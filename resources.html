@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Local and Ontario resources for seniors learning technology">
+  <title>Resources - Digital Confidence Centre</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+  <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">Resources</span>
+    <span></span>
+  </div>
+
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">&#10005;</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Your learning journey</p>
+    </div>
+    <nav>
+      <a href="index.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a href="module-1.html"><span class="nav-icon">🏠</span><span class="nav-label">1. The Escape Hatch</span></a>
+      <a href="module-2.html"><span class="nav-icon">🛡️</span><span class="nav-label">2. Security Shield</span></a>
+      <a href="module-3.html"><span class="nav-icon">🔑</span><span class="nav-label">3. Passwords</span></a>
+      <a href="module-4.html"><span class="nav-icon">📱</span><span class="nav-label">4. App Store Safety</span></a>
+      <a href="module-5.html"><span class="nav-icon">✉️</span><span class="nav-label">5. Email &amp; Messages</span></a>
+      <a href="module-6.html"><span class="nav-icon">🏦</span><span class="nav-label">6. Banking</span></a>
+      <a href="module-7.html"><span class="nav-icon">🎨</span><span class="nav-label">7. Creative Joy</span></a>
+      <a href="module-8.html"><span class="nav-icon">👨‍👩‍👧</span><span class="nav-label">8. Helping Family</span></a>
+      <a href="resources.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
+      <a href="scam-simulator.html"><span class="nav-icon">🎯</span><span class="nav-label">Scam Simulator</span></a>
+      <div class="settings-divider"></div>
+      <a href="#" class="settings-link"><span class="nav-icon">⚙️</span><span class="nav-label">My Settings</span></a>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <h1>Local &amp; Ontario Resources</h1>
+      <p>Real people and real programs in our community that can help you with technology. These have been selected because they are patient, senior-friendly, and either free or very low cost.</p>
+
+      <!-- Dynamic local resources — populated by city-resources.js -->
+      <div id="local-resources"></div>
+
+      <!-- National resources (Connected Canadians, Cyber-Seniors, Anti-Fraud Centre, Get Cyber Safe) are rendered dynamically inside #local-resources above -->
+
+      <h2>Additional Canadian Programmes</h2>
+
+      <div class="resource-card">
+        <h4>ABC Life Literacy Canada — Digital Literacy</h4>
+        <p>Free digital literacy programmes and resources designed for Canadian adults. Their materials are written in plain language and are excellent for building confidence.</p>
+        <p class="resource-meta">Website: abclifeliteracy.ca</p>
+        <span class="efficacy-badge">Free Resources</span>
+      </div>
+
+      <div class="resource-card">
+        <h4>Canada Revenue Agency (Real Contact)</h4>
+        <p>If you receive a suspicious call from someone claiming to be from the CRA and you want to verify, call the CRA directly at the number below. Never use a phone number given to you by a suspicious caller.</p>
+        <p class="resource-phone"><a href="tel:18009598281">1-800-959-8281</a> (Individual tax enquiries)</p>
+        <p class="resource-meta">Website: canada.ca/en/revenue-agency</p>
+        <span class="efficacy-badge">Verify CRA Calls Here</span>
+      </div>
+
+      <h2>Emergency Contacts</h2>
+
+      <div class="resource-card">
+        <h4>Police</h4>
+        <p><strong>Emergency: 911</strong></p>
+        <p>For non-emergency police contacts in your city, see the Local Resources section above.</p>
+      </div>
+
+      <div class="resource-card">
+        <h4>Apple Support</h4>
+        <p>For real Apple support (not the scam calls), contact Apple directly:</p>
+        <p class="resource-phone">Phone: 1-800-275-2273</p>
+        <p class="resource-meta">Website: support.apple.com</p>
+      </div>
+
+      <div class="resource-card">
+        <h4>Google / Android Support</h4>
+        <p>For help with Android phones or tablets:</p>
+        <p class="resource-phone">Phone: 1-855-836-3987</p>
+        <p class="resource-meta">Website: support.google.com</p>
+      </div>
+
+      <h2>Helpful Podcasts</h2>
+
+      <div class="podcast-card">
+        <div class="podcast-icon">🎙️</div>
+        <div>
+          <h4>Seniors Tech Talk</h4>
+          <p>Weekly conversations about technology topics for older adults. No jargon, no condescension — real, helpful tech advice. Search "Seniors Tech Talk" in the Podcasts app on your iPad (the purple icon with a radio signal shape).</p>
+        </div>
+      </div>
+
+      <div class="podcast-card">
+        <div class="podcast-icon">🎙️</div>
+        <div>
+          <h4>Digital Savvy Seniors</h4>
+          <p>Tips and tricks for getting the most from your devices, from online safety to fun apps. Each episode covers one clear topic so you can choose what is relevant to you.</p>
+        </div>
+      </div>
+
+      <div class="podcast-card">
+        <div class="podcast-icon">🎙️</div>
+        <div>
+          <h4>Tech Tips for Seniors</h4>
+          <p>Short, focused episodes (under 15 minutes) that tackle one topic at a time. Great for learning something new while having your morning coffee.</p>
+        </div>
+      </div>
+
+      <div class="tip-block">
+        <span class="tip-label">How to Listen to Podcasts</span>
+        <p>On your iPad, look for the <strong>Podcasts</strong> app — it has a purple icon with a radio signal shape. Open it, tap Search, and type the name of the podcast. Tap the podcast to see episodes, then tap any episode to play it. You can pause and resume at any time.</p>
+      </div>
+
+      <h2>Helpful YouTube Channels</h2>
+
+      <p>These channels specialize in patient, clear technology instruction for older adults. You can find them by searching their names in the YouTube app (or visiting youtube.com in Safari).</p>
+
+      <div class="resource-card">
+        <h4>Payette Forward</h4>
+        <p>Calm, thorough tutorials for iPhone and iPad. Covers everything from basic setup to troubleshooting specific problems. Videos are clearly organised by topic.</p>
+        <span class="efficacy-badge">Excellent for iPad Help</span>
+      </div>
+
+      <div class="resource-card">
+        <h4>The Senior List</h4>
+        <p>Technology reviews and tutorials specifically created for older adults. They test products and apps from a senior's perspective and give honest recommendations.</p>
+        <span class="efficacy-badge">Senior-Focused Reviews</span>
+      </div>
+
+      <div class="resource-card">
+        <h4>Tech Talks with Ken</h4>
+        <p>Easy-to-follow technology tips and tricks. Ken speaks slowly and clearly, and repeats important steps.</p>
+        <span class="efficacy-badge">Clear and Patient</span>
+      </div>
+
+      <div class="confidence-check">
+        <span class="check-icon">💛</span>
+        <p>You are never alone on this journey. These people and programs exist because they care about helping people learn. Do not hesitate to reach out.</p>
+      </div>
+
+      <div class="module-nav">
+        <a href="module-8.html" class="btn btn-secondary">← Module 8: Helping Family</a>
+        <a href="scam-simulator.html" class="btn btn-primary btn-next">Try the Scam Simulator →</a>
+      </div>
+
+      <footer class="site-footer">
+        <p>Digital Confidence Centre &middot; Made with care in Ontario</p>
+        <p>This site does not collect any personal information. Your progress is saved only on your own device.</p>
+        <p class="city-footer-label" style="display:none;"></p>
+        <p class="device-footer-label" style="display:none;"></p>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/accessibility.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/city-resources.js"></script>
+  <script src="js/setup-wizard.js"></script>
+</body>
+</html>

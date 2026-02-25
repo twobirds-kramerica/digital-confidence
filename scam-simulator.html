@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive Scam Simulator - Practice spotting scams in a safe environment">
+  <title>Scam Simulator - Digital Confidence Centre</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+  <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">Scam Simulator</span>
+    <span></span>
+  </div>
+
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">&#10005;</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Your learning journey</p>
+    </div>
+    <nav>
+      <a href="index.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a href="module-1.html"><span class="nav-icon">🏠</span><span class="nav-label">1. The Escape Hatch</span></a>
+      <a href="module-2.html"><span class="nav-icon">🛡️</span><span class="nav-label">2. Security Shield</span></a>
+      <a href="module-3.html"><span class="nav-icon">🔑</span><span class="nav-label">3. Passwords</span></a>
+      <a href="module-4.html"><span class="nav-icon">📱</span><span class="nav-label">4. App Store Safety</span></a>
+      <a href="module-5.html"><span class="nav-icon">✉️</span><span class="nav-label">5. Email &amp; Messages</span></a>
+      <a href="module-6.html"><span class="nav-icon">🏦</span><span class="nav-label">6. Banking</span></a>
+      <a href="module-7.html"><span class="nav-icon">🎨</span><span class="nav-label">7. Creative Joy</span></a>
+      <a href="module-8.html"><span class="nav-icon">👨‍👩‍👧</span><span class="nav-label">8. Helping Family</span></a>
+      <a href="resources.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
+      <a href="scam-simulator.html"><span class="nav-icon">🎯</span><span class="nav-label">Scam Simulator</span></a>
+      <div class="settings-divider"></div>
+      <a href="#" class="settings-link"><span class="nav-icon">⚙️</span><span class="nav-label">My Settings</span></a>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <h1>Scam Simulator</h1>
+      <p>Practice spotting scams in a completely safe environment. Nothing here is real — these are training exercises to sharpen your scam-detection skills. Take your time and read each scenario carefully.</p>
+
+      <div class="tip-block">
+        <span class="tip-label">How This Works</span>
+        <p>You will see real-looking scenarios — emails, text messages, phone calls, and websites. For each one, decide what you would do. Tap your answer and you will receive feedback explaining why it is right or what to watch for.</p>
+      </div>
+
+      <h2>Round 1: Email Scenarios</h2>
+
+      <div class="quiz-container" id="email-quiz">
+        <div class="quiz-question" data-correct="b">
+          <h4>Scenario 1: The Locked Account Email</h4>
+          <div class="scam-example">
+            <p>From: security-team@td-banking-alerts.ca<br>
+            Subject: Your TD EasyWeb Account Has Been Locked<br><br>
+            Dear Valued Customer,<br><br>
+            Due to suspicious activity, your TD EasyWeb account has been temporarily locked. To regain access, please verify your identity immediately:<br><br>
+            [Click Here to Verify Your Identity]<br><br>
+            If you do not verify within 24 hours, your account will be permanently suspended.<br><br>
+            TD Canada Trust Security Department</p>
+          </div>
+          <p><strong>What would you do?</strong></p>
+          <button class="quiz-option" data-answer="a">Click the link to verify your identity — your account might really be locked</button>
+          <button class="quiz-option" data-answer="b">Delete the email — the sender address "td-banking-alerts.ca" is not a real TD address, it says "Dear Valued Customer" instead of your name, and it uses urgency to pressure you</button>
+          <button class="quiz-option" data-answer="c">Reply to the email asking for more information</button>
+          <div class="quiz-feedback" data-correct-text="Excellent! You spotted all three red flags: fake email address, generic greeting, and artificial urgency. The real TD email domain is @td.com. If you are ever worried, open the TD app directly or call the number on the back of your bank card." data-incorrect-text="This is a scam email. The red flags are: (1) The sender address 'td-banking-alerts.ca' is fake — the real TD domain is @td.com, (2) It says 'Dear Valued Customer' instead of your name, (3) It creates urgency with a 24-hour deadline. Never click links in emails like this."></div>
+        </div>
+
+        <div class="quiz-question" data-correct="a">
+          <h4>Scenario 2: The Online Order Confirmation</h4>
+          <div class="scam-example">
+            <p>From: order-confirmation@amazon.ca<br>
+            Subject: Your Amazon.ca Order #302-8891447-2234<br><br>
+            Hello Margaret,<br><br>
+            Thank you for your order! Your package of "KitchenAid Stand Mixer - Red" ($549.99) will arrive by Thursday, February 20.<br><br>
+            Track your package: [Track Order]<br><br>
+            Did not make this order? Visit amazon.ca to check your account.<br><br>
+            Thank you for shopping with Amazon.ca</p>
+          </div>
+          <p><strong>What would you do?</strong></p>
+          <button class="quiz-option" data-answer="a">Do not click any links. If you did not order anything, open the Amazon app or type amazon.ca in your browser directly to check your orders</button>
+          <button class="quiz-option" data-answer="b">Click "Track Order" to see what is happening</button>
+          <button class="quiz-option" data-answer="c">Immediately call the phone number in the email to cancel the order</button>
+          <div class="quiz-feedback" data-correct-text="Smart thinking! Even though this email looks more legitimate (it uses your name and comes from amazon.ca), the safest approach is always to go to the website directly rather than clicking links in emails. If you did not order a KitchenAid mixer, check your Amazon account by opening the app or typing the address yourself." data-incorrect-text="The safest approach is to go directly to amazon.ca (type it yourself) or open the Amazon app to check your orders. Even if an email looks legitimate, it is always safer to go directly to the source rather than clicking email links."></div>
+        </div>
+
+        <div class="quiz-question" data-correct="c">
+          <h4>Scenario 3: The Prize Winner Email</h4>
+          <div class="scam-example">
+            <p>From: winners@canadian-sweepstakes-official.com<br>
+            Subject: CONGRATULATIONS! You Have Won $50,000!<br><br>
+            Dear Lucky Winner,<br><br>
+            Your email address was randomly selected in the Canadian National Sweepstakes! You have won $50,000 CAD! To claim your prize, please send a processing fee of $199.99 to cover administrative costs. Send the fee via e-Transfer to: claims@cnsweeps.com<br><br>
+            Sincerely,<br>
+            Canadian National Sweepstakes Board</p>
+          </div>
+          <p><strong>What would you do?</strong></p>
+          <button class="quiz-option" data-answer="a">Send the $199.99 — it is worth it if you win $50,000</button>
+          <button class="quiz-option" data-answer="b">Reply asking for more details about the sweepstakes</button>
+          <button class="quiz-option" data-answer="c">Delete it immediately — real sweepstakes never ask you to pay a fee to collect your prize, and you cannot win a contest you never entered</button>
+          <div class="quiz-feedback" data-correct-text="Correct! This is a classic advance-fee scam. The rules are simple: (1) You cannot win a contest you did not enter, (2) Real prizes never require a processing fee, (3) Legitimate organizations do not ask for e-Transfers from winners." data-incorrect-text="This is a scam. Remember: (1) You cannot win a contest you never entered, (2) Legitimate prizes never require you to pay a fee, (3) No real organization asks for payment via e-Transfer to claim a prize. Delete and move on."></div>
+        </div>
+
+        <div class="quiz-score">
+          <p class="score-number"></p>
+          <p class="score-message"></p>
+        </div>
+      </div>
+
+      <div class="confidence-check">
+        <span class="check-icon">💛</span>
+        <p>Confidence Check: How did you do? Whether you got them all right or learned something new, you are building stronger defences every time you practise.</p>
+      </div>
+
+      <h2>Round 2: Text Message Scenarios</h2>
+
+      <div class="quiz-container" id="text-quiz">
+        <div class="quiz-question" data-correct="b">
+          <h4>Scenario 4: The Package Delivery Text</h4>
+          <div class="scam-example">
+            <p>From: +1-416-555-8823<br><br>
+            Canada Post: Your package is being held at the sorting facility. A $2.49 delivery surcharge must be paid before release. Pay now: http://canada-post-delivery.com/pay</p>
+          </div>
+          <p><strong>What would you do?</strong></p>
+          <button class="quiz-option" data-answer="a">Pay the $2.49 — it is a small amount and you want your package</button>
+          <button class="quiz-option" data-answer="b">Delete the text — Canada Post does not send texts asking for payment, and the website address is fake</button>
+          <button class="quiz-option" data-answer="c">Click the link to check the tracking number</button>
+          <div class="quiz-feedback" data-correct-text="Well done! Canada Post leaves notice cards in your physical mailbox — they do not text you demanding payment. The fake website 'canada-post-delivery.com' is designed to steal your credit card information. The real website is canadapost-postescanada.ca." data-incorrect-text="This is a scam text. Canada Post does not send texts asking for payment — they leave a notice card in your real mailbox. The website 'canada-post-delivery.com' is fake. If you are expecting a package, check the real website: canadapost-postescanada.ca."></div>
+        </div>
+
+        <div class="quiz-question" data-correct="a">
+          <h4>Scenario 5: The Bank Verification Code</h4>
+          <div class="scam-example">
+            <p>You receive this legitimate-looking text:<br><br>
+            "Your RBC verification code is: 847291. Do not share this code with anyone."<br><br>
+            Then your phone rings. The caller says: "Hello, this is RBC fraud prevention. We detected suspicious activity on your account. To verify your identity, please read me the verification code we sent to your phone."</p>
+          </div>
+          <p><strong>What would you do?</strong></p>
+          <button class="quiz-option" data-answer="a">Hang up — a real bank employee will never ask you to read a verification code over the phone. The code is meant to protect you, not to be shared</button>
+          <button class="quiz-option" data-answer="b">Read the code to the caller — they said they are from RBC</button>
+          <button class="quiz-option" data-answer="c">Ask the caller for their employee number before sharing the code</button>
+          <div class="quiz-feedback" data-correct-text="Exactly right! This is a very sophisticated scam. The scammer has your login credentials and is trying to log in to your account. The bank sent the verification code to YOUR phone as a security measure. If you read the code to the scammer, they can complete the login and access your money. Never share verification codes with anyone, no matter who they claim to be." data-incorrect-text="The correct answer is to hang up. This is a real and dangerous scam technique. The scammer already has your password and is trying to log in. The bank sent the code to YOUR phone to protect you. If you read it to the caller, they can access your account. Never share verification codes with anyone."></div>
+        </div>
+
+        <div class="quiz-question" data-correct="c">
+          <h4>Scenario 6: The Family Emergency Text</h4>
+          <div class="scam-example">
+            <p>From: Unknown Number<br><br>
+            "Hi Grandma, this is your grandson. I got a new phone number. My old phone broke. Can you save this number? I need help with something urgent, can you call me back at this number?"</p>
+          </div>
+          <p><strong>What would you do?</strong></p>
+          <button class="quiz-option" data-answer="a">Call the new number immediately — your grandson might need help</button>
+          <button class="quiz-option" data-answer="b">Text back asking "Which grandson?"</button>
+          <button class="quiz-option" data-answer="c">Call your grandson at his real phone number (the one you already have) to check if this is genuine</button>
+          <div class="quiz-feedback" data-correct-text="Perfect! Always verify by contacting the person through a number you already know and trust. If your grandson really did get a new phone, he will confirm when you call his old number (or his parents can confirm). This text is designed to get you to call the scammer's number, where they will ask for money." data-incorrect-text="The safest choice is to call your grandson at the phone number you already have. If he really got a new phone, he or his parents can confirm. Texting back 'which grandson?' gives the scammer information they can use. Always verify through a trusted number."></div>
+        </div>
+
+        <div class="quiz-score">
+          <p class="score-number"></p>
+          <p class="score-message"></p>
+        </div>
+      </div>
+
+      <h2>Round 3: Phone Call and Website Scenarios</h2>
+
+      <div class="quiz-container" id="phone-quiz">
+        <div class="quiz-question" data-correct="b">
+          <h4>Scenario 7: The Apple Support Call</h4>
+          <div class="scam-example">
+            <p>Your phone rings. Caller ID shows "Apple Inc."<br><br>
+            "Hello, this is Apple Security calling. We have detected that your iCloud account has been compromised. Hackers are currently downloading your personal photos and documents. We need to act fast. Please allow us to remotely access your iPad so we can secure your account. There will be a one-time security service fee of $199."</p>
+          </div>
+          <p><strong>What would you do?</strong></p>
+          <button class="quiz-option" data-answer="a">Follow their instructions — they said they are from Apple and it sounds serious</button>
+          <button class="quiz-option" data-answer="b">Hang up immediately — Apple will never call you about a security issue you did not report, will never ask for remote access, and will never charge a fee to fix a security problem</button>
+          <button class="quiz-option" data-answer="c">Ask them to prove they are from Apple</button>
+          <div class="quiz-feedback" data-correct-text="Exactly right! Apple will never call you about security problems. Three clear red flags: (1) They called you first, (2) They asked for remote access, and (3) They want a $199 fee. Scammers can fake Caller ID to show 'Apple Inc.' — the number on your screen means nothing. If you are worried about your iCloud, contact Apple directly at 1-800-275-2273." data-incorrect-text="The correct answer is to hang up. Apple will never call you about a security issue you did not report, will never ask for remote access to your device, and will never charge a fee to fix security problems. Scammers can fake Caller ID. If you are worried, call Apple directly at 1-800-275-2273."></div>
+        </div>
+
+        <div class="quiz-question" data-correct="a">
+          <h4>Scenario 8: The Too-Good-to-Be-True Website</h4>
+          <div class="scam-example">
+            <p>You find a website called "Canadian-iPad-Deals.com" advertising:<br><br>
+            "CLEARANCE SALE! Brand New iPad Air — 90% OFF!<br>
+            Regular price: $799 — TODAY ONLY: $79.99!<br>
+            Limited Stock! Only 3 remaining!<br>
+            Payment accepted: Wire transfer, Bitcoin, or gift cards."</p>
+          </div>
+          <p><strong>What would you do?</strong></p>
+          <button class="quiz-option" data-answer="a">Leave the website — a 90% discount on a new iPad is not real, and legitimate stores accept credit cards, not wire transfers or gift cards</button>
+          <button class="quiz-option" data-answer="b">Buy it quickly before the three remaining units sell out</button>
+          <button class="quiz-option" data-answer="c">Bookmark it and come back later to see if the deal is still available</button>
+          <div class="quiz-feedback" data-correct-text="Smart decision! Multiple red flags here: (1) A 90% discount on a current Apple product is not realistic, (2) 'TODAY ONLY' and 'Only 3 remaining' are pressure tactics, (3) Legitimate stores accept credit cards — asking for wire transfers, Bitcoin, or gift cards means they do not want you to be able to reverse the payment. This is a scam website." data-incorrect-text="This is a scam website. Red flags include: a 90% discount that is not realistic, artificial urgency ('TODAY ONLY,' 'Only 3 remaining'), and payment methods that cannot be reversed (wire transfer, Bitcoin, gift cards). Legitimate stores like apple.ca, bestbuy.ca, or amazon.ca accept regular credit cards."></div>
+        </div>
+
+        <div class="quiz-question" data-correct="c">
+          <h4>Scenario 9: The CRA Voicemail</h4>
+          <div class="scam-example">
+            <p>You receive a voicemail:<br><br>
+            "This is an urgent message from the Canada Revenue Agency. Your Social Insurance Number has been suspended due to suspicious activity. Press 1 to speak with an agent immediately, or a warrant for your arrest will be issued within 24 hours. This is your final notice."</p>
+          </div>
+          <p><strong>What would you do?</strong></p>
+          <button class="quiz-option" data-answer="a">Call back immediately — you do not want to be arrested</button>
+          <button class="quiz-option" data-answer="b">Press 1 to speak with the agent and sort it out</button>
+          <button class="quiz-option" data-answer="c">Delete the voicemail — the CRA does not leave threatening voicemails, Social Insurance Numbers cannot be "suspended," and the government does not threaten arrest by phone</button>
+          <div class="quiz-feedback" data-correct-text="Perfect score on that one! Three key facts: (1) The CRA sends letters — they do not leave threatening voicemails, (2) Your Social Insurance Number cannot be 'suspended' — that is not how it works, (3) The government does not threaten arrest over the phone. This is one of the most common scams in Canada. Delete and move on." data-incorrect-text="This is a scam. Remember: (1) The CRA communicates by mail, not threatening voicemails, (2) A Social Insurance Number cannot be 'suspended,' (3) The government will never threaten arrest by phone. If you are worried about your tax situation, call the real CRA at 1-800-959-8281."></div>
+        </div>
+
+        <div class="quiz-question" data-correct="b">
+          <h4>Scenario 10: The Helpful Stranger on Facebook</h4>
+          <div class="scam-example">
+            <p>A friendly person named "David" sends you a message on Facebook:<br><br>
+            "Hello! I am a financial advisor and I noticed your profile. I help retirees in Canada grow their savings with a guaranteed investment programme. My clients earn 15-20% returns monthly with zero risk. I have helped many seniors in Ontario. Would you like to learn more? I can set you up with a free consultation."</p>
+          </div>
+          <p><strong>What would you do?</strong></p>
+          <button class="quiz-option" data-answer="a">Accept the consultation — 15-20% monthly returns sound great</button>
+          <button class="quiz-option" data-answer="b">Ignore and block this person — no legitimate investment offers "guaranteed" returns of 15-20% per month with zero risk. This is an investment scam</button>
+          <button class="quiz-option" data-answer="c">Ask David for his credentials and office address</button>
+          <div class="quiz-feedback" data-correct-text="Well done! No legitimate investment offers guaranteed 15-20% monthly returns with zero risk. For perspective, even the best investments in the world average 8-10% per year (not per month). This is a classic investment scam. Legitimate financial advisors do not cold-message strangers on Facebook." data-incorrect-text="This is an investment scam. Red flags: (1) 15-20% monthly returns are not possible with any legitimate investment — even great investments average 8-10% per year, (2) 'Guaranteed' and 'zero risk' together is always a lie, (3) Legitimate financial advisors do not contact strangers on Facebook. Block and report."></div>
+        </div>
+
+        <div class="quiz-score">
+          <p class="score-number"></p>
+          <p class="score-message"></p>
+        </div>
+      </div>
+
+      <div class="confidence-check">
+        <span class="check-icon">🎉</span>
+        <p>You have completed all three rounds of the Scam Simulator!</p>
+        <p class="check-text">Whether you aced every question or learned something new, you are now better equipped to protect yourself and your family. Remember: the 3-Second Rule (Stop, Breathe, Verify) is your best defence in any situation. You can come back and practise these scenarios any time.</p>
+      </div>
+
+      <h2>Your Scam-Spotting Quick Reference</h2>
+
+      <div class="tip-block">
+        <span class="tip-label">The 5 Universal Red Flags</span>
+        <p><strong>1. Urgency:</strong> "Act now!" "You have 24 hours!" Real organizations give you time.</p>
+        <p><strong>2. Fear:</strong> "Your account is locked!" "The police are coming!" Scammers use fear as a weapon.</p>
+        <p><strong>3. Unusual payment:</strong> Gift cards, wire transfers, Bitcoin. Real companies accept credit cards.</p>
+        <p><strong>4. They contacted you first:</strong> Real support waits for you to call them.</p>
+        <p><strong>5. Secrecy:</strong> "Don't tell anyone." Isolation is a scammer's tool.</p>
+      </div>
+
+      <div class="module-nav">
+        <a href="resources.html" class="btn btn-secondary">← Resources</a>
+        <a href="index.html" class="btn btn-primary btn-next">Back to Home →</a>
+      </div>
+
+      <footer class="site-footer">
+        <p>Digital Confidence Centre &middot; Made with care in Ontario</p>
+        <p>This site does not collect any personal information. Your progress is saved only on your own device.</p>
+        <p class="city-footer-label" style="display:none;"></p>
+        <p class="device-footer-label" style="display:none;"></p>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/accessibility.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/scam-quiz.js"></script>
+  <script src="js/city-resources.js"></script>
+  <script src="js/setup-wizard.js"></script>
+</body>
+</html>

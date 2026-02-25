@@ -1,0 +1,162 @@
+/* ============================================
+   Responsive / Mobile-First Styles
+   ============================================ */
+
+/* Mobile-first: sidebar hidden by default on small screens */
+@media (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-close {
+    display: flex;
+  }
+
+  .top-bar {
+    display: flex;
+  }
+
+  .main-content {
+    padding-top: calc(var(--nav-height) + var(--spacing-md));
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+  }
+
+  .accessibility-bar {
+    top: var(--nav-height);
+    border-top: none;
+    border-bottom-right-radius: 0;
+  }
+
+  .welcome-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .three-second-rule .steps {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .module-nav {
+    flex-direction: column;
+  }
+
+  .module-nav .btn {
+    max-width: 100%;
+  }
+}
+
+/* Desktop: sidebar always visible */
+@media (min-width: 1025px) {
+  .page-wrapper {
+    padding-left: var(--sidebar-width);
+  }
+
+  .sidebar {
+    transform: translateX(0);
+  }
+
+  .top-bar {
+    display: none;
+  }
+
+  .sidebar-overlay {
+    display: none !important;
+  }
+}
+
+/* Tablet landscape adjustments */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main-content {
+    max-width: 700px;
+  }
+
+  .module-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small phone adjustments */
+@media (max-width: 480px) {
+  :root {
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+  }
+
+  .main-content {
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+  }
+
+  .welcome-hero {
+    padding: var(--spacing-md);
+  }
+
+  .welcome-hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .module-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .module-card .card-icon {
+    margin: 0 auto;
+  }
+
+  .accessibility-bar {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .a11y-btn {
+    min-width: 42px;
+    min-height: 42px;
+    font-size: 0.9rem;
+  }
+
+  .podcast-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .scam-example {
+    font-size: 0.85rem;
+    word-break: break-word;
+  }
+}
+
+/* iPad specific (most important target) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .main-content {
+    padding: calc(var(--nav-height) + var(--spacing-lg)) var(--spacing-lg) 120px;
+    max-width: 680px;
+  }
+
+  .module-card {
+    padding: var(--spacing-lg);
+  }
+
+  .quiz-option {
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: 1.05rem;
+  }
+
+  .btn-large {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+  .main-content {
+    max-width: 780px;
+    padding: var(--spacing-lg) var(--spacing-xl);
+  }
+}

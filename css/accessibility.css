@@ -1,0 +1,109 @@
+/* ============================================
+   Accessibility Styles
+   Font Sizing & Dark Mode Overrides
+   ============================================ */
+
+/* Font Size Levels */
+[data-font-size="small"] {
+  font-size: 16px;
+}
+
+[data-font-size="medium"] {
+  font-size: 18px;
+}
+
+[data-font-size="large"] {
+  font-size: 22px;
+}
+
+[data-font-size="xl"] {
+  font-size: 26px;
+}
+
+/* Ensure headings scale proportionally */
+[data-font-size="large"] h1 { font-size: 2.2rem; }
+[data-font-size="large"] h2 { font-size: 1.7rem; }
+[data-font-size="large"] h3 { font-size: 1.4rem; }
+
+[data-font-size="xl"] h1 { font-size: 2.4rem; }
+[data-font-size="xl"] h2 { font-size: 1.9rem; }
+[data-font-size="xl"] h3 { font-size: 1.5rem; }
+
+/* Focus indicators (enhanced) */
+*:focus-visible {
+  outline: 3px solid var(--accent-primary);
+  outline-offset: 3px;
+}
+
+/* Skip to content link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--spacing-md);
+  background: var(--accent-primary);
+  color: #FFFFFF;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  z-index: 9999;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* High contrast enhancements for dark mode */
+[data-theme="dark"] .quiz-option {
+  border-width: 2px;
+}
+
+[data-theme="dark"] .module-card {
+  border-width: 2px;
+}
+
+[data-theme="dark"] a {
+  text-decoration-thickness: 2px;
+}
+
+/* Ensure tap targets on touch devices */
+@media (pointer: coarse) {
+  .progress-checkbox {
+    width: 40px;
+    height: 40px;
+  }
+
+  .quiz-option {
+    padding: var(--spacing-md);
+  }
+
+  .sidebar nav a {
+    min-height: 56px;
+    padding: var(--spacing-md);
+  }
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

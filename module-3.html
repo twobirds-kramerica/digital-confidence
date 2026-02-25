@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Module 3: Passwords and Biometrics - Secure your accounts without the headache">
+  <title>Module 3: Passwords &amp; Biometrics - Digital Confidence Centre</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+  <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">Module 3: Passwords</span>
+    <span></span>
+  </div>
+
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">&#10005;</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Your learning journey</p>
+    </div>
+    <nav>
+      <a href="index.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a href="module-1.html"><span class="nav-icon">🏠</span><span class="nav-label">1. The Escape Hatch</span></a>
+      <a href="module-2.html"><span class="nav-icon">🛡️</span><span class="nav-label">2. Security Shield</span></a>
+      <a href="module-3.html"><span class="nav-icon">🔑</span><span class="nav-label">3. Passwords</span></a>
+      <a href="module-4.html"><span class="nav-icon">📱</span><span class="nav-label">4. App Store Safety</span></a>
+      <a href="module-5.html"><span class="nav-icon">✉️</span><span class="nav-label">5. Email &amp; Messages</span></a>
+      <a href="module-6.html"><span class="nav-icon">🏦</span><span class="nav-label">6. Banking</span></a>
+      <a href="module-7.html"><span class="nav-icon">🎨</span><span class="nav-label">7. Creative Joy</span></a>
+      <a href="module-8.html"><span class="nav-icon">👨‍👩‍👧</span><span class="nav-label">8. Helping Family</span></a>
+      <a href="resources.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
+      <a href="scam-simulator.html"><span class="nav-icon">🎯</span><span class="nav-label">Scam Simulator</span></a>
+      <div class="settings-divider"></div>
+      <a href="#" class="settings-link"><span class="nav-icon">⚙️</span><span class="nav-label">My Settings</span></a>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <h1>Module 3: Passwords &amp; Biometrics</h1>
+      <p><strong>What you will learn:</strong> How to keep your accounts secure without memorizing dozens of passwords. We will cover Face ID, password managers, and what those security terms actually mean in plain language.</p>
+
+      <div class="story-block">
+        <span class="story-label">Helen's Story</span>
+        <p>Helen, 69, from LaSalle, had one password for everything: her late husband's name followed by their anniversary year. She used it for her email, her bank, her iPad, Amazon, Facebook — everything. "It's easy to remember," she told her daughter.</p>
+        <p>Then one day, Helen noticed strange purchases on her Amazon account — three expensive Bluetooth speakers she had never ordered. Someone had figured out her password (it turns out her husband's name and their anniversary were both on her Facebook profile) and used it to get into her Amazon account. Because Helen used the same password everywhere, the thief also tried it on her email — and got in.</p>
+        <p>Helen spent two stressful weeks changing passwords, calling her bank, and locking down her accounts. But the experience taught her something she now shares with every friend: "One password for everything is like one key for your house, your car, and your safety deposit box. If someone copies that key, they get into everything."</p>
+        <p>Today, Helen uses Face ID and a password manager. She says managing her passwords is now easier than it was before — and far, far safer.</p>
+      </div>
+
+      <h2>Security Terms in Plain Language</h2>
+
+      <p>Before we go further, let us define some words you might hear. Think of this as your personal dictionary:</p>
+
+      <div class="tip-block">
+        <span class="tip-label">Your Security Dictionary</span>
+        <p><strong>Password:</strong> A secret word or phrase that proves you are who you say you are. Like a key to a lock.</p>
+        <p><strong>Biometrics:</strong> Using your body to prove your identity — your face, your fingerprint, or even your voice. "Bio" means life, and "metrics" means measurement. So biometrics means "measuring something about you."</p>
+        <p><strong>Face ID:</strong> Apple's system that uses the front camera on your iPad or iPhone to recognise your face. It is like a security guard who knows what you look like and opens the door when they see you.</p>
+        <p><strong>Touch ID:</strong> Apple's fingerprint reader, found on older iPads and iPhones. You press your finger on the Home button and it recognises your unique fingerprint.</p>
+        <p><strong>Face Unlock / Fingerprint Unlock:</strong> Android's version of the same idea. Many Android phones and tablets can recognise your face or your fingerprint to unlock your device and confirm your identity.</p>
+        <p><strong>Password Manager:</strong> A secure digital vault that remembers all your passwords for you. You only need to remember one master password — the vault remembers the rest.</p>
+        <p><strong>Two-Factor Authentication (also called 2FA or "two-step verification"):</strong> An extra security step when you log in. After typing your password, you also need a second proof — usually a code sent to your phone. It is like a door that needs both a key and a secret knock.</p>
+        <p><strong>Apple ID:</strong> Your personal account with Apple. It is the email address and password you use to download apps, use iCloud, and access Apple services. Think of it as your membership card for everything Apple.</p>
+        <p><strong>Google Account:</strong> Your personal account with Google. It is the email address (usually Gmail) and password you use to download apps from the Play Store, back up your data, and access Google services. Think of it as your membership card for everything on your Android device.</p>
+      </div>
+
+      <div class="confidence-check">
+        <span class="check-icon">💛</span>
+        <p>Confidence Check: Those terms are not so scary when they are explained properly, are they? You are building your tech vocabulary.</p>
+      </div>
+
+      <h2>Biometrics: Your Face or Fingerprint Is Your Password</h2>
+
+      <p>Modern devices can recognise you by your face or fingerprint. This is one of the most convenient and secure ways to protect your device.</p>
+
+      <div class="device-content" data-devices="iphone,ipad">
+      <h3>Face ID on iPad and iPhone</h3>
+
+      <p>If your iPad or iPhone is a newer model, it likely has Face ID.</p>
+
+      <p><strong>How Face ID works:</strong> When you set up Face ID, your device takes a detailed map of your face using special sensors. It does not take a regular photograph — it creates a mathematical model of the shape of your face. This model is stored only on your device (it is never sent to Apple or anyone else). When you pick up your device and look at the screen, it checks: "Is this the same face?" If yes, it unlocks.</p>
+
+      <div class="walkthrough">
+        <h4>Setting Up Face ID</h4>
+        <div class="walkthrough-step">
+          <span class="step-num">1</span>
+          <span class="step-text">Find the <strong>Settings</strong> app on your Home screen. It looks like grey mechanical gears.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">2</span>
+          <span class="step-text">Tap <strong>Settings</strong> to open it.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">3</span>
+          <span class="step-text">Scroll down the left side and tap <strong>"Face ID &amp; Passcode"</strong>.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">4</span>
+          <span class="step-text">You will need to enter your current passcode (the number you type to unlock your iPad).</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">5</span>
+          <span class="step-text">Tap <strong>"Set Up Face ID"</strong>.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">6</span>
+          <span class="step-text">Hold your iPad at arm's length and position your face in the circle on the screen. Slowly move your head in a circle, as if you are tracing the outline of a large clock with your nose.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">7</span>
+          <span class="step-text">You will need to do this twice. Follow the on-screen instructions.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">8</span>
+          <span class="step-text">When it says "Face ID is now set up" — you are done! Your face is now your password.</span>
+        </div>
+      </div>
+
+      <div class="image-placeholder" role="img" aria-label="Face ID setup screen on iPhone Settings">
+        <div class="placeholder-inner">
+          <div class="placeholder-icon-wrap">🔒</div>
+          <div class="placeholder-text-wrap">
+            <span class="placeholder-label">Screenshot needed</span>
+            <p class="placeholder-caption">Face ID setup screen on iPhone Settings</p>
+            <p class="placeholder-dims">Recommended: 600 × 800 px</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-block">
+        <span class="tip-label">Good to Know</span>
+        <p>Face ID works with glasses on or off, and it adapts as your appearance changes gradually over time. It does not work with a face covering, so you may need your passcode when wearing a mask. Face ID will also not let someone unlock your device while you are sleeping — your eyes need to be open and looking at the screen.</p>
+      </div>
+      </div>
+
+      <div class="device-content" data-devices="android-phone,android-tablet">
+      <h3>Fingerprint and Face Unlock on Android</h3>
+
+      <p>Most Android phones and tablets come with a fingerprint reader, and many newer models also offer face unlock. The fingerprint reader is usually found on the back of the device, on the side (built into the power button), or under the screen itself. Setting it up is straightforward and takes just a couple of minutes.</p>
+
+      <div class="walkthrough">
+        <h4>Setting Up Fingerprint Unlock on Android</h4>
+        <div class="walkthrough-step">
+          <span class="step-num">1</span>
+          <span class="step-text">Open the <strong>Settings</strong> app (the gear icon on your Home screen or in the App Drawer).</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">2</span>
+          <span class="step-text">Scroll down and tap <strong>"Security"</strong> or <strong>"Biometrics and Security"</strong> (the exact name varies slightly between Samsung, Google Pixel, and other brands).</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">3</span>
+          <span class="step-text">Tap <strong>"Fingerprint"</strong> or <strong>"Fingerprints"</strong>.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">4</span>
+          <span class="step-text">You will be asked to enter your current PIN, pattern, or password (the code you normally use to unlock your device). If you do not have one set up yet, the device will ask you to create one first.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">5</span>
+          <span class="step-text">Tap <strong>"Add fingerprint."</strong> The device will ask you to place your finger on the fingerprint sensor.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">6</span>
+          <span class="step-text">Gently tap and lift your finger on the sensor repeatedly. The screen will show you how much of your fingerprint has been captured. Move your finger slightly each time to cover all the edges.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">7</span>
+          <span class="step-text">When the device says your fingerprint has been added — you are done! Your finger is now your password.</span>
+        </div>
+      </div>
+
+      <div class="walkthrough">
+        <h4>Setting Up Face Unlock on Android</h4>
+        <div class="walkthrough-step">
+          <span class="step-num">1</span>
+          <span class="step-text">Open <strong>Settings</strong> and go to <strong>"Security"</strong> or <strong>"Biometrics and Security."</strong></span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">2</span>
+          <span class="step-text">Tap <strong>"Face recognition"</strong> or <strong>"Face Unlock."</strong></span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">3</span>
+          <span class="step-text">Enter your PIN, pattern, or password when prompted.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">4</span>
+          <span class="step-text">Hold your device at arm's length and position your face inside the circle on the screen. Hold still while the camera scans your face.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">5</span>
+          <span class="step-text">When the device confirms your face has been registered, you are all set.</span>
+        </div>
+      </div>
+
+      <div class="image-placeholder" role="img" aria-label="Fingerprint setup screen on Android Settings">
+        <div class="placeholder-inner">
+          <div class="placeholder-icon-wrap">🔒</div>
+          <div class="placeholder-text-wrap">
+            <span class="placeholder-label">Screenshot needed</span>
+            <p class="placeholder-caption">Fingerprint setup screen on Android Settings</p>
+            <p class="placeholder-dims">Recommended: 600 × 800 px</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-block">
+        <span class="tip-label">Good to Know</span>
+        <p>Android fingerprint unlock is very reliable and works even if your hands are slightly damp. Face unlock on Android is convenient, but on most devices it is slightly less secure than fingerprint — some models can be unlocked with a good photograph. For best security, use fingerprint as your primary method and face unlock as a backup. You can have both set up at the same time.</p>
+      </div>
+      </div>
+
+      <div class="confidence-check-box">
+        <span class="check-icon">💪</span>
+        <p>You already know the most important security terms. That knowledge is your foundation.</p>
+        <p class="check-subtext">Most people never learn what these words actually mean — you are already ahead.</p>
+      </div>
+
+      <h2>Creating Strong Passwords</h2>
+
+      <p>For accounts where you still need a typed password, here is how to make a good one:</p>
+
+      <div class="danger-block">
+        <span class="danger-label">Weak Passwords (Do Not Use These)</span>
+        <p>123456, password, your name, your pet's name, your birthday, your anniversary, your address, "qwerty," or any single word found in the dictionary.</p>
+      </div>
+
+      <div class="warning-box">
+        <span class="warning-box-label">Watch Out</span>
+        <p>Using the same password for multiple accounts is like using the same key for your house, your car, and your safety deposit box. If a thief copies that one key, they get into everything.</p>
+      </div>
+
+      <p>A strong password is like a strong lock — it has multiple parts that work together. The best way to create one is the <strong>passphrase method</strong>:</p>
+
+      <div class="tip-block">
+        <span class="tip-label">The Passphrase Method</span>
+        <p>Instead of a single word, use a short phrase of random words. For example:</p>
+        <p><strong>Purple-Teacup-Bridge-44</strong></p>
+        <p>This is much harder for a computer to guess than "MyName1954" but much easier for you to remember. You can picture a purple teacup sitting on a bridge with the number 44 on it. The sillier the image, the easier it is to remember.</p>
+        <p>More examples: <strong>Garden-Rabbit-Snow-17</strong> or <strong>Kitchen-River-Maple-82</strong></p>
+      </div>
+
+      <div class="image-placeholder" role="img" aria-label="Visual example of a passphrase — Purple-Teacup-Bridge-44">
+        <div class="placeholder-inner">
+          <div class="placeholder-icon-wrap">🔑</div>
+          <div class="placeholder-text-wrap">
+            <span class="placeholder-label">Screenshot needed</span>
+            <p class="placeholder-caption">Visual example of a passphrase — Purple-Teacup-Bridge-44</p>
+            <p class="placeholder-dims">Recommended: 800 × 400 px</p>
+          </div>
+        </div>
+      </div>
+
+      <p>The key rules for passwords:</p>
+      <ul class="content-list">
+        <li><strong>Never use the same password twice.</strong> Each account should have its own unique password.</li>
+        <li><strong>Never share your passwords</strong> with anyone — not even someone who says they are from Apple or your bank.</li>
+        <li><strong>Make them long.</strong> A 16-character passphrase is far stronger than an 8-character password with random symbols.</li>
+      </ul>
+
+      <div class="confidence-check">
+        <span class="check-icon">💛</span>
+        <p>Confidence Check: You do not need to be a computer expert to have strong passwords. A silly phrase you can picture in your mind is all you need.</p>
+      </div>
+
+      <div class="tip-box">
+        <span class="tip-box-label">Tip</span>
+        <p>Write your master password on paper and keep it in a locked drawer or a safe — never on a sticky note attached to your device. A paper backup in a secure location is perfectly fine.</p>
+      </div>
+
+      <h2>Password Managers: Your Digital Vault</h2>
+
+      <p>"But how am I supposed to remember a different password for every account?" Great question. The answer is: you are not. A password manager does it for you.</p>
+
+      <div class="device-content" data-devices="iphone,ipad">
+      <p>Your iPad comes with a built-in password manager called <strong>iCloud Keychain</strong>. Here is what it does:</p>
+
+      <ul class="content-list">
+        <li>When you create a new account on a website, your iPad offers to <strong>save the password</strong> for you.</li>
+        <li>When you return to that website, your iPad <strong>fills in the password automatically</strong> — you do not need to type it.</li>
+        <li>It can <strong>suggest strong passwords</strong> when you are creating a new account.</li>
+        <li>It <strong>warns you</strong> if one of your saved passwords has been found in a data breach.</li>
+        <li>All of this is protected by your Face ID or passcode — no one else can see your passwords.</li>
+      </ul>
+
+      <div class="walkthrough">
+        <h4>Making Sure iCloud Keychain Is Turned On</h4>
+        <div class="walkthrough-step">
+          <span class="step-num">1</span>
+          <span class="step-text">Open <strong>Settings</strong> (the grey gears icon).</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">2</span>
+          <span class="step-text">Tap your <strong>name</strong> at the very top of the Settings screen (it shows your name and "Apple ID, iCloud, Media &amp; Purchases").</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">3</span>
+          <span class="step-text">Tap <strong>"iCloud"</strong>.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">4</span>
+          <span class="step-text">Tap <strong>"Passwords and Keychain"</strong>.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">5</span>
+          <span class="step-text">Make sure the switch next to <strong>"Sync this iPad"</strong> is turned on (green). If it is already green, you are all set.</span>
+        </div>
+      </div>
+
+      <div class="image-placeholder" role="img" aria-label="Password manager app screen showing saved passwords">
+        <div class="placeholder-inner">
+          <div class="placeholder-icon-wrap">🗝️</div>
+          <div class="placeholder-text-wrap">
+            <span class="placeholder-label">Screenshot needed</span>
+            <p class="placeholder-caption">Password manager app screen showing saved passwords</p>
+            <p class="placeholder-dims">Recommended: 600 × 800 px</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="walkthrough">
+        <h4>Viewing Your Saved Passwords</h4>
+        <div class="walkthrough-step">
+          <span class="step-num">1</span>
+          <span class="step-text">Open <strong>Settings</strong>.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">2</span>
+          <span class="step-text">Scroll down and tap <strong>"Passwords"</strong>.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">3</span>
+          <span class="step-text">Use Face ID or enter your passcode to see your saved passwords.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">4</span>
+          <span class="step-text">You will see a list of websites and the passwords saved for each one. Tap any entry to see the details.</span>
+        </div>
+      </div>
+      </div>
+
+      <div class="device-content" data-devices="android-phone,android-tablet">
+      <p>Your Android device comes with a built-in password manager called <strong>Google Password Manager</strong>. It works through your Google account and your Chrome browser. Here is what it does:</p>
+
+      <ul class="content-list">
+        <li>When you create a new account on a website in Chrome, your device offers to <strong>save the password</strong> for you.</li>
+        <li>When you return to that website, your device <strong>fills in the password automatically</strong> — you do not need to type it.</li>
+        <li>It can <strong>suggest strong passwords</strong> when you are creating a new account.</li>
+        <li>It <strong>warns you</strong> if one of your saved passwords has been found in a data breach (called a "Password Checkup").</li>
+        <li>All of this is protected by your screen lock (fingerprint, face unlock, or PIN) — no one else can see your passwords.</li>
+      </ul>
+
+      <div class="walkthrough">
+        <h4>Making Sure Google Password Manager Is Turned On</h4>
+        <div class="walkthrough-step">
+          <span class="step-num">1</span>
+          <span class="step-text">Open the <strong>Chrome</strong> app (the colourful circle icon).</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">2</span>
+          <span class="step-text">Tap the <strong>three dots</strong> in the top-right corner of the screen.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">3</span>
+          <span class="step-text">Tap <strong>"Settings"</strong>.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">4</span>
+          <span class="step-text">Tap <strong>"Password Manager"</strong> (or <strong>"Passwords"</strong> on some versions).</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">5</span>
+          <span class="step-text">Make sure <strong>"Offer to save passwords"</strong> is turned on (the switch should be blue). If it is already on, you are all set.</span>
+        </div>
+      </div>
+
+      <div class="walkthrough">
+        <h4>Viewing Your Saved Passwords</h4>
+        <div class="walkthrough-step">
+          <span class="step-num">1</span>
+          <span class="step-text">Open the <strong>Settings</strong> app on your device.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">2</span>
+          <span class="step-text">Tap <strong>"Passwords and accounts"</strong> or <strong>"Google"</strong> and then <strong>"Password Manager."</strong></span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">3</span>
+          <span class="step-text">Use your fingerprint, face unlock, or PIN to confirm your identity.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">4</span>
+          <span class="step-text">You will see a list of websites and apps with saved passwords. Tap any entry to see the details.</span>
+        </div>
+      </div>
+
+      <div class="tip-block">
+        <span class="tip-label">Helpful Hint</span>
+        <p>You can also visit <strong>passwords.google.com</strong> in any web browser to see all your saved passwords. You will need to sign in with your Google account. This is handy if you want to review your passwords on a computer as well.</p>
+      </div>
+      </div>
+
+      <div class="confidence-check-box">
+        <span class="check-icon">🌟</span>
+        <p>You now understand password managers — the single most powerful tool for keeping your accounts safe.</p>
+        <p class="check-subtext">You do not need to memorise dozens of passwords. The vault does it for you.</p>
+      </div>
+
+      <h2>Two-Factor Authentication: The Double Lock</h2>
+
+      <p>Imagine your front door had two locks — a regular lock and a deadbolt. Even if someone copied your key, they still could not get in without also having the deadbolt key. That is what two-factor authentication does for your online accounts.</p>
+
+      <p>When you turn on two-factor authentication (let us call it "the double lock"), logging in works like this:</p>
+
+      <ol class="numbered-list">
+        <li>You type your password as usual (the first lock).</li>
+        <li>The website sends a <strong>short code</strong> (usually 6 numbers) to your phone or iPad (the second lock).</li>
+        <li>You type that code into the website.</li>
+        <li>Now the website knows it is really you — because even if someone stole your password, they would also need your phone to get the code.</li>
+      </ol>
+
+      <p>Your Apple ID already uses two-factor authentication by default. When you sign in on a new device, Apple sends a code to your other devices. This is normal and it is protecting you.</p>
+
+      <div class="image-placeholder" role="img" aria-label="Phone showing a 6-digit verification code text message">
+        <div class="placeholder-inner">
+          <div class="placeholder-icon-wrap">📱</div>
+          <div class="placeholder-text-wrap">
+            <span class="placeholder-label">Screenshot needed</span>
+            <p class="placeholder-caption">Phone showing a 6-digit verification code text message</p>
+            <p class="placeholder-dims">Recommended: 600 × 800 px</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="three-second-rule">
+        <h3>The 3-Second Rule for Codes</h3>
+        <div class="steps">
+          <div class="step">
+            <span class="step-icon">✋</span>
+            <span class="step-name">Stop</span>
+            <span class="step-desc">Did you request this code?</span>
+          </div>
+          <div class="step">
+            <span class="step-icon">🫁</span>
+            <span class="step-name">Breathe</span>
+            <span class="step-desc">If you did not try to log in, someone else might be trying.</span>
+          </div>
+          <div class="step">
+            <span class="step-icon">🔍</span>
+            <span class="step-name">Verify</span>
+            <span class="step-desc">Never share a verification code with anyone who calls or texts you. Change your password if you did not request it.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="confidence-check">
+        <span class="check-icon">💛</span>
+        <p>Confidence Check: You now understand the three layers of security: a strong password, a password manager, and the double lock. You are more secure than most people online.</p>
+      </div>
+
+      <div class="video-lab">
+        <h2>Video Lab: Watch and Learn</h2>
+
+        <div class="video-container">
+          <h4>How to Use Face ID on iPad</h4>
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/mN1SuvPClWo" title="How to use Face ID on iPad" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <p class="video-note">A clear, visual walkthrough of setting up and using Face ID on your iPad.</p>
+        </div>
+
+        <div class="video-container">
+          <h4>How to Create Strong Passwords</h4>
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/aEmF3Iylvr4" title="How to create strong passwords" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <p class="video-note">Explains the passphrase method and why longer passwords beat complicated ones.</p>
+        </div>
+
+        <div class="video-container">
+          <h4>Understanding Two-Factor Authentication</h4>
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/hGRii5f_uSc" title="Two-factor authentication explained" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <p class="video-note">A beginner-friendly explanation of what two-factor authentication is and why it matters.</p>
+        </div>
+      </div>
+
+      <div class="warning-box">
+        <span class="warning-box-label">Watch Out</span>
+        <p>No legitimate company will ever ask you for a verification code over the phone. If someone calls and asks for a code that was sent to your device, hang up immediately — it is a scam.</p>
+      </div>
+
+      <div class="three-second-rule-box">
+        <h4>Remember the 3-Second Rule</h4>
+        <p>Stop. Breathe. Think before you tap. If something feels urgent or too good to be true, that is your signal to pause.</p>
+      </div>
+
+      <div class="tip-box">
+        <span class="tip-box-label">Tip</span>
+        <p>If you receive a verification code you did not request, do not panic — but do change the password for that account as soon as possible. It means someone is trying to log in as you.</p>
+      </div>
+
+      <div class="exercise-block">
+        <h3>Practical Exercise: Strengthen Your Security</h3>
+        <p>Let us put what you have learned into action. Work through these steps at your own pace — you do not need to do them all in one sitting.</p>
+
+        <div class="device-content" data-devices="iphone,ipad">
+        <ol class="numbered-list">
+          <li><strong>Check Face ID:</strong> Go to Settings → Face ID &amp; Passcode and make sure Face ID is set up. If it is not, follow the walkthrough above to set it up.</li>
+          <li><strong>Check your Keychain:</strong> Go to Settings → Passwords and look at your saved passwords. Are any of them marked with a warning triangle? If so, those passwords may have been found in a data breach — consider changing them.</li>
+          <li><strong>Create a passphrase:</strong> Think of three random words and a number. Write it down on paper and store it in a safe place (like a locked drawer — never on a sticky note on your iPad).</li>
+          <li><strong>Change one password:</strong> Pick one account (perhaps an online shopping site — start with something that is not your bank) and change the password to your new passphrase.</li>
+        </ol>
+
+        <div class="success-state">
+          <strong>Success looks like this:</strong> Face ID is set up and working. You have at least one strong passphrase password. You know where your saved passwords are stored on your iPad.
+        </div>
+        </div>
+
+        <div class="device-content" data-devices="android-phone,android-tablet">
+        <ol class="numbered-list">
+          <li><strong>Check your fingerprint or face unlock:</strong> Go to Settings → Security (or Biometrics and Security) and make sure at least one fingerprint is registered. If not, follow the walkthrough above to set it up.</li>
+          <li><strong>Check your saved passwords:</strong> Open Chrome, tap the three dots, then Settings → Password Manager. Look at your saved passwords. If there is a "Password Checkup" option, tap it to see if any of your passwords have been found in a data breach — consider changing those.</li>
+          <li><strong>Create a passphrase:</strong> Think of three random words and a number. Write it down on paper and store it in a safe place (like a locked drawer — never on a sticky note near your device).</li>
+          <li><strong>Change one password:</strong> Pick one account (perhaps an online shopping site — start with something that is not your bank) and change the password to your new passphrase.</li>
+        </ol>
+
+        <div class="success-state">
+          <strong>Success looks like this:</strong> Fingerprint or face unlock is set up and working. You have at least one strong passphrase password. You know where your saved passwords are stored on your Android device.
+        </div>
+        </div>
+      </div>
+
+      <div class="success-state-box">
+        <span class="success-icon">✅</span>
+        <p><strong>Well done!</strong> You have strengthened your device's security with biometrics and better passwords. Every step you take makes your accounts safer.</p>
+      </div>
+
+      <h2>Quick Check: Test Your Knowledge</h2>
+
+      <div class="quiz-container" id="module3-quiz">
+        <div class="quiz-question" data-correct="b">
+          <h4>1. Which is the strongest password?</h4>
+          <button class="quiz-option" data-answer="a">MyName1954!</button>
+          <button class="quiz-option" data-answer="b">Purple-Teacup-Bridge-44</button>
+          <button class="quiz-option" data-answer="c">password123</button>
+          <div class="quiz-feedback" data-correct-text="Well done! A passphrase with random words is much harder to guess than a name with a year or a common word." data-incorrect-text="The strongest option is 'Purple-Teacup-Bridge-44' — a passphrase of random words is hard for computers to crack but easy for you to remember."></div>
+        </div>
+
+        <div class="quiz-question" data-correct="a">
+          <h4>2. What does a password manager do?</h4>
+          <button class="quiz-option" data-answer="a">Securely stores all your passwords so you only need to remember one</button>
+          <button class="quiz-option" data-answer="b">Sends your passwords to Apple for safekeeping</button>
+          <button class="quiz-option" data-answer="c">Makes all your accounts use the same password</button>
+          <div class="quiz-feedback" data-correct-text="Exactly! A password manager is your secure digital vault. You remember one password, it remembers the rest." data-incorrect-text="A password manager securely stores all your passwords on your device so you only need to remember one master password (or use Face ID)."></div>
+        </div>
+
+        <div class="quiz-question" data-correct="c">
+          <h4>3. You receive a text message with a verification code that you did not request. What should you do?</h4>
+          <button class="quiz-option" data-answer="a">Ignore it — codes expire and it is nothing to worry about</button>
+          <button class="quiz-option" data-answer="b">Reply to the text with "STOP"</button>
+          <button class="quiz-option" data-answer="c">Do not share the code with anyone, and consider changing your password for that account</button>
+          <div class="quiz-feedback" data-correct-text="Correct! An unexpected code could mean someone is trying to access your account. Never share it, and change your password to be safe." data-incorrect-text="An unexpected verification code could mean someone has your password and is trying to log in. Never share the code, and change your password for that account."></div>
+        </div>
+
+        <div class="quiz-score">
+          <p class="score-number"></p>
+          <p class="score-message"></p>
+        </div>
+      </div>
+
+      <h2>Module 3 Progress Checklist</h2>
+
+      <div class="checklist">
+        <div class="progress-item">
+          <input type="checkbox" class="progress-checkbox" data-id="m3-1" id="m3-1">
+          <label class="progress-label" for="m3-1">I understand what Face ID, passwords, and two-factor authentication mean</label>
+        </div>
+        <div class="progress-item">
+          <input type="checkbox" class="progress-checkbox" data-id="m3-2" id="m3-2">
+          <label class="progress-label" for="m3-2">Face ID is set up on my device</label>
+        </div>
+        <div class="progress-item">
+          <input type="checkbox" class="progress-checkbox" data-id="m3-3" id="m3-3">
+          <label class="progress-label" for="m3-3">I know how to create a strong passphrase</label>
+        </div>
+        <div class="progress-item">
+          <input type="checkbox" class="progress-checkbox" data-id="m3-4" id="m3-4">
+          <label class="progress-label" for="m3-4">I know where my saved passwords are stored</label>
+        </div>
+        <div class="progress-item">
+          <input type="checkbox" class="progress-checkbox" data-id="m3-5" id="m3-5">
+          <label class="progress-label" for="m3-5">I have changed at least one weak password</label>
+        </div>
+        <div class="progress-item">
+          <input type="checkbox" class="progress-checkbox" data-id="m3-6" id="m3-6">
+          <label class="progress-label" for="m3-6">I understand why I should never share verification codes</label>
+        </div>
+      </div>
+
+      <h2>Local Help</h2>
+
+      <div class="local-help-dynamic"></div>
+
+      <div class="resource-card">
+        <h4>Connected Canadians</h4>
+        <p>Free technology mentoring for older adults. Trained volunteers can help you set up Face ID, create strong passwords, and configure your password manager — all over the phone or video call.</p>
+        <p class="resource-phone">Phone: 1-855-808-1423</p>
+        <p class="resource-meta">Website: connectedcanadians.ca</p>
+        <span class="efficacy-badge">Highly Effective — 95% satisfaction rate</span>
+      </div>
+
+      <div class="confidence-check">
+        <span class="check-icon">🎉</span>
+        <p>Congratulations! You have completed Module 3!</p>
+        <p class="check-text">Your accounts are now protected by strong, unique passwords, a password manager, and biometrics. That is a fortress of security, and you built it yourself.</p>
+      </div>
+
+      <div class="feeling-stuck-box">
+        <h4>Feeling Stuck?</h4>
+        <p>You do not have to figure this out alone. These free services are staffed by real, patient people who love helping:</p>
+        <p class="resource-phone"><strong>Connected Canadians</strong> — <a href="tel:18558080505">1-855-808-0505</a></p>
+        <p class="resource-phone"><strong>Cyber-Seniors</strong> — <a href="tel:18442173057">1-844-217-3057</a></p>
+        <p>Both services are free, Canadian, and specialise in helping older adults with technology at your own pace.</p>
+      </div>
+
+      <div class="module-nav">
+        <a href="module-2.html" class="btn btn-secondary">← Previous: Security Shield</a>
+        <a href="module-4.html" class="btn btn-primary btn-next">Next: App Store Safety →</a>
+      </div>
+
+      <footer class="site-footer">
+        <p>Digital Confidence Centre &middot; Made with care in Ontario</p>
+        <p>This site does not collect any personal information. Your progress is saved only on your own device.</p>
+        <p class="city-footer-label" style="display:none;"></p>
+        <p class="device-footer-label" style="display:none;"></p>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/accessibility.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/scam-quiz.js"></script>
+  <script src="js/city-resources.js"></script>
+  <script src="js/setup-wizard.js"></script>
+</body>
+</html>

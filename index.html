@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Digital Confidence Centre - Friendly technology training for seniors in Ontario">
+  <title>Digital Confidence Centre</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+  <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Accessibility Controls -->
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <!-- Top Bar (Mobile) -->
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">Digital Confidence Centre</span>
+    <span></span>
+  </div>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">✕</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Your learning journey</p>
+    </div>
+    <nav>
+      <a href="index.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a href="module-1.html"><span class="nav-icon">🏠</span><span class="nav-label">1. The Escape Hatch</span></a>
+      <a href="module-2.html"><span class="nav-icon">🛡️</span><span class="nav-label">2. Security Shield</span></a>
+      <a href="module-3.html"><span class="nav-icon">🔑</span><span class="nav-label">3. Passwords</span></a>
+      <a href="module-4.html"><span class="nav-icon">📱</span><span class="nav-label">4. App Store Safety</span></a>
+      <a href="module-5.html"><span class="nav-icon">✉️</span><span class="nav-label">5. Email & Messages</span></a>
+      <a href="module-6.html"><span class="nav-icon">🏦</span><span class="nav-label">6. Banking</span></a>
+      <a href="module-7.html"><span class="nav-icon">🎨</span><span class="nav-label">7. Creative Joy</span></a>
+      <a href="module-8.html"><span class="nav-icon">👨‍👩‍👧</span><span class="nav-label">8. Helping Family</span></a>
+      <a href="resources.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
+      <a href="scam-simulator.html"><span class="nav-icon">🎯</span><span class="nav-label">Scam Simulator</span></a>
+      <div class="settings-divider"></div>
+      <a href="#" class="settings-link"><span class="nav-icon">⚙️</span><span class="nav-label">My Settings</span></a>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <!-- Welcome Hero -->
+      <div class="welcome-hero">
+        <h1>Welcome to the Digital Confidence Centre</h1>
+        <p class="subtitle">A free, self-paced learning programme for beginners, geared for seniors who want to feel safe and confident using their devices.</p>
+        <p class="tagline">You are not behind. You are right on time. Let's learn together.</p>
+      </div>
+
+      <!-- Welcome Banner (shown after onboarding) -->
+      <div id="dc-welcome-banner" class="confidence-check" style="display:none;"></div>
+
+      <!-- Progress Overview -->
+      <div class="progress-overview">
+        <h2 style="border:none;margin:0;padding:0;font-size:1.2rem;">Your Progress</h2>
+        <p class="progress-text" style="margin:8px 0;">Start a module below to begin tracking your progress.</p>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" style="width: 0%;" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+
+      <!-- About This Site -->
+      <div class="story-block">
+        <span class="story-label">A note from your guide</span>
+        <p>This website was designed with one person in mind: someone who is smart, capable, and has a lifetime of wisdom — but who finds today's technology a bit overwhelming. That person might be you, and that is completely okay.</p>
+        <p>Every lesson here moves at your pace. There are no tests you can fail. There is nothing you can break. And if you ever feel lost, you can always come back to this home page and start fresh.</p>
+        <p>Think of this as your friendly neighbour sitting at your kitchen table with a cup of tea, walking you through things one step at a time.</p>
+      </div>
+
+      <h2 style="border:none;margin-top:var(--spacing-lg);">Your Learning Modules</h2>
+      <p>Work through these in order, or jump to whichever topic you need most. Each module is designed to be completed in one sitting, but you can always come back and review.</p>
+
+      <!-- Module Cards -->
+      <div class="module-grid">
+
+        <a href="module-1.html" class="module-card" data-module="1">
+          <div class="card-icon">🏠</div>
+          <div class="card-content">
+            <h3>Module 1: Mastering the Escape Hatch</h3>
+            <p>Learn the one skill that changes everything: how to get back to safety no matter what happens on your screen. The Home button, force quitting apps, and why nothing you do is permanent.</p>
+            <span class="card-progress"></span>
+          </div>
+        </a>
+
+        <a href="module-2.html" class="module-card" data-module="2">
+          <div class="card-icon">🛡️</div>
+          <div class="card-content">
+            <h3>Module 2: The Security Shield</h3>
+            <p>Your deep-dive guide to spotting scams, phishing emails, and fraudulent phone calls. Includes real Canadian examples and the powerful 3-Second Rule.</p>
+            <span class="card-progress"></span>
+          </div>
+        </a>
+
+        <a href="module-3.html" class="module-card" data-module="3">
+          <div class="card-icon">🔑</div>
+          <div class="card-content">
+            <h3>Module 3: Passwords & Biometrics</h3>
+            <p>Make your accounts secure without memorizing dozens of passwords. Learn about Face ID, password managers, and what "two-factor authentication" really means in plain language.</p>
+            <span class="card-progress"></span>
+          </div>
+        </a>
+
+        <a href="module-4.html" class="module-card" data-module="4">
+          <div class="card-icon">📱</div>
+          <div class="card-content">
+            <h3>Module 4: App Store Safety</h3>
+            <p>How to find, download, and verify apps safely. Learn to spot fake apps, understand permissions, and keep your device running smoothly.</p>
+            <span class="card-progress"></span>
+          </div>
+        </a>
+
+        <a href="module-5.html" class="module-card" data-module="5">
+          <div class="card-icon">✉️</div>
+          <div class="card-content">
+            <h3>Module 5: Email & Messages</h3>
+            <p>Master safe communication. Spot scam emails, block unwanted callers, and send messages and photos to family with confidence.</p>
+            <span class="card-progress"></span>
+          </div>
+        </a>
+
+        <a href="module-6.html" class="module-card" data-module="6">
+          <div class="card-icon">🏦</div>
+          <div class="card-content">
+            <h3>Module 6: Banking & Transactions</h3>
+            <p>Online banking does not have to be scary. Learn how to check your balance, pay bills, and make safe purchases — all from your iPad.</p>
+            <span class="card-progress"></span>
+          </div>
+        </a>
+
+        <a href="module-7.html" class="module-card" data-module="7">
+          <div class="card-icon">🎨</div>
+          <div class="card-content">
+            <h3>Module 7: Photos & Creative Joy</h3>
+            <p>The fun stuff! Explore photo editing, drawing apps, and creative tools. Your iPad is not just for email — it is a canvas for your creativity.</p>
+            <span class="card-progress"></span>
+          </div>
+        </a>
+
+        <a href="module-8.html" class="module-card" data-module="8">
+          <div class="card-icon">👨‍👩‍👧</div>
+          <div class="card-content">
+            <h3>Module 8: Helping Family Stay Connected</h3>
+            <p>Use your device to strengthen family bonds. Video calls, shared photo albums, group messages, and the Personal Relationship Manager project.</p>
+            <span class="card-progress"></span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Extra Resources -->
+      <h2>More Tools for You</h2>
+
+      <div class="module-grid">
+        <a href="resources.html" class="module-card">
+          <div class="card-icon">📚</div>
+          <div class="card-content">
+            <h3>Local &amp; Ontario Resources</h3>
+            <p>Local tech help, phone numbers, community centres, and free programs designed to help seniors in your area.</p>
+          </div>
+        </a>
+
+        <a href="scam-simulator.html" class="module-card">
+          <div class="card-icon">🎯</div>
+          <div class="card-content">
+            <h3>Scam Simulator</h3>
+            <p>Practice spotting scams in a safe environment. Interactive quizzes with real-world examples — no risk, all learning.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Podcasts Section -->
+      <h2>Helpful Podcasts</h2>
+      <p>These shows are made for people like you. Listen on your iPad while having your morning coffee.</p>
+
+      <div class="podcast-card">
+        <div class="podcast-icon">🎙️</div>
+        <div>
+          <h4>Seniors Tech Talk</h4>
+          <p>Weekly conversations about technology topics that matter to older adults, explained without jargon. Search for "Seniors Tech Talk" in the Podcasts app on your iPad (the purple icon with a radio signal).</p>
+        </div>
+      </div>
+
+      <div class="podcast-card">
+        <div class="podcast-icon">🎙️</div>
+        <div>
+          <h4>Digital Savvy Seniors</h4>
+          <p>Tips and tricks for getting the most out of your devices, from online safety to fun apps. Available in Apple Podcasts.</p>
+        </div>
+      </div>
+
+      <div class="podcast-card">
+        <div class="podcast-icon">🎙️</div>
+        <div>
+          <h4>Tech Tips for Seniors</h4>
+          <p>Short, focused episodes that tackle one topic at a time. Great for learning something new in ten minutes or less.</p>
+        </div>
+      </div>
+
+      <div class="confidence-check">
+        <span class="check-icon">💛</span>
+        <p>You have already taken the most important step — you are here, and you are learning.</p>
+        <p class="check-text">Pick any module above and begin at your own pace. There is no rush, and you cannot make a mistake.</p>
+      </div>
+
+      <footer class="site-footer">
+        <p>Digital Confidence Centre &middot; Made with care in Ontario</p>
+        <p>This site does not collect any personal information. Your progress is saved only on your own device.</p>
+        <p class="city-footer-label" style="display:none;"></p>
+        <p class="device-footer-label" style="display:none;"></p>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/accessibility.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/city-resources.js"></script>
+  <script src="js/setup-wizard.js"></script>
+</body>
+</html>
