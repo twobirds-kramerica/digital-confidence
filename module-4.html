@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Module 4: App Store Safety - Download apps safely and avoid fakes">
+  <meta name="description" content="Module 4: App Store Safety — download apps safely, spot fake apps, manage subscriptions, and understand permissions. Guides for iPad, Android, and Windows seniors.">
+  <meta name="keywords" content="App Store safety seniors, download apps iPad seniors, fake apps how to spot, Google Play Store guide, Microsoft Store tutorial, app permissions explained">
+  <meta property="og:title" content="Module 4: App Store Safety — Digital Confidence Centre">
+  <meta property="og:description" content="Learn to find, download, and verify apps safely. Spot fake apps, understand permissions, and avoid hidden subscription fees.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://brendakramer.github.io/brenda-digital-confidence/module-4.html">
   <title>Module 4: App Store Safety - Digital Confidence Centre</title>
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/accessibility.css">
@@ -46,6 +51,19 @@
       <a href="module-8.html"><span class="nav-icon">👨‍👩‍👧</span><span class="nav-label">8. Helping Family</span></a>
       <a href="resources.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
       <a href="scam-simulator.html"><span class="nav-icon">🎯</span><span class="nav-label">Scam Simulator</span></a>
+      <div class="sidebar-a11y-section">
+        <p class="sidebar-a11y-title">Text Size</p>
+        <div class="sidebar-font-row">
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false" style="font-size:1rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+        </div>
+        <p class="sidebar-a11y-title">Screen Colour</p>
+        <div class="sidebar-theme-row">
+          <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+        </div>
+      </div>
       <div class="settings-divider"></div>
       <a href="#" class="settings-link"><span class="nav-icon">⚙️</span><span class="nav-label">My Settings</span></a>
     </nav>
@@ -56,6 +74,7 @@
 
       <h1>Module 4: App Store Safety</h1>
       <p><strong>What you will learn:</strong> How to find, download, and verify apps safely. You will learn to spot fake apps, understand what permissions mean, and keep your device running smoothly.</p>
+      <img class="module-hero-image" src="images/senior-couple-smartphone.jpg" alt="Senior couple exploring apps on a smartphone" width="800" height="200" loading="lazy">
 
       <div class="story-block">
         <span class="story-label">Frank's Story</span>
@@ -68,6 +87,50 @@
         <span class="tip-box-label">Tip</span>
         <p>The safest way to open the App Store is to tap its icon directly on your Home screen — never from a link in an email, text message, or website.</p>
       </div>
+
+      <!-- App Store Mini-Guide -->
+      <details class="appstore-guide">
+        <summary>How do I use the App Store on my device?</summary>
+
+        <details class="appstore-platform" data-devices="iphone,ipad">
+          <summary>📱 Apple App Store (iPhone / iPad) — blue icon with white "A"</summary>
+          <div class="appstore-platform-body">
+            <ol>
+              <li><strong>Open the App Store</strong> — tap the blue icon with the white letter "A" on your Home screen.</li>
+              <li><strong>Search for an app</strong> — tap the magnifying glass icon at the bottom, then type the name of the app you want.</li>
+              <li><strong>Review the app</strong> — check the star rating (4 or higher is good), the number of reviews, and who made it.</li>
+              <li><strong>Download</strong> — tap <strong>Get</strong> (free apps) or the price button (paid apps). You may need to confirm with Face ID, Touch ID, or your Apple ID password.</li>
+              <li><strong>Allow permissions</strong> — when the app opens for the first time, it may ask for access to your location, camera, or contacts. You can choose "Allow" or "Don't Allow" for each one.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="appstore-platform" data-devices="android-phone,android-tablet">
+          <summary>🤖 Google Play Store (Android) — colourful triangle icon</summary>
+          <div class="appstore-platform-body">
+            <ol>
+              <li><strong>Open the Play Store</strong> — tap the colourful triangle icon (blue, green, red, and yellow) on your Home screen or app drawer. It may be labelled "Play Store."</li>
+              <li><strong>Search for an app</strong> — tap the search bar at the top and type the name of the app you want.</li>
+              <li><strong>Review the app</strong> — check the star rating, number of installs, and who published it (look for well-known names).</li>
+              <li><strong>Download</strong> — tap <strong>Install</strong> (free apps) or the price button (paid apps). You may need to confirm with your fingerprint or Google account password.</li>
+              <li><strong>Allow permissions</strong> — the first time you open the app, it may ask for access to your location, camera, or contacts. Read each request carefully before choosing "Allow."</li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="appstore-platform" data-devices="windows">
+          <summary>🖥️ Microsoft Store (Windows) — blue shopping bag icon</summary>
+          <div class="appstore-platform-body">
+            <ol>
+              <li><strong>Open the Microsoft Store</strong> — click the blue shopping bag icon in your taskbar at the bottom of the screen, or search "Microsoft Store" in the Start menu.</li>
+              <li><strong>Search for an app</strong> — type the name of the app in the search bar at the top of the Store window.</li>
+              <li><strong>Review the app</strong> — check the star rating, number of reviews, and the publisher name.</li>
+              <li><strong>Download</strong> — click <strong>Get</strong> (free) or the price button (paid). You may need to sign in with your Microsoft account.</li>
+              <li><strong>Allow permissions</strong> — some apps will ask for permissions (camera, microphone, location) when you first use them. You can choose what to allow in your Windows Settings if you change your mind later.</li>
+            </ol>
+          </div>
+        </details>
+      </details>
 
       <h2>The Real App Store: How to Find It</h2>
 
@@ -402,7 +465,7 @@
         <div class="video-container">
           <h4>How to Download Apps on iPad</h4>
           <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/FnCiGYONfQ4" title="How to download apps on iPad" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/FnCiGYONfQ4?rel=0&modestbranding=1" title="How to download apps on iPad" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
           </div>
           <p class="video-note">A complete beginner's guide to finding and installing apps from the App Store.</p>
         </div>
@@ -410,7 +473,7 @@
         <div class="video-container">
           <h4>How to Cancel Subscriptions on iPhone and iPad</h4>
           <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/PGfMHFLt7TY" title="How to cancel app subscriptions on iPad" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/PGfMHFLt7TY?rel=0&modestbranding=1" title="How to cancel app subscriptions on iPad" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
           </div>
           <p class="video-note">Step-by-step instructions for finding and cancelling unwanted subscriptions.</p>
         </div>
@@ -418,7 +481,7 @@
         <div class="video-container">
           <h4>How to Delete Apps on iPad</h4>
           <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/8Z0sDXoMg0A" title="How to delete apps on iPad" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/8Z0sDXoMg0A?rel=0&modestbranding=1" title="How to delete apps on iPad" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
           </div>
           <p class="video-note">Quick tutorial on removing apps you no longer need from your iPad.</p>
         </div>
@@ -536,6 +599,7 @@
   <script src="js/progress.js"></script>
   <script src="js/scam-quiz.js"></script>
   <script src="js/city-resources.js"></script>
+  <script src="js/welcome-splash.js"></script>
   <script src="js/setup-wizard.js"></script>
 </body>
 </html>

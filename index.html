@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Digital Confidence Centre - Friendly technology training for seniors in Ontario">
+  <meta name="description" content="Free digital literacy training for seniors in Ontario. Learn to use your iPad, iPhone, and computer safely with 8 friendly, self-paced modules. No jargon.">
+  <meta name="keywords" content="digital literacy seniors Ontario, technology help seniors Windsor London Kitchener, iPad training older adults, online safety seniors, computer lessons seniors Ontario">
+  <meta property="og:title" content="Digital Confidence Centre — Friendly Tech Learning for Ontario Seniors">
+  <meta property="og:description" content="Free, friendly technology training for seniors in Ontario. Stay safe online, learn your devices, and build confidence at your own pace.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://brendakramer.github.io/brenda-digital-confidence/index.html">
   <title>Digital Confidence Centre</title>
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/accessibility.css">
@@ -50,6 +55,19 @@
       <a href="module-8.html"><span class="nav-icon">👨‍👩‍👧</span><span class="nav-label">8. Helping Family</span></a>
       <a href="resources.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
       <a href="scam-simulator.html"><span class="nav-icon">🎯</span><span class="nav-label">Scam Simulator</span></a>
+      <div class="sidebar-a11y-section">
+        <p class="sidebar-a11y-title">Text Size</p>
+        <div class="sidebar-font-row">
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false" style="font-size:1rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+        </div>
+        <p class="sidebar-a11y-title">Screen Colour</p>
+        <div class="sidebar-theme-row">
+          <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+        </div>
+      </div>
       <div class="settings-divider"></div>
       <a href="#" class="settings-link"><span class="nav-icon">⚙️</span><span class="nav-label">My Settings</span></a>
     </nav>
@@ -59,10 +77,15 @@
     <main class="main-content" id="main">
 
       <!-- Welcome Hero -->
-      <div class="welcome-hero">
-        <h1>Welcome to the Digital Confidence Centre</h1>
-        <p class="subtitle">A free, self-paced learning programme for beginners, geared for seniors who want to feel safe and confident using their devices.</p>
-        <p class="tagline">You are not behind. You are right on time. Let's learn together.</p>
+      <div class="welcome-hero welcome-hero-inner">
+        <div class="welcome-hero-text">
+          <h1>Welcome to the Digital Confidence Centre</h1>
+          <p class="subtitle">A free, self-paced learning programme for beginners, geared for seniors who want to feel safe and confident using their devices.</p>
+          <p class="tagline">You are not behind. You are right on time. Let's learn together.</p>
+        </div>
+        <div class="welcome-hero-image">
+          <img src="images/senior-woman-ipad.jpg" alt="Smiling senior woman using a tablet" width="260" height="200" loading="eager">
+        </div>
       </div>
 
       <!-- Welcome Banner (shown after onboarding) -->
@@ -194,7 +217,29 @@
         <div class="podcast-icon">🎙️</div>
         <div>
           <h4>Seniors Tech Talk</h4>
-          <p>Weekly conversations about technology topics that matter to older adults, explained without jargon. Search for "Seniors Tech Talk" in the Podcasts app on your iPad (the purple icon with a radio signal).</p>
+          <p>Weekly conversations about technology topics that matter to older adults, explained without jargon.</p>
+          <div class="podcast-platforms">
+            <span class="podcast-platform-badge">🎵 Apple Podcasts</span>
+            <span class="podcast-platform-badge">💚 Spotify</span>
+            <span class="podcast-platform-badge">▶️ Google Podcasts</span>
+          </div>
+          <details class="podcast-howto">
+            <summary>How to find this podcast on your device</summary>
+            <div class="podcast-howto-steps">
+              <h5>📱 Apple / iPad</h5>
+              <ol>
+                <li>Open the purple <strong>Podcasts</strong> app</li>
+                <li>Tap <strong>Search</strong> → type "Seniors Tech Talk"</li>
+                <li>Tap the show, then tap any episode to play</li>
+              </ol>
+              <h5>🤖 Android</h5>
+              <ol>
+                <li>Open <strong>Spotify</strong> or <strong>Google Podcasts</strong></li>
+                <li>Tap <strong>Search</strong> → type "Seniors Tech Talk"</li>
+                <li>Tap the show, then tap any episode to play</li>
+              </ol>
+            </div>
+          </details>
         </div>
       </div>
 
@@ -202,7 +247,29 @@
         <div class="podcast-icon">🎙️</div>
         <div>
           <h4>Digital Savvy Seniors</h4>
-          <p>Tips and tricks for getting the most out of your devices, from online safety to fun apps. Available in Apple Podcasts.</p>
+          <p>Tips and tricks for getting the most out of your devices, from online safety to fun apps.</p>
+          <div class="podcast-platforms">
+            <span class="podcast-platform-badge">🎵 Apple Podcasts</span>
+            <span class="podcast-platform-badge">💚 Spotify</span>
+            <span class="podcast-platform-badge">▶️ Google Podcasts</span>
+          </div>
+          <details class="podcast-howto">
+            <summary>How to find this podcast on your device</summary>
+            <div class="podcast-howto-steps">
+              <h5>📱 Apple / iPad</h5>
+              <ol>
+                <li>Open the purple <strong>Podcasts</strong> app</li>
+                <li>Tap <strong>Search</strong> → type "Digital Savvy Seniors"</li>
+                <li>Tap the show, then tap any episode to play</li>
+              </ol>
+              <h5>🤖 Android</h5>
+              <ol>
+                <li>Open <strong>Spotify</strong> or <strong>Google Podcasts</strong></li>
+                <li>Tap <strong>Search</strong> → type "Digital Savvy Seniors"</li>
+                <li>Tap the show, then tap any episode to play</li>
+              </ol>
+            </div>
+          </details>
         </div>
       </div>
 
@@ -211,6 +278,28 @@
         <div>
           <h4>Tech Tips for Seniors</h4>
           <p>Short, focused episodes that tackle one topic at a time. Great for learning something new in ten minutes or less.</p>
+          <div class="podcast-platforms">
+            <span class="podcast-platform-badge">🎵 Apple Podcasts</span>
+            <span class="podcast-platform-badge">💚 Spotify</span>
+            <span class="podcast-platform-badge">▶️ Google Podcasts</span>
+          </div>
+          <details class="podcast-howto">
+            <summary>How to find this podcast on your device</summary>
+            <div class="podcast-howto-steps">
+              <h5>📱 Apple / iPad</h5>
+              <ol>
+                <li>Open the purple <strong>Podcasts</strong> app</li>
+                <li>Tap <strong>Search</strong> → type "Tech Tips for Seniors"</li>
+                <li>Tap the show, then tap any episode to play</li>
+              </ol>
+              <h5>🤖 Android</h5>
+              <ol>
+                <li>Open <strong>Spotify</strong> or <strong>Google Podcasts</strong></li>
+                <li>Tap <strong>Search</strong> → type "Tech Tips for Seniors"</li>
+                <li>Tap the show, then tap any episode to play</li>
+              </ol>
+            </div>
+          </details>
         </div>
       </div>
 
@@ -234,6 +323,7 @@
   <script src="js/accessibility.js"></script>
   <script src="js/progress.js"></script>
   <script src="js/city-resources.js"></script>
+  <script src="js/welcome-splash.js"></script>
   <script src="js/setup-wizard.js"></script>
 </body>
 </html>

@@ -74,8 +74,8 @@ function updateFontButtons(activeSize) {
 }
 
 function initThemeToggle() {
-  var btn = document.querySelector('.theme-toggle-btn');
-  if (btn) {
+  var btns = document.querySelectorAll('.theme-toggle-btn');
+  btns.forEach(function (btn) {
     btn.addEventListener('click', function () {
       var current = document.documentElement.getAttribute('data-theme');
       var next = current === 'dark' ? 'light' : 'dark';
@@ -83,13 +83,13 @@ function initThemeToggle() {
       localStorage.setItem('dc-theme', next);
       updateThemeButton(next);
     });
-  }
+  });
 }
 
 function updateThemeButton(theme) {
-  var btn = document.querySelector('.theme-toggle-btn');
-  if (btn) {
+  var btns = document.querySelectorAll('.theme-toggle-btn');
+  btns.forEach(function (btn) {
     btn.textContent = theme === 'dark' ? '\u2600\uFE0F' : '\uD83C\uDF13';
     btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-  }
+  });
 }

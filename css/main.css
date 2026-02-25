@@ -6,7 +6,7 @@
 /* CSS Custom Properties */
 :root {
   /* Light Mode (Default) */
-  --bg-primary: #FFFFFF;
+  --bg-primary: #FAFAF8;
   --bg-secondary: #F8F9FA;
   --bg-card: #FFFFFF;
   --bg-highlight: #EBF5FB;
@@ -1606,3 +1606,460 @@ strong {
   padding: var(--spacing-md);
   margin: var(--spacing-md) 0;
 }
+
+/* ============================================
+   Sidebar Accessibility Controls
+   ============================================ */
+.sidebar-a11y-section {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-top: 1px solid var(--border-light);
+  margin-top: var(--spacing-sm);
+}
+
+.sidebar-a11y-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.sidebar-font-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.sidebar-font-row .a11y-btn {
+  flex: 1;
+  min-width: unset;
+  min-height: 48px;
+  padding: 4px 2px;
+}
+
+.sidebar-theme-row {
+  display: flex;
+  gap: 6px;
+}
+
+.sidebar-theme-row .a11y-btn {
+  flex: 1;
+  min-height: 48px;
+  font-size: 0.9rem;
+  gap: 6px;
+}
+
+/* ============================================
+   Welcome Hero Image
+   ============================================ */
+.welcome-hero-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.welcome-hero-text {
+  flex: 1;
+}
+
+.welcome-hero-image {
+  flex-shrink: 0;
+  width: 260px;
+  height: 200px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.welcome-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .welcome-hero-inner {
+    flex-direction: column;
+  }
+  .welcome-hero-image {
+    width: 100%;
+    height: 180px;
+  }
+}
+
+/* ============================================
+   Module Hero Image (top of module pages)
+   ============================================ */
+.module-hero-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-lg);
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .module-hero-image {
+    height: 140px;
+    margin-bottom: var(--spacing-md);
+  }
+}
+
+/* ============================================
+   Phase 1 Polish — Visual Warmth
+   ============================================ */
+
+/* Module cards: warm amber left accent on hover */
+.module-card:hover {
+  border-left: 4px solid #E8B84B;
+}
+
+/* Story blocks: warm cream tone */
+.story-block {
+  background: #FFF8EC;
+}
+
+/* Confidence checks: warm cream-green tone */
+.confidence-check {
+  background: #F0FAF4;
+}
+
+/* Sidebar header: warm blue-to-indigo gradient */
+.sidebar-header {
+  background: linear-gradient(135deg, #3A8FC7 0%, #4A5BAD 100%);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  padding: var(--spacing-md);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  margin-bottom: var(--spacing-sm);
+}
+
+.sidebar-header h2 {
+  color: #FFFFFF;
+}
+
+.sidebar-header p {
+  color: rgba(255,255,255,0.8);
+}
+
+/* Welcome hero: soft warm gradient */
+.welcome-hero {
+  background: linear-gradient(135deg, #FFF8EC 0%, #EBF5FB 60%, #EAF4FF 100%);
+}
+
+/* Desktop: add top padding to clear the accessibility bar */
+@media (min-width: 1025px) {
+  .main-content {
+    padding-top: 76px;
+  }
+}
+
+/* ============================================
+   Phase 1 Polish — Splash Overlay
+   ============================================ */
+.splash-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(160deg, #FFF8EC 0%, #EBF5FB 50%, #EAF4FF 100%);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+  overflow-y: auto;
+}
+
+.splash-inner {
+  background: rgba(255,255,255,0.92);
+  border-radius: var(--radius-lg);
+  max-width: 680px;
+  width: 100%;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  box-shadow: 0 12px 48px rgba(52,152,219,0.15);
+  text-align: center;
+}
+
+.splash-inner h1 {
+  font-size: 2rem;
+  color: #2C3E50;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.25;
+}
+
+.splash-inner .splash-sub {
+  font-size: 1.15rem;
+  color: #5D6D7E;
+  margin-bottom: var(--spacing-lg);
+  font-style: italic;
+}
+
+.splash-bullets {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto var(--spacing-lg) auto;
+  max-width: 520px;
+}
+
+.splash-bullets li {
+  padding: var(--spacing-sm) 0;
+  padding-left: 40px;
+  position: relative;
+  border-bottom: 1px solid #EAEDED;
+  font-size: 1.05rem;
+  color: #2C3E50;
+}
+
+.splash-bullets li:last-child {
+  border-bottom: none;
+}
+
+.splash-bullets li::before {
+  content: attr(data-icon);
+  position: absolute;
+  left: 0;
+  top: var(--spacing-sm);
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.splash-note {
+  background: #EBF5FB;
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  font-size: 0.95rem;
+  color: #3498DB;
+  text-align: left;
+}
+
+.splash-btn-start {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #3498DB;
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-family: inherit;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  min-height: 60px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 380px;
+  transition: background 0.2s ease;
+  margin-bottom: var(--spacing-md);
+  box-shadow: 0 4px 12px rgba(52,152,219,0.3);
+}
+
+.splash-btn-start:hover {
+  background: #2980B9;
+}
+
+.splash-skip {
+  display: block;
+  font-size: 0.95rem;
+  color: #85929E;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 8px;
+}
+
+.splash-skip:hover {
+  color: #5D6D7E;
+}
+
+@media (max-width: 480px) {
+  .splash-inner {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+  .splash-inner h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ============================================
+   Phase 1 Polish — Wizard Current Selections Banner
+   ============================================ */
+.wizard-current-settings {
+  background: #EBF5FB;
+  border: 1px solid #AED6F1;
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-xs) var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  font-size: 0.9rem;
+  color: #2471A3;
+  text-align: center;
+}
+
+/* ============================================
+   Phase 1 Polish — Podcast Enhancements
+   ============================================ */
+.podcast-platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin: var(--spacing-xs) 0;
+}
+
+.podcast-platform-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.podcast-howto {
+  margin-top: var(--spacing-sm);
+}
+
+.podcast-howto summary {
+  cursor: pointer;
+  color: var(--accent-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: var(--spacing-xs) 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.podcast-howto summary::before {
+  content: "▶";
+  font-size: 0.7rem;
+  transition: transform 0.2s ease;
+}
+
+.podcast-howto[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.podcast-howto-steps {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-xs);
+  font-size: 0.9rem;
+}
+
+.podcast-howto-steps h5 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
+}
+
+.podcast-howto-steps h5:first-child {
+  margin-top: 0;
+}
+
+.podcast-howto-steps ol {
+  margin: 0 0 var(--spacing-sm) var(--spacing-md);
+  padding: 0;
+}
+
+.podcast-howto-steps ol li {
+  margin-bottom: 4px;
+}
+
+/* ============================================
+   Phase 1 Polish — App Store Guide
+   ============================================ */
+.appstore-guide {
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+}
+
+.appstore-guide > summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  padding: 4px 0;
+}
+
+.appstore-guide > summary::before {
+  content: "▶";
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.appstore-guide[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.appstore-platform {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  margin-top: var(--spacing-md);
+  background: var(--bg-card);
+}
+
+.appstore-platform > summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.appstore-platform > summary::before {
+  content: "▶";
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.appstore-platform[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.appstore-platform-body {
+  padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md) var(--spacing-md);
+  border-top: 1px solid var(--border-light);
+}
+
+.appstore-platform-body ol {
+  margin: 0;
+  padding-left: var(--spacing-md);
+}
+
+.appstore-platform-body ol li {
+  margin-bottom: var(--spacing-xs);
+  font-size: 0.95rem;
+}
+

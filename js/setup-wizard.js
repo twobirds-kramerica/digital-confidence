@@ -72,6 +72,38 @@ function buildWizardDOM() {
   wizard.className = 'setup-wizard';
   wizard.id = 'setup-wizard';
 
+  // Current settings banner (only if settings already saved)
+  var savedCity = localStorage.getItem('dc-city');
+  var savedProfile = localStorage.getItem('dc-device-profile');
+  if (savedCity || savedProfile) {
+    var banner = document.createElement('div');
+    banner.className = 'wizard-current-settings';
+    var parts = [];
+    if (savedCity && window.DC_CITIES && window.DC_CITIES[savedCity]) {
+      parts.push(window.DC_CITIES[savedCity].name);
+    } else if (savedCity) {
+      parts.push(savedCity.charAt(0).toUpperCase() + savedCity.slice(1));
+    }
+    if (savedProfile) {
+      try {
+        var p = JSON.parse(savedProfile);
+        var devLabels = {
+          iphone: 'iPhone', 'android-phone': 'Android Phone',
+          ipad: 'iPad', 'android-tablet': 'Android Tablet',
+          windows: 'Windows', mac: 'Mac', chromebook: 'Chromebook'
+        };
+        var devices = [].concat(p.phone || [], p.tablet || [], p.computer || [])
+          .filter(function (v) { return v && v !== 'none'; })
+          .map(function (v) { return devLabels[v] || v; });
+        if (devices.length) parts.push(devices.join(', '));
+      } catch (e) { /* ignore */ }
+    }
+    if (parts.length) {
+      banner.textContent = 'Currently set to: ' + parts.join(' \u2022 ');
+      wizard.appendChild(banner);
+    }
+  }
+
   // Progress dots
   var dots = document.createElement('div');
   dots.className = 'wizard-progress';
