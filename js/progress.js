@@ -22,6 +22,15 @@ function initProgressCheckboxes() {
       localStorage.setItem(key, cb.checked);
       updateLabel(cb, cb.checked);
       updateProgressOverview();
+      // Announce to screen readers
+      var announcer = document.getElementById('progress-announcer');
+      if (announcer) {
+        var labelEl = cb.nextElementSibling;
+        var labelText = labelEl ? labelEl.textContent.trim() : 'item';
+        announcer.textContent = cb.checked
+          ? 'Progress saved: "' + labelText + '" marked complete.'
+          : 'Progress updated: "' + labelText + '" unmarked.';
+      }
     });
   });
 }
