@@ -73,7 +73,7 @@ var NATIONAL_RESOURCES = [
 function dcGetCity() {
   var key = localStorage.getItem('dc-city');
   if (key && DC_CITIES[key]) return key;
-  return null;
+  return 'windsor'; /* Default — shows Windsor resources until user sets their city */
 }
 
 /* Get city data object */
