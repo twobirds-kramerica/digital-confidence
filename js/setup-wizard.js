@@ -463,14 +463,42 @@ function trapFocus(container) {
   if (focusable.length > 0) focusable[0].focus();
 }
 
+/* ---------- Device Tip Banner (shown after skipping setup) ---------- */
+function showDevicePromptIfNeeded() {
+  if (!localStorage.getItem('dc-device-prompt-pending')) return;
+  // Only show on module pages (URL contains 'module-')
+  if (!window.location.pathname.includes('module-') &&
+      !window.location.href.includes('module-')) return;
+
+  var main = document.querySelector('.main-content');
+  if (!main) return;
+
+  var banner = document.createElement('div');
+  banner.className = 'device-prompt-banner';
+  banner.innerHTML =
+    '<span class="device-prompt-icon">💡</span>' +
+    '<span class="device-prompt-text">Tip: <a href="#" onclick="dcOpenWizard();return false;">Set your devices in Settings</a> to see personalised content for your phone, tablet, or computer.</span>' +
+    '<button class="device-prompt-dismiss" aria-label="Dismiss tip" onclick="this.parentNode.remove();localStorage.removeItem(\'dc-device-prompt-pending\');">✕</button>';
+
+  var firstChild = main.firstElementChild;
+  if (firstChild) {
+    main.insertBefore(banner, firstChild);
+  } else {
+    main.appendChild(banner);
+  }
+}
+
 /* ---------- Init on Page Load ---------- */
 document.addEventListener('DOMContentLoaded', function () {
-  // Show wizard on first visit
-  if (!localStorage.getItem('dc-setup-complete')) {
+  // Show wizard on first visit (not when skipped)
+  var setupStatus = localStorage.getItem('dc-setup-complete');
+  if (!setupStatus) {
     dcOpenWizard();
   }
   // Apply device filtering
   applyDeviceFiltering();
+  // Show device tip banner if user skipped setup
+  showDevicePromptIfNeeded();
 
   // Bind sidebar settings link
   var settingsLink = document.querySelector('.settings-link');

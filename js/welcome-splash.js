@@ -23,34 +23,24 @@
 
     overlay.innerHTML =
       '<div class="splash-inner">' +
-        '<div style="font-size:3rem;margin-bottom:16px;">💙</div>' +
-        '<h1>Welcome to Your Digital Confidence Journey</h1>' +
+        '<div class="splash-icon">🌟</div>' +
+        '<h1>Welcome to Digital Confidence</h1>' +
         '<p class="splash-sub">You\'re on your way to feeling comfortable and safe with your devices</p>' +
-        '<ul class="splash-bullets">' +
-          '<li data-icon="📚">Work through 8 friendly modules at your own pace — no rush, no tests</li>' +
-          '<li data-icon="🛡️">Learn to spot scams, create safe passwords, and browse with confidence</li>' +
-          '<li data-icon="📱">Content is tailored to your devices (iPad, iPhone, Android, or Windows)</li>' +
-          '<li data-icon="💛">Your progress is saved on this device — pick up where you left off any time</li>' +
-        '</ul>' +
-        '<div class="splash-note">' +
-          '<strong>First step:</strong> We\'ll ask you a few quick questions about where you live and which devices you use. This helps us show you the most helpful instructions. It only takes about 30 seconds.' +
-        '</div>' +
-        '<button class="splash-btn-start" id="splash-start-btn">Let\'s Get Started! ✨</button>' +
+        '<p class="splash-desc">Learn at your own pace. Start from the top or jump to any section. Your progress is saved automatically. We\'ll ask about your location and devices to personalise your experience.</p>' +
+        '<button class="splash-btn-start" id="splash-start-btn">Let\'s Get Started!</button>' +
         '<button class="splash-skip" id="splash-skip-btn">Skip Setup — Browse Now</button>' +
       '</div>';
 
     document.body.appendChild(overlay);
 
-    /* Focus the start button */
     var startBtn = document.getElementById('splash-start-btn');
-    var skipBtn = document.getElementById('splash-skip-btn');
+    var skipBtn  = document.getElementById('splash-skip-btn');
 
     if (startBtn) {
       startBtn.focus();
       startBtn.addEventListener('click', function () {
         markSplashSeen();
         closeSplash(overlay);
-        /* Open the setup wizard */
         if (typeof dcOpenWizard === 'function') {
           dcOpenWizard();
         }
@@ -59,8 +49,8 @@
 
     if (skipBtn) {
       skipBtn.addEventListener('click', function () {
+        setSkipDefaults();
         markSplashSeen();
-        localStorage.setItem('dc-setup-complete', 'true');
         closeSplash(overlay);
       });
     }
@@ -68,8 +58,8 @@
     /* Trap focus inside overlay */
     overlay.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
+        setSkipDefaults();
         markSplashSeen();
-        localStorage.setItem('dc-setup-complete', 'true');
         closeSplash(overlay);
         return;
       }
@@ -77,7 +67,7 @@
         var focusable = overlay.querySelectorAll('button, [tabindex]:not([tabindex="-1"])');
         if (focusable.length < 2) return;
         var first = focusable[0];
-        var last = focusable[focusable.length - 1];
+        var last  = focusable[focusable.length - 1];
         if (e.shiftKey && document.activeElement === first) {
           e.preventDefault();
           last.focus();
@@ -87,6 +77,25 @@
         }
       }
     });
+  }
+
+  /* Set sensible defaults when user skips setup */
+  function setSkipDefaults() {
+    /* City: generic fallback — content still works, city-specific refs show Windsor */
+    if (!localStorage.getItem('dc-city')) {
+      localStorage.setItem('dc-city', 'windsor');
+    }
+    /* No device profile → device filter shows ALL content (see applyDeviceFiltering) */
+    /* Font size & theme defaults */
+    if (!localStorage.getItem('dc-font-size')) {
+      localStorage.setItem('dc-font-size', 'medium');
+    }
+    if (!localStorage.getItem('dc-theme')) {
+      localStorage.setItem('dc-theme', 'light');
+    }
+    /* Mark setup as skipped (shows device tip banner on module pages) */
+    localStorage.setItem('dc-setup-complete', 'skipped');
+    localStorage.setItem('dc-device-prompt-pending', 'true');
   }
 
   function markSplashSeen() {
