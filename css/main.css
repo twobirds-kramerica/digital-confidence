@@ -546,7 +546,7 @@ strong {
 
 .tip-block {
   background: var(--bg-highlight);
-  border: 2px dashed var(--accent-primary);
+  border: 2px solid var(--accent-primary);
   border-radius: var(--radius-md);
   padding: var(--spacing-md);
   margin: var(--spacing-md) 0;
@@ -611,7 +611,7 @@ strong {
 /* Tip Box — friendly blue hints */
 .tip-box {
   background: var(--bg-highlight);
-  border: 2px dashed var(--accent-primary);
+  border: 2px solid var(--accent-primary);
   border-radius: var(--radius-md);
   padding: var(--spacing-md);
   margin: var(--spacing-md) 0;
@@ -1565,7 +1565,7 @@ strong {
    Image Placeholders
    ============================================ */
 .image-placeholder {
-  border: 2px dashed #CCCCCC;
+  border: 2px solid #CCCCCC;
   border-radius: var(--radius-md);
   background: #F5F5F5;
   padding: var(--spacing-lg) var(--spacing-md);
@@ -1768,8 +1768,9 @@ strong {
    ============================================ */
 .module-hero-image {
   width: 100%;
-  height: 200px;
+  height: 280px;
   object-fit: cover;
+  object-position: center 20%;
   border-radius: var(--radius-lg);
   margin-bottom: var(--spacing-lg);
   display: block;
@@ -2264,7 +2265,7 @@ strong {
 /* ── Image Placeholder Redesign ──────────────────────────── */
 .image-placeholder {
   background: linear-gradient(135deg, #EEF2F7 0%, #E3E9F0 100%);
-  border: 2px dashed #B0BEC5;
+  border: 2px solid #B0BEC5;
   border-radius: 12px;
   padding: 48px 24px;
   min-height: 200px;
@@ -2297,22 +2298,9 @@ strong {
   flex-direction: column;
   align-items: center;
 }
-.placeholder-text-wrap::before {
-  content: "Visual Example";
-  font-size: 13px;
-  color: #607D8B;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  margin-top: 10px;
-  display: block;
-}
 [data-theme="dark"] .image-placeholder {
   background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
   border-color: #546E7A;
-}
-[data-theme="dark"] .placeholder-text-wrap::before {
-  color: #90A4AE;
 }
 
 /* ── Video Search Cards ───────────────────────────────────── */
