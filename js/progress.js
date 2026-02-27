@@ -81,6 +81,24 @@ function updateProgressOverview() {
     }
   }
 
+  // Check if all modules complete → unlock final quiz
+  if (completedModules === totalModules && totalModules > 0) {
+    if (localStorage.getItem('finalQuizUnlocked') !== 'true') {
+      localStorage.setItem('finalQuizUnlocked', 'true');
+    }
+    // Show quiz banner on home page
+    var banner = document.getElementById('final-quiz-banner');
+    if (banner) banner.classList.add('visible');
+    // Show unlock toast (if DC_QUIZ is loaded)
+    if (typeof DC_QUIZ !== 'undefined' && DC_QUIZ.showUnlockNotification) {
+      DC_QUIZ.showUnlockNotification();
+    }
+  } else if (localStorage.getItem('finalQuizUnlocked') === 'true') {
+    // Already unlocked from a previous session
+    var banner = document.getElementById('final-quiz-banner');
+    if (banner) banner.classList.add('visible');
+  }
+
   // Update module cards with completion status
   var cards = document.querySelectorAll('.module-card');
   cards.forEach(function (card) {
