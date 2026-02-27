@@ -167,19 +167,35 @@ function dcRenderModuleHelp() {
   if (!containers.length) return;
 
   var city = dcGetCityData();
-  containers.forEach(function (el) {
-    if (!city) {
-      el.innerHTML =
-        '<p><strong>Need local help?</strong> <a href="#" onclick="dcOpenWizard(); return false;">Set your city</a> to see local resources here.</p>';
-      return;
-    }
+  /* Also update the named cards inside local-help-section */
+  var libCard  = document.getElementById('lh-library');
+  var senCard  = document.getElementById('lh-senior');
+  if (libCard && city) {
+    libCard.innerHTML =
+      '<div class="local-help-card-icon">📚</div>' +
+      '<h4>' + city.library.name + '</h4>' +
+      '<p>Free tech help &amp; workshops. <strong><a href="tel:' +
+      city.library.phone.replace(/[^0-9+]/g, '') + '">' + city.library.phone + '</a></strong></p>';
+  }
+  if (senCard && city) {
+    senCard.innerHTML =
+      '<div class="local-help-card-icon">👥</div>' +
+      '<h4>' + city.seniorCentre.name + '</h4>' +
+      '<p>Tech classes &amp; support. <strong><a href="tel:' +
+      city.seniorCentre.phone.replace(/[^0-9+]/g, '') + '">' + city.seniorCentre.phone + '</a></strong></p>';
+  }
 
-    var html = '<h4>Local Help in ' + city.name + '</h4>';
-    html += '<p><strong>' + city.library.name + '</strong> — <a href="tel:' + city.library.phone.replace(/[^0-9+]/g, '') + '">' + city.library.phone + '</a></p>';
-    html += '<p><strong>' + city.seniorCentre.name + '</strong> — <a href="tel:' + city.seniorCentre.phone.replace(/[^0-9+]/g, '') + '">' + city.seniorCentre.phone + '</a></p>';
-    html += '<p><strong>Police (non-emergency)</strong> — <a href="tel:' + city.policeNonEmergency.replace(/[^0-9+]/g, '') + '">' + city.policeNonEmergency + '</a></p>';
-    html += '<p><a href="resources.html">See all ' + city.name + ' resources</a></p>';
-    el.innerHTML = html;
+  containers.forEach(function (el) {
+    /* police non-emergency as a compact extra note */
+    if (!city) { el.innerHTML = ''; return; }
+    el.innerHTML =
+      '<div class="local-help-card" style="margin-top:16px;">' +
+      '<div class="local-help-card-icon">🚔</div>' +
+      '<h4>Police Non-Emergency</h4>' +
+      '<p>For fraud &amp; scam reporting (not emergencies).<br>' +
+      '<strong><a href="tel:' + city.policeNonEmergency.replace(/[^0-9+]/g, '') + '">' +
+      city.policeNonEmergency + '</a></strong><br>' +
+      '<a href="resources.html">See all ' + city.name + ' resources →</a></p></div>';
   });
 }
 
