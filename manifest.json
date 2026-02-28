@@ -1,0 +1,43 @@
+{
+  "name": "Digital Confidence Centre",
+  "short_name": "Digital Confidence",
+  "description": "Free digital literacy training for seniors in Ontario. 11 self-paced modules covering devices, safety, AI, and more.",
+  "start_url": "/digital-confidence/",
+  "display": "standalone",
+  "background_color": "#FAFAF8",
+  "theme_color": "#1565C0",
+  "lang": "en-CA",
+  "orientation": "any",
+  "categories": ["education"],
+  "icons": [
+    {
+      "src": "images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Module 1: The Escape Hatch",
+      "url": "/digital-confidence/module-1.html",
+      "description": "Start with the most important skill"
+    },
+    {
+      "name": "Final Assessment",
+      "url": "/digital-confidence/final-quiz.html",
+      "description": "Take the final quiz and earn your certificate"
+    },
+    {
+      "name": "Resources",
+      "url": "/digital-confidence/resources.html",
+      "description": "Local help and Ontario resources"
+    }
+  ]
+}

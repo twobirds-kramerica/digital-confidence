@@ -1,8 +1,8 @@
 /* ============================================
    Digital Confidence Centre — Final Quiz
-   v2 — 20 scenario-based "What would you do?"
-        questions covering all 8 modules
-   Passing score: 80% (16/20)
+   v3 — 26 scenario-based "What would you do?"
+        questions covering all 11 modules
+   Passing score: 80% (21/26)
    ============================================ */
 
 var DC_QUIZ = (function () {
@@ -268,9 +268,87 @@ var DC_QUIZ = (function () {
       correct: 1,
       explain: 'The padlock icon and "https://" mean your data is encrypted between your device and the site — no one can intercept it in transit. An "http://" site (no padlock) sends your data as plain text, readable by anyone on the same network. Never enter payment information on unsecured sites.'
     },
+    /* MODULE 9 — Understanding AI */
+    {
+      module: 'Module 9: Understanding AI',
+      q: 'You receive a phone call that sounds exactly like your granddaughter Emily. She says she has been arrested in another city and needs you to send $3,000 through e-transfer immediately — and not to tell her parents. What do you do?',
+      options: [
+        'Send the money right away — you recognize her voice',
+        'Hang up immediately, then call Emily directly on her real phone number to verify',
+        'Ask the caller questions only the real Emily would know',
+        'Transfer half the money now and wait for more information'
+      ],
+      correct: 1,
+      explain: 'AI can clone a loved one\'s voice from just seconds of audio on social media. This is the "Grandparent Scam 2.0." No matter how real the voice sounds, always hang up and call back on the person\'s real, known number. A family secret code word also helps — a real family member will know it; a scammer will not.'
+    },
+    {
+      module: 'Module 9: Understanding AI',
+      q: 'A video goes viral showing a well-known Canadian politician saying something shocking and offensive. The video looks real — but something feels off about the lip movements. What is the safest first step?',
+      options: [
+        'Share it immediately — the public deserves to know',
+        'Pause and check whether the video appears on reputable news sources like CBC or CTV before believing or sharing it',
+        'If it looks real enough, it must be real',
+        'Report it to the politician\'s office by phone'
+      ],
+      correct: 1,
+      explain: 'Deepfake videos can look extremely convincing. Unnatural lip sync, stiff movement, and unusual lighting are warning signs. Apply the 3-Second Rule: Stop, Breathe, Verify. If CBC, CTV, or Globe and Mail are not reporting it, the video is almost certainly a deepfake. Never share without verifying.'
+    },
+
+    /* MODULE 10 — Grocery & Food Delivery */
+    {
+      module: 'Module 10: Grocery & Food Delivery',
+      q: 'You just placed your first Instacart order. The shopper texts: "The brand of yogurt you ordered is sold out — OK to substitute with a similar one?" What do you do?',
+      options: [
+        'Ignore the message — this is probably a scam',
+        'Reply yes or no through the Instacart app — this is a normal, expected part of the process',
+        'Cancel the entire order immediately',
+        'Give the shopper your phone number so they can call you directly'
+      ],
+      correct: 1,
+      explain: 'Instacart shoppers often send substitution messages when items are out of stock. This is completely normal and expected. Reply through the app — yes for a substitution or no if you only want that specific item. No personal information is needed.'
+    },
+    {
+      module: 'Module 10: Grocery & Food Delivery',
+      q: 'Your Uber Eats order arrived, but one item is completely wrong — you ordered a garden salad and received a Caesar salad. What is the correct way to resolve this?',
+      options: [
+        'Accept it — there is no way to get a refund from a delivery app',
+        'Call the restaurant directly and demand a refund',
+        'Open the Uber Eats app, find your recent order, tap "Report a Problem," and request a refund for the incorrect item',
+        'Post a negative review and accept the loss'
+      ],
+      correct: 2,
+      explain: 'Delivery apps have straightforward refund processes built right in. Open the app, find your order in your history, tap "Report a Problem" or "Get Help," describe the issue, and request a refund or credit. Most refunds are processed within a few days — no phone calls required.'
+    },
+
+    /* MODULE 11 — Ride-Sharing */
+    {
+      module: 'Module 11: Ride-Sharing',
+      q: 'You requested an Uber and a silver car pulls up. Before you open the door, what is the single most important thing to do?',
+      options: [
+        'Ask the driver "Are you my Uber?" and get in if they say yes',
+        'Check that the licence plate on the car matches the plate shown in your Uber app',
+        'Check that the car colour looks approximately right',
+        'Get in quickly so you don\'t hold up traffic'
+      ],
+      correct: 1,
+      explain: 'Always check the licence plate FIRST — before opening the door, before saying anything. Anyone can claim to be your Uber driver; the licence plate cannot lie. The driver should also greet YOU by name (not the other way around) before you get in. These two steps take seconds and protect you every time.'
+    },
+    {
+      module: 'Module 11: Ride-Sharing',
+      q: 'You are midway through an Uber ride when the driver takes an unexpected route and you feel uneasy. What should you do?',
+      options: [
+        'Stay calm and say nothing — drivers know the best routes',
+        'Immediately demand the driver pull over in a dangerous area',
+        'Open the Uber app, tap the shield icon to access safety features, and optionally tap the 911 emergency button to share your location',
+        'Jump out of the moving car'
+      ],
+      correct: 2,
+      explain: 'Your safety always comes first. In the Uber app, the shield icon gives you access to: Share Trip (sends your real-time location to a trusted contact), and a 911 Emergency button that also shares your trip details with first responders. You can also politely ask to be let out at a well-lit, populated location like a gas station or pharmacy.'
+    },
+
     {
       module: 'General: Putting It All Together',
-      q: 'You\'ve completed all 8 modules of the Digital Confidence Centre. Your neighbour asks how to stay safe online and says "Just give me the one most important rule." What would you tell them?',
+      q: 'You\'ve completed all 11 modules of the Digital Confidence Centre. Your neighbour asks how to stay safe online and says "Just give me the one most important rule." What would you tell them?',
       options: [
         '"Never use the internet — it\'s too dangerous"',
         '"If something feels urgent, scary, or too good to be true — pause, close it, and verify through official channels before doing anything"',
@@ -282,7 +360,7 @@ var DC_QUIZ = (function () {
     }
   ];
 
-  var PASS_SCORE   = 16;
+  var PASS_SCORE   = 21;
   var currentQ     = 0;
   var score        = 0;
   var answered     = [];
@@ -306,7 +384,7 @@ var DC_QUIZ = (function () {
   /* ── Locked screen ───────────────────────────────────────── */
   function renderLocked(container) {
     var statuses = '';
-    for (var i = 1; i <= 8; i++) {
+    for (var i = 1; i <= 11; i++) {
       var done = isModuleDone(i);
       statuses += '<li class="' + (done ? 'done' : 'pending') + '">' +
         (done ? '✅' : '⬜') + ' Module ' + i + '</li>';
@@ -315,7 +393,7 @@ var DC_QUIZ = (function () {
       '<div class="quiz-locked-screen">' +
         '<div class="quiz-locked-icon">🔒</div>' +
         '<h1>Final Assessment — Locked</h1>' +
-        '<p>Complete all 8 learning modules to unlock the Final Assessment and earn your Certificate of Completion.</p>' +
+        '<p>Complete all 11 learning modules to unlock the Final Assessment and earn your Certificate of Completion.</p>' +
         '<ul class="module-checklist">' + statuses + '</ul>' +
         '<p><a href="index.html">← Return to Home</a> to continue your modules.</p>' +
       '</div>';
@@ -327,7 +405,7 @@ var DC_QUIZ = (function () {
       '<div class="quiz-container">' +
         '<div class="quiz-header">' +
           '<h1>🎓 Final Digital Confidence Assessment</h1>' +
-          '<p style="color:#455A64;font-size:17px;margin:8px 0 0;">20 real-life scenarios &nbsp;·&nbsp; Pass with 80% &nbsp;·&nbsp; No time limit</p>' +
+          '<p style="color:#455A64;font-size:17px;margin:8px 0 0;">26 real-life scenarios &nbsp;·&nbsp; Pass with 80% &nbsp;·&nbsp; No time limit</p>' +
         '</div>' +
         '<div class="quiz-question" style="text-align:center;">' +
           '<div style="font-size:72px;margin-bottom:24px;">📋</div>' +
@@ -335,7 +413,7 @@ var DC_QUIZ = (function () {
           '<p style="font-size:18px;color:var(--text-secondary);margin-bottom:32px;">' +
             'Each question describes a real situation you might encounter. ' +
             'Choose what you would do. There is no time pressure — read carefully.<br><br>' +
-            'You need 16 correct answers (80%) to pass and receive your certificate.' +
+            'You need 21 correct answers (80%) to pass and receive your certificate.' +
           '</p>' +
           '<button class="quiz-btn quiz-btn-primary" id="start-quiz-btn" style="font-size:20px;padding:18px 48px;">Begin Assessment</button>' +
         '</div>' +
@@ -437,8 +515,8 @@ var DC_QUIZ = (function () {
     var heading  = passed ? 'Congratulations — You Passed!' : 'Great Effort!';
 
     var message  = passed
-      ? 'You scored ' + score + '/20 (' + percent + '%). You\'ve demonstrated strong digital confidence! Enter your name below to print your Certificate.'
-      : 'You scored ' + score + '/20 (' + percent + '%). You need 16/20 to pass. Review the modules and try again — you\'re closer than you think!';
+      ? 'You scored ' + score + '/26 (' + percent + '%). You\'ve demonstrated strong digital confidence! Enter your name below to print your Certificate.'
+      : 'You scored ' + score + '/26 (' + percent + '%). You need 21/26 to pass. Review the modules and try again — you\'re closer than you think!';
 
     var nameSection = passed
       ? '<div class="name-input-section">' +
@@ -522,7 +600,7 @@ var DC_QUIZ = (function () {
           '<div class="cert-logo">🎓</div>' +
           '<div class="cert-awarded">This certificate is proudly awarded to</div>' +
           '<div class="cert-name">' + escHTML(name) + '</div>' +
-          '<div class="cert-body">In recognition of successfully completing the comprehensive 8-module Digital Confidence training programme, demonstrating applied proficiency in safe and confident use of digital devices and online services.</div>' +
+          '<div class="cert-body">In recognition of successfully completing the comprehensive 11-module Digital Confidence training programme, demonstrating applied proficiency in safe and confident use of digital devices, online services, AI tools, and modern delivery and transportation apps.</div>' +
           '<div class="cert-achievement">' +
             '<h3>Final Assessment Result</h3>' +
             '<div class="cert-score">' + percent + '% — Proficient</div>' +
@@ -534,6 +612,8 @@ var DC_QUIZ = (function () {
               '<li>Password management</li><li>Safe app installation</li>' +
               '<li>Email &amp; messaging security</li><li>Online banking safety</li>' +
               '<li>Creative device applications</li><li>Family connectivity</li>' +
+              '<li>AI literacy &amp; deepfake awareness</li><li>Grocery &amp; food delivery apps</li>' +
+              '<li>Ride-sharing safety</li>' +
             '</ul>' +
           '</div>' +
           '<div class="cert-footer">' +
@@ -566,7 +646,7 @@ var DC_QUIZ = (function () {
   /* ── Check all modules complete ─────────────────────────── */
   function checkFinalQuizUnlock() {
     var allDone = true;
-    for (var i = 1; i <= 8; i++) {
+    for (var i = 1; i <= 11; i++) {
       if (!isModuleDone(i)) { allDone = false; break; }
     }
     if (allDone) {

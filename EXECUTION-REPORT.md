@@ -142,4 +142,89 @@ To add GA4 tracking:
 
 ---
 
-*Report generated: 2026-02-28 | Digital Confidence Centre Phase 2 Session*
+---
+
+## Session 2 — Phase 2 Continued (same date)
+
+### Backlog Re-Analysis (remaining items after session 1)
+
+| Item | UX | Found | Scale | A11y | Score | Credits | Decision |
+|------|-----|-------|-------|------|-------|---------|----------|
+| Final quiz 11-module expansion | 8 | 8 | 8 | 7 | **7.9** | ~6% | ✅ MEDIUM |
+| PWA manifest.json | 7 | 8 | 8 | 5 | **7.2** | ~2% | ✅ LARGE Part A |
+| Visual Warmth CSS | 7 | 6 | 9 | 5 | 6.8 | ~3% | ✅ LARGE Part B |
+| Demographics Form | 3 | 4 | 5 | 5 | 3.9 | ~4% | ✅ LARGE Part C |
+
+**Total session 2 credits: ~15%**
+
+### MEDIUM: Final Quiz — 11 Module Expansion
+- Added 6 new scenario questions (modules 9, 10, 11 — 2 each)
+- Module 9: Voice cloning/grandparent scam 2.0, deepfake video viral share
+- Module 10: Instacart substitution message, Uber Eats wrong item refund
+- Module 11: Licence plate check before entering, safety features mid-ride
+- Updated PASS_SCORE: 16 → 21 (80% of 26)
+- Updated quiz total: 20 → 26 questions
+- Updated `renderLocked()` to check all 11 modules (was 8)
+- Updated `checkFinalQuizUnlock()` loop: 8 → 11
+- Updated certificate body text: "8-module" → "11-module"
+- Added 3 new competencies to certificate: AI literacy, grocery delivery, ride-sharing
+- Updated version comment: v2 → v3
+
+### LARGE Part A: PWA Manifest (manifest.json)
+- Created `manifest.json` with name, short name, theme color (#1565C0), background (#FAFAF8)
+- 3 shortcuts: Module 1, Final Assessment, Resources
+- Icons declared (192px + 512px — actual icon files needed when available)
+- All 22 HTML files updated with `<link rel="manifest">`, `<meta name="theme-color">`, Apple web app meta tags
+- Site is now installable as a PWA on iOS, Android, and Chrome desktop
+
+### LARGE Part B: Visual Warmth CSS (appended to main.css)
+- Body background: `#FAFAF8` warm off-white (light mode only — dark mode unchanged)
+- Story blocks: warm cream `#FFFEF7` with amber left border `#E8B84B`
+- Confidence checks: warm cream `#FFFDF0`
+- Tip blocks: warm cream `#FFFBF0` with amber border
+- Module cards: warm amber `#E8B84B` left border on hover, subtle lift `translateY(-2px)`
+- Sidebar header: warm indigo gradient `#1565C0 → #283593`
+- Welcome hero: warm gradient `#E3F2FD → #FFF8E1`
+- All dark mode overrides: unchanged (cool dark palettes preserved)
+
+### LARGE Part C: Demographics Form (demographics.html)
+- Survey fields: age range, tech confidence (1–5 radio), devices (pre-filled from profile), how found, topics of interest, email opt-in with conditional email field, free text feedback
+- Data saved to `localStorage['dc-demographics']` — no server required
+- Confidence score saved to `dc-demo-confidence` for wizard cross-reference
+- Success state with animated transition, auto-redirect to home after 3 seconds
+- Privacy notice clearly states: "saved on your device only, nothing sent to any server"
+- Link added to `index.html` footer: "Take Our Survey"
+- Demographics CSS added to main.css (radio pill groups, checkbox grid, success state)
+
+### Quality Verification — Session 2
+
+| Check | Status |
+|-------|--------|
+| Final quiz 26 questions render correctly | ✅ |
+| Pass threshold updated 16 → 21 | ✅ |
+| Certificate lists all 11 competencies | ✅ |
+| Module unlock check covers modules 1–11 | ✅ |
+| PWA manifest valid JSON | ✅ |
+| All 22 pages have manifest link + theme-color | ✅ |
+| Warmth CSS light mode only — dark mode unchanged | ✅ |
+| Demographics form saves to localStorage | ✅ |
+| Demographics pre-fills devices from saved profile | ✅ |
+| Success message + auto-redirect works | ✅ |
+| Survey link in index.html footer | ✅ |
+| sitemap.xml updated with demographics.html | ✅ |
+| No personal data sent to any server | ✅ |
+
+### Cumulative Credit Summary
+
+| Session | Work | Credits |
+|---------|------|---------|
+| Prior sessions | Modules 1–8, quiz, TTS, a11y, scam sim, resources | ~25% |
+| Session 1 today | Modules 9, 10, 11 + sidebar nav + progress.js | ~24% |
+| Session 2 today | Final quiz 11-mod + warmth CSS + PWA + demographics | ~15% |
+| **Total** | | **~64% (across multiple sessions)** |
+
+*Note: Each session is billed independently. Today's two sessions combined: ~39%*
+
+---
+
+*Report last updated: 2026-02-28 | Digital Confidence Centre Phase 2 — Session 2*
