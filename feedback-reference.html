@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Feedback Reference — Digital Confidence Centre (Dev Only)</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+  <style>
+    .ref-section { max-width: 800px; margin: 32px auto; padding: 0 16px; }
+    .ref-section h2 { border-bottom: 2px solid #ccc; padding-bottom: 8px; margin-top: 40px; }
+    .dev-banner { background: #1a1a2e; color: #fff; padding: 12px 20px; text-align: center; font-family: monospace; }
+    .class-label { font-family: monospace; background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-size: 0.85em; }
+  </style>
+</head>
+<body>
+  <div class="dev-banner">⚙️ DEVELOPER REFERENCE ONLY — not linked from any public page</div>
+
+  <div class="ref-section">
+    <h1>Feedback Flag Reference</h1>
+    <p>This page shows every feedback and alert component used across the Digital Confidence Centre. Use it to verify styles look correct after CSS changes.</p>
+
+    <h2>Confidence Checks</h2>
+    <div class="confidence-check">
+      <span class="check-icon">💛</span>
+      <p>Confidence Check: You are doing wonderfully!</p>
+      <p class="check-text">Class: <span class="class-label">.confidence-check</span></p>
+    </div>
+
+    <div class="confidence-check-box">
+      <span class="check-icon">💪</span>
+      <p>Milestone celebration text goes here.</p>
+      <p class="check-subtext">Class: <span class="class-label">.confidence-check-box</span></p>
+    </div>
+
+    <h2>Tip Blocks</h2>
+    <div class="tip-block">
+      <span class="tip-label">Tip</span>
+      <p>This is a tip block — used for helpful hints and bonus information. Class: <span class="class-label">.tip-block</span></p>
+    </div>
+
+    <div class="tip-box">
+      <span class="tip-box-label">Tip</span>
+      <p>This is a tip box — lighter variant. Class: <span class="class-label">.tip-box</span></p>
+    </div>
+
+    <h2>Warning Boxes</h2>
+    <div class="warning-box">
+      <span class="warning-box-label">Watch Out</span>
+      <p>This is a warning box — used for cautions and watch-out moments. Class: <span class="class-label">.warning-box</span></p>
+    </div>
+
+    <h2>Scam Example</h2>
+    <div class="scam-example">
+      <span class="example-label">Example of a fake warning (this is NOT real)</span>
+      <p>WARNING! Your device has a virus! Call 1-888-555-0000 immediately!</p>
+    </div>
+    <p><small>Class: <span class="class-label">.scam-example</span></small></p>
+
+    <h2>Success State</h2>
+    <div class="success-state">
+      <strong>Success looks like this:</strong> Task completed successfully.
+    </div>
+    <p><small>Class: <span class="class-label">.success-state</span></small></p>
+
+    <div class="success-state-box">
+      <span class="success-icon">✅</span>
+      <p><strong>Well done!</strong> Larger success state box variant.</p>
+    </div>
+    <p><small>Class: <span class="class-label">.success-state-box</span></small></p>
+
+    <h2>Exercise Block</h2>
+    <div class="exercise-block">
+      <h3>Practical Exercise</h3>
+      <p>Step-by-step hands-on exercise content goes here. Class: <span class="class-label">.exercise-block</span></p>
+    </div>
+
+    <h2>Quiz Components</h2>
+    <div class="quiz-container">
+      <div class="quiz-question" data-correct="b">
+        <h4>Sample Quiz Question</h4>
+        <button class="quiz-option" data-answer="a">Wrong answer</button>
+        <button class="quiz-option" data-answer="b">Correct answer</button>
+        <button class="quiz-option" data-answer="c">Wrong answer</button>
+        <div class="quiz-feedback" data-correct-text="Great job!" data-incorrect-text="Not quite."></div>
+      </div>
+      <div class="quiz-score">
+        <p class="score-number"></p>
+        <p class="score-message"></p>
+      </div>
+    </div>
+
+    <h2>Visual Example Card</h2>
+    <div class="visual-example-card" role="img" aria-label="Visual Example: Sample">
+      <div class="example-icon">📱</div>
+      <div class="example-content">
+        <h4 class="example-title">Visual Example: Sample</h4>
+        <p class="example-description">This replaces old blue image-placeholder banners. Class: <span class="class-label">.visual-example-card</span></p>
+      </div>
+    </div>
+
+    <h2>Three-Second Rule</h2>
+    <div class="three-second-rule">
+      <h3>The 3-Second Rule</h3>
+      <div class="steps">
+        <div class="step">
+          <span class="step-icon">✋</span>
+          <span class="step-name">Stop</span>
+          <span class="step-desc">Take your fingers off the screen.</span>
+        </div>
+        <div class="step">
+          <span class="step-icon">🫁</span>
+          <span class="step-name">Breathe</span>
+          <span class="step-desc">One slow, deep breath.</span>
+        </div>
+        <div class="step">
+          <span class="step-icon">🔍</span>
+          <span class="step-name">Verify</span>
+          <span class="step-desc">Is this real, or a trick?</span>
+        </div>
+      </div>
+    </div>
+
+    <h2>Video Section</h2>
+    <div class="video-section">
+      <div class="video-section-header">
+        <div class="video-section-icon">📺</div>
+        <h3>Video Tutorials</h3>
+      </div>
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="video-card-thumbnail">
+            <div class="video-card-play-icon">▶️</div>
+            <div class="video-card-topic-icon">🤖</div>
+          </div>
+          <h4>Sample Video Title</h4>
+          <p>Sample video description goes here.</p>
+          <a href="#" class="video-card-btn">Watch Tutorials</a>
+        </div>
+      </div>
+    </div>
+
+    <h2>Local Help Section</h2>
+    <div class="local-help-section">
+      <h3>🤝 Need In-Person Help?</h3>
+      <div class="local-help-grid">
+        <div class="local-help-card">
+          <div class="local-help-card-icon">📞</div>
+          <h4>Connected Canadians</h4>
+          <p>Free one-on-one tech support.<br><strong>1-855-808-0505</strong></p>
+        </div>
+        <div class="local-help-card">
+          <div class="local-help-card-icon">🌐</div>
+          <h4>Cyber-Seniors</h4>
+          <p>Free training from volunteers.<br><strong>1-844-217-3057</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:60px;color:#999;font-size:0.85em;">This page is for development reference only and is not indexed by search engines.</p>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/accessibility.js"></script>
+  <script src="js/scam-quiz.js"></script>
+</body>
+</html>
