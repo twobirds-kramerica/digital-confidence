@@ -3292,3 +3292,177 @@ strong {
   .beta-feedback-trigger { padding:12px 18px; font-size:14px; }
   .beta-feedback-panel  { bottom:70px; right:16px; width:calc(100vw - 32px); }
 }
+
+
+/* ============================================================
+   VISUAL EXAMPLE CARDS (replaces image-placeholder style)
+   ============================================================ */
+.visual-example-card {
+  background: linear-gradient(135deg, #1E3A5F 0%, #2C5282 100%);
+  border: 2px solid #5DADE2;
+  border-radius: 12px;
+  padding: 32px;
+  margin: 32px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.example-icon {
+  font-size: 72px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+}
+.example-content { max-width: 700px; }
+.example-title {
+  color: #90CAF9;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+}
+.example-description {
+  color: #B0BEC5;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+[data-theme="light"] .visual-example-card {
+  background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+  border-color: #2196F3;
+}
+[data-theme="light"] .example-title { color: #1565C0; }
+[data-theme="light"] .example-description { color: #37474F; }
+@media (max-width: 768px) {
+  .visual-example-card { padding: 24px 16px; }
+  .example-icon { font-size: 56px; }
+  .example-title { font-size: 18px; }
+  .example-description { font-size: 14px; }
+}
+
+/* ============================================================
+   SPEECH / TTS SPEED CONTROLS
+   ============================================================ */
+.speech-controls {
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+  border: 2px solid #4CAF50;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 40px 0;
+}
+.control-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.control-icon { font-size: 28px; }
+.control-label { color: #2E7D32; font-size: 18px; font-weight: 700; }
+.speed-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.speed-btn {
+  background: white;
+  border: 3px solid #81C784;
+  border-radius: 10px;
+  padding: 16px 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+.speed-btn:hover {
+  background: #F1F8F4;
+  border-color: #4CAF50;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(76,175,80,0.3);
+}
+.speed-btn.active {
+  background: #4CAF50;
+  color: white;
+  border-color: #388E3C;
+  box-shadow: 0 4px 16px rgba(76,175,80,0.4);
+}
+.speed-icon { font-size: 32px; }
+.speed-label { font-size: 14px; font-weight: 600; }
+.speed-badge {
+  position: absolute;
+  top: -8px; right: -8px;
+  background: #FF9800;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+.speed-help { text-align: center; color: #2E7D32; font-size: 14px; margin: 0; font-style: italic; }
+[data-theme="dark"] .speech-controls { background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%); border-color: #66BB6A; }
+[data-theme="dark"] .control-label { color: #A5D6A7; }
+[data-theme="dark"] .speed-btn { background: #2E7D32; border-color: #4CAF50; color: #E8F5E9; }
+[data-theme="dark"] .speed-btn.active { background: #66BB6A; color: #1B5E20; }
+[data-theme="dark"] .speed-help { color: #A5D6A7; }
+
+/* ============================================================
+   PERSONALIZATION / DEVICE-FILTER BANNERS
+   ============================================================ */
+.personalization-banner, .filtered-banner {
+  background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+  border: 2px solid #FF9800;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 32px;
+}
+.banner-content { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.banner-icon { font-size: 48px; margin: 0; line-height: 1; }
+.banner-text { flex: 1; min-width: 200px; }
+.banner-text strong { color: #E65100; font-size: 18px; display: block; margin-bottom: 4px; }
+.banner-text p { color: #5D4037; margin: 0; font-size: 14px; }
+.banner-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-personalize, .btn-edit { background: #FF9800; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+.btn-personalize:hover, .btn-edit:hover { background: #F57C00; }
+.btn-dismiss, .btn-show-all { background: transparent; color: #E65100; border: 2px solid #E65100; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+.btn-dismiss:hover, .btn-show-all:hover { background: #E65100; color: white; }
+[data-theme="dark"] .personalization-banner, [data-theme="dark"] .filtered-banner { background: linear-gradient(135deg, #3E2723 0%, #4E342E 100%); border-color: #FFB74D; }
+[data-theme="dark"] .banner-text strong { color: #FFCC80; }
+[data-theme="dark"] .banner-text p { color: #BCAAA4; }
+[data-theme="dark"] .btn-dismiss, [data-theme="dark"] .btn-show-all { color: #FFB74D; border-color: #FFB74D; }
+[data-theme="dark"] .btn-dismiss:hover, [data-theme="dark"] .btn-show-all:hover { background: #FFB74D; color: #1E1E1E; }
+
+/* ============================================================
+   DYSLEXIC FONT TOGGLE
+   ============================================================ */
+@import url('https://cdn.jsdelivr.net/npm/opendyslexic@1.0.3/opendyslexic-regular.css');
+body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, sans-serif !important; }
+.font-option { background: #E3F2FD; border: 2px solid #2196F3; border-radius: 8px; padding: 16px; margin: 16px 0; }
+.toggle-label { display: flex; align-items: center; gap: 16px; cursor: pointer; user-select: none; }
+.toggle-switch {
+  width: 60px; height: 32px;
+  background: #CFD8DC;
+  border-radius: 16px;
+  position: relative;
+  transition: background 0.3s;
+  flex-shrink: 0;
+}
+.toggle-switch::after {
+  content: '';
+  position: absolute;
+  width: 26px; height: 26px;
+  background: white;
+  border-radius: 50%;
+  top: 3px; left: 3px;
+  transition: transform 0.3s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+#dyslexic-font-toggle { display: none; }
+#dyslexic-font-toggle:checked + .toggle-switch { background: #4CAF50; }
+#dyslexic-font-toggle:checked + .toggle-switch::after { transform: translateX(28px); }
+.toggle-text { display: flex; flex-direction: column; gap: 4px; }
+.toggle-text strong { color: #2C3E50; font-size: 16px; }
+.toggle-text small { color: #546E7A; font-size: 13px; }
+[data-theme="dark"] .font-option { background: #1E3A5F; border-color: #5DADE2; }
+[data-theme="dark"] .toggle-switch { background: #455A64; }
+[data-theme="dark"] .toggle-text strong { color: #E8E8E8; }
+[data-theme="dark"] .toggle-text small { color: #B0BEC5; }

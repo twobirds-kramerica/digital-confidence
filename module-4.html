@@ -131,6 +131,17 @@
           <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
         </div>
       </div>
+        <p class="sidebar-a11y-title">Reading Comfort</p>
+        <div class="font-option">
+          <label class="toggle-label" for="dyslexic-font-toggle">
+            <input type="checkbox" id="dyslexic-font-toggle" />
+            <span class="toggle-switch"></span>
+            <span class="toggle-text">
+              <strong>Dyslexia-Friendly Font</strong>
+              <small>Easier to read for some people</small>
+            </span>
+          </label>
+        </div>
       <div class="settings-divider"></div>
       <a href="#" class="settings-link"><span class="nav-icon">⚙️</span><span class="nav-label">My Settings</span></a>
     </nav>
@@ -289,14 +300,11 @@
 
       <div class="device-content" data-devices="android-phone,android-tablet">
 
-      <div class="image-placeholder" role="img" aria-label="Google Play Store search results for a banking app">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">📱</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">Google Play Store search results for a banking app</p>
-            <p class="placeholder-dims">Recommended: 600 × 800 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: Play Store Search Results">
+        <div class="example-icon">🏪</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: Play Store Search Results</h4>
+          <p class="example-description">Play Store results show the app name, developer, star rating, and download count. For a banking app, confirm the developer matches your bank's official company name.</p>
         </div>
       </div>
 
@@ -333,14 +341,11 @@
       </div>
       </div>
 
-      <div class="image-placeholder" role="img" aria-label="App Store search results showing a real app vs a fake app">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">📱</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">App Store search results showing a real app vs a fake app</p>
-            <p class="placeholder-dims">Recommended: 800 × 600 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: Real App vs Copycat App">
+        <div class="example-icon">⚠️</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: Real App vs Copycat App</h4>
+          <p class="example-description">A real bank app is published by the bank itself and has millions of downloads. A copycat uses a similar name and logo but comes from an unknown developer with very few reviews.</p>
         </div>
       </div>
 
@@ -359,14 +364,11 @@
         <li><strong>Look at the number of ratings.</strong> Popular, legitimate apps have thousands or millions of ratings. A fake copycat might have very few — perhaps dozens or even none.</li>
       </ul>
 
-      <div class="image-placeholder" role="img" aria-label="App Store listing showing developer name and download count">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">📱</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">App Store listing showing developer name and download count</p>
-            <p class="placeholder-dims">Recommended: 600 × 800 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: App Store Listing">
+        <div class="example-icon">✅</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: App Store Listing</h4>
+          <p class="example-description">The developer name appears just below the app title on the store listing. For your bank app, it should match your bank's official legal company name exactly.</p>
         </div>
       </div>
 
@@ -419,14 +421,11 @@
         <li><strong>"[App Name] Would Like to Track Your Activity"</strong> — The app wants to follow what you do on other apps and websites to show you targeted advertisements. Almost always, tap <strong>"Ask App Not to Track."</strong></li>
       </ul>
 
-      <div class="image-placeholder" role="img" aria-label="App permission request popup — Allow or Don't Allow">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">❓</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">App permission request popup — Allow or Don't Allow</p>
-            <p class="placeholder-dims">Recommended: 600 × 800 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: Permission Request Popup">
+        <div class="example-icon">🔐</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: Permission Request Popup</h4>
+          <p class="example-description">When an app asks to access your location, camera, or contacts, read carefully. Tapping Don't Allow is always safe if you are uncertain why the app needs access.</p>
         </div>
       </div>
 
@@ -471,14 +470,11 @@
         </div>
       </div>
 
-      <div class="image-placeholder" role="img" aria-label="Settings screen for managing in-app purchases">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">⚙️</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">Settings screen for managing in-app purchases</p>
-            <p class="placeholder-dims">Recommended: 600 × 800 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: In-App Purchase Controls">
+        <div class="example-icon">💳</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: In-App Purchase Controls</h4>
+          <p class="example-description">In Screen Time (iPhone/iPad) or Digital Wellbeing (Android) settings you can require a password before any purchase — this prevents accidental charges completely.</p>
         </div>
       </div>
 
@@ -683,6 +679,7 @@
   <script src="js/read-aloud.js"></script>
   <script src="js/feedback-widget.js"></script>
 
+  <script src="js/speech-config.js"></script>
   <script src="js/app.js"></script>
   <script src="js/accessibility.js"></script>
   <script src="js/progress.js"></script>

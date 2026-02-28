@@ -131,6 +131,17 @@
           <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
         </div>
       </div>
+        <p class="sidebar-a11y-title">Reading Comfort</p>
+        <div class="font-option">
+          <label class="toggle-label" for="dyslexic-font-toggle">
+            <input type="checkbox" id="dyslexic-font-toggle" />
+            <span class="toggle-switch"></span>
+            <span class="toggle-text">
+              <strong>Dyslexia-Friendly Font</strong>
+              <small>Easier to read for some people</small>
+            </span>
+          </label>
+        </div>
       <div class="settings-divider"></div>
       <a href="#" class="settings-link"><span class="nav-icon">⚙️</span><span class="nav-label">My Settings</span></a>
     </nav>
@@ -220,14 +231,11 @@
         </div>
       </div>
 
-      <div class="image-placeholder" role="img" aria-label="Face ID setup screen on iPhone Settings">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">🔒</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">Face ID setup screen on iPhone Settings</p>
-            <p class="placeholder-dims">Recommended: 600 × 800 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: Face ID Setup">
+        <div class="example-icon">🍎</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: Face ID Setup</h4>
+          <p class="example-description">The Face ID setup in iPhone Settings guides you through a simple face scan — look at your phone and slowly move your head in a circle once. It takes about 30 seconds total.</p>
         </div>
       </div>
 
@@ -298,14 +306,11 @@
         </div>
       </div>
 
-      <div class="image-placeholder" role="img" aria-label="Fingerprint setup screen on Android Settings">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">🔒</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">Fingerprint setup screen on Android Settings</p>
-            <p class="placeholder-dims">Recommended: 600 × 800 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: Fingerprint Setup">
+        <div class="example-icon">🤖</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: Fingerprint Setup</h4>
+          <p class="example-description">The fingerprint setup in Android Settings asks you to repeatedly press and lift your finger on the sensor until it has learned every edge of your fingerprint.</p>
         </div>
       </div>
 
@@ -384,14 +389,11 @@
         <p>More examples: <strong>Garden-Rabbit-Snow-17</strong> or <strong>Kitchen-River-Maple-82</strong></p>
       </div>
 
-      <div class="image-placeholder" role="img" aria-label="Visual example of a passphrase — Purple-Teacup-Bridge-44">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">🔑</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">Visual example of a passphrase — Purple-Teacup-Bridge-44</p>
-            <p class="placeholder-dims">Recommended: 800 × 400 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: Passphrase">
+        <div class="example-icon">🔑</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: Passphrase</h4>
+          <p class="example-description">A passphrase like Purple-Teacup-Bridge-44 is easy to remember (picture a purple teacup on a bridge) yet extremely difficult for any computer to guess.</p>
         </div>
       </div>
 
@@ -451,14 +453,11 @@
         </div>
       </div>
 
-      <div class="image-placeholder" role="img" aria-label="Password manager app screen showing saved passwords">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">🗝️</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">Password manager app screen showing saved passwords</p>
-            <p class="placeholder-dims">Recommended: 600 × 800 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: Password Manager App">
+        <div class="example-icon">🗝️</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: Password Manager App</h4>
+          <p class="example-description">A password manager stores all your passwords securely in one place. You only need to remember one master password — it fills in all the others for you automatically.</p>
         </div>
       </div>
 
@@ -618,14 +617,11 @@
 
       <p>Your Apple ID already uses two-factor authentication by default. When you sign in on a new device, Apple sends a code to your other devices. This is normal and it is protecting you.</p>
 
-      <div class="image-placeholder" role="img" aria-label="Phone showing a 6-digit verification code text message">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">📱</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">Phone showing a 6-digit verification code text message</p>
-            <p class="placeholder-dims">Recommended: 600 × 800 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: Two-Factor Verification Code">
+        <div class="example-icon">📲</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: Two-Factor Verification Code</h4>
+          <p class="example-description">A two-factor code arrives as a text message with a 6-digit number that expires in about 30 seconds. Enter it right after typing your password to complete the login.</p>
         </div>
       </div>
 
@@ -875,6 +871,7 @@
   <script src="js/read-aloud.js"></script>
   <script src="js/feedback-widget.js"></script>
 
+  <script src="js/speech-config.js"></script>
   <script src="js/app.js"></script>
   <script src="js/accessibility.js"></script>
   <script src="js/progress.js"></script>

@@ -131,6 +131,17 @@
           <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
         </div>
       </div>
+        <p class="sidebar-a11y-title">Reading Comfort</p>
+        <div class="font-option">
+          <label class="toggle-label" for="dyslexic-font-toggle">
+            <input type="checkbox" id="dyslexic-font-toggle" />
+            <span class="toggle-switch"></span>
+            <span class="toggle-text">
+              <strong>Dyslexia-Friendly Font</strong>
+              <small>Easier to read for some people</small>
+            </span>
+          </label>
+        </div>
       <div class="settings-divider"></div>
       <a href="#" class="settings-link"><span class="nav-icon">⚙️</span><span class="nav-label">My Settings</span></a>
     </nav>
@@ -149,6 +160,34 @@
         <p>Margaret did what many of us would do: she panicked. She pressed every button she could find. Nothing seemed to work. Finally, she unplugged her iPad and hid it in a drawer for three days.</p>
         <p>Here is the good news: Margaret's iPad was perfectly fine the entire time. That scary message was a fake — a common trick designed to frighten people. And if Margaret had known the one skill we are about to learn, she could have closed that fake warning in about two seconds and gone right back to her butter tart recipe.</p>
         <p>That skill is what we call <strong>the Escape Hatch</strong>, and it is the most important thing you will learn in this entire course.</p>
+      
+      <div class="speech-controls">
+        <div class="control-header">
+          <span class="control-icon">🎚️</span>
+          <span class="control-label">Reading Speed</span>
+        </div>
+        <div class="speed-options">
+          <button class="speed-btn" data-speed="0.65">
+            <span class="speed-icon">🐢</span>
+            <span class="speed-label">Very Slow</span>
+          </button>
+          <button class="speed-btn active" data-speed="0.85">
+            <span class="speed-icon">🚶</span>
+            <span class="speed-label">Slow</span>
+            <span class="speed-badge">Best</span>
+          </button>
+          <button class="speed-btn" data-speed="1.0">
+            <span class="speed-icon">🏃</span>
+            <span class="speed-label">Normal</span>
+          </button>
+          <button class="speed-btn" data-speed="1.25">
+            <span class="speed-icon">⚡</span>
+            <span class="speed-label">Fast</span>
+          </button>
+        </div>
+        <p class="speed-help">💡 This setting affects all Listen buttons throughout the site</p>
+      </div>
+
       </div>
 
       <h2>The Golden Rule: Nothing Is Permanent</h2>
@@ -194,14 +233,11 @@
         </div>
       </div>
 
-      <div class="image-placeholder" role="img" aria-label="Home screen showing the Home button location on iPad">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">📱</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">Home screen showing the Home button location on iPad</p>
-            <p class="placeholder-dims">Recommended: 800 × 600 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: Home Screen">
+        <div class="example-icon">📱</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: Home Screen</h4>
+          <p class="example-description">Your iPad home screen shows app icons arranged in a grid. The round Home button sits at the very bottom edge, below the screen — press it once to return here from any app.</p>
         </div>
       </div>
 
@@ -220,14 +256,11 @@
           <span class="step-text">You are back at your Home screen. Safe and sound.</span>
         </div>
       </div>
-      <div class="image-placeholder" role="img" aria-label="Swipe up gesture animation on iPad without Home button">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">👆</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">Swipe up gesture animation on iPad without Home button</p>
-            <p class="placeholder-dims">Recommended: 800 × 600 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: Swipe-Up Gesture">
+        <div class="example-icon">☝️</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: Swipe-Up Gesture</h4>
+          <p class="example-description">On newer iPads without a Home button, place your finger on the thin horizontal line at the bottom of the screen and slide upward to return to your Home screen.</p>
         </div>
       </div>
 
@@ -268,14 +301,11 @@
         </div>
       </div>
 
-      <div class="image-placeholder" role="img" aria-label="Android navigation bar showing back, home, and recent buttons">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">📱</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">Android navigation bar showing back, home, and recent buttons</p>
-            <p class="placeholder-dims">Recommended: 800 × 400 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: Android Navigation Bar">
+        <div class="example-icon">🤖</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: Android Navigation Bar</h4>
+          <p class="example-description">Most Android devices show three shapes at the bottom: a triangle (Back), a circle (Home), and a square (Recent Apps). The circle in the middle brings you back to your home screen.</p>
         </div>
       </div>
 
@@ -335,14 +365,11 @@
           <span class="step-text"><strong>Double-press</strong> the Home button quickly (tap-tap). You will see a new view that shows cards — these are all the apps you have used recently.</span>
         </div>
 
-      <div class="image-placeholder" role="img" aria-label="App Switcher view showing multiple open apps">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">📲</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">App Switcher view showing multiple open apps</p>
-            <p class="placeholder-dims">Recommended: 800 × 600 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: App Switcher">
+        <div class="example-icon">📲</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: App Switcher</h4>
+          <p class="example-description">Double-pressing the Home button reveals card-sized previews of every app you have recently opened. Swipe a card upward to close that app completely.</p>
         </div>
       </div>
         <div class="walkthrough-step">
@@ -359,14 +386,11 @@
         </div>
       </div>
 
-      <div class="image-placeholder" role="img" aria-label="Swiping up on an app card to force close it">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">👆</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">Swiping up on an app card to force close it</p>
-            <p class="placeholder-dims">Recommended: 800 × 600 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: Force-Closing an App">
+        <div class="example-icon">⬆️</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: Force-Closing an App</h4>
+          <p class="example-description">Flick the app card upward off the top of the screen to force-quit it. The app is not deleted — it will restart fresh the next time you open it.</p>
         </div>
       </div>
 
@@ -570,16 +594,7 @@
       </div>
       </div>
 
-      <div class="image-placeholder" role="img" aria-label="Control Center panel on iPad showing Wi-Fi, Bluetooth, brightness">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">⚙️</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">Control Center panel on iPad showing Wi-Fi, Bluetooth, brightness</p>
-            <p class="placeholder-dims">Recommended: 600 × 800 px</p>
-          </div>
-</div>
-      </div>
+      
 
       <div class="confidence-check">
         <span class="check-icon">💛</span>
@@ -955,6 +970,7 @@
   <script src="js/read-aloud.js"></script>
   <script src="js/feedback-widget.js"></script>
 
+  <script src="js/speech-config.js"></script>
   <script src="js/app.js"></script>
   <script src="js/accessibility.js"></script>
   <script src="js/progress.js"></script>

@@ -93,3 +93,26 @@ function updateThemeButton(theme) {
     btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
   });
 }
+
+/* ---- Dyslexic Font Toggle ---- */
+function initDyslexicFont() {
+  var toggle = document.getElementById('dyslexic-font-toggle');
+  if (!toggle) return;
+
+  // Restore saved state
+  if (localStorage.getItem('dc-dyslexic-font') === 'true') {
+    document.body.classList.add('dyslexic-font');
+    toggle.checked = true;
+  }
+
+  toggle.addEventListener('change', function() {
+    document.body.classList.toggle('dyslexic-font', this.checked);
+    localStorage.setItem('dc-dyslexic-font', this.checked);
+    // Sync other toggles on same page (sidebar may have duplicate)
+    document.querySelectorAll('#dyslexic-font-toggle').forEach(function(t) {
+      t.checked = toggle.checked;
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initDyslexicFont);

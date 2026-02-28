@@ -131,6 +131,17 @@
           <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
         </div>
       </div>
+        <p class="sidebar-a11y-title">Reading Comfort</p>
+        <div class="font-option">
+          <label class="toggle-label" for="dyslexic-font-toggle">
+            <input type="checkbox" id="dyslexic-font-toggle" />
+            <span class="toggle-switch"></span>
+            <span class="toggle-text">
+              <strong>Dyslexia-Friendly Font</strong>
+              <small>Easier to read for some people</small>
+            </span>
+          </label>
+        </div>
       <div class="settings-divider"></div>
       <a href="#" class="settings-link"><span class="nav-icon">⚙️</span><span class="nav-label">My Settings</span></a>
     </nav>
@@ -223,14 +234,11 @@
         </div>
       </div>
 
-      <div class="image-placeholder" role="img" aria-label="App Store showing official bank app with verified developer badge">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">🏦</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">App Store showing official bank app with verified developer badge</p>
-            <p class="placeholder-dims">Recommended: 600 × 800 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: Official Bank App">
+        <div class="example-icon">🏦</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: Official Bank App</h4>
+          <p class="example-description">The official banking app is published under your bank's exact legal company name and has millions of downloads with thousands of verified reviews — look for both before installing.</p>
         </div>
       </div>
 
@@ -397,14 +405,11 @@
       </div>
       </div>
 
-      <div class="image-placeholder" role="img" aria-label="Banking app main screen showing account balances">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">💳</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">Banking app main screen showing account balances</p>
-            <p class="placeholder-dims">Recommended: 600 × 800 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: Banking App Home Screen">
+        <div class="example-icon">💳</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: Banking App Home Screen</h4>
+          <p class="example-description">The banking app main screen shows your account balances at a glance — chequing, savings, and credit cards listed clearly. Tap any account to see your recent transactions.</p>
         </div>
       </div>
 
@@ -442,14 +447,11 @@
         <li><strong>Review everything carefully</strong> before tapping "Confirm" or "Pay."</li>
       </ol>
 
-      <div class="image-placeholder" role="img" aria-label="Bill payment screen in a banking app">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">💳</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">Bill payment screen in a banking app</p>
-            <p class="placeholder-dims">Recommended: 600 × 800 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: Bill Payment Screen">
+        <div class="example-icon">🧾</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: Bill Payment Screen</h4>
+          <p class="example-description">The bill payment screen asks you to select a payee (the company you are paying), enter your account number with them, and type the amount — then confirm with fingerprint or PIN.</p>
         </div>
       </div>
 
@@ -463,14 +465,11 @@
         <p>Confidence Check: Paying bills from your kitchen table is a wonderful convenience. No more stamps, no more lineups, no more driving in the snow.</p>
       </div>
 
-      <div class="image-placeholder" role="img" aria-label="e-Transfer screen showing recipient and amount fields">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">💸</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">e-Transfer screen showing recipient and amount fields</p>
-            <p class="placeholder-dims">Recommended: 600 × 800 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: Interac e-Transfer Screen">
+        <div class="example-icon">💸</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: Interac e-Transfer Screen</h4>
+          <p class="example-description">The e-Transfer screen asks for the recipient's email or mobile number and the dollar amount. Always double-check the address before sending — transfers can be difficult to reverse.</p>
         </div>
       </div>
 
@@ -565,14 +564,11 @@
       </div>
       </div>
 
-      <div class="image-placeholder" role="img" aria-label="Browser address bar showing padlock icon for secure connection">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">🔒</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">Browser address bar showing padlock icon for secure connection</p>
-            <p class="placeholder-dims">Recommended: 800 × 300 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: Secure Connection Padlock">
+        <div class="example-icon">🔒</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: Secure Connection Padlock</h4>
+          <p class="example-description">The padlock icon in your browser address bar confirms the connection is encrypted. Your banking details are scrambled and cannot be read by anyone monitoring the network.</p>
         </div>
       </div>
 
@@ -701,6 +697,7 @@
   <script src="js/read-aloud.js"></script>
   <script src="js/feedback-widget.js"></script>
 
+  <script src="js/speech-config.js"></script>
   <script src="js/app.js"></script>
   <script src="js/accessibility.js"></script>
   <script src="js/progress.js"></script>

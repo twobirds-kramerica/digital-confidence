@@ -131,6 +131,17 @@
           <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
         </div>
       </div>
+        <p class="sidebar-a11y-title">Reading Comfort</p>
+        <div class="font-option">
+          <label class="toggle-label" for="dyslexic-font-toggle">
+            <input type="checkbox" id="dyslexic-font-toggle" />
+            <span class="toggle-switch"></span>
+            <span class="toggle-text">
+              <strong>Dyslexia-Friendly Font</strong>
+              <small>Easier to read for some people</small>
+            </span>
+          </label>
+        </div>
       <div class="settings-divider"></div>
       <a href="#" class="settings-link"><span class="nav-icon">⚙️</span><span class="nav-label">My Settings</span></a>
     </nav>
@@ -180,14 +191,11 @@
         </div>
       </div>
 
-      <div class="image-placeholder" role="img" aria-label="Camera app screen showing shutter button and photo/video toggle">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">📷</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">Camera app screen showing shutter button and photo/video toggle</p>
-            <p class="placeholder-dims">Recommended: 600 × 800 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: Camera App">
+        <div class="example-icon">📷</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: Camera App</h4>
+          <p class="example-description">The large round button at the bottom centre of the camera app is the shutter button — tap it once to take a photo. A slider or tab nearby switches between Photo and Video mode.</p>
         </div>
       </div>
 
@@ -278,14 +286,11 @@
         </div>
       </div>
 
-      <div class="image-placeholder" role="img" aria-label="Photos app editing screen with brightness and crop tools">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">🖼️</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">Photos app editing screen with brightness and crop tools</p>
-            <p class="placeholder-dims">Recommended: 800 × 600 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: Photo Editing Screen">
+        <div class="example-icon">🖼️</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: Photo Editing Screen</h4>
+          <p class="example-description">The editing screen shows slider controls for brightness, contrast, and colour. Drag a slider left or right to adjust your photo, then tap Done to save — or Cancel to undo everything.</p>
         </div>
       </div>
       </div>
@@ -349,14 +354,11 @@
         <li><strong>Memories:</strong> Google Photos automatically creates slideshows and collages from your photos. Look at the top of the main screen for these memory highlights. They can be quite lovely and surprising.</li>
       </ul>
 
-      <div class="image-placeholder" role="img" aria-label="Google Photos app showing photo grid and sharing options">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">📸</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">Google Photos app showing photo grid and sharing options</p>
-            <p class="placeholder-dims">Recommended: 600 × 800 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: Google Photos Grid">
+        <div class="example-icon">🗃️</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: Google Photos Grid</h4>
+          <p class="example-description">Google Photos organises all your pictures by date in a scrollable grid. Tap any photo to view it full-screen, then tap the share icon to send it to family.</p>
         </div>
       </div>
       </div>
@@ -396,14 +398,11 @@
         <span class="efficacy-badge">Relaxing and Fun</span>
       </div>
 
-      <div class="image-placeholder" role="img" aria-label="Drawing app showing a simple painting made with finger">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">🎨</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">Drawing app showing a simple painting made with finger</p>
-            <p class="placeholder-dims">Recommended: 800 × 600 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: Drawing App">
+        <div class="example-icon">🎨</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: Drawing App</h4>
+          <p class="example-description">A drawing app lets you paint on screen with your finger. Choose a colour and brush size, then draw freely. Nothing can break — tap Undo at any time to remove your last stroke.</p>
         </div>
       </div>
       </div>
@@ -432,14 +431,11 @@
       </div>
       </div>
 
-      <div class="image-placeholder" role="img" aria-label="Share sheet showing options like Messages, Email, AirDrop">
-        <div class="placeholder-inner">
-          <div class="placeholder-icon-wrap">📤</div>
-          <div class="placeholder-text-wrap">
-            <span class="placeholder-label">Screenshot needed</span>
-            <p class="placeholder-caption">Share sheet showing options like Messages, Email, AirDrop</p>
-            <p class="placeholder-dims">Recommended: 600 × 800 px</p>
-          </div>
+      <div class="visual-example-card" role="img" aria-label="Visual Example: Share Sheet">
+        <div class="example-icon">🔗</div>
+        <div class="example-content">
+          <h4 class="example-title">Visual Example: Share Sheet</h4>
+          <p class="example-description">Tapping the box-with-upward-arrow icon opens the Share sheet, listing all the ways to send a photo: Messages, Email, AirDrop to nearby Apple devices, and more.</p>
         </div>
       </div>
 
@@ -615,6 +611,7 @@
   <script src="js/read-aloud.js"></script>
   <script src="js/feedback-widget.js"></script>
 
+  <script src="js/speech-config.js"></script>
   <script src="js/app.js"></script>
   <script src="js/accessibility.js"></script>
   <script src="js/progress.js"></script>

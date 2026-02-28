@@ -356,6 +356,7 @@ function saveWizard() {
   dcCloseWizard();
   // Refresh dynamic content
   applyDeviceFiltering();
+  personalizeStories();
   if (typeof dcRenderResourcesPage === 'function') dcRenderResourcesPage();
   if (typeof dcRenderModuleHelp === 'function') dcRenderModuleHelp();
   if (typeof dcUpdateIndicators === 'function') dcUpdateIndicators();
@@ -499,6 +500,15 @@ document.addEventListener('DOMContentLoaded', function () {
   applyDeviceFiltering();
   // Show device tip banner if user skipped setup
   showDevicePromptIfNeeded();
+  personalizeStories();
+  // Show personalization/filtered banner on module pages
+  if (window.location.pathname.indexOf("module-") !== -1 || window.location.href.indexOf("module-") !== -1) {
+    var _profile = null;
+    try { _profile = JSON.parse(localStorage.getItem("dc-device-profile") || "null"); } catch(e){}
+    var _hasDevices = _profile && [].concat(_profile.phone||[], _profile.tablet||[], _profile.computer||[]).some(function(v){ return v && v !== "none"; });
+    if (!_hasDevices) { showPersonalizationBanner(); }
+    else { showFilteredBanner(_profile); }
+  }
 
   // Bind sidebar settings link
   var settingsLink = document.querySelector('.settings-link');
@@ -509,3 +519,62 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+/* ---------- Personalization Banners ---------- */
+function showPersonalizationBanner() {
+  if (document.querySelector('.personalization-banner')) return;
+  var main = document.querySelector('.main-content');
+  if (!main) return;
+  var banner = document.createElement('div');
+  banner.className = 'personalization-banner';
+  banner.innerHTML =
+    '<div class="banner-content">' +
+      '<p class="banner-icon">💡</p>' +
+      '<div class="banner-text">' +
+        '<strong>Get Personalised Instructions</strong>' +
+        '<p>Tell us your devices to see step-by-step guidance just for you.</p>' +
+      '</div>' +
+      '<div class="banner-actions">' +
+        '<button onclick="dcOpenWizard();this.closest('.personalization-banner').remove();" class="btn-personalize">Set My Devices</button>' +
+        '<button onclick="this.closest('.personalization-banner').remove()" class="btn-dismiss">Maybe Later</button>' +
+      '</div>' +
+    '</div>';
+  var h1 = main.querySelector('h1');
+  if (h1 && h1.nextSibling) { main.insertBefore(banner, h1.nextSibling); }
+  else { main.insertBefore(banner, main.firstElementChild); }
+}
+
+function showFilteredBanner(profile) {
+  if (document.querySelector('.filtered-banner')) return;
+  var main = document.querySelector('.main-content');
+  if (!main) return;
+  var labels = { iphone: 'iPhone', 'android-phone': 'Android Phone', ipad: 'iPad', 'android-tablet': 'Android Tablet', windows: 'Windows PC', mac: 'Mac', chromebook: 'Chromebook' };
+  var devices = [].concat(profile.phone||[], profile.tablet||[], profile.computer||[]).filter(function(v){return v&&v!=='none';}).map(function(v){return labels[v]||v;});
+  if (!devices.length) return;
+  var banner = document.createElement('div');
+  banner.className = 'filtered-banner';
+  banner.innerHTML =
+    '<div class="banner-content">' +
+      '<p style="margin:0">📱 Showing content for: <strong>' + devices.join(', ') + '</strong></p>' +
+      '<div class="banner-actions">' +
+        '<button onclick="dcOpenWizard()" class="btn-edit">Edit</button>' +
+      '</div>' +
+    '</div>';
+  var h1 = main.querySelector('h1');
+  if (h1 && h1.nextSibling) { main.insertBefore(banner, h1.nextSibling); }
+  else { main.insertBefore(banner, main.firstElementChild); }
+}
+
+function personalizeStories() {
+  var profile = null;
+  try { profile = JSON.parse(localStorage.getItem('dc-device-profile') || 'null'); } catch(e) {}
+  var deviceName = 'device';
+  if (profile) {
+    if (profile.phone && profile.phone.length && profile.phone[0] !== 'none') deviceName = profile.phone[0] === 'iphone' ? 'iPhone' : 'Android phone';
+    else if (profile.tablet && profile.tablet.length && profile.tablet[0] !== 'none') deviceName = profile.tablet[0] === 'ipad' ? 'iPad' : 'Android tablet';
+    else if (profile.computer && profile.computer.length && profile.computer[0] !== 'none') deviceName = profile.computer[0];
+  }
+  document.querySelectorAll('.story-block, .story-box').forEach(function(el) {
+    el.innerHTML = el.innerHTML.replace(/{{DEVICE}}/g, deviceName);
+  });
+}
