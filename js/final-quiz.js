@@ -1,287 +1,288 @@
 /* ============================================
    Digital Confidence Centre — Final Quiz
-   20 questions covering all 8 modules
+   v2 — 20 scenario-based "What would you do?"
+        questions covering all 8 modules
    Passing score: 80% (16/20)
    ============================================ */
 
 var DC_QUIZ = (function () {
   'use strict';
 
-  /* ── 20 Questions ─────────────────────────────────────── */
+  /* ── 20 Scenario-Based Questions ──────────────────────── */
   var questions = [
 
     /* MODULE 1 — The Escape Hatch */
     {
       module: 'Module 1: The Escape Hatch',
-      q: 'Something scary pops up on your iPad saying it has a virus. What is the BEST first thing to do?',
+      q: 'You\'re reading a recipe on your iPad when a loud alarm sounds and your screen fills with flashing red text: "CRITICAL VIRUS DETECTED! Call 1-888-555-0123 IMMEDIATELY!" What do you do?',
       options: [
-        'Call the phone number shown on the screen',
-        'Press the Home button or swipe up to return to your Home screen',
-        'Turn the iPad off and hide it',
-        'Type your password into the box on the screen'
+        'Call the number right away — this sounds serious',
+        'Press the Home button or swipe up to return to your Home screen, then ignore the message',
+        'Turn off your iPad and leave it off for a few days',
+        'Give someone on the phone remote access to your iPad to fix it'
       ],
       correct: 1,
-      explain: 'The Home button (or swipe-up gesture) is your Escape Hatch. It closes whatever is on your screen immediately. Scary messages like that are almost always fake — they cannot hurt you if you simply leave the page.'
+      explain: 'This is a fake alert — a very common scare tactic. Your Escape Hatch (Home button or swipe-up) instantly closes the website causing the alarm. Real viruses never announce themselves with pop-up phone numbers. Your iPad is completely fine.'
     },
     {
       module: 'Module 1: The Escape Hatch',
-      q: 'Which statement about your iPad is TRUE?',
+      q: 'An app on your iPad completely freezes — you can\'t tap anything and the screen won\'t respond. What\'s the right sequence to try?',
       options: [
-        'You can permanently break your iPad by tapping the wrong thing',
-        'Deleting an app removes it forever and it cannot be reinstalled',
-        'Almost everything you do on your iPad can be undone, closed, or fixed',
-        'Pressing the Home button too many times can damage the device'
+        'Smash the screen firmly several times to wake it up',
+        'First press Home (or swipe up), then if still frozen force-quit the app, then restart if needed',
+        'Immediately take it to the Apple Store — it must be broken',
+        'Remove the SIM card and reinsert it'
       ],
-      correct: 2,
-      explain: 'Your iPad is very forgiving. Even deleted apps can be reinstalled. Even accidentally opened websites can be closed. The Home button is always safe to press.'
+      correct: 1,
+      explain: 'The escalation ladder: Home button first (gentlest), then force-quit the frozen app by swiping it away in the App Switcher, then restart if needed. This handles 99% of frozen-screen situations without any repair.'
     },
 
     /* MODULE 2 — Security Shield */
     {
       module: 'Module 2: Security Shield',
-      q: 'Which of the following is a WARNING SIGN of a phishing email?',
+      q: 'You get an email from "TD Bank Security Team" saying your account is suspended. The subject says "URGENT: Verify your identity NOW." The link in the email goes to "td-bank-secure-login.com". What do you do?',
       options: [
-        'The email is longer than one page',
-        'The email includes a company logo',
-        'Poor grammar, urgent language, and a request to click a link immediately',
-        'The email was sent on a weekend'
+        'Click the link quickly — your account might be blocked',
+        'Reply to the email asking if it\'s legitimate',
+        'Close the email, open a fresh browser tab, and type your bank\'s real web address yourself',
+        'Forward it to family members to see if they got it too'
       ],
       correct: 2,
-      explain: 'Phishing emails typically use urgency ("Act now or your account will be closed!"), poor spelling, and links that take you to fake websites. Scammers are in a hurry — they make mistakes.'
+      explain: 'The domain "td-bank-secure-login.com" is NOT TD Bank\'s real website (which is td.com). Scammers create convincing fake websites to steal your login. Never click bank links in emails — always type the address yourself.'
     },
     {
       module: 'Module 2: Security Shield',
-      q: 'Your bank calls to say there is fraud on your account and asks for your PIN to "verify" it. What do you do?',
+      q: 'Your grandson calls you in a panic. He says he\'s been arrested in another city and needs you to buy $2,000 in gift cards immediately to pay bail. He begs you not to tell anyone. What is this?',
       options: [
-        'Give them the PIN — it is your bank, after all',
-        'Hang up and call your bank back using the number on the back of your bank card',
-        'Give them only the last two digits of your PIN',
-        'Ask them to call back tomorrow'
+        'A real emergency — buy the gift cards right away to help him',
+        'The "Grandparent Scam." Hang up, then call your grandson directly on his real number to verify',
+        'Probably a prank from his friends',
+        'A legitimate bail process — gift cards are commonly used for bail'
       ],
       correct: 1,
-      explain: 'Your real bank will NEVER ask for your PIN or password by phone. Hang up immediately and call the number printed on your bank card — not any number given to you in the call.'
+      explain: 'This is the "Grandparent Scam" — one of Canada\'s most common elder fraud tactics. Legitimate bail processes never use gift cards. Always verify by calling your grandchild directly on their known number before doing anything.'
     },
 
     /* MODULE 3 — Passwords */
     {
       module: 'Module 3: Passwords & Security',
-      q: 'What is two-factor authentication (2FA)?',
+      q: 'You\'re setting up a new account. The site asks you to create a password. Which password would best protect your account?',
       options: [
-        'Using two different passwords for the same account',
-        'An extra security step that requires your password PLUS a separate code sent to your phone',
-        'Logging in from two different devices at the same time',
-        'A type of anti-virus software'
+        'Your name plus your birth year: "Margaret1952"',
+        'The word "password" (easy to remember)',
+        'A random mix like "BlueSky!River9Maple" — something you can picture but no one could guess',
+        'Your phone number, since you always remember it'
       ],
-      correct: 1,
-      explain: 'Two-factor authentication adds a second check. Even if a scammer learns your password, they still cannot get in without the code that was sent to your phone.'
+      correct: 2,
+      explain: 'Good passwords are long, mix word types, and aren\'t personal information. "BlueSky!River9Maple" uses three random words with a symbol and number — easy for you to visualize but essentially impossible to guess. Personal info like birthdays and phone numbers are the first things hackers try.'
     },
     {
       module: 'Module 3: Passwords & Security',
-      q: 'Which is the STRONGEST password?',
+      q: 'After entering your email password, your email provider sends a 6-digit code to your phone and asks you to enter it before logging in. You didn\'t request this. What\'s happening?',
       options: [
-        'password123',
-        'MyDogSparky2005',
-        'T!ger$unset#Moon42',
-        'abc123'
+        'Your account has been hacked — change your password immediately',
+        'Your email provider is testing a new feature you should skip',
+        'This is two-factor authentication working correctly — enter the code to log in securely',
+        'This is a phishing attempt — do not enter the code'
       ],
       correct: 2,
-      explain: 'A strong password mixes uppercase letters, lowercase letters, numbers, and symbols — and is not a real word or personal detail. "T!ger$unset#Moon42" uses all four types and is hard to guess.'
+      explain: 'Two-factor authentication (2FA) is a security feature that protects you. When YOU log in, the system sends a code to your phone to confirm it\'s really you. This is a good thing — enter the code. If you receive a code when you didn\'t try to log in, that\'s when to worry (someone else tried).'
     },
 
     /* MODULE 4 — App Store Safety */
     {
       module: 'Module 4: App Store Safety',
-      q: 'Where is the safest place to download apps for your iPhone or iPad?',
+      q: 'You want to download a free Sudoku game. You find one on the App Store with 4.8 stars and 50,000 reviews. But when you tap it, it asks for permission to access your microphone, contacts, and location. What should you do?',
       options: [
-        'Any website that says "Free Download"',
-        'A link sent in a text message from a friend',
-        'The official Apple App Store (purple icon with a white "A")',
-        'Websites ending in .net or .org'
+        'Allow everything — popular apps are always safe',
+        'Tap "Don\'t Allow" for all three — a Sudoku game has no reason to need your microphone, contacts, or location',
+        'Delete the app — any app that asks for permissions is dangerous',
+        'Allow only the microphone permission and deny the rest'
       ],
-      correct: 2,
-      explain: 'Apple\'s App Store reviews every app before it can be listed. Downloading from unknown websites or links in messages risks installing harmful software on your device.'
+      correct: 1,
+      explain: 'A number-puzzle game genuinely needs none of those permissions. Tapping "Don\'t Allow" is completely safe — the app will still work for puzzles. Permissions should match what an app actually does.'
     },
     {
       module: 'Module 4: App Store Safety',
-      q: 'A new app you installed asks permission to access your microphone, contacts, AND camera. You only use it to read recipes. What should you do?',
+      q: 'You receive a text message from "Apple" with a link to "download the latest iOS security update." The link goes to "apple-ios-update.net." What do you do?',
       options: [
-        'Allow everything — the app probably needs it',
-        'Only allow permissions that make sense for what the app does (for a recipe app: none of those)',
-        'Delete the app immediately — all apps that ask for permissions are dangerous',
-        'Ignore the request and never use the app again'
+        'Tap the link — security updates are important',
+        'Delete the text. Real iPhone updates come through Settings → General → Software Update, never a text message',
+        'Forward the link to your children to handle',
+        'Reply "STOP" to opt out of updates'
       ],
       correct: 1,
-      explain: 'Apps should only get the access they genuinely need. A recipe app has no reason to use your microphone or contacts. You can always tap "Don\'t Allow" — the app can still work for its main purpose.'
+      explain: 'Apple never sends software updates through text messages. Real updates arrive through Settings on your device. "apple-ios-update.net" is not an Apple website. This is a classic smishing (SMS phishing) attack.'
     },
 
     /* MODULE 5 — Email & Messages */
     {
       module: 'Module 5: Email & Messages',
-      q: 'You receive an email from "Amazon" saying your package is delayed and you must click a link to reschedule. The sender\'s address is "shipping@amazon-delivery-update.net". What do you do?',
+      q: 'You\'re reading your emails and find one from "Amazon" saying your order was declined and you need to update your payment info. The email shows your name but the sender\'s address is "noreply@amazon-updates-canada.com." What do you do?',
       options: [
-        'Click the link — it sounds urgent',
-        'Reply to the email asking for more information',
-        'Do NOT click the link. Go directly to Amazon\'s website by typing amazon.ca in your browser',
-        'Forward it to your family to see what they think'
+        'Update your payment — Amazon needs it',
+        'Reply asking for more details about the declined order',
+        'Do NOT click any links. Go directly to amazon.ca and check your orders there',
+        'Call the 1-800 number shown in the email'
       ],
       correct: 2,
-      explain: 'Legitimate Amazon emails come from @amazon.ca or @amazon.com — never from hyphenated domains like "amazon-delivery-update.net". Always go directly to a company\'s website rather than clicking email links.'
+      explain: 'Legitimate Amazon emails come from @amazon.ca or @amazon.com — never from hyphenated domains like "amazon-updates-canada.com." Your name appearing in the email doesn\'t make it legitimate — scammers buy lists. Go directly to the real website to check.'
     },
     {
       module: 'Module 5: Email & Messages',
-      q: 'How do you stop unwanted spam emails from reaching your inbox?',
+      q: 'You\'ve been getting 10+ spam emails per day. A spam email says "Click here to unsubscribe permanently." What should you do?',
       options: [
-        'Reply to the spam email and ask to be removed',
-        'Mark the email as "Junk" or "Spam" in your email app — this teaches it to block similar messages',
-        'Delete your email account and create a new one',
-        'Call the phone company'
+        'Click "Unsubscribe" — this will stop all the spam',
+        'Ignore the unsubscribe link. Use your email app\'s "Mark as Junk" button instead',
+        'Reply to the spam email asking to be removed from their list',
+        'Create a new email address to escape the spam'
       ],
       correct: 1,
-      explain: 'Using the "Mark as Junk/Spam" button trains your email app to recognize and block similar messages in the future. Never reply to spam — it confirms your address is active, which leads to MORE spam.'
+      explain: '"Unsubscribe" links in spam often confirm your address is active, causing MORE spam. The "Mark as Junk" or "Mark as Spam" button in your email app quietly teaches the system to block similar messages — without tipping off the spammer.'
     },
 
     /* MODULE 6 — Banking */
     {
       module: 'Module 6: Banking & Transactions',
-      q: 'Which of these is the SAFEST way to access your online banking?',
+      q: 'Someone phones claiming to be from your bank\'s fraud department. They say there\'s suspicious activity and need to "verify" your account by asking for your online banking password and PIN. What do you do?',
       options: [
-        'Click a link in an email that says it is from your bank',
-        'Open your bank\'s official app from your Home screen, or type your bank\'s web address directly',
-        'Search Google for "TD Bank login" and click the first result',
-        'Use the banking link sent by a friend on Facebook'
+        'Give the information — fraud departments need it to protect your account',
+        'Give only partial information (first two digits of PIN)',
+        'Hang up immediately. Call your bank back using the number on the back of your card',
+        'Ask them to call back in an hour'
       ],
-      correct: 1,
-      explain: 'Always open your banking app directly from your Home screen, or type your bank\'s web address yourself. Never follow links from emails or social media to log into your bank.'
+      correct: 2,
+      explain: 'Your real bank will NEVER ask for your password or PIN — not by phone, not by email, not by text. This is a social engineering scam. Hang up and call your bank using only the number printed on your card to verify whether there\'s a real issue.'
     },
     {
       module: 'Module 6: Banking & Transactions',
-      q: 'You notice a $47 charge on your bank statement from a company you do not recognize. What should you do?',
+      q: 'You\'re checking your bank statement on your iPad and notice a charge for $89 from "SVC*CLOUDTECH" that you don\'t recognize. What\'s the right first step?',
       options: [
-        'Ignore it — it is probably fine',
-        'Post about it on Facebook asking if anyone else got the same charge',
-        'Call your bank immediately using the number on the back of your card and report the suspicious charge',
-        'Wait to see if another charge appears before calling'
+        'Ignore it — small charges sometimes appear and disappear',
+        'Post about it on Facebook to see if others got the same charge',
+        'Contact your bank immediately using their official app or the number on your card and report the unrecognized charge',
+        'Wait three months to see if another charge appears before acting'
       ],
       correct: 2,
-      explain: 'Always report unfamiliar charges to your bank right away. The sooner you report it, the easier it is to reverse. Canadian banks have fraud protection — you will not be held responsible for charges you did not make.'
+      explain: 'Report unknown charges right away. Canadian banks have fraud protection — you won\'t be held responsible for charges you didn\'t make, but reporting quickly makes reversal much easier. "SVC*" often indicates a subscription-type charge that may have signed you up without clear consent.'
     },
 
     /* MODULE 7 — Creative Joy */
     {
       module: 'Module 7: Creative Joy',
-      q: 'You want to share a photo you took of your grandchild with your daughter. What is a safe, easy way to do this on your iPhone?',
+      q: 'You took a wonderful photo of your grandchildren at their birthday party. You want to share it with family but not post it publicly online. What\'s the safest way?',
       options: [
-        'Post it publicly on social media for everyone to see',
-        'Use the Share button and send it directly via iMessage or email to your daughter',
-        'Take a picture of your screen with another phone',
-        'You cannot share photos from an iPhone'
+        'Post it on Facebook with privacy set to "Public" so family can easily find it',
+        'Email it or send it via iMessage directly to family members you choose',
+        'Upload it to a free photo-sharing website you found through Google',
+        'Post it in a Facebook group with 500 members called "Windsor Families"'
       ],
       correct: 1,
-      explain: 'The Share button (the square with an upward arrow) lets you send photos directly and privately via iMessage, email, or WhatsApp. This is much safer than posting publicly.'
+      explain: 'Sending directly via email or iMessage means only your chosen recipients see the photo. Posting publicly — even in groups — puts photos of children in front of strangers. Direct sharing is always the safest option for family photos.'
     },
     {
       module: 'Module 7: Creative Joy',
-      q: 'You accidentally deleted a photo from your iPhone. Where might you be able to find it?',
+      q: 'You were editing photos on your iPad and accidentally deleted 12 pictures from last Christmas. You\'re heartbroken. What should you try first?',
       options: [
-        'It is gone forever once deleted',
-        'In the "Recently Deleted" album in the Photos app — photos stay there for 30 days',
-        'In your email inbox',
-        'You need to call Apple to recover it'
+        'Nothing — photos are gone forever once deleted on an iPad',
+        'Call Apple Support immediately — they can restore photos',
+        'Open the Photos app, tap Albums, scroll down and tap "Recently Deleted" — photos stay there for 30 days',
+        'Restore your iPad to factory settings to get them back'
       ],
-      correct: 1,
-      explain: 'iPhones keep deleted photos in a "Recently Deleted" folder for 30 days. Open the Photos app → Albums → scroll down to "Recently Deleted" to restore them.'
+      correct: 2,
+      explain: 'The "Recently Deleted" album in Photos is your safety net. Deleted photos stay there for 30 days before being permanently removed. Tap "Recover" on any photo to bring it back. No support call needed.'
     },
 
     /* MODULE 8 — Staying Connected */
     {
       module: 'Module 8: Staying Connected',
-      q: 'A stranger on Facebook sends you a friend request. Their profile is new, has few photos, and they immediately message asking for gift cards to help a "family emergency." What is this?',
+      q: 'During a FaceTime call with your daughter in Vancouver, the video suddenly becomes blocky and the audio cuts out. She sounds like a robot. What\'s most likely happening and what should you try?',
       options: [
-        'A genuine emergency and you should help',
-        'A common scam targeting people on social media — do not send money or gift cards to anyone you do not know personally',
-        'A misunderstanding — reply and ask them to explain',
-        'Probably a relative you forgot about'
+        'Your iPad is broken — the video chip has failed',
+        'The FaceTime app needs to be reinstalled',
+        'It\'s likely a slow Wi-Fi connection. Try moving closer to your router, or ask your daughter to check her connection',
+        'FaceTime doesn\'t work well across provinces'
       ],
-      correct: 1,
-      explain: 'Gift card requests from strangers (or apparent strangers) on social media are an extremely common scam. No legitimate emergency ever requires you to pay with gift cards. Block and report the account.'
+      correct: 2,
+      explain: 'Pixelated video and robot-like audio are classic signs of a slow or unstable internet connection — not a hardware failure. Moving closer to your Wi-Fi router usually resolves it instantly. FaceTime works perfectly across all Canadian provinces and internationally.'
     },
     {
       module: 'Module 8: Staying Connected',
-      q: 'During a FaceTime call your grandchild\'s screen freezes. What is the most likely cause and solution?',
+      q: 'A stranger on Facebook named "Michael Roberts" sends you a friend request. He has 3 friends, his profile is 2 weeks old, and within minutes of you accepting, he messages saying he\'s a Canadian soldier overseas and needs help buying iTunes gift cards for his squad. What do you do?',
       options: [
-        'Your iPad is broken — take it to the Apple Store',
-        'A slow Wi-Fi connection. Move closer to your router or ask your grandchild to check their connection',
-        'You need to pay more for a better FaceTime subscription',
-        'FaceTime only works in Canada'
+        'Help him — soldiers deserve support',
+        'Ask him to prove he\'s a real soldier first',
+        'Unfriend and block him immediately. This is a romance/gift card scam — a very common fraud targeting Canadians',
+        'Report him but keep him as a friend to gather evidence'
       ],
-      correct: 1,
-      explain: 'Frozen or blurry video calls are almost always caused by a slow internet connection. Moving closer to your Wi-Fi router usually fixes it. FaceTime is free and works worldwide — no paid subscription needed.'
+      correct: 2,
+      explain: 'This is the "military romance scam" — one of the most reported frauds in Canada. No real soldier asks strangers for gift cards. The combination of a new profile, few friends, and an immediate gift card request are all classic warning signs. Unfriend, block, and report.'
     },
 
     /* GENERAL / CROSS-MODULE */
     {
-      module: 'General Knowledge',
-      q: 'Your iPad asks to install a software update. What should you do?',
+      module: 'General: Device Safety',
+      q: 'A pop-up appears on your iPad saying "Your iPad storage is almost full. Tap here to buy extra storage for 99¢/month." The pop-up looks like it\'s from Apple. What should you do?',
       options: [
-        'Ignore all updates — they slow your device down',
-        'Wait at least a year before updating',
-        'Install the update — updates fix security problems and keep your device protected',
-        'Call Apple to ask permission first'
-      ],
-      correct: 2,
-      explain: 'Software updates are important security fixes. Apple releases them when they discover vulnerabilities — installing updates promptly keeps your device safe. You can schedule updates to happen overnight while you sleep.'
-    },
-    {
-      module: 'General Knowledge',
-      q: 'Which of these Wi-Fi networks is the SAFEST to use for banking or shopping?',
-      options: [
-        '"Free_Mall_WiFi" at your local shopping centre',
-        '"Tim_Hortons_Guest" at a coffee shop',
-        'Your own home Wi-Fi network with a password',
-        'Any public Wi-Fi that says "Secure"'
-      ],
-      correct: 2,
-      explain: 'Your home Wi-Fi is private and password-protected. Public Wi-Fi networks can be monitored by others on the same network. Save banking and shopping for when you are on your home network, or use your phone\'s cellular data instead.'
-    },
-    {
-      module: 'General Knowledge',
-      q: 'What does the padlock icon (🔒) in the address bar of your browser mean?',
-      options: [
-        'The website is owned by the government',
-        'The website has been checked by police for safety',
-        'The connection between your device and the website is encrypted (private)',
-        'You are not allowed to copy content from the site'
-      ],
-      correct: 2,
-      explain: 'The padlock means the website uses HTTPS encryption — data sent between you and the site is scrambled so others cannot intercept it. Always look for the padlock before entering passwords or payment information.'
-    },
-    {
-      module: 'General Knowledge',
-      q: 'If someone phones claiming to be from "Microsoft Support" and says your computer has a virus, and asks you to let them connect remotely to fix it, you should:',
-      options: [
-        'Let them connect — Microsoft Support is trustworthy',
-        'Give them your computer password so they can help',
-        'Hang up immediately. Microsoft does not make unsolicited calls like this. It is a scam.',
-        'Tell them to call back next week'
-      ],
-      correct: 2,
-      explain: 'Microsoft, Apple, and other tech companies do NOT call you out of the blue about viruses on your computer. These "tech support" calls are scams. The caller wants remote access to steal your files, passwords, or money. Hang up.'
-    },
-    {
-      module: 'General Knowledge',
-      q: 'You have completed all 8 modules of the Digital Confidence Centre. What does that mean?',
-      options: [
-        'You know everything there is to know and will never be scammed',
-        'You have built real skills to navigate your devices safely, spot scams, and stay connected — and you can always come back to review',
-        'You must now take an in-person exam at your library',
-        'Your device is now automatically protected from all threats'
+        'Tap it — extra storage is cheap and useful',
+        'Close the pop-up. If you genuinely need more storage, go to Settings → your name → iCloud to manage it through Apple\'s official settings',
+        'Enter your credit card details — it\'s only 99 cents',
+        'Turn off your iPad to make the pop-up stop permanently'
       ],
       correct: 1,
-      explain: 'Congratulations! Completing these modules means you have taken real, meaningful steps toward digital confidence. Technology keeps changing, so staying curious and reviewing what you have learned are the best habits you can have.'
+      explain: 'Apple never offers storage upgrades through random pop-ups while browsing. This is a scam designed to steal credit card details or install malware. All legitimate Apple purchases and settings happen through your device\'s built-in Settings app — never through pop-ups.'
+    },
+    {
+      module: 'General: Online Safety',
+      q: 'You\'re at Tim Hortons using their free Wi-Fi to check your email. You want to quickly check your bank balance while you\'re there. What\'s the safest approach?',
+      options: [
+        'Use the Tim Hortons Wi-Fi — it\'s fine for banking',
+        'Switch to your phone\'s cellular data (4G/LTE) or wait until you\'re home to do your banking',
+        'Use the public Wi-Fi but log out immediately after',
+        'Ask Tim Hortons staff if their Wi-Fi is encrypted before using it'
+      ],
+      correct: 1,
+      explain: 'Public Wi-Fi networks can be monitored by others on the same network. For banking and anything sensitive, use your cellular data connection (4G/LTE) or wait until you\'re on your secured home Wi-Fi. Your cellular connection is encrypted by default.'
+    },
+    {
+      module: 'General: Scam Awareness',
+      q: 'Someone phones saying your Social Insurance Number has been "compromised in criminal activity" and you\'ll be arrested unless you pay $800 in Bitcoin to clear your name. They say this call is confidential and you must not tell anyone. What do you do?',
+      options: [
+        'Pay immediately to avoid arrest',
+        'Ask them for more time to gather the money',
+        'Hang up. The CRA and police never demand Bitcoin payments or secrecy. This is a common government impersonation scam.',
+        'Give them your SIN number to verify the issue'
+      ],
+      correct: 2,
+      explain: 'The Canada Revenue Agency, RCMP, and all government agencies never demand payment in Bitcoin, gift cards, or wire transfers. They never threaten immediate arrest by phone. They never ask for secrecy. These three features together are the signature of a government impersonation scam. Hang up immediately.'
+    },
+    {
+      module: 'General: Browser Safety',
+      q: 'You\'re about to enter your credit card number to buy a birthday gift online. You notice the website address starts with "http://" instead of "https://" and there\'s no padlock icon. What should you do?',
+      options: [
+        'Continue — the padlock just means the site is government-approved',
+        'Do not enter your credit card on this site. The missing padlock means the connection is not encrypted',
+        'The padlock only matters for banking sites, not shopping',
+        'Refresh the page — the padlock will appear after you start filling in the form'
+      ],
+      correct: 1,
+      explain: 'The padlock icon and "https://" mean your data is encrypted between your device and the site — no one can intercept it in transit. An "http://" site (no padlock) sends your data as plain text, readable by anyone on the same network. Never enter payment information on unsecured sites.'
+    },
+    {
+      module: 'General: Putting It All Together',
+      q: 'You\'ve completed all 8 modules of the Digital Confidence Centre. Your neighbour asks how to stay safe online and says "Just give me the one most important rule." What would you tell them?',
+      options: [
+        '"Never use the internet — it\'s too dangerous"',
+        '"If something feels urgent, scary, or too good to be true — pause, close it, and verify through official channels before doing anything"',
+        '"Change your password every day to stay safe"',
+        '"Only use a computer at the library where staff can help"'
+      ],
+      correct: 1,
+      explain: 'Scammers rely on urgency and fear to prevent you from thinking clearly. The single most powerful habit is the pause. Whether it\'s a scary pop-up, an urgent email, or a suspicious phone call — stop, close it, breathe, and then verify through channels you know are real. That one habit protects you from the vast majority of threats.'
     }
   ];
 
-  var PASS_SCORE   = 16; // out of 20
+  var PASS_SCORE   = 16;
   var currentQ     = 0;
   var score        = 0;
   var answered     = [];
@@ -326,17 +327,17 @@ var DC_QUIZ = (function () {
       '<div class="quiz-container">' +
         '<div class="quiz-header">' +
           '<h1>🎓 Final Digital Confidence Assessment</h1>' +
-          '<p style="color:#455A64;font-size:17px;margin:8px 0 0;">20 questions &nbsp;·&nbsp; Pass with 80% &nbsp;·&nbsp; Take your time</p>' +
+          '<p style="color:#455A64;font-size:17px;margin:8px 0 0;">20 real-life scenarios &nbsp;·&nbsp; Pass with 80% &nbsp;·&nbsp; No time limit</p>' +
         '</div>' +
         '<div class="quiz-question" style="text-align:center;">' +
           '<div style="font-size:72px;margin-bottom:24px;">📋</div>' +
           '<h3 style="font-size:24px;">You\'ve earned this!</h3>' +
           '<p style="font-size:18px;color:var(--text-secondary);margin-bottom:32px;">' +
-            'This 20-question assessment covers all 8 modules. ' +
-            'You need 16 correct answers (80%) to pass and receive your certificate.<br><br>' +
-            'There is no time limit. Read each question carefully.' +
+            'Each question describes a real situation you might encounter. ' +
+            'Choose what you would do. There is no time pressure — read carefully.<br><br>' +
+            'You need 16 correct answers (80%) to pass and receive your certificate.' +
           '</p>' +
-          '<button class="quiz-btn quiz-btn-primary" id="start-quiz-btn" style="font-size:20px;padding:18px 48px;">Start Assessment</button>' +
+          '<button class="quiz-btn quiz-btn-primary" id="start-quiz-btn" style="font-size:20px;padding:18px 48px;">Begin Assessment</button>' +
         '</div>' +
       '</div>';
 
@@ -347,27 +348,22 @@ var DC_QUIZ = (function () {
 
   /* ── Start quiz ──────────────────────────────────────────── */
   function startQuiz(container) {
-    currentQ    = 0;
-    score       = 0;
-    answered    = [];
-    quizStarted = true;
+    currentQ = 0; score = 0; answered = []; quizStarted = true;
     renderQuestion(container);
   }
 
   /* ── Render question ─────────────────────────────────────── */
   function renderQuestion(container) {
     var q = questions[currentQ];
-    var pct = Math.round(((currentQ) / questions.length) * 100);
-
-    var optionsHTML = '';
+    var pct = Math.round((currentQ / questions.length) * 100);
     var letters = ['A', 'B', 'C', 'D'];
-    q.options.forEach(function (opt, i) {
-      optionsHTML +=
-        '<button class="quiz-option" data-index="' + i + '">' +
-          '<span class="quiz-option-letter">' + letters[i] + '</span>' +
-          '<span>' + escHTML(opt) + '</span>' +
-        '</button>';
-    });
+
+    var optionsHTML = q.options.map(function (opt, i) {
+      return '<button class="quiz-option" data-index="' + i + '">' +
+        '<span class="quiz-option-letter">' + letters[i] + '</span>' +
+        '<span>' + escHTML(opt) + '</span>' +
+      '</button>';
+    }).join('');
 
     container.innerHTML =
       '<div class="quiz-container">' +
@@ -378,20 +374,19 @@ var DC_QUIZ = (function () {
           '</div>' +
           '<div class="quiz-progress-label">Question ' + (currentQ + 1) + ' of ' + questions.length + '</div>' +
         '</div>' +
-
         '<div class="quiz-question" id="current-question">' +
           '<span class="quiz-module-tag">' + escHTML(q.module) + '</span>' +
           '<h3>' + escHTML(q.q) + '</h3>' +
           '<div class="quiz-options" id="options-wrap">' + optionsHTML + '</div>' +
           '<div class="quiz-feedback" id="quiz-feedback"></div>' +
         '</div>' +
-
         '<div class="quiz-nav">' +
-          '<button class="quiz-btn quiz-btn-primary" id="next-btn" disabled>Next →</button>' +
+          '<button class="quiz-btn quiz-btn-primary" id="next-btn" disabled>' +
+            (currentQ === questions.length - 1 ? 'See My Results' : 'Next Question →') +
+          '</button>' +
         '</div>' +
       '</div>';
 
-    // Attach option listeners
     container.querySelectorAll('.quiz-option').forEach(function (btn) {
       btn.addEventListener('click', function () {
         selectAnswer(container, parseInt(this.getAttribute('data-index')));
@@ -410,30 +405,18 @@ var DC_QUIZ = (function () {
     var feedback = document.getElementById('quiz-feedback');
     var nextBtn  = document.getElementById('next-btn');
 
-    // Disable all options
     options.forEach(function (btn) { btn.disabled = true; });
 
     var isCorrect = (selectedIndex === q.correct);
     if (isCorrect) score++;
     answered.push(isCorrect);
 
-    // Mark correct and selected
     options[q.correct].classList.add('correct');
-    if (!isCorrect) {
-      options[selectedIndex].classList.add('incorrect');
-    }
+    if (!isCorrect) options[selectedIndex].classList.add('incorrect');
 
-    // Show feedback
-    feedback.textContent = (isCorrect ? '✅ Correct! ' : '❌ Not quite. ') + q.explain;
+    feedback.textContent = (isCorrect ? '✅ That\'s right! ' : '❌ Not quite. ') + q.explain;
     feedback.className = 'quiz-feedback show ' + (isCorrect ? 'correct-fb' : 'incorrect-fb');
-
-    // Enable next
     nextBtn.disabled = false;
-
-    // Update label on last question
-    if (currentQ === questions.length - 1) {
-      nextBtn.textContent = 'See My Results';
-    }
   }
 
   /* ── Next question ─────────────────────────────────────────── */
@@ -451,10 +434,11 @@ var DC_QUIZ = (function () {
     var passed   = score >= PASS_SCORE;
     var percent  = Math.round((score / questions.length) * 100);
     var icon     = passed ? '🏆' : '📚';
-    var heading  = passed ? 'Congratulations — You Passed!' : 'Great Effort — Keep Going!';
+    var heading  = passed ? 'Congratulations — You Passed!' : 'Great Effort!';
+
     var message  = passed
-      ? 'You scored ' + score + '/20 (' + percent + '%). You have demonstrated real digital confidence. Enter your name below to print your Certificate of Completion.'
-      : 'You scored ' + score + '/20 (' + percent + '%). You need 16/20 to pass. Review the modules and try again — you are closer than you think!';
+      ? 'You scored ' + score + '/20 (' + percent + '%). You\'ve demonstrated strong digital confidence! Enter your name below to print your Certificate.'
+      : 'You scored ' + score + '/20 (' + percent + '%). You need 16/20 to pass. Review the modules and try again — you\'re closer than you think!';
 
     var nameSection = passed
       ? '<div class="name-input-section">' +
@@ -471,15 +455,13 @@ var DC_QUIZ = (function () {
         '</div>';
 
     container.innerHTML =
-      '<div class="quiz-container">' +
-        '<div class="quiz-results">' +
-          '<span class="quiz-results-icon">' + icon + '</span>' +
-          '<h2>' + heading + '</h2>' +
-          '<div class="quiz-results-score ' + (passed ? 'passing' : 'failing') + '">' + percent + '%</div>' +
-          '<p class="quiz-results-message">' + message + '</p>' +
-          nameSection +
-        '</div>' +
-      '</div>';
+      '<div class="quiz-container"><div class="quiz-results">' +
+        '<span class="quiz-results-icon">' + icon + '</span>' +
+        '<h2>' + heading + '</h2>' +
+        '<div class="quiz-results-score ' + (passed ? 'passing' : 'failing') + '">' + percent + '%</div>' +
+        '<p class="quiz-results-message">' + message + '</p>' +
+        nameSection +
+      '</div></div>';
 
     if (passed) {
       document.getElementById('print-cert-btn').addEventListener('click', function () {
@@ -487,77 +469,101 @@ var DC_QUIZ = (function () {
         printCertificate(name, percent);
       });
     }
-
     var retakeBtn = document.getElementById('retake-btn');
-    if (retakeBtn) {
-      retakeBtn.addEventListener('click', function () {
-        startQuiz(container);
-      });
-    }
+    if (retakeBtn) retakeBtn.addEventListener('click', function () { startQuiz(container); });
   }
 
-  /* ── Certificate generation ─────────────────────────────── */
+  /* ── Professional Certificate ───────────────────────────── */
   function printCertificate(name, percent) {
     var dateStr = new Date().toLocaleDateString('en-CA', {
       year: 'numeric', month: 'long', day: 'numeric'
     });
 
-    var html =
-      '<!DOCTYPE html><html><head><title>Certificate of Completion</title>' +
+    var html = '<!DOCTYPE html><html lang="en"><head>' +
+      '<meta charset="UTF-8"><title>Certificate of Digital Confidence</title>' +
       '<style>' +
-        '@page{size:letter;margin:0}' +
-        'body{font-family:Georgia,serif;margin:0;padding:60px;background:#fff}' +
-        '.cert{border:8px double #2C3E50;padding:60px;text-align:center;min-height:680px;background:linear-gradient(to bottom,#FFFFFF 0%,#F8F9FA 100%)}' +
-        '.cert-org{font-size:14px;color:#546E7A;letter-spacing:4px;text-transform:uppercase;margin-bottom:16px}' +
-        '.cert-title{font-size:44px;color:#1A237E;margin:0 0 12px;font-weight:bold}' +
-        '.cert-subtitle{font-size:18px;color:#546E7A;margin-bottom:32px}' +
-        '.cert-seal{font-size:72px;margin:24px 0}' +
-        '.cert-body{font-size:18px;color:#37474F;line-height:1.8;margin:16px 0}' +
-        '.cert-name{font-size:38px;color:#1565C0;margin:20px 0;font-style:italic;border-bottom:2px solid #BBDEFB;display:inline-block;padding:0 40px 8px}' +
-        '.cert-score{font-size:22px;color:#2E7D32;font-weight:bold;margin:24px 0}' +
-        '.cert-modules{font-size:14px;color:#546E7A;max-width:500px;margin:12px auto;line-height:1.8}' +
-        '.cert-date{font-size:15px;color:#546E7A;margin-top:40px}' +
-        '.cert-signature{margin-top:32px;padding-top:16px;border-top:1px solid #E0E0E0;font-size:14px;color:#90A4AE}' +
+        '@page{size:letter portrait;margin:0}' +
+        '@media print{body{margin:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}}' +
+        'body{font-family:Georgia,"Times New Roman",serif;margin:0;padding:0;background:white}' +
+        '.cert-page{width:8.5in;height:11in;padding:0.75in;box-sizing:border-box;position:relative;background:white}' +
+        '.cert-border{border:12px double #2C3E50;padding:0.5in;height:100%;box-sizing:border-box;position:relative;background:linear-gradient(to bottom,#FFFFFF 0%,#F8F9FA 100%)}' +
+        '.corner{position:absolute;font-size:40px;color:#CFD8DC;line-height:1}' +
+        '.c-tl{top:20px;left:20px}.c-tr{top:20px;right:20px}.c-bl{bottom:20px;left:20px}.c-br{bottom:20px;right:20px}' +
+        '.cert-content{text-align:center;padding:32px 20px}' +
+        '.cert-org{font-size:13px;color:#546E7A;letter-spacing:4px;text-transform:uppercase;margin-bottom:12px;font-weight:600}' +
+        '.cert-title{font-size:52px;color:#1565C0;margin:16px 0 8px;font-weight:bold;line-height:1.2}' +
+        '.cert-subtitle{font-size:20px;color:#37474F;margin-bottom:40px;font-weight:500}' +
+        '.cert-logo{font-size:72px;margin-bottom:16px}' +
+        '.cert-awarded{font-size:16px;color:#546E7A;margin-bottom:12px;font-style:italic}' +
+        '.cert-name{font-size:44px;color:#2C3E50;margin:20px 0;font-weight:bold;font-style:italic;border-bottom:3px solid #2C3E50;display:inline-block;padding:0 40px 10px;min-width:380px}' +
+        '.cert-body{font-size:16px;color:#37474F;line-height:1.8;margin:28px auto;max-width:540px}' +
+        '.cert-achievement{background:linear-gradient(135deg,#E8F5E9 0%,#C8E6C9 100%);border:2px solid #4CAF50;border-radius:12px;padding:18px 24px;margin:24px auto;max-width:460px}' +
+        '.cert-achievement h3{color:#2E7D32;margin:0 0 8px;font-size:18px}' +
+        '.cert-score{font-size:32px;color:#2E7D32;font-weight:bold;margin:6px 0}' +
+        '.cert-skills{text-align:left;margin:20px auto;max-width:500px;color:#37474F;font-size:14px;line-height:1.6}' +
+        '.cert-skills strong{display:block;margin-bottom:6px;color:#2C3E50;font-size:15px}' +
+        '.cert-skills ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 20px}' +
+        '.cert-skills li{padding-left:22px;position:relative}' +
+        '.cert-skills li:before{content:"✓";position:absolute;left:0;color:#4CAF50;font-weight:bold}' +
+        '.cert-footer{margin-top:40px;padding-top:16px;border-top:2px solid #CFD8DC;display:flex;justify-content:space-between;align-items:flex-end}' +
+        '.cert-seal{text-align:center}' +
+        '.seal-icon{font-size:56px;display:block;margin-bottom:4px}' +
+        '.seal-text{font-size:11px;color:#546E7A;letter-spacing:2px;text-transform:uppercase}' +
+        '.cert-date-block{text-align:right;font-size:15px;color:#546E7A}' +
+        '.cert-date-block strong{display:block;font-size:16px;color:#2C3E50;margin-top:4px}' +
       '</style></head><body>' +
-      '<div class="cert">' +
-        '<div class="cert-org">Digital Confidence Centre</div>' +
-        '<div class="cert-title">Certificate of Completion</div>' +
-        '<div class="cert-subtitle">Digital Literacy Training Programme</div>' +
-        '<div class="cert-seal">🏆</div>' +
-        '<div class="cert-body">This certifies that</div>' +
-        '<div class="cert-name">' + escHTML(name) + '</div>' +
-        '<div class="cert-body">has successfully completed the comprehensive 8-module Digital Confidence training programme, demonstrating proficiency in:</div>' +
-        '<div class="cert-modules">Device Navigation &nbsp;·&nbsp; Online Security &nbsp;·&nbsp; Password Safety<br>App Store Safety &nbsp;·&nbsp; Email &amp; Messaging &nbsp;·&nbsp; Online Banking<br>Creative Technology &nbsp;·&nbsp; Staying Connected with Family</div>' +
-        '<div class="cert-score">Assessment Score: ' + percent + '%</div>' +
-        '<div class="cert-date">Awarded on ' + dateStr + '</div>' +
-        '<div class="cert-signature">Digital Confidence Centre &nbsp;·&nbsp; digitalconfidencecentre.ca</div>' +
-      '</div></body></html>';
+      '<div class="cert-page"><div class="cert-border">' +
+        '<div class="corner c-tl">✦</div><div class="corner c-tr">✦</div>' +
+        '<div class="corner c-bl">✦</div><div class="corner c-br">✦</div>' +
+        '<div class="cert-content">' +
+          '<div class="cert-org">Digital Confidence Centre</div>' +
+          '<div class="cert-title">Certificate of Completion</div>' +
+          '<div class="cert-subtitle">Digital Literacy Training Programme</div>' +
+          '<div class="cert-logo">🎓</div>' +
+          '<div class="cert-awarded">This certificate is proudly awarded to</div>' +
+          '<div class="cert-name">' + escHTML(name) + '</div>' +
+          '<div class="cert-body">In recognition of successfully completing the comprehensive 8-module Digital Confidence training programme, demonstrating applied proficiency in safe and confident use of digital devices and online services.</div>' +
+          '<div class="cert-achievement">' +
+            '<h3>Final Assessment Result</h3>' +
+            '<div class="cert-score">' + percent + '% — Proficient</div>' +
+            '<p style="margin:4px 0 0;color:#2E7D32;font-size:14px;">Scenario-based assessment passed</p>' +
+          '</div>' +
+          '<div class="cert-skills"><strong>Competencies Demonstrated:</strong>' +
+            '<ul>' +
+              '<li>Device navigation &amp; escape hatch</li><li>Online security &amp; scam awareness</li>' +
+              '<li>Password management</li><li>Safe app installation</li>' +
+              '<li>Email &amp; messaging security</li><li>Online banking safety</li>' +
+              '<li>Creative device applications</li><li>Family connectivity</li>' +
+            '</ul>' +
+          '</div>' +
+          '<div class="cert-footer">' +
+            '<div class="cert-seal"><span class="seal-icon">🏆</span><span class="seal-text">Official Certificate</span></div>' +
+            '<div class="cert-date-block">Awarded on<strong>' + dateStr + '</strong>digitalconfidencecentre.ca</div>' +
+          '</div>' +
+        '</div>' +
+      '</div></div>' +
+      '<script>window.onload=function(){setTimeout(function(){window.print();},600);};<\/script>' +
+      '</body></html>';
 
-    var win = window.open('', '_blank');
+    var win = window.open('', '_blank', 'width=900,height=1150');
     if (win) {
       win.document.write(html);
       win.document.close();
-      win.onload = function () { win.print(); };
     }
   }
 
   /* ── Module completion check ─────────────────────────────── */
   function isModuleDone(moduleNum) {
-    // Uses the same keys as progress.js (dc-progress-m{n}-{i})
     var prefix = 'dc-progress-m' + moduleNum;
-    var hasItems = false;
-    var allDone  = true;
+    var hasItems = false, allDone = true;
     for (var i = 1; i <= 10; i++) {
       var val = localStorage.getItem(prefix + '-' + i);
-      if (val !== null) {
-        hasItems = true;
-        if (val !== 'true') allDone = false;
-      }
+      if (val !== null) { hasItems = true; if (val !== 'true') allDone = false; }
     }
     return hasItems && allDone;
   }
 
-  /* ── Check if all modules complete (called from progress.js) */
+  /* ── Check all modules complete ─────────────────────────── */
   function checkFinalQuizUnlock() {
     var allDone = true;
     for (var i = 1; i <= 8; i++) {
@@ -571,7 +577,6 @@ var DC_QUIZ = (function () {
     return allDone;
   }
 
-  /* ── Unlock notification toast ─────────────────────────────── */
   function showUnlockNotification() {
     if (document.querySelector('.quiz-unlock-notification')) return;
     var el = document.createElement('div');
@@ -581,17 +586,13 @@ var DC_QUIZ = (function () {
       '<div class="quiz-unlock-content">' +
         '<div class="quiz-unlock-icon">🎉</div>' +
         '<h3>All Modules Complete!</h3>' +
-        '<p>You\'ve unlocked the Final Assessment. Take the 20-question quiz to earn your Certificate.</p>' +
+        '<p>You\'ve unlocked the Final Assessment. Take the quiz to earn your Certificate.</p>' +
         '<a href="final-quiz.html" class="btn-success">Take Final Assessment →</a>' +
       '</div>';
-
     document.body.appendChild(el);
-    el.querySelector('.quiz-unlock-close').addEventListener('click', function () {
-      el.remove();
-    });
+    el.querySelector('.quiz-unlock-close').addEventListener('click', function () { el.remove(); });
   }
 
-  /* ── Show quiz banner on home page ─────────────────────────── */
   function showHomeBanner() {
     var banner = document.getElementById('final-quiz-banner');
     if (banner) banner.classList.add('visible');
@@ -599,10 +600,8 @@ var DC_QUIZ = (function () {
 
   function escHTML(str) {
     return String(str)
-      .replace(/&/g,'&amp;')
-      .replace(/</g,'&lt;')
-      .replace(/>/g,'&gt;')
-      .replace(/"/g,'&quot;');
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
   return {
@@ -614,9 +613,6 @@ var DC_QUIZ = (function () {
 
 })();
 
-// Auto-init on quiz page
 document.addEventListener('DOMContentLoaded', function () {
-  if (document.getElementById('quiz-app')) {
-    DC_QUIZ.init();
-  }
+  if (document.getElementById('quiz-app')) DC_QUIZ.init();
 });

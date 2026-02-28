@@ -1,14 +1,15 @@
 /* ============================================
    Digital Confidence Centre
    Read Aloud / Text-to-Speech Feature
-   Adds Listen buttons to long text blocks
+   v2 — threshold 4+/200+, button at bottom,
+        stable word highlighting with originalHTML
    ============================================ */
 
 (function () {
   'use strict';
 
-  // Minimum sentences before a Listen button appears
-  var MIN_SENTENCES = 2;
+  var MIN_SENTENCES = 4;
+  var MIN_CHARS     = 200;
 
   var currentUtterance = null;
   var currentElement   = null;
@@ -17,29 +18,32 @@
 
   /* ── Init ─────────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', function () {
-    if (!('speechSynthesis' in window)) return; // browser doesn't support TTS
+    if (!('speechSynthesis' in window)) return;
 
-    // Target story blocks, tip blocks, confidence checks, and large paragraphs
+    // Selectors for eligible blocks
     var selectors = [
       '.story-block > p',
       '.tip-block > p',
       '.tip-box > p',
-      '.confidence-check > p',
-      '.confidence-check-box > p',
       '.warning-box > p',
-      '.danger-block > p'
+      '.danger-block > p',
+      '.exercise-block > p',
+      '.walkthrough > p'
     ];
 
-    var blocks = document.querySelectorAll(selectors.join(', '));
-    blocks.forEach(function (el) {
+    document.querySelectorAll(selectors.join(', ')).forEach(function (el) {
+      // Skip anything inside confidence-check sections
+      if (el.closest('.confidence-check') || el.closest('.confidence-check-box')) return;
+
       var text = el.textContent.trim();
       var sentences = (text.match(/[.!?]+/g) || []).length;
-      if (sentences >= MIN_SENTENCES && text.length > 80) {
+
+      if (sentences >= MIN_SENTENCES || text.length >= MIN_CHARS) {
         wrapWithReadAloud(el);
       }
     });
 
-    // Restore speed preference in any speed selects on the page
+    // Restore speed preference
     var speedSel = document.getElementById('ra-speed-select');
     if (speedSel) {
       speedSel.value = localStorage.getItem('dc-ra-speed') || '1.0';
@@ -49,10 +53,13 @@
     }
   });
 
-  /* ── Wrap element with read-aloud controls ────────────── */
+  /* ── Wrap element — button goes BELOW content ─────────── */
   function wrapWithReadAloud(element) {
-    var wrapper = document.createElement('div');
+    var wrapper  = document.createElement('div');
     wrapper.className = 'read-aloud-wrapper';
+
+    element.parentNode.insertBefore(wrapper, element);
+    wrapper.appendChild(element);   // content first
 
     var controls = document.createElement('div');
     controls.className = 'read-aloud-controls';
@@ -60,14 +67,12 @@
     var btn = document.createElement('button');
     btn.className = 'read-aloud-btn';
     btn.setAttribute('aria-label', 'Read this paragraph aloud');
-    btn.innerHTML = '<span class="read-aloud-icon">▶</span><span class="read-aloud-label">Listen</span>';
+    btn.innerHTML =
+      '<span class="read-aloud-icon" aria-hidden="true">▶</span>' +
+      '<span class="read-aloud-label">Listen to This Section</span>';
 
     controls.appendChild(btn);
-
-    // Insert wrapper before the element, move element inside
-    element.parentNode.insertBefore(wrapper, element);
-    wrapper.appendChild(controls);
-    wrapper.appendChild(element);
+    wrapper.appendChild(controls);  // controls after content
 
     btn.addEventListener('click', function () {
       handleButtonClick(element, btn);
@@ -78,18 +83,17 @@
   function handleButtonClick(element, btn) {
     var synth = window.speechSynthesis;
 
-    if (currentElement === element && synth.speaking && !isPaused) {
-      // Currently reading this element — pause it
-      synth.pause();
-      isPaused = true;
-      setButtonState(btn, 'paused');
-    } else if (currentElement === element && isPaused) {
-      // Currently paused on this element — resume
-      synth.resume();
-      isPaused = false;
-      setButtonState(btn, 'playing');
+    if (currentElement === element) {
+      if (synth.speaking && !isPaused) {
+        synth.pause();
+        isPaused = true;
+        setButtonState(btn, 'paused');
+      } else if (isPaused) {
+        synth.resume();
+        isPaused = false;
+        setButtonState(btn, 'playing');
+      }
     } else {
-      // Start reading this element (stop any previous)
       stopReading();
       startReading(element, btn);
     }
@@ -98,20 +102,23 @@
   /* ── Start reading ────────────────────────────────────── */
   function startReading(element, btn) {
     var synth = window.speechSynthesis;
+
+    // Save original HTML for safe highlight restoration
+    if (!element.dataset.originalHtml) {
+      element.dataset.originalHtml = element.innerHTML;
+    }
+
     var text = element.textContent.trim();
     var utterance = new SpeechSynthesisUtterance(text);
 
-    var speed = parseFloat(localStorage.getItem('dc-ra-speed') || '1.0');
-    utterance.rate = speed;
+    utterance.rate = parseFloat(localStorage.getItem('dc-ra-speed') || '1.0');
     utterance.lang = 'en-CA';
 
-    // Prefer a female English voice if available
+    // Pick a clear English voice if available
     var voices = synth.getVoices();
     var preferred = voices.find(function (v) {
-      return v.lang.startsWith('en') && v.name.toLowerCase().includes('female');
-    }) || voices.find(function (v) {
-      return v.lang.startsWith('en');
-    });
+      return v.lang.startsWith('en') && /female|zira|samantha/i.test(v.name);
+    }) || voices.find(function (v) { return v.lang.startsWith('en'); });
     if (preferred) utterance.voice = preferred;
 
     utterance.onstart = function () {
@@ -119,30 +126,18 @@
       setButtonState(btn, 'playing');
     };
 
-    utterance.onend = function () {
-      element.classList.remove('being-read');
-      clearHighlights(element);
-      setButtonState(btn, 'idle');
-      currentUtterance = null;
-      currentElement   = null;
-      currentButton    = null;
-      isPaused = false;
-    };
-
-    utterance.onerror = function () {
-      element.classList.remove('being-read');
-      setButtonState(btn, 'idle');
-      currentUtterance = null;
-      currentElement   = null;
-      currentButton    = null;
-      isPaused = false;
-    };
-
-    // Word boundary highlighting
     utterance.onboundary = function (event) {
       if (event.name === 'word' && typeof event.charIndex === 'number') {
         highlightWord(element, text, event.charIndex, event.charLength || 1);
       }
+    };
+
+    utterance.onend = function () {
+      finishReading(element, btn);
+    };
+
+    utterance.onerror = function () {
+      finishReading(element, btn);
     };
 
     currentUtterance = utterance;
@@ -153,6 +148,16 @@
     synth.speak(utterance);
   }
 
+  function finishReading(element, btn) {
+    element.classList.remove('being-read');
+    clearHighlights(element);
+    setButtonState(btn, 'idle');
+    currentUtterance = null;
+    currentElement   = null;
+    currentButton    = null;
+    isPaused = false;
+  }
+
   /* ── Stop all reading ────────────────────────────────── */
   function stopReading() {
     window.speechSynthesis.cancel();
@@ -160,45 +165,50 @@
       currentElement.classList.remove('being-read');
       clearHighlights(currentElement);
     }
-    if (currentButton) {
-      setButtonState(currentButton, 'idle');
-    }
+    if (currentButton) setButtonState(currentButton, 'idle');
     currentUtterance = null;
     currentElement   = null;
     currentButton    = null;
     isPaused = false;
   }
 
-  /* ── Word highlight ────────────────────────────────────── */
-  function highlightWord(element, originalText, charIndex, charLength) {
-    clearHighlights(element);
-    var before = originalText.substring(0, charIndex);
-    var word   = originalText.substring(charIndex, charIndex + charLength);
-    var after  = originalText.substring(charIndex + charLength);
+  /* ── Word highlight (stable via originalHTML) ─────────── */
+  function highlightWord(element, plainText, charIndex, charLength) {
+    // Restore from originalHTML first to avoid nested <mark> accumulation
+    if (element.dataset.originalHtml) {
+      element.innerHTML = element.dataset.originalHtml;
+    }
 
-    // Safely set innerHTML preserving structure
+    var before = plainText.substring(0, charIndex);
+    var word   = plainText.substring(charIndex, charIndex + charLength);
+    var after  = plainText.substring(charIndex + charLength);
+
     element.innerHTML =
-      escapeHTML(before) +
-      '<mark class="word-highlight">' + escapeHTML(word) + '</mark>' +
-      escapeHTML(after);
-  }
+      safeText(before) +
+      '<mark class="word-highlight">' + safeText(word) + '</mark>' +
+      safeText(after);
 
-  function clearHighlights(element) {
-    var marks = element.querySelectorAll('.word-highlight');
-    if (marks.length) {
-      // Rebuild text content safely
-      element.innerHTML = element.textContent;
+    // Scroll the highlighted word into view
+    var mark = element.querySelector('.word-highlight');
+    if (mark) {
+      mark.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   }
 
-  function escapeHTML(str) {
-    return str
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;');
+  function clearHighlights(element) {
+    if (element.dataset.originalHtml) {
+      element.innerHTML = element.dataset.originalHtml;
+    }
   }
 
-  /* ── Button state helper ─────────────────────────────── */
+  /* Use a DOM node to safely escape text */
+  function safeText(str) {
+    var d = document.createElement('span');
+    d.textContent = str;
+    return d.innerHTML;
+  }
+
+  /* ── Button state ────────────────────────────────────── */
   function setButtonState(btn, state) {
     var icon  = btn.querySelector('.read-aloud-icon');
     var label = btn.querySelector('.read-aloud-label');
@@ -214,12 +224,11 @@
       btn.setAttribute('aria-label', 'Resume reading');
     } else {
       icon.textContent  = '▶';
-      label.textContent = 'Listen';
+      label.textContent = 'Listen to This Section';
       btn.setAttribute('aria-label', 'Read this paragraph aloud');
     }
   }
 
-  // Stop if user navigates away
   window.addEventListener('beforeunload', function () {
     window.speechSynthesis.cancel();
   });

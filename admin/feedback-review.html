@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Beta Feedback Dashboard — Digital Confidence Centre</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 40px 24px;
+      background: #F5F5F5;
+      color: #2C3E50;
+    }
+    .dashboard { max-width: 1100px; margin: 0 auto; }
+    h1 { color: #2C3E50; margin: 0 0 8px; font-size: 28px; }
+    .subtitle { color: #546E7A; margin: 0 0 36px; font-size: 15px; }
+
+    /* Stats */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .stat-card {
+      background: white;
+      padding: 20px 24px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border-left: 5px solid #FF9800;
+    }
+    .stat-card.bugs   { border-color: #F44336; }
+    .stat-card.sugg   { border-color: #2196F3; }
+    .stat-card.praise { border-color: #4CAF50; }
+    .stat-card.conf   { border-color: #FF9800; }
+    .stat-number { font-size: 40px; font-weight: 700; color: #2C3E50; line-height: 1; }
+    .stat-label  { color: #78909C; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px; }
+
+    /* Toolbar */
+    .toolbar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .toolbar-btn {
+      background: #2196F3;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .toolbar-btn:hover { background: #1565C0; }
+    .toolbar-btn.danger { background: #F44336; }
+    .toolbar-btn.danger:hover { background: #C62828; }
+    .filter-select {
+      padding: 10px 14px;
+      border: 2px solid #E0E0E0;
+      border-radius: 8px;
+      font-size: 14px;
+      background: white;
+      color: #2C3E50;
+    }
+    .count-label { color: #546E7A; font-size: 14px; margin-left: auto; }
+
+    /* Feedback list */
+    .feedback-list {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .feedback-item {
+      border-left: 5px solid #FF9800;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      background: #FAFAFA;
+      border-radius: 0 8px 8px 0;
+    }
+    .feedback-item.bug        { border-color: #F44336; }
+    .feedback-item.suggestion { border-color: #2196F3; }
+    .feedback-item.praise     { border-color: #4CAF50; }
+    .feedback-item.confusing  { border-color: #FF9800; }
+    .fi-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .fi-type {
+      background: #FF9800;
+      color: white;
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .fi-type.bug        { background: #F44336; }
+    .fi-type.suggestion { background: #2196F3; }
+    .fi-type.praise     { background: #4CAF50; }
+    .fi-date  { color: #90A4AE; font-size: 13px; margin-left: auto; }
+    .fi-page  { font-size: 13px; color: #546E7A; font-weight: 600; margin-bottom: 8px; }
+    .fi-msg   { font-size: 15px; color: #2C3E50; line-height: 1.6; margin-bottom: 8px; white-space: pre-wrap; }
+    .fi-meta  { display: flex; gap: 16px; font-size: 12px; color: #90A4AE; flex-wrap: wrap; }
+    .empty    { text-align: center; padding: 60px 20px; color: #90A4AE; font-size: 17px; }
+
+    @media (max-width: 600px) {
+      body { padding: 20px 16px; }
+      .stat-number { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <h1>🎯 Beta Feedback Dashboard</h1>
+    <p class="subtitle">Feedback is stored locally on this device. Use Export CSV to collect and share with the team.</p>
+
+    <div class="stats" id="stats-grid">
+      <!-- Populated by JS -->
+    </div>
+
+    <div class="toolbar">
+      <button class="toolbar-btn" onclick="exportCSV()">📊 Export CSV</button>
+      <button class="toolbar-btn" onclick="refreshDashboard()">🔄 Refresh</button>
+      <select class="filter-select" id="filter-type" onchange="refreshDashboard()">
+        <option value="all">All Types</option>
+        <option value="bug">🐛 Bugs</option>
+        <option value="suggestion">💡 Suggestions</option>
+        <option value="confusing">😕 Confusing</option>
+        <option value="praise">👍 Praise</option>
+        <option value="other">💬 Other</option>
+      </select>
+      <span class="count-label" id="count-label"></span>
+      <button class="toolbar-btn danger" onclick="clearAllFeedback()">🗑️ Clear All</button>
+    </div>
+
+    <div class="feedback-list" id="feedback-list">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+
+  <script>
+    var STORAGE_KEY = 'dc-beta-feedback';
+
+    function getFeedback() {
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+      } catch (e) { return []; }
+    }
+
+    var TYPE_ICONS = {
+      bug: '🐛', suggestion: '💡', confusing: '😕',
+      praise: '👍', other: '💬'
+    };
+
+    function refreshDashboard() {
+      var all  = getFeedback();
+      var filter = document.getElementById('filter-type').value;
+      var shown  = filter === 'all' ? all : all.filter(function(f){ return f.type === filter; });
+
+      // Stats
+      document.getElementById('stats-grid').innerHTML = [
+        { cls:'',       num: all.length,                                          lbl:'Total Feedback'  },
+        { cls:'bugs',   num: all.filter(function(f){return f.type==='bug'}).length,         lbl:'Bug Reports'     },
+        { cls:'sugg',   num: all.filter(function(f){return f.type==='suggestion'}).length,  lbl:'Suggestions'     },
+        { cls:'praise', num: all.filter(function(f){return f.type==='praise'}).length,      lbl:'Positive'        },
+        { cls:'conf',   num: all.filter(function(f){return f.type==='confusing'}).length,   lbl:'Confusing Items' }
+      ].map(function(s){
+        return '<div class="stat-card ' + s.cls + '">' +
+          '<div class="stat-number">' + s.num + '</div>' +
+          '<div class="stat-label">' + s.lbl + '</div>' +
+        '</div>';
+      }).join('');
+
+      // Count label
+      document.getElementById('count-label').textContent =
+        'Showing ' + shown.length + ' of ' + all.length + ' entries';
+
+      // Feedback items (newest first)
+      var sorted = shown.slice().sort(function(a,b){
+        return new Date(b.timestamp) - new Date(a.timestamp);
+      });
+
+      if (sorted.length === 0) {
+        document.getElementById('feedback-list').innerHTML =
+          '<div class="empty">📭 No feedback yet' + (filter !== 'all' ? ' for this type' : '') + '.</div>';
+        return;
+      }
+
+      document.getElementById('feedback-list').innerHTML = sorted.map(function(item, idx){
+        var typeClass = item.type || 'other';
+        var icon = TYPE_ICONS[typeClass] || '💬';
+        return '<div class="feedback-item ' + typeClass + '">' +
+          '<div class="fi-header">' +
+            '<span class="fi-type ' + typeClass + '">' + icon + ' ' + (item.type || 'other') + '</span>' +
+            '<span class="fi-date">' + formatDate(item.timestamp) + '</span>' +
+          '</div>' +
+          '<div class="fi-page">📄 ' + escHTML(item.page || '') + '</div>' +
+          '<div class="fi-msg">' + escHTML(item.message || '') + '</div>' +
+          '<div class="fi-meta">' +
+            '<span>📧 ' + escHTML(item.email || 'anonymous') + '</span>' +
+            '<span>🖥️ ' + escHTML(item.screenSize || '?') + '</span>' +
+            '<span>' + (item.darkMode ? '🌙 Dark' : '☀️ Light') + '</span>' +
+            '<span>🌐 ' + escHTML((item.url || '').replace('https://twobirds-kramerica.github.io/digital-confidence/','')) + '</span>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    }
+
+    function formatDate(ts) {
+      if (!ts) return '?';
+      var d = new Date(ts);
+      return d.toLocaleDateString('en-CA', { month:'short', day:'numeric' }) + ' ' +
+             d.toLocaleTimeString('en-CA', { hour:'2-digit', minute:'2-digit' });
+    }
+
+    function exportCSV() {
+      var all = getFeedback();
+      if (all.length === 0) { alert('No feedback to export.'); return; }
+
+      var headers = ['Timestamp','Page','Type','Message','Email','Screen','Dark Mode','URL'];
+      var rows = all.map(function(f){
+        return [
+          f.timestamp || '',
+          '"' + (f.page || '').replace(/"/g,'""') + '"',
+          f.type || '',
+          '"' + (f.message || '').replace(/"/g,'""') + '"',
+          f.email || 'anonymous',
+          f.screenSize || '',
+          f.darkMode ? 'Yes' : 'No',
+          '"' + (f.url || '').replace(/"/g,'""') + '"'
+        ].join(',');
+      });
+
+      var csv = [headers.join(',')].concat(rows).join('\n');
+      var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      var url  = URL.createObjectURL(blob);
+      var link = document.createElement('a');
+      link.href     = url;
+      link.download = 'dc-beta-feedback-' + new Date().toISOString().split('T')[0] + '.csv';
+      link.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function clearAllFeedback() {
+      if (confirm('Delete ALL feedback? This cannot be undone.')) {
+        localStorage.removeItem(STORAGE_KEY);
+        refreshDashboard();
+      }
+    }
+
+    function escHTML(str) {
+      var d = document.createElement('div');
+      d.textContent = String(str);
+      return d.innerHTML;
+    }
+
+    // Initial load + auto-refresh every 30s
+    refreshDashboard();
+    setInterval(refreshDashboard, 30000);
+  </script>
+</body>
+</html>
