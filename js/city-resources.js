@@ -45,19 +45,25 @@ var NATIONAL_RESOURCES = [
   {
     name: 'Connected Canadians',
     phone: '1-855-808-0505',
-    description: 'Free one-on-one technology help for older adults. Trusted by 10,000+ seniors, Government of Canada funded. Trained volunteers help by phone or video call at your pace.',
+    website: 'connectedcanadians.ca',
+    description: 'Free one-on-one technology help for older adults by phone or video call. Trained volunteers work at your pace — no question is too basic.',
+    availability: 'Monday–Friday, 9am–5pm ET · Toll-free · Government of Canada funded',
     efficacy: 'Government of Canada funded — trusted by 10,000+ seniors'
   },
   {
     name: 'Cyber-Seniors',
     phone: '1-844-217-3057',
-    description: 'Award-winning programme that pairs older adults with trained tech mentors. Featured on CBC. They specialise in helping with phones, tablets, video calling, and online safety.',
+    website: 'cyberseniors.org',
+    description: 'Award-winning programme pairing older adults with trained tech mentors. Helps with phones, tablets, video calling, and online safety. Featured on CBC.',
+    availability: 'Call to book a free appointment · Toll-free',
     efficacy: 'Award-winning, CBC featured'
   },
   {
     name: 'Canadian Anti-Fraud Centre',
     phone: '1-888-495-8501',
-    description: 'The national reporting centre for fraud and scams in Canada. Report scams, get advice, and check if something is a known scam.',
+    website: 'antifraudcentre-centreantifraude.ca',
+    description: 'The official national centre for reporting fraud and scams in Canada. Call to report a scam, get advice, or check if something is suspicious.',
+    availability: 'Monday–Friday, 9am–4:45pm ET · Toll-free',
     efficacy: 'Official Government of Canada resource'
   },
   {
@@ -65,6 +71,7 @@ var NATIONAL_RESOURCES = [
     phone: '',
     website: 'getcybersafe.gc.ca',
     description: 'The Government of Canada\'s official cyber security website. Plain-language guides on passwords, phishing, safe shopping, and privacy.',
+    availability: 'Free online guides — available 24 hours a day',
     efficacy: 'Official Government of Canada resource'
   }
 ];
@@ -83,11 +90,17 @@ function dcGetCityData() {
 }
 
 /* Build a resource card HTML string with large tappable phone link */
-function dcResourceCard(name, phone, description, efficacy, extra) {
+function dcResourceCard(name, phone, description, efficacy, extra, website, availability) {
   var html = '<div class="resource-card">';
   html += '<h4>' + name + '</h4>';
   if (description) html += '<p>' + description + '</p>';
-  if (phone) html += '<p class="resource-phone"><a href="tel:' + phone.replace(/[^0-9+]/g, '') + '">' + phone + '</a></p>';
+  if (phone || website) {
+    html += '<div class="resource-contact">';
+    if (phone) html += '<p><strong>Phone:</strong> <a href="tel:' + phone.replace(/[^0-9+]/g, '') + '">' + phone + '</a></p>';
+    if (website) html += '<p><strong>Website:</strong> <a href="https://' + website + '" target="_blank" rel="noopener noreferrer">' + website + '</a></p>';
+    html += '</div>';
+  }
+  if (availability) html += '<p class="resource-availability">' + availability + '</p>';
   if (extra) html += extra;
   if (efficacy) html += '<span class="efficacy-badge">' + efficacy + '</span>';
   html += '</div>';
@@ -124,11 +137,7 @@ function dcRenderResourcesPage() {
   html += '<p>These Canada-wide programmes are available to everyone, no matter where you live.</p>';
   for (var n = 0; n < NATIONAL_RESOURCES.length; n++) {
     var r = NATIONAL_RESOURCES[n];
-    var extra = '';
-    if (r.website) {
-      extra = '<p><a href="https://' + r.website + '" target="_blank" rel="noopener">' + r.website + '</a></p>';
-    }
-    html += dcResourceCard(r.name, r.phone, r.description, r.efficacy, extra);
+    html += dcResourceCard(r.name, r.phone, r.description, r.efficacy, '', r.website, r.availability);
   }
 
   container.innerHTML = html;
