@@ -3673,3 +3673,90 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   border-color: #4CAF50;
   color: #81C784;
 }
+
+/* ── Inline per-instance speed controls ─────────────────────── */
+.listen-controls-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.speed-controls-inline {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #F0F4F8;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid #CFD8DC;
+  flex-wrap: wrap;
+}
+
+.speed-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #546E7A;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+
+.speed-btn-inline {
+  background: transparent;
+  border: none;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #546E7A;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.15s;
+  min-width: 34px;
+  line-height: 1.4;
+}
+
+.speed-btn-inline:hover {
+  background: #E0E7EF;
+  color: #1565C0;
+}
+
+.speed-btn-inline.active {
+  background: #1565C0;
+  color: #FFFFFF;
+  box-shadow: 0 1px 4px rgba(21, 101, 192, 0.35);
+}
+
+[data-theme="dark"] .speed-controls-inline {
+  background: #1E2D3D;
+  border-color: #37474F;
+}
+
+[data-theme="dark"] .speed-label {
+  color: #90A4AE;
+}
+
+[data-theme="dark"] .speed-btn-inline {
+  color: #90A4AE;
+}
+
+[data-theme="dark"] .speed-btn-inline:hover {
+  background: #263238;
+  color: #90CAF9;
+}
+
+[data-theme="dark"] .speed-btn-inline.active {
+  background: #1565C0;
+  color: #FFFFFF;
+}
+
+@media (max-width: 480px) {
+  .speed-controls-inline {
+    gap: 2px;
+    padding: 4px 8px;
+  }
+  .speed-btn-inline {
+    font-size: 10px;
+    padding: 2px 6px;
+    min-width: 28px;
+  }
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#64B5F6"/>
+      <stop offset="100%" stop-color="#1565C0"/>
+    </linearGradient>
+  </defs>
+  <!-- Sky background with rounded corners -->
+  <rect width="32" height="32" fill="url(#sky)" rx="6"/>
+  <!-- Subtle clouds -->
+  <ellipse cx="7" cy="7" rx="3.5" ry="1.8" fill="white" opacity="0.22"/>
+  <ellipse cx="26" cy="9" rx="2.5" ry="1.4" fill="white" opacity="0.18"/>
+  <!-- Bird 1: larger, upper-left, wings spread wide in flight -->
+  <path d="M3,13 C6,8.5 8.5,9.5 10,11.5 C11.5,9.5 14,8.5 17,13 L10,14.5 Z"
+        fill="white" opacity="0.95"/>
+  <!-- Bird 2: smaller, lower-right, wings spread -->
+  <path d="M17,21 C19,18 20.5,18.5 22,20 C23.5,18.5 25,18 27,21 L22,22 Z"
+        fill="white" opacity="0.88"/>
+</svg>

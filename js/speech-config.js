@@ -1,13 +1,12 @@
 /* ============================================================
    Digital Confidence Centre — Speech Configuration & TTS
-   Provides voice selection, speed controls, and read-aloud
-   buttons for all long-form content sections.
+   Per-instance inline speed controls. Listen ↔ Pause toggle.
    ============================================================ */
 
 var VOICE_CONFIG = {
   primaryVoice: null,
   secondaryVoice: null,
-  defaultRate: 0.85,
+  defaultRate: 1.0,
   pitch: 1.0,
   volume: 1.0
 };
@@ -37,9 +36,8 @@ function initializeVoices() {
   VOICE_CONFIG.primaryVoice   = femaleVoices[0] || allVoices[0] || null;
   VOICE_CONFIG.secondaryVoice = maleVoices[0]   || allVoices[1] || null;
 
-  var saved = parseFloat(localStorage.getItem('dc-speech-speed') || '0.85');
+  var saved = parseFloat(localStorage.getItem('dc-speech-speed') || '1.0');
   VOICE_CONFIG.defaultRate = saved;
-  updateSpeedButtons(saved);
 }
 
 if (window.speechSynthesis) {
@@ -58,8 +56,8 @@ function getVoiceForContent(element) {
   return VOICE_CONFIG.primaryVoice;
 }
 
-/* ---- Core TTS ---- */
-function dcReadAloud(element, button) {
+/* ---- Core TTS (accepts explicit rate) ---- */
+function dcReadAloud(element, button, rate) {
   if (!window.speechSynthesis) return;
   window.speechSynthesis.cancel();
 
@@ -68,7 +66,7 @@ function dcReadAloud(element, button) {
 
   var utterance = new SpeechSynthesisUtterance(text);
   utterance.voice  = getVoiceForContent(element);
-  utterance.rate   = VOICE_CONFIG.defaultRate;
+  utterance.rate   = rate || VOICE_CONFIG.defaultRate;
   utterance.pitch  = VOICE_CONFIG.pitch;
   utterance.volume = VOICE_CONFIG.volume;
 
@@ -96,6 +94,10 @@ function dcReadAloud(element, button) {
   };
 
   utterance.onerror = function() {
+    var icon  = button.querySelector('.read-aloud-icon');
+    var label = button.querySelector('.read-aloud-label');
+    if (icon)  icon.textContent  = '▶️';
+    if (label) label.textContent = 'Listen';
     element.classList.remove('being-read');
     dcClearHighlight(element);
   };
@@ -103,22 +105,20 @@ function dcReadAloud(element, button) {
   window.speechSynthesis.speak(utterance);
 }
 
-function dcToggleReadAloud(element, button) {
+/* ---- Toggle: Listen ↔ Pause only (no Resume state) ---- */
+function dcToggleReadAloud(element, button, rate) {
   if (!window.speechSynthesis) return;
-  if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
-    window.speechSynthesis.pause();
+  if (window.speechSynthesis.speaking) {
+    /* Stop completely — button returns to "Listen" */
+    window.speechSynthesis.cancel();
     var icon  = button.querySelector('.read-aloud-icon');
     var label = button.querySelector('.read-aloud-label');
     if (icon)  icon.textContent  = '▶️';
-    if (label) label.textContent = 'Resume';
-  } else if (window.speechSynthesis.paused) {
-    window.speechSynthesis.resume();
-    var icon2  = button.querySelector('.read-aloud-icon');
-    var label2 = button.querySelector('.read-aloud-label');
-    if (icon2)  icon2.textContent  = '⏸️';
-    if (label2) label2.textContent = 'Pause';
+    if (label) label.textContent = 'Listen';
+    element.classList.remove('being-read');
+    dcClearHighlight(element);
   } else {
-    dcReadAloud(element, button);
+    dcReadAloud(element, button, rate);
   }
 }
 
@@ -149,26 +149,74 @@ function dcEscapeHtml(text) {
   return d.innerHTML;
 }
 
-/* ---- Button factory ---- */
+/* ---- Inline speed button HTML builder ---- */
 var DC_TTS_MIN_SENTENCES = 4;
 var DC_TTS_MIN_CHARS     = 200;
 
+var DC_SPEEDS = [
+  { v: '0.5',  label: '0.5x', aria: 'Half speed'   },
+  { v: '0.75', label: '0.75x', aria: 'Slow speed'  },
+  { v: '1',    label: '1x',   aria: 'Normal speed' },
+  { v: '1.5',  label: '1.5x', aria: 'Fast speed'   },
+  { v: '2',    label: '2x',   aria: 'Double speed'  }
+];
+
+function dcBuildSpeedButtons(savedSpeed) {
+  return DC_SPEEDS.map(function(s) {
+    var active = (Math.abs(parseFloat(s.v) - savedSpeed) < 0.01) ? ' active' : '';
+    return '<button class="speed-btn-inline' + active + '" data-speed="' + s.v +
+           '" aria-label="' + s.aria + '">' + s.label + '</button>';
+  }).join('');
+}
+
+/* ---- Button factory: Listen button + inline speed controls ---- */
 function dcAddReadAloudButton(element) {
   if (element.querySelector('.read-aloud-btn')) return;
   if (element.closest('.confidence-check, .confidence-check-box, .quiz-container, .quiz-question, .read-aloud-controls')) return;
 
+  var savedSpeed  = parseFloat(localStorage.getItem('dc-speech-speed') || '1.0');
+  var currentSpeed = savedSpeed;
+
   var controls = document.createElement('div');
   controls.className = 'read-aloud-controls';
   controls.innerHTML =
-    '<button class="read-aloud-btn" aria-label="Listen to this section">' +
-      '<span class="read-aloud-icon">\u25B6\uFE0F</span>' +
-      '<span class="read-aloud-label">Listen</span>' +
-    '</button>';
+    '<div class="listen-controls-container">' +
+      '<button class="read-aloud-btn" aria-label="Listen to this section">' +
+        '<span class="read-aloud-icon">\u25B6\uFE0F</span>' +
+        '<span class="read-aloud-label">Listen</span>' +
+      '</button>' +
+      '<div class="speed-controls-inline">' +
+        '<span class="speed-label">Speed:</span>' +
+        dcBuildSpeedButtons(savedSpeed) +
+      '</div>' +
+    '</div>';
 
   element.appendChild(controls);
 
-  controls.querySelector('.read-aloud-btn').addEventListener('click', function() {
-    dcToggleReadAloud(element, this);
+  var listenBtn = controls.querySelector('.read-aloud-btn');
+  var speedBtns = controls.querySelectorAll('.speed-btn-inline');
+
+  /* Per-instance speed buttons */
+  speedBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      speedBtns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentSpeed = parseFloat(btn.getAttribute('data-speed'));
+      VOICE_CONFIG.defaultRate = currentSpeed;
+      localStorage.setItem('dc-speech-speed', currentSpeed);
+
+      /* Restart playback at new speed if currently playing */
+      if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+        setTimeout(function() {
+          dcReadAloud(element, listenBtn, currentSpeed);
+        }, 150);
+      }
+    });
+  });
+
+  listenBtn.addEventListener('click', function() {
+    dcToggleReadAloud(element, this, currentSpeed);
   });
 }
 
@@ -178,31 +226,12 @@ function dcShouldAddButton(el) {
   return sentences >= DC_TTS_MIN_SENTENCES || text.length >= DC_TTS_MIN_CHARS;
 }
 
-/* ---- Speed button state ---- */
-function updateSpeedButtons(speed) {
-  document.querySelectorAll('.speed-btn').forEach(function(btn) {
-    var s = parseFloat(btn.getAttribute('data-speed'));
-    btn.classList.toggle('active', Math.abs(s - speed) < 0.01);
-  });
-}
-
 /* ---- DOMContentLoaded init ---- */
 document.addEventListener('DOMContentLoaded', function() {
-  /* Speed buttons */
-  document.querySelectorAll('.speed-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var speed = parseFloat(btn.getAttribute('data-speed'));
-      VOICE_CONFIG.defaultRate = speed;
-      localStorage.setItem('dc-speech-speed', speed);
-      updateSpeedButtons(speed);
-    });
-  });
-
-  var savedSpeed = parseFloat(localStorage.getItem('dc-speech-speed') || '0.85');
+  var savedSpeed = parseFloat(localStorage.getItem('dc-speech-speed') || '1.0');
   VOICE_CONFIG.defaultRate = savedSpeed;
-  updateSpeedButtons(savedSpeed);
 
-  /* Story blocks: ONE Listen button for the whole block */
+  /* Story blocks: ONE Listen button (with inline speed) for the whole block */
   document.querySelectorAll('.story-block').forEach(function(block) {
     block.querySelectorAll('.read-aloud-controls').forEach(function(c) { c.remove(); });
     dcAddReadAloudButton(block);
@@ -211,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function() {
   /* Long paragraphs and tip blocks outside of excluded containers */
   document.querySelectorAll('p, .tip-block, .tip-box, .warning-box').forEach(function(el) {
     if (el.closest('.story-block, .confidence-check, .confidence-check-box, .quiz-container, .quiz-question, .read-aloud-controls, .visual-example-card, .video-section')) return;
-    /* Skip p elements inside tip/warning containers — the container itself gets the button */
+    /* Skip p elements inside tip/warning containers — the container gets the button */
     if (el.matches('p') && el.closest('.tip-block, .tip-box, .warning-box')) return;
     if (dcShouldAddButton(el)) {
       dcAddReadAloudButton(el);
