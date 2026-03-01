@@ -211,6 +211,8 @@ document.addEventListener('DOMContentLoaded', function() {
   /* Long paragraphs and tip blocks outside of excluded containers */
   document.querySelectorAll('p, .tip-block, .tip-box, .warning-box').forEach(function(el) {
     if (el.closest('.story-block, .confidence-check, .confidence-check-box, .quiz-container, .quiz-question, .read-aloud-controls, .visual-example-card, .video-section')) return;
+    /* Skip p elements inside tip/warning containers — the container itself gets the button */
+    if (el.matches('p') && el.closest('.tip-block, .tip-box, .warning-box')) return;
     if (dcShouldAddButton(el)) {
       dcAddReadAloudButton(el);
     }

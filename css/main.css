@@ -3120,12 +3120,13 @@ strong {
   text-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-/* ── Read-Aloud controls at bottom ───────────────────────────── */
+/* ── Read-Aloud controls at bottom, right-aligned ─────────────── */
 .read-aloud-controls {
   margin-top: 16px !important;
   margin-bottom: 0 !important;
   padding-top: 12px !important;
   border-top: 1px dashed #CFD8DC !important;
+  text-align: right !important;
 }
 [data-theme="dark"] .read-aloud-controls {
   border-top-color: #546E7A !important;
