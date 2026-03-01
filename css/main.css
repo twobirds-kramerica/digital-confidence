@@ -3760,3 +3760,78 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
     min-width: 28px;
   }
 }
+
+/* ---- Podcast Platform Badges ---- */
+.podcast-platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 6px;
+}
+
+.podcast-platform-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.15s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.podcast-platform-badge:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.podcast-platform-badge.badge-apple {
+  background: linear-gradient(135deg, #9B1FDC, #C05AF3);
+  color: #ffffff;
+}
+
+.podcast-platform-badge.badge-spotify {
+  background: #1DB954;
+  color: #ffffff;
+}
+
+.podcast-platform-badge.badge-youtube {
+  background: #FF0000;
+  color: #ffffff;
+}
+
+.podcast-platform-note {
+  margin: 4px 0 10px;
+  color: #546E7A;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+[data-theme="dark"] .podcast-platform-note {
+  color: #90A4AE;
+}
+
+[data-theme="dark"] .podcast-platform-badge.badge-apple {
+  background: linear-gradient(135deg, #7B10B8, #A040D0);
+}
+
+[data-theme="dark"] .podcast-platform-badge.badge-spotify {
+  background: #17A844;
+}
+
+[data-theme="dark"] .podcast-platform-badge.badge-youtube {
+  background: #CC0000;
+}
+
+@media (max-width: 480px) {
+  .podcast-platforms {
+    gap: 6px;
+  }
+  .podcast-platform-badge {
+    font-size: 12px;
+    padding: 5px 11px;
+  }
+}

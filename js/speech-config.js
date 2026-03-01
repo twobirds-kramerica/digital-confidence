@@ -37,6 +37,8 @@ function initializeVoices() {
   VOICE_CONFIG.secondaryVoice = maleVoices[0]   || allVoices[1] || null;
 
   var saved = parseFloat(localStorage.getItem('dc-speech-speed') || '1.0');
+  /* Migrate old speeds (1.5, 2.0) to nearest valid option */
+  if (DC_VALID_SPEEDS.indexOf(saved) === -1) { saved = 1.0; }
   VOICE_CONFIG.defaultRate = saved;
 }
 
@@ -154,12 +156,13 @@ var DC_TTS_MIN_SENTENCES = 4;
 var DC_TTS_MIN_CHARS     = 200;
 
 var DC_SPEEDS = [
-  { v: '0.5',  label: '0.5x', aria: 'Half speed'   },
-  { v: '0.75', label: '0.75x', aria: 'Slow speed'  },
-  { v: '1',    label: '1x',   aria: 'Normal speed' },
-  { v: '1.5',  label: '1.5x', aria: 'Fast speed'   },
-  { v: '2',    label: '2x',   aria: 'Double speed'  }
+  { v: '0.5',  label: '0.5x',  aria: 'Half speed'              },
+  { v: '0.75', label: '0.75x', aria: 'Slow speed'              },
+  { v: '1',    label: '1x',    aria: 'Normal speed'            },
+  { v: '1.15', label: '1.15x', aria: 'Slightly faster speed'   },
+  { v: '1.25', label: '1.25x', aria: 'Moderately faster speed' }
 ];
+var DC_VALID_SPEEDS = [0.5, 0.75, 1.0, 1.15, 1.25];
 
 function dcBuildSpeedButtons(savedSpeed) {
   return DC_SPEEDS.map(function(s) {
@@ -229,6 +232,7 @@ function dcShouldAddButton(el) {
 /* ---- DOMContentLoaded init ---- */
 document.addEventListener('DOMContentLoaded', function() {
   var savedSpeed = parseFloat(localStorage.getItem('dc-speech-speed') || '1.0');
+  if (DC_VALID_SPEEDS.indexOf(savedSpeed) === -1) { savedSpeed = 1.0; }
   VOICE_CONFIG.defaultRate = savedSpeed;
 
   /* Story blocks: ONE Listen button (with inline speed) for the whole block */
