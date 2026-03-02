@@ -3942,3 +3942,460 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   background: #1A2633;
   border-left-color: #42A5F5;
 }
+
+/* ================================================================
+   FEEDBACK MODAL (feedback-github.js)
+   ================================================================ */
+
+/* Floating feedback trigger — bottom-left */
+.dc-feedback-trigger {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  background: linear-gradient(135deg, #1565C0, #1976D2);
+  color: #fff;
+  border: none;
+  border-radius: 28px;
+  padding: 13px 22px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(21, 101, 192, 0.45);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  transition: all 0.2s;
+  z-index: 999996;
+}
+.dc-feedback-trigger:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(21, 101, 192, 0.55);
+}
+
+/* Global idea FAB — bottom-right, above panic button */
+.dc-idea-fab {
+  position: fixed;
+  bottom: 108px;
+  right: 24px;
+  background: linear-gradient(135deg, #2E7D32, #388E3C);
+  color: #fff;
+  border: none;
+  border-radius: 28px;
+  padding: 13px 22px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(46, 125, 50, 0.45);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  transition: all 0.2s;
+  z-index: 999998;
+}
+.dc-idea-fab:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(46, 125, 50, 0.55);
+}
+
+.dc-fab-icon { font-size: 20px; }
+.dc-fab-label { white-space: nowrap; }
+
+/* Feedback modal overlay */
+.dc-feedback-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dc-modal-backdrop {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: -1;
+}
+
+.dc-modal-content {
+  position: relative;
+  background: #fff;
+  border-radius: 14px;
+  padding: 28px 28px 24px;
+  max-width: 580px;
+  width: 100%;
+  max-height: 92vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+}
+
+.dc-modal-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  width: 44px;
+  height: 44px;
+  background: #FF5252;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 26px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  z-index: 10;
+  flex-shrink: 0;
+}
+.dc-modal-close:hover { background: #FF1744; transform: scale(1.1); }
+
+.dc-modal-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1A237E;
+  margin: 0 0 6px;
+  clear: both;
+}
+
+.dc-modal-subtitle {
+  color: #546E7A;
+  font-size: 14px;
+  margin: 0 0 18px;
+}
+
+/* Fields */
+.dc-feedback-field { margin-bottom: 18px; }
+.dc-feedback-label {
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #2C3E50;
+}
+.dc-optional { font-weight: 400; color: #78909C; font-size: 13px; }
+
+.dc-feedback-input,
+.dc-feedback-textarea,
+.dc-feedback-select {
+  width: 100%;
+  border: 2px solid #CFD8DC;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 16px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.dc-feedback-input:focus,
+.dc-feedback-textarea:focus,
+.dc-feedback-select:focus {
+  outline: none;
+  border-color: #1565C0;
+  box-shadow: 0 0 0 3px rgba(21,101,192,0.15);
+}
+.dc-field-help { font-size: 12px; color: #90A4AE; margin: 5px 0 0; }
+
+/* Feedback type radio buttons */
+.dc-feedback-types { display: flex; flex-direction: column; gap: 8px; }
+.dc-type-option {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  cursor: pointer;
+}
+.dc-type-option input[type="radio"] { position: absolute; opacity: 0; width: 0; }
+.dc-type-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 2px solid #E0E7EF;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s;
+  width: 100%;
+  background: #FAFBFC;
+}
+.dc-type-option input:checked + .dc-type-label {
+  border-color: #1565C0;
+  background: #E8F0FE;
+}
+.dc-type-option:hover .dc-type-label { border-color: #90A4AE; }
+.dc-type-icon { font-size: 22px; flex-shrink: 0; }
+.dc-type-text { font-weight: 600; font-size: 15px; flex: 1; }
+.dc-type-help { font-size: 12px; color: #78909C; white-space: nowrap; }
+
+/* Actions */
+.dc-feedback-actions { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+.dc-btn-submit {
+  background: #1565C0;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.dc-btn-submit:hover { background: #0D47A1; }
+.dc-btn-submit:disabled { background: #90A4AE; cursor: not-allowed; }
+.dc-btn-cancel {
+  background: transparent;
+  color: #546E7A;
+  border: 2px solid #CFD8DC;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.dc-btn-cancel:hover { background: #F5F7FA; color: #2C3E50; }
+
+/* Success & Error states */
+.dc-feedback-success,
+.dc-feedback-error {
+  text-align: center;
+  padding: 32px 20px;
+}
+.dc-success-icon, .dc-error-icon { font-size: 52px; margin-bottom: 16px; }
+.dc-feedback-success h3 { color: #2E7D32; font-size: 24px; margin-bottom: 10px; }
+.dc-feedback-error h3 { color: #E67E22; font-size: 22px; margin-bottom: 10px; }
+.dc-reference-num { color: #546E7A; font-size: 14px; margin: 8px 0 20px; }
+
+/* Dark mode — feedback */
+[data-theme="dark"] .dc-modal-content {
+  background: #1E2D3D;
+  color: #E8EAF0;
+}
+[data-theme="dark"] .dc-modal-title { color: #90CAF9; }
+[data-theme="dark"] .dc-modal-subtitle { color: #90A4AE; }
+[data-theme="dark"] .dc-feedback-label { color: #CFD8DC; }
+[data-theme="dark"] .dc-feedback-input,
+[data-theme="dark"] .dc-feedback-textarea,
+[data-theme="dark"] .dc-feedback-select {
+  background: #263238; border-color: #37474F; color: #E8EAF0;
+}
+[data-theme="dark"] .dc-type-label { background: #263238; border-color: #37474F; }
+[data-theme="dark"] .dc-type-option input:checked + .dc-type-label {
+  background: #1A2F4A; border-color: #42A5F5;
+}
+[data-theme="dark"] .dc-type-text { color: #E8EAF0; }
+[data-theme="dark"] .dc-feedback-trigger { background: linear-gradient(135deg, #0D47A1, #1565C0); }
+[data-theme="dark"] .dc-idea-fab { background: linear-gradient(135deg, #1B5E20, #2E7D32); }
+
+/* Mobile — feedback */
+@media (max-width: 600px) {
+  .dc-feedback-trigger {
+    bottom: 16px; left: 16px;
+    padding: 11px 16px; font-size: 14px;
+  }
+  .dc-idea-fab {
+    bottom: 96px; right: 16px;
+    width: 56px; height: 56px;
+    border-radius: 50%; padding: 0;
+    justify-content: center;
+  }
+  .dc-idea-fab .dc-fab-label { display: none; }
+  .dc-feedback-trigger .dc-fab-label { display: none; }
+  .dc-feedback-trigger { width: 56px; height: 56px; border-radius: 50%; padding: 0; justify-content: center; }
+  .dc-modal-content { padding: 20px 16px 18px; max-height: 95vh; }
+  .dc-type-help { display: none; }
+  .dc-feedback-actions { flex-direction: column; }
+  .dc-btn-submit, .dc-btn-cancel { width: 100%; text-align: center; }
+}
+
+/* High-zoom / high-DPI */
+@media (min-resolution: 144dpi) {
+  .dc-modal-content { max-height: 88vh; }
+}
+
+/* ================================================================
+   SCAM PANIC BUTTON (panic-button.js)
+   ================================================================ */
+
+.dc-scam-panic-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: linear-gradient(135deg, #C62828, #E53935);
+  color: #fff;
+  border: 3px solid #FFEB3B;
+  border-radius: 12px;
+  padding: 14px 22px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(198, 40, 40, 0.55);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 999997;
+  animation: dc-pulse 2.2s ease-in-out infinite;
+}
+@keyframes dc-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 6px 20px rgba(198,40,40,0.55); }
+  50%       { transform: scale(1.04); box-shadow: 0 8px 28px rgba(198,40,40,0.7); }
+}
+.dc-scam-panic-btn:hover {
+  animation: none;
+  transform: scale(1.07);
+  box-shadow: 0 10px 30px rgba(198,40,40,0.75);
+}
+.dc-panic-icon {
+  font-size: 26px;
+  display: inline-block;
+  animation: dc-shake 0.6s ease-in-out infinite;
+}
+@keyframes dc-shake {
+  0%, 100% { transform: rotate(0deg); }
+  25%       { transform: rotate(-6deg); }
+  75%       { transform: rotate(6deg); }
+}
+
+/* Scam modal */
+.dc-scam-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: 1000000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 16px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.dc-scam-backdrop {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.82);
+  z-index: -1;
+}
+.dc-scam-content {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 760px;
+  width: 100%;
+  margin: 24px auto;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+}
+.dc-scam-close {
+  position: absolute;
+  top: 16px; right: 16px;
+  width: 44px; height: 44px;
+  background: #FF5252; border: none; border-radius: 50%;
+  color: #fff; font-size: 28px; font-weight: 700;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+.dc-scam-close:hover { background: #C62828; }
+
+.dc-scam-title {
+  color: #B71C1C;
+  font-size: 26px;
+  margin: 0 0 24px;
+  text-align: center;
+  padding-right: 50px;
+}
+
+.dc-scam-step {
+  display: flex;
+  gap: 18px;
+  background: #F5F5F5;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 14px;
+  border-left: 5px solid #1565C0;
+  align-items: flex-start;
+}
+.dc-scam-step.dc-step-urgent {
+  background: #FFEBEE;
+  border-left-color: #C62828;
+}
+.dc-step-num {
+  flex-shrink: 0;
+  width: 48px; height: 48px;
+  background: #1565C0; color: #fff;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; font-weight: 700;
+}
+.dc-scam-step.dc-step-urgent .dc-step-num { background: #C62828; }
+.dc-step-body { flex: 1; }
+.dc-step-body h3 { font-size: 19px; color: #1A237E; margin: 0 0 10px; }
+.dc-step-body p  { margin: 0 0 8px; line-height: 1.6; font-size: 16px; }
+.dc-step-body ul { margin: 8px 0 0 20px; line-height: 1.8; }
+.dc-urgent-action {
+  background: #fff;
+  border-left: 4px solid #C62828;
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #B71C1C;
+  margin: 10px 0;
+}
+.dc-contact-block {
+  background: #fff;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 10px 0;
+  line-height: 1.8;
+}
+.dc-contact-block a { color: #1565C0; font-weight: 600; }
+
+.dc-scam-footer { margin-top: 20px; text-align: center; }
+.dc-reassurance {
+  background: #E8F5E9;
+  border-radius: 8px;
+  padding: 16px;
+  color: #1B5E20;
+  font-size: 17px;
+  margin-bottom: 18px;
+}
+.dc-scam-close-btn {
+  background: #1565C0; color: #fff;
+  border: none; border-radius: 10px;
+  padding: 16px 40px; font-size: 18px; font-weight: 700;
+  cursor: pointer; transition: background 0.2s;
+}
+.dc-scam-close-btn:hover { background: #0D47A1; }
+
+/* Dark mode — scam */
+[data-theme="dark"] .dc-scam-content { background: #1A1A2E; color: #E8EAF0; }
+[data-theme="dark"] .dc-scam-title   { color: #EF9A9A; }
+[data-theme="dark"] .dc-step-body h3 { color: #90CAF9; }
+[data-theme="dark"] .dc-scam-step    { background: #1E2D3D; }
+[data-theme="dark"] .dc-scam-step.dc-step-urgent { background: #2D1515; }
+[data-theme="dark"] .dc-urgent-action { background: #2D1515; color: #EF9A9A; }
+[data-theme="dark"] .dc-contact-block { background: #263238; }
+[data-theme="dark"] .dc-contact-block a { color: #90CAF9; }
+[data-theme="dark"] .dc-reassurance { background: #1B3320; color: #A5D6A7; }
+
+/* Mobile — scam */
+@media (max-width: 600px) {
+  .dc-scam-panic-btn {
+    bottom: 16px; right: 16px;
+    width: 70px; height: 70px;
+    border-radius: 50%; padding: 0;
+    justify-content: center;
+  }
+  .dc-panic-text { display: none; }
+  .dc-scam-content { padding: 20px 16px; margin: 12px auto; }
+  .dc-scam-title  { font-size: 20px; }
+  .dc-scam-step   { flex-direction: column; gap: 10px; }
+  .dc-step-num    { width: 40px; height: 40px; font-size: 18px; }
+}
