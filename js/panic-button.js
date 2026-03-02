@@ -5,19 +5,28 @@
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
-  injectPanicButton();
+  injectSidebarPanicBanner();
   injectScamModal();
 });
 
-function injectPanicButton() {
-  var btn = document.createElement('button');
-  btn.id        = 'dc-scam-panic-btn';
-  btn.className = 'dc-scam-panic-btn';
-  btn.setAttribute('aria-label', 'Think you\'ve been scammed? Click here for help');
-  btn.title     = 'Think you\'ve been scammed? Click for immediate help';
-  btn.innerHTML = '<span class="dc-panic-icon" aria-hidden="true">🚨</span><span class="dc-panic-text">Think You\'ve Been Scammed?</span>';
-  btn.addEventListener('click', openScamModal);
-  document.body.appendChild(btn);
+function injectSidebarPanicBanner() {
+  /* Find the Scam Simulator nav link inside the sidebar */
+  var sidebarScamLink = null;
+  document.querySelectorAll('a[href="scam-simulator.html"]').forEach(function (link) {
+    if (link.closest('.sidebar')) sidebarScamLink = link;
+  });
+  if (!sidebarScamLink) return;
+
+  var banner = document.createElement('button');
+  banner.id        = 'dc-sidebar-panic-banner';
+  banner.className = 'dc-sidebar-panic-banner';
+  banner.setAttribute('aria-label', 'Think you\'ve been scammed? Click here for help');
+  banner.innerHTML =
+    '<span class="dc-panic-icon" aria-hidden="true">🚨</span>' +
+    '<span class="dc-sidebar-panic-text">Think You\'ve<br>Been Scammed?</span>';
+  banner.addEventListener('click', openScamModal);
+
+  sidebarScamLink.insertAdjacentElement('afterend', banner);
 }
 
 function injectScamModal() {

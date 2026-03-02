@@ -54,9 +54,8 @@ var DC_IDEA_CATEGORIES = [
    ================================================================ */
 document.addEventListener('DOMContentLoaded', function () {
   injectFeedbackStyles();
-  injectFeedbackTrigger();
+  injectUnifiedFeedbackBtn();
   injectFeedbackModal();
-  injectGlobalIdeaFAB();
   initFeedbackDatalist();
 });
 
@@ -65,26 +64,15 @@ function injectFeedbackStyles() {
   /* Styles are added to main.css by the build — nothing needed here */
 }
 
-/* ---- Feedback trigger button (bottom-left, blue) ---- */
-function injectFeedbackTrigger() {
+/* ---- Unified "Ideas and Feedback" button (bottom-right) ---- */
+function injectUnifiedFeedbackBtn() {
   var btn = document.createElement('button');
-  btn.id        = 'dc-feedback-trigger';
-  btn.className = 'dc-feedback-trigger';
-  btn.setAttribute('aria-label', 'Send feedback about this page');
-  btn.innerHTML = '<span class="dc-fab-icon">💬</span><span class="dc-fab-label">Feedback</span>';
-  btn.addEventListener('click', function () { openFeedbackModal('page'); });
-  document.body.appendChild(btn);
-}
-
-/* ---- Global idea FAB (bottom-right above panic button, green) ---- */
-function injectGlobalIdeaFAB() {
-  var btn = document.createElement('button');
-  btn.id        = 'dc-idea-fab';
-  btn.className = 'dc-idea-fab';
-  btn.setAttribute('aria-label', 'Share a general idea');
-  btn.title     = 'Have an idea? Share it here!';
-  btn.innerHTML = '<span class="dc-fab-icon">💡</span><span class="dc-fab-label">Got an Idea?</span>';
-  btn.addEventListener('click', function () { openFeedbackModal('global'); });
+  btn.id        = 'dc-unified-feedback-btn';
+  btn.className = 'dc-unified-feedback-btn';
+  btn.setAttribute('aria-label', 'Share ideas or feedback');
+  btn.title     = 'Share your ideas and feedback';
+  btn.innerHTML = '<span class="dc-fab-icon">💬</span><span class="dc-fab-label">Ideas &amp; Feedback</span>';
+  btn.addEventListener('click', function () { openFeedbackModal('unified'); });
   document.body.appendChild(btn);
 }
 
@@ -228,13 +216,13 @@ function openFeedbackModal(mode) {
 
   modal.dataset.mode = mode || 'page';
 
-  if (mode === 'global') {
-    title.textContent       = 'Got an Idea? 💡';
-    subtitle.textContent    = 'Share any suggestion about the whole site';
+  if (mode === 'unified' || mode === 'global') {
+    title.textContent       = 'Ideas & Feedback 💬';
+    subtitle.textContent    = 'Share an idea or tell us about this page: ' + (document.title || window.location.pathname.split('/').pop());
     catField.style.display  = 'block';
   } else {
-    title.textContent       = 'How can we improve this page?';
-    subtitle.textContent    = 'Feedback about: ' + (document.title || window.location.pathname.split('/').pop());
+    title.textContent       = 'Ideas & Feedback 💬';
+    subtitle.textContent    = 'About this page: ' + (document.title || window.location.pathname.split('/').pop());
     catField.style.display  = 'none';
   }
 

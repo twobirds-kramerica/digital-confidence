@@ -83,6 +83,7 @@ function dcReadAloud(element, button, rate) {
     var label = button.querySelector('.read-aloud-label');
     if (icon)  icon.textContent  = '⏸️';
     if (label) label.textContent = 'Pause';
+    button.classList.add('playing');
     element.classList.add('being-read');
   };
 
@@ -91,6 +92,7 @@ function dcReadAloud(element, button, rate) {
     var label = button.querySelector('.read-aloud-label');
     if (icon)  icon.textContent  = '▶️';
     if (label) label.textContent = 'Listen';
+    button.classList.remove('playing');
     element.classList.remove('being-read');
     dcClearHighlight(element);
   };
@@ -100,6 +102,7 @@ function dcReadAloud(element, button, rate) {
     var label = button.querySelector('.read-aloud-label');
     if (icon)  icon.textContent  = '▶️';
     if (label) label.textContent = 'Listen';
+    button.classList.remove('playing');
     element.classList.remove('being-read');
     dcClearHighlight(element);
   };
@@ -117,6 +120,7 @@ function dcToggleReadAloud(element, button, rate) {
     var label = button.querySelector('.read-aloud-label');
     if (icon)  icon.textContent  = '▶️';
     if (label) label.textContent = 'Listen';
+    button.classList.remove('playing');
     element.classList.remove('being-read');
     dcClearHighlight(element);
   } else {
