@@ -167,9 +167,9 @@ var DC_QUIZ = (function () {
       explain: 'Report unknown charges right away. Canadian banks have fraud protection — you won\'t be held responsible for charges you didn\'t make, but reporting quickly makes reversal much easier. "SVC*" often indicates a subscription-type charge that may have signed you up without clear consent.'
     },
 
-    /* MODULE 7 — Creative Joy */
+    /* MODULE 7 — Photos & Memories */
     {
-      module: 'Module 7: Creative Joy',
+      module: 'Module 7: Photos & Memories',
       q: 'You took a wonderful photo of your grandchildren at their birthday party. You want to share it with family but not post it publicly online. What\'s the safest way?',
       options: [
         'Post it on Facebook with privacy set to "Public" so family can easily find it',
@@ -181,7 +181,7 @@ var DC_QUIZ = (function () {
       explain: 'Sending directly via email or iMessage means only your chosen recipients see the photo. Posting publicly — even in groups — puts photos of children in front of strangers. Direct sharing is always the safest option for family photos.'
     },
     {
-      module: 'Module 7: Creative Joy',
+      module: 'Module 7: Photos & Memories',
       q: 'You were editing photos on your iPad and accidentally deleted 12 pictures from last Christmas. You\'re heartbroken. What should you try first?',
       options: [
         'Nothing — photos are gone forever once deleted on an iPad',
