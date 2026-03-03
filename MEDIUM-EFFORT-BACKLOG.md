@@ -106,4 +106,18 @@ These items were scored and deferred in earlier sessions:
 
 ---
 
-*File created: 2026-02-28 | Execute after beta feedback — build based on data, not assumptions*
+---
+
+## Cross-Reference: Items in LOW-EFFORT-BACKLOG
+
+These items were added to LOW-EFFORT-BACKLOG but are relevant to this medium-effort context:
+
+| Item | Status | Notes |
+|------|--------|-------|
+| LOW-EFFORT-6: Password Vault Tip | Deferred | Prerequisite for MEDIUM-EFFORT-7 full guide |
+| LOW-EFFORT-8: Multi-Language Feedback | Deferred | Simple label addition — escalate to French translation if demand warrants |
+| LOW-EFFORT-7: Antivirus Recommendation | Deferred | Could expand into a full module on device maintenance |
+
+---
+
+*File updated: 2026-03-02 | Execute after beta feedback — build based on data, not assumptions*

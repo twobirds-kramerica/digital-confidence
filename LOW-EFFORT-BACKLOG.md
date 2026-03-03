@@ -65,19 +65,8 @@ The `{{CITY}}` placeholder is replaced at runtime by `localize.js`. A few story 
 
 ## LOW-EFFORT-3: Module Title Clarity (Module 7)
 
-**Status:** Deferred
-**Estimated credits:** ~1%
-**Score:** UX 5, Foundation 4, Scale 7, A11y 4 → **5.0**
-
-**What it is:**
-Module 7 is called "Creative Joy" — the only module title that doesn't clearly describe what you'll learn. Users may skip it not knowing it covers photo-taking, drawing apps, and creative activities.
-
-**Proposed rename:** "Photos & Creative Apps"
-
-**Files to change (bulk):** module-7.html, index.html, all 22 sidebar navs
-
-**User feedback question:**
-> "Did you understand what Module 7 was about before opening it? What would you call it?"
+**Status:** ✅ DONE — executed 2026-03-02
+**Renamed to:** "Photos & Memories" (38 replacements across all HTML files)
 
 ---
 
@@ -111,22 +100,80 @@ Add a "Reading Comfort" step to the setup wizard proactively offering the dyslex
 
 ---
 
+## LOW-EFFORT-6: Password Vault Recommendation (Built-in Only)
+
+**Status:** Deferred — awaiting beta feedback
+**Estimated credits:** ~2%
+**Score:** UX 7, Foundation 6, Scale 6, A11y 4 → **6.3**
+
+**What it is:**
+Many seniors write passwords on paper or reuse the same one everywhere. A short tip block in Module 3 (Passwords) recommending the free, built-in options — iCloud Keychain (Apple) and Google Password Manager (Android) — with a one-line explanation of what they do. No extra app, no cost. Links to the deeper guide in MEDIUM-EFFORT-7 when it's built.
+
+**Files to change:**
+- `module-3.html` — add a new tip block with device-filtered iCloud Keychain / Google Password Manager recommendation
+
+**User feedback question:**
+> "Did you know your phone has a free built-in password manager? Would you use it?"
+
+---
+
+## LOW-EFFORT-7: Antivirus & Tech Support Recommendation
+
+**Status:** Deferred — awaiting beta feedback
+**Estimated credits:** ~2%
+**Score:** UX 6, Foundation 6, Scale 5, A11y 3 → **5.7**
+
+**What it is:**
+Add a short "What to use on your device" tip to Module 2 (Security Shield) or resources.html recommending:
+- Apple/iPad: no antivirus needed (built-in protections), but Malwarebytes Free for peace of mind
+- Android: Malwarebytes Free or built-in Google Play Protect
+- Windows: Windows Defender (already built in) is sufficient; avoid fake "clean-up" software
+- Recommended tech support: Apple Store (free Genius Bar), Best Buy Geek Squad (paid), Cyber-Seniors
+
+**Files to change:**
+- `module-2.html` or `resources.html` — new tip/warning block with device filtering
+
+**User feedback question:**
+> "Do you use antivirus software? Are you confident your device is protected?"
+
+---
+
+## LOW-EFFORT-8: Multi-Language Feedback Option
+
+**Status:** Deferred — gather demand data first
+**Estimated credits:** ~3%
+**Score:** UX 6, Foundation 4, Scale 8, A11y 5 → **5.9**
+
+**What it is:**
+The feedback/ideas modal currently collects text in English only. Some seniors in Ontario are more comfortable writing in French or another language. Add a "Language of feedback" dropdown (English / French / Other) to the feedback form. Issues posted to GitHub get a language label. No translation needed — just captures what language the feedback is written in so it can be routed appropriately.
+
+**Files to change:**
+- `js/feedback-github.js` — add language dropdown to modal, add language label to GitHub issue title
+
+**User feedback question:**
+> "Would you prefer to give feedback in a language other than English? Which language?"
+
+---
+
 ## Execution Priority (When Ready)
 
 | Order | Item | Score | Credits | Notes |
 |-------|------|-------|---------|-------|
 | 1 | LOW-EFFORT-1: Location Prompt | **7.3** | ~8% | Trust + privacy — execute next week |
 | 2 | LOW-EFFORT-4: Dyslexic Font in Wizard | 5.9 | ~2% | High a11y impact |
-| 3 | LOW-EFFORT-2: Story Personalisation | 4.6 | ~3% | Polish |
-| 4 | LOW-EFFORT-3: Module 7 Title | 5.0 | ~1% | Quick win if beta shows confusion |
-| 5 | LOW-EFFORT-5: Visual Example Rework | 5.2 | ~7% | **Wait for beta data** |
+| 3 | LOW-EFFORT-6: Password Vault Tip | 6.3 | ~2% | Quick win for security |
+| 4 | LOW-EFFORT-8: Multi-Language Feedback | 5.9 | ~3% | Gather demand first |
+| 5 | LOW-EFFORT-7: Antivirus Recommendation | 5.7 | ~2% | Simple tip block |
+| 6 | LOW-EFFORT-2: Story Personalisation | 4.6 | ~3% | Polish |
+| 7 | LOW-EFFORT-5: Visual Example Rework | 5.2 | ~7% | **Wait for beta data** |
 
 ---
 
-### Already Executed This Session (Removed)
+### Already Executed (Removed from Queue)
 - ~~LOW-EFFORT-1 (old): Inline Speed Controls~~ → **DONE** — per-instance speed controls next to every Listen button
 - ~~Module 8 rename~~ → **DONE** — "Helping Family" renamed to "Stay Connected"
+- ~~LOW-EFFORT-3: Module 7 Title~~ → **DONE** — "Creative Joy" renamed to "Photos & Memories" (2026-03-02)
 
 ---
 
-*File updated: 2026-02-28 | Execute after beta feedback collected*
+*File updated: 2026-03-02 | Execute after beta feedback collected*

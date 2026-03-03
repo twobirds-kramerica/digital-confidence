@@ -63,7 +63,12 @@ function dcReadAloud(element, button, rate) {
   if (!window.speechSynthesis) return;
   window.speechSynthesis.cancel();
 
-  var text = element.textContent.trim();
+  /* Clone and strip the read-aloud controls so button labels and
+     speed options are never read aloud as part of the content. */
+  var clone = element.cloneNode(true);
+  var ctrl = clone.querySelector('.read-aloud-controls');
+  if (ctrl) ctrl.remove();
+  var text = clone.textContent.trim();
   if (!text) return;
 
   var utterance = new SpeechSynthesisUtterance(text);
@@ -186,6 +191,7 @@ function dcAddReadAloudButton(element) {
 
   var controls = document.createElement('div');
   controls.className = 'read-aloud-controls';
+  controls.setAttribute('aria-hidden', 'true'); /* Excluded from screen readers and TTS text extraction */
   controls.innerHTML =
     '<div class="listen-controls-container">' +
       '<button class="read-aloud-btn" aria-label="Listen to this section">' +
@@ -228,7 +234,11 @@ function dcAddReadAloudButton(element) {
 }
 
 function dcShouldAddButton(el) {
-  var text = el.textContent.trim();
+  /* Exclude any injected controls text when measuring content length */
+  var clone = el.cloneNode(true);
+  var ctrl = clone.querySelector('.read-aloud-controls');
+  if (ctrl) ctrl.remove();
+  var text = clone.textContent.trim();
   var sentences = (text.match(/[.!?]+/g) || []).length;
   return sentences >= DC_TTS_MIN_SENTENCES || text.length >= DC_TTS_MIN_CHARS;
 }

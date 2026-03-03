@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backlog Dashboard — Digital Confidence Centre</title>
+  <style>
+    /* ============================================================
+       Backlog Dashboard — Internal Admin Tool
+       No external dependencies. Self-contained.
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0F1117;
+      color: #E8EAF0;
+      min-height: 100vh;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* Header */
+    .db-header {
+      background: linear-gradient(135deg, #1A1F2E 0%, #1E2640 100%);
+      border-bottom: 1px solid #2A3050;
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .db-header-logo {
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+    .db-header-title h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #E8EAF0;
+      letter-spacing: -0.3px;
+    }
+    .db-header-title p {
+      font-size: 12px;
+      color: #8892B0;
+      margin-top: 2px;
+    }
+    .db-header-meta {
+      margin-left: auto;
+      text-align: right;
+      font-size: 11px;
+      color: #5C6A8A;
+    }
+    .db-header-meta strong {
+      color: #7988AD;
+    }
+
+    /* Layout */
+    .db-body { padding: 24px 32px; max-width: 1400px; margin: 0 auto; }
+
+    /* Section headers */
+    .db-section { margin-bottom: 36px; }
+    .db-section-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: #5C7BB5;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .db-section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #1E2640;
+    }
+
+    /* ---- Stats Row ---- */
+    .db-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+    .db-stat {
+      background: #161B2E;
+      border: 1px solid #1E2640;
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+    .db-stat-value {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .db-stat-label {
+      font-size: 11px;
+      color: #5C6A8A;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .stat-green  { color: #4ADE80; }
+    .stat-blue   { color: #60A5FA; }
+    .stat-yellow { color: #FBBF24; }
+    .stat-purple { color: #A78BFA; }
+    .stat-red    { color: #F87171; }
+
+    /* ---- Effort/Benefit Matrix ---- */
+    .db-matrix-wrap {
+      background: #161B2E;
+      border: 1px solid #1E2640;
+      border-radius: 12px;
+      padding: 24px;
+      position: relative;
+    }
+    .db-matrix {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      border-left: 2px solid #2A3050;
+      border-bottom: 2px solid #2A3050;
+      margin-top: 8px;
+    }
+    /* Grid lines */
+    .db-matrix::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(90deg, transparent, transparent calc(25% - 1px), #1E2640 calc(25% - 1px), #1E2640 25%),
+        repeating-linear-gradient(0deg, transparent, transparent calc(25% - 1px), #1E2640 calc(25% - 1px), #1E2640 25%);
+      pointer-events: none;
+    }
+    .db-axis-x {
+      font-size: 10px;
+      color: #5C6A8A;
+      text-align: center;
+      margin-top: 8px;
+      letter-spacing: 0.8px;
+    }
+    .db-axis-y {
+      position: absolute;
+      left: -52px;
+      top: 50%;
+      transform: translateY(-50%) rotate(-90deg);
+      font-size: 10px;
+      color: #5C6A8A;
+      letter-spacing: 0.8px;
+      white-space: nowrap;
+    }
+    .db-axis-labels-y {
+      position: absolute;
+      left: -30px;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .db-axis-labels-y span, .db-axis-labels-x span {
+      font-size: 9px;
+      color: #3A4560;
+    }
+    .db-axis-labels-x {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 4px;
+      padding-left: 4px;
+    }
+    /* Quadrant labels */
+    .quadrant-label {
+      position: absolute;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+    /* Matrix dots */
+    .matrix-dot {
+      position: absolute;
+      transform: translate(-50%, 50%);
+      cursor: pointer;
+      transition: transform 0.15s;
+    }
+    .matrix-dot:hover { transform: translate(-50%, 50%) scale(1.15); }
+    .matrix-dot:hover .dot-tooltip { opacity: 1; pointer-events: auto; }
+    .dot-circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 800;
+      border: 2px solid rgba(255,255,255,0.15);
+    }
+    .dot-done    .dot-circle { background: #166534; border-color: #4ADE80; color: #A7F3D0; }
+    .dot-queue   .dot-circle { background: #1D4ED8; border-color: #60A5FA; color: #BAE6FD; }
+    .dot-deferred .dot-circle { background: #5B21B6; border-color: #A78BFA; color: #DDD6FE; }
+    .dot-blocked .dot-circle { background: #7C2D12; border-color: #F97316; color: #FED7AA; }
+    .dot-tooltip {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1A1F2E;
+      border: 1px solid #2A3050;
+      border-radius: 8px;
+      padding: 8px 10px;
+      width: 200px;
+      font-size: 11px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.15s;
+      z-index: 10;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    }
+    .dot-tooltip strong { color: #60A5FA; font-size: 11px; display: block; margin-bottom: 2px; }
+    .dot-tooltip span { color: #8892B0; }
+
+    /* Matrix legend */
+    .matrix-legend {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: #8892B0;
+    }
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .leg-done     { background: #4ADE80; }
+    .leg-queue    { background: #60A5FA; }
+    .leg-deferred { background: #A78BFA; }
+    .leg-blocked  { background: #F97316; }
+
+    /* ---- Timeline Swimlane ---- */
+    .db-timeline {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 0;
+    }
+    .tl-phase-col {
+      display: flex;
+      flex-direction: column;
+    }
+    .tl-items-col {
+      display: flex;
+      flex-direction: column;
+    }
+    .tl-row {
+      display: contents;
+    }
+    .tl-phase {
+      background: #161B2E;
+      border: 1px solid #1E2640;
+      border-right: none;
+      border-bottom: none;
+      padding: 14px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #5C7BB5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 72px;
+    }
+    .tl-phase:first-child { border-top-left-radius: 10px; }
+    .tl-phase:last-child { border-bottom-left-radius: 10px; border-bottom: 1px solid #1E2640; }
+    .tl-items {
+      background: #161B2E;
+      border: 1px solid #1E2640;
+      border-bottom: none;
+      padding: 10px 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-content: flex-start;
+      min-height: 72px;
+    }
+    .tl-items:first-child { border-top-right-radius: 10px; }
+    .tl-items:last-child { border-bottom-right-radius: 10px; border-bottom: 1px solid #1E2640; }
+    .tl-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 500;
+      border: 1px solid transparent;
+    }
+    .tag-done     { background: rgba(74,222,128,0.1);  border-color: rgba(74,222,128,0.25);  color: #86EFAC; }
+    .tag-queue    { background: rgba(96,165,250,0.1);  border-color: rgba(96,165,250,0.25);  color: #93C5FD; }
+    .tag-deferred { background: rgba(167,139,250,0.1); border-color: rgba(167,139,250,0.25); color: #C4B5FD; }
+    .tag-now      { background: rgba(251,191,36,0.1);  border-color: rgba(251,191,36,0.35);  color: #FDE68A; }
+
+    /* ---- Table ---- */
+    .db-table-controls {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .db-filter-btn {
+      background: #161B2E;
+      border: 1px solid #2A3050;
+      border-radius: 20px;
+      color: #8892B0;
+      padding: 5px 14px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .db-filter-btn:hover,
+    .db-filter-btn.active {
+      background: #1D4ED8;
+      border-color: #60A5FA;
+      color: #E8EAF0;
+    }
+    .db-search {
+      background: #161B2E;
+      border: 1px solid #2A3050;
+      border-radius: 8px;
+      color: #E8EAF0;
+      padding: 6px 12px;
+      font-size: 12px;
+      width: 240px;
+      margin-left: auto;
+    }
+    .db-search:focus { outline: none; border-color: #60A5FA; }
+    .db-search::placeholder { color: #3A4560; }
+
+    .db-table-wrap {
+      background: #161B2E;
+      border: 1px solid #1E2640;
+      border-radius: 12px;
+      overflow: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    thead {
+      background: #0F1117;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    th {
+      padding: 11px 14px;
+      text-align: left;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #5C7BB5;
+      border-bottom: 1px solid #1E2640;
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+    }
+    th:hover { color: #93C5FD; }
+    th.sorted { color: #60A5FA; }
+    th .sort-arrow { margin-left: 4px; font-size: 9px; }
+    td {
+      padding: 10px 14px;
+      font-size: 12px;
+      border-bottom: 1px solid #1A1F2E;
+      vertical-align: middle;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: rgba(30,38,64,0.5); }
+    tr.hidden { display: none; }
+
+    .td-id { color: #3A4560; font-size: 10px; font-family: monospace; }
+    .td-title { color: #E8EAF0; font-weight: 500; max-width: 280px; }
+    .td-title small { display: block; color: #5C6A8A; font-size: 10px; font-weight: 400; margin-top: 1px; }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    .badge-done     { background: rgba(74,222,128,0.12);  color: #86EFAC; }
+    .badge-deferred { background: rgba(167,139,250,0.12); color: #C4B5FD; }
+    .badge-next     { background: rgba(251,191,36,0.12);  color: #FDE68A; }
+    .badge-later    { background: rgba(96,165,250,0.12);  color: #93C5FD; }
+    .badge-blocked  { background: rgba(249,115,22,0.12);  color: #FED7AA; }
+
+    .score-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .score-track {
+      width: 60px;
+      height: 4px;
+      background: #1E2640;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .score-fill {
+      height: 100%;
+      border-radius: 4px;
+    }
+
+    .effort-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 10px;
+    }
+    .effort-low    { color: #4ADE80; }
+    .effort-medium { color: #FBBF24; }
+    .effort-high   { color: #F87171; }
+
+    .credits-val { color: #8892B0; font-size: 11px; }
+
+    /* Responsive tweaks */
+    @media (max-width: 900px) {
+      .db-body { padding: 16px; }
+      .db-header { padding: 14px 16px; }
+      .db-matrix { height: 280px; }
+      .db-timeline { grid-template-columns: 70px 1fr; }
+    }
+    @media (max-width: 600px) {
+      .db-stats { grid-template-columns: 1fr 1fr; }
+      .db-search { width: 100%; margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="db-header">
+  <div class="db-header-logo">🐦</div>
+  <div class="db-header-title">
+    <h1>Backlog Dashboard</h1>
+    <p>Digital Confidence Centre — Internal Planning Tool</p>
+  </div>
+  <div class="db-header-meta">
+    <strong id="today-date"></strong><br>
+    v4 / Post Beta Launch
+  </div>
+</header>
+
+<div class="db-body">
+
+  <!-- ===== STATS ===== -->
+  <div class="db-stats">
+    <div class="db-stat">
+      <div class="db-stat-value stat-green" id="stat-done">0</div>
+      <div class="db-stat-label">Items Done</div>
+    </div>
+    <div class="db-stat">
+      <div class="db-stat-value stat-yellow" id="stat-next">0</div>
+      <div class="db-stat-label">Up Next</div>
+    </div>
+    <div class="db-stat">
+      <div class="db-stat-value stat-blue" id="stat-later">0</div>
+      <div class="db-stat-label">Later</div>
+    </div>
+    <div class="db-stat">
+      <div class="db-stat-value stat-purple" id="stat-deferred">0</div>
+      <div class="db-stat-label">Deferred</div>
+    </div>
+    <div class="db-stat">
+      <div class="db-stat-value stat-red" id="stat-blocked">0</div>
+      <div class="db-stat-label">Blocked</div>
+    </div>
+    <div class="db-stat">
+      <div class="db-stat-value" style="color:#E8EAF0" id="stat-total">0</div>
+      <div class="db-stat-label">Total Tracked</div>
+    </div>
+  </div>
+
+  <!-- ===== EFFORT / BENEFIT MATRIX ===== -->
+  <div class="db-section">
+    <div class="db-section-title">Effort vs. Benefit Matrix</div>
+    <div class="db-matrix-wrap">
+      <div style="position:relative; padding-left: 36px;">
+        <span class="db-axis-y">BENEFIT / SCORE →</span>
+        <div class="db-axis-labels-y">
+          <span>10</span><span>7.5</span><span>5</span><span>2.5</span><span>0</span>
+        </div>
+        <div class="db-matrix" id="db-matrix">
+          <!-- Quadrant labels -->
+          <span class="quadrant-label" style="right:4%;top:4%;color:#4ADE80">HIGH VALUE / LOW EFFORT</span>
+          <span class="quadrant-label" style="left:54%;top:4%;color:#FBBF24">HIGH VALUE / HIGH EFFORT</span>
+          <span class="quadrant-label" style="right:4%;bottom:4%;color:#5C6A8A">LOW VALUE / LOW EFFORT</span>
+          <span class="quadrant-label" style="left:54%;bottom:4%;color:#F87171">LOW VALUE / HIGH EFFORT</span>
+          <!-- Dots injected by JS -->
+        </div>
+        <div class="db-axis-labels-x">
+          <span>Low (1-2%)</span><span>Medium (3-5%)</span><span>High (6-10%)</span><span>Very High (10%+)</span>
+        </div>
+      </div>
+      <div class="db-axis-x">EFFORT (CREDITS REQUIRED) →</div>
+      <div class="matrix-legend">
+        <div class="legend-item"><div class="legend-dot leg-done"></div>Done</div>
+        <div class="legend-item"><div class="legend-dot leg-queue"></div>Up Next</div>
+        <div class="legend-item"><div class="legend-dot leg-deferred"></div>Deferred</div>
+        <div class="legend-item"><div class="legend-dot leg-blocked"></div>Blocked</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SWIMLANE TIMELINE ===== -->
+  <div class="db-section">
+    <div class="db-section-title">Delivery Timeline</div>
+    <div class="db-timeline" id="db-timeline">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+
+  <!-- ===== TABLE ===== -->
+  <div class="db-section">
+    <div class="db-section-title">Full Backlog Table</div>
+    <div class="db-table-controls">
+      <button class="db-filter-btn active" data-filter="all">All</button>
+      <button class="db-filter-btn" data-filter="done">Done</button>
+      <button class="db-filter-btn" data-filter="next">Up Next</button>
+      <button class="db-filter-btn" data-filter="later">Later</button>
+      <button class="db-filter-btn" data-filter="deferred">Deferred</button>
+      <button class="db-filter-btn" data-filter="blocked">Blocked</button>
+      <input class="db-search" type="search" placeholder="Search items..." id="db-search-input">
+    </div>
+    <div class="db-table-wrap">
+      <table id="db-table">
+        <thead>
+          <tr>
+            <th data-col="id">ID <span class="sort-arrow">↕</span></th>
+            <th data-col="title">Title <span class="sort-arrow">↕</span></th>
+            <th data-col="phase">Phase <span class="sort-arrow">↕</span></th>
+            <th data-col="score">Score <span class="sort-arrow">↕</span></th>
+            <th data-col="effort">Effort <span class="sort-arrow">↕</span></th>
+            <th data-col="credits">Credits <span class="sort-arrow">↕</span></th>
+            <th data-col="status">Status <span class="sort-arrow">↕</span></th>
+          </tr>
+        </thead>
+        <tbody id="db-tbody">
+          <!-- Injected by JS -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  /* ============================================================
+     DATA
+     status: 'done' | 'next' | 'later' | 'deferred' | 'blocked'
+     effort: 'low' | 'medium' | 'high'
+     effortPct: approximate credit cost
+     score: 0–10 impact score
+     x: 0–100 % position on effort axis (matrix)
+     y: 0–100 % position on score axis  (matrix, 0 = bottom)
+  ============================================================ */
+  var ITEMS = [
+    /* ---- DONE ---- */
+    { id:'P1-01', title:'Core 8 Modules', sub:'Full content, quizzes, TTS', phase:'Phase 1', status:'done', effort:'high', effortPct:40, score:9.5, x:88, y:92 },
+    { id:'P1-02', title:'TTS Read Aloud System', sub:'Per-instance speed controls, Listen↔Pause', phase:'Phase 1', status:'done', effort:'medium', effortPct:6, score:8.5, x:62, y:82 },
+    { id:'P1-03', title:'Accessibility Suite', sub:'Font size, dyslexia font, dark mode', phase:'Phase 1', status:'done', effort:'medium', effortPct:5, score:8.0, x:55, y:77 },
+    { id:'P1-04', title:'Scam Simulator', sub:'Interactive yes/no scenario trainer', phase:'Phase 1', status:'done', effort:'medium', effortPct:5, score:8.5, x:55, y:82 },
+    { id:'P1-05', title:'Device Wizard', sub:'4-step setup: city, devices, font, theme', phase:'Phase 1', status:'done', effort:'medium', effortPct:4, score:8.0, x:48, y:77 },
+    { id:'P1-06', title:'City Resources', sub:'Windsor, London, Kitchener + national', phase:'Phase 1', status:'done', effort:'medium', effortPct:5, score:7.5, x:55, y:72 },
+    { id:'P1-07', title:'Feedback / GitHub Issues', sub:'PAT-backed issue creation + localStorage', phase:'Phase 1', status:'done', effort:'medium', effortPct:6, score:7.0, x:62, y:67 },
+    { id:'P1-08', title:'Panic Button (Scam Help)', sub:'Sidebar banner + 5-step modal', phase:'Phase 1', status:'done', effort:'low', effortPct:2, score:8.5, x:18, y:82 },
+    { id:'P1-09', title:'Listen Button Polish', sub:'Playing state, layout shift fix, width lock', phase:'Phase 1', status:'done', effort:'low', effortPct:1, score:7.0, x:10, y:67 },
+    { id:'P1-10', title:'UI Button Consolidation', sub:'Merged Feedback + Ideas, sidebar panic move', phase:'Phase 1', status:'done', effort:'low', effortPct:1, score:6.5, x:10, y:62 },
+    { id:'P2-01', title:'Module 9: Understanding AI', sub:'AI literacy + scam avoidance', phase:'Phase 2', status:'done', effort:'high', effortPct:8, score:6.8, x:72, y:65 },
+    { id:'P2-02', title:'Module 10: Grocery Delivery', sub:'Instacart, Walmart pickup step-by-step', phase:'Phase 2', status:'done', effort:'high', effortPct:8, score:7.0, x:72, y:67 },
+    { id:'P2-03', title:'Module 11: Ride-Sharing', sub:'Uber + taxi app safety walkthrough', phase:'Phase 2', status:'done', effort:'high', effortPct:8, score:7.0, x:72, y:67 },
+    { id:'P2-04', title:'Final Quiz (11-module)', sub:'20 scenario questions + certificate', phase:'Phase 2', status:'done', effort:'medium', effortPct:6, score:7.9, x:62, y:76 },
+    { id:'P2-05', title:'Demographics Form', sub:'Optional form for service planning', phase:'Phase 2', status:'done', effort:'medium', effortPct:4, score:3.9, x:48, y:36 },
+    { id:'P2-06', title:'Module 7 Rename', sub:'"Creative Joy" → "Photos & Memories"', phase:'Phase 2', status:'done', effort:'low', effortPct:1, score:5.0, x:10, y:47 },
+    { id:'P2-07', title:'Module 8 Rename', sub:'"Helping Family" → "Stay Connected"', phase:'Phase 2', status:'done', effort:'low', effortPct:1, score:5.0, x:10, y:47 },
+    { id:'P2-08', title:'Remove Emergency Contacts', sub:'Police/emergency removed from resources', phase:'Phase 2', status:'done', effort:'low', effortPct:1, score:6.0, x:10, y:57 },
+    { id:'P2-09', title:'Visual Warmth CSS', sub:'Off-white bg, amber hover accents, gradients', phase:'Phase 2', status:'done', effort:'low', effortPct:2, score:6.5, x:18, y:62 },
+    { id:'P2-10', title:'Podcast Platform Badges', sub:'Apple/Spotify/YouTube link badges', phase:'Phase 2', status:'done', effort:'low', effortPct:1, score:6.0, x:10, y:57 },
+    /* ---- NEXT (high priority, ready to build) ---- */
+    { id:'LE-01', title:'Location Confirmation Prompt', sub:'Opt-in city selection before showing local resources', phase:'Next Sprint', status:'next', effort:'medium', effortPct:8, score:7.3, x:72, y:70 },
+    { id:'LE-06', title:'Password Vault Tip Block', sub:'Built-in iCloud Keychain / Google PM tip in Module 3', phase:'Next Sprint', status:'next', effort:'low', effortPct:2, score:6.3, x:18, y:60 },
+    /* ---- LATER (approved, not urgent) ---- */
+    { id:'LE-04', title:'Dyslexic Font in Wizard', sub:'Reading Comfort step in setup wizard', phase:'Later', status:'later', effort:'low', effortPct:2, score:5.9, x:18, y:56 },
+    { id:'LE-08', title:'Multi-Language Feedback', sub:'Language dropdown in feedback modal', phase:'Later', status:'later', effort:'low', effortPct:3, score:5.9, x:28, y:56 },
+    { id:'LE-07', title:'Antivirus Recommendation', sub:'Device-filtered antivirus tip in Module 2', phase:'Later', status:'later', effort:'low', effortPct:2, score:5.7, x:18, y:54 },
+    { id:'ME-07', title:'Password Manager Deep Dive', sub:'Full iCloud Keychain + Google PM guide in Module 3', phase:'Later', status:'later', effort:'medium', effortPct:5, score:6.7, x:55, y:64 },
+    /* ---- DEFERRED (waiting for beta data) ---- */
+    { id:'LE-02', title:'Story Personalisation Cleanup', sub:'Fallback to "Ontario" if no city set', phase:'Deferred', status:'deferred', effort:'low', effortPct:3, score:4.6, x:28, y:43 },
+    { id:'LE-05', title:'Visual Example Rework', sub:'Wait for beta feedback — may or may not build', phase:'Deferred', status:'deferred', effort:'medium', effortPct:7, score:5.2, x:68, y:49 },
+    { id:'ME-06', title:'2FA Training Section', sub:'New section in Module 2 — build if beta requests it', phase:'Deferred', status:'deferred', effort:'medium', effortPct:8, score:7.3, x:72, y:70 },
+    /* ---- BLOCKED ---- */
+    { id:'GA-01', title:'Google Analytics Integration', sub:'Waiting on Measurement ID from user (G-XXXXXXXXXX)', phase:'Blocked', status:'blocked', effort:'low', effortPct:1, score:6.0, x:10, y:57 },
+    { id:'PLAN-01', title:'Phase 1 Polish Plan', sub:'Welcome splash, YouTube fix, header overlap, App Store guides, SEO', phase:'Blocked', status:'blocked', effort:'high', effortPct:15, score:7.5, x:82, y:72 }
+  ];
+
+  /* ============================================================
+     SWIMLANE DATA
+  ============================================================ */
+  var SWIMLANES = [
+    {
+      phase: 'Phase 1\nBuilt', items: [
+        {label:'8 Core Modules', status:'done'},
+        {label:'TTS & Read Aloud', status:'done'},
+        {label:'Accessibility Suite', status:'done'},
+        {label:'Scam Simulator', status:'done'},
+        {label:'Device Wizard', status:'done'},
+        {label:'City Resources', status:'done'},
+        {label:'Feedback System', status:'done'},
+        {label:'Scam Panic Button', status:'done'},
+        {label:'Listen Button Polish', status:'done'},
+        {label:'Visual Warmth', status:'done'}
+      ]
+    },
+    {
+      phase: 'Phase 2\nBuilt', items: [
+        {label:'Module 9: AI', status:'done'},
+        {label:'Module 10: Grocery', status:'done'},
+        {label:'Module 11: Rides', status:'done'},
+        {label:'Final Quiz (11 mod)', status:'done'},
+        {label:'Demographics Form', status:'done'},
+        {label:'M7 + M8 Rename', status:'done'},
+        {label:'Remove Emergency Ctns', status:'done'},
+        {label:'Podcast Badges', status:'done'}
+      ]
+    },
+    {
+      phase: '▶ Now\nNext Sprint', items: [
+        {label:'Location Confirmation', status:'now'},
+        {label:'Password Vault Tip', status:'now'}
+      ]
+    },
+    {
+      phase: 'Later\n(Beta Data)', items: [
+        {label:'Dyslexic Font Wizard', status:'deferred'},
+        {label:'Multi-Language FB', status:'deferred'},
+        {label:'Antivirus Tip', status:'deferred'},
+        {label:'Password Manager Guide', status:'deferred'}
+      ]
+    },
+    {
+      phase: 'Deferred\n(Wait)', items: [
+        {label:'Story Personalisation', status:'deferred'},
+        {label:'Visual Example Rework', status:'deferred'},
+        {label:'2FA Training', status:'deferred'}
+      ]
+    },
+    {
+      phase: '⛔ Blocked', items: [
+        {label:'Google Analytics', status:'blocked'},
+        {label:'Phase 1 Polish Plan', status:'blocked'}
+      ]
+    }
+  ];
+
+  /* ============================================================
+     RENDER
+  ============================================================ */
+
+  // Date
+  var d = new Date();
+  document.getElementById('today-date').textContent =
+    d.toLocaleDateString('en-CA', { year:'numeric', month:'long', day:'numeric' });
+
+  // Stats
+  var counts = { done:0, next:0, later:0, deferred:0, blocked:0 };
+  ITEMS.forEach(function(item) { counts[item.status]++; });
+  document.getElementById('stat-done').textContent    = counts.done;
+  document.getElementById('stat-next').textContent    = counts.next;
+  document.getElementById('stat-later').textContent   = counts.later;
+  document.getElementById('stat-deferred').textContent = counts.deferred;
+  document.getElementById('stat-blocked').textContent = counts.blocked;
+  document.getElementById('stat-total').textContent   = ITEMS.length;
+
+  // Matrix
+  var matrix = document.getElementById('db-matrix');
+  ITEMS.forEach(function(item) {
+    var dot = document.createElement('div');
+    dot.className = 'matrix-dot dot-' + item.status;
+    // x: effort axis (left to right 2%–95%)
+    // y: score axis (bottom to top 2%–95%) — CSS transform flips (positive = from bottom)
+    var leftPct   = (item.x * 0.9 + 2) + '%';
+    var bottomPct = (item.y * 0.9 + 2) + '%';
+    dot.style.left   = leftPct;
+    dot.style.bottom = bottomPct;
+    var scoreColor = item.score >= 7.5 ? '#4ADE80' : item.score >= 6 ? '#FBBF24' : '#8892B0';
+    dot.innerHTML =
+      '<div class="dot-circle">' + item.id.split('-')[1] + '</div>' +
+      '<div class="dot-tooltip">' +
+        '<strong>' + item.title + '</strong>' +
+        '<span>' + item.sub + '</span><br>' +
+        '<span style="color:' + scoreColor + ';font-weight:700">Score: ' + item.score + '</span>' +
+        '&nbsp;&nbsp;<span>Effort: ~' + item.effortPct + '%</span>' +
+      '</div>';
+    matrix.appendChild(dot);
+  });
+
+  // Swimlane
+  var tlEl = document.getElementById('db-timeline');
+  var phaseCol = document.createElement('div');
+  phaseCol.className = 'tl-phase-col';
+  var itemsCol = document.createElement('div');
+  itemsCol.className = 'tl-items-col';
+  SWIMLANES.forEach(function(lane) {
+    var ph = document.createElement('div');
+    ph.className = 'tl-phase';
+    ph.textContent = lane.phase;
+    phaseCol.appendChild(ph);
+
+    var it = document.createElement('div');
+    it.className = 'tl-items';
+    lane.items.forEach(function(item) {
+      var tag = document.createElement('span');
+      var cls = item.status === 'done' ? 'tag-done' :
+                item.status === 'now'  ? 'tag-now'  :
+                item.status === 'blocked' ? 'tag-queue' :
+                'tag-deferred';
+      tag.className = 'tl-tag ' + cls;
+      tag.textContent = item.label;
+      it.appendChild(tag);
+    });
+    itemsCol.appendChild(it);
+  });
+  tlEl.appendChild(phaseCol);
+  tlEl.appendChild(itemsCol);
+
+  // Table
+  var tbody = document.getElementById('db-tbody');
+  var sortState = { col: 'score', dir: -1 };
+  var activeFilter = 'all';
+  var searchQ = '';
+
+  function scoreColor(s) {
+    return s >= 8 ? '#4ADE80' : s >= 7 ? '#86EFAC' : s >= 6 ? '#FBBF24' : s >= 5 ? '#FCA5A5' : '#5C6A8A';
+  }
+  function effortLabel(e) {
+    return e === 'low' ? '<span class="effort-low effort-pill">▼ Low</span>' :
+           e === 'medium' ? '<span class="effort-medium effort-pill">◆ Med</span>' :
+           '<span class="effort-high effort-pill">▲ High</span>';
+  }
+  function statusBadge(s) {
+    var map = { done:'Done', next:'Up Next', later:'Later', deferred:'Deferred', blocked:'Blocked' };
+    return '<span class="badge badge-' + s + '">' + (map[s]||s) + '</span>';
+  }
+
+  function renderTable() {
+    var sorted = ITEMS.slice().sort(function(a,b) {
+      var av = a[sortState.col], bv = b[sortState.col];
+      if (typeof av === 'string') av = av.toLowerCase();
+      if (typeof bv === 'string') bv = bv.toLowerCase();
+      if (av < bv) return -1 * sortState.dir;
+      if (av > bv) return  1 * sortState.dir;
+      return 0;
+    });
+
+    tbody.innerHTML = '';
+    sorted.forEach(function(item) {
+      var show = (activeFilter === 'all' || activeFilter === item.status) &&
+                 (searchQ === '' || (item.title + item.sub + item.id).toLowerCase().indexOf(searchQ) !== -1);
+      var tr = document.createElement('tr');
+      if (!show) tr.className = 'hidden';
+      var fillW = Math.round(item.score / 10 * 100);
+      tr.innerHTML =
+        '<td class="td-id">' + item.id + '</td>' +
+        '<td class="td-title">' + item.title + '<small>' + item.sub + '</small></td>' +
+        '<td style="color:#5C7BB5;font-size:11px">' + item.phase + '</td>' +
+        '<td><div class="score-bar"><div class="score-track"><div class="score-fill" style="width:' + fillW + '%;background:' + scoreColor(item.score) + '"></div></div><span style="color:' + scoreColor(item.score) + ';font-size:11px;font-weight:700">' + item.score + '</span></div></td>' +
+        '<td>' + effortLabel(item.effort) + '</td>' +
+        '<td class="credits-val">~' + item.effortPct + '%</td>' +
+        '<td>' + statusBadge(item.status) + '</td>';
+      tbody.appendChild(tr);
+    });
+
+    document.querySelectorAll('th[data-col]').forEach(function(th) {
+      th.classList.toggle('sorted', th.dataset.col === sortState.col);
+      var arrow = th.querySelector('.sort-arrow');
+      if (th.dataset.col === sortState.col) {
+        arrow.textContent = sortState.dir === 1 ? '↑' : '↓';
+      } else {
+        arrow.textContent = '↕';
+      }
+    });
+  }
+
+  // Sort on header click
+  document.querySelectorAll('th[data-col]').forEach(function(th) {
+    th.addEventListener('click', function() {
+      var col = th.dataset.col;
+      if (sortState.col === col) {
+        sortState.dir *= -1;
+      } else {
+        sortState.col = col;
+        sortState.dir = col === 'score' ? -1 : 1;
+      }
+      renderTable();
+    });
+  });
+
+  // Filter buttons
+  document.querySelectorAll('.db-filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.db-filter-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter;
+      renderTable();
+    });
+  });
+
+  // Search
+  document.getElementById('db-search-input').addEventListener('input', function() {
+    searchQ = this.value.trim().toLowerCase();
+    renderTable();
+  });
+
+  renderTable();
+</script>
+</body>
+</html>
