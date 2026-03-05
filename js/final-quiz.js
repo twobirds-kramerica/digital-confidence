@@ -1,8 +1,8 @@
 /* ============================================
    Digital Confidence Centre — Final Quiz
-   v3 — 26 scenario-based "What would you do?"
+   v4 — 29 scenario-based "What would you do?"
         questions covering all 11 modules
-   Passing score: 80% (21/26)
+   Passing score: 80% (24/29)
    ============================================ */
 
 var DC_QUIZ = (function () {
@@ -219,6 +219,32 @@ var DC_QUIZ = (function () {
       explain: 'This is the "military romance scam" — one of the most reported frauds in Canada. No real soldier asks strangers for gift cards. The combination of a new profile, few friends, and an immediate gift card request are all classic warning signs. Unfriend, block, and report.'
     },
 
+    /* MODULE 8 — Texting & Public vs Private */
+    {
+      module: 'Module 8: Staying Connected',
+      q: 'You\'d like to call your friend Margaret for a chat but you remember learning that sending a quick message first is now considered the polite thing to do. What is the best approach?',
+      options: [
+        'Call her directly — calling is always the most respectful way to reach someone',
+        'Never call at all — texting has completely replaced phone calls',
+        'Send a short text first: "Hi Margaret, free for a call this morning?" — then call when she replies',
+        'Send a long detailed email asking permission to call, then wait several days'
+      ],
+      correct: 2,
+      explain: 'A quick "Are you free to talk?" text before calling is the modern courtesy — it lets Margaret know a call is coming so she isn\'t caught off guard. Calling is absolutely still fine, especially for close family or emergencies. The text-first habit simply makes calling even more considerate.'
+    },
+    {
+      module: 'Module 8: Staying Connected',
+      q: 'You want to send your friend Susan a quick note on Facebook about a beautiful sunset. You type your message and notice a 🌐 globe icon next to the button you\'re about to tap. What does the globe mean?',
+      options: [
+        'Your Wi-Fi is working — the globe just shows you are connected to the internet',
+        'The message is encrypted and completely private — only Susan will see it',
+        'The globe means this will be a public post — visible to everyone on Facebook, not just Susan',
+        'The globe shows the message will be translated to other languages'
+      ],
+      correct: 2,
+      explain: 'The 🌐 globe icon means your post will be visible to EVERYONE — like pinning a note on a bulletin board in a shopping centre. To reach Susan privately, look for her photo at the top and a "Send" button at the bottom (not "Post"). The rule: see a globe → stop and check. No globe = private message.'
+    },
+
     /* GENERAL / CROSS-MODULE */
     {
       module: 'General: Device Safety',
@@ -360,7 +386,7 @@ var DC_QUIZ = (function () {
     }
   ];
 
-  var PASS_SCORE   = 21;
+  var PASS_SCORE   = 24;
   var currentQ     = 0;
   var score        = 0;
   var answered     = [];
@@ -405,7 +431,7 @@ var DC_QUIZ = (function () {
       '<div class="quiz-container">' +
         '<div class="quiz-header">' +
           '<h1>🎓 Final Digital Confidence Assessment</h1>' +
-          '<p style="color:#455A64;font-size:17px;margin:8px 0 0;">26 real-life scenarios &nbsp;·&nbsp; Pass with 80% &nbsp;·&nbsp; No time limit</p>' +
+          '<p style="color:#455A64;font-size:17px;margin:8px 0 0;">29 real-life scenarios &nbsp;·&nbsp; Pass with 80% &nbsp;·&nbsp; No time limit</p>' +
         '</div>' +
         '<div class="quiz-question" style="text-align:center;">' +
           '<div style="font-size:72px;margin-bottom:24px;">📋</div>' +
@@ -413,7 +439,7 @@ var DC_QUIZ = (function () {
           '<p style="font-size:18px;color:var(--text-secondary);margin-bottom:32px;">' +
             'Each question describes a real situation you might encounter. ' +
             'Choose what you would do. There is no time pressure — read carefully.<br><br>' +
-            'You need 21 correct answers (80%) to pass and receive your certificate.' +
+            'You need 24 correct answers (80%) to pass and receive your certificate.' +
           '</p>' +
           '<button class="quiz-btn quiz-btn-primary" id="start-quiz-btn" style="font-size:20px;padding:18px 48px;">Begin Assessment</button>' +
         '</div>' +

@@ -9,14 +9,16 @@ var wizardSelections = {
   city: '',
   phone: [],
   tablet: [],
-  computer: []
+  computer: [],
+  reading: ''  /* 'standard' or 'dyslexic' */
 };
 
 var WIZARD_STEPS = [
   { id: 'city', title: 'Where do you live?', type: 'city' },
   { id: 'phone', title: 'What phone do you use?', type: 'device' },
   { id: 'tablet', title: 'What tablet do you use?', type: 'device' },
-  { id: 'computer', title: 'What computer do you use?', type: 'device' }
+  { id: 'computer', title: 'What computer do you use?', type: 'device' },
+  { id: 'reading', title: 'How would you like text to look?', type: 'reading' }
 ];
 
 var DEVICE_OPTIONS = {
@@ -191,6 +193,9 @@ function loadExistingSelections() {
       wizardSelections.computer = parsed.computer || [];
     } catch (e) { /* ignore */ }
   }
+  /* Load reading preference (default to standard so wizard starts with one selected) */
+  var savedDyslexic = localStorage.getItem('dc-dyslexic-font');
+  wizardSelections.reading = savedDyslexic === 'true' ? 'dyslexic' : 'standard';
 }
 
 /* ---------- Render Current Step ---------- */
@@ -230,6 +235,24 @@ function renderWizard() {
     if ('geolocation' in navigator) {
       html += '<button class="wizard-geo-btn" id="wizard-geo" type="button">Use my location to suggest a city</button>';
     }
+  } else if (step.type === 'reading') {
+    var isDyslexic = wizardSelections.reading === 'dyslexic';
+    html += '<h3>' + step.title + '</h3>';
+    html += '<p class="step-explanation">Some people find a special font easier to read. Choose whichever feels more comfortable — you can change it at any time in the sidebar.</p>';
+    html += '<div class="wizard-options reading-options" role="group" aria-label="Font style preference">';
+
+    html += '<button class="wizard-option reading-option' + (!isDyslexic ? ' selected' : '') + '" data-reading="standard" type="button" aria-pressed="' + (!isDyslexic) + '">';
+    html += '<div class="reading-sample">The quick brown fox<br>jumps over the lazy dog.</div>';
+    html += '<strong>Standard Font</strong>';
+    html += '</button>';
+
+    html += '<button class="wizard-option reading-option' + (isDyslexic ? ' selected' : '') + '" data-reading="dyslexic" type="button" aria-pressed="' + isDyslexic + '">';
+    html += '<div class="reading-sample dyslexic-preview">The quick brown fox<br>jumps over the lazy dog.</div>';
+    html += '<strong>Dyslexia-Friendly Font</strong>';
+    html += '<small style="display:block;margin-top:4px;font-size:0.82rem;color:#555;">Easier for many people to read</small>';
+    html += '</button>';
+
+    html += '</div>';
   } else {
     var category = step.id;
     var options = DEVICE_OPTIONS[category];
@@ -284,12 +307,23 @@ function renderWizard() {
   }
 
   // Bind device option buttons
-  var optBtns = container.querySelectorAll('.wizard-option');
+  var optBtns = container.querySelectorAll('.wizard-option:not(.reading-option)');
   optBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
       var val = btn.getAttribute('data-value');
       var cat = btn.getAttribute('data-category');
       toggleDeviceOption(cat, val);
+      renderWizard();
+    });
+  });
+
+  // Bind reading option buttons (live preview)
+  var readingBtns = container.querySelectorAll('.reading-option');
+  readingBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      wizardSelections.reading = btn.getAttribute('data-reading');
+      /* Live preview — apply/remove class immediately */
+      document.body.classList.toggle('dyslexic-font', wizardSelections.reading === 'dyslexic');
       renderWizard();
     });
   });
@@ -352,6 +386,15 @@ function saveWizard() {
     tablet: wizardSelections.tablet,
     computer: wizardSelections.computer
   }));
+  /* Save reading preference */
+  if (wizardSelections.reading) {
+    var dyslexicOn = wizardSelections.reading === 'dyslexic';
+    localStorage.setItem('dc-dyslexic-font', dyslexicOn ? 'true' : 'false');
+    document.body.classList.toggle('dyslexic-font', dyslexicOn);
+    /* Sync sidebar toggle if present */
+    var toggle = document.getElementById('dyslexic-font-toggle');
+    if (toggle) toggle.checked = dyslexicOn;
+  }
   localStorage.setItem('dc-setup-complete', 'true');
   dcCloseWizard();
   // Refresh dynamic content

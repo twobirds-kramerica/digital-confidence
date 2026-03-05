@@ -4395,3 +4395,172 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   .dc-scam-step   { flex-direction: column; gap: 10px; }
   .dc-step-num    { width: 40px; height: 40px; font-size: 18px; }
 }
+
+/* ============================================
+   Location Prompt Banner (resources.html)
+   ============================================ */
+.lp-banner {
+  background: linear-gradient(135deg, #EBF5FB 0%, #EAF4FF 100%);
+  border: 2px solid #3498DB;
+  border-radius: var(--radius-lg);
+  margin-bottom: 28px;
+  padding: 32px 28px;
+}
+.lp-inner { text-align: center; max-width: 600px; margin: 0 auto; }
+.lp-icon  { font-size: 2.4rem; margin-bottom: 12px; }
+.lp-heading {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin: 0 0 10px;
+}
+.lp-subtext {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+.lp-city-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.lp-city-btn {
+  background: #fff;
+  border: 2px solid #3498DB;
+  border-radius: var(--radius-md);
+  color: #1565C0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 600;
+  min-width: 130px;
+  padding: 14px 18px;
+  transition: background 0.15s, color 0.15s, transform 0.1s;
+}
+.lp-city-btn:hover,
+.lp-city-btn:focus {
+  background: #3498DB;
+  color: #fff;
+  outline: none;
+  transform: translateY(-1px);
+}
+.lp-city-btn:active { transform: translateY(0); }
+
+.lp-or-text {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0 0 8px;
+}
+.lp-ontario-btn {
+  background: none;
+  border: none;
+  color: var(--accent-primary);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 4px 0;
+  text-decoration: underline;
+}
+.lp-ontario-btn:hover { color: var(--accent-hover); }
+
+/* Change Location strip */
+.lp-change-wrap {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.lp-city-label {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin: 0;
+}
+.lp-change-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--accent-primary);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  transition: background 0.15s;
+}
+.lp-change-btn:hover { background: #D6EAF8; }
+
+/* Dark mode */
+[data-theme="dark"] .lp-banner {
+  background: linear-gradient(135deg, #1A2A3A 0%, #1C2E40 100%);
+  border-color: #5DADE2;
+}
+[data-theme="dark"] .lp-city-btn {
+  background: #1E2D3D;
+  border-color: #5DADE2;
+  color: #90CAF9;
+}
+[data-theme="dark"] .lp-city-btn:hover,
+[data-theme="dark"] .lp-city-btn:focus {
+  background: #2471A3;
+  color: #fff;
+}
+[data-theme="dark"] .lp-change-wrap { background: transparent; }
+[data-theme="dark"] .lp-change-btn  { background: #1E2D3D; border-color: #4A6278; }
+[data-theme="dark"] .lp-change-btn:hover { background: #2C3E50; }
+
+/* Mobile */
+@media (max-width: 600px) {
+  .lp-banner   { padding: 24px 16px; }
+  .lp-city-btn { min-width: 110px; font-size: 1rem; padding: 12px 12px; }
+  .lp-heading  { font-size: 1.3rem; }
+}
+
+/* ============================================
+   Setup Wizard — Reading Comfort Step
+   ============================================ */
+.reading-options {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+.reading-option {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 200px;
+  max-width: 240px;
+  padding: 20px 16px;
+  text-align: center;
+}
+.reading-sample {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  line-height: 1.6;
+  padding: 12px 14px;
+  width: 100%;
+  text-align: left;
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+}
+.dyslexic-preview {
+  font-family: OpenDyslexic, sans-serif;
+}
+
+/* Dark mode */
+[data-theme="dark"] .reading-sample {
+  background: #1E2D3D;
+  border-color: #4A6278;
+  color: #E8EAF0;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .reading-options { flex-direction: column; }
+  .reading-option  { max-width: 100%; width: 100%; }
+}
