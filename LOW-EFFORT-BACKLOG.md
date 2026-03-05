@@ -13,7 +13,7 @@
 
 ## LOW-EFFORT-1: Location Prompt Before Showing Local Resources *(NEW)*
 
-**Status:** Deferred — execute next week with fresh budget
+**Status:** ✅ DONE — executed 2026-03-05
 **Estimated credits:** ~8%
 **Score:** UX 8, Foundation 7, Scale 7, A11y 5 → **7.3**
 **Priority:** MEDIUM-HIGH
@@ -48,7 +48,7 @@ User expressed concern about showing localised content without the user explicit
 
 ## LOW-EFFORT-2: Story Personalisation Cleanup
 
-**Status:** Deferred
+**Status:** ✅ DONE — executed 2026-03-05 (localize.js now uses 'springfield' generic fallback)
 **Estimated credits:** ~3%
 **Score:** UX 6, Foundation 3, Scale 5, A11y 3 → **4.6**
 
@@ -72,7 +72,7 @@ The `{{CITY}}` placeholder is replaced at runtime by `localize.js`. A few story 
 
 ## LOW-EFFORT-4: Default Dyslexic Font Option in Wizard
 
-**Status:** Deferred
+**Status:** ✅ DONE — executed 2026-03-05 (5th wizard step: Reading Comfort)
 **Estimated credits:** ~2%
 **Score:** UX 6, Foundation 5, Scale 5, A11y 9 → **5.9**
 
@@ -102,7 +102,7 @@ Add a "Reading Comfort" step to the setup wizard proactively offering the dyslex
 
 ## LOW-EFFORT-6: Password Vault Recommendation (Built-in Only)
 
-**Status:** Deferred — awaiting beta feedback
+**Status:** ✅ DONE — executed 2026-03-05 (comparison table added to module-3.html)
 **Estimated credits:** ~2%
 **Score:** UX 7, Foundation 6, Scale 6, A11y 4 → **6.3**
 
@@ -119,7 +119,7 @@ Many seniors write passwords on paper or reuse the same one everywhere. A short 
 
 ## LOW-EFFORT-7: Antivirus & Tech Support Recommendation
 
-**Status:** Deferred — awaiting beta feedback
+**Status:** ✅ DONE — executed 2026-03-05 (device-filtered section added to module-2.html)
 **Estimated credits:** ~2%
 **Score:** UX 6, Foundation 6, Scale 5, A11y 3 → **5.7**
 
@@ -140,7 +140,7 @@ Add a short "What to use on your device" tip to Module 2 (Security Shield) or re
 
 ## LOW-EFFORT-8: Multi-Language Feedback Option
 
-**Status:** Deferred — gather demand data first
+**Status:** ✅ DONE — executed 2026-03-05 (language dropdown added to feedback modal, language label in GitHub issue)
 **Estimated credits:** ~3%
 **Score:** UX 6, Foundation 4, Scale 8, A11y 5 → **5.9**
 

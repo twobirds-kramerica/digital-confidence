@@ -134,6 +134,16 @@ function injectFeedbackModal() {
           '<div class="dc-feedback-types" id="dc-feedback-types">' + typeOptions + '</div>',
         '</div>',
 
+        /* Language */
+        '<div class="dc-feedback-field">',
+          '<label class="dc-feedback-label" for="dc-feedback-lang">Language of your feedback:</label>',
+          '<select id="dc-feedback-lang" class="dc-feedback-select">',
+            '<option value="English" selected>English</option>',
+            '<option value="Fran\u00e7ais (French)">Fran\u00e7ais (French)</option>',
+            '<option value="Other / Autre">Other / Autre</option>',
+          '</select>',
+        '</div>',
+
         /* Message */
         '<div class="dc-feedback-field">',
           '<label class="dc-feedback-label" for="dc-feedback-text">Your feedback:</label>',
@@ -246,6 +256,7 @@ function handleFeedbackSubmit() {
   var textEl    = document.getElementById('dc-feedback-text');
   var typeEl    = document.querySelector('input[name="dc-feedback-type"]:checked');
   var catEl     = document.getElementById('dc-idea-category');
+  var langEl    = document.getElementById('dc-feedback-lang');
   var modal     = document.getElementById('dc-feedback-modal');
   var mode      = modal ? modal.dataset.mode : 'page';
 
@@ -253,6 +264,7 @@ function handleFeedbackSubmit() {
   var text     = textEl ? textEl.value.trim() : '';
   var type     = typeEl ? typeEl.value : 'Other Feedback';
   var category = (mode === 'global' && catEl && catEl.value) ? catEl.value : '';
+  var language = (langEl && langEl.value) ? langEl.value : 'English';
 
   if (!text) {
     alert('Please share your feedback before submitting.');
@@ -263,20 +275,23 @@ function handleFeedbackSubmit() {
   var submitBtn = document.getElementById('dc-submit-btn');
   if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending\u2026'; }
 
-  createGitHubIssue(name, type, text, category, mode);
+  createGitHubIssue(name, type, text, category, mode, language);
 }
 
 /* ================================================================
    GITHUB ISSUES API
    ================================================================ */
-function createGitHubIssue(userName, feedbackType, feedbackText, category, mode) {
+function createGitHubIssue(userName, feedbackType, feedbackText, category, mode, language) {
+  var lang     = language || 'English';
   var page     = window.location.pathname.split('/').pop() || 'index.html';
-  var titleStr = 'Feedback from ' + userName + ' | ' + feedbackType + (category ? ' | ' + category : '');
+  var langTag  = lang !== 'English' ? ' | ' + lang : '';
+  var titleStr = 'Feedback from ' + userName + ' | ' + feedbackType + (category ? ' | ' + category : '') + langTag;
 
   var bodyLines = [
     '**Submitted by:** ' + userName,
     '**Type:** ' + feedbackType,
     (category ? '**Category:** ' + category : ''),
+    '**Language:** ' + lang,
     '**Page:** ' + page,
     '**Full URL:** ' + window.location.href,
     '**Timestamp:** ' + new Date().toLocaleString('en-CA', { timeZone: 'America/Toronto' }),
@@ -294,6 +309,7 @@ function createGitHubIssue(userName, feedbackType, feedbackText, category, mode)
 
   var slug = feedbackType.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   var labels = ['beta-feedback', slug];
+  if (lang !== 'English') labels.push('lang-' + lang.split(' ')[0].toLowerCase());
 
   var backup = {
     name: userName, type: feedbackType, text: feedbackText,

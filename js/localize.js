@@ -58,8 +58,9 @@ var DC_CITIES = {
 
 /* Safe text-node replacement — does NOT touch event listeners */
 function localizeContent() {
-  var cityKey = localStorage.getItem('dc-city') || 'windsor';
-  var info = DC_CITIES[cityKey] || DC_CITIES.windsor;
+  /* Use 'springfield' (generic Ontario fallback) if no city chosen yet */
+  var cityKey = localStorage.getItem('dc-city') || 'springfield';
+  var info = DC_CITIES[cityKey] || DC_CITIES.springfield;
 
   var walker = document.createTreeWalker(
     document.body,
