@@ -1,8 +1,8 @@
 /* ============================================
    Digital Confidence Centre — Final Quiz
-   v4 — 29 scenario-based "What would you do?"
+   v4 — 30 scenario-based "What would you do?"
         questions covering all 11 modules
-   Passing score: 80% (24/29)
+   Passing score: 80% (24/30)
    ============================================ */
 
 var DC_QUIZ = (function () {
@@ -87,6 +87,19 @@ var DC_QUIZ = (function () {
       ],
       correct: 2,
       explain: 'Two-factor authentication (2FA) is a security feature that protects you. When YOU log in, the system sends a code to your phone to confirm it\'s really you. This is a good thing — enter the code. If you receive a code when you didn\'t try to log in, that\'s when to worry (someone else tried).'
+    },
+
+    {
+      module: 'Module 3: Passwords & Security',
+      q: 'You have just turned on two-factor authentication for your Gmail account. An hour later, you receive a phone call from someone claiming to be from Google. They say there is a problem with your account and ask you to read them the 6-digit code that just arrived by text message. What do you do?',
+      options: [
+        'Read them the code — Google needs it to fix your account',
+        'Ask them to call back tomorrow to give you time to think',
+        'Hang up immediately. A legitimate company will never call to ask for your verification code. This is a scam.',
+        'Give them only the first 3 digits of the code to verify they are real'
+      ],
+      correct: 2,
+      explain: 'This is a "real-time phishing" scam. The caller is trying to log into YOUR account right now and needs you to hand them the 2FA code. Google, your bank, and any legitimate company will NEVER call you to ask for a verification code. The moment someone asks for your 6-digit code over the phone, hang up. Even giving part of it is dangerous.'
     },
 
     /* MODULE 4 — App Store Safety */
@@ -431,7 +444,7 @@ var DC_QUIZ = (function () {
       '<div class="quiz-container">' +
         '<div class="quiz-header">' +
           '<h1>🎓 Final Digital Confidence Assessment</h1>' +
-          '<p style="color:#455A64;font-size:17px;margin:8px 0 0;">29 real-life scenarios &nbsp;·&nbsp; Pass with 80% &nbsp;·&nbsp; No time limit</p>' +
+          '<p style="color:#455A64;font-size:17px;margin:8px 0 0;">30 real-life scenarios &nbsp;·&nbsp; Pass with 80% &nbsp;·&nbsp; No time limit</p>' +
         '</div>' +
         '<div class="quiz-question" style="text-align:center;">' +
           '<div style="font-size:72px;margin-bottom:24px;">📋</div>' +
@@ -439,7 +452,7 @@ var DC_QUIZ = (function () {
           '<p style="font-size:18px;color:var(--text-secondary);margin-bottom:32px;">' +
             'Each question describes a real situation you might encounter. ' +
             'Choose what you would do. There is no time pressure — read carefully.<br><br>' +
-            'You need 24 correct answers (80%) to pass and receive your certificate.' +
+            'You need 24 correct answers (80%) to pass and receive your certificate. (30 questions total)' +
           '</p>' +
           '<button class="quiz-btn quiz-btn-primary" id="start-quiz-btn" style="font-size:20px;padding:18px 48px;">Begin Assessment</button>' +
         '</div>' +
