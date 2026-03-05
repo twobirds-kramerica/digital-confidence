@@ -176,6 +176,27 @@ body {
   min-height: 100vh;
 }
 
+/* Skip Navigation Link (keyboard / screen reader accessibility) */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 9999;
+  padding: 12px 20px;
+  background: #1565C0;
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid #FFD700;
+  outline-offset: 2px;
+}
+
 /* Typography */
 h1, h2, h3, h4 {
   color: var(--text-primary);
