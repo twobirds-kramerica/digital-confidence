@@ -3476,7 +3476,16 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   transition: transform 0.3s;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
-#dyslexic-font-toggle { display: none; }
+/* Visually hidden (not display:none) so iOS Safari label taps still fire change events */
+#dyslexic-font-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  pointer-events: none;
+}
 #dyslexic-font-toggle:checked + .toggle-switch { background: #4CAF50; }
 #dyslexic-font-toggle:checked + .toggle-switch::after { transform: translateX(28px); }
 .toggle-text { display: flex; flex-direction: column; gap: 4px; }

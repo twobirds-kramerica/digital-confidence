@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
   loadPreferences();
   initFontControls();
   initThemeToggle();
+  initDyslexicFont();
 });
 
 var FONT_SIZES = ['small', 'medium', 'large', 'xl'];
@@ -45,6 +46,10 @@ function loadPreferences() {
   document.documentElement.setAttribute('data-theme', savedTheme);
   updateFontButtons(savedFont);
   updateThemeButton(savedTheme);
+  // Apply dyslexic font early (same frame as theme/font) to prevent flash
+  if (localStorage.getItem('dc-dyslexic-font') === 'true') {
+    document.body.classList.add('dyslexic-font');
+  }
 }
 
 function initFontControls() {
@@ -99,20 +104,24 @@ function initDyslexicFont() {
   var toggle = document.getElementById('dyslexic-font-toggle');
   if (!toggle) return;
 
-  // Restore saved state
-  if (localStorage.getItem('dc-dyslexic-font') === 'true') {
-    document.body.classList.add('dyslexic-font');
-    toggle.checked = true;
-  }
+  // Sync toggle visual state (body class already applied in loadPreferences)
+  toggle.checked = (localStorage.getItem('dc-dyslexic-font') === 'true');
 
   toggle.addEventListener('change', function() {
-    document.body.classList.toggle('dyslexic-font', this.checked);
-    localStorage.setItem('dc-dyslexic-font', this.checked);
-    // Sync other toggles on same page (sidebar may have duplicate)
-    document.querySelectorAll('#dyslexic-font-toggle').forEach(function(t) {
-      t.checked = toggle.checked;
-    });
+    var isOn = this.checked;
+    document.body.classList.toggle('dyslexic-font', isOn);
+    // Store as explicit string so === 'true' check works reliably on all browsers
+    localStorage.setItem('dc-dyslexic-font', isOn ? 'true' : 'false');
   });
-}
 
-document.addEventListener('DOMContentLoaded', initDyslexicFont);
+  // iOS Safari: also listen on the label for 'click' as a fallback
+  var label = toggle.closest('label');
+  if (label) {
+    label.addEventListener('touchend', function(e) {
+      // Let the browser handle it; this just prevents delayed 300ms ghost click
+      e.preventDefault();
+      toggle.checked = !toggle.checked;
+      toggle.dispatchEvent(new Event('change'));
+    });
+  }
+}
