@@ -1,0 +1,4 @@
+# Keep folder structure but ignore actual backup files (may contain personal data)
+*
+!.gitignore
+!README.md

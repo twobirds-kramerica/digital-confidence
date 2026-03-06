@@ -52,6 +52,18 @@
 - Ontario-specific resources and phone numbers where referenced
 - Default city: St. Thomas, Ontario
 
+## Data Backup Policy
+- Feedback submissions are stored in Formspree (https://formspree.io/f/xeerqryj)
+- Formspree free tier: 50 submissions/month, CSV export available in dashboard
+- Manual backup reminder: Export CSV from Formspree dashboard monthly
+- Backup location: Save exports to /backups/feedback/ in this repo (gitignored for privacy)
+- If Formspree becomes unavailable, replace endpoint URL in js/feedback-github.js line 13
+  with any CORS-safe form service (e.g. Netlify Forms, Web3Forms, Basin)
+- Do NOT store raw submission data in the public repo — personal feedback is private
+- Secondary backup: Web3Forms (https://web3forms.com) — fire-and-forget, silent fail
+- Web3Forms key stored in: js/feedback-github.js (search for WEB3FORMS_ACCESS_KEY)
+- If adding a third form service in future, follow the same silent fire-and-forget pattern
+
 ## Deployment Checklist (Before Any Push)
 - [ ] No new external dependencies introduced without approval
 - [ ] All modals tested at 150% zoom

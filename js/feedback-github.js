@@ -312,6 +312,22 @@ function submitToFormspree(userName, feedbackType, feedbackText, module, lang) {
       console.log('═══ END ═══');
       saveFeedbackBackup(Object.assign({ submitted: true }, payload));
       showFeedbackSuccess();
+
+      /* Silent redundant backup to Web3Forms — fire-and-forget, never blocks user */
+      // WEB3FORMS_ACCESS_KEY: Replace with key from https://web3forms.com
+      var web3Key = 'WEB3FORMS_ACCESS_KEY';
+      if (web3Key !== 'WEB3FORMS_ACCESS_KEY') {
+        fetch('https://api.web3forms.com/submit', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            access_key: web3Key,
+            subject:    'DCC Feedback Backup',
+            from_name:  payload.name || 'Anonymous',
+            message:    JSON.stringify(payload)
+          })
+        }).catch(function () { /* silent fail — backup only */ });
+      }
     } else {
       console.error('Formspree error:', result.data);
       throw new Error(result.data.error || 'Submission failed');
