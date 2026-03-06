@@ -42,12 +42,29 @@ var DC_FEEDBACK_TYPES = [
   { value: 'Other Feedback',               icon: '💬', help: 'Something else'                   }
 ];
 
-/* ---- Category options for global idea FAB ---- */
+/* ---- Category options ---- */
 var DC_IDEA_CATEGORIES = [
   'Passwords & Security','App Store & Downloads','Email',
   'Online Banking','Photos & Camera','Video Calls (FaceTime/Zoom)',
   'Website Navigation','New Section/Topic Request','Other'
 ];
+
+/* ---- Page-to-category auto-populate map ---- */
+var DC_PAGE_CATEGORIES = {
+  'module-1.html':  'Module 1: Getting Started',
+  'module-2.html':  'Module 2: Escape Hatch',
+  'module-3.html':  'Module 3: Passwords',
+  'module-4.html':  'Module 4: App Store Safety',
+  'module-5.html':  'Module 5: Email Basics',
+  'module-6.html':  'Module 6: Online Banking',
+  'module-7.html':  'Module 7: Photos & Memories',
+  'module-8.html':  'Module 8: Stay Connected',
+  'module-9.html':  'Module 9: Video Calls',
+  'module-10.html': 'Module 10: Scam Simulator',
+  'module-11.html': 'Module 11: Final Quiz',
+  'resources.html': 'Resources Page',
+  'index.html':     'Home Page'
+};
 
 /* ================================================================
    INJECT FEEDBACK UI INTO EVERY PAGE
@@ -57,14 +74,24 @@ document.addEventListener('DOMContentLoaded', function () {
   injectUnifiedFeedbackBtn();
   injectFeedbackModal();
   initFeedbackDatalist();
+  initAutoAdvance();
 });
 
-/* ---- Inject CSS (avoids needing main.css update for this system) ---- */
+/* ---- Inject CSS for new UX elements ---- */
 function injectFeedbackStyles() {
-  /* Styles are added to main.css by the build — nothing needed here */
+  var style = document.createElement('style');
+  style.textContent = [
+    '.dc-attachment-field{margin-top:32px;padding-top:24px;border-top:1px solid #E1E8ED;opacity:0.7;}',
+    '.dc-label-small{font-size:13px;color:#78909C;display:block;margin-bottom:4px;font-weight:600;}',
+    '.dc-field-help-small{font-size:12px;color:#B0BEC5;margin:0 0 8px;}',
+    '.dc-file-input{font-size:13px;padding:8px;border:1px dashed #CFD8DC;border-radius:6px;background:#F5F7FA;width:100%;box-sizing:border-box;}',
+    '.dc-file-reqs{font-size:11px;color:#90A4AE;margin:4px 0 0;}',
+    '.dc-feedback-actions{display:flex;justify-content:space-between;align-items:center;margin-top:32px;padding-top:24px;border-top:2px solid #E1E8ED;gap:12px;}'
+  ].join('\n');
+  document.head.appendChild(style);
 }
 
-/* ---- Unified "Ideas and Feedback" button (bottom-right) ---- */
+/* ---- Unified "Ideas and Feedback" FAB button (bottom-right) ---- */
 function injectUnifiedFeedbackBtn() {
   var btn = document.createElement('button');
   btn.id        = 'dc-unified-feedback-btn';
@@ -101,26 +128,37 @@ function injectFeedbackModal() {
       '<div class="dc-modal-backdrop" id="dc-modal-backdrop"></div>',
       '<div class="dc-modal-content" role="document">',
 
-        /* Close button — sticky so it's always visible */
         '<button class="dc-modal-close" id="dc-modal-close" aria-label="Close feedback">',
           '<span aria-hidden="true">&times;</span>',
         '</button>',
 
-        /* Header */
         '<div id="dc-modal-form-area">',
-        '<h2 class="dc-modal-title" id="dc-modal-title">Help Us Improve! 🚀</h2>',
+        '<h2 class="dc-modal-title" id="dc-modal-title">Ideas &amp; Feedback 💬</h2>',
         '<p class="dc-modal-subtitle" id="dc-modal-subtitle"></p>',
 
-        /* Global idea category (hidden in page mode) */
-        '<div class="dc-feedback-field" id="dc-category-field" style="display:none;">',
-          '<label class="dc-feedback-label" for="dc-idea-category">What area is this idea about?</label>',
+        /* 1. Feedback type */
+        '<div class="dc-feedback-field">',
+          '<p class="dc-feedback-label">Type of feedback:</p>',
+          '<div class="dc-feedback-types" id="dc-feedback-types">' + typeOptions + '</div>',
+        '</div>',
+
+        /* 2. Category (always visible, auto-populated from page) */
+        '<div class="dc-feedback-field" id="dc-category-field">',
+          '<label class="dc-feedback-label" for="dc-idea-category">What is this idea/feedback about?</label>',
           '<select id="dc-idea-category" class="dc-feedback-select">' + catOptions + '</select>',
         '</div>',
 
-        /* Name */
+        /* 3. Feedback text */
+        '<div class="dc-feedback-field">',
+          '<label class="dc-feedback-label" for="dc-feedback-text">Your feedback:</label>',
+          '<textarea id="dc-feedback-text" class="dc-feedback-textarea" rows="5"',
+            ' placeholder="Tell us what you noticed\u2026" required></textarea>',
+        '</div>',
+
+        /* 4. Name (optional, moved to bottom) */
         '<div class="dc-feedback-field">',
           '<label class="dc-feedback-label" for="dc-feedback-name">',
-            'Your Name <span class="dc-optional">(Optional — helps us follow up)</span>',
+            'Your Name <span class="dc-optional">(Optional \u2014 helps us follow up)</span>',
           '</label>',
           '<input type="text" id="dc-feedback-name" class="dc-feedback-input"',
             ' placeholder="Start typing your name\u2026" list="dc-beta-names" autocomplete="off">',
@@ -128,13 +166,7 @@ function injectFeedbackModal() {
           '<p class="dc-field-help">Can\'t find your name? Just type it in!</p>',
         '</div>',
 
-        /* Feedback type */
-        '<div class="dc-feedback-field">',
-          '<p class="dc-feedback-label">Type of feedback:</p>',
-          '<div class="dc-feedback-types" id="dc-feedback-types">' + typeOptions + '</div>',
-        '</div>',
-
-        /* Language */
+        /* 5. Language */
         '<div class="dc-feedback-field">',
           '<label class="dc-feedback-label" for="dc-feedback-lang">Language of your feedback:</label>',
           '<select id="dc-feedback-lang" class="dc-feedback-select">',
@@ -144,17 +176,19 @@ function injectFeedbackModal() {
           '</select>',
         '</div>',
 
-        /* Message */
-        '<div class="dc-feedback-field">',
-          '<label class="dc-feedback-label" for="dc-feedback-text">Your feedback:</label>',
-          '<textarea id="dc-feedback-text" class="dc-feedback-textarea" rows="5"',
-            ' placeholder="Tell us what you noticed\u2026" required></textarea>',
+        /* 6. Screenshot (optional, visually de-emphasized) */
+        '<div class="dc-feedback-field dc-attachment-field">',
+          '<label for="dc-feedback-screenshot" class="dc-label-small">Screenshot (optional)</label>',
+          '<p class="dc-field-help-small">Only if it helps explain your feedback</p>',
+          '<input type="file" id="dc-feedback-screenshot" class="dc-file-input"',
+            ' accept="image/png,image/jpeg,image/webp">',
+          '<p class="dc-file-reqs">PNG, JPG, or WebP only &bull; Max 2MB</p>',
         '</div>',
 
-        /* Actions */
+        /* 7. Buttons: Cancel left, Send right */
         '<div class="dc-feedback-actions">',
-          '<button id="dc-submit-btn" class="dc-btn-submit">Send Feedback</button>',
           '<button id="dc-cancel-btn" class="dc-btn-cancel">Cancel</button>',
+          '<button id="dc-submit-btn" class="dc-btn-submit">Send Feedback</button>',
         '</div>',
         '</div>',
 
@@ -187,6 +221,22 @@ function injectFeedbackModal() {
   document.getElementById('dc-cancel-btn').addEventListener('click', closeFeedbackModal);
   document.getElementById('dc-submit-btn').addEventListener('click', handleFeedbackSubmit);
 
+  /* Screenshot file validation */
+  document.getElementById('dc-feedback-screenshot').addEventListener('change', function (e) {
+    var file = e.target.files[0];
+    if (!file) return;
+    if (file.size > 2097152) {
+      alert('Screenshot must be under 2MB. Please resize and try again.');
+      e.target.value = '';
+      return;
+    }
+    var allowed = ['image/png', 'image/jpeg', 'image/webp'];
+    if (allowed.indexOf(file.type) === -1) {
+      alert('Only PNG, JPG, or WebP images allowed.');
+      e.target.value = '';
+    }
+  });
+
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
       var modal = document.getElementById('dc-feedback-modal');
@@ -206,15 +256,55 @@ function initFeedbackDatalist() {
   });
 }
 
+/* ---- Auto-advance: scroll to next field when current field is filled ---- */
+function initAutoAdvance() {
+  /* Type radio → scroll category into view and focus it */
+  document.querySelectorAll('input[name="dc-feedback-type"]').forEach(function (radio) {
+    radio.addEventListener('change', function () {
+      var next = document.getElementById('dc-idea-category');
+      if (next) {
+        next.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(function () { next.focus(); }, 300);
+      }
+    });
+  });
+
+  /* Category select → scroll textarea into view and focus it */
+  var catSel = document.getElementById('dc-idea-category');
+  if (catSel) {
+    catSel.addEventListener('change', function () {
+      if (this.value) {
+        var next = document.getElementById('dc-feedback-text');
+        if (next) {
+          next.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          setTimeout(function () { next.focus(); }, 300);
+        }
+      }
+    });
+  }
+
+  /* Textarea blur → scroll name field into view (no focus steal) */
+  var ta = document.getElementById('dc-feedback-text');
+  if (ta) {
+    ta.addEventListener('blur', function () {
+      if (this.value.trim()) {
+        var next = document.getElementById('dc-feedback-name');
+        if (next) next.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  }
+}
+
 /* ---- Open modal ---- */
 function openFeedbackModal(mode) {
-  var modal    = document.getElementById('dc-feedback-modal');
-  var title    = document.getElementById('dc-modal-title');
-  var subtitle = document.getElementById('dc-modal-subtitle');
-  var catField = document.getElementById('dc-category-field');
-  var formArea = document.getElementById('dc-modal-form-area');
-  var success  = document.getElementById('dc-feedback-success');
-  var error    = document.getElementById('dc-feedback-error');
+  var modal      = document.getElementById('dc-feedback-modal');
+  var title      = document.getElementById('dc-modal-title');
+  var subtitle   = document.getElementById('dc-modal-subtitle');
+  var formArea   = document.getElementById('dc-modal-form-area');
+  var success    = document.getElementById('dc-feedback-success');
+  var error      = document.getElementById('dc-feedback-error');
+  var catEl      = document.getElementById('dc-idea-category');
+  var screenshot = document.getElementById('dc-feedback-screenshot');
 
   /* Reset state */
   formArea.style.display = 'block';
@@ -223,24 +313,38 @@ function openFeedbackModal(mode) {
   document.querySelectorAll('input[name="dc-feedback-type"]').forEach(function (r) { r.checked = false; });
   var ta = document.getElementById('dc-feedback-text');
   if (ta) ta.value = '';
+  if (screenshot) screenshot.value = '';
 
   modal.dataset.mode = mode || 'page';
 
-  if (mode === 'unified' || mode === 'global') {
-    title.textContent       = 'Ideas & Feedback 💬';
-    subtitle.textContent    = 'Share an idea or tell us about this page: ' + (document.title || window.location.pathname.split('/').pop());
-    catField.style.display  = 'block';
-  } else {
-    title.textContent       = 'Ideas & Feedback 💬';
-    subtitle.textContent    = 'About this page: ' + (document.title || window.location.pathname.split('/').pop());
-    catField.style.display  = 'none';
+  title.textContent    = 'Ideas & Feedback 💬';
+  subtitle.textContent = 'About this page: ' + (document.title || window.location.pathname.split('/').pop());
+
+  /* Auto-populate category from current page */
+  if (catEl) {
+    var page         = window.location.pathname.split('/').pop() || 'index.html';
+    var autoCategory = DC_PAGE_CATEGORIES[page];
+    if (autoCategory) {
+      /* Add option dynamically if not already in the list */
+      if (!catEl.querySelector('option[value="' + autoCategory + '"]')) {
+        var opt         = document.createElement('option');
+        opt.value       = autoCategory;
+        opt.textContent = autoCategory;
+        catEl.insertBefore(opt, catEl.options[1] || null);
+      }
+      catEl.value = autoCategory;
+    } else {
+      catEl.value = '';
+    }
   }
 
-  modal.style.display = 'flex';
+  modal.style.display          = 'flex';
   document.body.style.overflow = 'hidden';
+
+  /* Focus first radio button (feedback type is now first field) */
   setTimeout(function () {
-    var nameInput = document.getElementById('dc-feedback-name');
-    if (nameInput) nameInput.focus();
+    var firstRadio = document.querySelector('input[name="dc-feedback-type"]');
+    if (firstRadio) firstRadio.focus();
   }, 100);
 }
 
@@ -252,18 +356,17 @@ function closeFeedbackModal() {
 
 /* ---- Submit handler ---- */
 function handleFeedbackSubmit() {
-  var nameEl    = document.getElementById('dc-feedback-name');
-  var textEl    = document.getElementById('dc-feedback-text');
-  var typeEl    = document.querySelector('input[name="dc-feedback-type"]:checked');
-  var catEl     = document.getElementById('dc-idea-category');
-  var langEl    = document.getElementById('dc-feedback-lang');
-  var modal     = document.getElementById('dc-feedback-modal');
-  var mode      = modal ? modal.dataset.mode : 'page';
+  var nameEl       = document.getElementById('dc-feedback-name');
+  var textEl       = document.getElementById('dc-feedback-text');
+  var typeEl       = document.querySelector('input[name="dc-feedback-type"]:checked');
+  var catEl        = document.getElementById('dc-idea-category');
+  var langEl       = document.getElementById('dc-feedback-lang');
+  var screenshotEl = document.getElementById('dc-feedback-screenshot');
 
   var name     = (nameEl && nameEl.value.trim()) ? nameEl.value.trim() : 'Anonymous';
   var text     = textEl ? textEl.value.trim() : '';
   var type     = typeEl ? typeEl.value : 'Other Feedback';
-  var category = (mode === 'global' && catEl && catEl.value) ? catEl.value : '';
+  var category = (catEl && catEl.value) ? catEl.value : '';
   var language = (langEl && langEl.value) ? langEl.value : 'English';
 
   if (!text) {
@@ -275,13 +378,24 @@ function handleFeedbackSubmit() {
   var submitBtn = document.getElementById('dc-submit-btn');
   if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending\u2026'; }
 
-  createGitHubIssue(name, type, text, category, mode, language);
+  /* Capture screenshot metadata if a file was selected */
+  var screenshotMeta = null;
+  var screenshotFile = screenshotEl && screenshotEl.files[0];
+  if (screenshotFile) {
+    screenshotMeta = {
+      name: screenshotFile.name,
+      size: Math.round(screenshotFile.size / 1024) + ' KB',
+      type: screenshotFile.type
+    };
+  }
+
+  createGitHubIssue(name, type, text, category, 'page', language, screenshotMeta);
 }
 
 /* ================================================================
    GITHUB ISSUES API
    ================================================================ */
-function createGitHubIssue(userName, feedbackType, feedbackText, category, mode, language) {
+function createGitHubIssue(userName, feedbackType, feedbackText, category, mode, language, screenshotMeta) {
   console.log('═══ FEEDBACK SUBMISSION DEBUG ═══');
   console.log('Timestamp:', new Date().toISOString());
   console.log('User:', userName);
@@ -290,12 +404,13 @@ function createGitHubIssue(userName, feedbackType, feedbackText, category, mode,
   console.log('Token present:', !!DC_GITHUB.token);
   console.log('Token prefix:', DC_GITHUB.token ? DC_GITHUB.token.substring(0, 7) + '...' : 'MISSING');
   console.log('Repo:', DC_GITHUB.owner + '/' + DC_GITHUB.repo);
+
   var lang     = language || 'English';
   var page     = window.location.pathname.split('/').pop() || 'index.html';
   var langTag  = lang !== 'English' ? ' | ' + lang : '';
   var titleStr = 'Feedback from ' + userName + ' | ' + feedbackType + (category ? ' | ' + category : '') + langTag;
 
-  var bodyLines = [
+  var bodyParts = [
     '**Submitted by:** ' + userName,
     '**Type:** ' + feedbackType,
     (category ? '**Category:** ' + category : ''),
@@ -309,13 +424,24 @@ function createGitHubIssue(userName, feedbackType, feedbackText, category, mode,
     '**Feedback:**',
     '',
     feedbackText,
-    '',
-    '---',
-    '',
-    '_Device: ' + window.innerWidth + 'x' + window.innerHeight + ' · ' + navigator.userAgent.slice(0, 80) + '_'
-  ].filter(function (l) { return l !== '' || true; }).join('\n');
+    ''
+  ];
 
-  var slug = feedbackType.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  if (screenshotMeta) {
+    bodyParts.push('---');
+    bodyParts.push('');
+    bodyParts.push('**Screenshot attached by user:** ' + screenshotMeta.name + ' (' + screenshotMeta.size + ', ' + screenshotMeta.type + ')');
+    bodyParts.push('_Ask the user to share it directly if needed — auto-upload is not supported._');
+    bodyParts.push('');
+  }
+
+  bodyParts.push('---');
+  bodyParts.push('');
+  bodyParts.push('_Device: ' + window.innerWidth + 'x' + window.innerHeight + ' \u00b7 ' + navigator.userAgent.slice(0, 80) + '_');
+
+  var bodyLines = bodyParts.join('\n');
+
+  var slug   = feedbackType.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   var labels = ['beta-feedback', slug];
   if (lang !== 'English') labels.push('lang-' + lang.split(' ')[0].toLowerCase());
 
@@ -326,7 +452,6 @@ function createGitHubIssue(userName, feedbackType, feedbackText, category, mode,
   };
 
   if (!DC_GITHUB.token) {
-    /* No token configured — save to localStorage only */
     backup.issueNumber = 'LOCAL';
     saveFeedbackBackup(backup);
     showFeedbackSuccess('LOCAL');
@@ -393,8 +518,8 @@ function showFeedbackSuccess(issueNumber) {
 }
 
 function showFeedbackError() {
-  var formArea = document.getElementById('dc-modal-form-area');
-  var error    = document.getElementById('dc-feedback-error');
+  var formArea  = document.getElementById('dc-modal-form-area');
+  var error     = document.getElementById('dc-feedback-error');
   var submitBtn = document.getElementById('dc-submit-btn');
   if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Feedback'; }
   if (formArea) formArea.style.display = 'none';
