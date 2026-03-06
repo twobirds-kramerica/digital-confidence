@@ -10,7 +10,7 @@
         e.g. 'https://formspree.io/f/xpwzgkbn'
    ============================================================ */
 
-var DC_FORMSPREE_ENDPOINT = 'YOUR_FORMSPREE_ENDPOINT';
+var DC_FORMSPREE_ENDPOINT = 'https://formspree.io/f/xeerqryj';
 
 /* ---- Feedback types ---- */
 var DC_FEEDBACK_TYPES = [
