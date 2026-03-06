@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback System Test</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; }
+    button { padding: 12px 24px; font-size: 16px; cursor: pointer; background: #0066cc; color: white; border: none; border-radius: 6px; }
+    #results { margin-top: 20px; padding: 16px; background: #f5f5f5; border-radius: 6px; min-height: 40px; font-family: monospace; }
+  </style>
+</head>
+<body>
+  <h1>Feedback System Test</h1>
+  <p>Open the browser console (F12 &rarr; Console tab) before clicking the button.</p>
+  <button onclick="runTest()">Test Feedback Submission</button>
+  <div id="results">Results will appear here...</div>
+
+  <script src="js/feedback-github.js"></script>
+  <script>
+    function runTest() {
+      document.getElementById('results').textContent = 'Sending... watch the Console tab (F12)';
+      try {
+        createGitHubIssue(
+          'Test User',
+          'Bug Report/Issue',
+          'Automated test submission to verify the feedback system is working correctly.',
+          '',
+          'page',
+          'English'
+        );
+        document.getElementById('results').textContent = 'Request sent — check Console for DEBUG logs and check GitHub Issues for result.';
+      } catch (err) {
+        document.getElementById('results').textContent = 'ERROR: ' + err.message;
+      }
+    }
+  </script>
+</body>
+</html>

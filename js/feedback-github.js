@@ -11,7 +11,7 @@
    ============================================================ */
 
 var DC_GITHUB = {
-  token: '',  /* <-- Paste your fine-grained PAT here after generating */
+  token: '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',
   owner: 'twobirds-kramerica',
   repo:  'digital-confidence'
 };
@@ -282,6 +282,14 @@ function handleFeedbackSubmit() {
    GITHUB ISSUES API
    ================================================================ */
 function createGitHubIssue(userName, feedbackType, feedbackText, category, mode, language) {
+  console.log('═══ FEEDBACK SUBMISSION DEBUG ═══');
+  console.log('Timestamp:', new Date().toISOString());
+  console.log('User:', userName);
+  console.log('Type:', feedbackType);
+  console.log('Text length:', feedbackText ? feedbackText.length : 0);
+  console.log('Token present:', !!DC_GITHUB.token);
+  console.log('Token prefix:', DC_GITHUB.token ? DC_GITHUB.token.substring(0, 7) + '...' : 'MISSING');
+  console.log('Repo:', DC_GITHUB.owner + '/' + DC_GITHUB.repo);
   var lang     = language || 'English';
   var page     = window.location.pathname.split('/').pop() || 'index.html';
   var langTag  = lang !== 'English' ? ' | ' + lang : '';
@@ -325,6 +333,9 @@ function createGitHubIssue(userName, feedbackType, feedbackText, category, mode,
     return;
   }
 
+  console.log('Making GitHub API request...');
+  console.log('URL:', 'https://api.github.com/repos/' + DC_GITHUB.owner + '/' + DC_GITHUB.repo + '/issues');
+
   fetch('https://api.github.com/repos/' + DC_GITHUB.owner + '/' + DC_GITHUB.repo + '/issues', {
     method: 'POST',
     headers: {
@@ -334,18 +345,30 @@ function createGitHubIssue(userName, feedbackType, feedbackText, category, mode,
     },
     body: JSON.stringify({ title: titleStr, body: bodyLines, labels: labels })
   })
-  .then(function (res) { return res.json().then(function (d) { return { ok: res.ok, data: d }; }); })
+  .then(function (res) {
+    console.log('Response status:', res.status);
+    console.log('Response ok:', res.ok);
+    return res.json().then(function (d) { return { ok: res.ok, status: res.status, data: d }; });
+  })
   .then(function (result) {
     if (result.ok) {
+      console.log('SUCCESS - Issue created:', result.data.number);
+      console.log('Issue URL:', result.data.html_url);
+      console.log('═══ END DEBUG ═══');
       backup.issueNumber = result.data.number;
       saveFeedbackBackup(backup);
       showFeedbackSuccess(result.data.number);
     } else {
-      throw new Error(result.data.message || 'API error');
+      console.error('GITHUB API ERROR');
+      console.error('Status:', result.status);
+      console.error('Message:', result.data.message);
+      console.error('Docs:', result.data.documentation_url);
+      console.error('═══ END DEBUG ═══');
+      throw new Error(result.data.message || 'API error ' + result.status);
     }
   })
   .catch(function (err) {
-    console.warn('Feedback GitHub error:', err);
+    console.error('Feedback GitHub error:', err.message || err);
     saveFeedbackBackup(backup);
     showFeedbackError();
   });
