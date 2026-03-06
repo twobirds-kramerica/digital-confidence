@@ -1,69 +1,59 @@
 /* ============================================================
-   Digital Confidence Centre — GitHub Issues Feedback System
-   Beta feedback → GitHub Issues with email notifications.
+   Digital Confidence Centre — Feedback Form
+   Submissions go to Formspree (CORS-safe, no backend needed).
 
-   TOKEN SECURITY NOTE:
-   Use a fine-grained Personal Access Token (PAT) with ONLY
-   "Issues: write" permission on this specific repository.
-   The token is visible in source code — this is acceptable
-   for a public beta where the worst-case is spam issues.
-   NEVER use a token with repo-wide write or delete access.
+   SETUP: Replace YOUR_FORMSPREE_ENDPOINT below with your
+   Formspree form URL. Steps:
+     1. Go to https://formspree.io and create a free account
+     2. Create a new form → copy the endpoint URL
+     3. Replace the placeholder string below with your URL
+        e.g. 'https://formspree.io/f/xpwzgkbn'
    ============================================================ */
 
-var DC_GITHUB = {
-  token: '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',
-  owner: 'twobirds-kramerica',
-  repo:  'digital-confidence'
-};
+var DC_FORMSPREE_ENDPOINT = 'YOUR_FORMSPREE_ENDPOINT';
 
-/* ---- 100 common senior names (sorted) ---- */
-var BETA_TESTER_NAMES = [
-  'Agnes','Alexander','Alice','Amy','Andrew','Angela','Ann','Anna','Anthony',
-  'Barbara','Benjamin','Betty','Brandon','Brenda','Brian','Carol','Catherine',
-  'Charles','Cheryl','Christine','Cynthia','Daniel','David','Dennis','Diana',
-  'Diane','Donald','Donna','Dorothy','Douglas','Edward','Elizabeth','Emily',
-  'Eric','Evelyn','Frances','Frank','Gary','George','Gloria','Gregory','Helen',
-  'Jack','Jacob','James','Janet','Jason','Jean','Jeffrey','Jennifer','Jerry',
-  'Jessica','Jonathan','Joseph','Joshua','Joyce','Judith','Julie','Justin',
-  'Karen','Kathleen','Kenneth','Kevin','Kimberly','Larry','Laura','Linda',
-  'Lisa','Margaret','Maria','Mark','Mary','Matthew','Michael','Michelle',
-  'Nancy','Nicholas','Patricia','Patrick','Paul','Raymond','Rebecca','Richard',
-  'Robert','Ronald','Ruth','Ryan','Samuel','Sandra','Sarah','Scott','Sharon',
-  'Shirley','Stephanie','Stephen','Steven','Susan','Teresa','Thomas','Timothy',
-  'Tyler','Virginia','William'
-];
-
-/* ---- Feedback types (grandma-proof labels) ---- */
+/* ---- Feedback types ---- */
 var DC_FEEDBACK_TYPES = [
-  { value: 'Bug Report/Issue',              icon: '🐛', help: 'Something isn\'t working right'  },
-  { value: 'Suggestion for this area',      icon: '💡', help: 'An idea to make this better'     },
-  { value: 'Something confusing',           icon: '❓', help: 'I don\'t understand this part'   },
-  { value: 'Something good',               icon: '⭐', help: 'I like this!'                     },
-  { value: 'Other Feedback',               icon: '💬', help: 'Something else'                   }
+  { value: 'Bug Report / Issue',     icon: '🐛', help: 'Something isn\'t working right'  },
+  { value: 'Suggestion',             icon: '💡', help: 'An idea to make this better'     },
+  { value: 'Something confusing',    icon: '❓', help: 'I don\'t understand this part'   },
+  { value: 'Something good',         icon: '⭐', help: 'I like this!'                     },
+  { value: 'Other',                  icon: '💬', help: 'Something else'                   }
 ];
 
-/* ---- Category options ---- */
-var DC_IDEA_CATEGORIES = [
-  'Passwords & Security','App Store & Downloads','Email',
-  'Online Banking','Photos & Camera','Video Calls (FaceTime/Zoom)',
-  'Website Navigation','New Section/Topic Request','Other'
+/* ---- Module options (derived from actual page <title> tags) ---- */
+var DC_MODULES = [
+  'Home Page',
+  'Module 1: Mastering the Escape Hatch',
+  'Module 2: The Security Shield',
+  'Module 3: Passwords & Biometrics',
+  'Module 4: App Store Safety',
+  'Module 5: Email & Messages',
+  'Module 6: Banking & Transactions',
+  'Module 7: Photos & Memories',
+  'Module 8: Stay Connected',
+  'Module 9: Understanding AI',
+  'Module 10: Grocery & Food Delivery',
+  'Module 11: Ride-Sharing Apps',
+  'Resources Page',
+  'General / Other'
 ];
 
-/* ---- Page-to-category auto-populate map ---- */
-var DC_PAGE_CATEGORIES = {
-  'module-1.html':  'Module 1: Getting Started',
-  'module-2.html':  'Module 2: Escape Hatch',
-  'module-3.html':  'Module 3: Passwords',
+/* ---- Page-to-module auto-select map ---- */
+var DC_PAGE_MODULE = {
+  'index.html':     'Home Page',
+  'module-1.html':  'Module 1: Mastering the Escape Hatch',
+  'module-2.html':  'Module 2: The Security Shield',
+  'module-3.html':  'Module 3: Passwords & Biometrics',
   'module-4.html':  'Module 4: App Store Safety',
-  'module-5.html':  'Module 5: Email Basics',
-  'module-6.html':  'Module 6: Online Banking',
+  'module-5.html':  'Module 5: Email & Messages',
+  'module-6.html':  'Module 6: Banking & Transactions',
   'module-7.html':  'Module 7: Photos & Memories',
   'module-8.html':  'Module 8: Stay Connected',
-  'module-9.html':  'Module 9: Video Calls',
-  'module-10.html': 'Module 10: Scam Simulator',
-  'module-11.html': 'Module 11: Final Quiz',
-  'resources.html': 'Resources Page',
-  'index.html':     'Home Page'
+  'module-9.html':  'Module 9: Understanding AI',
+  'module-10.html': 'Module 10: Grocery & Food Delivery',
+  'module-11.html': 'Module 11: Ride-Sharing Apps',
+  'resources.html': 'Resources Page'
 };
 
 /* ================================================================
@@ -73,25 +63,30 @@ document.addEventListener('DOMContentLoaded', function () {
   injectFeedbackStyles();
   injectUnifiedFeedbackBtn();
   injectFeedbackModal();
-  initFeedbackDatalist();
-  initAutoAdvance();
 });
 
-/* ---- Inject CSS for new UX elements ---- */
+/* ---- Inject CSS overrides for this component ---- */
 function injectFeedbackStyles() {
   var style = document.createElement('style');
   style.textContent = [
-    '.dc-attachment-field{margin-top:32px;padding-top:24px;border-top:1px solid #E1E8ED;opacity:0.7;}',
-    '.dc-label-small{font-size:13px;color:#78909C;display:block;margin-bottom:4px;font-weight:600;}',
-    '.dc-field-help-small{font-size:12px;color:#B0BEC5;margin:0 0 8px;}',
-    '.dc-file-input{font-size:13px;padding:8px;border:1px dashed #CFD8DC;border-radius:6px;background:#F5F7FA;width:100%;box-sizing:border-box;}',
-    '.dc-file-reqs{font-size:11px;color:#90A4AE;margin:4px 0 0;}',
-    '.dc-feedback-actions{display:flex;justify-content:space-between;align-items:center;margin-top:32px;padding-top:24px;border-top:2px solid #E1E8ED;gap:12px;}'
+    /* Override the red circle close button with a clean text button */
+    '.dc-modal-close{',
+    '  position:sticky;top:0;float:right;',
+    '  background:none;border:1px solid #CFD8DC;border-radius:6px;',
+    '  color:#546E7A;font-size:14px;font-weight:600;cursor:pointer;',
+    '  padding:6px 12px;margin-bottom:10px;z-index:10;flex-shrink:0;',
+    '  transition:background 0.15s,color 0.15s,border-color 0.15s;',
+    '  width:auto;height:auto;',
+    '}',
+    '.dc-modal-close:hover{background:#F5F7FA;color:#1A237E;border-color:#B0BEC5;}',
+    /* Button row */
+    '.dc-feedback-actions{margin-top:20px;}',
+    '.dc-feedback-actions .dc-btn-submit{width:100%;}'
   ].join('\n');
   document.head.appendChild(style);
 }
 
-/* ---- Unified "Ideas and Feedback" FAB button (bottom-right) ---- */
+/* ---- "Ideas & Feedback" FAB button (bottom-right) ---- */
 function injectUnifiedFeedbackBtn() {
   var btn = document.createElement('button');
   btn.id        = 'dc-unified-feedback-btn';
@@ -99,16 +94,16 @@ function injectUnifiedFeedbackBtn() {
   btn.setAttribute('aria-label', 'Share ideas or feedback');
   btn.title     = 'Share your ideas and feedback';
   btn.innerHTML = '<span class="dc-fab-icon">💬</span><span class="dc-fab-label">Ideas &amp; Feedback</span>';
-  btn.addEventListener('click', function () { openFeedbackModal('unified'); });
+  btn.addEventListener('click', function () { openFeedbackModal(); });
   document.body.appendChild(btn);
 }
 
 /* ---- Full feedback modal ---- */
 function injectFeedbackModal() {
-  var typeOptions = DC_FEEDBACK_TYPES.map(function (t, i) {
+  var typeOptions = DC_FEEDBACK_TYPES.map(function (t) {
     return [
       '<label class="dc-type-option">',
-        '<input type="radio" name="dc-feedback-type" value="' + t.value + '"' + (i === 0 ? ' required' : '') + '>',
+        '<input type="radio" name="dc-feedback-type" value="' + t.value + '">',
         '<span class="dc-type-label">',
           '<span class="dc-type-icon">' + t.icon + '</span>',
           '<span class="dc-type-text">' + t.value + '</span>',
@@ -118,78 +113,56 @@ function injectFeedbackModal() {
     ].join('');
   }).join('');
 
-  var catOptions = '<option value="">Select a category\u2026</option>' +
-    DC_IDEA_CATEGORIES.map(function (c) {
-      return '<option value="' + c + '">' + c + '</option>';
-    }).join('');
+  var moduleOptions = DC_MODULES.map(function (m) {
+    return '<option value="' + m + '">' + m + '</option>';
+  }).join('');
 
   var html = [
     '<div id="dc-feedback-modal" class="dc-feedback-modal" role="dialog" aria-modal="true" aria-label="Feedback" style="display:none;">',
       '<div class="dc-modal-backdrop" id="dc-modal-backdrop"></div>',
       '<div class="dc-modal-content" role="document">',
 
-        '<button class="dc-modal-close" id="dc-modal-close" aria-label="Close feedback">',
-          '<span aria-hidden="true">&times;</span>',
-        '</button>',
+        /* Clean text close button (not red circle) */
+        '<button class="dc-modal-close" id="dc-modal-close" aria-label="Close feedback">\u00d7 Close</button>',
 
         '<div id="dc-modal-form-area">',
         '<h2 class="dc-modal-title" id="dc-modal-title">Ideas &amp; Feedback 💬</h2>',
-        '<p class="dc-modal-subtitle" id="dc-modal-subtitle"></p>',
 
-        /* 1. Feedback type */
+        /* FIELD 1: Module dropdown (auto-detected, user-editable) */
+        '<div class="dc-feedback-field">',
+          '<label class="dc-feedback-label" for="dc-feedback-module">Which part of the site is this about?</label>',
+          '<select id="dc-feedback-module" class="dc-feedback-select">',
+            moduleOptions,
+          '</select>',
+        '</div>',
+
+        /* FIELD 2: Feedback type */
         '<div class="dc-feedback-field">',
           '<p class="dc-feedback-label">Type of feedback:</p>',
           '<div class="dc-feedback-types" id="dc-feedback-types">' + typeOptions + '</div>',
         '</div>',
 
-        /* 2. Category (always visible, auto-populated from page) */
-        '<div class="dc-feedback-field" id="dc-category-field">',
-          '<label class="dc-feedback-label" for="dc-idea-category">What is this idea/feedback about?</label>',
-          '<select id="dc-idea-category" class="dc-feedback-select">' + catOptions + '</select>',
-        '</div>',
-
-        /* 3. Feedback text */
+        /* FIELD 3: Feedback textarea */
         '<div class="dc-feedback-field">',
           '<label class="dc-feedback-label" for="dc-feedback-text">Your feedback:</label>',
           '<textarea id="dc-feedback-text" class="dc-feedback-textarea" rows="5"',
             ' placeholder="Tell us what you noticed\u2026" required></textarea>',
         '</div>',
 
-        /* 4. Name (optional, moved to bottom) */
-        '<div class="dc-feedback-field">',
-          '<label class="dc-feedback-label" for="dc-feedback-name">',
-            'Your Name <span class="dc-optional">(Optional \u2014 helps us follow up)</span>',
-          '</label>',
-          '<input type="text" id="dc-feedback-name" class="dc-feedback-input"',
-            ' placeholder="Start typing your name\u2026" list="dc-beta-names" autocomplete="off">',
-          '<datalist id="dc-beta-names"></datalist>',
-          '<p class="dc-field-help">Can\'t find your name? Just type it in!</p>',
-        '</div>',
-
-        /* 5. Language */
-        '<div class="dc-feedback-field">',
-          '<label class="dc-feedback-label" for="dc-feedback-lang">Language of your feedback:</label>',
-          '<select id="dc-feedback-lang" class="dc-feedback-select">',
-            '<option value="English" selected>English</option>',
-            '<option value="Fran\u00e7ais (French)">Fran\u00e7ais (French)</option>',
-            '<option value="Other / Autre">Other / Autre</option>',
-          '</select>',
-        '</div>',
-
-        /* 6. Screenshot (optional, visually de-emphasized) */
-        '<div class="dc-feedback-field dc-attachment-field">',
-          '<label for="dc-feedback-screenshot" class="dc-label-small">Screenshot (optional)</label>',
-          '<p class="dc-field-help-small">Only if it helps explain your feedback</p>',
-          '<input type="file" id="dc-feedback-screenshot" class="dc-file-input"',
-            ' accept="image/png,image/jpeg,image/webp">',
-          '<p class="dc-file-reqs">PNG, JPG, or WebP only &bull; Max 2MB</p>',
-        '</div>',
-
-        /* 7. Buttons: Cancel left, Send right */
+        /* FIELD 4: Submit button (immediately below textarea) */
         '<div class="dc-feedback-actions">',
-          '<button id="dc-cancel-btn" class="dc-btn-cancel">Cancel</button>',
           '<button id="dc-submit-btn" class="dc-btn-submit">Send Feedback</button>',
         '</div>',
+
+        /* FIELD 5: Your Name (Optional) — below submit */
+        '<div class="dc-feedback-field" style="margin-top:16px;">',
+          '<label class="dc-feedback-label" for="dc-feedback-name">',
+            'Your Name <span class="dc-optional">(Optional)</span>',
+          '</label>',
+          '<input type="text" id="dc-feedback-name" class="dc-feedback-input"',
+            ' placeholder="Type here\u2026" autocomplete="off">',
+        '</div>',
+
         '</div>',
 
         /* Success state */
@@ -218,24 +191,7 @@ function injectFeedbackModal() {
   /* Wire up events */
   document.getElementById('dc-modal-close').addEventListener('click', closeFeedbackModal);
   document.getElementById('dc-modal-backdrop').addEventListener('click', closeFeedbackModal);
-  document.getElementById('dc-cancel-btn').addEventListener('click', closeFeedbackModal);
   document.getElementById('dc-submit-btn').addEventListener('click', handleFeedbackSubmit);
-
-  /* Screenshot file validation */
-  document.getElementById('dc-feedback-screenshot').addEventListener('change', function (e) {
-    var file = e.target.files[0];
-    if (!file) return;
-    if (file.size > 2097152) {
-      alert('Screenshot must be under 2MB. Please resize and try again.');
-      e.target.value = '';
-      return;
-    }
-    var allowed = ['image/png', 'image/jpeg', 'image/webp'];
-    if (allowed.indexOf(file.type) === -1) {
-      alert('Only PNG, JPG, or WebP images allowed.');
-      e.target.value = '';
-    }
-  });
 
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
@@ -245,66 +201,13 @@ function injectFeedbackModal() {
   });
 }
 
-/* ---- Populate datalist with sorted names ---- */
-function initFeedbackDatalist() {
-  var dl = document.getElementById('dc-beta-names');
-  if (!dl) return;
-  BETA_TESTER_NAMES.forEach(function (name) {
-    var opt = document.createElement('option');
-    opt.value = name;
-    dl.appendChild(opt);
-  });
-}
-
-/* ---- Auto-advance: scroll to next field when current field is filled ---- */
-function initAutoAdvance() {
-  /* Type radio → scroll category into view and focus it */
-  document.querySelectorAll('input[name="dc-feedback-type"]').forEach(function (radio) {
-    radio.addEventListener('change', function () {
-      var next = document.getElementById('dc-idea-category');
-      if (next) {
-        next.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        setTimeout(function () { next.focus(); }, 300);
-      }
-    });
-  });
-
-  /* Category select → scroll textarea into view and focus it */
-  var catSel = document.getElementById('dc-idea-category');
-  if (catSel) {
-    catSel.addEventListener('change', function () {
-      if (this.value) {
-        var next = document.getElementById('dc-feedback-text');
-        if (next) {
-          next.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          setTimeout(function () { next.focus(); }, 300);
-        }
-      }
-    });
-  }
-
-  /* Textarea blur → scroll name field into view (no focus steal) */
-  var ta = document.getElementById('dc-feedback-text');
-  if (ta) {
-    ta.addEventListener('blur', function () {
-      if (this.value.trim()) {
-        var next = document.getElementById('dc-feedback-name');
-        if (next) next.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    });
-  }
-}
-
 /* ---- Open modal ---- */
-function openFeedbackModal(mode) {
-  var modal      = document.getElementById('dc-feedback-modal');
-  var title      = document.getElementById('dc-modal-title');
-  var subtitle   = document.getElementById('dc-modal-subtitle');
-  var formArea   = document.getElementById('dc-modal-form-area');
-  var success    = document.getElementById('dc-feedback-success');
-  var error      = document.getElementById('dc-feedback-error');
-  var catEl      = document.getElementById('dc-idea-category');
-  var screenshot = document.getElementById('dc-feedback-screenshot');
+function openFeedbackModal() {
+  var modal    = document.getElementById('dc-feedback-modal');
+  var formArea = document.getElementById('dc-modal-form-area');
+  var success  = document.getElementById('dc-feedback-success');
+  var error    = document.getElementById('dc-feedback-error');
+  var moduleEl = document.getElementById('dc-feedback-module');
 
   /* Reset state */
   formArea.style.display = 'block';
@@ -313,38 +216,22 @@ function openFeedbackModal(mode) {
   document.querySelectorAll('input[name="dc-feedback-type"]').forEach(function (r) { r.checked = false; });
   var ta = document.getElementById('dc-feedback-text');
   if (ta) ta.value = '';
-  if (screenshot) screenshot.value = '';
+  var nameEl = document.getElementById('dc-feedback-name');
+  if (nameEl) nameEl.value = '';
 
-  modal.dataset.mode = mode || 'page';
-
-  title.textContent    = 'Ideas & Feedback 💬';
-  subtitle.textContent = 'About this page: ' + (document.title || window.location.pathname.split('/').pop());
-
-  /* Auto-populate category from current page */
-  if (catEl) {
-    var page         = window.location.pathname.split('/').pop() || 'index.html';
-    var autoCategory = DC_PAGE_CATEGORIES[page];
-    if (autoCategory) {
-      /* Add option dynamically if not already in the list */
-      if (!catEl.querySelector('option[value="' + autoCategory + '"]')) {
-        var opt         = document.createElement('option');
-        opt.value       = autoCategory;
-        opt.textContent = autoCategory;
-        catEl.insertBefore(opt, catEl.options[1] || null);
-      }
-      catEl.value = autoCategory;
-    } else {
-      catEl.value = '';
-    }
+  /* Auto-select module based on current page (user can still change it) */
+  if (moduleEl) {
+    var page       = window.location.pathname.split('/').pop() || 'index.html';
+    var autoModule = DC_PAGE_MODULE[page];
+    moduleEl.value = autoModule || 'General / Other';
   }
 
   modal.style.display          = 'flex';
   document.body.style.overflow = 'hidden';
 
-  /* Focus first radio button (feedback type is now first field) */
+  /* Focus the module dropdown first */
   setTimeout(function () {
-    var firstRadio = document.querySelector('input[name="dc-feedback-type"]');
-    if (firstRadio) firstRadio.focus();
+    if (moduleEl) moduleEl.focus();
   }, 100);
 }
 
@@ -356,145 +243,83 @@ function closeFeedbackModal() {
 
 /* ---- Submit handler ---- */
 function handleFeedbackSubmit() {
-  var nameEl       = document.getElementById('dc-feedback-name');
-  var textEl       = document.getElementById('dc-feedback-text');
-  var typeEl       = document.querySelector('input[name="dc-feedback-type"]:checked');
-  var catEl        = document.getElementById('dc-idea-category');
-  var langEl       = document.getElementById('dc-feedback-lang');
-  var screenshotEl = document.getElementById('dc-feedback-screenshot');
+  var nameEl   = document.getElementById('dc-feedback-name');
+  var textEl   = document.getElementById('dc-feedback-text');
+  var typeEl   = document.querySelector('input[name="dc-feedback-type"]:checked');
+  var moduleEl = document.getElementById('dc-feedback-module');
 
   var name     = (nameEl && nameEl.value.trim()) ? nameEl.value.trim() : 'Anonymous';
   var text     = textEl ? textEl.value.trim() : '';
-  var type     = typeEl ? typeEl.value : 'Other Feedback';
-  var category = (catEl && catEl.value) ? catEl.value : '';
-  var language = (langEl && langEl.value) ? langEl.value : 'English';
+  var type     = typeEl ? typeEl.value : 'Not specified';
+  var module   = (moduleEl && moduleEl.value) ? moduleEl.value : 'General / Other';
+  var lang     = navigator.language || 'unknown';
 
   if (!text) {
     alert('Please share your feedback before submitting.');
-    textEl && textEl.focus();
+    if (textEl) textEl.focus();
     return;
   }
 
   var submitBtn = document.getElementById('dc-submit-btn');
   if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending\u2026'; }
 
-  /* Capture screenshot metadata if a file was selected */
-  var screenshotMeta = null;
-  var screenshotFile = screenshotEl && screenshotEl.files[0];
-  if (screenshotFile) {
-    screenshotMeta = {
-      name: screenshotFile.name,
-      size: Math.round(screenshotFile.size / 1024) + ' KB',
-      type: screenshotFile.type
-    };
-  }
-
-  createGitHubIssue(name, type, text, category, 'page', language, screenshotMeta);
+  submitToFormspree(name, type, text, module, lang);
 }
 
 /* ================================================================
-   GITHUB ISSUES API
+   FORMSPREE SUBMISSION
+   CORS-safe, works on static GitHub Pages sites.
+   No backend or server required.
    ================================================================ */
-function createGitHubIssue(userName, feedbackType, feedbackText, category, mode, language, screenshotMeta) {
-  console.log('═══ FEEDBACK SUBMISSION DEBUG ═══');
-  console.log('Timestamp:', new Date().toISOString());
-  console.log('User:', userName);
+function submitToFormspree(userName, feedbackType, feedbackText, module, lang) {
+  console.log('═══ FEEDBACK SUBMISSION ═══');
+  console.log('Endpoint configured:', DC_FORMSPREE_ENDPOINT !== 'YOUR_FORMSPREE_ENDPOINT');
+  console.log('Module:', module);
   console.log('Type:', feedbackType);
-  console.log('Text length:', feedbackText ? feedbackText.length : 0);
-  console.log('Token present:', !!DC_GITHUB.token);
-  console.log('Token prefix:', DC_GITHUB.token ? DC_GITHUB.token.substring(0, 7) + '...' : 'MISSING');
-  console.log('Repo:', DC_GITHUB.owner + '/' + DC_GITHUB.repo);
 
-  var lang     = language || 'English';
-  var page     = window.location.pathname.split('/').pop() || 'index.html';
-  var langTag  = lang !== 'English' ? ' | ' + lang : '';
-  var titleStr = 'Feedback from ' + userName + ' | ' + feedbackType + (category ? ' | ' + category : '') + langTag;
-
-  var bodyParts = [
-    '**Submitted by:** ' + userName,
-    '**Type:** ' + feedbackType,
-    (category ? '**Category:** ' + category : ''),
-    '**Language:** ' + lang,
-    '**Page:** ' + page,
-    '**Full URL:** ' + window.location.href,
-    '**Timestamp:** ' + new Date().toLocaleString('en-CA', { timeZone: 'America/Toronto' }),
-    '',
-    '---',
-    '',
-    '**Feedback:**',
-    '',
-    feedbackText,
-    ''
-  ];
-
-  if (screenshotMeta) {
-    bodyParts.push('---');
-    bodyParts.push('');
-    bodyParts.push('**Screenshot attached by user:** ' + screenshotMeta.name + ' (' + screenshotMeta.size + ', ' + screenshotMeta.type + ')');
-    bodyParts.push('_Ask the user to share it directly if needed — auto-upload is not supported._');
-    bodyParts.push('');
-  }
-
-  bodyParts.push('---');
-  bodyParts.push('');
-  bodyParts.push('_Device: ' + window.innerWidth + 'x' + window.innerHeight + ' \u00b7 ' + navigator.userAgent.slice(0, 80) + '_');
-
-  var bodyLines = bodyParts.join('\n');
-
-  var slug   = feedbackType.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-  var labels = ['beta-feedback', slug];
-  if (lang !== 'English') labels.push('lang-' + lang.split(' ')[0].toLowerCase());
-
-  var backup = {
-    name: userName, type: feedbackType, text: feedbackText,
-    category: category, page: page, timestamp: new Date().toISOString(),
-    issueNumber: 'PENDING'
-  };
-
-  if (!DC_GITHUB.token) {
-    backup.issueNumber = 'LOCAL';
-    saveFeedbackBackup(backup);
-    showFeedbackSuccess('LOCAL');
+  /* Guard: warn clearly if endpoint has not been configured */
+  if (DC_FORMSPREE_ENDPOINT === 'YOUR_FORMSPREE_ENDPOINT') {
+    console.warn('Formspree endpoint not configured — saving to localStorage only.');
+    console.warn('Go to https://formspree.io, create a form, and update DC_FORMSPREE_ENDPOINT.');
+    saveFeedbackBackup({ name: userName, type: feedbackType, text: feedbackText, module: module });
+    showFeedbackError();
     return;
   }
 
-  console.log('Making GitHub API request...');
-  console.log('URL:', 'https://api.github.com/repos/' + DC_GITHUB.owner + '/' + DC_GITHUB.repo + '/issues');
+  var payload = {
+    name:          userName,
+    feedback_type: feedbackType,
+    module:        module,
+    page_url:      window.location.href,
+    message:       feedbackText,
+    language:      lang,
+    timestamp:     new Date().toLocaleString('en-CA', { timeZone: 'America/Toronto' }),
+    device:        window.innerWidth + 'x' + window.innerHeight
+  };
 
-  fetch('https://api.github.com/repos/' + DC_GITHUB.owner + '/' + DC_GITHUB.repo + '/issues', {
-    method: 'POST',
-    headers: {
-      'Authorization': 'token ' + DC_GITHUB.token,
-      'Content-Type': 'application/json',
-      'Accept': 'application/vnd.github.v3+json'
-    },
-    body: JSON.stringify({ title: titleStr, body: bodyLines, labels: labels })
+  fetch(DC_FORMSPREE_ENDPOINT, {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body:    JSON.stringify(payload)
   })
   .then(function (res) {
     console.log('Response status:', res.status);
-    console.log('Response ok:', res.ok);
-    return res.json().then(function (d) { return { ok: res.ok, status: res.status, data: d }; });
+    return res.json().then(function (d) { return { ok: res.ok, data: d }; });
   })
   .then(function (result) {
     if (result.ok) {
-      console.log('SUCCESS - Issue created:', result.data.number);
-      console.log('Issue URL:', result.data.html_url);
-      console.log('═══ END DEBUG ═══');
-      backup.issueNumber = result.data.number;
-      saveFeedbackBackup(backup);
-      showFeedbackSuccess(result.data.number);
+      console.log('SUCCESS — feedback submitted via Formspree');
+      console.log('═══ END ═══');
+      saveFeedbackBackup(Object.assign({ submitted: true }, payload));
+      showFeedbackSuccess();
     } else {
-      console.error('GITHUB API ERROR');
-      console.error('Status:', result.status);
-      console.error('Message:', result.data.message);
-      console.error('Docs:', result.data.documentation_url);
-      console.error('═══ END DEBUG ═══');
-      throw new Error(result.data.message || 'API error ' + result.status);
+      console.error('Formspree error:', result.data);
+      throw new Error(result.data.error || 'Submission failed');
     }
   })
   .catch(function (err) {
-    console.error('Feedback GitHub error:', err.message || err);
-    saveFeedbackBackup(backup);
+    console.error('Feedback submission error:', err.message || err);
+    saveFeedbackBackup({ name: userName, type: feedbackType, text: feedbackText, module: module });
     showFeedbackError();
   });
 }
@@ -502,18 +327,16 @@ function createGitHubIssue(userName, feedbackType, feedbackText, category, mode,
 function saveFeedbackBackup(entry) {
   try {
     var all = JSON.parse(localStorage.getItem('dc-feedback-backup') || '[]');
-    all.push(entry);
+    all.push(Object.assign({ timestamp: new Date().toISOString() }, entry));
     localStorage.setItem('dc-feedback-backup', JSON.stringify(all));
   } catch (e) { /* storage full or unavailable */ }
 }
 
-function showFeedbackSuccess(issueNumber) {
+function showFeedbackSuccess() {
   var formArea = document.getElementById('dc-modal-form-area');
   var success  = document.getElementById('dc-feedback-success');
-  var refEl    = document.getElementById('dc-reference-num');
   if (formArea) formArea.style.display = 'none';
-  if (refEl) refEl.textContent = issueNumber !== 'LOCAL' ? 'Reference #' + issueNumber : 'Saved locally';
-  if (success) success.style.display = 'block';
+  if (success)  success.style.display  = 'block';
   setTimeout(function () { closeFeedbackModal(); }, 5000);
 }
 
@@ -523,5 +346,5 @@ function showFeedbackError() {
   var submitBtn = document.getElementById('dc-submit-btn');
   if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Feedback'; }
   if (formArea) formArea.style.display = 'none';
-  if (error) error.style.display = 'block';
+  if (error)    error.style.display    = 'block';
 }
