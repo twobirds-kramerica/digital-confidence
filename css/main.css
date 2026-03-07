@@ -1385,6 +1385,34 @@ strong {
   .setup-wizard-overlay, .device-filter-notice, .image-placeholder {
     display: none !important;
   }
+  /* Dark mode: force white background and black text for all elements */
+  [data-theme="dark"] body,
+  [data-theme="dark"] .main-content,
+  [data-theme="dark"] .page-wrapper {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  /* Callout boxes: use borders instead of coloured backgrounds */
+  .warning-block, .danger-block, .tip-block, .exercise-block,
+  .tip-box, .warning-box, .three-second-rule-box, .confidence-check,
+  .confidence-check-box, .success-state-box, .feeling-stuck-box, .story-block {
+    background: #ffffff !important;
+    border: 2px solid #333333 !important;
+    color: #000000 !important;
+  }
+  [data-theme="dark"] .warning-block,
+  [data-theme="dark"] .danger-block,
+  [data-theme="dark"] .tip-block,
+  [data-theme="dark"] .exercise-block,
+  [data-theme="dark"] .tip-box,
+  [data-theme="dark"] .warning-box,
+  [data-theme="dark"] .three-second-rule-box,
+  [data-theme="dark"] .confidence-check,
+  [data-theme="dark"] .story-block {
+    background: #ffffff !important;
+    border: 2px solid #333333 !important;
+    color: #000000 !important;
+  }
 }
 
 /* ============================================
