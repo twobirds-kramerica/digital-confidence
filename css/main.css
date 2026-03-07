@@ -4490,11 +4490,16 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   padding: 14px 18px;
   transition: background 0.15s, color 0.15s, transform 0.1s;
 }
-.lp-city-btn:hover,
+.lp-city-btn:hover {
+  background: #3498DB;
+  color: #fff;
+  transform: translateY(-1px);
+}
 .lp-city-btn:focus {
   background: #3498DB;
   color: #fff;
-  outline: none;
+  outline: 3px solid #005FCC;
+  outline-offset: 2px;
   transform: translateY(-1px);
 }
 .lp-city-btn:active { transform: translateY(0); }
