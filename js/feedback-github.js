@@ -69,16 +69,16 @@ document.addEventListener('DOMContentLoaded', function () {
 function injectFeedbackStyles() {
   var style = document.createElement('style');
   style.textContent = [
-    /* Override the red circle close button with a clean text button */
+    /* Close button — visible grey pill on any background */
     '.dc-modal-close{',
     '  position:sticky;top:0;float:right;',
-    '  background:none;border:1px solid #CFD8DC;border-radius:6px;',
-    '  color:#546E7A;font-size:14px;font-weight:600;cursor:pointer;',
-    '  padding:6px 12px;margin-bottom:10px;z-index:10;flex-shrink:0;',
+    '  background:#f0f0f0;border:1px solid #cccccc;border-radius:4px;',
+    '  color:#333333;font-size:14px;font-weight:600;cursor:pointer;',
+    '  padding:4px 10px;margin-bottom:10px;z-index:10;flex-shrink:0;',
     '  transition:background 0.15s,color 0.15s,border-color 0.15s;',
     '  width:auto;height:auto;',
     '}',
-    '.dc-modal-close:hover{background:#F5F7FA;color:#1A237E;border-color:#B0BEC5;}',
+    '.dc-modal-close:hover{background:#e0e0e0;color:#333333;border-color:#999999;}',
     /* Button row */
     '.dc-feedback-actions{margin-top:20px;}',
     '.dc-feedback-actions .dc-btn-submit{width:100%;}'
