@@ -1363,6 +1363,11 @@ strong {
     content: " (" attr(href) ")";
     font-size: 0.8em;
   }
+  /* Suppress tel: and mailto: URL display — number is already visible in the link text */
+  a[href^="tel"]::after,
+  a[href^="mailto"]::after {
+    content: none;
+  }
   .video-container .video-wrapper {
     display: none;
   }
