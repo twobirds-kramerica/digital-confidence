@@ -314,8 +314,8 @@ function submitToFormspree(userName, feedbackType, feedbackText, module, lang) {
       showFeedbackSuccess();
 
       /* Silent redundant backup to Web3Forms — fire-and-forget, never blocks user */
-      // WEB3FORMS_ACCESS_KEY: Replace with key from https://web3forms.com
-      var web3Key = 'WEB3FORMS_ACCESS_KEY';
+      // Formspree replaces GitHub Issues API — CORS-safe for static sites
+      var web3Key = '5e0ecf7e-fb33-4541-be2e-1938bce868f4';
       if (web3Key !== 'WEB3FORMS_ACCESS_KEY') {
         fetch('https://api.web3forms.com/submit', {
           method:  'POST',
