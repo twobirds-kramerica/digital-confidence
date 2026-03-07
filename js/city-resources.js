@@ -48,7 +48,7 @@ var NATIONAL_RESOURCES = [
     website: 'connectedcanadians.ca',
     description: 'Free one-on-one technology help for older adults by phone or video call. Trained volunteers work at your pace — no question is too basic.',
     availability: 'Monday–Friday, 9am–5pm ET · Toll-free · Government of Canada funded',
-    efficacy: 'Government of Canada funded — trusted by 10,000+ seniors'
+    efficacy: 'Funded by the Government of Canada. Over 10,000 seniors served. Free one-on-one tech mentoring by trained volunteers.'
   },
   {
     name: 'Cyber-Seniors',
@@ -56,15 +56,15 @@ var NATIONAL_RESOURCES = [
     website: 'cyberseniors.org',
     description: 'Award-winning programme pairing older adults with trained tech mentors. Helps with phones, tablets, video calling, and online safety. Featured on CBC.',
     availability: 'Call to book a free appointment · Toll-free',
-    efficacy: 'Award-winning, CBC featured'
+    efficacy: 'Award-winning non-profit. Senior volunteers helping other seniors with technology — in plain language, at your pace.'
   },
   {
     name: 'Canadian Anti-Fraud Centre',
-    phone: '1-888-495-8501',
+    phone: '1-888-495-4416',
     website: 'antifraudcentre-centreantifraude.ca',
     description: 'The official national centre for reporting fraud and scams in Canada. Call to report a scam, get advice, or check if something is suspicious.',
     availability: 'Monday–Friday, 9am–4:45pm ET · Toll-free',
-    efficacy: 'Official Government of Canada resource'
+    efficacy: 'Government of Canada\'s official fraud reporting centre. Over $500 million in fraud reported annually. Your reports help protect other Canadians.'
   },
   {
     name: 'Get Cyber Safe',
@@ -72,7 +72,15 @@ var NATIONAL_RESOURCES = [
     website: 'getcybersafe.gc.ca',
     description: 'The Government of Canada\'s official cyber security website. Plain-language guides on passwords, phishing, safe shopping, and privacy.',
     availability: 'Free online guides — available 24 hours a day',
-    efficacy: 'Official Government of Canada resource'
+    efficacy: 'Official Government of Canada cybersecurity awareness programme. Free guides, checklists, and tips written for everyday Canadians.'
+  },
+  {
+    name: 'RCMP Scam Awareness',
+    phone: '',
+    website: 'rcmp-grc.gc.ca/scams',
+    description: 'The Royal Canadian Mounted Police resource on common scams targeting Canadians. Updated regularly with new fraud alerts and prevention advice.',
+    availability: 'Free online resource — available 24 hours a day',
+    efficacy: 'Official Royal Canadian Mounted Police resource on common scams targeting Canadians. Updated regularly with new fraud alerts.'
   }
 ];
 
@@ -96,13 +104,17 @@ function dcResourceCard(name, phone, description, efficacy, extra, website, avai
   if (description) html += '<p>' + description + '</p>';
   if (phone || website) {
     html += '<div class="resource-contact">';
-    if (phone) html += '<p><strong>Phone:</strong> <a href="tel:' + phone.replace(/[^0-9+]/g, '') + '">' + phone + '</a></p>';
+    if (phone) {
+      var telNum = phone.replace(/[^0-9+]/g, '');
+      if (telNum && telNum[0] !== '+') telNum = '+' + telNum;
+      html += '<p><strong>Phone:</strong> <a href="tel:' + telNum + '">' + phone + '</a></p>';
+    }
     if (website) html += '<p><strong>Website:</strong> <a href="https://' + website + '" target="_blank" rel="noopener noreferrer">' + website + '</a></p>';
     html += '</div>';
   }
   if (availability) html += '<p class="resource-availability">' + availability + '</p>';
   if (extra) html += extra;
-  if (efficacy) html += '<span class="efficacy-badge">' + efficacy + '</span>';
+  if (efficacy) html += '<div class="tip-box" style="margin-top:10px;">\uD83D\uDCA1 ' + efficacy + '</div>';
   html += '</div>';
   return html;
 }
@@ -165,7 +177,7 @@ function dcRenderCityBlock(city) {
   html += dcResourceCard(city.name + ' Police (Non-Emergency)', city.policeNonEmergency, 'For fraud or scam reporting. In an emergency, always call 911.', '');
 
   // Shared fraud line
-  html += dcResourceCard('Canadian Anti-Fraud Centre', '1-888-495-8501', 'National fraud reporting hotline. All cities share this resource.', 'Official Government of Canada');
+  html += dcResourceCard('Canadian Anti-Fraud Centre', '1-888-495-4416', 'National fraud reporting hotline. All cities share this resource.', 'Official Government of Canada resource — report scams and protect other Canadians.');
 
   return html;
 }
