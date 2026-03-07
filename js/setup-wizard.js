@@ -534,9 +534,12 @@ function showDevicePromptIfNeeded() {
 
 /* ---------- Init on Page Load ---------- */
 document.addEventListener('DOMContentLoaded', function () {
-  // Show wizard on first visit (not when skipped)
+  // Show wizard only if: setup is incomplete AND splash has already been dismissed.
+  // welcome-splash.js handles first visits — it opens the wizard via its own button.
+  // Without this guard, both the splash and wizard would open simultaneously on first visit.
   var setupStatus = localStorage.getItem('dc-setup-complete');
-  if (!setupStatus) {
+  var splashSeen  = localStorage.getItem('dc-splash-seen');
+  if (!setupStatus && splashSeen) {
     dcOpenWizard();
   }
   // Apply device filtering

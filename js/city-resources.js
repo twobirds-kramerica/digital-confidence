@@ -298,7 +298,7 @@ function dcShowWelcomeBanner() {
   var msg = 'Welcome! We have set up your Digital Confidence Centre';
   if (city) msg += ' for <strong>' + city.name + '</strong>';
   if (deviceNames.length > 0) msg += ' with instructions for your <strong>' + deviceNames.join(' and ') + '</strong>';
-  msg += '. You can change these anytime from the <strong>My Settings</strong> link in the sidebar.';
+  msg += '. You can change these anytime in Settings.';
 
   welcomeEl.innerHTML = '<span class="check-icon">🎉</span><p>' + msg + '</p>';
   welcomeEl.style.display = '';
