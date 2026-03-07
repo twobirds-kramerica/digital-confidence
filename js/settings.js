@@ -41,6 +41,7 @@ function injectSettingsStyles() {
     '  transition:background 0.15s,border-color 0.15s;',
     '}',
     '.dc-settings-close:hover{background:#e0e0e0;border-color:#999999;}',
+    '.dc-settings-close:focus{outline:3px solid #005FCC;outline-offset:2px;}',
     '.dc-settings-title{',
     '  font-size:22px;font-weight:700;color:#1A237E;margin:0 0 20px;clear:both;',
     '}',
@@ -59,7 +60,7 @@ function injectSettingsStyles() {
     /* Font size buttons */
     '.dc-settings-font-row{display:flex;gap:10px;flex-wrap:wrap;}',
     '.dc-settings-font-btn{',
-    '  flex:1;min-width:60px;padding:10px 8px;border-radius:8px;',
+    '  flex:1;min-width:60px;min-height:44px;padding:10px 8px;border-radius:8px;',
     '  border:2px solid #CFD8DC;background:#fff;cursor:pointer;',
     '  font-weight:700;transition:all 0.15s;line-height:1;',
     '}',
