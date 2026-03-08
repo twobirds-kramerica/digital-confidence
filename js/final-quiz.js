@@ -1,14 +1,16 @@
 /* ============================================
    Digital Confidence Centre — Final Quiz
-   v4 — 30 scenario-based "What would you do?"
+   v5 — 30 scenario-based "What would you do?"
         questions covering all 11 modules
-   Passing score: 80% (24/30)
+   Passing score: 70% (21/30)
+   Sprint 7: readiness panel, smart scoring,
+             certificate.html, resources chain
    ============================================ */
 
 var DC_QUIZ = (function () {
   'use strict';
 
-  /* ── 20 Scenario-Based Questions ──────────────────────── */
+  /* ── 30 Scenario-Based Questions ──────────────────────── */
   var questions = [
 
     /* MODULE 1 — The Escape Hatch */
@@ -247,7 +249,7 @@ var DC_QUIZ = (function () {
     },
     {
       module: 'Module 8: Staying Connected',
-      q: 'You want to send your friend Susan a quick note on Facebook about a beautiful sunset. You type your message and notice a 🌐 globe icon next to the button you\'re about to tap. What does the globe mean?',
+      q: 'You want to send your friend Susan a quick note on Facebook about a beautiful sunset. You type your message and notice a globe icon next to the button you\'re about to tap. What does the globe mean?',
       options: [
         'Your Wi-Fi is working — the globe just shows you are connected to the internet',
         'The message is encrypted and completely private — only Susan will see it',
@@ -255,13 +257,13 @@ var DC_QUIZ = (function () {
         'The globe shows the message will be translated to other languages'
       ],
       correct: 2,
-      explain: 'The 🌐 globe icon means your post will be visible to EVERYONE — like pinning a note on a bulletin board in a shopping centre. To reach Susan privately, look for her photo at the top and a "Send" button at the bottom (not "Post"). The rule: see a globe → stop and check. No globe = private message.'
+      explain: 'The globe icon means your post will be visible to EVERYONE — like pinning a note on a bulletin board in a shopping centre. To reach Susan privately, look for her photo at the top and a "Send" button at the bottom (not "Post"). The rule: see a globe — stop and check. No globe means private message.'
     },
 
     /* GENERAL / CROSS-MODULE */
     {
       module: 'General: Device Safety',
-      q: 'A pop-up appears on your iPad saying "Your iPad storage is almost full. Tap here to buy extra storage for 99¢/month." The pop-up looks like it\'s from Apple. What should you do?',
+      q: 'A pop-up appears on your iPad saying "Your iPad storage is almost full. Tap here to buy extra storage for 99 cents/month." The pop-up looks like it\'s from Apple. What should you do?',
       options: [
         'Tap it — extra storage is cheap and useful',
         'Close the pop-up. If you genuinely need more storage, go to Settings → your name → iCloud to manage it through Apple\'s official settings',
@@ -399,7 +401,7 @@ var DC_QUIZ = (function () {
     }
   ];
 
-  var PASS_SCORE   = 24;
+  var PASS_SCORE   = 21;   /* 70% of 30 */
   var currentQ     = 0;
   var score        = 0;
   var answered     = [];
@@ -409,32 +411,116 @@ var DC_QUIZ = (function () {
   function init() {
     var container = document.getElementById('quiz-app');
     if (!container) return;
-
-    var unlocked = localStorage.getItem('finalQuizUnlocked') === 'true'
-                || localStorage.getItem('dc-quiz-dev-bypass') === 'true';
-
-    if (!unlocked) {
-      renderLocked(container);
-    } else {
-      renderStart(container);
-    }
+    buildReadinessPanel(container);
   }
 
-  /* ── Locked screen ───────────────────────────────────────── */
+  /* ── Readiness Panel (Phase 2) ──────────────────────────── */
+  function buildReadinessPanel(container) {
+    var total = 11;
+    var doneCount = 0;
+    var incomplete = [];
+    var mLabels = [
+      'Module 1: The Escape Hatch',
+      'Module 2: The Security Shield',
+      'Module 3: Passwords & Biometrics',
+      'Module 4: App Store Safety',
+      'Module 5: Email & Messages',
+      'Module 6: Banking & Transactions',
+      'Module 7: Photos & Memories',
+      'Module 8: Stay Connected',
+      'Module 9: Understanding AI',
+      'Module 10: Grocery & Food Delivery',
+      'Module 11: Ride-Sharing Apps'
+    ];
+    var mUrls = [
+      'module-1.html', 'module-2.html', 'module-3.html', 'module-4.html',
+      'module-5.html', 'module-6.html', 'module-7.html', 'module-8.html',
+      'module-9.html', 'module-10.html', 'module-11.html'
+    ];
+
+    for (var i = 1; i <= total; i++) {
+      if (isModuleDone(i)) { doneCount++; }
+      else { incomplete.push({ label: mLabels[i - 1], url: mUrls[i - 1] }); }
+    }
+
+    var statusHTML = '';
+    for (var j = 1; j <= total; j++) {
+      var d = isModuleDone(j);
+      statusHTML += '<li class="' + (d ? 'done' : 'pending') + '">' +
+        (d ? '&#x2705;' : '&#x2B1C;') + ' ' + escHTML(mLabels[j - 1]) + '</li>';
+    }
+
+    var bannerHTML = '';
+    var actionHTML = '';
+
+    if (doneCount === total) {
+      localStorage.setItem('finalQuizUnlocked', 'true');
+      bannerHTML =
+        '<div class="confidence-check-box">' +
+          '&#x2705; <strong>You are ready!</strong><br>' +
+          'You have completed all 11 modules. You can take the Final Assessment now ' +
+          '&#8212; and you can retake it as many times as you like. There is no pressure and no time limit.' +
+        '</div>';
+      actionHTML =
+        '<button class="quiz-btn quiz-btn-primary" id="start-quiz-btn" ' +
+        'style="font-size:20px;padding:18px 48px;margin-top:24px;">Begin Assessment &#8594;</button>';
+    } else if (doneCount === 0) {
+      bannerHTML =
+        '<div class="tip-box">' +
+          '&#128161; <strong>It looks like you have not started the modules yet.</strong><br>' +
+          'The Digital Confidence Centre works best when you go through the modules first ' +
+          '&#8212; they prepare you for this assessment. ' +
+          '<a href="module-1.html">Start with Module 1 &#8594;</a>' +
+        '</div>';
+    } else {
+      var incLinks = incomplete.map(function (m) {
+        return '<li><a href="' + m.url + '">' + escHTML(m.label) + ' &#8594;</a></li>';
+      }).join('');
+      bannerHTML =
+        '<div class="warning-box">' +
+          '&#x26A0;&#xFE0F; <strong>A few modules are not finished yet:</strong>' +
+          '<ul style="margin:12px 0 0 20px;">' + incLinks + '</ul><br>' +
+          'You can still take the quiz now &#8212; but you might find it easier after finishing those modules. The choice is yours.' +
+        '</div>';
+      actionHTML =
+        '<button class="quiz-btn quiz-btn-secondary" id="take-anyway-btn" ' +
+        'style="margin-top:16px;">Take the Quiz Anyway</button>';
+    }
+
+    container.innerHTML =
+      '<div class="quiz-container">' +
+        '<div class="quiz-header"><h1>&#127891; Final Assessment &#8212; Readiness Check</h1></div>' +
+        '<div class="quiz-question">' +
+          bannerHTML +
+          (doneCount > 0
+            ? '<h3 style="margin-top:28px;font-size:18px;">Your progress so far:</h3>' +
+              '<ul class="module-checklist">' + statusHTML + '</ul>'
+            : '') +
+          actionHTML +
+        '</div>' +
+      '</div>';
+
+    var startBtn = document.getElementById('start-quiz-btn');
+    if (startBtn) startBtn.addEventListener('click', function () { renderStart(container); });
+    var takeBtn = document.getElementById('take-anyway-btn');
+    if (takeBtn) takeBtn.addEventListener('click', function () { renderStart(container); });
+  }
+
+  /* ── Locked screen (kept for dev reference) ─────────────── */
   function renderLocked(container) {
     var statuses = '';
     for (var i = 1; i <= 11; i++) {
       var done = isModuleDone(i);
       statuses += '<li class="' + (done ? 'done' : 'pending') + '">' +
-        (done ? '✅' : '⬜') + ' Module ' + i + '</li>';
+        (done ? '&#x2705;' : '&#x2B1C;') + ' Module ' + i + '</li>';
     }
     container.innerHTML =
       '<div class="quiz-locked-screen">' +
-        '<div class="quiz-locked-icon">🔒</div>' +
-        '<h1>Final Assessment — Locked</h1>' +
+        '<div class="quiz-locked-icon">&#128274;</div>' +
+        '<h1>Final Assessment &#8212; Locked</h1>' +
         '<p>Complete all 11 learning modules to unlock the Final Assessment and earn your Certificate of Completion.</p>' +
         '<ul class="module-checklist">' + statuses + '</ul>' +
-        '<p><a href="index.html">← Return to Home</a> to continue your modules.</p>' +
+        '<p><a href="index.html">&#8592; Return to Home</a> to continue your modules.</p>' +
       '</div>';
   }
 
@@ -443,16 +529,20 @@ var DC_QUIZ = (function () {
     container.innerHTML =
       '<div class="quiz-container">' +
         '<div class="quiz-header">' +
-          '<h1>🎓 Final Digital Confidence Assessment</h1>' +
-          '<p style="color:#455A64;font-size:17px;margin:8px 0 0;">30 real-life scenarios &nbsp;·&nbsp; Pass with 80% &nbsp;·&nbsp; No time limit</p>' +
+          '<h1>&#127891; Final Digital Confidence Assessment</h1>' +
+          '<p style="color:#455A64;font-size:17px;margin:8px 0 0;">30 real-life scenarios &nbsp;&middot;&nbsp; Pass with 70% &nbsp;&middot;&nbsp; No time limit</p>' +
         '</div>' +
         '<div class="quiz-question" style="text-align:center;">' +
-          '<div style="font-size:72px;margin-bottom:24px;">📋</div>' +
+          '<div class="three-second-rule-box" style="text-align:left;margin-bottom:24px;">' +
+            '&#x1F6D1; Take your time. There is no clock, no pressure, and no one watching. ' +
+            'Read each question carefully &#8212; Stop, Breathe, then choose your answer.' +
+          '</div>' +
+          '<div style="font-size:72px;margin-bottom:24px;">&#128203;</div>' +
           '<h3 style="font-size:24px;">You\'ve earned this!</h3>' +
           '<p style="font-size:18px;color:var(--text-secondary);margin-bottom:32px;">' +
             'Each question describes a real situation you might encounter. ' +
-            'Choose what you would do. There is no time pressure — read carefully.<br><br>' +
-            'You need 24 correct answers (80%) to pass and receive your certificate. (30 questions total)' +
+            'Choose what you would do. There is no time pressure &#8212; read carefully.<br><br>' +
+            'You need 21 correct answers (70%) to pass and receive your certificate. (30 questions total)' +
           '</p>' +
           '<button class="quiz-btn quiz-btn-primary" id="start-quiz-btn" style="font-size:20px;padding:18px 48px;">Begin Assessment</button>' +
         '</div>' +
@@ -499,7 +589,7 @@ var DC_QUIZ = (function () {
         '</div>' +
         '<div class="quiz-nav">' +
           '<button class="quiz-btn quiz-btn-primary" id="next-btn" disabled>' +
-            (currentQ === questions.length - 1 ? 'See My Results' : 'Next Question →') +
+            (currentQ === questions.length - 1 ? 'See My Results' : 'Next Question &#8594;') +
           '</button>' +
         '</div>' +
       '</div>';
@@ -531,7 +621,7 @@ var DC_QUIZ = (function () {
     options[q.correct].classList.add('correct');
     if (!isCorrect) options[selectedIndex].classList.add('incorrect');
 
-    feedback.textContent = (isCorrect ? '✅ That\'s right! ' : '❌ Not quite. ') + q.explain;
+    feedback.textContent = (isCorrect ? '&#x2705; That\'s right! ' : '&#x274C; Not quite. ') + q.explain;
     feedback.className = 'quiz-feedback show ' + (isCorrect ? 'correct-fb' : 'incorrect-fb');
     nextBtn.disabled = false;
   }
@@ -549,26 +639,51 @@ var DC_QUIZ = (function () {
   /* ── Results screen ────────────────────────────────────────── */
   function renderResults(container) {
     var passed   = score >= PASS_SCORE;
+    var perfect  = score === questions.length;
     var percent  = Math.round((score / questions.length) * 100);
-    var icon     = passed ? '🏆' : '📚';
-    var heading  = passed ? 'Congratulations — You Passed!' : 'Great Effort!';
+    var icon     = passed ? '&#127942;' : '&#128218;';
+    var heading  = passed ? 'Congratulations &#8212; You Passed!' : 'Great Effort!';
 
-    var message  = passed
-      ? 'You scored ' + score + '/26 (' + percent + '%). You\'ve demonstrated strong digital confidence! Enter your name below to print your Certificate.'
-      : 'You scored ' + score + '/26 (' + percent + '%). You need 21/26 to pass. Review the modules and try again — you\'re closer than you think!';
+    /* Save to LocalStorage (Phase 3) */
+    var dateStr = new Date().toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
+    localStorage.setItem('finalQuizScore', percent);
+    localStorage.setItem('finalQuizDate', dateStr);
+
+    var extraHTML = '';
+    if (perfect) {
+      extraHTML = '<div class="confidence-check-box" style="margin-top:16px;">' +
+        '&#127775; <strong>A perfect score!</strong> That is truly exceptional. ' +
+        'You have mastered every topic in this programme.</div>';
+    }
+
+    var message = passed
+      ? 'You scored ' + score + '/' + questions.length + ' (' + percent + '%). ' +
+        'You have demonstrated strong digital confidence! Enter your name below to get your Certificate of Completion.'
+      : 'You scored ' + score + '/' + questions.length + ' (' + percent + '%). ' +
+        'You need 21/' + questions.length + ' (70%) to pass. ' +
+        'Great effort &#8212; review the modules you found tricky and try again. There is no limit on retakes.';
 
     var nameSection = passed
-      ? '<div class="name-input-section">' +
-          '<label for="cert-name">Your name for the certificate:</label>' +
-          '<input type="text" id="cert-name" placeholder="e.g. Margaret Wilson" maxlength="60">' +
+      ? '<div class="name-input-section" style="margin-top:24px;">' +
+          '<label for="cert-name" style="display:block;margin-bottom:8px;font-weight:600;">' +
+            'Your name for the certificate:' +
+          '</label>' +
+          '<input type="text" id="cert-name" placeholder="e.g. Margaret Wilson" maxlength="60" ' +
+            'style="font-size:18px;padding:10px;border:2px solid #ddd;border-radius:8px;width:100%;box-sizing:border-box;">' +
         '</div>' +
         '<div class="quiz-results-actions">' +
-          '<button class="quiz-btn quiz-btn-primary btn-success" id="print-cert-btn">🎓 Print My Certificate</button>' +
+          '<button class="quiz-btn quiz-btn-primary btn-success" id="get-cert-btn">&#127891; Get My Certificate</button>' +
           '<button class="quiz-btn quiz-btn-secondary" id="retake-btn">Retake Quiz</button>' +
+        '</div>' +
+        '<div style="margin-top:20px;text-align:center;">' +
+          '<a href="resources.html" style="color:var(--accent-primary);font-size:16px;">Continue to Resources &#8594;</a>' +
         '</div>'
       : '<div class="quiz-results-actions">' +
           '<a href="index.html" class="quiz-btn quiz-btn-secondary">Review Modules</a>' +
           '<button class="quiz-btn quiz-btn-primary" id="retake-btn">Try Again</button>' +
+        '</div>' +
+        '<div style="margin-top:20px;text-align:center;">' +
+          '<a href="resources.html" style="color:var(--accent-primary);font-size:16px;">Continue to Resources &#8594;</a>' +
         '</div>';
 
     container.innerHTML =
@@ -577,98 +692,19 @@ var DC_QUIZ = (function () {
         '<h2>' + heading + '</h2>' +
         '<div class="quiz-results-score ' + (passed ? 'passing' : 'failing') + '">' + percent + '%</div>' +
         '<p class="quiz-results-message">' + message + '</p>' +
+        extraHTML +
         nameSection +
       '</div></div>';
 
     if (passed) {
-      document.getElementById('print-cert-btn').addEventListener('click', function () {
-        var name = (document.getElementById('cert-name').value || 'a Digital Confidence Centre learner').trim();
-        printCertificate(name, percent);
+      document.getElementById('get-cert-btn').addEventListener('click', function () {
+        var name = (document.getElementById('cert-name').value || '').trim();
+        if (name) localStorage.setItem('userName', name);
+        window.location.href = 'certificate.html';
       });
     }
     var retakeBtn = document.getElementById('retake-btn');
     if (retakeBtn) retakeBtn.addEventListener('click', function () { startQuiz(container); });
-  }
-
-  /* ── Professional Certificate ───────────────────────────── */
-  function printCertificate(name, percent) {
-    var dateStr = new Date().toLocaleDateString('en-CA', {
-      year: 'numeric', month: 'long', day: 'numeric'
-    });
-
-    var html = '<!DOCTYPE html><html lang="en"><head>' +
-      '<meta charset="UTF-8"><title>Certificate of Digital Confidence</title>' +
-      '<style>' +
-        '@page{size:letter portrait;margin:0}' +
-        '@media print{body{margin:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}}' +
-        'body{font-family:Georgia,"Times New Roman",serif;margin:0;padding:0;background:white}' +
-        '.cert-page{width:8.5in;height:11in;padding:0.75in;box-sizing:border-box;position:relative;background:white}' +
-        '.cert-border{border:12px double #2C3E50;padding:0.5in;height:100%;box-sizing:border-box;position:relative;background:linear-gradient(to bottom,#FFFFFF 0%,#F8F9FA 100%)}' +
-        '.corner{position:absolute;font-size:40px;color:#CFD8DC;line-height:1}' +
-        '.c-tl{top:20px;left:20px}.c-tr{top:20px;right:20px}.c-bl{bottom:20px;left:20px}.c-br{bottom:20px;right:20px}' +
-        '.cert-content{text-align:center;padding:32px 20px}' +
-        '.cert-org{font-size:13px;color:#546E7A;letter-spacing:4px;text-transform:uppercase;margin-bottom:12px;font-weight:600}' +
-        '.cert-title{font-size:52px;color:#1565C0;margin:16px 0 8px;font-weight:bold;line-height:1.2}' +
-        '.cert-subtitle{font-size:20px;color:#37474F;margin-bottom:40px;font-weight:500}' +
-        '.cert-logo{font-size:72px;margin-bottom:16px}' +
-        '.cert-awarded{font-size:16px;color:#546E7A;margin-bottom:12px;font-style:italic}' +
-        '.cert-name{font-size:44px;color:#2C3E50;margin:20px 0;font-weight:bold;font-style:italic;border-bottom:3px solid #2C3E50;display:inline-block;padding:0 40px 10px;min-width:380px}' +
-        '.cert-body{font-size:16px;color:#37474F;line-height:1.8;margin:28px auto;max-width:540px}' +
-        '.cert-achievement{background:linear-gradient(135deg,#E8F5E9 0%,#C8E6C9 100%);border:2px solid #4CAF50;border-radius:12px;padding:18px 24px;margin:24px auto;max-width:460px}' +
-        '.cert-achievement h3{color:#2E7D32;margin:0 0 8px;font-size:18px}' +
-        '.cert-score{font-size:32px;color:#2E7D32;font-weight:bold;margin:6px 0}' +
-        '.cert-skills{text-align:left;margin:20px auto;max-width:500px;color:#37474F;font-size:14px;line-height:1.6}' +
-        '.cert-skills strong{display:block;margin-bottom:6px;color:#2C3E50;font-size:15px}' +
-        '.cert-skills ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 20px}' +
-        '.cert-skills li{padding-left:22px;position:relative}' +
-        '.cert-skills li:before{content:"✓";position:absolute;left:0;color:#4CAF50;font-weight:bold}' +
-        '.cert-footer{margin-top:40px;padding-top:16px;border-top:2px solid #CFD8DC;display:flex;justify-content:space-between;align-items:flex-end}' +
-        '.cert-seal{text-align:center}' +
-        '.seal-icon{font-size:56px;display:block;margin-bottom:4px}' +
-        '.seal-text{font-size:11px;color:#546E7A;letter-spacing:2px;text-transform:uppercase}' +
-        '.cert-date-block{text-align:right;font-size:15px;color:#546E7A}' +
-        '.cert-date-block strong{display:block;font-size:16px;color:#2C3E50;margin-top:4px}' +
-      '</style></head><body>' +
-      '<div class="cert-page"><div class="cert-border">' +
-        '<div class="corner c-tl">✦</div><div class="corner c-tr">✦</div>' +
-        '<div class="corner c-bl">✦</div><div class="corner c-br">✦</div>' +
-        '<div class="cert-content">' +
-          '<div class="cert-org">Digital Confidence Centre</div>' +
-          '<div class="cert-title">Certificate of Completion</div>' +
-          '<div class="cert-subtitle">Digital Literacy Training Programme</div>' +
-          '<div class="cert-logo">🎓</div>' +
-          '<div class="cert-awarded">This certificate is proudly awarded to</div>' +
-          '<div class="cert-name">' + escHTML(name) + '</div>' +
-          '<div class="cert-body">In recognition of successfully completing the comprehensive 11-module Digital Confidence training programme, demonstrating applied proficiency in safe and confident use of digital devices, online services, AI tools, and modern delivery and transportation apps.</div>' +
-          '<div class="cert-achievement">' +
-            '<h3>Final Assessment Result</h3>' +
-            '<div class="cert-score">' + percent + '% — Proficient</div>' +
-            '<p style="margin:4px 0 0;color:#2E7D32;font-size:14px;">Scenario-based assessment passed</p>' +
-          '</div>' +
-          '<div class="cert-skills"><strong>Competencies Demonstrated:</strong>' +
-            '<ul>' +
-              '<li>Device navigation &amp; escape hatch</li><li>Online security &amp; scam awareness</li>' +
-              '<li>Password management</li><li>Safe app installation</li>' +
-              '<li>Email &amp; messaging security</li><li>Online banking safety</li>' +
-              '<li>Creative device applications</li><li>Family connectivity</li>' +
-              '<li>AI literacy &amp; deepfake awareness</li><li>Grocery &amp; food delivery apps</li>' +
-              '<li>Ride-sharing safety</li>' +
-            '</ul>' +
-          '</div>' +
-          '<div class="cert-footer">' +
-            '<div class="cert-seal"><span class="seal-icon">🏆</span><span class="seal-text">Official Certificate</span></div>' +
-            '<div class="cert-date-block">Awarded on<strong>' + dateStr + '</strong>digitalconfidencecentre.ca</div>' +
-          '</div>' +
-        '</div>' +
-      '</div></div>' +
-      '<script>window.onload=function(){setTimeout(function(){window.print();},600);};<\/script>' +
-      '</body></html>';
-
-    var win = window.open('', '_blank', 'width=900,height=1150');
-    if (win) {
-      win.document.write(html);
-      win.document.close();
-    }
   }
 
   /* ── Module completion check ─────────────────────────────── */
@@ -701,12 +737,12 @@ var DC_QUIZ = (function () {
     var el = document.createElement('div');
     el.className = 'quiz-unlock-notification';
     el.innerHTML =
-      '<button class="quiz-unlock-close" aria-label="Close">✕</button>' +
+      '<button class="quiz-unlock-close" aria-label="Close">&#x2715;</button>' +
       '<div class="quiz-unlock-content">' +
-        '<div class="quiz-unlock-icon">🎉</div>' +
+        '<div class="quiz-unlock-icon">&#127881;</div>' +
         '<h3>All Modules Complete!</h3>' +
         '<p>You\'ve unlocked the Final Assessment. Take the quiz to earn your Certificate.</p>' +
-        '<a href="final-quiz.html" class="btn-success">Take Final Assessment →</a>' +
+        '<a href="final-quiz.html" class="btn-success">Take Final Assessment &#8594;</a>' +
       '</div>';
     document.body.appendChild(el);
     el.querySelector('.quiz-unlock-close').addEventListener('click', function () { el.remove(); });
@@ -719,8 +755,8 @@ var DC_QUIZ = (function () {
 
   function escHTML(str) {
     return String(str)
-      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
-      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
   return {
