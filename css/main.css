@@ -3485,67 +3485,66 @@ strong {
    PERSONALIZATION / DEVICE-FILTER BANNERS
    ============================================================ */
 
-/* Large personalization prompt (no devices set — index/resources) */
-.personalization-banner {
-  background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
-  border: 2px solid #FF9800;
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 32px;
+/* Minimal device indicator — footnote style, zero visual weight */
+.device-indicator,
+.personalization-banner,
+.device-profile-bar {
+  font-size: 0.78rem;
+  color: #888;
+  padding: 0.25rem 0;
+  margin: 0 0 0.75rem 0;
+  background: none;
+  border: none;
+  border-left: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  line-height: 1.4;
 }
+.device-indicator .edit-btn,
+.personalization-banner .edit-btn,
+.device-profile-bar .edit-btn {
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  background: none;
+  color: #2C6FBF;
+  border: 1px solid #2C6FBF;
+  border-radius: 3px;
+  cursor: pointer;
+  min-height: 24px;
+  text-decoration: underline;
+}
+.device-indicator-empty {
+  font-style: italic;
+}
+[data-theme="dark"] .device-indicator,
+[data-theme="dark"] .personalization-banner,
+[data-theme="dark"] .device-profile-bar {
+  color: #999;
+}
+[data-theme="dark"] .device-indicator .edit-btn,
+[data-theme="dark"] .personalization-banner .edit-btn,
+[data-theme="dark"] .device-profile-bar .edit-btn {
+  color: #7fb3f5;
+  border-color: #7fb3f5;
+}
+
+/* Keep large personalization card styles available for banner-content children */
 .banner-content { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
 .banner-icon { font-size: 48px; margin: 0; line-height: 1; }
 .banner-text { flex: 1; min-width: 200px; }
 .banner-text strong { color: #E65100; font-size: 18px; display: block; margin-bottom: 4px; }
 .banner-text p { color: #5D4037; margin: 0; font-size: 14px; }
 .banner-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-.btn-personalize, .btn-edit { background: #FF9800; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; }
-.btn-personalize:hover, .btn-edit:hover { background: #F57C00; }
+.btn-personalize { background: #FF9800; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+.btn-personalize:hover { background: #F57C00; }
 .btn-dismiss, .btn-show-all { background: transparent; color: #E65100; border: 2px solid #E65100; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; }
 .btn-dismiss:hover, .btn-show-all:hover { background: #E65100; color: white; }
-[data-theme="dark"] .personalization-banner { background: linear-gradient(135deg, #3E2723 0%, #4E342E 100%); border-color: #FFB74D; }
 [data-theme="dark"] .banner-text strong { color: #FFCC80; }
 [data-theme="dark"] .banner-text p { color: #BCAAA4; }
 [data-theme="dark"] .btn-dismiss, [data-theme="dark"] .btn-show-all { color: #FFB74D; border-color: #FFB74D; }
 [data-theme="dark"] .btn-dismiss:hover, [data-theme="dark"] .btn-show-all:hover { background: #FFB74D; color: #1E1E1E; }
-
-/* Compact device indicator (replaces filtered-banner) */
-.device-indicator {
-  font-size: 0.85rem;
-  padding: 0.35rem 1rem;
-  background: #fff8e1;
-  border-left: 3px solid #f0a500;
-  margin: 0.5rem 0 1rem 0;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-.device-indicator .edit-btn {
-  font-size: 0.8rem;
-  padding: 0.2rem 0.6rem;
-  background: #f0a500;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  min-height: 28px;
-}
-.device-indicator-empty {
-  color: #666;
-  font-style: italic;
-}
-[data-theme="dark"] .device-indicator {
-  background: #2a2200;
-  border-color: #c88000;
-  color: #e0e0e0;
-}
-[data-theme="dark"] .device-indicator .edit-btn {
-  background: #c88000;
-}
-[data-theme="dark"] .device-indicator-empty {
-  color: #aaa;
-}
 
 /* ============================================================
    DYSLEXIC FONT TOGGLE
