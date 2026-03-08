@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your Digital Confidence Centre Certificate of Completion. Print or save as PDF.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Certificate of Completion | Digital Confidence Centre</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1565C0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Digital Confidence">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPH5H5BM52"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RPH5H5BM52');
+  </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <style>
+    /* ── Certificate Page Styles ── */
+    .cert-page-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+    .cert-actions {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .cert-actions .btn {
+      margin: 0 8px;
+    }
+    .cert-name-section {
+      background: var(--bg-card);
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .cert-name-section h2 {
+      margin: 0 0 12px;
+      font-size: 1.2rem;
+    }
+    .cert-name-section input {
+      font-size: 1.1rem;
+      padding: 10px 16px;
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      width: 100%;
+      max-width: 400px;
+      box-sizing: border-box;
+      margin-bottom: 16px;
+    }
+
+    /* ── The Certificate Itself ── */
+    .certificate {
+      border: 8px double #2C3E50;
+      padding: 48px 56px;
+      background: #fff;
+      color: #000;
+      font-family: Georgia, 'Times New Roman', serif;
+      position: relative;
+    }
+    .certificate .cert-corner {
+      position: absolute;
+      font-size: 28px;
+      color: #CFD8DC;
+      line-height: 1;
+    }
+    .certificate .cert-corner.tl { top: 14px; left: 14px; }
+    .certificate .cert-corner.tr { top: 14px; right: 14px; }
+    .certificate .cert-corner.bl { bottom: 14px; left: 14px; }
+    .certificate .cert-corner.br { bottom: 14px; right: 14px; }
+    .certificate .cert-org {
+      font-size: 12px;
+      color: #546E7A;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .certificate .cert-title {
+      font-size: 42px;
+      color: #1565C0;
+      text-align: center;
+      font-weight: bold;
+      margin: 8px 0 4px;
+      line-height: 1.2;
+    }
+    .certificate .cert-subtitle {
+      font-size: 17px;
+      color: #37474F;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .certificate .cert-logo {
+      font-size: 60px;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .certificate .cert-awarded {
+      font-size: 15px;
+      color: #546E7A;
+      text-align: center;
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+    .certificate .cert-name {
+      font-size: 36px;
+      color: #2C3E50;
+      text-align: center;
+      font-weight: bold;
+      font-style: italic;
+      border-bottom: 3px solid #2C3E50;
+      display: inline-block;
+      padding: 0 32px 8px;
+      margin: 8px auto 28px;
+      min-width: 320px;
+    }
+    .certificate .cert-name-wrap {
+      text-align: center;
+    }
+    .certificate .cert-body {
+      font-size: 15px;
+      color: #37474F;
+      line-height: 1.8;
+      text-align: center;
+      max-width: 520px;
+      margin: 0 auto 24px;
+    }
+    .certificate .cert-achievement {
+      background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+      border: 2px solid #4CAF50;
+      border-radius: 10px;
+      padding: 16px 20px;
+      text-align: center;
+      max-width: 420px;
+      margin: 0 auto 24px;
+    }
+    .certificate .cert-achievement h3 {
+      color: #2E7D32;
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+    .certificate .cert-score-val {
+      font-size: 28px;
+      color: #2E7D32;
+      font-weight: bold;
+    }
+    .certificate .cert-skills {
+      font-size: 13px;
+      color: #37474F;
+      max-width: 500px;
+      margin: 0 auto 28px;
+      line-height: 1.6;
+    }
+    .certificate .cert-skills strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #2C3E50;
+      font-size: 14px;
+      text-align: center;
+    }
+    .certificate .cert-skills ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 20px;
+    }
+    .certificate .cert-skills li {
+      padding-left: 20px;
+      position: relative;
+    }
+    .certificate .cert-skills li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      color: #4CAF50;
+      font-weight: bold;
+    }
+    .certificate .cert-footer {
+      margin-top: 32px;
+      padding-top: 14px;
+      border-top: 2px solid #CFD8DC;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .certificate .cert-seal {
+      text-align: center;
+    }
+    .certificate .seal-icon {
+      font-size: 44px;
+      display: block;
+    }
+    .certificate .seal-text {
+      font-size: 10px;
+      color: #546E7A;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .certificate .cert-date-block {
+      text-align: right;
+      font-size: 14px;
+      color: #546E7A;
+    }
+    .certificate .cert-date-block strong {
+      display: block;
+      font-size: 15px;
+      color: #2C3E50;
+      margin-top: 2px;
+    }
+    .certificate .cert-domain {
+      font-size: 11px;
+      color: #90A4AE;
+      margin-top: 4px;
+    }
+
+    /* ── Print Rules ── */
+    @media print {
+      .accessibility-bar,
+      .top-bar,
+      .sidebar,
+      .sidebar-overlay,
+      .skip-link,
+      .cert-actions,
+      .cert-name-section,
+      .no-print {
+        display: none !important;
+      }
+      .page-wrapper {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .cert-page-wrapper {
+        max-width: 100% !important;
+        padding: 0 !important;
+      }
+      body {
+        background: #fff;
+        color: #000;
+      }
+      .certificate {
+        border: 8px double #2C3E50;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">&#x1F313;</button>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">&#x2630;</button>
+    <span class="site-title">Certificate of Completion</span>
+    <span></span>
+  </div>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+      <div class="cert-page-wrapper">
+
+        <!-- Name entry (shown if no name in localStorage) -->
+        <div class="cert-name-section" id="name-section" style="display:none;">
+          <h2>What name would you like on your certificate?</h2>
+          <input type="text" id="name-input" placeholder="e.g. Margaret Wilson" maxlength="60"
+            aria-label="Your name for the certificate">
+          <br>
+          <button class="btn btn-primary" id="generate-btn">Generate My Certificate</button>
+        </div>
+
+        <!-- Action buttons -->
+        <div class="cert-actions no-print">
+          <a href="final-quiz.html" class="btn btn-secondary">&#8592; Back to Assessment</a>
+          <button class="btn btn-primary" id="print-btn" onclick="window.print()">&#128438; Print or Save as PDF</button>
+        </div>
+
+        <!-- The Certificate -->
+        <div class="certificate" id="certificate" aria-label="Certificate of Completion">
+          <span class="cert-corner tl" aria-hidden="true">&#x2726;</span>
+          <span class="cert-corner tr" aria-hidden="true">&#x2726;</span>
+          <span class="cert-corner bl" aria-hidden="true">&#x2726;</span>
+          <span class="cert-corner br" aria-hidden="true">&#x2726;</span>
+
+          <div class="cert-org">Digital Confidence Centre</div>
+          <div class="cert-title">Certificate of Completion</div>
+          <div class="cert-subtitle">Digital Literacy Training Programme</div>
+          <div class="cert-logo">&#127891;</div>
+          <div class="cert-awarded">This certificate is proudly awarded to</div>
+          <div class="cert-name-wrap">
+            <div class="cert-name" id="cert-name-display">&#8213;</div>
+          </div>
+          <div class="cert-body">
+            In recognition of successfully completing the comprehensive 11-module Digital Confidence
+            training programme, demonstrating applied proficiency in the safe and confident use of
+            digital devices, online services, AI tools, and modern delivery and transportation apps.
+          </div>
+          <div class="cert-achievement">
+            <h3>Final Assessment Result</h3>
+            <div class="cert-score-val" id="cert-score-display">&#8213;</div>
+            <p style="margin:4px 0 0;color:#2E7D32;font-size:13px;">Scenario-based assessment passed</p>
+          </div>
+          <div class="cert-skills">
+            <strong>Competencies Demonstrated:</strong>
+            <ul>
+              <li>Device navigation &amp; escape hatch</li>
+              <li>Online security &amp; scam awareness</li>
+              <li>Password management</li>
+              <li>Safe app installation</li>
+              <li>Email &amp; messaging security</li>
+              <li>Online banking safety</li>
+              <li>Creative device applications</li>
+              <li>Family connectivity</li>
+              <li>AI literacy &amp; deepfake awareness</li>
+              <li>Grocery &amp; food delivery apps</li>
+              <li>Ride-sharing safety</li>
+            </ul>
+          </div>
+          <div class="cert-footer">
+            <div class="cert-seal">
+              <span class="seal-icon">&#127942;</span>
+              <span class="seal-text">Official Certificate</span>
+            </div>
+            <div class="cert-date-block">
+              Awarded on
+              <strong id="cert-date-display">&#8213;</strong>
+              <div class="cert-domain">digitalconfidencecentre.ca</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-actions no-print" style="margin-top:28px;">
+          <a href="resources.html" class="btn btn-primary">Continue to Resources &#8594;</a>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="js/speech-config.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/accessibility.js" defer></script>
+  <script src="js/settings.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var name   = localStorage.getItem('userName') || '';
+      var score  = localStorage.getItem('finalQuizScore') || '';
+      var date   = localStorage.getItem('finalQuizDate') || '';
+
+      /* Populate date — use stored or today */
+      if (!date) {
+        date = new Date().toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
+        localStorage.setItem('finalQuizDate', date);
+      }
+      document.getElementById('cert-date-display').textContent = date;
+
+      /* Populate score */
+      if (score) {
+        document.getElementById('cert-score-display').textContent = score + '% \u2014 Proficient';
+      }
+
+      /* Populate name or show entry form */
+      if (name) {
+        document.getElementById('cert-name-display').textContent = name;
+        document.getElementById('name-section').style.display = 'none';
+      } else {
+        document.getElementById('name-section').style.display = 'block';
+        document.getElementById('cert-name-display').textContent = '\u2014 Your Name \u2014';
+      }
+
+      /* Generate button */
+      var genBtn = document.getElementById('generate-btn');
+      if (genBtn) {
+        genBtn.addEventListener('click', function () {
+          var n = (document.getElementById('name-input').value || '').trim();
+          if (!n) { alert('Please enter your name first.'); return; }
+          localStorage.setItem('userName', n);
+          document.getElementById('cert-name-display').textContent = n;
+          document.getElementById('name-section').style.display = 'none';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
