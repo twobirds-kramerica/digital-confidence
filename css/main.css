@@ -4673,3 +4673,44 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   .email-invite-box { display: none; }
   .trust-signals { display: none; }
 }
+
+/* ── Standard Footer Inner Layout (Phase 9 — footer standardisation) ── */
+.footer-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.footer-brand {
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+.footer-tagline {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+.footer-support {
+  font-size: 0.9rem;
+  margin: 0.75rem 0 0.5rem;
+}
+.footer-copy {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+[data-theme="dark"] .footer-brand { color: #e0e0e0; }
+[data-theme="dark"] .footer-tagline { color: #aaa; }
+[data-theme="dark"] .footer-support { color: #ccc; }
+[data-theme="dark"] .footer-copy { color: #888; }
+[data-theme="dark"] .footer-links a { color: #90CAF9; }
+[data-theme="dark"] .site-footer { border-color: #333; }
+
+/* ── Email Invite Dark Mode (input + button) ── */
+[data-theme="dark"] .email-invite-form input[type="email"] {
+  background: #1e1e1e; border-color: #4a6278; color: #e0e0e0;
+}
+[data-theme="dark"] .email-invite-btn {
+  background: #1a5299;
+}
+[data-theme="dark"] .email-invite-headline { color: #e0e0e0; }
