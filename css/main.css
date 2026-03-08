@@ -4621,3 +4621,55 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   .reading-options { flex-direction: column; }
   .reading-option  { max-width: 100%; width: 100%; }
 }
+
+/* ── Email Capture Banner (Phase 5) ── */
+.email-invite-box {
+  background: #f0f7ff;
+  border: 1px solid #c0d8f0;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+.email-invite-headline { font-size: 1.3rem; font-weight: bold; margin-bottom: 0.5rem; }
+.email-invite-body { margin-bottom: 1rem; line-height: 1.6; }
+.email-invite-form {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 0.75rem; margin-bottom: 0.75rem;
+}
+.email-invite-form input[type="email"] {
+  width: 100%; max-width: 360px; padding: 0.75rem 1rem;
+  font-size: 1rem; border: 2px solid #aaa; border-radius: 8px; min-height: 44px;
+}
+.email-invite-btn {
+  background: #2C6FBF; color: white; border: none;
+  padding: 0.75rem 1.5rem; border-radius: 8px; font-size: 1rem;
+  cursor: pointer; min-height: 44px;
+}
+.email-invite-btn:hover { background: #1a5299; }
+.email-invite-dismiss {
+  background: none; border: none; color: #666; font-size: 0.9rem;
+  cursor: pointer; text-decoration: underline; min-height: 44px;
+}
+[data-theme="dark"] .email-invite-box {
+  background: #1a2a3a; border-color: #2a4a6a; color: #e0e0e0;
+}
+[data-theme="dark"] .email-invite-dismiss { color: #aaa; }
+
+/* ── Trust Signals (Phase 7) ── */
+.trust-signals { display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 2rem 0; }
+.trust-item {
+  flex: 1 1 200px; background: #f9f9f9; border-radius: 10px;
+  padding: 1.25rem; line-height: 1.6;
+}
+[data-theme="dark"] .trust-item { background: #2a2a2a; }
+
+/* ── Module Intro Block (Phase 8) ── */
+.module-intro { margin-bottom: 2rem; }
+.module-time { font-size: 0.95rem; color: #666; margin-bottom: 1rem; }
+[data-theme="dark"] .module-time { color: #aaa; }
+
+@media print {
+  .email-invite-box { display: none; }
+  .trust-signals { display: none; }
+}

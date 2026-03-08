@@ -1080,6 +1080,19 @@
         <a href="module-4.html" class="btn btn-primary btn-next">Next: App Store Safety →</a>
       </div>
 
+            <div class="email-invite-box" id="emailInviteBox">
+        <div class="email-invite-inner">
+          <p class="email-invite-headline">📬 Stay in the Loop</p>
+          <p class="email-invite-body">Would you like us to let you know when new lessons are added? We will never share your email, never send spam, and you can unsubscribe anytime with one click.</p>
+          <div class="email-invite-form">
+            <input type="email" id="emailCaptureInput" placeholder="Your email address (optional)" aria-label="Your email address" />
+            <button onclick="submitEmailCapture()" class="email-invite-btn">Yes, keep me posted</button>
+          </div>
+          <button onclick="dismissEmailCapture()" class="email-invite-dismiss">No thank you</button>
+        </div>
+      </div>
+      <script src="js/email-capture.js"></script>
+
       <footer class="site-footer">
         <div class="footer-links">
           <a href="index.html">Home</a>
