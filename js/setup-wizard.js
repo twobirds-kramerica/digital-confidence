@@ -581,8 +581,8 @@ function applyDeviceFiltering() {
     parsed.computer.forEach(function (d) {
       if (d !== 'none') {
         userDevices.push(d);
-        if (d === 'windows') deviceNames.push('Windows');
-        if (d === 'mac') deviceNames.push('Mac');
+        if (d === 'windows') deviceNames.push('Windows Computer');
+        if (d === 'mac') deviceNames.push('Apple Computer (Mac)');
         if (d === 'chromebook') deviceNames.push('Chromebook');
       }
     });
@@ -601,22 +601,7 @@ function applyDeviceFiltering() {
     else { el.classList.add('hidden'); anyHidden = true; }
   });
 
-  if (anyHidden) {
-    var main = document.querySelector('.main-content');
-    if (main && main.firstElementChild) {
-      var notice = document.createElement('div');
-      notice.className = 'device-filter-notice';
-      notice.innerHTML =
-        '<p>Showing instructions for your ' + deviceNames.join(' and ') + '.</p>' +
-        '<a href="#" onclick="dcOpenWizard(); return false;">Change devices</a>';
-      var firstH1 = main.querySelector('h1');
-      if (firstH1 && firstH1.parentNode) {
-        firstH1.parentNode.insertBefore(notice, firstH1.nextSibling);
-      } else {
-        main.insertBefore(notice, main.firstElementChild);
-      }
-    }
-  }
+  /* device-filter-notice removed — device-indicator banner handles this */
 }
 
 /* ---------- Focus Trap Helper ---------- */
@@ -664,7 +649,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var _hasDevices = _profile && [].concat(
       _profile.phone || [], _profile.tablet || [], _profile.computer || []
     ).some(function (v) { return v && v !== 'none'; });
-    if (!_hasDevices) { showPersonalizationBanner(); }
+    if (!_hasDevices) { showDeviceIndicatorEmpty(); }
     else { showFilteredBanner(_profile); }
   }
 
@@ -702,26 +687,48 @@ function showPersonalizationBanner() {
 }
 
 function showFilteredBanner(profile) {
-  if (document.querySelector('.filtered-banner')) return;
+  if (document.querySelector('.device-indicator')) return;
   var main = document.querySelector('.main-content');
   if (!main) return;
   var labels = {
     iphone: 'iPhone', 'android-phone': 'Android Phone', ipad: 'iPad',
-    'android-tablet': 'Android Tablet', windows: 'Windows PC', mac: 'Mac', chromebook: 'Chromebook'
+    'android-tablet': 'Android Tablet', windows: 'Windows Computer',
+    mac: 'Apple Computer (Mac)', chromebook: 'Chromebook'
   };
   var devices = [].concat(profile.phone || [], profile.tablet || [], profile.computer || [])
     .filter(function (v) { return v && v !== 'none'; })
     .map(function (v) { return labels[v] || v; });
-  if (!devices.length) return;
+  if (!devices.length) {
+    showDeviceIndicatorEmpty();
+    return;
+  }
+  /* Build natural Oxford-style list: A, B, and C */
+  var displayStr;
+  if (devices.length === 1) {
+    displayStr = devices[0];
+  } else if (devices.length === 2) {
+    displayStr = devices[0] + ' and ' + devices[1];
+  } else {
+    displayStr = devices.slice(0, -1).join(', ') + ', and ' + devices[devices.length - 1];
+  }
   var banner = document.createElement('div');
-  banner.className = 'filtered-banner';
+  banner.className = 'device-indicator';
   banner.innerHTML =
-    '<div class="banner-content">' +
-      '<p style="margin:0">&#128241; Showing content for: <strong>' + devices.join(', ') + '</strong></p>' +
-      '<div class="banner-actions">' +
-        '<button onclick="dcOpenWizard()" class="btn-edit">Edit</button>' +
-      '</div>' +
-    '</div>';
+    '<span>&#128241; Showing content for: <strong>' + displayStr + '</strong></span>' +
+    '<button class="edit-btn" onclick="dcOpenWizard()">Change</button>';
+  var h1 = main.querySelector('h1');
+  if (h1 && h1.nextSibling) { main.insertBefore(banner, h1.nextSibling); }
+  else { main.insertBefore(banner, main.firstElementChild); }
+}
+
+function showDeviceIndicatorEmpty() {
+  if (document.querySelector('.device-indicator')) return;
+  var main = document.querySelector('.main-content');
+  if (!main) return;
+  var banner = document.createElement('div');
+  banner.className = 'device-indicator device-indicator-empty';
+  banner.innerHTML =
+    '<span>&#128241; <a href="#" onclick="dcOpenWizard();return false;">Set up your device profile in Settings</a> for personalised content</span>';
   var h1 = main.querySelector('h1');
   if (h1 && h1.nextSibling) { main.insertBefore(banner, h1.nextSibling); }
   else { main.insertBefore(banner, main.firstElementChild); }

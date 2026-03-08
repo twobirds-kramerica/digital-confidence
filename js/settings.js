@@ -310,7 +310,7 @@ function updateSettingsDevicesDisplay() {
       var labels = {
         iphone: 'iPhone', 'android-phone': 'Android Phone',
         ipad: 'iPad', 'android-tablet': 'Android Tablet',
-        windows: 'Windows PC', mac: 'Mac', chromebook: 'Chromebook'
+        windows: 'Windows Computer', mac: 'Apple Computer (Mac)', chromebook: 'Chromebook'
       };
       var devices = [].concat(profile.phone || [], profile.tablet || [], profile.computer || [])
         .filter(function (v) { return v && v !== 'none'; })
