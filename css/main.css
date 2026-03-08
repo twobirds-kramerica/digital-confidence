@@ -1831,9 +1831,10 @@ strong {
   display: block;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .module-hero-image {
-    height: 140px;
+    height: 180px;
+    object-position: center 20%;
     margin-bottom: var(--spacing-md);
   }
 }
