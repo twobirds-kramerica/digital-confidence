@@ -131,7 +131,7 @@ function injectFeedbackModal() {
         /* FIELD 1: Module dropdown (auto-detected, user-editable) */
         '<div class="dc-feedback-field">',
           '<label class="dc-feedback-label" for="dc-feedback-module">Which part of the site is this about?</label>',
-          '<select id="dc-feedback-module" class="dc-feedback-select">',
+          '<select id="dc-feedback-module" name="module" class="dc-feedback-select">',
             moduleOptions,
           '</select>',
         '</div>',
@@ -145,7 +145,7 @@ function injectFeedbackModal() {
         /* FIELD 3: Feedback textarea */
         '<div class="dc-feedback-field">',
           '<label class="dc-feedback-label" for="dc-feedback-text">Your feedback:</label>',
-          '<textarea id="dc-feedback-text" class="dc-feedback-textarea" rows="5"',
+          '<textarea id="dc-feedback-text" name="message" class="dc-feedback-textarea" rows="5"',
             ' placeholder="Tell us what you noticed\u2026" required></textarea>',
         '</div>',
 
@@ -159,7 +159,7 @@ function injectFeedbackModal() {
           '<label class="dc-feedback-label" for="dc-feedback-name">',
             'Your Name <span class="dc-optional">(Optional)</span>',
           '</label>',
-          '<input type="text" id="dc-feedback-name" class="dc-feedback-input"',
+          '<input type="text" id="dc-feedback-name" name="name" class="dc-feedback-input"',
             ' placeholder="Type here\u2026" autocomplete="off">',
         '</div>',
 
