@@ -69,16 +69,18 @@ document.addEventListener('DOMContentLoaded', function () {
 function injectFeedbackStyles() {
   var style = document.createElement('style');
   style.textContent = [
-    /* Close button — visible grey pill on any background */
+    /* Close button — grey pill */
     '.dc-modal-close{',
     '  position:sticky;top:0;float:right;',
-    '  background:#f0f0f0;border:1px solid #cccccc;border-radius:4px;',
-    '  color:#333333;font-size:14px;font-weight:600;cursor:pointer;',
-    '  padding:4px 10px;margin-bottom:10px;z-index:10;flex-shrink:0;',
+    '  background:#f0f0f0;border:1px solid #cccccc;border-radius:20px;',
+    '  color:#333333;font-size:0.9rem;font-weight:600;cursor:pointer;',
+    '  padding:0.3rem 1rem;margin-bottom:10px;z-index:10;flex-shrink:0;',
+    '  min-height:36px;',
     '  transition:background 0.15s,color 0.15s,border-color 0.15s;',
     '  width:auto;height:auto;',
     '}',
     '.dc-modal-close:hover{background:#e0e0e0;color:#333333;border-color:#999999;}',
+    '[data-theme="dark"] .dc-modal-close{background:#333;color:#eee;border-color:#555;}',
     /* Button row */
     '.dc-feedback-actions{margin-top:20px;}',
     '.dc-feedback-actions .dc-btn-submit{width:100%;}'
