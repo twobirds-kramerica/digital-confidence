@@ -4756,3 +4756,29 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   background: #1a5299;
 }
 [data-theme="dark"] .email-invite-headline { color: #e0e0e0; }
+
+/* ── App Comparison Cards (Module 8 — Sprint 8) ── */
+.app-comparison {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.app-card {
+  background: #f9f9f9;
+  border-left: 4px solid #2C6FBF;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  line-height: 1.7;
+}
+.app-card h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+.app-card p {
+  margin: 0.4rem 0;
+}
+[data-theme="dark"] .app-card {
+  background: #1e2a38;
+  border-color: #4a90d9;
+}
