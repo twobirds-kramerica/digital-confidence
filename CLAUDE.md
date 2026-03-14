@@ -71,6 +71,9 @@
 - [ ] No red circle ✕ close buttons anywhere
 - [ ] Module labels correctly mapped
 
+## Efficiency Routing
+# Efficiency routing handled globally via ~/.claude/CLAUDE.md
+
 ---
 
 ## New Project Check
