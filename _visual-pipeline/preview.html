@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visual Pipeline Preview — Two Birds</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, serif;
+      background: #FAF8F5;
+      color: #2C2C2C;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 1.8rem;
+      color: #2B5EA7;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    .stage-label {
+      display: inline-block;
+      background: #2B5EA7;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-family: sans-serif;
+      margin-bottom: 1rem;
+    }
+    .instructions {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      font-family: sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .candidate-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .candidate {
+      background: white;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .candidate.selected {
+      border-color: #2B5EA7;
+    }
+    .candidate-label {
+      background: #f5f5f5;
+      padding: 0.75rem 1rem;
+      font-family: sans-serif;
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: #444;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .approve-btn {
+      background: #2B5EA7;
+      color: white;
+      border: none;
+      padding: 0.3rem 0.75rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    .approve-btn:hover { background: #1a4a8a; }
+    .image-slot {
+      width: 100%;
+      min-height: 200px;
+      background: #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-family: sans-serif;
+      font-size: 0.85rem;
+    }
+    .image-slot img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .candidate-notes {
+      padding: 0.75rem 1rem;
+      font-family: sans-serif;
+      font-size: 0.85rem;
+      color: #555;
+      border-top: 1px solid #eee;
+    }
+    .approval-log {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem;
+      font-family: sans-serif;
+      font-size: 0.85rem;
+    }
+    .approval-log h2 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #2B5EA7;
+    }
+    #log-entries { color: #555; }
+    .log-entry {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Visual Pipeline Preview</h1>
+  <p class="subtitle">Two Birds | Image Candidate Review Tool — Stage 3</p>
+
+  <span class="stage-label">STAGE 3: REVIEW</span>
+
+  <div class="instructions">
+    <strong>How to use this file:</strong><br>
+    1. Claude places image candidates here before applying anything to a live site.<br>
+    2. Review each candidate below.<br>
+    3. Click <strong>Approve</strong> on the image you want to use.<br>
+    4. Tell Claude which candidate is approved — it will then move it to <code>/approved/</code>.<br>
+    5. Only after your approval does the image go live.
+  </div>
+
+  <div class="candidate-grid" id="candidates">
+
+    <div class="candidate" id="candidate-a">
+      <div class="candidate-label">
+        Candidate A
+        <button class="approve-btn" onclick="approve('A')">Approve A</button>
+      </div>
+      <div class="image-slot">
+        <!-- Replace src with actual image URL or path -->
+        <span>Image A — paste URL or path here</span>
+      </div>
+      <div class="candidate-notes">Notes: Describe what this candidate shows.</div>
+    </div>
+
+    <div class="candidate" id="candidate-b">
+      <div class="candidate-label">
+        Candidate B
+        <button class="approve-btn" onclick="approve('B')">Approve B</button>
+      </div>
+      <div class="image-slot">
+        <span>Image B — paste URL or path here</span>
+      </div>
+      <div class="candidate-notes">Notes: Describe what this candidate shows.</div>
+    </div>
+
+    <div class="candidate" id="candidate-c">
+      <div class="candidate-label">
+        Candidate C
+        <button class="approve-btn" onclick="approve('C')">Approve C</button>
+      </div>
+      <div class="image-slot">
+        <span>Image C — paste URL or path here</span>
+      </div>
+      <div class="candidate-notes">Notes: Describe what this candidate shows.</div>
+    </div>
+
+  </div>
+
+  <div class="approval-log">
+    <h2>Approval Log</h2>
+    <div id="log-entries">No approvals recorded yet.</div>
+  </div>
+
+  <script>
+    const log = [];
+    function approve(candidate) {
+      document.querySelectorAll('.candidate').forEach(el => el.classList.remove('selected'));
+      document.getElementById('candidate-' + candidate.toLowerCase()).classList.add('selected');
+      const entry = {
+        candidate,
+        time: new Date().toLocaleString(),
+      };
+      log.push(entry);
+      const logEl = document.getElementById('log-entries');
+      logEl.innerHTML = log.map(e =>
+        `<div class="log-entry">&#10003; Candidate ${e.candidate} approved at ${e.time}</div>`
+      ).join('');
+    }
+  </script>
+
+</body>
+</html>
