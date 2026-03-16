@@ -47,8 +47,8 @@ var DC_CITIES = {
     restaurant: 'a local Kitchener restaurant'
   },
   springfield: {
-    name: 'your area',
-    landmark: 'the local park',
+    name: 'Ontario',
+    landmark: 'a local park',
     library: 'your local library',
     seniorCenter: 'your local community health centre',
     neighborhood: 'your neighbourhood',

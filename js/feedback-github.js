@@ -165,6 +165,9 @@ function injectFeedbackModal() {
             ' placeholder="Type here\u2026" autocomplete="off">',
         '</div>',
 
+        /* Version stamp — hidden field for Formspree submissions */
+        '<input type="hidden" name="version" value="MVP-1.0-2026-03-16">',
+
         '</div>',
 
         /* Success state */
@@ -296,7 +299,8 @@ function submitToFormspree(userName, feedbackType, feedbackText, module, lang) {
     message:       feedbackText,
     language:      lang,
     timestamp:     new Date().toLocaleString('en-CA', { timeZone: 'America/Toronto' }),
-    device:        window.innerWidth + 'x' + window.innerHeight
+    device:        window.innerWidth + 'x' + window.innerHeight,
+    version:       'MVP-1.0-2026-03-16'
   };
 
   fetch(DC_FORMSPREE_ENDPOINT, {
