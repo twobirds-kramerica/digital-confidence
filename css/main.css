@@ -580,6 +580,16 @@ strong {
   margin-bottom: var(--spacing-xs);
 }
 
+.try-it {
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--accent-success);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  margin-top: var(--spacing-xs);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
 /* The 3-Second Rule */
 .three-second-rule {
   background: linear-gradient(135deg, var(--bg-warning), var(--bg-highlight));
