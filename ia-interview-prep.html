@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iA Financial — Interview Prep</title>
+  <style>
+    :root {
+      --navy:       #1B3A6B;
+      --navy-dark:  #122850;
+      --navy-light: #2B5EA7;
+      --gold:       #C9A84C;
+      --gold-light: #E8C870;
+      --bg:         #F7F8FA;
+      --bg-card:    #FFFFFF;
+      --border:     #D8DEE8;
+      --text:       #1A2233;
+      --text-dim:   #5A6580;
+      --green:      #2E7D52;
+      --green-bg:   #EEF7F2;
+      --amber:      #B07D1A;
+      --amber-bg:   #FEF8EC;
+      --red:        #C0392B;
+      --radius:     10px;
+      --font:       'Segoe UI', -apple-system, system-ui, sans-serif;
+      --shadow:     0 2px 12px rgba(27,58,107,0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ---- Print styles ---- */
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white; font-size: 12px; }
+      .card { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
+      header { background: white; border-bottom: 3px solid #1B3A6B; }
+      .header-logo-text h1 { color: #1B3A6B; }
+      .header-date { color: #333; }
+    }
+
+    /* ---- Header ---- */
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 24px 32px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-bottom: 4px solid var(--gold);
+    }
+    .header-logo { display: flex; align-items: center; gap: 16px; }
+    .header-logo-mark {
+      width: 48px; height: 48px;
+      background: var(--gold);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; font-weight: 900;
+      color: var(--navy);
+      letter-spacing: -1px;
+      flex-shrink: 0;
+    }
+    .header-logo-text h1 { font-size: 1.25rem; font-weight: 700; color: white; }
+    .header-logo-text p  { font-size: 0.78rem; color: rgba(255,255,255,0.7); margin-top: 2px; }
+    .header-date {
+      text-align: right;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.5;
+    }
+    .header-date strong { color: var(--gold); font-size: 1rem; display: block; }
+
+    /* ---- Layout ---- */
+    .wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* ---- Cards ---- */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .card-header {
+      background: var(--navy);
+      color: white;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card-header .section-num {
+      background: var(--gold);
+      color: var(--navy);
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .card-header h2 { font-size: 1rem; font-weight: 700; }
+    .card-body { padding: 24px; }
+
+    /* ---- Company overview ---- */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 600px) { .overview-grid { grid-template-columns: 1fr; } }
+    .overview-block {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .overview-block h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .overview-block p, .overview-block li {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+    .overview-block ul { padding-left: 16px; }
+    .overview-block li { margin-bottom: 4px; }
+    .overview-highlight {
+      border-left: 3px solid var(--gold);
+      background: var(--amber-bg);
+    }
+    .overview-highlight p { color: var(--text); }
+
+    /* ---- JD Analysis ---- */
+    textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 0.9rem;
+      padding: 14px 16px;
+      outline: none;
+      resize: vertical;
+      min-height: 160px;
+      transition: border-color 0.2s;
+    }
+    textarea:focus { border-color: var(--navy-light); }
+
+    input[type="text"] {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 0.9rem;
+      padding: 10px 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input[type="text"]:focus { border-color: var(--navy-light); }
+
+    label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin-bottom: 6px;
+    }
+    .field-group { margin-bottom: 16px; }
+    .field-group:last-child { margin-bottom: 0; }
+
+    /* ---- Buttons ---- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border: none;
+      border-radius: 8px;
+      font-family: var(--font);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.18s, transform 0.1s;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-navy {
+      background: var(--navy);
+      color: white;
+    }
+    .btn-navy:hover { background: var(--navy-dark); }
+    .btn-navy:disabled { opacity: 0.45; cursor: not-allowed; }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+    }
+    .btn-gold:hover { background: var(--gold-light); }
+
+    /* ---- Analysis output ---- */
+    .analysis-output {
+      display: none;
+      margin-top: 20px;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+    .analysis-output.visible { display: block; }
+    .analysis-section { margin-bottom: 20px; }
+    .analysis-section h3 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .analysis-section ul { padding-left: 0; list-style: none; }
+    .analysis-section li {
+      padding: 7px 12px 7px 32px;
+      margin-bottom: 5px;
+      border-radius: 6px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      font-size: 0.87rem;
+      position: relative;
+    }
+    .analysis-section li::before {
+      content: '→';
+      position: absolute;
+      left: 12px;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .analysis-section li.question-item::before { content: '?'; color: var(--navy-light); }
+    .analysis-section li.emphasise-item::before { content: '★'; color: var(--green); }
+
+    /* ---- STAR story ---- */
+    .star-grid { display: flex; flex-direction: column; gap: 12px; }
+    .star-block {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .star-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      background: var(--navy);
+      color: white;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .star-letter {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+    .star-content {
+      padding: 14px 16px;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      background: var(--bg);
+    }
+
+    /* ---- Questions to ask ---- */
+    .question-list { display: flex; flex-direction: column; gap: 8px; }
+    .question-item-card {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+    }
+    .q-num {
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .q-text { font-size: 0.9rem; line-height: 1.5; }
+
+    /* ---- Checklist ---- */
+    .checklist { display: flex; flex-direction: column; gap: 8px; }
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 11px 16px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .checklist-item:hover { background: var(--green-bg); }
+    .checklist-item.done {
+      background: var(--green-bg);
+      border-color: var(--green);
+      text-decoration: line-through;
+      color: var(--text-dim);
+    }
+    .check-box {
+      width: 22px; height: 22px;
+      border: 2px solid var(--border);
+      border-radius: 5px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+      transition: all 0.15s;
+    }
+    .checklist-item.done .check-box {
+      background: var(--green);
+      border-color: var(--green);
+      color: white;
+    }
+
+    /* ---- API key ---- */
+    .api-strip {
+      background: var(--amber-bg);
+      border: 1px solid #E0C070;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .api-strip label { margin: 0; color: var(--amber); font-size: 0.8rem; min-width: 120px; }
+    .api-strip input { flex: 1; min-width: 200px; background: white; margin: 0; }
+
+    /* ---- Spinner ---- */
+    .spinner {
+      display: inline-block;
+      width: 14px; height: 14px;
+      border: 2px solid rgba(255,255,255,0.35);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .status-note {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      margin-top: 8px;
+    }
+    .status-note.error { color: var(--red); }
+
+    /* ---- Tone callout ---- */
+    .callout {
+      background: var(--amber-bg);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+    .callout strong { color: var(--amber); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-logo">
+    <div class="header-logo-mark">iA</div>
+    <div class="header-logo-text">
+      <h1>iA Financial — Interview Prep</h1>
+      <p>Personal prep tool — not linked from main site</p>
+    </div>
+  </div>
+  <div class="header-date">
+    <strong>Friday, March 20, 2026</strong>
+    1:00 PM ET
+  </div>
+</header>
+
+<div class="wrapper">
+
+  <!-- SECTION 1: Company Overview -->
+  <div class="card">
+    <div class="card-header">
+      <div class="section-num">1</div>
+      <h2>Company Overview</h2>
+    </div>
+    <div class="card-body">
+      <div class="overview-grid">
+
+        <div class="overview-block overview-highlight">
+          <h3>Who They Are</h3>
+          <p>iA Financial Group (Industrial Alliance) is one of Canada's largest insurance and wealth management companies. Founded in 1892 in Quebec City. Publicly traded on TSX (IAG). Over 10,000 employees across Canada and the US.</p>
+        </div>
+
+        <div class="overview-block">
+          <h3>What They Do</h3>
+          <ul>
+            <li>Individual life and health insurance</li>
+            <li>Group insurance (employer benefit plans)</li>
+            <li>Savings and retirement products (RRSPs, RRIFs, annuities)</li>
+            <li>Wealth management and mutual funds</li>
+            <li>Dealer services and auto/mortgage financing</li>
+          </ul>
+        </div>
+
+        <div class="overview-block">
+          <h3>Headquarters &amp; Scale</h3>
+          <ul>
+            <li>HQ: Quebec City, Quebec</li>
+            <li>$200B+ in assets under management</li>
+            <li>Serves 4+ million Canadians</li>
+            <li>Offices across all provinces + US operations</li>
+            <li>Strong presence in Ontario, Atlantic Canada</li>
+          </ul>
+        </div>
+
+        <div class="overview-block">
+          <h3>Recent Strategic Direction</h3>
+          <ul>
+            <li>Digital transformation of client experience</li>
+            <li>Expansion of group benefits business</li>
+            <li>Acquisitions in US market (iA Auto &amp; Home)</li>
+            <li>Focus on advisor technology and digital tools</li>
+            <li>ESG commitments and responsible investing</li>
+          </ul>
+        </div>
+
+        <div class="overview-block">
+          <h3>Culture &amp; Values (Stated)</h3>
+          <ul>
+            <li><strong>People first</strong> — client-centred and community-focused</li>
+            <li><strong>Integrity</strong> — long-term relationships over short-term gains</li>
+            <li><strong>Agility</strong> — adapting quickly in a changing market</li>
+            <li><strong>Excellence</strong> — quality in every client interaction</li>
+          </ul>
+        </div>
+
+        <div class="overview-block overview-highlight">
+          <h3>Your Angle Into iA</h3>
+          <p>iA serves seniors, families, and working Canadians — exactly the audience you've spent 50 days building for. Digital literacy, trust, and accessible communication are iA values <em>and</em> your demonstrated skills.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: Job Description Analysis -->
+  <div class="card">
+    <div class="card-header">
+      <div class="section-num">2</div>
+      <h2>Job Description Analysis</h2>
+    </div>
+    <div class="card-body">
+
+      <div class="api-strip no-print">
+        <label>Anthropic API Key</label>
+        <input type="text" id="api-key" placeholder="sk-ant-..." autocomplete="off" spellcheck="false">
+        <span style="font-size:0.75rem;color:var(--amber);">Session only — never stored</span>
+      </div>
+
+      <div class="field-group">
+        <label for="jd-input">Paste the job description here</label>
+        <textarea id="jd-input" placeholder="Paste the full job description from the iA Financial posting. Include the role title, responsibilities, and required qualifications.&#10;&#10;The analysis will extract: top skills required, likely interview themes, probable questions, and what to emphasise from your background."></textarea>
+      </div>
+
+      <div class="no-print">
+        <button class="btn btn-navy" id="analyse-btn" onclick="analyseJD()">
+          Analyse This Role
+        </button>
+        <p class="status-note" id="analyse-status"></p>
+      </div>
+
+      <div class="analysis-output" id="analysis-output">
+        <!-- Populated by JS -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 3: Your STAR Story -->
+  <div class="card">
+    <div class="card-header">
+      <div class="section-num">3</div>
+      <h2>Your Story — STAR Format</h2>
+    </div>
+    <div class="card-body">
+
+      <div class="callout">
+        <strong>Tip:</strong> Lead with the result. "In 50 days with no coding background, I built a working digital product for Canadian seniors, submitted a grant application, and secured an interview at a company like iA Financial." Then walk them back through the story.
+      </div>
+
+      <div class="star-grid" style="margin-top:16px;">
+
+        <div class="star-block">
+          <div class="star-label">
+            <div class="star-letter">S</div>
+            Situation
+          </div>
+          <div class="star-content">
+            Twenty-year career in Senior Project Management, primarily in enterprise environments. In early 2026, made the decision to transition from employment to building a consultancy. Sole provider for family — this was not a comfortable career experiment, it was a necessity to execute.
+          </div>
+        </div>
+
+        <div class="star-block">
+          <div class="star-label">
+            <div class="star-letter">T</div>
+            Task
+          </div>
+          <div class="star-content">
+            Build a profitable, demonstrable business from zero within 50 days — with no prior coding background — that could serve as both a standalone product and a portfolio for consultancy work. Target audience: Canadian seniors needing digital literacy support.
+          </div>
+        </div>
+
+        <div class="star-block">
+          <div class="star-label">
+            <div class="star-letter">A</div>
+            Action
+          </div>
+          <div class="star-content">
+            Used AI-assisted development to build the <strong>Digital Confidence Centre</strong> — a full-stack educational web platform with 11 modules, a scam simulator, a final assessment with certificate, a French language toggle, and a standalone AI accountability tool (P3). Submitted an SBEC grant application. Applied to and secured this iA Financial interview within the same window.
+          </div>
+        </div>
+
+        <div class="star-block">
+          <div class="star-label">
+            <div class="star-letter">R</div>
+            Result
+          </div>
+          <div class="star-content">
+            Live product deployed to GitHub Pages at no cost. Grant application submitted. Interview secured with a major Canadian financial institution within 50 days of starting. Demonstrated that 20 years of PM discipline, applied to a new toolset, produces results faster than traditional timelines.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="callout" style="margin-top:16px;">
+        <strong>Bridge to iA:</strong> "The seniors I built for are iA's clients. The trust, clarity, and patience required to serve that audience — I've been doing that in product form. At iA, I'd bring that same focus to your projects."
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 4: Questions to Ask -->
+  <div class="card">
+    <div class="card-header">
+      <div class="section-num">4</div>
+      <h2>Questions to Ask Them</h2>
+    </div>
+    <div class="card-body">
+      <div class="question-list">
+
+        <div class="question-item-card">
+          <div class="q-num">1</div>
+          <div class="q-text">You've been growing your group benefits and digital advisory business — how is this team positioned to support that growth, and what does success look like in the first 90 days for this role?</div>
+        </div>
+
+        <div class="question-item-card">
+          <div class="q-num">2</div>
+          <div class="q-text">iA has been expanding into the US market and investing heavily in digital transformation. How does that affect day-to-day work for this team — are you building new capability or evolving existing process?</div>
+        </div>
+
+        <div class="question-item-card">
+          <div class="q-num">3</div>
+          <div class="q-text">What's the biggest challenge the team is navigating right now that the right person in this role could directly help solve?</div>
+        </div>
+
+        <div class="question-item-card">
+          <div class="q-num">4</div>
+          <div class="q-text">iA's stated values include agility and people-first thinking — how do those show up in how projects are actually run here, from your experience on the team?</div>
+        </div>
+
+        <div class="question-item-card">
+          <div class="q-num">5</div>
+          <div class="q-text">I come from a background of building for non-technical end users — seniors, in my most recent project. Is there opportunity in this role to bridge between technical teams and client-facing stakeholders who need plain-language communication?</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: Logistics Checklist -->
+  <div class="card">
+    <div class="card-header">
+      <div class="section-num">5</div>
+      <h2>Logistics Checklist</h2>
+    </div>
+    <div class="card-body">
+      <div class="checklist" id="checklist">
+
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <span>Research your interviewer on LinkedIn tonight — find common ground and any public work</span>
+        </div>
+
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <span>Test video and audio if the interview is remote — join a test meeting beforehand</span>
+        </div>
+
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <span>Prepare 3 printed CVs if the interview is in person</span>
+        </div>
+
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <span>Log in or arrive 5 minutes early — not 1 minute, not 10</span>
+        </div>
+
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <span>Water bottle and a notepad with your 5 questions written out</span>
+        </div>
+
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <span>Review your STAR story one more time Thursday night — out loud, not just in your head</span>
+        </div>
+
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <span>Confirm the interview format, location, and who you're meeting — check the original email</span>
+        </div>
+
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <span>Sleep before 11pm Thursday — you're sharp, and you need to show up sharp</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+/* ---- Checklist toggle (session only) ---- */
+function toggleCheck(el) {
+  el.classList.toggle('done');
+  el.querySelector('.check-box').textContent = el.classList.contains('done') ? '✓' : '';
+}
+
+/* ---- JD Analysis via Anthropic API ---- */
+async function analyseJD() {
+  var jd     = document.getElementById('jd-input').value.trim();
+  var apiKey = document.getElementById('api-key').value.trim();
+  var btn    = document.getElementById('analyse-btn');
+  var status = document.getElementById('analyse-status');
+  var output = document.getElementById('analysis-output');
+
+  if (!apiKey) {
+    status.textContent = 'Enter your Anthropic API key above.';
+    status.className = 'status-note error';
+    return;
+  }
+  if (!jd) {
+    status.textContent = 'Paste a job description first.';
+    status.className = 'status-note error';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> Analysing...';
+  status.textContent = '';
+  output.classList.remove('visible');
+
+  var systemPrompt = [
+    'You are an expert career coach specialising in financial services roles in Canada.',
+    'Analyse the job description and return a structured analysis in this EXACT format — use these exact headings, nothing else:',
+    '',
+    'TOP 5 SKILLS:',
+    '- [skill 1]',
+    '- [skill 2]',
+    '- [skill 3]',
+    '- [skill 4]',
+    '- [skill 5]',
+    '',
+    'INTERVIEW THEMES:',
+    '- [theme 1]',
+    '- [theme 2]',
+    '- [theme 3]',
+    '',
+    'LIKELY QUESTIONS:',
+    '- [question 1]',
+    '- [question 2]',
+    '- [question 3]',
+    '- [question 4]',
+    '- [question 5]',
+    '',
+    'WHAT TO EMPHASISE:',
+    '- [point 1 — what to highlight from a PM/product background]',
+    '- [point 2]',
+    '- [point 3]',
+    '',
+    'Be specific and practical. The candidate is a 20-year Senior PM transitioning to consultancy, with a live digital product for Canadian seniors as recent portfolio work.'
+  ].join('\n');
+
+  try {
+    var res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'content-type': 'application/json',
+        'anthropic-dangerous-direct-browser-calls': 'true'
+      },
+      body: JSON.stringify({
+        model: 'claude-haiku-4-5-20251001',
+        max_tokens: 800,
+        system: systemPrompt,
+        messages: [{ role: 'user', content: 'Job description:\n\n' + jd }]
+      })
+    });
+
+    if (!res.ok) {
+      var err = await res.json().catch(function() { return {}; });
+      throw new Error(err.error && err.error.message ? err.error.message : 'API error ' + res.status);
+    }
+
+    var data = await res.json();
+    var text = data.content && data.content[0] && data.content[0].text
+      ? data.content[0].text : '';
+
+    renderAnalysis(text, output);
+    output.classList.add('visible');
+    status.textContent = '';
+
+  } catch (e) {
+    status.textContent = 'Error: ' + e.message;
+    status.className = 'status-note error';
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'Analyse This Role';
+}
+
+function renderAnalysis(text, container) {
+  var sections = {
+    'TOP 5 SKILLS':    { key: 'skills',    title: 'Top 5 Required Skills',    cls: '' },
+    'INTERVIEW THEMES':{ key: 'themes',    title: 'Likely Interview Themes',  cls: '' },
+    'LIKELY QUESTIONS':{ key: 'questions', title: 'Questions They\'ll Ask You', cls: 'question-item' },
+    'WHAT TO EMPHASISE':{ key: 'emphasis', title: 'What to Emphasise From Your Background', cls: 'emphasise-item' }
+  };
+
+  var html = '';
+  var lines = text.split('\n');
+  var currentSection = null;
+  var items = {};
+  Object.keys(sections).forEach(function(k) { items[k] = []; });
+
+  lines.forEach(function(line) {
+    var trimmed = line.trim();
+    Object.keys(sections).forEach(function(heading) {
+      if (trimmed.startsWith(heading)) { currentSection = heading; }
+    });
+    if (currentSection && trimmed.startsWith('- ')) {
+      items[currentSection].push(trimmed.slice(2));
+    }
+  });
+
+  Object.keys(sections).forEach(function(heading) {
+    var s = sections[heading];
+    var list = items[heading];
+    if (!list.length) return;
+    html += '<div class="analysis-section">';
+    html += '<h3>' + s.title + '</h3>';
+    html += '<ul>';
+    list.forEach(function(item) {
+      html += '<li class="' + s.cls + '">' + escHtml(item) + '</li>';
+    });
+    html += '</ul></div>';
+  });
+
+  container.innerHTML = html || '<p style="color:var(--text-dim);">Could not parse the response. Check your API key and try again.</p>';
+}
+
+function escHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+</script>
+
+</body>
+</html>
