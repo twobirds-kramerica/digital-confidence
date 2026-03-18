@@ -3,980 +3,804 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>P3 — Personal Priority Partner (Prototype)</title>
+  <title>P3 — Personal Priority Partner (Alpha)</title>
   <style>
     :root {
-      --bg: #0f1117;
-      --bg-card: #1a1d27;
-      --bg-input: #242736;
-      --border: #2e3249;
-      --accent: #6c6ff7;
-      --accent-hover: #8789f8;
-      --accent-dim: rgba(108,111,247,0.15);
-      --text: #e8eaf0;
-      --text-dim: #8b90a8;
-      --green: #4caf8a;
-      --amber: #f0a04b;
-      --red: #e05c6a;
-      --radius: 12px;
-      --font: 'Segoe UI', system-ui, sans-serif;
+      --bg:         #0d0f14;
+      --bg-card:    #161921;
+      --bg-input:   #1e2130;
+      --border:     #2a2f45;
+      --coral:      #E8845C;
+      --coral-dim:  rgba(232,132,92,0.15);
+      --coral-hover:#f09470;
+      --blue:       #2B5EA7;
+      --blue-hover: #3670c4;
+      --text:       #e8eaf0;
+      --text-dim:   #8b90a8;
+      --green:      #4caf8a;
+      --amber:      #f0a04b;
+      --red:        #e05c6a;
+      --radius:     14px;
+      --font:       'Segoe UI', system-ui, -apple-system, sans-serif;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: var(--font);
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      font-size: 15px;
+      line-height: 1.5;
     }
+
+    /* ---- Header ---- */
     header {
-      padding: 20px 24px 16px;
+      background: var(--bg-card);
       border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
     }
-    .logo { display: flex; align-items: center; gap: 10px; }
-    .logo-icon { font-size: 1.6rem; }
-    .logo-text h1 { font-size: 1.2rem; font-weight: 700; color: var(--text); }
-    .logo-text p { font-size: 0.75rem; color: var(--text-dim); }
-    .badge {
-      background: var(--accent-dim);
-      color: var(--accent);
-      border: 1px solid var(--accent);
+    .header-left { display: flex; align-items: center; gap: 12px; }
+    .header-left h1 { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+    .header-left p  { font-size: 0.73rem; color: var(--text-dim); margin-top: 2px; }
+    .alpha-badge {
+      background: var(--coral-dim);
+      color: var(--coral);
+      border: 1px solid var(--coral);
       padding: 3px 10px;
       border-radius: 20px;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
     }
-    .layout {
+    .escalation-display {
       display: flex;
-      flex: 1;
-      overflow: hidden;
-      height: calc(100vh - 65px);
+      align-items: center;
+      gap: 10px;
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 8px 16px;
+      font-size: 0.8rem;
     }
-    .sidebar {
-      width: 300px;
-      min-width: 280px;
-      background: var(--bg-card);
-      border-right: 1px solid var(--border);
-      padding: 20px 18px;
-      overflow-y: auto;
+    .esc-emoji { font-size: 1.6rem; transition: all 0.3s; }
+    .esc-count { font-size: 0.72rem; color: var(--text-dim); }
+    .esc-count strong { color: var(--coral); font-size: 1rem; }
+
+    /* ---- Main layout ---- */
+    .wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 28px 20px 60px;
       display: flex;
       flex-direction: column;
       gap: 20px;
     }
-    .main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
+
+    /* ---- Cards ---- */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 24px;
     }
-    .section-label {
+    .card-title {
       font-size: 0.7rem;
       font-weight: 700;
-      text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--text-dim);
-      margin-bottom: 8px;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 14px;
     }
-    label { display: block; font-size: 0.85rem; color: var(--text-dim); margin-bottom: 5px; }
-    input[type="text"], input[type="password"], textarea, select {
+
+    /* ---- Form elements ---- */
+    label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+    input[type="text"], textarea {
       width: 100%;
       background: var(--bg-input);
       border: 1px solid var(--border);
       border-radius: 8px;
       color: var(--text);
-      padding: 9px 12px;
-      font-size: 0.88rem;
       font-family: var(--font);
+      font-size: 0.95rem;
+      padding: 10px 14px;
       outline: none;
       transition: border-color 0.2s;
+      resize: vertical;
     }
-    input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
-      border-color: var(--accent);
+    input[type="text"]:focus, textarea:focus {
+      border-color: var(--coral);
     }
-    textarea { resize: vertical; min-height: 60px; }
-    select option { background: var(--bg-card); }
+    textarea { min-height: 70px; }
 
-    /* Rigidity Slider */
-    .slider-wrap { margin-top: 4px; }
-    .slider-labels {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.72rem;
-      color: var(--text-dim);
-      margin-bottom: 4px;
-    }
+    /* ---- Rigidity slider ---- */
+    .slider-wrap { display: flex; flex-direction: column; gap: 10px; }
+    .slider-row { display: flex; align-items: center; gap: 14px; }
     input[type="range"] {
+      flex: 1;
       -webkit-appearance: none;
-      width: 100%;
-      height: 5px;
+      height: 6px;
       border-radius: 3px;
-      background: var(--border);
+      background: linear-gradient(to right, var(--green) 0%, var(--coral) 50%, var(--red) 100%);
       outline: none;
       cursor: pointer;
     }
     input[type="range"]::-webkit-slider-thumb {
       -webkit-appearance: none;
-      width: 16px; height: 16px;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
-      background: var(--accent);
+      background: var(--coral);
       cursor: pointer;
-      transition: background 0.2s;
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 6px rgba(232,132,92,0.5);
     }
-    input[type="range"]::-webkit-slider-thumb:hover { background: var(--accent-hover); }
-    .slider-value {
-      text-align: center;
+    .slider-val {
+      min-width: 42px;
+      text-align: right;
       font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--accent);
-      margin-top: 4px;
-    }
-
-    /* Escalation meter */
-    .escalation-meter {
-      background: var(--bg-input);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 12px 14px;
-    }
-    .escalation-row { display: flex; align-items: center; justify-content: space-between; }
-    .escalation-label { font-size: 0.82rem; color: var(--text-dim); }
-    .escalation-count {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--green);
-      transition: color 0.4s;
-    }
-    .escalation-count.warn { color: var(--amber); }
-    .escalation-count.danger { color: var(--red); }
-    .escalation-pips { display: flex; gap: 4px; margin-top: 8px; }
-    .pip {
-      flex: 1; height: 4px; border-radius: 2px;
-      background: var(--border);
-      transition: background 0.3s;
-    }
-    .pip.active { background: var(--green); }
-    .pip.active.warn { background: var(--amber); }
-    .pip.active.danger { background: var(--red); }
-
-    /* Safewords */
-    .safeword-box {
-      background: rgba(108,111,247,0.07);
-      border: 1px solid rgba(108,111,247,0.3);
-      border-radius: 8px;
-      padding: 10px 14px;
-      font-size: 0.8rem;
-    }
-    .safeword-box strong { color: var(--accent); }
-    .safeword-btn-row { display: flex; gap: 8px; margin-top: 10px; }
-    .sw-btn {
-      flex: 1;
-      padding: 7px;
-      border: none;
-      border-radius: 7px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-    .sw-btn:hover { opacity: 0.85; }
-    .sw-btn.kuno { background: var(--amber); color: #1a1200; }
-    .sw-btn.paisley { background: var(--red); color: #fff; }
-
-    /* Buttons */
-    .btn {
-      padding: 9px 16px;
-      border: none;
-      border-radius: 8px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: opacity 0.2s, transform 0.1s;
-    }
-    .btn:hover { opacity: 0.88; }
-    .btn:active { transform: scale(0.98); }
-    .btn-primary { background: var(--accent); color: #fff; }
-    .btn-secondary { background: var(--bg-input); color: var(--text); border: 1px solid var(--border); }
-    .btn-full { width: 100%; }
-    .btn:disabled { opacity: 0.4; cursor: not-allowed; }
-
-    /* Chat area */
-    #chat-area {
-      flex: 1;
-      overflow-y: auto;
-      padding: 20px 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .empty-state {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px;
-      color: var(--text-dim);
-    }
-    .empty-state .icon { font-size: 3rem; margin-bottom: 16px; }
-    .empty-state h2 { font-size: 1.1rem; color: var(--text); margin-bottom: 8px; }
-    .empty-state p { font-size: 0.85rem; line-height: 1.5; max-width: 320px; }
-
-    .message {
-      display: flex;
-      gap: 12px;
-      max-width: 720px;
-      animation: fadeIn 0.25s ease;
-    }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-    .message.user { flex-direction: row-reverse; margin-left: auto; }
-    .message-avatar {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
-      background: var(--bg-input);
-      border: 1px solid var(--border);
-    }
-    .message.user .message-avatar { background: var(--accent-dim); border-color: var(--accent); }
-    .message-body {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 12px 16px;
       font-size: 0.9rem;
-      line-height: 1.6;
-      max-width: 560px;
+      color: var(--coral);
     }
-    .message.user .message-body {
-      background: var(--accent-dim);
-      border-color: rgba(108,111,247,0.4);
-    }
-    .message-meta {
-      font-size: 0.72rem;
-      color: var(--text-dim);
-      margin-top: 5px;
-    }
-    .escalation-tag {
-      display: inline-block;
-      padding: 1px 8px;
-      border-radius: 10px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      margin-left: 6px;
-    }
-    .tag-low { background: rgba(76,175,138,0.2); color: var(--green); }
-    .tag-mid { background: rgba(240,160,75,0.2); color: var(--amber); }
-    .tag-high { background: rgba(224,92,106,0.2); color: var(--red); }
-
-    /* Typing indicator */
-    .typing-indicator { display: flex; gap: 4px; padding: 14px 16px; align-items: center; }
-    .typing-indicator span {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--text-dim);
-      animation: bounce 1.2s infinite ease-in-out;
-    }
-    .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
-    .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
-    @keyframes bounce {
-      0%, 80%, 100% { transform: scale(0.7); opacity: 0.5; }
-      40% { transform: scale(1); opacity: 1; }
-    }
-
-    /* Input bar */
-    .input-bar {
-      border-top: 1px solid var(--border);
-      padding: 14px 20px;
-      display: flex;
-      gap: 10px;
-      align-items: flex-end;
-    }
-    #user-input {
-      flex: 1;
+    .persona-label {
       background: var(--bg-input);
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 0.85rem;
       color: var(--text);
-      padding: 10px 14px;
-      font-size: 0.9rem;
-      font-family: var(--font);
-      outline: none;
-      resize: none;
-      max-height: 120px;
-      line-height: 1.4;
-      transition: border-color 0.2s;
-    }
-    #user-input:focus { border-color: var(--accent); }
-    #send-btn {
-      width: 42px; height: 42px;
-      border-radius: 10px;
-      background: var(--accent);
-      border: none;
-      color: #fff;
-      font-size: 1.1rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: opacity 0.2s;
-    }
-    #send-btn:hover { opacity: 0.88; }
-    #send-btn:disabled { opacity: 0.3; cursor: not-allowed; }
-
-    /* Status bar */
-    .status-bar {
-      padding: 6px 24px;
-      background: var(--bg-card);
-      border-top: 1px solid var(--border);
-      font-size: 0.75rem;
-      color: var(--text-dim);
       display: flex;
       align-items: center;
       gap: 8px;
     }
-    .status-dot {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--red);
-      flex-shrink: 0;
-    }
-    .status-dot.connected { background: var(--green); }
-    .status-dot.thinking { background: var(--amber); animation: pulse 1s infinite; }
-    @keyframes pulse { 50% { opacity: 0.4; } }
+    .persona-label .persona-emoji { font-size: 1.2rem; }
 
-    /* API key section */
-    .api-key-section {
-      background: rgba(76,175,138,0.08);
-      border: 1px solid rgba(76,175,138,0.3);
+    /* ---- Buttons ---- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 24px;
+      border: none;
       border-radius: 8px;
-      padding: 10px 14px;
+      font-family: var(--font);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.18s, transform 0.1s;
     }
-    .api-key-section .hint {
-      font-size: 0.72rem;
-      color: var(--green);
-      margin-top: 4px;
+    .btn:active { transform: scale(0.97); }
+    .btn-primary {
+      background: var(--blue);
+      color: #fff;
     }
-    .key-row { display: flex; gap: 6px; align-items: center; }
-    .key-row input { flex: 1; }
-    .toggle-key {
+    .btn-primary:hover { background: var(--blue-hover); }
+    .btn-primary:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .btn-coral {
+      background: var(--coral);
+      color: #fff;
+    }
+    .btn-coral:hover { background: var(--coral-hover); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-dim);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { border-color: var(--coral); color: var(--text); }
+
+    /* ---- Response area ---- */
+    .response-area {
+      min-height: 100px;
       background: var(--bg-input);
       border: 1px solid var(--border);
-      border-radius: 6px;
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 0.92rem;
+      line-height: 1.6;
       color: var(--text-dim);
-      padding: 7px 10px;
-      font-size: 0.8rem;
-      cursor: pointer;
-      flex-shrink: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
     }
-    .toggle-key:hover { color: var(--text); }
+    .response-area.has-content { color: var(--text); }
 
-    /* Summary panel */
-    #summary-panel {
+    /* ---- Safewords section ---- */
+    .safeword-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 520px) { .safeword-grid { grid-template-columns: 1fr; } }
+    .safeword-hint {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      margin-top: 6px;
+    }
+    .kuno-count {
+      font-size: 0.75rem;
+      color: var(--amber);
+      margin-top: 4px;
+    }
+
+    /* ---- Red Zone ---- */
+    #red-zone {
+      display: none;
+      border: 2px solid var(--red);
+      background: rgba(224,92,106,0.06);
+    }
+    #red-zone .card-title { color: var(--red); }
+    .rz-quote {
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--text);
+      text-align: center;
+      padding: 10px 0;
+    }
+    .rz-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    @media (max-width: 520px) { .rz-grid { grid-template-columns: 1fr; } }
+    .rz-block {
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 0.84rem;
+      line-height: 1.6;
+    }
+    .rz-block strong { color: var(--coral); display: block; margin-bottom: 6px; }
+    .breath-step { margin: 4px 0; }
+    .breath-step span {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--coral-dim);
+      border: 1px solid var(--coral);
+      color: var(--coral);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-align: center;
+      line-height: 20px;
+      margin-right: 6px;
+    }
+    .rz-message {
+      margin-top: 14px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      font-style: italic;
+    }
+    .rz-message strong { color: var(--text); }
+
+    /* ---- LOCKDOWN ---- */
+    #lockdown-overlay {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.7);
+      background: rgba(13,15,20,0.96);
       z-index: 100;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 20px;
-    }
-    #summary-panel.visible { display: flex; }
-    .summary-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      max-width: 500px;
-      width: 100%;
-      padding: 28px;
-    }
-    .summary-card h2 { font-size: 1.1rem; margin-bottom: 16px; }
-    .summary-card pre {
-      white-space: pre-wrap;
-      font-family: var(--font);
-      font-size: 0.88rem;
-      line-height: 1.6;
-      color: var(--text-dim);
-      background: var(--bg-input);
-      border-radius: 8px;
-      padding: 14px;
-      max-height: 320px;
-      overflow-y: auto;
-      margin-bottom: 16px;
-    }
-
-    /* Paused overlay */
-    .paused-banner {
-      display: none;
-      background: rgba(240,160,75,0.15);
-      border: 1px solid rgba(240,160,75,0.4);
-      padding: 10px 20px;
+      gap: 20px;
       text-align: center;
-      font-size: 0.85rem;
-      color: var(--amber);
+      padding: 40px;
     }
-    .paused-banner.visible { display: block; }
+    #lockdown-overlay.active { display: flex; }
+    .lockdown-emoji { font-size: 4rem; }
+    .lockdown-title { font-size: 1.4rem; font-weight: 700; color: var(--red); }
+    .lockdown-body { max-width: 420px; color: var(--text-dim); line-height: 1.7; }
 
-    @media (max-width: 700px) {
-      .sidebar { display: none; }
-      .sidebar.mobile-open { display: flex; position: fixed; inset: 0; z-index: 50; width: 100%; overflow-y: auto; }
+    /* ---- Session summary ---- */
+    #session-summary {
+      display: none;
+    }
+    .log-item {
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 8px;
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+    .log-item .log-num { color: var(--coral); font-weight: 700; margin-right: 6px; }
+    .log-item .log-text { color: var(--text-dim); }
+
+    /* ---- Utility ---- */
+    .field-group { margin-bottom: 14px; }
+    .field-group:last-child { margin-bottom: 0; }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+    .spinner {
+      display: inline-block;
+      width: 14px; height: 14px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .status-msg {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      margin-top: 8px;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 16px 0;
     }
   </style>
 </head>
 <body>
 
+<!-- Header -->
 <header>
-  <div class="logo">
-    <span class="logo-icon">🎯</span>
-    <div class="logo-text">
+  <div class="header-left">
+    <div>
       <h1>P3 — Personal Priority Partner</h1>
-      <p>Accountability AI prototype · Two Birds, 2026</p>
+      <p>Your accountability construct. Honest, warm, relentless.</p>
+    </div>
+    <div class="alpha-badge">ALPHA</div>
+  </div>
+  <div class="escalation-display">
+    <div class="esc-emoji" id="esc-emoji">😄</div>
+    <div class="esc-count">
+      Deviations<br><strong id="esc-num">0</strong>
     </div>
   </div>
-  <span class="badge">PROTOTYPE v0.1</span>
 </header>
 
-<div class="layout">
+<div class="wrapper">
 
-  <!-- Sidebar: Controls -->
-  <div class="sidebar" id="sidebar">
+  <!-- 1. Setup -->
+  <div class="card">
+    <div class="card-title">Session Setup</div>
 
-    <!-- API Key -->
-    <div>
-      <div class="section-label">API Connection</div>
-      <div class="api-key-section">
-        <label for="api-key">Anthropic API Key</label>
-        <div class="key-row">
-          <input type="password" id="api-key" placeholder="sk-ant-…" autocomplete="off">
-          <button class="toggle-key" id="toggle-key-btn" title="Show/hide key">👁</button>
-        </div>
-        <div class="hint">Session only — never stored anywhere.</div>
-      </div>
+    <div class="field-group">
+      <label for="priority-input">What is your #1 priority right now?</label>
+      <textarea id="priority-input" placeholder="e.g. Submit the Shoppers application before noon"></textarea>
     </div>
 
-    <!-- Task Setup -->
-    <div>
-      <div class="section-label">Today's Task</div>
-      <label for="task-input">What should you be doing right now?</label>
-      <textarea id="task-input" rows="3" placeholder="e.g. Finish the grant application intro paragraph and submit by 5 PM."></textarea>
+    <div class="field-group">
+      <label for="distraction-input">What are you doing instead?</label>
+      <input type="text" id="distraction-input" placeholder="e.g. Reorganising my bookmarks again">
     </div>
 
-    <!-- Rigidity Slider -->
-    <div>
-      <div class="section-label">Pushback Intensity</div>
+    <div class="field-group">
+      <label for="persona-input">Who do you want to hear from?</label>
+      <input type="text" id="persona-input" placeholder="e.g. my dad, my old coach, my best friend Sarah">
+    </div>
+
+    <div class="field-group">
+      <div class="card-title" style="margin-bottom:10px;">Rigidity Level</div>
       <div class="slider-wrap">
-        <div class="slider-labels">
-          <span>💤 Gentle</span>
-          <span>🔥 Relentless</span>
+        <div class="slider-row">
+          <span style="font-size:0.78rem;color:var(--text-dim);min-width:28px">0%</span>
+          <input type="range" id="rigidity-slider" min="0" max="100" value="40">
+          <span style="font-size:0.78rem;color:var(--text-dim);min-width:36px;text-align:right">100%</span>
+          <span class="slider-val" id="slider-val">40%</span>
         </div>
-        <input type="range" id="rigidity" min="0" max="100" value="50">
-        <div class="slider-value"><span id="rigidity-val">50</span>%</div>
-      </div>
-    </div>
-
-    <!-- Persona -->
-    <div>
-      <div class="section-label">P3 Voice Persona</div>
-      <label for="persona-select">Choose a pushback style</label>
-      <select id="persona-select">
-        <option value="coach">🏋️ Firm Coach — direct, no fluff</option>
-        <option value="friend">🤝 Honest Friend — warm but real</option>
-        <option value="drill">🪖 Drill Sergeant — zero tolerance</option>
-        <option value="therapist">🧠 Therapist — curious, not judgey</option>
-        <option value="custom">✏️ Custom (define below)</option>
-      </select>
-      <div id="custom-persona-wrap" style="margin-top:8px; display:none;">
-        <label for="custom-persona">Describe your custom voice</label>
-        <textarea id="custom-persona" rows="2" placeholder="e.g. Speak like my no-nonsense grandmother who raised 6 kids and doesn't accept excuses."></textarea>
-      </div>
-    </div>
-
-    <!-- Escalation Meter -->
-    <div>
-      <div class="section-label">Escalation Level</div>
-      <div class="escalation-meter">
-        <div class="escalation-row">
-          <span class="escalation-label">Avoidance count</span>
-          <span class="escalation-count" id="esc-count">0</span>
-        </div>
-        <div class="escalation-pips" id="esc-pips">
-          <div class="pip"></div><div class="pip"></div><div class="pip"></div>
-          <div class="pip"></div><div class="pip"></div>
+        <div class="persona-label" id="persona-label">
+          <span class="persona-emoji" id="persona-emoji">🙂</span>
+          <span id="persona-name">Supportive Coach</span>
         </div>
       </div>
     </div>
-
-    <!-- Safewords -->
-    <div>
-      <div class="section-label">Safewords</div>
-      <div class="safeword-box">
-        <p style="margin-bottom:6px;"><strong>KUNO</strong> — pause, go gentle</p>
-        <p><strong>PAISLEY</strong> — end session + summary</p>
-        <p style="margin-top:6px;font-size:0.75rem;color:var(--text-dim);">Type or click to activate.</p>
-        <div class="safeword-btn-row">
-          <button class="sw-btn kuno" onclick="triggerKuno()">🐾 KUNO</button>
-          <button class="sw-btn paisley" onclick="triggerPaisley()">🌸 PAISLEY</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Session controls -->
-    <div style="display:flex;flex-direction:column;gap:8px;">
-      <button class="btn btn-primary btn-full" id="start-btn" onclick="startSession()">▶ Start Session</button>
-      <button class="btn btn-secondary btn-full" id="summary-btn" onclick="requestSummary()" disabled>📋 Session Summary</button>
-      <button class="btn btn-secondary btn-full" onclick="clearSession()" id="clear-btn" disabled>🗑 Clear &amp; Reset</button>
-    </div>
-
   </div>
 
-  <!-- Main chat -->
-  <div class="main">
-    <div class="paused-banner" id="paused-banner">
-      ⏸ KUNO mode active — P3 is being gentle. Type anything to continue, or <a href="#" onclick="triggerPaisley();return false;" style="color:var(--amber);">end session</a>.
+  <!-- 2. API Key -->
+  <div class="card">
+    <div class="card-title">API Key (Session Only — Never Stored)</div>
+    <div class="field-group">
+      <label for="api-key-input">Anthropic API Key</label>
+      <input type="text" id="api-key-input" placeholder="sk-ant-..." autocomplete="off" spellcheck="false">
     </div>
-    <div id="chat-area">
-      <div class="empty-state" id="empty-state">
-        <div class="icon">🎯</div>
-        <h2>Ready when you are</h2>
-        <p>Enter your task, set your rigidity level, pick a persona, and hit <strong>Start Session</strong>. P3 will hold you accountable — on your own terms.</p>
-      </div>
+    <p class="status-msg">Your key is held in memory only. It is cleared when you close this tab.</p>
+  </div>
+
+  <!-- 3. Generate -->
+  <div class="card">
+    <div class="card-title">Pushback</div>
+    <div class="actions">
+      <button class="btn btn-primary" id="generate-btn" onclick="generatePushback()">
+        Generate Pushback
+      </button>
+      <button class="btn btn-ghost" onclick="incrementEscalation()">+ Deviation</button>
     </div>
-    <div class="input-bar">
-      <textarea id="user-input" placeholder="Tell P3 what's on your mind…" rows="1" disabled></textarea>
-      <button id="send-btn" disabled onclick="sendMessage()">➤</button>
-    </div>
-    <div class="status-bar">
-      <div class="status-dot" id="status-dot"></div>
-      <span id="status-text">Not connected — enter API key and start session</span>
+    <p class="status-msg" id="gen-status"></p>
+    <div class="response-area" id="response-area" style="margin-top:14px;">
+      Your pushback will appear here.
     </div>
   </div>
+
+  <!-- 4. Safewords -->
+  <div class="card">
+    <div class="card-title">Safewords</div>
+    <div class="safeword-grid">
+      <div>
+        <label for="kuno-input">KUNO — pause the construct</label>
+        <input type="text" id="kuno-input" placeholder="Type KUNO to pause" autocomplete="off">
+        <p class="safeword-hint">Drops the persona. You'll receive a warm, non-pressured response.</p>
+        <p class="kuno-count" id="kuno-count"></p>
+      </div>
+      <div>
+        <label for="paisley-input">PAISLEY — return to coaching</label>
+        <input type="text" id="paisley-input" placeholder="Type PAISLEY to re-engage" autocomplete="off">
+        <p class="safeword-hint">Reactivates your coaching construct after a KUNO pause.</p>
+      </div>
+    </div>
+    <div class="actions" style="margin-top:12px;">
+      <button class="btn btn-ghost" onclick="checkSafewords()">Submit Safeword</button>
+    </div>
+    <p class="status-msg" id="safeword-status"></p>
+  </div>
+
+  <!-- 5. Red Zone -->
+  <div class="card" id="red-zone">
+    <div class="card-title">🚨 Red Zone — Take a Break</div>
+    <p class="rz-quote" id="rz-quote"></p>
+    <div class="rz-grid">
+      <div class="rz-block">
+        <strong>Watch</strong>
+        <div id="rz-video">Search YouTube for:<br><em id="rz-yt-search"></em></div>
+      </div>
+      <div class="rz-block">
+        <strong>Breathe — 4-7-8 Method</strong>
+        <div class="breath-step"><span>1</span> Inhale through your nose for <strong>4 counts</strong></div>
+        <div class="breath-step"><span>2</span> Hold your breath for <strong>7 counts</strong></div>
+        <div class="breath-step"><span>3</span> Exhale through your mouth for <strong>8 counts</strong></div>
+        <div class="breath-step" style="margin-top:8px;color:var(--text-dim);font-size:0.78rem;">Repeat 3 times. You don't have to do anything else right now.</div>
+      </div>
+    </div>
+    <p class="rz-message"><strong>Take 10 minutes. Come back stronger.</strong></p>
+    <div class="actions" style="margin-top:16px;">
+      <button class="btn btn-coral" onclick="closeRedZone()">I'm ready to return</button>
+    </div>
+  </div>
+
+  <!-- 6. Session Summary -->
+  <div class="card" id="session-summary">
+    <div class="card-title">Session Summary</div>
+    <div class="field-group">
+      <label>Stated Priority</label>
+      <div class="log-item" id="summary-priority" style="color:var(--text);">—</div>
+    </div>
+    <div class="field-group">
+      <label>Total Deviations</label>
+      <div class="log-item" id="summary-count" style="color:var(--coral);font-weight:700;font-size:1rem;">0</div>
+    </div>
+    <div class="field-group">
+      <label>Pushback Log</label>
+      <div id="summary-log">
+        <p style="color:var(--text-dim);font-size:0.82rem;">No pushback generated yet this session.</p>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn btn-ghost" onclick="resetSession()">Reset Session</button>
+    </div>
+  </div>
+
 </div>
 
-<!-- Summary panel -->
-<div id="summary-panel">
-  <div class="summary-card">
-    <h2>📋 Session Summary</h2>
-    <pre id="summary-text">Generating summary…</pre>
-    <div style="display:flex;gap:10px;">
-      <button class="btn btn-secondary" onclick="copyToClipboard()" style="flex:1;">📋 Copy</button>
-      <button class="btn btn-primary" onclick="closeSummary()" style="flex:1;">Close</button>
-    </div>
+<!-- LOCKDOWN overlay (5th+ deviation) -->
+<div id="lockdown-overlay">
+  <div class="lockdown-emoji">🚨</div>
+  <div class="lockdown-title">LOCKDOWN MODE</div>
+  <div class="lockdown-body">
+    Five deviations. You've hit the wall.<br><br>
+    The Red Zone bundle is waiting below.<br>
+    Take 10 minutes. Then come back.<br><br>
+    <em>This construct cares about you enough to stop pushing.</em>
   </div>
+  <button class="btn btn-coral" style="margin-top:10px;" onclick="exitLockdown()">I'll take the break</button>
 </div>
 
 <script>
-// ── State ──────────────────────────────────────────────────────────────────
-const state = {
-  apiKey: '',
-  task: '',
-  rigidity: 50,
-  persona: 'coach',
-  customPersona: '',
-  messages: [],      // full conversation history for API
+/* ============================================
+   P3 — Personal Priority Partner
+   Session memory only. No localStorage.
+   ============================================ */
+
+var session = {
   escalation: 0,
-  sessionActive: false,
-  paused: false,
-  sessionId: Date.now().toString(36)
+  kunoCount: 0,
+  kunoActive: false,
+  log: [],
+  priority: '',
+  redZoneShown: false
 };
 
-// ── Persona descriptions ───────────────────────────────────────────────────
-const PERSONAS = {
-  coach:     'You are a firm but supportive coach. Direct, no fluff, solution-oriented. You believe in the user but you call their bluffs.',
-  friend:    'You are a close, brutally honest friend. Warm but real. You care too much to let them off the hook.',
-  drill:     'You are a drill sergeant. Zero tolerance for excuses. Short, punchy responses. You respect discipline above all.',
-  therapist: 'You are a curious, non-judgmental therapist. You ask the uncomfortable question they\'re avoiding. No scolding — just precise observations.',
-  custom:    '{{CUSTOM}}'
-};
+var RED_ZONE_QUOTES = [
+  "You don't have to fix everything today. You just have to take the next step.",
+  "Rest is not surrender. It's fuel.",
+  "The person who returns after a real break is sharper than the one who pushed through exhausted.",
+  "Five minutes of stillness is worth an hour of spinning your wheels.",
+  "You're not behind. You're human."
+];
 
-// ── System prompt builder ─────────────────────────────────────────────────
-function buildSystemPrompt() {
-  const personaText = state.persona === 'custom'
-    ? (state.customPersona || PERSONAS.coach)
-    : PERSONAS[state.persona];
+var YT_SEARCHES = [
+  "5 minute meditation focus",
+  "calming piano music for focus",
+  "short breathing exercise stress relief",
+  "5 minute nature sounds reset",
+  "gentle productivity reset short"
+];
 
-  const rigidityGuide = state.rigidity <= 20
-    ? 'Be very soft and encouraging. Gently nudge, never push hard.'
-    : state.rigidity <= 40
-    ? 'Be moderately encouraging with light accountability. Be kind but honest.'
-    : state.rigidity <= 60
-    ? 'Be firm and direct. Hold the line but stay supportive.'
-    : state.rigidity <= 80
-    ? 'Be relentless. Push hard. Acknowledge their feelings briefly, then redirect to the task.'
-    : 'Maximum pressure. No excuses accepted. Brief responses. Every dodge gets called out immediately.';
+var ESCALATION_STATES = [
+  { emoji: '😄', label: 'Starting fresh' },
+  { emoji: '😄', label: 'First check-in' },
+  { emoji: '🧐', label: 'Checking in' },
+  { emoji: '😤', label: 'Getting serious' },
+  { emoji: '🚨', label: 'Red alert' }
+];
 
-  const escalationGuide = state.escalation === 0
-    ? 'This is the opening — be welcoming but clear about expectations.'
-    : state.escalation <= 2
-    ? `The user has tried to dodge ${state.escalation} time(s). Escalate slightly — be a little firmer.`
-    : state.escalation <= 4
-    ? `ESCALATED: The user has dodged ${state.escalation} times. Be noticeably more direct. Name what you see.`
-    : `RED ZONE: The user has avoided the task ${state.escalation} times. Activate your most direct voice. This is a serious avoidance pattern. Consider asking what is really going on beneath the surface.`;
+/* ---- Rigidity slider ---- */
+var slider = document.getElementById('rigidity-slider');
+var sliderVal = document.getElementById('slider-val');
+var personaEmoji = document.getElementById('persona-emoji');
+var personaName = document.getElementById('persona-name');
 
-  return `You are P3 — Personal Priority Partner. You are an AI accountability coach. Your ONLY job is to help the user complete their stated task.
-
-PERSONA: ${personaText}
-
-TASK THE USER COMMITTED TO: "${state.task}"
-
-RIGIDITY SETTING (${state.rigidity}%): ${rigidityGuide}
-
-ESCALATION CONTEXT: ${escalationGuide}
-
-SAFEWORDS — if the user types KUNO or PAISLEY, acknowledge them graciously:
-- KUNO: Say you hear them, soften your tone, check in gently
-- PAISLEY: Thank them for the session, offer to summarize what they accomplished and what got in the way
-
-RULES:
-1. Always tie responses back to the stated task
-2. If the user tries to change the subject, acknowledge briefly then redirect
-3. Keep responses concise — 2-5 sentences max unless the user needs real support
-4. Never lecture. Ask questions that make the user think.
-5. Track avoidance attempts — if the user clearly deflects, note it naturally in your response
-6. Celebrate any actual progress, no matter how small
-7. You are not a general assistant. You are P3. Stay in character.`;
+function getPersonaFromRigidity(v) {
+  if (v <= 20)  return { emoji: '😄', name: 'Gentle Friend' };
+  if (v <= 40)  return { emoji: '🙂', name: 'Supportive Coach' };
+  if (v <= 60)  return { emoji: '🎯', name: 'Firm Mentor' };
+  if (v <= 80)  return { emoji: '😤', name: 'Demanding Boss' };
+  return        { emoji: '🚨', name: 'Drill Sergeant' };
 }
 
-// ── Session management ────────────────────────────────────────────────────
-async function startSession() {
-  const apiKey = document.getElementById('api-key').value.trim();
-  const task = document.getElementById('task-input').value.trim();
+slider.addEventListener('input', function () {
+  var v = parseInt(this.value);
+  sliderVal.textContent = v + '%';
+  var p = getPersonaFromRigidity(v);
+  personaEmoji.textContent = p.emoji;
+  personaName.textContent = p.name;
+});
 
-  if (!apiKey) { alert('Please enter your Anthropic API key first.'); return; }
-  if (!task) { alert('Please describe what you should be doing right now.'); return; }
-
-  state.apiKey = apiKey;
-  state.task = task;
-  state.rigidity = parseInt(document.getElementById('rigidity').value);
-  state.persona = document.getElementById('persona-select').value;
-  state.customPersona = document.getElementById('custom-persona').value.trim();
-  state.messages = [];
-  state.escalation = 0;
-  state.sessionActive = true;
-  state.paused = false;
-
-  updateEscalation(0);
-  document.getElementById('empty-state')?.remove();
-  document.getElementById('start-btn').disabled = true;
-  document.getElementById('user-input').disabled = false;
-  document.getElementById('send-btn').disabled = false;
-  document.getElementById('summary-btn').disabled = false;
-  document.getElementById('clear-btn').disabled = false;
-  setStatus('thinking', 'P3 is preparing…');
-
-  // Opening message from P3
-  const opener = await callP3("Begin the session with a brief, in-character opening. Acknowledge the task, set the tone for today's session, and ask one sharp question to get them started.");
-  if (opener) {
-    appendMessage('p3', opener, state.escalation);
-    setStatus('connected', `Session active · Task: "${state.task.slice(0, 40)}${state.task.length > 40 ? '…' : ''}"`);
+/* ---- Escalation counter ---- */
+function incrementEscalation() {
+  session.escalation++;
+  updateEscalationDisplay();
+  updateSummary();
+  if (session.escalation >= 5 && !session.redZoneShown) {
+    triggerRedZone();
   }
 }
 
-// ── Message handling ──────────────────────────────────────────────────────
-async function sendMessage() {
-  const input = document.getElementById('user-input');
-  const text = input.value.trim();
-  if (!text || !state.sessionActive) return;
+function updateEscalationDisplay() {
+  var idx = Math.min(session.escalation, ESCALATION_STATES.length - 1);
+  var state = ESCALATION_STATES[idx];
+  document.getElementById('esc-emoji').textContent = state.emoji;
+  document.getElementById('esc-num').textContent = session.escalation;
 
-  input.value = '';
-  input.style.height = 'auto';
-
-  // Check for safewords
-  if (text.toUpperCase().includes('KUNO')) { triggerKuno(); return; }
-  if (text.toUpperCase().includes('PAISLEY')) { triggerPaisley(); return; }
-
-  appendMessage('user', text);
-  state.messages.push({ role: 'user', content: text });
-
-  // Simple avoidance heuristic
-  const avoidanceSignals = ['i\'ll do it later', 'just a minute', 'one sec', 'quick question',
-    'before i start', 'actually i wanted to', 'can we talk about', 'that reminds me',
-    'i\'m tired', 'i need a break', 'just checking', 'this will only take'];
-  const lowerText = text.toLowerCase();
-  const isAvoidance = avoidanceSignals.some(s => lowerText.includes(s)) ||
-    (text.length < 30 && !lowerText.includes(state.task.toLowerCase().slice(0, 10)));
-
-  if (isAvoidance) {
-    state.escalation = Math.min(state.escalation + 1, 5);
-    updateEscalation(state.escalation);
+  if (session.escalation >= 5) {
+    document.getElementById('esc-emoji').textContent = '🚨';
+    document.getElementById('lockdown-overlay').classList.add('active');
   }
-
-  document.getElementById('send-btn').disabled = true;
-  document.getElementById('user-input').disabled = true;
-  setStatus('thinking', 'P3 is thinking…');
-  showTyping();
-
-  const reply = await callP3(null);
-  hideTyping();
-
-  if (reply) {
-    state.messages.push({ role: 'assistant', content: reply });
-    appendMessage('p3', reply, state.escalation);
-  }
-
-  document.getElementById('send-btn').disabled = false;
-  document.getElementById('user-input').disabled = false;
-  document.getElementById('user-input').focus();
-  setStatus('connected', `Session active · Escalation: ${state.escalation}`);
 }
 
-// ── API call ──────────────────────────────────────────────────────────────
-async function callP3(userOverride) {
-  const msgs = userOverride
-    ? [{ role: 'user', content: userOverride }]
-    : [...state.messages];
+function triggerRedZone() {
+  session.redZoneShown = true;
+  var rz = document.getElementById('red-zone');
+  rz.style.display = '';
+  document.getElementById('rz-quote').textContent =
+    '"' + RED_ZONE_QUOTES[Math.floor(Math.random() * RED_ZONE_QUOTES.length)] + '"';
+  document.getElementById('rz-yt-search').textContent =
+    '"' + YT_SEARCHES[Math.floor(Math.random() * YT_SEARCHES.length)] + '"';
+  rz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.getElementById('session-summary').style.display = '';
+  updateSummary();
+}
+
+function closeRedZone() {
+  document.getElementById('lockdown-overlay').classList.remove('active');
+}
+
+function exitLockdown() {
+  document.getElementById('lockdown-overlay').classList.remove('active');
+  document.getElementById('red-zone').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* ---- Safewords ---- */
+function checkSafewords() {
+  var kunoVal    = document.getElementById('kuno-input').value.trim().toUpperCase();
+  var paisleyVal = document.getElementById('paisley-input').value.trim().toUpperCase();
+  var status     = document.getElementById('safeword-status');
+
+  if (kunoVal === 'KUNO') {
+    session.kunoCount++;
+    session.kunoActive = true;
+    document.getElementById('kuno-input').value = '';
+    document.getElementById('kuno-count').textContent =
+      'KUNO used ' + session.kunoCount + ' time' + (session.kunoCount === 1 ? '' : 's') + ' this session.';
+
+    if (session.kunoCount >= 3) {
+      status.textContent = 'You\'ve used KUNO three times. That\'s okay — rest is real work. Ready to re-engage? Type PAISLEY to return.';
+      status.style.color = 'var(--amber)';
+    } else {
+      status.textContent = 'Construct paused. You\'re safe. Take a breath. No pressure here.';
+      status.style.color = 'var(--green)';
+      generateKunoResponse();
+    }
+    return;
+  }
+
+  if (paisleyVal === 'PAISLEY') {
+    session.kunoActive = false;
+    document.getElementById('paisley-input').value = '';
+    status.textContent = 'Welcome back. Your construct is re-engaged. When you\'re ready, generate your next pushback.';
+    status.style.color = 'var(--coral)';
+    return;
+  }
+
+  status.textContent = 'Type KUNO to pause or PAISLEY to return.';
+  status.style.color = 'var(--text-dim)';
+}
+
+function generateKunoResponse() {
+  var responseArea = document.getElementById('response-area');
+  responseArea.className = 'response-area has-content';
+  responseArea.textContent = 'Hey. You called KUNO — that took self-awareness. Whatever is happening right now, you don\'t have to explain it. Take the time you need. I\'ll be here when you\'re ready.';
+}
+
+/* ---- Generate pushback ---- */
+async function generatePushback() {
+  var priority    = document.getElementById('priority-input').value.trim();
+  var distraction = document.getElementById('distraction-input').value.trim();
+  var persona     = document.getElementById('persona-input').value.trim();
+  var rigidity    = parseInt(document.getElementById('rigidity-slider').value);
+  var apiKey      = document.getElementById('api-key-input').value.trim();
+
+  var btn       = document.getElementById('generate-btn');
+  var statusEl  = document.getElementById('gen-status');
+  var respArea  = document.getElementById('response-area');
+
+  if (!apiKey) {
+    statusEl.textContent = 'Enter your Anthropic API key above.';
+    statusEl.style.color = 'var(--amber)';
+    return;
+  }
+  if (!priority) {
+    statusEl.textContent = 'Enter your #1 priority first.';
+    statusEl.style.color = 'var(--amber)';
+    return;
+  }
+
+  if (session.kunoActive) {
+    statusEl.textContent = 'Construct is paused (KUNO active). Type PAISLEY to return.';
+    statusEl.style.color = 'var(--amber)';
+    return;
+  }
+
+  var personaDesc = persona
+    ? 'the person the user describes as "' + persona + '"'
+    : 'a firm but warm accountability coach';
+
+  var systemPrompt = 'You are ' + personaDesc + '. The user\'s stated priority is: ' + priority + '. They are currently doing "' + distraction + '" instead. Deliver accountability in that persona\'s authentic voice at ' + rigidity + '% intensity. Be encouraging underneath — you believe in them completely. Keep your response under 100 words. Be human, not robotic.';
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> Generating...';
+  statusEl.textContent = '';
+  respArea.className = 'response-area';
+  respArea.textContent = '';
 
   try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    var res = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': state.apiKey,
+        'x-api-key': apiKey,
         'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-direct-browser-access': 'true'
+        'content-type': 'application/json',
+        'anthropic-dangerous-direct-browser-calls': 'true'
       },
       body: JSON.stringify({
-        model: 'claude-haiku-4-5',
-        max_tokens: 512,
-        system: buildSystemPrompt(),
-        messages: msgs
+        model: 'claude-haiku-4-5-20251001',
+        max_tokens: 200,
+        system: systemPrompt,
+        messages: [{ role: 'user', content: 'Give me my pushback.' }]
       })
     });
 
-    if (!response.ok) {
-      const err = await response.json().catch(() => ({ error: { message: response.statusText } }));
-      const errMsg = err?.error?.message || response.statusText;
-      setStatus('error', `API error: ${errMsg}`);
-      appendMessage('system', `⚠️ API error: ${errMsg}`);
-      return null;
+    if (!res.ok) {
+      var err = await res.json().catch(function() { return {}; });
+      throw new Error(err.error && err.error.message ? err.error.message : 'API error ' + res.status);
     }
 
-    const data = await response.json();
-    return data.content?.[0]?.text || null;
+    var data = await res.json();
+    var text = data.content && data.content[0] && data.content[0].text
+      ? data.content[0].text
+      : '(No response received)';
 
-  } catch (e) {
-    setStatus('error', `Connection error: ${e.message}`);
-    appendMessage('system', `⚠️ Connection error: ${e.message}`);
-    return null;
-  }
-}
+    respArea.className = 'response-area has-content';
+    respArea.textContent = text;
 
-// ── Safewords ─────────────────────────────────────────────────────────────
-async function triggerKuno() {
-  if (!state.sessionActive) return;
-  state.paused = true;
-  document.getElementById('paused-banner').classList.add('visible');
-  appendMessage('user', '🐾 KUNO');
-  state.messages.push({ role: 'user', content: 'KUNO' });
-  const reply = await callP3(null);
-  if (reply) {
-    state.messages.push({ role: 'assistant', content: reply });
-    appendMessage('p3', reply);
-  }
-}
+    session.priority = priority;
+    incrementEscalation();
 
-async function triggerPaisley() {
-  if (!state.sessionActive) return;
-  document.getElementById('paused-banner').classList.remove('visible');
-  appendMessage('user', '🌸 PAISLEY');
-  state.messages.push({ role: 'user', content: 'PAISLEY' });
-  const reply = await callP3(null);
-  if (reply) {
-    state.messages.push({ role: 'assistant', content: reply });
-    appendMessage('p3', reply);
-  }
-  state.sessionActive = false;
-  document.getElementById('user-input').disabled = true;
-  document.getElementById('send-btn').disabled = true;
-  setStatus('connected', 'Session ended — view summary below');
-  requestSummary();
-}
-
-// ── Summary ───────────────────────────────────────────────────────────────
-async function requestSummary() {
-  const panel = document.getElementById('summary-panel');
-  const summaryText = document.getElementById('summary-text');
-  panel.classList.add('visible');
-  summaryText.textContent = 'Generating summary…';
-
-  const summaryPrompt = `The session is now over. Please write a brief but honest session summary covering:
-1. What the user was supposed to do
-2. Whether they made progress (be honest)
-3. Key avoidance patterns observed (escalation was at level ${state.escalation})
-4. One actionable recommendation for next time
-Keep it under 200 words. Be constructive, not harsh.`;
-
-  const msgs = [...state.messages, { role: 'user', content: summaryPrompt }];
-
-  try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': state.apiKey,
-        'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-direct-browser-access': 'true'
-      },
-      body: JSON.stringify({
-        model: 'claude-haiku-4-5',
-        max_tokens: 400,
-        system: buildSystemPrompt(),
-        messages: msgs
-      })
+    session.log.push({
+      n: session.escalation,
+      text: text
     });
-    const data = await response.json();
-    summaryText.textContent = data.content?.[0]?.text || 'Summary unavailable.';
+
+    updateSummary();
+    statusEl.textContent = '';
+
   } catch (e) {
-    summaryText.textContent = `Could not generate summary: ${e.message}`;
-  }
-}
-
-function closeSummary() {
-  document.getElementById('summary-panel').classList.remove('visible');
-}
-
-function copyToClipboard() {
-  const text = document.getElementById('summary-text').textContent;
-  navigator.clipboard.writeText(text).then(() => {
-    const btn = event.target;
-    btn.textContent = '✅ Copied';
-    setTimeout(() => btn.textContent = '📋 Copy', 1500);
-  });
-}
-
-// ── UI helpers ────────────────────────────────────────────────────────────
-function appendMessage(role, text, escalation) {
-  const area = document.getElementById('chat-area');
-  const wrap = document.createElement('div');
-  wrap.className = `message ${role === 'user' ? 'user' : ''}`;
-
-  const avatar = document.createElement('div');
-  avatar.className = 'message-avatar';
-  avatar.textContent = role === 'user' ? '👤' : role === 'system' ? '⚠️' : '🎯';
-
-  const body = document.createElement('div');
-  body.className = 'message-body';
-  body.innerHTML = text.replace(/\n/g, '<br>');
-
-  if (role === 'p3' && escalation !== undefined && escalation > 0) {
-    const meta = document.createElement('div');
-    meta.className = 'message-meta';
-    const level = escalation <= 1 ? 'low' : escalation <= 3 ? 'mid' : 'high';
-    const label = escalation <= 1 ? 'Gentle' : escalation <= 3 ? 'Escalated' : '🔥 Red Zone';
-    meta.innerHTML = `<span class="escalation-tag tag-${level}">E${escalation} · ${label}</span>`;
-    body.appendChild(meta);
+    respArea.className = 'response-area';
+    respArea.textContent = '';
+    statusEl.textContent = 'Error: ' + e.message;
+    statusEl.style.color = 'var(--red)';
   }
 
-  wrap.appendChild(avatar);
-  wrap.appendChild(body);
-  area.appendChild(wrap);
-  area.scrollTop = area.scrollHeight;
+  btn.disabled = false;
+  btn.textContent = 'Generate Pushback';
 }
 
-function showTyping() {
-  const area = document.getElementById('chat-area');
-  const wrap = document.createElement('div');
-  wrap.className = 'message';
-  wrap.id = 'typing-indicator';
-  const avatar = document.createElement('div');
-  avatar.className = 'message-avatar';
-  avatar.textContent = '🎯';
-  const body = document.createElement('div');
-  body.className = 'message-body typing-indicator';
-  body.innerHTML = '<span></span><span></span><span></span>';
-  wrap.appendChild(avatar);
-  wrap.appendChild(body);
-  area.appendChild(wrap);
-  area.scrollTop = area.scrollHeight;
-}
+/* ---- Session summary ---- */
+function updateSummary() {
+  document.getElementById('session-summary').style.display = '';
+  document.getElementById('summary-priority').textContent = session.priority || '(not yet set)';
+  document.getElementById('summary-count').textContent = session.escalation;
 
-function hideTyping() {
-  document.getElementById('typing-indicator')?.remove();
-}
-
-function updateEscalation(n) {
-  const count = document.getElementById('esc-count');
-  const pips = document.querySelectorAll('#esc-pips .pip');
-  count.textContent = n;
-  count.className = 'escalation-count' + (n >= 4 ? ' danger' : n >= 2 ? ' warn' : '');
-  pips.forEach((pip, i) => {
-    pip.className = 'pip' + (i < n ? ' active' + (n >= 4 ? ' danger' : n >= 2 ? ' warn' : '') : '');
-  });
-}
-
-function setStatus(type, text) {
-  const dot = document.getElementById('status-dot');
-  dot.className = 'status-dot' + (type === 'connected' ? ' connected' : type === 'thinking' ? ' thinking' : '');
-  document.getElementById('status-text').textContent = text;
-}
-
-function clearSession() {
-  if (!confirm('Clear this session and reset everything?')) return;
-  state.messages = [];
-  state.escalation = 0;
-  state.sessionActive = false;
-  state.paused = false;
-  updateEscalation(0);
-  document.getElementById('chat-area').innerHTML = `
-    <div class="empty-state" id="empty-state">
-      <div class="icon">🎯</div>
-      <h2>Ready when you are</h2>
-      <p>Enter your task, set your rigidity level, pick a persona, and hit <strong>Start Session</strong>.</p>
-    </div>`;
-  document.getElementById('user-input').disabled = true;
-  document.getElementById('send-btn').disabled = true;
-  document.getElementById('summary-btn').disabled = true;
-  document.getElementById('clear-btn').disabled = true;
-  document.getElementById('start-btn').disabled = false;
-  document.getElementById('paused-banner').classList.remove('visible');
-  setStatus('', 'Not connected — enter API key and start session');
-}
-
-// ── Wiring ─────────────────────────────────────────────────────────────────
-document.getElementById('rigidity').addEventListener('input', function() {
-  document.getElementById('rigidity-val').textContent = this.value;
-  state.rigidity = parseInt(this.value);
-});
-
-document.getElementById('persona-select').addEventListener('change', function() {
-  document.getElementById('custom-persona-wrap').style.display =
-    this.value === 'custom' ? 'block' : 'none';
-});
-
-document.getElementById('toggle-key-btn').addEventListener('click', function() {
-  const inp = document.getElementById('api-key');
-  inp.type = inp.type === 'password' ? 'text' : 'password';
-});
-
-document.getElementById('user-input').addEventListener('keydown', function(e) {
-  if (e.key === 'Enter' && !e.shiftKey) {
-    e.preventDefault();
-    sendMessage();
+  var logEl = document.getElementById('summary-log');
+  if (session.log.length === 0) {
+    logEl.innerHTML = '<p style="color:var(--text-dim);font-size:0.82rem;">No pushback generated yet this session.</p>';
+    return;
   }
-});
+  logEl.innerHTML = session.log.map(function (item) {
+    return '<div class="log-item"><span class="log-num">#' + item.n + '</span><span class="log-text">' + escapeHtml(item.text) + '</span></div>';
+  }).join('');
+}
 
-document.getElementById('user-input').addEventListener('input', function() {
-  this.style.height = 'auto';
-  this.style.height = Math.min(this.scrollHeight, 120) + 'px';
-});
+function escapeHtml(str) {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
 
-// Close summary on backdrop click
-document.getElementById('summary-panel').addEventListener('click', function(e) {
-  if (e.target === this) closeSummary();
-});
+function resetSession() {
+  session.escalation = 0;
+  session.kunoCount  = 0;
+  session.kunoActive = false;
+  session.log = [];
+  session.priority = '';
+  session.redZoneShown = false;
 
-setStatus('', 'Not connected — enter API key and start session');
+  document.getElementById('esc-emoji').textContent = '😄';
+  document.getElementById('esc-num').textContent = '0';
+  document.getElementById('response-area').className = 'response-area';
+  document.getElementById('response-area').textContent = 'Your pushback will appear here.';
+  document.getElementById('gen-status').textContent = '';
+  document.getElementById('safeword-status').textContent = '';
+  document.getElementById('kuno-count').textContent = '';
+  document.getElementById('kuno-input').value = '';
+  document.getElementById('paisley-input').value = '';
+  document.getElementById('red-zone').style.display = 'none';
+  document.getElementById('lockdown-overlay').classList.remove('active');
+  updateSummary();
+}
+
+/* ---- Init summary visible on load ---- */
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('session-summary').style.display = '';
+});
 </script>
 </body>
 </html>
