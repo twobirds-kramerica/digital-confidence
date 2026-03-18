@@ -171,11 +171,11 @@ var DC_QUIZ = (function () {
     },
     {
       module: 'Module 6: Banking & Transactions',
-      q: 'You\'re checking your bank statement on your iPad and notice a charge for $89 from "SVC*CLOUDTECH" that you don\'t recognize. What\'s the right first step?',
+      q: 'You\'re checking your bank statement on your iPad and notice a charge for $89 from "SVC*CLOUDTECH" that you don\'t recognise. What\'s the right first step?',
       options: [
         'Ignore it — small charges sometimes appear and disappear',
         'Post about it on Facebook to see if others got the same charge',
-        'Contact your bank immediately using their official app or the number on your card and report the unrecognized charge',
+        'Contact your bank immediately using their official app or the number on your card and report the unrecognised charge',
         'Wait three months to see if another charge appears before acting'
       ],
       correct: 2,
@@ -314,7 +314,7 @@ var DC_QUIZ = (function () {
       module: 'Module 9: Understanding AI',
       q: 'You receive a phone call that sounds exactly like your granddaughter Emily. She says she has been arrested in another city and needs you to send $3,000 through e-transfer immediately — and not to tell her parents. What do you do?',
       options: [
-        'Send the money right away — you recognize her voice',
+        'Send the money right away — you recognise her voice',
         'Hang up immediately, then call Emily directly on her real phone number to verify',
         'Ask the caller questions only the real Emily would know',
         'Transfer half the money now and wait for more information'
