@@ -155,12 +155,22 @@
         <p><em>Tip: You can use the font size buttons at the top to make the text larger.</em></p>
       </div>
 
-      <!-- Temp placeholder — awaiting ImageFX replacement (gentle learning theme) -->
-      <img class="module-hero-image" src="images/senior-couple-computer.jpg?v=1" alt="A senior couple sitting together at a table, learning about technology with curiosity and ease" width="1200" loading="lazy">
+      <!-- TEMP: awaiting ImageFX replacement - see IMAGEFX-PROMPTS.md -->
+      <img class="module-hero-image" src="images/senior-couple-computer.jpg?v=1" alt="A senior couple sitting together at a table, learning about technology with curiosity and ease" width="1200" height="400" loading="eager">
 
       <!-- Glossary Section — 20 Terms -->
       <h2>Common Words Explained</h2>
       <p>Here are 20 of the most common words you will see and hear when using a tablet, phone, or computer. Each one is explained simply, without jargon. Bookmark this page — it will always be here when you need it.</p>
+
+      <!-- Glossary Search Filter -->
+      <div class="glossary-search-wrap" style="margin:1rem 0 1.5rem;">
+        <label for="glossary-search" style="display:block;font-weight:600;margin-bottom:0.5rem;">🔍 Find a word:</label>
+        <input type="search" id="glossary-search"
+          placeholder="Type a word, e.g. tap, icon, Wi-Fi…"
+          aria-label="Search glossary terms"
+          style="width:100%;max-width:480px;padding:0.65rem 1rem;font-size:1rem;border:2px solid var(--border-color,#c5cae9);border-radius:8px;background:var(--bg-secondary,#f5f5f5);color:var(--text-primary,#222);">
+        <p id="glossary-no-results" role="status" aria-live="polite" style="display:none;color:#c62828;margin-top:0.5rem;font-weight:600;">No matching terms found. Try a different word.</p>
+      </div>
 
       <div class="tip-block">
         <span class="tip-label">📌 Button</span>
@@ -304,7 +314,7 @@
 
       <!-- Comic Corner -->
       <h2>😄 Comic Corner</h2>
-      <p>A little laughter makes learning stick. Here are three gentle jokes for anyone who has ever felt bewildered by technology. You are not alone — and it is allowed to be funny.</p>
+      <p>A little laughter makes learning stick. Here are five gentle jokes for anyone who has ever felt bewildered by technology. You are not alone — and it is allowed to be funny.</p>
 
       <div class="confidence-check" style="margin-bottom:20px;">
         <span class="check-icon" style="font-size:2rem;">😅</span>
@@ -322,6 +332,18 @@
         <span class="check-icon" style="font-size:2rem;">🦉</span>
         <p><strong>Why do seniors make the best tech learners?</strong></p>
         <p class="check-text">Because they have the patience, the wisdom, and the life experience to know that nothing worth doing comes without a little practice — and nothing is ever as scary as it first looked.</p>
+      </div>
+
+      <div class="confidence-check" style="margin-bottom:20px;">
+        <span class="check-icon" style="font-size:2rem;">🔑</span>
+        <p><strong>Why did the senior change her password to "incorrect"?</strong></p>
+        <p class="check-text">So that whenever she forgot it, the computer would helpfully remind her: <em>"Your password is incorrect."</em></p>
+      </div>
+
+      <div class="confidence-check" style="margin-bottom:20px;">
+        <span class="check-icon" style="font-size:2rem;">📡</span>
+        <p><strong>What did the Wi-Fi say to the laptop?</strong></p>
+        <p class="check-text">"I feel a real connection."<br>The laptop replied: "Finally. I've been asking everyone in this building."</p>
       </div>
 
       <div class="tip-box">
@@ -367,6 +389,31 @@
     </main>
   </div>
 
+  <!-- Glossary search/filter — page-specific, no external dependencies -->
+  <script>
+    (function () {
+      var input = document.getElementById('glossary-search');
+      var noResults = document.getElementById('glossary-no-results');
+      if (!input) return;
+      input.addEventListener('input', function () {
+        var q = input.value.trim().toLowerCase();
+        var blocks = document.querySelectorAll('.tip-block');
+        var visible = 0;
+        blocks.forEach(function (block) {
+          var text = block.innerText.toLowerCase();
+          if (!q || text.indexOf(q) !== -1) {
+            block.style.display = '';
+            visible++;
+          } else {
+            block.style.display = 'none';
+          }
+        });
+        if (noResults) {
+          noResults.style.display = (q && visible === 0) ? '' : 'none';
+        }
+      });
+    })();
+  </script>
   <script src="js/speech-config.js" defer></script>
   <script src="js/app.js" defer></script>
   <script src="js/accessibility.js" defer></script>

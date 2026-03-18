@@ -146,7 +146,7 @@
 
       <h1>Scam Simulator</h1>
       <p>Practice spotting scams in a completely safe environment. Nothing here is real — these are training exercises to sharpen your scam-detection skills. Take your time and read each scenario carefully.</p>
-      <img class="module-hero-image" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&h=400&fit=crop&v=2" alt="A warning alert symbol on a screen, representing the importance of staying alert to scams" width="1200" loading="lazy">
+      <img class="module-hero-image" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&h=400&fit=crop&v=2" alt="A warning alert symbol on a screen, representing the importance of staying alert to scams" width="1200" height="400" loading="eager">
 
       <div class="tip-block">
         <span class="tip-label">How This Works</span>
@@ -341,8 +341,48 @@
       </div>
 
       <div class="confidence-check">
+        <span class="check-icon">💛</span>
+        <p>Confidence Check: Great work on Round 3. Two more real-world Canadian scams coming — these ones are especially tricky because they target your phone service directly.</p>
+      </div>
+
+      <h2>Round 4: Canadian Telecom Scams</h2>
+
+      <div class="quiz-container" id="telecom-quiz">
+        <div class="quiz-question" data-correct="c">
+          <h4>Scenario 11: The Rogers Bank "Fraud Team" Call</h4>
+          <div class="scam-example">
+            <p>Your phone rings. Caller ID shows "Rogers Bank".<br><br>
+            "Hello, this is the Rogers Bank fraud prevention team. We have detected suspicious charges on your Mastercard — someone just tried to make a $1,200 purchase at a store you have never visited. We need to cancel your card immediately to protect you. A courier will arrive at your home within two hours to collect your current card and deliver your new one. For your security, please cut the chip corner of your old card and hand it to the courier when they arrive. Do not call the number on the back of your card — that line is being monitored by the fraudsters."</p>
+          </div>
+          <p><strong>What would you do?</strong></p>
+          <button class="quiz-option" data-answer="a">Wait for the courier — the bank is protecting you and it sounds very official</button>
+          <button class="quiz-option" data-answer="b">Cut the chip as instructed, just to be safe</button>
+          <button class="quiz-option" data-answer="c">Hang up and call Rogers Bank directly using the number printed on the back of your card — no real bank ever sends a courier to collect your card, and telling you NOT to call the official number is a major red flag</button>
+          <div class="quiz-feedback" data-correct-text="Excellent instincts! This is the 'courier scam' and it is one of the most convincing frauds in Canada right now. The key red flags: (1) No legitimate bank ever sends a courier to collect your credit or debit card, (2) Telling you NOT to call the number on your card is a huge warning sign — real banks want you to verify, (3) Caller ID can be faked to show any name, including your actual bank. If you ever receive this call, hang up, wait 10 minutes (scammers sometimes stay on the line), then call the number on the back of your card from a different phone if possible. You are doing great, and your device is safe." data-incorrect-text="This is the courier scam — one of the most common and convincing frauds in Canada. No real bank ever sends a courier to pick up your card. The instruction NOT to call the number on your card is itself the biggest red flag. Caller ID is easily faked. Always call your bank directly using the number on the back of your card to verify any fraud concern."></div>
+        </div>
+
+        <div class="quiz-question" data-correct="b">
+          <h4>Scenario 12: The Call Forwarding Trick</h4>
+          <div class="scam-example">
+            <p>You receive a call from someone saying they are a Rogers technical support agent:<br><br>
+            "Hi, we are doing a network upgrade in your area and your line may experience some issues. To fix this, I just need you to dial *21* followed by a 10-digit number and then press #. This re-registers your line on the upgraded network and only takes a second. It is completely safe — it is just a technical reset code."</p>
+          </div>
+          <p><strong>What would you do?</strong></p>
+          <button class="quiz-option" data-answer="a">Dial the code — it sounds technical and the agent seems to know what they are talking about</button>
+          <button class="quiz-option" data-answer="b">Hang up without dialling anything — dialling *21* followed by a number activates call forwarding on most phones, which would secretly redirect all your incoming calls (including bank verification calls) to the scammer's phone</button>
+          <button class="quiz-option" data-answer="c">Ask the agent to text you the code instead so you can verify it first</button>
+          <div class="quiz-feedback" data-correct-text="You caught a very clever scam! The code *21*[number]# is a real phone feature — it activates call forwarding on most Canadian carriers. If a scammer gets you to dial it, every incoming call you receive (including verification calls from your bank when they call to confirm a transaction) gets forwarded directly to the scammer. Your carrier will never ask you to dial a feature code as part of a network upgrade. If you ever dialled such a code by accident, call your carrier immediately and dial ##21# to cancel all call forwarding. You are doing great, and your device is safe." data-incorrect-text="This scam uses a real phone feature against you. Dialling *21*[number]# activates call forwarding — so all your incoming calls, including bank fraud verification calls, would go to the scammer instead of you. Carriers never ask you to dial feature codes for 'network upgrades.' Always hang up on these calls and contact Rogers directly if you are concerned about your service."></div>
+        </div>
+
+        <div class="quiz-score">
+          <p class="score-number"></p>
+          <p class="score-message"></p>
+        </div>
+      </div>
+
+      <div class="confidence-check">
         <span class="check-icon">🎉</span>
-        <p>You have completed all three rounds of the Scam Simulator!</p>
+        <p>You have completed all four rounds of the Scam Simulator!</p>
         <p class="check-text">Whether you aced every question or learned something new, you are now better equipped to protect yourself and your family. Remember: the 3-Second Rule (Stop, Breathe, Verify) is your best defence in any situation. You can come back and practise these scenarios any time.</p>
       </div>
 
