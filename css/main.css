@@ -5087,3 +5087,13 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 [data-font-size="large"] .entry-example { font-size: 1.05rem; }
 [data-font-size="xl"]    .entry-plain,
 [data-font-size="xl"]    .entry-example { font-size: 1.15rem; }
+
+/* Module-to-glossary cross-links */
+.glossary-link {
+  color: inherit;
+  border-bottom: 1px dotted currentColor;
+  text-decoration: none;
+}
+.glossary-link:hover {
+  text-decoration: underline;
+}
