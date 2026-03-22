@@ -4799,3 +4799,291 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   background: #1e2a38;
   border-color: #4a90d9;
 }
+
+/* ================================================================
+   GLOSSARY PAGE STYLES
+   digital-literacy-101.html
+   ================================================================ */
+
+/* Breadcrumb */
+.breadcrumb ol {
+  display: flex;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.2rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: var(--text-secondary, #666);
+}
+.breadcrumb li:not(:last-child)::after {
+  content: " ›";
+  margin-left: 0.4rem;
+}
+.breadcrumb a {
+  color: var(--accent-color, #1565C0);
+}
+
+/* Language toggle */
+.glossary-lang-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.2rem 0 1rem;
+  flex-wrap: wrap;
+}
+.lang-btn {
+  padding: 0.45rem 1.3rem;
+  border: 2px solid var(--accent-color, #1565C0);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--accent-color, #1565C0);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.lang-btn.active,
+.lang-btn:hover {
+  background: var(--accent-color, #1565C0);
+  color: #fff;
+}
+
+/* Search bar */
+.glossary-search-wrap {
+  margin: 0.5rem 0 1rem;
+}
+.glossary-search-wrap label {
+  display: block;
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+#glossary-search {
+  width: 100%;
+  max-width: 560px;
+  padding: 0.8rem 1rem;
+  font-size: 1.05rem;
+  border: 2px solid var(--border-color, #c5cae9);
+  border-radius: 8px;
+  background: var(--bg-secondary, #f5f5f5);
+  color: var(--text-primary, #222);
+  display: block;
+}
+#glossary-search:focus {
+  outline: 3px solid var(--accent-color, #1565C0);
+  border-color: var(--accent-color, #1565C0);
+}
+
+/* Did You Mean */
+#did-you-mean {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary, #555);
+}
+#did-you-mean strong {
+  margin-right: 0.3rem;
+}
+.dym-suggestion {
+  background: none;
+  border: 1px solid var(--accent-color, #1565C0);
+  border-radius: 4px;
+  color: var(--accent-color, #1565C0);
+  padding: 0.2rem 0.6rem;
+  font-size: 0.92rem;
+  cursor: pointer;
+  margin-right: 0.4rem;
+  margin-top: 0.3rem;
+}
+.dym-suggestion:hover {
+  background: var(--accent-color, #1565C0);
+  color: #fff;
+}
+
+/* Category filter buttons */
+.glossary-category-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.5rem 0 1.2rem;
+}
+.cat-btn {
+  padding: 0.4rem 0.85rem;
+  border: 2px solid var(--border-color, #c5cae9);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--text-primary, #222);
+  cursor: pointer;
+  font-size: 0.88rem;
+  white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s;
+}
+.cat-btn.active,
+.cat-btn:hover {
+  background: var(--accent-color, #1565C0);
+  color: #fff;
+  border-color: var(--accent-color, #1565C0);
+}
+
+/* Result count */
+.glossary-result-count {
+  font-size: 0.88rem;
+  color: var(--text-secondary, #666);
+  margin: 0 0 0.8rem;
+  min-height: 1.2em;
+}
+
+/* Category section headings */
+.glossary-category-section {
+  margin-bottom: 2.5rem;
+}
+.glossary-category-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 2rem 0 0.8rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--accent-color, #1565C0);
+  color: var(--text-primary, #111);
+}
+
+/* Individual glossary entry card */
+.glossary-entry {
+  background: var(--bg-secondary, #f9f9f9);
+  border: 1px solid var(--border-color, #e0e0e0);
+  border-radius: 10px;
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 0.9rem;
+  scroll-margin-top: 80px;
+}
+.glossary-entry h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+  color: var(--accent-color, #1565C0);
+}
+.entry-plain {
+  margin: 0 0 0.45rem;
+  line-height: 1.55;
+}
+.entry-analogy {
+  font-style: italic;
+  color: var(--text-secondary, #555);
+  margin: 0 0 0.45rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.entry-example {
+  margin: 0 0 0.45rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.entry-safety {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.9rem;
+  margin: 0.5rem 0 0.3rem;
+  line-height: 1.5;
+}
+.entry-module-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--accent-color, #1565C0);
+}
+
+/* No-results block */
+#glossary-no-results {
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+/* Link button (inline) */
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--accent-color, #1565C0);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: inherit;
+  padding: 0;
+}
+
+/* Admin analytics panel */
+.glossary-admin-panel {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: var(--bg-primary, #fff);
+  border: 2px solid #1565C0;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.5rem;
+  max-height: 420px;
+  overflow-y: auto;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+.glossary-admin-panel table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.glossary-admin-panel td,
+.glossary-admin-panel th {
+  padding: 0.3rem 0.5rem;
+  border-bottom: 1px solid var(--border-color, #eee);
+  text-align: left;
+}
+.glossary-admin-panel th {
+  font-weight: 700;
+  background: var(--bg-secondary, #f5f5f5);
+}
+
+/* Screen-reader-only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+/* Dark mode overrides */
+[data-theme="dark"] .glossary-entry {
+  background: #1e2a38;
+  border-color: #3a4e66;
+}
+[data-theme="dark"] .entry-safety {
+  background: #2a2000;
+  border-left-color: #f9a825;
+}
+[data-theme="dark"] .glossary-admin-panel {
+  background: #1a1a2e;
+  border-color: #4a90d9;
+}
+[data-theme="dark"] .dym-suggestion {
+  border-color: #4a90d9;
+  color: #4a90d9;
+}
+[data-theme="dark"] .dym-suggestion:hover {
+  background: #4a90d9;
+  color: #fff;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .glossary-category-nav { gap: 0.35rem; }
+  .cat-btn { font-size: 0.8rem; padding: 0.35rem 0.65rem; }
+  .glossary-entry { padding: 0.9rem 1rem; }
+  .glossary-admin-panel { position: static; }
+}
+
+/* Font-size scaling for glossary entries */
+[data-font-size="large"] .glossary-entry h3 { font-size: 1.25rem; }
+[data-font-size="xl"]    .glossary-entry h3 { font-size: 1.4rem; }
+[data-font-size="large"] .entry-plain,
+[data-font-size="large"] .entry-example { font-size: 1.05rem; }
+[data-font-size="xl"]    .entry-plain,
+[data-font-size="xl"]    .entry-example { font-size: 1.15rem; }
