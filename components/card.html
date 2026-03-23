@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Card Components — DCC Design System</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    body { padding: 2rem; max-width: 900px; margin: 0 auto; }
+    .component-section { margin-bottom: 3rem; }
+    .component-section h2 { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+    .code-block { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 1rem; font-family: monospace; font-size: 0.85rem; white-space: pre-wrap; margin-top: 1rem; }
+    h1 { margin-bottom: 2rem; }
+  </style>
+</head>
+<body>
+
+<h1>Card &amp; Content Block Components</h1>
+<p style="color:var(--text-secondary);margin-bottom:2rem">These are the core content pattern blocks used inside modules and across the site. Use the right block for the right purpose — story, warning, tip, confidence check, and success state each have distinct visual treatment and emotional tone.</p>
+
+<!-- Story Block -->
+<div class="component-section">
+  <h2>Story Block — real-world scenario to open with</h2>
+  <div class="story-block">
+    <span class="story-label">📖 Margaret's Story</span>
+    <p>Margaret received an email saying her Apple ID was locked. The email looked exactly like one from Apple, with the right logo and everything. She almost clicked the link — but then she remembered the Three-Second Rule.</p>
+  </div>
+  <div class="code-block">&lt;div class="story-block"&gt;
+  &lt;span class="story-label"&gt;📖 Margaret's Story&lt;/span&gt;
+  &lt;p&gt;Story content here...&lt;/p&gt;
+&lt;/div&gt;</div>
+</div>
+
+<!-- Warning Block -->
+<div class="component-section">
+  <h2>Warning Block — danger / scam alert</h2>
+  <div class="warning-block">
+    <span class="warning-label">⚠️ Watch Out</span>
+    <p>Never share your verification code with anyone who calls you — not even if they say they are from your bank or Apple. A real company will never ask for this code over the phone.</p>
+  </div>
+  <div class="code-block">&lt;div class="warning-block"&gt;
+  &lt;span class="warning-label"&gt;⚠️ Watch Out&lt;/span&gt;
+  &lt;p&gt;Warning content here...&lt;/p&gt;
+&lt;/div&gt;</div>
+</div>
+
+<!-- Tip Block -->
+<div class="component-section">
+  <h2>Tip Block — helpful guidance</h2>
+  <div class="tip-block">
+    <span class="tip-label">💡 Helpful Tip</span>
+    <p>You can always check whether your Wi-Fi is connected by looking for the fan-shaped icon in the top right corner of your screen. If it is grey, you are not connected.</p>
+  </div>
+  <div class="code-block">&lt;div class="tip-block"&gt;
+  &lt;span class="tip-label"&gt;💡 Helpful Tip&lt;/span&gt;
+  &lt;p&gt;Tip content here...&lt;/p&gt;
+&lt;/div&gt;</div>
+</div>
+
+<!-- Confidence Check -->
+<div class="component-section">
+  <h2>Confidence Check — reassurance moment</h2>
+  <div class="confidence-check">
+    <span class="check-icon">✅</span>
+    <p class="check-text">You're doing great! Understanding phishing is one of the most important skills for staying safe online. Many people fall for these scams — knowing what to look for puts you ahead.</p>
+  </div>
+  <div class="code-block">&lt;div class="confidence-check"&gt;
+  &lt;span class="check-icon"&gt;✅&lt;/span&gt;
+  &lt;p class="check-text"&gt;Reassurance message here...&lt;/p&gt;
+&lt;/div&gt;</div>
+</div>
+
+<!-- Three-Second Rule Box -->
+<div class="component-section">
+  <h2>Three-Second Rule Box — safety decision framework</h2>
+  <div class="three-second-rule-box">
+    <h4>The Three-Second Rule</h4>
+    <p>Before clicking anything unexpected: <strong>Stop</strong> (put the device down), <strong>Think</strong> (does this make sense?), <strong>Check</strong> (call someone you trust if unsure).</p>
+  </div>
+  <div class="code-block">&lt;div class="three-second-rule-box"&gt;
+  &lt;h4&gt;The Three-Second Rule&lt;/h4&gt;
+  &lt;p&gt;Description here...&lt;/p&gt;
+&lt;/div&gt;</div>
+</div>
+
+<!-- Success State -->
+<div class="component-section">
+  <h2>Success State — exercise completion</h2>
+  <div class="success-state-box">
+    <span class="success-icon">🎉</span>
+    <p><strong>Excellent work!</strong> You have completed this exercise. You now know how to identify a phishing email.</p>
+  </div>
+  <div class="code-block">&lt;div class="success-state-box"&gt;
+  &lt;span class="success-icon"&gt;🎉&lt;/span&gt;
+  &lt;p&gt;&lt;strong&gt;Well done!&lt;/strong&gt; Completion message here.&lt;/p&gt;
+&lt;/div&gt;</div>
+</div>
+
+<!-- Module Card -->
+<div class="component-section">
+  <h2>Module Card — homepage grid</h2>
+  <a href="../module-2.html" class="module-card" style="text-decoration:none;display:block;max-width:400px">
+    <div class="card-icon">🔒</div>
+    <div class="card-content">
+      <h3>The Security Shield</h3>
+      <p>Learn to recognise scams and protect your personal information online.</p>
+    </div>
+  </a>
+  <div class="code-block">&lt;a href="module-2.html" class="module-card"&gt;
+  &lt;div class="card-icon"&gt;🔒&lt;/div&gt;
+  &lt;div class="card-content"&gt;
+    &lt;h3&gt;Module Title&lt;/h3&gt;
+    &lt;p&gt;Module description.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/a&gt;</div>
+</div>
+
+<!-- Resource Card -->
+<div class="component-section">
+  <h2>Resource Card — resources.html</h2>
+  <div class="resource-card" style="max-width:400px">
+    <h4>Ontario 211</h4>
+    <p class="resource-meta">Free helpline · Available 24/7 · English &amp; French</p>
+    <a href="tel:211" class="resource-phone">📞 Call 211</a>
+  </div>
+  <div class="code-block">&lt;div class="resource-card"&gt;
+  &lt;h4&gt;Resource Name&lt;/h4&gt;
+  &lt;p class="resource-meta"&gt;Details · Hours · Language&lt;/p&gt;
+  &lt;a href="tel:XXX" class="resource-phone"&gt;📞 Phone number&lt;/a&gt;
+&lt;/div&gt;</div>
+</div>
+
+</body>
+</html>

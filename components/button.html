@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Button Components — DCC Design System</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    body { padding: 2rem; max-width: 800px; margin: 0 auto; }
+    .component-section { margin-bottom: 3rem; }
+    .component-section h2 { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+    .component-row { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 1rem; }
+    .code-block { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 1rem; font-family: monospace; font-size: 0.85rem; white-space: pre-wrap; margin-top: 0.5rem; }
+    h1 { margin-bottom: 2rem; }
+  </style>
+</head>
+<body>
+
+<h1>Button Components</h1>
+<p style="color:var(--text-secondary);margin-bottom:2rem">All buttons use <code>.btn</code> as the base class plus one variant. Minimum size: 60px (--tap-target). See DESIGN-SYSTEM.md for full rules.</p>
+
+<div class="component-section">
+  <h2>Primary — Main call to action</h2>
+  <div class="component-row">
+    <button class="btn btn-primary">Get Started</button>
+    <button class="btn btn-primary btn-large">Start Module</button>
+  </div>
+  <div class="code-block">&lt;button class="btn btn-primary"&gt;Get Started&lt;/button&gt;
+&lt;button class="btn btn-primary btn-large"&gt;Start Module&lt;/button&gt;</div>
+</div>
+
+<div class="component-section">
+  <h2>Secondary — Supporting action</h2>
+  <div class="component-row">
+    <button class="btn btn-secondary">Go Back</button>
+    <button class="btn btn-secondary btn-large">View All Modules</button>
+  </div>
+  <div class="code-block">&lt;button class="btn btn-secondary"&gt;Go Back&lt;/button&gt;
+&lt;button class="btn btn-secondary btn-large"&gt;View All Modules&lt;/button&gt;</div>
+</div>
+
+<div class="component-section">
+  <h2>Success — Completion / positive confirmation</h2>
+  <div class="component-row">
+    <button class="btn btn-success">Mark as Complete ✓</button>
+  </div>
+  <div class="code-block">&lt;button class="btn btn-success"&gt;Mark as Complete ✓&lt;/button&gt;</div>
+</div>
+
+<div class="component-section">
+  <h2>As a link — navigational button</h2>
+  <div class="component-row">
+    <a href="../index.html" class="btn btn-primary">Go to Dashboard</a>
+    <a href="../module-1.html" class="btn btn-secondary">Module 1</a>
+  </div>
+  <div class="code-block">&lt;a href="module-1.html" class="btn btn-primary"&gt;Go to Dashboard&lt;/a&gt;</div>
+</div>
+
+<div class="component-section">
+  <h2>Print button — module footer</h2>
+  <div class="component-row">
+    <button class="btn-print" onclick="window.print()" aria-label="Print this module">🖨 Print this module</button>
+  </div>
+  <div class="code-block">&lt;button class="btn-print" onclick="window.print()" aria-label="Print this module"&gt;🖨 Print this module&lt;/button&gt;</div>
+</div>
+
+<div class="component-section">
+  <h2>Disabled state</h2>
+  <div class="component-row">
+    <button class="btn btn-primary" disabled aria-disabled="true">Unavailable</button>
+    <button class="btn btn-secondary" disabled aria-disabled="true">Unavailable</button>
+  </div>
+  <div class="code-block">&lt;button class="btn btn-primary" disabled aria-disabled="true"&gt;Unavailable&lt;/button&gt;</div>
+</div>
+
+<div class="component-section">
+  <h2>Rules — never do these</h2>
+  <ul style="line-height:2;color:var(--text-secondary)">
+    <li>❌ Never use <code>--accent-danger</code> (red) for a primary action</li>
+    <li>❌ Never make a button smaller than <code>--tap-target</code> (60px)</li>
+    <li>❌ Never remove the :focus ring</li>
+    <li>❌ Never use vague labels ("Submit", "Click Here")</li>
+    <li>✅ Always use action verbs ("Save Changes", "Start Module", "Download Certificate")</li>
+  </ul>
+</div>
+
+</body>
+</html>

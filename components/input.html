@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Form Input Components — DCC Design System</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    body { padding: 2rem; max-width: 700px; margin: 0 auto; }
+    .component-section { margin-bottom: 3rem; }
+    .component-section h2 { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+    .code-block { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 1rem; font-family: monospace; font-size: 0.85rem; white-space: pre-wrap; margin-top: 1rem; }
+    h1 { margin-bottom: 2rem; }
+
+    /* DCC form field standards */
+    .form-group { margin-bottom: 1.5rem; }
+    .form-label {
+      display: block;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+    .form-label .optional {
+      font-weight: 400;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+    .form-input,
+    .form-select,
+    .form-textarea {
+      display: block;
+      width: 100%;
+      min-height: var(--tap-target);
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      font-family: inherit;
+      color: var(--text-primary);
+      background: var(--bg-card);
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    }
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: var(--text-muted);
+      opacity: 0.8;
+    }
+    .form-textarea { min-height: 120px; resize: vertical; }
+    .form-hint { font-size: 0.875rem; color: var(--text-muted); margin-top: 0.4rem; }
+    .form-error { font-size: 0.875rem; color: var(--accent-danger); margin-top: 0.4rem; font-weight: 600; }
+    .form-input.is-error,
+    .form-textarea.is-error,
+    .form-select.is-error {
+      border-color: var(--accent-danger);
+      box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.15);
+    }
+    .form-input.is-success { border-color: var(--accent-success); }
+  </style>
+</head>
+<body>
+
+<h1>Form Input Components</h1>
+<p style="color:var(--text-secondary);margin-bottom:2rem">Form styles are defined in this component file. Copy the CSS block from this file's &lt;style&gt; tag into any page that needs forms. Always pair every input with a visible label — never rely on placeholder text alone.</p>
+
+<!-- Text Input -->
+<div class="component-section">
+  <h2>Text Input — standard</h2>
+  <div class="form-group">
+    <label class="form-label" for="demo-name">Your Name <span class="optional">(Optional)</span></label>
+    <input class="form-input" id="demo-name" type="text" placeholder="Type here..." autocomplete="name">
+  </div>
+  <div class="code-block">&lt;div class="form-group"&gt;
+  &lt;label class="form-label" for="your-field-id"&gt;
+    Field Label &lt;span class="optional"&gt;(Optional)&lt;/span&gt;
+  &lt;/label&gt;
+  &lt;input class="form-input" id="your-field-id" type="text" placeholder="Type here..."&gt;
+&lt;/div&gt;</div>
+</div>
+
+<!-- Textarea -->
+<div class="component-section">
+  <h2>Textarea — multi-line</h2>
+  <div class="form-group">
+    <label class="form-label" for="demo-feedback">Your Feedback</label>
+    <textarea class="form-textarea" id="demo-feedback" placeholder="Tell us what you think..." rows="4"></textarea>
+    <p class="form-hint">Your feedback helps us improve the course for other seniors.</p>
+  </div>
+  <div class="code-block">&lt;div class="form-group"&gt;
+  &lt;label class="form-label" for="feedback"&gt;Your Feedback&lt;/label&gt;
+  &lt;textarea class="form-textarea" id="feedback" rows="4"
+    placeholder="Tell us what you think..."&gt;&lt;/textarea&gt;
+  &lt;p class="form-hint"&gt;Hint text here.&lt;/p&gt;
+&lt;/div&gt;</div>
+</div>
+
+<!-- Select -->
+<div class="component-section">
+  <h2>Select dropdown</h2>
+  <div class="form-group">
+    <label class="form-label" for="demo-module">Which module are you on?</label>
+    <select class="form-select" id="demo-module">
+      <option value="">-- Choose a module --</option>
+      <option value="1">Module 1: Mastering the Escape Hatch</option>
+      <option value="2">Module 2: The Security Shield</option>
+      <option value="3">Module 3: Passwords &amp; Biometrics</option>
+    </select>
+  </div>
+  <div class="code-block">&lt;div class="form-group"&gt;
+  &lt;label class="form-label" for="module-select"&gt;Which module?&lt;/label&gt;
+  &lt;select class="form-select" id="module-select"&gt;
+    &lt;option value=""&gt;-- Choose --&lt;/option&gt;
+    &lt;option value="1"&gt;Module 1: ...&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;</div>
+</div>
+
+<!-- Error State -->
+<div class="component-section">
+  <h2>Error state</h2>
+  <div class="form-group">
+    <label class="form-label" for="demo-error">Email Address</label>
+    <input class="form-input is-error" id="demo-error" type="email" value="not-an-email" aria-describedby="demo-error-msg" aria-invalid="true">
+    <p class="form-error" id="demo-error-msg" role="alert">⚠ Please enter a valid email address (for example: name@example.com)</p>
+  </div>
+  <div class="code-block">&lt;div class="form-group"&gt;
+  &lt;label class="form-label" for="email"&gt;Email Address&lt;/label&gt;
+  &lt;input class="form-input is-error" id="email" type="email"
+    aria-describedby="email-error" aria-invalid="true"&gt;
+  &lt;p class="form-error" id="email-error" role="alert"&gt;
+    ⚠ Please enter a valid email address
+  &lt;/p&gt;
+&lt;/div&gt;</div>
+</div>
+
+<!-- Full feedback form example -->
+<div class="component-section">
+  <h2>Complete form example — feedback modal pattern</h2>
+  <form onsubmit="return false" style="background:var(--bg-card);padding:var(--spacing-md);border-radius:var(--radius-md);border:1px solid var(--border-color)">
+    <div class="form-group">
+      <label class="form-label" for="demo-full-module">Module</label>
+      <select class="form-select" id="demo-full-module">
+        <option value="2">Module 2: The Security Shield</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="demo-full-type">Feedback Type</label>
+      <select class="form-select" id="demo-full-type">
+        <option value="general">General Comment</option>
+        <option value="confusing">Something Was Confusing</option>
+        <option value="helpful">Something Was Very Helpful</option>
+        <option value="bug">Something Didn't Work</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="demo-full-feedback">Your Feedback</label>
+      <textarea class="form-textarea" id="demo-full-feedback" rows="4" placeholder="Tell us what you think..."></textarea>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit Feedback</button>
+    <div class="form-group" style="margin-top:1rem;margin-bottom:0">
+      <label class="form-label" for="demo-full-name">Your Name <span class="optional">(Optional)</span></label>
+      <input class="form-input" id="demo-full-name" type="text" placeholder="Type here..." autocomplete="name">
+    </div>
+  </form>
+  <p class="form-hint" style="margin-top:0.5rem">Field order per CLAUDE.md: Module → Feedback Type → Feedback → Submit → Your Name (Optional)</p>
+</div>
+
+<!-- Rules -->
+<div class="component-section">
+  <h2>Rules</h2>
+  <ul style="line-height:2;color:var(--text-secondary)">
+    <li>✅ Always pair every input with a visible <code>&lt;label&gt;</code></li>
+    <li>✅ Minimum input height: <code>var(--tap-target)</code> (60px)</li>
+    <li>✅ Minimum font size: <code>1rem</code> (18px)</li>
+    <li>✅ Show <code>aria-invalid="true"</code> and <code>aria-describedby</code> on error inputs</li>
+    <li>✅ Use <code>role="alert"</code> on error messages so screen readers announce them</li>
+    <li>✅ "Your Name" is always optional — label it <code>Your Name (Optional)</code></li>
+    <li>❌ Never use placeholder text as the only label</li>
+    <li>❌ Never pre-populate name fields</li>
+    <li>❌ Feedback form field order: do not change — Module → Type → Feedback → Submit → Name</li>
+  </ul>
+</div>
+
+</body>
+</html>
