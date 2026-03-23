@@ -35,6 +35,7 @@ var DC_MODULES = [
   'Module 9: Understanding AI',
   'Module 10: Grocery & Food Delivery',
   'Module 11: Ride-Sharing Apps',
+  'Module 12: Getting the Help You Deserve',
   'Resources Page',
   'General / Other'
 ];
@@ -53,6 +54,7 @@ var DC_PAGE_MODULE = {
   'module-9.html':  'Module 9: Understanding AI',
   'module-10.html': 'Module 10: Grocery & Food Delivery',
   'module-11.html': 'Module 11: Ride-Sharing Apps',
+  'module-12.html': 'Module 12: Getting the Help You Deserve',
   'resources.html': 'Resources Page'
 };
 
