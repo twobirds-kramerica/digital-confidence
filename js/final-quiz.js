@@ -1,8 +1,8 @@
 /* ============================================
    Digital Confidence Centre — Final Quiz
-   v5 — 30 scenario-based "What would you do?"
+   v6 — 33 scenario-based "What would you do?"
         questions covering all 11 modules
-   Passing score: 70% (21/30)
+   Passing score: 73% (24/33)
    Sprint 7: readiness panel, smart scoring,
              certificate.html, resources chain
    ============================================ */
@@ -398,10 +398,52 @@ var DC_QUIZ = (function () {
       ],
       correct: 1,
       explain: 'Scammers rely on urgency and fear to prevent you from thinking clearly. The single most powerful habit is the pause. Whether it\'s a scary pop-up, an urgent email, or a suspicious phone call — stop, close it, breathe, and then verify through channels you know are real. That one habit protects you from the vast majority of threats.'
+    },
+
+    /* MODULE 2 — Scam Scenarios (Extra) */
+    {
+      module: 'Module 2: The Security Shield',
+      q: 'You receive an email saying "Your package could not be delivered — click here to reschedule." You were not expecting any packages. What should you do?',
+      options: [
+        'Click the link — maybe someone sent a surprise gift',
+        'Delete it — this is a common delivery scam',
+        'Call the delivery company\'s official number to check',
+        'Forward it to family to ask if they sent something'
+      ],
+      correct: 1,
+      explain: 'Delivery scams are very common. If you were not expecting a package, delete the email. Real delivery companies leave a notice at your door or send a tracking number you can look up on their official website — never through an unexpected email link.'
+    },
+
+    /* MODULE 4 — App Safety (Extra) */
+    {
+      module: 'Module 4: App Store Safety',
+      q: 'A website you are installing software from says "Please disable your antivirus temporarily to complete this installation." What should you do?',
+      options: [
+        'Follow the instructions — the software needs this to install',
+        'This is a major warning sign — close the website immediately',
+        'Only disable it if the company name looks familiar',
+        'Disable it briefly, then turn it back on straight after'
+      ],
+      correct: 1,
+      explain: 'Legitimate software never asks you to disable your antivirus protection. This is almost always malware trying to sneak past your security. Close the website immediately and do not install anything.'
+    },
+
+    /* General: Public Wi-Fi Safety */
+    {
+      module: 'General: Browser Safety',
+      q: 'You are using the free Wi-Fi at your local coffee shop. Which of these activities is safest to do?',
+      options: [
+        'Check your bank balance',
+        'Browse the news',
+        'Shop online and enter your credit card number',
+        'Log into your email account'
+      ],
+      correct: 1,
+      explain: 'On public Wi-Fi, other people on the same network could potentially see what you are doing. Browsing news is safe. For banking, shopping, and email — wait until you are on your home Wi-Fi or mobile data.'
     }
   ];
 
-  var PASS_SCORE   = 21;   /* 70% of 30 */
+  var PASS_SCORE   = 24;   /* 73% of 33 */
   var currentQ     = 0;
   var score        = 0;
   var answered     = [];
