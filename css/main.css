@@ -1097,6 +1097,13 @@ strong {
   border-color: var(--accent-success);
 }
 
+/* Focus indicator for keyboard users — WCAG AA requirement */
+.btn:focus-visible {
+  outline: 3px solid var(--accent-primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
 .btn-large {
   padding: var(--spacing-md) var(--spacing-lg);
   font-size: 1.15rem;
