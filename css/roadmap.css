@@ -1,0 +1,159 @@
+/* ============================================================
+   Digital Confidence Centre — Roadmap Page Styles
+   css/roadmap.css
+   ============================================================ */
+
+/* ── Roadmap Section Headings ─────────────────────────────── */
+.roadmap-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.roadmap-section-heading {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 2px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+/* ── Roadmap Cards ─────────────────────────────────────────── */
+.roadmap-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  border-left: 5px solid var(--border-color);
+  transition: box-shadow 0.15s ease;
+}
+
+.roadmap-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.roadmap-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 var(--spacing-xs) 0;
+  padding: 0;
+  border: none;
+  color: var(--text-primary);
+}
+
+.roadmap-card p {
+  margin: 0;
+  color: var(--text-primary);
+  opacity: 0.85;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ── Colour-coded left borders using accent variables ─────── */
+.roadmap-card--quick-win {
+  border-left-color: var(--accent-success);
+}
+
+.roadmap-card--in-progress {
+  border-left-color: var(--accent-warning);
+}
+
+.roadmap-card--future {
+  border-left-color: var(--accent-primary);
+}
+
+.roadmap-card--completed {
+  border-left-color: var(--border-color);
+  opacity: 0.8;
+}
+
+/* ── Status Badges ─────────────────────────────────────────── */
+.roadmap-badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-xs);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.roadmap-badge--quick-win {
+  background: var(--accent-success);
+  color: #fff;
+}
+
+.roadmap-badge--in-progress {
+  background: var(--accent-warning);
+  color: #fff;
+}
+
+.roadmap-badge--future {
+  background: var(--accent-primary);
+  color: #fff;
+}
+
+.roadmap-badge--completed {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* ── Intro note box ─────────────────────────────────────────── */
+.roadmap-intro {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+  border-left: 4px solid var(--accent-primary);
+}
+
+.roadmap-intro p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ── Dark mode overrides ────────────────────────────────────── */
+[data-theme="dark"] .roadmap-card {
+  background: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .roadmap-intro {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .roadmap-badge--quick-win {
+  background: var(--accent-success);
+  color: #fff;
+}
+
+[data-theme="dark"] .roadmap-badge--in-progress {
+  background: var(--accent-warning);
+  color: #fff;
+}
+
+[data-theme="dark"] .roadmap-badge--future {
+  background: var(--accent-primary);
+  color: #fff;
+}
+
+[data-theme="dark"] .roadmap-badge--completed {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* ── Responsive tweaks ──────────────────────────────────────── */
+@media (max-width: 600px) {
+  .roadmap-card {
+    padding: var(--spacing-sm);
+  }
+
+  .roadmap-section-heading {
+    font-size: 1.1rem;
+  }
+}
