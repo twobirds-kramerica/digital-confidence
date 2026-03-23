@@ -140,6 +140,16 @@ function injectFeedbackModal() {
           '</select>',
         '</div>',
 
+        /* FIELD 1b: Language selector */
+        '<div class="dc-feedback-field">',
+          '<label class="dc-feedback-label" for="dc-feedback-language">Language / Langue</label>',
+          '<select id="dc-feedback-language" name="language" class="dc-feedback-select">',
+            '<option value="en">English</option>',
+            '<option value="fr">Fran\u00e7ais</option>',
+            '<option value="other">Other / Autre</option>',
+          '</select>',
+        '</div>',
+
         /* FIELD 2: Feedback type */
         '<div class="dc-feedback-field">',
           '<p class="dc-feedback-label">Type of feedback:</p>',
@@ -177,6 +187,7 @@ function injectFeedbackModal() {
           '<div class="dc-success-icon">✅</div>',
           '<h3>Thank You!</h3>',
           '<p>Your feedback has been received.</p>',
+          '<p>Nous lisons les commentaires en fran\u00e7ais. French feedback is welcome! / Les commentaires en fran\u00e7ais sont les bienvenus\u00a0!</p>',
           '<p class="dc-reference-num" id="dc-reference-num"></p>',
           '<button onclick="closeFeedbackModal()" class="dc-btn-submit">Close</button>',
         '</div>',
@@ -226,6 +237,10 @@ function openFeedbackModal() {
   var nameEl = document.getElementById('dc-feedback-name');
   if (nameEl) nameEl.value = '';
 
+  /* Reset language dropdown to English on each open */
+  var langEl = document.getElementById('dc-feedback-language');
+  if (langEl) langEl.value = 'en';
+
   /* Auto-select module based on current page (user can still change it) */
   if (moduleEl) {
     var page       = window.location.pathname.split('/').pop() || 'index.html';
@@ -255,11 +270,12 @@ function handleFeedbackSubmit() {
   var typeEl   = document.querySelector('input[name="dc-feedback-type"]:checked');
   var moduleEl = document.getElementById('dc-feedback-module');
 
+  var langEl   = document.getElementById('dc-feedback-language');
   var name     = (nameEl && nameEl.value.trim()) ? nameEl.value.trim() : 'Anonymous';
   var text     = textEl ? textEl.value.trim() : '';
   var type     = typeEl ? typeEl.value : 'Not specified';
   var module   = (moduleEl && moduleEl.value) ? moduleEl.value : 'General / Other';
-  var lang     = navigator.language || 'unknown';
+  var userLang = (langEl && langEl.value) ? langEl.value : (navigator.language || 'unknown');
 
   if (!text) {
     alert('Please share your feedback before submitting.');
@@ -270,7 +286,7 @@ function handleFeedbackSubmit() {
   var submitBtn = document.getElementById('dc-submit-btn');
   if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending\u2026'; }
 
-  submitToFormspree(name, type, text, module, lang);
+  submitToFormspree(name, type, text, module, userLang);
 }
 
 /* ================================================================
