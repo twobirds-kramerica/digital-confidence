@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
   initFontControls();
   initThemeToggle();
   initDyslexicFont();
+  initBackToTop();
+  initBreadcrumb();
 });
 
 var FONT_SIZES = ['small', 'medium', 'large', 'xl'];
@@ -100,28 +102,94 @@ function updateThemeButton(theme) {
 }
 
 /* ---- Dyslexic Font Toggle ---- */
+function setDyslexicFont(isOn) {
+  document.body.classList.toggle('dyslexic-font', isOn);
+  localStorage.setItem('dc-dyslexic-font', isOn ? 'true' : 'false');
+  // Sync sidebar checkbox
+  var checkbox = document.getElementById('dyslexic-font-toggle');
+  if (checkbox) checkbox.checked = isOn;
+  // Sync header bar button
+  var barBtn = document.querySelector('.dyslexic-font-btn');
+  if (barBtn) {
+    barBtn.classList.toggle('active', isOn);
+    barBtn.setAttribute('aria-pressed', isOn ? 'true' : 'false');
+  }
+}
+
 function initDyslexicFont() {
+  var isOn = localStorage.getItem('dc-dyslexic-font') === 'true';
+
+  // Inject 👓 button into the accessibility-bar (header)
+  var bar = document.querySelector('.accessibility-bar');
+  if (bar && !bar.querySelector('.dyslexic-font-btn')) {
+    var barBtn = document.createElement('button');
+    barBtn.className = 'a11y-btn dyslexic-font-btn';
+    barBtn.setAttribute('aria-label', 'Toggle dyslexic-friendly font (OpenDyslexic)');
+    barBtn.setAttribute('aria-pressed', isOn ? 'true' : 'false');
+    barBtn.setAttribute('title', 'Switch to OpenDyslexic font');
+    barBtn.textContent = '👓';
+    if (isOn) barBtn.classList.add('active');
+    var themeBtn = bar.querySelector('.theme-toggle-btn');
+    if (themeBtn) bar.insertBefore(barBtn, themeBtn);
+    else bar.appendChild(barBtn);
+    barBtn.addEventListener('click', function() {
+      setDyslexicFont(!document.body.classList.contains('dyslexic-font'));
+    });
+  }
+
+  // Wire sidebar checkbox
   var toggle = document.getElementById('dyslexic-font-toggle');
   if (!toggle) return;
-
-  // Sync toggle visual state (body class already applied in loadPreferences)
-  toggle.checked = (localStorage.getItem('dc-dyslexic-font') === 'true');
-
+  toggle.checked = isOn;
   toggle.addEventListener('change', function() {
-    var isOn = this.checked;
-    document.body.classList.toggle('dyslexic-font', isOn);
-    // Store as explicit string so === 'true' check works reliably on all browsers
-    localStorage.setItem('dc-dyslexic-font', isOn ? 'true' : 'false');
+    setDyslexicFont(this.checked);
   });
-
-  // iOS Safari: also listen on the label for 'click' as a fallback
+  // iOS Safari touchend fallback
   var label = toggle.closest('label');
   if (label) {
     label.addEventListener('touchend', function(e) {
-      // Let the browser handle it; this just prevents delayed 300ms ghost click
       e.preventDefault();
       toggle.checked = !toggle.checked;
       toggle.dispatchEvent(new Event('change'));
     });
   }
+}
+
+/* ---- Back to Top Button ---- */
+function initBackToTop() {
+  var btn = document.createElement('button');
+  btn.className = 'back-to-top';
+  btn.setAttribute('aria-label', 'Back to top');
+  btn.innerHTML = '&#8679;'; // ↑ upward arrow
+  document.body.appendChild(btn);
+
+  window.addEventListener('scroll', function() {
+    btn.classList.toggle('visible', window.scrollY > 500);
+  }, { passive: true });
+
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+/* ---- Breadcrumb on Module Pages ---- */
+function initBreadcrumb() {
+  var path = window.location.pathname;
+  var match = path.match(/module-(\d+)\.html/);
+  if (!match) return;
+
+  var h1 = document.querySelector('.main-content h1, main h1');
+  if (!h1) return;
+
+  var moduleName = h1.textContent.trim();
+  var nav = document.createElement('nav');
+  nav.className = 'breadcrumb-nav';
+  nav.setAttribute('aria-label', 'Breadcrumb');
+  nav.innerHTML =
+    '<ol class="breadcrumb">' +
+      '<li><a href="index.html">Home</a></li>' +
+      '<li aria-current="page">' + moduleName + '</li>' +
+    '</ol>';
+
+  h1.parentNode.insertBefore(nav, h1);
 }

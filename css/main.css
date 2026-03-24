@@ -5109,3 +5109,78 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 .glossary-link:hover {
   text-decoration: underline;
 }
+
+/* ── Card Status Badges ────────────────────────────────── */
+.card-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-xs);
+}
+.badge-new      { background: var(--navy-light, #dce8f8); color: var(--accent-primary); }
+.badge-updated  { background: #fff3e0; color: var(--accent-warning); }
+.badge-complete { background: #e8f5e9; color: var(--accent-success); }
+
+[data-theme="dark"] .badge-new      { background: rgba(52,152,219,0.2); color: #5DADE2; }
+[data-theme="dark"] .badge-updated  { background: rgba(243,156,18,0.2); color: #F7DC6F; }
+[data-theme="dark"] .badge-complete { background: rgba(39,174,96,0.2); color: #58D68D; }
+
+/* ── Back to Top Button ────────────────────────────────── */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  background: var(--accent-primary);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease, background 0.15s;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.back-to-top.visible   { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.back-to-top:hover     { background: #2980b9; }
+.back-to-top:focus     { outline: 3px solid var(--accent-primary); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top { transition: none; }
+}
+
+/* ── Breadcrumb Navigation ─────────────────────────────── */
+.breadcrumb-nav {
+  padding: var(--spacing-xs) 0 0;
+  margin-bottom: 0.5rem;
+}
+.breadcrumb {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.breadcrumb li + li::before { content: '›'; margin-right: 0.2rem; opacity: 0.6; }
+.breadcrumb a { color: var(--accent-primary); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb [aria-current="page"] { color: var(--text-secondary); }
+
+/* ── Dyslexic Font Bar Button ──────────────────────────── */
+.a11y-btn.dyslexic-font-btn { font-size: 1.1rem; }
+.a11y-btn.dyslexic-font-btn.active { background: var(--accent-primary); color: #fff; border-color: var(--accent-primary); }
