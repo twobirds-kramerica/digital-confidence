@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="fr-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Module 3 : Mots de Passe et Biométrie — Apprenez à protéger vos comptes avec Face ID, un gestionnaire de mots de passe et l'authentification à deux facteurs.">
+  <title>Module 3 : Mots de Passe et Biométrie | Centre de Confiance Numérique</title>
+  <link rel="stylesheet" href="../../../css/main.css">
+  <link rel="stylesheet" href="../../../css/accessibility.css">
+  <link rel="stylesheet" href="../../../css/mobile.css">
+  <link rel="stylesheet" href="../../../css/print.css">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+  <meta name="theme-color" content="#1565C0">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Passer au contenu principal</a>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Contrôles d'accessibilité">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Petit texte" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Texte moyen" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Grand texte" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Très grand texte" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Passer en mode sombre">🌓</button>
+    <a href="../../../module-3.html" class="a11y-btn" style="font-size:0.82rem;font-weight:700;letter-spacing:0.03em;padding:4px 8px;text-decoration:none;" aria-label="Lire en anglais">⚜ EN</a>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Ouvrir le menu de navigation">☰</button>
+    <span class="site-title">Module 3 : Mots de Passe et Biométrie</span>
+    <span></span>
+  </div>
+
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <aside class="sidebar" aria-label="Navigation principale">
+    <button class="sidebar-close" aria-label="Fermer la navigation">&#10005;</button>
+    <div class="sidebar-header">
+      <h2>Centre de Confiance Numérique</h2>
+      <p>Votre parcours d'apprentissage</p>
+    </div>
+    <nav>
+      <a href="../index.html"><span class="nav-icon">🏠</span><span class="nav-label">Accueil</span></a>
+      <a href="module-1.html"><span class="nav-icon">🪂</span><span class="nav-label">1. La Sortie de Secours</span></a>
+      <a href="module-2.html"><span class="nav-icon">🛡️</span><span class="nav-label">2. Le Bouclier de Sécurité</span></a>
+      <a href="module-3.html" aria-current="page"><span class="nav-icon">🔑</span><span class="nav-label">3. Mots de Passe</span></a>
+      <a href="module-4.html"><span class="nav-icon">📱</span><span class="nav-label">4. Sécurité des Applis</span></a>
+      <a href="module-5.html"><span class="nav-icon">✉️</span><span class="nav-label">5. Courriels et Messages</span></a>
+      <a href="module-6.html"><span class="nav-icon">🏦</span><span class="nav-label">6. Services Bancaires</span></a>
+      <a href="../../../module-7.html"><span class="nav-icon">🎨</span><span class="nav-label">7. Photos (anglais)</span></a>
+      <a href="../../../module-8.html"><span class="nav-icon">👨‍👩‍👧</span><span class="nav-label">8. Rester Connecté (anglais)</span></a>
+      <a href="../../../module-9.html"><span class="nav-icon">🤖</span><span class="nav-label">9. Comprendre l'IA (anglais)</span></a>
+      <a href="../../../module-10.html"><span class="nav-icon">🛒</span><span class="nav-label">10. Épicerie en ligne (anglais)</span></a>
+      <a href="../../../module-11.html"><span class="nav-icon">🚗</span><span class="nav-label">11. Covoiturage (anglais)</span></a>
+      <div class="sidebar-a11y-section">
+        <p class="sidebar-a11y-title">Taille du texte</p>
+        <div class="sidebar-font-row">
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Petit texte" aria-pressed="false" style="font-size:0.8rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Texte moyen" aria-pressed="false" style="font-size:1rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Grand texte" aria-pressed="false" style="font-size:1.2rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Très grand texte" aria-pressed="false" style="font-size:1.4rem">A</button>
+        </div>
+        <p class="sidebar-a11y-title">Couleur de l'écran</p>
+        <div class="sidebar-theme-row">
+          <button class="a11y-btn theme-toggle-btn" aria-label="Passer en mode sombre">🌓</button>
+        </div>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <h1>Module 3 : Mots de Passe et Biométrie</h1>
+      <p><strong>Ce que vous allez apprendre :</strong> Comment protéger vos comptes sans mémoriser des dizaines de mots de passe. Nous allons aborder Face ID, les gestionnaires de mots de passe, et ce que ces termes de sécurité signifient vraiment en langage simple.</p>
+      <img class="module-hero-image" src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1200&h=400&fit=crop&v=2" alt="Une personne utilisant un capteur d'empreinte digitale pour se connecter de façon sécurisée" width="1200" height="400" loading="eager">
+
+      <div class="story-block">
+        <span class="story-label">L'histoire d'Hélène</span>
+        <p>Hélène, 69 ans, n'avait qu'un seul mot de passe pour tout : le nom de son défunt mari suivi de l'année de leur anniversaire de mariage. Elle l'utilisait pour son courriel, sa banque, son iPad, Amazon, Facebook — partout. « C'est facile à retenir », disait-elle à sa fille.</p>
+        <p>Puis un jour, Hélène a remarqué des achats bizarres sur son compte Amazon — trois coûteuses enceintes Bluetooth qu'elle n'avait jamais commandées. Quelqu'un avait deviné son mot de passe (le nom de son mari et leur anniversaire étaient tous les deux sur son profil Facebook) et l'avait utilisé pour accéder à son compte Amazon. Comme Hélène utilisait le même mot de passe partout, le voleur l'a aussi essayé sur son courriel — et est entré.</p>
+        <p>Hélène a passé deux semaines stressantes à changer des mots de passe, à appeler sa banque et à verrouiller ses comptes. Mais cette expérience lui a appris quelque chose qu'elle partage maintenant avec chaque amie : « Un seul mot de passe pour tout, c'est comme une seule clé pour votre maison, votre voiture et votre coffre-fort. Si quelqu'un fait une copie de cette clé, il entre dans tout. »</p>
+        <p>Aujourd'hui, Hélène utilise Face ID et un gestionnaire de mots de passe. Elle dit que gérer ses mots de passe est maintenant plus facile qu'avant — et beaucoup, beaucoup plus sûr.</p>
+      </div>
+
+      <h2>Les termes de sécurité en langage simple</h2>
+
+      <p>Avant d'aller plus loin, définissons quelques mots que vous pourriez entendre. Considérez ceci comme votre dictionnaire personnel :</p>
+
+      <div class="tip-block">
+        <span class="tip-label">Votre dictionnaire de sécurité</span>
+        <p><strong>Mot de passe :</strong> Un mot ou une phrase secrète qui prouve que vous êtes bien vous. Comme une clé pour une serrure.</p>
+        <p><strong>Biométrie :</strong> Utiliser votre corps pour prouver votre identité — votre visage, votre empreinte digitale, ou même votre voix. « Bio » signifie vie, et « métrie » signifie mesure. Donc la biométrie signifie « mesurer quelque chose vous concernant ».</p>
+        <p><strong>Face ID :</strong> Le système d'Apple qui utilise la caméra frontale de votre iPad ou iPhone pour reconnaître votre visage. C'est comme un gardien de sécurité qui sait à quoi vous ressemblez et ouvre la porte quand il vous voit.</p>
+        <p><strong>Touch ID :</strong> Le lecteur d'empreintes digitales d'Apple, que l'on trouve sur les anciens iPads et iPhones. Vous appuyez votre doigt sur le bouton Accueil et il reconnaît votre empreinte unique.</p>
+        <p><strong>Déverrouillage par visage / Déverrouillage par empreinte digitale :</strong> La version Android de la même idée. De nombreux téléphones et tablettes Android peuvent reconnaître votre visage ou votre empreinte digitale pour déverrouiller votre appareil.</p>
+        <p><strong>Gestionnaire de mots de passe :</strong> Un coffre-fort numérique sécurisé qui se souvient de tous vos mots de passe à votre place. Vous n'avez besoin de retenir qu'un seul mot de passe maître — le coffre-fort se souvient du reste.</p>
+        <p><strong>Authentification à deux facteurs</strong> (aussi appelée « 2FA » ou « vérification en deux étapes ») : Une étape de sécurité supplémentaire lors de la connexion. Après avoir tapé votre mot de passe, vous avez également besoin d'une deuxième preuve — habituellement un code envoyé à votre téléphone. C'est comme une porte qui nécessite à la fois une clé et un mot de passe secret.</p>
+        <p><strong>Apple ID :</strong> Votre compte personnel chez Apple. C'est l'adresse courriel et le mot de passe que vous utilisez pour télécharger des applications, utiliser iCloud et accéder aux services Apple. Considérez-le comme votre carte de membre pour tout ce qui est Apple.</p>
+        <p><strong>Compte Google :</strong> Votre compte personnel chez Google. C'est l'adresse courriel (habituellement Gmail) et le mot de passe que vous utilisez pour télécharger des applications depuis le Play Store et accéder aux services Google.</p>
+      </div>
+
+      <div class="confidence-check">
+        <span class="check-icon">💛</span>
+        <p>Vérification de confiance : Ces termes ne sont pas si intimidants quand on les explique correctement, n'est-ce pas ? Vous développez votre vocabulaire technologique.</p>
+      </div>
+
+      <h2>Biométrie : Votre visage ou empreinte est votre mot de passe</h2>
+
+      <p>Les appareils modernes peuvent vous reconnaître par votre visage ou votre empreinte digitale. C'est l'une des façons les plus pratiques et sécurisées de protéger votre appareil.</p>
+
+      <h3>Face ID sur iPad et iPhone</h3>
+
+      <p>Si votre iPad ou iPhone est un modèle récent, il possède probablement Face ID.</p>
+
+      <p><strong>Comment Face ID fonctionne :</strong> Lorsque vous configurez Face ID, votre appareil crée une carte détaillée de votre visage à l'aide de capteurs spéciaux. Il ne prend pas une simple photo — il crée un modèle mathématique de la forme de votre visage. Ce modèle est stocké uniquement sur votre appareil (il n'est jamais envoyé à Apple ni à quiconque). Quand vous prenez votre appareil et regardez l'écran, il vérifie : « Est-ce le même visage ? » Si oui, il se déverrouille.</p>
+
+      <div class="walkthrough">
+        <h4>Configurer Face ID</h4>
+        <div class="walkthrough-step">
+          <span class="step-num">1</span>
+          <span class="step-text">Trouvez l'application <strong>Réglages</strong> sur votre écran d'accueil. Elle ressemble à des engrenages mécaniques gris.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">2</span>
+          <span class="step-text">Tapez sur <strong>Réglages</strong> pour l'ouvrir.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">3</span>
+          <span class="step-text">Faites défiler le côté gauche et tapez sur <strong>« Face ID et code »</strong>.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">4</span>
+          <span class="step-text">Vous devrez entrer votre code actuel (le numéro que vous tapez pour déverrouiller votre iPad).</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">5</span>
+          <span class="step-text">Tapez sur <strong>« Configurer Face ID »</strong>.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">6</span>
+          <span class="step-text">Tenez votre iPad à bout de bras et positionnez votre visage dans le cercle affiché à l'écran. Bougez lentement la tête en cercle, comme si vous traciez le contour d'une grande horloge avec votre nez.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">7</span>
+          <span class="step-text">Vous devrez le faire deux fois. Suivez les instructions à l'écran.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">8</span>
+          <span class="step-text">Quand il dit « Face ID est maintenant configuré » — vous avez terminé ! Votre visage est maintenant votre mot de passe.</span>
+        </div>
+      </div>
+
+      <div class="tip-block">
+        <span class="tip-label">Bon à savoir</span>
+        <p>Face ID fonctionne avec ou sans lunettes, et il s'adapte à mesure que votre apparence change graduellement avec le temps. Il ne fonctionne pas avec un couvre-visage, donc vous aurez peut-être besoin de votre code avec un masque. Face ID ne permettra pas non plus à quelqu'un de déverrouiller votre appareil pendant que vous dormez — vos yeux doivent être ouverts et regarder l'écran.</p>
+      </div>
+
+      <div class="confidence-check-box">
+        <span class="check-icon">💪</span>
+        <p>Vous connaissez déjà les termes de sécurité les plus importants. Cette connaissance est votre fondation.</p>
+        <p class="check-subtext">La plupart des gens n'apprennent jamais la signification réelle de ces mots — vous êtes déjà en avance.</p>
+      </div>
+
+      <h2>Créer des mots de passe solides</h2>
+
+      <p>Pour les comptes où vous avez encore besoin d'un mot de passe tapé, voici comment en créer un bon :</p>
+
+      <div class="danger-block">
+        <span class="danger-label">Mots de passe faibles (ne les utilisez pas)</span>
+        <p>123456, motdepasse, votre nom, le nom de votre animal, votre date de naissance, votre anniversaire de mariage, votre adresse, « qwerty », ou n'importe quel mot unique trouvé dans le dictionnaire.</p>
+      </div>
+
+      <div class="warning-box">
+        <span class="warning-box-label">Attention</span>
+        <p>Utiliser le même mot de passe pour plusieurs comptes, c'est comme utiliser la même clé pour votre maison, votre voiture et votre coffre-fort. Si un voleur copie cette clé, il entre dans tout.</p>
+      </div>
+
+      <p>Un mot de passe solide est comme une serrure solide — il a plusieurs éléments qui fonctionnent ensemble. La meilleure façon d'en créer un est la <strong>méthode de la phrase de passe</strong> :</p>
+
+      <div class="tip-block">
+        <span class="tip-label">La méthode de la phrase de passe</span>
+        <p>Au lieu d'un seul mot, utilisez une courte phrase de mots aléatoires. Par exemple :</p>
+        <p><strong>Tulipe-Violette-Pont-44</strong></p>
+        <p>C'est beaucoup plus difficile à deviner pour un ordinateur que « MonNom1954 » mais beaucoup plus facile à retenir pour vous. Vous pouvez imaginer une tulipe violette assise sur un pont avec le numéro 44 dessus. Plus l'image est saugrenue, plus elle est facile à retenir.</p>
+        <p>Autres exemples : <strong>Jardin-Lapin-Neige-17</strong> ou <strong>Cuisine-Rivière-Érable-82</strong></p>
+      </div>
+
+      <div class="visual-example-card" role="img" aria-label="Phrase de passe">
+        <div class="example-icon">🔑</div>
+        <div class="example-content">
+          <h4 class="example-title">Phrase de passe</h4>
+          <p class="example-description">Une phrase de passe comme Tulipe-Violette-Pont-44 est facile à retenir (imaginez une tulipe violette sur un pont) mais extrêmement difficile à deviner pour un ordinateur.</p>
+        </div>
+      </div>
+
+      <p>Les règles essentielles pour les mots de passe :</p>
+      <ul class="content-list">
+        <li><strong>N'utilisez jamais le même mot de passe deux fois.</strong> Chaque compte doit avoir son propre mot de passe unique.</li>
+        <li><strong>Ne partagez jamais vos mots de passe</strong> avec quiconque — même quelqu'un qui dit être d'Apple ou de votre banque.</li>
+        <li><strong>Faites-les longs.</strong> Une phrase de passe de 16 caractères est bien plus solide qu'un mot de passe de 8 caractères avec des symboles aléatoires.</li>
+      </ul>
+
+      <div class="confidence-check">
+        <span class="check-icon">💛</span>
+        <p>Vérification de confiance : Vous n'avez pas besoin d'être un expert en informatique pour avoir des mots de passe solides. Une phrase saugrenue que vous pouvez visualiser dans votre esprit suffit.</p>
+      </div>
+
+      <div class="tip-box">
+        <span class="tip-box-label">Conseil</span>
+        <p>Écrivez votre mot de passe maître sur papier et gardez-le dans un tiroir verrouillé ou un coffre — jamais sur une note autocollante sur votre appareil. Une copie papier dans un endroit sûr est tout à fait appropriée.</p>
+      </div>
+
+      <h2>Gestionnaires de mots de passe : Votre coffre-fort numérique</h2>
+
+      <p>« Mais comment suis-je censé retenir un mot de passe différent pour chaque compte ? » Excellente question. La réponse : vous ne l'êtes pas. Un gestionnaire de mots de passe le fait pour vous.</p>
+
+      <p>Votre iPad est livré avec un gestionnaire de mots de passe intégré appelé <strong>iCloud Keychain</strong>. Voici ce qu'il fait :</p>
+
+      <ul class="content-list">
+        <li>Lorsque vous créez un nouveau compte sur un site Web, votre iPad vous propose de <strong>sauvegarder le mot de passe</strong>.</li>
+        <li>Quand vous revenez sur ce site Web, votre iPad <strong>remplit le mot de passe automatiquement</strong> — vous n'avez pas besoin de le taper.</li>
+        <li>Il peut <strong>suggérer des mots de passe solides</strong> quand vous créez un nouveau compte.</li>
+        <li>Il vous <strong>avertit</strong> si l'un de vos mots de passe enregistrés a été trouvé dans une fuite de données.</li>
+        <li>Tout cela est protégé par votre Face ID ou code — personne d'autre ne peut voir vos mots de passe.</li>
+      </ul>
+
+      <div class="walkthrough">
+        <h3>S'assurer que iCloud Keychain est activé</h3>
+        <div class="walkthrough-step">
+          <span class="step-num">1</span>
+          <span class="step-text">Ouvrez <strong>Réglages</strong> (l'icône des engrenages gris).</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">2</span>
+          <span class="step-text">Tapez sur votre <strong>nom</strong> tout en haut de l'écran Réglages.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">3</span>
+          <span class="step-text">Tapez sur <strong>« iCloud »</strong>.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">4</span>
+          <span class="step-text">Tapez sur <strong>« Mots de passe et Keychain »</strong>.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">5</span>
+          <span class="step-text">Assurez-vous que le bouton à côté de <strong>« Synchroniser cet iPad »</strong> est activé (vert). S'il est déjà vert, vous êtes prêt.</span>
+        </div>
+      </div>
+
+      <div class="walkthrough">
+        <h3>Voir vos mots de passe enregistrés</h3>
+        <div class="walkthrough-step">
+          <span class="step-num">1</span>
+          <span class="step-text">Ouvrez <strong>Réglages</strong>.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">2</span>
+          <span class="step-text">Faites défiler vers le bas et tapez sur <strong>« Mots de passe »</strong>.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">3</span>
+          <span class="step-text">Utilisez Face ID ou entrez votre code pour voir vos mots de passe enregistrés.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">4</span>
+          <span class="step-text">Vous verrez une liste de sites Web et les mots de passe enregistrés pour chacun. Tapez sur n'importe quelle entrée pour voir les détails.</span>
+        </div>
+      </div>
+
+      <div class="visual-example-card" role="img" aria-label="Application gestionnaire de mots de passe">
+        <div class="example-icon">🗝️</div>
+        <div class="example-content">
+          <h4 class="example-title">Application gestionnaire de mots de passe</h4>
+          <p class="example-description">Un gestionnaire de mots de passe stocke tous vos mots de passe de façon sécurisée au même endroit. Vous n'avez besoin de retenir qu'un seul mot de passe maître — il remplit automatiquement tous les autres.</p>
+        </div>
+      </div>
+
+      <div class="confidence-check-box">
+        <span class="check-icon">🌟</span>
+        <p>Vous comprenez maintenant les gestionnaires de mots de passe — l'outil le plus puissant pour garder vos comptes en sécurité.</p>
+        <p class="check-subtext">Vous n'avez pas besoin de mémoriser des dizaines de mots de passe. Le coffre-fort le fait pour vous.</p>
+      </div>
+
+      <h2>L'authentification à deux facteurs : Le double verrou</h2>
+
+      <p>Imaginez que votre porte d'entrée avait deux serrures — une serrure ordinaire et un verrou de sûreté. Même si quelqu'un copiait votre clé, il ne pourrait toujours pas entrer sans avoir aussi la clé du verrou. C'est ce que fait l'authentification à deux facteurs pour vos comptes en ligne.</p>
+
+      <p>Quand vous activez l'authentification à deux facteurs (appelons-la « le double verrou »), la connexion fonctionne ainsi :</p>
+
+      <ol class="numbered-list">
+        <li>Vous tapez votre mot de passe comme d'habitude (la première serrure).</li>
+        <li>Le site Web envoie un <strong>code court</strong> (habituellement 6 chiffres) à votre téléphone ou iPad (la deuxième serrure).</li>
+        <li>Vous tapez ce code dans le site Web.</li>
+        <li>Maintenant le site sait que c'est vraiment vous — parce que même si quelqu'un volait votre mot de passe, il aurait aussi besoin de votre téléphone pour obtenir le code.</li>
+      </ol>
+
+      <p>Votre Apple ID utilise déjà l'authentification à deux facteurs par défaut. Lorsque vous vous connectez sur un nouvel appareil, Apple envoie un code à vos autres appareils. C'est normal et c'est votre protection.</p>
+
+      <div class="visual-example-card" role="img" aria-label="Code de vérification à deux facteurs">
+        <div class="example-icon">📲</div>
+        <div class="example-content">
+          <h4 class="example-title">Code de vérification à deux facteurs</h4>
+          <p class="example-description">Un code à deux facteurs arrive comme un message texte avec un numéro à 6 chiffres qui expire en environ 30 secondes. Entrez-le juste après avoir tapé votre mot de passe pour compléter la connexion.</p>
+        </div>
+      </div>
+
+      <div class="three-second-rule">
+        <h3>La Règle des 3 Secondes pour les codes</h3>
+        <div class="steps">
+          <div class="step">
+            <span class="step-icon">✋</span>
+            <span class="step-name">Arrêtez</span>
+            <span class="step-desc">Avez-vous demandé ce code ?</span>
+          </div>
+          <div class="step">
+            <span class="step-icon">🫁</span>
+            <span class="step-name">Respirez</span>
+            <span class="step-desc">Si vous n'avez pas essayé de vous connecter, quelqu'un d'autre essaie peut-être.</span>
+          </div>
+          <div class="step">
+            <span class="step-icon">🔍</span>
+            <span class="step-name">Vérifiez</span>
+            <span class="step-desc">Ne partagez jamais un code de vérification avec quiconque vous appelle ou vous envoie un message. Changez votre mot de passe si vous ne l'avez pas demandé.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-block">
+        <span class="tip-label">Quels comptes ont le plus besoin du double verrou ?</span>
+        <ul>
+          <li><strong>Services bancaires</strong> — La plupart des banques canadiennes l'exigent déjà. Vous l'utilisez peut-être sans le savoir.</li>
+          <li><strong>Courriel (Gmail, Outlook)</strong> — Très important. Votre courriel peut être utilisé pour réinitialiser tous vos autres mots de passe.</li>
+          <li><strong>Services gouvernementaux</strong> — Mon dossier ARC, Service Canada.</li>
+          <li><strong>Facebook et Instagram</strong> — Facultatif mais recommandé.</li>
+          <li><strong>Amazon</strong> — Facultatif ; particulièrement important si vous avez une carte de crédit enregistrée.</li>
+        </ul>
+        <p><strong>Commencez par votre courriel et votre banque.</strong> Ces deux comptes sont les plus importants à protéger, et une fois sécurisés, le reste suit naturellement.</p>
+      </div>
+
+      <h3>Activer le double verrou pour votre compte Gmail</h3>
+
+      <p>Gmail (le service de courriel de Google) est utilisé par des millions de Canadiens. Voici comment activer l'authentification à deux facteurs sur iPhone ou iPad :</p>
+
+      <ol class="numbered-list">
+        <li>Ouvrez l'application <strong>Gmail</strong> (l'icône enveloppe rouge et blanc) et assurez-vous d'être connecté.</li>
+        <li>Tapez sur votre <strong>photo de profil</strong> (votre initiale ou photo, en haut à droite).</li>
+        <li>Tapez sur <strong>Gérer votre compte Google</strong>.</li>
+        <li>Tapez sur l'onglet <strong>Sécurité</strong> en haut.</li>
+        <li>Faites défiler vers le bas jusqu'à <strong>Comment vous vous connectez à Google</strong>.</li>
+        <li>Tapez sur <strong>Validation en deux étapes</strong>.</li>
+        <li>Tapez sur <strong>Commencer</strong> et suivez les étapes. Google vous demandera votre numéro de téléphone pour vous envoyer un code par message texte.</li>
+        <li>Entrez le code que Google vous envoie pour confirmer que ça fonctionne, puis tapez sur <strong>Activer</strong>.</li>
+      </ol>
+
+      <div class="warning-box">
+        <strong>La règle absolue à retenir</strong>
+        <p>Ne donnez jamais votre code à deux facteurs à quiconque. Une entreprise légitime ne vous appellera jamais pour vous demander votre code à 6 chiffres. Si quelqu'un appelle pour demander votre code — qu'il prétende être de Google, de votre banque ou du gouvernement — raccrochez immédiatement. Ce code est la clé de votre compte, et le donner revient à remettre l'accès complet à un étranger.</p>
+      </div>
+
+      <div class="warning-box">
+        <span class="warning-box-label">Attention</span>
+        <p>Aucune entreprise légitime ne vous demandera jamais un code de vérification par téléphone. Si quelqu'un appelle et demande un code qui a été envoyé à votre appareil, raccrochez immédiatement — c'est une arnaque.</p>
+      </div>
+
+      <div class="three-second-rule-box">
+        <h4>Rappel : La Règle des 3 Secondes</h4>
+        <p>Arrêtez. Respirez. Réfléchissez avant de taper. Si quelque chose semble urgent ou trop beau pour être vrai, c'est votre signal pour faire une pause.</p>
+      </div>
+
+      <div class="tip-box">
+        <span class="tip-box-label">Conseil</span>
+        <p>Si vous recevez un code de vérification que vous n'avez pas demandé, ne paniquez pas — mais changez le mot de passe de ce compte dès que possible. Cela signifie que quelqu'un essaie de se connecter à votre place.</p>
+      </div>
+
+      <div class="exercise-block">
+        <h3>Exercice pratique : Renforcez votre sécurité</h3>
+        <p>Mettons ce que vous avez appris en pratique. Travaillez à travers ces étapes à votre propre rythme — vous n'avez pas besoin de tout faire en une seule séance.</p>
+
+        <ol class="numbered-list">
+          <li><strong>Vérifiez Face ID :</strong> Allez dans Réglages → Face ID et code et assurez-vous que Face ID est configuré. Si ce n'est pas le cas, suivez le guide ci-dessus.</li>
+          <li><strong>Vérifiez votre Keychain :</strong> Allez dans Réglages → Mots de passe et regardez vos mots de passe enregistrés. Y en a-t-il marqués avec un triangle d'avertissement ? Si oui, ces mots de passe ont peut-être été trouvés dans une fuite de données — envisagez de les changer.</li>
+          <li><strong>Créez une phrase de passe :</strong> Pensez à trois mots aléatoires et un chiffre. Écrivez-la sur papier et rangez-la dans un endroit sûr (comme un tiroir verrouillé — jamais sur une note autocollante sur votre iPad).</li>
+          <li><strong>Changez un mot de passe :</strong> Choisissez un compte (peut-être un site d'achats en ligne — commencez par quelque chose qui n'est pas votre banque) et changez le mot de passe pour votre nouvelle phrase de passe.</li>
+        </ol>
+
+        <div class="success-state">
+          <strong>Le succès ressemble à ceci :</strong> Face ID est configuré et fonctionne. Vous avez au moins un mot de passe en phrase de passe solide. Vous savez où vos mots de passe enregistrés sont stockés sur votre iPad.
+        </div>
+      </div>
+
+      <h2>Vérification rapide : Testez vos connaissances</h2>
+
+      <div class="quiz-container" id="module3-quiz-fr">
+        <div class="quiz-question" data-correct="b">
+          <h3>1. Lequel est le mot de passe le plus solide ?</h3>
+          <button class="quiz-option" data-answer="a">MonNom1954!</button>
+          <button class="quiz-option" data-answer="b">Tulipe-Violette-Pont-44</button>
+          <button class="quiz-option" data-answer="c">motdepasse123</button>
+          <div class="quiz-feedback" data-correct-text="Bravo ! Une phrase de passe avec des mots aléatoires est beaucoup plus difficile à deviner qu'un nom avec une année ou un mot courant." data-incorrect-text="L'option la plus solide est « Tulipe-Violette-Pont-44 » — une phrase de passe de mots aléatoires est difficile à craquer pour les ordinateurs mais facile à retenir pour vous."></div>
+        </div>
+
+        <div class="quiz-question" data-correct="a">
+          <h3>2. Que fait un gestionnaire de mots de passe ?</h3>
+          <button class="quiz-option" data-answer="a">Il stocke de façon sécurisée tous vos mots de passe — vous n'avez besoin d'en retenir qu'un</button>
+          <button class="quiz-option" data-answer="b">Il envoie vos mots de passe à Apple pour les garder en sécurité</button>
+          <button class="quiz-option" data-answer="c">Il fait utiliser le même mot de passe à tous vos comptes</button>
+          <div class="quiz-feedback" data-correct-text="Exactement ! Un gestionnaire de mots de passe est votre coffre-fort numérique sécurisé. Vous retenez un mot de passe, il retient les autres." data-incorrect-text="Un gestionnaire de mots de passe stocke de façon sécurisée tous vos mots de passe sur votre appareil — vous n'avez besoin de retenir qu'un seul mot de passe maître (ou d'utiliser Face ID)."></div>
+        </div>
+
+        <div class="quiz-question" data-correct="c">
+          <h3>3. Vous recevez un message texte avec un code de vérification que vous n'avez pas demandé. Que devriez-vous faire ?</h3>
+          <button class="quiz-option" data-answer="a">L'ignorer — les codes expirent et ce n'est pas grave</button>
+          <button class="quiz-option" data-answer="b">Répondre au texte avec « STOP »</button>
+          <button class="quiz-option" data-answer="c">Ne partager le code avec personne, et envisager de changer votre mot de passe pour ce compte</button>
+          <div class="quiz-feedback" data-correct-text="Correct ! Un code inattendu pourrait signifier que quelqu'un essaie d'accéder à votre compte. Ne le partagez jamais, et changez votre mot de passe pour être prudent." data-incorrect-text="Un code de vérification inattendu pourrait signifier que quelqu'un a votre mot de passe et essaie de se connecter. Ne partagez jamais le code, et changez votre mot de passe pour ce compte."></div>
+        </div>
+
+        <div class="quiz-score">
+          <p class="score-number"></p>
+          <p class="score-message"></p>
+        </div>
+      </div>
+
+      <h2>Liste de vérification — Module 3</h2>
+
+      <div class="checklist">
+        <div class="progress-item">
+          <input type="checkbox" class="progress-checkbox" data-id="m3-1-fr" id="m3-1-fr">
+          <label class="progress-label" for="m3-1-fr">Je comprends ce que Face ID, les mots de passe et l'authentification à deux facteurs signifient</label>
+        </div>
+        <div class="progress-item">
+          <input type="checkbox" class="progress-checkbox" data-id="m3-2-fr" id="m3-2-fr">
+          <label class="progress-label" for="m3-2-fr">Face ID est configuré sur mon appareil</label>
+        </div>
+        <div class="progress-item">
+          <input type="checkbox" class="progress-checkbox" data-id="m3-3-fr" id="m3-3-fr">
+          <label class="progress-label" for="m3-3-fr">Je sais comment créer une phrase de passe solide</label>
+        </div>
+        <div class="progress-item">
+          <input type="checkbox" class="progress-checkbox" data-id="m3-4-fr" id="m3-4-fr">
+          <label class="progress-label" for="m3-4-fr">Je sais où mes mots de passe enregistrés sont stockés</label>
+        </div>
+        <div class="progress-item">
+          <input type="checkbox" class="progress-checkbox" data-id="m3-5-fr" id="m3-5-fr">
+          <label class="progress-label" for="m3-5-fr">J'ai changé au moins un mot de passe faible</label>
+        </div>
+        <div class="progress-item">
+          <input type="checkbox" class="progress-checkbox" data-id="m3-6-fr" id="m3-6-fr">
+          <label class="progress-label" for="m3-6-fr">Je comprends pourquoi je ne dois jamais partager des codes de vérification</label>
+        </div>
+      </div>
+
+      <h2>🤝 Besoin d'aide en personne ?</h2>
+      <p>Votre communauté offre un soutien technologique gratuit pour les aînés :</p>
+
+      <div class="local-help-grid">
+        <div class="local-help-card">
+          <div class="local-help-card-icon">📚</div>
+          <h4>Votre bibliothèque locale</h4>
+          <p>De nombreuses bibliothèques offrent des ateliers technologiques gratuits et des séances individuelles.</p>
+        </div>
+        <div class="local-help-card">
+          <div class="local-help-card-icon">👥</div>
+          <h4>Centre pour aînés</h4>
+          <p>Les centres communautaires organisent souvent des cours de technologie et des groupes de soutien.</p>
+        </div>
+        <div class="local-help-card">
+          <div class="local-help-card-icon">📞</div>
+          <h4>Canadiens Branchés</h4>
+          <p>Soutien technologique gratuit individuel par téléphone ou appel vidéo.<br><strong><a href="tel:+18558080505">1-855-808-0505</a></strong></p>
+        </div>
+        <div class="local-help-card">
+          <div class="local-help-card-icon">🌐</div>
+          <h4>Cyber-Seniors</h4>
+          <p>Formation technologique gratuite de bénévoles formés.<br><strong><a href="tel:+18442173057">1-844-217-3057</a></strong></p>
+        </div>
+      </div>
+
+      <div class="confidence-check">
+        <span class="check-icon">🎉</span>
+        <p>Félicitations ! Vous avez terminé le Module 3 !</p>
+        <p class="check-text">Vos comptes sont maintenant protégés par des mots de passe solides et uniques, un gestionnaire de mots de passe et la biométrie. C'est une forteresse de sécurité, et vous l'avez construite vous-même.</p>
+      </div>
+
+      <div class="feeling-stuck-box">
+        <h4>Vous vous sentez coincé ?</h4>
+        <p>Vous n'avez pas à comprendre ça tout seul. Ces services gratuits sont dotés de vrais gens patients qui adorent aider :</p>
+        <p class="resource-phone"><strong>Canadiens Branchés</strong> — <a href="tel:+18558080505">1-855-808-0505</a></p>
+        <p class="resource-phone"><strong>Cyber-Seniors</strong> — <a href="tel:+18442173057">1-844-217-3057</a></p>
+        <p>Les deux services sont gratuits, canadiens, et spécialisés pour aider les personnes âgées avec la technologie à votre propre rythme.</p>
+      </div>
+
+      <div class="module-nav">
+        <a href="module-2.html" class="btn btn-secondary">← Précédent : Le Bouclier de Sécurité</a>
+        <a href="module-4.html" class="btn btn-primary btn-next">Suivant : Sécurité des Applications →</a>
+      </div>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-brand">Centre de Confiance Numérique</p>
+          <p class="footer-tagline">Un programme d'apprentissage gratuit pour les aînés canadiens</p>
+          <nav class="footer-links" aria-label="Navigation du pied de page">
+            <a href="../index.html">Accueil</a> |
+            <a href="../../../resources.html">Ressources (anglais)</a> |
+            <a href="../../../faq.html">FAQ (anglais)</a> |
+            <a href="../../../about.html">À propos (anglais)</a> |
+            <a href="../../../privacy.html">Politique de confidentialité (anglais)</a>
+          </nav>
+          <p class="footer-support">
+            Besoin d'aide ? Appelez <strong>Canadiens Branchés</strong> gratuitement :
+            <a href="tel:+18558080505">1-855-808-0505</a>
+          </p>
+          <p class="footer-copy">&copy; 2026 Two Birds. Fait avec soin en Ontario, Canada.</p>
+          <p style="font-size:0.78rem;color:#888;margin-top:8px;">⚜ Cette traduction a été générée par ordinateur et nécessite une révision professionnelle.</p>
+        </div>
+      </footer>
+
+      <div id="progress-announcer" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+    </main>
+  </div>
+
+  <script src="../../../js/app.js" defer></script>
+  <script src="../../../js/accessibility.js" defer></script>
+  <script src="../../../js/progress.js" defer></script>
+  <script src="../../../js/scam-quiz.js" defer></script>
+  <button class="btn-print" onclick="window.print()" aria-label="Imprimer ce module">🖨️ Imprimer ce module</button>
+</body>
+</html>

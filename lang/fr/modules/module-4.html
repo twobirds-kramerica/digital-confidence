@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Module 4 : Sécurité des Applications — Apprenez à trouver de vraies applications, à repérer les fausses, à comprendre les permissions et à gérer les abonnements.">
+  <title>Module 4 : Sécurité des Applications | Centre de Confiance Numérique</title>
+  <link rel="stylesheet" href="../../../css/main.css">
+  <link rel="stylesheet" href="../../../css/accessibility.css">
+  <link rel="stylesheet" href="../../../css/mobile.css">
+  <link rel="stylesheet" href="../../../css/print.css">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+  <meta name="theme-color" content="#1565C0">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Passer au contenu principal</a>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Contrôles d'accessibilité">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Petit texte" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Texte moyen" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Grand texte" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Très grand texte" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Passer en mode sombre">🌓</button>
+    <a href="../../../module-4.html" class="a11y-btn" style="font-size:0.82rem;font-weight:700;letter-spacing:0.03em;padding:4px 8px;text-decoration:none;" aria-label="Lire en anglais">⚜ EN</a>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Ouvrir le menu de navigation">☰</button>
+    <span class="site-title">Module 4 : Sécurité des Applications</span>
+    <span></span>
+  </div>
+
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <aside class="sidebar" aria-label="Navigation principale">
+    <button class="sidebar-close" aria-label="Fermer la navigation">&#10005;</button>
+    <div class="sidebar-header">
+      <h2>Centre de Confiance Numérique</h2>
+      <p>Votre parcours d'apprentissage</p>
+    </div>
+    <nav>
+      <a href="../index.html"><span class="nav-icon">🏠</span><span class="nav-label">Accueil</span></a>
+      <a href="module-1.html"><span class="nav-icon">🪂</span><span class="nav-label">1. La Sortie de Secours</span></a>
+      <a href="module-2.html"><span class="nav-icon">🛡️</span><span class="nav-label">2. Le Bouclier de Sécurité</span></a>
+      <a href="module-3.html"><span class="nav-icon">🔑</span><span class="nav-label">3. Mots de Passe</span></a>
+      <a href="module-4.html" aria-current="page"><span class="nav-icon">📱</span><span class="nav-label">4. Sécurité des Applis</span></a>
+      <a href="module-5.html"><span class="nav-icon">✉️</span><span class="nav-label">5. Courriels et Messages</span></a>
+      <a href="module-6.html"><span class="nav-icon">🏦</span><span class="nav-label">6. Services Bancaires</span></a>
+      <a href="../../../module-7.html"><span class="nav-icon">🎨</span><span class="nav-label">7. Photos (anglais)</span></a>
+      <a href="../../../module-8.html"><span class="nav-icon">👨‍👩‍👧</span><span class="nav-label">8. Rester Connecté (anglais)</span></a>
+      <a href="../../../module-9.html"><span class="nav-icon">🤖</span><span class="nav-label">9. Comprendre l'IA (anglais)</span></a>
+      <a href="../../../module-10.html"><span class="nav-icon">🛒</span><span class="nav-label">10. Épicerie en ligne (anglais)</span></a>
+      <a href="../../../module-11.html"><span class="nav-icon">🚗</span><span class="nav-label">11. Covoiturage (anglais)</span></a>
+      <div class="sidebar-a11y-section">
+        <p class="sidebar-a11y-title">Taille du texte</p>
+        <div class="sidebar-font-row">
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Petit texte" aria-pressed="false" style="font-size:0.8rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Texte moyen" aria-pressed="false" style="font-size:1rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Grand texte" aria-pressed="false" style="font-size:1.2rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Très grand texte" aria-pressed="false" style="font-size:1.4rem">A</button>
+        </div>
+        <p class="sidebar-a11y-title">Couleur de l'écran</p>
+        <div class="sidebar-theme-row">
+          <button class="a11y-btn theme-toggle-btn" aria-label="Passer en mode sombre">🌓</button>
+        </div>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <h1>Module 4 : Sécurité des Applications</h1>
+      <p><strong>Ce que vous allez apprendre :</strong> Comment trouver et télécharger des applications sécurisées, repérer les fausses applications, comprendre les permissions et gérer les abonnements — sans mauvaises surprises.</p>
+      <img class="module-hero-image" src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&h=400&fit=crop&v=2" alt="Une personne parcourant les applications sur une tablette" width="1200" height="400" loading="eager">
+
+      <div class="story-block">
+        <span class="story-label">L'histoire de François</span>
+        <p>François, 76 ans, voulait télécharger une application météo pour son iPad. Son ami lui en avait recommandé une, alors François a ouvert ce qu'il pensait être l'App Store et a cherché « météo ». Il a trouvé une application qui semblait correcte, a tapé « Obtenir » et a immédiatement été invité à entrer son numéro de carte de crédit. François l'a entré, pensant que c'était normal.</p>
+        <p>Deux semaines plus tard, François a remarqué un débit de 49,99 $ sur sa carte de crédit d'une entreprise qu'il n'avait jamais entendue. Il s'avérait qu'il avait téléchargé une fausse application météo qui l'avait inscrit à un abonnement hebdomadaire. L'« App Store » qu'il avait utilisé était en fait un site Web se faisant passer pour l'App Store.</p>
+        <p>L'erreur de François était compréhensible — le faux magasin semblait très réel. Mais il existe des façons claires de s'assurer qu'on utilise le vrai App Store, qu'on télécharge de vraies applications et qu'on n'est jamais trompé par des frais cachés. C'est de cela que parle ce module.</p>
+      </div>
+
+      <div class="tip-box">
+        <span class="tip-box-label">Conseil</span>
+        <p>La façon la plus sûre d'ouvrir l'App Store est de taper directement sur son icône sur votre écran d'accueil — jamais depuis un lien dans un courriel, un message texte ou un site Web.</p>
+      </div>
+
+      <h2>Le vrai App Store : Comment le trouver</h2>
+
+      <p>L'App Store est le seul endroit sûr pour télécharger des applications sur votre iPad ou iPhone. Il est géré par Apple, et chaque application qu'il contient a été vérifiée pour sa sécurité. Voici comment trouver le vrai :</p>
+
+      <div class="walkthrough">
+        <h3>Trouver et ouvrir l'App Store</h3>
+        <div class="walkthrough-step">
+          <span class="step-num">1</span>
+          <span class="step-text">Cherchez sur votre écran d'accueil une <strong>icône bleue avec une lettre « A » blanche faite de lignes</strong> (comme des bâtons arrangés en forme de A). C'est l'App Store.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">2</span>
+          <span class="step-text">Tapez une fois dessus pour l'ouvrir.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">3</span>
+          <span class="step-text">Vous verrez un écran avec des applications recommandées, des catégories et une barre de recherche en haut.</span>
+        </div>
+      </div>
+
+      <div class="warning-block">
+        <span class="warning-label">Important</span>
+        <p>Ne téléchargez jamais des applications depuis un site Web, un lien dans un courriel ou un lien dans un message texte. Utilisez uniquement l'App Store officiel sur votre appareil. Si quelqu'un vous envoie un lien pour télécharger une application, ignorez-le — trouvez vous-même l'application dans le vrai App Store.</p>
+      </div>
+
+      <div class="confidence-check">
+        <span class="check-icon">💛</span>
+        <p>Vérification de confiance : L'App Store est votre centre commercial sécurisé pour les applications. Si vous vous en tenez à l'App Store, vous êtes déjà en avance.</p>
+      </div>
+
+      <h2>Comment télécharger une application</h2>
+
+      <div class="walkthrough">
+        <h3>Télécharger une application étape par étape</h3>
+        <div class="walkthrough-step">
+          <span class="step-num">1</span>
+          <span class="step-text">Ouvrez l'<strong>App Store</strong> (icône bleue avec « A » blanc).</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">2</span>
+          <span class="step-text">Tapez sur l'onglet <strong>Rechercher</strong> en bas de l'écran (il ressemble à une loupe).</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">3</span>
+          <span class="step-text">Tapez sur la barre de recherche en haut et tapez le nom de l'application que vous voulez. Par exemple, tapez « MétéoMédia ».</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">4</span>
+          <span class="step-text">Une liste de résultats apparaîtra. <strong>Avant de télécharger quoi que ce soit, vérifiez attentivement l'application</strong> (voir la liste de vérification ci-dessous).</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">5</span>
+          <span class="step-text">Quand vous trouvez la bonne application, tapez le bouton bleu <strong>« Obtenir »</strong> (pour les applications gratuites) ou le bouton de prix (pour les applications payantes).</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">6</span>
+          <span class="step-text">Confirmez avec <strong>Face ID</strong> ou votre code d'accès.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">7</span>
+          <span class="step-text">L'application se téléchargera et apparaîtra sur votre écran d'accueil. Vous pouvez taper dessus pour l'ouvrir.</span>
+        </div>
+      </div>
+
+      <h2>Comment distinguer une vraie application d'une fausse</h2>
+
+      <p>Quand vous cherchez dans l'App Store, vous pourriez voir plusieurs applications avec des noms similaires. Voici comment choisir la vraie :</p>
+
+      <ul class="content-list">
+        <li><strong>Vérifiez le nom du développeur.</strong> Le nom du développeur apparaît sous le nom de l'application en petits caractères. Par exemple, la vraie application « RBC Mobile » est faite par « Royal Bank of Canada ». Si le nom du développeur vous semble inconnu ou mal orthographié, soyez prudent.</li>
+        <li><strong>Regardez le nombre d'évaluations.</strong> Les applications populaires et légitimes ont des milliers ou des millions d'évaluations. Un clone peut en avoir très peu — peut-être des dizaines, voire aucune.</li>
+        <li><strong>Lisez la note en étoiles.</strong> La plupart des vraies applications d'entreprises établies ont des notes de 3,5 étoiles ou plus (sur 5). Des notes très basses (en dessous de 2 étoiles) sont un signe d'avertissement.</li>
+        <li><strong>Vérifiez les captures d'écran.</strong> Faites défiler vers le bas pour voir des images de l'aspect de l'application. Ont-elles l'air professionnelles ?</li>
+        <li><strong>Repérez l'étiquette « Achats intégrés ».</strong> Si une application dit « Achats intégrés » sous le bouton « Obtenir », cela signifie que l'application est gratuite à télécharger mais peut vous demander de payer pour des fonctionnalités supplémentaires à l'intérieur.</li>
+      </ul>
+
+      <div class="visual-example-card" role="img" aria-label="Vraie application vs application copie">
+        <div class="example-icon">⚠️</div>
+        <div class="example-content">
+          <h4 class="example-title">Vraie application vs application copie</h4>
+          <p class="example-description">Une vraie application bancaire est publiée par la banque elle-même et compte des millions de téléchargements. Une copie utilise un nom et un logo similaires mais provient d'un développeur inconnu avec très peu d'évaluations.</p>
+        </div>
+      </div>
+
+      <div class="three-second-rule">
+        <h3>La Règle des 3 Secondes pour les applications</h3>
+        <div class="steps">
+          <div class="step">
+            <span class="step-icon">✋</span>
+            <span class="step-name">Arrêtez</span>
+            <span class="step-desc">Avant de taper « Obtenir », faites une pause et vérifiez les détails.</span>
+          </div>
+          <div class="step">
+            <span class="step-icon">🫁</span>
+            <span class="step-name">Respirez</span>
+            <span class="step-desc">Il n'y a pas de précipitation. L'application sera encore là dans cinq minutes.</span>
+          </div>
+          <div class="step">
+            <span class="step-icon">🔍</span>
+            <span class="step-name">Vérifiez</span>
+            <span class="step-desc">Vérifiez le développeur, les évaluations et les avis. Est-ce que tout semble correct ?</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="warning-box">
+        <span class="warning-box-label">Attention</span>
+        <p>Si une application a très peu d'évaluations, un nom de développeur que vous ne reconnaissez pas, ou des captures d'écran qui semblent peu soignées, ne la téléchargez pas. Une vraie application d'une grande entreprise aura toujours des milliers d'évaluations.</p>
+      </div>
+
+      <h2>Comprendre les permissions des applications</h2>
+
+      <p>Lorsque vous ouvrez une nouvelle application pour la première fois, elle pourrait demander la permission d'accéder à des parties de votre iPad. Ces demandes apparaissent sous forme de petites fenêtres contextuelles. Voici ce que les plus courantes signifient :</p>
+
+      <ul class="content-list">
+        <li><strong>« [Application] aimerait vous envoyer des notifications »</strong> — L'application veut vous envoyer des alertes et des rappels, même quand vous ne l'utilisez pas. Tapez <strong>« Autoriser »</strong> si vous voulez des rappels ou <strong>« Ne pas autoriser »</strong> si vous ne voulez pas être dérangé.</li>
+        <li><strong>« [Application] aimerait accéder à votre localisation »</strong> — L'application veut savoir où vous êtes. Une application météo ou de cartographie en a besoin pour fonctionner. Un jeu ou une application de lampe de poche n'en a pas besoin. Choisissez « Lors de l'utilisation » pour les applications qui ont vraiment besoin de votre localisation.</li>
+        <li><strong>« [Application] aimerait accéder à vos photos »</strong> — L'application veut voir les images stockées sur votre iPad. Une application de retouche photo en a besoin ; une calculatrice non.</li>
+        <li><strong>« [Application] aimerait accéder à vos contacts »</strong> — L'application veut voir votre carnet d'adresses. Autorisez cela uniquement pour les applications de communication comme FaceTime ou Messages.</li>
+        <li><strong>« [Application] aimerait vous suivre »</strong> — L'application veut suivre ce que vous faites sur d'autres applications et sites Web pour vous montrer des publicités ciblées. Presque toujours, tapez <strong>« Demander de ne pas suivre »</strong>.</li>
+      </ul>
+
+      <div class="tip-block">
+        <span class="tip-label">La règle simple</span>
+        <p>Si vous n'êtes pas sûr, choisissez <strong>« Ne pas autoriser »</strong>. Vous pouvez toujours changer d'avis plus tard dans Réglages. Dire « non » ne casse jamais une application — au pire, une fonctionnalité pourrait ne pas fonctionner, et l'application vous le dira.</p>
+      </div>
+
+      <h2>Abonnements et coûts cachés</h2>
+
+      <p>Certaines applications sont gratuites à télécharger mais facturent des frais mensuels ou annuels pour continuer à les utiliser. C'est ce qu'on appelle un <strong>abonnement</strong>. C'est comme un abonnement à une revue — vous payez régulièrement pour continuer à la recevoir.</p>
+
+      <p>Les abonnements ne sont pas nécessairement mauvais, mais vous devez toujours savoir à quoi vous vous inscrivez. Voici comment vérifier :</p>
+
+      <div class="walkthrough">
+        <h3>Vérifier vos abonnements</h3>
+        <div class="walkthrough-step">
+          <span class="step-num">1</span>
+          <span class="step-text">Ouvrez <strong>Réglages</strong> (l'icône des engrenages gris).</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">2</span>
+          <span class="step-text">Tapez sur votre <strong>nom</strong> en haut.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">3</span>
+          <span class="step-text">Tapez sur <strong>« Abonnements »</strong>.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">4</span>
+          <span class="step-text">Vous verrez une liste de tous les abonnements actifs. Si vous voyez quelque chose que vous ne reconnaissez pas ou ne voulez plus, tapez dessus et choisissez <strong>« Annuler l'abonnement »</strong>.</span>
+        </div>
+      </div>
+
+      <div class="warning-block">
+        <span class="warning-label">Attention</span>
+        <p>Certaines applications offrent un « essai gratuit » qui se transforme automatiquement en abonnement payant après 3 ou 7 jours. Si vous essayez un essai gratuit, définissez un rappel sur votre téléphone pour annuler avant la fin de l'essai — ou annulez immédiatement après vous être inscrit (vous bénéficierez quand même de toute la période d'essai, mais vous ne serez pas facturé par la suite).</p>
+      </div>
+
+      <h2>Supprimer des applications que vous ne voulez plus</h2>
+
+      <div class="walkthrough">
+        <h3>Supprimer une application de votre iPad</h3>
+        <div class="walkthrough-step">
+          <span class="step-num">1</span>
+          <span class="step-text">Trouvez l'icône de l'application sur votre écran d'accueil.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">2</span>
+          <span class="step-text"><strong>Appuyez et maintenez</strong> l'icône pendant environ deux secondes. Les icônes commenceront à osciller.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">3</span>
+          <span class="step-text">Vous verrez un petit <strong>« X »</strong> ou un signe <strong>moins</strong> dans le coin de chaque application. Tapez dessus sur l'application que vous voulez supprimer.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">4</span>
+          <span class="step-text">Tapez sur <strong>« Supprimer l'app »</strong> pour confirmer. (Si vous changez d'avis, vous pouvez toujours la télécharger à nouveau depuis l'App Store.)</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">5</span>
+          <span class="step-text">Appuyez sur le bouton Accueil (ou tapez « OK ») pour arrêter l'oscillation.</span>
+        </div>
+      </div>
+
+      <p>Rappel : supprimer une application <strong>n'annule pas</strong> un abonnement. Si vous payez une application mensuellement, vous devez annuler l'abonnement séparément (en utilisant les étapes ci-dessus) avant de supprimer l'application.</p>
+
+      <div class="confidence-check-box">
+        <span class="check-icon">🌟</span>
+        <p>Vous devenez un acheteur d'applications averti. Vous savez comment vérifier les permissions et surveiller les coûts cachés.</p>
+        <p class="check-subtext">Ces compétences vous protègent à chaque fois que vous utilisez votre appareil.</p>
+      </div>
+
+      <div class="exercise-block">
+        <h3>Exercice pratique : Explorer l'App Store</h3>
+        <ol class="numbered-list">
+          <li>Ouvrez l'App Store et cherchez <strong>« MétéoMédia »</strong>. Vérifiez le nom du développeur, la note en étoiles et le nombre d'avis. Ne le téléchargez pas — c'est pour s'entraîner.</li>
+          <li>Allez dans Réglages → [Votre Nom] → Abonnements et vérifiez si vous avez des abonnements actifs que vous ne connaissiez pas.</li>
+          <li>Si vous avez des applications sur votre écran d'accueil que vous ne reconnaissez pas ou n'utilisez plus, entraînez-vous à en supprimer une.</li>
+        </ol>
+        <div class="success-state">
+          <strong>Le succès ressemble à ceci :</strong> Vous pouvez rechercher une application en toute confiance, vérifier qu'elle est légitime en vérifiant le développeur et les évaluations, et vous savez où trouver et annuler les abonnements.
+        </div>
+      </div>
+
+      <h2>Vérification rapide : Testez vos connaissances</h2>
+
+      <div class="quiz-container" id="module4-quiz-fr">
+        <div class="quiz-question" data-correct="b">
+          <h3>1. Quel est le seul endroit sûr pour télécharger des applications pour votre iPad ?</h3>
+          <button class="quiz-option" data-answer="a">Depuis un lien que quelqu'un vous a envoyé par texto</button>
+          <button class="quiz-option" data-answer="b">L'application App Store sur votre iPad</button>
+          <button class="quiz-option" data-answer="c">N'importe quel site Web qui affiche des applications</button>
+          <div class="quiz-feedback" data-correct-text="Exactement ! L'App Store sur votre iPad est le seul endroit sûr. Ne téléchargez jamais depuis des liens dans des courriels ou des textos." data-incorrect-text="Le seul endroit sûr est l'application App Store sur votre iPad (l'icône bleue avec le A blanc). Ne téléchargez jamais depuis des liens dans des courriels ou des textos."></div>
+        </div>
+
+        <div class="quiz-question" data-correct="a">
+          <h3>2. Une application demande la permission de « Suivre votre activité sur les applications et sites Web d'autres entreprises. » Que devriez-vous faire ?</h3>
+          <button class="quiz-option" data-answer="a">Taper « Demander de ne pas suivre »</button>
+          <button class="quiz-option" data-answer="b">Taper « Autoriser » pour que l'application fonctionne correctement</button>
+          <button class="quiz-option" data-answer="c">Supprimer l'application immédiatement</button>
+          <div class="quiz-feedback" data-correct-text="Bon choix ! Le suivi concerne les publicités ciblées, pas le fonctionnement de l'application. Vous pouvez presque toujours dire non." data-incorrect-text="Le meilleur choix est « Demander de ne pas suivre ». Cette permission concerne les publicités, pas le fonctionnement de l'application. L'application fonctionnera très bien sans."></div>
+        </div>
+
+        <div class="quiz-question" data-correct="c">
+          <h3>3. Vous avez supprimé une application, mais vous êtes toujours facturé 9,99 $ par mois. Pourquoi ?</h3>
+          <button class="quiz-option" data-answer="a">Votre iPad est brisé</button>
+          <button class="quiz-option" data-answer="b">Quelqu'un a piraté votre compte</button>
+          <button class="quiz-option" data-answer="c">Supprimer une application n'annule pas son abonnement — vous devez annuler séparément dans Réglages</button>
+          <div class="quiz-feedback" data-correct-text="C'est exact ! Supprimer une application et annuler un abonnement sont deux étapes distinctes. Allez dans Réglages → Votre Nom → Abonnements pour annuler." data-incorrect-text="Supprimer une application n'annule pas son abonnement. Vous devez aller dans Réglages → Votre Nom → Abonnements pour annuler le paiement."></div>
+        </div>
+
+        <div class="quiz-score">
+          <p class="score-number"></p>
+          <p class="score-message"></p>
+        </div>
+      </div>
+
+      <div class="confidence-check">
+        <span class="check-icon">🎉</span>
+        <p>Félicitations ! Vous avez terminé le Module 4 !</p>
+        <p class="check-text">Vous êtes maintenant un acheteur d'applications averti qui sait rester en sécurité dans l'App Store. En avant vers les courriels et les messages !</p>
+      </div>
+
+      <div class="feeling-stuck-box">
+        <h4>Vous vous sentez coincé ?</h4>
+        <p>Vous n'avez pas à comprendre ça tout seul. Ces services gratuits sont dotés de vrais gens patients qui adorent aider :</p>
+        <p class="resource-phone"><strong>Canadiens Branchés</strong> — <a href="tel:+18558080505">1-855-808-0505</a></p>
+        <p class="resource-phone"><strong>Cyber-Seniors</strong> — <a href="tel:+18442173057">1-844-217-3057</a></p>
+        <p>Les deux services sont gratuits, canadiens, et spécialisés pour aider les personnes âgées avec la technologie à votre propre rythme.</p>
+      </div>
+
+      <div class="module-nav">
+        <a href="module-3.html" class="btn btn-secondary">← Précédent : Mots de Passe</a>
+        <a href="module-5.html" class="btn btn-primary btn-next">Suivant : Courriels et Messages →</a>
+      </div>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-brand">Centre de Confiance Numérique</p>
+          <p class="footer-tagline">Un programme d'apprentissage gratuit pour les aînés canadiens</p>
+          <nav class="footer-links" aria-label="Navigation du pied de page">
+            <a href="../index.html">Accueil</a> |
+            <a href="../../../resources.html">Ressources (anglais)</a> |
+            <a href="../../../faq.html">FAQ (anglais)</a> |
+            <a href="../../../about.html">À propos (anglais)</a> |
+            <a href="../../../privacy.html">Politique de confidentialité (anglais)</a>
+          </nav>
+          <p class="footer-support">
+            Besoin d'aide ? Appelez <strong>Canadiens Branchés</strong> gratuitement :
+            <a href="tel:+18558080505">1-855-808-0505</a>
+          </p>
+          <p class="footer-copy">&copy; 2026 Two Birds. Fait avec soin en Ontario, Canada.</p>
+          <p style="font-size:0.78rem;color:#888;margin-top:8px;">⚜ Cette traduction a été générée par ordinateur et nécessite une révision professionnelle.</p>
+        </div>
+      </footer>
+
+      <div id="progress-announcer" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+    </main>
+  </div>
+
+  <script src="../../../js/app.js" defer></script>
+  <script src="../../../js/accessibility.js" defer></script>
+  <script src="../../../js/progress.js" defer></script>
+  <script src="../../../js/scam-quiz.js" defer></script>
+  <button class="btn-print" onclick="window.print()" aria-label="Imprimer ce module">🖨️ Imprimer ce module</button>
+</body>
+</html>

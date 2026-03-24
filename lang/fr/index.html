@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Le Centre de Confiance Numérique — programme gratuit d'apprentissage numérique pour les aînés de l'Ontario. Version française en préparation.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="description" content="Le Centre de Confiance Numérique — programme gratuit d'apprentissage numérique pour les aînés de l'Ontario. Apprenez à utiliser votre iPad en toute sécurité.">
   <title>Accueil — Centre de Confiance Numérique</title>
   <link rel="stylesheet" href="../../css/main.css">
   <link rel="stylesheet" href="../../css/accessibility.css">
@@ -12,56 +13,50 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
   <meta name="theme-color" content="#1565C0">
-  <meta name="robots" content="noindex, follow">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Confiance Numérique">
 </head>
 <body>
   <a href="#main" class="skip-link">Passer au contenu principal</a>
 
-  <!-- Accessibility Controls -->
   <div class="accessibility-bar" role="toolbar" aria-label="Contrôles d'accessibilité">
     <button class="a11y-btn font-size-btn" data-size="small" aria-label="Petit texte" aria-pressed="false" style="font-size:0.8rem">A</button>
     <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Texte moyen" aria-pressed="true" style="font-size:1rem">A</button>
     <button class="a11y-btn font-size-btn" data-size="large" aria-label="Grand texte" aria-pressed="false" style="font-size:1.2rem">A</button>
     <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Très grand texte" aria-pressed="false" style="font-size:1.4rem">A</button>
     <button class="a11y-btn theme-toggle-btn" aria-label="Passer en mode sombre">🌓</button>
-    <a href="../../index.html" class="a11y-btn" style="font-size:0.82rem;font-weight:700;letter-spacing:0.03em;padding:4px 8px;text-decoration:none;">⚜ EN</a>
+    <a href="../../index.html" class="a11y-btn" style="font-size:0.82rem;font-weight:700;letter-spacing:0.03em;padding:4px 8px;text-decoration:none;" aria-label="Lire ce site en anglais">⚜ EN</a>
   </div>
 
-  <!-- Top Bar (Mobile) -->
   <div class="top-bar">
     <button class="menu-btn" aria-label="Ouvrir le menu de navigation">☰</button>
     <span class="site-title">Centre de Confiance Numérique</span>
     <span></span>
   </div>
 
-  <!-- Sidebar Overlay -->
   <div class="sidebar-overlay" aria-hidden="true"></div>
 
-  <!-- Sidebar Navigation -->
   <aside class="sidebar" aria-label="Navigation principale">
-    <button class="sidebar-close" aria-label="Fermer la navigation">✕</button>
+    <button class="sidebar-close" aria-label="Fermer la navigation">&#10005;</button>
     <div class="sidebar-header">
       <h2>Centre de Confiance Numérique</h2>
       <p>Votre parcours d'apprentissage</p>
     </div>
     <nav>
-      <a href="index.html"><span class="nav-icon">🏠</span><span class="nav-label">Accueil</span></a>
-      <a href="../../digital-literacy-101.html"><span class="nav-icon">📖</span><span class="nav-label">Fondements</span></a>
-      <a href="../../module-1.html"><span class="nav-icon">🪂</span><span class="nav-label">1. The Escape Hatch</span></a>
-      <a href="../../module-2.html"><span class="nav-icon">🛡️</span><span class="nav-label">2. Security Shield</span></a>
-      <a href="../../module-3.html"><span class="nav-icon">🔑</span><span class="nav-label">3. Passwords</span></a>
-      <a href="../../module-4.html"><span class="nav-icon">📱</span><span class="nav-label">4. App Store Safety</span></a>
-      <a href="../../module-5.html"><span class="nav-icon">✉️</span><span class="nav-label">5. Email &amp; Messages</span></a>
-      <a href="../../module-6.html"><span class="nav-icon">🏦</span><span class="nav-label">6. Banking</span></a>
-      <a href="../../module-7.html"><span class="nav-icon">🎨</span><span class="nav-label">7. Photos &amp; Memories</span></a>
-      <a href="../../module-8.html"><span class="nav-icon">👨‍👩‍👧</span><span class="nav-label">8. Stay Connected</span></a>
-      <a href="../../module-9.html"><span class="nav-icon">🤖</span><span class="nav-label">9. Understanding AI</span></a>
-      <a href="../../module-10.html"><span class="nav-icon">🛒</span><span class="nav-label">10. Grocery &amp; Delivery</span></a>
-      <a href="../../module-11.html"><span class="nav-icon">🚗</span><span class="nav-label">11. Ride-Sharing</span></a>
-      <a href="../../module-12.html"><span class="nav-icon">🤝</span><span class="nav-label">12. Getting the Help You Deserve</span></a>
-      <a href="../../family-setup.html"><span class="nav-icon">👪</span><span class="nav-label">Pour un proche</span></a>
-      <a href="../../resources.html"><span class="nav-icon">📚</span><span class="nav-label">Ressources</span></a>
-      <a href="../../scam-simulator.html"><span class="nav-icon">🎯</span><span class="nav-label">Simulateur d'arnaques</span></a>
+      <a href="index.html" aria-current="page"><span class="nav-icon">🏠</span><span class="nav-label">Accueil</span></a>
+      <a href="modules/module-1.html"><span class="nav-icon">🪂</span><span class="nav-label">1. La Porte de Sortie</span></a>
+      <a href="modules/module-2.html"><span class="nav-icon">🛡️</span><span class="nav-label">2. Le Bouclier de Sécurité</span></a>
+      <a href="modules/module-3.html"><span class="nav-icon">🔑</span><span class="nav-label">3. Mots de Passe et Biométrie</span></a>
+      <a href="modules/module-4.html"><span class="nav-icon">📱</span><span class="nav-label">4. Sécurité des Applications</span></a>
+      <a href="modules/module-5.html"><span class="nav-icon">✉️</span><span class="nav-label">5. Courriels et Messages</span></a>
+      <a href="modules/module-6.html"><span class="nav-icon">🏦</span><span class="nav-label">6. Services Bancaires en Ligne</span></a>
+      <a href="../../module-7.html"><span class="nav-icon">🎨</span><span class="nav-label">7. Photos et Souvenirs <em>(anglais)</em></span></a>
+      <a href="../../module-8.html"><span class="nav-icon">👨‍👩‍👧</span><span class="nav-label">8. Rester Connecté <em>(anglais)</em></span></a>
+      <a href="../../module-9.html"><span class="nav-icon">🤖</span><span class="nav-label">9. Comprendre l'IA <em>(anglais)</em></span></a>
+      <a href="../../module-10.html"><span class="nav-icon">🛒</span><span class="nav-label">10. Épicerie en Ligne <em>(anglais)</em></span></a>
+      <a href="../../module-11.html"><span class="nav-icon">🚗</span><span class="nav-label">11. Transport par Application <em>(anglais)</em></span></a>
+      <a href="../../module-12.html"><span class="nav-icon">🤝</span><span class="nav-label">12. Obtenir de l'Aide <em>(anglais)</em></span></a>
+      <a href="../../resources.html"><span class="nav-icon">📚</span><span class="nav-label">Ressources <em>(anglais)</em></span></a>
       <div class="sidebar-a11y-section">
         <p class="sidebar-a11y-title">Taille du texte</p>
         <div class="sidebar-font-row">
@@ -75,17 +70,17 @@
           <button class="a11y-btn theme-toggle-btn" aria-label="Passer en mode sombre">🌓</button>
         </div>
       </div>
-        <p class="sidebar-a11y-title">Confort de lecture</p>
-        <div class="font-option">
-          <label class="toggle-label" for="dyslexic-font-toggle">
-            <input type="checkbox" id="dyslexic-font-toggle" />
-            <span class="toggle-switch"></span>
-            <span class="toggle-text">
-              <strong>Police adaptée à la dyslexie</strong>
-              <small>Plus facile à lire pour certaines personnes</small>
-            </span>
-          </label>
-        </div>
+      <p class="sidebar-a11y-title">Confort de lecture</p>
+      <div class="font-option">
+        <label class="toggle-label" for="dyslexic-font-toggle">
+          <input type="checkbox" id="dyslexic-font-toggle" />
+          <span class="toggle-switch"></span>
+          <span class="toggle-text">
+            <strong>Police adaptée à la dyslexie</strong>
+            <small>Plus facile à lire pour certaines personnes</small>
+          </span>
+        </label>
+      </div>
       <div class="settings-divider"></div>
       <a href="../../index.html" class="settings-link" style="font-weight:700;"><span class="nav-icon">⚜</span><span class="nav-label">Version anglaise</span></a>
     </nav>
@@ -94,38 +89,186 @@
   <div class="page-wrapper">
     <main class="main-content" id="main">
 
-      <!-- French Coming Soon Banner -->
-      <div class="story-block" style="background:#fff8e1;border-left-color:#f59e0b;">
-        <span class="story-label" style="background:#f59e0b;">&#x1F1EB;&#x1F1F7; Version française</span>
-        <p><strong>La version française complète est en préparation.</strong> Nous travaillons avec des traducteurs professionnels pour vous offrir une traduction de qualité, pas une traduction automatique.</p>
-        <p>La traduction complète est prévue pour le printemps 2026. En attendant, <a href="../../index.html">visitez la version anglaise →</a></p>
-      </div>
-
-      <!-- Placeholder Hero -->
       <div class="welcome-hero welcome-hero-inner">
         <div class="welcome-hero-text">
-          <h1>Développez Votre Confiance Numérique</h1>
-          <p class="subtitle">Apprentissage gratuit et guidé pour les aînés de l'Ontario.</p>
-          <p class="tagline">Cette page sera bientôt disponible en français.</p>
+          <h1>Bienvenue au Centre de Confiance Numérique</h1>
+          <p class="subtitle">Un programme d'apprentissage gratuit et à votre rythme pour les aînés qui veulent se sentir en sécurité et en confiance avec leur appareil.</p>
+          <p class="tagline">Vous n'êtes pas en retard. Vous arrivez au bon moment. Apprenons ensemble.</p>
+        </div>
+        <div class="welcome-hero-image">
+          <img src="../../images/senior-woman-ipad.jpg" alt="Femme âgée souriante utilisant une tablette" width="260" height="200" loading="eager">
         </div>
       </div>
 
-      <!-- What's available now -->
       <div class="story-block">
-        <span class="story-label">Disponible maintenant</span>
-        <p>Pendant que nous préparons la version française complète, vous pouvez :</p>
-        <ul style="margin-top:12px;line-height:2;">
-          <li><a href="../../index.html">Consulter la version anglaise complète →</a></li>
-          <li><a href="../../faq.html">Lire la FAQ (partiellement disponible en français) →</a></li>
-          <li><a href="../../resources.html">Consulter les ressources ontariennes →</a></li>
-        </ul>
+        <span class="story-label">Un mot de votre guide</span>
+        <p>Ce site a été conçu en pensant à une personne en particulier : quelqu'un d'intelligent, de capable, qui possède une vie entière de sagesse — mais qui trouve que la technologie d'aujourd'hui est un peu accablante. Cette personne, c'est peut-être vous, et c'est tout à fait normal.</p>
+        <p>Chaque leçon ici avance à votre rythme. Il n'y a pas d'examens que vous pouvez rater. Il n'y a rien que vous pouvez briser. Et si jamais vous vous sentez perdu, vous pouvez toujours revenir à cette page d'accueil et recommencer à zéro.</p>
+        <p>Imaginez que c'est votre voisin bienveillant assis à votre table de cuisine avec une tasse de thé, vous guidant à travers les choses une étape à la fois.</p>
       </div>
 
-      <!-- Contact -->
+      <div class="tip-block" style="background:#fff8e1;border-left-color:#f59e0b;">
+        <span class="tip-label" style="background:#f59e0b;">⚜ Version française</span>
+        <p>Les modules 1 à 6 sont disponibles en français. Les modules 7 à 12 sont disponibles en anglais seulement pour le moment. <a href="../../index.html">Visiter la version anglaise complète →</a></p>
+        <p style="font-size:0.82rem;color:#666;margin-top:6px;">⚜ Ces traductions ont été générées par ordinateur et nécessitent une révision professionnelle.</p>
+      </div>
+
+      <h2 style="border:none;margin-top:var(--spacing-lg);">Vos modules d'apprentissage</h2>
+      <p>Parcourez-les dans l'ordre, ou passez directement au sujet dont vous avez le plus besoin. Chaque module est conçu pour être complété en une seule séance, mais vous pouvez toujours revenir et réviser.</p>
+
+      <div class="module-grid">
+
+        <a href="modules/module-1.html" class="module-card" data-module="1">
+          <div class="card-icon">🏠</div>
+          <div class="card-content">
+            <h3>Module 1 : Maîtriser la Porte de Sortie</h3>
+            <p>Apprenez la compétence qui change tout : comment revenir en sécurité peu importe ce qui se passe sur votre écran. Le bouton d'accueil, fermer les applications et pourquoi rien de ce que vous faites n'est permanent.</p>
+          </div>
+        </a>
+
+        <a href="modules/module-2.html" class="module-card" data-module="2">
+          <div class="card-icon">🛡️</div>
+          <div class="card-content">
+            <h3>Module 2 : Le Bouclier de Sécurité</h3>
+            <p>Votre guide complet pour repérer les arnaques, les courriels d'hameçonnage et les appels téléphoniques frauduleux. Comprend de vrais exemples canadiens et la puissante Règle des 3 Secondes.</p>
+          </div>
+        </a>
+
+        <a href="modules/module-3.html" class="module-card" data-module="3">
+          <div class="card-icon">🔑</div>
+          <div class="card-content">
+            <h3>Module 3 : Mots de Passe et Biométrie</h3>
+            <p>Sécurisez vos comptes sans mémoriser des dizaines de mots de passe. Apprenez Face ID, les gestionnaires de mots de passe et ce que « l'authentification à deux facteurs » signifie vraiment.</p>
+          </div>
+        </a>
+
+        <a href="modules/module-4.html" class="module-card" data-module="4">
+          <div class="card-icon">📱</div>
+          <div class="card-content">
+            <h3>Module 4 : Sécurité des Applications</h3>
+            <p>Comment trouver, télécharger et vérifier des applications en toute sécurité. Apprenez à repérer les fausses applications, à comprendre les autorisations et à garder votre appareil en bon état.</p>
+          </div>
+        </a>
+
+        <a href="modules/module-5.html" class="module-card" data-module="5">
+          <div class="card-icon">✉️</div>
+          <div class="card-content">
+            <h3>Module 5 : Courriels et Messages</h3>
+            <p>Maîtrisez les communications sécuritaires. Repérez les courriels frauduleux, bloquez les appelants indésirables et envoyez des messages et des photos à votre famille en toute confiance.</p>
+          </div>
+        </a>
+
+        <a href="modules/module-6.html" class="module-card" data-module="6">
+          <div class="card-icon">🏦</div>
+          <div class="card-content">
+            <h3>Module 6 : Services Bancaires en Ligne</h3>
+            <p>Les services bancaires en ligne n'ont pas à faire peur. Apprenez à vérifier votre solde, payer vos factures et faire des achats sécuritaires — le tout depuis votre iPad.</p>
+          </div>
+        </a>
+
+        <a href="../../module-7.html" class="module-card" data-module="7">
+          <div class="card-icon">🎨</div>
+          <div class="card-content">
+            <span class="card-badge" style="background:#888;">anglais</span>
+            <h3>Module 7 : Photos et Souvenirs</h3>
+            <p>Le contenu amusant ! Explorez la retouche photo, les applications de dessin et les outils créatifs. Votre iPad n'est pas seulement pour les courriels — c'est une toile pour votre créativité.</p>
+          </div>
+        </a>
+
+        <a href="../../module-8.html" class="module-card" data-module="8">
+          <div class="card-icon">👨‍👩‍👧</div>
+          <div class="card-content">
+            <span class="card-badge" style="background:#888;">anglais</span>
+            <h3>Module 8 : Rester Connecté</h3>
+            <p>Utilisez votre appareil pour renforcer les liens familiaux. Appels vidéo, albums photo partagés, messages de groupe et le projet Gestionnaire de Relations Personnelles.</p>
+          </div>
+        </a>
+
+        <a href="../../module-9.html" class="module-card" data-module="9">
+          <div class="card-icon">🤖</div>
+          <div class="card-content">
+            <span class="card-badge" style="background:#888;">anglais</span>
+            <h3>Module 9 : Comprendre l'IA</h3>
+            <p>Qu'est-ce que l'intelligence artificielle, vraiment ? Apprenez à repérer les hypertrucages, à protéger votre vie privée et à utiliser des fonctions d'IA conviviales pour débutants.</p>
+          </div>
+        </a>
+
+        <a href="../../module-10.html" class="module-card" data-module="10">
+          <div class="card-icon">🛒</div>
+          <div class="card-content">
+            <span class="card-badge" style="background:#888;">anglais</span>
+            <h3>Module 10 : Épicerie et Livraison de Repas</h3>
+            <p>Commandez des épiceries et des repas de restaurant à domicile. Paiements sécurisés, coût total affiché avant de confirmer — aucune surprise.</p>
+          </div>
+        </a>
+
+        <a href="../../module-11.html" class="module-card" data-module="11">
+          <div class="card-icon">🚗</div>
+          <div class="card-content">
+            <span class="card-badge" style="background:#888;">anglais</span>
+            <h3>Module 11 : Applications de Transport</h3>
+            <p>Demandez une course sécuritaire n'importe où avec Uber ou Lyft. Apprenez à vérifier votre chauffeur, partagez votre trajet avec votre famille en temps réel et voyagez avec confiance.</p>
+          </div>
+        </a>
+
+        <a href="../../module-12.html" class="module-card" data-module="12">
+          <div class="card-icon">🤝</div>
+          <div class="card-content">
+            <span class="card-badge" style="background:#888;">anglais</span>
+            <h3>Module 12 : Obtenir l'Aide que Vous Méritez</h3>
+            <p>Naviguez dans les systèmes de service à la clientèle, connaissez vos droits de consommateur au Canada et restez en sécurité lorsque quelqu'un offre l'accès à distance à votre appareil.</p>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="trust-signals">
+        <div class="trust-item">
+          🔒 <strong>Vos informations sont en sécurité</strong><br>
+          Nous ne demandons jamais de mots de passe, de coordonnées bancaires ou d'informations personnelles.
+        </div>
+        <div class="trust-item">
+          💰 <strong>Complètement gratuit</strong><br>
+          Chaque leçon est gratuite. Aucune carte de crédit. Aucun abonnement. Aucun piège.
+        </div>
+        <div class="trust-item">
+          🤝 <strong>Allez à votre rythme</strong><br>
+          Pas d'échéances, pas d'examens, pas de mauvaises réponses. Revenez n'importe quand.
+        </div>
+      </div>
+
       <div class="tip-box">
-        💡 <strong>Besoin d'aide dès maintenant ?</strong>
-        Appelez <strong>Connected Canadians</strong> au
+        💡 <strong>Besoin d'aide pour commencer ?</strong>
+        Appelez <strong>Canadiens Branchés</strong> au
         <a href="tel:+18558080505">1-855-808-0505</a> — aide gratuite et personnalisée d'un bénévole formé. Financé par le gouvernement du Canada.
+      </div>
+
+      <h2>Plus d'outils pour vous</h2>
+
+      <div class="module-grid">
+        <a href="../../resources.html" class="module-card">
+          <div class="card-icon">📚</div>
+          <div class="card-content">
+            <h3>Ressources locales et ontariennes</h3>
+            <p>Aide technologique locale, numéros de téléphone, centres communautaires et programmes gratuits conçus pour aider les aînés de votre région. (anglais)</p>
+          </div>
+        </a>
+
+        <a href="../../scam-simulator.html" class="module-card">
+          <div class="card-icon">🎯</div>
+          <div class="card-content">
+            <h3>Simulateur d'arnaques</h3>
+            <p>Pratiquez à repérer les arnaques dans un environnement sécuritaire. Quiz interactifs avec des exemples du monde réel — aucun risque, tout l'apprentissage. (anglais)</p>
+          </div>
+        </a>
+
+        <a href="../../family-setup.html" class="module-card">
+          <div class="card-icon">👪</div>
+          <div class="card-content">
+            <h3>Configurer cela pour un être cher ?</h3>
+            <p>Si vous êtes un membre de la famille ou un aidant qui aide un aîné à démarrer, cette page vous guide à travers une configuration rapide de 10 minutes. (anglais)</p>
+          </div>
+        </a>
       </div>
 
       <footer class="site-footer">
@@ -135,15 +278,17 @@
           <nav class="footer-links" aria-label="Navigation du pied de page">
             <a href="index.html">Accueil</a> |
             <a href="../../resources.html">Ressources</a> |
-            <a href="../../faq.html">FAQ</a> |
+            <a href="faq.html">FAQ</a> |
             <a href="../../family-setup.html">Pour les familles</a> |
-            <a href="../../privacy.html">Politique de confidentialité</a>
+            <a href="../../privacy.html">Politique de confidentialité</a> |
+            <a href="../../index.html">⚜ Version anglaise</a>
           </nav>
           <p class="footer-support">
-            Besoin d'aide ? Appelez <strong>Connected Canadians</strong> gratuitement&nbsp;:<br>
+            Besoin d'aide ? Appelez <strong>Canadiens Branchés</strong> gratuitement :
             <a href="tel:+18558080505">1-855-808-0505</a>
           </p>
           <p class="footer-copy">&copy; 2026 Two Birds. Fait avec soin en Ontario, Canada.</p>
+          <p style="font-size:0.78rem;color:#888;margin-top:8px;">⚜ Cette traduction a été générée par ordinateur et nécessite une révision professionnelle.</p>
         </div>
       </footer>
     </main>
