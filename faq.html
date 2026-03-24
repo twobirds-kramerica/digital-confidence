@@ -17,6 +17,17 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/accessibility.css">
   <link rel="stylesheet" href="css/mobile.css">
+  <style>
+    .faq-search-wrap { position: relative; margin: 1.25rem 0 1.5rem; }
+    .faq-search-input { width: 100%; padding: 0.75rem 1rem; font-size: 1rem; font-family: inherit; border: 2px solid var(--color-primary, #1565C0); border-radius: 50px; background: var(--color-surface, #fff); color: var(--color-text, #1a1a1a); }
+    .faq-search-input:focus { outline: 3px solid rgba(21,101,192,0.3); outline-offset: 2px; }
+    .faq-search-count { display: block; font-size: 0.82rem; color: var(--color-text-muted, #666); margin-top: 0.4rem; padding-left: 0.5rem; }
+    .faq-no-results { background: #fff8e1; border-left: 4px solid #f59e0b; border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; }
+    .faq-category { font-size: 1.1rem; margin-top: 2rem; margin-bottom: 0.75rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--color-primary, #1565C0); }
+    .faq-item[hidden] { display: none !important; }
+    .faq-intro { color: var(--color-text-muted, #555); margin-bottom: 1rem; }
+    .faq-lang-switch { margin-bottom: 1rem; font-size: 0.9rem; }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -229,6 +240,7 @@
       <a href="module-9.html"><span class="nav-icon">🤖</span><span class="nav-label">9. Understanding AI</span></a>
       <a href="module-10.html"><span class="nav-icon">🛒</span><span class="nav-label">10. Grocery &amp; Delivery</span></a>
       <a href="module-11.html"><span class="nav-icon">🚗</span><span class="nav-label">11. Ride-Sharing</span></a>
+      <a href="module-12.html"><span class="nav-icon">🤝</span><span class="nav-label">12. Getting the Help You Deserve</span></a>
       <a href="module-visual-ai.html"><span class="nav-icon">📷</span><span class="nav-label">Show Me! (Bonus)</span></a>
       <a href="family-setup.html"><span class="nav-icon">👪</span><span class="nav-label">Set Up for a Loved One</span></a>
       <a href="resources.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
@@ -246,206 +258,468 @@
         <a href="faq-fr.html">⚜ Lire en fran&ccedil;ais</a>
       </div>
 
-      <p class="faq-intro">Plain-language answers to the questions we hear most often. Click any question to see the answer.</p>
+      <p class="faq-intro">Plain-language answers to 50 of the questions we hear most often. Click any question to see the answer.</p>
 
-      <details class="faq-item">
-        <summary>How do I get back to the home screen if I am lost on my iPad or iPhone?</summary>
+      <!-- Search -->
+      <div class="faq-search-wrap">
+        <input type="search" id="faq-search" class="faq-search-input" placeholder="Search questions…" aria-label="Search FAQ questions">
+        <span class="faq-search-count" id="faq-search-count" aria-live="polite"></span>
+      </div>
+
+      <div id="faq-no-results" class="faq-no-results" style="display:none">
+        <p>No questions match your search. Try different words, or <a href="resources.html">contact us for help</a>.</p>
+      </div>
+
+      <!-- ═══ CATEGORY 1: GETTING STARTED ═══ -->
+      <h2 class="faq-category" data-category="getting-started">🌱 Getting Started</h2>
+
+      <details class="faq-item" data-category="getting-started">
+        <summary>What is Digital Confidence Centre?</summary>
         <div class="faq-answer">
-          <p>Press the <strong>Home button</strong> — the round button below the screen on older devices — or <strong>swipe up from the very bottom</strong> of the screen on newer iPads and iPhones. This always takes you safely back to your home screen, no matter what happened.</p>
-          <p>You can never break anything by pressing the Home button. It is always safe to use.</p>
+          <p>Digital Confidence Centre is a <strong>free, self-paced digital literacy programme</strong> built specifically for Ontario seniors aged 70 and over. We offer 12 modules covering everything from the basics of your iPad to staying safe from scams — in plain language, at your own pace, with no tests you can fail.</p>
+          <p>You can start any time, revisit any lesson as often as you like, and stop whenever you need a break. Everything stays exactly where you left it.</p>
         </div>
       </details>
 
-      <details class="faq-item">
-        <summary>How can I tell if an email is a scam?</summary>
+      <details class="faq-item" data-category="getting-started">
+        <summary>Who is this programme for?</summary>
         <div class="faq-answer">
-          <p>Watch for these warning signs:</p>
-          <ul>
-            <li><strong>Urgent language</strong> — "Act now!", "Your account will be closed!", "You have won!"</li>
-            <li><strong>Suspicious sender address</strong> — For example, apple-support-help@gmail.com instead of @apple.com</li>
-            <li><strong>Requests for your password or banking information</strong> — No legitimate company ever asks for this by email</li>
-            <li><strong>Links that look odd</strong> — Hover over a link (on a computer) to see where it really goes</li>
-          </ul>
-          <p><strong>When in doubt, delete it.</strong> Contact the company directly by phone using a number you find yourself — never use a number from the suspicious email.</p>
+          <p>This programme was built for Ontario adults — especially those aged 70 and over — who feel uncertain, confused, or anxious about technology. You do not need any previous experience. If you are reading this page, you already have the skills you need to begin.</p>
+          <p>It is also helpful for adult children or grandchildren who want to share a learning resource with an older relative, and for libraries and senior centres looking for structured digital literacy content.</p>
         </div>
       </details>
 
-      <details class="faq-item">
-        <summary>Is online banking safe for seniors?</summary>
+      <details class="faq-item" data-category="getting-started">
+        <summary>Do I need to know anything about computers first?</summary>
         <div class="faq-answer">
-          <p>Yes — online banking through your bank's <strong>official app</strong> is very safe. Download the app from the App Store or Google Play Store (search for your bank's name). Always access your bank by typing their address yourself (for example, <em>rbc.com</em>) — never follow links from emails.</p>
-          <p>Enable <strong>two-factor authentication</strong> for extra security, and check your balance regularly to spot anything unusual quickly. Your bank will never ask for your full password by phone or email.</p>
+          <p><strong>No prior knowledge is needed.</strong> The programme starts from the very beginning — Module 1 teaches you the single most important skill on any device: how to stop, go back, and start over safely. Everything builds from there.</p>
+          <p>If you can tap a screen or move a mouse, you have all the technical skill required to begin.</p>
         </div>
       </details>
 
-      <details class="faq-item">
-        <summary>What is the difference between an iPhone and an iPad?</summary>
+      <details class="faq-item" data-category="getting-started">
+        <summary>How long does it take to complete the programme?</summary>
         <div class="faq-answer">
-          <p>An <strong>iPhone</strong> is a phone that fits in your pocket. It can make calls, send texts, and connect to the internet. An <strong>iPad</strong> is a larger tablet — about the size of a small book — that connects to Wi-Fi and is ideal for reading, watching videos, and video calls. It does not make phone calls on its own.</p>
-          <p>Both run the same apps and work very similarly. Skills you learn on one apply to the other.</p>
+          <p>Each module takes roughly <strong>20 to 45 minutes</strong> to read through — longer if you practise the steps on your own device as you go, which we encourage. The full programme of 12 modules can be completed over a few afternoons, or stretched across several weeks. There is no deadline.</p>
+          <p>Many people complete one module per day and find that comfortable.</p>
         </div>
       </details>
 
-      <details class="faq-item">
-        <summary>How do I download apps safely?</summary>
+      <details class="faq-item" data-category="getting-started">
+        <summary>Can I go at my own pace?</summary>
         <div class="faq-answer">
-          <p>Only download apps from:</p>
-          <ul>
-            <li><strong>App Store</strong> — for iPhone and iPad (blue icon with white A)</li>
-            <li><strong>Google Play Store</strong> — for Android phones and tablets</li>
-            <li><strong>Microsoft Store</strong> — for Windows computers</li>
-          </ul>
-          <p>Before downloading, check: Does it have thousands of reviews? Is the developer name recognisable? Was it updated recently? If something feels off, do not download it. Never install apps from websites, pop-up ads, or links sent by email or text.</p>
+          <p>Absolutely. This is a self-paced programme — you control when you start, when you stop, and how long you spend on each lesson. There are no time limits, no live sessions, and no instructor waiting for you.</p>
+          <p>The programme remembers your progress using a small file on your device (called a cookie). If you close the page and come back, you can pick up from where you left off.</p>
         </div>
       </details>
 
-      <details class="faq-item">
-        <summary>What should I do if I think I have been scammed?</summary>
+      <details class="faq-item" data-category="getting-started">
+        <summary>Is this really free?</summary>
         <div class="faq-answer">
-          <p><strong>Do not panic — you are not alone, and help is available.</strong></p>
-          <ol>
-            <li>Stop all contact with the scammer immediately</li>
-            <li>If money was involved, call your bank right away — they can often stop or reverse transactions</li>
-            <li>Report to the <strong>Canadian Anti-Fraud Centre: <a href="tel:+18884954416">1-888-495-4416</a></strong></li>
-            <li>Change any passwords that may have been compromised</li>
-            <li>Tell a trusted family member or friend</li>
-          </ol>
-          <p>Reporting helps protect others. You will not get in trouble for reporting.</p>
+          <p>Yes — completely free. No subscription, no account required, no hidden fees. The programme is funded as a community service by Two Birds, a small Ontario product studio.</p>
+          <p>We will never ask you for payment, your credit card, or any personal information beyond what you choose to share through the optional feedback form.</p>
         </div>
       </details>
 
-      <details class="faq-item">
-        <summary>How do I make text larger on my iPhone or iPad?</summary>
+      <details class="faq-item" data-category="getting-started">
+        <summary>What if I get stuck on a module?</summary>
         <div class="faq-answer">
-          <p>Go to <strong>Settings → Display &amp; Brightness → Text Size</strong> and drag the slider to the right. For even larger text, go to <strong>Settings → Accessibility → Display &amp; Text Size → Larger Text</strong>.</p>
-          <p>On this website, use the <strong>A buttons at the top</strong> of the page — tap the larger A to increase text size. Your preference is saved for your next visit.</p>
+          <p>First — this is completely normal. Getting stuck is part of learning, not a sign you are doing something wrong.</p>
+          <p>If a section is confusing, try reading it again slowly. If it still does not make sense, skip it and come back later — the surrounding context sometimes makes a tricky part clearer on a second pass.</p>
+          <p>You can also call <strong>Connected Canadians at 1-855-808-0505</strong> for free one-on-one help from a real person.</p>
         </div>
       </details>
 
-      <details class="faq-item">
-        <summary>Where can I get in-person technology help in Ontario?</summary>
+      <details class="faq-item" data-category="getting-started">
+        <summary>Can I print the lessons?</summary>
         <div class="faq-answer">
-          <p>Several free options are available across Ontario:</p>
-          <ul>
-            <li><strong>Your local public library</strong> — most offer free tech help sessions and workshops</li>
-            <li><strong>Connected Canadians</strong> — free one-on-one help by phone: <a href="tel:+18558080505">1-855-808-0505</a></li>
-            <li><strong>Cyber-Seniors</strong> — free help from trained young volunteers: <a href="tel:+18442173057">1-844-217-3057</a></li>
-            <li><strong>Senior centres</strong> — many host technology classes and support groups</li>
-          </ul>
-          <p>See our <a href="resources.html">Resources page</a> for local contacts in Windsor, London, Kitchener, St. Thomas, and Woodstock.</p>
+          <p>Yes. Each module page has a <strong>🖨️ Print This Module button</strong> at the bottom-right of the screen. Clicking it opens your browser's print dialogue. The printed version hides navigation and sidebars so you get a clean, readable document.</p>
+          <p>Printed lessons are great for keeping beside your device while you practise, or for sharing with a friend or family member.</p>
         </div>
       </details>
 
-      <details class="faq-item">
-        <summary>Do I need antivirus software on my iPhone or iPad?</summary>
+      <details class="faq-item" data-category="getting-started">
+        <summary>Do I need an email address to use this?</summary>
         <div class="faq-answer">
-          <p>Generally, <strong>no</strong>. iPhones and iPads have very strong built-in security and do not need antivirus apps. The most important protections are:</p>
-          <ul>
-            <li>Keep your operating system updated: <strong>Settings → General → Software Update</strong></li>
-            <li>Only download apps from the official App Store</li>
-            <li>Avoid clicking suspicious links</li>
-          </ul>
-          <p>On <strong>Android</strong>, built-in Google Play Protect scans apps automatically. On <strong>Windows computers</strong>, Microsoft Defender (built in) provides good protection and does not require a subscription.</p>
+          <p>No. You can use the entire Digital Confidence Centre without an email address or any account of any kind. Just open the website and start reading.</p>
+          <p>An email address is only needed if you want to receive the optional Certificate of Completion after finishing all 12 modules and the final assessment.</p>
         </div>
       </details>
 
-      <details class="faq-item">
-        <summary>What is two-factor authentication and do I need it?</summary>
+      <details class="faq-item" data-category="getting-started">
+        <summary>Can my spouse or a friend use this too?</summary>
         <div class="faq-answer">
-          <p>Two-factor authentication (2FA) is an <strong>extra security step</strong>. After entering your password, you receive a short code by text message to confirm it is really you — like a second lock on the door.</p>
-          <p><strong>Yes, you should enable it</strong> on your email, banking, and social media accounts. It prevents thieves from accessing your accounts even if they somehow learn your password. Your bank and email provider will have a "Security" section in their settings where you can turn this on.</p>
+          <p>Yes — anyone can use it, and there is no limit. You can go through the programme together, side by side, which many couples and friends find more enjoyable than learning alone.</p>
+          <p>Note that progress is saved to the individual device and browser, so your progress and your spouse's progress are tracked separately if you use different devices.</p>
         </div>
       </details>
 
-      <details class="faq-item">
-        <summary>Is WhatsApp safe to use?</summary>
-        <div class="faq-answer">
-          <p>Yes — WhatsApp is a safe and legitimate app used by over two billion people worldwide. Messages are <strong>end-to-end encrypted</strong>, which means only you and the person you are messaging can read them.</p>
-          <p>A few things to watch for:</p>
-          <ul>
-            <li><strong>Only accept messages from people you know.</strong> If a stranger messages you asking for money or personal information, block and delete them.</li>
-            <li><strong>Be cautious with links.</strong> Even in WhatsApp, do not click links from people you do not know.</li>
-            <li><strong>Download only from the official App Store or Google Play Store</strong> — search for "WhatsApp" and look for the official app by Meta.</li>
-          </ul>
-          <p>WhatsApp is especially useful for free calls and messages to family or friends who live abroad, and for group chats with family.</p>
-        </div>
-      </details>
+      <!-- ═══ CATEGORY 2: TECHNICAL QUESTIONS ═══ -->
+      <h2 class="faq-category" data-category="technical">🔧 Technical Questions</h2>
 
-      <details class="faq-item">
-        <summary>What is the difference between a private message and a public post on Facebook?</summary>
-        <div class="faq-answer">
-          <p>This is one of the most common sources of confusion on Facebook. There are two very different ways to write something:</p>
-          <ul>
-            <li><strong>Private message (Messenger):</strong> Like a sealed letter — only the person you send it to can read it. Look for your friend's photo at the top and a <strong>"Send"</strong> button. No globe icon.</li>
-            <li><strong>Public post (Timeline/Feed):</strong> Like posting a notice on a bulletin board — all your friends can see it, and sometimes strangers too. Look for the "What's on your mind?" box and a <strong>🌐 globe icon</strong> and a <strong>"Post"</strong> button.</li>
-          </ul>
-          <p><strong>The Globe Rule:</strong> Before you tap Send or Post, look for the 🌐 globe icon. If you see it, your message will be public. If there is no globe, you are sending a private message.</p>
-          <p>If you accidentally post something publicly, tap the three dots on the post, then "Edit audience" or "Delete" to fix it.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Is it rude to text someone before calling them?</summary>
-        <div class="faq-answer">
-          <p>Actually, it is considered <strong>more polite</strong> to send a quick text before calling — especially for people you do not contact every day. A short message like "Hi Dorothy, are you free for a call this morning?" gives them a chance to get ready and means they will not be caught off guard.</p>
-          <p>You do not need to text first if:</p>
-          <ul>
-            <li>It is an emergency</li>
-            <li>You have a scheduled call</li>
-            <li>It is very close family (spouse, children) who expect your calls</li>
-            <li>The person has a landline (no texting available)</li>
-          </ul>
-          <p>This is a modern courtesy — not a rule. Calling is still wonderful. A little heads-up text just makes it even better.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Why does a website sometimes look different on my iPad compared to a computer?</summary>
-        <div class="faq-answer">
-          <p>Websites detect what device you are using and show a <strong>"mobile version"</strong> on tablets and phones. The mobile version usually has bigger buttons and simpler menus — it is designed for touch screens.</p>
-          <p>Both versions work fine; the site just looks different to suit your device. If you ever find the mobile version harder to use, most websites have a small link at the bottom that says <strong>"View full site"</strong> or <strong>"Desktop version"</strong> — tapping that will switch to the computer view.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>What does it mean when someone tells me to "clear my cache"?</summary>
-        <div class="faq-answer">
-          <p>Your device saves copies of websites you visit (called a <strong>"cache"</strong>) to load them faster next time. Sometimes these saved copies get outdated and cause a page to look wrong or not load at all.</p>
-          <p>Clearing your cache is like telling your device, <em>"Forget what you saved — get a fresh copy."</em> You only need to do this if a website is not working properly.</p>
-          <p><strong>On an iPad or iPhone:</strong> Go to <strong>Settings → Safari → Clear History and Website Data</strong>. This clears the cache, history, and cookies. You may need to sign in again to websites you use regularly.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Is it safe to let my browser save my passwords?</summary>
-        <div class="faq-answer">
-          <p>It depends on your situation. If you are the only person who uses your device and you have a device passcode set, saving passwords in Safari is generally safe for everyday websites.</p>
-          <p>For banking or important accounts, it is safer to use the <strong>built-in password manager</strong> that comes with your iPhone or iPad — Apple's iCloud Keychain. It encrypts your passwords and fills them in automatically when you need them.</p>
-          <p>The most important rule: <strong>never save passwords on a shared or public device</strong> — for example, a computer at the library or a family member's tablet. Module 3 covers password management in detail.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Why do real emails sometimes end up in my Junk or Spam folder?</summary>
-        <div class="faq-answer">
-          <p>Email programmes use automatic filters to guess which messages might be unwanted. Sometimes they get it wrong — a newsletter you signed up for, a receipt from a store, or even a message from a friend can land in Junk or Spam by mistake.</p>
-          <p>If a real email lands in Junk or Spam, open it and tap <strong>"Not Junk"</strong> or <strong>"Not Spam."</strong> Future emails from that sender should then arrive in your inbox.</p>
-          <p>It is a good idea to check your Junk folder once a week, just in case something important was mistakenly filtered out.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
+      <details class="faq-item" data-category="technical">
         <summary>What is the difference between Wi-Fi and mobile data?</summary>
         <div class="faq-answer">
-          <p><strong>Wi-Fi</strong> is internet that comes from a router — at home, at the library, or at a coffee shop. Once you connect to Wi-Fi, browsing does not use your monthly data allowance. You can usually tell you are on Wi-Fi because you will see the Wi-Fi symbol (a series of curved lines) at the top of your screen.</p>
-          <p><strong>Mobile data</strong> (also called cellular data) is internet provided through your phone company's network — Telus, Bell, Rogers, etc. You pay for a certain amount each month (for example, 5 GB). If you use too much, your speed may slow down or you may be charged extra.</p>
-          <p><strong>Tip:</strong> Use Wi-Fi whenever you can to save your data allowance for when you are out and about. Streaming videos and downloading apps uses the most data.</p>
+          <p><strong>Wi-Fi</strong> is internet that comes from a wireless router — at home, at the library, or at a coffee shop. When you are on Wi-Fi, browsing costs nothing extra. You can tell you are on Wi-Fi by the fan-shaped symbol at the top of your screen.</p>
+          <p><strong>Mobile data</strong> (also called cellular data) is internet provided through your phone company — Telus, Bell, Rogers, etc. You pay for a monthly allowance (e.g., 5 GB). Streaming videos and downloading apps uses the most data. <strong>Tip:</strong> connect to Wi-Fi at home and you will rarely use your data allowance at all.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="technical">
+        <summary>Why do real emails sometimes go to my Junk or Spam folder?</summary>
+        <div class="faq-answer">
+          <p>Email programmes use automatic filters to catch unwanted messages — but sometimes they make mistakes. A newsletter you signed up for, a receipt from a store, or even an email from a friend can land in Junk or Spam by accident.</p>
+          <p>If this happens, open the email and tap <strong>"Not Junk"</strong> or <strong>"Not Spam."</strong> Future emails from that sender should arrive in your inbox. Check your Junk folder once a week just in case something important was filtered out.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="technical">
+        <summary>What does "clear your cache" mean?</summary>
+        <div class="faq-answer">
+          <p>Your device saves copies of websites you visit (called a <strong>cache</strong>) so they load faster next time. Sometimes these saved copies get outdated and cause a page to look wrong.</p>
+          <p>Clearing your cache is like saying, <em>"Forget what you saved — get a fresh copy from the internet."</em> On an iPhone or iPad: <strong>Settings → Safari → Clear History and Website Data.</strong> You may need to log in again to websites you visit regularly.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="technical">
+        <summary>Is it safe to save passwords in my browser?</summary>
+        <div class="faq-answer">
+          <p>It is reasonably safe on your personal device if you have a screen lock passcode. Apple's built-in password manager (iCloud Keychain) encrypts your passwords and is a solid choice for most people.</p>
+          <p><strong>Never save passwords on a shared or public device</strong> — a computer at the library, a friend's tablet, or any device other people use. See <a href="module-3.html">Module 3: Passwords</a> for a full explanation of safe password habits.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="technical">
+        <summary>Why does a website look different on my iPad compared to a computer?</summary>
+        <div class="faq-answer">
+          <p>Websites detect your device type and show a <strong>mobile version</strong> on tablets and phones — with bigger buttons and simpler menus, designed for touch screens. The content is the same; the layout just adjusts to fit your screen.</p>
+          <p>If you prefer the full desktop view, look for a small link at the bottom of the page that says <strong>"View full site"</strong> or <strong>"Desktop version."</strong></p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="technical">
+        <summary>What is a VPN and do I need one?</summary>
+        <div class="faq-answer">
+          <p>A VPN (Virtual Private Network) creates a private tunnel for your internet traffic — hiding your activity from your internet provider and people on the same Wi-Fi network. It is most useful when using public Wi-Fi in a café or hotel.</p>
+          <p>For most seniors at home on a private Wi-Fi network, a VPN is not essential. If you use public Wi-Fi regularly, a reputable paid VPN (like NordVPN or ExpressVPN) is worth considering. Be cautious of free VPNs — some collect and sell your data, which is the opposite of what you want.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="technical">
+        <summary>What are "cookies" — the internet kind?</summary>
+        <div class="faq-answer">
+          <p>Internet cookies are small text files that websites save on your device to remember things about you — like your login, your language preference, or what is in your shopping cart. They are how a site knows you were there before.</p>
+          <p>Most cookies are harmless and helpful. <strong>"Third-party cookies"</strong> are different — these track your browsing across different websites for advertising. Browsers now block many of these by default. When a website asks if you "accept cookies," you can safely choose "Accept necessary only" or "Decline optional cookies."</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="technical">
+        <summary>Why do websites ask if they can send notifications?</summary>
+        <div class="faq-answer">
+          <p>Notifications are pop-up alerts from a website — like a ping from a news site when a story is published, or a reminder from a calendar app. Websites must ask your permission before sending them.</p>
+          <p><strong>You can almost always say No or Block</strong> — most websites do not need to send you notifications. Saying no does not stop the website from working. If you accidentally said yes and you now get unwanted alerts, go to <strong>Settings → Notifications</strong> on your device and turn them off for that site or app.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="technical">
+        <summary>What is the difference between Google and Chrome?</summary>
+        <div class="faq-answer">
+          <p><strong>Google</strong> is a search engine — a website (google.ca) where you type questions to find information. <strong>Chrome</strong> is a browser — the app you use to visit websites and access Google.</p>
+          <p>Think of it this way: Chrome is the car you drive, and Google is a destination you visit. You can use Chrome to visit Google, but you can also use it to visit any other website. On an iPhone or iPad, Safari is the built-in browser — it works the same way.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="technical">
+        <summary>What does "update available" mean and should I do it?</summary>
+        <div class="faq-answer">
+          <p>When you see "update available," your device or app is telling you a newer, improved version is ready. <strong>Yes, you should update</strong> — updates fix security vulnerabilities, which are weaknesses that scammers can exploit if left unpatched.</p>
+          <p>On an iPhone or iPad: <strong>Settings → General → Software Update.</strong> Connect to Wi-Fi before updating. The update usually takes 10–20 minutes and your device may restart. Everything will look the same afterwards — updates do not erase your data.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="technical">
+        <summary>Why does my device say "storage full"?</summary>
+        <div class="faq-answer">
+          <p>Every device has a limited amount of storage space for photos, apps, videos, and documents. When it gets full, new photos may not save and some apps may stop working properly.</p>
+          <p><strong>Quick fixes:</strong> Delete photos you no longer need, remove apps you never use, or enable iCloud Photos (on Apple devices) which moves photos to the cloud to free up space. Go to <strong>Settings → General → iPhone/iPad Storage</strong> to see what is using the most space and get recommendations.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="technical">
+        <summary>What is "the cloud"?</summary>
+        <div class="faq-answer">
+          <p>"The cloud" simply means <strong>storage on someone else's computers</strong>, accessed over the internet. When your photos "save to the cloud," they are actually being stored on Apple's (or Google's) servers in large data centres — not just on your device.</p>
+          <p>The advantage: if you lose or break your device, your photos and documents are safe and can be restored. iCloud (Apple), Google Drive, and OneDrive (Microsoft) are common cloud services. See <a href="module-7.html">Module 7: Photos &amp; Memories</a> for more on using iCloud safely.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="technical">
+        <summary>What does "sync" mean?</summary>
+        <div class="faq-answer">
+          <p>"Sync" (short for synchronise) means making sure the same information appears on all your devices. For example, if you add a contact on your iPhone, syncing sends that contact to your iPad and computer automatically, so all three devices show the same thing.</p>
+          <p>On Apple devices, syncing happens automatically through iCloud when you are connected to Wi-Fi. You usually do not need to do anything — it works in the background.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="technical">
+        <summary>Why do apps need permissions like access to my camera or contacts?</summary>
+        <div class="faq-answer">
+          <p>Apps ask for permissions when they need to access parts of your device to work properly. A video calling app needs your camera and microphone. A mapping app needs your location. A contacts app needs your contacts list.</p>
+          <p><strong>You can always say No</strong> — the app will still install, but some features may not work. A good rule: if an app asks for a permission that does not make sense (a flashlight app wanting your contacts, for example), that is a red flag. Go to <strong>Settings → Privacy &amp; Security</strong> to review and change what apps can access.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="technical">
+        <summary>What is two-factor authentication (2FA)?</summary>
+        <div class="faq-answer">
+          <p>Two-factor authentication is an <strong>extra security step</strong> after you enter your password. The most common version: you enter your password, and then a short code is sent to your phone by text message. You enter that code to complete the login — like a second key to the same door.</p>
+          <p><strong>You should enable 2FA</strong> on your email, banking, and social media accounts. Even if a scammer somehow gets your password, they cannot log in without the code sent to your phone. Your bank's "Security" or "Account Settings" section is where to turn it on.</p>
+        </div>
+      </details>
+
+      <!-- ═══ CATEGORY 3: SAFETY & SECURITY ═══ -->
+      <h2 class="faq-category" data-category="safety">🛡️ Safety &amp; Security</h2>
+
+      <details class="faq-item" data-category="safety">
+        <summary>How do I know if a website is safe?</summary>
+        <div class="faq-answer">
+          <p>Look for these signs of a safe website:</p>
+          <ul>
+            <li><strong>HTTPS (not HTTP)</strong> — look for the padlock icon in the address bar. This means your connection to the site is encrypted.</li>
+            <li><strong>Recognisable web address</strong> — rbc.com is safe; rbc-secure-login.com is suspicious. Watch for misspellings or extra words added to real brand names.</li>
+            <li><strong>No pressure tactics</strong> — legitimate sites do not use countdown timers or "only 1 left!" for important decisions.</li>
+          </ul>
+          <p>When in doubt, close the page and search for the company directly through Google rather than clicking a link you received by email or text. See <a href="module-2.html">Module 2: The Security Shield</a> for more.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="safety">
+        <summary>What makes a strong password?</summary>
+        <div class="faq-answer">
+          <p>A strong password is <strong>long, random, and unique</strong>. Length matters most — a 16-character password is far stronger than an 8-character one, even if the short one uses symbols.</p>
+          <p>The easiest approach: use a <strong>passphrase</strong> — three or four random words strung together, like <em>PurpleMapleBoatTuesday</em>. It is long, easy to remember, and very hard to crack. Never use your name, birthday, address, or the word "password." See <a href="module-3.html">Module 3: Passwords</a> for the full guide.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="safety">
+        <summary>Should I use the same password everywhere?</summary>
+        <div class="faq-answer">
+          <p><strong>No — this is one of the most important safety rules online.</strong> If you use the same password everywhere and one site is hacked, scammers will try that same password on your email, your bank, your social media — and they will get in.</p>
+          <p>The solution: use a different password for every important account. A password manager (like Apple's built-in iCloud Keychain) can generate and remember unique passwords for every site so you only need to remember one main password. <a href="module-3.html">Module 3</a> covers this fully.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="safety">
+        <summary>What is phishing?</summary>
+        <div class="faq-answer">
+          <p>Phishing (pronounced "fishing") is when a scammer sends a fake email, text, or message pretending to be a trusted organisation — your bank, Canada Post, the CRA, or Apple — to trick you into clicking a link and entering your password or personal information.</p>
+          <p>The name comes from the idea of "fishing" — they cast a convincing lure and wait for someone to bite. See <a href="module-2.html">Module 2</a> and our <a href="scam-simulator.html">Scam Simulator</a> for practice spotting phishing attempts.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="safety">
+        <summary>How can I tell if an email is fake?</summary>
+        <div class="faq-answer">
+          <p>Watch for these red flags:</p>
+          <ul>
+            <li><strong>Sender address does not match the company</strong> — td-alerts@gmail.com is not a real TD address</li>
+            <li><strong>Generic greeting</strong> — "Dear Valued Customer" instead of your name</li>
+            <li><strong>Urgency or threats</strong> — "Your account will be deleted in 24 hours!"</li>
+            <li><strong>Requests for passwords or banking details</strong> — no real company asks for this by email</li>
+            <li><strong>Suspicious links</strong> — hover over any link (on a computer) to see where it actually leads</li>
+          </ul>
+          <p>When in doubt: delete the email and contact the company directly using a phone number or website address you find yourself.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="safety">
+        <summary>What should I do if I clicked a suspicious link?</summary>
+        <div class="faq-answer">
+          <p>Stay calm — clicking a link alone usually does not cause harm. Here is what to do:</p>
+          <ol>
+            <li><strong>Close the page immediately</strong> — do not enter any information</li>
+            <li><strong>Do not download anything</strong> the page may suggest</li>
+            <li>If you entered your password — <strong>change it immediately</strong> on the real website</li>
+            <li>If you entered banking or payment details — <strong>call your bank right away</strong></li>
+            <li>Run a software update on your device, just to be safe</li>
+          </ol>
+          <p>If you are unsure whether anything happened, call <strong>Connected Canadians at 1-855-808-0505</strong> — they can talk you through it for free.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="safety">
+        <summary>Are public Wi-Fi networks safe?</summary>
+        <div class="faq-answer">
+          <p>Public Wi-Fi (in cafés, airports, libraries) is <strong>less secure than your home network</strong> because others on the same network can sometimes intercept unencrypted traffic. However, most websites today use HTTPS encryption, which protects your data even on public Wi-Fi.</p>
+          <p><strong>Safe on public Wi-Fi:</strong> reading news, searching, browsing. <strong>Avoid on public Wi-Fi:</strong> online banking, shopping with your credit card, or entering passwords on sensitive accounts. If you must do banking on the go, use your phone's mobile data instead of public Wi-Fi.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="safety">
+        <summary>What is identity theft and how do I prevent it?</summary>
+        <div class="faq-answer">
+          <p>Identity theft is when someone uses your personal information — name, date of birth, Social Insurance Number, credit card details — to pretend to be you and commit fraud, often opening new credit accounts in your name.</p>
+          <p><strong>Prevention steps:</strong> Never share your SIN except when legally required (tax filings, employment). Shred documents with personal information. Check your credit report once a year for free at <strong>equifax.ca</strong> or <strong>transunion.ca</strong>. Use strong, unique passwords. Enable 2FA on important accounts.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="safety">
+        <summary>Should I answer calls from unknown numbers?</summary>
+        <div class="faq-answer">
+          <p>It is reasonable to <strong>let unknown numbers go to voicemail</strong>. A real caller who needs to reach you will leave a message. Scam calls almost never leave voicemails — or they leave automated threatening messages designed to frighten you into calling back.</p>
+          <p>If you do answer and something feels wrong — urgent pressure, requests for gift cards or personal information, threats of arrest — <strong>hang up immediately.</strong> You owe no explanation. If you are worried it was real, look up the organisation's number yourself and call them back directly.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="safety">
+        <summary>What is ransomware?</summary>
+        <div class="faq-answer">
+          <p>Ransomware is a type of malicious software that locks or encrypts your files and then demands payment — usually in gift cards or cryptocurrency — to unlock them. It is most common on Windows computers and is typically spread through email attachments or fake software downloads.</p>
+          <p><strong>Prevention:</strong> Keep your operating system and apps updated, do not open email attachments from unknown senders, and back up your important files regularly to an external drive or cloud storage. iPhones and iPads are far less vulnerable to ransomware than Windows computers.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="safety">
+        <summary>How do I know if my device has a virus?</summary>
+        <div class="faq-answer">
+          <p>On <strong>iPhones and iPads</strong>, true viruses are extremely rare thanks to Apple's security model. Warning signs that something is wrong: the device is very slow, apps crash constantly, your battery drains unusually fast, or strange pop-ups appear constantly. Most of these are caused by full storage or outdated software — not a virus.</p>
+          <p>On <strong>Windows computers</strong>, Microsoft Defender (built in) will alert you if it finds something. Be very sceptical of pop-up warnings from websites claiming your device is infected — these are almost always scams trying to get you to call a fake tech support number.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="safety">
+        <summary>Are password managers safe?</summary>
+        <div class="faq-answer">
+          <p>Yes — reputable password managers are among the safest ways to handle your passwords. They encrypt your passwords so strongly that even the company running the service cannot read them. Apple's iCloud Keychain (built into iPhone and iPad), 1Password, and Bitwarden are all well-regarded options.</p>
+          <p>Using a password manager means you can have a strong, unique password for every site without having to remember any of them — just one main "master password" to unlock the manager itself. This is safer than reusing the same password everywhere.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="safety">
+        <summary>What information should I never share online?</summary>
+        <div class="faq-answer">
+          <p>Never share these with anyone online or by phone unless you are certain of who is asking and why:</p>
+          <ul>
+            <li><strong>Social Insurance Number (SIN)</strong></li>
+            <li><strong>Full banking details</strong> — account number, transit number, online banking password</li>
+            <li><strong>Credit card number, expiry date, and CVV code</strong> (the 3-digit code on the back)</li>
+            <li><strong>Passwords or PINs</strong> of any kind — your bank will never ask for these</li>
+            <li><strong>Date of birth combined with full name and address</strong> — this combination is enough for identity theft</li>
+          </ul>
+          <p>Sharing your first name, general city, or email address on a legitimate site is usually fine.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="safety">
+        <summary>How do scammers get my phone number?</summary>
+        <div class="faq-answer">
+          <p>Scammers obtain phone numbers from several sources: data breaches (when a company's database is hacked and sold), purchased marketing lists, random-number diallers that call every number in a sequence, and public records. Your number being called does not mean you did anything wrong.</p>
+          <p>You can reduce unwanted calls by registering on Canada's <strong>National Do Not Call List</strong> at <strong>lnnte-dncl.gc.ca</strong> or by calling <strong>1-866-580-3625</strong>. Legitimate Canadian companies are legally required to honour this registry.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="safety">
+        <summary>What is the difference between spam and a scam?</summary>
+        <div class="faq-answer">
+          <p><strong>Spam</strong> is unwanted bulk email — advertisements, newsletters you did not sign up for, or mass messages sent to thousands of people. Spam is annoying but usually not dangerous. It just clutters your inbox.</p>
+          <p><strong>A scam</strong> is a deliberate attempt to defraud you — to steal money, personal information, or access to your accounts. Not all spam is a scam, but all scams arrive as some form of unsolicited communication. The key difference: does it want something valuable from you?</p>
+        </div>
+      </details>
+
+      <!-- ═══ CATEGORY 4: PRACTICAL TASKS ═══ -->
+      <h2 class="faq-category" data-category="practical">📋 Practical Tasks</h2>
+
+      <details class="faq-item" data-category="practical">
+        <summary>How do I attach a photo to an email?</summary>
+        <div class="faq-answer">
+          <p><strong>On an iPhone or iPad:</strong> Start composing your email. Tap the body of the email, then tap the small arrow in the formatting bar (or hold your finger on a blank area in the email body until a menu appears). Choose <strong>"Insert Photo or Video."</strong> Select the photo and tap <strong>Use.</strong> Then send as usual.</p>
+          <p>Alternatively, go to your Photos app, find the photo, tap the Share button (a square with an arrow pointing up), and choose <strong>Mail</strong> from the sharing options. A new email will open with the photo already attached.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="practical">
+        <summary>How do I save a PDF someone sent me?</summary>
+        <div class="faq-answer">
+          <p><strong>In an email:</strong> Tap the PDF attachment to open it. Tap the Share button (square with arrow). Choose <strong>"Save to Files"</strong> to save it to your iPad's Files app, or choose <strong>"Save to iCloud Drive"</strong> to save it to the cloud. You can find it later in the <strong>Files app</strong> (blue folder icon).</p>
+          <p>If you want to print it instead, choose <strong>"Print"</strong> from the Share menu — your nearby AirPrint printer should appear automatically.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="practical">
+        <summary>How do I print from my iPad?</summary>
+        <div class="faq-answer">
+          <p>Tap the <strong>Share button</strong> (square with an arrow pointing up) on whatever you want to print — a webpage, photo, or document. Scroll down and tap <strong>Print.</strong> Choose your printer from the list (your printer must support AirPrint and be on the same Wi-Fi network as your iPad).</p>
+          <p>If your printer does not appear, check that it is turned on, connected to Wi-Fi, and that your iPad is on the same Wi-Fi network. Most modern printers support AirPrint — look for the AirPrint logo or check your printer's manual.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="practical">
+        <summary>How do I make the text bigger on websites?</summary>
+        <div class="faq-answer">
+          <p><strong>On an iPhone or iPad:</strong> In Safari, tap <strong>AA</strong> in the address bar (the two different-sized A's on the left side). Then tap the larger A to increase the text size on that page.</p>
+          <p><strong>On this website specifically:</strong> Use the <strong>A A A A buttons</strong> at the top of the page — tap the larger ones to increase text size. Your preference is saved automatically across all pages on this site.</p>
+          <p>For a permanent system-wide change: <strong>Settings → Display &amp; Brightness → Text Size</strong> — drag the slider right to make everything bigger.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="practical">
+        <summary>How do I bookmark a website?</summary>
+        <div class="faq-answer">
+          <p><strong>In Safari on iPhone or iPad:</strong> Go to the website you want to save. Tap the <strong>Share button</strong> (square with arrow pointing up) at the bottom of the screen. Tap <strong>"Add Bookmark."</strong> Give it a name and tap <strong>Save.</strong></p>
+          <p>To find your bookmarks later: tap the <strong>book icon</strong> at the bottom of Safari. Your saved bookmarks will appear as a list. Tapping any of them takes you straight to that website.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="practical">
+        <summary>How do I find a website I visited yesterday?</summary>
+        <div class="faq-answer">
+          <p><strong>In Safari:</strong> Tap the <strong>book icon</strong> at the bottom of the screen. Tap the <strong>clock icon</strong> (History) at the top of the panel that appears. You will see a list of websites you have visited recently, organised by date.</p>
+          <p>Tap any website in the history to go back to it. If you cleared your history recently or use Private Browsing, the history will be empty — websites visited in Private mode are not saved.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="practical">
+        <summary>How do I download an app safely?</summary>
+        <div class="faq-answer">
+          <p>Only download apps through official stores:</p>
+          <ul>
+            <li><strong>iPhone or iPad:</strong> App Store (the blue icon with an A)</li>
+            <li><strong>Android:</strong> Google Play Store</li>
+            <li><strong>Windows computer:</strong> Microsoft Store</li>
+          </ul>
+          <p>Before downloading: check the developer name (does it match the real company?), read the reviews, and note the number of downloads. If an app is brand new with few reviews, be cautious. Never install an app from a website, email link, or pop-up ad. See <a href="module-4.html">Module 4: App Store Safety</a> for a full walkthrough.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="practical">
+        <summary>How do I unsubscribe from emails I did not sign up for?</summary>
+        <div class="faq-answer">
+          <p>Scroll to the very bottom of the email — most legitimate marketing emails include a small <strong>"Unsubscribe"</strong> or <strong>"Manage preferences"</strong> link. Tapping it will take you to a page where you can remove yourself from the mailing list. Allow a few days for the change to take effect.</p>
+          <p><strong>Important:</strong> Only use the unsubscribe link in emails from companies you recognise. For suspected scam emails — delete without clicking anything. Clicking "unsubscribe" on a scam email confirms your address is active and may result in more scam emails.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="practical">
+        <summary>How do I video call my family?</summary>
+        <div class="faq-answer">
+          <p><strong>FaceTime</strong> (iPhone/iPad users calling other Apple devices): Open the FaceTime app (green camera icon), tap the <strong>+</strong> button, type the person's name or phone number, and tap <strong>Video.</strong></p>
+          <p><strong>If they have an Android phone or different device:</strong> Use <strong>WhatsApp</strong> (free calls between any devices), <strong>Google Meet</strong>, or <strong>Zoom.</strong> All are free to download from the App Store.</p>
+          <p>See <a href="module-8.html">Module 8: Stay Connected</a> for a step-by-step guide to video calling.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" data-category="practical">
+        <summary>How do I pay a bill online safely?</summary>
+        <div class="faq-answer">
+          <p>The safest way to pay a bill online is through your bank's official website or app — log in and use the <strong>Bill Payment</strong> feature to pay directly from your account.</p>
+          <p><strong>Steps:</strong> Open your bank's app. Find "Pay Bills" or "Transfers." Add the company as a payee (you will need your account number from your bill). Enter the amount and confirm. Your bank's app is encrypted and the safest channel for payments.</p>
+          <p><strong>Never pay a bill by clicking a link in an email.</strong> Always go directly to your bank's app or website. See <a href="module-6.html">Module 6: Banking</a> for a full walkthrough.</p>
         </div>
       </details>
 
       <div class="confidence-check">
         <span class="check-icon">💛</span>
-        <p>Don't see your question here? Our <a href="resources.html">Resources page</a> lists free phone lines where real people are happy to help.</p>
+        <p>Don't see your question here? Call <strong>Connected Canadians</strong> free at <strong>1-855-808-0505</strong> — real people are happy to help with any technology question.</p>
       </div>
 
       <div class="module-nav">
@@ -453,7 +727,7 @@
         <a href="faq-fr.html" class="btn btn-primary">FAQ en fran&ccedil;ais →</a>
       </div>
 
-            <footer class="site-footer">
+      <footer class="site-footer">
         <div class="footer-inner">
           <p class="footer-brand">Digital Confidence Centre</p>
           <p class="footer-tagline">A free learning programme for Canadian seniors</p>
@@ -480,6 +754,40 @@
     </main>
   </div>
 
+  <script>
+    (function() {
+      var input = document.getElementById('faq-search');
+      var countEl = document.getElementById('faq-search-count');
+      var noResults = document.getElementById('faq-no-results');
+      if (!input) return;
+      input.addEventListener('input', function() {
+        var q = input.value.trim().toLowerCase();
+        var items = document.querySelectorAll('.faq-item');
+        var cats = document.querySelectorAll('.faq-category');
+        var shown = 0;
+        items.forEach(function(item) {
+          var text = item.textContent.toLowerCase();
+          var match = !q || text.indexOf(q) !== -1;
+          item.hidden = !match;
+          if (match) shown++;
+        });
+        // Hide empty category headers
+        cats.forEach(function(cat) {
+          var catName = cat.getAttribute('data-category');
+          var hasVisible = false;
+          document.querySelectorAll('.faq-item[data-category="' + catName + '"]').forEach(function(i) { if (!i.hidden) hasVisible = true; });
+          cat.hidden = !hasVisible;
+        });
+        if (q) {
+          countEl.textContent = shown + ' question' + (shown !== 1 ? 's' : '') + ' match' + (shown === 1 ? 'es' : '') + ' your search';
+          noResults.style.display = shown === 0 ? 'block' : 'none';
+        } else {
+          countEl.textContent = '';
+          noResults.style.display = 'none';
+        }
+      });
+    })();
+  </script>
   <script src="js/speech-config.js" defer></script>
   <script src="js/app.js" defer></script>
   <script src="js/lang-toggle.js" defer></script>

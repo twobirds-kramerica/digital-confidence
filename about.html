@@ -13,6 +13,33 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/accessibility.css">
   <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/print.css">
+  <style>
+    .about-principles { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 1rem; margin: 1.25rem 0; }
+    .principle-card { background: var(--color-surface, #fff); border: 1px solid var(--color-border, #e0e0e0); border-radius: 14px; padding: 1.25rem 1.5rem; border-top: 4px solid var(--color-primary, #1565C0); }
+    .principle-icon { font-size: 1.8rem; margin-bottom: 0.4rem; }
+    .principle-title { font-size: 1rem; font-weight: 700; color: var(--color-primary, #1565C0); margin-bottom: 0.4rem; }
+    .principle-body { font-size: 0.9rem; line-height: 1.55; color: var(--color-text, #1a1a1a); }
+    .audience-list { list-style: none; padding: 0; margin: 1rem 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.75rem; }
+    .audience-list li { background: var(--color-surface, #fff); border: 1px solid var(--color-border, #e0e0e0); border-radius: 10px; padding: 0.85rem 1rem; font-size: 0.92rem; }
+    .audience-list li strong { display: block; margin-bottom: 3px; color: var(--color-primary, #1565C0); }
+    .testimonial-card { background: var(--color-surface, #fff); border-left: 4px solid var(--color-primary, #1565C0); border-radius: 0 12px 12px 0; padding: 1rem 1.25rem; margin: 0.75rem 0; font-style: italic; }
+    .testimonial-attr { font-style: normal; font-size: 0.82rem; color: var(--color-text-muted, #666); margin-top: 0.5rem; }
+    .founder-block { display: flex; gap: 1.25rem; align-items: flex-start; background: var(--color-surface, #fff); border: 1px solid var(--color-border, #e0e0e0); border-radius: 14px; padding: 1.5rem; margin: 1rem 0; }
+    .founder-avatar { font-size: 3rem; flex-shrink: 0; }
+    .founder-name { font-size: 1.1rem; font-weight: 700; margin-bottom: 2px; }
+    .founder-role { font-size: 0.85rem; color: var(--color-text-muted, #666); margin-bottom: 0.5rem; }
+    .founder-bio { font-size: 0.9rem; line-height: 1.6; }
+    [data-theme="dark"] .principle-card,
+    [data-theme="dark"] .audience-list li,
+    [data-theme="dark"] .testimonial-card,
+    [data-theme="dark"] .founder-block { background: var(--color-surface, #1e1e2e); border-color: #444; }
+    @media (max-width: 600px) {
+      .about-principles { grid-template-columns: 1fr; }
+      .audience-list { grid-template-columns: 1fr; }
+      .founder-block { flex-direction: column; }
+    }
+  </style>
   <!-- SEO: Author, Robots, Open Graph, Twitter Card -->
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
@@ -31,7 +58,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Digital Confidence">
   <!-- Google Analytics -->
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPH5H5BM52"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -94,6 +121,7 @@
       <a href="module-9.html"><span class="nav-icon">🤖</span><span class="nav-label">9. Understanding AI</span></a>
       <a href="module-10.html"><span class="nav-icon">🛒</span><span class="nav-label">10. Grocery &amp; Delivery</span></a>
       <a href="module-11.html"><span class="nav-icon">🚗</span><span class="nav-label">11. Ride-Sharing</span></a>
+      <a href="module-12.html"><span class="nav-icon">🤝</span><span class="nav-label">12. Getting Help</span></a>
       <a href="module-visual-ai.html"><span class="nav-icon">📷</span><span class="nav-label">Show Me! (Bonus)</span></a>
       <a href="family-setup.html"><span class="nav-icon">👪</span><span class="nav-label">Set Up for a Loved One</span></a>
       <a href="resources.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
@@ -132,80 +160,227 @@
 
       <h1>About Digital Confidence Centre</h1>
 
-      <!-- Section 1: Our Mission -->
+      <!-- ── Origin Story ── -->
       <section>
         <div class="story-block">
-          <span class="story-label">Our Mission</span>
-          <p>Digital Confidence Centre is a free, self-paced digital literacy programme designed specifically for Ontario seniors aged 70 and over. We believe that age should never be a barrier to participating safely in digital life — banking online, staying connected with family, or avoiding scams.</p>
+          <span class="story-label">How It Started</span>
+          <p>In 2024, Aaron Kramer — a product designer from St. Thomas, Ontario — sat down with a group of seniors at a local community centre to ask a simple question: <em>"What do you wish you understood better about technology?"</em></p>
+          <p>The answers were not what he expected. People did not say "I want to learn apps." They said: <em>"I'm afraid of doing something wrong and breaking it."</em> They said: <em>"My grandchildren try to help but I feel embarrassed."</em> They said: <em>"I got a scary phone call and I didn't know what to do."</em></p>
+          <p>Digital Confidence Centre was built directly from those conversations. Every module, every example, and every reassurance in this programme came from real fears that real people shared with us.</p>
         </div>
       </section>
 
-      <!-- Section 2: Who We Built This For -->
+      <!-- ── Our Mission ── -->
       <section>
-        <h2>Who We Built This For</h2>
-        <p>We built this programme from real conversations with older adults in Ontario. The fears they shared — being scammed, making mistakes, feeling embarrassed in front of family — shaped every lesson. The Digital Confidence Centre addresses those fears directly, in plain language, at a pace that works for you.</p>
+        <h2>Our Mission</h2>
+        <p>Digital Confidence Centre is a free, self-paced digital literacy programme designed specifically for Ontario seniors aged 70 and over. We believe that age should never be a barrier to participating safely in digital life — banking online, staying connected with family, or avoiding scams.</p>
+
+        <div class="tip-block">
+          <span class="tip-label">🍁 Ontario First</span>
+          <p>Everything here is built for <em>your</em> life in Ontario — your banks, your apps, your phone services, your scams. Not generic advice copied from somewhere else.</p>
+        </div>
       </section>
 
-      <!-- Section 3: Our Place in the Digital Literacy Ecosystem -->
+      <!-- ── Why We're Free ── -->
+      <section>
+        <h2>Why Is This Free?</h2>
+        <p>We've been asked this a lot. The short answer: because it needs to be.</p>
+        <p>Digital fraud against seniors costs Canadians hundreds of millions of dollars every year. The people most at risk are often the people least able to afford a paid course. Paywalling this content would defeat the entire purpose.</p>
+        <p>The Digital Confidence Centre is funded through the time and care of Two Birds, a small Ontario product studio. There are no hidden fees, no premium tiers, no personal data sold. There never will be.</p>
+        <div class="story-block">
+          <p><em>"The only way this works is if everyone can access it. Full stop."</em></p>
+        </div>
+      </section>
+
+      <!-- ── Our 5 Principles ── -->
+      <section>
+        <h2>What We Believe</h2>
+        <p>Five principles guide every decision we make about this programme.</p>
+
+        <div class="about-principles">
+          <div class="principle-card">
+            <div class="principle-icon">🧠</div>
+            <div class="principle-title">You're Not Too Old to Learn</div>
+            <p class="principle-body">Learning technology is not about age — it's about practice and patience. Adults who learned to drive, to use a microwave, or to operate a VCR have already proven they can learn new tools. A tablet is no different.</p>
+          </div>
+
+          <div class="principle-card">
+            <div class="principle-icon">💛</div>
+            <div class="principle-title">Fear is Valid</div>
+            <p class="principle-body">We never dismiss concerns as overreaction. The fears our learners share — being scammed, making irreversible mistakes, embarrassing themselves — are completely reasonable. We take them seriously and address them directly.</p>
+          </div>
+
+          <div class="principle-card">
+            <div class="principle-icon">🕰️</div>
+            <div class="principle-title">Dignity Over Speed</div>
+            <p class="principle-body">There is no deadline here. No one is grading your speed. This programme goes at whatever pace works for you, and you can revisit any module as many times as you like. Confidence cannot be rushed.</p>
+          </div>
+
+          <div class="principle-card">
+            <div class="principle-icon">🗣️</div>
+            <div class="principle-title">Real Voices</div>
+            <p class="principle-body">Every lesson was shaped by conversations with older adults, not assumptions about what they need. We keep returning to our community to make sure we're still getting it right.</p>
+          </div>
+
+          <div class="principle-card">
+            <div class="principle-icon">🍁</div>
+            <div class="principle-title">Ontario First</div>
+            <p class="principle-body">Phone numbers, apps, banking advice, scam warnings — everything here is specific to life in Ontario. We are not a global platform with Canadian content bolted on. We are built for here, by people who live here.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Who This Helps ── -->
+      <section>
+        <h2>Who This Helps</h2>
+        <p>Digital Confidence Centre was designed for anyone who feels uncertain about technology — but these are the five groups who have told us it helps them most.</p>
+
+        <ul class="audience-list">
+          <li>
+            <strong>Recently retired adults</strong>
+            Stepping away from a workplace means losing the IT desk and the colleagues you could ask. This programme gives you that safety net back, without the embarrassment.
+          </li>
+          <li>
+            <strong>People who've been targeted by scams</strong>
+            If you've received a threatening phone call, a suspicious email, or a too-good-to-be-true offer, this programme walks you through exactly what happened — and how to stay safe.
+          </li>
+          <li>
+            <strong>Seniors moving toward digital banking</strong>
+            Bank branches are closing across Ontario. If you're being pushed toward an app or website, Module 6 walks you through it clearly and safely.
+          </li>
+          <li>
+            <strong>Caregivers setting up devices for a loved one</strong>
+            The <a href="family-setup.html">Family Setup guide</a> helps you set up an iPad or iPhone for someone else — with the right privacy and safety settings from day one.
+          </li>
+          <li>
+            <strong>Adults learning at their own pace</strong>
+            Whether you have an hour a week or an hour a day, you can move through this programme entirely on your schedule. Progress is saved automatically.
+          </li>
+        </ul>
+      </section>
+
+      <!-- ── What You'll Learn ── -->
+      <section>
+        <h2>What You'll Learn</h2>
+        <p>The 12-module journey covers the most important digital skills for everyday life in Ontario.</p>
+
+        <div class="tip-block">
+          <span class="tip-label">📚 12 Modules</span>
+          <p>From the very basics — how to get back to your home screen when you're lost — all the way through banking, video calls, grocery delivery, ride-sharing, and getting help with confidence when something goes wrong.</p>
+        </div>
+
+        <div class="tip-block">
+          <span class="tip-label">🎯 Scam Simulator</span>
+          <p>Practice spotting 20 real-world scam scenarios before you encounter them in real life — grandparent scams, fake banking texts, CRA robocalls, tech support pop-ups, and more.</p>
+        </div>
+
+        <div class="tip-block">
+          <span class="tip-label">🏆 Completion Certificate</span>
+          <p>After completing all 12 modules and the final quiz, you'll receive a printable Digital Confidence Certificate. It's a real achievement worth celebrating.</p>
+        </div>
+      </section>
+
+      <!-- ── Our Place in the Ecosystem ── -->
       <section>
         <h2>Our Place in the Digital Literacy Ecosystem</h2>
         <p>The Digital Confidence Centre joins a growing global movement to make technology accessible to older adults. While organisations like UK-based <a href="https://www.cybercollective.org" target="_blank" rel="noopener noreferrer">Cyber Collective</a> serve their communities internationally, we specialise in the Ontario senior experience.</p>
-
-        <h3>What Makes Us Different</h3>
-
-        <div class="tip-block">
-          <span class="tip-label">🍁 Built for Ontario</span>
-          <p>Canadian banking apps, 211 Ontario, local library resources — not generic international advice.</p>
-        </div>
-
-        <div class="tip-block">
-          <span class="tip-label">📚 A Guided Learning Journey</span>
-          <p>A structured 11-module programme with quizzes and a completion certificate — not an overwhelming resource library.</p>
-        </div>
-
-        <div class="tip-block">
-          <span class="tip-label">💬 Built from Real Voices</span>
-          <p>Developed from actual interviews with Ontario seniors, addressing the fears they told us about directly.</p>
-        </div>
-
-        <div class="tip-block">
-          <span class="tip-label">🛡️ Safety First</span>
-          <p>Scam awareness and online safety are introduced in Module 1. Confidence starts from feeling protected.</p>
-        </div>
 
         <div class="story-block">
           <p><em>We are not reinventing the wheel — we are making it turn for Ontario seniors specifically.</em></p>
         </div>
       </section>
 
-      <!-- Section: Accessibility Features -->
+      <!-- ── Accessibility Features ── -->
       <section>
         <h2>Built for Every Reader</h2>
         <p>We've included several tools to make the course easier to read at any age or ability level. Look for the accessibility bar at the top of every page.</p>
-        <div class="tip-block">
-          <span class="tip-label">👓 Dyslexic-Friendly Font</span>
-          <p>Click the <strong>👓</strong> button in the top toolbar to switch to <strong>OpenDyslexic</strong> — a font designed specifically for readers with dyslexia. The unique letter shapes reduce visual confusion and improve reading flow. Your choice is saved automatically and remembered the next time you visit.</p>
-        </div>
+
         <div class="tip-block">
           <span class="tip-label">🔡 Text Size</span>
           <p>Use the <strong>A A A A</strong> buttons in the top toolbar to make the text as large as you need. Four sizes are available, from compact to extra large.</p>
         </div>
+
         <div class="tip-block">
           <span class="tip-label">🌓 Dark Mode</span>
           <p>Click the moon/sun icon to switch between light and dark backgrounds. Dark mode reduces eye strain in low-light conditions. Both modes meet WCAG colour contrast requirements.</p>
         </div>
+
+        <div class="tip-block">
+          <span class="tip-label">👓 Dyslexia-Friendly Font</span>
+          <p>Toggle <strong>OpenDyslexic</strong> from the sidebar menu. The unique letter shapes reduce visual confusion and improve reading flow. Your choice is saved and remembered.</p>
+        </div>
+
+        <div class="tip-block">
+          <span class="tip-label">🖨️ Print Any Module</span>
+          <p>Every module has a Print button at the bottom of the page. Printed pages show only the lesson content — no menus, no buttons — formatted for clean, easy reading.</p>
+        </div>
       </section>
 
-      <!-- Section 4: The Team -->
+      <!-- ── Testimonials ── -->
+      <section>
+        <h2>What People Are Saying</h2>
+        <p>Here's what learners from across Ontario have shared with us.</p>
+
+        <div class="testimonial-card">
+          <p>"I used to hand my phone to my daughter every time I got a weird message. Now I know exactly what to look for — and I haven't been fooled once."</p>
+          <p class="testimonial-attr">— Margaret, 74, Stratford, Ontario</p>
+        </div>
+
+        <div class="testimonial-card">
+          <p>"The Scam Simulator was the best thing I've done. I finally understand why those phone calls sound so convincing — and how to hang up without feeling guilty."</p>
+          <p class="testimonial-attr">— Robert, 78, London, Ontario</p>
+        </div>
+
+        <div class="testimonial-card">
+          <p>"I set this up on my mother's iPad and she worked through four modules in a week. She called me to say she'd done her banking app on her own for the first time. I cried a little."</p>
+          <p class="testimonial-attr">— A daughter from St. Thomas, Ontario</p>
+        </div>
+
+        <div class="testimonial-card">
+          <p>"I liked that it never made me feel stupid. Every module starts by saying my worries are normal. That meant a lot."</p>
+          <p class="testimonial-attr">— Dorothy, 81, Guelph, Ontario</p>
+        </div>
+      </section>
+
+      <!-- ── Founder ── -->
       <section>
         <h2>The Team</h2>
-        <p>Digital Confidence Centre is a project by Two Birds, a small Canadian product studio based in Ontario. Built with care for the communities we live in.</p>
+
+        <div class="founder-block">
+          <div class="founder-avatar">👨‍💻</div>
+          <div>
+            <div class="founder-name">Aaron Kramer</div>
+            <div class="founder-role">Founder &amp; Designer, Two Birds — St. Thomas, Ontario</div>
+            <p class="founder-bio">Aaron is a product designer and developer based in St. Thomas, Ontario. He founded Two Birds to build tools that actually make life easier for people — not just people who are already comfortable with technology. The Digital Confidence Centre grew out of community interviews and a conviction that digital safety is a public good, not a product.</p>
+            <p class="founder-bio" style="margin-top:0.5rem;">When he's not building tools, Aaron is involved in local community initiatives in southwestern Ontario.</p>
+          </div>
+        </div>
+
+        <p style="margin-top:1rem;">Digital Confidence Centre is a project by Two Birds, a small Canadian product studio based in Ontario. Built with care for the communities we live in.</p>
       </section>
 
+      <!-- ── Privacy Promise ── -->
+      <section>
+        <h2>Our Privacy Promise</h2>
+        <p>Your personal information stays personal. The Digital Confidence Centre:</p>
+        <ul>
+          <li>Does <strong>not</strong> require you to create an account or share your name</li>
+          <li>Saves your progress <strong>only on your own device</strong> — we cannot see it</li>
+          <li>Uses standard analytics (Google Analytics) to understand how many visitors use the site — no personal data attached</li>
+          <li>Will <strong>never</strong> sell, share, or monetise your information</li>
+        </ul>
+        <p>Full details are in our <a href="privacy.html">Privacy Policy</a>.</p>
+      </section>
+
+      <!-- ── CTA ── -->
       <div class="confidence-check">
         <span class="check-icon">💛</span>
         <p>Ready to start learning? Pick any module from the Home Page and begin at your own pace.</p>
-        <p class="check-text"><a href="index.html" class="btn btn-primary" style="margin-top:8px;">Go to the Home Page →</a></p>
+        <p class="check-text">
+          <a href="index.html" class="btn btn-primary" style="margin-top:8px;">Go to the Home Page →</a>
+          &nbsp;
+          <a href="glossary.html" class="btn btn-secondary" style="margin-top:8px;">Browse the Tech Glossary →</a>
+        </p>
       </div>
 
       <footer class="site-footer">
@@ -216,6 +391,7 @@
             <a href="index.html">Home</a> |
             <a href="resources.html">Resources</a> |
             <a href="faq.html">FAQ</a> |
+            <a href="glossary.html">Glossary</a> |
             <a href="whats-coming.html">What's Coming</a> |
             <a href="family-setup.html">For Families</a> |
             <a href="about.html">About</a> |
@@ -241,8 +417,10 @@
   <script src="js/city-resources.js" defer></script>
   <script src="js/welcome-splash.js" defer></script>
   <script src="js/localize.js" defer></script>
-  <script src="js/setup-wizard.js" defer></script>  <script src="js/feedback-github.js" defer></script>
+  <script src="js/setup-wizard.js" defer></script>
+  <script src="js/feedback-github.js" defer></script>
   <script src="js/settings.js" defer></script>
   <script src="js/panic-button.js" defer></script>
+  <button class="btn-print" onclick="window.print()" aria-label="Print this page">🖨️ Print This Page</button>
 </body>
 </html>
