@@ -1,0 +1,222 @@
+/* ============================================
+   print.css — Digital Confidence Centre
+   Print-optimised styles for module pages
+   ============================================ */
+
+@media print {
+
+  /* ── Hide non-content elements ── */
+  .sidebar,
+  .sidebar-overlay,
+  .accessibility-bar,
+  .top-bar,
+  .menu-btn,
+  .module-nav,
+  .site-footer,
+  .skip-link,
+  .settings-link,
+  .settings-divider,
+  .scenario-toggle,
+  .progress-item,
+  .btn-print,
+  #feedback-modal,
+  #settings-modal,
+  #welcome-splash,
+  .panic-button,
+  .back-to-top,
+  [aria-label="Open navigation menu"],
+  [aria-label="Close navigation"] {
+    display: none !important;
+  }
+
+  /* ── Print header ── */
+  .page-wrapper::before {
+    content: "Digital Confidence Centre — digitalconfidencecentre.ca";
+    display: block;
+    font-size: 9pt;
+    color: #666;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 6pt;
+    margin-bottom: 16pt;
+    font-family: Georgia, serif;
+  }
+
+  /* ── Page setup ── */
+  @page {
+    margin: 2cm;
+    size: letter portrait;
+  }
+
+  @page :first {
+    margin-top: 2cm;
+  }
+
+  /* ── Base typography ── */
+  body {
+    font-family: Georgia, 'Times New Roman', serif !important;
+    font-size: 12pt !important;
+    line-height: 1.6 !important;
+    color: #000 !important;
+    background: #fff !important;
+  }
+
+  h1 {
+    font-size: 20pt !important;
+    border-bottom: 2pt solid #000;
+    padding-bottom: 6pt;
+    margin-bottom: 12pt;
+    page-break-after: avoid;
+  }
+
+  h2 {
+    font-size: 15pt !important;
+    margin-top: 18pt;
+    page-break-after: avoid;
+  }
+
+  h3 {
+    font-size: 13pt !important;
+    page-break-after: avoid;
+  }
+
+  p {
+    font-size: 12pt !important;
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* ── Layout ── */
+  .page-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .main-content {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* ── Show answers in scenarios ── */
+  .scenario-answer {
+    display: block !important;
+  }
+
+  /* ── Cards and blocks ── */
+  .tip-block,
+  .warning-box,
+  .story-block,
+  .confidence-check,
+  .walkthrough,
+  .script-box,
+  .safety-checklist,
+  .magic-words-grid,
+  .takeaways-grid,
+  .feeling-stuck-box,
+  .practice-scenario {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: 1pt solid #ccc !important;
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .walkthrough-step,
+  .checklist-item,
+  .takeaway-card,
+  .magic-word-card,
+  .script-line {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* ── Show URLs after links ── */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #444;
+    word-break: break-all;
+  }
+
+  /* Don't show URL for anchor links or javascript links */
+  a[href^="#"]::after,
+  a[href^="javascript"]::after {
+    content: "" !important;
+  }
+
+  /* ── Images ── */
+  .module-hero-image {
+    max-width: 100% !important;
+    max-height: 3cm !important;
+    page-break-after: avoid;
+  }
+
+  /* ── Page numbers ── */
+  .page-wrapper::after {
+    content: "";
+    display: block;
+  }
+
+  /* Footer on each page */
+  @page {
+    @bottom-center {
+      content: "Digital Confidence Centre  |  Page " counter(page) " of " counter(pages);
+      font-size: 9pt;
+      color: #666;
+    }
+  }
+
+  /* ── Black and white friendly ── */
+  * {
+    color: #000 !important;
+    background-color: #fff !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Keep important borders visible */
+  .tip-block { border-left: 3pt solid #000 !important; padding-left: 8pt !important; }
+  .warning-box { border: 2pt solid #000 !important; }
+  .story-block { border-left: 3pt solid #666 !important; }
+
+  /* ── Accessibility bar hidden ── */
+  .a11y-btn,
+  .font-size-btn,
+  .theme-toggle-btn {
+    display: none !important;
+  }
+}
+
+/* ── Print button — visible on screen, hidden when printing ── */
+.btn-print {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: #1565C0;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: 0 2px 12px rgba(21,101,192,0.35);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background 0.15s, transform 0.15s;
+  text-decoration: none;
+}
+
+.btn-print:hover {
+  background: #0d47a1;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.btn-print:focus {
+  outline: 3px solid rgba(21,101,192,0.4);
+  outline-offset: 2px;
+}
