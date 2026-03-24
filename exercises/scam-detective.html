@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A timed scam-spotting challenge for Ontario seniors. Five real-world scenarios — can you identify the scam before the clock runs out?">
+  <meta property="og:title" content="Scam Detective: Can You Spot the Trick? — Digital Confidence Centre">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/exercises/scam-detective.html">
+  <title>Scam Detective: Can You Spot the Trick? — Digital Confidence Centre</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/accessibility.css">
+  <link rel="stylesheet" href="../css/mobile.css">
+  <link rel="stylesheet" href="../css/print.css">
+  <link rel="stylesheet" href="../css/exercises.css">
+  <style>
+    .detective-intro {
+      background: #FFF8E1;
+      border: 2px solid #F9A825;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .detective-intro p { margin: 0.4rem 0; }
+    [data-theme="dark"] .detective-intro { background: #2E2A1A; border-color: #F9A825; }
+    .start-btn {
+      display: block;
+      margin: 1.5rem auto 0;
+      padding: 16px 40px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 50px;
+      background: #1565C0;
+      color: #fff;
+      cursor: pointer;
+      min-width: 220px;
+    }
+    .start-btn:hover { background: #0D47A1; }
+    .red-flag {
+      display: inline-block;
+      background: #FFEBEE;
+      border: 1px solid #E53935;
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 0.85rem;
+      color: #B71C1C;
+      margin: 2px 3px;
+      font-weight: 700;
+    }
+    [data-theme="dark"] .red-flag { background: #2E1A1A; color: #F1948A; border-color: #F1948A; }
+  </style>
+  <!-- SEO -->
+  <meta name="author" content="Digital Confidence Centre">
+  <meta name="robots" content="index, follow">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#1565C0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Digital Confidence">
+  <!-- Google Analytics -->
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPH5H5BM52"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RPH5H5BM52');
+  </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+</head>
+<body>
+  <script>
+    if (/bot|crawler|spider|crawling/i.test(navigator.userAgent)) {
+      try { localStorage.setItem('dc-setup-complete', 'crawler-bypass'); } catch(e) {}
+    }
+  </script>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Accessibility Controls -->
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <!-- Top Bar (Mobile) -->
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">Scam Detective</span>
+    <span></span>
+  </div>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">&#10005;</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Your learning journey</p>
+    </div>
+    <nav>
+      <a href="../index.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a href="../digital-literacy-101.html"><span class="nav-icon">📖</span><span class="nav-label">Foundations</span></a>
+      <a href="../module-1.html"><span class="nav-icon">🪂</span><span class="nav-label">1. The Escape Hatch</span></a>
+      <a href="../module-2.html"><span class="nav-icon">🛡️</span><span class="nav-label">2. Security Shield</span></a>
+      <a href="../module-3.html"><span class="nav-icon">🔑</span><span class="nav-label">3. Passwords</span></a>
+      <a href="../module-4.html"><span class="nav-icon">📱</span><span class="nav-label">4. App Store Safety</span></a>
+      <a href="../module-5.html"><span class="nav-icon">✉️</span><span class="nav-label">5. Email &amp; Messages</span></a>
+      <a href="../module-6.html"><span class="nav-icon">🏦</span><span class="nav-label">6. Banking</span></a>
+      <a href="../module-7.html"><span class="nav-icon">🎨</span><span class="nav-label">7. Photos &amp; Memories</span></a>
+      <a href="../module-8.html"><span class="nav-icon">👨‍👩‍👧</span><span class="nav-label">8. Stay Connected</span></a>
+      <a href="../module-9.html"><span class="nav-icon">🤖</span><span class="nav-label">9. Understanding AI</span></a>
+      <a href="../module-10.html"><span class="nav-icon">🛒</span><span class="nav-label">10. Grocery &amp; Delivery</span></a>
+      <a href="../module-11.html"><span class="nav-icon">🚗</span><span class="nav-label">11. Ride-Sharing</span></a>
+      <a href="../module-12.html"><span class="nav-icon">🤝</span><span class="nav-label">12. Getting Help</span></a>
+      <a href="../module-visual-ai.html"><span class="nav-icon">📷</span><span class="nav-label">Show Me! (Bonus)</span></a>
+      <a href="../family-setup.html"><span class="nav-icon">👪</span><span class="nav-label">Set Up for a Loved One</span></a>
+      <a href="../resources.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
+      <a href="../scam-simulator.html"><span class="nav-icon">🎯</span><span class="nav-label">Scam Simulator</span></a>
+      <div class="sidebar-a11y-section">
+        <p class="sidebar-a11y-title">Text Size</p>
+        <div class="sidebar-font-row">
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false" style="font-size:1rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+        </div>
+        <p class="sidebar-a11y-title">Screen Colour</p>
+        <div class="sidebar-theme-row">
+          <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+        </div>
+      </div>
+        <p class="sidebar-a11y-title">Reading Comfort</p>
+        <div class="font-option">
+          <label class="toggle-label" for="dyslexic-font-toggle">
+            <input type="checkbox" id="dyslexic-font-toggle" />
+            <span class="toggle-switch"></span>
+            <span class="toggle-text">
+              <strong>Dyslexia-Friendly Font</strong>
+              <small>Easier to read for some people</small>
+            </span>
+          </label>
+        </div>
+      <div class="settings-divider"></div>
+      <a href="#" class="settings-link" aria-label="Open settings"><span class="nav-icon">⚙️</span><span class="nav-label">My Settings</span></a>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <div class="exercise-container">
+        <div class="exercise-header">
+          <h1>Scam Detective: Can You Spot the Trick?</h1>
+          <p class="exercise-description">Read each message carefully and decide: is it a scam or is it safe? You have 20 seconds per question. Don't worry — no real personal information is involved.</p>
+        </div>
+
+        <!-- Pre-start introduction -->
+        <div class="detective-intro" id="detective-intro">
+          <p><strong>How to play:</strong></p>
+          <p>You will see 5 real-world messages — texts, emails, and phone call scripts. For each one, press <strong>This is a Scam</strong> or <strong>Looks Safe</strong> before the timer runs out. After each answer, you'll see an explanation with the red flags to watch for.</p>
+          <p><strong>Ready to start?</strong> Your 20-second timer begins with the first question.</p>
+          <button class="start-btn" id="start-detective">Start the Challenge →</button>
+        </div>
+
+        <!-- Exercise area — populated by JS -->
+        <div class="exercise-content" id="detective-exercise" style="display:none;"></div>
+
+        <!-- Results area — populated by JS -->
+        <div class="exercise-feedback" id="detective-results" style="display:none;" tabindex="-1" role="region" aria-label="Exercise results"></div>
+
+        <div class="confidence-check" style="margin-top:1.5rem;">
+          <span class="check-icon">🔍</span>
+          <p><strong>Remember:</strong> Real government agencies like the CRA never threaten arrest or demand immediate payment. If something feels urgent or scary — that's a scam tactic. Hang up. Delete. Call someone you trust.</p>
+          <a href="../module-5.html" class="btn btn-primary" style="margin-top:8px;">Review Module 5: Email &amp; Messages →</a>
+          &nbsp;
+          <a href="../scam-simulator.html" class="btn btn-secondary" style="margin-top:8px;">Try the Full Scam Simulator →</a>
+        </div>
+      </div><!-- /.exercise-container -->
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-brand">Digital Confidence Centre</p>
+          <p class="footer-tagline">A free learning programme for Canadian seniors</p>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="../index.html">Home</a> |
+            <a href="../resources.html">Resources</a> |
+            <a href="../faq.html">FAQ</a> |
+            <a href="../glossary.html">Glossary</a> |
+            <a href="../whats-coming.html">What's Coming</a> |
+            <a href="../family-setup.html">For Families</a> |
+            <a href="../about.html">About</a> |
+            <a href="../privacy.html">Privacy Policy</a> |
+            <a href="#" onclick="openFeedbackModal(); return false;">Ideas &amp; Feedback</a>
+          </nav>
+          <p class="footer-support">
+            Need help? Call <strong>Connected Canadians</strong> free:
+            <a href="tel:+18558080505">1-855-808-0505</a>
+          </p>
+          <p class="footer-copy">&copy; 2026 Two Birds. Made with care in Ontario, Canada.</p>
+          <p class="city-footer-label" style="display:none;"></p>
+          <p class="device-footer-label" style="display:none;"></p>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../js/exercise-engine.js"></script>
+  <script>
+    /* ── Scam Detective Scenarios ── */
+    var SCENARIOS = [
+      {
+        type: 'text',
+        from: 'Unknown Number',
+        body: 'Your Interac e-Transfer of $2,847 from CRA Tax Refund is ready. Click to claim now: http://cra-etransfer.biz/claim',
+        answer: 'scam',
+        timer: 20,
+        explanation: 'RED FLAGS: The CRA (Canada Revenue Agency) never sends tax refunds via Interac e-Transfer. The link domain (cra-etransfer.biz) is not a government site — all real CRA URLs end in .gc.ca. Never click these links.'
+      },
+      {
+        type: 'email',
+        from: 'no-reply@apple.com',
+        subject: 'Your receipt from Apple — Apple Music',
+        body: 'Thank you for your purchase. Apple Music subscription — $10.99/month. Billed to your Apple ID on file. This is your monthly receipt. No action is required.',
+        answer: 'safe',
+        timer: 20,
+        explanation: 'This is a legitimate receipt from Apple. The sender domain is apple.com (Apple\'s real domain), it states no action is required, and it matches a normal subscription charge. If you didn\'t subscribe to Apple Music, you can check your Apple ID account directly at appleid.apple.com.'
+      },
+      {
+        type: 'phone',
+        from: '1-888-555-0193 (Incoming Call)',
+        body: '"Hello, this is the Canada Revenue Agency. You owe $4,200 in unpaid taxes. A warrant has been issued for your arrest. To avoid being taken into custody today, you must call 1-888-555-0193 immediately and purchase iTunes gift cards to settle your balance."',
+        answer: 'scam',
+        timer: 20,
+        explanation: 'RED FLAGS: The CRA never threatens arrest over the phone. The CRA never asks for payment in gift cards — this is the single biggest scam red flag that exists. The CRA will always send a written notice by mail first. Hang up immediately and report to the Canadian Anti-Fraud Centre: 1-888-495-8501.'
+      },
+      {
+        type: 'text',
+        from: 'Unknown Number',
+        body: '"Hi Mom, it\'s me. I lost my phone and I\'m using a friend\'s number. I\'m in a really bad situation — I was in a minor car accident and I need $500 e-transferred right away to pay the other driver and avoid the police getting involved. Please don\'t call Dad yet — I\'ll explain everything later. Can you send it to this email: help-me-now@gmail.com?"',
+        answer: 'scam',
+        timer: 20,
+        explanation: 'RED FLAGS: This is the "grandparent scam" or "family emergency scam." Scammers ask you not to verify with other family members — that is intentional. The urgency, secrecy, and e-transfer to a stranger\'s email are all red flags. Always call your family member directly on their known number before sending any money.'
+      },
+      {
+        type: 'email',
+        from: 'system@connected.canadians.ca',
+        subject: 'Your learning progress has been saved',
+        body: 'Your Digital Confidence Centre learning session has been recorded. You have completed 3 of 12 modules. Your progress is saved on your device. No action is required. Visit the Digital Confidence Centre any time to continue: https://twobirds-kramerica.github.io/digital-confidence/',
+        answer: 'safe',
+        timer: 20,
+        explanation: 'This is a legitimate system notification from the Digital Confidence Centre. The sender domain matches the programme\'s host (connected.canadians.ca), no personal information or payment is requested, and the link points to the real site. System progress emails like this are routine and safe.'
+      }
+    ];
+
+    /* ── Start button ── */
+    document.getElementById('start-detective').addEventListener('click', function () {
+      document.getElementById('detective-intro').style.display = 'none';
+      document.getElementById('detective-exercise').style.display = 'block';
+      document.getElementById('detective-exercise').focus();
+
+      window.DC_EXERCISES.initScamDetective(
+        SCENARIOS,
+        '#detective-exercise',
+        function (results) {
+          document.getElementById('detective-exercise').style.display = 'none';
+          window.DC_EXERCISES.renderResults(results, '#detective-results');
+        }
+      );
+    });
+  </script>
+  <script src="../js/speech-config.js" defer></script>
+  <script src="../js/app.js" defer></script>
+  <script src="../js/accessibility.js" defer></script>
+  <script src="../js/city-resources.js" defer></script>
+  <script src="../js/welcome-splash.js" defer></script>
+  <script src="../js/setup-wizard.js" defer></script>
+  <script src="../js/feedback-github.js" defer></script>
+  <script src="../js/settings.js" defer></script>
+  <script src="../js/panic-button.js" defer></script>
+  <button class="btn-print" onclick="window.print()" aria-label="Print this page">🖨️ Print This Page</button>
+</body>
+</html>

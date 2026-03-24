@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Practice sorting real-looking emails into the right folder — inbox, spam, or delete. Learn to spot scam senders before they catch you.">
+  <meta property="og:title" content="Practice Exercise: Sorting Your Inbox — Digital Confidence Centre">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/exercises/email-sorting.html">
+  <title>Practice Exercise: Sorting Your Inbox — Digital Confidence Centre</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/accessibility.css">
+  <link rel="stylesheet" href="../css/mobile.css">
+  <link rel="stylesheet" href="../css/print.css">
+  <link rel="stylesheet" href="../css/exercises.css">
+  <style>
+    .drag-source {
+      margin-bottom: 1.5rem;
+    }
+    .drag-source-label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-secondary, #5D6D7E);
+      margin-bottom: 0.5rem;
+    }
+    .email-item {
+      background: #E3F2FD;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin: 8px 0;
+      cursor: grab;
+      user-select: none;
+      touch-action: none;
+      transition: all 0.2s ease;
+    }
+    .email-item:hover { border-color: #1565C0; }
+    .email-item.dragging { opacity: 0.5; cursor: grabbing; }
+    .email-from { font-weight: 700; font-size: 0.88rem; color: #1565C0; }
+    .email-subject { font-size: 0.93rem; margin-top: 2px; }
+    [data-theme="dark"] .email-item { background: #1a237e; color: #e8eaf6; }
+    [data-theme="dark"] .email-from  { color: #90CAF9; }
+    .check-all-btn {
+      display: block;
+      margin: 1.5rem auto 0;
+      padding: 14px 32px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 50px;
+      background: #1565C0;
+      color: #fff;
+      cursor: pointer;
+    }
+    .check-all-btn:hover { background: #0D47A1; }
+    .check-all-btn:disabled { background: #90A4AE; cursor: default; }
+  </style>
+  <!-- SEO -->
+  <meta name="author" content="Digital Confidence Centre">
+  <meta name="robots" content="index, follow">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#1565C0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Digital Confidence">
+  <!-- Google Analytics -->
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPH5H5BM52"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RPH5H5BM52');
+  </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+</head>
+<body>
+  <script>
+    if (/bot|crawler|spider|crawling/i.test(navigator.userAgent)) {
+      try { localStorage.setItem('dc-setup-complete', 'crawler-bypass'); } catch(e) {}
+    }
+  </script>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Accessibility Controls -->
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <!-- Top Bar (Mobile) -->
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">Sorting Your Inbox</span>
+    <span></span>
+  </div>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">&#10005;</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Your learning journey</p>
+    </div>
+    <nav>
+      <a href="../index.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a href="../digital-literacy-101.html"><span class="nav-icon">📖</span><span class="nav-label">Foundations</span></a>
+      <a href="../module-1.html"><span class="nav-icon">🪂</span><span class="nav-label">1. The Escape Hatch</span></a>
+      <a href="../module-2.html"><span class="nav-icon">🛡️</span><span class="nav-label">2. Security Shield</span></a>
+      <a href="../module-3.html"><span class="nav-icon">🔑</span><span class="nav-label">3. Passwords</span></a>
+      <a href="../module-4.html"><span class="nav-icon">📱</span><span class="nav-label">4. App Store Safety</span></a>
+      <a href="../module-5.html"><span class="nav-icon">✉️</span><span class="nav-label">5. Email &amp; Messages</span></a>
+      <a href="../module-6.html"><span class="nav-icon">🏦</span><span class="nav-label">6. Banking</span></a>
+      <a href="../module-7.html"><span class="nav-icon">🎨</span><span class="nav-label">7. Photos &amp; Memories</span></a>
+      <a href="../module-8.html"><span class="nav-icon">👨‍👩‍👧</span><span class="nav-label">8. Stay Connected</span></a>
+      <a href="../module-9.html"><span class="nav-icon">🤖</span><span class="nav-label">9. Understanding AI</span></a>
+      <a href="../module-10.html"><span class="nav-icon">🛒</span><span class="nav-label">10. Grocery &amp; Delivery</span></a>
+      <a href="../module-11.html"><span class="nav-icon">🚗</span><span class="nav-label">11. Ride-Sharing</span></a>
+      <a href="../module-12.html"><span class="nav-icon">🤝</span><span class="nav-label">12. Getting Help</span></a>
+      <a href="../module-visual-ai.html"><span class="nav-icon">📷</span><span class="nav-label">Show Me! (Bonus)</span></a>
+      <a href="../family-setup.html"><span class="nav-icon">👪</span><span class="nav-label">Set Up for a Loved One</span></a>
+      <a href="../resources.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
+      <a href="../scam-simulator.html"><span class="nav-icon">🎯</span><span class="nav-label">Scam Simulator</span></a>
+      <div class="sidebar-a11y-section">
+        <p class="sidebar-a11y-title">Text Size</p>
+        <div class="sidebar-font-row">
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false" style="font-size:1rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+        </div>
+        <p class="sidebar-a11y-title">Screen Colour</p>
+        <div class="sidebar-theme-row">
+          <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+        </div>
+      </div>
+        <p class="sidebar-a11y-title">Reading Comfort</p>
+        <div class="font-option">
+          <label class="toggle-label" for="dyslexic-font-toggle">
+            <input type="checkbox" id="dyslexic-font-toggle" />
+            <span class="toggle-switch"></span>
+            <span class="toggle-text">
+              <strong>Dyslexia-Friendly Font</strong>
+              <small>Easier to read for some people</small>
+            </span>
+          </label>
+        </div>
+      <div class="settings-divider"></div>
+      <a href="#" class="settings-link" aria-label="Open settings"><span class="nav-icon">⚙️</span><span class="nav-label">My Settings</span></a>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <div class="exercise-container">
+        <div class="exercise-header">
+          <h1>Practice Exercise: Sorting Your Inbox</h1>
+          <p class="exercise-description">Drag each email into the correct folder: <strong>Keep in Inbox</strong>, <strong>Move to Spam</strong>, or <strong>Delete Immediately</strong>. Look closely at the sender address — scammers often use addresses that look almost right.</p>
+        </div>
+
+        <div class="exercise-content" id="sort-exercise">
+
+          <!-- Source tray -->
+          <div class="drag-source" id="email-tray">
+            <p class="drag-source-label">Emails to sort — drag each one into a folder below:</p>
+
+            <div class="draggable-item email-item"
+                 data-correct-zone="inbox"
+                 data-explanation="This is a real Ontario library system email. The domain libraryontario.ca is official and legitimate."
+                 draggable="true">
+              <div class="email-from">From: newsletter@libraryontario.ca</div>
+              <div class="email-subject">Your library card renewal is ready</div>
+            </div>
+
+            <div class="draggable-item email-item"
+                 data-correct-zone="delete"
+                 data-explanation="apple-id-verify.net is NOT Apple's real domain (apple.com). This is a phishing scam designed to steal your Apple password."
+                 draggable="true">
+              <div class="email-from">From: security-alert@apple-id-verify.net</div>
+              <div class="email-subject">Your Apple ID has been suspended</div>
+            </div>
+
+            <div class="draggable-item email-item"
+                 data-correct-zone="inbox"
+                 data-explanation="A Gmail address from family is expected and safe. You can always confirm with a quick phone call if unsure."
+                 draggable="true">
+              <div class="email-from">From: family@gmail.com</div>
+              <div class="email-subject">Photos from Thanksgiving</div>
+            </div>
+
+            <div class="draggable-item email-item"
+                 data-correct-zone="inbox"
+                 data-explanation="noreply@royalbank.com uses RBC's real domain. eStatement notices from your own bank are legitimate — just don't click links inside. Log in directly from the app instead."
+                 draggable="true">
+              <div class="email-from">From: noreply@royalbank.com</div>
+              <div class="email-subject">Your eStatement is ready</div>
+            </div>
+
+            <div class="draggable-item email-item"
+                 data-correct-zone="delete"
+                 data-explanation="amazon-order-help.co is NOT Amazon's domain (amazon.ca or amazon.com). The .co ending and hyphenated name are red flags for a scam."
+                 draggable="true">
+              <div class="email-from">From: support@amazon-order-help.co</div>
+              <div class="email-subject">Action required on your order</div>
+            </div>
+
+            <div class="draggable-item email-item"
+                 data-correct-zone="spam"
+                 data-explanation="Flyer subscription emails from marketing lists are not dangerous scams, but they clutter your inbox. Move them to spam so you only see them if you want to."
+                 draggable="true">
+              <div class="email-from">From: deals@shoppers-flyers.com</div>
+              <div class="email-subject">This week's Shoppers Drug Mart flyer</div>
+            </div>
+
+            <div class="draggable-item email-item"
+                 data-correct-zone="delete"
+                 data-explanation="Look carefully: the domain is cra.gc.ca-refund.info — not cra.gc.ca. Scammers add the real domain in the middle to fool you. The real CRA domain always ends in .gc.ca with nothing after it."
+                 draggable="true">
+              <div class="email-from">From: cra-tax-refund@cra.gc.ca-refund.info</div>
+              <div class="email-subject">Your CRA refund is pending</div>
+            </div>
+
+            <div class="draggable-item email-item"
+                 data-correct-zone="inbox"
+                 data-explanation="no-reply@canadapost.ca uses Canada Post's real domain. Delivery notifications from your actual carrier are safe to read."
+                 draggable="true">
+              <div class="email-from">From: no-reply@canadapost.ca</div>
+              <div class="email-subject">Your package is out for delivery</div>
+            </div>
+          </div><!-- /#email-tray -->
+
+          <!-- Drop zones -->
+          <div class="drop-zones">
+            <div class="drop-zone" data-zone="inbox" tabindex="0" role="listbox" aria-label="Keep in Inbox drop zone">
+              <div class="drop-zone-label">📥 Keep in Inbox</div>
+            </div>
+            <div class="drop-zone" data-zone="spam" tabindex="0" role="listbox" aria-label="Move to Spam drop zone">
+              <div class="drop-zone-label">📁 Move to Spam</div>
+            </div>
+            <div class="drop-zone" data-zone="delete" tabindex="0" role="listbox" aria-label="Delete Immediately drop zone">
+              <div class="drop-zone-label">🗑️ Delete Immediately</div>
+            </div>
+          </div>
+
+          <button class="check-all-btn" id="check-answers-btn" disabled>Check My Answers</button>
+        </div><!-- /.exercise-content -->
+
+        <!-- Results panel (hidden until check) -->
+        <div class="exercise-feedback" id="sort-results" style="display:none;" tabindex="-1" role="region" aria-label="Exercise results"></div>
+
+        <div class="confidence-check" style="margin-top:1.5rem;">
+          <span class="check-icon">✉️</span>
+          <p><strong>Key tip:</strong> Always look at the full email address, not just the name. Scammers can make the display name say "Apple" or "CRA" — but the actual address gives them away.</p>
+          <a href="../module-5.html" class="btn btn-primary" style="margin-top:8px;">Review Module 5: Email &amp; Messages →</a>
+        </div>
+      </div><!-- /.exercise-container -->
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-brand">Digital Confidence Centre</p>
+          <p class="footer-tagline">A free learning programme for Canadian seniors</p>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="../index.html">Home</a> |
+            <a href="../resources.html">Resources</a> |
+            <a href="../faq.html">FAQ</a> |
+            <a href="../glossary.html">Glossary</a> |
+            <a href="../whats-coming.html">What's Coming</a> |
+            <a href="../family-setup.html">For Families</a> |
+            <a href="../about.html">About</a> |
+            <a href="../privacy.html">Privacy Policy</a> |
+            <a href="#" onclick="openFeedbackModal(); return false;">Ideas &amp; Feedback</a>
+          </nav>
+          <p class="footer-support">
+            Need help? Call <strong>Connected Canadians</strong> free:
+            <a href="tel:+18558080505">1-855-808-0505</a>
+          </p>
+          <p class="footer-copy">&copy; 2026 Two Birds. Made with care in Ontario, Canada.</p>
+          <p class="city-footer-label" style="display:none;"></p>
+          <p class="device-footer-label" style="display:none;"></p>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../js/exercise-engine.js"></script>
+  <script>
+    /* ── Email Sorting Exercise Logic ── */
+    (function () {
+      'use strict';
+
+      var tray      = document.getElementById('email-tray');
+      var checkBtn  = document.getElementById('check-answers-btn');
+      var resultsEl = document.getElementById('sort-results');
+      var zones     = Array.from(document.querySelectorAll('.drop-zone'));
+      var items     = Array.from(document.querySelectorAll('.email-item'));
+
+      /* Enable check button once all items are placed */
+      function updateCheckBtn() {
+        var remaining = tray.querySelectorAll('.email-item').length;
+        checkBtn.disabled = (remaining > 0);
+        if (!checkBtn.disabled) {
+          checkBtn.setAttribute('aria-label', 'All emails sorted — check your answers');
+        }
+      }
+
+      /* ── Mouse drag ── */
+      var dragTarget = null;
+      items.forEach(function (item) {
+        item.addEventListener('dragstart', function () {
+          dragTarget = item;
+          item.classList.add('dragging');
+        });
+        item.addEventListener('dragend', function () {
+          item.classList.remove('dragging');
+          dragTarget = null;
+          updateCheckBtn();
+        });
+      });
+
+      zones.forEach(function (zone) {
+        zone.addEventListener('dragover', function (e) {
+          e.preventDefault();
+          zone.classList.add('drag-over');
+        });
+        zone.addEventListener('dragleave', function () {
+          zone.classList.remove('drag-over');
+        });
+        zone.addEventListener('drop', function (e) {
+          e.preventDefault();
+          zone.classList.remove('drag-over');
+          if (dragTarget) {
+            zone.appendChild(dragTarget);
+            updateCheckBtn();
+          }
+        });
+      });
+
+      /* ── Touch drag ── */
+      var touchItem   = null;
+      var touchClone  = null;
+      var touchOffX   = 0;
+      var touchOffY   = 0;
+
+      items.forEach(function (item) {
+        item.addEventListener('touchstart', function (e) {
+          touchItem = item;
+          var t    = e.touches[0];
+          var rect = item.getBoundingClientRect();
+          touchOffX = t.clientX - rect.left;
+          touchOffY = t.clientY - rect.top;
+          touchClone = item.cloneNode(true);
+          touchClone.style.cssText = [
+            'position:fixed','pointer-events:none','opacity:0.75','z-index:9999',
+            'width:' + rect.width + 'px',
+            'left:' + (t.clientX - touchOffX) + 'px',
+            'top:'  + (t.clientY - touchOffY) + 'px',
+            'margin:0'
+          ].join(';');
+          document.body.appendChild(touchClone);
+          item.classList.add('dragging');
+          e.preventDefault();
+        }, { passive: false });
+
+        item.addEventListener('touchmove', function (e) {
+          if (!touchClone) return;
+          var t = e.touches[0];
+          touchClone.style.left = (t.clientX - touchOffX) + 'px';
+          touchClone.style.top  = (t.clientY - touchOffY) + 'px';
+          zones.forEach(function (z) { z.classList.remove('drag-over'); });
+          var el   = document.elementFromPoint(t.clientX, t.clientY);
+          var zone = el ? el.closest('.drop-zone') : null;
+          if (zone) zone.classList.add('drag-over');
+          e.preventDefault();
+        }, { passive: false });
+
+        item.addEventListener('touchend', function (e) {
+          if (touchClone) { touchClone.remove(); touchClone = null; }
+          if (touchItem)  { touchItem.classList.remove('dragging'); }
+          zones.forEach(function (z) { z.classList.remove('drag-over'); });
+          var t    = e.changedTouches[0];
+          var el   = document.elementFromPoint(t.clientX, t.clientY);
+          var zone = el ? el.closest('.drop-zone') : null;
+          if (zone && touchItem) {
+            zone.appendChild(touchItem);
+            updateCheckBtn();
+          }
+          touchItem = null;
+        }, { passive: false });
+      });
+
+      /* ── Check answers ── */
+      checkBtn.addEventListener('click', function () {
+        checkBtn.disabled = true;
+        var results = [];
+
+        zones.forEach(function (zone) {
+          var zoneName = zone.dataset.zone;
+          var placed   = Array.from(zone.querySelectorAll('.email-item'));
+          placed.forEach(function (item) {
+            var correct = (item.dataset.correctZone === zoneName);
+            item.classList.add(correct ? 'correct' : 'incorrect');
+            results.push({
+              correct:     correct,
+              label:       item.querySelector('.email-from').textContent + ' — ' + item.querySelector('.email-subject').textContent,
+              explanation: item.dataset.explanation || ''
+            });
+          });
+        });
+
+        /* Build results HTML manually (extended format with explanations) */
+        var total   = results.length;
+        var correct = results.filter(function (r) { return r.correct; }).length;
+        var pct     = Math.round((correct / total) * 100);
+
+        var grade, message;
+        if (pct >= 90)      { grade = 'Excellent!';       message = 'You have a sharp eye for suspicious sender addresses.'; }
+        else if (pct >= 70) { grade = 'Well done!';       message = 'Good instincts — review the ones you missed below.'; }
+        else if (pct >= 50) { grade = 'Good effort!';     message = 'Scammers design these to look convincing. Read the explanations carefully.'; }
+        else                { grade = 'Keep practising!'; message = 'These are tricky. Focus on the sender domain (the part after the @).'; }
+
+        var detailsHtml = results.map(function (r) {
+          var cls  = r.correct ? 'correct' : 'incorrect';
+          var icon = r.correct ? '✓' : '✗';
+          return '<div class="feedback-item ' + cls + '"><strong>' + icon + ' ' + escHtml(r.label) + '</strong>'
+               + (r.explanation ? '<br><em style="font-size:0.88rem;">' + escHtml(r.explanation) + '</em>' : '')
+               + '</div>';
+        }).join('');
+
+        resultsEl.innerHTML = [
+          '<div class="score-display" aria-label="Score: ' + correct + ' out of ' + total + '">' + correct + ' / ' + total + '</div>',
+          '<p style="font-size:1.2rem;font-weight:700;">' + grade + '</p>',
+          '<p>' + message + '</p>',
+          '<div class="feedback-details">' + detailsHtml + '</div>',
+          '<button class="btn btn-primary retry-btn" id="sort-retry">Try Again</button>'
+        ].join('');
+
+        resultsEl.style.display = 'block';
+        resultsEl.focus();
+
+        document.getElementById('sort-retry').addEventListener('click', function () {
+          window.location.reload();
+        });
+
+        if (window.DC_EXERCISES && window.DC_EXERCISES.announce) {
+          window.DC_EXERCISES.announce(grade + ' You scored ' + correct + ' out of ' + total + '.');
+        }
+      });
+
+      function escHtml(str) {
+        return String(str)
+          .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      }
+
+      updateCheckBtn();
+    })();
+  </script>
+  <script src="../js/speech-config.js" defer></script>
+  <script src="../js/app.js" defer></script>
+  <script src="../js/accessibility.js" defer></script>
+  <script src="../js/city-resources.js" defer></script>
+  <script src="../js/welcome-splash.js" defer></script>
+  <script src="../js/setup-wizard.js" defer></script>
+  <script src="../js/feedback-github.js" defer></script>
+  <script src="../js/settings.js" defer></script>
+  <script src="../js/panic-button.js" defer></script>
+  <button class="btn-print" onclick="window.print()" aria-label="Print this page">🖨️ Print This Page</button>
+</body>
+</html>

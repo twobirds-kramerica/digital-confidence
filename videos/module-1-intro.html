@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Watch the Module 1 video tutorial for the Digital Confidence Centre — a step-by-step visual guide to the Escape Hatch for Ontario seniors.">
+  <title>Module 1 Video Guide — Digital Confidence Centre</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/accessibility.css">
+  <link rel="stylesheet" href="../css/mobile.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <meta name="theme-color" content="#1565C0">
+  <style>
+    /* =============================================
+       DC Video Player Styles
+       ============================================= */
+
+    /* Video section wrapper */
+    .dc-video-section {
+      margin: var(--spacing-lg) 0;
+    }
+
+    /* The main player wrapper */
+    .dc-video-wrap {
+      position: relative;
+      max-width: 800px;
+      background: #000;
+      border-radius: 12px 12px 0 0;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    }
+
+    /* Native video element */
+    .dc-video-wrap video {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px 12px 0 0;
+    }
+
+    /* YouTube iframe embed */
+    .dc-video-wrap .dc-yt-wrap {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 aspect ratio */
+    }
+
+    .dc-video-wrap .dc-yt-wrap iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 12px 12px 0 0;
+    }
+
+    /* ---- Controls bar ---- */
+    .dc-video-controls {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      padding: 8px 12px;
+      background: #222;
+      border-radius: 0 0 12px 12px;
+      flex-wrap: wrap;
+    }
+
+    [data-theme="dark"] .dc-video-controls {
+      background: #111;
+    }
+
+    /* All control buttons — 44px minimum touch target */
+    .dc-btn {
+      min-width: 44px;
+      min-height: 44px;
+      padding: 0 10px;
+      background: #444;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s;
+      font-family: inherit;
+    }
+
+    .dc-btn:hover,
+    .dc-btn:focus-visible {
+      background: #1565C0;
+      outline: 3px solid #90CAF9;
+      outline-offset: 2px;
+    }
+
+    .dc-btn-active {
+      background: #1565C0;
+    }
+
+    /* CC button width */
+    .dc-captions-btn {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      min-width: 44px;
+    }
+
+    /* Transcript button */
+    .dc-transcript-btn {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0 12px;
+      min-width: 110px;
+    }
+
+    /* Progress bar */
+    .dc-progress-wrap {
+      flex: 1;
+      min-width: 80px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 0 4px;
+    }
+
+    .dc-progress-bar {
+      position: relative;
+      width: 100%;
+      height: 6px;
+      background: #555;
+      border-radius: 3px;
+      overflow: visible;
+    }
+
+    .dc-progress-fill {
+      height: 100%;
+      background: #1565C0;
+      border-radius: 3px;
+      transition: width 0.1s linear;
+      pointer-events: none;
+    }
+
+    .dc-progress-wrap:hover .dc-progress-bar {
+      height: 10px;
+    }
+
+    /* Chapter markers */
+    .dc-chapter-marker {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 12px;
+      height: 12px;
+      background: #f59e0b;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 2;
+      padding: 0;
+      min-width: unset;
+      min-height: unset;
+    }
+
+    .dc-chapter-marker:hover {
+      background: #fff;
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Time display */
+    .dc-time-display {
+      color: #ccc;
+      font-size: 0.78rem;
+      white-space: nowrap;
+      min-width: 90px;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Speed selector */
+    .dc-speed-label {
+      color: #ccc;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .dc-speed-select {
+      min-height: 44px;
+      background: #444;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0 8px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .dc-speed-select:focus-visible {
+      outline: 3px solid #90CAF9;
+    }
+
+    /* Large play overlay */
+    .dc-play-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      background: rgba(0,0,0,0.65);
+      color: #fff;
+      border: 3px solid rgba(255,255,255,0.8);
+      border-radius: 50%;
+      font-size: 2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.25s, transform 0.15s;
+      z-index: 5;
+    }
+
+    .dc-play-overlay:hover {
+      background: rgba(21,101,192,0.85);
+      transform: translate(-50%, -50%) scale(1.08);
+    }
+
+    .dc-play-overlay:focus-visible {
+      outline: 3px solid #90CAF9;
+    }
+
+    /* ---- Transcript panel ---- */
+    .video-transcript {
+      max-width: 800px;
+      background: var(--bg-secondary, #f8f9fa);
+      border: 1px solid var(--border-colour, #dee2e6);
+      border-radius: 0 0 12px 12px;
+      padding: var(--spacing-md, 20px);
+      margin-top: 0;
+    }
+
+    [data-theme="dark"] .video-transcript {
+      background: #1e2228;
+      border-color: #333;
+    }
+
+    .video-transcript h3 {
+      margin-top: 0;
+      font-size: 1rem;
+      border: none;
+    }
+
+    .video-transcript p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* ---- Chapter navigation list ---- */
+    .chapter-list {
+      max-width: 800px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .chapter-list li a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border-colour, #dee2e6);
+      text-decoration: none;
+      color: var(--text-primary, #212529);
+      font-size: 0.95rem;
+      transition: background 0.15s;
+    }
+
+    .chapter-list li a:hover,
+    .chapter-list li a:focus-visible {
+      background: var(--bg-secondary, #f0f4ff);
+      border-color: #1565C0;
+    }
+
+    .chapter-timestamp {
+      color: #1565C0;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      min-width: 40px;
+      font-size: 0.9rem;
+    }
+
+    /* ---- Breadcrumb ---- */
+    .breadcrumb {
+      font-size: 0.9rem;
+      color: var(--text-secondary, #6c757d);
+      margin-bottom: var(--spacing-md, 20px);
+    }
+
+    .breadcrumb a {
+      color: #1565C0;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---- Download / action buttons ---- */
+    .video-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: var(--spacing-md, 20px) 0;
+      max-width: 800px;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      min-height: 44px;
+      border: 2px solid #1565C0;
+      color: #1565C0;
+      background: transparent;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .btn-outline:hover,
+    .btn-outline:focus-visible {
+      background: #1565C0;
+      color: #fff;
+    }
+
+    /* ---- Related links ---- */
+    .video-related {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: var(--spacing-lg, 32px);
+      padding-top: var(--spacing-md, 20px);
+      border-top: 1px solid var(--border-colour, #dee2e6);
+      max-width: 800px;
+    }
+
+    .video-related a {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1565C0;
+      text-decoration: none;
+    }
+
+    .video-related a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---- Dark mode overrides ---- */
+    [data-theme="dark"] .dc-btn {
+      background: #333;
+    }
+
+    [data-theme="dark"] .dc-speed-select {
+      background: #333;
+    }
+
+    [data-theme="dark"] .dc-time-display {
+      color: #aaa;
+    }
+
+    [data-theme="dark"] .chapter-list li a {
+      color: #e0e0e0;
+    }
+
+    [data-theme="dark"] .chapter-list li a:hover {
+      background: #2a2d35;
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 600px) {
+      .dc-time-display {
+        display: none;
+      }
+      .dc-transcript-btn {
+        min-width: 90px;
+        font-size: 0.75rem;
+      }
+      .dc-captions-btn {
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Accessibility Controls -->
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <!-- Top Bar (Mobile) -->
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">Digital Confidence Centre</span>
+    <span></span>
+  </div>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">✕</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Your learning journey</p>
+    </div>
+    <nav>
+      <a href="../index.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a href="../digital-literacy-101.html"><span class="nav-icon">📖</span><span class="nav-label">Foundations</span></a>
+      <a href="../module-1.html" aria-current="page"><span class="nav-icon">🪂</span><span class="nav-label">1. The Escape Hatch</span></a>
+      <a href="../module-2.html"><span class="nav-icon">🛡️</span><span class="nav-label">2. Security Shield</span></a>
+      <a href="../module-3.html"><span class="nav-icon">🔑</span><span class="nav-label">3. Passwords</span></a>
+      <a href="../module-4.html"><span class="nav-icon">📱</span><span class="nav-label">4. App Store Safety</span></a>
+      <a href="../module-5.html"><span class="nav-icon">✉️</span><span class="nav-label">5. Email &amp; Messages</span></a>
+      <a href="../module-6.html"><span class="nav-icon">🏦</span><span class="nav-label">6. Banking</span></a>
+      <a href="../module-7.html"><span class="nav-icon">🎨</span><span class="nav-label">7. Photos &amp; Memories</span></a>
+      <a href="../module-8.html"><span class="nav-icon">👨‍👩‍👧</span><span class="nav-label">8. Stay Connected</span></a>
+      <a href="../module-9.html"><span class="nav-icon">🤖</span><span class="nav-label">9. Understanding AI</span></a>
+      <a href="../module-10.html"><span class="nav-icon">🛒</span><span class="nav-label">10. Grocery &amp; Delivery</span></a>
+      <a href="../module-11.html"><span class="nav-icon">🚗</span><span class="nav-label">11. Ride-Sharing</span></a>
+      <a href="../module-12.html"><span class="nav-icon">🤝</span><span class="nav-label">12. Getting the Help You Deserve</span></a>
+      <a href="../family-setup.html"><span class="nav-icon">👪</span><span class="nav-label">Set Up for a Loved One</span></a>
+      <a href="../resources.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
+      <a href="../scam-simulator.html"><span class="nav-icon">🎯</span><span class="nav-label">Scam Simulator</span></a>
+      <div class="sidebar-a11y-section">
+        <p class="sidebar-a11y-title">Text Size</p>
+        <div class="sidebar-font-row">
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false" style="font-size:1rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+        </div>
+        <p class="sidebar-a11y-title">Screen Colour</p>
+        <div class="sidebar-theme-row">
+          <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+        </div>
+      </div>
+        <p class="sidebar-a11y-title">Reading Comfort</p>
+        <div class="font-option">
+          <label class="toggle-label" for="dyslexic-font-toggle">
+            <input type="checkbox" id="dyslexic-font-toggle" />
+            <span class="toggle-switch"></span>
+            <span class="toggle-text">
+              <strong>Dyslexia-Friendly Font</strong>
+              <small>Easier to read for some people</small>
+            </span>
+          </label>
+        </div>
+      <div class="settings-divider"></div>
+      <a href="#" class="settings-link" aria-label="Open settings"><span class="nav-icon">⚙️</span><span class="nav-label">My Settings</span></a>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a> ›
+        <a href="../module-1.html">Module 1</a> ›
+        <span>Video Guide</span>
+      </nav>
+
+      <h1>Module 1 Video Tutorial: The Escape Hatch</h1>
+      <p class="subtitle">Watch this short video to see the Escape Hatch in action on a real iPad. Follow along at your own pace — you can pause, rewind, and replay as many times as you need.</p>
+
+      <!-- Accessibility note -->
+      <div class="story-block" style="margin-bottom: var(--spacing-md);">
+        <span class="story-label">Accessibility</span>
+        <p>This video has closed captions and a full written transcript. If you prefer to read, the complete Module 1 text is available on the module page. Use the <strong>CC</strong> button to show or hide captions. Use the <strong>Transcript</strong> button to read along below the video.</p>
+      </div>
+
+      <!-- Video Player Section -->
+      <section class="dc-video-section" aria-label="Module 1 video player">
+        <div
+          class="dc-video-wrap"
+          data-chapters='[
+            {"label":"Introduction","time":"0:00"},
+            {"label":"The Home Button","time":"1:15"},
+            {"label":"The Back Button","time":"2:30"},
+            {"label":"Practice Exercises","time":"4:00"}
+          ]'
+        >
+          <!-- YouTube embed placeholder — replace VIDEO_ID_HERE with the actual YouTube video ID -->
+          <div class="dc-yt-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/VIDEO_ID_HERE?cc_load_policy=1&rel=0&modestbranding=1"
+              title="Module 1 Tutorial: The Escape Hatch — Digital Confidence Centre"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Transcript panel (hidden by default, toggled by Transcript button) -->
+        <div class="video-transcript" hidden>
+          <h3>Full Transcript — Module 1: The Escape Hatch</h3>
+          <p><em>Professional transcript coming when the video is produced. This is a placeholder. The transcript will appear here word-for-word so you can read along or refer back to any part of the video.</em></p>
+          <p>[0:00] Welcome to Module 1 of the Digital Confidence Centre. Today we are going to learn the single most important skill for using your iPad safely...</p>
+          <p>[1:15] The Home Button is the round button at the bottom of your iPad. On newer iPads, it is a swipe gesture from the bottom instead. No matter what is happening on your screen, pressing or swiping Home will always bring you back to safety...</p>
+          <p>[2:30] The Back Button appears in the top-left corner of most apps. It usually looks like a left-pointing arrow and has the name of the previous screen. Tapping it takes you one step back, just like the back button in a car...</p>
+          <p>[4:00] Now it is your turn to practise. Try opening the Settings app, then pressing Home to return to the Home Screen. You cannot break anything. Everything you see on your screen can be undone...</p>
+          <p><em>[End of transcript placeholder]</em></p>
+        </div>
+      </section>
+
+      <!-- Chapter Navigation -->
+      <section aria-label="Chapter navigation" style="margin: var(--spacing-lg) 0;">
+        <h2 style="font-size:1.15rem;">Jump to a Chapter</h2>
+        <p>Tap any chapter to jump straight to that part of the video.</p>
+        <ul class="chapter-list" role="list">
+          <li>
+            <a href="https://www.youtube.com/embed/VIDEO_ID_HERE?start=0" aria-label="Chapter 1: Introduction, starting at 0:00">
+              <span class="chapter-timestamp">0:00</span>
+              <span>Introduction — What is the Escape Hatch?</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/embed/VIDEO_ID_HERE?start=75" aria-label="Chapter 2: The Home Button, starting at 1:15">
+              <span class="chapter-timestamp">1:15</span>
+              <span>The Home Button — Your safe return</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/embed/VIDEO_ID_HERE?start=150" aria-label="Chapter 3: The Back Button, starting at 2:30">
+              <span class="chapter-timestamp">2:30</span>
+              <span>The Back Button — One step back</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/embed/VIDEO_ID_HERE?start=240" aria-label="Chapter 4: Practice Exercises, starting at 4:00">
+              <span class="chapter-timestamp">4:00</span>
+              <span>Practice Exercises — Try it yourself</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Download Transcript -->
+      <div class="video-actions">
+        <a href="#" class="btn-outline" aria-label="Download the Module 1 transcript as a PDF">
+          &#128196; Download Transcript (PDF)
+        </a>
+      </div>
+
+      <!-- Related links -->
+      <div class="video-related">
+        <a href="../module-1.html">&#8592; Back to Module 1</a>
+        <a href="../module-2.html">Next Module: The Security Shield &#8594;</a>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Digital Confidence Centre</p>
+      <p class="footer-tagline">A free learning programme for Canadian seniors</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="../index.html">Home</a> |
+        <a href="../resources.html">Resources</a> |
+        <a href="../faq.html">FAQ</a> |
+        <a href="../family-setup.html">For Families</a> |
+        <a href="../privacy.html">Privacy Policy</a>
+      </nav>
+      <p class="footer-support">
+        Need help? Call <strong>Connected Canadians</strong> free:
+        <a href="tel:+18558080505">1-855-808-0505</a>
+      </p>
+      <p class="footer-copy">&copy; 2026 Two Birds. Made with care in Ontario, Canada.</p>
+    </div>
+  </footer>
+
+  <script src="../js/app.js" defer></script>
+  <script src="../js/lang-toggle.js" defer></script>
+  <script src="../js/accessibility.js" defer></script>
+  <script src="../js/video-player.js" defer></script>
+  <script src="../js/settings.js" defer></script>
+</body>
+</html>

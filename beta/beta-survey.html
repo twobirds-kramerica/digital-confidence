@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Beta Tester Survey — Digital Confidence Centre">
+  <title>Beta Tester Survey — Digital Confidence Centre</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/accessibility.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta name="theme-color" content="#1565C0">
+  <style>
+    .survey-card {
+      background: var(--color-surface, #fff);
+      border: 1px solid var(--color-border, #e0e0e0);
+      border-radius: 14px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.5rem;
+      border-top: 4px solid #1565C0;
+    }
+    .survey-card h2 {
+      font-size: 1.05rem;
+      color: #1565C0;
+      margin-bottom: 0.1rem;
+    }
+    .question-number {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 0.4rem;
+    }
+    .question-text {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text, #1a1a1a);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    /* Scale (1–10) */
+    .scale-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .scale-row label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      cursor: pointer;
+    }
+    .scale-row input[type="radio"] {
+      cursor: pointer;
+    }
+    .scale-row .scale-num {
+      font-size: 0.85rem;
+      color: var(--color-text, #222);
+      min-width: 1.6rem;
+      text-align: center;
+    }
+    .scale-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: #888;
+      margin-top: 0.25rem;
+    }
+    /* Radio & textarea groups */
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      margin-bottom: 0.75rem;
+    }
+    .radio-group label {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.97rem;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .radio-group input[type="radio"] {
+      margin-top: 0.2rem;
+      flex-shrink: 0;
+    }
+    .survey-textarea {
+      width: 100%;
+      border: 1px solid var(--color-border, #ccc);
+      border-radius: 8px;
+      padding: 0.7rem 0.85rem;
+      font-family: inherit;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      resize: vertical;
+      background: var(--color-surface, #fff);
+      color: var(--color-text, #222);
+      min-height: 90px;
+    }
+    .survey-textarea:focus {
+      outline: 2px solid #1565C0;
+      outline-offset: 2px;
+    }
+    .survey-select {
+      width: 100%;
+      border: 1px solid var(--color-border, #ccc);
+      border-radius: 8px;
+      padding: 0.65rem 0.85rem;
+      font-family: inherit;
+      font-size: 0.97rem;
+      background: var(--color-surface, #fff);
+      color: var(--color-text, #222);
+    }
+    .survey-select:focus {
+      outline: 2px solid #1565C0;
+      outline-offset: 2px;
+    }
+    .survey-input {
+      width: 100%;
+      border: 1px solid var(--color-border, #ccc);
+      border-radius: 8px;
+      padding: 0.65rem 0.85rem;
+      font-family: inherit;
+      font-size: 0.97rem;
+      background: var(--color-surface, #fff);
+      color: var(--color-text, #222);
+    }
+    .survey-input:focus {
+      outline: 2px solid #1565C0;
+      outline-offset: 2px;
+    }
+    .optional-label {
+      font-size: 0.8rem;
+      color: #888;
+      font-style: italic;
+      margin-left: 0.4rem;
+    }
+    .follow-up-area {
+      margin-top: 0.75rem;
+    }
+    .follow-up-label {
+      font-size: 0.88rem;
+      color: #666;
+      margin-bottom: 0.35rem;
+      display: block;
+    }
+    .submit-row {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    .btn-submit {
+      background: #1565C0;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.85rem 2.5rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .btn-submit:hover { background: #0d47a1; }
+    .btn-submit:disabled { background: #90caf9; cursor: not-allowed; }
+    .success-state {
+      display: none;
+      background: #e8f5e9;
+      border: 2px solid #2e7d32;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    .success-state h2 {
+      color: #2e7d32;
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+    }
+    .success-state p {
+      font-size: 0.97rem;
+      color: #333;
+      line-height: 1.6;
+    }
+    .survey-intro {
+      background: #e3f2fd;
+      border-left: 4px solid #1565C0;
+      border-radius: 0 10px 10px 0;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    @media (max-width: 600px) {
+      .survey-card { padding: 1.25rem 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">Beta Survey</span>
+    <span></span>
+  </div>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">&#10005;</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Your learning journey</p>
+    </div>
+    <nav>
+      <a href="../index.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a href="../digital-literacy-101.html"><span class="nav-icon">📖</span><span class="nav-label">Foundations</span></a>
+      <a href="../module-1.html"><span class="nav-icon">🪂</span><span class="nav-label">1. The Escape Hatch</span></a>
+      <a href="../module-2.html"><span class="nav-icon">🛡️</span><span class="nav-label">2. Security Shield</span></a>
+      <a href="../module-3.html"><span class="nav-icon">🔑</span><span class="nav-label">3. Passwords</span></a>
+      <a href="../module-4.html"><span class="nav-icon">📱</span><span class="nav-label">4. App Store Safety</span></a>
+      <a href="../module-5.html"><span class="nav-icon">✉️</span><span class="nav-label">5. Email &amp; Messages</span></a>
+      <a href="../module-6.html"><span class="nav-icon">🏦</span><span class="nav-label">6. Banking</span></a>
+      <a href="../module-7.html"><span class="nav-icon">🎨</span><span class="nav-label">7. Photos &amp; Memories</span></a>
+      <a href="../module-8.html"><span class="nav-icon">👨‍👩‍👧</span><span class="nav-label">8. Stay Connected</span></a>
+      <a href="../module-9.html"><span class="nav-icon">🤖</span><span class="nav-label">9. Understanding AI</span></a>
+      <a href="../module-10.html"><span class="nav-icon">🛒</span><span class="nav-label">10. Grocery &amp; Delivery</span></a>
+      <a href="../module-11.html"><span class="nav-icon">🚗</span><span class="nav-label">11. Ride-Sharing</span></a>
+      <a href="../module-12.html"><span class="nav-icon">🤝</span><span class="nav-label">12. Getting Help</span></a>
+      <a href="../module-visual-ai.html"><span class="nav-icon">📷</span><span class="nav-label">Show Me! (Bonus)</span></a>
+      <a href="../family-setup.html"><span class="nav-icon">👪</span><span class="nav-label">Set Up for a Loved One</span></a>
+      <a href="../resources.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
+      <a href="../scam-simulator.html"><span class="nav-icon">🎯</span><span class="nav-label">Scam Simulator</span></a>
+      <div class="sidebar-a11y-section">
+        <p class="sidebar-a11y-title">Text Size</p>
+        <div class="sidebar-font-row">
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false" style="font-size:1rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+        </div>
+        <p class="sidebar-a11y-title">Screen Colour</p>
+        <div class="sidebar-theme-row">
+          <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+        </div>
+      </div>
+        <p class="sidebar-a11y-title">Reading Comfort</p>
+        <div class="font-option">
+          <label class="toggle-label" for="dyslexic-font-toggle">
+            <input type="checkbox" id="dyslexic-font-toggle" />
+            <span class="toggle-switch"></span>
+            <span class="toggle-text">
+              <strong>Dyslexia-Friendly Font</strong>
+              <small>Easier to read for some people</small>
+            </span>
+          </label>
+        </div>
+      <div class="settings-divider"></div>
+      <a href="#" class="settings-link" aria-label="Open settings"><span class="nav-icon">⚙️</span><span class="nav-label">My Settings</span></a>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <div class="module-breadcrumb" style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:1rem;">
+        <a href="../index.html">Home</a> › Beta Survey
+      </div>
+
+      <h1>Beta Tester Survey</h1>
+
+      <div class="survey-intro">
+        Thank you for testing Digital Confidence Centre! Your honest answers will directly shape
+        how we improve the programme before it reaches more Ontario seniors. This takes about
+        5–10 minutes. All questions except "Your Name" are optional.
+      </div>
+
+      <!-- Success State -->
+      <div class="success-state" id="survey-success" role="alert" aria-live="polite">
+        <h2>Thank You!</h2>
+        <p>
+          Your survey response has been submitted. We genuinely appreciate the time you took
+          to help us improve Digital Confidence Centre.
+        </p>
+        <p style="margin-top:1rem;">
+          <a href="../index.html" class="btn btn-primary">Return to Home Page</a>
+        </p>
+      </div>
+
+      <!-- Survey Form -->
+      <form id="beta-survey-form" action="https://formspree.io/f/xeerqryj" method="POST" novalidate>
+        <input type="hidden" name="form-type" value="beta-survey">
+
+        <!-- Q1: Confidence scale -->
+        <div class="survey-card">
+          <p class="question-number">Question 1 of 9</p>
+          <p class="question-text">How confident do you feel with technology now, compared to when you started?</p>
+          <div class="scale-row" role="group" aria-label="Confidence scale 1 to 10">
+            <label><input type="radio" name="confidence-scale" value="1"><span class="scale-num">1</span></label>
+            <label><input type="radio" name="confidence-scale" value="2"><span class="scale-num">2</span></label>
+            <label><input type="radio" name="confidence-scale" value="3"><span class="scale-num">3</span></label>
+            <label><input type="radio" name="confidence-scale" value="4"><span class="scale-num">4</span></label>
+            <label><input type="radio" name="confidence-scale" value="5"><span class="scale-num">5</span></label>
+            <label><input type="radio" name="confidence-scale" value="6"><span class="scale-num">6</span></label>
+            <label><input type="radio" name="confidence-scale" value="7"><span class="scale-num">7</span></label>
+            <label><input type="radio" name="confidence-scale" value="8"><span class="scale-num">8</span></label>
+            <label><input type="radio" name="confidence-scale" value="9"><span class="scale-num">9</span></label>
+            <label><input type="radio" name="confidence-scale" value="10"><span class="scale-num">10</span></label>
+          </div>
+          <div class="scale-labels">
+            <span>1 = Not confident at all</span>
+            <span>10 = Very confident</span>
+          </div>
+        </div>
+
+        <!-- Q2: Most helpful module -->
+        <div class="survey-card">
+          <p class="question-number">Question 2 of 9</p>
+          <p class="question-text">Which module helped you most?</p>
+          <select name="most-helpful-module" class="survey-select" aria-label="Which module helped you most">
+            <option value="">— Select a module —</option>
+            <option value="Module 1: Mastering the Escape Hatch">Module 1: Mastering the Escape Hatch</option>
+            <option value="Module 2: The Security Shield">Module 2: The Security Shield</option>
+            <option value="Module 3: Passwords &amp; Biometrics">Module 3: Passwords &amp; Biometrics</option>
+            <option value="Module 4: App Store Safety">Module 4: App Store Safety</option>
+            <option value="Module 5: Email &amp; Messages">Module 5: Email &amp; Messages</option>
+            <option value="Module 6: Banking &amp; Transactions">Module 6: Banking &amp; Transactions</option>
+            <option value="Module 7: Photos &amp; Memories">Module 7: Photos &amp; Memories</option>
+            <option value="Module 8: Stay Connected">Module 8: Stay Connected</option>
+            <option value="Module 9: Understanding AI">Module 9: Understanding AI</option>
+            <option value="Module 10: Grocery &amp; Food Delivery">Module 10: Grocery &amp; Food Delivery</option>
+            <option value="Module 11: Ride-Sharing Apps">Module 11: Ride-Sharing Apps</option>
+            <option value="Module 12: Getting Help">Module 12: Getting Help</option>
+            <option value="I haven't completed any yet">I haven't completed any yet</option>
+          </select>
+        </div>
+
+        <!-- Q3: Topics to add -->
+        <div class="survey-card">
+          <p class="question-number">Question 3 of 9</p>
+          <p class="question-text">What topic should we add next?</p>
+          <textarea
+            name="topic-suggestion"
+            class="survey-textarea"
+            placeholder="e.g. How to use video calling, understanding smart TVs, managing subscriptions..."
+            aria-label="What topic should we add next"
+          ></textarea>
+        </div>
+
+        <!-- Q4: Respected -->
+        <div class="survey-card">
+          <p class="question-number">Question 4 of 9</p>
+          <p class="question-text">Did you feel respected and not talked down to?</p>
+          <div class="radio-group" role="group" aria-label="Did you feel respected">
+            <label>
+              <input type="radio" name="felt-respected" value="Yes">
+              Yes — the tone felt respectful throughout
+            </label>
+            <label>
+              <input type="radio" name="felt-respected" value="Sometimes">
+              Sometimes — it varied by section
+            </label>
+            <label>
+              <input type="radio" name="felt-respected" value="No">
+              No — some parts felt patronising
+            </label>
+          </div>
+          <div class="follow-up-area">
+            <span class="follow-up-label">Optional — tell us more:</span>
+            <textarea
+              name="felt-respected-explanation"
+              class="survey-textarea"
+              placeholder="Which part felt off? What would have felt better?"
+              aria-label="Optional explanation for respect question"
+              style="min-height:70px;"
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Q5: Recommend -->
+        <div class="survey-card">
+          <p class="question-number">Question 5 of 9</p>
+          <p class="question-text">Would you recommend Digital Confidence Centre to other seniors?</p>
+          <div class="radio-group" role="group" aria-label="Would you recommend this">
+            <label>
+              <input type="radio" name="would-recommend" value="Yes">
+              Yes
+            </label>
+            <label>
+              <input type="radio" name="would-recommend" value="No">
+              No
+            </label>
+          </div>
+          <div class="follow-up-area">
+            <span class="follow-up-label">Why? <span class="optional-label">(optional)</span></span>
+            <textarea
+              name="recommend-reason"
+              class="survey-textarea"
+              placeholder="What made you decide yes or no?"
+              aria-label="Why or why not would you recommend this"
+              style="min-height:70px;"
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Q6: One thing to change -->
+        <div class="survey-card">
+          <p class="question-number">Question 6 of 9</p>
+          <p class="question-text">What is one thing we should change?</p>
+          <textarea
+            name="one-change"
+            class="survey-textarea"
+            placeholder="Be as specific or as general as you like. No wrong answers."
+            aria-label="One thing we should change"
+          ></textarea>
+        </div>
+
+        <!-- Q7: Testimonial permission -->
+        <div class="survey-card">
+          <p class="question-number">Question 7 of 9</p>
+          <p class="question-text">May we use your feedback as a testimonial on the website?</p>
+          <div class="radio-group" role="group" aria-label="Testimonial permission">
+            <label>
+              <input type="radio" name="testimonial-permission" value="Yes — with my name">
+              Yes — you may use my name
+            </label>
+            <label>
+              <input type="radio" name="testimonial-permission" value="Yes — anonymously">
+              Yes — but anonymously please
+            </label>
+            <label>
+              <input type="radio" name="testimonial-permission" value="No">
+              No — please keep my feedback private
+            </label>
+          </div>
+        </div>
+
+        <!-- Q8: Name -->
+        <div class="survey-card">
+          <p class="question-number">Question 8 of 9</p>
+          <p class="question-text">Your Name <span class="optional-label">(optional)</span></p>
+          <input
+            type="text"
+            name="tester-name"
+            class="survey-input"
+            placeholder="Type here..."
+            aria-label="Your name (optional)"
+            autocomplete="name"
+          >
+        </div>
+
+        <!-- Q9: City -->
+        <div class="survey-card">
+          <p class="question-number">Question 9 of 9</p>
+          <p class="question-text">Your city in Ontario <span class="optional-label">(optional)</span></p>
+          <input
+            type="text"
+            name="tester-city"
+            class="survey-input"
+            placeholder="e.g. London, Stratford, Guelph"
+            aria-label="Your city in Ontario (optional)"
+            autocomplete="address-level2"
+          >
+        </div>
+
+        <div class="submit-row">
+          <button type="submit" class="btn-submit" id="survey-submit-btn">
+            Submit Survey
+          </button>
+          <p style="font-size:0.82rem;color:#888;margin-top:0.75rem;">
+            Responses are sent securely via Formspree. We never share your personal information.
+          </p>
+        </div>
+
+      </form>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-brand">Digital Confidence Centre</p>
+          <p class="footer-tagline">A free learning programme for Canadian seniors</p>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="../index.html">Home</a> |
+            <a href="../resources.html">Resources</a> |
+            <a href="../about.html">About</a> |
+            <a href="../privacy.html">Privacy Policy</a> |
+            <a href="#" onclick="openFeedbackModal(); return false;">Ideas &amp; Feedback</a>
+          </nav>
+          <p class="footer-support">
+            Need help? Call <strong>Connected Canadians</strong> free:
+            <a href="tel:+18558080505">1-855-808-0505</a>
+          </p>
+          <p class="footer-copy">&copy; 2026 Two Birds. Made with care in Ontario, Canada.</p>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="../js/app.js" defer></script>
+  <script src="../js/accessibility.js" defer></script>
+  <script src="../js/feedback-github.js" defer></script>
+  <script>
+    document.getElementById('beta-survey-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = document.getElementById('survey-submit-btn');
+      btn.disabled = true;
+      btn.textContent = 'Submitting…';
+
+      var formData = new FormData(this);
+
+      fetch('https://formspree.io/f/xeerqryj', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(response) {
+        if (response.ok) {
+          document.getElementById('beta-survey-form').style.display = 'none';
+          var success = document.getElementById('survey-success');
+          success.style.display = 'block';
+          success.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Submit Survey';
+          alert('There was a problem submitting the survey. Please try again or email your feedback directly to aaron.patzalek@gmail.com.');
+        }
+      })
+      .catch(function() {
+        btn.disabled = false;
+        btn.textContent = 'Submit Survey';
+        alert('Could not connect to the server. Please check your internet connection and try again.');
+      });
+    });
+  </script>
+
+  <button class="btn-print" onclick="window.print()" aria-label="Print this page">🖨️ Print This Page</button>
+</body>
+</html>

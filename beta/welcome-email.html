@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Beta Welcome Email Template — DCC</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #f0f4f8;
+      font-family: Georgia, 'Times New Roman', serif;
+      padding: 2rem 1rem;
+      color: #1a1a1a;
+    }
+    .page-controls {
+      max-width: 600px;
+      margin: 0 auto 1.5rem auto;
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .page-controls p {
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+      color: #555;
+      flex: 1;
+    }
+    .btn-print {
+      background: #1565C0;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.5rem 1.25rem;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .btn-print:hover { background: #0d47a1; }
+    .email-card {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      overflow: hidden;
+    }
+    .email-header {
+      background: #1565C0;
+      padding: 2rem 2.5rem 1.5rem 2.5rem;
+      text-align: center;
+    }
+    .email-header .logo-text {
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.3rem;
+    }
+    .email-header .logo-tagline {
+      color: #bbdefb;
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+    }
+    .email-subject-bar {
+      background: #e3f2fd;
+      border-bottom: 1px solid #bbdefb;
+      padding: 0.75rem 2.5rem;
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+      color: #1565C0;
+    }
+    .email-subject-bar strong { font-weight: 700; }
+    .email-body {
+      padding: 2rem 2.5rem;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #222;
+    }
+    .email-body p { margin-bottom: 1rem; }
+    .email-body .salutation { font-size: 1.05rem; margin-bottom: 1.25rem; }
+    .section-heading {
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #1565C0;
+      text-transform: uppercase;
+      background: #e3f2fd;
+      border-left: 4px solid #1565C0;
+      padding: 0.4rem 0.75rem;
+      margin: 1.5rem 0 0.75rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .bullet-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 1rem 0;
+    }
+    .bullet-list li {
+      padding: 0.3rem 0 0.3rem 1.5rem;
+      position: relative;
+      font-size: 0.97rem;
+      line-height: 1.6;
+    }
+    .bullet-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0.4rem;
+      color: #1565C0;
+      font-weight: bold;
+    }
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 1rem 0;
+    }
+    .check-list li {
+      padding: 0.3rem 0 0.3rem 1.75rem;
+      position: relative;
+      font-size: 0.97rem;
+      line-height: 1.6;
+    }
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0.4rem;
+      color: #2e7d32;
+      font-weight: bold;
+    }
+    .numbered-list {
+      padding-left: 1.5rem;
+      margin: 0.5rem 0 1rem 0;
+    }
+    .numbered-list li {
+      padding: 0.3rem 0;
+      font-size: 0.97rem;
+      line-height: 1.6;
+    }
+    .link-box {
+      background: #f0f7ff;
+      border: 2px solid #1565C0;
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      margin: 0.75rem 0 1rem 0;
+      text-align: center;
+    }
+    .link-box a {
+      color: #1565C0;
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      word-break: break-all;
+      text-decoration: none;
+    }
+    .link-box a:hover { text-decoration: underline; }
+    .technical-note {
+      background: #fffde7;
+      border-left: 3px solid #f9a825;
+      border-radius: 0 4px 4px 0;
+      padding: 0.75rem 1rem;
+      margin: 0.75rem 0;
+      font-size: 0.92rem;
+    }
+    .signature {
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid #e0e0e0;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+    .signature .sig-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #1565C0;
+    }
+    .email-footer {
+      background: #f5f5f5;
+      border-top: 1px solid #e0e0e0;
+      padding: 1rem 2.5rem;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 0.75rem;
+      color: #888;
+    }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .page-controls { display: none; }
+      .email-card { box-shadow: none; border: 1px solid #ccc; }
+    }
+    @media (max-width: 640px) {
+      .email-body { padding: 1.25rem 1.25rem; }
+      .email-header { padding: 1.5rem 1.25rem 1.25rem; }
+      .email-subject-bar { padding: 0.65rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-controls">
+    <p>This is a visual template only — copy the content into your email client, or print it for reference.</p>
+    <button class="btn-print" onclick="window.print()">🖨️ Print</button>
+  </div>
+
+  <div class="email-card">
+
+    <div class="email-header">
+      <div class="logo-text">Digital Confidence Centre</div>
+      <div class="logo-tagline">A free learning programme for Ontario seniors</div>
+    </div>
+
+    <div class="email-subject-bar">
+      <strong>Subject:</strong> You're Invited: Digital Confidence Centre Beta Testing
+    </div>
+
+    <div class="email-body">
+
+      <p class="salutation">Dear [Name],</p>
+
+      <p>Thank you for agreeing to help test Digital Confidence Centre! Your feedback will directly shape how we help Ontario seniors build digital confidence.</p>
+
+      <div class="section-heading">What Is This?</div>
+      <p>A free, guided learning platform for seniors 70+ covering everything from passwords to online banking to scam prevention.</p>
+
+      <div class="section-heading">What We Need From You</div>
+      <ul class="bullet-list">
+        <li>Explore the site for 1–2 weeks</li>
+        <li>Complete at least 3 modules that interest you</li>
+        <li>Use the "Ideas &amp; Feedback" button (bottom of every page) to share thoughts</li>
+        <li>Tell us what confuses you, what helps, and what's missing</li>
+      </ul>
+
+      <div class="section-heading">Your Beta Tester Link</div>
+      <div class="link-box">
+        <a href="https://twobirds-kramerica.github.io/digital-confidence/?beta=true" target="_blank">
+          https://twobirds-kramerica.github.io/digital-confidence/?beta=true
+        </a>
+      </div>
+
+      <div class="section-heading">Quick Start</div>
+      <ol class="numbered-list">
+        <li>Visit the link above</li>
+        <li>Click "Start with Module 1" or choose any topic</li>
+        <li>Go at your own pace — no pressure!</li>
+        <li>Share feedback anytime using the blue feedback button</li>
+      </ol>
+
+      <div class="section-heading">What to Look For</div>
+      <ul class="check-list">
+        <li>Is the text easy to read?</li>
+        <li>Are the instructions clear?</li>
+        <li>Do the examples make sense for Ontario?</li>
+        <li>Does anything feel patronising or overly simple?</li>
+        <li>What would you add or change?</li>
+      </ul>
+
+      <div class="technical-note">
+        <strong>Technical Note:</strong> This works best on iPad, tablet, or computer. Works on phones too, but bigger screens are easier.
+      </div>
+
+      <p>Questions? Reply to this email anytime.</p>
+
+      <p>Thank you for helping make this better!</p>
+
+      <div class="signature">
+        <div class="sig-name">Aaron Kramer</div>
+        <div>Founder, Digital Confidence Centre</div>
+        <div>Two Birds Innovation</div>
+        <div><a href="mailto:aaron.patzalek@gmail.com" style="color:#1565C0;">aaron.patzalek@gmail.com</a></div>
+      </div>
+
+    </div>
+
+    <div class="email-footer">
+      Digital Confidence Centre &mdash; Two Birds Innovation &mdash; St. Thomas, Ontario<br>
+      This is a reference template. Open in browser, copy content, paste into your email client.
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+{
+  "_comment": "Digital Confidence Centre — White-Label Branding Template",
+  "_instructions": "Fill in all fields below and send to aaron.patzalek@gmail.com. Fields marked REQUIRED must be provided before deployment can begin.",
+
+  "organisation": {
+    "name": "REQUIRED — Your full organisation name (e.g. Elgin County Library)",
+    "shortName": "REQUIRED — Short display name (e.g. ECL Digital Learning)",
+    "tagline": "Optional — One-line tagline shown under your name",
+    "type": "library | credit_union | bank | senior_centre | health_unit | other",
+    "website": "https://your-organisation.ca",
+    "contactEmail": "REQUIRED — Primary contact email for this deployment",
+    "contactPhone": "Optional — Phone number for learner support",
+    "city": "REQUIRED — Primary city served (e.g. St. Thomas)",
+    "region": "Ontario"
+  },
+
+  "branding": {
+    "primaryColour": "REQUIRED — Hex code (e.g. #1565C0). This replaces DCC blue.",
+    "secondaryColour": "Optional — Hex code for accents",
+    "backgroundColour": "Optional — Page background (default: #f5f7fa)",
+    "textColour": "Optional — Main body text (default: #1a1a1a)",
+    "logoUrl": "REQUIRED — URL or file path to your logo (SVG preferred, min 200px wide)",
+    "logoAltText": "REQUIRED — Alt text for your logo (e.g. Elgin County Library logo)",
+    "favicon": "Optional — URL to favicon (32x32 PNG or ICO)",
+    "fontFamily": "Optional — Google Fonts name or 'default' to keep existing"
+  },
+
+  "domain": {
+    "customDomain": "Optional — e.g. digitalliteracy.yourbank.ca (CNAME setup required)",
+    "subdomain": "Optional — e.g. seniors (becomes seniors.twobirds.ca if no custom domain)",
+    "sslRequired": true
+  },
+
+  "content": {
+    "siteName": "REQUIRED — Name shown in browser tab and header (e.g. ECL Digital Learning Centre)",
+    "welcomeMessage": "Optional — Custom welcome message on the home page",
+    "localPhoneNumber": "Optional — Local helpline to show instead of Connected Canadians",
+    "localPhoneLabel": "Optional — Label for local phone (e.g. ECL Tech Help Line)",
+    "hideModules": "Optional — Array of module numbers to hide (e.g. [10, 11])",
+    "customResourcesCity": "Optional — Default city for local resources lookup (e.g. Stratford)",
+    "footerText": "Optional — Custom footer line (e.g. Presented by Elgin County Library)"
+  },
+
+  "analytics": {
+    "googleAnalyticsId": "Optional — Your own GA4 measurement ID (e.g. G-XXXXXXXXXX)",
+    "shareAnalyticsWithDCC": true,
+    "_note": "DCC retains aggregate analytics. Set shareAnalyticsWithDCC to false for Enterprise tier."
+  },
+
+  "tier": "basic | professional | enterprise",
+  "contractStartDate": "YYYY-MM-DD",
+  "contractEndDate": "YYYY-MM-DD",
+  "accountManager": "Aaron Kramer",
+
+  "_version": "1.0",
+  "_lastUpdated": "2026-03-24"
+}

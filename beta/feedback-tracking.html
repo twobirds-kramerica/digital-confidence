@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Beta Feedback Dashboard — DCC Admin</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/accessibility.css">
+  <style>
+    .admin-header {
+      background: #1565C0;
+      color: #fff;
+      padding: 1.25rem 2rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+    }
+    .admin-header h1 { font-size: 1.4rem; margin-bottom: 0.25rem; }
+    .admin-header p { font-size: 0.88rem; opacity: 0.85; }
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .dash-card {
+      background: var(--color-surface, #fff);
+      border: 1px solid var(--color-border, #e0e0e0);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      border-top: 4px solid #1565C0;
+    }
+    .dash-card h2 {
+      font-size: 1rem;
+      color: #1565C0;
+      margin-bottom: 0.75rem;
+    }
+    .dash-card p, .dash-card li {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--color-text, #222);
+    }
+    .dash-card a {
+      color: #1565C0;
+      font-weight: 600;
+    }
+    .dash-card ul { padding-left: 1.25rem; margin-top: 0.5rem; }
+    .beta-param-badge {
+      display: inline-block;
+      background: #e3f2fd;
+      color: #1565C0;
+      border: 1px solid #90caf9;
+      border-radius: 20px;
+      padding: 0.2rem 0.75rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      font-family: monospace;
+      margin-bottom: 0.5rem;
+    }
+    .beta-param-badge.active {
+      background: #e8f5e9;
+      color: #2e7d32;
+      border-color: #a5d6a7;
+    }
+    .visits-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-top: 0.75rem;
+    }
+    .visits-table th {
+      background: #e3f2fd;
+      color: #1565C0;
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      font-weight: 700;
+    }
+    .visits-table td {
+      padding: 0.45rem 0.75rem;
+      border-bottom: 1px solid var(--color-border, #e0e0e0);
+      color: var(--color-text, #222);
+    }
+    .visits-table tr:last-child td { border-bottom: none; }
+    .empty-state {
+      color: #999;
+      font-style: italic;
+      font-size: 0.85rem;
+      padding: 0.5rem 0;
+    }
+    .notes-area {
+      width: 100%;
+      min-height: 200px;
+      border: 1px solid var(--color-border, #ccc);
+      border-radius: 8px;
+      padding: 0.75rem;
+      font-family: Georgia, serif;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      resize: vertical;
+      background: var(--color-surface, #fff);
+      color: var(--color-text, #222);
+    }
+    .notes-saved {
+      font-size: 0.78rem;
+      color: #2e7d32;
+      margin-top: 0.35rem;
+      display: none;
+    }
+    .btn-clear-notes {
+      background: #fff;
+      border: 1px solid #e53935;
+      color: #e53935;
+      border-radius: 6px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.82rem;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+    .btn-clear-notes:hover { background: #ffebee; }
+    .section-full {
+      background: var(--color-surface, #fff);
+      border: 1px solid var(--color-border, #e0e0e0);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      border-top: 4px solid #1565C0;
+      margin-bottom: 1.25rem;
+    }
+    .section-full h2 {
+      font-size: 1rem;
+      color: #1565C0;
+      margin-bottom: 0.75rem;
+    }
+    .instruction-step {
+      background: #f5f7fa;
+      border-left: 3px solid #1565C0;
+      border-radius: 0 6px 6px 0;
+      padding: 0.6rem 1rem;
+      margin: 0.5rem 0;
+      font-size: 0.88rem;
+    }
+    @media print {
+      .notes-area { border: 1px solid #999; }
+      .btn-clear-notes { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <div class="top-bar">
+    <span></span>
+    <span class="site-title">Beta Dashboard</span>
+    <span></span>
+  </div>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <div class="admin-header">
+        <h1>Beta Feedback Dashboard</h1>
+        <p>DCC Admin — Private. Not indexed by search engines.</p>
+      </div>
+
+      <!-- URL Parameter Detection -->
+      <div class="section-full">
+        <h2>Beta URL Parameter Detection</h2>
+        <p style="font-size:0.9rem;margin-bottom:0.75rem;">
+          Beta testers access the site via <code>?beta=true</code> in the URL. Detection status for <strong>this session</strong>:
+        </p>
+        <div id="beta-param-status">
+          <span class="beta-param-badge" id="beta-badge">Checking…</span>
+        </div>
+        <p style="font-size:0.85rem;color:#666;margin-top:0.6rem;">
+          The beta parameter is not stored persistently. It only appears when a tester arrives via the invite link.
+          Google Analytics can track <code>?beta=true</code> sessions — see the GA section below.
+        </p>
+      </div>
+
+      <!-- Dashboard Grid -->
+      <div class="dashboard-grid">
+
+        <!-- Formspree -->
+        <div class="dash-card">
+          <h2>Formspree Submissions</h2>
+          <p>All feedback from the "Ideas &amp; Feedback" button and the beta survey is collected here.</p>
+          <p style="margin-top:0.75rem;">
+            <a href="https://formspree.io/f/xeerqryj" target="_blank" rel="noopener">
+              Open Formspree Dashboard →
+            </a>
+          </p>
+          <ul style="margin-top:0.75rem;">
+            <li>Log in with your Formspree account</li>
+            <li>Select form <code>xeerqryj</code></li>
+            <li>Download CSV for backup (monthly)</li>
+            <li>Free tier: 50 submissions/month</li>
+          </ul>
+        </div>
+
+        <!-- Google Analytics -->
+        <div class="dash-card">
+          <h2>Google Analytics</h2>
+          <p>Track which modules beta testers are visiting, time on page, and device types.</p>
+          <p style="margin-top:0.75rem;">
+            <a href="https://analytics.google.com" target="_blank" rel="noopener">
+              Open Google Analytics →
+            </a>
+          </p>
+          <ul style="margin-top:0.75rem;">
+            <li>Property ID: <code>G-RPH5H5BM52</code></li>
+            <li>Filter by URL containing <code>beta=true</code></li>
+            <li>Reports → Engagement → Pages</li>
+            <li>Explore → Segments for beta cohort</li>
+          </ul>
+        </div>
+
+        <!-- Beta Survey -->
+        <div class="dash-card">
+          <h2>Beta Survey Results</h2>
+          <p>Responses from the end-of-beta survey are also sent to Formspree.</p>
+          <p style="margin-top:0.75rem;">
+            <a href="beta-survey.html" target="_blank">
+              View Beta Survey Page →
+            </a>
+          </p>
+          <p style="font-size:0.85rem;color:#666;margin-top:0.5rem;">
+            Survey submissions are tagged with <code>form-type: beta-survey</code> in the Formspree data.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Page Visit Log (sessionStorage) -->
+      <div class="section-full">
+        <h2>Page Visits This Session</h2>
+        <p style="font-size:0.88rem;color:#666;margin-bottom:0.75rem;">
+          This reads from <code>sessionStorage</code>. Data only exists for the current browser session —
+          it resets when the browser tab is closed. For persistent tracking, use Google Analytics.
+        </p>
+        <div id="visit-log-container">
+          <p class="empty-state">No session visit data found. Visit some DCC pages and return here to see them logged.</p>
+        </div>
+      </div>
+
+      <!-- Manual Notes -->
+      <div class="section-full">
+        <h2>Manual Observations (Saved Locally)</h2>
+        <p style="font-size:0.88rem;color:#666;margin-bottom:0.75rem;">
+          Paste tester quotes, phone call notes, or observations here. Saved to <code>localStorage</code>
+          on this device — not synced anywhere. Back up by copying text elsewhere.
+        </p>
+        <textarea
+          class="notes-area"
+          id="admin-notes"
+          placeholder="Paste notes, tester quotes, or observations here...&#10;&#10;Example:&#10;Margaret (St. Thomas) — called to say Module 3 password section was confusing. Suggested clearer screenshots.&#10;Jim (London) — completed 5 modules in one sitting. No issues. Loves the story blocks."
+          aria-label="Manual admin notes"
+        ></textarea>
+        <p class="notes-saved" id="notes-saved-msg">Saved.</p>
+        <div style="display:flex;gap:0.75rem;align-items:center;margin-top:0.5rem;">
+          <button class="btn-clear-notes" onclick="clearNotes()">Clear Notes</button>
+          <span style="font-size:0.78rem;color:#666;">Notes are only saved on this device.</span>
+        </div>
+      </div>
+
+      <!-- How to Run Beta Instructions -->
+      <div class="section-full">
+        <h2>Beta Programme Instructions</h2>
+        <div class="instruction-step">1. Send testers the welcome email (see <a href="welcome-email.html">welcome-email.html</a> for template).</div>
+        <div class="instruction-step">2. Ask testers to use the <strong>Ideas &amp; Feedback</strong> button on any page to submit thoughts.</div>
+        <div class="instruction-step">3. After 1–2 weeks, send testers the <a href="beta-survey.html">Beta Survey link</a>.</div>
+        <div class="instruction-step">4. Download Formspree CSV weekly during the beta period.</div>
+        <div class="instruction-step">5. Check Google Analytics weekly for module engagement data.</div>
+        <div class="instruction-step">6. Log qualitative notes (phone calls, emails) in the notes field above.</div>
+        <div class="instruction-step">7. After beta closes, compile findings and prioritise changes before public launch.</div>
+      </div>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-brand">Digital Confidence Centre</p>
+          <p class="footer-tagline">A free learning programme for Canadian seniors</p>
+          <p class="footer-copy">&copy; 2026 Two Birds. Made with care in Ontario, Canada.</p>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="../js/accessibility.js" defer></script>
+  <script>
+    // --- Beta URL parameter detection ---
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var badge = document.getElementById('beta-badge');
+      if (params.get('beta') === 'true') {
+        badge.textContent = '?beta=true detected in this URL';
+        badge.classList.add('active');
+      } else {
+        badge.textContent = '?beta=true not present in this URL';
+      }
+    })();
+
+    // --- SessionStorage visit log ---
+    (function() {
+      var container = document.getElementById('visit-log-container');
+      var visitData = null;
+      try {
+        visitData = sessionStorage.getItem('dcc-visits');
+      } catch(e) {}
+
+      if (visitData) {
+        try {
+          var visits = JSON.parse(visitData);
+          if (Array.isArray(visits) && visits.length > 0) {
+            var table = document.createElement('table');
+            table.className = 'visits-table';
+            table.innerHTML = '<thead><tr><th>Page</th><th>Time</th></tr></thead><tbody></tbody>';
+            var tbody = table.querySelector('tbody');
+            visits.forEach(function(v) {
+              var tr = document.createElement('tr');
+              tr.innerHTML = '<td>' + (v.page || '—') + '</td><td>' + (v.time || '—') + '</td>';
+              tbody.appendChild(tr);
+            });
+            container.innerHTML = '';
+            container.appendChild(table);
+            return;
+          }
+        } catch(e) {}
+      }
+      container.innerHTML = '<p class="empty-state">No session visit data found. Visit some DCC pages and return here to see them logged.</p>';
+    })();
+
+    // --- localStorage notes ---
+    (function() {
+      var ta = document.getElementById('admin-notes');
+      var savedMsg = document.getElementById('notes-saved-msg');
+      try {
+        var saved = localStorage.getItem('dcc-admin-notes');
+        if (saved) ta.value = saved;
+      } catch(e) {}
+
+      var saveTimer;
+      ta.addEventListener('input', function() {
+        clearTimeout(saveTimer);
+        saveTimer = setTimeout(function() {
+          try {
+            localStorage.setItem('dcc-admin-notes', ta.value);
+            savedMsg.style.display = 'block';
+            setTimeout(function(){ savedMsg.style.display = 'none'; }, 2000);
+          } catch(e) {}
+        }, 800);
+      });
+    })();
+
+    function clearNotes() {
+      if (!confirm('Clear all notes? This cannot be undone.')) return;
+      try { localStorage.removeItem('dcc-admin-notes'); } catch(e) {}
+      document.getElementById('admin-notes').value = '';
+    }
+  </script>
+
+  <button class="btn-print" onclick="window.print()" aria-label="Print this page">🖨️ Print This Page</button>
+</body>
+</html>

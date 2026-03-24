@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Module {{MODULE_NUM}}: {{MODULE_TITLE}} — Digital Confidence Centre. A free digital literacy module for Ontario seniors.">
+  <meta property="og:title" content="Module {{MODULE_NUM}}: {{MODULE_TITLE}} — Digital Confidence Centre">
+  <meta property="og:type" content="website">
+  <title>Module {{MODULE_NUM}}: {{MODULE_TITLE}} — Digital Confidence Centre</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/print.css">
+  <!-- Google Analytics -->
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPH5H5BM52"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RPH5H5BM52');
+  </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1565C0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Digital Confidence">
+  <meta name="robots" content="index, follow">
+</head>
+<body>
+  <script>
+    /* Skip wizard automatically for search engine crawlers */
+    if (/bot|crawler|spider|crawling/i.test(navigator.userAgent)) {
+      try { localStorage.setItem('dc-setup-complete', 'crawler-bypass'); } catch(e) {}
+    }
+  </script>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Accessibility Controls -->
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <!-- Top Bar (Mobile) -->
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">Module {{MODULE_NUM}}</span>
+    <span></span>
+  </div>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">&#10005;</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Your learning journey</p>
+    </div>
+    <nav>
+      <a href="index.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a href="digital-literacy-101.html"><span class="nav-icon">📖</span><span class="nav-label">Foundations</span></a>
+      <a href="module-1.html"><span class="nav-icon">🪂</span><span class="nav-label">1. The Escape Hatch</span></a>
+      <a href="module-2.html"><span class="nav-icon">🛡️</span><span class="nav-label">2. Security Shield</span></a>
+      <a href="module-3.html"><span class="nav-icon">🔑</span><span class="nav-label">3. Passwords</span></a>
+      <a href="module-4.html"><span class="nav-icon">📱</span><span class="nav-label">4. App Store Safety</span></a>
+      <a href="module-5.html"><span class="nav-icon">✉️</span><span class="nav-label">5. Email &amp; Messages</span></a>
+      <a href="module-6.html"><span class="nav-icon">🏦</span><span class="nav-label">6. Banking</span></a>
+      <a href="module-7.html"><span class="nav-icon">🎨</span><span class="nav-label">7. Photos &amp; Memories</span></a>
+      <a href="module-8.html"><span class="nav-icon">👨‍👩‍👧</span><span class="nav-label">8. Stay Connected</span></a>
+      <a href="module-9.html"><span class="nav-icon">🤖</span><span class="nav-label">9. Understanding AI</span></a>
+      <a href="module-10.html"><span class="nav-icon">🛒</span><span class="nav-label">10. Grocery &amp; Delivery</span></a>
+      <a href="module-11.html"><span class="nav-icon">🚗</span><span class="nav-label">11. Ride-Sharing</span></a>
+      <a href="module-12.html"><span class="nav-icon">🤝</span><span class="nav-label">12. Getting Help</span></a>
+      <a href="module-visual-ai.html"><span class="nav-icon">📷</span><span class="nav-label">Show Me! (Bonus)</span></a>
+      <a href="family-setup.html"><span class="nav-icon">👪</span><span class="nav-label">Set Up for a Loved One</span></a>
+      <a href="resources.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
+      <a href="scam-simulator.html"><span class="nav-icon">🎯</span><span class="nav-label">Scam Simulator</span></a>
+      <div class="sidebar-a11y-section">
+        <p class="sidebar-a11y-title">Text Size</p>
+        <div class="sidebar-font-row">
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false" style="font-size:1rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+        </div>
+        <p class="sidebar-a11y-title">Screen Colour</p>
+        <div class="sidebar-theme-row">
+          <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+        </div>
+      </div>
+        <p class="sidebar-a11y-title">Reading Comfort</p>
+        <div class="font-option">
+          <label class="toggle-label" for="dyslexic-font-toggle">
+            <input type="checkbox" id="dyslexic-font-toggle" />
+            <span class="toggle-switch"></span>
+            <span class="toggle-text">
+              <strong>Dyslexia-Friendly Font</strong>
+              <small>Easier to read for some people</small>
+            </span>
+          </label>
+        </div>
+      <div class="settings-divider"></div>
+      <a href="#" class="settings-link" aria-label="Open settings"><span class="nav-icon">⚙️</span><span class="nav-label">My Settings</span></a>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <div class="module-breadcrumb" style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:1rem;">
+        <a href="index.html">Home</a> › Module {{MODULE_NUM}}
+      </div>
+
+      <h1>Module {{MODULE_NUM}}: {{MODULE_TITLE}}</h1>
+
+      <!-- Learning Outcomes -->
+      <div class="tip-block">
+        <span class="tip-label">📋 What You'll Learn</span>
+        <ul>
+          <li>{{OUTCOME_1}}</li>
+          <li>{{OUTCOME_2}}</li>
+          <li>{{OUTCOME_3}}</li>
+        </ul>
+      </div>
+
+      <!-- Section 1 -->
+      <section>
+        <h2>{{SECTION_1_TITLE}}</h2>
+        <p>{{SECTION_1_CONTENT}}</p>
+        <div class="story-block">
+          <span class="story-label">{{STORY_LABEL}}</span>
+          <p>{{STORY_CONTENT}}</p>
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+      <section>
+        <h2>{{SECTION_2_TITLE}}</h2>
+        <p>{{SECTION_2_CONTENT}}</p>
+        <div class="tip-block">
+          <span class="tip-label">{{TIP_LABEL}}</span>
+          <p>{{TIP_CONTENT}}</p>
+        </div>
+      </section>
+
+      <!-- Section 3 -->
+      <section>
+        <h2>{{SECTION_3_TITLE}}</h2>
+        <p>{{SECTION_3_CONTENT}}</p>
+      </section>
+
+      <!-- Practice Scenario -->
+      <section>
+        <h2>Practice Scenario</h2>
+        <div class="practice-scenario">
+          <p><strong>Scenario:</strong> {{SCENARIO_DESCRIPTION}}</p>
+          <button
+            class="scenario-toggle btn btn-secondary"
+            onclick="var a=this.nextElementSibling;a.style.display=a.style.display==='block'?'none':'block'"
+            aria-expanded="false"
+          >See what to do &rarr;</button>
+          <div class="scenario-answer" style="display:none;">
+            <p>{{SCENARIO_ANSWER}}</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Takeaways Grid -->
+      <section>
+        <h2>Key Takeaways</h2>
+        <div class="takeaways-grid">
+          <div class="takeaway-card">
+            <div class="takeaway-icon">{{TAKEAWAY_ICON_1}}</div>
+            <p>{{TAKEAWAY_1}}</p>
+          </div>
+          <div class="takeaway-card">
+            <div class="takeaway-icon">{{TAKEAWAY_ICON_2}}</div>
+            <p>{{TAKEAWAY_2}}</p>
+          </div>
+          <div class="takeaway-card">
+            <div class="takeaway-icon">{{TAKEAWAY_ICON_3}}</div>
+            <p>{{TAKEAWAY_3}}</p>
+          </div>
+          <div class="takeaway-card">
+            <div class="takeaway-icon">{{TAKEAWAY_ICON_4}}</div>
+            <p>{{TAKEAWAY_4}}</p>
+          </div>
+          <div class="takeaway-card">
+            <div class="takeaway-icon">{{TAKEAWAY_ICON_5}}</div>
+            <p>{{TAKEAWAY_5}}</p>
+          </div>
+          <div class="takeaway-card">
+            <div class="takeaway-icon">{{TAKEAWAY_ICON_6}}</div>
+            <p>{{TAKEAWAY_6}}</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Progress Checkboxes -->
+      <section>
+        <h2>Mark Your Progress</h2>
+        <div class="progress-section" data-module="{{MODULE_NUM}}">
+          <label class="progress-item">
+            <input type="checkbox" class="progress-checkbox" data-id="m{{MODULE_NUM}}-1">
+            <span class="progress-label">I understand {{TOPIC_1}}</span>
+          </label>
+          <label class="progress-item">
+            <input type="checkbox" class="progress-checkbox" data-id="m{{MODULE_NUM}}-2">
+            <span class="progress-label">I can {{SKILL_1}}</span>
+          </label>
+          <label class="progress-item">
+            <input type="checkbox" class="progress-checkbox" data-id="m{{MODULE_NUM}}-3">
+            <span class="progress-label">I feel confident about {{CONFIDENCE_1}}</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Module Navigation -->
+      <div class="confidence-check">
+        <span class="check-icon">&#9989;</span>
+        <p>Well done completing Module {{MODULE_NUM}}!</p>
+        <p>
+          <a href="module-{{MODULE_NUM_PREV}}.html" class="btn btn-secondary">&larr; Previous Module</a>
+          <a href="index.html" class="btn btn-secondary">Home</a>
+          <a href="module-{{MODULE_NUM_NEXT}}.html" class="btn btn-primary">Next Module &rarr;</a>
+        </p>
+      </div>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-brand">Digital Confidence Centre</p>
+          <p class="footer-tagline">A free learning programme for Canadian seniors</p>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="index.html">Home</a> |
+            <a href="resources.html">Resources</a> |
+            <a href="faq.html">FAQ</a> |
+            <a href="glossary.html">Glossary</a> |
+            <a href="whats-coming.html">What's Coming</a> |
+            <a href="family-setup.html">For Families</a> |
+            <a href="about.html">About</a> |
+            <a href="privacy.html">Privacy Policy</a> |
+            <a href="#" onclick="openFeedbackModal(); return false;">Ideas &amp; Feedback</a>
+          </nav>
+          <p class="footer-support">
+            Need help? Call <strong>Connected Canadians</strong> free:
+            <a href="tel:+18558080505">1-855-808-0505</a>
+          </p>
+          <p class="footer-copy">&copy; 2026 Two Birds. Made with care in Ontario, Canada.</p>
+          <p class="city-footer-label" style="display:none;"></p>
+          <p class="device-footer-label" style="display:none;"></p>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="js/speech-config.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/lang-toggle.js" defer></script>
+  <script src="js/accessibility.js" defer></script>
+  <script src="js/city-resources.js" defer></script>
+  <script src="js/welcome-splash.js" defer></script>
+  <script src="js/localize.js" defer></script>
+  <script src="js/setup-wizard.js" defer></script>
+  <script src="js/feedback-github.js" defer></script>
+  <script src="js/settings.js" defer></script>
+  <script src="js/panic-button.js" defer></script>
+  <script src="js/progress.js" defer></script>
+  <button class="btn-print" onclick="window.print()" aria-label="Print this module">🖨️ Print This Module</button>
+</body>
+</html>
