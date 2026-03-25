@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beta Tester Invitation — Digital Confidence Centre</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background-color: #f4f6f9;
+      color: #1a1a1a;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* Outer wrapper */
+    .email-wrapper {
+      max-width: 640px;
+      margin: 40px auto;
+      background: #ffffff;
+      border: 1px solid #d0d7e3;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* Header */
+    .email-header {
+      background-color: #1b3a6b;
+      padding: 32px 40px;
+      text-align: center;
+    }
+    .email-header .org-name {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #a8c4e8;
+      margin-bottom: 8px;
+    }
+    .email-header h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+    .email-header .tagline {
+      font-size: 14px;
+      color: #c8d9ef;
+      font-style: italic;
+    }
+
+    /* Beta badge */
+    .beta-badge {
+      background-color: #e8f0fb;
+      border-left: 4px solid #1b3a6b;
+      padding: 12px 40px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: #1b3a6b;
+      letter-spacing: 0.5px;
+    }
+
+    /* Body */
+    .email-body {
+      padding: 36px 40px;
+    }
+
+    .salutation {
+      font-size: 17px;
+      margin-bottom: 20px;
+      color: #1a1a1a;
+    }
+
+    p {
+      margin-bottom: 18px;
+      color: #2c2c2c;
+    }
+
+    h2 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #1b3a6b;
+      margin: 28px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e0e8f5;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    ul {
+      margin: 0 0 18px 0;
+      padding-left: 22px;
+    }
+    ul li {
+      margin-bottom: 8px;
+      color: #2c2c2c;
+    }
+    ul li strong {
+      color: #1b3a6b;
+    }
+
+    /* Highlight box */
+    .highlight-box {
+      background-color: #f0f5ff;
+      border: 1px solid #c5d5f0;
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .highlight-box p {
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+    .highlight-box p:last-child {
+      margin-bottom: 0;
+    }
+    .highlight-box strong {
+      color: #1b3a6b;
+    }
+
+    /* Ideal participant box */
+    .participant-box {
+      background-color: #fafbff;
+      border: 1px solid #dce8f8;
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+
+    /* Contact card */
+    .contact-card {
+      background-color: #1b3a6b;
+      color: #ffffff;
+      border-radius: 6px;
+      padding: 24px 28px;
+      margin: 28px 0;
+    }
+    .contact-card .contact-name {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .contact-card .contact-org {
+      font-size: 13px;
+      color: #a8c4e8;
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+    .contact-card a {
+      color: #c8d9ef;
+      text-decoration: none;
+    }
+    .contact-card .contact-line {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    /* CTA button */
+    .cta-button {
+      display: inline-block;
+      background-color: #1b3a6b;
+      color: #ffffff !important;
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 5px;
+      margin: 8px 0 24px;
+      letter-spacing: 0.3px;
+    }
+
+    /* Community note */
+    .community-note {
+      background-color: #f7f9fc;
+      border: 1px solid #e0e8f5;
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin: 24px 0;
+      font-size: 14px;
+      color: #4a5568;
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* Sign off */
+    .signoff {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid #e8eef8;
+    }
+    .signoff p {
+      margin-bottom: 6px;
+    }
+
+    /* Footer */
+    .email-footer {
+      background-color: #f0f4fb;
+      padding: 20px 40px;
+      text-align: center;
+      font-size: 12px;
+      color: #6b7a99;
+      font-family: Arial, Helvetica, sans-serif;
+      border-top: 1px solid #d0d7e3;
+    }
+    .email-footer a {
+      color: #1b3a6b;
+      text-decoration: none;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .email-wrapper {
+        margin: 0;
+        border-radius: 0;
+        border: none;
+      }
+      .email-header,
+      .email-body,
+      .email-footer {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      .beta-badge {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      .email-header h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="email-wrapper">
+
+  <!-- Header -->
+  <div class="email-header">
+    <div class="org-name">Two Birds Innovation</div>
+    <h1>Digital Confidence Centre</h1>
+    <div class="tagline">Helping seniors navigate the digital world — confidently and safely</div>
+  </div>
+
+  <!-- Beta badge -->
+  <div class="beta-badge">
+    Community Beta Programme &nbsp;·&nbsp; April 1 – May 15, 2026 &nbsp;·&nbsp; Limited Spaces Available
+  </div>
+
+  <!-- Body -->
+  <div class="email-body">
+
+    <p class="salutation">Dear [Contact Name],</p>
+
+    <p>
+      I'm reaching out because [ORGANIZATION NAME] plays a vital role in supporting seniors across our community.
+      I'd love your help connecting with a few of the older adults you serve — specifically to participate in the
+      beta launch of <strong>Digital Confidence Centre</strong>, a free digital literacy programme designed for adults 70 and up.
+    </p>
+
+    <p>
+      We're not a classroom and we're not a manual. Digital Confidence Centre is a friendly, self-paced online
+      programme that teaches seniors how to use their iPhone or iPad more safely — everything from avoiding scams
+      to using apps with confidence. We built it for seniors who are capable and curious, but who haven't always
+      had someone explain things in a way that actually makes sense.
+    </p>
+
+    <p>
+      We're looking to recruit <strong>2–5 participants</strong> from your network to help us test the programme
+      before public launch.
+    </p>
+
+    <h2>Why Participate?</h2>
+
+    <ul>
+      <li><strong>Free access</strong> — no cost to your organisation or to participants, ever</li>
+      <li><strong>Direct input</strong> — participants help shape a tool that will serve thousands of Ontario seniors</li>
+      <li><strong>Real skills</strong> — participants will genuinely learn and gain confidence with their devices</li>
+      <li><strong>Community contribution</strong> — a meaningful, low-commitment way for seniors to give back</li>
+      <li><strong>No tech background required</strong> — we designed this specifically for beginners</li>
+    </ul>
+
+    <h2>What's Involved</h2>
+
+    <div class="highlight-box">
+      <p>&#9201;&nbsp; <strong>Time commitment: approximately 2–3 hours total over 4 weeks</strong></p>
+      <p>&#128197;&nbsp; <strong>Beta period: April 1 – May 15, 2026</strong></p>
+      <p>&#128241;&nbsp; <strong>Device required: iPhone or iPad with internet access</strong></p>
+    </div>
+
+    <ul>
+      <li>Complete <strong>2–3 short learning modules</strong> at their own pace (15–20 minutes each)</li>
+      <li>Fill in a simple <strong>feedback form</strong> after each module (5–10 minutes)</li>
+      <li>Optional: a relaxed <strong>30-minute phone conversation</strong> with our team to share their thoughts</li>
+      <li>That's it — no apps to install, no passwords to remember, no in-person attendance required</li>
+    </ul>
+
+    <h2>Ideal Participants</h2>
+
+    <div class="participant-box">
+      <p>We're looking for participants who:</p>
+      <ul>
+        <li>Are <strong>70 years of age or older</strong></li>
+        <li>Own or have regular access to an <strong>iPhone or iPad</strong></li>
+        <li>Have basic internet access at home or through your facility</li>
+        <li>Are <strong>willing to try something new</strong> — even if they feel unsure about technology</li>
+        <li>Are comfortable reading and responding to simple email or text messages</li>
+        <li>Live in Ontario (Elgin County, Middlesex County, or surrounding Southwestern Ontario preferred)</li>
+      </ul>
+      <p style="margin-top: 12px; font-style: italic; color: #4a5568;">
+        We especially welcome participants who are newer to smartphones or who have expressed interest in
+        learning more about using technology safely.
+      </p>
+    </div>
+
+    <h2>How You Can Help</h2>
+
+    <p>
+      If you can think of 2–5 seniors in your community who might benefit from this experience, I'd be grateful
+      if you could share this invitation with them — by email, by posting it on your bulletin board, or simply
+      by mentioning it directly. I'm happy to provide printed flyers or a short description you can share in
+      your newsletter or on your screens.
+    </p>
+
+    <p>
+      Interested participants can reach out to me directly, or you can collect names and I'll follow up personally.
+      Whichever is easier for you.
+    </p>
+
+    <a href="mailto:[YOUR EMAIL]" class="cta-button">Refer a Participant — Email Us</a>
+
+    <h2>Contact Information</h2>
+
+    <div class="contact-card">
+      <div class="contact-name">Aaron Kramer</div>
+      <div class="contact-org">Founder, Two Birds Innovation</div>
+      <div class="contact-line">&#9993;&nbsp; <a href="mailto:[YOUR EMAIL]">[YOUR EMAIL]</a></div>
+      <div class="contact-line">&#128222;&nbsp; [YOUR PHONE]</div>
+      <div class="contact-line">&#127758;&nbsp; <a href="https://dcc.twobirds.ca">dcc.twobirds.ca</a></div>
+      <div class="contact-line" style="margin-top: 10px; font-size: 13px; color: #a8c4e8;">
+        St. Thomas, Ontario &nbsp;·&nbsp; Serving Elgin County and Southwestern Ontario
+      </div>
+    </div>
+
+    <div class="community-note">
+      There is no cost to participants or to your organisation — now or in the future.
+      This is a community service project. We are committed to keeping Digital Confidence Centre free
+      for the seniors who need it most.
+    </div>
+
+    <p>
+      Thank you for the work your organisation does every day to support seniors in our community.
+      I hope we can partner on this small but meaningful step forward.
+    </p>
+
+    <div class="signoff">
+      <p>Warm regards,</p>
+      <p><strong>Aaron Kramer</strong></p>
+      <p>Founder, Two Birds Innovation</p>
+      <p style="font-size: 14px; color: #6b7a99; margin-top: 8px;">[YOUR EMAIL] &nbsp;·&nbsp; [YOUR PHONE]</p>
+    </div>
+
+  </div><!-- /email-body -->
+
+  <!-- Footer -->
+  <div class="email-footer">
+    <p>
+      Digital Confidence Centre is developed by Two Birds Innovation, St. Thomas, Ontario.<br />
+      This invitation was sent to you because of your role supporting seniors in Southwestern Ontario.
+    </p>
+    <p style="margin-top: 8px;">
+      To opt out of future programme invitations, simply reply with "Unsubscribe" and we will remove you immediately.
+    </p>
+  </div>
+
+</div><!-- /email-wrapper -->
+
+</body>
+</html>
