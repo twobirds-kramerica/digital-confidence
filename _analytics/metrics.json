@@ -1,0 +1,28 @@
+{
+  "_note": "This file is auto-generated nightly by _analytics/generate-metrics.js via GitHub Actions. See ga4-api-setup.md for setup instructions.",
+  "generated": null,
+  "totalUsers": null,
+  "moduleStarts": null,
+  "moduleCompletions": null,
+  "feedbackSubmissions": null,
+  "avgSessionMinutes": null,
+  "quizPassRate": null,
+  "discovery": { "organic": null, "direct": null, "referral": null, "social": null },
+  "funnel": {
+    "visitors": null,
+    "started": null,
+    "completed": null,
+    "quizAttempts": null,
+    "quizPassed": null
+  },
+  "modules": [],
+  "beta": {
+    "users": null,
+    "sessions": null,
+    "feedbackCount": null,
+    "modulesCompleted": null,
+    "avgModulesPerUser": null,
+    "satisfactionScore": null,
+    "dropoff": {}
+  }
+}

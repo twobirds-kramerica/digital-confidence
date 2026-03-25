@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>User Journey Dashboard — DCC Admin</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, -apple-system, sans-serif; background: #F5F7FA; color: #1a1a1a; }
+
+    .admin-header {
+      background: #1565C0;
+      color: white;
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .admin-header h1 { font-size: 1.3rem; font-weight: 700; }
+    .admin-header p  { font-size: 0.85rem; opacity: 0.8; margin-top: 4px; }
+    .admin-badge {
+      background: rgba(255,255,255,0.2);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      margin-left: auto;
+    }
+
+    .admin-nav {
+      background: white;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 0 32px;
+      display: flex;
+      gap: 0;
+    }
+    .admin-nav a {
+      display: inline-block;
+      padding: 14px 20px;
+      text-decoration: none;
+      color: #546E7A;
+      font-size: 0.9rem;
+      border-bottom: 3px solid transparent;
+      transition: all 0.15s;
+    }
+    .admin-nav a:hover, .admin-nav a.active {
+      color: #1565C0;
+      border-bottom-color: #1565C0;
+    }
+
+    .dashboard-wrap { padding: 32px; max-width: 1400px; margin: 0 auto; }
+
+    /* ── Summary Cards ── */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .summary-card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .summary-card .value {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1565C0;
+      line-height: 1;
+    }
+    .summary-card .label {
+      font-size: 0.82rem;
+      color: #546E7A;
+      margin-top: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .summary-card .change {
+      font-size: 0.85rem;
+      margin-top: 6px;
+      color: #2E7D32;
+      font-weight: 600;
+    }
+    .summary-card .change.down { color: #C62828; }
+
+    /* ── Journey Stages ── */
+    .journey-flow { display: flex; flex-direction: column; gap: 24px; margin-bottom: 32px; }
+    .journey-stage {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      border-left: 4px solid #1565C0;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .journey-stage h3 { font-size: 1rem; color: #1565C0; margin-bottom: 6px; }
+    .journey-stage > p { font-size: 0.85rem; color: #546E7A; margin-bottom: 16px; }
+    .stage-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+    }
+    .metric-card {
+      background: #F5F7FA;
+      padding: 16px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .metric-value { font-size: 1.8rem; font-weight: 700; color: #1565C0; }
+    .metric-label { font-size: 0.78rem; color: #546E7A; margin-top: 6px; }
+
+    /* ── Funnel ── */
+    .funnel-section {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 32px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .funnel-section h2 { font-size: 1rem; margin-bottom: 20px; }
+    .funnel-step {
+      background: linear-gradient(135deg, #1565C0, #42A5F5);
+      color: white;
+      padding: 18px 24px;
+      margin: 6px auto;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: width 0.4s ease;
+    }
+    .funnel-step:nth-child(1) { width: 100%; }
+    .funnel-step:nth-child(2) { width: 78%; }
+    .funnel-step:nth-child(3) { width: 55%; }
+    .funnel-step:nth-child(4) { width: 32%; }
+    .funnel-step:nth-child(5) { width: 22%; }
+    .funnel-step .step-label { font-weight: 600; font-size: 0.95rem; }
+    .funnel-step .step-count { font-size: 1.2rem; font-weight: 700; }
+    .funnel-step .step-pct   { font-size: 0.82rem; opacity: 0.85; background: rgba(0,0,0,0.15); padding: 2px 10px; border-radius: 50px; }
+
+    /* ── Module Grid ── */
+    .module-table {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 32px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .module-table h2 { font-size: 1rem; margin-bottom: 16px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    th { text-align: left; padding: 10px 12px; background: #F5F7FA; color: #546E7A; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    td { padding: 12px; border-bottom: 1px solid #F0F0F0; }
+    tr:last-child td { border-bottom: none; }
+    .progress-bar-wrap { background: #E3EAF7; border-radius: 4px; height: 8px; }
+    .progress-bar-fill { background: #1565C0; height: 8px; border-radius: 4px; transition: width 0.5s; }
+
+    /* ── Notice ── */
+    .ga4-notice {
+      background: #FFF8E1;
+      border: 1px solid #F59E0B;
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-size: 0.875rem;
+      margin-bottom: 24px;
+    }
+    .ga4-notice strong { color: #B45309; }
+
+    .timestamp { font-size: 0.78rem; color: #546E7A; margin-top: 4px; }
+
+    @media (max-width: 600px) {
+      .dashboard-wrap { padding: 16px; }
+      .admin-header, .admin-nav { padding-left: 16px; padding-right: 16px; }
+      .funnel-step { width: 100% !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="admin-header">
+    <div>
+      <h1>📊 User Journey Dashboard</h1>
+      <p>Digital Confidence Centre — Analytics Overview</p>
+    </div>
+    <span class="admin-badge">Admin Only</span>
+  </header>
+
+  <nav class="admin-nav">
+    <a href="user-journey-dashboard.html" class="active">Journey Overview</a>
+    <a href="beta-analytics.html">Beta Testers</a>
+    <a href="../_analytics/ga4-api-setup.md">GA4 API Setup</a>
+    <a href="../index.html">← Back to Site</a>
+  </nav>
+
+  <div class="dashboard-wrap">
+
+    <div class="ga4-notice">
+      <strong>⚠️ Live data requires GA4 API integration.</strong>
+      The metrics below are illustrative placeholders. To populate with real data,
+      complete the setup in <a href="../_analytics/ga4-api-setup.md">_analytics/ga4-api-setup.md</a>
+      and connect the GA4 Data API. All values below update automatically once connected.
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="value" id="total-users">—</div>
+        <div class="label">Total Users (30d)</div>
+        <div class="change" id="users-change">↑ Connect GA4 API</div>
+      </div>
+      <div class="summary-card">
+        <div class="value" id="module-starts">—</div>
+        <div class="label">Module Starts</div>
+        <div class="change" id="starts-change"></div>
+      </div>
+      <div class="summary-card">
+        <div class="value" id="module-completions">—</div>
+        <div class="label">Module Completions</div>
+        <div class="change" id="completions-change"></div>
+      </div>
+      <div class="summary-card">
+        <div class="value" id="avg-session">—</div>
+        <div class="label">Avg Session (min)</div>
+        <div class="change"></div>
+      </div>
+      <div class="summary-card">
+        <div class="value" id="feedback-count">—</div>
+        <div class="label">Feedback Submissions</div>
+        <div class="change"></div>
+      </div>
+      <div class="summary-card">
+        <div class="value" id="quiz-pass-rate">—</div>
+        <div class="label">Quiz Pass Rate</div>
+        <div class="change"></div>
+      </div>
+    </div>
+
+    <!-- Journey Stages -->
+    <div class="journey-flow">
+
+      <div class="journey-stage">
+        <h3>Stage 1 — Discovery</h3>
+        <p>How users find the Digital Confidence Centre</p>
+        <div class="stage-metrics">
+          <div class="metric-card"><div class="metric-value" id="s1-organic">—</div><div class="metric-label">Organic Search</div></div>
+          <div class="metric-card"><div class="metric-value" id="s1-direct">—</div><div class="metric-label">Direct / Bookmark</div></div>
+          <div class="metric-card"><div class="metric-value" id="s1-referral">—</div><div class="metric-label">Referrals</div></div>
+          <div class="metric-card"><div class="metric-value" id="s1-social">—</div><div class="metric-label">Social Media</div></div>
+        </div>
+      </div>
+
+      <div class="journey-stage">
+        <h3>Stage 2 — Engagement</h3>
+        <p>First interactions with content</p>
+        <div class="stage-metrics">
+          <div class="metric-card"><div class="metric-value" id="s2-homepage">—</div><div class="metric-label">Homepage Views</div></div>
+          <div class="metric-card"><div class="metric-value" id="s2-starts">—</div><div class="metric-label">Module Starts</div></div>
+          <div class="metric-card"><div class="metric-value" id="s2-time">—</div><div class="metric-label">Avg Time on Site</div></div>
+          <div class="metric-card"><div class="metric-value" id="s2-pages">—</div><div class="metric-label">Pages / Session</div></div>
+        </div>
+      </div>
+
+      <div class="journey-stage">
+        <h3>Stage 3 — Learning</h3>
+        <p>Active content consumption</p>
+        <div class="stage-metrics">
+          <div class="metric-card"><div class="metric-value" id="s3-complete">—</div><div class="metric-label">Modules Completed</div></div>
+          <div class="metric-card"><div class="metric-value" id="s3-scroll75">—</div><div class="metric-label">Read to 75%</div></div>
+          <div class="metric-card"><div class="metric-value" id="s3-videos">—</div><div class="metric-label">Video Link Clicks</div></div>
+          <div class="metric-card"><div class="metric-value" id="s3-avg">—</div><div class="metric-label">Avg Modules / User</div></div>
+        </div>
+      </div>
+
+      <div class="journey-stage">
+        <h3>Stage 4 — Mastery</h3>
+        <p>Quiz completion and certification</p>
+        <div class="stage-metrics">
+          <div class="metric-card"><div class="metric-value" id="s4-attempts">—</div><div class="metric-label">Quiz Attempts</div></div>
+          <div class="metric-card"><div class="metric-value" id="s4-passrate">—</div><div class="metric-label">Pass Rate</div></div>
+          <div class="metric-card"><div class="metric-value" id="s4-avgscore">—</div><div class="metric-label">Avg Quiz Score</div></div>
+          <div class="metric-card"><div class="metric-value" id="s4-certs">—</div><div class="metric-label">Certificates Earned</div></div>
+        </div>
+      </div>
+
+      <div class="journey-stage">
+        <h3>Stage 5 — Advocacy</h3>
+        <p>User engagement and support</p>
+        <div class="stage-metrics">
+          <div class="metric-card"><div class="metric-value" id="s5-feedback">—</div><div class="metric-label">Feedback Submissions</div></div>
+          <div class="metric-card"><div class="metric-value" id="s5-phone">—</div><div class="metric-label">Help Line Clicks</div></div>
+          <div class="metric-card"><div class="metric-value" id="s5-print">—</div><div class="metric-label">Modules Printed</div></div>
+          <div class="metric-card"><div class="metric-value" id="s5-outbound">—</div><div class="metric-label">Outbound Clicks</div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Conversion Funnel -->
+    <div class="funnel-section">
+      <h2>📉 Conversion Funnel</h2>
+      <div id="funnel-container">
+        <div class="funnel-step">
+          <span class="step-label">🌐 Site Visitors</span>
+          <span class="step-count" id="funnel-visitors">—</span>
+          <span class="step-pct">100%</span>
+        </div>
+        <div class="funnel-step">
+          <span class="step-label">📖 Started a Module</span>
+          <span class="step-count" id="funnel-started">—</span>
+          <span class="step-pct" id="funnel-started-pct">—</span>
+        </div>
+        <div class="funnel-step">
+          <span class="step-label">✅ Completed a Module</span>
+          <span class="step-count" id="funnel-complete">—</span>
+          <span class="step-pct" id="funnel-complete-pct">—</span>
+        </div>
+        <div class="funnel-step">
+          <span class="step-label">📝 Attempted Quiz</span>
+          <span class="step-count" id="funnel-quiz">—</span>
+          <span class="step-pct" id="funnel-quiz-pct">—</span>
+        </div>
+        <div class="funnel-step">
+          <span class="step-label">🏆 Passed Quiz</span>
+          <span class="step-count" id="funnel-passed">—</span>
+          <span class="step-pct" id="funnel-passed-pct">—</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Module-by-Module Table -->
+    <div class="module-table">
+      <h2>📚 Module Performance</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Module</th>
+            <th>Page Views</th>
+            <th>Started</th>
+            <th>Completed</th>
+            <th>Completion Rate</th>
+            <th>Avg Time</th>
+            <th>Scroll 75%</th>
+          </tr>
+        </thead>
+        <tbody id="module-table-body">
+          <tr><td colspan="7" style="text-align:center;color:#546E7A;padding:24px;">
+            Connect GA4 API to populate module performance data.
+            See <a href="../_analytics/ga4-api-setup.md">_analytics/ga4-api-setup.md</a> for setup.
+          </td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="timestamp">Dashboard last loaded: <span id="load-time"></span></p>
+    <p class="timestamp" style="margin-top:4px;">
+      Data source: Google Analytics 4 — Property configured in
+      <a href="../_analytics/ga4-api-setup.md">_analytics/ga4-api-setup.md</a>
+    </p>
+
+  </div>
+
+  <script>
+    document.getElementById('load-time').textContent = new Date().toLocaleString('en-CA');
+
+    /* ── GA4 Data API Integration ──────────────────────────────
+       Replace the mock data below with real GA4 API calls once
+       the service account is configured per ga4-api-setup.md
+
+       Example using the GA4 Data API (Node.js/serverless):
+       This dashboard can be served as a static page that reads
+       from a pre-generated JSON file updated by a scheduled script.
+
+       File: _analytics/metrics.json (generated nightly by GA4 script)
+    ────────────────────────────────────────────────────────── */
+    async function loadMetrics() {
+      try {
+        const res = await fetch('../_analytics/metrics.json');
+        if (!res.ok) throw new Error('No metrics.json yet');
+        const data = await res.json();
+        populateDashboard(data);
+      } catch (e) {
+        console.info('[DCC Dashboard] metrics.json not yet generated. See ga4-api-setup.md');
+      }
+    }
+
+    function populateDashboard(data) {
+      function setEl(id, value) {
+        const el = document.getElementById(id);
+        if (el && value !== undefined) el.textContent = value;
+      }
+
+      setEl('total-users',       data.totalUsers?.toLocaleString());
+      setEl('module-starts',     data.moduleStarts?.toLocaleString());
+      setEl('module-completions',data.moduleCompletions?.toLocaleString());
+      setEl('avg-session',       data.avgSessionMinutes);
+      setEl('feedback-count',    data.feedbackSubmissions?.toLocaleString());
+      setEl('quiz-pass-rate',    data.quizPassRate + '%');
+
+      /* Journey stages */
+      if (data.discovery) {
+        setEl('s1-organic',  data.discovery.organic?.toLocaleString());
+        setEl('s1-direct',   data.discovery.direct?.toLocaleString());
+        setEl('s1-referral', data.discovery.referral?.toLocaleString());
+        setEl('s1-social',   data.discovery.social?.toLocaleString());
+      }
+
+      /* Funnel */
+      if (data.funnel) {
+        setEl('funnel-visitors',    data.funnel.visitors?.toLocaleString());
+        setEl('funnel-started',     data.funnel.started?.toLocaleString());
+        setEl('funnel-complete',    data.funnel.completed?.toLocaleString());
+        setEl('funnel-quiz',        data.funnel.quizAttempts?.toLocaleString());
+        setEl('funnel-passed',      data.funnel.quizPassed?.toLocaleString());
+        const v = data.funnel.visitors || 1;
+        setEl('funnel-started-pct',  Math.round(data.funnel.started / v * 100) + '%');
+        setEl('funnel-complete-pct', Math.round(data.funnel.completed / v * 100) + '%');
+        setEl('funnel-quiz-pct',     Math.round(data.funnel.quizAttempts / v * 100) + '%');
+        setEl('funnel-passed-pct',   Math.round(data.funnel.quizPassed / v * 100) + '%');
+      }
+
+      /* Module table */
+      if (data.modules && Array.isArray(data.modules)) {
+        const tbody = document.getElementById('module-table-body');
+        tbody.innerHTML = data.modules.map(function (m) {
+          const compRate = m.started ? Math.round(m.completed / m.started * 100) : 0;
+          return '<tr>' +
+            '<td><strong>' + m.name + '</strong></td>' +
+            '<td>' + (m.pageViews || 0).toLocaleString() + '</td>' +
+            '<td>' + (m.started || 0).toLocaleString() + '</td>' +
+            '<td>' + (m.completed || 0).toLocaleString() + '</td>' +
+            '<td><div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:' + compRate + '%"></div></div> ' + compRate + '%</td>' +
+            '<td>' + (m.avgMinutes || '—') + 'm</td>' +
+            '<td>' + (m.scroll75 || '—') + '</td>' +
+          '</tr>';
+        }).join('');
+      }
+    }
+
+    loadMetrics();
+  </script>
+</body>
+</html>

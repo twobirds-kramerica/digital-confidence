@@ -1,0 +1,15 @@
+# Analytics — service account credentials (NEVER commit)
+_analytics/service-account.json
+_analytics/node_modules/
+_analytics/package-lock.json
+
+# Feedback backups (contain personal data)
+backups/feedback/
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
+
+# Local editor files
+.vscode/settings.json
+*.swp

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Beta Tester Analytics — DCC Admin</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, -apple-system, sans-serif; background: #F5F7FA; color: #1a1a1a; }
+
+    .admin-header {
+      background: #6A1B9A;
+      color: white;
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .admin-header h1 { font-size: 1.3rem; font-weight: 700; }
+    .admin-header p  { font-size: 0.85rem; opacity: 0.8; margin-top: 4px; }
+    .admin-badge { background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 50px; font-size: 0.78rem; margin-left: auto; }
+
+    .admin-nav {
+      background: white;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 0 32px;
+      display: flex;
+    }
+    .admin-nav a {
+      display: inline-block;
+      padding: 14px 20px;
+      text-decoration: none;
+      color: #546E7A;
+      font-size: 0.9rem;
+      border-bottom: 3px solid transparent;
+    }
+    .admin-nav a:hover, .admin-nav a.active { color: #6A1B9A; border-bottom-color: #6A1B9A; }
+
+    .dashboard-wrap { padding: 32px; max-width: 1400px; margin: 0 auto; }
+
+    .notice {
+      background: #F3E5F5;
+      border: 1px solid #CE93D8;
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-size: 0.875rem;
+      margin-bottom: 24px;
+    }
+    .notice strong { color: #6A1B9A; }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .card .value { font-size: 2rem; font-weight: 700; color: #6A1B9A; }
+    .card .label { font-size: 0.82rem; color: #546E7A; margin-top: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    .section { background: white; border-radius: 12px; padding: 24px; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+    .section h2 { font-size: 1rem; margin-bottom: 16px; border-bottom: 2px solid #F3E5F5; padding-bottom: 12px; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    th { text-align: left; padding: 10px 12px; background: #F5F7FA; color: #546E7A; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    td { padding: 12px; border-bottom: 1px solid #F0F0F0; }
+    tr:last-child td { border-bottom: none; }
+
+    .tag { display: inline-block; padding: 2px 10px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; }
+    .tag-beta    { background: #EDE7F6; color: #6A1B9A; }
+    .tag-active  { background: #E8F5E9; color: #2E7D32; }
+    .tag-silent  { background: #FAFAFA; color: #546E7A; border: 1px solid #E0E0E0; }
+
+    .pain-point-list { list-style: none; }
+    .pain-point-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #F0F0F0;
+    }
+    .pain-point-list li:last-child { border-bottom: none; }
+    .pain-point-list .bar-wrap { flex: 1; margin: 0 20px; background: #E3EAF7; border-radius: 4px; height: 8px; }
+    .pain-point-list .bar      { background: #6A1B9A; height: 8px; border-radius: 4px; }
+    .pain-point-list .count    { font-weight: 700; color: #6A1B9A; min-width: 40px; text-align: right; }
+
+    .dropoff-step {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px;
+      background: #F5F7FA;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+    .dropoff-step .step-name { flex: 1; font-weight: 600; }
+    .dropoff-step .step-bar-wrap { flex: 2; background: #E0E0E0; border-radius: 4px; height: 10px; }
+    .dropoff-step .step-bar { height: 10px; border-radius: 4px; background: #6A1B9A; }
+    .dropoff-step .step-pct { min-width: 50px; text-align: right; font-weight: 700; color: #6A1B9A; }
+
+    .url-builder {
+      background: #F3E5F5;
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+
+    .timestamp { font-size: 0.78rem; color: #546E7A; margin-top: 8px; }
+
+    @media (max-width: 600px) {
+      .dashboard-wrap { padding: 16px; }
+      .admin-header, .admin-nav { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="admin-header">
+    <div>
+      <h1>🧪 Beta Tester Analytics</h1>
+      <p>Track engagement, confusion points, and feedback from beta testers</p>
+    </div>
+    <span class="admin-badge">Admin Only</span>
+  </header>
+
+  <nav class="admin-nav">
+    <a href="user-journey-dashboard.html">Journey Overview</a>
+    <a href="beta-analytics.html" class="active">Beta Testers</a>
+    <a href="../_analytics/ga4-api-setup.md">GA4 API Setup</a>
+    <a href="../index.html">← Back to Site</a>
+  </nav>
+
+  <div class="dashboard-wrap">
+
+    <div class="notice">
+      <strong>🔗 How to recruit beta testers:</strong> Share the site URL with
+      <code>?beta=true</code> appended — e.g. <code>https://twobirds-kramerica.github.io/digital-confidence/?beta=true</code>
+      Beta testers are automatically tagged in GA4 and their sessions are tracked separately.
+      A/B test variants can also be forced via URL parameters.
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="summary-grid">
+      <div class="card">
+        <div class="value" id="beta-users">—</div>
+        <div class="label">Beta Testers</div>
+      </div>
+      <div class="card">
+        <div class="value" id="beta-sessions">—</div>
+        <div class="label">Sessions</div>
+      </div>
+      <div class="card">
+        <div class="value" id="beta-feedback">—</div>
+        <div class="label">Feedback Items</div>
+      </div>
+      <div class="card">
+        <div class="value" id="beta-completion">—</div>
+        <div class="label">Modules Completed</div>
+      </div>
+      <div class="card">
+        <div class="value" id="beta-avg-modules">—</div>
+        <div class="label">Avg Modules / User</div>
+      </div>
+      <div class="card">
+        <div class="value" id="beta-nps">—</div>
+        <div class="label">Satisfaction Score</div>
+      </div>
+    </div>
+
+    <!-- Drop-off Points -->
+    <div class="section">
+      <h2>📉 Drop-off Points (Where Beta Testers Stop)</h2>
+      <p style="font-size:0.85rem;color:#546E7A;margin-bottom:16px;">
+        Percentage of beta testers who reach each page — reveals where content loses people.
+      </p>
+      <div id="dropoff-container">
+        <div class="dropoff-step">
+          <div class="step-name">Home Page</div>
+          <div class="step-bar-wrap"><div class="step-bar" style="width:100%"></div></div>
+          <div class="step-pct">100%</div>
+        </div>
+        <div class="dropoff-step">
+          <div class="step-name">Module 1</div>
+          <div class="step-bar-wrap"><div class="step-bar" style="width:78%"></div></div>
+          <div class="step-pct" id="dp-m1">—</div>
+        </div>
+        <div class="dropoff-step">
+          <div class="step-name">Module 2</div>
+          <div class="step-bar-wrap"><div class="step-bar" style="width:62%"></div></div>
+          <div class="step-pct" id="dp-m2">—</div>
+        </div>
+        <div class="dropoff-step">
+          <div class="step-name">Module 3</div>
+          <div class="step-bar-wrap"><div class="step-bar" style="width:48%"></div></div>
+          <div class="step-pct" id="dp-m3">—</div>
+        </div>
+        <div class="dropoff-step">
+          <div class="step-name">Module 4</div>
+          <div class="step-bar-wrap"><div class="step-bar" style="width:38%"></div></div>
+          <div class="step-pct" id="dp-m4">—</div>
+        </div>
+        <div class="dropoff-step">
+          <div class="step-name">Module 5</div>
+          <div class="step-bar-wrap"><div class="step-bar" style="width:30%"></div></div>
+          <div class="step-pct" id="dp-m5">—</div>
+        </div>
+        <div class="dropoff-step">
+          <div class="step-name">Module 6</div>
+          <div class="step-bar-wrap"><div class="step-bar" style="width:22%"></div></div>
+          <div class="step-pct" id="dp-m6">—</div>
+        </div>
+        <div class="dropoff-step">
+          <div class="step-name">Final Quiz</div>
+          <div class="step-bar-wrap"><div class="step-bar" style="width:14%"></div></div>
+          <div class="step-pct" id="dp-quiz">—</div>
+        </div>
+      </div>
+      <p class="timestamp">Update drop-off widths above once GA4 API is connected.</p>
+    </div>
+
+    <!-- Confusion / Pain Points -->
+    <div class="section">
+      <h2>🧩 Reported Confusion Points (by Frequency)</h2>
+      <p style="font-size:0.85rem;color:#546E7A;margin-bottom:16px;">
+        Based on Formspree feedback tagged "Something confusing". Ranked by submission count.
+      </p>
+      <ul class="pain-point-list" id="pain-points">
+        <li>
+          <span>Feedback data populates once Formspree submissions are reviewed and tagged.</span>
+          <div class="bar-wrap"><div class="bar" style="width:0%"></div></div>
+          <span class="count">0</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Feature Requests -->
+    <div class="section">
+      <h2>💡 Feature Requests (by Frequency)</h2>
+      <p style="font-size:0.85rem;color:#546E7A;margin-bottom:16px;">
+        Based on Formspree feedback tagged "Suggestion". Export from Formspree dashboard → CSV → paste below.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Feature Request</th>
+            <th>Count</th>
+            <th>Source Module</th>
+            <th>Priority</th>
+          </tr>
+        </thead>
+        <tbody id="feature-requests">
+          <tr><td colspan="5" style="text-align:center;color:#546E7A;padding:24px;">
+            Export feedback CSV from Formspree and paste feature requests here.
+          </td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Beta Tester Activity Log -->
+    <div class="section">
+      <h2>👥 Beta Tester Sessions</h2>
+      <p style="font-size:0.85rem;color:#546E7A;margin-bottom:16px;">
+        GA4 user segments filtered by is_beta=true parameter.
+        Requires GA4 API integration — see <a href="../_analytics/ga4-api-setup.md">ga4-api-setup.md</a>.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>User (anonymised)</th>
+            <th>Sessions</th>
+            <th>Modules Visited</th>
+            <th>Feedback Submitted</th>
+            <th>Last Active</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="beta-users-table">
+          <tr><td colspan="6" style="text-align:center;color:#546E7A;padding:24px;">
+            Connect GA4 API to see anonymised beta tester sessions.
+          </td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Beta URL Builder -->
+    <div class="section">
+      <h2>🔗 Beta Invite URL Builder</h2>
+      <p style="font-size:0.85rem;color:#546E7A;margin-bottom:16px;">
+        Add these parameters to any page URL to tag the session as a beta test:
+      </p>
+      <div class="url-builder">
+        <p><strong>Base URL:</strong></p>
+        <p style="margin-top:8px;">https://twobirds-kramerica.github.io/digital-confidence/<strong>?beta=true</strong></p>
+        <p style="margin-top:12px;"><strong>Force A/B variant:</strong></p>
+        <p style="margin-top:8px;">https://twobirds-kramerica.github.io/digital-confidence/?beta=true<strong>&ab_homepage-headline=variant-a</strong></p>
+        <p style="margin-top:12px;"><strong>Start on specific module:</strong></p>
+        <p style="margin-top:8px;">https://twobirds-kramerica.github.io/digital-confidence/module-3.html?beta=true</p>
+      </div>
+    </div>
+
+    <!-- GitHub Issues Integration Note -->
+    <div class="section">
+      <h2>🐙 GitHub Issues Integration</h2>
+      <p style="font-size:0.875rem;color:#546E7A;margin-bottom:16px;">
+        Beta feedback submitted via the Formspree form is automatically tagged with the source module.
+        To route feedback directly to GitHub Issues with <code>beta-feedback</code> label, configure
+        a Zapier or Make (Integromat) workflow:
+      </p>
+      <ol style="font-size:0.875rem;line-height:1.8;margin-left:20px;color:#37474F;">
+        <li>Trigger: New Formspree submission</li>
+        <li>Filter: Field <code>is_beta</code> = true (set via hidden form field when ?beta=true)</li>
+        <li>Action: Create GitHub Issue with label <code>beta-feedback</code></li>
+        <li>Title: <code>[Beta] {feedback_type} — {module}</code></li>
+        <li>Body: Paste all form fields</li>
+      </ol>
+      <p style="font-size:0.85rem;color:#546E7A;margin-top:12px;">
+        Free tier of Make (Integromat) supports this workflow with no cost.
+      </p>
+    </div>
+
+    <p class="timestamp">Dashboard last loaded: <span id="load-time"></span></p>
+
+  </div>
+
+  <script>
+    document.getElementById('load-time').textContent = new Date().toLocaleString('en-CA');
+
+    /* Load beta metrics from pre-generated JSON (same file as main dashboard, filtered) */
+    async function loadBetaMetrics() {
+      try {
+        const res = await fetch('../_analytics/metrics.json');
+        if (!res.ok) return;
+        const data = await res.json();
+        if (!data.beta) return;
+
+        const b = data.beta;
+        function setEl(id, v) { const el = document.getElementById(id); if (el && v !== undefined) el.textContent = v; }
+        setEl('beta-users',      b.users);
+        setEl('beta-sessions',   b.sessions);
+        setEl('beta-feedback',   b.feedbackCount);
+        setEl('beta-completion', b.modulesCompleted);
+        setEl('beta-avg-modules',b.avgModulesPerUser);
+        setEl('beta-nps',        b.satisfactionScore);
+
+        if (b.dropoff) {
+          Object.keys(b.dropoff).forEach(function (key) {
+            setEl('dp-' + key, b.dropoff[key] + '%');
+          });
+        }
+      } catch (e) {
+        console.info('[DCC Beta] metrics.json not available yet.');
+      }
+    }
+
+    loadBetaMetrics();
+  </script>
+</body>
+</html>
