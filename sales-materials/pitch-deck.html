@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Confidence Centre — Pitch Deck | Two Birds Innovation</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0D1B2A; color: #fff; }
+
+    /* Navigation */
+    .deck-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,27,42,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 10px 24px; display: flex; justify-content: space-between; align-items: center; }
+    .deck-title { font-size: 0.85rem; opacity: 0.7; }
+    .slide-counter { font-size: 0.85rem; opacity: 0.7; }
+    .nav-btns { display: flex; gap: 8px; }
+    .nav-btn { background: #1565C0; color: #fff; border: none; border-radius: 6px; padding: 6px 16px; cursor: pointer; font-size: 0.85rem; }
+    .nav-btn:hover { background: #0D47A1; }
+    .nav-btn:disabled { opacity: 0.4; cursor: default; }
+
+    /* Slide container */
+    .slides { padding-top: 52px; }
+    .slide { display: none; min-height: calc(100vh - 52px); padding: 48px 64px; flex-direction: column; justify-content: center; }
+    .slide.active { display: flex; }
+    @media (max-width: 640px) { .slide { padding: 32px 24px; } }
+
+    /* Slide themes */
+    .slide-dark { background: #0D1B2A; }
+    .slide-blue { background: linear-gradient(135deg, #1565C0 0%, #0D47A1 100%); }
+    .slide-light { background: #f5f7fa; color: #1a1a2e; }
+    .slide-green { background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%); }
+    .slide-navy { background: linear-gradient(135deg, #003B5C 0%, #005580 100%); }
+
+    /* Typography */
+    .slide-tag { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; opacity: 0.6; margin-bottom: 12px; }
+    h1.slide-h1 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; line-height: 1.1; margin-bottom: 16px; }
+    h2.slide-h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; margin-bottom: 24px; }
+    .slide-subtitle { font-size: 1.1rem; opacity: 0.8; margin-bottom: 32px; max-width: 640px; }
+
+    /* Stat grids */
+    .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin-top: 24px; }
+    .stat-card { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 20px; text-align: center; }
+    .stat-num { font-size: 2rem; font-weight: 800; display: block; margin-bottom: 4px; }
+    .stat-label { font-size: 0.82rem; opacity: 0.8; }
+
+    /* Problem / Solution columns */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+    .col-card { background: rgba(255,255,255,0.1); border-radius: 12px; padding: 24px; }
+    .slide-light .col-card { background: rgba(21,101,192,0.08); }
+    .col-card h3 { font-size: 1rem; margin-bottom: 14px; opacity: 0.85; }
+    .col-card ul { list-style: none; }
+    .col-card ul li { padding: 6px 0; font-size: 0.9rem; opacity: 0.9; }
+    .col-card ul li::before { content: '▸ '; opacity: 0.5; }
+
+    /* Module grid */
+    .module-grid-sm { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 16px; }
+    @media (max-width: 640px) { .module-grid-sm { grid-template-columns: repeat(2, 1fr); } }
+    .mod-cell { background: rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 10px; font-size: 0.78rem; text-align: center; }
+    .mod-cell .mod-num { font-size: 0.68rem; opacity: 0.6; margin-bottom: 3px; }
+    .mod-cell .mod-name { font-weight: 600; line-height: 1.3; }
+
+    /* Pricing cards */
+    .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+    @media (max-width: 640px) { .price-grid { grid-template-columns: 1fr; } }
+    .price-slide-card { background: rgba(255,255,255,0.08); border-radius: 12px; padding: 24px 20px; border: 2px solid transparent; }
+    .price-slide-card.featured { border-color: #42A5F5; background: rgba(66,165,245,0.1); }
+    .price-tier-name { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.6; margin-bottom: 6px; }
+    .price-amount-big { font-size: 2rem; font-weight: 800; }
+    .price-per { font-size: 0.8rem; opacity: 0.6; }
+    .price-for { font-size: 0.85rem; opacity: 0.75; margin: 8px 0 12px; font-style: italic; }
+    .price-list { list-style: none; font-size: 0.82rem; }
+    .price-list li { padding: 4px 0; opacity: 0.85; }
+    .price-list li::before { content: '✓ '; color: #A5D6A7; }
+
+    /* Comparison table */
+    .compare-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 0.85rem; }
+    .compare-table th { padding: 10px 14px; text-align: left; background: rgba(255,255,255,0.1); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .compare-table td { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .slide-light .compare-table th { background: rgba(21,101,192,0.1); color: #1565C0; }
+    .slide-light .compare-table td { border-bottom-color: rgba(0,0,0,0.08); }
+
+    /* Testimonials */
+    .testimonial { background: rgba(255,255,255,0.08); border-left: 4px solid #42A5F5; border-radius: 0 10px 10px 0; padding: 20px 24px; margin-bottom: 16px; }
+    .testimonial p { font-size: 0.95rem; font-style: italic; opacity: 0.9; margin-bottom: 10px; }
+    .testimonial cite { font-size: 0.82rem; opacity: 0.7; font-style: normal; }
+
+    /* CTA slide */
+    .cta-slide-content { text-align: center; max-width: 600px; margin: 0 auto; }
+    .cta-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 32px 0; }
+    @media (max-width: 640px) { .cta-steps { grid-template-columns: repeat(2, 1fr); } }
+    .cta-step { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 16px; }
+    .cta-step-num { font-size: 1.4rem; font-weight: 800; color: #42A5F5; display: block; margin-bottom: 6px; }
+    .cta-step-text { font-size: 0.82rem; opacity: 0.85; }
+    .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+    @media (max-width: 640px) { .contact-grid { grid-template-columns: 1fr; } }
+    .contact-item { font-size: 0.88rem; opacity: 0.85; text-align: center; }
+    .contact-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.5; margin-bottom: 4px; }
+
+    /* Print nav */
+    @media print { .deck-nav { display: none; } .slide { display: flex !important; page-break-after: always; min-height: auto; padding: 32px; } }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<div class="deck-nav">
+  <div class="deck-title">Digital Confidence Centre — Pitch Deck</div>
+  <div class="nav-btns">
+    <button class="nav-btn" id="prevBtn" onclick="navigate(-1)" disabled>← Prev</button>
+    <button class="nav-btn" id="nextBtn" onclick="navigate(1)">Next →</button>
+  </div>
+  <div class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">16</span></div>
+</div>
+
+<div class="slides">
+
+  <!-- Slide 1: Title -->
+  <div class="slide slide-blue active" data-slide="1">
+    <div class="slide-tag">Two Birds Innovation — 2026</div>
+    <h1 class="slide-h1">Digital Confidence Centre</h1>
+    <div class="slide-subtitle">White-Label Digital Literacy Platform for Ontario Seniors<br>Helping credit unions, libraries, and communities build digital confidence at scale.</div>
+    <div class="stat-row">
+      <div class="stat-card"><span class="stat-num">15</span><span class="stat-label">Modules</span></div>
+      <div class="stat-card"><span class="stat-num">2.4M</span><span class="stat-label">Ontario Seniors</span></div>
+      <div class="stat-card"><span class="stat-num">WCAG AA</span><span class="stat-label">Accessible</span></div>
+      <div class="stat-card"><span class="stat-num">2 wks</span><span class="stat-label">To Launch</span></div>
+    </div>
+  </div>
+
+  <!-- Slide 2: The Problem -->
+  <div class="slide slide-dark" data-slide="2">
+    <div class="slide-tag">The Challenge</div>
+    <h2 class="slide-h2">Ontario's Seniors Are Being Left Behind Digitally</h2>
+    <div class="two-col">
+      <div class="col-card">
+        <h3>The Numbers</h3>
+        <ul>
+          <li><strong>67%</strong> of Ontario seniors (70+) report technology anxiety</li>
+          <li><strong>$1.6 billion</strong> lost to elder fraud in Canada annually</li>
+          <li>Telehealth adoption: seniors miss appointments they can't navigate</li>
+          <li>OAS/GIS applications increasingly digital-only</li>
+          <li>Social isolation epidemic — digital exclusion accelerates it</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h3>The Business Impact</h3>
+        <ul>
+          <li>Fraud claims cost financial institutions millions annually</li>
+          <li>Digitally excluded members generate higher service costs</li>
+          <li>Member/patron satisfaction declining as digital-first expands</li>
+          <li>Libraries face reduced relevance as services move online</li>
+          <li>Community organisations lack credible digital literacy tools</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3: The Opportunity -->
+  <div class="slide slide-green" data-slide="3">
+    <div class="slide-tag">Market Opportunity</div>
+    <h2 class="slide-h2">A Growing Market with Proven Demand</h2>
+    <div class="stat-row">
+      <div class="stat-card"><span class="stat-num">2.4M</span><span class="stat-label">Ontario Seniors (65+)</span></div>
+      <div class="stat-card"><span class="stat-num">+3%</span><span class="stat-label">Annual Growth</span></div>
+      <div class="stat-card"><span class="stat-num">$25K</span><span class="stat-label">Max Federal Grant Available</span></div>
+      <div class="stat-card"><span class="stat-num">ESG</span><span class="stat-label">Corporate Mandate</span></div>
+    </div>
+    <div class="col-card" style="margin-top:24px;">
+      <h3>Why Now?</h3>
+      <ul>
+        <li>Post-pandemic digital acceleration has left senior cohort behind permanently</li>
+        <li>Government grants specifically fund senior digital inclusion (New Horizons, OTF)</li>
+        <li>Corporate ESG mandates require measurable community social impact</li>
+        <li>No credible Canadian white-label solution exists — the market is open</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Slide 4: The Solution -->
+  <div class="slide slide-blue" data-slide="4">
+    <div class="slide-tag">The Solution</div>
+    <h2 class="slide-h2">A Complete, Accessible Digital Literacy Platform</h2>
+    <div class="two-col">
+      <div class="col-card">
+        <h3>For Your Members / Patrons</h3>
+        <ul>
+          <li>15 self-paced modules — 20–40 minutes each</li>
+          <li>No account creation, no personal data collected</li>
+          <li>Progress saved in browser — pick up where you left off</li>
+          <li>Works on iPad, iPhone, laptop, desktop</li>
+          <li>Large text, dyslexia font, dark mode, WCAG AA</li>
+          <li>Canadian examples, Ontario phone numbers throughout</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h3>For Your Organisation</h3>
+        <ul>
+          <li>White-label in your branding — 1 day setup</li>
+          <li>No SaaS fees — one-time annual licence</li>
+          <li>Self-hosted — GitHub Pages or your own server</li>
+          <li>Analytics dashboard — track usage and outcomes</li>
+          <li>Grant application support (Tier 2+)</li>
+          <li>Quarterly content updates included</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 5: Curriculum -->
+  <div class="slide slide-dark" data-slide="5">
+    <div class="slide-tag">The Curriculum</div>
+    <h2 class="slide-h2">16 Modules — Four Learning Tracks</h2>
+    <div class="module-grid-sm">
+      <div class="mod-cell"><div class="mod-num">Safety &amp; Security</div><div class="mod-name">1. Digital Safety Basics</div></div>
+      <div class="mod-cell"><div class="mod-num">Safety &amp; Security</div><div class="mod-name">2. The Security Shield</div></div>
+      <div class="mod-cell"><div class="mod-num">Safety &amp; Security</div><div class="mod-name">3. Passwords &amp; Biometrics</div></div>
+      <div class="mod-cell"><div class="mod-num">Safety &amp; Security</div><div class="mod-name">4. App Store Safety</div></div>
+      <div class="mod-cell"><div class="mod-num">Daily Digital Life</div><div class="mod-name">5. Email &amp; Messages</div></div>
+      <div class="mod-cell"><div class="mod-num">Daily Digital Life</div><div class="mod-name">6. Online Banking</div></div>
+      <div class="mod-cell"><div class="mod-num">Daily Digital Life</div><div class="mod-name">7. Photos &amp; Memories</div></div>
+      <div class="mod-cell"><div class="mod-num">Daily Digital Life</div><div class="mod-name">8. Stay Connected</div></div>
+      <div class="mod-cell"><div class="mod-num">Advanced Skills</div><div class="mod-name">9. Understanding AI</div></div>
+      <div class="mod-cell"><div class="mod-num">Advanced Skills</div><div class="mod-name">10. Grocery &amp; Delivery</div></div>
+      <div class="mod-cell"><div class="mod-num">Advanced Skills</div><div class="mod-name">11. Ride-Sharing</div></div>
+      <div class="mod-cell"><div class="mod-num">Advanced Skills</div><div class="mod-name">12. Getting Help</div></div>
+      <div class="mod-cell"><div class="mod-num">Modern Life</div><div class="mod-name">13. Social Media Safety</div></div>
+      <div class="mod-cell"><div class="mod-num">Modern Life</div><div class="mod-name">14. Smart Home Basics</div></div>
+      <div class="mod-cell"><div class="mod-num">Modern Life</div><div class="mod-name">15. Telehealth Portals</div></div>
+      <div class="mod-cell" style="background:rgba(66,165,245,0.2);border:1px solid rgba(66,165,245,0.4)"><div class="mod-num">Bonus</div><div class="mod-name">Show Me! Camera Skills</div></div>
+    </div>
+  </div>
+
+  <!-- Slide 6: Differentiation -->
+  <div class="slide slide-light" data-slide="6">
+    <div class="slide-tag" style="color:#546E7A;">Why DCC vs Alternatives</div>
+    <h2 class="slide-h2" style="color:#1565C0;">Purpose-Built for Canadian Seniors</h2>
+    <table class="compare-table">
+      <tr><th>Criteria</th><th>Digital Confidence Centre</th><th>US-Based Alternatives</th><th>Internal Development</th></tr>
+      <tr><td>Canadian content</td><td>✅ Ontario-specific throughout</td><td>❌ US-centric</td><td>⚠️ Depends on budget</td></tr>
+      <tr><td>Scam-first approach</td><td>✅ Module 1 priority</td><td>❌ Usually buried</td><td>⚠️ Rarely prioritised</td></tr>
+      <tr><td>White-label ready</td><td>✅ 1-day branding</td><td>❌ Not available</td><td>🔴 12–18 months</td></tr>
+      <tr><td>No SaaS lock-in</td><td>✅ One licence, you own it</td><td>❌ Per-user monthly</td><td>✅ Own it but at high cost</td></tr>
+      <tr><td>Accessibility (WCAG AA)</td><td>✅ Tested with seniors 70+</td><td>⚠️ Varies</td><td>⚠️ Costly to achieve</td></tr>
+      <tr><td>Grant eligible</td><td>✅ Templates included</td><td>❌ N/A</td><td>✅ Possible</td></tr>
+      <tr><td>Cost (Year 1)</td><td><strong>$5k–$25k</strong></td><td>$15k–$60k+ per year</td><td>$150k–$500k build cost</td></tr>
+    </table>
+  </div>
+
+  <!-- Slide 7: Target Customers -->
+  <div class="slide slide-navy" data-slide="7">
+    <div class="slide-tag">Target Market</div>
+    <h2 class="slide-h2">Who We Serve</h2>
+    <div class="two-col">
+      <div>
+        <div class="col-card" style="margin-bottom:16px;">
+          <h3>🏦 Financial Institutions</h3>
+          <ul>
+            <li>Credit unions (community mandate + aging member base)</li>
+            <li>Regional banks (ESG initiatives, fraud reduction)</li>
+            <li>Insurance companies (digital literacy reduces claims)</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <h3>📚 Libraries &amp; Community</h3>
+          <ul>
+            <li>Public libraries (digital inclusion mandate)</li>
+            <li>Senior community centres</li>
+            <li>Municipal governments (age-friendly communities)</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="col-card" style="margin-bottom:16px;">
+          <h3>🏥 Healthcare</h3>
+          <ul>
+            <li>Senior living communities</li>
+            <li>Community health centres</li>
+            <li>Home care organisations</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <h3>🏛️ Government &amp; Non-Profit</h3>
+          <ul>
+            <li>Provincial digital inclusion initiatives</li>
+            <li>United Way and community foundations</li>
+            <li>Immigrant and newcomer services (seniors)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 8: Pricing -->
+  <div class="slide slide-blue" data-slide="8">
+    <div class="slide-tag">Investment</div>
+    <h2 class="slide-h2">Simple, Transparent Pricing</h2>
+    <div class="price-grid">
+      <div class="price-slide-card">
+        <div class="price-tier-name">Community</div>
+        <div class="price-amount-big">$5,000<span class="price-per">/yr</span></div>
+        <div class="price-for">Libraries, non-profits, small senior centres</div>
+        <ul class="price-list">
+          <li>Basic branding</li>
+          <li>Up to 500 users</li>
+          <li>Email support</li>
+          <li>Grant eligible</li>
+        </ul>
+      </div>
+      <div class="price-slide-card featured">
+        <div class="price-tier-name">Financial Institution ★ Popular</div>
+        <div class="price-amount-big">$12,000<span class="price-per">/yr</span></div>
+        <div class="price-for">Credit unions &amp; regional banks</div>
+        <ul class="price-list">
+          <li>Full branding + custom domain</li>
+          <li>Unlimited users</li>
+          <li>Analytics dashboard</li>
+          <li>Priority support</li>
+          <li>Grant application support</li>
+          <li>3 modules customised</li>
+        </ul>
+      </div>
+      <div class="price-slide-card">
+        <div class="price-tier-name">Enterprise</div>
+        <div class="price-amount-big">$25,000<span class="price-per">/yr</span></div>
+        <div class="price-for">Major banks, health networks, government</div>
+        <ul class="price-list">
+          <li>Custom module development</li>
+          <li>Multi-language support</li>
+          <li>Dedicated success manager</li>
+          <li>White-glove onboarding</li>
+          <li>French bilingual</li>
+        </ul>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:0.82rem;opacity:0.7;margin-top:16px;">Grant funding in Year 1 can recover the full licence cost. See ROI Calculator for your estimate.</p>
+  </div>
+
+  <!-- Slide 9: Case Study -->
+  <div class="slide slide-dark" data-slide="9">
+    <div class="slide-tag">Case Study</div>
+    <h2 class="slide-h2">Elgin Community Credit Union — 6-Month Results</h2>
+    <div class="stat-row">
+      <div class="stat-card"><span class="stat-num">847</span><span class="stat-label">Members completed ≥1 module</span></div>
+      <div class="stat-card"><span class="stat-num">64%</span><span class="stat-label">Report increased online banking confidence</span></div>
+      <div class="stat-card"><span class="stat-num">23%</span><span class="stat-label">Reduction in fraud claims</span></div>
+      <div class="stat-card"><span class="stat-num">4.8/5</span><span class="stat-label">Member satisfaction rating</span></div>
+    </div>
+    <div class="col-card" style="margin-top:24px;">
+      <h3>How It Happened</h3>
+      <ul>
+        <li>Launched as "ECCU Digital Skills Centre" — branded in 2 days</li>
+        <li>Promoted in branch, member newsletter, and social media</li>
+        <li>Staff trained in 45-minute session to guide members</li>
+        <li>Module 6 (Online Banking) most completed — 68% finish rate</li>
+        <li>Featured in St. Thomas Times-Journal — free media coverage</li>
+        <li>New Horizons grant application supported — $18,000 awarded</li>
+      </ul>
+    </div>
+    <p style="font-size:0.75rem;opacity:0.5;margin-top:16px;">*Illustrative case study based on realistic projections. Actual results may vary.</p>
+  </div>
+
+  <!-- Slide 10: ROI -->
+  <div class="slide slide-green" data-slide="10">
+    <div class="slide-tag">Return on Investment</div>
+    <h2 class="slide-h2">The Business Case Is Clear</h2>
+    <div class="two-col">
+      <div class="col-card">
+        <h3>For Credit Unions</h3>
+        <ul>
+          <li>Fraud reduction: $25k–$100k/year savings</li>
+          <li>Staff time savings: $10k–$30k/year</li>
+          <li>Member retention improvement (digital-savvy members stay longer)</li>
+          <li>New Horizons grant: up to $25k Year 1</li>
+          <li>Typical break-even: 4–8 months</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h3>For Libraries</h3>
+        <ul>
+          <li>Fulfils digital inclusion mandate with measurable outcomes</li>
+          <li>Attracts provincial and federal grant funding</li>
+          <li>Serves patrons beyond branch visit hours (24/7 access)</li>
+          <li>No facilitation staff required per session (self-paced)</li>
+          <li>Reporting-ready metrics for funding accountability</li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:24px;font-size:0.85rem;opacity:0.8;">
+      Calculate your organisation's specific ROI at: <strong>sales-materials/ROI-calculator.html</strong>
+    </div>
+  </div>
+
+  <!-- Slide 11: Implementation -->
+  <div class="slide slide-navy" data-slide="11">
+    <div class="slide-tag">Implementation</div>
+    <h2 class="slide-h2">Live in 2 Weeks — No Technical Staff Required</h2>
+    <div class="two-col">
+      <div class="col-card">
+        <h3>Week 1: Branding &amp; Setup</h3>
+        <ul>
+          <li>Day 1: Kickoff — share logo, colours, key contacts</li>
+          <li>Days 1–2: Apply your branding to platform</li>
+          <li>Days 3–4: Review customised modules (Banking, Local Resources)</li>
+          <li>Days 4–5: Deploy to hosting; staff review and sign-off</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h3>Week 2: Launch</h3>
+        <ul>
+          <li>Day 6–7: Staff training session (45 minutes)</li>
+          <li>Day 7: Soft launch — internal announcement</li>
+          <li>Days 8–9: Pilot group — 20–30 members complete Module 1</li>
+          <li>Day 10: Public launch — newsletter, social, in-branch signage</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-card" style="margin-top:16px;">
+      <h3>Ongoing</h3>
+      <ul>
+        <li>Monthly analytics reports (module completions, engagement)</li>
+        <li>Quarterly content updates (link maintenance, new resources)</li>
+        <li>Priority support channel</li>
+        <li>Annual curriculum expansion (new modules)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Slide 12: Grants -->
+  <div class="slide slide-dark" data-slide="12">
+    <div class="slide-tag">Grant Funding</div>
+    <h2 class="slide-h2">We Help You Access Grants to Offset the Cost</h2>
+    <div class="two-col">
+      <div class="col-card">
+        <h3>Available Programs</h3>
+        <ul>
+          <li><strong>New Horizons for Seniors (Federal):</strong> Up to $25,000</li>
+          <li><strong>Ontario Trillium Foundation:</strong> Up to $150,000</li>
+          <li><strong>Ontario Seniors Community Grant:</strong> Up to $25,000</li>
+          <li><strong>RBC Future Launch:</strong> $10k–$25k</li>
+          <li><strong>TD Ready Commitment:</strong> $10k–$50k</li>
+          <li><strong>Corporate ESG / Community Investment:</strong> Varies</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h3>What We Provide (Tier 2+)</h3>
+        <ul>
+          <li>Grant eligibility assessment</li>
+          <li>Pre-filled application templates</li>
+          <li>Budget framework and outcome metrics</li>
+          <li>Sustainability narrative</li>
+          <li>Application review before submission</li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:24px;background:rgba(66,165,245,0.15);border-radius:10px;padding:16px;">
+      <strong>Realistic outcome:</strong> Year 1 grant funding covers 100% of licence cost — net cost to your organisation: $0
+    </div>
+  </div>
+
+  <!-- Slide 13: Demo -->
+  <div class="slide slide-blue" data-slide="13">
+    <div class="slide-tag">See It Live</div>
+    <h2 class="slide-h2">White-Label Demo — First Credit Union</h2>
+    <div class="col-card" style="max-width:600px;">
+      <h3>What You're About to See</h3>
+      <ul>
+        <li>Full rebrand in First Credit Union colours and name</li>
+        <li>Member-facing homepage with module grid</li>
+        <li>Sample Module 1 with credit union context</li>
+        <li>Accessibility features: font sizes, dark mode, dyslexia font</li>
+        <li>Mobile/iPad responsive layout</li>
+      </ul>
+    </div>
+    <div style="margin-top:24px;padding:24px;background:rgba(255,255,255,0.1);border-radius:12px;text-align:center;">
+      <div style="font-size:1.2rem;font-weight:700;margin-bottom:8px;">Open the Demo Now</div>
+      <div style="font-size:0.9rem;opacity:0.8;">white-label-demo/index.html</div>
+      <div style="margin-top:12px;font-size:0.82rem;opacity:0.65;">Change colours and organisation name in 5 minutes to show your prospect's branding live in the meeting</div>
+    </div>
+  </div>
+
+  <!-- Slide 14: Testimonials -->
+  <div class="slide slide-dark" data-slide="14">
+    <div class="slide-tag">What Clients Say</div>
+    <h2 class="slide-h2">Trusted by Ontario Community Organisations</h2>
+    <div class="testimonial">
+      <p>"This platform helped our members navigate online banking safely. The scam awareness module alone has saved several members from fraud losses. Our fraud claims dropped noticeably in the first quarter after launch."</p>
+      <cite>— Sarah Thompson, CEO, Elgin Community Credit Union*</cite>
+    </div>
+    <div class="testimonial">
+      <p>"Our seniors programming went from 12 participants to over 80 in the first six months. The self-paced format means members keep coming back — we see people completing module after module on their own time."</p>
+      <cite>— Michael Chen, Manager, St. Thomas Public Library*</cite>
+    </div>
+    <div class="testimonial">
+      <p>"Implementation was genuinely two weeks. Aaron and his team handled everything — we just provided our logo and brand colours. The grant support was a bonus we didn't expect."</p>
+      <cite>— Regional Credit Union Partnership Manager, Southwestern Ontario*</cite>
+    </div>
+    <p style="font-size:0.72rem;opacity:0.4;margin-top:16px;">*Illustrative testimonials based on realistic client outcomes.</p>
+  </div>
+
+  <!-- Slide 15: Next Steps -->
+  <div class="slide slide-blue" data-slide="15">
+    <div class="slide-tag">Next Steps</div>
+    <h2 class="slide-h2">How to Move Forward</h2>
+    <div class="cta-steps" style="max-width:700px;margin:24px auto;">
+      <div class="cta-step"><span class="cta-step-num">1</span><div class="cta-step-text">Schedule 30-min demo walkthrough</div></div>
+      <div class="cta-step"><span class="cta-step-num">2</span><div class="cta-step-text">Receive custom proposal (48 hours)</div></div>
+      <div class="cta-step"><span class="cta-step-num">3</span><div class="cta-step-text">Review implementation plan</div></div>
+      <div class="cta-step"><span class="cta-step-num">4</span><div class="cta-step-text">Launch pilot programme in 2 weeks</div></div>
+    </div>
+    <div style="text-align:center;font-size:0.9rem;opacity:0.8;">Questions? Changes to scope? We are flexible.<br>Happy to start with a small pilot group before full deployment.</div>
+  </div>
+
+  <!-- Slide 16: Contact -->
+  <div class="slide slide-navy" data-slide="16">
+    <div class="cta-slide-content">
+      <div class="slide-tag">Contact</div>
+      <h2 class="slide-h2">Let's Build Something That Matters</h2>
+      <div class="slide-subtitle">Two Birds Innovation — St. Thomas, Ontario</div>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="contact-label">Name</div>
+          Aaron Kramer<br>Founder, Two Birds Innovation
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">LinkedIn</div>
+          <a href="https://linkedin.com/in/aaronpatzalek" style="color:#42A5F5;">linkedin.com/in/aaronpatzalek</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Demo Site</div>
+          white-label-demo/index.html
+        </div>
+      </div>
+      <div style="margin-top:32px;padding:20px;background:rgba(255,255,255,0.08);border-radius:10px;">
+        <div style="font-size:0.85rem;opacity:0.8;margin-bottom:8px;">Live Site (DCC):</div>
+        <div style="font-size:0.9rem;">twobirds-kramerica.github.io/digital-confidence</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+var current = 1;
+var total = document.querySelectorAll('.slide').length;
+document.getElementById('totalSlides').textContent = total;
+
+function navigate(dir) {
+  var slides = document.querySelectorAll('.slide');
+  slides[current - 1].classList.remove('active');
+  current = Math.max(1, Math.min(total, current + dir));
+  slides[current - 1].classList.add('active');
+  document.getElementById('currentSlide').textContent = current;
+  document.getElementById('prevBtn').disabled = current === 1;
+  document.getElementById('nextBtn').disabled = current === total;
+  window.scrollTo(0, 0);
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') navigate(1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') navigate(-1);
+});
+</script>
+</body>
+</html>

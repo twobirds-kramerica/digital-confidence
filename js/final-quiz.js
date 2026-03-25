@@ -1,8 +1,8 @@
 /* ============================================
    Digital Confidence Centre — Final Quiz
-   v6 — 33 scenario-based "What would you do?"
-        questions covering all 11 modules
-   Passing score: 73% (24/33)
+   v7 — 42 scenario-based "What would you do?"
+        questions covering modules 1–11 + 13–15
+   Passing score: 73% (31/42)
    Sprint 7: readiness panel, smart scoring,
              certificate.html, resources chain
    ============================================ */
@@ -440,10 +440,124 @@ var DC_QUIZ = (function () {
       ],
       correct: 1,
       explain: 'On public Wi-Fi, other people on the same network could potentially see what you are doing. Browsing news is safe. For banking, shopping, and email — wait until you are on your home Wi-Fi or mobile data.'
+    },
+
+    /* MODULE 13 — Social Media */
+    {
+      module: 'Module 13: Social Media',
+      q: 'You receive a Facebook friend request from someone you don\'t recognise. Their profile was created three weeks ago, they have no mutual friends with you, and their profile photo looks like a professional model. What should you do?',
+      options: [
+        'Accept it — the more friends the better',
+        'Decline it. These are classic signs of a fake or scam profile.',
+        'Accept it, but don\'t share personal posts with them',
+        'Message them to ask why they want to be friends'
+      ],
+      correct: 1,
+      explain: 'A new account, stock-photo profile picture, and zero mutual connections are the three biggest red flags of a fake profile. Scammers and romance fraudsters typically create these accounts to target seniors. It is always safe to decline requests from people you do not know personally.'
+    },
+    {
+      module: 'Module 13: Social Media',
+      q: 'You posted a photo on Facebook and realised you accidentally set the audience to "Public" instead of "Friends." What does "Public" mean on Facebook?',
+      options: [
+        'Only your Facebook friends can see it',
+        'Anyone on the internet — including people with no Facebook account — can find and see this post',
+        'Only people in Canada can see it',
+        'Only people over 18 can see it'
+      ],
+      correct: 1,
+      explain: '"Public" on Facebook means anyone anywhere in the world — including people who are not logged into Facebook — can find and see that post through Google search or direct link. Always set your default audience to "Friends" for personal posts and photos.'
+    },
+    {
+      module: 'Module 13: Social Media',
+      q: 'Someone on Facebook Marketplace is selling a laptop for $50. They ask you to send the money by Interac e-transfer before you see the item in person. What should you do?',
+      options: [
+        'Send the money — $50 is not much to risk',
+        'Decline. Never send money to a stranger before seeing the item. Arrange to meet in person at a public place and pay cash on the spot.',
+        'Ask them to send you the laptop first, then you\'ll pay',
+        'Send half the money now and the rest after you see it'
+      ],
+      correct: 1,
+      explain: 'This is a classic Marketplace scam. Once you send an e-transfer to a stranger, that money is almost impossible to recover. Always see items in person before paying, meet in a well-lit public place (many Ontario police stations have designated "safe exchange zones"), and pay with cash.'
+    },
+
+    /* MODULE 14 — Smart Home */
+    {
+      module: 'Module 14: Smart Home Basics',
+      q: 'Your new voice assistant (Amazon Alexa) is sitting on your kitchen counter. Your neighbour asks, "Isn\'t it always listening to everything you say?" What is the accurate answer?',
+      options: [
+        'Yes, it records and stores every conversation in your home',
+        'It is always listening for the specific wake word only ("Alexa"). After hearing it, it records your command and sends it to be processed.',
+        'No, it only activates when you press a button',
+        'It only listens when connected to the internet'
+      ],
+      correct: 1,
+      explain: 'Voice assistants are designed to listen only for their specific wake word (Alexa, Hey Google, Siri). After hearing it, they record your voice command. If privacy concerns you, every device has a physical mute button that physically disconnects the microphone — you can see a red indicator light when muted.'
+    },
+    {
+      module: 'Module 14: Smart Home Basics',
+      q: 'You are thinking about getting a smart thermostat. Which of these statements is TRUE about Ontario energy rebates for smart thermostats?',
+      options: [
+        'There are no rebates available in Ontario',
+        'Both Enbridge Gas and Hydro One offer rebates that can significantly offset the cost of a smart thermostat',
+        'Rebates are only available if you are under 65',
+        'You must buy the thermostat from a utility company to get the rebate'
+      ],
+      correct: 1,
+      explain: 'Ontario residents can access rebates through Enbridge Gas (for natural gas heating) and Hydro One (for electric heat pumps). These programs are designed to encourage energy efficiency and can offset a significant portion of the cost. Check enbridgegas.com/rebates or hydroone.com for current amounts and eligibility.'
+    },
+    {
+      module: 'Module 14: Smart Home Basics',
+      q: 'What is a "smart plug" and why is it considered the best starter smart home device for beginners?',
+      options: [
+        'It is a special power bar that costs $200 and requires an electrician to install',
+        'A small device you plug into any existing outlet — it makes that outlet controllable by phone or voice, with no installation or wiring required',
+        'A plug adapter that only works with Apple devices',
+        'A device that monitors how much electricity you use and sends you monthly reports'
+      ],
+      correct: 1,
+      explain: 'A smart plug is the perfect starting point because it requires zero installation — just plug it into a regular wall outlet and connect it to a free app. You can then schedule any device plugged into it (lamp, coffee maker, fan) to turn on and off automatically. Canadian Tire sells them for $15–$35.'
+    },
+
+    /* MODULE 15 — Telehealth */
+    {
+      module: 'Module 15: Telehealth',
+      q: 'It is 11pm on a Saturday and you have been experiencing chest tightness for the past hour that is making you anxious. You are not sure if it is serious. What is the BEST first step?',
+      options: [
+        'Wait until Monday to call your family doctor',
+        'Call 911 immediately — chest tightness can indicate a heart emergency',
+        'Call Ontario Telehealth at 1-866-797-0000 to speak with a registered nurse',
+        'Google your symptoms and decide based on what you find'
+      ],
+      correct: 1,
+      explain: 'Chest tightness that concerns you — especially at night — should never be ignored. Call 911 immediately. This is a potential cardiac emergency and requires immediate assessment by paramedics, not a telehealth call. Ontario Telehealth is excellent for non-emergency health questions, but chest pain is always treated as urgent.'
+    },
+    {
+      module: 'Module 15: Telehealth',
+      q: 'Your doctor\'s office uses a patient portal called MyChart. You log in and see a lab result marked "Abnormal." Before calling the office in a panic, what should you know?',
+      options: [
+        '"Abnormal" always means something is seriously wrong',
+        'Lab reference ranges are set for a general population. "Abnormal" flags are common and your doctor will contact you if action is needed. Wait for their call.',
+        'You should ignore the portal — only trust results your doctor tells you in person',
+        'You should immediately go to the emergency room'
+      ],
+      correct: 1,
+      explain: 'Lab reference ranges cover a statistical average of the population. Many results are flagged "Abnormal" that are completely fine for your individual situation — age, medications, and existing conditions all affect what is normal for YOU. If the result required urgent action, your doctor would have already called. Check when the result was uploaded — if it was days ago and you haven\'t heard, it likely requires no immediate action.'
+    },
+    {
+      module: 'Module 15: Telehealth',
+      q: 'A health website emails you saying "Your Ontario health records are at risk. Click here immediately to verify your identity and protect your information." What should you do?',
+      options: [
+        'Click the link and verify your information to protect your health records',
+        'Delete the email. Government and hospital systems never contact patients this way. This is a phishing scam.',
+        'Forward it to your doctor to ask if it is real',
+        'Call the number in the email to report the breach'
+      ],
+      correct: 1,
+      explain: 'Ontario\'s health system (MyHealth Ontario, hospital portals, OHIP) will never send unsolicited emails asking you to verify personal information. This is a classic phishing attack targeting health data. Delete it immediately. If you are genuinely concerned about your account security, go directly to myhealth.ontario.ca by typing it in your browser — never click a link from an email.'
     }
   ];
 
-  var PASS_SCORE   = 24;   /* 73% of 33 */
+  var PASS_SCORE   = 31;   /* 73% of 42 */
   var currentQ     = 0;
   var score        = 0;
   var answered     = [];

@@ -1,0 +1,191 @@
+/* ============================================================
+   Digital Confidence Centre — White-Label Branding Override
+   Client: First Credit Union (Demo)
+   Primary:  #003B5C (deep navy blue)
+   Accent:   #00A651 (credit union green)
+   ============================================================ */
+
+/* ── Brand Colour Override ─────────────────────────────────── */
+:root {
+  --accent-primary:    #00A651;
+  --accent-secondary:  #003B5C;
+  --accent-hover:      #007A3D;
+  --link-colour:       #00A651;
+  --btn-primary-bg:    #00A651;
+  --btn-primary-hover: #007A3D;
+  --sidebar-bg:        #003B5C;
+  --sidebar-text:      #ffffff;
+  --sidebar-link-hover-bg: rgba(0, 166, 81, 0.15);
+  --top-bar-bg:        #003B5C;
+  --top-bar-text:      #ffffff;
+}
+
+/* ── White-Label Logo / Header ─────────────────────────────── */
+.wl-logo-bar {
+  background: #003B5C;
+  color: #ffffff;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 3px solid #00A651;
+}
+
+.wl-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.wl-logo-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
+.wl-logo-tagline {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.03em;
+}
+
+.wl-logo-icon {
+  width: 44px;
+  height: 44px;
+  background: #00A651;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+/* ── Sidebar Branding ──────────────────────────────────────── */
+.sidebar .sidebar-header h2 {
+  color: #00A651;
+}
+
+.sidebar nav a[aria-current="page"] {
+  background: rgba(0, 166, 81, 0.2);
+  border-left: 3px solid #00A651;
+  color: #ffffff;
+}
+
+/* ── Hero Section ──────────────────────────────────────────── */
+.wl-hero {
+  background: linear-gradient(135deg, #003B5C 0%, #005580 100%);
+  color: #ffffff;
+  padding: 48px 32px;
+  border-radius: 12px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.wl-hero::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 200px;
+  height: 200px;
+  background: rgba(0, 166, 81, 0.15);
+  border-radius: 50%;
+}
+
+.wl-hero h1 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  margin: 0 0 12px;
+  color: #ffffff;
+}
+
+.wl-hero p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.88);
+  max-width: 640px;
+  margin: 0 0 24px;
+}
+
+.wl-hero .wl-stat {
+  display: inline-block;
+  background: rgba(0,166,81,0.25);
+  border: 1px solid rgba(0,166,81,0.5);
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-right: 12px;
+  margin-bottom: 8px;
+}
+
+/* ── DICO / CCUA Trust Badge ───────────────────────────────── */
+.wl-trust-badges {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.wl-trust-badge {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.9);
+}
+
+/* ── Module Cards (override accent colour) ─────────────────── */
+.module-card:hover {
+  border-color: #00A651;
+  box-shadow: 0 4px 16px rgba(0, 166, 81, 0.15);
+}
+
+/* ── Footer Branding ───────────────────────────────────────── */
+.wl-footer {
+  margin-top: 48px;
+  padding: 20px 24px;
+  background: #f5f7fa;
+  border-top: 3px solid #003B5C;
+  border-radius: 0 0 8px 8px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: #546E7A;
+}
+
+.wl-footer strong {
+  color: #003B5C;
+}
+
+/* ── Buttons ───────────────────────────────────────────────── */
+.btn-primary {
+  background: #00A651 !important;
+  border-color: #00A651 !important;
+}
+
+.btn-primary:hover {
+  background: #007A3D !important;
+  border-color: #007A3D !important;
+}
+
+/* ── Dark mode overrides ───────────────────────────────────── */
+[data-theme="dark"] .wl-footer {
+  background: #1a1a2e;
+  color: #90a4ae;
+}
+
+[data-theme="dark"] .wl-footer strong {
+  color: #00A651;
+}
+
+[data-theme="dark"] :root {
+  --accent-primary: #00C060;
+  --accent-hover:   #00A651;
+}
+
+/* ── Print ─────────────────────────────────────────────────── */
+@media print {
+  .wl-logo-bar { border-bottom: 2px solid #003B5C; }
+  .wl-hero { background: #003B5C !important; }
+}

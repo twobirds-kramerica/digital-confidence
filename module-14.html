@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about smart thermostats, video doorbells, voice assistants, and smart home devices — what they do, privacy considerations, and Ontario rebates.">
+  <title>Module 14: Smart Home Basics | Digital Confidence Centre</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/print.css">
+  <meta name="author" content="Digital Confidence Centre">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Module 14: Smart Home Basics — Digital Confidence Centre">
+  <meta property="og:description" content="Understanding connected devices in your home — smart thermostats, doorbells, voice assistants, and more for Ontario seniors.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://twobirds-kramerica.github.io/digital-confidence/module-14.html">
+  <meta property="og:image" content="https://twobirds-kramerica.github.io/digital-confidence/images/senior-woman-ipad.jpg">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/module-14.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Module 14: Smart Home Basics",
+    "description": "Understanding connected smart home devices — thermostats, doorbells, voice assistants, smart plugs for Ontario seniors.",
+    "url": "https://twobirds-kramerica.github.io/digital-confidence/module-14.html",
+    "educationalLevel": "Beginner",
+    "learningResourceType": "Tutorial",
+    "audience": {"@type": "Audience", "audienceType": "Seniors"},
+    "inLanguage": "en-CA",
+    "isAccessibleForFree": true
+  }
+  </script>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1565C0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Digital Confidence">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPH5H5BM52"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RPH5H5BM52');
+  </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <style>
+    /* Module 14 specific styles */
+    .device-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1.25rem 0;
+    }
+    .device-card {
+      background: var(--color-surface, #fff);
+      border: 2px solid var(--color-primary, #1565C0);
+      border-radius: 10px;
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    [data-theme="dark"] .device-card {
+      background: var(--color-surface-dark, #1e293b);
+    }
+    .device-card-icon { font-size: 1.75rem; }
+    .device-card-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-primary, #1565C0);
+    }
+    .device-card-desc {
+      font-size: 0.85rem;
+      color: var(--color-text-muted, #555);
+      line-height: 1.5;
+    }
+    [data-theme="dark"] .device-card-desc { color: #94a3b8; }
+
+    .rebate-box {
+      background: #f0fdf4;
+      border: 2px solid #16a34a;
+      border-radius: 10px;
+      padding: 1.25rem;
+      margin: 1.25rem 0;
+    }
+    [data-theme="dark"] .rebate-box {
+      background: #052e16;
+      border-color: #16a34a;
+    }
+    .rebate-box-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #16a34a;
+      margin-bottom: 0.5rem;
+    }
+
+    .privacy-meter {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin: 1.25rem 0;
+    }
+    .privacy-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--color-surface, #fff);
+      border: 1px solid #e0e7ef;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+    }
+    [data-theme="dark"] .privacy-row {
+      background: #1e293b;
+      border-color: #334155;
+    }
+    .privacy-device { font-size: 0.9rem; font-weight: 600; flex: 1; }
+    .privacy-level {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 20px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .privacy-low { background: #dcfce7; color: #166534; }
+    .privacy-medium { background: #fef9c3; color: #854d0e; }
+    .privacy-high { background: #fee2e2; color: #991b1b; }
+    [data-theme="dark"] .privacy-low { background: #166534; color: #dcfce7; }
+    [data-theme="dark"] .privacy-medium { background: #854d0e; color: #fef9c3; }
+    [data-theme="dark"] .privacy-high { background: #991b1b; color: #fee2e2; }
+
+    .step-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.25rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .step-list li {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      background: var(--color-surface, #fff);
+      border: 1px solid #e0e7ef;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+    [data-theme="dark"] .step-list li {
+      background: #1e293b;
+      border-color: #334155;
+    }
+    .step-num-circle {
+      background: var(--color-primary, #1565C0);
+      color: #fff;
+      min-width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .decision-tree {
+      background: var(--color-surface, #fff);
+      border: 1px solid #e0e7ef;
+      border-radius: 10px;
+      padding: 1.25rem;
+      margin: 1.25rem 0;
+    }
+    [data-theme="dark"] .decision-tree {
+      background: #1e293b;
+      border-color: #334155;
+    }
+    .decision-q {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+    .decision-options {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+    .decision-yes {
+      background: #dcfce7;
+      color: #166534;
+      border: 1.5px solid #16a34a;
+      border-radius: 6px;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .decision-no {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1.5px solid #dc2626;
+      border-radius: 6px;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    [data-theme="dark"] .decision-yes { background: #166534; color: #dcfce7; }
+    [data-theme="dark"] .decision-no { background: #991b1b; color: #fee2e2; }
+    .decision-note { font-size: 0.83rem; color: var(--color-text-muted, #666); font-style: italic; margin-bottom: 0.5rem; }
+    [data-theme="dark"] .decision-note { color: #94a3b8; }
+
+    @media (max-width: 600px) {
+      .device-card-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <noscript>
+    <div style="padding:20px;font-family:Georgia,serif;max-width:800px;margin:0 auto">
+      <h1>Digital Confidence Centre — Module 14: Smart Home Basics</h1>
+
+      <div class="module-intro">
+        <p class="module-time">&#9203; About 25–35 minutes — go at your own pace</p>
+        <div class="confidence-check-box">
+          &#10003; <strong>You are in a safe place.</strong><br>
+          Nothing on this page can harm your device. You cannot break anything by reading.
+          If anything feels wrong, close this page and come back later — your progress is saved.
+        </div>
+      </div>
+
+      <p>Free digital literacy training for seniors in Ontario.</p>
+      <nav><a href="index.html">Home</a> | <a href="module-14.html">Module 14</a></nav>
+    </div>
+  </noscript>
+  <script>
+    if (/bot|crawler|spider|crawling/i.test(navigator.userAgent)) {
+      try { localStorage.setItem('dc-setup-complete', 'crawler-bypass'); } catch(e) {}
+    }
+  </script>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">Module 14: Smart Home</span>
+    <span></span>
+  </div>
+
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">&#10005;</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Your learning journey</p>
+    </div>
+    <nav>
+      <a href="index.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a href="digital-literacy-101.html"><span class="nav-icon">📖</span><span class="nav-label">Foundations</span></a>
+      <a href="module-1.html"><span class="nav-icon">🪂</span><span class="nav-label">1. The Escape Hatch</span></a>
+      <a href="module-2.html"><span class="nav-icon">🛡️</span><span class="nav-label">2. Security Shield</span></a>
+      <a href="module-2-5.html"><span class="nav-icon">📂</span><span class="nav-label">Everyday Tasks</span></a>
+      <a href="module-3.html"><span class="nav-icon">🔑</span><span class="nav-label">3. Passwords</span></a>
+      <a href="module-4.html"><span class="nav-icon">📱</span><span class="nav-label">4. App Store Safety</span></a>
+      <a href="module-5.html"><span class="nav-icon">✉️</span><span class="nav-label">5. Email &amp; Messages</span></a>
+      <a href="module-6.html"><span class="nav-icon">🏦</span><span class="nav-label">6. Banking</span></a>
+      <a href="module-7.html"><span class="nav-icon">🎨</span><span class="nav-label">7. Photos &amp; Memories</span></a>
+      <a href="module-8.html"><span class="nav-icon">👨‍👩‍👧</span><span class="nav-label">8. Stay Connected</span></a>
+      <a href="module-9.html"><span class="nav-icon">🤖</span><span class="nav-label">9. Understanding AI</span></a>
+      <a href="module-10.html"><span class="nav-icon">🛒</span><span class="nav-label">10. Grocery &amp; Delivery</span></a>
+      <a href="module-11.html"><span class="nav-icon">🚗</span><span class="nav-label">11. Ride-Sharing</span></a>
+      <a href="module-12.html"><span class="nav-icon">🤝</span><span class="nav-label">12. Getting Help</span></a>
+      <a href="module-13.html"><span class="nav-icon">👥</span><span class="nav-label">13. Social Media</span></a>
+      <a href="module-14.html" aria-current="page"><span class="nav-icon">🏠</span><span class="nav-label">14. Smart Home</span></a>
+      <a href="module-15.html"><span class="nav-icon">🏥</span><span class="nav-label">15. Telehealth</span></a>
+      <a href="module-visual-ai.html"><span class="nav-icon">📷</span><span class="nav-label">Show Me! (Bonus)</span></a>
+      <a href="family-setup.html"><span class="nav-icon">👪</span><span class="nav-label">Set Up for a Loved One</span></a>
+      <a href="resources.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
+      <a href="scam-simulator.html"><span class="nav-icon">🎯</span><span class="nav-label">Scam Simulator</span></a>
+      <div class="sidebar-a11y-section">
+        <p class="sidebar-a11y-title">Text Size</p>
+        <div class="sidebar-font-row">
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false" style="font-size:1rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+        </div>
+        <p class="sidebar-a11y-title">Screen Colour</p>
+        <div class="sidebar-theme-row">
+          <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+        </div>
+      </div>
+        <p class="sidebar-a11y-title">Reading Comfort</p>
+        <div class="font-option">
+          <label class="toggle-label" for="dyslexic-font-toggle">
+            <input type="checkbox" id="dyslexic-font-toggle" />
+            <span class="toggle-switch"></span>
+            <span class="toggle-text">
+              <strong>Dyslexia-Friendly Font</strong>
+              <small>Easier to read for some people</small>
+            </span>
+          </label>
+        </div>
+      <div class="settings-divider"></div>
+      <a href="#" class="settings-link" aria-label="Open settings"><span class="nav-icon">⚙️</span><span class="nav-label">My Settings</span></a>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <h1>Module 14: Smart Home Basics</h1>
+      <p><strong>What you will learn:</strong> What smart home devices are and how they work, which ones are most useful for Ontario seniors, how to protect your privacy, and how to take advantage of Ontario energy rebates — so you can decide what is right (or not right) for your home.</p>
+
+      <img class="module-hero-image" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=400&fit=crop" alt="A modern living room with smart home devices including a smart speaker and thermostat on the wall" width="1200" height="400" loading="eager">
+
+      <div class="module-intro">
+        <p class="module-time">&#9203; About 25–35 minutes — go at your own pace</p>
+        <div class="confidence-check-box">
+          ✅ <strong>You are in a safe place.</strong><br>
+          Nothing on this page can harm your device. You cannot break anything by reading.
+          If anything feels wrong, close this page and come back later — your progress is saved.
+        </div>
+      </div>
+
+      <div class="read-aloud-tip" role="note" aria-label="How to have this page read aloud">
+        <h3>🔊 Listen to This Page</h3>
+        <p><strong>iPhone / iPad:</strong> Touch and hold any text, then tap <strong>Speak</strong> — the whole page can be read aloud.</p>
+        <p><strong>Android:</strong> Settings → Accessibility → Select to Speak → tap any text to hear it.</p>
+        <p><strong>Windows:</strong> Press <strong>Windows + Ctrl + Enter</strong> to start Narrator, which reads the page aloud.</p>
+        <p><strong>Mac:</strong> System Settings → Accessibility → Spoken Content → turn on <strong>Speak Selection</strong>.</p>
+        <p><strong>Any device (Chrome):</strong> Highlight text → right-click → <strong>Read aloud</strong>.</p>
+      </div>
+
+      <!-- ═══ ROBERT'S STORY ═══ -->
+      <div class="story-block">
+        <span class="story-label">Robert's Story</span>
+        <p>Robert, 77, lives on his own in Woodstock, Ontario. His family had one persistent worry every winter: his old furnace, and whether Robert would remember to turn the heat down at night — or notice if it stopped working while he slept.</p>
+        <p>His son-in-law suggested a Nest smart thermostat. Robert was sceptical — "My thermostat works fine," he said. But he agreed to try it for a month. Within three weeks, his heating bill dropped by $40. He could check the temperature in his house from his phone while visiting his sister in London. And the app quietly alerted his son-in-law when the temperature dropped unexpectedly at 2am one February night — which turned out to be a faulty furnace igniter, caught before any pipes froze.</p>
+        <p>"I was not looking for a smart home," Robert says now. "But I found one device that actually makes a difference for me. The rest I leave well alone."</p>
+        <p>That is the right approach. This module shows you what is available, what is genuinely useful, and how to make your own informed decision.</p>
+      </div>
+
+      <!-- ═══ PROGRESS CHECKLIST ═══ -->
+      <h2>Your Progress</h2>
+      <p>Tick each item as you read through the module:</p>
+
+      <div class="progress-item">
+        <input type="checkbox" class="progress-checkbox" id="m14-1" data-id="m14-1">
+        <label class="progress-label" for="m14-1">Part 1: What Are Smart Home Devices?</label>
+      </div>
+      <div class="progress-item">
+        <input type="checkbox" class="progress-checkbox" id="m14-2" data-id="m14-2">
+        <label class="progress-label" for="m14-2">Part 2: Smart Thermostats &amp; Ontario Rebates</label>
+      </div>
+      <div class="progress-item">
+        <input type="checkbox" class="progress-checkbox" id="m14-3" data-id="m14-3">
+        <label class="progress-label" for="m14-3">Part 3: Video Doorbells</label>
+      </div>
+      <div class="progress-item">
+        <input type="checkbox" class="progress-checkbox" id="m14-4" data-id="m14-4">
+        <label class="progress-label" for="m14-4">Part 4: Voice Assistants (Alexa, Google, Siri)</label>
+      </div>
+      <div class="progress-item">
+        <input type="checkbox" class="progress-checkbox" id="m14-5" data-id="m14-5">
+        <label class="progress-label" for="m14-5">Part 5: Smart Lighting</label>
+      </div>
+      <div class="progress-item">
+        <input type="checkbox" class="progress-checkbox" id="m14-6" data-id="m14-6">
+        <label class="progress-label" for="m14-6">Part 6: Smart Plugs — The Best Place to Start</label>
+      </div>
+      <div class="progress-item">
+        <input type="checkbox" class="progress-checkbox" id="m14-7" data-id="m14-7">
+        <label class="progress-label" for="m14-7">Part 7: Safety, Privacy, and WiFi Security</label>
+      </div>
+
+      <!-- ═══ PART 1 ═══ -->
+      <h2>🏠 Part 1: What Are Smart Home Devices?</h2>
+
+      <p>A smart home device is any household device that connects to your home WiFi and can be controlled from a phone, tablet, or your voice. That is the whole definition. There is nothing magical about the word "smart" — it simply means it uses the internet to do things a regular device cannot.</p>
+
+      <div class="device-card-grid">
+        <div class="device-card">
+          <span class="device-card-icon">🌡️</span>
+          <span class="device-card-name">Smart Thermostat</span>
+          <span class="device-card-desc">Controls heating and cooling. Learns your schedule and saves energy automatically.</span>
+        </div>
+        <div class="device-card">
+          <span class="device-card-icon">🔔</span>
+          <span class="device-card-name">Video Doorbell</span>
+          <span class="device-card-desc">Shows you who is at your door on your phone — even when you are not home.</span>
+        </div>
+        <div class="device-card">
+          <span class="device-card-icon">🔊</span>
+          <span class="device-card-name">Voice Assistant</span>
+          <span class="device-card-desc">A speaker you talk to. Sets reminders, plays music, answers questions, makes calls.</span>
+        </div>
+        <div class="device-card">
+          <span class="device-card-icon">💡</span>
+          <span class="device-card-name">Smart Lighting</span>
+          <span class="device-card-desc">Control lights from your phone or voice. Set schedules, dim levels, or sunrise alarms.</span>
+        </div>
+        <div class="device-card">
+          <span class="device-card-icon">🔌</span>
+          <span class="device-card-name">Smart Plug</span>
+          <span class="device-card-desc">Plug into any wall outlet. Makes any device — a lamp, coffee maker, fan — controllable by phone.</span>
+        </div>
+      </div>
+
+      <h3>The One Thing They All Need</h3>
+      <p>Every smart home device needs your home WiFi password to set up. If you do not have reliable home WiFi, smart devices will not work well. That is the first and most important question to ask yourself.</p>
+
+      <div class="tip-box">
+        <span class="tip-box-label">An Important Truth</span>
+        <p>Smart home devices are <strong>completely optional</strong>. Your home works perfectly fine without any of them. These are tools that <em>might</em> make certain things easier or safer. Whether that tradeoff is worth it depends entirely on your situation — and you are the only one who can decide that.</p>
+      </div>
+
+      <h3>When It Makes Sense vs. When It Does Not</h3>
+
+      <ul class="content-list">
+        <li><strong>Good candidate:</strong> You have reliable home WiFi, you are comfortable using a phone app, and there is something specific you would like to make easier (like remembering to turn down the heat)</li>
+        <li><strong>Good candidate:</strong> Accessibility — controlling lights without getting up, making calls hands-free, or having family check in remotely if you want that</li>
+        <li><strong>Not the right fit (yet):</strong> Your WiFi is unreliable or you do not have it at home</li>
+        <li><strong>Not the right fit:</strong> You are not comfortable with apps and do not have someone to help you get set up</li>
+        <li><strong>Start small:</strong> One smart plug costs $15–$20 and can be fully disconnected in seconds. It is the safest way to try the technology without commitment</li>
+      </ul>
+
+      <!-- ═══ PART 2 ═══ -->
+      <h2>🌡️ Part 2: Smart Thermostats (Nest, Ecobee)</h2>
+
+      <p>A smart thermostat replaces your existing wall thermostat. It does the same job — controlling your heating and air conditioning — but adds useful features: it learns your schedule, adjusts itself automatically, and lets you control the temperature from your phone anywhere in the world.</p>
+
+      <h3>How You Control It</h3>
+      <ul class="content-list">
+        <li><strong>The wall unit:</strong> Has a small screen, just like a regular thermostat. You can use it exactly the same way. No phone required for basic use.</li>
+        <li><strong>The phone app:</strong> Lets you adjust the temperature from anywhere, check if you left the heat on, or set "Away" mode before a trip</li>
+        <li><strong>Voice:</strong> If you have a voice assistant (Alexa or Google Home), you can say "Alexa, set the temperature to 21 degrees"</li>
+      </ul>
+
+      <div class="rebate-box">
+        <span class="rebate-box-label">💰 Ontario Energy Rebates</span>
+        <p><strong>Enbridge Gas Home Efficiency Rebate Programme:</strong> Eligible customers may receive up to <strong>$250</strong> rebate when upgrading to a qualifying smart thermostat. Visit <strong>enbridgegas.com/rebates</strong> or call Enbridge to confirm current eligibility.</p>
+        <p><strong>Hydro One:</strong> Offers rebates on smart thermostats, especially for heat pump systems. Visit <strong>hydroone.com</strong> and search "smart thermostat rebate" for current offers.</p>
+        <p><em>Rebate programmes change annually. Always confirm eligibility before purchasing. Bring your receipt — most rebates are applied after installation.</em></p>
+      </div>
+
+      <h3>Privacy: What Does a Smart Thermostat Know?</h3>
+      <p>Smart thermostat companies do collect data — specifically, whether you are home or away (based on temperature patterns and motion sensors), and your heating and cooling habits. This data is used to make energy-saving recommendations and improve the product. It is not sold to advertisers in personally identifiable form, but the data does leave your home.</p>
+
+      <div class="tip-box">
+        <span class="tip-box-label">Winter Safety Tip — Away Mode</span>
+        <p>When you leave home for more than a day, set your thermostat to "Away" mode (typically 15–17°C). This lowers your heating bill while ensuring your pipes cannot freeze. <strong>Never set your home below 15°C in an Ontario winter</strong> — frozen pipes are an expensive repair. Smart thermostats handle this automatically once you configure it.</p>
+      </div>
+
+      <h3>Installation</h3>
+      <ul class="content-list">
+        <li><strong>DIY:</strong> Most smart thermostats replace a standard thermostat using just a screwdriver. Each comes with clear instructions and a YouTube tutorial walkthrough. Takes about 30 minutes.</li>
+        <li><strong>Professional installation:</strong> An electrician will typically charge $75–$150 for the job. Well worth it if you prefer not to do it yourself.</li>
+        <li><strong>Where to buy:</strong> Canadian Tire, Home Depot, and Best Buy all carry Nest and Ecobee thermostats. Staff can advise which model suits your heating system.</li>
+      </ul>
+
+      <!-- ═══ PART 3 ═══ -->
+      <h2>🔔 Part 3: Video Doorbells (Ring, Nest, Arlo)</h2>
+
+      <p>A video doorbell replaces or supplements your existing doorbell. When someone rings it — or even just walks up to your door — it sends a notification to your phone with a live video feed. You can see and speak to whoever is there, whether you are in the next room or on the other side of the country.</p>
+
+      <h3>Why Seniors Find This Useful</h3>
+      <ul class="content-list">
+        <li>See delivery drivers and confirm your parcel has arrived — without getting up</li>
+        <li>Verify who is at the door before opening it, especially for unexpected visitors</li>
+        <li>Deter "porch pirates" — package theft drops significantly when a visible camera is present</li>
+        <li>Let family check in remotely: "Mum, I can see you are home — did you get the groceries I ordered?"</li>
+      </ul>
+
+      <h3>How It Works</h3>
+      <ol class="content-list">
+        <li>The doorbell detects motion or is pressed → sends a notification to your phone</li>
+        <li>You tap the notification → see a live video of your doorstep</li>
+        <li>Optional: speak through the app — your voice comes out of the doorbell's speaker, and you hear the visitor through your phone</li>
+        <li>Video is saved to a cloud account (usually requires a monthly subscription for saved recordings)</li>
+      </ol>
+
+      <div class="warning-box">
+        <span class="warning-box-label">Privacy Consideration — Your Neighbours</span>
+        <p>Video doorbells capture more than just your front step. They can record neighbours' driveways, the public sidewalk, or parts of adjacent properties. In Ontario, there is no explicit law against recording public areas from your own property, <strong>but you must not record into someone's home, yard, or private space</strong>. Point your camera only at your own entryway. If a neighbour raises a concern, take it seriously.</p>
+      </div>
+
+      <h3>Subscription Costs (Canadian)</h3>
+      <ul class="content-list">
+        <li><strong>Ring Basic Plan:</strong> approximately $4.99/month (Canadian) for video history. Without a subscription, you can see the live view but recordings are not saved.</li>
+        <li><strong>Google Nest Doorbell:</strong> Works with the Google Home app; some video history included free, extended history requires a Google One subscription</li>
+        <li><strong>Arlo Essential:</strong> Free tier includes limited cloud storage; Arlo Secure plan approximately $4.99/month (Canadian) for more history</li>
+      </ul>
+
+      <h3>Installation</h3>
+      <ul class="content-list">
+        <li><strong>Wired models:</strong> Replace your existing doorbell wiring. Most DIY-friendly if you are comfortable with simple electrical work.</li>
+        <li><strong>Battery-powered models:</strong> No wiring required. Mount with screws, charge the battery every few months.</li>
+        <li><strong>Geek Squad (Best Buy):</strong> Offers in-home doorbell installation. Visit bestbuy.ca for Ontario locations and current pricing.</li>
+      </ul>
+
+      <!-- ═══ PART 4 ═══ -->
+      <h2>🔊 Part 4: Voice Assistants (Alexa, Google Home, Siri)</h2>
+
+      <p>A voice assistant is a small speaker or device that you talk to using natural language. You ask it a question, give it a command, or ask it to do something — and it responds. No typing. No tapping menus. Just your voice.</p>
+
+      <h3>What Seniors Use Them For</h3>
+
+      <div class="scenario-card">
+        <p><strong>Medication reminders:</strong> "Alexa, set a reminder to take my blood pressure medication every morning at 8am." — Alexa says "Reminder!" aloud at 8am every day.</p>
+      </div>
+
+      <div class="scenario-card">
+        <p><strong>Hands-free calling:</strong> "Hey Google, call Margaret." — It dials Margaret's number without you needing to find your phone.</p>
+      </div>
+
+      <div class="scenario-card">
+        <p><strong>Weather check:</strong> "Siri, what is the weather today in St. Thomas?" — Answers immediately, without opening an app.</p>
+      </div>
+
+      <div class="scenario-card">
+        <p><strong>Radio and music:</strong> "Alexa, play CBC Radio One." — Streams live radio through the speaker. Great while cooking or getting ready in the morning.</p>
+      </div>
+
+      <div class="scenario-card">
+        <p><strong>Light control (if smart bulbs installed):</strong> "Hey Google, turn off the kitchen light." — Works without getting up, especially helpful at night.</p>
+      </div>
+
+      <h3>The Three Main Platforms</h3>
+      <ul class="content-list">
+        <li><strong>Amazon Alexa (Echo devices):</strong> Widest selection of devices at different price points. Works well as a standalone device or alongside other smart home equipment. Sold at Canadian Tire, Best Buy, and Costco.</li>
+        <li><strong>Google Home (Nest Audio, Nest Mini):</strong> Excellent at answering general questions and integrating with Google Calendar, Gmail, and Google Maps. Sold at Best Buy and Walmart.</li>
+        <li><strong>Apple HomePod / Siri:</strong> Best choice if you already use an iPhone or iPad heavily. Works seamlessly with Apple devices but less compatible with non-Apple smart home products.</li>
+      </ul>
+
+      <div class="warning-box">
+        <span class="warning-box-label">The "Always Listening" Question</span>
+        <p>Yes — voice assistants are always listening for their wake word ("Alexa," "Hey Google," or "Hey Siri"). The companies state that recordings only begin <em>after</em> the wake word is detected, and that audio is processed on their servers to generate a response. False activations do occur occasionally.</p>
+        <p><strong>How to mute:</strong> Every device has a physical mute button on top or the side. When muted, the microphone is physically disconnected — a red light or indicator confirms this. Use the mute button during private conversations, medical appointments on the phone, or any time you prefer not to be heard.</p>
+        <p>If privacy is a significant concern for you, a voice assistant may not be the right fit — and that is a completely reasonable conclusion.</p>
+      </div>
+
+      <!-- ═══ PART 5 ═══ -->
+      <h2>💡 Part 5: Smart Lighting (Philips Hue, LIFX)</h2>
+
+      <p>Smart lighting means light bulbs — and sometimes light switches — that you can control with your phone or voice, rather than only by the wall switch. The bulbs screw into your regular light sockets. No rewiring required.</p>
+
+      <h3>Why This Can Be Genuinely Useful</h3>
+      <ul class="content-list">
+        <li><strong>Accessibility:</strong> No more getting up in the dark to flip a switch. Control any light from your phone or voice while staying in your chair or bed.</li>
+        <li><strong>Morning routine:</strong> Set lights to gradually brighten in the bedroom starting at 6:30am — a gentler wake-up than an alarm</li>
+        <li><strong>Schedules:</strong> "Living room lights on at 6pm, off at 10pm" — set it once and it runs automatically every day without any action on your part</li>
+        <li><strong>Away mode:</strong> While on vacation, randomise lights to turn on and off at varied times, simulating occupancy to deter break-ins</li>
+      </ul>
+
+      <h3>Cost (Canadian)</h3>
+      <ul class="content-list">
+        <li>Individual smart bulbs: approximately $20–$50 each (Canadian Tire, IKEA, Best Buy)</li>
+        <li>Starter kits (hub + 3 bulbs): approximately $80–$150</li>
+        <li>IKEA TRÅDFRI: A budget-friendly option available in London, Hamilton, and Toronto IKEA stores</li>
+      </ul>
+
+      <div class="tip-box">
+        <span class="tip-box-label">Start with Just One</span>
+        <p>Before committing to smart lighting throughout your home, buy a single smart plug or one smart bulb and live with it for two weeks. You will quickly know whether the convenience is worth it for you, and whether the app feels manageable. One bulb is a very low-risk experiment.</p>
+      </div>
+
+      <!-- ═══ PART 6 ═══ -->
+      <h2>🔌 Part 6: Smart Plugs — The Best Place to Start</h2>
+
+      <p>If you want to try smart home technology for the first time, start here. A smart plug is a small device you plug into your existing wall outlet. Anything you then plug into the smart plug becomes "smart" — controllable by your phone or voice.</p>
+
+      <p>There is no installation. No wiring. No electrician. You plug it in, download a free app, and you are done.</p>
+
+      <h3>What You Can Do With One</h3>
+
+      <div class="scenario-card">
+        <p><strong>Coffee maker:</strong> Set it to turn on at 7am every morning. Wake up to fresh coffee already brewed, without touching any buttons.</p>
+      </div>
+
+      <div class="scenario-card">
+        <p><strong>Floor lamp:</strong> Set it to turn on at sunset and off at 10:30pm. The lamp follows the season automatically — no adjusting the schedule as daylight hours change.</p>
+      </div>
+
+      <div class="scenario-card">
+        <p><strong>Holiday lights:</strong> On at 5pm, off at 11pm, every night from December 1st through January 2nd. Set it once and forget it.</p>
+      </div>
+
+      <div class="scenario-card">
+        <p><strong>Fan:</strong> Automatically turns off at midnight so you do not have to get up to switch it off after falling asleep in your chair.</p>
+      </div>
+
+      <div class="scenario-card">
+        <p><strong>Heating pad or electric blanket:</strong> Set a timer so it warms your bed before you go to sleep, then shuts off automatically after 30 minutes.</p>
+      </div>
+
+      <h3>Cost and Where to Buy (Canadian)</h3>
+      <ul class="content-list">
+        <li>Approximately $15–$35 per plug at Canadian Tire, Best Buy, and Walmart</li>
+        <li><strong>Amazon Smart Plug:</strong> Works directly with Alexa voice commands</li>
+        <li><strong>Google Nest Plug:</strong> Works directly with Google Home voice commands</li>
+        <li><strong>TP-Link Kasa Smart Plug:</strong> Works with both Alexa and Google Home; good reviews for reliability; widely available at Canadian Tire</li>
+      </ul>
+
+      <h3>Step-by-Step Setup</h3>
+      <ol class="step-list">
+        <li><span class="step-num-circle">1</span><span>Plug the smart plug into any wall outlet in your home</span></li>
+        <li><span class="step-num-circle">2</span><span>On your phone, go to the App Store (iPhone/iPad) or Google Play Store (Android) and download the brand's app (e.g. "Kasa Smart" for TP-Link, "Amazon Alexa" for Amazon plugs)</span></li>
+        <li><span class="step-num-circle">3</span><span>Open the app and tap "Add a device" or the + button — it will search for your new plug automatically</span></li>
+        <li><span class="step-num-circle">4</span><span>When prompted, enter your home WiFi password. The plug connects to your network.</span></li>
+        <li><span class="step-num-circle">5</span><span>Give the plug a name — for example, "Coffee Maker" or "Bedroom Lamp." Use a name that is easy to remember and say aloud.</span></li>
+        <li><span class="step-num-circle">6</span><span>Tap "Schedule" to set times for the plug to turn on and off automatically. Save the schedule.</span></li>
+        <li><span class="step-num-circle">7</span><span>Test it: tap the on/off button in the app. Watch the plug's indicator light change. You are done.</span></li>
+      </ol>
+
+      <div class="confidence-check-box">
+        ✅ <strong>You can undo this at any time.</strong> If you decide a smart plug is not for you, unplug it and go back to using the outlet normally. Nothing permanent changes in your home.
+      </div>
+
+      <!-- ═══ PART 7 ═══ -->
+      <h2>🔒 Part 7: Safety and Privacy</h2>
+
+      <p>Smart home devices are only as secure as your home WiFi. If someone could access your WiFi network, they could potentially control your devices. This section explains how to keep things safe — without needing to become a technology expert.</p>
+
+      <h3>Securing Your WiFi</h3>
+      <ul class="content-list">
+        <li><strong>Use a strong WiFi password:</strong> Not your address, birthday, or the word "password." A strong password uses a mix of letters, numbers, and symbols (at least 12 characters). Your internet provider set a default password — write it down and keep it somewhere safe.</li>
+        <li><strong>Change the default router password:</strong> Your router (the box that provides your WiFi) has its own admin password, separate from your WiFi password. Check the bottom of your router for the default. Change it to something unique if you can — your internet provider's help line can walk you through this.</li>
+        <li><strong>WPA2 or WPA3 encryption:</strong> Your WiFi should be set to WPA2 or WPA3 security (not the older WEP). Most routers made after 2015 default to WPA2 or better. Check with your internet provider if you are unsure.</li>
+      </ul>
+
+      <h3>Guest Networks — A Smart Layer of Protection</h3>
+      <p>Most modern routers can create a separate "guest WiFi" network. The idea: put your smart home devices on the guest network, and keep your main devices (laptop, phone, iPad) on the primary network. This way, if a smart device is ever compromised, it cannot reach your important personal devices.</p>
+      <p>Ask your internet provider or a family member to help set up a guest network — it is usually one setting in the router's administration panel.</p>
+
+      <h3>What Data Do Smart Home Devices Collect?</h3>
+
+      <div class="privacy-meter">
+        <div class="privacy-row">
+          <span class="privacy-device">🌡️ Smart Thermostat</span>
+          <span class="privacy-level privacy-medium">Moderate</span>
+          <span style="font-size:0.82rem;color:var(--color-text-muted,#666)">Learns when you are home or away; energy usage patterns</span>
+        </div>
+        <div class="privacy-row">
+          <span class="privacy-device">🔔 Video Doorbell</span>
+          <span class="privacy-level privacy-high">Higher</span>
+          <span style="font-size:0.82rem;color:var(--color-text-muted,#666)">Video recordings of visitors; motion events; facial recognition (some models)</span>
+        </div>
+        <div class="privacy-row">
+          <span class="privacy-device">🔊 Voice Assistant</span>
+          <span class="privacy-level privacy-high">Higher</span>
+          <span style="font-size:0.82rem;color:var(--color-text-muted,#666)">Voice commands recorded after wake word; questions asked; connected device states</span>
+        </div>
+        <div class="privacy-row">
+          <span class="privacy-device">💡 Smart Lighting</span>
+          <span class="privacy-level privacy-low">Lower</span>
+          <span style="font-size:0.82rem;color:var(--color-text-muted,#666)">When lights are on or off; schedules set</span>
+        </div>
+        <div class="privacy-row">
+          <span class="privacy-device">🔌 Smart Plug</span>
+          <span class="privacy-level privacy-low">Lower</span>
+          <span style="font-size:0.82rem;color:var(--color-text-muted,#666)">When device is on or off; energy usage (on some models)</span>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <span class="tip-box-label">Your Decision Framework</span>
+        <p>Before adding any smart device, ask yourself: <strong>"What data am I comfortable sharing in exchange for this convenience?"</strong></p>
+        <p>A smart plug that tells a company when your coffee maker turns on feels very different from a voice assistant that records everything you say near it. Both tradeoffs are real. Neither is automatically wrong — it is your choice to make.</p>
+      </div>
+
+      <h3>When and How to Deactivate a Smart Device</h3>
+      <p>Unlike traditional appliances, smart home devices can be completely deactivated at any time:</p>
+      <ul class="content-list">
+        <li>To stop a <strong>smart plug</strong> from collecting data: unplug it. Done.</li>
+        <li>To stop a <strong>voice assistant</strong> from listening: press the physical mute button (mic turns off and red light comes on) or unplug the device entirely</li>
+        <li>To delete your <strong>voice history</strong> from Amazon Alexa: open the Alexa app → More → Settings → Alexa Privacy → Review Voice History → Delete All Recordings</li>
+        <li>To delete your <strong>voice history</strong> from Google Home: open the Google Home app → Account → My Activity → Filter by Google Assistant → Delete</li>
+      </ul>
+
+      <!-- ═══ PRACTICE SCENARIOS ═══ -->
+      <h2>🎯 Practice Scenarios</h2>
+
+      <h3>Scenario 1: Should You Buy a Smart Thermostat?</h3>
+      <div class="decision-tree">
+        <div class="decision-q">Do you have reliable home WiFi?</div>
+        <div class="decision-options">
+          <span class="decision-yes">Yes →</span>
+          <span class="decision-no">No → Smart thermostat not recommended yet. Contact your internet provider first.</span>
+        </div>
+        <div class="decision-q">Do you have a rough idea of your current monthly heating bill?</div>
+        <div class="decision-options">
+          <span class="decision-yes">Yes (or willing to check) →</span>
+          <span class="decision-no">No → Check your Enbridge or Hydro One bill for 2–3 months first, so you can measure any savings.</span>
+        </div>
+        <div class="decision-q">Are you comfortable using a simple phone app (like the Weather app)?</div>
+        <div class="decision-options">
+          <span class="decision-yes">Yes →</span>
+          <span class="decision-no">No → Consider having a family member set it up and manage the app for you. Or wait until you feel more comfortable with apps.</span>
+        </div>
+        <div class="decision-q">Do you have someone who can help install it (or $75–$150 for an electrician)?</div>
+        <div class="decision-options">
+          <span class="decision-yes">Yes →</span>
+          <span class="decision-no">No → Check whether your furnace installer or heating company includes installation. Some do.</span>
+        </div>
+        <p class="decision-note">If you answered Yes to all four: you are a strong candidate. Check Enbridge and Hydro One rebates first — you may get $100–$250 back on the purchase.</p>
+      </div>
+
+      <h3>Scenario 2: Setting Up a Smart Plug — Walk-Through</h3>
+      <div class="scenario-card">
+        <p><strong>Goal:</strong> You want your living room floor lamp to turn on automatically at 7pm and off at 11pm, every night.</p>
+        <ol class="content-list">
+          <li>Purchase a TP-Link Kasa smart plug (~$20–$25 at Canadian Tire)</li>
+          <li>Plug it into the wall outlet your lamp currently uses</li>
+          <li>Plug your lamp's cord into the smart plug</li>
+          <li>Download the "Kasa Smart" app from the App Store or Google Play (it is free)</li>
+          <li>Create a free Kasa account (your email address and a password)</li>
+          <li>In the app, tap the + button → Add Device → the app finds your plug automatically</li>
+          <li>Enter your home WiFi password when prompted. Name the plug "Living Room Lamp."</li>
+          <li>Tap "Schedule" → Add Schedule → On Time: 7:00 PM, Off Time: 11:00 PM, Repeat: Every Day → Save</li>
+          <li>Your lamp now turns on and off automatically every evening. No further action needed.</li>
+        </ol>
+      </div>
+
+      <h3>Scenario 3: Reviewing Your Alexa Privacy Settings</h3>
+      <div class="scenario-card">
+        <p><strong>Goal:</strong> You have had an Amazon Echo for a month and want to review what it has recorded, and delete the history.</p>
+        <ol class="content-list">
+          <li>Open the <strong>Amazon Alexa app</strong> on your phone or iPad</li>
+          <li>Tap <strong>More</strong> (bottom right — three lines icon)</li>
+          <li>Tap <strong>Settings</strong></li>
+          <li>Tap <strong>Alexa Privacy</strong></li>
+          <li>Tap <strong>Review Voice History</strong> — you can see individual recordings. Tap any entry to hear the clip. Tap the bin icon to delete individual ones.</li>
+          <li>To delete everything: tap <strong>Delete All Recordings for All History</strong> → Confirm</li>
+          <li>To prevent Alexa from saving future voice recordings: go back to Alexa Privacy → Manage Your Alexa Data → Choose how long to save recordings → Select "Don't save recordings"</li>
+        </ol>
+        <p><em>You can review and delete this history at any time. It is your data.</em></p>
+      </div>
+
+      <!-- ═══ YOUR CHECKLIST ═══ -->
+      <h2>✅ What You Now Know</h2>
+
+      <div class="checklist">
+        <div class="progress-item">
+          <input type="checkbox" class="progress-checkbox" id="m14-know-1" data-id="m14-know-1">
+          <label class="progress-label" for="m14-know-1">I understand what makes a device "smart" and what it needs to work (WiFi + app)</label>
+        </div>
+        <div class="progress-item">
+          <input type="checkbox" class="progress-checkbox" id="m14-know-2" data-id="m14-know-2">
+          <label class="progress-label" for="m14-know-2">I know about Ontario energy rebates for smart thermostats (Enbridge, Hydro One)</label>
+        </div>
+        <div class="progress-item">
+          <input type="checkbox" class="progress-checkbox" id="m14-know-3" data-id="m14-know-3">
+          <label class="progress-label" for="m14-know-3">I understand how video doorbells work and the privacy considerations for neighbours</label>
+        </div>
+        <div class="progress-item">
+          <input type="checkbox" class="progress-checkbox" id="m14-know-4" data-id="m14-know-4">
+          <label class="progress-label" for="m14-know-4">I know how to mute my voice assistant's microphone using the physical button</label>
+        </div>
+        <div class="progress-item">
+          <input type="checkbox" class="progress-checkbox" id="m14-know-5" data-id="m14-know-5">
+          <label class="progress-label" for="m14-know-5">I understand how smart plugs work and could set one up using the step-by-step guide</label>
+        </div>
+        <div class="progress-item">
+          <input type="checkbox" class="progress-checkbox" id="m14-know-6" data-id="m14-know-6">
+          <label class="progress-label" for="m14-know-6">I know how to secure my WiFi network for smart home devices (guest network, strong password)</label>
+        </div>
+        <div class="progress-item">
+          <input type="checkbox" class="progress-checkbox" id="m14-know-7" data-id="m14-know-7">
+          <label class="progress-label" for="m14-know-7">I can use the decision framework to decide which smart home devices are right — or not right — for my home</label>
+        </div>
+      </div>
+
+      <!-- ═══ CANADIAN RESOURCES ═══ -->
+      <div class="feeling-stuck-box">
+        <h4>Canadian Resources — Smart Home and Energy Rebates</h4>
+        <p class="resource-phone"><strong>Enbridge Gas Home Efficiency Rebate</strong> — <a href="https://www.enbridgegas.com/rebates" target="_blank" rel="noopener">enbridgegas.com/rebates</a></p>
+        <p class="resource-phone"><strong>Hydro One Rebates</strong> (smart thermostat and heat pump) — <a href="https://www.hydroone.com" target="_blank" rel="noopener">hydroone.com</a> → search "rebates"</p>
+        <p class="resource-phone"><strong>Energy Star Canada</strong> (efficient device ratings) — <a href="https://www.energystar.gc.ca" target="_blank" rel="noopener">energystar.gc.ca</a></p>
+        <p class="resource-phone"><strong>Canadian Tire Smart Home Department</strong> — In-store staff can advise on compatible devices and basic setup help</p>
+        <p class="resource-phone"><strong>Best Buy Geek Squad Installation</strong> (doorbells, thermostats) — <a href="https://www.bestbuy.ca" target="_blank" rel="noopener">bestbuy.ca</a> → search "Geek Squad installation"</p>
+        <p class="resource-phone"><strong>Connected Canadians</strong> (free tech help for seniors) — <a href="tel:+18558080505">1-855-808-0505</a></p>
+      </div>
+
+      <div class="confidence-check">
+        <span class="check-icon">🎉</span>
+        <p>You have completed Module 14!</p>
+        <p class="check-text">You now have a solid understanding of smart home technology — not from a salesperson's perspective, but from your own. You know which devices collect which data, how Ontario rebates work, how to secure your WiFi, and most importantly, how to decide what is genuinely worth it for you. Smart home technology is entirely optional — but now you can make that decision from knowledge, not uncertainty.</p>
+      </div>
+
+      <div class="module-nav">
+        <a href="module-13.html" class="btn btn-secondary">← Previous: Understanding Social Media</a>
+        <a href="module-15.html" class="btn btn-primary btn-next">Next: Telehealth &amp; Medical Portals →</a>
+      </div>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-brand">Digital Confidence Centre</p>
+          <p class="footer-tagline">A free learning programme for Canadian seniors</p>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="index.html">Home</a> |
+            <a href="resources.html">Resources</a> |
+            <a href="faq.html">FAQ</a> |
+            <a href="whats-coming.html">What's Coming</a> |
+            <a href="family-setup.html">For Families</a> |
+            <a href="about.html">About</a> |
+            <a href="privacy.html">Privacy Policy</a> |
+            <a href="#" onclick="openFeedbackModal(); return false;">Ideas &amp; Feedback</a>
+          </nav>
+          <p class="footer-support">
+            Need help? Call <strong>Connected Canadians</strong> free:
+            <a href="tel:+18558080505">1-855-808-0505</a>
+          </p>
+          <p class="footer-copy">&copy; 2026 Two Birds. Made with care in Ontario, Canada.</p>
+          <p class="city-footer-label" style="display:none;"></p>
+          <p class="device-footer-label" style="display:none;"></p>
+        </div>
+      </footer>
+
+      <div id="progress-announcer" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+    </main>
+  </div>
+  <script src="js/read-aloud.js" defer></script>
+  <script src="js/speech-config.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/lang-toggle.js" defer></script>
+  <script src="js/accessibility.js" defer></script>
+  <script src="js/progress.js" defer></script>
+  <script src="js/city-resources.js" defer></script>
+  <script src="js/welcome-splash.js" defer></script>
+  <script src="js/localize.js" defer></script>
+  <script src="js/setup-wizard.js" defer></script>
+  <script src="js/feedback-github.js" defer></script>
+  <script src="js/settings.js" defer></script>
+  <script src="js/panic-button.js" defer></script>
+  <script src="js/analytics-events.js" defer></script>
+  <script src="js/heatmap-init.js" defer></script>
+  <script src="js/ab-testing.js" defer></script>
+  <button class="btn-print" onclick="window.print()" aria-label="Print this module">🖨️ Print This Module</button>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROI Calculator — Digital Confidence Centre | Two Birds Innovation</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f7fa; color: #1a1a2e; min-height: 100vh; }
+    .page-header { background: #1565C0; color: #fff; padding: 24px 32px; }
+    .page-header h1 { font-size: 1.5rem; margin-bottom: 4px; }
+    .page-header p { font-size: 0.9rem; opacity: 0.85; }
+    .container { max-width: 900px; margin: 0 auto; padding: 32px 24px; }
+
+    .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+    @media (max-width: 640px) { .calc-grid { grid-template-columns: 1fr; } }
+
+    .card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .card h2 { font-size: 1rem; color: #1565C0; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #E3F2FD; }
+
+    .field { margin-bottom: 16px; }
+    .field label { display: block; font-size: 0.85rem; font-weight: 600; color: #546E7A; margin-bottom: 6px; }
+    .field select, .field input[type=range], .field input[type=number] {
+      width: 100%; padding: 10px 12px; border: 1.5px solid #CFD8DC; border-radius: 8px;
+      font-size: 1rem; background: #fff; color: #1a1a2e; cursor: pointer;
+    }
+    .field input[type=range] { padding: 0; margin-top: 8px; accent-color: #1565C0; }
+    .range-value { font-size: 0.9rem; font-weight: 700; color: #1565C0; text-align: right; margin-top: 4px; }
+
+    .results { background: #1565C0; color: #fff; border-radius: 12px; padding: 28px 32px; margin-bottom: 24px; }
+    .results h2 { font-size: 1.1rem; margin-bottom: 20px; opacity: 0.9; }
+    .result-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    @media (max-width: 500px) { .result-grid { grid-template-columns: 1fr; } }
+    .result-item { background: rgba(255,255,255,0.12); border-radius: 8px; padding: 14px 16px; }
+    .result-label { font-size: 0.78rem; opacity: 0.8; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .result-value { font-size: 1.5rem; font-weight: 700; }
+    .result-sub { font-size: 0.78rem; opacity: 0.75; margin-top: 2px; }
+
+    .grants-box { background: #E8F5E9; border: 1px solid #A5D6A7; border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; }
+    .grants-box h3 { color: #2E7D32; margin-bottom: 12px; }
+    .grant-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #C8E6C9; font-size: 0.88rem; }
+    .grant-item:last-child { border-bottom: none; }
+    .grant-name { color: #1B5E20; font-weight: 600; }
+    .grant-amount { color: #2E7D32; font-weight: 700; }
+    .grant-note { font-size: 0.78rem; color: #4CAF50; }
+
+    .timeline { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 24px; }
+    .timeline h2 { font-size: 1rem; color: #1565C0; margin-bottom: 16px; }
+    .timeline-bar { display: flex; margin-bottom: 8px; }
+    .timeline-label { width: 120px; font-size: 0.82rem; color: #546E7A; padding-top: 6px; flex-shrink: 0; }
+    .bar-track { flex: 1; background: #E3F2FD; border-radius: 4px; height: 28px; position: relative; overflow: hidden; }
+    .bar-fill { height: 100%; background: #1565C0; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; font-size: 0.78rem; color: #fff; font-weight: 600; transition: width 0.5s ease; }
+    .bar-fill.green { background: #2E7D32; }
+    .bar-fill.gold { background: #F57F17; }
+
+    .cta-bar { background: #003B5C; color: #fff; border-radius: 12px; padding: 24px 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .cta-bar h3 { font-size: 1rem; margin-bottom: 4px; }
+    .cta-bar p { font-size: 0.85rem; opacity: 0.85; }
+    .cta-btn { background: #1565C0; color: #fff; border: 2px solid #42A5F5; border-radius: 8px; padding: 12px 24px; font-size: 0.95rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; }
+    .cta-btn:hover { background: #0D47A1; }
+
+    .disclaimer { font-size: 0.78rem; color: #90A4AE; text-align: center; margin-top: 16px; line-height: 1.5; }
+  </style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Digital Confidence Centre — ROI Calculator</h1>
+  <p>Estimate the return on investment for white-label licensing at your organisation</p>
+</div>
+
+<div class="container">
+
+  <div class="calc-grid">
+
+    <!-- Inputs -->
+    <div class="card">
+      <h2>Your Organisation</h2>
+
+      <div class="field">
+        <label for="orgType">Organisation Type</label>
+        <select id="orgType" onchange="calculate()">
+          <option value="credit-union">Credit Union / Caisse Populaire</option>
+          <option value="bank">Regional Bank</option>
+          <option value="library">Public Library</option>
+          <option value="senior-centre">Senior Living / Community Centre</option>
+          <option value="municipality">Municipal Government</option>
+          <option value="healthcare">Healthcare Network</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="memberCount">Members / Patrons / Residents (65+)</label>
+        <input type="range" id="memberCount" min="500" max="100000" step="500" value="10000" oninput="updateRange('memberCount', 'memberCountVal'); calculate()">
+        <div class="range-value"><span id="memberCountVal">10,000</span></div>
+      </div>
+
+      <div class="field">
+        <label for="fraudLosses" id="fraudLabel">Estimated Annual Fraud Losses ($)</label>
+        <input type="range" id="fraudLosses" min="0" max="500000" step="5000" value="75000" oninput="updateRange('fraudLosses', 'fraudLossesVal', '$'); calculate()">
+        <div class="range-value"><span id="fraudLossesVal">$75,000</span></div>
+      </div>
+
+      <div class="field">
+        <label for="tier">Licence Tier</label>
+        <select id="tier" onchange="calculate()">
+          <option value="5000">Tier 1 — Community ($5,000/yr)</option>
+          <option value="12000" selected>Tier 2 — Financial Institution ($12,000/yr)</option>
+          <option value="25000">Tier 3 — Enterprise ($25,000/yr)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Adoption Assumptions</h2>
+
+      <div class="field">
+        <label>% of 65+ members expected to complete ≥1 module</label>
+        <input type="range" id="adoptionRate" min="1" max="30" step="1" value="8" oninput="updateRange('adoptionRate', 'adoptionRateVal', '', '%'); calculate()">
+        <div class="range-value"><span id="adoptionRateVal">8%</span></div>
+      </div>
+
+      <div class="field">
+        <label>Estimated fraud reduction from educated members (%)</label>
+        <input type="range" id="fraudReduction" min="5" max="40" step="5" value="20" oninput="updateRange('fraudReduction', 'fraudReductionVal', '', '%'); calculate()">
+        <div class="range-value"><span id="fraudReductionVal">20%</span></div>
+      </div>
+
+      <div class="field">
+        <label>Staff hours saved per month (digital self-service)</label>
+        <input type="range" id="staffHours" min="0" max="100" step="5" value="20" oninput="updateRange('staffHours', 'staffHoursVal'); calculate()">
+        <div class="range-value"><span id="staffHoursVal">20</span> hrs/month</div>
+      </div>
+
+      <div class="field">
+        <label>Average staff cost ($/hr)</label>
+        <input type="range" id="staffRate" min="20" max="75" step="5" value="35" oninput="updateRange('staffRate', 'staffRateVal', '$'); calculate()">
+        <div class="range-value"><span id="staffRateVal">$35</span>/hr</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Results -->
+  <div class="results">
+    <h2>Estimated Annual Return</h2>
+    <div class="result-grid">
+      <div class="result-item">
+        <div class="result-label">Fraud Loss Reduction</div>
+        <div class="result-value" id="fraudSavings">$15,000</div>
+        <div class="result-sub" id="fraudSavingsSub">From educated members</div>
+      </div>
+      <div class="result-item">
+        <div class="result-label">Staff Time Savings</div>
+        <div class="result-value" id="staffSavings">$8,400</div>
+        <div class="result-sub">Digital self-service adoption</div>
+      </div>
+      <div class="result-item">
+        <div class="result-label">Programme Cost</div>
+        <div class="result-value" id="programmeCost">$12,000</div>
+        <div class="result-sub">Annual licence fee</div>
+      </div>
+      <div class="result-item">
+        <div class="result-label">Net Benefit (Year 1)</div>
+        <div class="result-value" id="netBenefit">$11,400</div>
+        <div class="result-sub" id="breakEven">Break-even in ~10 months</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grant Opportunities -->
+  <div class="grants-box">
+    <h3>🍀 Available Grant Funding (Offsets Licence Cost)</h3>
+    <div id="grantList">
+      <div class="grant-item">
+        <div>
+          <div class="grant-name">New Horizons for Seniors Program</div>
+          <div class="grant-note">Federal — two intakes/year, non-profit partner required</div>
+        </div>
+        <div class="grant-amount">Up to $25,000</div>
+      </div>
+      <div class="grant-item">
+        <div>
+          <div class="grant-name">Ontario Trillium Foundation — Seed</div>
+          <div class="grant-note">Ontario — registered charity required</div>
+        </div>
+        <div class="grant-amount">Up to $50,000</div>
+      </div>
+      <div class="grant-item">
+        <div>
+          <div class="grant-name">RBC Future Launch</div>
+          <div class="grant-note">Registered charity required</div>
+        </div>
+        <div class="grant-amount">$10,000–$25,000</div>
+      </div>
+    </div>
+    <p style="font-size:0.82rem;color:#388E3C;margin-top:12px;">Grant support included in Tier 2 and Tier 3 licences. In Year 1, grant funding can effectively make the programme cost-neutral.</p>
+  </div>
+
+  <!-- Timeline -->
+  <div class="timeline">
+    <h2>3-Year Projected ROI</h2>
+    <div id="timelineCharts"></div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-bar">
+    <div>
+      <h3>Ready for a Custom Proposal?</h3>
+      <p>These estimates are conservative. Let's discuss your specific situation and build a tailored business case.</p>
+    </div>
+    <a href="https://linkedin.com/in/aaronpatzalek" class="cta-btn" target="_blank" rel="noopener">Book a Demo →</a>
+  </div>
+
+  <p class="disclaimer">
+    Estimates are illustrative and based on industry averages. Actual results vary by organisation size, member demographics, and adoption rates.
+    Fraud reduction figures based on Canadian Anti-Fraud Centre research showing digital literacy as the most effective preventive intervention.
+    Staff savings based on industry standard $35/hr estimate; adjust using your actual rates above.
+  </p>
+
+</div>
+
+<script>
+function fmt(n) {
+  return '$' + Math.round(n).toLocaleString('en-CA');
+}
+
+function updateRange(inputId, displayId, prefix, suffix) {
+  var val = document.getElementById(inputId).value;
+  var display = Number(val).toLocaleString('en-CA');
+  document.getElementById(displayId).textContent = (prefix||'') + display + (suffix||'');
+}
+
+function calculate() {
+  var memberCount = Number(document.getElementById('memberCount').value);
+  var fraudLosses = Number(document.getElementById('fraudLosses').value);
+  var tier = Number(document.getElementById('tier').value);
+  var adoptionRate = Number(document.getElementById('adoptionRate').value) / 100;
+  var fraudReduction = Number(document.getElementById('fraudReduction').value) / 100;
+  var staffHours = Number(document.getElementById('staffHours').value);
+  var staffRate = Number(document.getElementById('staffRate').value);
+
+  var participants = Math.round(memberCount * adoptionRate);
+  var fraudSavings = fraudLosses * fraudReduction;
+  var staffSavings = staffHours * staffRate * 12;
+  var totalBenefit = fraudSavings + staffSavings;
+  var netBenefit = totalBenefit - tier;
+  var breakEvenMonths = tier / (totalBenefit / 12);
+
+  document.getElementById('fraudSavings').textContent = fmt(fraudSavings);
+  document.getElementById('fraudSavingsSub').textContent = 'From ~' + participants.toLocaleString('en-CA') + ' educated members';
+  document.getElementById('staffSavings').textContent = fmt(staffSavings);
+  document.getElementById('programmeCost').textContent = fmt(tier);
+  document.getElementById('netBenefit').textContent = fmt(netBenefit);
+
+  if (breakEvenMonths < 12) {
+    document.getElementById('breakEven').textContent = 'Break-even in ~' + Math.round(breakEvenMonths) + ' months';
+  } else {
+    document.getElementById('breakEven').textContent = 'Break-even in Year ' + Math.ceil(breakEvenMonths / 12);
+  }
+
+  // 3-year timeline
+  var maxVal = (totalBenefit * 3) * 1.1;
+  var y1Net = totalBenefit - tier;
+  var y2Net = y1Net + totalBenefit;
+  var y3Net = y2Net + totalBenefit;
+
+  function pct(v) { return Math.max(5, Math.min(100, Math.round((Math.abs(v) / maxVal) * 100))); }
+
+  document.getElementById('timelineCharts').innerHTML =
+    bar('Year 1', y1Net, maxVal) +
+    bar('Year 2', y2Net, maxVal) +
+    bar('Year 3', y3Net, maxVal);
+}
+
+function bar(label, value, max) {
+  var pct = Math.max(5, Math.min(100, Math.round((Math.abs(value) / max) * 100)));
+  var colour = value >= 0 ? 'green' : 'gold';
+  var display = (value >= 0 ? '+' : '') + '$' + Math.round(Math.abs(value)).toLocaleString('en-CA');
+  return '<div class="timeline-bar">' +
+    '<div class="timeline-label">' + label + '</div>' +
+    '<div class="bar-track"><div class="bar-fill ' + colour + '" style="width:' + pct + '%">' + display + '</div></div>' +
+    '</div>';
+}
+
+// Init
+calculate();
+</script>
+</body>
+</html>
