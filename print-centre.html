@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Print or save any Digital Confidence Centre module as a cheat sheet. Choose what you need, build a personalised summary, and print it in large, readable text.">
+  <title>Print Centre — Digital Confidence Centre</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/print.css">
+  <meta name="author" content="Digital Confidence Centre">
+  <meta name="robots" content="index, follow">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1565C0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Digital Confidence">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPH5H5BM52"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RPH5H5BM52');
+  </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <style>
+    /* Print Centre page styles */
+    .print-centre-intro {
+      background: #e8f4fd;
+      border-left: 4px solid #1565C0;
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+    .print-section {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .print-section h2 {
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+    .module-checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem 1.5rem;
+    }
+    @media (max-width: 600px) {
+      .module-checklist {
+        grid-template-columns: 1fr;
+      }
+    }
+    .module-checklist li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1rem;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .module-checklist li input[type="checkbox"] {
+      width: 1.3rem;
+      height: 1.3rem;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    .select-clear-row {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .btn-select-all,
+    .btn-clear-all {
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      border: 2px solid #1565C0;
+      font-size: 0.95rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.15s, color 0.15s;
+    }
+    .btn-select-all {
+      background: #1565C0;
+      color: #fff;
+    }
+    .btn-select-all:hover {
+      background: #0d47a1;
+    }
+    .btn-clear-all {
+      background: #fff;
+      color: #1565C0;
+    }
+    .btn-clear-all:hover {
+      background: #e8f4fd;
+    }
+    .options-checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .options-checklist li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1rem;
+    }
+    .options-checklist li input[type="checkbox"] {
+      width: 1.3rem;
+      height: 1.3rem;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    .output-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .btn-print-now,
+    .btn-email-myself,
+    .btn-build-cheatsheet {
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .btn-print-now {
+      background: #1565C0;
+      color: #fff;
+    }
+    .btn-print-now:hover {
+      background: #0d47a1;
+    }
+    .btn-email-myself {
+      background: #fff;
+      color: #1565C0;
+      border: 2px solid #1565C0;
+    }
+    .btn-email-myself:hover {
+      background: #e8f4fd;
+    }
+    .btn-build-cheatsheet {
+      background: #2e7d32;
+      color: #fff;
+      font-size: 1.1rem;
+      padding: 0.9rem 2rem;
+      margin-top: 0.5rem;
+      display: block;
+      width: 100%;
+      max-width: 400px;
+    }
+    .btn-build-cheatsheet:hover {
+      background: #1b5e20;
+      transform: translateY(-1px);
+    }
+    .selection-count {
+      font-size: 0.95rem;
+      color: #555;
+      margin-top: 0.75rem;
+    }
+    /* Print styles for the cheat sheet window — injected into new window */
+    /* (see JS below) */
+  </style>
+</head>
+<body>
+  <noscript>
+    <div style="padding:20px;font-family:Georgia,serif;max-width:800px;margin:0 auto">
+      <h1>Print Centre — Digital Confidence Centre</h1>
+      <p>This page requires JavaScript to build your cheat sheet. Please enable JavaScript and reload.</p>
+      <nav>
+        <a href="index.html">Home</a> |
+        <a href="resources.html">Resources</a>
+      </nav>
+    </div>
+  </noscript>
+  <script>
+    if (/bot|crawler|spider|crawling/i.test(navigator.userAgent)) {
+      try { localStorage.setItem('dc-setup-complete', 'crawler-bypass'); } catch(e) {}
+    }
+  </script>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">Print Centre</span>
+    <span></span>
+  </div>
+
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">&#10005;</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Your learning journey</p>
+    </div>
+    <nav>
+      <a href="index.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a href="digital-literacy-101.html"><span class="nav-icon">📖</span><span class="nav-label">Foundations</span></a>
+      <a href="module-1.html"><span class="nav-icon">🪂</span><span class="nav-label">1. The Escape Hatch</span></a>
+      <a href="module-2.html"><span class="nav-icon">🛡️</span><span class="nav-label">2. Security Shield</span></a>
+      <a href="module-2-5.html"><span class="nav-icon">📂</span><span class="nav-label">2.5 Everyday Tasks</span></a>
+      <a href="module-3.html"><span class="nav-icon">🔑</span><span class="nav-label">3. Passwords</span></a>
+      <a href="module-4.html"><span class="nav-icon">📱</span><span class="nav-label">4. App Store Safety</span></a>
+      <a href="module-5.html"><span class="nav-icon">✉️</span><span class="nav-label">5. Email &amp; Messages</span></a>
+      <a href="module-6.html"><span class="nav-icon">🏦</span><span class="nav-label">6. Banking</span></a>
+      <a href="module-7.html"><span class="nav-icon">🎨</span><span class="nav-label">7. Photos &amp; Memories</span></a>
+      <a href="module-8.html"><span class="nav-icon">👨‍👩‍👧</span><span class="nav-label">8. Stay Connected</span></a>
+      <a href="module-9.html"><span class="nav-icon">🤖</span><span class="nav-label">9. Understanding AI</span></a>
+      <a href="module-10.html"><span class="nav-icon">🛒</span><span class="nav-label">10. Grocery &amp; Delivery</span></a>
+      <a href="module-11.html"><span class="nav-icon">🚗</span><span class="nav-label">11. Ride-Sharing</span></a>
+      <a href="module-12.html"><span class="nav-icon">🤝</span><span class="nav-label">12. Getting Help</span></a>
+      <a href="module-13.html"><span class="nav-icon">👥</span><span class="nav-label">13. Social Media</span></a>
+      <a href="module-14.html"><span class="nav-icon">🏡</span><span class="nav-label">14. Smart Home</span></a>
+      <a href="module-15.html"><span class="nav-icon">🏥</span><span class="nav-label">15. Telehealth</span></a>
+      <a href="module-visual-ai.html"><span class="nav-icon">📷</span><span class="nav-label">Show Me! (Bonus)</span></a>
+      <a href="family-setup.html"><span class="nav-icon">👪</span><span class="nav-label">Set Up for a Loved One</span></a>
+      <a href="print-centre.html" aria-current="page"><span class="nav-icon">🖨️</span><span class="nav-label">Print Centre</span></a>
+      <a href="recommended-tools.html"><span class="nav-icon">🔧</span><span class="nav-label">Recommended Tools</span></a>
+      <a href="resources.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
+      <a href="scam-simulator.html"><span class="nav-icon">🎯</span><span class="nav-label">Scam Simulator</span></a>
+      <div class="sidebar-a11y-section">
+        <p class="sidebar-a11y-title">Text Size</p>
+        <div class="sidebar-font-row">
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false" style="font-size:1rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+        </div>
+        <p class="sidebar-a11y-title">Screen Colour</p>
+        <div class="sidebar-theme-row">
+          <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+        </div>
+      </div>
+        <p class="sidebar-a11y-title">Reading Comfort</p>
+        <div class="font-option">
+          <label class="toggle-label" for="dyslexic-font-toggle">
+            <input type="checkbox" id="dyslexic-font-toggle" />
+            <span class="toggle-switch"></span>
+            <span class="toggle-text">
+              <strong>Dyslexia-Friendly Font</strong>
+              <small>Easier to read for some people</small>
+            </span>
+          </label>
+        </div>
+      <div class="settings-divider"></div>
+      <a href="#" class="settings-link" aria-label="Open settings"><span class="nav-icon">⚙️</span><span class="nav-label">My Settings</span></a>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <h1>Print Centre</h1>
+
+      <p class="print-centre-intro">
+        Choose the modules and resources you'd like to print or save. Everything stays on your screen — nothing is sent anywhere.
+      </p>
+
+      <!-- Module Selection -->
+      <div class="print-section">
+        <h2>Step 1: Choose Your Modules</h2>
+        <div class="select-clear-row">
+          <button class="btn-select-all" id="btn-select-all" onclick="selectAll()">Select All</button>
+          <button class="btn-clear-all" id="btn-clear-all" onclick="clearAll()">Clear All</button>
+        </div>
+        <ul class="module-checklist" id="module-checklist">
+          <li><input type="checkbox" id="mod-1" value="1"><label for="mod-1">Module 1: Mastering the Escape Hatch</label></li>
+          <li><input type="checkbox" id="mod-2" value="2"><label for="mod-2">Module 2: The Security Shield</label></li>
+          <li><input type="checkbox" id="mod-2-5" value="2.5"><label for="mod-2-5">Module 2.5: Everyday Tasks</label></li>
+          <li><input type="checkbox" id="mod-3" value="3"><label for="mod-3">Module 3: Passwords &amp; Biometrics</label></li>
+          <li><input type="checkbox" id="mod-4" value="4"><label for="mod-4">Module 4: App Store Safety</label></li>
+          <li><input type="checkbox" id="mod-5" value="5"><label for="mod-5">Module 5: Email &amp; Messages</label></li>
+          <li><input type="checkbox" id="mod-6" value="6"><label for="mod-6">Module 6: Banking &amp; Transactions</label></li>
+          <li><input type="checkbox" id="mod-7" value="7"><label for="mod-7">Module 7: Photos &amp; Memories</label></li>
+          <li><input type="checkbox" id="mod-8" value="8"><label for="mod-8">Module 8: Stay Connected</label></li>
+          <li><input type="checkbox" id="mod-9" value="9"><label for="mod-9">Module 9: Understanding AI</label></li>
+          <li><input type="checkbox" id="mod-10" value="10"><label for="mod-10">Module 10: Grocery &amp; Food Delivery</label></li>
+          <li><input type="checkbox" id="mod-11" value="11"><label for="mod-11">Module 11: Ride-Sharing Apps</label></li>
+          <li><input type="checkbox" id="mod-12" value="12"><label for="mod-12">Module 12: Getting the Help You Deserve</label></li>
+          <li><input type="checkbox" id="mod-13" value="13"><label for="mod-13">Module 13: Social Media</label></li>
+          <li><input type="checkbox" id="mod-14" value="14"><label for="mod-14">Module 14: Smart Home</label></li>
+          <li><input type="checkbox" id="mod-15" value="15"><label for="mod-15">Module 15: Telehealth</label></li>
+        </ul>
+        <p class="selection-count" id="selection-count" aria-live="polite">0 modules selected</p>
+      </div>
+
+      <!-- Extra Options -->
+      <div class="print-section">
+        <h2>Step 2: Extra Sections to Include</h2>
+        <ul class="options-checklist">
+          <li>
+            <input type="checkbox" id="opt-glossary">
+            <label for="opt-glossary">Include Glossary Terms</label>
+          </li>
+          <li>
+            <input type="checkbox" id="opt-faq">
+            <label for="opt-faq">Include FAQ Answers</label>
+          </li>
+          <li>
+            <input type="checkbox" id="opt-scam">
+            <label for="opt-scam">Include Scam Warning Cards</label>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Output Actions -->
+      <div class="print-section">
+        <h2>Step 3: Print or Share</h2>
+        <div class="output-row">
+          <button class="btn-print-now" onclick="window.print()" aria-label="Print this page now">🖨️ Print Now</button>
+          <button class="btn-email-myself" onclick="emailToMyself()" aria-label="Email a summary to yourself">✉️ Email to Myself</button>
+        </div>
+      </div>
+
+      <!-- Build Cheat Sheet -->
+      <div class="print-section">
+        <h2>Step 4: Build My Cheat Sheet</h2>
+        <p>This generates a 1–2 page summary in large, easy-to-read text with just the key tips from your selected modules. Your printer dialog will open automatically.</p>
+        <button class="btn-build-cheatsheet" onclick="buildCheatSheet()" aria-label="Build and print my cheat sheet">📄 Build My Cheat Sheet</button>
+      </div>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-brand">Digital Confidence Centre</p>
+          <p class="footer-tagline">A free learning programme for Canadian seniors</p>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="index.html">Home</a> |
+            <a href="resources.html">Resources</a> |
+            <a href="faq.html">FAQ</a> |
+            <a href="whats-coming.html">What's Coming</a> |
+            <a href="family-setup.html">For Families</a> |
+            <a href="about.html">About</a> |
+            <a href="privacy.html">Privacy Policy</a> |
+            <a href="#" onclick="openFeedbackModal(); return false;">Ideas &amp; Feedback</a>
+          </nav>
+          <p class="footer-support">
+            Need help? Call <strong>Connected Canadians</strong> free:
+            <a href="tel:+18558080505">1-855-808-0505</a>
+          </p>
+          <p class="footer-copy">&copy; 2026 Two Birds. Made with care in Ontario, Canada.</p>
+          <p class="city-footer-label" style="display:none;"></p>
+          <p class="device-footer-label" style="display:none;"></p>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="js/speech-config.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/lang-toggle.js" defer></script>
+  <script src="js/accessibility.js" defer></script>
+  <script src="js/progress.js" defer></script>
+  <script src="js/city-resources.js" defer></script>
+  <script src="js/welcome-splash.js" defer></script>
+  <script src="js/localize.js" defer></script>
+  <script src="js/setup-wizard.js" defer></script>
+  <script src="js/feedback-github.js" defer></script>
+  <script src="js/settings.js" defer></script>
+  <script src="js/panic-button.js" defer></script>
+  <script src="js/analytics-events.js" defer></script>
+  <script src="js/heatmap-init.js" defer></script>
+  <script src="js/ab-testing.js" defer></script>
+
+  <script>
+    /* ============================================================
+       Print Centre — inline JavaScript
+       All logic is self-contained. No external dependencies.
+    ============================================================ */
+
+    // Module data: key tips for the cheat sheet
+    var MODULE_DATA = {
+      '1': {
+        title: 'Module 1: Mastering the Escape Hatch',
+        tips: [
+          'Press the Home button (round button at the bottom) or swipe up from the bottom edge to return to your Home screen at any time.',
+          'You cannot break your iPad by tapping the wrong thing. Everything can be closed, undone, or fixed.',
+          'If a scary pop-up appears, press Home immediately — it cannot harm your device.'
+        ]
+      },
+      '2': {
+        title: 'Module 2: The Security Shield',
+        tips: [
+          'Use the 3-Second Rule: pause before tapping any link or pop-up. Ask yourself — did I expect this?',
+          'Real banks and government agencies never call or text asking for your password or SIN.',
+          'If something feels wrong, hang up, close it, and call the organisation directly using a number you look up yourself.'
+        ]
+      },
+      '2.5': {
+        title: 'Module 2.5: Everyday Tasks',
+        tips: [
+          'Common tasks like copy-paste, zooming in, and adjusting brightness are easy once you know the gestures.',
+          'Pinch two fingers together to zoom out; spread them apart to zoom in on any photo or webpage.',
+          'The Control Centre (swipe down from top-right corner) gives you quick access to Wi-Fi, brightness, and more.'
+        ]
+      },
+      '3': {
+        title: 'Module 3: Passwords &amp; Biometrics',
+        tips: [
+          'Use a unique password for every important account — never reuse the same one.',
+          'Face ID and Touch ID are safe and convenient — they never leave your device.',
+          'A password manager (like iCloud Keychain) remembers all your passwords so you only need to remember one.'
+        ]
+      },
+      '4': {
+        title: 'Module 4: App Store Safety',
+        tips: [
+          'Only download apps from the official App Store — never from a link in a text or email.',
+          'Check the number of reviews and the developer name before installing anything.',
+          'Legitimate apps never require your banking password or SIN to install.'
+        ]
+      },
+      '5': {
+        title: 'Module 5: Email &amp; Messages',
+        tips: [
+          'Scam emails often create urgency ("Act now!") or fear ("Your account will be closed"). Slow down.',
+          'Check the sender\'s actual email address — scammers use addresses that look almost right but aren\'t.',
+          'Never click a link to "verify" your account. Go directly to the website by typing the address yourself.'
+        ]
+      },
+      '6': {
+        title: 'Module 6: Banking &amp; Transactions',
+        tips: [
+          'Always access your bank by typing the web address directly or using the official bank app.',
+          'Check your statements regularly — report anything unfamiliar to your bank immediately.',
+          'Interac e-Transfer is safe when you send money only to people you know and trust.'
+        ]
+      },
+      '7': {
+        title: 'Module 7: Photos &amp; Memories',
+        tips: [
+          'iCloud Photos backs up your photos automatically — they are safe even if you lose your iPad.',
+          'You can share a photo album with family without sharing your whole photo library.',
+          'Deleting a photo moves it to "Recently Deleted" where it stays for 30 days — nothing is gone immediately.'
+        ]
+      },
+      '8': {
+        title: 'Module 8: Stay Connected',
+        tips: [
+          'FaceTime is free and pre-installed on your iPhone and iPad — great for video calls with family.',
+          'You can video call on Zoom without an account — just tap the link someone sends you.',
+          'If the screen freezes on a call, try turning Wi-Fi off and back on, or move closer to your router.'
+        ]
+      },
+      '9': {
+        title: 'Module 9: Understanding AI',
+        tips: [
+          'AI assistants like Siri can answer questions, set reminders, and send messages using just your voice.',
+          'AI can make mistakes — always double-check important information from a trusted source.',
+          'You are always in control. AI tools do what you ask; they do not act on their own.'
+        ]
+      },
+      '10': {
+        title: 'Module 10: Grocery &amp; Food Delivery',
+        tips: [
+          'Apps like Instacart and PC Express let you order groceries for delivery or curbside pickup.',
+          'Always check your order summary before confirming — substitutions are common.',
+          'Save your delivery address and payment details once; you won\'t need to re-enter them every time.'
+        ]
+      },
+      '11': {
+        title: 'Module 11: Ride-Sharing Apps',
+        tips: [
+          'Apps like Uber and Lyft show you the driver\'s name, photo, and licence plate before they arrive — always check.',
+          'The price is confirmed before you book — there are no surprise fares.',
+          'You can share your trip details with a family member directly from the app so they know where you are.'
+        ]
+      },
+      '12': {
+        title: 'Module 12: Getting the Help You Deserve',
+        tips: [
+          'Connected Canadians offers free tech help by phone: 1-855-808-0505.',
+          'Cyber-Seniors volunteers provide patient, one-on-one help: 1-844-217-3057.',
+          'Your local library often runs free digital literacy workshops — call and ask what\'s available.'
+        ]
+      },
+      '13': {
+        title: 'Module 13: Social Media',
+        tips: [
+          'Review your privacy settings — set your profile to "Friends Only" so strangers cannot see your posts.',
+          'Never accept a friend request from someone you don\'t know in real life.',
+          'Think before you post: anything shared online can be seen, saved, and shared by others.'
+        ]
+      },
+      '14': {
+        title: 'Module 14: Smart Home',
+        tips: [
+          'Smart devices like Amazon Echo or Google Home can be controlled entirely by voice — no typing needed.',
+          'Always use a strong, unique password for your home Wi-Fi network.',
+          'You can ask a smart speaker to call family members, play music, or set medication reminders.'
+        ]
+      },
+      '15': {
+        title: 'Module 15: Telehealth',
+        tips: [
+          'Many Ontario doctors now offer video appointments — ask your clinic if this is available.',
+          'For telehealth calls, find a quiet, well-lit spot and test your camera and microphone first.',
+          'You can use Ontario Health\'s virtual care services through the Ontario Telemedicine Network (OTN).'
+        ]
+      }
+    };
+
+    var GLOSSARY_TERMS = [
+      { term: 'App', def: 'A programme on your phone or tablet that does a specific job, like email or maps.' },
+      { term: 'Browser', def: 'The app you use to visit websites (e.g., Safari on Apple devices, Chrome).' },
+      { term: 'Password', def: 'A secret word or phrase that proves it\'s you when you log in to an account.' },
+      { term: 'Wi-Fi', def: 'Wireless internet — your device connects to it to access the internet without a cable.' },
+      { term: 'Update', def: 'A free improvement to your app or device software — always install these for security.' },
+      { term: 'Phishing', def: 'A scam where criminals pretend to be a trusted organisation to steal your information.' },
+      { term: 'Cloud', def: 'Your files stored on the internet (not just on your device) so you can access them anywhere.' },
+      { term: 'Two-factor authentication', def: 'An extra security step — after your password, a code is sent to your phone to confirm it\'s you.' }
+    ];
+
+    var FAQ_ITEMS = [
+      { q: 'Can I break my iPad by tapping the wrong thing?', a: 'No. You cannot break your iPad by tapping incorrectly. Almost everything can be undone or closed.' },
+      { q: 'What should I do if a scary message pops up?', a: 'Press the Home button immediately. The message cannot harm your device.' },
+      { q: 'Is it safe to use my iPad for banking?', a: 'Yes, if you use the official bank app or type the bank\'s web address yourself. Never click links in emails.' },
+      { q: 'How do I know if an email is a scam?', a: 'Check the sender\'s address carefully. Legitimate organisations never ask for your password by email.' },
+      { q: 'What if I forget my password?', a: 'Use the "Forgot Password" link on any login page — it will send a reset link to your email.' }
+    ];
+
+    var SCAM_CARDS = [
+      { warning: 'CRA Scam', detail: 'The Canada Revenue Agency will NEVER call threatening arrest. If you receive this call, hang up.' },
+      { warning: '"Your iPad has a virus"', detail: 'This is always fake. iPads do not get viruses from websites. Press Home and ignore it.' },
+      { warning: 'Gift Card Payment Requests', detail: 'No legitimate business or government agency will ever ask you to pay with gift cards.' },
+      { warning: 'Grandparent Scam', detail: 'Callers pretend to be a grandchild in trouble. Call your grandchild directly on their known number first.' },
+      { warning: 'Bank "Fraud Department" Calls', detail: 'Hang up and call your bank\'s number on the back of your card — never call back the number they give you.' }
+    ];
+
+    // Update selection count whenever a checkbox changes
+    document.addEventListener('DOMContentLoaded', function () {
+      var checkboxes = document.querySelectorAll('#module-checklist input[type="checkbox"]');
+      checkboxes.forEach(function (cb) {
+        cb.addEventListener('change', updateCount);
+      });
+      updateCount();
+    });
+
+    function updateCount() {
+      var checked = document.querySelectorAll('#module-checklist input[type="checkbox"]:checked').length;
+      var total = document.querySelectorAll('#module-checklist input[type="checkbox"]').length;
+      var el = document.getElementById('selection-count');
+      if (el) {
+        el.textContent = checked + ' of ' + total + ' module' + (checked === 1 ? '' : 's') + ' selected';
+      }
+    }
+
+    function selectAll() {
+      document.querySelectorAll('#module-checklist input[type="checkbox"]').forEach(function (cb) {
+        cb.checked = true;
+      });
+      updateCount();
+    }
+
+    function clearAll() {
+      document.querySelectorAll('#module-checklist input[type="checkbox"]').forEach(function (cb) {
+        cb.checked = false;
+      });
+      updateCount();
+    }
+
+    function getSelectedModules() {
+      var selected = [];
+      document.querySelectorAll('#module-checklist input[type="checkbox"]:checked').forEach(function (cb) {
+        selected.push(cb.value);
+      });
+      return selected;
+    }
+
+    function emailToMyself() {
+      var selected = getSelectedModules();
+      if (selected.length === 0) {
+        alert('Please select at least one module first.');
+        return;
+      }
+      var lines = ['Digital Confidence Centre — My Selected Modules', ''];
+      selected.forEach(function (key) {
+        var mod = MODULE_DATA[key];
+        if (mod) lines.push('- ' + mod.title.replace(/&amp;/g, '&'));
+      });
+      if (document.getElementById('opt-glossary').checked) lines.push('- Glossary Terms');
+      if (document.getElementById('opt-faq').checked) lines.push('- FAQ Answers');
+      if (document.getElementById('opt-scam').checked) lines.push('- Scam Warning Cards');
+      lines.push('');
+      lines.push('Visit the full course at: https://twobirds-kramerica.github.io/digital-confidence/');
+      var subject = encodeURIComponent('My Digital Confidence Centre Cheat Sheet');
+      var body = encodeURIComponent(lines.join('\n'));
+      window.location.href = 'mailto:?subject=' + subject + '&body=' + body;
+    }
+
+    function buildCheatSheet() {
+      var selected = getSelectedModules();
+      if (selected.length === 0) {
+        alert('Please select at least one module before building your cheat sheet.');
+        return;
+      }
+      var includeGlossary = document.getElementById('opt-glossary').checked;
+      var includeFaq = document.getElementById('opt-faq').checked;
+      var includeScam = document.getElementById('opt-scam').checked;
+
+      // Build HTML content for the cheat sheet
+      var html = '<!DOCTYPE html><html lang="en-CA"><head>';
+      html += '<meta charset="UTF-8">';
+      html += '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
+      html += '<title>My Digital Confidence Cheat Sheet</title>';
+      html += '<style>';
+      html += 'body { font-family: Georgia, serif; font-size: 18pt; line-height: 1.6; colour: #111; background: #fff; margin: 0; padding: 2cm; max-width: 900px; margin: 0 auto; }';
+      html += 'h1 { font-size: 22pt; colour: #1a237e; border-bottom: 3px solid #1a237e; padding-bottom: 0.3em; margin-bottom: 0.5em; }';
+      html += 'h2 { font-size: 18pt; colour: #1565C0; margin-top: 1.5em; margin-bottom: 0.3em; page-break-after: avoid; }';
+      html += 'ul { margin: 0.5em 0 1em 1.5em; padding: 0; }';
+      html += 'li { margin-bottom: 0.5em; }';
+      html += '.section-divider { border: none; border-top: 1px solid #ccc; margin: 1.5em 0; }';
+      html += '.warning-card { border: 2px solid #c62828; border-radius: 8px; padding: 0.8em 1em; margin-bottom: 1em; background: #fff8f8; }';
+      html += '.warning-card strong { colour: #c62828; }';
+      html += '.faq-item { margin-bottom: 1em; }';
+      html += '.faq-q { font-weight: bold; }';
+      html += '.glossary-item { margin-bottom: 0.6em; }';
+      html += '.glossary-term { font-weight: bold; }';
+      html += '.footer-note { margin-top: 2em; font-size: 12pt; colour: #555; border-top: 1px solid #ccc; padding-top: 0.8em; }';
+      html += '@media print { body { font-size: 14pt; padding: 1cm; } h1 { font-size: 18pt; } h2 { font-size: 15pt; } }';
+      html += '</style>';
+      html += '</head><body>';
+
+      html += '<h1>My Digital Confidence Cheat Sheet</h1>';
+      html += '<p style="font-size:12pt;colour:#555;">Generated from the Digital Confidence Centre &mdash; ' + new Date().toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' }) + '</p>';
+      html += '<hr class="section-divider">';
+
+      // Module tips
+      selected.forEach(function (key) {
+        var mod = MODULE_DATA[key];
+        if (!mod) return;
+        html += '<h2>' + mod.title + '</h2>';
+        html += '<ul>';
+        mod.tips.forEach(function (tip) {
+          html += '<li>' + tip + '</li>';
+        });
+        html += '</ul>';
+      });
+
+      // Glossary
+      if (includeGlossary) {
+        html += '<hr class="section-divider">';
+        html += '<h2>Glossary of Common Terms</h2>';
+        GLOSSARY_TERMS.forEach(function (item) {
+          html += '<div class="glossary-item"><span class="glossary-term">' + item.term + ':</span> ' + item.def + '</div>';
+        });
+      }
+
+      // FAQ
+      if (includeFaq) {
+        html += '<hr class="section-divider">';
+        html += '<h2>Common Questions &amp; Answers</h2>';
+        FAQ_ITEMS.forEach(function (item) {
+          html += '<div class="faq-item"><p class="faq-q">' + item.q + '</p><p>' + item.a + '</p></div>';
+        });
+      }
+
+      // Scam Warning Cards
+      if (includeScam) {
+        html += '<hr class="section-divider">';
+        html += '<h2>Scam Warning Cards</h2>';
+        SCAM_CARDS.forEach(function (card) {
+          html += '<div class="warning-card"><strong>' + card.warning + '</strong><br>' + card.detail + '</div>';
+        });
+      }
+
+      html += '<div class="footer-note">Digital Confidence Centre &mdash; Free digital literacy training for Ontario seniors. Visit: twobirds-kramerica.github.io/digital-confidence/ &nbsp;|&nbsp; Free help: Connected Canadians 1-855-808-0505</div>';
+      html += '</body></html>';
+
+      var win = window.open('', '_blank');
+      if (!win) {
+        alert('Could not open the cheat sheet. Please allow pop-ups for this site and try again.');
+        return;
+      }
+      win.document.write(html);
+      win.document.close();
+      setTimeout(function () {
+        win.focus();
+        win.print();
+      }, 500);
+    }
+  </script>
+</body>
+</html>

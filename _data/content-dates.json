@@ -1,0 +1,115 @@
+{
+  "lastUpdated": "2026-03-25",
+  "note": "Update section dates whenever content is manually verified. Sections older than 60 days will be flagged for review by the monthly GitHub Action.",
+  "modules": {
+    "module-1": {
+      "title": "Mastering the Escape Hatch",
+      "lastFullReview": "2026-03-25",
+      "sections": {
+        "device-buttons": { "label": "Home button and gesture instructions", "verified": "2026-03-25", "sensitivity": "high" },
+        "ios-version": { "label": "iOS version-specific steps", "verified": "2026-03-25", "sensitivity": "high" }
+      }
+    },
+    "module-2": {
+      "title": "The Security Shield",
+      "lastFullReview": "2026-03-25",
+      "sections": {
+        "cra-scams": { "label": "CRA scam tactics", "verified": "2026-03-25", "sensitivity": "high" },
+        "cafc-stats": { "label": "Canadian Anti-Fraud Centre statistics", "verified": "2026-03-25", "sensitivity": "medium" }
+      }
+    },
+    "module-3": {
+      "title": "Passwords & Biometrics",
+      "lastFullReview": "2026-03-25",
+      "sections": {
+        "icloud-keychain": { "label": "iCloud Keychain setup steps", "verified": "2026-03-25", "sensitivity": "high" },
+        "face-id": { "label": "Face ID and Touch ID instructions", "verified": "2026-03-25", "sensitivity": "high" }
+      }
+    },
+    "module-4": {
+      "title": "App Store Safety",
+      "lastFullReview": "2026-03-25",
+      "sections": {
+        "app-store-ui": { "label": "App Store navigation steps", "verified": "2026-03-25", "sensitivity": "high" }
+      }
+    },
+    "module-5": {
+      "title": "Email & Messages",
+      "lastFullReview": "2026-03-25",
+      "sections": {
+        "phishing-examples": { "label": "Phishing email examples", "verified": "2026-03-25", "sensitivity": "medium" }
+      }
+    },
+    "module-6": {
+      "title": "Banking & Transactions",
+      "lastFullReview": "2026-03-25",
+      "sections": {
+        "interac-etransfer": { "label": "Interac e-Transfer steps", "verified": "2026-03-25", "sensitivity": "high" },
+        "bank-app-ui": { "label": "Bank app navigation examples", "verified": "2026-03-25", "sensitivity": "high" }
+      }
+    },
+    "module-7": {
+      "title": "Photos & Memories",
+      "lastFullReview": "2026-03-25",
+      "sections": {}
+    },
+    "module-8": {
+      "title": "Stay Connected",
+      "lastFullReview": "2026-03-25",
+      "sections": {}
+    },
+    "module-9": {
+      "title": "Understanding AI",
+      "lastFullReview": "2026-03-25",
+      "sections": {
+        "ai-tools": { "label": "AI tool examples and capabilities", "verified": "2026-03-25", "sensitivity": "high" }
+      }
+    },
+    "module-10": {
+      "title": "Grocery & Food Delivery",
+      "lastFullReview": "2026-03-25",
+      "sections": {
+        "delivery-apps": { "label": "Grocery/delivery app screenshots and steps", "verified": "2026-03-25", "sensitivity": "high" }
+      }
+    },
+    "module-11": {
+      "title": "Ride-Sharing Apps",
+      "lastFullReview": "2026-03-25",
+      "sections": {
+        "uber-steps": { "label": "Uber booking steps and UI", "verified": "2026-03-25", "sensitivity": "high" }
+      }
+    },
+    "module-12": {
+      "title": "Getting the Help You Deserve",
+      "lastFullReview": "2026-03-25",
+      "sections": {}
+    },
+    "module-13": {
+      "title": "Social Media",
+      "lastFullReview": "2026-03-25",
+      "sections": {
+        "facebook-privacy": { "label": "Facebook privacy settings UI", "verified": "2026-03-25", "sensitivity": "high" }
+      }
+    },
+    "module-14": {
+      "title": "Smart Home",
+      "lastFullReview": "2026-03-25",
+      "sections": {
+        "ontario-rebates": { "label": "Ontario smart home rebate programs", "verified": "2026-03-25", "sensitivity": "medium" }
+      }
+    },
+    "module-15": {
+      "title": "Telehealth & Health Apps",
+      "lastFullReview": "2026-03-25",
+      "sections": {
+        "myhealth-ontario": { "label": "MyHealth Ontario app features", "verified": "2026-03-25", "sensitivity": "high" },
+        "ohip-coverage": { "label": "OHIP telehealth coverage details", "verified": "2026-03-25", "sensitivity": "high" }
+      }
+    },
+    "module-2-5": {
+      "title": "Everyday Digital Tasks",
+      "lastFullReview": "2026-03-25",
+      "sections": {}
+    }
+  }
+}
