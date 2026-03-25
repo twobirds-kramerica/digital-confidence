@@ -97,7 +97,7 @@ function injectUnifiedFeedbackBtn() {
   btn.className = 'dc-unified-feedback-btn';
   btn.setAttribute('aria-label', 'Share ideas or feedback');
   btn.title     = 'Share your ideas and feedback';
-  btn.innerHTML = '<span class="dc-fab-icon">💬</span><span class="dc-fab-label">Ideas &amp; Feedback</span>';
+  btn.innerHTML = '<span class="dc-fab-icon">💬</span><span class="dc-fab-label">Ideas &amp; Feedback</span><span class="dc-fab-mobile-label" aria-hidden="true">Feedback</span>';
   btn.addEventListener('click', function () { openFeedbackModal(); });
   document.body.appendChild(btn);
 }

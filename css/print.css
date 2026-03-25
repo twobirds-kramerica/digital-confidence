@@ -187,27 +187,24 @@
   }
 }
 
-/* ── Print button — visible on screen, hidden when printing ── */
+/* ── Print button — in-content, before module footer ── */
 .btn-print {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   background: #1565C0;
   color: #fff;
   border: none;
   border-radius: 50px;
-  padding: 0.65rem 1.25rem;
-  font-size: 0.9rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   font-family: inherit;
-  box-shadow: 0 2px 12px rgba(21,101,192,0.35);
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  transition: background 0.15s, transform 0.15s;
+  box-shadow: 0 2px 8px rgba(21,101,192,0.25);
+  margin: 1.5rem auto 0;
   text-decoration: none;
+  transition: background 0.15s, transform 0.15s;
 }
 
 .btn-print:hover {

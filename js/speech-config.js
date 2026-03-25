@@ -43,10 +43,20 @@ function initializeVoices() {
 }
 
 if (window.speechSynthesis) {
+  /* Warm-up: cancel any stale speech state left from a previous page.
+     On some browsers (especially Chrome/iOS Safari) the first call to
+     speak() silently fails if cancel() has never been called. This
+     single cancel() at page-load primes the synthesis engine. */
+  window.speechSynthesis.cancel();
+
   if (window.speechSynthesis.onvoiceschanged !== undefined) {
     window.speechSynthesis.onvoiceschanged = initializeVoices;
   }
+  /* Call immediately AND after a short delay — some browsers (Chrome)
+     return an empty voices array on the first synchronous call even
+     though onvoiceschanged is supported. The 200ms retry catches that. */
   initializeVoices();
+  setTimeout(initializeVoices, 200);
 }
 
 function getVoiceForContent(element) {
@@ -112,7 +122,17 @@ function dcReadAloud(element, button, rate) {
     dcClearHighlight(element);
   };
 
-  window.speechSynthesis.speak(utterance);
+  /* If voices still haven't loaded, delay the first speak() by 150ms
+     to allow onvoiceschanged to fire first. */
+  if (!VOICE_CONFIG.primaryVoice && window.speechSynthesis.getVoices().length === 0) {
+    setTimeout(function () {
+      initializeVoices();
+      utterance.voice = getVoiceForContent(element);
+      window.speechSynthesis.speak(utterance);
+    }, 150);
+  } else {
+    window.speechSynthesis.speak(utterance);
+  }
 }
 
 /* ---- Toggle: Listen ↔ Pause only (no Resume state) ---- */

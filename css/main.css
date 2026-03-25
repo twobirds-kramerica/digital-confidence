@@ -4328,6 +4328,19 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
     justify-content: center;
   }
   .dc-unified-feedback-btn .dc-fab-label { display: none; }
+  /* Show micro-label below bubble on mobile */
+  .dc-unified-feedback-btn .dc-fab-mobile-label {
+    display: block;
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    font-weight: 700;
+    color: #1565C0;
+    white-space: nowrap;
+    letter-spacing: 0.03em;
+  }
   .dc-modal-content { padding: 20px 16px 18px; max-height: 95vh; }
   .dc-type-help { display: none; }
   .dc-feedback-actions { flex-direction: column; }
@@ -5283,3 +5296,293 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 }
 [data-theme="dark"] .scenario-card h4 { color: #A5D6A7; }
 [data-theme="dark"] .scenario-card .scenario-success { color: #81C784; }
+
+/* ── Content Freshness Badges (Phase 8A) ── */
+.dc-freshness-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.dc-badge-verified { background: #E8F5E9; color: #2E7D32; border: 1px solid #A5D6A7; }
+.dc-badge-aging    { background: #FFF8E1; color: #F57F17; border: 1px solid #FFE082; }
+.dc-badge-stale    { background: #FFF3E0; color: #E65100; border: 1px solid #FFCC02; }
+
+/* ================================================================
+   EXIT SAFELY BUTTON (exit-safely.js)
+   Fixed bottom-left — opposite the feedback button (bottom-right)
+   ================================================================ */
+#dc-exit-safely-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  background: #fff;
+  color: #1565C0;
+  border: 2px solid #1565C0;
+  border-radius: 50px;
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 12px rgba(21,101,192,0.15);
+  z-index: 999994;
+  min-width: 44px;
+  min-height: 44px;
+  transition: background 0.15s, color 0.15s;
+}
+#dc-exit-safely-btn:hover {
+  background: #1565C0;
+  color: #fff;
+  text-decoration: none;
+}
+.dc-exit-icon { font-size: 2rem; line-height: 1; }
+.dc-exit-label { white-space: nowrap; font-size: 0.88rem; }
+@media (max-width: 600px) {
+  #dc-exit-safely-btn {
+    bottom: 16px;
+    left: 16px;
+    padding: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    justify-content: center;
+  }
+  #dc-exit-safely-btn .dc-exit-label { display: none; }
+}
+[data-theme="dark"] #dc-exit-safely-btn {
+  background: #1a2744;
+  color: #90CAF9;
+  border-color: #42A5F5;
+}
+[data-theme="dark"] #dc-exit-safely-btn:hover {
+  background: #1565C0;
+  color: #fff;
+}
+
+/* Mobile: position feedback btn above exit label so they don't overlap */
+@media (max-width: 600px) {
+  .dc-unified-feedback-btn {
+    position: relative; /* needed for dc-fab-mobile-label absolute positioning */
+  }
+}
+
+/* ============================================
+   Sponsor Card — Phase 6A
+   ============================================ */
+
+.dc-sponsor-card {
+  background: #f5f7fa;
+  border: 1px solid #CFD8DC;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 32px 0 24px;
+}
+
+.dc-sponsor-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1565C0;
+  background: #E3F2FD;
+  border: 1px solid #BBDEFB;
+  border-radius: 4px;
+  padding: 3px 8px;
+  margin-bottom: 12px;
+}
+
+.dc-sponsor-body {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.dc-sponsor-logo-placeholder {
+  font-size: 48px;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 56px;
+  text-align: center;
+}
+
+.dc-sponsor-info {
+  flex: 1;
+  min-width: 160px;
+}
+
+.dc-sponsor-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.dc-sponsor-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.dc-sponsor-cta {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--accent-primary);
+  color: #FFFFFF !important;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.dc-sponsor-cta:hover,
+.dc-sponsor-cta:focus {
+  background: var(--accent-hover);
+  color: #FFFFFF !important;
+}
+
+.dc-sponsor-disclosure {
+  margin-top: 12px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  border-top: 1px solid #E0E0E0;
+  padding-top: 8px;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 480px) {
+  .dc-sponsor-body {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .dc-sponsor-cta {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Dark mode */
+[data-theme="dark"] .dc-sponsor-card {
+  background: #252525;
+  border-color: #3A3A3A;
+}
+
+[data-theme="dark"] .dc-sponsor-badge {
+  background: #1A2E45;
+  border-color: #1E3A5F;
+  color: #64B5F6;
+}
+
+[data-theme="dark"] .dc-sponsor-disclosure {
+  border-top-color: #3A3A3A;
+  color: #9E9E9E;
+}
+
+/* ============================================
+   Analytics Consent Banner — Phase 6C
+   ============================================ */
+
+#dc-consent-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999990; /* Below feedback button (999996) and modals */
+  background: #FFFFFF;
+  border-top: 3px solid var(--accent-primary);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.12);
+  padding: 0;
+}
+
+.dc-consent-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.dc-consent-text {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  margin: 0;
+  min-width: 200px;
+}
+
+.dc-consent-learn {
+  color: var(--accent-primary);
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.dc-consent-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.dc-consent-btn-ok {
+  padding: 12px 28px;
+  background: var(--accent-primary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  min-height: 48px;
+  transition: background 0.2s ease;
+}
+
+.dc-consent-btn-ok:hover,
+.dc-consent-btn-ok:focus {
+  background: var(--accent-hover);
+  outline: 3px solid #FFD700;
+  outline-offset: 2px;
+}
+
+/* On mobile: full-width banner, larger touch targets */
+@media (max-width: 600px) {
+  .dc-consent-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 16px;
+  }
+  .dc-consent-btn-ok {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.1rem;
+    min-height: 56px;
+  }
+  .dc-consent-actions {
+    width: 100%;
+  }
+}
+
+/* Dark mode */
+[data-theme="dark"] #dc-consent-banner {
+  background: #2D2D2D;
+  border-top-color: var(--accent-primary);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .dc-consent-text {
+  color: #E8E8E8;
+}
