@@ -6,104 +6,325 @@
       "title": "Mastering the Escape Hatch",
       "lastFullReview": "2026-03-25",
       "sections": {
-        "device-buttons": { "label": "Home button and gesture instructions", "verified": "2026-03-25", "sensitivity": "high" },
-        "ios-version": { "label": "iOS version-specific steps", "verified": "2026-03-25", "sensitivity": "high" }
+        "device-buttons": {
+          "label": "Home button and gesture instructions",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "ios-version": {
+          "label": "iOS version-specific steps",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-1-section-1": {
+          "label": "Home button and gesture steps (iOS/iPadOS specific)",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-1-section-2": {
+          "label": "Restart steps (iOS/Android device-specific)",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        }
       }
     },
     "module-2": {
       "title": "The Security Shield",
       "lastFullReview": "2026-03-25",
       "sections": {
-        "cra-scams": { "label": "CRA scam tactics", "verified": "2026-03-25", "sensitivity": "high" },
-        "cafc-stats": { "label": "Canadian Anti-Fraud Centre statistics", "verified": "2026-03-25", "sensitivity": "medium" }
+        "cra-scams": {
+          "label": "CRA scam tactics",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "cafc-stats": {
+          "label": "Canadian Anti-Fraud Centre statistics",
+          "verified": "2026-03-25",
+          "sensitivity": "medium"
+        },
+        "module-2-section-1": {
+          "label": "CRA phone scam tactics and red flags",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-2-section-2": {
+          "label": "Grandparent scam tactics and scripts",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        }
       }
     },
     "module-3": {
       "title": "Passwords & Biometrics",
       "lastFullReview": "2026-03-25",
       "sections": {
-        "icloud-keychain": { "label": "iCloud Keychain setup steps", "verified": "2026-03-25", "sensitivity": "high" },
-        "face-id": { "label": "Face ID and Touch ID instructions", "verified": "2026-03-25", "sensitivity": "high" }
+        "icloud-keychain": {
+          "label": "iCloud Keychain setup steps",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "face-id": {
+          "label": "Face ID and Touch ID instructions",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-3-section-1": {
+          "label": "Face ID setup steps (iOS-specific)",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-3-section-2": {
+          "label": "iCloud Keychain setup instructions",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        }
       }
     },
     "module-4": {
       "title": "App Store Safety",
       "lastFullReview": "2026-03-25",
       "sections": {
-        "app-store-ui": { "label": "App Store navigation steps", "verified": "2026-03-25", "sensitivity": "high" }
+        "app-store-ui": {
+          "label": "App Store navigation steps",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-4-section-1": {
+          "label": "App Store navigation steps (iOS)",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-4-section-2": {
+          "label": "Real vs fake app identification tips",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        }
       }
     },
     "module-5": {
       "title": "Email & Messages",
       "lastFullReview": "2026-03-25",
       "sections": {
-        "phishing-examples": { "label": "Phishing email examples", "verified": "2026-03-25", "sensitivity": "medium" }
+        "phishing-examples": {
+          "label": "Phishing email examples",
+          "verified": "2026-03-25",
+          "sensitivity": "medium"
+        },
+        "module-5-section-1": {
+          "label": "Email sending steps (Mail app)",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-5-section-2": {
+          "label": "Phishing email identification examples",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        }
       }
     },
     "module-6": {
       "title": "Banking & Transactions",
       "lastFullReview": "2026-03-25",
       "sections": {
-        "interac-etransfer": { "label": "Interac e-Transfer steps", "verified": "2026-03-25", "sensitivity": "high" },
-        "bank-app-ui": { "label": "Bank app navigation examples", "verified": "2026-03-25", "sensitivity": "high" }
+        "interac-etransfer": {
+          "label": "Interac e-Transfer steps",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "bank-app-ui": {
+          "label": "Bank app navigation examples",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-6-section-1": {
+          "label": "Bank app download steps",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-6-section-2": {
+          "label": "Bank app balance-checking steps",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        }
       }
     },
     "module-7": {
       "title": "Photos & Memories",
       "lastFullReview": "2026-03-25",
-      "sections": {}
+      "sections": {
+        "module-7-section-1": {
+          "label": "Camera app photo-taking steps (iOS/Android)",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-7-section-2": {
+          "label": "Photo editing steps (Photos app)",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        }
+      }
     },
     "module-8": {
       "title": "Stay Connected",
       "lastFullReview": "2026-03-25",
-      "sections": {}
+      "sections": {
+        "module-8-section-1": {
+          "label": "FaceTime video call steps",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-8-section-2": {
+          "label": "Google Meet video call steps",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        }
+      }
     },
     "module-9": {
       "title": "Understanding AI",
       "lastFullReview": "2026-03-25",
       "sections": {
-        "ai-tools": { "label": "AI tool examples and capabilities", "verified": "2026-03-25", "sensitivity": "high" }
+        "ai-tools": {
+          "label": "AI tool examples and capabilities",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-9-section-1": {
+          "label": "Deepfake video and audio examples",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-9-section-2": {
+          "label": "AI-generated scam email examples",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        }
       }
     },
     "module-10": {
       "title": "Grocery & Food Delivery",
       "lastFullReview": "2026-03-25",
       "sections": {
-        "delivery-apps": { "label": "Grocery/delivery app screenshots and steps", "verified": "2026-03-25", "sensitivity": "high" }
+        "delivery-apps": {
+          "label": "Grocery/delivery app screenshots and steps",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-10-section-1": {
+          "label": "Instacart ordering steps and pricing",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-10-section-2": {
+          "label": "Uber Eats ordering steps and pricing",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        }
       }
     },
     "module-11": {
       "title": "Ride-Sharing Apps",
       "lastFullReview": "2026-03-25",
       "sections": {
-        "uber-steps": { "label": "Uber booking steps and UI", "verified": "2026-03-25", "sensitivity": "high" }
+        "uber-steps": {
+          "label": "Uber booking steps and UI",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-11-section-1": {
+          "label": "Uber app setup and download steps",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-11-section-2": {
+          "label": "Lyft app steps and comparison to Uber",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        }
       }
     },
     "module-12": {
       "title": "Getting the Help You Deserve",
       "lastFullReview": "2026-03-25",
-      "sections": {}
+      "sections": {
+        "module-12-section-1": {
+          "label": "Canadian consumer escalation resources and phone numbers",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-12-section-2": {
+          "label": "Alternative contact channels for customer service",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        }
+      }
     },
     "module-13": {
       "title": "Social Media",
       "lastFullReview": "2026-03-25",
       "sections": {
-        "facebook-privacy": { "label": "Facebook privacy settings UI", "verified": "2026-03-25", "sensitivity": "high" }
+        "facebook-privacy": {
+          "label": "Facebook privacy settings UI",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-13-section-1": {
+          "label": "Facebook account creation steps",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-13-section-2": {
+          "label": "Facebook privacy settings (UI may change)",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        }
       }
     },
     "module-14": {
       "title": "Smart Home",
       "lastFullReview": "2026-03-25",
       "sections": {
-        "ontario-rebates": { "label": "Ontario smart home rebate programs", "verified": "2026-03-25", "sensitivity": "medium" }
+        "ontario-rebates": {
+          "label": "Ontario smart home rebate programs",
+          "verified": "2026-03-25",
+          "sensitivity": "medium"
+        },
+        "module-14-section-1": {
+          "label": "Nest and Ecobee thermostat features and pricing",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-14-section-2": {
+          "label": "Ring, Nest, Arlo doorbell features and pricing",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        }
       }
     },
     "module-15": {
       "title": "Telehealth & Health Apps",
       "lastFullReview": "2026-03-25",
       "sections": {
-        "myhealth-ontario": { "label": "MyHealth Ontario app features", "verified": "2026-03-25", "sensitivity": "high" },
-        "ohip-coverage": { "label": "OHIP telehealth coverage details", "verified": "2026-03-25", "sensitivity": "high" }
+        "myhealth-ontario": {
+          "label": "MyHealth Ontario app features",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "ohip-coverage": {
+          "label": "OHIP telehealth coverage details",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-15-section-1": {
+          "label": "OHIP telehealth coverage details",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        },
+        "module-15-section-2": {
+          "label": "MyChart app features and availability",
+          "verified": "2026-03-25",
+          "sensitivity": "high"
+        }
       }
     },
     "module-2-5": {
