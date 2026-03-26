@@ -1,29 +1,18 @@
 /* ============================================
    Digital Confidence Centre
-   Analytics Consent Banner — Phase 6C
+   Analytics Consent Banner — Phase 6D
    ============================================
 
    GA4 Tag ID: G-RPH5H5BM52
 
-   INTEGRATION NOTE FOR FUTURE UPDATE:
-   The GA4 gtag('config', 'G-RPH5H5BM52') call is currently inline
-   in each HTML file's <head>. To honour consent properly, move that
-   call out of the <head> inline script and instead fire it only from
-   the grantAnalyticsConsent() function below.
-
-   Steps to complete the migration:
-     1. In each HTML file, change the GA4 inline script to load the
-        gtag library but NOT call gtag('config', ...).
-        Keep: gtag('js', new Date());
-        Remove: gtag('config', 'G-RPH5H5BM52');
-     2. Let this script call gtag('config', ...) after consent.
-     3. Set window['ga-disable-G-RPH5H5BM52'] = true BEFORE the
-        gtag library loads for users who have declined.
-
-   Until that migration is complete, this script:
-   - Does NOT fire a second pageview (avoiding duplicate hits).
-   - Sets the disable flag if consent is declined, which stops
-     all future GA4 events during the session.
+   Consent-gated GA4 (Phase 6D):
+   - The inline head script on every HTML page no longer loads GA4
+     automatically. It only fires GA4 if localStorage 'analytics_consent'
+     is already 'true'.
+   - New users (no stored value) see the banner. GA4 does not load
+     until they click "OK, got it".
+   - Users who click "No thanks" have consent stored as 'false' and
+     GA4 is disabled for the session.
    ============================================ */
 
 (function () {
@@ -64,19 +53,28 @@
   }
 
   /* ------------------------------------------
-     Grant consent: store preference and enable GA.
-     Does NOT fire a second pageview event.
+     Grant consent: store preference and load GA4
+     now (it wasn't loaded on page start for new users).
      ------------------------------------------ */
   function grantConsent() {
-    try {
-      localStorage.setItem(CONSENT_KEY, 'true');
-    } catch (e) {}
-    // If gtag is available, update consent state.
-    // The initial pageview has already fired from the inline head script.
-    if (typeof window.gtag === 'function') {
-      window.gtag('consent', 'update', {
-        'analytics_storage': 'granted'
-      });
+    try { localStorage.setItem(CONSENT_KEY, 'true'); } catch(e) {}
+    // Load and initialise GA4 now (it wasn't loaded on page start)
+    if (!window.gtagLoaded) {
+      window.gtagLoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      document.head.appendChild(s);
+      s.onload = function() {
+        if (typeof window.gtag === 'function') {
+          window.gtag('js', new Date());
+          window.gtag('config', GA_ID);
+          window.gtag('consent', 'update', { analytics_storage: 'granted' });
+        }
+      };
+    } else if (typeof window.gtag === 'function') {
+      // GA4 was already loaded (returning user path — shouldn't reach here but safe)
+      window.gtag('consent', 'update', { analytics_storage: 'granted' });
     }
   }
 
@@ -109,16 +107,26 @@
         '</p>' +
         '<div class="dc-consent-actions">' +
           '<button id="dc-consent-ok" class="dc-consent-btn-ok">OK, got it</button>' +
+          '<button id="dc-consent-no" class="dc-consent-btn-no">No thanks</button>' +
         '</div>' +
       '</div>';
 
     document.body.appendChild(banner);
 
-    /* Bind button */
+    /* Bind OK button */
     var okBtn = document.getElementById('dc-consent-ok');
     if (okBtn) {
       okBtn.addEventListener('click', function () {
         grantConsent();
+        removeBanner(banner);
+      });
+    }
+
+    /* Bind No thanks button */
+    var noBtn = document.getElementById('dc-consent-no');
+    if (noBtn) {
+      noBtn.addEventListener('click', function() {
+        declineConsent();
         removeBanner(banner);
       });
     }

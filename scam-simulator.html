@@ -35,13 +35,27 @@
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPH5H5BM52"></script>
   <script>
+    // Consent-gated GA4 — only initialises if user has granted consent
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-RPH5H5BM52');
+    (function(){
+      var consent = null;
+      try { consent = localStorage.getItem('analytics_consent'); } catch(e) {}
+      if (consent === 'true') {
+        // Consent already given — load GA4 normally
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RPH5H5BM52';
+        document.head.appendChild(s);
+        gtag('js', new Date());
+        gtag('config', 'G-RPH5H5BM52');
+      } else if (consent === 'false') {
+        // Explicitly declined — set disable flag
+        window['ga-disable-G-RPH5H5BM52'] = true;
+      }
+      // If null (not yet decided) — do nothing. analytics-consent.js will handle it.
+    })();
   </script>
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
