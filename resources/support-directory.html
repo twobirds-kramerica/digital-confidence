@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="A curated directory of free Canadian digital literacy and senior support organisations — including phone numbers, websites, and local resources in Ontario.">
+  <meta name="keywords" content="digital literacy seniors Canada, senior tech support Ontario, Connected Canadians, Cyber-Seniors, Canadian Anti-Fraud Centre, free tech help seniors">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/resources/support-directory.html">
+  <title>Canadian Senior Support Directory — Digital Confidence Centre</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/accessibility.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <meta name="theme-color" content="#1565C0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Digital Confidence">
+  <meta property="og:title" content="Canadian Senior Support Directory — Digital Confidence Centre">
+  <meta property="og:description" content="Free Canadian organisations that help seniors with technology — phone numbers, websites, and local resources in Ontario.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://twobirds-kramerica.github.io/digital-confidence/resources/support-directory.html">
+  <meta name="author" content="Digital Confidence Centre">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Canadian Senior Support Directory",
+    "description": "A curated directory of free Canadian digital literacy and senior support organisations.",
+    "url": "https://twobirds-kramerica.github.io/digital-confidence/resources/support-directory.html",
+    "publisher": {"@type": "Organization", "name": "Digital Confidence Centre"},
+    "inLanguage": "en-CA",
+    "datePublished": "2026-03-26",
+    "dateModified": "2026-03-26"
+  }
+  </script>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPH5H5BM52"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RPH5H5BM52');
+  </script>
+  <script src="../js/analytics-consent.js" defer></script>
+  <style>
+    /* ── Directory card ───────────────────────────────────────── */
+    .directory-card {
+      background: var(--bg-card, #fff);
+      border: 1px solid var(--border-light, #e3eaf5);
+      border-radius: 14px;
+      padding: 1.5rem 1.5rem 1.25rem;
+      margin: 1.25rem 0;
+      box-shadow: 0 2px 8px rgba(21,101,192,0.07);
+      position: relative;
+    }
+
+    .directory-card h2 {
+      font-size: 1.25rem;
+      color: var(--accent-primary, #1565C0);
+      margin: 0 0 0.5rem 0;
+      padding-right: 5rem; /* room for cost badge */
+      border: none;
+    }
+
+    .directory-card .org-description {
+      font-size: 1.05rem;
+      line-height: 1.65;
+      margin: 0 0 0.85rem 0;
+      color: var(--text-primary, #222);
+    }
+
+    .directory-card .contact-row {
+      margin: 0.3rem 0;
+      font-size: 1rem;
+      color: var(--text-primary, #222);
+    }
+
+    .directory-card .contact-row strong {
+      display: inline-block;
+      min-width: 5rem;
+    }
+
+    .directory-card .phone-link {
+      display: inline-block;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent-primary, #1565C0);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      margin-top: 0.2rem;
+    }
+
+    .directory-card .phone-link:hover,
+    .directory-card .phone-link:focus {
+      text-decoration: underline;
+    }
+
+    .directory-card .efficacy-note {
+      display: block;
+      font-style: italic;
+      font-size: 0.92rem;
+      color: var(--text-muted, #666);
+      margin: 0.6rem 0 0.85rem 0;
+    }
+
+    .directory-card .card-actions {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    /* Cost badge — positioned top-right of card */
+    .cost-badge {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      display: inline-block;
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .cost-badge.free {
+      background: #E8F5E9;
+      color: #2E7D32;
+      border: 1px solid #A5D6A7;
+    }
+
+    .cost-badge.paid {
+      background: #F5F5F5;
+      color: #616161;
+      border: 1px solid #BDBDBD;
+    }
+
+    /* Introductory hero strip */
+    .directory-hero {
+      background: linear-gradient(135deg, #1565C0 0%, #1976D2 100%);
+      color: #fff;
+      border-radius: 14px;
+      padding: 2rem 1.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .directory-hero h1 {
+      font-size: clamp(1.3rem, 4vw, 1.9rem);
+      font-weight: 700;
+      color: #fff;
+      border: none;
+      margin: 0 0 0.5rem 0;
+      line-height: 1.3;
+    }
+
+    .directory-hero p {
+      font-size: 1.05rem;
+      opacity: 0.92;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Section dividers */
+    .directory-section-heading {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-muted, #555);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 2.25rem 0 0.5rem 0;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--border-light, #e3eaf5);
+    }
+
+    /* Responsive: stack address on small screens */
+    @media (max-width: 480px) {
+      .directory-card h2 {
+        padding-right: 0;
+        margin-bottom: 0.9rem;
+      }
+      .cost-badge {
+        position: static;
+        display: inline-block;
+        margin-bottom: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <noscript>
+    <div style="padding:20px;font-family:Georgia,serif;max-width:800px;margin:0 auto">
+      <h1>Canadian Senior Support Directory — Digital Confidence Centre</h1>
+      <p>Free organisations and services to help Canadian seniors with technology.</p>
+      <nav>
+        <a href="../index.html">Home</a> |
+        <a href="../resources.html">Resources</a>
+      </nav>
+    </div>
+  </noscript>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">Support Directory</span>
+    <span></span>
+  </div>
+
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">&#10005;</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Your learning journey</p>
+    </div>
+    <nav>
+      <a href="../index.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a href="../digital-literacy-101.html"><span class="nav-icon">📖</span><span class="nav-label">Foundations</span></a>
+      <a href="../module-1.html"><span class="nav-icon">🪂</span><span class="nav-label">1. The Escape Hatch</span></a>
+      <a href="../module-2.html"><span class="nav-icon">🛡️</span><span class="nav-label">2. Security Shield</span></a>
+      <a href="../module-3.html"><span class="nav-icon">🔑</span><span class="nav-label">3. Passwords</span></a>
+      <a href="../module-4.html"><span class="nav-icon">📱</span><span class="nav-label">4. App Store Safety</span></a>
+      <a href="../module-5.html"><span class="nav-icon">✉️</span><span class="nav-label">5. Email &amp; Messages</span></a>
+      <a href="../module-6.html"><span class="nav-icon">🏦</span><span class="nav-label">6. Banking</span></a>
+      <a href="../module-7.html"><span class="nav-icon">🎨</span><span class="nav-label">7. Photos &amp; Memories</span></a>
+      <a href="../module-8.html"><span class="nav-icon">👨‍👩‍👧</span><span class="nav-label">8. Stay Connected</span></a>
+      <a href="../module-9.html"><span class="nav-icon">🤖</span><span class="nav-label">9. Understanding AI</span></a>
+      <a href="../module-10.html"><span class="nav-icon">🛒</span><span class="nav-label">10. Grocery &amp; Delivery</span></a>
+      <a href="../module-11.html"><span class="nav-icon">🚗</span><span class="nav-label">11. Ride-Sharing</span></a>
+      <a href="../module-visual-ai.html"><span class="nav-icon">📷</span><span class="nav-label">Show Me! (Bonus)</span></a>
+      <a href="../family-setup.html"><span class="nav-icon">👪</span><span class="nav-label">Set Up for a Loved One</span></a>
+      <a href="../resources.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
+      <a href="../print-centre.html"><span class="nav-icon">🖨️</span><span class="nav-label">Print Centre</span></a>
+      <a href="../recommended-tools.html"><span class="nav-icon">⭐</span><span class="nav-label">Recommended Tools</span></a>
+      <a href="../scam-simulator.html"><span class="nav-icon">🎯</span><span class="nav-label">Scam Simulator</span></a>
+      <div class="sidebar-a11y-section">
+        <p class="sidebar-a11y-title">Text Size</p>
+        <div class="sidebar-font-row">
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false" style="font-size:1rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+        </div>
+        <p class="sidebar-a11y-title">Screen Colour</p>
+        <div class="sidebar-theme-row">
+          <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+        </div>
+      </div>
+      <p class="sidebar-a11y-title">Reading Comfort</p>
+      <div class="font-option">
+        <label class="toggle-label" for="dyslexic-font-toggle">
+          <input type="checkbox" id="dyslexic-font-toggle" />
+          <span class="toggle-switch"></span>
+          <span class="toggle-text">
+            <strong>Dyslexia-Friendly Font</strong>
+            <small>Easier to read for some people</small>
+          </span>
+        </label>
+      </div>
+      <div class="settings-divider"></div>
+      <a href="#" class="settings-link" aria-label="Open settings"><span class="nav-icon">⚙️</span><span class="nav-label">My Settings</span></a>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a> &rsaquo; <a href="../resources.html">Resources</a> &rsaquo; <span>Support Directory</span>
+      </nav>
+
+      <div class="directory-hero">
+        <h1>Canadian Senior Support Directory</h1>
+        <p>Real people and real programmes that help Canadian seniors get confident with technology. Every organisation listed here is free (or free with an Apple device), trusted, and senior-friendly.</p>
+      </div>
+
+      <!-- ── NATIONAL PROGRAMMES ──────────────────────────────── -->
+      <h2 class="directory-section-heading">National Programmes</h2>
+
+      <!-- 1. Connected Canadians -->
+      <div class="directory-card">
+        <span class="cost-badge free">Free</span>
+        <h2>Connected Canadians</h2>
+        <p class="org-description">Free one-on-one tech support and digital literacy programmes for Canadian seniors. Friendly, patient volunteers help you with your device at your own pace — no jargon, no rush.</p>
+        <div class="contact-row">
+          <strong>Phone:</strong>
+          <a class="phone-link" href="tel:+18442962622">1-844-296-2622</a>
+        </div>
+        <div class="contact-row">
+          <strong>Website:</strong>
+          <a href="https://connectedcanadians.ca" target="_blank" rel="noopener noreferrer">connectedcanadians.ca</a>
+        </div>
+        <em class="efficacy-note">Trusted by thousands of Canadian seniors for friendly, patient tech help</em>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="tel:+18442962622">Call now</a>
+          <a class="btn btn-secondary" href="https://connectedcanadians.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
+        </div>
+      </div>
+
+      <!-- 2. Cyber-Seniors -->
+      <div class="directory-card">
+        <span class="cost-badge free">Free</span>
+        <h2>Cyber-Seniors</h2>
+        <p class="org-description">Volunteer-run tech mentoring that connects seniors with trained student volunteers. Get one-on-one help with your smartphone, tablet, email, video calls, and more.</p>
+        <div class="contact-row">
+          <strong>Phone:</strong>
+          <a class="phone-link" href="tel:+18442173057">1-844-217-3057</a>
+        </div>
+        <div class="contact-row">
+          <strong>Website:</strong>
+          <a href="https://cyberseniors.org" target="_blank" rel="noopener noreferrer">cyberseniors.org</a>
+        </div>
+        <em class="efficacy-note">Recommended by libraries and senior centres across Canada</em>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="tel:+18442173057">Call now</a>
+          <a class="btn btn-secondary" href="https://cyberseniors.org" target="_blank" rel="noopener noreferrer">Visit website</a>
+        </div>
+      </div>
+
+      <!-- 3. Stand Against Scams -->
+      <div class="directory-card">
+        <span class="cost-badge free">Free</span>
+        <h2>Stand Against Scams</h2>
+        <p class="org-description">Canada's national campaign to protect Canadians from fraud and scams. Report a scam you've encountered, get prevention tips, and learn how to recognise common tricks before they catch you off guard.</p>
+        <div class="contact-row">
+          <strong>Website:</strong>
+          <a href="https://standagainstscams.ca" target="_blank" rel="noopener noreferrer">standagainstscams.ca</a>
+        </div>
+        <em class="efficacy-note">Run by Canada's leading fraud prevention organisations</em>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://standagainstscams.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
+        </div>
+      </div>
+
+      <!-- 4. Canadian Anti-Fraud Centre -->
+      <div class="directory-card">
+        <span class="cost-badge free">Free</span>
+        <h2>Canadian Anti-Fraud Centre</h2>
+        <p class="org-description">Report phone scams, email fraud, identity theft, and investment fraud. This is a Government of Canada resource — the official place to report fraud and get verified prevention advice.</p>
+        <div class="contact-row">
+          <strong>Phone:</strong>
+          <a class="phone-link" href="tel:+18884958501">1-888-495-8501</a>
+        </div>
+        <div class="contact-row">
+          <strong>Website:</strong>
+          <a href="https://antifraudcentre-centreantifraude.ca" target="_blank" rel="noopener noreferrer">antifraudcentre-centreantifraude.ca</a>
+        </div>
+        <em class="efficacy-note">The official Government of Canada fraud reporting centre</em>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="tel:+18884958501">Call now</a>
+          <a class="btn btn-secondary" href="https://antifraudcentre-centreantifraude.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
+        </div>
+      </div>
+
+      <!-- 5. ISED Canada -->
+      <div class="directory-card">
+        <span class="cost-badge free">Free</span>
+        <h2>ISED Canada — Digital Literacy Resources</h2>
+        <p class="org-description">Government of Canada resources for building digital skills, including guides designed for seniors and newcomers. Plain-language tools and links to funded programmes across the country.</p>
+        <div class="contact-row">
+          <strong>Website:</strong>
+          <a href="https://ised-isde.canada.ca/site/digital-literacy/en" target="_blank" rel="noopener noreferrer">ised-isde.canada.ca</a>
+        </div>
+        <em class="efficacy-note">Official Government of Canada digital skills programming</em>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://ised-isde.canada.ca/site/digital-literacy/en" target="_blank" rel="noopener noreferrer">Visit website</a>
+        </div>
+      </div>
+
+      <!-- ── ONTARIO PROGRAMMES ──────────────────────────────── -->
+      <h2 class="directory-section-heading">Ontario Programmes</h2>
+
+      <!-- 6. Ontario 2-1-1 -->
+      <div class="directory-card">
+        <span class="cost-badge free">Free</span>
+        <h2>Ontario 2-1-1</h2>
+        <p class="org-description">Free confidential helpline connecting Ontarians to local social and community services, including digital literacy support. Just dial 2-1-1 on any phone — no area code needed.</p>
+        <div class="contact-row">
+          <strong>Phone:</strong>
+          <a class="phone-link" href="tel:211">2-1-1</a>
+        </div>
+        <div class="contact-row">
+          <strong>Website:</strong>
+          <a href="https://211ontario.ca" target="_blank" rel="noopener noreferrer">211ontario.ca</a>
+        </div>
+        <em class="efficacy-note">Available 24/7 across Ontario — just dial 2-1-1</em>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="tel:211">Call 2-1-1</a>
+          <a class="btn btn-secondary" href="https://211ontario.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
+        </div>
+      </div>
+
+      <!-- ── LOCAL — LONDON & ST. THOMAS ─────────────────────── -->
+      <h2 class="directory-section-heading">Local — London &amp; St. Thomas</h2>
+
+      <!-- 7. London Public Library -->
+      <div class="directory-card">
+        <span class="cost-badge free">Free</span>
+        <h2>London Public Library — Digital Literacy</h2>
+        <p class="org-description">Free digital help sessions, device workshops, and one-on-one tech appointments at branches across London, Ontario. Drop in without an appointment for quick help, or book a longer session.</p>
+        <div class="contact-row">
+          <strong>Phone:</strong>
+          <a class="phone-link" href="tel:+15196614600">519-661-4600</a>
+        </div>
+        <div class="contact-row">
+          <strong>Website:</strong>
+          <a href="https://londonpubliclibrary.ca" target="_blank" rel="noopener noreferrer">londonpubliclibrary.ca</a>
+        </div>
+        <em class="efficacy-note">Free tech help at your local branch — no appointment needed for drop-in sessions</em>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="tel:+15196614600">Call now</a>
+          <a class="btn btn-secondary" href="https://londonpubliclibrary.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
+        </div>
+      </div>
+
+      <!-- 8. St. Thomas Public Library -->
+      <div class="directory-card">
+        <span class="cost-badge free">Free</span>
+        <h2>St. Thomas Public Library</h2>
+        <p class="org-description">Digital literacy programmes and tech help for community members in St. Thomas and Elgin County. The friendly staff at 153 Curtis St are ready to help with your device — no question is too small.</p>
+        <div class="contact-row">
+          <strong>Address:</strong> 153 Curtis St, St. Thomas, ON N5P 3Z7
+        </div>
+        <div class="contact-row">
+          <strong>Phone:</strong>
+          <a class="phone-link" href="tel:+15196316050">519-631-6050</a>
+        </div>
+        <div class="contact-row">
+          <strong>Website:</strong>
+          <a href="https://stthomaspubliclibrary.ca" target="_blank" rel="noopener noreferrer">stthomaspubliclibrary.ca</a>
+        </div>
+        <em class="efficacy-note">Your local library — friendly staff ready to help with your device</em>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="tel:+15196316050">Call now</a>
+          <a class="btn btn-secondary" href="https://stthomaspubliclibrary.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
+        </div>
+      </div>
+
+      <!-- 9. Masonville Apple Store -->
+      <div class="directory-card">
+        <span class="cost-badge free">Free*</span>
+        <h2>Masonville Apple Store (London, ON)</h2>
+        <p class="org-description">Free one-on-one support for iPhone, iPad, and Mac at the Apple Store in Masonville Place. Book a Genius Bar appointment online for in-depth device help from Apple-certified technicians. <em>*Free with any Apple device.</em></p>
+        <div class="contact-row">
+          <strong>Address:</strong> 1680 Richmond St, London, ON N6G 3Y9 (Masonville Place)
+        </div>
+        <div class="contact-row">
+          <strong>Phone:</strong>
+          <a class="phone-link" href="tel:+18002752273">1-800-275-2273</a>
+        </div>
+        <div class="contact-row">
+          <strong>Website:</strong>
+          <a href="https://apple.com/ca/retail/masonvilleplace" target="_blank" rel="noopener noreferrer">apple.com/ca/retail/masonvilleplace</a>
+        </div>
+        <em class="efficacy-note">Expert help from Apple-certified technicians for your iPhone or iPad</em>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="tel:+18002752273">Call Apple Support</a>
+          <a class="btn btn-secondary" href="https://apple.com/ca/retail/masonvilleplace" target="_blank" rel="noopener noreferrer">Book Genius Bar</a>
+        </div>
+      </div>
+
+      <div class="confidence-check">
+        <span class="check-icon">💛</span>
+        <p>Every organisation on this page wants to help you. Do not be shy about reaching out — there are no silly questions, and everyone starts somewhere.</p>
+      </div>
+
+      <div class="module-nav">
+        <a href="../resources.html" class="btn btn-secondary">← Back to Resources</a>
+        <a href="../index.html" class="btn btn-primary">Back to Home</a>
+      </div>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-brand">Digital Confidence Centre</p>
+          <p class="footer-tagline">A free learning programme for Canadian seniors</p>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="../index.html">Home</a> |
+            <a href="../resources.html">Resources</a> |
+            <a href="index.html">Resource Articles</a> |
+            <a href="../print-centre.html">Print Centre</a> |
+            <a href="../recommended-tools.html">Recommended Tools</a> |
+            <a href="../faq.html">FAQ</a> |
+            <a href="../about.html">About</a> |
+            <a href="../privacy.html">Privacy Policy</a>
+          </nav>
+          <p class="footer-support">
+            Need help? Call <strong>Connected Canadians</strong> free:
+            <a href="tel:+18442962622">1-844-296-2622</a>
+          </p>
+          <p class="footer-copy">&copy; 2026 Two Birds. Made with care in Ontario, Canada.</p>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../js/app.js" defer></script>
+  <script src="../js/accessibility.js" defer></script>
+  <script src="../js/feedback-github.js" defer></script>
+  <script src="../js/settings.js" defer></script>
+</body>
+</html>
