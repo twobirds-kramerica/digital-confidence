@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Admin only — not indexed by search engines -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <title>Performance Dashboard — DCC Admin</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f7fa;
+      color: #1a1a1a;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .admin-header {
+      background: #0d2b4e;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .admin-header h1 {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    .admin-badge {
+      background: #ef5350;
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      letter-spacing: 0.06em;
+    }
+    .admin-notice {
+      background: #FFF3E0;
+      border-bottom: 2px solid #FF9800;
+      padding: 0.6rem 2rem;
+      font-size: 0.85rem;
+      color: #5D4037;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 3rem;
+    }
+    .loading-msg {
+      text-align: center;
+      padding: 3rem;
+      color: #888;
+      font-size: 1rem;
+    }
+    /* Section cards */
+    .dash-section {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+    .dash-section-header {
+      background: #f8f9fa;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .dash-section-header h2 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0d2b4e;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .section-icon { font-size: 1.1rem; }
+    .dash-section-body { padding: 1.25rem 1.5rem; }
+    /* Stats row */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .stat-box {
+      background: #f0f7ff;
+      border: 1px solid #BBDEFB;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .stat-box .stat-num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #1565C0;
+    }
+    .stat-box .stat-label {
+      font-size: 0.78rem;
+      color: #555;
+      margin-top: 0.2rem;
+    }
+    /* Tables */
+    .dash-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    .dash-table th {
+      background: #e8f0fe;
+      color: #0d2b4e;
+      font-weight: 700;
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      white-space: nowrap;
+    }
+    .dash-table td {
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid #f0f0f0;
+      vertical-align: top;
+    }
+    .dash-table tr:last-child td { border-bottom: none; }
+    .dash-table tr:hover td { background: #fafafa; }
+    /* Status badges */
+    .badge { display: inline-block; border-radius: 4px; padding: 0.15rem 0.5rem; font-size: 0.75rem; font-weight: 700; }
+    .badge-ok { background: #E8F5E9; color: #2E7D32; }
+    .badge-warn { background: #FFF8E1; color: #F57F17; }
+    .badge-missing { background: #FFEBEE; color: #B71C1C; }
+    .badge-assumed { background: #F3E5F5; color: #6A1B9A; }
+    /* Issues list */
+    .issue-list { list-style: none; padding: 0; }
+    .issue-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      padding: 0.3rem 0;
+      font-size: 0.88rem;
+      color: #444;
+      border-bottom: 1px solid #f5f5f5;
+    }
+    .issue-list li:last-child { border-bottom: none; }
+    .issue-dot { width: 6px; height: 6px; border-radius: 50%; background: #FF9800; flex-shrink: 0; margin-top: 0.35rem; }
+    /* Build log */
+    .build-entry {
+      background: #f9f9f9;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 0.9rem 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+    .build-entry .build-date {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #0d2b4e;
+      margin-bottom: 0.3rem;
+    }
+    .build-entry .build-phases {
+      font-size: 0.85rem;
+      color: #1565C0;
+      margin-bottom: 0.5rem;
+    }
+    .build-files {
+      font-size: 0.82rem;
+      color: #666;
+      font-family: monospace;
+      max-height: 80px;
+      overflow-y: auto;
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      padding: 0.4rem 0.6rem;
+    }
+    .next-actions-list { list-style: none; padding: 0; }
+    .next-actions-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      padding: 0.4rem 0;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .next-actions-list li:last-child { border-bottom: none; }
+    .action-num {
+      background: #1565C0;
+      color: #fff;
+      width: 1.3rem;
+      height: 1.3rem;
+      border-radius: 50%;
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .error-msg { background: #FFEBEE; border: 1px solid #FFCDD2; border-radius: 8px; padding: 1rem; color: #B71C1C; font-size: 0.9rem; }
+    @media (max-width: 600px) {
+      .admin-header { flex-direction: column; align-items: flex-start; }
+      .container { padding: 1rem; }
+      .dash-table { font-size: 0.8rem; }
+      .dash-table th, .dash-table td { padding: 0.4rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="admin-header">
+    <h1>Digital Confidence Centre — Performance Dashboard</h1>
+    <span class="admin-badge">ADMIN ONLY</span>
+  </div>
+
+  <div class="admin-notice">
+    Admin only — not indexed by search engines. Do not link this page from any public navigation.
+    Data loaded from <code>performance-data.json</code>.
+  </div>
+
+  <div class="container">
+    <div id="dashboard-content">
+      <div class="loading-msg">Loading performance data...</div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var dashEl = document.getElementById('dashboard-content');
+
+      function badge(val) {
+        if (val === true) return '<span class="badge badge-ok">Yes</span>';
+        if (val === false) return '<span class="badge badge-missing">Missing</span>';
+        if (val === 'assumed') return '<span class="badge badge-assumed">Assumed</span>';
+        return '<span class="badge badge-warn">' + val + '</span>';
+      }
+
+      function renderDashboard(data) {
+        var html = '';
+
+        // ---- Site Overview ----
+        var pc = data.page_counts;
+        html += '<div class="dash-section">';
+        html += '<div class="dash-section-header"><span class="section-icon">📊</span><h2>Site Overview</h2></div>';
+        html += '<div class="dash-section-body">';
+        html += '<div class="stats-row">';
+        var sections = ['modules','tools','resources','admin','beta','b2b','supporting'];
+        sections.forEach(function(s) {
+          if (pc[s]) {
+            html += '<div class="stat-box"><div class="stat-num">' + (pc[s].count || pc[s].pages.length) + '</div>';
+            html += '<div class="stat-label">' + s.charAt(0).toUpperCase() + s.slice(1) + ' pages</div></div>';
+          }
+        });
+        html += '<div class="stat-box" style="background:#e8f5e9;border-color:#A5D6A7;">';
+        html += '<div class="stat-num" style="color:#2E7D32;">' + (pc.total_approximate || '?') + '</div>';
+        html += '<div class="stat-label">Total pages (approx.)</div></div>';
+        html += '</div>';
+        html += '<p style="font-size:0.82rem;color:#888;margin-top:0.75rem;">Last build: <strong>' + (data._meta.last_build_date || 'Unknown') + '</strong> &bull; Schema v' + (data._meta.schema_version || '?') + '</p>';
+        html += '</div></div>';
+
+        // ---- SEO Checklist ----
+        html += '<div class="dash-section">';
+        html += '<div class="dash-section-header"><span class="section-icon">🔍</span><h2>SEO Checklist</h2></div>';
+        html += '<div class="dash-section-body">';
+        html += '<table class="dash-table"><thead><tr>';
+        html += '<th>Page</th><th>Title</th><th>Description</th><th>Canonical</th><th>OG Tags</th><th>JSON-LD</th><th>H1</th><th>Sitemap</th><th>Issues</th>';
+        html += '</tr></thead><tbody>';
+
+        var seo = data.seo_audit && data.seo_audit.pages ? data.seo_audit.pages : {};
+        Object.keys(seo).forEach(function(page) {
+          var p = seo[page];
+          var issues = (p.issues && p.issues.length) ? p.issues.join('; ') : '—';
+          html += '<tr>';
+          html += '<td><code>' + page + '</code></td>';
+          html += '<td>' + badge(p.title) + '</td>';
+          html += '<td>' + badge(p.meta_description) + '</td>';
+          html += '<td>' + badge(p.canonical) + '</td>';
+          html += '<td>' + badge(p.og_tags) + '</td>';
+          html += '<td>' + badge(p.json_ld) + '</td>';
+          html += '<td>' + badge(p.h1) + '</td>';
+          html += '<td>' + badge(p.sitemap_included) + '</td>';
+          html += '<td style="max-width:220px;font-size:0.78rem;color:#666;">' + issues + '</td>';
+          html += '</tr>';
+        });
+
+        html += '</tbody></table>';
+        html += '<p style="font-size:0.8rem;color:#888;margin-top:0.75rem;">SEO audit date: ' + (data.seo_audit.last_checked || 'Unknown') + '. ';
+        html += '<span class="badge badge-assumed">Assumed</span> = not individually verified this build.</p>';
+        html += '</div></div>';
+
+        // ---- Image Audit ----
+        html += '<div class="dash-section">';
+        html += '<div class="dash-section-header"><span class="section-icon">🖼️</span><h2>Image Audit</h2></div>';
+        html += '<div class="dash-section-body">';
+        html += '<table class="dash-table"><thead><tr>';
+        html += '<th>Page / Section</th><th>Est. Images</th><th>Alt Text</th><th>Lazy Load</th><th>Issues</th>';
+        html += '</tr></thead><tbody>';
+
+        var imgAudit = data.image_audit && data.image_audit.pages ? data.image_audit.pages : {};
+        Object.keys(imgAudit).forEach(function(page) {
+          var p = imgAudit[page];
+          var issues = (p.issues && p.issues.length) ? p.issues.join('; ') : '—';
+          html += '<tr>';
+          html += '<td><code>' + page + '</code></td>';
+          html += '<td>' + (p.estimated_images || p.estimated_images_per_module || '?') + '</td>';
+          html += '<td>' + badge(p.all_have_alt) + '</td>';
+          html += '<td>' + badge(p.lazy_loading) + '</td>';
+          html += '<td style="font-size:0.78rem;color:#666;">' + issues + '</td>';
+          html += '</tr>';
+        });
+
+        html += '</tbody></table>';
+        html += '<p style="font-size:0.8rem;color:#888;margin-top:0.75rem;">Image audit last updated: ' + (data.image_audit.last_checked || 'Unknown') + '.</p>';
+        html += '</div></div>';
+
+        // ---- Module Status ----
+        html += '<div class="dash-section">';
+        html += '<div class="dash-section-header"><span class="section-icon">📚</span><h2>Module Status</h2></div>';
+        html += '<div class="dash-section-body">';
+
+        var ms = data.module_status;
+        html += '<p style="font-size:0.85rem;color:#555;margin-bottom:1rem;">Completion tracking: ';
+        html += '<span class="badge badge-ok">' + (ms.completion_tracking_enabled ? 'Enabled' : 'Disabled') + '</span>';
+        html += ' via <strong>' + ms.tracking_method + '</strong></p>';
+
+        html += '<table class="dash-table"><thead><tr>';
+        html += '<th>Module</th><th>Status</th><th>Has Quiz</th><th>Has Feedback</th>';
+        html += '</tr></thead><tbody>';
+
+        Object.keys(ms.modules).forEach(function(mod) {
+          var m = ms.modules[mod];
+          html += '<tr>';
+          html += '<td>' + mod + '</td>';
+          html += '<td>' + badge(m.status === 'published') + '</td>';
+          html += '<td>' + badge(m.has_quiz) + '</td>';
+          html += '<td>' + badge(m.has_feedback) + '</td>';
+          html += '</tr>';
+        });
+
+        html += '</tbody></table>';
+        html += '</div></div>';
+
+        // ---- Build Log ----
+        html += '<div class="dash-section">';
+        html += '<div class="dash-section-header"><span class="section-icon">📋</span><h2>Build Log</h2></div>';
+        html += '<div class="dash-section-body">';
+
+        if (data.build_log && data.build_log.length) {
+          data.build_log.forEach(function(entry) {
+            html += '<div class="build-entry">';
+            html += '<div class="build-date">' + entry.date + '</div>';
+            if (entry.phases_completed) {
+              html += '<div class="build-phases">Phases: ' + entry.phases_completed.join(', ') + '</div>';
+            }
+            if (entry.files_added && entry.files_added.length) {
+              html += '<div class="build-files">' + entry.files_added.join(' &bull; ') + '</div>';
+            }
+            if (entry.notes) {
+              html += '<p style="font-size:0.82rem;color:#888;margin-top:0.4rem;">' + entry.notes + '</p>';
+            }
+            html += '</div>';
+          });
+        }
+
+        html += '</div></div>';
+
+        // ---- Next Actions ----
+        html += '<div class="dash-section">';
+        html += '<div class="dash-section-header"><span class="section-icon">✅</span><h2>Recommended Next Actions</h2></div>';
+        html += '<div class="dash-section-body">';
+        html += '<ol class="next-actions-list">';
+
+        if (data.next_actions && data.next_actions.length) {
+          data.next_actions.forEach(function(action, i) {
+            html += '<li><div class="action-num">' + (i + 1) + '</div><span>' + action + '</span></li>';
+          });
+        }
+
+        html += '</ol>';
+        html += '</div></div>';
+
+        dashEl.innerHTML = html;
+      }
+
+      fetch('performance-data.json')
+        .then(function(r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.json();
+        })
+        .then(function(data) {
+          renderDashboard(data);
+        })
+        .catch(function(err) {
+          dashEl.innerHTML = '<div class="error-msg">Could not load performance-data.json: ' + err.message + '<br><small>Make sure this page is served over HTTP/HTTPS (not opened as a local file).</small></div>';
+        });
+    })();
+  </script>
+</body>
+</html>

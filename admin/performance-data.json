@@ -1,0 +1,290 @@
+{
+  "_meta": {
+    "last_build_date": "2026-03-26",
+    "schema_version": "1.0",
+    "notes": "Performance audit data for Digital Confidence Centre. Update after each significant build."
+  },
+  "page_counts": {
+    "modules": {
+      "count": 15,
+      "pages": [
+        "module-1.html", "module-2.html", "module-2-5.html", "module-3.html",
+        "module-4.html", "module-5.html", "module-6.html", "module-7.html",
+        "module-8.html", "module-9.html", "module-10.html", "module-11.html",
+        "module-12.html", "module-13.html", "module-14.html", "module-15.html",
+        "module-visual-ai.html"
+      ]
+    },
+    "tools": {
+      "count": 8,
+      "pages": [
+        "scam-simulator.html",
+        "final-quiz.html",
+        "glossary.html",
+        "recommended-tools.html",
+        "print-centre.html",
+        "family-setup.html",
+        "digital-literacy-101.html",
+        "search-guide.html"
+      ]
+    },
+    "resources": {
+      "count": 7,
+      "pages": [
+        "resources.html",
+        "resources/index.html",
+        "resources/digital-safety-seniors-ontario.html",
+        "resources/how-to-spot-scams-canada.html",
+        "resources/ipad-basics-seniors.html",
+        "resources/online-banking-safety-canada.html",
+        "resources/video-calling-grandchildren.html",
+        "resources/ai-tools-seniors.html"
+      ]
+    },
+    "admin": {
+      "count": 5,
+      "pages": [
+        "admin/performance.html",
+        "admin/performance-data.json",
+        "admin/beta-analytics.html",
+        "admin/feedback-review.html",
+        "admin/user-journey-dashboard.html"
+      ]
+    },
+    "beta": {
+      "count": 5,
+      "pages": [
+        "beta/beta-landing.html",
+        "beta/beta-confirmation.html",
+        "beta/beta-guide.html",
+        "beta/beta-survey.html",
+        "beta/feedback-tracking.html",
+        "beta/welcome-email.html"
+      ]
+    },
+    "b2b": {
+      "count": 3,
+      "pages": [
+        "b2b/index.html",
+        "b2b/roi-calculator.html",
+        "b2b/case-study-template.html"
+      ]
+    },
+    "supporting": {
+      "count": 8,
+      "pages": [
+        "index.html",
+        "about.html",
+        "faq.html",
+        "privacy.html",
+        "whats-coming.html",
+        "sitemap.xml",
+        "robots.txt",
+        "manifest.json"
+      ]
+    },
+    "total_approximate": 51
+  },
+  "seo_audit": {
+    "last_checked": "2026-03-26",
+    "pages": {
+      "index.html": {
+        "title": true,
+        "meta_description": true,
+        "canonical": true,
+        "og_tags": true,
+        "json_ld": true,
+        "h1": true,
+        "sitemap_included": true,
+        "issues": []
+      },
+      "module-1.html": {
+        "title": true,
+        "meta_description": "assumed",
+        "canonical": "assumed",
+        "og_tags": "assumed",
+        "json_ld": "assumed",
+        "h1": true,
+        "sitemap_included": true,
+        "issues": ["Verify meta_description present — not individually audited this build"]
+      },
+      "resources/index.html": {
+        "title": true,
+        "meta_description": true,
+        "canonical": true,
+        "og_tags": false,
+        "json_ld": false,
+        "h1": true,
+        "sitemap_included": false,
+        "issues": ["Add to sitemap.xml", "Add OG tags", "Add Article JSON-LD"]
+      },
+      "resources/digital-safety-seniors-ontario.html": {
+        "title": true,
+        "meta_description": true,
+        "canonical": true,
+        "og_tags": false,
+        "json_ld": true,
+        "h1": true,
+        "sitemap_included": false,
+        "issues": ["Add to sitemap.xml", "Add OG/Twitter meta tags"]
+      },
+      "resources/how-to-spot-scams-canada.html": {
+        "title": true,
+        "meta_description": true,
+        "canonical": true,
+        "og_tags": false,
+        "json_ld": true,
+        "h1": true,
+        "sitemap_included": false,
+        "issues": ["Add to sitemap.xml", "Add OG/Twitter meta tags"]
+      },
+      "resources/ipad-basics-seniors.html": {
+        "title": true,
+        "meta_description": true,
+        "canonical": true,
+        "og_tags": false,
+        "json_ld": true,
+        "h1": true,
+        "sitemap_included": false,
+        "issues": ["Add to sitemap.xml", "Add OG/Twitter meta tags"]
+      },
+      "resources/online-banking-safety-canada.html": {
+        "title": true,
+        "meta_description": true,
+        "canonical": true,
+        "og_tags": false,
+        "json_ld": true,
+        "h1": true,
+        "sitemap_included": false,
+        "issues": ["Add to sitemap.xml", "Add OG/Twitter meta tags"]
+      },
+      "resources/video-calling-grandchildren.html": {
+        "title": true,
+        "meta_description": true,
+        "canonical": true,
+        "og_tags": false,
+        "json_ld": true,
+        "h1": true,
+        "sitemap_included": false,
+        "issues": ["Add to sitemap.xml", "Add OG/Twitter meta tags"]
+      },
+      "resources/ai-tools-seniors.html": {
+        "title": true,
+        "meta_description": true,
+        "canonical": true,
+        "og_tags": false,
+        "json_ld": true,
+        "h1": true,
+        "sitemap_included": false,
+        "issues": ["Add to sitemap.xml", "Add OG/Twitter meta tags"]
+      },
+      "b2b/index.html": {
+        "title": true,
+        "meta_description": true,
+        "canonical": false,
+        "og_tags": false,
+        "json_ld": false,
+        "h1": true,
+        "sitemap_included": false,
+        "issues": ["Add canonical URL", "Add to sitemap.xml", "Add OG tags"]
+      },
+      "beta/beta-landing.html": {
+        "title": true,
+        "meta_description": true,
+        "canonical": false,
+        "og_tags": false,
+        "json_ld": false,
+        "h1": true,
+        "sitemap_included": false,
+        "issues": ["noindex not set — add if recruitment is closed", "Add canonical URL"]
+      }
+    }
+  },
+  "image_audit": {
+    "last_checked": "2026-03-26",
+    "notes": "Image count estimates per major page. Full audit pending.",
+    "pages": {
+      "index.html": {
+        "estimated_images": 3,
+        "all_have_alt": "assumed",
+        "all_have_dimensions": "assumed",
+        "lazy_loading": true
+      },
+      "module-1.html through module-15.html": {
+        "estimated_images_per_module": "2-5",
+        "all_have_alt": "assumed",
+        "lazy_loading": "assumed",
+        "issues": ["Full image audit needed per module page"]
+      },
+      "b2b/index.html": {
+        "estimated_images": 0,
+        "issues": []
+      },
+      "resources/": {
+        "estimated_images": 0,
+        "issues": ["Consider adding hero images to resource articles for OG social sharing"]
+      }
+    }
+  },
+  "module_status": {
+    "completion_tracking_enabled": true,
+    "tracking_method": "localStorage",
+    "modules": {
+      "module-1": { "status": "published", "has_quiz": true, "has_feedback": true },
+      "module-2": { "status": "published", "has_quiz": true, "has_feedback": true },
+      "module-2-5": { "status": "published", "has_quiz": false, "has_feedback": true },
+      "module-3": { "status": "published", "has_quiz": true, "has_feedback": true },
+      "module-4": { "status": "published", "has_quiz": true, "has_feedback": true },
+      "module-5": { "status": "published", "has_quiz": true, "has_feedback": true },
+      "module-6": { "status": "published", "has_quiz": true, "has_feedback": true },
+      "module-7": { "status": "published", "has_quiz": true, "has_feedback": true },
+      "module-8": { "status": "published", "has_quiz": true, "has_feedback": true },
+      "module-9": { "status": "published", "has_quiz": true, "has_feedback": true },
+      "module-10": { "status": "published", "has_quiz": "unknown", "has_feedback": true },
+      "module-11": { "status": "published", "has_quiz": "unknown", "has_feedback": true },
+      "module-12": { "status": "published", "has_quiz": "unknown", "has_feedback": true },
+      "module-13": { "status": "published", "has_quiz": "unknown", "has_feedback": true },
+      "module-14": { "status": "published", "has_quiz": "unknown", "has_feedback": true },
+      "module-15": { "status": "published", "has_quiz": "unknown", "has_feedback": true },
+      "module-visual-ai": { "status": "published", "has_quiz": false, "has_feedback": true }
+    }
+  },
+  "build_log": [
+    {
+      "date": "2026-03-26",
+      "phases_completed": ["Phase 8", "Phase 9", "Phase 12", "Phase 13"],
+      "files_added": [
+        "beta/beta-landing.html",
+        "beta/beta-confirmation.html",
+        "beta/beta-guide.html",
+        "b2b/index.html",
+        "b2b/roi-calculator.html",
+        "b2b/case-study-template.html",
+        "resources/index.html",
+        "resources/digital-safety-seniors-ontario.html",
+        "resources/how-to-spot-scams-canada.html",
+        "resources/ipad-basics-seniors.html",
+        "resources/online-banking-safety-canada.html",
+        "resources/video-calling-grandchildren.html",
+        "resources/ai-tools-seniors.html",
+        "admin/performance-data.json",
+        "admin/performance.html"
+      ],
+      "files_modified": ["index.html"],
+      "notes": "Four phases built in single session. Sitemap.xml needs updating for new pages."
+    },
+    {
+      "date": "2026-03-25",
+      "phases_completed": ["Phase 6", "Phase 7"],
+      "notes": "Performance optimisations, DNS prefetch, lazy loading, privacy fixes."
+    }
+  ],
+  "next_actions": [
+    "Update sitemap.xml with all new /resources/, /b2b/, and /beta/ pages",
+    "Add OG/Twitter meta tags to all new pages",
+    "Add canonical URLs to b2b pages",
+    "Verify image alt text on all module pages",
+    "Consider adding hero images to /resources/ articles for social sharing",
+    "Export Formspree feedback CSV (monthly reminder)"
+  ]
+}
