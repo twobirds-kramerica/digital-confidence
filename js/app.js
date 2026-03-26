@@ -15,11 +15,19 @@ function initSidebar() {
   var overlay = document.querySelector('.sidebar-overlay');
   var closeBtn = document.querySelector('.sidebar-close');
 
+  /* Track the active focus trap so we can release it on close */
+  var activeTrapRelease = null;
+
   if (menuBtn) {
     menuBtn.addEventListener('click', function () {
+      var trigger = document.activeElement;
       sidebar.classList.add('open');
       overlay.classList.add('show');
       document.body.style.overflow = 'hidden';
+      /* Trap focus inside the sidebar panel */
+      if (typeof trapFocus === 'function') {
+        activeTrapRelease = trapFocus(sidebar, trigger);
+      }
     });
   }
 
@@ -27,6 +35,11 @@ function initSidebar() {
     sidebar.classList.remove('open');
     overlay.classList.remove('show');
     document.body.style.overflow = '';
+    /* Release focus trap and restore focus to the triggering element */
+    if (activeTrapRelease) {
+      activeTrapRelease();
+      activeTrapRelease = null;
+    }
   }
 
   if (closeBtn) {

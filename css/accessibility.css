@@ -29,10 +29,24 @@
 [data-font-size="xl"] h2 { font-size: 1.9rem; }
 [data-font-size="xl"] h3 { font-size: 1.5rem; }
 
-/* Focus indicators (enhanced) */
+/* Focus indicators — keyboard users only (focus-visible) */
+/* Remove the browser default for mouse/touch users */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Clear, branded outline for keyboard navigation */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[type="checkbox"]:focus-visible,
+[tabindex]:focus-visible,
 *:focus-visible {
-  outline: 3px solid var(--accent-primary);
-  outline-offset: 3px;
+  outline: 3px solid #1565C0;
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 /* Skip to content link */
@@ -54,14 +68,13 @@
   top: 0;
 }
 
-/* Reduced motion */
+/* Reduced motion — respect user OS setting */
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-  html {
-    scroll-behavior: auto;
+    scroll-behavior: auto !important;
   }
 }
 
@@ -104,6 +117,13 @@
   margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
+}
+
+/* Dyslexia-friendly font — toggled via .dyslexic-font class on <html> or <body> */
+.dyslexic-font body,
+html.dyslexic-font body {
+  font-family: 'OpenDyslexic', 'Comic Sans MS', cursive !important;
 }
