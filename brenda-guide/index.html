@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<!--
+  Brenda's Guide — Digital Confidence Centre
+  Standalone printable digital literacy guide for seniors aged 70+
+  iOS only. Canadian English. No sidebar nav. Print-friendly.
+-->
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Brenda's personal digital literacy guide — plain-language iPad help for seniors in Southwestern Ontario. Printable, iOS-only, scam awareness included.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="author" content="Digital Confidence Centre">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/brenda-guide/index.html">
+  <title>Brenda's Guide — Digital Confidence Centre</title>
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#1565C0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Brenda's Guide">
+  <!-- Google Analytics -->
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPH5H5BM52"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RPH5H5BM52');
+  </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+  <style>
+    /* Brenda Guide — Standalone Stylesheet */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      font-size: 20px;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #fafafa;
+      font-family: Georgia, 'Times New Roman', serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    h1 { font-size: 2em; margin: 0 0 4px; }
+    h2.section-title {
+      font-size: 1.8em;
+      color: #1565C0;
+      border-bottom: 3px solid #1565C0;
+      padding-bottom: 8px;
+      margin: 40px 0 20px;
+      page-break-before: always;
+    }
+    h3 { font-size: 1.3em; margin: 24px 0 12px; }
+    h4 { font-size: 1.1em; }
+
+    p { margin: 0 0 16px; }
+
+    .guide-section { margin-bottom: 48px; }
+
+    /* Top bar */
+    .top-bar {
+      background: #1565C0;
+      color: white;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9em;
+      margin: 0 -20px 32px;
+    }
+    .top-bar a { color: #a0d4ff; text-decoration: none; }
+    .top-bar a:hover { text-decoration: underline; }
+    .top-bar-title { font-weight: bold; font-size: 1em; }
+
+    .print-btn {
+      background: white;
+      color: #1565C0;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
+    .print-btn:hover { background: #e8f4fd; }
+
+    /* Three second rule */
+    .three-second-rule {
+      background: #fff3cd;
+      border: 3px solid #e6ac00;
+      border-radius: 12px;
+      padding: 24px;
+      margin: 24px 0;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+    .three-second-rule strong {
+      font-size: 1.2em;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    /* Warning cards */
+    .warning-card {
+      border: 2px solid #dc3545;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 16px 0;
+      background: #fff5f5;
+    }
+    .warning-card::before {
+      content: "⚠️  ";
+      font-size: 1.3em;
+    }
+
+    /* Success states */
+    .success-state {
+      background: #d4edda;
+      border-left: 5px solid #28a745;
+      padding: 12px 16px;
+      margin: 8px 0 16px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.95em;
+    }
+    .success-state::before {
+      content: "✓ SUCCESS: ";
+      font-weight: bold;
+      color: #155724;
+    }
+
+    /* Try it now */
+    .try-it {
+      background: #e8f4fd;
+      border: 2px solid #1565C0;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .try-it::before {
+      content: "👉 Try it now: ";
+      font-weight: bold;
+      color: #1565C0;
+    }
+
+    /* Resource cards */
+    .resource-card {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 16px 0;
+      background: white;
+    }
+    .resource-card h3 { margin-top: 0; color: #1565C0; }
+
+    .phone-number {
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #1a1a1a;
+      display: block;
+      margin: 8px 0;
+    }
+
+    /* Confidence check */
+    .confidence-check {
+      background: #1565C0;
+      color: white;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 32px 0 0;
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+
+    /* Lists */
+    ol li, ul li { margin-bottom: 12px; }
+    ol { padding-left: 24px; }
+    ul { padding-left: 24px; }
+
+    /* Step blocks */
+    .step-block {
+      margin: 20px 0;
+      padding-left: 8px;
+    }
+    .step-label {
+      font-weight: bold;
+      font-size: 1.05em;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+
+    /* Final message */
+    .final-message {
+      background: #f0f7ff;
+      border: 2px solid #1565C0;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 40px 0;
+      text-align: center;
+      font-size: 1.1em;
+      line-height: 1.7;
+    }
+
+    /* Print styles */
+    @media print {
+      .top-bar, .print-btn, .no-print { display: none !important; }
+      body {
+        font-size: 14pt;
+        color: black;
+        background: white;
+        max-width: 100%;
+        padding: 0;
+      }
+      h1 { font-size: 20pt; }
+      h2.section-title {
+        page-break-before: always;
+        color: black;
+        border-color: black;
+        font-size: 18pt;
+      }
+      h3 { font-size: 14pt; }
+      .confidence-check {
+        background: #eee;
+        color: black;
+        border: 2px solid #999;
+      }
+      .three-second-rule, .warning-card, .try-it { page-break-inside: avoid; }
+      .resource-card { page-break-inside: avoid; border: 1px solid #999; }
+      a { color: black; text-decoration: none; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #666; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <a href="../index.html">← Back to Home</a>
+    <span class="top-bar-title">Digital Confidence Centre — Brenda's Guide</span>
+    <button class="print-btn" onclick="window.print()">🖨️ Print this guide</button>
+  </div>
+
+  <h1>Brenda's Personal iPad Guide</h1>
+  <p>This guide was written just for you, Brenda. Take your time. Read one section at a time. There is no hurry.</p>
+
+  <main>
+
+    <!-- SECTION 1 -->
+    <section class="guide-section" id="section-1">
+      <h2 class="section-title">Section 1: Your Device is Safe</h2>
+      <div class="section-content">
+
+        <p>Your iPad was designed to be forgiving. Nothing you tap by mistake will permanently break it. The engineers at Apple spent years making sure that everyday mistakes do not cause lasting damage.</p>
+
+        <p>The worst that can happen is you end up on a screen you did not mean to open — and there is always a way back. Your iPad is not fragile. You cannot "break the internet" by tapping the wrong thing.</p>
+
+        <p>The <strong>Home Bar</strong> (the thin line at the very bottom of the screen) or the <strong>Home Button</strong> (the round button at the bottom on older iPads) is your escape hatch. Press it or swipe up from the bottom at any time to return to safety. Think of it as the "take me home" button — it is always there for you.</p>
+
+        <div class="three-second-rule">
+          <strong>The 3-Second Rule</strong>
+          When something unexpected appears on your screen — STOP. Take a breath. Look at it for 3 seconds before you do anything. Most scary-looking messages are completely harmless. Do not tap anything until you have taken those 3 seconds to look at it calmly.
+        </div>
+
+        <h3>How to Get Back to Safety</h3>
+        <p>No matter what is on your screen, you can always return to your home screen — the familiar page with all your colourful app icons. Here is how:</p>
+
+        <div class="step-block">
+          <p class="step-label">Step 1</p>
+          <p>Look for the thin bar at the very bottom of your screen — it may just be a small line, like a dash.</p>
+        </div>
+        <div class="step-block">
+          <p class="step-label">Step 2</p>
+          <p>Swipe upward from the very bottom edge of the screen — start your finger right at the edge and move it toward the middle. (Or press the round button at the bottom if your iPad has one.)</p>
+        </div>
+        <div class="step-block">
+          <p class="step-label">Step 3</p>
+          <p>Your home screen with your app icons will appear.</p>
+        </div>
+        <div class="step-block">
+          <p class="step-label">Step 4</p>
+          <p>Look around the screen — do you see your familiar colourful icons? Good. That is home base.</p>
+        </div>
+        <div class="success-state">You should see your familiar colourful icons on your home screen. You are safe. Well done.</div>
+
+        <h3>What is a Home Screen?</h3>
+        <p>Think of the home screen as the front door of your house. No matter which room you wander into, you can always walk back to the front door. The home screen is where all your apps (programmes — the little pictures you tap to open things) live. You will recognise it because it is the screen you see when you first turn on your iPad.</p>
+
+        <div class="try-it">Right now, tap the blue app that says "Safari" — it looks like a compass rose, a circular design with a needle pointing in different directions. Then swipe up from the bottom (or press the round button) to come back home. You did it. That is the whole skill, right there.</div>
+
+      </div>
+      <div class="confidence-check">
+        <p>✓ You are doing great, and your device is safe.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="guide-section" id="section-2">
+      <h2 class="section-title">Section 2: Spotting Scams — The Brenda Method</h2>
+      <div class="section-content">
+
+        <p>Scammers work hard to make you feel rushed and frightened. Your best defence is to slow down. No real bank, government office, or technology company will ever rush you or threaten you. If someone is pressuring you, that pressure itself is the warning sign.</p>
+
+        <h3>Warning Signs — Read Each One Carefully</h3>
+
+        <div class="warning-card">
+          <strong>Is it urgent?</strong> Does the caller say you must act RIGHT NOW or something terrible will happen? Real organisations give you time to think. They are happy to call you back. They will give you a reference number. If someone is rushing you — hang up.
+        </div>
+
+        <div class="warning-card">
+          <strong>Are they asking for a gift card?</strong> The CRA (Canada Revenue Agency — the government office that handles income taxes) and your bank will NEVER ask you to pay a bill using iTunes cards, Google Play cards, or any other gift card. No exceptions. This is always a scam. Hang up immediately.
+        </div>
+
+        <div class="warning-card">
+          <strong>Are they asking to come to your home?</strong> Your bank will NEVER send a courier or a representative to your home to collect your bank card, your PIN number (Personal Identification Number — the secret code you enter at the bank machine), or your device. If anyone offers to do this — hang up immediately.
+        </div>
+
+        <div class="warning-card">
+          <strong>Are they asking you to dial a code?</strong> If a caller asks you to dial *21 or *72 followed by any phone number, hang up right away. These codes can redirect (send) your incoming phone calls to the scammer without you knowing, so your family and bank cannot reach you.
+        </div>
+
+        <div class="warning-card">
+          <strong>Did you get a text message with a link?</strong> If a text message asks you to tap a link (a highlighted piece of text or a web address) to "confirm your account," "claim a prize," or "avoid a fine" — do not tap it. Delete the message. If you are worried it might be real, call the organisation directly using the number on their official website or on the back of your bank card.
+        </div>
+
+        <h3>Fake CRA (Canada Revenue Agency) Phone Calls</h3>
+        <p>This is one of the most common scams in Canada. Here is what you need to know:</p>
+        <ul>
+          <li>The CRA does not call to demand immediate payment over the phone.</li>
+          <li>The CRA does not threaten arrest if you do not pay right away.</li>
+          <li>The CRA does not ask for payment by gift card.</li>
+          <li>If you receive a call like this, hang up. Then call the real CRA at the number below to check if there is actually anything owed.</li>
+        </ul>
+        <p><span class="phone-number">Real CRA Number: 1-800-959-8281</span></p>
+
+        <h3>If Something Feels Wrong</h3>
+        <p>You are allowed to hang up at any time. You do not owe a stranger on the phone a conversation. There is no situation where a real, trustworthy organisation will be offended if you say "I need to call you back" and hang up.</p>
+        <p>Call someone you trust before you do anything with money or personal information (your address, date of birth, SIN — Social Insurance Number — your 9-digit government identification number, or your banking details).</p>
+
+        <h3>Help Is Available</h3>
+        <div class="resource-card">
+          <h3>Canadian Anti-Fraud Centre</h3>
+          <p>Report a scam or ask for advice. This is a Government of Canada service.</p>
+          <span class="phone-number">1-888-495-8501</span>
+          <p>Website: antifraudcentre-centreantifraude.ca</p>
+        </div>
+        <div class="resource-card">
+          <h3>Stand Against Scams</h3>
+          <p>The Canadian Anti-Scam Coalition — information and resources about current scams targeting Canadians.</p>
+          <p>Website: standagainstscams.ca</p>
+        </div>
+
+      </div>
+      <div class="confidence-check">
+        <p>✓ You are doing great, and your device is safe.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="guide-section" id="section-3">
+      <h2 class="section-title">Section 3: Video Calling Your Family with FaceTime</h2>
+      <div class="section-content">
+
+        <p>FaceTime is the video calling app (programme) built into your iPad. It is free to use, comes already installed, and works over your home Wi-Fi (wireless internet — no extra charges). You can see and hear the person you are calling, and they can see and hear you, as though you are in the same room.</p>
+
+        <h3>Before You Start</h3>
+        <p>Make sure your iPad is charged (the battery icon in the top right corner of your screen should not be nearly empty) and connected to Wi-Fi (look for the fan-shaped icon — like a quarter-circle with lines curving out from the bottom — in the top right corner of your screen).</p>
+
+        <h3>How to Make a FaceTime Call</h3>
+        <p>Follow these steps one at a time. Do not worry about going slowly — there is no rush.</p>
+
+        <div class="step-block">
+          <p class="step-label">Step 1</p>
+          <p>Look for the green app with a white video camera shape on it. It is called FaceTime. It may be on your home screen or in a folder.</p>
+          <div class="success-state">The FaceTime app opens and you can see your own face in a small window. This is normal — the camera is simply showing you what others will see.</div>
+        </div>
+
+        <div class="step-block">
+          <p class="step-label">Step 2</p>
+          <p>Look at the top right corner of the screen. Tap the button that says "New FaceTime" — it is a small blue button.</p>
+          <div class="success-state">A new screen appears with a field (a blank box) at the top that says "To:"</div>
+        </div>
+
+        <div class="step-block">
+          <p class="step-label">Step 3</p>
+          <p>Tap the field that says "To:" — a keyboard will appear at the bottom of your screen, sliding up like a drawer opening.</p>
+          <div class="success-state">The keyboard is visible and the "To:" field has a blinking cursor (a thin flashing line) inside it.</div>
+        </div>
+
+        <div class="step-block">
+          <p class="step-label">Step 4</p>
+          <p>Type the name of the person you want to call. You can also type their phone number or email address.</p>
+          <div class="success-state">Their name appears in a blue bubble (a rounded oval shape).</div>
+        </div>
+
+        <div class="step-block">
+          <p class="step-label">Step 5</p>
+          <p>Look for the green button to the right of the "To:" field. It will say "Video." Tap it.</p>
+          <div class="success-state">Your screen shows a spinning circle — this means your iPad is calling. Then your family member's face appears! You are connected.</div>
+        </div>
+
+        <h3>If No One Answers</h3>
+        <p>The call will ring a few times and then stop on its own. That is perfectly normal — it just means the other person was not near their device at that moment. Try again in a few minutes, or send them a text message first to let them know you are calling.</p>
+
+        <h3>How to End a Call</h3>
+        <p>Look for the red circle with a white X at the bottom of your screen. Tap it once to end the call. The screen will return to the FaceTime menu.</p>
+
+        <div class="try-it">Practise by calling Aaron. He is expecting a test call. Say hello and then hang up — just press the red circle with the X at the bottom of the screen. You have just made your first video call. That is a real skill.</div>
+
+      </div>
+      <div class="confidence-check">
+        <p>✓ You are doing great, and your device is safe.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section class="guide-section" id="section-4">
+      <h2 class="section-title">Section 4: Taking and Sharing Photos</h2>
+      <div class="section-content">
+
+        <p>The Camera app on your iPad lets you take photos just like a regular camera. Your photos are saved automatically in the Photos app — you do not have to do anything to save them. They are kept safe and organised for you.</p>
+
+        <h3>Opening the Camera</h3>
+
+        <div class="step-block">
+          <p class="step-label">Step 1</p>
+          <p>Look for the grey app that has a small black camera shape on it. It is called Camera. It may look like a simple outline of a camera body — rounded rectangle with a small circle (the lens) in the middle.</p>
+          <div class="success-state">Your screen shows whatever the camera is pointed at — like looking through a window. You are now using the camera.</div>
+        </div>
+
+        <div class="step-block">
+          <p class="step-label">Step 2</p>
+          <p>Point your iPad at something you would like to photograph — perhaps a flower, a pet, a view out your window, or something interesting nearby. Hold the iPad steady.</p>
+        </div>
+
+        <div class="step-block">
+          <p class="step-label">Step 3</p>
+          <p>Look for the large white circle at the bottom of the screen, in the middle. Tap it once.</p>
+          <div class="success-state">You will hear a soft click sound — like a camera shutter. A small square image appears briefly in the bottom left corner of your screen. Your photo has been taken and saved.</div>
+        </div>
+
+        <h3>Finding Your Photo in the Photos App</h3>
+
+        <div class="step-block">
+          <p class="step-label">Step 1</p>
+          <p>Go back to your home screen (swipe up from the bottom or press the round button). Look for the app that has a colourful rainbow pinwheel shape on it — like a flower with soft, curved petals in multiple colours. It is called Photos.</p>
+          <div class="success-state">The app opens and shows a grid of your photos — rows and rows of small pictures.</div>
+        </div>
+
+        <div class="step-block">
+          <p class="step-label">Step 2</p>
+          <p>Your most recent photo will be in the bottom right corner of the grid. Tap it once to see it full size.</p>
+          <div class="success-state">Your photo fills the screen. You can see it clearly. Well done.</div>
+        </div>
+
+        <h3>Sharing a Photo by Text Message</h3>
+        <p>Once you are looking at a photo full size, you can share it with family in just a few taps.</p>
+
+        <div class="step-block">
+          <p class="step-label">Step 1</p>
+          <p>While looking at your photo full size, look at the bottom left of your screen for a small square shape with an upward-pointing arrow coming out of the top. Tap it once.</p>
+          <div class="success-state">A menu slides up from the bottom of your screen with many sharing options — icons and words for different ways to send your photo.</div>
+        </div>
+
+        <div class="step-block">
+          <p class="step-label">Step 2</p>
+          <p>Look for the green icon that says "Messages" — it looks like a speech bubble (a rounded rectangle with a small tail at the bottom). Tap it.</p>
+          <div class="success-state">A new text message opens with your photo already attached — you can see a small version of your photo in the message area.</div>
+        </div>
+
+        <div class="step-block">
+          <p class="step-label">Step 3</p>
+          <p>Tap the "To:" field at the top and type the name or number of the person you want to send it to. Then look for the blue arrow button (it looks like an upward arrow inside a blue circle) and tap it to send.</p>
+          <div class="success-state">Your photo is on its way. The message shows as "Delivered" or with a small checkmark.</div>
+        </div>
+
+        <div class="try-it">Take a photo of the room you are sitting in right now. Then find it in Photos. You do not have to send it to anyone — just taking it and finding it again is the whole exercise. You have just done something millions of people do every day.</div>
+
+      </div>
+      <div class="confidence-check">
+        <p>✓ You are doing great, and your device is safe.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 5 -->
+    <section class="guide-section" id="section-5">
+      <h2 class="section-title">Section 5: Staying Safe Online</h2>
+      <div class="section-content">
+
+        <h3>What to Do If Something Looks Wrong</h3>
+        <p>If a website or app is behaving strangely — showing unexpected messages, making unusual sounds, or asking for personal information — there are two simple things you can do, and either one will solve most problems.</p>
+
+        <h4>Option 1 — Close the App</h4>
+        <p>Swipe upward slowly from the very bottom of your screen to the middle — hold your finger there for just a moment. Your screen will change to show all your open apps as floating cards, like a spread of photographs. Find the app that is causing trouble and swipe it upward (off the top of the screen) to close it completely.</p>
+        <div class="success-state">The app disappears from the card view. When you open it again, it will start fresh, as though you just installed it.</div>
+
+        <h4>Option 2 — Turn It Off and Back On</h4>
+        <p>This solves almost every iPad problem. Hold the button on the top right edge of your iPad and either volume button (the two buttons on the side) at the same time. A slider (a bar you can drag) will appear on the screen that says "slide to power off." Slide your finger along it to the right. Wait 30 seconds. Then hold the top right button again until the Apple logo (the silver apple shape) appears. Your iPad is starting fresh.</p>
+
+        <h3>What is a Software Update and Why Does It Matter?</h3>
+        <p>Apple regularly sends small improvements and security patches (fixes) to your iPad through something called software updates. Think of it like a locksmith visiting your home once a month to tighten all the locks and check the doors — it keeps everything safer without changing anything you can see.</p>
+        <p>It is safe and important to install these updates. They do not change how your iPad looks or works — they just quietly make it more secure.</p>
+
+        <h3>How to Know If an Update is Waiting</h3>
+        <p>Look at the grey Settings app on your home screen — it looks like mechanical gears (two interlocking cog-shaped circles). If there is a red circle with a number on it sitting on top of the Settings icon, that means Apple has a small update ready for you. Ask someone to help you install it, or tap Settings, then "General," then "Software Update" to follow the steps.</p>
+
+        <h3>When to Call for Help vs. Handle It Yourself</h3>
+
+        <h4>Call for Help If:</h4>
+        <ul>
+          <li>Something is asking for your bank account number, SIN (Social Insurance Number — your 9-digit government identification number), or passwords.</li>
+          <li>A message says your iPad has a virus and asks you to call a phone number. (This is almost always a scam — your iPad cannot get a virus from a website.)</li>
+          <li>You accidentally tapped a link in a suspicious text or email and entered any personal information.</li>
+          <li>You are not sure whether something is safe — when in doubt, call someone you trust.</li>
+        </ul>
+
+        <h4>Handle It Yourself:</h4>
+        <ul>
+          <li>A screen you did not mean to open — just swipe up or press home to return to safety.</li>
+          <li>An app that is frozen (not responding) — close it by swiping it away in the card view, then reopen it.</li>
+          <li>Your screen is too bright or too dim — ask someone to show you the brightness slider in Settings, or swipe down from the top right corner to find the brightness bar.</li>
+          <li>You cannot remember how to do something — look it up here, in this guide.</li>
+        </ul>
+
+      </div>
+      <div class="confidence-check">
+        <p>✓ You are doing great, and your device is safe.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 6 -->
+    <section class="guide-section" id="section-6">
+      <h2 class="section-title">Section 6: Your Support Network</h2>
+      <div class="section-content">
+
+        <p>You are not alone. There are real people whose job is to help you with exactly these things. Do not hesitate to call. Every one of the organisations below is designed to help people in your situation — no question is too small, and no one will make you feel embarrassed for asking.</p>
+
+        <div class="resource-card">
+          <h3>Connected Canadians / Cyber-Seniors</h3>
+          <p>Free one-on-one technology support for Canadian seniors, by phone or video call. Volunteers who have been specifically trained to help older adults with their devices, at your pace, in plain language.</p>
+          <span class="phone-number">1-844-217-3057</span>
+          <p>Website: cyberseniors.org</p>
+        </div>
+
+        <div class="resource-card">
+          <h3>Canadian Anti-Fraud Centre</h3>
+          <p>Report a phone scam, fake email, or identity theft. This is a Government of Canada resource — completely free, completely confidential. They also give advice on whether something you received might be a scam.</p>
+          <span class="phone-number">1-888-495-8501</span>
+          <p>Website: antifraudcentre-centreantifraude.ca</p>
+        </div>
+
+        <div class="resource-card">
+          <h3>Apple Support Canada</h3>
+          <p>Help with your iPad, iPhone, or iCloud account — directly from Apple. They can walk you through problems step by step over the phone. Free for all Apple device owners.</p>
+          <span class="phone-number">1-800-263-3394</span>
+          <p>Website: apple.com/ca/support</p>
+        </div>
+
+        <div class="resource-card">
+          <h3>Masonville Apple Store, London, Ontario</h3>
+          <p>In-person help with your Apple device at the Genius Bar — a walk-in appointment service where an Apple team member (called a Genius) will sit with you, look at your device, and help you solve any problem. Free appointments available.</p>
+          <p><strong>Address:</strong> 1865 Wonderland Rd N, London, ON (inside Masonville Place mall)</p>
+          <p><strong>Note:</strong> Book a free Genius Bar appointment at apple.com/ca/retail before you go — this saves waiting time.</p>
+        </div>
+
+        <div class="resource-card">
+          <h3>Digital Confidence Centre</h3>
+          <p>Free online learning for Ontario seniors — the programme you are using right now. Eleven modules (sections) covering everything from iPad basics to online banking and understanding Artificial Intelligence (AI — computer programmes that can answer questions and have conversations). Work through it at your own pace, as many times as you like.</p>
+          <p>Website: twobirds-kramerica.github.io/digital-confidence</p>
+        </div>
+
+        <div class="final-message">
+          <p>You have come a long way.</p>
+          <p>Every time you practise, your confidence grows — even if it does not feel that way in the moment.</p>
+          <p>Your device is safe. Your family is one tap away. And you have a whole team cheering you on.</p>
+          <p><strong>Well done, Brenda.</strong></p>
+        </div>
+
+      </div>
+      <div class="confidence-check">
+        <p>✓ You are doing great, and your device is safe.</p>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
