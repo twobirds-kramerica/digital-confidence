@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Thank you for signing up as a beta tester — Digital Confidence Centre">
+  <title>Thank You! — Beta Tester Sign-Up — Digital Confidence Centre</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/accessibility.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta name="theme-color" content="#1565C0">
+  <style>
+    .confirm-hero {
+      background: linear-gradient(135deg, #2E7D32 0%, #388E3C 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .confirm-hero .confirm-icon {
+      font-size: 3.5rem;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+    .confirm-hero h1 {
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+      color: #fff;
+      border: none;
+    }
+    .confirm-hero p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .next-steps-card {
+      background: var(--color-surface, #fff);
+      border: 1px solid var(--color-border, #e0e0e0);
+      border-radius: 14px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .next-steps-card h2 {
+      font-size: 1.2rem;
+      color: #1565C0;
+      margin-bottom: 1rem;
+    }
+    .steps-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      counter-reset: steps;
+    }
+    .steps-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--color-border, #f0f0f0);
+      font-size: 1.05rem;
+      line-height: 1.5;
+      counter-increment: steps;
+    }
+    .steps-list li:last-child {
+      border-bottom: none;
+    }
+    .step-number {
+      background: #1565C0;
+      color: #fff;
+      width: 1.8rem;
+      height: 1.8rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .cta-box {
+      background: #F0F7FF;
+      border: 1px solid #BBDEFB;
+      border-radius: 14px;
+      padding: 1.75rem 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .cta-box h2 {
+      font-size: 1.15rem;
+      color: #1565C0;
+      margin-bottom: 0.75rem;
+    }
+    .btn-start-learning {
+      display: inline-block;
+      background: #1565C0;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 0.9rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-top: 0.5rem;
+      transition: background 0.2s;
+    }
+    .btn-start-learning:hover {
+      background: #0d47a1;
+      color: #fff;
+    }
+    .reassurance-block {
+      background: var(--color-surface, #fff);
+      border-left: 4px solid #2E7D32;
+      border-radius: 0 10px 10px 0;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Accessibility Controls -->
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <!-- Top Bar (Mobile) -->
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">Digital Confidence Centre</span>
+    <span></span>
+  </div>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">✕</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Your learning journey</p>
+    </div>
+    <nav>
+      <a href="../index.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a href="../module-1.html"><span class="nav-icon">🪂</span><span class="nav-label">1. The Escape Hatch</span></a>
+      <a href="../module-2.html"><span class="nav-icon">🛡️</span><span class="nav-label">2. Security Shield</span></a>
+      <a href="../module-3.html"><span class="nav-icon">🔑</span><span class="nav-label">3. Passwords</span></a>
+      <a href="../resources.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
+      <div class="sidebar-a11y-section">
+        <p class="sidebar-a11y-title">Text Size</p>
+        <div class="sidebar-font-row">
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false" style="font-size:1rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+        </div>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <!-- Hero -->
+      <div class="confirm-hero" role="alert">
+        <span class="confirm-icon">🎉</span>
+        <h1>You're In! Thank You So Much.</h1>
+        <p>We've received your sign-up and we're genuinely excited to have you on board. Your experience and perspective are exactly what we need.</p>
+      </div>
+
+      <!-- What happens next -->
+      <div class="next-steps-card">
+        <h2>What Happens Next?</h2>
+        <ol class="steps-list">
+          <li>
+            <div class="step-number">1</div>
+            <div><strong>We review your sign-up</strong> — we go through all applications and confirm your spot within <strong>3 business days</strong>.</div>
+          </li>
+          <li>
+            <div class="step-number">2</div>
+            <div><strong>You'll receive a welcome email</strong> — it will include your official welcome letter, the beta guide, and a link to begin.</div>
+          </li>
+          <li>
+            <div class="step-number">3</div>
+            <div><strong>You start when you're ready</strong> — there's no fixed start date. Begin on your own schedule, at your own pace.</div>
+          </li>
+          <li>
+            <div class="step-number">4</div>
+            <div><strong>Share your thoughts as you go</strong> — a blue feedback button on every page makes it easy to tell us what's working and what isn't.</div>
+          </li>
+          <li>
+            <div class="step-number">5</div>
+            <div><strong>We improve the programme</strong> — your feedback directly shapes the final version that thousands of seniors will use.</div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Reassurance -->
+      <div class="reassurance-block">
+        <p>Not sure what to expect? That's completely normal. We've written a friendly <a href="beta-guide.html" style="color:#1565C0;font-weight:600;">Beta Tester Guide</a> that explains everything in plain language — what you'll do, how long it takes, and how to give feedback. You can read it any time.</p>
+      </div>
+
+      <!-- Start learning now -->
+      <div class="cta-box">
+        <h2>Can't Wait? Start Exploring Now!</h2>
+        <p style="font-size:1.05rem;color:#555;">You don't have to wait for our email. The learning centre is open right now — no password, no login, completely free.</p>
+        <a href="../index.html" class="btn-start-learning">Start Learning Now →</a>
+      </div>
+
+      <!-- Contact -->
+      <div class="next-steps-card" style="text-align:center;">
+        <h2>Questions?</h2>
+        <p style="font-size:1.05rem;">If you have any questions before we get back to you, you can reach us through the <a href="../index.html#feedback" style="color:#1565C0;">feedback form on the home page</a>. We're happy to help.</p>
+        <p style="font-size:1rem;color:#666;margin-top:0.5rem;">Or call <strong>Connected Canadians</strong> free at <a href="tel:+18558080505" style="color:#1565C0;">1-855-808-0505</a> if you need support with your device.</p>
+      </div>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-brand">Digital Confidence Centre</p>
+          <p class="footer-tagline">A free learning programme for Canadian seniors</p>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="../index.html">Home</a> |
+            <a href="../resources.html">Resources</a> |
+            <a href="../faq.html">FAQ</a> |
+            <a href="../about.html">About</a> |
+            <a href="../privacy.html">Privacy Policy</a>
+          </nav>
+          <p class="footer-copy">&copy; 2026 Two Birds. Made with care in Ontario, Canada.</p>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../js/app.js" defer></script>
+  <script src="../js/accessibility.js" defer></script>
+</body>
+</html>

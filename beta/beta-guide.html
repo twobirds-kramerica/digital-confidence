@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Beta Tester Onboarding Guide — everything you need to know about participating in the Digital Confidence Centre beta programme.">
+  <title>Beta Tester Guide — Digital Confidence Centre</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/accessibility.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta name="theme-color" content="#1565C0">
+  <style>
+    .guide-hero {
+      background: linear-gradient(135deg, #1565C0 0%, #1976D2 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 2rem 2rem;
+      margin-bottom: 2rem;
+    }
+    .guide-hero h1 {
+      font-size: clamp(1.3rem, 4vw, 1.9rem);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #fff;
+      border: none;
+      line-height: 1.3;
+    }
+    .guide-hero p {
+      font-size: 1.05rem;
+      opacity: 0.93;
+      max-width: 580px;
+      line-height: 1.6;
+    }
+    .guide-card {
+      background: var(--color-surface, #fff);
+      border: 1px solid var(--color-border, #e0e0e0);
+      border-radius: 14px;
+      border-top: 4px solid #1565C0;
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .guide-card h2 {
+      font-size: 1.15rem;
+      color: #1565C0;
+      margin-bottom: 0.75rem;
+    }
+    .guide-card p, .guide-card li {
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .guide-card ul, .guide-card ol {
+      padding-left: 1.5rem;
+      margin: 0.5rem 0;
+    }
+    .guide-card li {
+      margin-bottom: 0.5rem;
+    }
+    .tip-box {
+      background: #F0F7FF;
+      border: 1px solid #BBDEFB;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .tip-box strong {
+      color: #1565C0;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--color-border, #e8e8e8);
+      padding: 1rem 0;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-item summary {
+      font-weight: 600;
+      font-size: 1.05rem;
+      cursor: pointer;
+      color: #1a1a1a;
+      padding: 0.25rem 0;
+    }
+    .faq-item summary:hover {
+      color: #1565C0;
+    }
+    .faq-item p {
+      margin-top: 0.75rem;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #444;
+    }
+    .contact-card {
+      background: #F9F9F9;
+      border: 1px solid var(--color-border, #e0e0e0);
+      border-radius: 14px;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .contact-card h2 {
+      font-size: 1.15rem;
+      color: #1565C0;
+      margin-bottom: 0.5rem;
+    }
+    .btn-signup {
+      display: inline-block;
+      background: #1565C0;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 0.85rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-top: 0.75rem;
+      transition: background 0.2s;
+    }
+    .btn-signup:hover {
+      background: #0d47a1;
+      color: #fff;
+    }
+    .look-for-list li {
+      margin-bottom: 0.75rem;
+    }
+    .look-for-list .tag {
+      display: inline-block;
+      background: #1565C0;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      margin-right: 0.4rem;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Accessibility Controls -->
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <!-- Top Bar (Mobile) -->
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">Digital Confidence Centre</span>
+    <span></span>
+  </div>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">✕</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Your learning journey</p>
+    </div>
+    <nav>
+      <a href="../index.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a href="../module-1.html"><span class="nav-icon">🪂</span><span class="nav-label">1. The Escape Hatch</span></a>
+      <a href="../module-2.html"><span class="nav-icon">🛡️</span><span class="nav-label">2. Security Shield</span></a>
+      <a href="../module-3.html"><span class="nav-icon">🔑</span><span class="nav-label">3. Passwords</span></a>
+      <a href="../resources.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
+      <div class="sidebar-a11y-section">
+        <p class="sidebar-a11y-title">Text Size</p>
+        <div class="sidebar-font-row">
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false" style="font-size:1rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+        </div>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a> &rsaquo; <a href="beta-landing.html">Join Our Beta</a> &rsaquo; <span>Beta Tester Guide</span>
+      </nav>
+
+      <!-- Hero -->
+      <div class="guide-hero">
+        <h1>Your Beta Tester Guide</h1>
+        <p>Everything you need to know about participating — written in plain language, no tech jargon.</p>
+      </div>
+
+      <!-- What you'll be doing -->
+      <div class="guide-card">
+        <h2>What You'll Be Doing</h2>
+        <p>As a beta tester, you'll work through the Digital Confidence Centre lessons just like any other learner — but with one extra task: sharing your honest reaction as you go.</p>
+        <p>You don't need any special skills. You just need to use the site and notice how it feels. Things like:</p>
+        <ul>
+          <li>Was this easy to understand, or confusing?</li>
+          <li>Did the text feel too small, too big, or just right?</li>
+          <li>Was there anything you wanted to know that wasn't covered?</li>
+          <li>Did anything make you feel nervous or unsure?</li>
+        </ul>
+        <p>You are the expert on what it feels like to learn this material. That's why your feedback is so valuable.</p>
+      </div>
+
+      <!-- How long it takes -->
+      <div class="guide-card">
+        <h2>How Long Does It Take?</h2>
+        <p>The beta programme runs over approximately <strong>3–4 weeks</strong>. Most people spend about <strong>2–3 hours per week</strong> — that's roughly 20–30 minutes a few times a week.</p>
+        <p>There is no set schedule. You can work on a lesson first thing in the morning, after lunch, or in the evening — whatever suits you best. You can also take breaks whenever you like. Everything is saved automatically.</p>
+        <div class="tip-box">
+          <strong>Tip:</strong> Many people find it helpful to go through one lesson at a time, rather than trying to do everything in one sitting. Think of it like reading a chapter of a book before putting it down.
+        </div>
+      </div>
+
+      <!-- How to give feedback -->
+      <div class="guide-card">
+        <h2>How to Give Feedback</h2>
+        <p>There are two easy ways to share your thoughts:</p>
+        <ol>
+          <li style="margin-bottom:1rem;"><strong>The blue feedback button</strong> — look for a small button labelled "Ideas &amp; Feedback" in the footer of every page. Tap it to open a short form where you can share what you thought of that lesson. It only takes a minute.</li>
+          <li style="margin-bottom:1rem;"><strong>The feedback survey</strong> — after completing 3 or 4 lessons, we may send you a short survey by email. It asks broader questions about your overall experience.</li>
+        </ol>
+        <p>There are no wrong answers. We want your honest opinion — even if (especially if!) something didn't work well for you.</p>
+        <div class="tip-box">
+          <strong>Important:</strong> You can give feedback at any point during a lesson, not just at the end. If something confuses you halfway through, you don't have to wait — tap the feedback button right away and tell us.
+        </div>
+      </div>
+
+      <!-- What to look for -->
+      <div class="guide-card">
+        <h2>What to Look For</h2>
+        <p>Here are the kinds of things that would help us most to hear about:</p>
+        <ul class="look-for-list">
+          <li><span class="tag">Confusion</span> Any sentence, instruction, or step that left you feeling unsure or puzzled.</li>
+          <li><span class="tag">Too hard</span> Any part that felt overwhelming, moved too fast, or assumed knowledge you don't have.</li>
+          <li><span class="tag">Too easy</span> Any part that felt too basic or talked down to you.</li>
+          <li><span class="tag">Missing info</span> Something you wanted to know that wasn't covered.</li>
+          <li><span class="tag">Great!</span> Anything that made you say "That was helpful!" — we want to know what's working too.</li>
+          <li><span class="tag">Technical</span> Anything that didn't load, looked broken, or was hard to tap/click.</li>
+        </ul>
+      </div>
+
+      <!-- FAQ -->
+      <div class="guide-card">
+        <h2>Frequently Asked Questions</h2>
+
+        <details class="faq-item">
+          <summary>Do I have to complete all the modules?</summary>
+          <p>No. We'd love it if you could, but we understand life gets busy. Even completing 3–4 modules and sharing your thoughts is genuinely helpful. Just let us know how far you got.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What if I break something or make a mistake?</summary>
+          <p>You can't break anything — the site is view-only from your end. And there are no wrong answers in the lessons either. If you get a quiz question wrong, you just try again. No penalty, no judgement.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What if I need help with my device?</summary>
+          <p>We're not a device support service, but Connected Canadians offers free tech help by phone at <a href="tel:+18558080505" style="color:#1565C0;">1-855-808-0505</a>. They're patient, friendly, and specifically trained to help seniors with technology.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Will my feedback be private?</summary>
+          <p>Yes. Your feedback is only seen by the Digital Confidence Centre team. We may quote general themes (like "several testers found this section confusing") in reports, but we will never share your name or personal details.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can I stop at any time?</summary>
+          <p>Absolutely. There's no obligation. If you decide to stop for any reason — no problem at all. You don't even need to explain. Just close the website and that's that.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>I'm not very good with computers. Is that okay?</summary>
+          <p>That's actually ideal. We specifically want people who are newer to technology, because the whole point of this programme is to help beginners. Your perspective is exactly what we need.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What happens to the programme after the beta?</summary>
+          <p>Your feedback will be used to improve the lessons, fix confusing parts, and add anything that's missing. The final version will be made available free to all Ontario seniors. You'll have helped make it better for thousands of people.</p>
+        </details>
+      </div>
+
+      <!-- Contact -->
+      <div class="contact-card">
+        <h2>Questions? We're Here to Help.</h2>
+        <p style="font-size:1.05rem;color:#555;">Use the feedback form on the home page, or call <strong>Connected Canadians</strong> at <a href="tel:+18558080505" style="color:#1565C0;">1-855-808-0505</a> for device help.</p>
+        <p style="font-size:1rem;margin-top:0.75rem;">Ready to sign up?</p>
+        <a href="beta-landing.html#signup-form" class="btn-signup">Sign Up as a Beta Tester →</a>
+      </div>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-brand">Digital Confidence Centre</p>
+          <p class="footer-tagline">A free learning programme for Canadian seniors</p>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="../index.html">Home</a> |
+            <a href="../resources.html">Resources</a> |
+            <a href="../faq.html">FAQ</a> |
+            <a href="../about.html">About</a> |
+            <a href="../privacy.html">Privacy Policy</a>
+          </nav>
+          <p class="footer-copy">&copy; 2026 Two Birds. Made with care in Ontario, Canada.</p>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../js/app.js" defer></script>
+  <script src="../js/accessibility.js" defer></script>
+</body>
+</html>
