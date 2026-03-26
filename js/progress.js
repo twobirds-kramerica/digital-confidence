@@ -48,7 +48,7 @@ function updateLabel(checkbox, checked) {
 
 function updateProgressOverview() {
   // Count all progress items across all modules
-  var totalModules = 12;
+  var totalModules = 16;
   var completedModules = 0;
 
   for (var m = 1; m <= totalModules; m++) {
