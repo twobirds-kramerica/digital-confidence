@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="fr-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Apprenez vos droits en tant que consommateur et comment obtenir de l'aide technologique en toute sécurité — Module 12 du Centre de Confiance Numérique, formation numérique gratuite pour les aînés de l'Ontario.">
+  <title>Module 12 : Obtenir l'Aide que Vous Méritez | Centre de Confiance Numérique</title>
+  <link rel="stylesheet" href="../../../css/main.css">
+  <link rel="stylesheet" href="../../../css/accessibility.css">
+  <link rel="stylesheet" href="../../../css/mobile.css">
+  <link rel="stylesheet" href="../../../css/print.css">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+  <meta name="theme-color" content="#1565C0">
+  <style>
+    .magic-words-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.75rem;
+      margin: 1.25rem 0;
+    }
+    .magic-word-card {
+      background: var(--color-surface, #fff);
+      border: 2px solid var(--color-primary, #1565C0);
+      border-radius: 10px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    [data-theme="dark"] .magic-word-card {
+      background: var(--color-surface-dark, #1e293b);
+    }
+    .magic-word {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-primary, #1565C0);
+    }
+    .magic-word-note {
+      font-size: 0.82rem;
+      color: var(--color-text-muted, #666);
+    }
+
+    .script-box {
+      background: #f0f7ff;
+      border-left: 4px solid var(--color-primary, #1565C0);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin: 1.25rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    [data-theme="dark"] .script-box {
+      background: #1a2744;
+    }
+    .script-line { display: flex; flex-direction: column; gap: 0.3rem; }
+    .script-label { font-size: 0.8rem; font-weight: 700; color: var(--color-text-muted, #666); text-transform: uppercase; letter-spacing: 0.03em; }
+    .script-text { font-style: italic; color: var(--color-text, #1a1a1a); font-size: 0.95rem; line-height: 1.5; }
+    [data-theme="dark"] .script-text { color: #e2e8f0; }
+
+    .practice-scenario {
+      background: var(--color-surface, #fff);
+      border: 1px solid #e0e7ef;
+      border-radius: 10px;
+      padding: 1.25rem;
+      margin: 1.25rem 0;
+    }
+    [data-theme="dark"] .practice-scenario {
+      background: #1e293b;
+      border-color: #334155;
+    }
+    .scenario-toggle {
+      background: var(--color-primary, #1565C0);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      margin-top: 0.75rem;
+      font-family: inherit;
+    }
+    .scenario-toggle:hover { opacity: 0.9; }
+    .scenario-answer {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e0e7ef;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    [data-theme="dark"] .scenario-answer { border-color: #334155; }
+
+    .safety-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 1.25rem 0;
+    }
+    .checklist-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: var(--color-surface, #fff);
+      border: 1px solid #d1fae5;
+      border-radius: 8px;
+      padding: 0.875rem 1rem;
+    }
+    [data-theme="dark"] .checklist-item {
+      background: #1e293b;
+      border-color: #166534;
+    }
+    .check-num {
+      background: #16a34a;
+      color: #fff;
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .check-text { font-size: 0.92rem; line-height: 1.5; }
+
+    .takeaways-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+      margin: 1.25rem 0;
+    }
+    .takeaway-card {
+      background: var(--color-surface, #fff);
+      border: 1px solid #e0e7ef;
+      border-radius: 10px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    [data-theme="dark"] .takeaway-card {
+      background: #1e293b;
+      border-color: #334155;
+    }
+    .takeaway-icon { font-size: 1.5rem; }
+    .takeaway-card strong { color: var(--color-primary, #1565C0); font-size: 0.95rem; }
+    .takeaway-card p { font-size: 0.85rem; color: var(--color-text-muted, #555); margin: 0; line-height: 1.5; }
+    [data-theme="dark"] .takeaway-card p { color: #94a3b8; }
+
+    @media (max-width: 600px) {
+      .magic-words-grid { grid-template-columns: 1fr 1fr; }
+      .takeaways-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Passer au contenu principal</a>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Contrôles d'accessibilité">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Petit texte" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Texte moyen" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Grand texte" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Très grand texte" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Passer en mode sombre">🌓</button>
+    <a href="../../../module-12.html" class="a11y-btn" style="font-size:0.82rem;font-weight:700;letter-spacing:0.03em;padding:4px 8px;text-decoration:none;" aria-label="Lire en anglais">⚜ EN</a>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Ouvrir le menu de navigation">☰</button>
+    <span class="site-title">Module 12 : Obtenir de l'Aide</span>
+    <span></span>
+  </div>
+
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <aside class="sidebar" aria-label="Navigation principale">
+    <button class="sidebar-close" aria-label="Fermer la navigation">&#10005;</button>
+    <div class="sidebar-header">
+      <h2>Centre de Confiance Numérique</h2>
+      <p>Votre parcours d'apprentissage</p>
+    </div>
+    <nav>
+      <a href="../index.html"><span class="nav-icon">🏠</span><span class="nav-label">Accueil</span></a>
+      <a href="module-1.html"><span class="nav-icon">🪂</span><span class="nav-label">1. La Sortie de Secours</span></a>
+      <a href="module-2.html"><span class="nav-icon">🛡️</span><span class="nav-label">2. Le Bouclier de Sécurité</span></a>
+      <a href="module-3.html"><span class="nav-icon">🔑</span><span class="nav-label">3. Mots de Passe</span></a>
+      <a href="module-4.html"><span class="nav-icon">📱</span><span class="nav-label">4. Sécurité des Applis</span></a>
+      <a href="module-5.html"><span class="nav-icon">✉️</span><span class="nav-label">5. Courriels et Messages</span></a>
+      <a href="module-6.html"><span class="nav-icon">🏦</span><span class="nav-label">6. Services Bancaires</span></a>
+      <a href="module-7.html"><span class="nav-icon">🎨</span><span class="nav-label">7. Photos et Souvenirs</span></a>
+      <a href="module-8.html"><span class="nav-icon">👨‍👩‍👧</span><span class="nav-label">8. Restez Connecté</span></a>
+      <a href="module-9.html"><span class="nav-icon">🤖</span><span class="nav-label">9. Comprendre l'IA</span></a>
+      <a href="module-10.html"><span class="nav-icon">🛒</span><span class="nav-label">10. Épicerie en Ligne</span></a>
+      <a href="module-11.html"><span class="nav-icon">🚗</span><span class="nav-label">11. Covoiturage</span></a>
+      <a href="module-12.html" aria-current="page"><span class="nav-icon">🤝</span><span class="nav-label">12. Obtenir de l'Aide</span></a>
+      <div class="sidebar-a11y-section">
+        <p class="sidebar-a11y-title">Taille du texte</p>
+        <div class="sidebar-font-row">
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Petit texte" aria-pressed="false" style="font-size:0.8rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Texte moyen" aria-pressed="false" style="font-size:1rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Grand texte" aria-pressed="false" style="font-size:1.2rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Très grand texte" aria-pressed="false" style="font-size:1.4rem">A</button>
+        </div>
+        <p class="sidebar-a11y-title">Couleur de l'écran</p>
+        <div class="sidebar-theme-row">
+          <button class="a11y-btn theme-toggle-btn" aria-label="Passer en mode sombre">🌓</button>
+        </div>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <h1>Module 12 : Obtenir l'Aide que Vous Méritez</h1>
+      <p><strong>Ce que vous allez apprendre :</strong> Comment échapper aux systèmes téléphoniques automatisés, utiliser des scripts pour ralentir les représentants du service à la clientèle pressés, gérer les aidants bien intentionnés, et rester en sécurité quand quelqu'un offre un accès à distance à votre appareil.</p>
+      <img class="module-hero-image" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&h=400&fit=crop" alt="Une femme aînée confiante au téléphone, calme et maître de la situation, avec un cahier ouvert à côté d'elle" width="1200" height="400" loading="eager">
+
+      <div class="story-block">
+        <span class="story-label">Vous Méritez de Bonne Aide</span>
+        <p>Obtenir de l'aide avec la technologie — ou avec une facture, des frais ou une plainte — ne devrait pas ressembler à un combat. Mais parfois, c'est le cas. Vous attendez en ligne, appuyez sur des boutons sans fin, et vous avez quand même l'impression de ne pas avoir obtenu ce dont vous aviez besoin.</p>
+        <p>Ce module est là pour changer ça. Vous avez des droits en tant que consommateur au Canada. Vous avez des ressources à votre disposition. Et vous avez le droit de demander de l'aide à votre propre rythme, en langage simple, jusqu'à ce que vous compreniez pleinement ce qui se passe.</p>
+        <p>Vous méritez de bonne aide. Ce module vous montre comment l'obtenir.</p>
+      </div>
+
+      <!-- Sections de progression -->
+      <div class="progress-item">
+        <input type="checkbox" class="progress-checkbox" id="m12-1-fr" data-id="m12-1-fr">
+        <label class="progress-label" for="m12-1-fr">Section 1 : Le Piège du Chatbot</label>
+      </div>
+      <div class="progress-item">
+        <input type="checkbox" class="progress-checkbox" id="m12-2-fr" data-id="m12-2-fr">
+        <label class="progress-label" for="m12-2-fr">Section 2 : Briser les Barrières Linguistiques</label>
+      </div>
+      <div class="progress-item">
+        <input type="checkbox" class="progress-checkbox" id="m12-3-fr" data-id="m12-3-fr">
+        <label class="progress-label" for="m12-3-fr">Section 3 : Gérer les Aidants Bien Intentionnés</label>
+      </div>
+      <div class="progress-item">
+        <input type="checkbox" class="progress-checkbox" id="m12-4-fr" data-id="m12-4-fr">
+        <label class="progress-label" for="m12-4-fr">Section 4 : Soutien à Distance en Toute Sécurité</label>
+      </div>
+
+      <!-- ═══ SECTION 1 : LE PIÈGE DU CHATBOT ═══ -->
+      <h2>📞 Section 1 : Le Piège du Chatbot</h2>
+
+      <p>Quand vous appelez une entreprise et tombez sur un système téléphonique automatisé — parfois appelé SVI (Serveur Vocal Interactif) — il peut sembler qu'il n'y a pas d'issue. Le système pose des questions, vous donne des options, et revient au début si il ne vous comprend pas.</p>
+
+      <p>La bonne nouvelle : la plupart des systèmes automatisés ont des échappatoires. Vous avez juste besoin de connaître les mots magiques.</p>
+
+      <h3>Les Mots Magiques pour Joindre une Vraie Personne</h3>
+
+      <div class="magic-words-grid">
+        <div class="magic-word-card">
+          <span class="magic-word">« Représentant »</span>
+          <span class="magic-word-note">Fonctionne sur la plupart des systèmes canadiens de télécommunication, bancaires et de services publics</span>
+        </div>
+        <div class="magic-word-card">
+          <span class="magic-word">« Agent »</span>
+          <span class="magic-word-note">Particulièrement efficace avec Rogers, Bell, Telus et Shaw</span>
+        </div>
+        <div class="magic-word-card">
+          <span class="magic-word">Appuyer sur 0</span>
+          <span class="magic-word-note">La touche zéro transfère à un opérateur en direct sur de nombreux systèmes</span>
+        </div>
+        <div class="magic-word-card">
+          <span class="magic-word">« J'ai besoin d'aide »</span>
+          <span class="magic-word-note">Déclenche un transfert sur certains systèmes bancaires et de services publics</span>
+        </div>
+        <div class="magic-word-card">
+          <span class="magic-word">« Opérateur »</span>
+          <span class="magic-word-note">Une expression plus ancienne qui fonctionne encore sur de nombreuses lignes gouvernementales</span>
+        </div>
+        <div class="magic-word-card">
+          <span class="magic-word">Appuyer sur 0 0 0</span>
+          <span class="magic-word-note">Appuyer trois fois rapidement sur zéro contourne certains menus tenaces</span>
+        </div>
+      </div>
+
+      <div class="tip-block">
+        <span class="tip-label">Avant d'Appeler</span>
+        <p>Notez : votre numéro de compte, le montant en question, et la date à laquelle il est apparu. Avoir cela prêt accélère l'appel et vous faites bonne impression — ce qui aide vraiment. Du mardi au jeudi, de 10h à midi, les temps d'attente sont généralement les plus courts.</p>
+      </div>
+
+      <div class="story-block">
+        <span class="story-label">La Découverte de Dorothée</span>
+        <p>Dorothée a appelé sa banque au sujet d'un frais qu'elle ne reconnaissait pas. Elle a passé 15 minutes à appuyer sur des boutons avant de se souvenir de dire simplement « représentant » clairement. Elle a été connectée en quelques secondes. « Je me suis sentie idiote de ne pas le savoir avant », a-t-elle dit. « Mais maintenant je sais — et c'est ce qui compte. »</p>
+      </div>
+
+      <h3>Ressources Canadiennes d'Escalade</h3>
+      <p>Quand une entreprise refuse de résoudre votre plainte — voici qui appeler ensuite, entièrement gratuitement :</p>
+
+      <div class="walkthrough">
+        <div class="walkthrough-step">
+          <span class="step-num">1</span>
+          <span class="step-text">
+            <strong>CPRST — Commissaire aux plaintes relatives aux services de télécom-télévision</strong><br>
+            Pour les problèmes de téléphone, d'internet et de câble que votre fournisseur n'a pas résolus après 30 jours.<br>
+            Site web : <strong>ccts-cprst.ca</strong> &nbsp;|&nbsp; Téléphone : <strong>1-888-221-1687</strong><br>
+            <em>Gratuit. Aucun avocat requis. Disponible partout au Canada.</em>
+          </span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">2</span>
+          <span class="step-text">
+            <strong>OSBI — Ombudsman des services bancaires et d'investissement</strong><br>
+            Pour les problèmes bancaires ou d'investissement que votre banque refuse de résoudre.<br>
+            Site web : <strong>obsi.ca</strong> &nbsp;|&nbsp; Téléphone : <strong>1-888-451-4519</strong><br>
+            <em>Gratuit. Indépendant. Les banques sont tenues de coopérer.</em>
+          </span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">3</span>
+          <span class="step-text">
+            <strong>Protection du consommateur Ontario</strong><br>
+            Pour les achats, les contrats, les ventes à domicile et toute plainte de consommateur en Ontario.<br>
+            Site web : <strong>consumerprotection.on.ca</strong> &nbsp;|&nbsp; Téléphone : <strong>1-800-889-9768</strong><br>
+            <em>Appel gratuit depuis n'importe où en Ontario.</em>
+          </span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">4</span>
+          <span class="step-text">
+            <strong>Commissariat à la protection de la vie privée du Canada</strong><br>
+            Si une entreprise utilise mal vos renseignements personnels.<br>
+            Site web : <strong>priv.gc.ca</strong> &nbsp;|&nbsp; Téléphone : <strong>1-800-282-1376</strong>
+          </span>
+        </div>
+      </div>
+
+      <div class="tip-block">
+        <span class="tip-label">Tenez un Journal d'Appels</span>
+        <p>Gardez un petit carnet près de votre téléphone. Notez : la date, l'heure, le nom de l'entreprise, le nom de la personne à qui vous avez parlé, et ce qu'elle a accepté de faire. C'est votre preuve si vous devez escalader. Une capture d'écran d'une conversation par clavardage fonctionne aussi.</p>
+      </div>
+
+      <!-- Scénario de pratique 1 -->
+      <h3>Scénario de Pratique</h3>
+      <div class="practice-scenario">
+        <p><strong>La situation :</strong> Vous appelez votre fournisseur internet parce que votre facture a augmenté de 15 $ ce mois-ci sans avertissement. Le système automatisé vous demande continuellement d'appuyer sur 1 pour la facturation, puis revient au menu principal. Vous avez essayé trois fois.</p>
+        <button class="scenario-toggle" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block'; this.textContent = this.textContent === '👁 Voir quoi faire' ? '👁 Cacher la réponse' : '👁 Voir quoi faire'">👁 Voir quoi faire</button>
+        <div class="scenario-answer" style="display:none">
+          <p><strong>Quoi faire :</strong> Dites le mot <strong>« représentant »</strong> clairement dès que le message d'accueil automatisé se termine. Si ça ne fonctionne pas, appuyez sur <strong>0</strong> deux fois. Si vous ne parvenez toujours pas à passer, raccrochez et rappelez — parfois vous obtenez un chemin de routage différent lors du deuxième essai. Une fois que vous joignez une personne : « J'appelle au sujet d'une augmentation inattendue de 15 $ sur ma facture ce mois-ci. J'aimerais comprendre ce qui a changé. » Notez tout ce qu'on vous dit et le nom de l'agent. S'il dit qu'il ne peut pas l'annuler, demandez : « Pouvez-vous me transférer à un superviseur ? » Vous avez le droit de le demander.</p>
+        </div>
+      </div>
+
+      <!-- ═══ SECTION 2 : BRISER LES BARRIÈRES LINGUISTIQUES ═══ -->
+      <h2>🗣️ Section 2 : Briser les Barrières Linguistiques</h2>
+
+      <p>Même quand vous joignez une vraie personne, l'aide peut quand même sembler frustrante. Les agents parlent parfois vite, utilisent des mots techniques, ou semblent impatients. Vous pouvez vous sentir gêné de dire que vous n'avez pas compris — ou craindre de prendre trop de temps.</p>
+
+      <p><strong>Vous avez tout à fait le droit de leur demander de ralentir.</strong> Les agents du service à la clientèle sont formés pour vous aider — pas l'inverse.</p>
+
+      <h3>Des Scripts qui Fonctionnent Vraiment</h3>
+      <p>Ces phrases exactes sont polies, professionnelles et donnent des résultats. Vous pouvez les écrire sur un post-it et le garder près de votre téléphone.</p>
+
+      <div class="script-box">
+        <div class="script-line">
+          <span class="script-label">Pour les ralentir :</span>
+          <span class="script-text">« Désolé — pourriez-vous parler un peu plus lentement ? Je veux m'assurer de bien comprendre tout. »</span>
+        </div>
+        <div class="script-line">
+          <span class="script-label">Pour demander un langage simple :</span>
+          <span class="script-text">« Pourriez-vous expliquer ça sans termes techniques ? J'ai juste besoin de comprendre ce qui se passe en langage simple. »</span>
+        </div>
+        <div class="script-line">
+          <span class="script-label">Pour confirmer ce que vous avez entendu :</span>
+          <span class="script-text">« Laissez-moi m'assurer d'avoir bien compris — vous dites que [répétez ce que vous avez compris]. C'est bien ça ? »</span>
+        </div>
+        <div class="script-line">
+          <span class="script-label">Pour demander du temps :</span>
+          <span class="script-text">« J'ai besoin d'un moment pour noter ça. Pouvez-vous attendre une seconde ? »</span>
+        </div>
+        <div class="script-line">
+          <span class="script-label">Pour escalader poliment :</span>
+          <span class="script-text">« J'apprécie votre aide. Serait-il possible de parler à un superviseur ? Je veux juste m'assurer d'obtenir les bonnes informations. »</span>
+        </div>
+      </div>
+
+      <div class="confidence-check">
+        <span class="check-icon">💛</span>
+        <p>Vous ne devez pas raccrocher rapidement. Vous avez le droit de comprendre chaque mot de chaque accord avant de dire oui. Un bon agent vous attendra. Un impatient est une raison de rappeler et de parler à quelqu'un d'autre.</p>
+      </div>
+
+      <h3>Changer de Canal Quand le Téléphone Ne Fonctionne Pas</h3>
+      <p>Parfois, le téléphone n'est pas le meilleur canal. Voici quand changer :</p>
+
+      <div class="walkthrough">
+        <div class="walkthrough-step">
+          <span class="step-num">1</span>
+          <span class="step-text"><strong>Demandez une confirmation par courriel :</strong> « Pourriez-vous m'envoyer un résumé de ce que nous avons convenu par courriel ? J'aime avoir les choses par écrit. » Cela vous protège et motive souvent les agents à être plus prudents sur ce qu'ils promettent.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">2</span>
+          <span class="step-text"><strong>Utilisez le clavardage en ligne plutôt que le téléphone :</strong> De nombreuses entreprises ont un clavardage en direct sur leur site web. L'avantage : tout est déjà par écrit, et vous pouvez prendre tout le temps qu'il vous faut pour taper votre question sans vous sentir pressé.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">3</span>
+          <span class="step-text"><strong>Rédigez une lettre ou un courriel formel :</strong> Pour les litiges sérieux (erreurs de facturation, désaccords contractuels), une plainte écrite est plus puissante qu'un appel téléphonique. Les entreprises sont légalement tenues de répondre aux plaintes écrites.</span>
+        </div>
+      </div>
+
+      <!-- Scénario de pratique 2 -->
+      <h3>Scénario de Pratique</h3>
+      <div class="practice-scenario">
+        <p><strong>La situation :</strong> Vous appelez au sujet d'un frais mystérieux et l'agent parle très vite, utilise des acronymes que vous ne reconnaissez pas, et semble pressé. Vous dites « désolé » et acceptez quelque chose que vous n'avez pas bien compris, puis vous vous sentez confus après avoir raccroché.</p>
+        <button class="scenario-toggle" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block'; this.textContent = this.textContent === '👁 Voir quoi faire' ? '👁 Cacher la réponse' : '👁 Voir quoi faire'">👁 Voir quoi faire</button>
+        <div class="scenario-answer" style="display:none">
+          <p><strong>Quoi faire — pendant l'appel :</strong> Arrêtez et dites : <em>« J'ai besoin d'un moment — pourriez-vous ralentir et m'expliquer ça à nouveau en termes plus simples ? Je veux m'assurer de comprendre avant d'accepter quoi que ce soit. »</em> Ne vous excusez pas d'avoir besoin de clarté — c'est votre droit.</p>
+          <p><strong>Quoi faire — après l'appel :</strong> Rappelez et dites : <em>« J'ai parlé avec quelqu'un plus tôt aujourd'hui et je ne suis pas sûr d'avoir bien compris tous les termes de ce que j'ai accepté. Pourriez-vous consulter les notes du compte et m'aider à comprendre ? »</em> Vous pouvez annuler un accord que vous n'avez pas pleinement compris, surtout dans les 10 jours sur la plupart des contrats canadiens.</p>
+        </div>
+      </div>
+
+      <!-- ═══ SECTION 3 : GÉRER LES AIDANTS BIEN INTENTIONNÉS ═══ -->
+      <h2>👨‍👩‍👧 Section 3 : Gérer les Aidants Bien Intentionnés</h2>
+
+      <p>Avoir un membre de la famille qui aide avec la technologie est un cadeau. Mais ça peut aussi être inconfortable — ils vont vite, prennent le contrôle, et soudainement des choses sur votre téléphone ont changé et vous n'êtes pas sûr de ce qui s'est passé ni comment l'annuler.</p>
+
+      <p>Ce n'est pas de l'ingratitude. C'est de l'apprentissage. Les meilleurs aidants enseignent. Les bien intentionnés mais pressés vous rendent accidentellement plus dépendant.</p>
+
+      <h3>La Règle du « Montre-moi »</h3>
+
+      <div class="tip-block">
+        <span class="tip-label">Votre Phrase la Plus Puissante</span>
+        <p><strong>« Peux-tu me montrer comment faire ça — sans le faire à ma place ? »</strong></p>
+        <p>Cette seule phrase change tout. Elle signale que vous voulez apprendre, pas juste que ça soit réparé. Les bons aidants réagiront bien. Les impatients pourraient soupirer — et ça vous dit quelque chose aussi.</p>
+      </div>
+
+      <h3>La Règle des 5 Minutes</h3>
+
+      <div class="script-box">
+        <div class="script-line">
+          <span class="script-label">Quand ils vont trop vite :</span>
+          <span class="script-text">« Pourrais-tu faire ça encore une fois, lentement ? Je veux essayer moi-même pour m'en souvenir la prochaine fois. »</span>
+        </div>
+        <div class="script-line">
+          <span class="script-label">Quand ils sont sur le point de prendre le contrôle :</span>
+          <span class="script-text">« Donne-moi cinq minutes pour essayer ça moi-même d'abord. Si je suis bloqué après ça, je te demanderai. »</span>
+        </div>
+        <div class="script-line">
+          <span class="script-label">Quand ils l'ont déjà fait à votre place :</span>
+          <span class="script-text">« Merci — maintenant peux-tu me montrer comment tu as fait ? Je veux pouvoir le faire moi-même la prochaine fois. »</span>
+        </div>
+        <div class="script-line">
+          <span class="script-label">Quand ils veulent changer vos paramètres :</span>
+          <span class="script-text">« Je préférerais garder mes paramètres tels qu'ils sont. Peux-tu juste m'aider avec cette seule chose ? »</span>
+        </div>
+      </div>
+
+      <h3>Quand Accepter l'Aide vs. Résister</h3>
+
+      <div class="walkthrough">
+        <div class="walkthrough-step">
+          <span class="step-num">✅</span>
+          <span class="step-text"><strong>Acceptez l'aide :</strong> Quand quelque chose est cassé, vous cause du stress, ou vous avez vraiment essayé et ne pouvez pas le comprendre. Accepter de l'aide dans ces cas est sage, pas faible.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">✅</span>
+          <span class="step-text"><strong>Acceptez l'aide :</strong> Quand l'aidant explique ce qu'il fait au fur et à mesure et vous invite à essayer vous-même après.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">🛑</span>
+          <span class="step-text"><strong>Résistez :</strong> Quand quelqu'un veut changer des mots de passe, des paramètres ou des comptes « pour simplifier les choses » — surtout si vous ne l'avez pas demandé. Votre appareil et vos comptes vous appartiennent.</span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">🛑</span>
+          <span class="step-text"><strong>Résistez :</strong> Quand quelqu'un fait des choses si vite que vous ne savez pas ce qui a changé. Demandez-leur d'annuler et de recommencer lentement — c'est tout à fait raisonnable.</span>
+        </div>
+      </div>
+
+      <div class="story-block">
+        <span class="story-label">Le Moment de Marguerite</span>
+        <p>La fille de Marguerite est venue lui rendre visite et a « rangé » son iPad — déplacé toutes ses applis, changé la taille du texte et créé un nouveau mot de passe. « Ça lui a pris dix minutes », a dit Marguerite. « Mais ça m'a pris un mois pour me sentir à l'aise sur mon propre appareil. » Maintenant Marguerite utilise la règle du « montre-moi » et sa fille est devenue un bien meilleur professeur.</p>
+      </div>
+
+      <!-- Scénario de pratique 3 -->
+      <h3>Scénario de Pratique</h3>
+      <div class="practice-scenario">
+        <p><strong>La situation :</strong> Votre petit-fils vous rend visite et propose de vous aider à configurer une nouvelle appli. Il commence à appuyer sur des écrans si vite que vous perdez le fil, et avant que vous puissiez poser des questions, tout est fait. Vous vous sentez reconnaissant mais aussi incertain de ce qui vient de se passer.</p>
+        <button class="scenario-toggle" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block'; this.textContent = this.textContent === '👁 Voir quoi faire' ? '👁 Cacher la réponse' : '👁 Voir quoi faire'">👁 Voir quoi faire</button>
+        <div class="scenario-answer" style="display:none">
+          <p><strong>Quoi dire :</strong> <em>« Merci d'avoir fait ça ! Avant de partir, peux-tu me montrer comment tu as fait ? Je veux comprendre ce que tu as appuyé pour savoir comment l'utiliser. Pourrais-tu l'effacer et me laisser l'installer moi-même pendant que tu regardes ? »</em></p>
+          <p>La plupart des jeunes sont heureux de faire ça — ils supposent juste que les adultes plus âgés veulent que les choses soient faites, pas enseignées. Demander simplement change la dynamique. Vous n'êtes pas difficile. Vous êtes un bon élève.</p>
+        </div>
+      </div>
+
+      <!-- ═══ SECTION 4 : SOUTIEN À DISTANCE EN TOUTE SÉCURITÉ ═══ -->
+      <h2>🖥️ Section 4 : Soutien à Distance en Toute Sécurité</h2>
+
+      <p>Parfois, un aidant technique — que ce soit un membre de la famille, un magasin d'informatique ou une ligne de soutien que vous avez contactée — a besoin de voir votre écran. C'est ce qu'on appelle l'<strong>accès à distance</strong> : il peut voir et parfois contrôler votre appareil depuis un autre endroit via internet.</p>
+
+      <p>L'accès à distance peut être tout à fait sécuritaire. Il peut aussi être l'une des arnaques les plus dangereuses ciblant les aînés. La différence tient à une seule question : <strong>Avez-vous pris contact avec eux en premier ?</strong></p>
+
+      <h3>Outils Légitimes de Soutien à Distance</h3>
+
+      <div class="walkthrough">
+        <div class="walkthrough-step">
+          <span class="step-num">1</span>
+          <span class="step-text">
+            <strong>Windows Assistance rapide</strong> (intégré dans Windows 10 et 11)<br>
+            Comment l'utiliser : Recherchez « Assistance rapide » sur votre ordinateur Windows. Vous pouvez recevoir de l'aide de quelqu'un en qui vous avez confiance. Vous contrôlez quand ça commence et quand ça se termine.<br>
+            <em>Gratuit. Aucun téléchargement requis. Microsoft ne vous demandera jamais de l'utiliser sans sollicitation.</em>
+          </span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">2</span>
+          <span class="step-text">
+            <strong>Partage d'écran Apple / Partage d'écran FaceTime</strong><br>
+            Pour iPhones et iPads : Dans FaceTime, appuyez sur l'écran et choisissez « Partager mon écran ». L'autre personne peut voir votre écran mais ne peut pas le contrôler.<br>
+            <em>Intégré. Sécurisé. Vous pouvez arrêter le partage à tout moment en appuyant à nouveau sur l'écran.</em>
+          </span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">3</span>
+          <span class="step-text">
+            <strong>TeamViewer</strong> (pour ordinateurs)<br>
+            Un outil légitime utilisé par de nombreux professionnels de l'informatique. Ne l'utilisez que si vous l'avez téléchargé vous-même depuis teamviewer.com après avoir contacté un aidant de confiance.<br>
+            <em>Attention : Les arnaqueurs prétendent aussi utiliser TeamViewer — vérifiez toujours qui vous a demandé de l'installer.</em>
+          </span>
+        </div>
+        <div class="walkthrough-step">
+          <span class="step-num">4</span>
+          <span class="step-text">
+            <strong>AnyDesk</strong> (pour ordinateurs)<br>
+            Similaire à TeamViewer. Légitime lorsqu'utilisé avec un aidant de confiance que vous avez contacté.<br>
+            <em>Même mise en garde : ne jamais l'installer parce que quelqu'un vous a appelé en premier.</em>
+          </span>
+        </div>
+      </div>
+
+      <h3>La Liste de Contrôle de Sécurité pour l'Accès à Distance</h3>
+      <p>Avant de permettre à quiconque d'accéder à votre appareil, vérifiez TOUS les six points suivants. Si même un seul est « Non » — n'allez pas de l'avant.</p>
+
+      <div class="safety-checklist">
+        <div class="checklist-item">
+          <span class="check-num">1</span>
+          <span class="check-text"><strong>C'est moi qui les ai contactés en premier</strong> — J'ai appelé ou envoyé un courriel à cette personne/entreprise, ils ne m'ont pas contacté de façon inattendue.</span>
+        </div>
+        <div class="checklist-item">
+          <span class="check-num">2</span>
+          <span class="check-text"><strong>Je sais qui est cette personne</strong> — C'est un membre de la famille, un ami, ou une entreprise que j'ai déjà utilisée et en laquelle j'ai confiance.</span>
+        </div>
+        <div class="checklist-item">
+          <span class="check-num">3</span>
+          <span class="check-text"><strong>Je comprends ce qu'ils vont faire</strong> — Ils ont expliqué clairement ce qu'ils ont besoin de voir et pourquoi, avant que la session commence.</span>
+        </div>
+        <div class="checklist-item">
+          <span class="check-num">4</span>
+          <span class="check-text"><strong>Personne n'a demandé de paiement par carte-cadeau</strong> — Les aidants et entreprises légitimes ne demandent jamais de paiement en cartes iTunes, cartes Google Play ou cryptomonnaie.</span>
+        </div>
+        <div class="checklist-item">
+          <span class="check-num">5</span>
+          <span class="check-text"><strong>Je peux mettre fin à la session à tout moment</strong> — Je sais comment fermer l'appli ou éteindre mon appareil pour arrêter la connexion immédiatement.</span>
+        </div>
+        <div class="checklist-item">
+          <span class="check-num">6</span>
+          <span class="check-text"><strong>Je ne me sens pas sous pression</strong> — Personne ne me presse, ne crée d'urgence, ou me dit que quelque chose de terrible arrivera si je n'agis pas immédiatement.</span>
+        </div>
+      </div>
+
+      <div class="warning-box">
+        <span class="warning-box-label">🚨 Avertissement Critique — C'est une Arnaque Très Courante</span>
+        <p>N'autorisez jamais l'accès à distance si quelqu'un <strong>VOUS A APPELÉ de façon inattendue</strong> — même si l'identifiant de l'appelant affiche Apple, Microsoft, votre banque ou l'Agence du revenu du Canada. L'identifiant peut être falsifié. C'est l'une des arnaques les plus coûteuses ciblant les aînés. Les arnaqueurs peuvent sembler officiels, utiliser de vrais noms d'entreprises et créer une vraie urgence. <strong>Raccrochez quand même.</strong> Appelez la vraie entreprise en utilisant le numéro sur leur site web officiel.</p>
+        <p style="margin-top:0.75rem"><strong>Ils peuvent aussi :</strong> Vous dire que votre ordinateur a un virus et qu'ils peuvent le voir. Prétendre que votre NAS a été compromis. Dire que votre compte bancaire est en train d'être vidé. Exiger que vous restiez en ligne pendant qu'ils « réparent » ça. Chaque mot est un mensonge conçu pour vous faire peur et vous pousser à obéir.</p>
+      </div>
+
+      <div class="confidence-check-box">
+        <span class="check-icon">🛑</span>
+        <p><strong>La Règle Unique pour l'Accès à Distance</strong></p>
+        <p class="check-subtext">Si quelqu'un vous contacte en vous demandant l'accès à votre appareil — raccrochez. Sans exception. Une vraie entreprise, une vraie banque ou un vrai organisme gouvernemental ne vous appellera jamais de façon inattendue pour demander à accéder à votre appareil. Si vous avez accidentellement donné accès à quelqu'un, éteignez immédiatement votre appareil et appelez un membre de la famille de confiance ou le Centre antifraude du Canada : <strong>1-888-495-4416</strong>.</p>
+      </div>
+
+      <!-- Scénario de pratique 4 -->
+      <h3>Scénario de Pratique</h3>
+      <div class="practice-scenario">
+        <p><strong>La situation :</strong> Votre téléphone sonne. Un appelant dit qu'il est de « Microsoft Sécurité » et que votre ordinateur envoie des rapports d'erreurs. Il dit qu'il peut le corriger à distance mais qu'il a besoin que vous téléchargiez un programme appelé AnyDesk d'abord. Il semble professionnel et urgent.</p>
+        <button class="scenario-toggle" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block'; this.textContent = this.textContent === '👁 Voir quoi faire' ? '👁 Cacher la réponse' : '👁 Voir quoi faire'">👁 Voir quoi faire</button>
+        <div class="scenario-answer" style="display:none">
+          <p><strong>Quoi faire :</strong> Raccrochez le téléphone sans vous expliquer. Vous ne leur devez pas une raison.</p>
+          <p><strong>Pourquoi :</strong> Microsoft ne surveille pas les ordinateurs individuels et n'appelle pas les clients au sujet d'erreurs. C'est une arnaque de soutien technique. Si vous avez téléchargé quoi que ce soit ou leur avez donné accès avant de vous en rendre compte — éteignez immédiatement votre appareil, puis appelez une personne de confiance ou le Centre antifraude du Canada au 1-888-495-4416.</p>
+          <p><strong>Si vous n'êtes pas sûr :</strong> Appelez Microsoft directement au 1-800-642-7676 et demandez s'ils vous ont contacté. Ils confirmeront qu'ils ne l'ont pas fait.</p>
+        </div>
+      </div>
+
+      <!-- ═══ POINTS CLÉS ═══ -->
+      <h2>⭐ Points Clés du Module 12</h2>
+
+      <div class="takeaways-grid">
+        <div class="takeaway-card">
+          <span class="takeaway-icon">📞</span>
+          <strong>Les mots magiques fonctionnent</strong>
+          <p>Dites « représentant » ou « agent », ou appuyez sur 0 pour échapper aux systèmes téléphoniques automatisés.</p>
+        </div>
+        <div class="takeaway-card">
+          <span class="takeaway-icon">⚖️</span>
+          <strong>L'escalade est votre droit</strong>
+          <p>Le CPRST, l'OSBI et Protection du consommateur Ontario sont des ressources gratuites auxquelles les entreprises doivent répondre.</p>
+        </div>
+        <div class="takeaway-card">
+          <span class="takeaway-icon">🗣️</span>
+          <strong>Les scripts réduisent le stress</strong>
+          <p>« Pourriez-vous ralentir ? » et « Pouvez-vous expliquer ça sans termes techniques ? » sont puissants et professionnels.</p>
+        </div>
+        <div class="takeaway-card">
+          <span class="takeaway-icon">👨‍👩‍👧</span>
+          <strong>« Montre-moi » bat « fais-le pour moi »</strong>
+          <p>Chaque étape qu'un aidant vous enseigne est une étape que vous possédez pour toujours. Demandez à essayer vous-même.</p>
+        </div>
+        <div class="takeaway-card">
+          <span class="takeaway-icon">🖥️</span>
+          <strong>L'accès à distance requiert votre consentement</strong>
+          <p>Sécuritaire seulement quand vous les avez contactés en premier, que vous savez qui ils sont, et que vous pouvez arrêter à tout moment.</p>
+        </div>
+        <div class="takeaway-card">
+          <span class="takeaway-icon">🛑</span>
+          <strong>Appels non sollicités = raccrochez</strong>
+          <p>Aucune vraie entreprise ne vous appelle de façon inattendue pour demander l'accès à votre appareil. Sans exception.</p>
+        </div>
+      </div>
+
+      <!-- ═══ RESSOURCES CANADIENNES ═══ -->
+      <div class="feeling-stuck-box">
+        <h4>Ressources Canadiennes pour Obtenir de l'Aide</h4>
+        <p class="resource-phone"><strong>Canadiens Branchés</strong> (aide technologique gratuite pour aînés) — <a href="tel:+18558080505">1-855-808-0505</a></p>
+        <p class="resource-phone"><strong>Cyber-Seniors</strong> (soutien technologique intergénérationnel) — <a href="tel:+18442173057">1-844-217-3057</a></p>
+        <p class="resource-phone"><strong>Protection du consommateur Ontario</strong> — <a href="tel:+18008899768">1-800-889-9768</a></p>
+        <p class="resource-phone"><strong>CPRST</strong> (plaintes télécom) — <a href="tel:+18882211687">1-888-221-1687</a></p>
+        <p class="resource-phone"><strong>OSBI</strong> (plaintes bancaires) — <a href="tel:+18884514519">1-888-451-4519</a></p>
+        <p class="resource-phone"><strong>Centre antifraude du Canada</strong> — <a href="tel:+18884954416">1-888-495-4416</a></p>
+      </div>
+
+      <div class="confidence-check">
+        <span class="check-icon">🎉</span>
+        <p>Vous avez terminé le Module 12 !</p>
+        <p class="check-text">Vous savez maintenant comment échapper aux systèmes téléphoniques automatisés, utiliser des scripts pour obtenir ce dont vous avez besoin des représentants du service, guider les aidants familiaux pour vraiment apprendre plutôt que juste faire faire les choses à votre place, et vous protéger des arnaques d'accès à distance. Vous avez les outils, les mots et les connaissances. Vous méritez de bonne aide — et maintenant vous savez comment l'obtenir.</p>
+      </div>
+
+      <div style="text-align:center;padding:1rem 0 0.5rem">
+        <button class="btn-print" onclick="window.print()" aria-label="Imprimer ce module">🖨️ Imprimer ce Module</button>
+      </div>
+
+      <div class="module-nav">
+        <a href="module-11.html" class="btn btn-secondary">← Applications de Covoiturage</a>
+        <a href="../index.html" class="btn btn-primary btn-next">Retour à l'Accueil →</a>
+      </div>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-brand">Centre de Confiance Numérique</p>
+          <p class="footer-tagline">Un programme d'apprentissage gratuit pour les aînés canadiens</p>
+          <nav class="footer-links" aria-label="Navigation du pied de page">
+            <a href="../index.html">Accueil</a> |
+            <a href="../../../resources.html">Ressources</a> |
+            <a href="../../../privacy.html">Politique de Confidentialité</a>
+          </nav>
+          <p class="footer-support">
+            Besoin d'aide ? Appelez <strong>Canadiens Branchés</strong> gratuitement :
+            <a href="tel:+18558080505">1-855-808-0505</a>
+          </p>
+          <p class="footer-copy">&copy; 2026 Two Birds. Fait avec soin en Ontario, Canada.</p>
+          <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.5rem;">⚜ Cette traduction a été générée par ordinateur et nécessite une révision professionnelle.</p>
+        </div>
+      </footer>
+
+      <div id="progress-announcer" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+    </main>
+  </div>
+
+  <script src="../../../js/app.js" defer></script>
+  <script src="../../../js/accessibility.js" defer></script>
+  <script src="../../../js/progress.js" defer></script>
+  <script src="../../../js/scam-quiz.js" defer></script>
+</body>
+</html>
