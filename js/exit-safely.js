@@ -1,8 +1,8 @@
 /* ============================================================
    Digital Confidence Centre — Exit Safely Button
-   Injects a persistent "Exit Safely" button that takes users
-   to Google immediately. Useful if someone is being watched
-   or wants to leave quickly without their browsing tracked.
+   Injects an "Exit Safely" link into the header (top-bar)
+   instead of floating over page content. Useful if someone
+   is being watched or wants to leave quickly.
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -24,5 +24,21 @@ document.addEventListener('DOMContentLoaded', function () {
     e.preventDefault();
   });
 
-  document.body.appendChild(btn);
+  /* Inject into top-bar (mobile header) — replaces empty trailing span */
+  var topBar = document.querySelector('.top-bar');
+  if (topBar) {
+    var trailing = topBar.querySelector('span:last-child');
+    if (trailing) {
+      topBar.replaceChild(btn, trailing);
+    } else {
+      topBar.appendChild(btn);
+    }
+    return;
+  }
+
+  /* Fallback: inject into sidebar nav before the settings divider */
+  var divider = document.querySelector('.settings-divider');
+  if (divider) {
+    divider.parentNode.insertBefore(btn, divider);
+  }
 });
