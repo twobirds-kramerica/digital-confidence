@@ -5586,3 +5586,97 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 [data-theme="dark"] .dc-consent-text {
   color: #E8E8E8;
 }
+
+/* ============================================
+   Testimonials / Social Proof Section
+   ============================================ */
+
+.testimonials-section {
+  padding: 40px 20px;
+  background: #f0f4ff;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 24px;
+  color: #1565C0;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto 24px;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+.testimonial-stars {
+  color: #f5a623;
+  font-size: 1.3em;
+  margin-bottom: 12px;
+}
+
+.testimonial-quote {
+  font-size: 1.05em;
+  line-height: 1.6;
+  color: #333;
+  margin: 0 0 16px;
+  font-style: italic;
+}
+
+.testimonial-author {
+  font-weight: bold;
+  color: #1565C0;
+  font-size: 0.95em;
+}
+
+.testimonial-location {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.testimonials-disclaimer {
+  font-size: 0.85em;
+  color: #888;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+/* Dark mode for testimonials */
+[data-theme="dark"] .testimonials-section {
+  background: #1a2035;
+}
+
+[data-theme="dark"] .testimonials-section h2 {
+  color: #90CAF9;
+}
+
+[data-theme="dark"] .testimonial-card {
+  background: #1e2a3a;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+[data-theme="dark"] .testimonial-quote {
+  color: #D0D8E8;
+}
+
+[data-theme="dark"] .testimonial-author {
+  color: #90CAF9;
+}
+
+[data-theme="dark"] .testimonial-location {
+  color: #8899AA;
+}
+
+[data-theme="dark"] .testimonials-disclaimer {
+  color: #667788;
+}
