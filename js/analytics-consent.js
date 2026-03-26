@@ -105,7 +105,7 @@
         '<p class="dc-consent-text">' +
           'We use analytics to understand how seniors use this site and improve it. ' +
           'No personal information is collected. ' +
-          '<a href="/privacy.html" class="dc-consent-learn">Learn more</a>' +
+          '<a href="privacy.html" class="dc-consent-learn">Learn more</a>' +
         '</p>' +
         '<div class="dc-consent-actions">' +
           '<button id="dc-consent-ok" class="dc-consent-btn-ok">OK, got it</button>' +
