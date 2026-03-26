@@ -172,3 +172,49 @@ bf6602e feat: Phase 5 — sitemap.xml updated with all 40+ pages, robots.txt ver
 - **Admin pages not yet password-protected**: `admin/performance.html`, `admin/feedback-review.html`, and similar pages are noindex but publicly accessible by URL — consider Cloudflare Access rules or moving to a private repo branch
 - **LinkedIn calendar**: Posts in `_marketing/linkedin-calendar.md` need scheduling into a social media tool (Buffer, Hootsuite, or LinkedIn Scheduler directly)
 - **B2B pricing**: All pricing in `b2b/index.html` is placeholder — confirm with Aaron before publishing
+
+---
+
+## Session 2 Build — March 26, 2026
+
+### Phase 1 — Canadian Support Directory
+- Created resources/support-directory.html
+- 9 organisations: Connected Canadians, Cyber-Seniors, Stand Against Scams, Canadian Anti-Fraud Centre, Ontario 2-1-1, ISED Canada, London Public Library, St. Thomas Public Library, Masonville Apple Store
+- Grouped into National, Ontario, and Local sections
+
+### Phase 2 — Rogers Bank Scam Awareness Integration
+- Added courier fraud + call forwarding scam callout to module-3.html
+- Added amber alert card to index.html homepage ("Banks never pick up your card")
+- Added CSS for .alert-card to css/main.css
+- Source: Canadian Anti-Scam Coalition / standagainstscams.ca
+
+### Phase 3 — Print Centre Population
+- Fully populated print-centre.html with 16 modules × 3 tips each
+- Cheat sheet generator produces printable window output
+- Email-to-myself sends full tips via mailto:
+- @media print CSS added: 18px min font, black on white, nav/buttons hidden
+
+### Phase 4 — Homepage Social Proof
+- Added testimonials section to index.html (between email capture and footer)
+- 4 illustrative testimonial cards: London senior, St. Thomas teacher, Toronto son, library coordinator
+- CSS added to css/main.css with dark mode support
+- Disclaimer note: "illustrative until real beta tester feedback collected"
+
+### Phase 5 — Final Integration
+- "Get Help" nav link added to all English pages pointing to support-directory.html
+- "Get Help" footer link added to all root-level pages with footer-links nav
+- analytics-consent.js verified on new pages (support-directory.html already had it)
+- sitemap.xml updated with support-directory.html
+- Canadian English grep check passed on new files
+
+### Git Commits (Session 2)
+```
+5f438cf feat: Phase 2 — courier fraud and call forwarding scam awareness added to Module 3 and homepage
+99963d5 feat: Phase 3 — print centre fully populated (16 modules, cheat sheet generator, print CSS)
+521be8b feat: Phase 1 — Canadian support directory created (9 organisations)
+f36747b feat: Phase 4 — social proof testimonials section added to homepage
+03da657 feat: Phase 15 — final integration check, audit summary, Canadian English fixes, sitemap updates
+e7a803a feat: Phase 14 — accessibility deep dive (focus-visible, focus trapping, reduced-motion, aria-live, dyslexic font)
+2514f29 feat: Phase 1 — French translation modules 7-12 + print centre + privacy
+d999e15 feat: Phase 13 — performance monitoring dashboard and data file
+```
