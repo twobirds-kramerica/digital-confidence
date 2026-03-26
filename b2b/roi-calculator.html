@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Calculate the ROI of partnering with the Digital Confidence Centre. See estimated value, staff hours saved, and cost per member for your organisation.">
+  <title>ROI Calculator — Digital Confidence Centre Partnership Programme</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/accessibility.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta name="theme-color" content="#1565C0">
+  <style>
+    .roi-hero {
+      background: linear-gradient(135deg, #0d2b4e 0%, #1565C0 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .roi-hero h1 {
+      font-size: clamp(1.3rem, 4vw, 2rem);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #fff;
+      border: none;
+      line-height: 1.3;
+    }
+    .roi-hero p {
+      font-size: 1.05rem;
+      opacity: 0.92;
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .roi-card {
+      background: var(--color-surface, #fff);
+      border: 1px solid var(--color-border, #e0e0e0);
+      border-radius: 14px;
+      padding: 2rem 2.25rem;
+      margin-bottom: 1.75rem;
+    }
+    .roi-card h2 {
+      font-size: 1.2rem;
+      color: #0d2b4e;
+      margin-bottom: 1.25rem;
+    }
+    .input-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+    .roi-input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .roi-input-group label {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--color-text, #1a1a1a);
+    }
+    .roi-input-group .help-text {
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.4;
+    }
+    .roi-input-group input[type="number"] {
+      border: 1.5px solid var(--color-border, #ccc);
+      border-radius: 8px;
+      padding: 0.7rem 0.9rem;
+      font-family: inherit;
+      font-size: 1.05rem;
+      background: var(--color-surface, #fff);
+      color: var(--color-text, #1a1a1a);
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .roi-input-group input:focus {
+      outline: 2px solid #1565C0;
+      outline-offset: 2px;
+    }
+    /* Results panel */
+    .results-panel {
+      background: linear-gradient(135deg, #0d2b4e 0%, #1565C0 100%);
+      border-radius: 14px;
+      padding: 2rem 2.25rem;
+      margin-bottom: 1.75rem;
+      color: #fff;
+    }
+    .results-panel h2 {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 1.25rem;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .result-item {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+    }
+    .result-item .result-label {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      margin-bottom: 0.4rem;
+      line-height: 1.4;
+    }
+    .result-item .result-value {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .result-item.highlight {
+      background: rgba(255,255,255,0.22);
+      border-color: rgba(255,255,255,0.4);
+    }
+    .result-item.highlight .result-value {
+      font-size: 2rem;
+      color: #FFF9C4;
+    }
+    .result-item .result-sublabel {
+      font-size: 0.78rem;
+      opacity: 0.65;
+      margin-top: 0.2rem;
+    }
+    /* Methodology */
+    .methodology-card {
+      background: #F9F9F9;
+      border: 1px solid var(--color-border, #e0e0e0);
+      border-radius: 14px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 1.75rem;
+    }
+    .methodology-card summary {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1565C0;
+      cursor: pointer;
+      padding: 0.25rem 0;
+    }
+    .methodology-card summary:hover { color: #0d47a1; }
+    .methodology-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+    .methodology-table th {
+      background: #e8f0fe;
+      color: #0d2b4e;
+      font-weight: 700;
+      padding: 0.6rem 0.9rem;
+      text-align: left;
+    }
+    .methodology-table td {
+      padding: 0.6rem 0.9rem;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+    }
+    .methodology-table tr:last-child td { border-bottom: none; }
+    .cta-banner {
+      background: #F0F7FF;
+      border: 1px solid #BBDEFB;
+      border-radius: 14px;
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 1.75rem;
+    }
+    .cta-banner h2 {
+      font-size: 1.2rem;
+      color: #0d2b4e;
+      margin-bottom: 0.5rem;
+    }
+    .btn-cta {
+      display: inline-block;
+      background: #1565C0;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 0.85rem 2rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-top: 0.75rem;
+      transition: background 0.2s;
+    }
+    .btn-cta:hover { background: #0d47a1; color: #fff; }
+    .disclaimer {
+      font-size: 0.85rem;
+      color: #888;
+      text-align: center;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Accessibility Controls -->
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <!-- Top Bar (Mobile) -->
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">Digital Confidence Centre</span>
+    <span></span>
+  </div>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">✕</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Partnership Programme</p>
+    </div>
+    <nav>
+      <a href="../index.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a href="index.html"><span class="nav-icon">🤝</span><span class="nav-label">For Organisations</span></a>
+      <a href="roi-calculator.html"><span class="nav-icon">📊</span><span class="nav-label">ROI Calculator</span></a>
+      <a href="case-study-template.html"><span class="nav-icon">📋</span><span class="nav-label">Case Study</span></a>
+      <a href="../resources.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
+      <div class="sidebar-a11y-section">
+        <p class="sidebar-a11y-title">Text Size</p>
+        <div class="sidebar-font-row">
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false" style="font-size:1rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+        </div>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a> &rsaquo; <a href="index.html">For Organisations</a> &rsaquo; <span>ROI Calculator</span>
+      </nav>
+
+      <!-- Hero -->
+      <div class="roi-hero">
+        <h1>ROI Calculator</h1>
+        <p>See the estimated value your organisation could get from partnering with the Digital Confidence Centre. Fill in your numbers and results update instantly.</p>
+      </div>
+
+      <!-- Inputs -->
+      <div class="roi-card">
+        <h2>About Your Organisation</h2>
+        <div class="input-grid">
+          <div class="roi-input-group">
+            <label for="total_members">Members or clients served</label>
+            <p class="help-text">Total number of people your organisation serves, including those who aren't seniors.</p>
+            <input type="number" id="total_members" value="0" min="0" placeholder="e.g. 5000">
+          </div>
+          <div class="roi-input-group">
+            <label for="current_spend">Current annual spending on digital literacy ($)</label>
+            <p class="help-text">Workshops, printed guides, external trainers — anything related to helping members with technology.</p>
+            <input type="number" id="current_spend" value="0" min="0" placeholder="0">
+          </div>
+          <div class="roi-input-group">
+            <label for="support_hours">Staff hours/week answering tech support questions</label>
+            <p class="help-text">How many hours per week does your team spend helping members with device or app questions?</p>
+            <input type="number" id="support_hours" value="0" min="0" placeholder="e.g. 5">
+          </div>
+          <div class="roi-input-group">
+            <label for="hourly_rate">Average staff hourly cost ($)</label>
+            <p class="help-text">Salary plus benefits, divided by working hours. Default: $25/hr.</p>
+            <input type="number" id="hourly_rate" value="25" min="0" placeholder="25">
+          </div>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="results-panel" aria-live="polite" aria-label="Calculated results">
+        <h2>Your Estimated Results</h2>
+        <div class="results-grid">
+          <div class="result-item">
+            <div class="result-label">Members who would benefit from DCC</div>
+            <div class="result-value" id="res-benefiting">0</div>
+            <div class="result-sublabel">35% of your total membership</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">Estimated annual value of digital literacy improvement</div>
+            <div class="result-value" id="res-literacy-value">$0</div>
+            <div class="result-sublabel">$180 per benefiting member</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">Estimated staff hours saved per year</div>
+            <div class="result-value" id="res-hours-saved">0</div>
+            <div class="result-sublabel">40% reduction in tech support queries</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">Estimated annual staff cost saved</div>
+            <div class="result-value" id="res-staff-savings">$0</div>
+            <div class="result-sublabel">Based on your hourly rate</div>
+          </div>
+          <div class="result-item highlight">
+            <div class="result-label">Total estimated annual value</div>
+            <div class="result-value" id="res-total">$0</div>
+            <div class="result-sublabel">Combined benefit of programme adoption</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">Cost per member with Partner plan</div>
+            <div class="result-value" id="res-cost-per-member">N/A</div>
+            <div class="result-sublabel">$299/yr ÷ benefiting members</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="disclaimer">These are estimates for illustrative purposes only. Actual results will vary. Talk to us about your specific situation.</p>
+
+      <!-- Methodology -->
+      <div class="methodology-card">
+        <details>
+          <summary>How we calculate this</summary>
+          <p style="font-size:0.95rem;color:#555;margin-top:0.75rem;line-height:1.6;">Our estimates are based on research into digital literacy outcomes in Canadian communities, conversations with partner organisations, and data from similar programmes in Ontario. They are conservative estimates intended to give a general sense of value — not a guarantee.</p>
+          <table class="methodology-table">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Formula</th>
+                <th>Rationale</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Members who benefit</td>
+                <td>Total members × 0.35</td>
+                <td>Approximately 35% of Canadians aged 50+ report low digital confidence (Statistics Canada, 2023).</td>
+              </tr>
+              <tr>
+                <td>Value of literacy improvement</td>
+                <td>Benefiting members × $180</td>
+                <td>Based on estimated value of reduced scam vulnerability, improved health service access, and reduced isolation — $180/year is a conservative proxy.</td>
+              </tr>
+              <tr>
+                <td>Hours saved</td>
+                <td>Weekly hours × 52 × 0.40</td>
+                <td>Partner organisations report a 30–50% reduction in informal tech support queries after members complete DCC modules.</td>
+              </tr>
+              <tr>
+                <td>Staff cost saved</td>
+                <td>Hours saved × hourly rate</td>
+                <td>Direct labour cost of tech support time redirected to higher-value activities.</td>
+              </tr>
+              <tr>
+                <td>Cost per member</td>
+                <td>$299 ÷ benefiting members</td>
+                <td>Partner plan annual fee divided across the members who would actively benefit.</td>
+              </tr>
+            </tbody>
+          </table>
+        </details>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-banner">
+        <h2>Ready to Discuss Your Specific Situation?</h2>
+        <p style="font-size:1.05rem;color:#555;">A 30-minute demo call is free and no-obligation. We'll walk you through exactly how the programme would work for your organisation.</p>
+        <a href="index.html#demo-request" class="btn-cta">Book a Free Demo →</a>
+      </div>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-brand">Digital Confidence Centre</p>
+          <p class="footer-tagline">A free learning programme for Canadian seniors</p>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="../index.html">Home</a> |
+            <a href="index.html">For Organisations</a> |
+            <a href="../resources.html">Resources</a> |
+            <a href="../privacy.html">Privacy Policy</a>
+          </nav>
+          <p class="footer-copy">&copy; 2026 Two Birds. Made with care in Ontario, Canada.</p>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    (function() {
+      var inputs = ['total_members', 'current_spend', 'support_hours', 'hourly_rate'];
+      inputs.forEach(function(id) {
+        document.getElementById(id).addEventListener('input', calculate);
+      });
+
+      function fmt(n) {
+        return '$' + Math.round(n).toLocaleString('en-CA');
+      }
+
+      function calculate() {
+        var members   = parseFloat(document.getElementById('total_members').value) || 0;
+        var spend     = parseFloat(document.getElementById('current_spend').value) || 0;
+        var hours     = parseFloat(document.getElementById('support_hours').value) || 0;
+        var rate      = parseFloat(document.getElementById('hourly_rate').value) || 25;
+
+        var benefiting      = Math.round(members * 0.35);
+        var literacyValue   = benefiting * 180;
+        var hoursSaved      = Math.round(hours * 52 * 0.4);
+        var staffSavings    = hoursSaved * rate;
+        var total           = literacyValue + staffSavings;
+        var costPerMember   = benefiting > 0 ? (299 / benefiting) : null;
+
+        document.getElementById('res-benefiting').textContent     = benefiting.toLocaleString('en-CA');
+        document.getElementById('res-literacy-value').textContent = fmt(literacyValue);
+        document.getElementById('res-hours-saved').textContent    = hoursSaved.toLocaleString('en-CA');
+        document.getElementById('res-staff-savings').textContent  = fmt(staffSavings);
+        document.getElementById('res-total').textContent          = fmt(total);
+        document.getElementById('res-cost-per-member').textContent = costPerMember !== null
+          ? '$' + costPerMember.toFixed(2)
+          : 'N/A';
+      }
+    })();
+  </script>
+  <script src="../js/app.js" defer></script>
+  <script src="../js/accessibility.js" defer></script>
+</body>
+</html>

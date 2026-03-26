@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Partner with the Digital Confidence Centre to bring free, accessible digital literacy training to your senior members. Libraries, credit unions, seniors centres, and community organisations welcome.">
+  <title>For Organisations — Digital Confidence Centre Partnership Programme</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/accessibility.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta name="theme-color" content="#1565C0">
+  <style>
+    /* B2B-specific professional styles */
+    .b2b-hero {
+      background: linear-gradient(135deg, #0d2b4e 0%, #1565C0 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 3rem 2.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .b2b-hero h1 {
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: #fff;
+      border: none;
+      line-height: 1.3;
+    }
+    .b2b-hero .subheading {
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      opacity: 0.92;
+      max-width: 640px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.7;
+    }
+    .b2b-hero .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .stat-chip {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 10px;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .b2b-section {
+      background: var(--color-surface, #fff);
+      border: 1px solid var(--color-border, #e0e0e0);
+      border-radius: 14px;
+      padding: 2rem 2.25rem;
+      margin-bottom: 1.75rem;
+    }
+    .b2b-section h2 {
+      font-size: 1.3rem;
+      color: #0d2b4e;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #e8f0fe;
+      padding-bottom: 0.5rem;
+    }
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    .audience-card {
+      background: #F0F7FF;
+      border: 1px solid #BBDEFB;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      text-align: center;
+    }
+    .audience-card .aud-icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .audience-card p {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 0;
+      color: #0d2b4e;
+    }
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.65rem 0;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      border-bottom: 1px solid var(--color-border, #f0f0f0);
+    }
+    .feature-list li:last-child { border-bottom: none; }
+    .feature-list .fi-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    /* Pricing tiers */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    .pricing-card {
+      border: 2px solid var(--color-border, #ddd);
+      border-radius: 14px;
+      padding: 1.5rem 1.5rem 1.75rem;
+      position: relative;
+    }
+    .pricing-card.featured {
+      border-color: #1565C0;
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -0.75rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1565C0;
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.2rem 0.9rem;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .pricing-card .tier-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0d2b4e;
+      margin-bottom: 0.25rem;
+    }
+    .pricing-card .tier-price {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #1565C0;
+      margin-bottom: 0.1rem;
+    }
+    .pricing-card .tier-price span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #666;
+    }
+    .pricing-card .tier-desc {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+    .pricing-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .pricing-features li {
+      font-size: 0.95rem;
+      padding: 0.35rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      color: #333;
+    }
+    .pricing-features li::before {
+      content: "✓";
+      color: #2E7D32;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    /* Testimonials */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    .testimonial-card {
+      background: #FAFAFA;
+      border: 1px solid var(--color-border, #e0e0e0);
+      border-radius: 12px;
+      border-left: 4px solid #1565C0;
+      padding: 1.25rem 1.5rem;
+    }
+    .testimonial-card blockquote {
+      margin: 0 0 0.75rem;
+      font-style: italic;
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.7;
+    }
+    .testimonial-card cite {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #0d2b4e;
+    }
+    .placeholder-label {
+      background: #FFF9C4;
+      border: 1px dashed #F9A825;
+      border-radius: 6px;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #5D4037;
+      margin-left: 0.5rem;
+    }
+    /* Demo form */
+    .demo-form-section {
+      background: #0d2b4e;
+      border-radius: 16px;
+      padding: 2.5rem 2.25rem;
+      margin-bottom: 1.75rem;
+      color: #fff;
+    }
+    .demo-form-section h2 {
+      font-size: 1.35rem;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+    .demo-form-section .form-intro {
+      font-size: 1rem;
+      opacity: 0.85;
+      margin-bottom: 1.5rem;
+    }
+    .demo-form-group {
+      margin-bottom: 1.25rem;
+    }
+    .demo-form-group label {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      color: #cce0ff;
+    }
+    .demo-form-group input,
+    .demo-form-group select,
+    .demo-form-group textarea {
+      width: 100%;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      border-radius: 8px;
+      padding: 0.7rem 0.9rem;
+      font-family: inherit;
+      font-size: 1rem;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      box-sizing: border-box;
+    }
+    .demo-form-group input::placeholder,
+    .demo-form-group textarea::placeholder {
+      color: rgba(255,255,255,0.5);
+    }
+    .demo-form-group input:focus,
+    .demo-form-group select:focus,
+    .demo-form-group textarea:focus {
+      outline: 2px solid #90CAF9;
+      outline-offset: 2px;
+    }
+    .demo-form-group select option {
+      color: #333;
+      background: #fff;
+    }
+    .btn-demo-submit {
+      background: #fff;
+      color: #0d2b4e;
+      border: none;
+      border-radius: 10px;
+      padding: 0.9rem 2.2rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 0.5rem;
+      transition: background 0.2s;
+    }
+    .btn-demo-submit:hover { background: #e8f0fe; }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 640px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Accessibility Controls -->
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <!-- Top Bar (Mobile) -->
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">Digital Confidence Centre</span>
+    <span></span>
+  </div>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">✕</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Partnership Programme</p>
+    </div>
+    <nav>
+      <a href="../index.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a href="../module-1.html"><span class="nav-icon">🪂</span><span class="nav-label">1. The Escape Hatch</span></a>
+      <a href="../module-2.html"><span class="nav-icon">🛡️</span><span class="nav-label">2. Security Shield</span></a>
+      <a href="../resources.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
+      <div class="sidebar-a11y-section">
+        <p class="sidebar-a11y-title">Text Size</p>
+        <div class="sidebar-font-row">
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false" style="font-size:1rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+        </div>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <!-- Hero -->
+      <div class="b2b-hero">
+        <h1>Help Your Members Navigate the Digital World With Confidence</h1>
+        <p class="subheading">The Digital Confidence Centre is a free, self-paced digital literacy programme built specifically for Canadian seniors. Bring it to your community — no instructors, no setup costs, no technical overhead.</p>
+        <div class="hero-stats">
+          <div class="stat-chip">15+ modules</div>
+          <div class="stat-chip">Ontario-specific content</div>
+          <div class="stat-chip">Accessible by design</div>
+          <div class="stat-chip">Free to access</div>
+        </div>
+      </div>
+
+      <!-- Who it's for -->
+      <div class="b2b-section">
+        <h2>Who Partners With Us?</h2>
+        <p style="font-size:1.05rem;margin-bottom:1rem;">Organisations across Ontario are already using the Digital Confidence Centre to support their senior members and clients. Does your organisation fit one of these?</p>
+        <div class="audience-grid">
+          <div class="audience-card"><span class="aud-icon">📚</span><p>Public Libraries</p></div>
+          <div class="audience-card"><span class="aud-icon">🏦</span><p>Credit Unions</p></div>
+          <div class="audience-card"><span class="aud-icon">🏥</span><p>Community Health Centres</p></div>
+          <div class="audience-card"><span class="aud-icon">🏛️</span><p>Seniors Centres</p></div>
+          <div class="audience-card"><span class="aud-icon">⛪</span><p>Churches &amp; Faith Communities</p></div>
+          <div class="audience-card"><span class="aud-icon">🤝</span><p>Community Organisations</p></div>
+        </div>
+      </div>
+
+      <!-- Features -->
+      <div class="b2b-section">
+        <h2>What You Get</h2>
+        <ul class="feature-list">
+          <li>
+            <span class="fi-icon">🎓</span>
+            <div><strong>Self-paced, no instructor needed</strong> — members learn at their own pace, anytime, on any device. Staff time investment is minimal.</div>
+          </li>
+          <li>
+            <span class="fi-icon">👓</span>
+            <div><strong>Accessible design for seniors</strong> — adjustable text size, high-contrast mode, dyslexia-friendly fonts, and iPad-first layout. Built to accessibility standards from day one.</div>
+          </li>
+          <li>
+            <span class="fi-icon">🍁</span>
+            <div><strong>Canadian content, Ontario-specific</strong> — all examples, phone numbers, resources, and references are Canadian. Members won't encounter unfamiliar US services or language.</div>
+          </li>
+          <li>
+            <span class="fi-icon">💰</span>
+            <div><strong>Free to access</strong> — the base programme is publicly available at no cost. No accounts, no logins, no barriers for your members.</div>
+          </li>
+          <li>
+            <span class="fi-icon">🎨</span>
+            <div><strong>Customisable with your branding</strong> — Partner and Enterprise tiers include white-label options so members see your organisation's name and colours alongside the content.</div>
+          </li>
+          <li>
+            <span class="fi-icon">📊</span>
+            <div><strong>Usage reporting</strong> — know how many members are engaging, which modules are most popular, and where people are getting stuck. (Partner and Enterprise tiers.)</div>
+          </li>
+          <li>
+            <span class="fi-icon">📋</span>
+            <div><strong>Staff training guide included</strong> — a simple guide helps your staff introduce the programme to members and answer basic questions confidently.</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Pricing -->
+      <div class="b2b-section">
+        <h2>Partnership Tiers</h2>
+        <p style="font-size:1.05rem;margin-bottom:1.25rem;">Choose the level of support that's right for your organisation. All tiers include full access to the learning programme for your members.</p>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <div class="tier-name">Community</div>
+            <div class="tier-price">Free</div>
+            <div class="tier-desc">For organisations just getting started</div>
+            <ul class="pricing-features">
+              <li>Full access to all public modules</li>
+              <li>Printable handouts &amp; guides</li>
+              <li>Share the link with members</li>
+              <li>Community listing on our site</li>
+            </ul>
+          </div>
+          <div class="pricing-card featured">
+            <div class="pricing-badge">Most Popular</div>
+            <div class="tier-name">Partner</div>
+            <div class="tier-price">$299 <span>/ year</span></div>
+            <div class="tier-desc">For established organisations with regular senior programming</div>
+            <ul class="pricing-features">
+              <li>Everything in Community</li>
+              <li>White-label with your logo &amp; colours</li>
+              <li>Monthly usage reporting</li>
+              <li>Staff training guide</li>
+              <li>Priority email support</li>
+              <li>Custom welcome message for members</li>
+            </ul>
+          </div>
+          <div class="pricing-card">
+            <div class="tier-name">Enterprise</div>
+            <div class="tier-price">Custom</div>
+            <div class="tier-desc">For large organisations and regional health systems</div>
+            <ul class="pricing-features">
+              <li>Everything in Partner</li>
+              <li>Full custom deployment</li>
+              <li>System integrations available</li>
+              <li>Dedicated account support</li>
+              <li>Quarterly strategy reviews</li>
+              <li>Custom module development</li>
+            </ul>
+          </div>
+        </div>
+        <p style="font-size:0.9rem;color:#666;margin-top:1rem;text-align:center;">All prices in Canadian dollars. Non-profit pricing available — ask us.</p>
+        <p style="text-align:center;margin-top:0.5rem;"><a href="roi-calculator.html" style="color:#1565C0;font-weight:600;font-size:1rem;">Calculate your ROI →</a></p>
+      </div>
+
+      <!-- Testimonials -->
+      <div class="b2b-section">
+        <h2>What Organisations Are Saying <span class="placeholder-label">Placeholder</span></h2>
+        <p style="font-size:0.9rem;color:#888;margin-bottom:1rem;"><em>Testimonials will be added once the partnership programme launches. The following are examples of the feedback we expect to receive.</em></p>
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <blockquote>"Our members who've used the Digital Confidence Centre report feeling more confident with their devices after just a few sessions. It's something we can genuinely recommend."</blockquote>
+            <cite>— Branch Manager, Community Library (placeholder)</cite>
+          </div>
+          <div class="testimonial-card">
+            <blockquote>"As a credit union, we were spending significant staff time helping members with basic banking app questions. This programme has reduced that burden meaningfully."</blockquote>
+            <cite>— Member Services Director, Credit Union (placeholder)</cite>
+          </div>
+          <div class="testimonial-card">
+            <blockquote>"Our health centre serves many isolated seniors. Having a trusted, free resource to recommend for digital skills has made a real difference to their independence."</blockquote>
+            <cite>— Community Health Coordinator (placeholder)</cite>
+          </div>
+        </div>
+      </div>
+
+      <!-- Demo form -->
+      <div class="demo-form-section" id="demo-request">
+        <h2>Book a Free Demo</h2>
+        <p class="form-intro">We'll walk you through the programme, answer your questions, and help you figure out which tier is right for your organisation — no obligation.</p>
+
+        <form action="https://formspree.io/f/xeerqryj" method="POST">
+          <input type="hidden" name="_subject" value="B2B Demo Request — Digital Confidence Centre">
+          <input type="hidden" name="form_type" value="b2b_demo_request">
+
+          <div class="two-col">
+            <div class="demo-form-group">
+              <label for="org_name">Organisation Name *</label>
+              <input type="text" id="org_name" name="org_name" placeholder="e.g. St. Thomas Public Library" required>
+            </div>
+            <div class="demo-form-group">
+              <label for="contact_name">Your Name *</label>
+              <input type="text" id="contact_name" name="contact_name" placeholder="Type here..." required>
+            </div>
+          </div>
+
+          <div class="two-col">
+            <div class="demo-form-group">
+              <label for="contact_email">Email Address *</label>
+              <input type="email" id="contact_email" name="contact_email" placeholder="your@organisation.ca" required>
+            </div>
+            <div class="demo-form-group">
+              <label for="org_type">Organisation Type *</label>
+              <select id="org_type" name="org_type" required>
+                <option value="">Select...</option>
+                <option value="Public library">Public library</option>
+                <option value="Credit union">Credit union</option>
+                <option value="Community health centre">Community health centre</option>
+                <option value="Seniors centre">Seniors centre</option>
+                <option value="Church or faith community">Church or faith community</option>
+                <option value="Community organisation">Community organisation</option>
+                <option value="Regional health system">Regional health system</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="demo-form-group">
+            <label for="member_count">Approximate Number of Members/Clients Served</label>
+            <input type="number" id="member_count" name="member_count" placeholder="e.g. 2500" min="0">
+          </div>
+
+          <div class="demo-form-group">
+            <label for="demo_message">Tell us a bit about your situation or what you're hoping to achieve</label>
+            <textarea id="demo_message" name="demo_message" rows="4" placeholder="What challenges are your senior members facing? What would success look like for your organisation?"></textarea>
+          </div>
+
+          <button type="submit" class="btn-demo-submit">Request a Free Demo →</button>
+        </form>
+      </div>
+
+      <!-- Case studies -->
+      <div class="b2b-section" style="text-align:center;">
+        <h2>See Real Results</h2>
+        <p style="font-size:1.05rem;margin-bottom:0.75rem;">Read our case study template to understand the kinds of outcomes partner organisations are achieving.</p>
+        <a href="case-study-template.html" style="color:#1565C0;font-weight:600;font-size:1.05rem;">View Case Study Template →</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="roi-calculator.html" style="color:#1565C0;font-weight:600;font-size:1.05rem;">Calculate Your ROI →</a>
+      </div>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-brand">Digital Confidence Centre</p>
+          <p class="footer-tagline">A free learning programme for Canadian seniors</p>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="../index.html">Home</a> |
+            <a href="../resources.html">Resources</a> |
+            <a href="../about.html">About</a> |
+            <a href="../privacy.html">Privacy Policy</a>
+          </nav>
+          <p class="footer-copy">&copy; 2026 Two Birds. Made with care in Ontario, Canada.</p>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../js/app.js" defer></script>
+  <script src="../js/accessibility.js" defer></script>
+</body>
+</html>
