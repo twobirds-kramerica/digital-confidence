@@ -58,6 +58,10 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Digital Confidence">
   <!-- Google Analytics -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPH5H5BM52"></script>
   <script>
@@ -74,14 +78,13 @@
   <script src="js/analytics-consent.js" defer></script>
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
   <script>
     /* Skip wizard automatically for search engine crawlers */
     if (/bot|crawler|spider|crawling/i.test(navigator.userAgent)) {
       try { localStorage.setItem('dc-setup-complete', 'crawler-bypass'); } catch(e) {}
     }
   </script>
-  <a href="#main" class="skip-link">Skip to main content</a>
-
   <!-- Accessibility Controls -->
   <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
     <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
