@@ -46,9 +46,28 @@ function updateLabel(checkbox, checked) {
   }
 }
 
+function markModuleComplete(moduleNum) {
+  localStorage.setItem('dc-module-' + moduleNum + '-complete', 'true');
+  updateProgressOverview();
+  var announcer = document.getElementById('progress-announcer');
+  if (announcer) announcer.textContent = 'Module ' + moduleNum + ' marked complete!';
+}
+
+function resetAllProgress() {
+  for (var m = 1; m <= 16; m++) {
+    localStorage.removeItem('dc-module-' + m + '-complete');
+    for (var i = 1; i <= 10; i++) {
+      localStorage.removeItem('dc-progress-m' + m + '-' + i);
+    }
+  }
+  localStorage.removeItem('dc-module-2-5-complete');
+  localStorage.removeItem('finalQuizUnlocked');
+  updateProgressOverview();
+}
+
 function updateProgressOverview() {
   // Count all progress items across all modules
-  var totalModules = 16;
+  var totalModules = 17;
   var completedModules = 0;
 
   for (var m = 1; m <= totalModules; m++) {
@@ -65,9 +84,14 @@ function updateProgressOverview() {
         }
       }
     }
-    if (hasItems && allComplete) {
+    if ((hasItems && allComplete) || localStorage.getItem('dc-module-' + m + '-complete') === 'true') {
       completedModules++;
     }
+  }
+
+  // Also check module 2-5
+  if (localStorage.getItem('dc-module-2-5-complete') === 'true') {
+    completedModules++;
   }
 
   // Update progress bar on home page
