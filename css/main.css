@@ -5680,3 +5680,18 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 [data-theme="dark"] .testimonials-disclaimer {
   color: #667788;
 }
+
+/* ── Phase 2: Scam Awareness Alert Card ── */
+.alert-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: #fff3cd;
+  border: 2px solid #e6ac00;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 0 0 24px;
+}
+.alert-card .alert-icon { font-size: 2em; line-height: 1; }
+.alert-card .alert-content p { margin: 6px 0 10px; font-size: 1.05em; line-height: 1.5; }
+.alert-card .alert-link { color: #1565C0; font-weight: bold; text-decoration: underline; }
