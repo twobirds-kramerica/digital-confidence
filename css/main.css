@@ -5695,3 +5695,18 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 .alert-card .alert-icon { font-size: 2em; line-height: 1; }
 .alert-card .alert-content p { margin: 6px 0 10px; font-size: 1.05em; line-height: 1.5; }
 .alert-card .alert-link { color: #1565C0; font-weight: bold; text-decoration: underline; }
+
+/* Related Modules */
+.related-modules { margin: 32px 0 16px; padding-top: 24px; border-top: 2px solid #e0e7ff; }
+.related-title { font-size: 1.1em; color: #1565C0; margin-bottom: 16px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.related-card { display: flex; flex-direction: column; gap: 4px; padding: 16px; background: #f0f4ff; border: 1px solid #c7d2fe; border-radius: 10px; text-decoration: none; color: inherit; transition: background 0.2s; }
+.related-card:hover { background: #e0e7ff; }
+.related-num { font-size: 0.8em; color: #6366f1; font-weight: bold; text-transform: uppercase; }
+.related-name { font-size: 1em; font-weight: bold; color: #1565C0; }
+.related-desc { font-size: 0.88em; color: #555; line-height: 1.4; }
+
+/* Module Complete Action */
+.module-complete-action { text-align: center; margin: 24px 0 16px; }
+.btn-mark-complete { background: #1565C0; color: white; border: none; padding: 14px 32px; border-radius: 8px; font-size: 1.05em; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+.btn-mark-complete:hover { background: #0d47a1; }
