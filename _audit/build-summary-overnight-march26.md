@@ -218,3 +218,46 @@ e7a803a feat: Phase 14 — accessibility deep dive (focus-visible, focus trappin
 2514f29 feat: Phase 1 — French translation modules 7-12 + print centre + privacy
 d999e15 feat: Phase 13 — performance monitoring dashboard and data file
 ```
+
+---
+
+## Session 3 Build — March 26, 2026
+
+### Phase 1 — Two Birds Quality Dashboard (new repo)
+- Created twobirds-kramerica/quality-dashboard (new GitHub repo)
+- Single index.html — dark theme, GitHub API checks, 4 repos monitored
+- Health score 0-8 per repo, colour-coded badges (green/yellow/red)
+- Live: https://twobirds-kramerica.github.io/quality-dashboard/
+- GitHub Pages enabled
+
+### Phase 2 — DCC Competitive Analysis
+- Created _strategy/competitive-analysis.md
+- 7 competitor profiles: Geek Squad, Senior Planet/OATS, Connected Canadians, Cyber-Seniors, ISED Canada, Ontario libraries, AI tools
+- Includes: pricing recommendations, target segments, 12-month forecast, recommended product additions
+
+### Phase 3 — DCC Monetisation Strategy
+- Created _strategy/monetisation-strategy.md
+- Three tiers: Immediate (0-3 months), Near-Term (3-6 months), Medium-Term (6-12 months)
+- 12-month revenue projection table: Conservative / Base / Optimistic scenarios
+
+### Phase 4 — P3 Personal Priority Partner Framework
+- Created _strategy/p3-framework.md
+- Complete product spec: rigidity slider, tone ladder, personas, safewords (KUNO/PAISLEY), Red Zone, priority stack, distraction log, weekly mirror
+- Monetisation: Free / Pro ($9.99/month) / Clinical partnership
+- Technical requirements for MVP using Anthropic API
+
+### Phase 5 — Hero Image Registry
+- Created _image-registry/image-log.md
+- Logged senior-woman-ipad.jpg (local asset — licence review pending)
+- Alt text updated on index.html hero image
+
+### Phase 6 — Kevin's Apartment (separate repo — committed and pushed separately)
+- Neighbourhood legend added to index.html
+- Safety badge colour mapping verified
+- All active listings confirmed to have neighbourhood field
+- Pushed to twobirds-kramerica/kevins-apartment-search
+
+### Phase 7 — Final Integration
+- Sitemap.xml verified
+- Canadian English grep across new files
+- Audit file updated
