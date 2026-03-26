@@ -1,10 +1,10 @@
 /* ============================================
    Digital Confidence Centre — Final Quiz
-   v7 — 42 scenario-based "What would you do?"
-        questions covering modules 1–11 + 13–15
-   Passing score: 73% (31/42)
-   Sprint 7: readiness panel, smart scoring,
-             certificate.html, resources chain
+   v8 — 60 scenario-based "What would you do?"
+        questions covering modules 1–11, 13–15, 2.5
+   Passing score: 74% (44/60)
+   Sprint 8: added 18 new questions for
+             modules 13, 14, 15, and 2.5
    ============================================ */
 
 var DC_QUIZ = (function () {
@@ -554,10 +554,236 @@ var DC_QUIZ = (function () {
       ],
       correct: 1,
       explain: 'Ontario\'s health system (MyHealth Ontario, hospital portals, OHIP) will never send unsolicited emails asking you to verify personal information. This is a classic phishing attack targeting health data. Delete it immediately. If you are genuinely concerned about your account security, go directly to myhealth.ontario.ca by typing it in your browser — never click a link from an email.'
+    },
+
+    /* ── NEW QUESTIONS v8 ──────────────────────────────────── */
+
+    /* MODULE 13 — Social Media (4 new questions) */
+    {
+      module: 'Module 13: Social Media',
+      q: 'You want to check who can see your Facebook posts. Some posts are set to "Friends" and others to "Public." Which setting is safer for personal posts like photos of your home?',
+      options: [
+        '"Public" — more people can enjoy your photos',
+        '"Friends" — only people you have personally approved can see the post',
+        'It makes no difference either way',
+        '"Public" is safer because Facebook monitors it more closely'
+      ],
+      correct: 1,
+      explain: '"Friends" limits your post to only the people in your approved friends list. "Public" means anyone in the world, including people not on Facebook, can find and view your post through Google or a direct link. For personal photos — especially anything showing your home, your routine, or family members — always choose "Friends" or a more restricted audience.'
+    },
+    {
+      module: 'Module 13: Social Media',
+      q: 'You receive a second Facebook friend request from someone already in your friends list. Your original friend is still showing as connected. What is most likely happening?',
+      options: [
+        'Your friend accidentally sent a duplicate request — accept it',
+        'Facebook sometimes re-sends friend requests as a reminder',
+        'Someone has created a fake copy of your friend\'s profile. Do not accept — warn your real friend.',
+        'Your friend wants to connect on a different account — it is safe to accept'
+      ],
+      correct: 2,
+      explain: 'This is called a "cloned profile" scam. Scammers copy a real person\'s name and profile photo to create a fake account, then target all the real person\'s friends. Once accepted, they may send messages asking for money or personal information. If you already have someone as a friend and receive a new request from the same name, it is almost certainly a fake. Warn your real friend so they can report the cloned account to Facebook.'
+    },
+    {
+      module: 'Module 13: Social Media',
+      q: 'Which of the following types of information is safest to share publicly on your Facebook profile?',
+      options: [
+        'Your full home address so friends can find you easily',
+        'Your daily routine and the times you are usually out of the house',
+        'Your general interests, hobbies, and your first name',
+        'Photos showing the front of your house with the street number visible'
+      ],
+      correct: 2,
+      explain: 'General interests and hobbies are low-risk personal details. Your home address, daily routine, and photos that reveal your exact home location could be misused by a burglar or scammer. As a rule: if the information could help someone find you physically or know when your home is empty, keep it private.'
+    },
+    {
+      module: 'Module 13: Social Media',
+      q: 'Someone is sending you unwanted and uncomfortable messages on Facebook. What is the most effective way to stop all contact from them?',
+      options: [
+        'Reply politely asking them to stop',
+        'Delete your Facebook account',
+        'Use Facebook\'s Block feature — this prevents them from seeing your profile, messaging you, or finding you on Facebook at all',
+        'Report each individual message one at a time'
+      ],
+      correct: 2,
+      explain: 'Blocking is the most complete solution. When you block someone on Facebook, they cannot message you, see your posts, search for your profile, or contact you in any way on that platform. To block: go to their profile, tap the three dots (...), then select Block. Replying to unwanted messages often encourages the sender to continue.'
+    },
+
+    /* MODULE 14 — Smart Home (4 new questions) */
+    {
+      module: 'Module 14: Smart Home',
+      q: 'A stranger knocks on your door and offers to install a "free smart thermostat" from a government programme. He asks for your Wi-Fi password to complete the setup. What should you do?',
+      options: [
+        'Accept — a free thermostat from a government programme is a great deal',
+        'Let him in but stand nearby to watch',
+        'Decline politely and close the door. Legitimate programmes send registered technicians with advance notice and official ID — they never show up unannounced.',
+        'Give him the Wi-Fi password but change it after he leaves'
+      ],
+      correct: 2,
+      explain: 'This is a door-to-door scam. Giving your Wi-Fi password to a stranger could allow them to access every device on your home network. Legitimate government smart home programmes (such as Enbridge or Hydro One rebate installations) require you to apply first, receive written confirmation, and book a certified technician with company identification. Always verify before giving anyone access to your home or your network.'
+    },
+    {
+      module: 'Module 14: Smart Home',
+      q: 'Your neighbour worries that her smart doorbell camera could be hacked. Is this a real concern, and what is the best defence?',
+      options: [
+        'No — smart home devices cannot be hacked, only computers can',
+        'Yes — use a strong, unique password for the device\'s app account and keep the device firmware updated',
+        'Yes — the only safe option is to unplug all smart home devices',
+        'No — the camera manufacturer monitors all footage for security'
+      ],
+      correct: 1,
+      explain: 'Smart home devices including cameras can be hacked, particularly when they use weak or default passwords. The two most effective defences are: (1) set a strong, unique password for the app account connected to the device, and (2) keep the device firmware updated — most devices do this automatically when set to auto-update. A strong home Wi-Fi password also protects all your connected devices.'
+    },
+    {
+      module: 'Module 14: Smart Home',
+      q: 'What is "mesh Wi-Fi" and why might it benefit seniors in larger homes?',
+      options: [
+        'Mesh Wi-Fi is a special filter that automatically blocks harmful websites',
+        'Mesh Wi-Fi uses multiple small devices placed around your home to create one strong, seamless Wi-Fi signal everywhere — no more dead spots',
+        'Mesh Wi-Fi is only for businesses and requires professional installation',
+        'Mesh Wi-Fi requires a separate monthly subscription from your internet provider'
+      ],
+      correct: 1,
+      explain: 'A mesh Wi-Fi system uses two or three small "nodes" placed around your home that work together to create one strong Wi-Fi signal in every room — kitchen, bedroom, basement, and backyard. This eliminates the weak signal spots that often make smart devices unreliable or cause video calls to cut out. Popular brands available in Canada include Google Nest WiFi and Eero, and they can usually be set up without professional help.'
+    },
+    {
+      module: 'Module 14: Smart Home',
+      q: 'You are setting up a new smart thermostat app and it asks you to create an account. You want to use the same password you use for your email. What should you do instead?',
+      options: [
+        'Use the same password — it is too hard to remember different ones',
+        'Create a new unique password for the thermostat account and save it in your device\'s password manager',
+        'Use your home address as the password — you will never forget it',
+        'Skip creating a password if the app allows it'
+      ],
+      correct: 1,
+      explain: 'Every account — including smart home device accounts — should have its own unique password. If one account is compromised and you reuse passwords, all your other accounts become vulnerable. Use your iPhone or iPad\'s built-in iCloud Keychain (Settings → Passwords) to suggest and save a strong, unique password. It fills in automatically when you log in next time, so you only need to remember one master password.'
+    },
+
+    /* MODULE 15 — Telehealth (4 new questions) */
+    {
+      module: 'Module 15: Telehealth',
+      q: 'Your family doctor offers virtual visits covered by OHIP. Which situation is BEST suited to a virtual/telehealth visit rather than in person?',
+      options: [
+        'You have fallen and need stitches',
+        'You have had chest pain for the past two hours',
+        'You have had a mild skin rash for a week and want your doctor\'s opinion',
+        'You need a blood test ordered and the blood drawn at a lab'
+      ],
+      correct: 2,
+      explain: 'A mild rash lasting a week with no urgent symptoms is an ideal case for a virtual visit — your doctor can see it on camera, discuss it, and prescribe treatment if needed. Injuries requiring stitches, chest pain, and blood draws require in-person care. The general rule: if you can show it on camera and it is not an emergency, telehealth works well. If you need a physical examination or a test, go in person.'
+    },
+    {
+      module: 'Module 15: Telehealth',
+      q: 'You have a virtual doctor appointment tomorrow at 2pm. What steps should you take to prepare?',
+      options: [
+        'Wait until 2pm and tap the link when the reminder arrives',
+        'Find a quiet, well-lit space, charge your iPad, test your camera and microphone, have your health card and medications list ready, and join a few minutes early',
+        'Sit in your car for privacy and use your cellular data connection',
+        'Write out a list of every health concern you have ever had to make the most of the time'
+      ],
+      correct: 1,
+      explain: 'Preparing for a telehealth visit like an in-person appointment makes a big difference. Good lighting means your doctor can see you clearly. A charged device prevents a disconnection mid-appointment. Having your medications list ready saves time. Joining a few minutes early lets you resolve any technical issues without eating into your appointment time. A quiet space ensures the doctor can hear you clearly.'
+    },
+    {
+      module: 'Module 15: Telehealth',
+      q: 'You want to activate a MyChart patient portal account. Your clinic mailed you an activation code. What is the safest way to complete registration?',
+      options: [
+        'Search "MyChart login" in Google and click the first result',
+        'Go directly to your clinic\'s official website and follow their MyChart link from there',
+        'Click any link in an email that mentions MyChart',
+        'Ask someone at a public computer to help you set it up'
+      ],
+      correct: 1,
+      explain: 'Always access patient portals through your healthcare provider\'s official website — type the address yourself or use a bookmark you previously saved. Google results can include look-alike sites or outdated pages. Your activation code is only valid on the genuine portal, so starting from your clinic\'s own website ensures you are on the correct, secure site and not a copycat page designed to steal your information.'
+    },
+    {
+      module: 'Module 15: Telehealth',
+      q: 'You have mild cold symptoms — runny nose, mild sore throat — and want medical advice without leaving home. What is the best first step?',
+      options: [
+        'Call 911',
+        'Go directly to the hospital emergency department',
+        'Call Ontario Telehealth at 1-866-797-0000 to speak with a registered nurse free of charge, 24 hours a day',
+        'Search your symptoms on a random health website and self-diagnose'
+      ],
+      correct: 2,
+      explain: 'Ontario Telehealth (1-866-797-0000) is a free, 24/7 service staffed by registered nurses. They can assess your symptoms over the phone, give you advice, and tell you whether you need to visit a doctor or go to urgent care. This is the ideal first step for non-emergency symptoms like a mild cold. Emergency rooms and 911 are for urgent or potentially life-threatening situations — using them for minor illnesses creates unnecessary waits for people who truly need emergency care.'
+    },
+
+    /* MODULE 2.5 — Common Digital Tasks (6 new questions) */
+    {
+      module: 'Module 2.5: Common Digital Tasks',
+      q: 'You sent an Interac e-Transfer but mistyped the recipient\'s email address. The wrong person has not yet accepted the transfer. What should you do immediately?',
+      options: [
+        'Nothing — e-Transfers cannot be cancelled once sent',
+        'Contact your bank right away — if the transfer has not been accepted, your bank may be able to cancel it',
+        'Send another transfer to the correct person and accept the financial loss',
+        'Email the incorrect address and ask the stranger to return the money'
+      ],
+      correct: 1,
+      explain: 'An e-Transfer that has been sent but not yet accepted can often be cancelled by your bank. Call your bank\'s customer service line as soon as you notice the mistake and explain what happened. Time is critical — once the transfer is accepted by the recipient, recovery becomes much more difficult. This is why double-checking the email address before tapping Send is so important.'
+    },
+    {
+      module: 'Module 2.5: Common Digital Tasks',
+      q: 'You turned on iCloud Photos on your iPad, which has 2,400 existing photos. How many of your photos will be backed up to iCloud?',
+      options: [
+        'None — iCloud Backup and iCloud Photos are separate features',
+        'Only photos taken after you turned on iCloud Photos',
+        'All 2,400 photos — iCloud Photos backs up your entire photo library including older photos',
+        'Only enough to fill your free 5 GB storage'
+      ],
+      correct: 2,
+      explain: 'When you enable iCloud Photos, Apple uploads your entire photo library to iCloud — not just photos taken afterwards. All existing photos and videos are included. The upload process may take several hours or days on a large library, depending on your Wi-Fi speed. You can monitor progress in Settings → your name → iCloud → Photos. Once complete, all photos are safely backed up and accessible on any Apple device signed into your Apple ID.'
+    },
+    {
+      module: 'Module 2.5: Common Digital Tasks',
+      q: 'A notification appears on your iPhone saying "iOS 18.4 is available." Where is the only safe place to install this update?',
+      options: [
+        'Tap the notification link if it takes you directly to the App Store',
+        'Go to Settings → General → Software Update on your device',
+        'Search "iOS 18.4 download" in Safari and download from a website',
+        'Wait — you cannot install updates yourself, Apple does it automatically'
+      ],
+      correct: 1,
+      explain: 'The only safe place to install an iOS update is through Settings → General → Software Update. This connects directly to Apple\'s servers and installs the genuine update. Downloading iOS from websites or following links in text messages is how scammers deliver fake "updates" that install harmful software. The real iOS update process happens entirely within your device\'s Settings app, never through a website.'
+    },
+    {
+      module: 'Module 2.5: Common Digital Tasks',
+      q: 'You want to book a follow-up appointment with your specialist using their online portal. During account registration, the site asks for your Social Insurance Number (SIN). What should you do?',
+      options: [
+        'Enter your SIN — healthcare providers need it for identification',
+        'Close the page. Medical portals in Ontario use your health card number and date of birth — they never need your SIN for appointment booking.',
+        'Enter only the last four digits of your SIN',
+        'Call the clinic to confirm the SIN is required before entering it'
+      ],
+      correct: 1,
+      explain: 'Ontario healthcare portals verify your identity using your Ontario health card number and date of birth — not your Social Insurance Number. A medical booking site that asks for your SIN is either a scam site or has a serious data collection error. Your SIN is a highly sensitive identifier linked to your tax records; it should only ever be provided to Canada Revenue Agency or an employer for payroll. Close any medical site that asks for it and contact your clinic by phone to report the issue.'
+    },
+    {
+      module: 'Module 2.5: Common Digital Tasks',
+      q: 'Your iPhone shows a warning: "Your cellular data usage is at 90% of your monthly plan." What is the smartest action for the rest of the month?',
+      options: [
+        'Turn off your iPhone until the new billing cycle begins',
+        'Connect to Wi-Fi whenever possible to avoid using your remaining cellular data',
+        'Stream videos freely — phone carriers do not actually charge for going over',
+        'Buy a new iPhone with a larger data plan immediately'
+      ],
+      correct: 1,
+      explain: 'When your data is nearly used up, the simple solution is to use Wi-Fi instead of cellular data. At home, at the library, at a friend\'s house — whenever you see the Wi-Fi symbol in the top corner of your screen, you are on Wi-Fi and not using your data plan. Tasks like streaming video, downloading app updates, and loading photo-heavy websites use significant data. Doing these on Wi-Fi costs nothing extra.'
+    },
+    {
+      module: 'Module 2.5: Common Digital Tasks',
+      q: 'A friend recommends a meditation app and suggests you search for it in the App Store. You find two apps that look very similar. How do you choose the safe, legitimate one?',
+      options: [
+        'Download both and try them — it is fine to delete one later',
+        'Choose the one at the top of the search results regardless of other information',
+        'Check the developer name, star rating, number of reviews, and read a few user reviews before downloading',
+        'Avoid free apps — only paid apps from the App Store are safe'
+      ],
+      correct: 2,
+      explain: 'Before downloading any app, check four things: (1) the developer name — does it match a known company? (2) the star rating — 4 stars or above suggests quality; (3) the number of reviews — thousands of reviews indicates a widely-used, legitimate app; (4) recent user reviews — do they describe the app working as expected? Free apps are completely safe to download from the App Store — Apple reviews every app before listing it. The App Store itself is your protection.'
     }
   ];
 
-  var PASS_SCORE   = 31;   /* 73% of 42 */
+  var PASS_SCORE   = 44;   /* 74% of 60 */
   var currentQ     = 0;
   var score        = 0;
   var answered     = [];
@@ -686,7 +912,7 @@ var DC_QUIZ = (function () {
       '<div class="quiz-container">' +
         '<div class="quiz-header">' +
           '<h1>&#127891; Final Digital Confidence Assessment</h1>' +
-          '<p style="color:#455A64;font-size:17px;margin:8px 0 0;">30 real-life scenarios &nbsp;&middot;&nbsp; Pass with 70% &nbsp;&middot;&nbsp; No time limit</p>' +
+          '<p style="color:#455A64;font-size:17px;margin:8px 0 0;">60 real-life scenarios &nbsp;&middot;&nbsp; Pass with 74% &nbsp;&middot;&nbsp; No time limit</p>' +
         '</div>' +
         '<div class="quiz-question" style="text-align:center;">' +
           '<div class="three-second-rule-box" style="text-align:left;margin-bottom:24px;">' +
@@ -698,7 +924,7 @@ var DC_QUIZ = (function () {
           '<p style="font-size:18px;color:var(--text-secondary);margin-bottom:32px;">' +
             'Each question describes a real situation you might encounter. ' +
             'Choose what you would do. There is no time pressure &#8212; read carefully.<br><br>' +
-            'You need 21 correct answers (70%) to pass and receive your certificate. (30 questions total)' +
+            'You need 44 correct answers (74%) to pass and receive your certificate. (60 questions total)' +
           '</p>' +
           '<button class="quiz-btn quiz-btn-primary" id="start-quiz-btn" style="font-size:20px;padding:18px 48px;">Begin Assessment</button>' +
         '</div>' +
@@ -816,7 +1042,7 @@ var DC_QUIZ = (function () {
       ? 'You scored ' + score + '/' + questions.length + ' (' + percent + '%). ' +
         'You have demonstrated strong digital confidence! Enter your name below to get your Certificate of Completion.'
       : 'You scored ' + score + '/' + questions.length + ' (' + percent + '%). ' +
-        'You need 21/' + questions.length + ' (70%) to pass. ' +
+        'You need 44/' + questions.length + ' (74%) to pass. ' +
         'Great effort &#8212; review the modules you found tricky and try again. There is no limit on retakes.';
 
     var nameSection = passed
