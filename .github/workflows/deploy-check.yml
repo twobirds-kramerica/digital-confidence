@@ -1,0 +1,92 @@
+name: Deploy Check
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Run every Tuesday at 09:00 UTC to verify live site health
+    - cron: '0 9 * * 2'
+  workflow_dispatch:
+
+jobs:
+  deploy-check:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Wait for GitHub Pages deployment
+        if: github.event_name == 'push'
+        run: sleep 60
+
+      - name: Check critical pages respond with HTTP 200
+        id: page-check
+        run: |
+          BASE="https://twobirds-kramerica.github.io/digital-confidence"
+          PAGES=(
+            "/"
+            "/module-1.html"
+            "/module-2.html"
+            "/module-3.html"
+            "/module-6.html"
+            "/module-10.html"
+            "/resources.html"
+            "/sitemap.xml"
+            "/answers/"
+            "/answers/how-to-spot-email-scam.html"
+            "/answers/what-to-do-if-scammed.html"
+            "/resources/support-directory.html"
+            "/resources/canadian-helplines.html"
+            "/resources/device-guides.html"
+            "/scam-simulator.html"
+            "/privacy.html"
+            "/about.html"
+            "/accessibility.html"
+          )
+
+          FAILED=0
+          REPORT="## Deploy Check Report\n\n"
+          REPORT+="**Run:** ${{ github.run_number }}  \n"
+          REPORT+="**Date:** $(date -u '+%Y-%m-%d %H:%M UTC')  \n\n"
+          REPORT+="| Page | Status |\n|------|--------|\n"
+
+          for PAGE in "${PAGES[@]}"; do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 15 "${BASE}${PAGE}" || echo "ERROR")
+            if [ "$STATUS" = "200" ] || [ "$STATUS" = "301" ] || [ "$STATUS" = "302" ]; then
+              REPORT+="| \`${PAGE}\` | ✅ ${STATUS} |\n"
+            else
+              REPORT+="| \`${PAGE}\` | ❌ ${STATUS} |\n"
+              FAILED=$((FAILED + 1))
+            fi
+          done
+
+          echo -e "$REPORT" > deploy-check-report.md
+          echo "failed_count=$FAILED" >> $GITHUB_OUTPUT
+          cat deploy-check-report.md
+
+      - name: Verify sitemap is valid XML
+        run: |
+          curl -s "https://twobirds-kramerica.github.io/digital-confidence/sitemap.xml" \
+            | xmllint --noout - && echo "✅ sitemap.xml is valid XML" \
+            || echo "⚠️ sitemap.xml may have XML errors"
+
+      - name: Verify robots.txt is accessible
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            "https://twobirds-kramerica.github.io/digital-confidence/robots.txt")
+          [ "$STATUS" = "200" ] && echo "✅ robots.txt OK" || echo "❌ robots.txt returned $STATUS"
+
+      - name: Create issue if pages are failing
+        if: steps.page-check.outputs.failed_count != '0'
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: '🚨 Deploy check failed — ${{ steps.page-check.outputs.failed_count }} page(s) not responding'
+          content-filepath: ./deploy-check-report.md
+          labels: |
+            bug
+            deploy
+            automated
