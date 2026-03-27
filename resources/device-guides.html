@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Plain-language guides for iPad, iPhone, Android phones, smart TVs, and smart home devices — written for Canadian seniors. Free from Digital Confidence Centre.">
+  <title>Device Guides for Seniors — Digital Confidence Centre</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/resources/device-guides.html">
+  <link rel="alternate" hreflang="en-CA" href="https://twobirds-kramerica.github.io/digital-confidence/resources/device-guides.html">
+  <link rel="alternate" hreflang="fr-CA" href="https://twobirds-kramerica.github.io/digital-confidence/resources/device-guides.html">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/accessibility.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta property="og:title" content="Device Guides for Seniors — Digital Confidence Centre">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <meta name="theme-color" content="#1565C0">
+  <style>
+    .dg-hero { background: linear-gradient(135deg, #1565C0 0%, #1976D2 100%); color: #fff; border-radius: 16px; padding: 2rem 1.75rem; margin-bottom: 2rem; }
+    .dg-hero h1 { color: #fff; font-size: clamp(1.4rem, 4vw, 1.9rem); border: none; margin-bottom: .5rem; }
+    .dg-hero p { opacity: .92; line-height: 1.6; max-width: 580px; }
+    .device-tabs { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2rem; }
+    .device-tab { padding: .5rem 1rem; border: 2px solid var(--color-border, #ddd); border-radius: 8px; cursor: pointer; background: var(--color-bg, #fff); font-size: .9rem; font-weight: 600; color: var(--color-text, #333); transition: border-color .15s, background .15s; }
+    .device-tab.active, .device-tab:hover { border-color: var(--color-primary, #1565C0); background: var(--color-primary, #1565C0); color: #fff; }
+    .device-section { display: none; }
+    .device-section.active { display: block; }
+    .guide-card { background: var(--color-bg, #fff); border: 1px solid var(--color-border, #e0e0e0); border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; }
+    .guide-card h3 { margin-top: 0; font-size: 1.05rem; color: var(--color-primary, #1565C0); }
+    .guide-card ol, .guide-card ul { padding-left: 1.4rem; }
+    .guide-card li { margin-bottom: .4rem; line-height: 1.55; }
+    .guide-tip { background: var(--color-bg-alt, #f0f4ff); border-left: 4px solid var(--color-primary, #1565C0); padding: .75rem 1rem; border-radius: 0 8px 8px 0; margin: 1rem 0; font-size: .9rem; }
+    .guide-warn { background: #fff3e0; border-left: 4px solid #e65100; padding: .75rem 1rem; border-radius: 0 8px 8px 0; margin: 1rem 0; font-size: .9rem; }
+    .back-to-top { font-size: .85rem; color: var(--color-primary, #1565C0); cursor: pointer; text-decoration: underline; display: block; text-align: right; margin-bottom: .5rem; }
+  </style>
+</head>
+<body>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">Digital Confidence Centre</span>
+    <span></span>
+  </div>
+
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">✕</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Free digital literacy for seniors</p>
+    </div>
+    <nav>
+      <a href="../index.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a href="../answers/"><span class="nav-icon">❓</span><span class="nav-label">Quick Answers</span></a>
+      <a href="index.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
+      <a href="support-directory.html"><span class="nav-icon">🆘</span><span class="nav-label">Get Help</span></a>
+      <a href="device-guides.html" aria-current="page"><span class="nav-icon">📱</span><span class="nav-label">Device Guides</span></a>
+      <div class="sidebar-a11y-section">
+        <p class="sidebar-a11y-title">Text Size</p>
+        <div class="sidebar-font-row">
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false" style="font-size:1rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+        </div>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="font-size:.9rem;margin-bottom:1.5rem;color:var(--color-text-muted,#666)">
+        <a href="../index.html" style="color:var(--color-primary,#1565C0);text-decoration:none">Home</a> ›
+        <a href="index.html" style="color:var(--color-primary,#1565C0);text-decoration:none">Resources</a> ›
+        <span aria-current="page">Device Guides</span>
+      </nav>
+
+      <div class="dg-hero">
+        <h1 data-en="Device Guides for Seniors" data-fr="Guides des appareils pour les aînés">Device Guides for Seniors</h1>
+        <p data-en="Plain-language how-to guides for the most common devices used by Canadian seniors — iPad, iPhone, Android, smart TV, and smart home devices. Use the tabs below to find your device." data-fr="Des guides pratiques en langage simple pour les appareils les plus courants utilisés par les aînés canadiens — iPad, iPhone, Android, téléviseur intelligent et appareils domotiques.">Plain-language how-to guides for the most common devices used by Canadian seniors — iPad, iPhone, Android, smart TV, and smart home devices. Use the tabs below to find your device.</p>
+      </div>
+
+      <!-- Device Tabs -->
+      <div class="device-tabs" role="tablist" aria-label="Select your device">
+        <button class="device-tab active" role="tab" aria-selected="true" aria-controls="guide-ipad" onclick="showDevice('ipad', this)" data-en="📱 iPad" data-fr="📱 iPad">📱 iPad</button>
+        <button class="device-tab" role="tab" aria-selected="false" aria-controls="guide-iphone" onclick="showDevice('iphone', this)" data-en="📱 iPhone" data-fr="📱 iPhone">📱 iPhone</button>
+        <button class="device-tab" role="tab" aria-selected="false" aria-controls="guide-android" onclick="showDevice('android', this)" data-en="🤖 Android" data-fr="🤖 Android">🤖 Android</button>
+        <button class="device-tab" role="tab" aria-selected="false" aria-controls="guide-tv" onclick="showDevice('tv', this)" data-en="📺 Smart TV" data-fr="📺 Téléviseur intelligent">📺 Smart TV</button>
+        <button class="device-tab" role="tab" aria-selected="false" aria-controls="guide-smarthome" onclick="showDevice('smarthome', this)" data-en="🏠 Smart Home" data-fr="🏠 Maison intelligente">🏠 Smart Home</button>
+      </div>
+
+      <!-- iPad Guide -->
+      <div class="device-section active" id="guide-ipad" role="tabpanel">
+        <h2 data-en="iPad Basics" data-fr="Les bases de l'iPad">iPad Basics</h2>
+
+        <div class="guide-card">
+          <h3 data-en="How to get back to the Home screen" data-fr="Comment revenir à l'écran d'accueil">How to get back to the Home screen</h3>
+          <p data-en="The Home screen is the main screen you see when you first turn on your iPad — it shows all your app icons." data-fr="L'écran d'accueil est l'écran principal que vous voyez lorsque vous allumez votre iPad pour la première fois.">The Home screen is the main screen you see when you first turn on your iPad — it shows all your app icons.</p>
+          <ul>
+            <li data-en="<strong>Older iPads (with a round Home button at the bottom):</strong> Press the round Home button once." data-fr="<strong>iPad plus anciens (avec un bouton Home rond en bas) :</strong> Appuyez une fois sur le bouton Home rond."><strong>Older iPads (with a round Home button at the bottom):</strong> Press the round Home button once.</li>
+            <li data-en="<strong>Newer iPads (no Home button):</strong> Swipe your finger upward from the very bottom edge of the screen." data-fr="<strong>iPad plus récents (sans bouton Home) :</strong> Glissez votre doigt vers le haut depuis le bord inférieur de l'écran."><strong>Newer iPads (no Home button):</strong> Swipe your finger upward from the very bottom edge of the screen.</li>
+          </ul>
+          <div class="guide-tip" data-en="💡 You can press the Home button as many times as you like — it is impossible to break anything by pressing it." data-fr="💡 Vous pouvez appuyer sur le bouton Home autant de fois que vous le souhaitez — il est impossible de casser quoi que ce soit en l'appuyant.">💡 You can press the Home button as many times as you like — it is impossible to break anything by pressing it.</div>
+        </div>
+
+        <div class="guide-card">
+          <h3 data-en="How to update apps on iPad" data-fr="Comment mettre à jour les applications sur iPad">How to update apps on iPad</h3>
+          <ol>
+            <li data-en="Open the <strong>App Store</strong> (blue icon with a white A)." data-fr="Ouvrez <strong>l'App Store</strong> (icône bleue avec un A blanc).">Open the <strong>App Store</strong> (blue icon with a white A).</li>
+            <li data-en="Tap your <strong>profile picture</strong> in the top-right corner." data-fr="Appuyez sur votre <strong>photo de profil</strong> dans le coin supérieur droit.">Tap your <strong>profile picture</strong> in the top-right corner.</li>
+            <li data-en="Scroll down to see any available updates." data-fr="Faites défiler vers le bas pour voir les mises à jour disponibles.">Scroll down to see any available updates.</li>
+            <li data-en="Tap <strong>Update All</strong> to install everything at once." data-fr="Appuyez sur <strong>Tout mettre à jour</strong> pour tout installer en même temps.">Tap <strong>Update All</strong> to install everything at once.</li>
+          </ol>
+        </div>
+
+        <div class="guide-card">
+          <h3 data-en="How to make text bigger on iPad" data-fr="Comment agrandir le texte sur iPad">How to make text bigger on iPad</h3>
+          <ol>
+            <li data-en="Open <strong>Settings</strong> (grey icon with gears)." data-fr="Ouvrez <strong>Réglages</strong> (icône grise avec des engrenages).">Open <strong>Settings</strong> (grey icon with gears).</li>
+            <li data-en="Tap <strong>Display &amp; Brightness</strong>." data-fr="Appuyez sur <strong>Affichage et luminosité</strong>.">Tap <strong>Display &amp; Brightness</strong>.</li>
+            <li data-en="Tap <strong>Text Size</strong> and drag the slider to the right to make text larger." data-fr="Appuyez sur <strong>Taille du texte</strong> et faites glisser le curseur vers la droite pour agrandir le texte.">Tap <strong>Text Size</strong> and drag the slider to the right to make text larger.</li>
+            <li data-en="For even larger text: go to Settings → Accessibility → Display &amp; Text Size → Larger Text." data-fr="Pour un texte encore plus grand : allez dans Réglages → Accessibilité → Affichage et taille du texte → Texte plus grand.">For even larger text: go to Settings → Accessibility → Display &amp; Text Size → Larger Text.</li>
+          </ol>
+        </div>
+
+        <div class="guide-card">
+          <h3 data-en="How to connect iPad to WiFi" data-fr="Comment connecter l'iPad au Wi-Fi">How to connect iPad to WiFi</h3>
+          <ol>
+            <li data-en="Open <strong>Settings</strong>." data-fr="Ouvrez <strong>Réglages</strong>.">Open <strong>Settings</strong>.</li>
+            <li data-en="Tap <strong>Wi-Fi</strong>." data-fr="Appuyez sur <strong>Wi-Fi</strong>.">Tap <strong>Wi-Fi</strong>.</li>
+            <li data-en="Make sure the Wi-Fi toggle at the top is green (turned on)." data-fr="Assurez-vous que le bouton Wi-Fi en haut est vert (activé).">Make sure the Wi-Fi toggle at the top is green (turned on).</li>
+            <li data-en="Tap the name of your home network (your router's name)." data-fr="Appuyez sur le nom de votre réseau domestique (le nom de votre routeur).">Tap the name of your home network (your router's name).</li>
+            <li data-en="Type your WiFi password and tap <strong>Join</strong>." data-fr="Saisissez votre mot de passe Wi-Fi et appuyez sur <strong>Rejoindre</strong>.">Type your WiFi password and tap <strong>Join</strong>.</li>
+          </ol>
+          <div class="guide-warn" data-en="⚠️ Your WiFi password is different from your Apple ID password. It is usually printed on a label on your router (the small box from your internet provider)." data-fr="⚠️ Votre mot de passe Wi-Fi est différent de votre mot de passe Apple ID. Il est généralement imprimé sur une étiquette sur votre routeur (la petite boîte de votre fournisseur Internet).">⚠️ Your WiFi password is different from your Apple ID password. It is usually printed on a label on your router (the small box from your internet provider).</div>
+        </div>
+      </div>
+
+      <!-- iPhone Guide -->
+      <div class="device-section" id="guide-iphone" role="tabpanel">
+        <h2 data-en="iPhone Basics" data-fr="Les bases de l'iPhone">iPhone Basics</h2>
+
+        <div class="guide-card">
+          <h3 data-en="How to close a frozen app on iPhone" data-fr="Comment fermer une application figée sur iPhone">How to close a frozen app on iPhone</h3>
+          <ul>
+            <li data-en="<strong>iPhone with Home button:</strong> Double-press the Home button quickly. You will see cards of open apps. Swipe the frozen app's card upward to close it." data-fr="<strong>iPhone avec bouton Home :</strong> Appuyez deux fois rapidement sur le bouton Home. Vous verrez les applications ouvertes sous forme de cartes. Faites glisser la carte de l'application figée vers le haut pour la fermer."><strong>iPhone with Home button:</strong> Double-press the Home button quickly. You will see cards of open apps. Swipe the frozen app's card upward to close it.</li>
+            <li data-en="<strong>iPhone without Home button (Face ID models):</strong> Swipe up from the bottom and pause briefly in the middle. You will see the same card view. Swipe the frozen app's card upward." data-fr="<strong>iPhone sans bouton Home (modèles avec Face ID) :</strong> Glissez vers le haut depuis le bas et faites une brève pause au milieu. Vous verrez la même vue en cartes. Faites glisser la carte de l'application figée vers le haut."><strong>iPhone without Home button (Face ID models):</strong> Swipe up from the bottom and pause briefly in the middle. You will see the same card view. Swipe the frozen app's card upward.</li>
+          </ul>
+        </div>
+
+        <div class="guide-card">
+          <h3 data-en="How to block a phone number on iPhone" data-fr="Comment bloquer un numéro de téléphone sur iPhone">How to block a phone number on iPhone</h3>
+          <ol>
+            <li data-en="Open the <strong>Phone</strong> app." data-fr="Ouvrez l'application <strong>Téléphone</strong>.">Open the <strong>Phone</strong> app.</li>
+            <li data-en="Tap <strong>Recents</strong> at the bottom." data-fr="Appuyez sur <strong>Récents</strong> en bas.">Tap <strong>Recents</strong> at the bottom.</li>
+            <li data-en="Find the number and tap the blue circle with an <strong>i</strong> beside it." data-fr="Trouvez le numéro et appuyez sur le cercle bleu avec un <strong>i</strong> à côté.">Find the number and tap the blue circle with an <strong>i</strong> beside it.</li>
+            <li data-en="Scroll down and tap <strong>Block this Caller</strong>." data-fr="Faites défiler vers le bas et appuyez sur <strong>Bloquer ce correspondant</strong>.">Scroll down and tap <strong>Block this Caller</strong>.</li>
+          </ol>
+          <div class="guide-tip" data-en="💡 To silence all unknown callers: Settings → Phone → Silence Unknown Callers. This automatically sends any number not in your contacts to voicemail." data-fr="💡 Pour réduire au silence tous les appelants inconnus : Réglages → Téléphone → Réduire les appels inconnus au silence. Cela envoie automatiquement tout numéro absent de vos contacts vers la messagerie vocale.">💡 To silence all unknown callers: Settings → Phone → Silence Unknown Callers. This automatically sends any number not in your contacts to voicemail.</div>
+        </div>
+
+        <div class="guide-card">
+          <h3 data-en="How to take a screenshot on iPhone" data-fr="Comment prendre une capture d'écran sur iPhone">How to take a screenshot on iPhone</h3>
+          <ul>
+            <li data-en="<strong>iPhone with Home button:</strong> Press the Home button and the Power button (on the right side) at the same time. The screen will flash white." data-fr="<strong>iPhone avec bouton Home :</strong> Appuyez simultanément sur le bouton Home et le bouton Power (sur le côté droit). L'écran clignotera en blanc."><strong>iPhone with Home button:</strong> Press the Home button and the Power button (on the right side) at the same time. The screen will flash white.</li>
+            <li data-en="<strong>iPhone without Home button:</strong> Press the Power button and the Volume Up button at the same time. The screen will flash white." data-fr="<strong>iPhone sans bouton Home :</strong> Appuyez simultanément sur le bouton Power et le bouton Volume +. L'écran clignotera en blanc."><strong>iPhone without Home button:</strong> Press the Power button and the Volume Up button at the same time. The screen will flash white.</li>
+          </ul>
+          <p data-en="Your screenshot will be saved to your Photos app automatically. A small preview appears in the bottom-left corner — tap it to edit or share immediately." data-fr="Votre capture d'écran sera automatiquement sauvegardée dans votre application Photos. Un petit aperçu apparaît dans le coin inférieur gauche — appuyez dessus pour modifier ou partager immédiatement.">Your screenshot will be saved to your Photos app automatically. A small preview appears in the bottom-left corner — tap it to edit or share immediately.</p>
+        </div>
+      </div>
+
+      <!-- Android Guide -->
+      <div class="device-section" id="guide-android" role="tabpanel">
+        <h2 data-en="Android Phone Basics" data-fr="Les bases du téléphone Android">Android Phone Basics</h2>
+
+        <div class="guide-card">
+          <h3 data-en="How to find the Home screen on Android" data-fr="Comment trouver l'écran d'accueil sur Android">How to find the Home screen on Android</h3>
+          <p data-en="Android phones look slightly different depending on the brand (Samsung, Google Pixel, LG, Motorola), but they all have a Home button — either a physical button or a button shown at the bottom of the screen." data-fr="Les téléphones Android ont une apparence légèrement différente selon la marque (Samsung, Google Pixel, LG, Motorola), mais tous ont un bouton Home.">Android phones look slightly different depending on the brand (Samsung, Google Pixel, LG, Motorola), but they all have a Home button — either a physical button or a button shown at the bottom of the screen.</p>
+          <ul>
+            <li data-en="Look for a small house icon (🏠) at the bottom of your screen — tap it to go Home." data-fr="Cherchez une petite icône de maison (🏠) en bas de votre écran — appuyez dessus pour aller à l'accueil.">Look for a small house icon (🏠) at the bottom of your screen — tap it to go Home.</li>
+            <li data-en="If you see a square, circle, and triangle at the bottom — the circle (or house) is the Home button." data-fr="Si vous voyez un carré, un cercle et un triangle en bas — le cercle (ou la maison) est le bouton Home.">If you see a square, circle, and triangle at the bottom — the circle (or house) is the Home button.</li>
+          </ul>
+        </div>
+
+        <div class="guide-card">
+          <h3 data-en="How to update apps on Android" data-fr="Comment mettre à jour les applications sur Android">How to update apps on Android</h3>
+          <ol>
+            <li data-en="Open the <strong>Google Play Store</strong> (colourful triangle icon)." data-fr="Ouvrez le <strong>Google Play Store</strong> (icône triangle colorée).">Open the <strong>Google Play Store</strong> (colourful triangle icon).</li>
+            <li data-en="Tap your <strong>profile picture</strong> or the three lines in the top corner." data-fr="Appuyez sur votre <strong>photo de profil</strong> ou les trois lignes dans le coin supérieur.">Tap your <strong>profile picture</strong> or the three lines in the top corner.</li>
+            <li data-en="Tap <strong>Manage apps &amp; device</strong>." data-fr="Appuyez sur <strong>Gérer les applications et l'appareil</strong>.">Tap <strong>Manage apps &amp; device</strong>.</li>
+            <li data-en="Tap <strong>Update all</strong> to install all available updates." data-fr="Appuyez sur <strong>Tout mettre à jour</strong> pour installer toutes les mises à jour disponibles.">Tap <strong>Update all</strong> to install all available updates.</li>
+          </ol>
+        </div>
+
+        <div class="guide-card">
+          <h3 data-en="How to make text bigger on Android" data-fr="Comment agrandir le texte sur Android">How to make text bigger on Android</h3>
+          <ol>
+            <li data-en="Open <strong>Settings</strong> (gear icon)." data-fr="Ouvrez <strong>Paramètres</strong> (icône d'engrenage).">Open <strong>Settings</strong> (gear icon).</li>
+            <li data-en="Tap <strong>Accessibility</strong> (or <strong>Display</strong> on some phones)." data-fr="Appuyez sur <strong>Accessibilité</strong> (ou <strong>Affichage</strong> sur certains téléphones).">Tap <strong>Accessibility</strong> (or <strong>Display</strong> on some phones).</li>
+            <li data-en="Tap <strong>Font size</strong> or <strong>Text size</strong>." data-fr="Appuyez sur <strong>Taille de la police</strong> ou <strong>Taille du texte</strong>.">Tap <strong>Font size</strong> or <strong>Text size</strong>.</li>
+            <li data-en="Drag the slider to the right to make text larger. A preview at the top shows how it will look." data-fr="Faites glisser le curseur vers la droite pour agrandir le texte. Un aperçu en haut montre à quoi cela ressemblera.">Drag the slider to the right to make text larger. A preview at the top shows how it will look.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Smart TV Guide -->
+      <div class="device-section" id="guide-tv" role="tabpanel">
+        <h2 data-en="Smart TV Basics" data-fr="Les bases du téléviseur intelligent">Smart TV Basics</h2>
+
+        <div class="guide-card">
+          <h3 data-en="What is a Smart TV?" data-fr="Qu'est-ce qu'un téléviseur intelligent ?">What is a Smart TV?</h3>
+          <p data-en="A Smart TV is a television that connects to the internet. This lets you watch streaming services like Netflix, YouTube, CBC Gem, and Amazon Prime Video without a separate device. Most Smart TVs made after 2015 can connect to your home WiFi." data-fr="Un téléviseur intelligent est un téléviseur qui se connecte à Internet. Cela vous permet de regarder des services de diffusion en continu comme Netflix, YouTube, CBC Gem et Amazon Prime Video sans appareil séparé.">A Smart TV is a television that connects to the internet. This lets you watch streaming services like Netflix, YouTube, CBC Gem, and Amazon Prime Video without a separate device. Most Smart TVs made after 2015 can connect to your home WiFi.</p>
+        </div>
+
+        <div class="guide-card">
+          <h3 data-en="How to connect your Smart TV to WiFi" data-fr="Comment connecter votre téléviseur intelligent au Wi-Fi">How to connect your Smart TV to WiFi</h3>
+          <ol>
+            <li data-en="Press the <strong>Home</strong> or <strong>Menu</strong> button on your TV remote." data-fr="Appuyez sur le bouton <strong>Home</strong> ou <strong>Menu</strong> de votre télécommande.">Press the <strong>Home</strong> or <strong>Menu</strong> button on your TV remote.</li>
+            <li data-en="Navigate to <strong>Settings</strong> or <strong>Network</strong> (use the arrow buttons on your remote)." data-fr="Naviguez jusqu'à <strong>Paramètres</strong> ou <strong>Réseau</strong> (utilisez les boutons fléchés de votre télécommande).">Navigate to <strong>Settings</strong> or <strong>Network</strong> (use the arrow buttons on your remote).</li>
+            <li data-en="Select <strong>Wi-Fi</strong> or <strong>Wireless</strong>." data-fr="Sélectionnez <strong>Wi-Fi</strong> ou <strong>Sans fil</strong>.">Select <strong>Wi-Fi</strong> or <strong>Wireless</strong>.</li>
+            <li data-en="Choose your home network name from the list." data-fr="Choisissez le nom de votre réseau domestique dans la liste.">Choose your home network name from the list.</li>
+            <li data-en="Enter your WiFi password using the on-screen keyboard and remote." data-fr="Saisissez votre mot de passe Wi-Fi à l'aide du clavier à l'écran et de la télécommande.">Enter your WiFi password using the on-screen keyboard and remote.</li>
+          </ol>
+          <div class="guide-tip" data-en="💡 If entering a password with a TV remote is too difficult, most Smart TVs have a companion smartphone app that makes typing much easier." data-fr="💡 Si saisir un mot de passe avec une télécommande est trop difficile, la plupart des téléviseurs intelligents ont une application pour smartphone qui facilite beaucoup la saisie.">💡 If entering a password with a TV remote is too difficult, most Smart TVs have a companion smartphone app that makes typing much easier.</div>
+        </div>
+
+        <div class="guide-card">
+          <h3 data-en="How to watch CBC Gem for free" data-fr="Comment regarder CBC Gem gratuitement">How to watch CBC Gem for free</h3>
+          <p data-en="CBC Gem offers thousands of Canadian shows, documentaries, and movies — many completely free with a free account. No credit card required for the free tier." data-fr="CBC Gem offre des milliers d'émissions canadiennes, de documentaires et de films — beaucoup entièrement gratuits avec un compte gratuit. Aucune carte de crédit requise pour le niveau gratuit.">CBC Gem offers thousands of Canadian shows, documentaries, and movies — many completely free with a free account. No credit card required for the free tier.</p>
+          <ol>
+            <li data-en="Look for the <strong>CBC Gem</strong> app on your Smart TV (available on most Samsung, LG, Sony, and Roku TVs)." data-fr="Recherchez l'application <strong>CBC Gem</strong> sur votre téléviseur intelligent (disponible sur la plupart des téléviseurs Samsung, LG, Sony et Roku).">Look for the <strong>CBC Gem</strong> app on your Smart TV (available on most Samsung, LG, Sony, and Roku TVs).</li>
+            <li data-en="If it is not installed, find it in your TV's App Store (Samsung Apps, LG Content Store, etc.)." data-fr="S'il n'est pas installé, trouvez-le dans la boutique d'applications de votre téléviseur.">If it is not installed, find it in your TV's App Store (Samsung Apps, LG Content Store, etc.).</li>
+            <li data-en="Create a free account at gem.cbc.ca or sign in with an existing account." data-fr="Créez un compte gratuit sur gem.cbc.ca ou connectez-vous avec un compte existant.">Create a free account at gem.cbc.ca or sign in with an existing account.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Smart Home Guide -->
+      <div class="device-section" id="guide-smarthome" role="tabpanel">
+        <h2 data-en="Smart Home Device Basics" data-fr="Les bases des appareils domotiques">Smart Home Device Basics</h2>
+
+        <div class="guide-card">
+          <h3 data-en="What are smart home devices?" data-fr="Que sont les appareils domotiques ?">What are smart home devices?</h3>
+          <p data-en="Smart home devices are everyday household items — lights, thermostats, door locks, smoke detectors — that connect to the internet and can be controlled by your voice or smartphone. The most popular voice assistants in Canada are Amazon Alexa (sold as Echo) and Google Home (sold as Google Nest)." data-fr="Les appareils domotiques sont des articles ménagers courants — lumières, thermostats, serrures de porte, détecteurs de fumée — qui se connectent à Internet et peuvent être contrôlés par voix ou smartphone.">Smart home devices are everyday household items — lights, thermostats, door locks, smoke detectors — that connect to the internet and can be controlled by your voice or smartphone. The most popular voice assistants in Canada are Amazon Alexa (sold as Echo) and Google Home (sold as Google Nest).</p>
+        </div>
+
+        <div class="guide-card">
+          <h3 data-en="How to use Amazon Echo / Alexa" data-fr="Comment utiliser Amazon Echo / Alexa">How to use Amazon Echo / Alexa</h3>
+          <p data-en="Say <strong>Alexa</strong> followed by what you want. Examples:" data-fr="Dites <strong>Alexa</strong> suivi de ce que vous voulez. Exemples :">Say <strong>Alexa</strong> followed by what you want. Examples:</p>
+          <ul>
+            <li data-en="&ldquo;Alexa, what is the weather today?&rdquo;" data-fr="« Alexa, quel temps fait-il aujourd'hui ? »">&ldquo;Alexa, what is the weather today?&rdquo;</li>
+            <li data-en="&ldquo;Alexa, set a timer for 20 minutes.&rdquo;" data-fr="« Alexa, règle une minuterie de 20 minutes. »">&ldquo;Alexa, set a timer for 20 minutes.&rdquo;</li>
+            <li data-en="&ldquo;Alexa, call [name].&rdquo; (if you have added contacts)" data-fr="« Alexa, appelle [nom]. » (si vous avez ajouté des contacts)">&ldquo;Alexa, call [name].&rdquo; (if you have added contacts)</li>
+            <li data-en="&ldquo;Alexa, turn off the lights.&rdquo; (if you have smart bulbs)" data-fr="« Alexa, éteins les lumières. » (si vous avez des ampoules intelligentes)">&ldquo;Alexa, turn off the lights.&rdquo; (if you have smart bulbs)</li>
+          </ul>
+          <div class="guide-warn" data-en="⚠️ Amazon will never call you to tell you there is a problem with your Alexa device or account. If you receive such a call, hang up — it is a scam." data-fr="⚠️ Amazon ne vous appellera jamais pour vous dire qu'il y a un problème avec votre appareil Alexa ou votre compte. Si vous recevez un tel appel, raccrochez — c'est une arnaque.">⚠️ Amazon will never call you to tell you there is a problem with your Alexa device or account. If you receive such a call, hang up — it is a scam.</div>
+        </div>
+
+        <div class="guide-card">
+          <h3 data-en="Smart thermostat basics (Nest, Ecobee)" data-fr="Les bases du thermostat intelligent (Nest, Ecobee)">Smart thermostat basics (Nest, Ecobee)</h3>
+          <p data-en="Smart thermostats learn your schedule and adjust the temperature automatically to save energy. Most popular in Canada: Google Nest Thermostat and Ecobee." data-fr="Les thermostats intelligents apprennent votre horaire et ajustent automatiquement la température pour économiser de l'énergie. Les plus populaires au Canada : Google Nest Thermostat et Ecobee.">Smart thermostats learn your schedule and adjust the temperature automatically to save energy. Most popular in Canada: Google Nest Thermostat and Ecobee.</p>
+          <ul>
+            <li data-en="You can adjust the temperature from your phone, anywhere in the world." data-fr="Vous pouvez ajuster la température depuis votre téléphone, n'importe où dans le monde.">You can adjust the temperature from your phone, anywhere in the world.</li>
+            <li data-en="Set a schedule so the heat drops at night and comes on before you wake up." data-fr="Définissez un horaire pour que le chauffage baisse la nuit et s'allume avant votre réveil.">Set a schedule so the heat drops at night and comes on before you wake up.</li>
+            <li data-en="Get alerts if the temperature drops unusually low (useful when away in winter)." data-fr="Recevez des alertes si la température baisse de façon inhabituelle (utile quand vous êtes absent en hiver).">Get alerts if the temperature drops unusually low (useful when away in winter).</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="margin-top:2rem"><a href="index.html" data-en="← Back to all Resources" data-fr="← Retour à toutes les ressources">← Back to all Resources</a> &nbsp;|&nbsp; <a href="../module-1.html" data-en="Start Module 1 →" data-fr="Commencer le module 1 →">Start Module 1 →</a></p>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-brand">Digital Confidence Centre</p>
+          <p class="footer-tagline">A free learning programme for Canadian seniors</p>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="../index.html">Home</a> |
+            <a href="index.html">Resources</a> |
+            <a href="../about.html">About</a> |
+            <a href="../accessibility.html">Accessibility</a> |
+            <a href="../privacy.html">Privacy Policy</a> |
+            <a href="#" onclick="openFeedbackModal(); return false;">Ideas &amp; Feedback</a> |
+            <a href="support-directory.html">Get Help</a>
+          </nav>
+          <p class="footer-copy">&copy; 2026 Two Birds Innovation. Made with care in Ontario, Canada.</p>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script>
+    function showDevice(id, btn) {
+      document.querySelectorAll('.device-section').forEach(function(s) { s.classList.remove('active'); });
+      document.querySelectorAll('.device-tab').forEach(function(b) { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+      var section = document.getElementById('guide-' + id);
+      if (section) section.classList.add('active');
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+    }
+    // Restore tab from URL hash
+    var hash = window.location.hash.replace('#', '');
+    if (hash) {
+      var tabBtn = document.querySelector('[onclick*="' + hash + '"]');
+      if (tabBtn) showDevice(hash, tabBtn);
+    }
+  </script>
+  <script src="../js/search-index.js" defer></script>
+  <script src="../js/search.js" defer></script>
+  <script src="../js/analytics-consent.js" defer></script>
+  <script src="../js/app.js" defer></script>
+  <script src="../js/lang-toggle.js" defer></script>
+  <script src="../js/accessibility.js" defer></script>
+</body>
+</html>
