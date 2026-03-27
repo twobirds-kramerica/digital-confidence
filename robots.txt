@@ -1,6 +1,11 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
+Disallow: /_b2b/
+Disallow: /_grants/
+Disallow: /_social/
+Disallow: /_marketing/
+Disallow: /_build/
 
 User-agent: Googlebot
 Allow: /
