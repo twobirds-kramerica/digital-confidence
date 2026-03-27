@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Grant Tracker | Two Birds Innovation</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,sans-serif;background:#f5f7fa;color:#1a1a1a}
+    .pin-wall{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#1a1a1a}
+    .pin-form{background:#fff;border-radius:12px;padding:2rem;text-align:center;width:320px}
+    .pin-form h1{font-size:1.1rem;margin-bottom:1rem}
+    .pin-form input{width:100%;padding:.75rem;border:1px solid #ccc;border-radius:8px;font-size:1rem;text-align:center;letter-spacing:.3em;margin-bottom:.75rem}
+    .pin-form button{width:100%;padding:.75rem;background:#1565C0;color:#fff;border:none;border-radius:8px;font-size:1rem;cursor:pointer}
+    .pin-error{color:#c62828;font-size:.85rem;margin-top:.5rem}
+    .dashboard{display:none;padding:1.5rem;max-width:1400px;margin:0 auto}
+    .dash-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.25rem;flex-wrap:wrap;gap:.75rem}
+    .dash-title{font-size:1.3rem;font-weight:700}
+    .dash-meta{font-size:.82rem;color:#666;margin-top:2px}
+    .stats-bar{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.25rem}
+    .stat-chip{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:.45rem .9rem;font-size:.8rem}
+    .stat-chip strong{display:block;font-size:1.05rem;color:#1565C0}
+    .controls{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem;align-items:center}
+    .controls select,.controls input{padding:.4rem .7rem;border:1px solid #ccc;border-radius:8px;font-size:.83rem}
+    .btn{padding:.4rem .85rem;border:none;border-radius:8px;font-size:.8rem;cursor:pointer;font-weight:600}
+    .btn-blue{background:#1565C0;color:#fff}
+    .btn-green{background:#2e7d32;color:#fff}
+    .btn-outline{background:#fff;border:1px solid #ccc;color:#333}
+    .alert-banner{background:#fff3e0;border:1px solid #ffb74d;border-radius:10px;padding:.75rem 1rem;margin-bottom:1.25rem;font-size:.84rem;color:#e65100}
+    .alert-banner strong{display:block;margin-bottom:.3rem}
+    table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;font-size:.82rem}
+    th{background:#1565C0;color:#fff;padding:.6rem .75rem;text-align:left;font-weight:600;white-space:nowrap}
+    td{padding:.55rem .75rem;border-bottom:1px solid #f0f0f0;vertical-align:top}
+    tr:last-child td{border-bottom:none}
+    tr:hover td{background:#f8f9ff}
+    .badge{font-size:.7rem;font-weight:700;padding:.15rem .45rem;border-radius:20px;text-transform:uppercase;white-space:nowrap}
+    .pri-high{background:#fce4ec;color:#c62828;border:1px solid #ef9a9a}
+    .pri-medium{background:#fff3e0;color:#e65100;border:1px solid #ffcc80}
+    .pri-low{background:#f5f5f5;color:#666;border:1px solid #ddd}
+    .pri-longterm{background:#e8eaf6;color:#283593;border:1px solid #9fa8da}
+    .deadline-urgent{background:#c62828;color:#fff;font-weight:700;padding:.2rem .5rem;border-radius:6px;font-size:.75rem;white-space:nowrap}
+    .deadline-soon{background:#e65100;color:#fff;font-weight:600;padding:.2rem .5rem;border-radius:6px;font-size:.75rem;white-space:nowrap}
+    .deadline-ok{color:#333;font-size:.8rem}
+    .deadline-tbd{color:#999;font-style:italic;font-size:.8rem}
+    select.status-sel{padding:.25rem .4rem;border:1px solid #ccc;border-radius:6px;font-size:.78rem;width:150px}
+    input.notes-in{padding:.25rem .4rem;border:1px solid #ccc;border-radius:6px;font-size:.78rem;width:170px}
+    .amount{font-size:.78rem;color:#2e7d32;font-weight:600}
+    @media(max-width:900px){table,thead,tbody,th,td,tr{display:block}th{display:none}td{padding:.4rem .6rem;border-bottom:1px solid #eee}}
+  </style>
+</head>
+<body>
+
+<div class="pin-wall" id="pinWall">
+  <div class="pin-form">
+    <h1>🐦 Grant Tracker</h1>
+    <p style="font-size:.85rem;color:#666;margin-bottom:1rem">Two Birds Innovation — Internal</p>
+    <input type="password" id="pinInput" placeholder="PIN" maxlength="4" autocomplete="off">
+    <button onclick="checkPin()">Enter</button>
+    <div class="pin-error" id="pinError"></div>
+  </div>
+</div>
+
+<div class="dashboard" id="dashboardArea">
+  <div class="dash-header">
+    <div>
+      <div class="dash-title">Grant Tracker</div>
+      <div class="dash-meta">Two Birds Innovation · Digital Confidence Centre · 10 priority grants</div>
+    </div>
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+      <button class="btn btn-green" onclick="exportCSV()">Export CSV</button>
+      <button class="btn btn-outline" onclick="saveAll()">Save All</button>
+    </div>
+  </div>
+
+  <div class="alert-banner" id="alertBanner" style="display:none">
+    <strong>⚠️ Upcoming Deadlines</strong>
+    <span id="alertList"></span>
+  </div>
+
+  <div class="stats-bar" id="statsBar"></div>
+
+  <div class="controls">
+    <select id="filterPriority" onchange="renderTable()">
+      <option value="all">All priorities</option>
+      <option value="HIGH">High priority</option>
+      <option value="MEDIUM">Medium priority</option>
+      <option value="LONG-TERM">Long-term</option>
+    </select>
+    <select id="filterStatus" onchange="renderTable()">
+      <option value="all">All statuses</option>
+      <option value="not_started">Not started</option>
+      <option value="researching">Researching</option>
+      <option value="in_progress">In progress</option>
+      <option value="submitted">Submitted</option>
+      <option value="approved">Approved</option>
+      <option value="declined">Declined</option>
+      <option value="monitoring">Monitoring</option>
+    </select>
+    <input type="text" id="filterSearch" placeholder="Search grants…" oninput="renderTable()" style="width:160px">
+  </div>
+
+  <div style="overflow-x:auto">
+    <table id="grantsTable">
+      <thead>
+        <tr>
+          <th>Grant</th>
+          <th>Funder</th>
+          <th>Amount</th>
+          <th>Deadline</th>
+          <th>Priority</th>
+          <th>Partner Req'd</th>
+          <th>Status</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+const PIN = '2026';
+const TODAY = new Date();
+TODAY.setHours(0,0,0,0);
+
+const GRANTS = [
+  {
+    id: 'nhsp-fall-2026',
+    name: 'New Horizons for Seniors (Fall)',
+    funder: 'Government of Canada — ESDC',
+    amount_min: 1000,
+    amount_max: 25000,
+    deadline_str: '2026-09-30',
+    deadline_display: 'Sept 2026 (est.)',
+    priority: 'HIGH',
+    partner_required: true,
+    fit_score: 9,
+    notes_static: 'Annual; check esdc.canada.ca for exact dates. Online portal (GC Forms).',
+    status_default: 'not_started'
+  },
+  {
+    id: 'oscg-2026',
+    name: 'Ontario Seniors Community Grant',
+    funder: 'Ontario Seniors Secretariat / MSAA',
+    amount_min: 1000,
+    amount_max: 25000,
+    deadline_str: '2026-06-30',
+    deadline_display: 'June 30, 2026',
+    priority: 'HIGH',
+    partner_required: true,
+    fit_score: 9,
+    notes_static: 'Template complete. Transfer Payment Ontario portal. Strong fit.',
+    status_default: 'in_progress'
+  },
+  {
+    id: 'otf-seed',
+    name: 'OTF Seed Grant',
+    funder: 'Ontario Trillium Foundation',
+    amount_min: 5000,
+    amount_max: 75000,
+    deadline_str: null,
+    deadline_display: 'Rolling (quarterly panels)',
+    priority: 'HIGH',
+    partner_required: true,
+    fit_score: 8,
+    notes_static: 'Best entry point for Trillium. OTF GrantsConnect portal.',
+    status_default: 'researching'
+  },
+  {
+    id: 'bmo-seniors',
+    name: 'BMO Celebrates Seniors',
+    funder: 'BMO Financial Group',
+    amount_min: 5000,
+    amount_max: 20000,
+    deadline_str: null,
+    deadline_display: 'Spring (check BMO)',
+    priority: 'HIGH',
+    partner_required: true,
+    fit_score: 8,
+    notes_static: 'Focus specifically on seniors. Smaller ask — appropriate for early stage.',
+    status_default: 'not_started'
+  },
+  {
+    id: 'bell-communities',
+    name: 'Bell Better for Communities',
+    funder: 'Bell Canada',
+    amount_min: 5000,
+    amount_max: 25000,
+    deadline_str: null,
+    deadline_display: 'Annually (check bell.ca)',
+    priority: 'HIGH',
+    partner_required: true,
+    fit_score: 8,
+    notes_static: 'Digital inclusion is exact mandate match. Telecom angle relevant.',
+    status_default: 'not_started'
+  },
+  {
+    id: 'telus-friendly',
+    name: 'Telus Friendly Future Foundation',
+    funder: 'Telus Corporation',
+    amount_min: 5000,
+    amount_max: 25000,
+    deadline_str: null,
+    deadline_display: 'Rolling',
+    priority: 'HIGH',
+    partner_required: true,
+    fit_score: 8,
+    notes_static: 'Technology + social good + seniors = strong fit. Telus Ontario presence.',
+    status_default: 'not_started'
+  },
+  {
+    id: 'elgin-community-foundation',
+    name: 'Elgin-St. Thomas Community Foundation',
+    funder: 'Elgin-St. Thomas Community Foundation',
+    amount_min: 1000,
+    amount_max: 10000,
+    deadline_str: null,
+    deadline_display: 'Autumn (est.)',
+    priority: 'HIGH',
+    partner_required: true,
+    fit_score: 9,
+    notes_static: 'Local funder — strong geographic fit. Elgin County / St. Thomas specific.',
+    status_default: 'not_started'
+  },
+  {
+    id: 'td-ready',
+    name: 'TD Ready Commitment',
+    funder: 'TD Bank Group',
+    amount_min: 25000,
+    amount_max: 100000,
+    deadline_str: null,
+    deadline_display: 'Varies by region',
+    priority: 'MEDIUM',
+    partner_required: true,
+    fit_score: 7,
+    notes_static: 'Financial literacy and inclusion angle. Online application.',
+    status_default: 'not_started'
+  },
+  {
+    id: 'rbc-future-launch',
+    name: 'RBC Future Launch',
+    funder: 'RBC Foundation',
+    amount_min: 25000,
+    amount_max: 100000,
+    deadline_str: null,
+    deadline_display: 'Varies by stream',
+    priority: 'MEDIUM',
+    partner_required: true,
+    fit_score: 6,
+    notes_static: 'Digital skills angle fits; youth frame less natural. Letter of inquiry.',
+    status_default: 'not_started'
+  },
+  {
+    id: 'otf-grow',
+    name: 'OTF Grow Grant',
+    funder: 'Ontario Trillium Foundation',
+    amount_min: 75001,
+    amount_max: 500000,
+    deadline_str: null,
+    deadline_display: 'Rolling (quarterly)',
+    priority: 'LONG-TERM',
+    partner_required: true,
+    fit_score: 6,
+    notes_static: 'Requires track record. Not competitive until 2027–2028.',
+    status_default: 'monitoring'
+  }
+];
+
+const STATUS_LABELS = {
+  not_started: 'Not started',
+  researching: 'Researching',
+  in_progress: 'In progress',
+  submitted: 'Submitted',
+  approved: 'Approved',
+  declined: 'Declined',
+  monitoring: 'Monitoring'
+};
+
+let grants = [];
+
+function checkPin() {
+  if (document.getElementById('pinInput').value === PIN) {
+    document.getElementById('pinWall').style.display = 'none';
+    document.getElementById('dashboardArea').style.display = 'block';
+    loadData();
+  } else {
+    document.getElementById('pinError').textContent = 'Incorrect PIN.';
+  }
+}
+document.getElementById('pinInput').addEventListener('keydown', e => { if (e.key === 'Enter') checkPin(); });
+
+function loadData() {
+  grants = GRANTS.map(g => {
+    const saved = JSON.parse(localStorage.getItem('dcc-grant-' + g.id) || 'null');
+    return {
+      ...g,
+      status: saved ? (saved.status || g.status_default) : g.status_default,
+      notes_user: saved ? (saved.notes || '') : ''
+    };
+  });
+  checkDeadlineAlerts();
+  renderStats();
+  renderTable();
+}
+
+function daysUntil(dateStr) {
+  if (!dateStr) return null;
+  const d = new Date(dateStr);
+  d.setHours(0,0,0,0);
+  return Math.round((d - TODAY) / 86400000);
+}
+
+function checkDeadlineAlerts() {
+  const urgent = grants.filter(g => {
+    const d = daysUntil(g.deadline_str);
+    return d !== null && d >= 0 && d <= 30;
+  });
+  if (urgent.length > 0) {
+    const banner = document.getElementById('alertBanner');
+    banner.style.display = 'block';
+    document.getElementById('alertList').textContent =
+      urgent.map(g => g.name + ' — ' + g.deadline_display + ' (' + daysUntil(g.deadline_str) + ' days)').join(' · ');
+  }
+}
+
+function renderStats() {
+  const total = grants.length;
+  const active = grants.filter(g => ['researching','in_progress','submitted'].includes(g.status)).length;
+  const submitted = grants.filter(g => g.status === 'submitted').length;
+  const approved = grants.filter(g => g.status === 'approved').length;
+  const high = grants.filter(g => g.priority === 'HIGH').length;
+  document.getElementById('statsBar').innerHTML =
+    chip('Total', total) +
+    chip('Active', active, '#1565C0') +
+    chip('Submitted', submitted, '#6a1b9a') +
+    chip('Approved', approved, '#1b5e20') +
+    chip('High Priority', high, '#c62828');
+}
+
+function chip(l,v,c){ return '<div class="stat-chip"><strong style="color:'+(c||'#1565C0')+'">'+v+'</strong>'+l+'</div>'; }
+
+function renderTable() {
+  const pri = document.getElementById('filterPriority').value;
+  const status = document.getElementById('filterStatus').value;
+  const search = document.getElementById('filterSearch').value.toLowerCase();
+
+  const filtered = grants.filter(g => {
+    if (pri !== 'all' && g.priority !== pri) return false;
+    if (status !== 'all' && g.status !== status) return false;
+    if (search && !g.name.toLowerCase().includes(search) && !g.funder.toLowerCase().includes(search)) return false;
+    return true;
+  });
+
+  document.getElementById('tableBody').innerHTML = filtered.map(g => {
+    const priClass = 'pri-' + g.priority.toLowerCase().replace('-','');
+    const days = daysUntil(g.deadline_str);
+    let deadlineHtml;
+    if (days === null) {
+      deadlineHtml = '<span class="deadline-tbd">' + esc(g.deadline_display) + '</span>';
+    } else if (days < 0) {
+      deadlineHtml = '<span style="color:#999;font-size:.78rem;text-decoration:line-through">' + esc(g.deadline_display) + '</span>';
+    } else if (days <= 14) {
+      deadlineHtml = '<span class="deadline-urgent">' + esc(g.deadline_display) + '<br>' + days + ' days</span>';
+    } else if (days <= 30) {
+      deadlineHtml = '<span class="deadline-soon">' + esc(g.deadline_display) + '<br>' + days + ' days</span>';
+    } else {
+      deadlineHtml = '<span class="deadline-ok">' + esc(g.deadline_display) + '</span>';
+    }
+
+    const amount = g.amount_min === g.amount_max
+      ? '$' + fmt(g.amount_max)
+      : '$' + fmt(g.amount_min) + '–$' + fmt(g.amount_max);
+
+    return `<tr>
+      <td><strong>${esc(g.name)}</strong><br><span style="font-size:.72rem;color:#888">${esc(g.notes_static)}</span></td>
+      <td style="font-size:.78rem">${esc(g.funder)}</td>
+      <td><span class="amount">${amount}</span></td>
+      <td>${deadlineHtml}</td>
+      <td><span class="badge ${priClass}">${g.priority}</span><br><span style="font-size:.7rem;color:#888">Fit: ${g.fit_score}/10</span></td>
+      <td style="font-size:.78rem;text-align:center">${g.partner_required ? '✓ Yes' : '—'}</td>
+      <td>
+        <select class="status-sel" data-id="${g.id}" onchange="updateField('${g.id}','status',this.value);renderStats()">
+          ${Object.entries(STATUS_LABELS).map(([v,l]) => `<option value="${v}"${g.status===v?' selected':''}>${l}</option>`).join('')}
+        </select>
+      </td>
+      <td><input class="notes-in" type="text" value="${esc(g.notes_user||'')}" placeholder="Add note…" data-id="${g.id}" onchange="updateField('${g.id}','notes',this.value)"></td>
+    </tr>`;
+  }).join('');
+}
+
+function fmt(n) {
+  return Number(n).toLocaleString('en-CA');
+}
+
+function updateField(id, field, val) {
+  const g = grants.find(x => x.id === id);
+  if (!g) return;
+  if (field === 'status') g.status = val;
+  if (field === 'notes') g.notes_user = val;
+  saveGrant(g);
+}
+
+function saveGrant(g) {
+  localStorage.setItem('dcc-grant-' + g.id, JSON.stringify({ status: g.status, notes: g.notes_user }));
+}
+
+function saveAll() {
+  grants.forEach(saveGrant);
+  alert('All changes saved.');
+}
+
+function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function exportCSV() {
+  const headers = ['id','name','funder','amount_min','amount_max','deadline_display','priority','fit_score','partner_required','status','notes_user'];
+  const rows = grants.map(g => headers.map(h => '"' + String(g[h]||'').replace(/"/g,'""') + '"').join(','));
+  const csv = headers.join(',') + '\n' + rows.join('\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv'}));
+  a.download = 'dcc-grants-' + new Date().toISOString().slice(0,10) + '.csv';
+  a.click();
+}
+</script>
+</body>
+</html>
