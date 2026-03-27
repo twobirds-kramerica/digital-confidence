@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Product Roadmap 2026 | Two Birds Innovation</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0F1B2D;
+      --card-bg:    #1A2D44;
+      --card-border:#243d59;
+      --teal:       #00C9A7;
+      --teal-dim:   #009e84;
+      --teal-bg:    rgba(0,201,167,0.15);
+      --white:      #F0F4F8;
+      --muted:      #8AA0B8;
+      --planned:    #1565C0;
+      --planned-bg: rgba(21,101,192,0.2);
+      --complete:   #4a5568;
+      --complete-bg:rgba(74,85,104,0.2);
+      --active:     #00C9A7;
+      --active-bg:  rgba(0,201,167,0.2);
+      --yellow:     #F39C12;
+      --yellow-bg:  rgba(243,156,18,0.15);
+    }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      padding-bottom: 60px;
+    }
+
+    /* ── PIN Gate ── */
+    #pin-gate {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    .pin-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 40px 32px;
+      max-width: 360px;
+      width: 100%;
+      text-align: center;
+    }
+    .pin-card h2 { font-size: 1.4em; color: var(--teal); margin-bottom: 8px; }
+    .pin-card p  { color: var(--muted); font-size: 0.9em; margin-bottom: 24px; }
+    .pin-lock    { font-size: 2.5em; margin-bottom: 16px; }
+    .pin-input {
+      width: 100%;
+      padding: 14px 16px;
+      background: #0a1520;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      color: var(--white);
+      font-size: 1.3em;
+      text-align: center;
+      letter-spacing: 0.2em;
+      outline: none;
+      margin-bottom: 16px;
+    }
+    .pin-input:focus { border-color: var(--teal); }
+    .pin-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--teal);
+      color: #0a1520;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .pin-btn:hover { background: var(--teal-dim); }
+    .pin-error {
+      color: #E74C3C;
+      font-size: 0.85em;
+      margin-top: 10px;
+      min-height: 20px;
+    }
+
+    /* ── Main Content ── */
+    #main-content { display: none; }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, #0a1520 0%, #1A2D44 100%);
+      border-bottom: 2px solid var(--teal);
+      padding: 28px 24px 20px;
+      text-align: center;
+    }
+    .header h1 { font-size: clamp(1.4em, 4vw, 2em); font-weight: 700; }
+    .header h1 span { color: var(--teal); }
+    .header p { color: var(--muted); font-size: 0.9em; margin-top: 6px; }
+    .header-meta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+    .header-meta .chip {
+      font-size: 0.75em;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+    .chip-active   { background: var(--active-bg);   color: var(--active);  border: 1px solid var(--active); }
+    .chip-planned  { background: var(--planned-bg);  color: #5fa8ff;        border: 1px solid var(--planned); }
+    .chip-complete { background: var(--complete-bg); color: var(--muted);   border: 1px solid var(--complete); }
+
+    /* ── Container ── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 32px 20px; }
+
+    /* ── Legend ── */
+    .legend {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+      padding: 14px 18px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+    }
+    .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.85em; color: var(--muted); }
+    .legend-dot  { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+    .dot-active   { background: var(--active); }
+    .dot-planned  { background: var(--planned); }
+    .dot-complete { background: var(--complete); }
+
+    /* ── Gantt ── */
+    .gantt-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      margin-bottom: 32px;
+    }
+    .gantt {
+      min-width: 900px;
+      width: 100%;
+    }
+
+    /* Month header */
+    .gantt-header {
+      display: grid;
+      grid-template-columns: 180px repeat(10, 1fr);
+      background: #0a1520;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .gantt-header-label {
+      padding: 12px 16px;
+      font-size: 0.75em;
+      font-weight: 700;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-right: 1px solid var(--card-border);
+    }
+    .gantt-month {
+      padding: 12px 8px;
+      font-size: 0.75em;
+      font-weight: 600;
+      color: var(--muted);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-right: 1px solid rgba(36,61,89,0.5);
+    }
+    .gantt-month:last-child { border-right: none; }
+    .gantt-month.current { color: var(--teal); }
+
+    /* Swim lane rows */
+    .gantt-row {
+      display: grid;
+      grid-template-columns: 180px repeat(10, 1fr);
+      border-bottom: 1px solid var(--card-border);
+      min-height: 64px;
+    }
+    .gantt-row:last-child { border-bottom: none; }
+    .gantt-row-label {
+      padding: 14px 16px;
+      border-right: 1px solid var(--card-border);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+      background: rgba(10,21,32,0.4);
+    }
+    .gantt-row-label strong { font-size: 0.85em; color: var(--white); }
+    .gantt-row-label span   { font-size: 0.72em; color: var(--muted); }
+    .gantt-cells {
+      display: contents;
+    }
+    .gantt-cell {
+      position: relative;
+      padding: 10px 4px;
+      border-right: 1px solid rgba(36,61,89,0.4);
+      min-height: 64px;
+    }
+    .gantt-cell:last-child { border-right: none; }
+
+    /* Phase bars — spans placed with inline style col-start / col-end */
+    .gantt-bar-row {
+      grid-column: 2 / 12; /* spans all 10 month cells */
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 0;
+      min-height: 64px;
+      /* We use absolute bars inside */
+    }
+
+    /* Bar positioning approach: each row has a single relative container
+       and bars use left% + width% based on 10-month grid */
+    .gantt-bars {
+      position: relative;
+      width: 100%;
+      height: 64px;
+      /* Vertical grid lines */
+      background-image: repeating-linear-gradient(
+        to right,
+        transparent 0,
+        transparent calc(10% - 1px),
+        rgba(36,61,89,0.4) calc(10% - 1px),
+        rgba(36,61,89,0.4) 10%
+      );
+    }
+    .bar {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 28px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      font-size: 0.72em;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .bar-active  { background: var(--active-bg);   color: var(--active);  border: 1px solid rgba(0,201,167,0.5); }
+    .bar-planned { background: var(--planned-bg);  color: #5fa8ff;        border: 1px solid rgba(21,101,192,0.5); }
+    .bar-complete{ background: var(--complete-bg); color: var(--muted);   border: 1px solid rgba(74,85,104,0.5); }
+    .bar-yellow  { background: var(--yellow-bg);   color: var(--yellow);  border: 1px solid rgba(243,156,18,0.5); }
+
+    /* Current month marker */
+    .gantt-today {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--teal);
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    /* ── Phase table below chart ── */
+    .phases-section h2 {
+      font-size: 1.1em;
+      color: var(--teal);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .phases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .phase-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .phase-card h3 {
+      font-size: 0.85em;
+      color: var(--white);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .phase-card h3 .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .phase-card .timeline { font-size: 0.75em; color: var(--teal); margin-bottom: 8px; }
+    .phase-card ul { list-style: none; padding: 0; }
+    .phase-card ul li {
+      font-size: 0.78em;
+      color: var(--muted);
+      padding: 3px 0;
+      padding-left: 14px;
+      position: relative;
+    }
+    .phase-card ul li::before { content: '→'; position: absolute; left: 0; color: var(--card-border); }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+      font-size: 0.8em;
+      border-top: 1px solid var(--card-border);
+      margin-top: 20px;
+    }
+    footer a { color: var(--teal); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── Back link ── */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 0.85em;
+      text-decoration: none;
+      margin-bottom: 20px;
+      padding: 8px 0;
+    }
+    .back-link:hover { color: var(--teal); }
+
+    @media (max-width: 600px) {
+      .phases-grid { grid-template-columns: 1fr; }
+      .legend { gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PIN Gate -->
+  <div id="pin-gate">
+    <div class="pin-card">
+      <div class="pin-lock">🔒</div>
+      <h2>Internal Access</h2>
+      <p>This page is restricted to Two Birds Innovation team members.</p>
+      <input type="password" class="pin-input" id="pin-input" maxlength="4" placeholder="PIN" autocomplete="off" inputmode="numeric">
+      <button class="pin-btn" id="pin-submit">Unlock</button>
+      <p class="pin-error" id="pin-error" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content">
+
+    <div class="header">
+      <h1>Product <span>Roadmap 2026</span></h1>
+      <p>March – December 2026 &nbsp;·&nbsp; Two Birds Innovation &nbsp;·&nbsp; Internal use only</p>
+      <div class="header-meta">
+        <span class="chip chip-active">Active</span>
+        <span class="chip chip-planned">Planned</span>
+        <span class="chip chip-complete">Complete</span>
+      </div>
+    </div>
+
+    <div class="container">
+      <a href="#" class="back-link" onclick="history.back(); return false;">← Back</a>
+
+      <!-- Legend -->
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot dot-active"></div> Active — in progress now</div>
+        <div class="legend-item"><div class="legend-dot dot-planned"></div> Planned — scheduled, not yet started</div>
+        <div class="legend-item"><div class="legend-dot dot-complete"></div> Complete — shipped</div>
+      </div>
+
+      <!-- Gantt Chart -->
+      <div class="gantt-wrap">
+        <div class="gantt">
+
+          <!-- Month header -->
+          <div class="gantt-header">
+            <div class="gantt-header-label">Product</div>
+            <div class="gantt-month current">Mar</div>
+            <div class="gantt-month">Apr</div>
+            <div class="gantt-month">May</div>
+            <div class="gantt-month">Jun</div>
+            <div class="gantt-month">Jul</div>
+            <div class="gantt-month">Aug</div>
+            <div class="gantt-month">Sep</div>
+            <div class="gantt-month">Oct</div>
+            <div class="gantt-month">Nov</div>
+            <div class="gantt-month">Dec</div>
+          </div>
+
+          <!-- DCC Row -->
+          <div class="gantt-row">
+            <div class="gantt-row-label">
+              <strong>Digital Confidence Centre</strong>
+              <span>Seniors digital literacy</span>
+            </div>
+            <div class="gantt-bars" style="grid-column: 2 / 12;">
+              <!-- Mar-Apr: Phase 2 content + WCAG fixes (active) -->
+              <div class="bar bar-active"  style="left:0%;    width:20%;"> Phase 2 Content + WCAG</div>
+              <!-- May-Jun: Module 16 + visual AI expansion -->
+              <div class="bar bar-planned" style="left:20%;   width:20%;"> Module 16 + Visual AI</div>
+              <!-- Jul-Aug: Community pilot — St Thomas -->
+              <div class="bar bar-planned" style="left:40%;   width:20%;"> St. Thomas Pilot</div>
+              <!-- Sep-Oct: Facilitator guide + print kit -->
+              <div class="bar bar-planned" style="left:60%;   width:20%;"> Facilitator Guide</div>
+              <!-- Nov-Dec: v2.0 public launch -->
+              <div class="bar bar-planned" style="left:80%;   width:20%;"> v2.0 Launch</div>
+              <!-- Today marker: March = ~5% into the year (Mar 26 / 10 months ≈ 2.6%) -->
+              <div class="gantt-today" style="left: 8.4%;"></div>
+            </div>
+          </div>
+
+          <!-- Career Coach Row -->
+          <div class="gantt-row">
+            <div class="gantt-row-label">
+              <strong>Career Coach</strong>
+              <span>iA job-seeker tool</span>
+            </div>
+            <div class="gantt-bars" style="grid-column: 2 / 12;">
+              <!-- Mar: iA interview tool launched (complete) -->
+              <div class="bar bar-complete" style="left:0%;   width:10%;"> iA Interview Tool</div>
+              <!-- Apr-May: Resume analyser + cover letter -->
+              <div class="bar bar-active"  style="left:10%;  width:20%;"> Résumé + Cover Letter</div>
+              <!-- Jun-Aug: Job match scoring + alerts -->
+              <div class="bar bar-planned" style="left:30%;  width:30%;"> Job Match + Alerts</div>
+              <!-- Sep-Nov: Partner integrations + API -->
+              <div class="bar bar-planned" style="left:60%;  width:30%;"> Partner Integrations</div>
+              <div class="gantt-today" style="left: 8.4%;"></div>
+            </div>
+          </div>
+
+          <!-- Apartment Search Row -->
+          <div class="gantt-row">
+            <div class="gantt-row-label">
+              <strong>Apartment Search</strong>
+              <span>Kevin's rental tracker</span>
+            </div>
+            <div class="gantt-bars" style="grid-column: 2 / 12;">
+              <!-- Mar-Apr: Data scraping + listing normalisation (active) -->
+              <div class="bar bar-active"  style="left:0%;   width:20%;"> Data Pipeline</div>
+              <!-- May-Jun: Scoring + filters UI -->
+              <div class="bar bar-planned" style="left:20%;  width:20%;"> Scoring + Filters UI</div>
+              <!-- Jul: Email/Slack alerts -->
+              <div class="bar bar-planned" style="left:40%;  width:10%;"> Alerts</div>
+              <!-- Aug-Sep: Map view + saved listings -->
+              <div class="bar bar-planned" style="left:50%;  width:20%;"> Map View</div>
+              <!-- Oct+: Personal use / maintain -->
+              <div class="bar bar-complete" style="left:70%; width:30%;"> Maintenance</div>
+              <div class="gantt-today" style="left: 8.4%;"></div>
+            </div>
+          </div>
+
+          <!-- Quality Dashboard Row -->
+          <div class="gantt-row">
+            <div class="gantt-row-label">
+              <strong>Quality Dashboard</strong>
+              <span>Internal build monitor</span>
+            </div>
+            <div class="gantt-bars" style="grid-column: 2 / 12;">
+              <!-- Mar: Roadmap + strategy pages (active — this build) -->
+              <div class="bar bar-active"  style="left:0%;   width:10%;"> Roadmap + Strategy</div>
+              <!-- Apr-May: Beta analytics + journey maps -->
+              <div class="bar bar-planned" style="left:10%;  width:20%;"> Analytics + Journey</div>
+              <!-- Jun-Aug: Automated health checks -->
+              <div class="bar bar-planned" style="left:30%;  width:30%;"> Automated Checks</div>
+              <!-- Sep-Dec: Sprint tracker + velocity -->
+              <div class="bar bar-planned" style="left:60%;  width:40%;"> Sprint Tracker</div>
+              <div class="gantt-today" style="left: 8.4%;"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Phase Detail Cards -->
+      <div class="phases-section">
+        <h2>Phase Details — Digital Confidence Centre</h2>
+        <div class="phases-grid">
+
+          <div class="phase-card">
+            <h3><div class="dot" style="background:var(--active);"></div>Phase 2 Content &amp; WCAG Fixes</h3>
+            <div class="timeline">March – April 2026</div>
+            <ul>
+              <li>Module count audit (15 modules confirmed)</li>
+              <li>WCAG AA contrast fixes across all components</li>
+              <li>Mobile responsive deep audit (375–414px)</li>
+              <li>Search UX — hints, label, mobile collapse</li>
+            </ul>
+          </div>
+
+          <div class="phase-card">
+            <h3><div class="dot" style="background:var(--planned);"></div>Module 16 + Visual AI Expansion</h3>
+            <div class="timeline">May – June 2026</div>
+            <ul>
+              <li>Module 16: Online Safety Advanced</li>
+              <li>Visual AI "Show Me!" bonus expansion</li>
+              <li>French translation review pass</li>
+              <li>New scam scenario scenarios</li>
+            </ul>
+          </div>
+
+          <div class="phase-card">
+            <h3><div class="dot" style="background:var(--planned);"></div>St. Thomas Community Pilot</h3>
+            <div class="timeline">July – August 2026</div>
+            <ul>
+              <li>Recruit 20 pilot participants (seniors)</li>
+              <li>Facilitator-led sessions at library</li>
+              <li>Collect structured feedback</li>
+              <li>Iterate on module 1–5 based on feedback</li>
+            </ul>
+          </div>
+
+          <div class="phase-card">
+            <h3><div class="dot" style="background:var(--planned);"></div>Facilitator Guide + Print Kit</h3>
+            <div class="timeline">September – October 2026</div>
+            <ul>
+              <li>PDF facilitator workbook</li>
+              <li>Printable quick-reference cards per module</li>
+              <li>Slide deck templates for workshops</li>
+            </ul>
+          </div>
+
+          <div class="phase-card">
+            <h3><div class="dot" style="background:var(--planned);"></div>v2.0 Public Launch</h3>
+            <div class="timeline">November – December 2026</div>
+            <ul>
+              <li>Press release + social campaign</li>
+              <li>Submit to Ontario seniors org directories</li>
+              <li>Performance audit + CDN optimisation</li>
+              <li>Accessibility audit (external review)</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /container -->
+
+    <footer>
+      Two Birds Innovation &nbsp;·&nbsp; Internal — <span style="color:var(--teal);">Not for public distribution</span>
+      &nbsp;·&nbsp; <a href="../index.html">DCC Home</a>
+      &nbsp;·&nbsp; <a href="strategy.html">Strategy Docs →</a>
+    </footer>
+
+  </div><!-- /main-content -->
+
+  <script>
+    (function () {
+      var CORRECT_PIN = '2026';
+      var SESSION_KEY = 'pin_authenticated';
+
+      function unlock() {
+        sessionStorage.setItem(SESSION_KEY, 'true');
+        document.getElementById('pin-gate').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+      }
+
+      // Already authenticated this session?
+      if (sessionStorage.getItem(SESSION_KEY) === 'true') {
+        unlock();
+        return;
+      }
+
+      var input  = document.getElementById('pin-input');
+      var btn    = document.getElementById('pin-submit');
+      var errMsg = document.getElementById('pin-error');
+
+      function attempt() {
+        if (input.value === CORRECT_PIN) {
+          unlock();
+        } else {
+          errMsg.textContent = 'Incorrect PIN. Please try again.';
+          input.value = '';
+          input.focus();
+        }
+      }
+
+      btn.addEventListener('click', attempt);
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') attempt();
+      });
+      input.focus();
+    })();
+  </script>
+
+</body>
+</html>

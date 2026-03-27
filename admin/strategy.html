@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Strategy Documents | Two Birds Innovation</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0F1B2D;
+      --card-bg:    #1A2D44;
+      --card-border:#243d59;
+      --teal:       #00C9A7;
+      --teal-dim:   #009e84;
+      --teal-bg:    rgba(0,201,167,0.12);
+      --white:      #F0F4F8;
+      --muted:      #8AA0B8;
+      --yellow:     #F39C12;
+      --yellow-bg:  rgba(243,156,18,0.12);
+      --green:      #2ECC71;
+      --green-bg:   rgba(46,204,113,0.12);
+      --blue:       #5fa8ff;
+      --blue-bg:    rgba(95,168,255,0.12);
+      --purple:     #a78bfa;
+      --purple-bg:  rgba(167,139,250,0.12);
+    }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      padding-bottom: 60px;
+    }
+
+    /* ── PIN Gate ── */
+    #pin-gate {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    .pin-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 40px 32px;
+      max-width: 360px;
+      width: 100%;
+      text-align: center;
+    }
+    .pin-card h2 { font-size: 1.4em; color: var(--teal); margin-bottom: 8px; }
+    .pin-card p  { color: var(--muted); font-size: 0.9em; margin-bottom: 24px; }
+    .pin-lock    { font-size: 2.5em; margin-bottom: 16px; }
+    .pin-input {
+      width: 100%;
+      padding: 14px 16px;
+      background: #0a1520;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      color: var(--white);
+      font-size: 1.3em;
+      text-align: center;
+      letter-spacing: 0.2em;
+      outline: none;
+      margin-bottom: 16px;
+    }
+    .pin-input:focus { border-color: var(--teal); }
+    .pin-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--teal);
+      color: #0a1520;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .pin-btn:hover { background: var(--teal-dim); }
+    .pin-error {
+      color: #E74C3C;
+      font-size: 0.85em;
+      margin-top: 10px;
+      min-height: 20px;
+    }
+
+    /* ── Main Content ── */
+    #main-content { display: none; }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, #0a1520 0%, #1A2D44 100%);
+      border-bottom: 2px solid var(--teal);
+      padding: 28px 24px 20px;
+      text-align: center;
+    }
+    .header h1 { font-size: clamp(1.4em, 4vw, 2em); font-weight: 700; }
+    .header h1 span { color: var(--teal); }
+    .header p { color: var(--muted); font-size: 0.9em; margin-top: 6px; }
+
+    /* ── Container ── */
+    .container { max-width: 860px; margin: 0 auto; padding: 32px 20px; }
+
+    /* ── Back link ── */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 0.85em;
+      text-decoration: none;
+      margin-bottom: 24px;
+      padding: 8px 0;
+    }
+    .back-link:hover { color: var(--teal); }
+
+    /* ── Notice banner ── */
+    .notice {
+      background: var(--yellow-bg);
+      border: 1px solid rgba(243,156,18,0.3);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 0.85em;
+      color: var(--yellow);
+      margin-bottom: 28px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    /* ── Doc cards ── */
+    .docs-grid {
+      display: grid;
+      gap: 18px;
+    }
+    .doc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 22px 24px;
+      display: grid;
+      grid-template-columns: 48px 1fr auto;
+      gap: 0 18px;
+      align-items: start;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .doc-card:hover { border-color: var(--teal); background: rgba(0,201,167,0.04); }
+    .doc-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4em;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .doc-body h3 { font-size: 1em; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .doc-body p  { font-size: 0.82em; color: var(--muted); line-height: 1.5; margin-bottom: 10px; }
+    .doc-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .doc-tag {
+      font-size: 0.7em;
+      padding: 3px 10px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+    .doc-reviewed {
+      font-size: 0.75em;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .doc-arrow {
+      color: var(--teal);
+      font-size: 1.1em;
+      padding-top: 4px;
+      align-self: center;
+    }
+
+    /* Colour themes per doc */
+    .theme-teal   { background: var(--teal-bg);   color: var(--teal); }
+    .theme-yellow { background: var(--yellow-bg);  color: var(--yellow); }
+    .theme-blue   { background: var(--blue-bg);    color: var(--blue); }
+    .theme-purple { background: var(--purple-bg);  color: var(--purple); }
+
+    /* ── Section heading ── */
+    .section-head {
+      font-size: 0.75em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 12px;
+      margin-top: 32px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .section-head:first-of-type { margin-top: 0; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+      font-size: 0.8em;
+      border-top: 1px solid var(--card-border);
+      margin-top: 20px;
+    }
+    footer a { color: var(--teal); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 560px) {
+      .doc-card {
+        grid-template-columns: 40px 1fr;
+      }
+      .doc-arrow { display: none; }
+      .doc-icon  { width: 40px; height: 40px; font-size: 1.2em; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PIN Gate -->
+  <div id="pin-gate">
+    <div class="pin-card">
+      <div class="pin-lock">🔒</div>
+      <h2>Internal Access</h2>
+      <p>This page is restricted to Two Birds Innovation team members.</p>
+      <input type="password" class="pin-input" id="pin-input" maxlength="4" placeholder="PIN" autocomplete="off" inputmode="numeric">
+      <button class="pin-btn" id="pin-submit">Unlock</button>
+      <p class="pin-error" id="pin-error" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content">
+
+    <div class="header">
+      <h1>Strategy <span>Documents</span></h1>
+      <p>Two Birds Innovation &nbsp;·&nbsp; Internal use only &nbsp;·&nbsp; Not for distribution</p>
+    </div>
+
+    <div class="container">
+      <a href="#" class="back-link" onclick="history.back(); return false;">← Back</a>
+
+      <div class="notice">
+        <span>⚠️</span>
+        <span>These documents contain confidential competitive analysis, persona research, and monetisation strategy. Do not share outside the Two Birds team.</span>
+      </div>
+
+      <!-- DCC -->
+      <div class="section-head">Digital Confidence Centre</div>
+      <div class="docs-grid">
+
+        <a class="doc-card" href="../../brenda-digital-confidence/_strategy/dcc-strategy.md" target="_blank">
+          <div class="doc-icon theme-teal">📱</div>
+          <div class="doc-body">
+            <h3>DCC Product Strategy</h3>
+            <p>Core mission, target audience personas, competitive landscape (Ontario seniors digital literacy space), feature prioritisation framework, and distribution strategy through community partners.</p>
+            <div class="doc-meta">
+              <span class="doc-tag theme-teal">Product</span>
+              <span class="doc-tag theme-teal">Audience</span>
+              <span class="doc-reviewed">📅 Last reviewed: March 2026</span>
+            </div>
+          </div>
+          <div class="doc-arrow">→</div>
+        </a>
+
+        <a class="doc-card" href="../../brenda-digital-confidence/_strategy/dcc-monetisation.md" target="_blank">
+          <div class="doc-icon theme-yellow">💰</div>
+          <div class="doc-body">
+            <h3>DCC Monetisation &amp; Sustainability</h3>
+            <p>Revenue model options (grant-funded, municipal licensing, facilitator certification fees), cost structure, long-term sustainability plan, and funding organisation targets in Ontario.</p>
+            <div class="doc-meta">
+              <span class="doc-tag theme-yellow">Revenue</span>
+              <span class="doc-tag theme-yellow">Grants</span>
+              <span class="doc-reviewed">📅 Last reviewed: February 2026</span>
+            </div>
+          </div>
+          <div class="doc-arrow">→</div>
+        </a>
+
+      </div>
+
+      <!-- Career Coach -->
+      <div class="section-head">Career Coach</div>
+      <div class="docs-grid">
+
+        <a class="doc-card" href="../../career-coach/_strategy/career-coach-strategy.md" target="_blank">
+          <div class="doc-icon theme-blue">🎯</div>
+          <div class="doc-body">
+            <h3>Career Coach Product Strategy</h3>
+            <p>iA-powered job-seeker tool strategy: target users (displaced workers, career changers), core differentiators vs. LinkedIn / Indeed, AI feature roadmap, and integration partnership targets.</p>
+            <div class="doc-meta">
+              <span class="doc-tag theme-blue">Product</span>
+              <span class="doc-tag theme-blue">iA / AI</span>
+              <span class="doc-reviewed">📅 Last reviewed: March 2026</span>
+            </div>
+          </div>
+          <div class="doc-arrow">→</div>
+        </a>
+
+      </div>
+
+      <!-- Quality Dashboard -->
+      <div class="section-head">Quality Dashboard &amp; Internal Tools</div>
+      <div class="docs-grid">
+
+        <a class="doc-card" href="../../quality-dashboard/_strategy/platform-strategy.md" target="_blank">
+          <div class="doc-icon theme-purple">📊</div>
+          <div class="doc-body">
+            <h3>Platform &amp; Internal Tools Strategy</h3>
+            <p>Rationale for internal tooling investment (quality dashboard, roadmap, sprint tracking), build-vs-buy analysis, and how internal tooling supports faster product delivery across all Two Birds products.</p>
+            <div class="doc-meta">
+              <span class="doc-tag theme-purple">Infrastructure</span>
+              <span class="doc-tag theme-purple">Internal</span>
+              <span class="doc-reviewed">📅 Last reviewed: January 2026</span>
+            </div>
+          </div>
+          <div class="doc-arrow">→</div>
+        </a>
+
+      </div>
+
+    </div><!-- /container -->
+
+    <footer>
+      Two Birds Innovation &nbsp;·&nbsp; Internal — <span style="color:var(--teal);">Confidential</span>
+      &nbsp;·&nbsp; <a href="../index.html">DCC Home</a>
+      &nbsp;·&nbsp; <a href="roadmap.html">Roadmap →</a>
+    </footer>
+
+  </div><!-- /main-content -->
+
+  <script>
+    (function () {
+      var CORRECT_PIN = '2026';
+      var SESSION_KEY = 'pin_authenticated';
+
+      function unlock() {
+        sessionStorage.setItem(SESSION_KEY, 'true');
+        document.getElementById('pin-gate').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+      }
+
+      // Already authenticated this session?
+      if (sessionStorage.getItem(SESSION_KEY) === 'true') {
+        unlock();
+        return;
+      }
+
+      var input  = document.getElementById('pin-input');
+      var btn    = document.getElementById('pin-submit');
+      var errMsg = document.getElementById('pin-error');
+
+      function attempt() {
+        if (input.value === CORRECT_PIN) {
+          unlock();
+        } else {
+          errMsg.textContent = 'Incorrect PIN. Please try again.';
+          input.value = '';
+          input.focus();
+        }
+      }
+
+      btn.addEventListener('click', attempt);
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') attempt();
+      });
+      input.focus();
+    })();
+  </script>
+
+</body>
+</html>
