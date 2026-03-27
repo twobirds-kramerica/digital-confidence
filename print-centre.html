@@ -259,6 +259,49 @@
         font-size: 18px !important;
       }
     }
+    /* Dark mode overrides */
+    [data-theme="dark"] .print-centre-intro {
+      background: #1E3A5F;
+      border-left-color: #5DADE2;
+      color: var(--text-primary, #E0E0E0);
+    }
+    [data-theme="dark"] .print-section {
+      background: var(--bg-card, #333);
+      border-color: var(--border-color, #444);
+    }
+    [data-theme="dark"] .module-checklist li {
+      border-bottom-color: var(--border-color, #444);
+    }
+    [data-theme="dark"] .btn-select-all {
+      background: #5DADE2;
+      border-color: #5DADE2;
+      color: #0F1B2D;
+    }
+    [data-theme="dark"] .btn-select-all:hover {
+      background: #3a9fd4;
+    }
+    [data-theme="dark"] .btn-clear-all {
+      background: var(--bg-card, #333);
+      color: #5DADE2;
+      border-color: #5DADE2;
+    }
+    [data-theme="dark"] .btn-clear-all:hover {
+      background: #1E3A5F;
+    }
+    [data-theme="dark"] .btn-email-myself {
+      background: var(--bg-card, #333);
+      color: #5DADE2;
+      border-color: #5DADE2;
+    }
+    [data-theme="dark"] .btn-email-myself:hover {
+      background: #1E3A5F;
+    }
+    [data-theme="dark"] .btn-build-cheatsheet {
+      background: #2E7D32;
+    }
+    [data-theme="dark"] .selection-count {
+      color: var(--text-secondary, #A0A0A0);
+    }
   </style>
     <script src="js/search-index.js" defer></script>
   <script src="js/search.js" defer></script>

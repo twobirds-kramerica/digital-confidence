@@ -222,6 +222,50 @@
       line-height: 1.7;
     }
 
+    /* Dark mode — respects OS preference (standalone page, no toggle) */
+    @media (prefers-color-scheme: dark) {
+      body {
+        color: #E0E0E0;
+        background: #1E1E1E;
+      }
+      h2.section-title {
+        color: #90CAF9;
+        border-bottom-color: #5DADE2;
+      }
+      .resource-card {
+        background: #2a2a2a;
+        border-color: #444;
+      }
+      .resource-card h3 { color: #90CAF9; }
+      .three-second-rule {
+        background: #2C2100;
+        border-color: #f59e0b;
+        color: #fbbf24;
+      }
+      .warning-card {
+        background: #2E1A1A;
+        border-color: #EF9A9A;
+        color: #EF9A9A;
+      }
+      .success-state {
+        background: #1A2E1A;
+        border-left-color: #4CAF50;
+      }
+      .success-state::before { color: #81C784; }
+      .try-it {
+        background: #1E3A5F;
+        border-color: #5DADE2;
+      }
+      .try-it::before { color: #90CAF9; }
+      .final-message {
+        background: #1E3A5F;
+        border-color: #5DADE2;
+      }
+      .step-label { color: #E0E0E0; }
+      .phone-number { color: #E0E0E0; }
+      .print-btn { color: #0d47a1; }
+    }
+
     /* Print styles */
     @media print {
       .top-bar, .print-btn, .no-print { display: none !important; }

@@ -30,10 +30,18 @@
     .founder-name { font-size: 1.1rem; font-weight: 700; margin-bottom: 2px; }
     .founder-role { font-size: 0.85rem; color: var(--color-text-muted, #666); margin-bottom: 0.5rem; }
     .founder-bio { font-size: 0.9rem; line-height: 1.6; }
+    /* Dark mode: define local custom properties so all fallback values respond correctly */
+    [data-theme="dark"] {
+      --color-surface: #2a2a2a;
+      --color-border: #444444;
+      --color-primary: #5DADE2;
+      --color-text: #E0E0E0;
+      --color-text-muted: #A0A0A0;
+    }
     [data-theme="dark"] .principle-card,
     [data-theme="dark"] .audience-list li,
     [data-theme="dark"] .testimonial-card,
-    [data-theme="dark"] .founder-block { background: var(--color-surface, #1e1e2e); border-color: #444; }
+    [data-theme="dark"] .founder-block { background: var(--color-surface, #2a2a2a); border-color: #444; }
     @media (max-width: 600px) {
       .about-principles { grid-template-columns: 1fr; }
       .audience-list { grid-template-columns: 1fr; }

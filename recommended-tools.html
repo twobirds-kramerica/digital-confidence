@@ -72,11 +72,11 @@
     }
     .tools-contact-note {
       font-size: 0.95rem;
-      colour: #555;
+      color: #555;
       margin-bottom: 2rem;
     }
     .tools-contact-note a {
-      colour: #1565C0;
+      color: #1565C0;
     }
     .tools-category {
       margin-bottom: 2.5rem;
@@ -93,8 +93,8 @@
       gap: 1.25rem;
     }
     .tool-card {
-      background: #fff;
-      border: 1px solid #ddd;
+      background: var(--bg-card, #fff);
+      border: 1px solid var(--border-color, #ddd);
       border-radius: 12px;
       padding: 1.25rem 1.35rem;
       display: flex;
@@ -115,12 +115,12 @@
     .tool-name {
       font-weight: 700;
       font-size: 1.1rem;
-      colour: #1a1a1a;
+      color: var(--text-primary, #1a1a1a);
     }
     .tool-category-badge {
       font-size: 0.75rem;
       background: #e3f2fd;
-      colour: #1565C0;
+      color: #1565C0;
       border-radius: 20px;
       padding: 0.2em 0.75em;
       font-weight: 600;
@@ -128,7 +128,7 @@
     }
     .tool-description {
       font-size: 0.97rem;
-      colour: #333;
+      color: var(--text-primary, #333);
       margin: 0;
       flex-grow: 1;
     }
@@ -147,15 +147,15 @@
     }
     .cost-free {
       background: #e8f5e9;
-      colour: #2e7d32;
+      color: #2e7d32;
     }
     .cost-paid {
       background: #fff8e1;
-      colour: #f57f17;
+      color: #f57f17;
     }
     .tool-note {
       font-size: 0.85rem;
-      colour: #555;
+      color: var(--text-secondary, #555);
       font-style: italic;
       margin: 0;
     }
@@ -164,7 +164,7 @@
       margin-top: 0.5rem;
       padding: 0.5rem 1rem;
       background: #1565C0;
-      colour: #fff;
+      color: #fff;
       border-radius: 6px;
       font-size: 0.9rem;
       font-weight: 600;
@@ -174,7 +174,36 @@
     }
     .tool-link:hover {
       background: #0d47a1;
-      colour: #fff;
+      color: #fff;
+    }
+    /* Dark mode overrides */
+    [data-theme="dark"] .tools-disclaimer {
+      background: #1a2e1a;
+      border-left-color: #4CAF50;
+      color: #A5D6A7;
+    }
+    [data-theme="dark"] .tools-category h2 {
+      border-bottom-color: #5DADE2;
+    }
+    [data-theme="dark"] .tool-category-badge {
+      background: #1E3A5F;
+      color: #90CAF9;
+    }
+    [data-theme="dark"] .cost-free {
+      background: #1A2E1A;
+      color: #81C784;
+    }
+    [data-theme="dark"] .cost-paid {
+      background: #2C2100;
+      color: #FFB74D;
+    }
+    [data-theme="dark"] .tool-link {
+      background: #5DADE2;
+      color: #0F1B2D;
+    }
+    [data-theme="dark"] .tool-link:hover {
+      background: #3a9fd4;
+      color: #0F1B2D;
     }
     @media (max-width: 600px) {
       .tools-grid {

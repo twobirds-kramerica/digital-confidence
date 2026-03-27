@@ -74,7 +74,14 @@
       '@media(max-width:480px){' +
         '.yt-modal-box{padding:20px 16px 18px;}' +
         '.yt-btn{font-size:0.95rem;padding:11px 14px;}' +
-      '}';
+      '}' +
+      '[data-theme="dark"] .yt-modal-box{background:#2a2a2a;}' +
+      '[data-theme="dark"] .yt-modal-title{color:#E0E0E0;}' +
+      '[data-theme="dark"] .yt-modal-desc{color:#C0C0C0;}' +
+      '[data-theme="dark"] .yt-tip-list{color:#C0C0C0;}' +
+      '[data-theme="dark"] .yt-btn-secondary{background:#444;color:#E0E0E0;}' +
+      '[data-theme="dark"] .yt-btn-secondary:hover{background:#555;}' +
+      '[data-theme="dark"] .yt-dont-show-again{color:#A0A0A0;}';
     document.head.appendChild(style);
   }
 
