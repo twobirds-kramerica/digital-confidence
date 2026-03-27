@@ -5982,3 +5982,52 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   background: #1a2744;
   color: #90c4f8;
 }
+
+/* ── Quick Answers Accordion ── */
+.quick-answers-accordion {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--color-border, #e0e0e0);
+}
+.quick-answers-accordion h2 {
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+}
+.qa-item {
+  border-bottom: 1px solid var(--color-border, #e0e0e0);
+}
+.qa-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0.9rem 0;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text, #1a1a1a);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  line-height: 1.4;
+}
+.qa-question:hover { color: var(--color-primary, #1565C0); }
+.qa-question[aria-expanded="true"] .qa-chevron { transform: rotate(180deg); }
+.qa-chevron {
+  font-size: 0.7rem;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+  color: var(--color-text-muted, #666);
+}
+.qa-answer {
+  padding: 0.1rem 0 1rem 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--color-text, #1a1a1a);
+}
+.qa-answer p { margin: 0; }
+[data-theme="dark"] .qa-question { color: #E0E0E0; }
+[data-theme="dark"] .qa-question:hover { color: #5DADE2; }
+[data-theme="dark"] .qa-item { border-color: #444; }
+[data-theme="dark"] .quick-answers-accordion { border-color: #444; }
