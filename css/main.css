@@ -1254,12 +1254,14 @@ strong {
 }
 
 .welcome-hero h1 {
-  font-size: 2.4rem;
+  font-size: clamp(1.8rem, 5vw, 3rem);
   margin-bottom: var(--spacing-sm);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .welcome-hero .subtitle {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3vw, 1.3rem);
   color: var(--text-secondary);
   margin-bottom: var(--spacing-md);
 }
@@ -1848,6 +1850,7 @@ strong {
 
 .welcome-hero-text {
   flex: 1;
+  min-width: 0;
 }
 
 .welcome-hero-image {
@@ -1863,6 +1866,7 @@ strong {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
 }
 
 @media (max-width: 768px) {
