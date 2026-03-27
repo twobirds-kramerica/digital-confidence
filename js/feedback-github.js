@@ -316,8 +316,13 @@ function switchFeedbackTab(tab) {
   }
 }
 
+/* ---- Focus trap release handle ---- */
+var _dcFeedbackTrapRelease = null;
+var _dcFeedbackTrigger = null;
+
 /* ---- Open modal ---- */
 function openFeedbackModal() {
+  _dcFeedbackTrigger = document.activeElement;
   var modal    = document.getElementById('dc-feedback-modal');
   var formArea = document.getElementById('dc-modal-form-area');
   var success  = document.getElementById('dc-feedback-success');
@@ -352,10 +357,15 @@ function openFeedbackModal() {
   modal.style.display          = 'flex';
   document.body.style.overflow = 'hidden';
 
-  /* Focus the module dropdown first */
+  /* Trap focus inside modal content */
   setTimeout(function () {
-    if (moduleEl) moduleEl.focus();
-  }, 100);
+    var content = document.querySelector('.dc-modal-content');
+    if (content && typeof trapFocus === 'function') {
+      _dcFeedbackTrapRelease = trapFocus(content, _dcFeedbackTrigger);
+    } else if (moduleEl) {
+      moduleEl.focus();
+    }
+  }, 50);
 }
 
 function closeFeedbackModal() {
@@ -363,6 +373,14 @@ function closeFeedbackModal() {
   var modal = document.getElementById('dc-feedback-modal');
   if (modal) modal.style.display = 'none';
   document.body.style.overflow = '';
+  /* Release focus trap and return focus to trigger */
+  if (_dcFeedbackTrapRelease) {
+    _dcFeedbackTrapRelease();
+    _dcFeedbackTrapRelease = null;
+  } else if (_dcFeedbackTrigger && typeof _dcFeedbackTrigger.focus === 'function') {
+    _dcFeedbackTrigger.focus();
+  }
+  _dcFeedbackTrigger = null;
 }
 
 /* ================================================================

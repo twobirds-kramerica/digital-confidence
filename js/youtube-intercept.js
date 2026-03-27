@@ -115,13 +115,25 @@
     document.head.appendChild(style);
   }
 
+  /* ── Focus trap handle ── */
+  var _ytTrapRelease = null;
+  var _ytTrigger = null;
+
   /* ── Show modal for a given URL ── */
   function showModal(url) {
     var backdrop = document.getElementById('yt-intercept-backdrop');
     if (!backdrop) return;
 
+    _ytTrigger = document.activeElement;
     backdrop.classList.add('yt-open');
-    backdrop.focus();
+
+    /* Trap focus inside the modal box */
+    var box = backdrop.querySelector('.yt-modal-box');
+    if (box && typeof trapFocus === 'function') {
+      _ytTrapRelease = trapFocus(box, _ytTrigger);
+    } else {
+      backdrop.focus();
+    }
 
     var confirmBtn = document.getElementById('yt-confirm-btn');
     var cancelBtn  = document.getElementById('yt-cancel-btn');
@@ -163,6 +175,14 @@
   function closeModal() {
     var backdrop = document.getElementById('yt-intercept-backdrop');
     if (backdrop) backdrop.classList.remove('yt-open');
+    /* Release focus trap and restore focus */
+    if (_ytTrapRelease) {
+      _ytTrapRelease();
+      _ytTrapRelease = null;
+    } else if (_ytTrigger && typeof _ytTrigger.focus === 'function') {
+      _ytTrigger.focus();
+    }
+    _ytTrigger = null;
   }
 
   /* ── Check if a URL is YouTube ── */

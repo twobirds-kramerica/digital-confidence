@@ -3,6 +3,50 @@
    Main Application JavaScript
    ============================================ */
 
+/* ---- Focus Trap Utility (used by sidebar and modals) ---- */
+/* Also defined in focus-trap.js for standalone use; this copy
+   ensures it is always available since app.js loads on every page. */
+if (typeof trapFocus === 'undefined') {
+  var trapFocus = function trapFocus(modalElement, triggerElement) {
+    var FOCUSABLE = [
+      'a[href]', 'button:not([disabled])', 'input:not([disabled])',
+      'select:not([disabled])', 'textarea:not([disabled])',
+      '[tabindex]:not([tabindex="-1"])', 'details > summary'
+    ].join(', ');
+
+    function getFocusable() {
+      return Array.prototype.slice.call(
+        modalElement.querySelectorAll(FOCUSABLE)
+      ).filter(function (el) {
+        return !el.closest('[hidden]') && el.offsetParent !== null;
+      });
+    }
+
+    function onKeydown(e) {
+      if (e.key !== 'Tab') return;
+      var els = getFocusable();
+      if (!els.length) return;
+      var first = els[0], last = els[els.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    }
+
+    var els = getFocusable();
+    if (els.length) els[0].focus();
+    modalElement.addEventListener('keydown', onKeydown);
+
+    return function release() {
+      modalElement.removeEventListener('keydown', onKeydown);
+      if (triggerElement && typeof triggerElement.focus === 'function') {
+        triggerElement.focus();
+      }
+    };
+  };
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   initSidebar();
   setActiveNavLink();
@@ -25,9 +69,7 @@ function initSidebar() {
       overlay.classList.add('show');
       document.body.style.overflow = 'hidden';
       /* Trap focus inside the sidebar panel */
-      if (typeof trapFocus === 'function') {
-        activeTrapRelease = trapFocus(sidebar, trigger);
-      }
+      activeTrapRelease = trapFocus(sidebar, trigger);
     });
   }
 
