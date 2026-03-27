@@ -1,0 +1,64 @@
+name: Link Checker
+
+on:
+  schedule:
+    # Run every Monday at 08:00 UTC (4am ET, before business day)
+    - cron: '0 8 * * 1'
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+  workflow_dispatch:
+    # Allow manual trigger from GitHub Actions tab
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check links with lychee
+        id: lychee
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: >
+            --verbose
+            --no-progress
+            --exclude-mail
+            --exclude '^tel:'
+            --exclude '^javascript:'
+            --exclude 'localhost'
+            --exclude '127\.0\.0\.1'
+            --exclude 'clarity\.ms'
+            --exclude 'googletagmanager\.com'
+            --exclude 'fonts\.googleapis\.com'
+            --exclude 'fonts\.gstatic\.com'
+            --exclude 'cdnjs\.cloudflare\.com'
+            --exclude 'formspree\.io'
+            --exclude 'web3forms\.com'
+            --exclude 'open\.spotify\.com'
+            --exclude 'podcasts\.apple\.com'
+            --exclude 'www\.youtube\.com'
+            --exclude 'youtube\.com'
+            --timeout 30
+            --retry-wait-time 5
+            --max-retries 3
+            './**/*.html'
+          fail: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create issue on broken links found
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: '🔗 Broken links detected — ${{ github.run_number }}'
+          content-filepath: ./lychee/out.md
+          labels: |
+            bug
+            broken-links
+            automated

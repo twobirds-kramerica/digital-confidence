@@ -1,0 +1,64 @@
+name: Update Sitemap Dates
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - 'sitemap.xml'
+
+jobs:
+  update-sitemap:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Update sitemap lastmod dates
+        run: |
+          TODAY=$(date +%Y-%m-%d)
+
+          # Get list of HTML files changed in this push
+          CHANGED=$(git diff --name-only HEAD~1 HEAD 2>/dev/null | grep '\.html$' || true)
+
+          if [ -z "$CHANGED" ]; then
+            echo "No HTML files changed. Skipping sitemap update."
+            exit 0
+          fi
+
+          echo "Changed HTML files:"
+          echo "$CHANGED"
+
+          # Update lastmod for each changed file in sitemap.xml
+          for FILE in $CHANGED; do
+            # Convert file path to URL path (strip leading slash if present)
+            URL_PATH="${FILE}"
+
+            # Use sed to update the lastmod for matching <loc> entries
+            sed -i "/<loc>.*${URL_PATH//./\\.}<\/loc>/{n;s/<lastmod>.*<\/lastmod>/<lastmod>${TODAY}<\/lastmod>/}" sitemap.xml
+          done
+
+          echo "Sitemap updated with today's date: ${TODAY}"
+
+      - name: Check if sitemap changed
+        id: sitemap-diff
+        run: |
+          if git diff --quiet sitemap.xml; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit updated sitemap
+        if: steps.sitemap-diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml
+          git commit -m "chore: update sitemap lastmod dates [skip ci]"
+          git push
