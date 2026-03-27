@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Digital terms explained in plain language, organised by topic — safety, passwords, devices, connecting online, and banking.">
+  <title>Glossary by Topic — Digital Confidence Centre</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/resources/glossary-by-topic.html">
+  <link rel="alternate" hreflang="en-CA" href="https://twobirds-kramerica.github.io/digital-confidence/resources/glossary-by-topic.html">
+  <link rel="alternate" hreflang="fr-CA" href="https://twobirds-kramerica.github.io/digital-confidence/resources/glossary-by-topic.html">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/accessibility.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta property="og:title" content="Glossary by Topic — Digital Confidence Centre">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <meta name="theme-color" content="#1565C0">
+  <style>
+    /* ── Hero ── */
+    .topic-hero {
+      background: linear-gradient(135deg, #1565C0 0%, #0d47a1 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 2rem 1.75rem;
+      margin-bottom: 2rem;
+    }
+    .topic-hero h1 { color: #fff; font-size: clamp(1.4rem, 4vw, 1.9rem); margin-bottom: .5rem; border: none; }
+    .topic-hero p  { opacity: .92; line-height: 1.6; max-width: 560px; }
+
+    /* ── Browse-alternate link ── */
+    .topic-alpha-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--color-primary, #1565C0);
+      text-decoration: none;
+      margin-bottom: 1.75rem;
+    }
+    .topic-alpha-link:hover { text-decoration: underline; }
+
+    /* ── Section count badge ── */
+    .topic-count {
+      display: inline-block;
+      font-size: .75rem;
+      font-weight: 700;
+      background: rgba(255,255,255,0.22);
+      border-radius: 20px;
+      padding: 2px 10px;
+      margin-left: .5rem;
+      vertical-align: middle;
+    }
+
+    /* ── <details> accordion ── */
+    .topic-section {
+      border-radius: 14px;
+      border: 2px solid transparent;
+      margin-bottom: 1.25rem;
+      overflow: hidden;
+    }
+    .topic-section summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 1.4rem;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      list-style: none;
+      user-select: none;
+      gap: .5rem;
+    }
+    .topic-section summary::-webkit-details-marker { display: none; }
+    .topic-section summary .chevron {
+      font-size: 1rem;
+      transition: transform .2s ease;
+      flex-shrink: 0;
+    }
+    .topic-section[open] summary .chevron { transform: rotate(90deg); }
+
+    /* Accent colours per section */
+    .topic-scams   { border-color: #c0392b; }
+    .topic-scams   summary { background: #c0392b; }
+
+    .topic-passwords { border-color: #1565C0; }
+    .topic-passwords summary { background: #1565C0; }
+
+    .topic-devices { border-color: #2e7d32; }
+    .topic-devices summary { background: #2e7d32; }
+
+    .topic-online  { border-color: #6a1b9a; }
+    .topic-online  summary { background: #6a1b9a; }
+
+    .topic-banking { border-color: #00695c; }
+    .topic-banking summary { background: #00695c; }
+
+    /* ── Term list inside accordion ── */
+    .topic-body {
+      padding: 1.25rem 1.4rem 1.4rem;
+      background: var(--color-bg, #fff);
+    }
+    [data-theme="dark"] .topic-body { background: var(--color-surface, #1e1e2e); }
+
+    .topic-intro {
+      font-size: .9rem;
+      color: var(--color-text-muted, #555);
+      margin-bottom: 1.1rem;
+      font-style: italic;
+    }
+
+    .term-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: .85rem;
+    }
+    .term-item {
+      background: var(--color-bg-alt, #f9f9f9);
+      border: 1px solid var(--color-border, #e0e0e0);
+      border-radius: 10px;
+      padding: .85rem 1rem;
+    }
+    [data-theme="dark"] .term-item { background: #252535; border-color: #444; }
+
+    .term-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--color-text, #1a1a1a);
+      margin-bottom: .35rem;
+    }
+    .term-def {
+      font-size: .88rem;
+      line-height: 1.55;
+      color: var(--color-text, #333);
+      margin: 0;
+    }
+    [data-theme="dark"] .term-name,
+    [data-theme="dark"] .term-def { color: var(--color-text, #e8e8e8); }
+
+    /* Accent left-border per section */
+    .topic-scams    .term-item { border-left: 3px solid #c0392b; }
+    .topic-passwords .term-item { border-left: 3px solid #1565C0; }
+    .topic-devices  .term-item { border-left: 3px solid #2e7d32; }
+    .topic-online   .term-item { border-left: 3px solid #6a1b9a; }
+    .topic-banking  .term-item { border-left: 3px solid #00695c; }
+
+    /* ── Bottom footer note ── */
+    .topic-footer-note {
+      background: var(--color-bg-alt, #f5f5f5);
+      border: 1px solid var(--color-border, #ddd);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin: 2rem 0 1rem;
+      font-size: .9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 500px) {
+      .topic-section summary { font-size: 1rem; padding: .9rem 1rem; }
+      .topic-body { padding: 1rem 1rem 1.1rem; }
+      .term-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">Digital Confidence Centre</span>
+    <span></span>
+  </div>
+
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">✕</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Free digital literacy for seniors</p>
+    </div>
+    <nav>
+      <a href="../index.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a href="../answers/"><span class="nav-icon">❓</span><span class="nav-label">Quick Answers</span></a>
+      <a href="index.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
+      <a href="support-directory.html"><span class="nav-icon">🆘</span><span class="nav-label">Get Help</span></a>
+      <a href="../glossary.html"><span class="nav-icon">📖</span><span class="nav-label">Glossary (A–Z)</span></a>
+      <a href="glossary-by-topic.html" aria-current="page"><span class="nav-icon">🗂️</span><span class="nav-label">Glossary by Topic</span></a>
+      <div class="sidebar-a11y-section">
+        <p class="sidebar-a11y-title">Text Size</p>
+        <div class="sidebar-font-row">
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false" style="font-size:1rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+        </div>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="font-size:.9rem;margin-bottom:1.5rem;color:var(--color-text-muted,#666)">
+        <a href="../index.html" data-en="Home" data-fr="Accueil" style="color:var(--color-primary,#1565C0);text-decoration:none">Home</a> ›
+        <a href="index.html" data-en="Resources" data-fr="Ressources" style="color:var(--color-primary,#1565C0);text-decoration:none">Resources</a> ›
+        <span aria-current="page" data-en="Glossary by Topic" data-fr="Glossaire par sujet">Glossary by Topic</span>
+      </nav>
+
+      <div class="topic-hero">
+        <h1 data-en="Glossary by Topic" data-fr="Glossaire par sujet">Glossary by Topic</h1>
+        <p data-en="120+ digital terms explained in plain language, organised by what they relate to. Tap any section title to open it." data-fr="Plus de 120 termes numériques expliqués en langage simple, organisés par sujet. Appuyez sur le titre d'une section pour l'ouvrir.">120+ digital terms explained in plain language, organised by what they relate to. Tap any section title to open it.</p>
+      </div>
+
+      <a href="../glossary.html" class="topic-alpha-link" data-en="← Browse alphabetically" data-fr="← Parcourir par ordre alphabétique">← Browse alphabetically</a>
+
+      <!-- ═══════════════════════════════════════
+           SECTION 1: SCAMS & SAFETY
+      ════════════════════════════════════════ -->
+      <details class="topic-section topic-scams" id="topic-scams">
+        <summary>
+          <span data-en="🛡️ Scams &amp; Safety" data-fr="🛡️ Arnaques et sécurité">🛡️ Scams &amp; Safety<span class="topic-count">15 terms</span></span>
+          <span class="chevron" aria-hidden="true">›</span>
+        </summary>
+        <div class="topic-body">
+          <p class="topic-intro" data-en="Understanding these terms helps you spot and avoid online dangers. French equivalents are in the main A–Z glossary." data-fr="Comprendre ces termes vous aide à repérer et à éviter les dangers en ligne. Les équivalents français se trouvent dans le glossaire A–Z principal.">Understanding these terms helps you spot and avoid online dangers. French equivalents are in the main A–Z glossary.</p>
+          <div class="term-list">
+
+            <div class="term-item">
+              <div class="term-name">Phishing</div>
+              <p class="term-def">A fake email or message that pretends to be from your bank, government, or a company you trust — hoping you'll click a link and hand over your password or personal details. The word sounds like "fishing" because scammers are fishing for your information.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Smishing</div>
+              <p class="term-def">The same trick as phishing, but delivered by text message (SMS) instead of email. A common example is a text saying "Your Canada Post parcel is on hold — click here to pay a $2 fee." Don't tap the link.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Vishing</div>
+              <p class="term-def">Voice phishing — a phone call from someone pretending to be the CRA, your bank, or Microsoft Support, trying to scare you into giving personal information or gift card numbers. Real organisations never demand payment over the phone.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Ransomware</div>
+              <p class="term-def">A harmful programme that locks all the files on your device and demands money to unlock them. It usually arrives through a suspicious email attachment or link. Regular backups to iCloud protect you if this ever happens.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Malware</div>
+              <p class="term-def">Short for "malicious software" — any programme designed to damage your device, steal your information, or spy on you without your knowledge. Viruses, spyware, and ransomware are all types of malware.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Spyware</div>
+              <p class="term-def">A hidden programme that secretly watches what you do on your device — recording passwords, credit card numbers, or messages — and sends that information to criminals. You usually won't know it's there.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Social Engineering</div>
+              <p class="term-def">Tricking someone into giving up private information by building trust or creating a sense of urgency — for example, a caller who says "Your account has been hacked, I need your password right now to fix it." The attack targets people, not computers.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Spoofing</div>
+              <p class="term-def">When a scammer disguises a phone number or email address to look like it's coming from someone you know or trust — such as your bank or a government office. The number or name you see on your screen can be faked.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Catfishing</div>
+              <p class="term-def">When someone creates a fake online identity — using stolen photos and a false name — to build a relationship with you, often with the goal of eventually asking for money or personal details.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Grandparent Scam</div>
+              <p class="term-def">A scam where a criminal calls pretending to be your grandchild (or a lawyer or police officer acting on their behalf), claiming there's an emergency and they need money right away. Always call your grandchild directly on a number you already know before sending any money.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Romance Scam</div>
+              <p class="term-def">A scammer who spends weeks or months pretending to be a romantic partner online, then invents a crisis — illness, a business deal, being stuck abroad — and asks you for money. These scammers can seem very convincing and caring.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Tech Support Scam</div>
+              <p class="term-def">A pop-up or phone call claiming your computer has a dangerous virus and urging you to call a number or allow remote access. Real companies like Apple or Microsoft will never contact you this way out of the blue.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Gift Card Scam</div>
+              <p class="term-def">Any time someone demands payment in gift cards — whether by phone, text, or email — it is a scam. Legitimate businesses, government agencies, and courts do not accept gift cards as payment. Hang up immediately.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Deepfake</div>
+              <p class="term-def">A video or audio clip created by artificial intelligence that makes it look or sound like a real person is saying or doing something they never actually said or did. Deepfakes are increasingly used in scams and misinformation.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">QR Code Scam</div>
+              <p class="term-def">A fake QR code (the square barcode you scan with your camera) that takes you to a fraudulent website designed to steal your login details or install malware. Only scan QR codes from sources you completely trust.</p>
+            </div>
+
+          </div><!-- /.term-list -->
+        </div><!-- /.topic-body -->
+      </details>
+
+      <!-- ═══════════════════════════════════════
+           SECTION 2: PASSWORDS & ACCOUNTS
+      ════════════════════════════════════════ -->
+      <details class="topic-section topic-passwords" id="topic-passwords">
+        <summary>
+          <span data-en="🔑 Passwords &amp; Accounts" data-fr="🔑 Mots de passe et comptes">🔑 Passwords &amp; Accounts<span class="topic-count">14 terms</span></span>
+          <span class="chevron" aria-hidden="true">›</span>
+        </summary>
+        <div class="topic-body">
+          <p class="topic-intro" data-en="These terms cover how you prove who you are online and how your information is kept safe. French equivalents are in the main A–Z glossary." data-fr="Ces termes couvrent la façon dont vous prouvez votre identité en ligne et comment vos informations sont protégées. Les équivalents français se trouvent dans le glossaire A–Z principal.">These terms cover how you prove who you are online and how your information is kept safe. French equivalents are in the main A–Z glossary.</p>
+          <div class="term-list">
+
+            <div class="term-item">
+              <div class="term-name">Password</div>
+              <p class="term-def">A secret combination of letters, numbers, and symbols that proves you are who you say you are when you log into a website or app. A good password is long, unique, and not used on any other account.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Password Manager</div>
+              <p class="term-def">An app that securely stores all your passwords in one place, so you only need to remember one master password. It can also create strong, random passwords for every site. Apple's built-in Passwords app (iOS 18+) is free and safe to use.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Two-Factor Authentication (2FA)</div>
+              <p class="term-def">An extra security step after you enter your password — usually a six-digit code sent to your phone by text or generated by an app. Even if a scammer gets your password, they still can't get in without that second code.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Passphrase</div>
+              <p class="term-def">A password made up of several random words strung together — for example, "purple-kettle-mountain-rain." Passphrases are easier to remember than a string of random characters and are actually more secure because they're longer.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Biometrics</div>
+              <p class="term-def">Using a unique part of your body — your fingerprint, face, or voice — to prove your identity instead of typing a password. It's very difficult for someone else to copy your face or fingerprint.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Face ID</div>
+              <p class="term-def">Apple's face-recognition system on iPhones and iPads. It scans your face in 3D to confirm it's really you before unlocking your device or approving a purchase. It works even in the dark.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Touch ID</div>
+              <p class="term-def">Apple's fingerprint sensor on older iPhones and some iPad models. You press your finger to the Home button and the device recognises your unique fingerprint to unlock it — faster and more secure than a PIN.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">PIN</div>
+              <p class="term-def">A short number (usually 4–6 digits) used to unlock a device or confirm a bank transaction. PIN stands for Personal Identification Number. Never share your PIN with anyone — not even family members or bank staff.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Account</div>
+              <p class="term-def">A personal profile you create with a website, app, or service — usually with an email address and password. Your bank account, email account, and Apple ID are all examples. Each account should have its own unique password.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Username</div>
+              <p class="term-def">The name you choose to identify yourself when logging into a website or app — often your email address or a nickname. Unlike a password, a username is not meant to be secret, but it should not be something easy to guess.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Login</div>
+              <p class="term-def">The process of entering your username and password to access an account. "Log in" means to enter — "log out" (or "sign out") means to leave securely. Always sign out on shared devices like library computers.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Encryption</div>
+              <p class="term-def">A process that scrambles data so that only someone with the correct key can read it. When you send a bank payment or a WhatsApp message, encryption protects it from being intercepted and read by anyone else.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Data Breach</div>
+              <p class="term-def">When a company's security is broken and private customer information — like email addresses, passwords, or credit card numbers — is stolen by hackers. If a company you use has a breach, change your password for that account immediately.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Credential Stuffing</div>
+              <p class="term-def">A type of attack where criminals take usernames and passwords stolen from one data breach and automatically try them on hundreds of other websites. This is why using the same password on multiple accounts is dangerous.</p>
+            </div>
+
+          </div><!-- /.term-list -->
+        </div><!-- /.topic-body -->
+      </details>
+
+      <!-- ═══════════════════════════════════════
+           SECTION 3: DEVICES & APPS
+      ════════════════════════════════════════ -->
+      <details class="topic-section topic-devices" id="topic-devices">
+        <summary>
+          <span data-en="📱 Devices &amp; Apps" data-fr="📱 Appareils et applications">📱 Devices &amp; Apps<span class="topic-count">19 terms</span></span>
+          <span class="chevron" aria-hidden="true">›</span>
+        </summary>
+        <div class="topic-body">
+          <p class="topic-intro" data-en="Terms about the hardware and software you use every day. French equivalents are in the main A–Z glossary." data-fr="Des termes sur le matériel et les logiciels que vous utilisez chaque jour. Les équivalents français se trouvent dans le glossaire A–Z principal.">Terms about the hardware and software you use every day. French equivalents are in the main A–Z glossary.</p>
+          <div class="term-list">
+
+            <div class="term-item">
+              <div class="term-name">iOS</div>
+              <p class="term-def">The operating system (the core software) that runs on iPhones. iOS is updated by Apple every year with new features and security improvements. Keeping iOS up to date is one of the best things you can do for your phone's security.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">iPadOS</div>
+              <p class="term-def">Apple's operating system built specifically for iPads. It works much like iOS on an iPhone but includes features designed for a larger screen, such as multitasking and the Apple Pencil.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Android</div>
+              <p class="term-def">The operating system made by Google that runs on most non-Apple smartphones and tablets — including Samsung, Google Pixel, and many others. Android and iOS are the two main mobile operating systems in the world.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Update</div>
+              <p class="term-def">A newer version of an app or your device's software that adds improvements or fixes problems. When your iPad asks "Update Available," it's a good idea to say yes — updates often fix security issues that criminals could otherwise exploit.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Patch</div>
+              <p class="term-def">A small update released specifically to fix a security weakness or bug — like patching a hole in a fence. Patches are often released quickly after a security problem is discovered, which is why keeping your software updated matters.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Operating System</div>
+              <p class="term-def">The main software that runs your device and makes everything else work — like the engine of a car. iOS and iPadOS are Apple's operating systems. Without an operating system, no apps could run at all.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">App</div>
+              <p class="term-def">Short for "application" — a programme you tap to open on your phone or tablet. Think of apps as small, specialised tools: a weather app tells you the forecast, a banking app lets you check your balance, a camera app takes photos.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">App Store</div>
+              <p class="term-def">Apple's official shop for downloading apps onto your iPhone or iPad. Every app in the App Store has been reviewed by Apple for safety. Always download apps from the App Store — not from random websites or links in emails.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Google Play</div>
+              <p class="term-def">Google's official app store for Android devices — the Android equivalent of Apple's App Store. If you have a Samsung tablet, this is where you download apps safely.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Download</div>
+              <p class="term-def">Copying a file, app, or piece of content from the internet onto your device. When you download an app, it is saved to your phone so you can use it without an internet connection (for many features).</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Install</div>
+              <p class="term-def">Setting up an app or programme so it is ready to use on your device. On an iPad, downloading from the App Store both downloads and installs the app for you automatically — no extra steps needed.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Cache</div>
+              <p class="term-def">Temporary files your browser or app saves to make things load faster the next time you visit. Over time, old cached files can take up space or cause pages to look outdated. Clearing your cache is a common troubleshooting step.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Cookies</div>
+              <p class="term-def">Small files websites save on your device to remember your preferences — like staying logged in or keeping items in a shopping cart. Cookies are mostly harmless, but you can clear them in your browser settings if you want a fresh start.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Browser</div>
+              <p class="term-def">The app you use to visit websites — Safari is the default browser on iPhones and iPads. Chrome, Firefox, and Edge are other popular browsers. Your browser is what you open when you want to look something up on the internet.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Settings</div>
+              <p class="term-def">The control panel for your device or app where you can adjust how things look and behave — like turning on larger text, changing your password, or managing notifications. On an iPhone or iPad, Settings is the grey gear-shaped icon.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Accessibility</div>
+              <p class="term-def">Features built into your device designed to make it easier to use for people with vision, hearing, or motor challenges — such as larger text, voice control, or high-contrast colours. Found in Settings on your iPad.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Backup</div>
+              <p class="term-def">A copy of everything on your device — your photos, contacts, and settings — saved to a safe place. If your phone is lost, stolen, or broken, a recent backup means you won't lose everything. iCloud backup runs automatically when you charge your iPad overnight.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">iCloud</div>
+              <p class="term-def">Apple's secure online storage service that automatically backs up your photos, contacts, and device settings. Your iCloud account is linked to your Apple ID. The free plan includes 5 GB of storage; more can be purchased for a small monthly fee.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Storage</div>
+              <p class="term-def">The space on your device used to hold apps, photos, music, and documents. When your device says "Storage Almost Full," it means there isn't much room left for new things. You can free up space by deleting unused apps or old photos.</p>
+            </div>
+
+          </div><!-- /.term-list -->
+        </div><!-- /.topic-body -->
+      </details>
+
+      <!-- ═══════════════════════════════════════
+           SECTION 4: CONNECTING ONLINE
+      ════════════════════════════════════════ -->
+      <details class="topic-section topic-online" id="topic-online">
+        <summary>
+          <span data-en="🌐 Connecting Online" data-fr="🌐 Se connecter en ligne">🌐 Connecting Online<span class="topic-count">19 terms</span></span>
+          <span class="chevron" aria-hidden="true">›</span>
+        </summary>
+        <div class="topic-body">
+          <p class="topic-intro" data-en="How the internet works and how you get online safely. French equivalents are in the main A–Z glossary." data-fr="Comment fonctionne Internet et comment vous y connectez en toute sécurité. Les équivalents français se trouvent dans le glossaire A–Z principal.">How the internet works and how you get online safely. French equivalents are in the main A–Z glossary.</p>
+          <div class="term-list">
+
+            <div class="term-item">
+              <div class="term-name">Wi-Fi</div>
+              <p class="term-def">A wireless internet connection that lets your device get online without a cable. Your home router creates a Wi-Fi network — you connect your iPad to it using a network name (called an SSID) and password. Public Wi-Fi in coffee shops is convenient but less secure.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Internet</div>
+              <p class="term-def">A worldwide network of computers and servers linked together — like an enormous postal system for information. When you send an email, look something up on Google, or watch a YouTube video, you are using the internet.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Browser</div>
+              <p class="term-def">The app you use to navigate websites. Safari is built into every iPhone and iPad. Type an address or a question into the address bar at the top, and your browser retrieves the page for you.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">URL</div>
+              <p class="term-def">The web address of a specific page — for example, https://www.canada.ca. URL stands for Uniform Resource Locator. If you receive a link you're not sure about, look carefully at the URL before tapping it — scam sites often use addresses that look almost right but have a small mistake.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">HTTPS</div>
+              <p class="term-def">The secure version of the web — the "S" stands for "secure." When a website address starts with "https://" and shows a padlock icon in your browser, it means the connection between you and the site is encrypted. Never enter personal information on a site that only shows "http://" (no padlock).</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">VPN</div>
+              <p class="term-def">A Virtual Private Network — software that creates a private, encrypted tunnel for your internet traffic, hiding your activity from others on the same network. Useful on public Wi-Fi, but not necessary at home on your secure router.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Email</div>
+              <p class="term-def">Electronic mail — messages sent and received over the internet. Email replaced paper letters for many people. Common email services include Gmail, Outlook, and iCloud Mail. Always be cautious about unexpected emails asking you to click a link or open an attachment.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Spam</div>
+              <p class="term-def">Unwanted, unsolicited emails — the digital equivalent of junk mail. Most are just annoying advertisements, but some spam contains phishing attempts or malware. Your email provider's spam filter catches most of it automatically.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Attachment</div>
+              <p class="term-def">A file — such as a photo, document, or PDF — sent along with an email. Be cautious about opening attachments from people you don't recognise, or from unexpected emails that seem urgent. Malware is commonly spread through attachments.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Hyperlink</div>
+              <p class="term-def">A piece of text or an image you can tap or click to go to another web page or open a file. Links are usually underlined or shown in a different colour. Before tapping a link in an email, look carefully at where it actually leads.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Search Engine</div>
+              <p class="term-def">A website that finds other websites based on the words you type — Google and Bing are the most common. Type your question into the search bar at the top of your browser, and the search engine returns a list of relevant pages.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Algorithm</div>
+              <p class="term-def">A set of rules a computer follows to make decisions — like a recipe, but for maths. The algorithm on Facebook or YouTube decides which posts and videos to show you based on what you've looked at before. You are not seeing a random selection.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Cloud</div>
+              <p class="term-def">Storing your files or running software on someone else's powerful computers (servers) over the internet, rather than only on your own device. iCloud, Google Drive, and Dropbox are cloud services. "In the cloud" just means "saved on the internet."</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Streaming</div>
+              <p class="term-def">Watching video or listening to music over the internet without needing to download and save the file first — like water flowing through a tap. Netflix, YouTube, CBC Gem, and Spotify all use streaming.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Bluetooth</div>
+              <p class="term-def">A short-range wireless technology that connects devices to each other without cables — like connecting wireless headphones to your iPad, or linking your phone to your car. Bluetooth only works within a few metres.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Hotspot</div>
+              <p class="term-def">Using your mobile phone's cellular data connection to create a small Wi-Fi network that other devices can join. Useful when you're away from home and need to get your laptop or tablet online.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Data Roaming</div>
+              <p class="term-def">Using your phone's internet connection while you're outside your home country or province. Roaming charges from your carrier can add up quickly — check with your provider before travelling and consider turning data roaming off if you won't need it.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Bandwidth</div>
+              <p class="term-def">The amount of data that can travel through your internet connection at one time — like the width of a road. More bandwidth means more devices can use your internet at the same time without things slowing down.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Firewall</div>
+              <p class="term-def">A security system — either software or hardware — that acts as a gatekeeper between your device or network and the internet, blocking suspicious incoming traffic. Your home router usually includes a basic firewall built in.</p>
+            </div>
+
+          </div><!-- /.term-list -->
+        </div><!-- /.topic-body -->
+      </details>
+
+      <!-- ═══════════════════════════════════════
+           SECTION 5: BANKING & SHOPPING
+      ════════════════════════════════════════ -->
+      <details class="topic-section topic-banking" id="topic-banking">
+        <summary>
+          <span data-en="🏦 Banking &amp; Shopping" data-fr="🏦 Banque et achats">🏦 Banking &amp; Shopping<span class="topic-count">15 terms</span></span>
+          <span class="chevron" aria-hidden="true">›</span>
+        </summary>
+        <div class="topic-body">
+          <p class="topic-intro" data-en="Terms you'll encounter when managing money or shopping online safely. French equivalents are in the main A–Z glossary." data-fr="Termes que vous rencontrerez lorsque vous gérerez votre argent ou ferez des achats en ligne en toute sécurité. Les équivalents français se trouvent dans le glossaire A–Z principal.">Terms you'll encounter when managing money or shopping online safely. French equivalents are in the main A–Z glossary.</p>
+          <div class="term-list">
+
+            <div class="term-item">
+              <div class="term-name">Online Banking</div>
+              <p class="term-def">Managing your bank account through a website or app rather than visiting a branch. You can check your balance, pay bills, and transfer money. Always access your bank directly by typing the address yourself — never through a link in an email.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">e-Transfer</div>
+              <p class="term-def">A way to send money electronically from your bank account to another person in Canada, using only their email address or phone number. Interac e-Transfer is the most common system used by Canadian banks — fast, free or low-cost, and safe when used correctly.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Interac</div>
+              <p class="term-def">The Canadian network that processes debit card payments and e-Transfers between bank accounts. When you tap your debit card at a store or send an e-Transfer, Interac is the system handling it behind the scenes.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">E-Commerce</div>
+              <p class="term-def">Buying and selling goods or services over the internet. Amazon, Walmart.ca, and Etsy are all e-commerce sites. When shopping online, look for the padlock icon in your browser's address bar before entering any payment information.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">SSL Certificate</div>
+              <p class="term-def">A digital document that proves a website is who it says it is, and that enables the encrypted HTTPS connection you see in your browser. The padlock icon you see on trustworthy websites means the site has a valid SSL certificate.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Two-Factor Authentication (Banking)</div>
+              <p class="term-def">When your bank asks for a second form of verification — usually a text message code — before letting you log in or approve a large transfer. This is one of the strongest protections against someone accessing your account even if they know your password.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">PayPal</div>
+              <p class="term-def">An online payment service that lets you send and receive money, or pay for purchases, without sharing your credit card details with every seller. Widely used for online shopping and sending money to family. Create an account at paypal.com.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Credit Score</div>
+              <p class="term-def">A number (usually 300–900 in Canada) that represents how reliably you have repaid debts in the past. A higher score means lenders consider you a lower risk. You can check your credit score for free through services like Credit Karma or Borrowell.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Identity Theft</div>
+              <p class="term-def">When someone steals enough of your personal information — name, SIN, date of birth — to impersonate you, open accounts, or take out loans in your name. Shred financial documents, protect your SIN, and monitor your bank statements regularly.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Overdraft Protection</div>
+              <p class="term-def">A bank service that covers your account if you accidentally spend more money than you have in it — preventing a declined payment or returned cheque. There is usually a small fee. Ask your bank whether it's included in your account or available to add.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Secure Checkout</div>
+              <p class="term-def">The final step when buying something online where you enter your payment details. A secure checkout page will show "https://" in the address bar and a padlock icon. If you don't see those, do not enter your card number.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Loyalty Points</div>
+              <p class="term-def">Rewards earned when you shop at certain stores or use specific credit cards — like Aeroplan Miles, PC Optimum points, or Scene+ points. Points can be redeemed for discounts, free groceries, travel, or other rewards.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Order Confirmation</div>
+              <p class="term-def">An email sent immediately after you complete an online purchase, summarising what you ordered, the total cost, and when it will arrive. Save this email until your order arrives and matches what you paid for.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Tracking Number</div>
+              <p class="term-def">A unique code provided by a shipping company — like Canada Post or Purolator — that lets you follow your package's journey from the warehouse to your door. You'll usually find it in your order confirmation email.</p>
+            </div>
+
+            <div class="term-item">
+              <div class="term-name">Return Policy</div>
+              <p class="term-def">The rules a store sets about whether and how you can return a product you bought — including the time limit, condition of the item, and whether you'll get cash back or store credit. Always check the return policy before buying something online.</p>
+            </div>
+
+          </div><!-- /.term-list -->
+        </div><!-- /.topic-body -->
+      </details>
+
+      <!-- ── Bottom note ── -->
+      <div class="topic-footer-note" role="note">
+        <p data-en="Looking for a specific term? Browse all terms A–Z →" data-fr="Vous cherchez un terme précis ? Parcourez tous les termes de A à Z →">Looking for a specific term? <a href="../glossary.html" style="color:var(--color-primary,#1565C0);font-weight:600;">Browse all terms A–Z →</a></p>
+      </div>
+
+      <p style="margin-top:.5rem"><a href="index.html" data-en="← Back to all Resources" data-fr="← Retour à toutes les ressources">← Back to all Resources</a></p>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-brand">Digital Confidence Centre</p>
+          <p class="footer-tagline">A free learning programme for Canadian seniors</p>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="../index.html">Home</a> |
+            <a href="index.html">Resources</a> |
+            <a href="../about.html">About</a> |
+            <a href="../accessibility.html">Accessibility</a> |
+            <a href="../privacy.html">Privacy Policy</a> |
+            <a href="#" onclick="openFeedbackModal(); return false;">Ideas &amp; Feedback</a> |
+            <a href="support-directory.html">Get Help</a>
+          </nav>
+          <p class="footer-copy">&copy; 2026 Two Birds Innovation. Made with care in Ontario, Canada.</p>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="../js/search-index.js" defer></script>
+  <script src="../js/search.js" defer></script>
+  <script src="../js/analytics-consent.js" defer></script>
+  <script src="../js/app.js" defer></script>
+  <script src="../js/lang-toggle.js" defer></script>
+  <script src="../js/accessibility.js" defer></script>
+</body>
+</html>
