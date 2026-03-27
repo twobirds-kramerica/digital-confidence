@@ -16,7 +16,7 @@
     localStorage.setItem('dc-theme', oldTheme);
   }
   // Migrate progress keys
-  for (var m = 1; m <= 8; m++) {
+  for (var m = 1; m <= 15; m++) {
     for (var i = 1; i <= 10; i++) {
       var oldKey = 'brenda-progress-m' + m + '-' + i;
       var newKey = 'dc-progress-m' + m + '-' + i;
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initFontControls();
   initThemeToggle();
   initDyslexicFont();
-  initBackToTop();
+  initScrollProgress();
   initBreadcrumb();
   initTopBarHome();
 });
@@ -156,21 +156,19 @@ function initDyslexicFont() {
   }
 }
 
-/* ---- Back to Top Button ---- */
-function initBackToTop() {
-  var btn = document.createElement('button');
-  btn.className = 'back-to-top';
-  btn.setAttribute('aria-label', 'Back to top');
-  btn.innerHTML = '&#8679;'; // ↑ upward arrow
-  document.body.appendChild(btn);
+/* ---- Scroll Progress Indicator ---- */
+function initScrollProgress() {
+  var bar = document.createElement('div');
+  bar.id = 'dc-scroll-progress';
+  bar.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(bar);
 
   window.addEventListener('scroll', function() {
-    btn.classList.toggle('visible', window.scrollY > 500);
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    bar.style.height = pct + '%';
   }, { passive: true });
-
-  btn.addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
 }
 
 /* ---- Home Button in Top Bar ---- */

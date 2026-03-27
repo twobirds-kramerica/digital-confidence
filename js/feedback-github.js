@@ -85,7 +85,36 @@ function injectFeedbackStyles() {
     '[data-theme="dark"] .dc-modal-close{background:#333;color:#eee;border-color:#555;}',
     /* Button row */
     '.dc-feedback-actions{margin-top:20px;}',
-    '.dc-feedback-actions .dc-btn-submit{width:100%;}'
+    '.dc-feedback-actions .dc-btn-submit{width:100%;}',
+    /* Tab system */
+    '.dc-tab-bar{display:flex;gap:0;margin-bottom:18px;border-bottom:2px solid #e0e0e0;}',
+    '.dc-tab-btn{flex:1;padding:10px 8px;border:none;border-bottom:3px solid transparent;',
+    '  background:none;font-size:1rem;font-weight:600;cursor:pointer;color:#666;',
+    '  transition:color 0.15s,border-color 0.15s;margin-bottom:-2px;}',
+    '.dc-tab-btn.active{color:#1565C0;border-bottom-color:#1565C0;}',
+    '.dc-tab-btn:hover{color:#1565C0;}',
+    '[data-theme="dark"] .dc-tab-btn{color:#aaa;}',
+    '[data-theme="dark"] .dc-tab-btn.active{color:#64B5F6;border-bottom-color:#64B5F6;}',
+    '[data-theme="dark"] .dc-tab-bar{border-bottom-color:#444;}',
+    '.dc-tab-panel{display:none;} .dc-tab-panel.active{display:block;}',
+    /* Voice recorder */
+    '.dc-voice-wrap{text-align:center;padding:8px 0 4px;}',
+    '.dc-voice-hint{font-size:0.95rem;color:#555;margin-bottom:16px;line-height:1.5;}',
+    '[data-theme="dark"] .dc-voice-hint{color:#aaa;}',
+    '.dc-rec-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;',
+    '  border:none;border-radius:28px;font-size:1rem;font-weight:700;cursor:pointer;',
+    '  background:#e53935;color:#fff;transition:background 0.15s,transform 0.1s;}',
+    '.dc-rec-btn:hover{background:#c62828;transform:scale(1.04);}',
+    '.dc-rec-btn.recording{background:#b71c1c;animation:dc-rec-pulse 1.2s infinite;}',
+    '@keyframes dc-rec-pulse{0%,100%{box-shadow:0 0 0 0 rgba(229,57,53,0.5);}50%{box-shadow:0 0 0 10px rgba(229,57,53,0);}}',
+    '.dc-rec-timer{font-size:1.4rem;font-weight:700;font-variant-numeric:tabular-nums;',
+    '  color:#e53935;margin:14px 0;display:none;}',
+    '.dc-voice-player{margin:14px 0;width:100%;display:none;}',
+    '.dc-voice-actions{margin-top:14px;display:none;gap:10px;flex-direction:column;}',
+    '.dc-voice-actions.visible{display:flex;}',
+    '.dc-voice-unsupported{background:#fff3cd;border:1px solid #ffc107;border-radius:8px;',
+    '  padding:14px;font-size:0.95rem;color:#555;display:none;}',
+    '[data-theme="dark"] .dc-voice-unsupported{background:#332200;border-color:#664400;color:#ccc;}'
   ].join('\n');
   document.head.appendChild(style);
 }
@@ -132,59 +161,87 @@ function injectFeedbackModal() {
         '<div id="dc-modal-form-area">',
         '<h2 class="dc-modal-title" id="dc-modal-title">Ideas &amp; Feedback 💬</h2>',
 
-        /* FIELD 1: Module dropdown (auto-detected, user-editable) */
-        '<div class="dc-feedback-field">',
-          '<label class="dc-feedback-label" for="dc-feedback-module">Which part of the site is this about?</label>',
-          '<select id="dc-feedback-module" name="module" class="dc-feedback-select">',
-            moduleOptions,
-          '</select>',
+        /* Tab bar */
+        '<div class="dc-tab-bar" role="tablist">',
+          '<button class="dc-tab-btn active" id="dc-tab-written" role="tab" aria-selected="true" aria-controls="dc-panel-written">\u270d\ufe0f Written</button>',
+          '<button class="dc-tab-btn" id="dc-tab-voice" role="tab" aria-selected="false" aria-controls="dc-panel-voice">\ud83c\udfa4 Voice</button>',
         '</div>',
 
-        /* FIELD 1b: Language selector */
-        '<div class="dc-feedback-field">',
-          '<label class="dc-feedback-label" for="dc-feedback-language">Language / Langue</label>',
-          '<select id="dc-feedback-language" name="language" class="dc-feedback-select">',
-            '<option value="en">English</option>',
-            '<option value="fr">Fran\u00e7ais</option>',
-            '<option value="other">Other / Autre</option>',
-          '</select>',
+        /* Written tab panel */
+        '<div class="dc-tab-panel active" id="dc-panel-written" role="tabpanel" aria-labelledby="dc-tab-written">',
+
+          /* FIELD 1: Module dropdown (auto-detected, user-editable) */
+          '<div class="dc-feedback-field">',
+            '<label class="dc-feedback-label" for="dc-feedback-module">Which part of the site is this about?</label>',
+            '<select id="dc-feedback-module" name="module" class="dc-feedback-select">',
+              moduleOptions,
+            '</select>',
+          '</div>',
+
+          /* FIELD 1b: Language selector */
+          '<div class="dc-feedback-field">',
+            '<label class="dc-feedback-label" for="dc-feedback-language">Language / Langue</label>',
+            '<select id="dc-feedback-language" name="language" class="dc-feedback-select">',
+              '<option value="en">English</option>',
+              '<option value="fr">Fran\u00e7ais</option>',
+              '<option value="other">Other / Autre</option>',
+            '</select>',
+          '</div>',
+
+          /* FIELD 2: Feedback type */
+          '<div class="dc-feedback-field">',
+            '<p class="dc-feedback-label">Type of feedback:</p>',
+            '<div class="dc-feedback-types" id="dc-feedback-types">' + typeOptions + '</div>',
+          '</div>',
+
+          /* FIELD 3: Feedback textarea */
+          '<div class="dc-feedback-field">',
+            '<label class="dc-feedback-label" for="dc-feedback-text">Your feedback:</label>',
+            '<textarea id="dc-feedback-text" name="message" class="dc-feedback-textarea" rows="5"',
+              ' placeholder="Tell us what you noticed\u2026" required></textarea>',
+          '</div>',
+
+          /* FIELD 4: Submit button (immediately below textarea) */
+          '<div class="dc-feedback-actions">',
+            '<button id="dc-submit-btn" class="dc-btn-submit">Send Feedback</button>',
+          '</div>',
+
+          /* FIELD 5: Your Name (Optional) — below submit */
+          '<div class="dc-feedback-field" style="margin-top:16px;">',
+            '<label class="dc-feedback-label" for="dc-feedback-name">',
+              'Your Name <span class="dc-optional">(Optional)</span>',
+            '</label>',
+            '<input type="text" id="dc-feedback-name" name="name" class="dc-feedback-input"',
+              ' placeholder="Type here\u2026" autocomplete="off">',
+          '</div>',
+
+          /* Version stamp — hidden field for Formspree submissions */
+          '<input type="hidden" name="version" value="MVP-1.0-2026-03-16">',
+
         '</div>',
 
-        /* FIELD 2: Feedback type */
-        '<div class="dc-feedback-field">',
-          '<p class="dc-feedback-label">Type of feedback:</p>',
-          '<div class="dc-feedback-types" id="dc-feedback-types">' + typeOptions + '</div>',
+        /* Voice tab panel */
+        '<div class="dc-tab-panel" id="dc-panel-voice" role="tabpanel" aria-labelledby="dc-tab-voice">',
+          '<div class="dc-voice-unsupported" id="dc-voice-unsupported">',
+            '\u26a0\ufe0f Voice recording is not supported on this browser. Please use the Written tab instead.',
+          '</div>',
+          '<div class="dc-voice-wrap" id="dc-voice-wrap">',
+            '<p class="dc-voice-hint">Tap <strong>Start Recording</strong> and speak your feedback. Up to 5 minutes.</p>',
+            '<button class="dc-rec-btn" id="dc-rec-btn" type="button">\ud83d\udd34 Start Recording</button>',
+            '<div class="dc-rec-timer" id="dc-rec-timer">0:00</div>',
+            '<audio class="dc-voice-player" id="dc-voice-player" controls></audio>',
+            '<div class="dc-voice-actions" id="dc-voice-actions">',
+              '<button class="dc-btn-submit" id="dc-voice-send-btn" type="button">\ud83d\udce4 Send Voice Note</button>',
+              '<button style="background:#888;padding:10px;border:none;border-radius:8px;color:#fff;cursor:pointer;font-size:0.9rem;" id="dc-voice-redo-btn" type="button">\ud83d\udd04 Record Again</button>',
+            '</div>',
+          '</div>',
         '</div>',
-
-        /* FIELD 3: Feedback textarea */
-        '<div class="dc-feedback-field">',
-          '<label class="dc-feedback-label" for="dc-feedback-text">Your feedback:</label>',
-          '<textarea id="dc-feedback-text" name="message" class="dc-feedback-textarea" rows="5"',
-            ' placeholder="Tell us what you noticed\u2026" required></textarea>',
-        '</div>',
-
-        /* FIELD 4: Submit button (immediately below textarea) */
-        '<div class="dc-feedback-actions">',
-          '<button id="dc-submit-btn" class="dc-btn-submit">Send Feedback</button>',
-        '</div>',
-
-        /* FIELD 5: Your Name (Optional) — below submit */
-        '<div class="dc-feedback-field" style="margin-top:16px;">',
-          '<label class="dc-feedback-label" for="dc-feedback-name">',
-            'Your Name <span class="dc-optional">(Optional)</span>',
-          '</label>',
-          '<input type="text" id="dc-feedback-name" name="name" class="dc-feedback-input"',
-            ' placeholder="Type here\u2026" autocomplete="off">',
-        '</div>',
-
-        /* Version stamp — hidden field for Formspree submissions */
-        '<input type="hidden" name="version" value="MVP-1.0-2026-03-16">',
 
         '</div>',
 
         /* Success state */
         '<div id="dc-feedback-success" class="dc-feedback-success" style="display:none;">',
-          '<div class="dc-success-icon">✅</div>',
+          '<div class="dc-success-icon">\u2705</div>',
           '<h3>Thank You!</h3>',
           '<p>Your feedback has been received.</p>',
           '<p>Nous lisons les commentaires en fran\u00e7ais. French feedback is welcome! / Les commentaires en fran\u00e7ais sont les bienvenus\u00a0!</p>',
@@ -194,7 +251,7 @@ function injectFeedbackModal() {
 
         /* Error state */
         '<div id="dc-feedback-error" class="dc-feedback-error" style="display:none;">',
-          '<div class="dc-error-icon">⚠️</div>',
+          '<div class="dc-error-icon">\u26a0\ufe0f</div>',
           '<h3>We saved your feedback!</h3>',
           '<p>There was a connection issue, but your feedback was saved on your device. We\'ll collect it next time.</p>',
           '<button onclick="closeFeedbackModal()" class="dc-btn-submit">Close</button>',
@@ -210,6 +267,11 @@ function injectFeedbackModal() {
   document.getElementById('dc-modal-close').addEventListener('click', closeFeedbackModal);
   document.getElementById('dc-modal-backdrop').addEventListener('click', closeFeedbackModal);
   document.getElementById('dc-submit-btn').addEventListener('click', handleFeedbackSubmit);
+  document.getElementById('dc-tab-written').addEventListener('click', function () { switchFeedbackTab('written'); });
+  document.getElementById('dc-tab-voice').addEventListener('click', function () { switchFeedbackTab('voice'); });
+  document.getElementById('dc-rec-btn').addEventListener('click', toggleVoiceRecording);
+  document.getElementById('dc-voice-send-btn').addEventListener('click', sendVoiceNote);
+  document.getElementById('dc-voice-redo-btn').addEventListener('click', resetVoiceRecorder);
 
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
@@ -217,6 +279,31 @@ function injectFeedbackModal() {
       if (modal && modal.style.display !== 'none') closeFeedbackModal();
     }
   });
+
+  /* Check MediaRecorder support */
+  if (typeof MediaRecorder === 'undefined' || !navigator.mediaDevices) {
+    document.getElementById('dc-voice-wrap').style.display = 'none';
+    document.getElementById('dc-voice-unsupported').style.display = 'block';
+  }
+}
+
+/* ---- Tab switching ---- */
+function switchFeedbackTab(tab) {
+  var writtenBtn   = document.getElementById('dc-tab-written');
+  var voiceBtn     = document.getElementById('dc-tab-voice');
+  var writtenPanel = document.getElementById('dc-panel-written');
+  var voicePanel   = document.getElementById('dc-panel-voice');
+  if (tab === 'written') {
+    writtenBtn.classList.add('active');   writtenBtn.setAttribute('aria-selected', 'true');
+    voiceBtn.classList.remove('active'); voiceBtn.setAttribute('aria-selected', 'false');
+    writtenPanel.classList.add('active');
+    voicePanel.classList.remove('active');
+  } else {
+    voiceBtn.classList.add('active');     voiceBtn.setAttribute('aria-selected', 'true');
+    writtenBtn.classList.remove('active'); writtenBtn.setAttribute('aria-selected', 'false');
+    voicePanel.classList.add('active');
+    writtenPanel.classList.remove('active');
+  }
 }
 
 /* ---- Open modal ---- */
@@ -248,6 +335,10 @@ function openFeedbackModal() {
     moduleEl.value = autoModule || 'General / Other';
   }
 
+  /* Reset tabs to Written */
+  switchFeedbackTab('written');
+  resetVoiceRecorder();
+
   modal.style.display          = 'flex';
   document.body.style.overflow = 'hidden';
 
@@ -258,9 +349,150 @@ function openFeedbackModal() {
 }
 
 function closeFeedbackModal() {
+  stopVoiceRecordingIfActive();
   var modal = document.getElementById('dc-feedback-modal');
   if (modal) modal.style.display = 'none';
   document.body.style.overflow = '';
+}
+
+/* ================================================================
+   VOICE RECORDER
+   Uses MediaRecorder API. Graceful fallback if unsupported.
+   Sends via Web Share API (iOS) or mailto fallback (desktop).
+   Max 5 minutes.
+   ================================================================ */
+var _dcMediaRecorder = null;
+var _dcAudioChunks   = [];
+var _dcRecTimerInt   = null;
+var _dcRecSeconds    = 0;
+var _dcAudioBlob     = null;
+
+function resetVoiceRecorder() {
+  stopVoiceRecordingIfActive();
+  _dcAudioChunks  = [];
+  _dcAudioBlob    = null;
+  _dcRecSeconds   = 0;
+
+  var recBtn    = document.getElementById('dc-rec-btn');
+  var timer     = document.getElementById('dc-rec-timer');
+  var player    = document.getElementById('dc-voice-player');
+  var actions   = document.getElementById('dc-voice-actions');
+  if (!recBtn) return;
+
+  recBtn.textContent = '\uD83D\uDD34 Start Recording';
+  recBtn.classList.remove('recording');
+  recBtn.disabled = false;
+  if (timer)   { timer.textContent = '0:00'; timer.style.display = 'none'; }
+  if (player)  { player.src = ''; player.style.display = 'none'; }
+  if (actions) { actions.classList.remove('visible'); }
+}
+
+function stopVoiceRecordingIfActive() {
+  if (_dcMediaRecorder && _dcMediaRecorder.state === 'recording') {
+    _dcMediaRecorder.stop();
+  }
+  if (_dcRecTimerInt) { clearInterval(_dcRecTimerInt); _dcRecTimerInt = null; }
+}
+
+function toggleVoiceRecording() {
+  if (_dcMediaRecorder && _dcMediaRecorder.state === 'recording') {
+    _dcMediaRecorder.stop();
+  } else {
+    startVoiceRecording();
+  }
+}
+
+function startVoiceRecording() {
+  navigator.mediaDevices.getUserMedia({ audio: true })
+    .then(function (stream) {
+      _dcAudioChunks = [];
+      _dcAudioBlob   = null;
+      _dcRecSeconds  = 0;
+
+      var mimeType = '';
+      var types = ['audio/mp4', 'audio/webm;codecs=opus', 'audio/webm', 'audio/ogg'];
+      for (var i = 0; i < types.length; i++) {
+        if (MediaRecorder.isTypeSupported(types[i])) { mimeType = types[i]; break; }
+      }
+
+      _dcMediaRecorder = new MediaRecorder(stream, mimeType ? { mimeType: mimeType } : {});
+
+      _dcMediaRecorder.addEventListener('dataavailable', function (e) {
+        if (e.data && e.data.size > 0) _dcAudioChunks.push(e.data);
+      });
+
+      _dcMediaRecorder.addEventListener('stop', function () {
+        stream.getTracks().forEach(function (t) { t.stop(); });
+        clearInterval(_dcRecTimerInt);
+        _dcAudioBlob = new Blob(_dcAudioChunks, { type: _dcMediaRecorder.mimeType || 'audio/webm' });
+
+        var recBtn  = document.getElementById('dc-rec-btn');
+        var timer   = document.getElementById('dc-rec-timer');
+        var player  = document.getElementById('dc-voice-player');
+        var actions = document.getElementById('dc-voice-actions');
+
+        if (recBtn)  { recBtn.textContent = '\uD83D\uDD34 Start Recording'; recBtn.classList.remove('recording'); }
+        if (player)  { player.src = URL.createObjectURL(_dcAudioBlob); player.style.display = 'block'; }
+        if (actions) { actions.classList.add('visible'); }
+        if (timer)   { timer.style.display = 'none'; }
+      });
+
+      _dcMediaRecorder.start(1000);
+
+      /* Update UI */
+      var recBtn = document.getElementById('dc-rec-btn');
+      var timer  = document.getElementById('dc-rec-timer');
+      if (recBtn) { recBtn.textContent = '\u23f9 Stop Recording'; recBtn.classList.add('recording'); }
+      if (timer)  { timer.style.display = 'block'; timer.textContent = '0:00'; }
+
+      /* Countdown timer — max 5 minutes */
+      _dcRecTimerInt = setInterval(function () {
+        _dcRecSeconds++;
+        var m = Math.floor(_dcRecSeconds / 60);
+        var s = _dcRecSeconds % 60;
+        if (timer) timer.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+        if (_dcRecSeconds >= 300) {
+          _dcMediaRecorder.stop(); /* auto-stop at 5 min */
+        }
+      }, 1000);
+    })
+    .catch(function (err) {
+      alert('Could not access microphone. Please check your privacy settings and try again.\n\n(' + err.message + ')');
+    });
+}
+
+function sendVoiceNote() {
+  if (!_dcAudioBlob) return;
+
+  var ext      = _dcAudioBlob.type.includes('mp4') ? 'mp4' : 'webm';
+  var filename = 'dcc-voice-feedback.' + ext;
+  var subject  = encodeURIComponent('Voice Feedback — Digital Confidence Centre');
+  var body     = encodeURIComponent(
+    'Hello Two Birds,\n\nPlease find my voice feedback attached.\n\nSent from the Digital Confidence Centre feedback form.'
+  );
+  var mailtoHref = 'mailto:hello@twobirds.ca?subject=' + subject + '&body=' + body;
+
+  /* Try Web Share API first (works on iOS, Android) */
+  var file = new File([_dcAudioBlob], filename, { type: _dcAudioBlob.type });
+  if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+    navigator.share({
+      files: [file],
+      title: 'Voice Feedback',
+      text:  'Voice feedback for the Digital Confidence Centre'
+    }).catch(function () { /* user cancelled share — do nothing */ });
+    return;
+  }
+
+  /* Fallback: download the file, then open mail client */
+  var url   = URL.createObjectURL(_dcAudioBlob);
+  var dlLink = document.createElement('a');
+  dlLink.href     = url;
+  dlLink.download = filename;
+  dlLink.click();
+  setTimeout(function () {
+    URL.revokeObjectURL(url);
+    window.location.href = mailtoHref;
+  }, 800);
 }
 
 /* ---- Submit handler ---- */

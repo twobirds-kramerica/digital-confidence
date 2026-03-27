@@ -57,7 +57,7 @@
     style.id = 'dc-search-styles';
     style.textContent = [
       '.dc-search-wrap{position:relative;padding:10px 16px 6px;}',
-      '.dc-search-input{width:100%;padding:8px 32px 8px 10px;background:#0a1520;border:1px solid #243d59;border-radius:8px;color:#F0F4F8;font-size:0.9em;outline:none;}',
+      '.dc-search-input{width:100%;padding:8px 32px 8px 10px;background:#0a1520;border:1px solid #243d59;border-radius:8px;color:#F0F4F8;font-size:0.9em;outline:none;text-overflow:ellipsis;}',
       '.dc-search-input:focus{border-color:#00C9A7;}',
       '.dc-search-icon{position:absolute;right:26px;top:50%;transform:translateY(-50%);color:#8AA0B8;pointer-events:none;font-style:normal;}',
       '.dc-search-dropdown{position:absolute;left:16px;right:16px;top:calc(100% - 4px);background:#1A2D44;border:1px solid #243d59;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.4);z-index:200;overflow:hidden;display:none;}',

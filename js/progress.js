@@ -67,7 +67,7 @@ function resetAllProgress() {
 
 function updateProgressOverview() {
   // Count all progress items across all modules
-  var totalModules = 17;
+  var totalModules = 15;
   var completedModules = 0;
 
   for (var m = 1; m <= totalModules; m++) {
