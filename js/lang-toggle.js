@@ -13,6 +13,7 @@
     'Foundations':             'Fondements',
     '1. The Escape Hatch':     '1. La sortie de secours',
     '2. Security Shield':      '2. Bouclier de sécurité',
+    '2.5 Everyday Tasks':      '2.5 Tâches quotidiennes',
     '3. Passwords':            '3. Mots de passe',
     '4. App Store Safety':     '4. Sécurité de l\'App Store',
     '5. Email & Messages':     '5. Courriel et messages',
@@ -22,10 +23,18 @@
     '9. Understanding AI':     '9. Comprendre l\'IA',
     '10. Grocery & Delivery':  '10. Épicerie et livraison',
     '11. Ride-Sharing':        '11. Transport à la demande',
+    '12. Getting Help':        '12. Obtenir de l\'aide',
+    '13. Social Media':        '13. Médias sociaux',
+    '14. Smart Home':          '14. Maison intelligente',
+    '15. Telehealth':          '15. Télémédecine',
     'Show Me! (Bonus)':        'Montrez-moi ! (Bonus)',
     'Set Up for a Loved One':  'Pour un proche',
     'Resources':               'Ressources',
+    'Print Centre':            'Centre d\'impression',
+    'Recommended Tools':       'Outils recommandés',
     'Scam Simulator':          'Simulateur d\'arnaques',
+    'Get Help':                'Obtenir de l\'aide',
+    'Glossary':                'Glossaire',
     'My Settings':             'Mes paramètres',
     'FAQ':                     'FAQ',
     'FAQ (Français)':          'FAQ (Français)',
@@ -43,12 +52,19 @@
   };
 
   var FOOTER_LINKS_MAP = {
-    'Home':              'Accueil',
-    'Resources':         'Ressources',
-    'FAQ':               'FAQ',
-    'For Families':      'Pour les familles',
-    'Privacy Policy':    'Politique de confidentialité',
-    'Ideas & Feedback':  'Idées et commentaires'
+    'Home':                'Accueil',
+    'Modules':             'Modules',
+    'Resources':           'Ressources',
+    'Print Centre':        'Centre d\'impression',
+    'Recommended Tools':   'Outils recommandés',
+    'FAQ':                 'FAQ',
+    'Glossary':            'Glossaire',
+    'What\'s Coming':      'Prochainement',
+    'For Families':        'Pour les familles',
+    'About':               'À propos',
+    'Privacy Policy':      'Politique de confidentialité',
+    'Ideas & Feedback':    'Idées et commentaires',
+    'Get Help':            'Obtenir de l\'aide'
   };
 
   /* ---- Store original English text on first run ---- */
@@ -170,6 +186,35 @@
       btn.textContent = isFR ? '⚜ EN' : '⚜ FR';
       btn.setAttribute('aria-label', isFR ? 'Switch to English' : 'Passer au français');
       btn.setAttribute('aria-pressed', String(isFR));
+    }
+
+    /* Feedback FAB button */
+    var fab = document.getElementById('dc-unified-feedback-btn');
+    if (fab) {
+      var fabLabel = fab.querySelector('.dc-fab-label');
+      if (fabLabel) fabLabel.textContent = isFR ? 'Idées et commentaires' : 'Ideas & Feedback';
+      fab.setAttribute('aria-label', isFR ? 'Partager vos idées ou commentaires' : 'Share ideas or feedback');
+    }
+
+    /* Feedback modal text */
+    var modalTitle = document.getElementById('dc-modal-title');
+    if (modalTitle) modalTitle.innerHTML = isFR ? 'Idées et commentaires 💬' : 'Ideas &amp; Feedback 💬';
+
+    var modalClose = document.getElementById('dc-modal-close');
+    if (modalClose) {
+      modalClose.textContent = isFR ? '\u00d7 Fermer' : '\u00d7 Close';
+      modalClose.setAttribute('aria-label', isFR ? 'Fermer la fenêtre' : 'Close feedback');
+    }
+
+    var writtenTab = document.getElementById('dc-tab-written');
+    if (writtenTab) writtenTab.innerHTML = isFR ? '\u270d\ufe0f \u00c9crit' : '\u270d\ufe0f Written';
+
+    var voiceTab = document.getElementById('dc-tab-voice');
+    if (voiceTab) voiceTab.innerHTML = isFR ? '\ud83c\udfa4 Voix' : '\ud83c\udfa4 Voice';
+
+    var submitBtn = document.getElementById('dc-submit-btn');
+    if (submitBtn && !submitBtn.dataset.submitting) {
+      submitBtn.textContent = isFR ? 'Envoyer' : 'Send Feedback';
     }
 
     /* Persist */

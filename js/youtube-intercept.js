@@ -7,39 +7,69 @@
 (function () {
   'use strict';
 
+  /* ── Detect language ── */
+  function getLang() {
+    try {
+      var l = localStorage.getItem('dc-lang') || navigator.language || 'en';
+      return l.toLowerCase().startsWith('fr') ? 'fr' : 'en';
+    } catch (e) { return 'en'; }
+  }
+
+  var YT_TEXT = {
+    en: {
+      title:   'Opening a Video',
+      desc:    'You\'re about to open a YouTube video in a new tab. Here are a few tips before you go:',
+      tip1:    'You can <strong>close the tab</strong> when you\'re done and return here.',
+      tip2:    'If YouTube suggests other videos — it\'s okay to ignore them.',
+      tip3:    'You won\'t lose your place in this lesson.',
+      confirm: 'Watch Video',
+      cancel:  'Stay Here',
+      skip:    'Don\'t show this tip again'
+    },
+    fr: {
+      title:   'Ouverture d\'une vidéo',
+      desc:    'Vous êtes sur le point d\'ouvrir une vidéo YouTube dans un nouvel onglet. Voici quelques conseils avant de partir&nbsp;:',
+      tip1:    'Vous pouvez <strong>fermer l\'onglet</strong> lorsque vous avez terminé et revenir ici.',
+      tip2:    'Si YouTube suggère d\'autres vidéos — vous pouvez les ignorer.',
+      tip3:    'Vous ne perdrez pas votre place dans cette leçon.',
+      confirm: 'Regarder la vidéo',
+      cancel:  'Rester ici',
+      skip:    'Ne plus afficher ce conseil'
+    }
+  };
+
   /* ── Modal HTML ── */
-  var MODAL_HTML =
-    '<div id="yt-intercept-backdrop" role="dialog" aria-modal="true" ' +
+  function buildModalHTML() {
+    var t = YT_TEXT[getLang()];
+    return '<div id="yt-intercept-backdrop" role="dialog" aria-modal="true" ' +
          'aria-labelledby="yt-modal-title" aria-describedby="yt-modal-desc" ' +
          'tabindex="-1">' +
       '<div class="yt-modal-box">' +
         '<h2 id="yt-modal-title" class="yt-modal-title">' +
-          '<span aria-hidden="true">▶️</span> Opening a Video' +
+          '<span aria-hidden="true">▶️</span> ' + t.title +
         '</h2>' +
-        '<p id="yt-modal-desc" class="yt-modal-desc">' +
-          'You\'re about to open a YouTube video in a new tab. Here are a few tips before you go:' +
-        '</p>' +
+        '<p id="yt-modal-desc" class="yt-modal-desc">' + t.desc + '</p>' +
         '<ul class="yt-tip-list">' +
-          '<li>You can <strong>close the tab</strong> when you\'re done and return here.</li>' +
-          '<li>If YouTube suggests other videos — it\'s okay to ignore them.</li>' +
-          '<li>You won\'t lose your place in this lesson.</li>' +
+          '<li>' + t.tip1 + '</li>' +
+          '<li>' + t.tip2 + '</li>' +
+          '<li>' + t.tip3 + '</li>' +
         '</ul>' +
         '<div class="yt-modal-actions">' +
-          '<button id="yt-confirm-btn" class="yt-btn yt-btn-primary">Watch Video</button>' +
-          '<button id="yt-cancel-btn" class="yt-btn yt-btn-secondary">Stay Here</button>' +
+          '<button id="yt-confirm-btn" class="yt-btn yt-btn-primary">' + t.confirm + '</button>' +
+          '<button id="yt-cancel-btn" class="yt-btn yt-btn-secondary">' + t.cancel + '</button>' +
         '</div>' +
         '<label class="yt-dont-show-again">' +
-          '<input type="checkbox" id="yt-skip-cb" /> ' +
-          'Don\'t show this tip again' +
+          '<input type="checkbox" id="yt-skip-cb" /> ' + t.skip +
         '</label>' +
       '</div>' +
     '</div>';
+  }
 
   /* ── Inject modal once ── */
   function injectModal() {
     if (document.getElementById('yt-intercept-backdrop')) return;
     var div = document.createElement('div');
-    div.innerHTML = MODAL_HTML;
+    div.innerHTML = buildModalHTML();
     document.body.appendChild(div.firstChild);
     addModalStyles();
   }
