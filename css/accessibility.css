@@ -29,6 +29,22 @@
 [data-font-size="xl"] h2 { font-size: 1.9rem; }
 [data-font-size="xl"] h3 { font-size: 1.5rem; }
 
+[data-font-size="xxl"] {
+  font-size: 31px; /* 140% of 22px large base */
+}
+
+[data-font-size="xxl"] h1 { font-size: 2.6rem; }
+[data-font-size="xxl"] h2 { font-size: 2.1rem; }
+[data-font-size="xxl"] h3 { font-size: 1.7rem; }
+
+[data-font-size="xxxl"] {
+  font-size: 35px; /* 160% of 22px large base */
+}
+
+[data-font-size="xxxl"] h1 { font-size: 2.8rem; }
+[data-font-size="xxxl"] h2 { font-size: 2.3rem; }
+[data-font-size="xxxl"] h3 { font-size: 1.9rem; }
+
 /* Focus indicators — keyboard users only (focus-visible) */
 /* Remove the browser default for mouse/touch users */
 *:focus:not(:focus-visible) {
@@ -130,3 +146,61 @@ html.dyslexic-font body {
   font-family: 'OpenDyslexic', 'Comic Sans MS', cursive !important;
 }
 
+/* ============================================
+   High Contrast Mode (Phase 4D)
+   Toggle adds class .high-contrast to <html>
+   ============================================ */
+html.high-contrast {
+  filter: contrast(1.5) grayscale(0.3);
+}
+
+/* ============================================
+   Reduce Animations (Phase 4C — Cognitive)
+   Toggle adds class .reduce-motion to <body>
+   ============================================ */
+body.reduce-motion *,
+body.reduce-motion *::before,
+body.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* ============================================
+   Reading Guide (Phase 4C — Cognitive)
+   Highlights hovered paragraph in yellow
+   ============================================ */
+body.reading-guide p:hover,
+body.reading-guide li:hover,
+body.reading-guide dt:hover,
+body.reading-guide dd:hover {
+  background-color: #fff176;
+  border-radius: 3px;
+  cursor: default;
+}
+
+/* Dark mode reading guide — softer yellow */
+[data-theme="dark"] body.reading-guide p:hover,
+[data-theme="dark"] body.reading-guide li:hover,
+[data-theme="dark"] body.reading-guide dt:hover,
+[data-theme="dark"] body.reading-guide dd:hover {
+  background-color: #5c5000;
+  color: #fff;
+}
+
+/* ============================================
+   aria-live Announcer Region (Phase 4A)
+   ============================================ */
+#dc-live-region {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
