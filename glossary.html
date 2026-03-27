@@ -50,6 +50,38 @@
     [data-theme="dark"] .tag-intermediate { background: #1b3a1f; color: #a5d6a7; }
     [data-theme="dark"] .tag-services { background: #3e2200; color: #ffcc80; }
     @media (max-width: 600px) { .gloss-grid { grid-template-columns: 1fr; } }
+
+    /* Term of the Day */
+    .gloss-totd { background: linear-gradient(135deg,#EBF4FF 0%,#DBEAFE 100%); border: 2px solid #1565C0; border-radius: 14px; padding: 1.1rem 1.4rem; margin: 0 0 1.5rem; }
+    [data-theme="dark"] .gloss-totd { background: #1e3a5f; border-color: #3b82f6; }
+    .gloss-totd-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; }
+    .gloss-totd-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: #1565C0; }
+    [data-theme="dark"] .gloss-totd-label { color: #93c5fd; }
+    .gloss-totd-close { background: none; border: none; cursor: pointer; font-size: 0.82rem; color: #64748b; padding: 0.2rem 0.5rem; border-radius: 6px; }
+    .gloss-totd-close:hover { background: rgba(0,0,0,0.07); }
+    .gloss-totd-term { font-size: 1.25rem; font-weight: 700; color: #1565C0; margin: 0 0 0.35rem; }
+    [data-theme="dark"] .gloss-totd-term { color: #93c5fd; }
+    .gloss-totd-def { font-size: 0.95rem; line-height: 1.6; color: var(--color-text, #1a1a1a); margin: 0.5rem 0; }
+    .gloss-totd-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 0.6rem; font-size: 0.82rem; flex-wrap: wrap; gap: 0.5rem; }
+    .gloss-totd-sub { color: #64748b; font-style: italic; }
+    .gloss-totd-jump { color: #1565C0; font-weight: 600; text-decoration: none; }
+    .gloss-totd-jump:hover { text-decoration: underline; }
+
+    /* Print button */
+    .gloss-print-wrap { margin: 0.75rem 0 1.25rem; text-align: right; }
+    .gloss-print-btn { background: transparent; border: 2px solid #1565C0; color: #1565C0; border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, color 0.15s; }
+    .gloss-print-btn:hover { background: #1565C0; color: #fff; }
+    [data-theme="dark"] .gloss-print-btn { border-color: #60a5fa; color: #60a5fa; }
+    [data-theme="dark"] .gloss-print-btn:hover { background: #2563eb; color: #fff; border-color: #2563eb; }
+
+    /* Print styles */
+    @media print {
+      .accessibility-bar, .top-bar, .sidebar, .sidebar-overlay, .skip-link,
+      .gloss-search-wrap, .gloss-alpha-nav, .gloss-print-wrap, .gloss-totd,
+      .confidence-check, .module-nav, .site-footer { display: none !important; }
+      .gloss-grid { grid-template-columns: repeat(2, 1fr); }
+      .gloss-card { border: 1px solid #ccc; break-inside: avoid; }
+    }
   </style>
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#1565C0">
@@ -1089,5 +1121,6 @@
   <script src="js/setup-wizard.js" defer></script>  <script src="js/feedback-github.js" defer></script>
   <script src="js/settings.js" defer></script>
   <script src="js/panic-button.js" defer></script>
+  <script src="js/glossary-enhancements.js" defer></script>
 </body>
 </html>
