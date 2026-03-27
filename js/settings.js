@@ -152,6 +152,22 @@ function injectSettingsModal() {
           '</div>',
         '</div>',
 
+        /* Export / Import */
+        '<div class="dc-settings-section">',
+          '<p class="dc-settings-section-title">Backup &amp; Restore</p>',
+          '<p style="font-size:14px;color:#555;margin:0 0 12px">Save your progress and settings to a file, or restore from a backup.</p>',
+          '<div style="display:flex;gap:10px;flex-wrap:wrap">',
+            '<button class="dc-settings-change-btn" id="dc-settings-export-btn" style="flex:1;min-width:120px">',
+              '\u2B07\uFE0F Export My Data',
+            '</button>',
+            '<button class="dc-settings-change-btn" id="dc-settings-import-btn" style="flex:1;min-width:120px">',
+              '\u2B06\uFE0F Import Backup',
+            '</button>',
+          '</div>',
+          '<input type="file" id="dc-settings-import-file" accept=".json" style="display:none" aria-label="Import backup file">',
+          '<p id="dc-settings-import-msg" style="font-size:13px;margin:8px 0 0;display:none"></p>',
+        '</div>',
+
         /* Reset */
         '<div class="dc-settings-section">',
           '<p class="dc-settings-section-title">Reset</p>',
@@ -234,6 +250,74 @@ function injectSettingsModal() {
       localStorage.clear();
       location.reload();
     }
+  });
+
+  /* Export data */
+  document.getElementById('dc-settings-export-btn').addEventListener('click', function () {
+    var data = {};
+    try {
+      for (var i = 0; i < localStorage.length; i++) {
+        var key = localStorage.key(i);
+        if (key && key.indexOf('dc-') === 0) {
+          data[key] = localStorage.getItem(key);
+        }
+      }
+    } catch (e) {}
+
+    var json = JSON.stringify({
+      version: 1,
+      exported: new Date().toISOString(),
+      data: data
+    }, null, 2);
+
+    var blob = new Blob([json], { type: 'application/json' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'digital-confidence-backup-' + new Date().toISOString().slice(0, 10) + '.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+
+  /* Import data */
+  document.getElementById('dc-settings-import-btn').addEventListener('click', function () {
+    document.getElementById('dc-settings-import-file').click();
+  });
+
+  document.getElementById('dc-settings-import-file').addEventListener('change', function (e) {
+    var file = e.target.files && e.target.files[0];
+    var msg = document.getElementById('dc-settings-import-msg');
+    if (!file) return;
+
+    var reader = new FileReader();
+    reader.onload = function (ev) {
+      try {
+        var parsed = JSON.parse(ev.target.result);
+        if (!parsed.data || typeof parsed.data !== 'object') {
+          throw new Error('Invalid backup file');
+        }
+        var keys = Object.keys(parsed.data);
+        for (var i = 0; i < keys.length; i++) {
+          var k = keys[i];
+          if (k.indexOf('dc-') === 0) {
+            localStorage.setItem(k, parsed.data[k]);
+          }
+        }
+        msg.textContent = '\u2705 Backup restored! Reloading...';
+        msg.style.color = 'green';
+        msg.style.display = 'block';
+        setTimeout(function () { location.reload(); }, 1200);
+      } catch (err) {
+        msg.textContent = '\u274C Could not read this file. Make sure it is a Digital Confidence backup.';
+        msg.style.color = '#b71c1c';
+        msg.style.display = 'block';
+      }
+    };
+    reader.readAsText(file);
+    /* Reset input so same file can be re-selected */
+    e.target.value = '';
   });
 }
 
