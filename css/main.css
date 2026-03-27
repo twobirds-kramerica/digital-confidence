@@ -5492,12 +5492,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 .top-bar-home-label { font-size: 0.85rem; }
 [data-theme="dark"] .top-bar-home { color: var(--text-primary); }
 
-/* Mobile: position feedback btn above exit label so they don't overlap */
-@media (max-width: 600px) {
-  .dc-unified-feedback-btn {
-    position: relative; /* needed for dc-fab-mobile-label absolute positioning */
-  }
-}
+/* Note: dc-unified-feedback-btn is position: fixed !important on all screen sizes */
 
 /* ============================================
    Sponsor Card — Phase 6A
@@ -5934,7 +5929,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   color: #1a3a6b;
   align-items: center;
 }
-.eeat-trust-bar span { white-space: nowrap; }
+.eeat-trust-bar span { white-space: nowrap; max-width: 100%; overflow-wrap: break-word; word-break: break-word; }
 [data-theme="dark"] .eeat-trust-bar {
   background: #1a2744;
   color: #90c4f8;
