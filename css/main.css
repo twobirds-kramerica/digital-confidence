@@ -15,9 +15,9 @@
   --bg-danger: #FDEDEC;
   --text-primary: #2C3E50;
   --text-secondary: #5D6D7E;
-  --text-muted: #85929E;
-  --accent-primary: #3498DB;
-  --accent-hover: #2980B9;
+  --text-muted: #5A6B78;       /* darkened: 5.3:1 on white, was 3.0:1 */
+  --accent-primary: #1565C0;   /* darkened: 5.6:1 on light bg, was 3.0:1 */
+  --accent-hover: #0D47A1;     /* darkened: 7.8:1 on light bg */
   --accent-success: #27AE60;
   --accent-warning: #F39C12;
   --accent-danger: #E74C3C;
@@ -5166,13 +5166,26 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   letter-spacing: 0.5px;
   margin-bottom: var(--spacing-xs);
 }
-.badge-new      { background: var(--navy-light, #dce8f8); color: var(--accent-primary); }
-.badge-updated  { background: #fff3e0; color: var(--accent-warning); }
-.badge-complete { background: #e8f5e9; color: var(--accent-success); }
+.badge-new      { background: var(--navy-light, #dce8f8); color: #1565C0; }   /* 5.7:1 ✓ */
+.badge-updated  { background: #fff3e0; color: #7A5800; }                       /* 6.3:1 ✓ */
+.badge-complete { background: #e8f5e9; color: #155724; }                       /* 7.8:1 ✓ */
 
 [data-theme="dark"] .badge-new      { background: rgba(52,152,219,0.2); color: #5DADE2; }
 [data-theme="dark"] .badge-updated  { background: rgba(243,156,18,0.2); color: #F7DC6F; }
 [data-theme="dark"] .badge-complete { background: rgba(39,174,96,0.2); color: #58D68D; }
+
+/* ── WCAG AA Label Contrast Overrides ──────────────────── */
+/* Accent colours used as text on their matching light-coloured backgrounds
+   fail WCAG AA. These overrides use accessible dark variants (4.5:1+). */
+.warning-block .warning-label  { color: #7A5800; }  /* 6.3:1 on #FEF9E7 ✓ */
+.danger-block .danger-label    { color: #A93226; }  /* 6.4:1 on #FDEDEC ✓ */
+.confidence-check p            { color: #155724; }  /* 7.8:1 on #E8F8F5 ✓ */
+.tip-block .tip-label          { color: #0D47A1; }  /* 8.1:1 on #EBF5FB ✓ */
+/* Dark mode already compliant — no overrides needed */
+[data-theme="dark"] .warning-block .warning-label { color: var(--accent-warning); }
+[data-theme="dark"] .danger-block .danger-label   { color: var(--accent-danger);  }
+[data-theme="dark"] .confidence-check p           { color: var(--accent-success); }
+[data-theme="dark"] .tip-block .tip-label         { color: var(--accent-primary); }
 
 /* ── Scroll Progress Indicator ─────────────────────────── */
 #dc-scroll-progress {
@@ -5325,8 +5338,8 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   vertical-align: middle;
 }
 .dc-badge-verified { background: #E8F5E9; color: #2E7D32; border: 1px solid #A5D6A7; }
-.dc-badge-aging    { background: #FFF8E1; color: #F57F17; border: 1px solid #FFE082; }
-.dc-badge-stale    { background: #FFF3E0; color: #E65100; border: 1px solid #FFCC02; }
+.dc-badge-aging    { background: #FFF8E1; color: #6B4500; border: 1px solid #FFE082; }  /* 8.2:1 ✓ */
+.dc-badge-stale    { background: #FFF3E0; color: #7B2D00; border: 1px solid #FFCC02; }  /* 9.4:1 ✓ */
 
 /* ================================================================
    HOME BUTTON IN TOP BAR (accessibility.js — initTopBarHome)
