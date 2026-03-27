@@ -1,0 +1,258 @@
+/**
+ * module-enhance.css
+ * Phase 2 — Module Ecosystem Polish
+ * Styles for: header badge, collapsible summary, star rating, share button, section progress bar
+ */
+
+/* ── Module metadata strip ───────────────────────────────────────────────── */
+.module-meta-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin: 0.75rem 0 1.25rem;
+  font-size: 0.875rem;
+}
+
+.module-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--color-primary, #1565C0);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.module-meta-item {
+  color: var(--color-text-muted, #555);
+  white-space: nowrap;
+}
+
+.module-meta-label {
+  font-weight: 600;
+  color: var(--color-text, #333);
+  margin-right: 0.2rem;
+}
+
+/* ── Collapsible summary ─────────────────────────────────────────────────── */
+.module-summary-block {
+  background: var(--color-bg-alt, #f5f7ff);
+  border: 1px solid var(--color-border, #dde3f0);
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.module-summary-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.25rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  list-style: none;
+  user-select: none;
+  background: transparent;
+  color: var(--color-text, #222);
+}
+
+.module-summary-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.module-summary-toggle:hover {
+  background: var(--color-bg-hover, #e8ecff);
+}
+
+.summary-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.summary-chevron {
+  margin-left: auto;
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+  color: var(--color-text-muted, #666);
+}
+
+.module-summary-block[open] .summary-chevron {
+  transform: rotate(180deg);
+}
+
+.module-summary-body {
+  padding: 0 1.25rem 1.25rem;
+  border-top: 1px solid var(--color-border, #dde3f0);
+}
+
+.module-summary-body p {
+  margin-top: 1rem;
+  line-height: 1.65;
+}
+
+.summary-learn-label {
+  margin-top: 0.75rem;
+}
+
+.summary-learn-list {
+  margin: 0.4rem 0 0 1.25rem;
+  padding: 0;
+}
+
+.summary-learn-list li {
+  margin-bottom: 0.35rem;
+  line-height: 1.5;
+}
+
+/* ── Star rating ─────────────────────────────────────────────────────────── */
+.module-star-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 2rem 0 0.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--color-bg-alt, #f9f9f9);
+  border-radius: 10px;
+  border: 1px solid var(--color-border, #e0e0e0);
+}
+
+.star-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text, #333);
+}
+
+.star-row {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.star-btn {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--color-border, #ccc);
+  cursor: pointer;
+  padding: 0.1rem;
+  line-height: 1;
+  transition: color 0.15s, transform 0.1s;
+}
+
+.star-btn:hover,
+.star-btn:focus {
+  color: #f59e0b;
+  transform: scale(1.15);
+  outline: 2px solid var(--color-primary, #1565C0);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.star-btn.star-active {
+  color: #f59e0b;
+}
+
+.star-thanks {
+  font-size: 0.875rem;
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+/* ── Share button ────────────────────────────────────────────────────────── */
+.module-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: 1px solid var(--color-border, #ccc);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: var(--color-text, #333);
+  margin: 0.5rem 0 1.5rem;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.module-share-btn:hover,
+.module-share-btn:focus {
+  border-color: var(--color-primary, #1565C0);
+  background: var(--color-bg-alt, #f0f4ff);
+  outline: 2px solid var(--color-primary, #1565C0);
+  outline-offset: 2px;
+}
+
+/* ── Section progress bar ────────────────────────────────────────────────── */
+.section-progress-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: var(--color-bg, #fff);
+  border-top: 1px solid var(--color-border, #e0e0e0);
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.06);
+  padding: 0.5rem 1rem;
+  /* Keep above feedback bubble (z-index 1000+) — stay below it */
+}
+
+.spb-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.spb-text {
+  font-size: 0.8rem;
+  color: var(--color-text-muted, #555);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.spb-track {
+  flex: 1;
+  height: 6px;
+  background: var(--color-border, #e0e0e0);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.spb-fill {
+  height: 100%;
+  background: var(--color-primary, #1565C0);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+/* Push main content up so section progress bar doesn't cover footer */
+body:has(.section-progress-bar) .site-footer {
+  padding-bottom: 3.5rem;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .module-badge { background: var(--color-primary-dark, #1976D2); }
+  .module-summary-block { background: var(--color-bg-dark, #1a1a2e); border-color: var(--color-border-dark, #2d2d4a); }
+  .module-summary-toggle:hover { background: rgba(255,255,255,0.05); }
+  .section-progress-bar { background: var(--color-bg-dark, #1a1a2e); border-color: var(--color-border-dark, #2d2d4a); }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .summary-chevron, .spb-fill, .star-btn { transition: none; }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .module-meta-strip { gap: 0.4rem 0.75rem; font-size: 0.8rem; }
+  .module-badge { font-size: 0.75rem; }
+  .section-progress-bar { padding: 0.4rem 0.75rem; }
+  .spb-text { font-size: 0.75rem; }
+}
