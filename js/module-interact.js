@@ -23,6 +23,19 @@
   panel.innerHTML = interactHTML(moduleId);
   nav.parentNode.insertBefore(panel, nav.nextSibling);
 
+  // ── Newsletter slot (shown after panel) ──────────────────────────────────
+  var nlSlot = document.createElement('div');
+  nlSlot.className = 'dc-newsletter-slot';
+  nlSlot.style.maxWidth = '720px';
+  nlSlot.style.margin = '0 auto 2rem';
+  nlSlot.style.padding = '0 1rem';
+  panel.parentNode.insertBefore(nlSlot, panel.nextSibling);
+  // newsletter.js will pick up .dc-newsletter-slot automatically if loaded;
+  // trigger refresh if already loaded
+  if (typeof window.dcNewsletterRefresh === 'function') {
+    window.dcNewsletterRefresh();
+  }
+
   // ── Rating ───────────────────────────────────────────────────────────────
   var savedRating = parseInt(localStorage.getItem(ratingKey) || '0', 10);
   renderStars(savedRating);
