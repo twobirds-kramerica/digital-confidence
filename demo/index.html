@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Demo Launcher — Digital Confidence Centre</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/accessibility.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <style>
+    /* PIN gate */
+    .demo-gate {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+      text-align: center;
+      padding: 2rem;
+    }
+    .demo-gate h1 {
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      color: #0d2b4e;
+      margin-bottom: 0.5rem;
+    }
+    .demo-gate p {
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+    .demo-gate input {
+      font-size: 1.2rem;
+      padding: 0.6rem 0.9rem;
+      border: 2px solid var(--color-border, #ccc);
+      border-radius: 8px;
+      margin: 0.75rem 0;
+      width: 220px;
+      text-align: center;
+      letter-spacing: 0.2em;
+    }
+    .demo-gate input:focus { outline: 2px solid #1565C0; outline-offset: 2px; }
+    .demo-gate button {
+      padding: 0.65rem 1.75rem;
+      background: #1565C0;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 0.25rem;
+    }
+    .demo-gate button:hover { background: #0d47a1; }
+    .pin-lock-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      opacity: 0.5;
+    }
+
+    /* Main demo content */
+    .demo-content { display: none; }
+    .demo-content.unlocked { display: block; }
+
+    .demo-hero {
+      background: linear-gradient(135deg, #0d2b4e 0%, #1565C0 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 2rem 2.25rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .demo-hero-text h1 {
+      font-size: clamp(1.2rem, 3vw, 1.7rem);
+      font-weight: 700;
+      color: #fff;
+      border: none;
+      margin-bottom: 0.35rem;
+    }
+    .demo-hero-text p {
+      opacity: 0.88;
+      font-size: 0.98rem;
+      line-height: 1.5;
+    }
+    .demo-mode-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+      flex-shrink: 0;
+      user-select: none;
+    }
+    .demo-mode-toggle:hover { background: rgba(255,255,255,0.2); }
+    .demo-mode-toggle input[type="checkbox"] {
+      width: 1rem;
+      height: 1rem;
+      cursor: pointer;
+      accent-color: #FFF9C4;
+    }
+
+    /* Demo cards */
+    .demo-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .demo-card {
+      background: var(--color-surface, #fff);
+      border: 1.5px solid var(--color-border, #e0e0e0);
+      border-radius: 14px;
+      padding: 1.75rem 1.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .demo-card:hover {
+      box-shadow: 0 4px 18px rgba(21,101,192,0.13);
+      border-color: #1565C0;
+    }
+    .demo-card-icon { font-size: 2rem; line-height: 1; margin-bottom: 0.25rem; }
+    .demo-card h2 {
+      font-size: 1.1rem;
+      color: #0d2b4e;
+      margin: 0;
+    }
+    .demo-card p {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+    .demo-card .card-badge {
+      display: inline-block;
+      background: #e8f0fe;
+      color: #1565C0;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.55rem;
+      border-radius: 20px;
+      margin-bottom: 0.25rem;
+      width: fit-content;
+    }
+    .demo-card .card-badge.badge-partner { background: #e8f5e9; color: #2e7d32; }
+    .demo-card .card-badge.badge-library { background: #fce4ec; color: #c62828; }
+    .demo-card .card-badge.badge-unavailable { background: #f5f5f5; color: #999; }
+    .btn-demo {
+      display: inline-block;
+      background: #1565C0;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      padding: 0.65rem 1.25rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-top: 0.5rem;
+      text-align: center;
+      transition: background 0.2s;
+      align-self: flex-start;
+    }
+    .btn-demo:hover { background: #0d47a1; color: #fff; }
+    .btn-demo.btn-disabled {
+      background: #e0e0e0;
+      color: #999;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* Quick links bar */
+    .quick-links {
+      background: #F0F7FF;
+      border: 1px solid #BBDEFB;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .quick-links h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0d2b4e;
+      margin-bottom: 0.75rem;
+    }
+    .quick-links-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .quick-link-btn {
+      background: #fff;
+      border: 1px solid #BBDEFB;
+      border-radius: 6px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.85rem;
+      color: #1565C0;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.15s;
+    }
+    .quick-link-btn:hover { background: #e3f2fd; }
+
+    /* Countdown timer */
+    .countdown-widget {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      background: #0d2b4e;
+      color: #fff;
+      border-radius: 12px;
+      padding: 0.85rem 1.1rem;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      min-width: 160px;
+      text-align: center;
+      font-family: inherit;
+    }
+    .countdown-widget .cd-label {
+      font-size: 0.7rem;
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.3rem;
+    }
+    .countdown-widget .cd-time {
+      font-size: 1.6rem;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.02em;
+      color: #FFF9C4;
+    }
+    .countdown-widget .cd-time.urgent { color: #ff6b6b; }
+    .countdown-widget .cd-controls {
+      display: flex;
+      gap: 0.4rem;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+    .countdown-widget .cd-btn {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.75rem;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .countdown-widget .cd-btn:hover { background: rgba(255,255,255,0.28); }
+    .countdown-widget.hidden { display: none; }
+
+    /* Demo mode active banner */
+    .demo-mode-banner {
+      display: none;
+      background: #FFF9C4;
+      border: 1.5px solid #f9a825;
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      font-size: 0.88rem;
+      color: #7b5e00;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    body.demo-mode .demo-mode-banner { display: block; }
+
+    @media (max-width: 480px) {
+      .countdown-widget { bottom: 0.75rem; right: 0.75rem; min-width: 130px; }
+      .countdown-widget .cd-time { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">DCC — Demo Launcher</span>
+    <span></span>
+  </div>
+
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">✕</button>
+    <div class="sidebar-header"><h2>Demo Area</h2><p>Presenter Tools</p></div>
+    <nav>
+      <a href="../index.html"><span class="nav-icon">🏠</span><span class="nav-label">Back to Site</span></a>
+      <a href="index.html"><span class="nav-icon">🚀</span><span class="nav-label">Demo Launcher</span></a>
+      <a href="talking-points.html"><span class="nav-icon">💬</span><span class="nav-label">Talking Points</span></a>
+      <a href="../b2b/roi-calculator.html"><span class="nav-icon">📊</span><span class="nav-label">ROI Calculator</span></a>
+      <a href="../b2b/pricing.html"><span class="nav-icon">💰</span><span class="nav-label">Pricing</span></a>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <!-- PIN gate -->
+      <div class="demo-gate" id="demo-gate">
+        <div class="pin-lock-icon" aria-hidden="true">🔒</div>
+        <h1>Demo Launcher</h1>
+        <p>This area is for authorised presenters only.<br>Enter the demo PIN to continue.</p>
+        <input type="password" id="demo-pin" placeholder="Enter PIN" maxlength="4" aria-label="Demo PIN">
+        <button onclick="checkPin()">Unlock</button>
+        <p id="pin-error" style="color:#c62828;display:none;margin-top:0.75rem;">Incorrect PIN. Try again.</p>
+      </div>
+
+      <!-- Demo content (hidden until PIN entered) -->
+      <div class="demo-content" id="demo-content">
+
+        <!-- Demo hero with mode toggle -->
+        <div class="demo-hero">
+          <div class="demo-hero-text">
+            <h1>Demo Launcher</h1>
+            <p>Sales presentation mode &mdash; choose a demo experience to begin.</p>
+          </div>
+          <label class="demo-mode-toggle" for="demo-mode-toggle" title="Hides dev notices and internal labels from the screen">
+            <input type="checkbox" id="demo-mode-toggle" onchange="toggleDemoMode(this.checked)">
+            Sales Presentation Mode
+          </label>
+        </div>
+
+        <!-- Demo mode active notice -->
+        <div class="demo-mode-banner" role="status">
+          Sales Presentation Mode is ON &mdash; internal notices are hidden.
+        </div>
+
+        <!-- Demo cards -->
+        <div class="demo-cards">
+
+          <!-- Card 1: Full DCC -->
+          <div class="demo-card">
+            <div class="demo-card-icon" aria-hidden="true">🌐</div>
+            <span class="card-badge">Live Site</span>
+            <h2>Full DCC Experience</h2>
+            <p>The complete Digital Confidence Centre &mdash; homepage, all 17 modules, scam simulator, quiz, accessibility controls, bilingual support, and resources.</p>
+            <a href="../index.html" class="btn-demo">Launch Full Site &rarr;</a>
+          </div>
+
+          <!-- Card 2: First Credit Union -->
+          <div class="demo-card">
+            <div class="demo-card-icon" aria-hidden="true">🏦</div>
+            <span class="card-badge badge-partner">White Label</span>
+            <h2>First Credit Union Demo</h2>
+            <p>A branded version of DCC with First Credit Union colours, logo, and member-facing language. Shows how a financial institution could deploy the platform.</p>
+            <a href="../white-label-demo/first-credit-union/" class="btn-demo btn-disabled" aria-disabled="true">Coming Soon</a>
+          </div>
+
+          <!-- Card 3: London Public Library -->
+          <div class="demo-card">
+            <div class="demo-card-icon" aria-hidden="true">📚</div>
+            <span class="card-badge badge-library">White Label</span>
+            <h2>London Public Library Demo</h2>
+            <p>A white-label version configured for the London Public Library &mdash; library branding, community-focused language, and local resources.</p>
+            <a href="../white-label-demo/london-public-library/index.html" class="btn-demo">Launch Demo &rarr;</a>
+          </div>
+
+        </div>
+
+        <!-- Quick links -->
+        <div class="quick-links">
+          <h3>Quick Access During Presentation</h3>
+          <div class="quick-links-grid">
+            <a href="../module-1.html" class="quick-link-btn">Module 1</a>
+            <a href="../module-2.html" class="quick-link-btn">Module 2</a>
+            <a href="../scam-simulator.html" class="quick-link-btn">Scam Simulator</a>
+            <a href="../final-quiz.html" class="quick-link-btn">Final Quiz</a>
+            <a href="../resources.html" class="quick-link-btn">Resources</a>
+            <a href="talking-points.html" class="quick-link-btn">Talking Points</a>
+            <a href="../b2b/roi-calculator.html" class="quick-link-btn">ROI Calculator</a>
+            <a href="../b2b/pricing.html" class="quick-link-btn">Pricing</a>
+          </div>
+        </div>
+
+        <footer class="site-footer">
+          <div class="footer-inner">
+            <p class="footer-copy">&copy; 2026 Two Birds &mdash; Internal Demo Area &mdash; Not for distribution</p>
+          </div>
+        </footer>
+
+      </div><!-- /demo-content -->
+
+    </main>
+  </div>
+
+  <!-- Countdown timer widget (shown after unlock) -->
+  <div class="countdown-widget hidden" id="countdown-widget" aria-label="Presentation countdown timer">
+    <div class="cd-label">Presentation Timer</div>
+    <div class="cd-time" id="cd-display">30:00</div>
+    <div class="cd-controls">
+      <button class="cd-btn" id="cd-start-btn" onclick="cdStartPause()">Start</button>
+      <button class="cd-btn" onclick="cdReset()">Reset</button>
+    </div>
+  </div>
+
+  <script>
+    // --- PIN gate ---
+    function checkPin() {
+      var pin = document.getElementById('demo-pin').value;
+      if (pin === '2026') {
+        document.getElementById('demo-gate').style.display = 'none';
+        document.getElementById('demo-content').classList.add('unlocked');
+        document.getElementById('countdown-widget').classList.remove('hidden');
+        sessionStorage.setItem('dc-demo-unlocked', '1');
+        // Restore demo mode if set
+        if (localStorage.getItem('demo_mode') === 'true') {
+          document.getElementById('demo-mode-toggle').checked = true;
+          document.body.classList.add('demo-mode');
+        }
+      } else {
+        document.getElementById('pin-error').style.display = 'block';
+        document.getElementById('demo-pin').value = '';
+      }
+    }
+    document.getElementById('demo-pin').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') checkPin();
+    });
+    // Auto-unlock if already authenticated this session
+    if (sessionStorage.getItem('dc-demo-unlocked') === '1') {
+      document.getElementById('demo-gate').style.display = 'none';
+      document.getElementById('demo-content').classList.add('unlocked');
+      document.getElementById('countdown-widget').classList.remove('hidden');
+      if (localStorage.getItem('demo_mode') === 'true') {
+        document.getElementById('demo-mode-toggle').checked = true;
+        document.body.classList.add('demo-mode');
+      }
+    }
+
+    // --- Sales presentation mode toggle ---
+    function toggleDemoMode(on) {
+      if (on) {
+        document.body.classList.add('demo-mode');
+        localStorage.setItem('demo_mode', 'true');
+      } else {
+        document.body.classList.remove('demo-mode');
+        localStorage.removeItem('demo_mode');
+      }
+    }
+
+    // --- Countdown timer (30 minutes) ---
+    var cdTotal    = 30 * 60;
+    var cdRemain   = cdTotal;
+    var cdRunning  = false;
+    var cdInterval = null;
+
+    function cdFormat(s) {
+      var m = Math.floor(s / 60);
+      var sec = s % 60;
+      return (m < 10 ? '0' : '') + m + ':' + (sec < 10 ? '0' : '') + sec;
+    }
+
+    function cdTick() {
+      if (cdRemain <= 0) {
+        clearInterval(cdInterval);
+        cdRunning = false;
+        document.getElementById('cd-start-btn').textContent = 'Start';
+        document.getElementById('cd-display').textContent = '00:00';
+        document.getElementById('cd-display').classList.add('urgent');
+        return;
+      }
+      cdRemain--;
+      var el = document.getElementById('cd-display');
+      el.textContent = cdFormat(cdRemain);
+      if (cdRemain <= 300) { el.classList.add('urgent'); }
+      else { el.classList.remove('urgent'); }
+    }
+
+    function cdStartPause() {
+      if (cdRunning) {
+        clearInterval(cdInterval);
+        cdRunning = false;
+        document.getElementById('cd-start-btn').textContent = 'Resume';
+      } else {
+        if (cdRemain <= 0) cdRemain = cdTotal;
+        cdInterval = setInterval(cdTick, 1000);
+        cdRunning = true;
+        document.getElementById('cd-start-btn').textContent = 'Pause';
+      }
+    }
+
+    function cdReset() {
+      clearInterval(cdInterval);
+      cdRunning = false;
+      cdRemain = cdTotal;
+      document.getElementById('cd-start-btn').textContent = 'Start';
+      var el = document.getElementById('cd-display');
+      el.textContent = cdFormat(cdRemain);
+      el.classList.remove('urgent');
+    }
+  </script>
+
+  <script src="../js/app.js" defer></script>
+  <script src="../js/accessibility.js" defer></script>
+</body>
+</html>

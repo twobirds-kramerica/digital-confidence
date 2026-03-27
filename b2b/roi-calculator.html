@@ -281,19 +281,34 @@
             <input type="number" id="total_members" value="0" min="0" placeholder="e.g. 5000">
           </div>
           <div class="roi-input-group">
+            <label for="senior_members">How many senior members do you serve?</label>
+            <p class="help-text">Estimate the number of members aged 60+. Used to calculate digital confidence gap.</p>
+            <input type="number" id="senior_members" value="0" min="100" max="10000" placeholder="e.g. 800">
+          </div>
+          <div class="roi-input-group">
             <label for="current_spend">Current annual spending on digital literacy ($)</label>
             <p class="help-text">Workshops, printed guides, external trainers — anything related to helping members with technology.</p>
             <input type="number" id="current_spend" value="0" min="0" placeholder="0">
           </div>
           <div class="roi-input-group">
-            <label for="support_hours">Staff hours/week answering tech support questions</label>
+            <label for="support_hours">Staff hours per week spent on digital support questions</label>
             <p class="help-text">How many hours per week does your team spend helping members with device or app questions?</p>
             <input type="number" id="support_hours" value="0" min="0" placeholder="e.g. 5">
           </div>
           <div class="roi-input-group">
-            <label for="hourly_rate">Average staff hourly cost ($)</label>
-            <p class="help-text">Salary plus benefits, divided by working hours. Default: $25/hr.</p>
-            <input type="number" id="hourly_rate" value="25" min="0" placeholder="25">
+            <label for="hourly_rate">Average staff hourly cost ($/hr)</label>
+            <p class="help-text">Salary plus benefits, divided by working hours. Default: $35/hr.</p>
+            <input type="number" id="hourly_rate" value="35" min="0" placeholder="35">
+          </div>
+          <div class="roi-input-group">
+            <label for="digital_usage_rate">Digital services usage rate (%)</label>
+            <p class="help-text">What percentage of your senior members actively use your digital services (online banking, app, portal, etc.)?</p>
+            <input type="range" id="digital_usage_rate" value="30" min="0" max="100" step="5" oninput="updateSliderDisplay(this.value)" style="width:100%;margin-top:0.25rem;">
+            <div style="display:flex;justify-content:space-between;font-size:0.82rem;color:#888;margin-top:0.1rem;">
+              <span>0%</span>
+              <span id="usage-rate-display" style="font-weight:700;color:#1565C0;">30%</span>
+              <span>100%</span>
+            </div>
           </div>
         </div>
       </div>
@@ -332,7 +347,27 @@
             <div class="result-value" id="res-cost-per-member">N/A</div>
             <div class="result-sublabel">$299/yr ÷ benefiting members</div>
           </div>
+          <div class="result-item">
+            <div class="result-label">Annual staff time cost (current)</div>
+            <div class="result-value" id="res-staff-time-cost">$0</div>
+            <div class="result-sublabel">Hours/wk × 52 × hourly cost</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">Digital services gap</div>
+            <div class="result-value" id="res-digital-gap">—</div>
+            <div class="result-sublabel">Senior members not yet using digital services</div>
+          </div>
         </div>
+      </div>
+
+      <!-- ROI savings message -->
+      <div id="roi-savings-msg" style="display:none;background:#e8f5e9;border:1.5px solid #a5d6a7;border-radius:12px;padding:1rem 1.5rem;margin-bottom:1.5rem;font-size:1rem;color:#1b5e20;line-height:1.6;">
+        <strong>Staff Time Savings:</strong> DCC would save your organisation approximately <strong id="roi-savings-amount">$0</strong> per year in staff time alone — based on a 40% reduction in digital support queries at your current staffing cost.
+      </div>
+
+      <!-- Digital gap message -->
+      <div id="digital-gap-msg" style="display:none;background:#e3f2fd;border:1.5px solid #90caf9;border-radius:12px;padding:1rem 1.5rem;margin-bottom:1.5rem;font-size:1rem;color:#0d2b4e;line-height:1.6;">
+        <strong>Digital Confidence Gap:</strong> Based on your current digital services usage rate, approximately <strong id="digital-gap-count">0</strong> of your senior members are not yet using your digital services. DCC's training pathway is designed to move seniors from no digital confidence to active digital service users.
       </div>
 
       <p class="disclaimer">These are estimates for illustrative purposes only. Actual results will vary. Talk to us about your specific situation.</p>
@@ -376,6 +411,16 @@
                 <td>$299 ÷ benefiting members</td>
                 <td>Partner plan annual fee divided across the members who would actively benefit.</td>
               </tr>
+              <tr>
+                <td>Annual staff time cost</td>
+                <td>Hours/wk × 52 × hourly rate</td>
+                <td>Total annual cost of staff time currently spent on digital support queries — the baseline this programme reduces.</td>
+              </tr>
+              <tr>
+                <td>Digital confidence gap</td>
+                <td>Senior members × (1 − usage rate / 100)</td>
+                <td>Number of senior members not currently using digital services. Represents the addressable audience for digital literacy training.</td>
+              </tr>
             </tbody>
           </table>
         </details>
@@ -405,8 +450,13 @@
   </div>
 
   <script>
+    function updateSliderDisplay(val) {
+      document.getElementById('usage-rate-display').textContent = val + '%';
+      calculate();
+    }
+
     (function() {
-      var inputs = ['total_members', 'current_spend', 'support_hours', 'hourly_rate'];
+      var inputs = ['total_members', 'senior_members', 'current_spend', 'support_hours', 'hourly_rate'];
       inputs.forEach(function(id) {
         document.getElementById(id).addEventListener('input', calculate);
       });
@@ -416,10 +466,12 @@
       }
 
       function calculate() {
-        var members   = parseFloat(document.getElementById('total_members').value) || 0;
-        var spend     = parseFloat(document.getElementById('current_spend').value) || 0;
-        var hours     = parseFloat(document.getElementById('support_hours').value) || 0;
-        var rate      = parseFloat(document.getElementById('hourly_rate').value) || 25;
+        var members       = parseFloat(document.getElementById('total_members').value) || 0;
+        var seniorMembers = parseFloat(document.getElementById('senior_members').value) || 0;
+        var spend         = parseFloat(document.getElementById('current_spend').value) || 0;
+        var hours         = parseFloat(document.getElementById('support_hours').value) || 0;
+        var rate          = parseFloat(document.getElementById('hourly_rate').value) || 35;
+        var usageRate     = parseFloat(document.getElementById('digital_usage_rate').value) || 30;
 
         var benefiting      = Math.round(members * 0.35);
         var literacyValue   = benefiting * 180;
@@ -427,6 +479,12 @@
         var staffSavings    = hoursSaved * rate;
         var total           = literacyValue + staffSavings;
         var costPerMember   = benefiting > 0 ? (299 / benefiting) : null;
+
+        // New calculations
+        var staffTimeCostAnnual = hours * 52 * rate;
+        var digitalGapCount = seniorMembers > 0
+          ? Math.round(seniorMembers * (1 - usageRate / 100))
+          : null;
 
         document.getElementById('res-benefiting').textContent     = benefiting.toLocaleString('en-CA');
         document.getElementById('res-literacy-value').textContent = fmt(literacyValue);
@@ -436,6 +494,32 @@
         document.getElementById('res-cost-per-member').textContent = costPerMember !== null
           ? '$' + costPerMember.toFixed(2)
           : 'N/A';
+        document.getElementById('res-staff-time-cost').textContent = fmt(staffTimeCostAnnual);
+
+        // Digital gap result
+        if (digitalGapCount !== null) {
+          document.getElementById('res-digital-gap').textContent = digitalGapCount.toLocaleString('en-CA') + ' members';
+        } else {
+          document.getElementById('res-digital-gap').textContent = '—';
+        }
+
+        // ROI savings message
+        if (hours > 0 && rate > 0) {
+          var savingsMsg = document.getElementById('roi-savings-msg');
+          savingsMsg.style.display = 'block';
+          document.getElementById('roi-savings-amount').textContent = fmt(staffSavings);
+        } else {
+          document.getElementById('roi-savings-msg').style.display = 'none';
+        }
+
+        // Digital gap message
+        if (digitalGapCount !== null && digitalGapCount > 0) {
+          var gapMsg = document.getElementById('digital-gap-msg');
+          gapMsg.style.display = 'block';
+          document.getElementById('digital-gap-count').textContent = digitalGapCount.toLocaleString('en-CA');
+        } else {
+          document.getElementById('digital-gap-msg').style.display = 'none';
+        }
       }
     })();
   </script>

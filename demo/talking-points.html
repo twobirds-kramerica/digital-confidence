@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Talking Points — Demo — Digital Confidence Centre</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/accessibility.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <style>
+    /* PIN gate */
+    .demo-gate {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+      text-align: center;
+      padding: 2rem;
+    }
+    .demo-gate h1 { font-size: clamp(1.4rem, 4vw, 2rem); color: #0d2b4e; margin-bottom: 0.5rem; }
+    .demo-gate p { color: #555; margin-bottom: 1.5rem; }
+    .demo-gate input {
+      font-size: 1.2rem;
+      padding: 0.6rem 0.9rem;
+      border: 2px solid var(--color-border, #ccc);
+      border-radius: 8px;
+      margin: 0.75rem 0;
+      width: 220px;
+      text-align: center;
+      letter-spacing: 0.2em;
+    }
+    .demo-gate input:focus { outline: 2px solid #1565C0; outline-offset: 2px; }
+    .demo-gate button {
+      padding: 0.65rem 1.75rem;
+      background: #1565C0;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 0.25rem;
+    }
+    .demo-gate button:hover { background: #0d47a1; }
+
+    /* Main content */
+    .demo-content { display: none; }
+    .demo-content.unlocked { display: block; }
+
+    /* Page header */
+    .tp-header {
+      background: linear-gradient(135deg, #0d2b4e 0%, #1565C0 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 2rem 2.25rem;
+      margin-bottom: 2rem;
+    }
+    .tp-header h1 {
+      font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+      font-weight: 700;
+      color: #fff;
+      border: none;
+      margin-bottom: 0.35rem;
+    }
+    .tp-header p { opacity: 0.88; font-size: 0.97rem; line-height: 1.5; margin: 0; }
+
+    /* Segment blocks */
+    .segment {
+      border: 1.5px solid var(--color-border, #e0e0e0);
+      border-radius: 14px;
+      margin-bottom: 1.75rem;
+      overflow: hidden;
+    }
+    .segment-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #0d2b4e;
+      color: #fff;
+      padding: 0.9rem 1.5rem;
+    }
+    .segment-header .seg-time {
+      font-size: 0.8rem;
+      background: rgba(255,255,255,0.18);
+      border-radius: 20px;
+      padding: 0.15rem 0.65rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .segment-header h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+      border: none;
+    }
+    .segment-body { padding: 1.5rem 1.75rem; }
+
+    .tp-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    @media (max-width: 680px) { .tp-row { grid-template-columns: 1fr; } }
+
+    .tp-cell {
+      background: var(--color-bg-alt, #f8f9fa);
+      border-radius: 10px;
+      padding: 1rem 1.15rem;
+    }
+    .tp-cell h3 {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      color: #1565C0;
+      margin-bottom: 0.5rem;
+      border: none;
+    }
+    .tp-cell p, .tp-cell li {
+      font-size: 0.93rem;
+      line-height: 1.6;
+      color: var(--color-text, #1a1a1a);
+      margin: 0;
+    }
+    .tp-cell ul {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+    .tp-cell li { margin-bottom: 0.25rem; }
+
+    .tp-say {
+      background: #e8f5e9;
+      border-left: 3px solid #2e7d32;
+    }
+    .tp-say h3 { color: #2e7d32; }
+
+    .tp-show {
+      background: #e3f2fd;
+      border-left: 3px solid #1565C0;
+    }
+    .tp-show h3 { color: #1565C0; }
+
+    .tp-objection-block {
+      background: #fff8e1;
+      border: 1px solid #ffe082;
+      border-radius: 10px;
+      padding: 1rem 1.15rem;
+      margin-top: 0.5rem;
+    }
+    .tp-objection-block .obj-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      color: #e65100;
+      margin-bottom: 0.35rem;
+    }
+    .tp-objection-block .obj-q {
+      font-style: italic;
+      font-size: 0.92rem;
+      color: #5d4037;
+      margin-bottom: 0.6rem;
+    }
+    .tp-objection-block .obj-label-r {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      color: #2e7d32;
+      margin-bottom: 0.35rem;
+    }
+    .tp-objection-block .obj-a {
+      font-size: 0.92rem;
+      color: var(--color-text, #1a1a1a);
+      line-height: 1.6;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.9rem;
+      margin-top: 0.75rem;
+    }
+    .feature-item {
+      background: var(--color-bg-alt, #f8f9fa);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      font-size: 0.88rem;
+    }
+    .feature-item strong {
+      display: block;
+      color: #0d2b4e;
+      margin-bottom: 0.25rem;
+      font-size: 0.9rem;
+    }
+
+    /* Pricing table */
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.92rem;
+    }
+    .pricing-table th {
+      background: #0d2b4e;
+      color: #fff;
+      padding: 0.6rem 0.9rem;
+      text-align: left;
+      font-weight: 700;
+    }
+    .pricing-table td {
+      padding: 0.65rem 0.9rem;
+      border-bottom: 1px solid var(--color-border, #e0e0e0);
+      vertical-align: top;
+    }
+    .pricing-table tr:last-child td { border-bottom: none; }
+    .pricing-table tr:nth-child(even) td { background: var(--color-bg-alt, #f5f5f5); }
+    .price-highlight { font-weight: 800; color: #1565C0; font-size: 1.05rem; }
+    .pricing-table .tier-name { font-weight: 700; color: #0d2b4e; }
+
+    /* Close CTA */
+    .close-card {
+      background: linear-gradient(135deg, #0d2b4e 0%, #1565C0 100%);
+      color: #fff;
+      border-radius: 14px;
+      padding: 1.75rem 2rem;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    .close-card h2 { color: #fff; border: none; font-size: 1.15rem; margin-bottom: 0.5rem; }
+    .close-card p { opacity: 0.9; font-size: 0.95rem; line-height: 1.6; max-width: 560px; margin: 0 auto 1rem; }
+    .close-card .next-steps {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .close-card .step-pill {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* Nav back bar */
+    .nav-back {
+      margin-bottom: 1.5rem;
+    }
+    .nav-back a {
+      font-size: 0.9rem;
+      color: #1565C0;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .nav-back a:hover { text-decoration: underline; }
+
+    /* Print styles */
+    @media print {
+      .accessibility-bar,
+      .top-bar,
+      .sidebar,
+      .sidebar-overlay,
+      .menu-btn,
+      .demo-gate,
+      .nav-back,
+      footer { display: none !important; }
+      .demo-content { display: block !important; }
+      .page-wrapper { margin: 0 !important; padding: 0 !important; }
+      .main-content { padding: 0 !important; }
+      .tp-header {
+        background: #0d2b4e !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .segment-header {
+        background: #0d2b4e !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .segment { page-break-inside: avoid; }
+      body { font-size: 11pt; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">DCC — Talking Points</span>
+    <span></span>
+  </div>
+
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">✕</button>
+    <div class="sidebar-header"><h2>Demo Area</h2><p>Presenter Tools</p></div>
+    <nav>
+      <a href="../index.html"><span class="nav-icon">🏠</span><span class="nav-label">Back to Site</span></a>
+      <a href="index.html"><span class="nav-icon">🚀</span><span class="nav-label">Demo Launcher</span></a>
+      <a href="talking-points.html"><span class="nav-icon">💬</span><span class="nav-label">Talking Points</span></a>
+      <a href="../b2b/roi-calculator.html"><span class="nav-icon">📊</span><span class="nav-label">ROI Calculator</span></a>
+      <a href="../b2b/pricing.html"><span class="nav-icon">💰</span><span class="nav-label">Pricing</span></a>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <!-- PIN gate -->
+      <div class="demo-gate" id="demo-gate">
+        <div style="font-size:2.5rem;opacity:0.5;margin-bottom:1rem;" aria-hidden="true">🔒</div>
+        <h1>Talking Points</h1>
+        <p>This area is for authorised presenters only.<br>Enter the demo PIN to continue.</p>
+        <input type="password" id="demo-pin" placeholder="Enter PIN" maxlength="4" aria-label="Demo PIN">
+        <button onclick="checkPin()">Unlock</button>
+        <p id="pin-error" style="color:#c62828;display:none;margin-top:0.75rem;">Incorrect PIN. Try again.</p>
+      </div>
+
+      <!-- Content (hidden until PIN entered) -->
+      <div class="demo-content" id="demo-content">
+
+        <div class="nav-back">
+          <a href="index.html">&larr; Back to Demo Launcher</a>
+          &nbsp;&nbsp;
+          <a href="javascript:window.print()" style="color:#555;">Print this page</a>
+        </div>
+
+        <!-- Header -->
+        <div class="tp-header">
+          <h1>Sales Presentation Guide</h1>
+          <p>Structured talking points for a 25-minute discovery / demo meeting. Total time: ~25 min. Adapt as needed — this is a guide, not a script.</p>
+        </div>
+
+        <!-- OPENING -->
+        <div class="segment">
+          <div class="segment-header">
+            <h2>Opening</h2>
+            <span class="seg-time">~2 min</span>
+          </div>
+          <div class="segment-body">
+            <div class="tp-row">
+              <div class="tp-cell tp-show">
+                <h3>What to Show</h3>
+                <ul>
+                  <li>The homepage loading at <strong>digitalconfidencecentre.ca</strong></li>
+                  <li>The accessibility bar at the top (font size buttons, dark mode toggle)</li>
+                  <li>The sidebar navigation (scroll through it briefly)</li>
+                  <li>The language switcher &mdash; flip to French, then back</li>
+                </ul>
+              </div>
+              <div class="tp-cell tp-say">
+                <h3>What to Say</h3>
+                <p>"What you're seeing is a free, bilingual digital literacy platform built specifically for seniors. Every element &mdash; the font size controls, the dark mode, the simple navigation &mdash; was designed with 70+ year olds in mind. Notice there's no login, no account, nothing to set up. A senior can open this on their iPad and start learning in under 60 seconds."</p>
+              </div>
+            </div>
+            <div class="tp-objection-block">
+              <div class="obj-label">Likely Objection</div>
+              <div class="obj-q">"Is this just another e-learning tool?"</div>
+              <div class="obj-label-r">Your Response</div>
+              <div class="obj-a">"No. Most e-learning was built for people who already know how to use technology. This was built for people who've never touched a tablet before. It starts at the absolute beginning &mdash; Module 1 is literally called 'Mastering the Escape Hatch,' because we teach people how to close a window before we teach them anything else."</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CORE VALUE PROP -->
+        <div class="segment">
+          <div class="segment-header">
+            <h2>Core Value Proposition</h2>
+            <span class="seg-time">~5 min</span>
+          </div>
+          <div class="segment-body">
+            <div class="tp-row">
+              <div class="tp-cell tp-show">
+                <h3>What to Show</h3>
+                <ul>
+                  <li>Navigate to Module 1 from the sidebar</li>
+                  <li>Point out the lesson structure: short sections, plain language, large text</li>
+                  <li>Show the module progress tracker (checkboxes)</li>
+                  <li>Show the star rating at the bottom of the module</li>
+                </ul>
+              </div>
+              <div class="tp-cell tp-say">
+                <h3>What to Say</h3>
+                <p>"There are 17 self-paced modules. Bilingual &mdash; English and French. Works on iPad, iPhone, and any computer. No account, no login, no email required. We cover everything from basic device skills to online banking to understanding AI. Seniors can go at their own pace, come back later, and nothing is ever lost."</p>
+              </div>
+            </div>
+            <div class="tp-objection-block">
+              <div class="obj-label">Likely Objection</div>
+              <div class="obj-q">"How do we know seniors will actually use it?"</div>
+              <div class="obj-label-r">Your Response</div>
+              <div class="obj-a">"Because we designed for their specific context. iPad screen. Large text. No jargon. Ontario phone numbers in the resource directory. When someone opens this and sees a helpline number for their region, or a tip about the exact scam that's been hitting their neighbourhood this month &mdash; it feels like something made for them. Because it was."</div>
+            </div>
+            <div class="tp-row" style="margin-top:1rem;">
+              <div class="tp-cell">
+                <h3>Key Stats to Mention</h3>
+                <ul>
+                  <li>17 modules covering the full digital literacy journey</li>
+                  <li>Fully bilingual (EN/FR)</li>
+                  <li>Works on any device &mdash; no app to install</li>
+                  <li>4 font size levels + dark mode + dyslexia-friendly font</li>
+                  <li>Ontario-specific resources and phone numbers</li>
+                </ul>
+              </div>
+              <div class="tp-cell">
+                <h3>What Makes It Different</h3>
+                <ul>
+                  <li>No ads, no login walls, no paywalls</li>
+                  <li>Built from first principles for 70+ users</li>
+                  <li>Scam simulator with real Ontario scenarios</li>
+                  <li>Partners can white-label with their own branding</li>
+                  <li>Free for end users &mdash; your organisation sponsors access</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LIVE DEMO WALKTHROUGH -->
+        <div class="segment">
+          <div class="segment-header">
+            <h2>Live Demo Walkthrough</h2>
+            <span class="seg-time">~15 min</span>
+          </div>
+          <div class="segment-body">
+            <div class="feature-grid">
+
+              <div class="feature-item">
+                <strong>Module 1 — The Escape Hatch</strong>
+                Show the step-by-step layout, the checkboxes, the recap summary. "This is the kind of reassurance that builds confidence. Every little win is acknowledged."
+              </div>
+
+              <div class="feature-item">
+                <strong>Accessibility Bar</strong>
+                Increase font to XL, switch to dark mode. "Two clicks. No hunting through settings. This is accessibility that actually works for the people who need it."
+              </div>
+
+              <div class="feature-item">
+                <strong>Scam Simulator</strong>
+                Open a scam scenario. Show the reveal and the explanation. "This is active learning. Not just reading about scams &mdash; practising how to spot them. These are real Ontario-specific scenarios updated monthly."
+              </div>
+
+              <div class="feature-item">
+                <strong>Module Quiz</strong>
+                Show a quiz inside a module. "Immediate feedback, no judgment. They can retry as many times as they want. The goal is confidence, not a grade."
+              </div>
+
+              <div class="feature-item">
+                <strong>Final Quiz</strong>
+                Open final-quiz.html briefly. "For organisations that want a completion certificate pathway &mdash; this is the final assessment covering all 17 modules."
+              </div>
+
+              <div class="feature-item">
+                <strong>Resources Page</strong>
+                Show the resource directory. "Local helpline numbers, device guides, links to Ontario government services. Everything a senior might need is one place."
+              </div>
+
+              <div class="feature-item">
+                <strong>French Language</strong>
+                Switch to French. "Full translation &mdash; not machine-translated filler. Every module, every menu item, every button."
+              </div>
+
+              <div class="feature-item">
+                <strong>White Label Demo</strong>
+                If available, show the London Public Library demo. "This is what it looks like with your organisation's branding. We can configure this in 48 hours."
+              </div>
+
+            </div>
+
+            <div class="tp-cell tp-say" style="margin-top:1rem;">
+              <h3>The Line That Lands</h3>
+              <p>"Notice anything that's missing? Ads. Login walls. Cookie consent banners that take up half the screen. Paywalls. Pop-ups asking seniors to subscribe to a newsletter. None of that. This is what a digital literacy platform looks like when you build it for the user, not for the platform."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRICING -->
+        <div class="segment">
+          <div class="segment-header">
+            <h2>Pricing</h2>
+            <span class="seg-time">~5 min</span>
+          </div>
+          <div class="segment-body">
+            <table class="pricing-table">
+              <thead>
+                <tr>
+                  <th>Tier</th>
+                  <th>Annual Investment</th>
+                  <th>What's Included</th>
+                  <th>Best For</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="tier-name">Starter</td>
+                  <td><span class="price-highlight">$4,800/yr</span></td>
+                  <td>Up to 500 members, 5 modules, co-branded header</td>
+                  <td>Small credit unions, community centres, pilot programmes</td>
+                </tr>
+                <tr>
+                  <td class="tier-name">Professional</td>
+                  <td><span class="price-highlight">$12,000/yr</span></td>
+                  <td>Unlimited members, all 17 modules, custom branding, usage reports</td>
+                  <td>Mid-size credit unions, public libraries, healthcare networks</td>
+                </tr>
+                <tr>
+                  <td class="tier-name">Enterprise</td>
+                  <td><span class="price-highlight">$24,000/yr</span></td>
+                  <td>Full white-label deployment, facilitator training programme, analytics dashboard, dedicated support, custom module development</td>
+                  <td>Large financial institutions, provincial networks, municipal partners</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="tp-cell tp-say" style="margin-top:1rem;">
+              <h3>The Framing Line</h3>
+              <p>"What would it cost your organisation to build something like this from scratch? Development, design, accessibility testing, bilingual translation, content writing, hosting, maintenance &mdash; you're looking at $200,000 to $400,000, minimum, and two years of work. We've done that work. You're licensing the result &mdash; and you can have it live with your branding in 48 hours."</p>
+            </div>
+
+            <div class="tp-objection-block" style="margin-top:1rem;">
+              <div class="obj-label">Likely Objection</div>
+              <div class="obj-q">"We don't have budget for this right now."</div>
+              <div class="obj-label-r">Your Response</div>
+              <div class="obj-a">"Totally fair. A few things that might help: the ROI calculator on our site lets you model the staff time savings against the annual fee &mdash; for most organisations with even a modest tech support burden, it pays for itself. And we offer quarterly billing on the Professional tier if annual is a barrier. What does your budget cycle look like?"</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CLOSE -->
+        <div class="segment">
+          <div class="segment-header">
+            <h2>The Close</h2>
+            <span class="seg-time">~3 min</span>
+          </div>
+          <div class="segment-body">
+            <div class="tp-row">
+              <div class="tp-cell tp-say">
+                <h3>The Offer</h3>
+                <p>"Here's what I'd like to propose: I can set up a white-label demo with your organisation's branding in 48 hours &mdash; at absolutely no cost and no commitment. You get to see exactly what it would look like for your members before you make any decision. Would that be useful?"</p>
+              </div>
+              <div class="tp-cell tp-show">
+                <h3>Next Steps (Cover These Explicitly)</h3>
+                <ul>
+                  <li>Leave your contact card (physical or digital)</li>
+                  <li>Follow up within 48 hours with a summary email</li>
+                  <li>Offer to send the ROI calculator link for their records</li>
+                  <li>Ask: "Who else needs to be in the room for a go/no-go decision?"</li>
+                  <li>Book a second meeting before you leave if possible</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="tp-objection-block">
+              <div class="obj-label">Likely Objection</div>
+              <div class="obj-q">"We need to take this back to our board / executive team."</div>
+              <div class="obj-label-r">Your Response</div>
+              <div class="obj-a">"Of course. I'll send you a one-page summary and the ROI calculator link so you have something concrete to share. Would it be helpful if I joined a 15-minute call with your team to answer questions directly? I want to make sure this is as easy as possible to evaluate."</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Close CTA card -->
+        <div class="close-card">
+          <h2>After the Meeting</h2>
+          <p>Follow up within 48 hours. Send the summary email. Keep it short: three sentences about what you showed, a link to the ROI calculator, and a single clear ask (a second meeting or a white-label demo approval).</p>
+          <div class="next-steps">
+            <span class="step-pill">Send follow-up email &lt;48 hrs</span>
+            <span class="step-pill">Share ROI calculator link</span>
+            <span class="step-pill">Book next touchpoint</span>
+            <span class="step-pill">Build white-label in 48 hrs if approved</span>
+          </div>
+        </div>
+
+        <footer class="site-footer">
+          <div class="footer-inner">
+            <p class="footer-copy">&copy; 2026 Two Birds &mdash; Internal Demo Area &mdash; Not for distribution</p>
+          </div>
+        </footer>
+
+      </div><!-- /demo-content -->
+    </main>
+  </div>
+
+  <script>
+    function checkPin() {
+      var pin = document.getElementById('demo-pin').value;
+      if (pin === '2026') {
+        document.getElementById('demo-gate').style.display = 'none';
+        document.getElementById('demo-content').classList.add('unlocked');
+        sessionStorage.setItem('dc-demo-unlocked', '1');
+      } else {
+        document.getElementById('pin-error').style.display = 'block';
+        document.getElementById('demo-pin').value = '';
+      }
+    }
+    document.getElementById('demo-pin').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') checkPin();
+    });
+    if (sessionStorage.getItem('dc-demo-unlocked') === '1') {
+      document.getElementById('demo-gate').style.display = 'none';
+      document.getElementById('demo-content').classList.add('unlocked');
+    }
+  </script>
+
+  <script src="../js/app.js" defer></script>
+  <script src="../js/accessibility.js" defer></script>
+</body>
+</html>
