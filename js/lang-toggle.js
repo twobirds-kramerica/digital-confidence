@@ -27,6 +27,7 @@
     '13. Social Media':        '13. Médias sociaux',
     '14. Smart Home':          '14. Maison intelligente',
     '15. Telehealth':          '15. Télémédecine',
+    '16. Travel Safety':       '16. Sécurité en voyage',
     'Show Me! (Bonus)':        'Montrez-moi ! (Bonus)',
     'Set Up for a Loved One':  'Pour un proche',
     'Resources':               'Ressources',
