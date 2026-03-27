@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>B2B Outreach Dashboard | Two Birds Innovation</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,sans-serif;background:#f5f7fa;color:#1a1a1a}
+    .pin-wall{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#1a1a1a}
+    .pin-form{background:#fff;border-radius:12px;padding:2rem;text-align:center;width:320px}
+    .pin-form h1{font-size:1.1rem;margin-bottom:1rem}
+    .pin-form input{width:100%;padding:.75rem;border:1px solid #ccc;border-radius:8px;font-size:1rem;text-align:center;letter-spacing:.3em;margin-bottom:.75rem}
+    .pin-form button{width:100%;padding:.75rem;background:#1565C0;color:#fff;border:none;border-radius:8px;font-size:1rem;cursor:pointer}
+    .pin-error{color:#c62828;font-size:.85rem;margin-top:.5rem}
+    .dashboard{display:none;padding:1.5rem;max-width:1400px;margin:0 auto}
+    .dash-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.25rem;flex-wrap:wrap;gap:.75rem}
+    .dash-title{font-size:1.3rem;font-weight:700}
+    .dash-meta{font-size:.82rem;color:#666;margin-top:2px}
+    .stats-bar{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.25rem}
+    .stat-chip{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:.45rem .9rem;font-size:.8rem}
+    .stat-chip strong{display:block;font-size:1.05rem;color:#1565C0}
+    .controls{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem;align-items:center}
+    .controls select,.controls input{padding:.4rem .7rem;border:1px solid #ccc;border-radius:8px;font-size:.83rem}
+    .btn{padding:.4rem .85rem;border:none;border-radius:8px;font-size:.8rem;cursor:pointer;font-weight:600}
+    .btn-blue{background:#1565C0;color:#fff}.btn-green{background:#2e7d32;color:#fff}
+    .btn-outline{background:#fff;border:1px solid #ccc;color:#333}
+    table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;font-size:.82rem}
+    th{background:#1565C0;color:#fff;padding:.6rem .75rem;text-align:left;font-weight:600;white-space:nowrap}
+    td{padding:.55rem .75rem;border-bottom:1px solid #f0f0f0;vertical-align:top}
+    tr:last-child td{border-bottom:none}
+    tr:hover td{background:#f8f9ff}
+    .badge{font-size:.7rem;font-weight:700;padding:.15rem .45rem;border-radius:20px;text-transform:uppercase;white-space:nowrap}
+    .badge-library{background:#e3f2fd;color:#1565C0}
+    .badge-credit_union{background:#e8f5e9;color:#2e7d32}
+    .badge-org{background:#fff3e0;color:#e65100}
+    .tier-1{background:#fff9c4;color:#f57f17;border:1px solid #ffe082}
+    .tier-2{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+    .tier-3{background:#f5f5f5;color:#666;border:1px solid #ddd}
+    select.status-sel{padding:.25rem .4rem;border:1px solid #ccc;border-radius:6px;font-size:.78rem;width:130px}
+    input.notes-in{padding:.25rem .4rem;border:1px solid #ccc;border-radius:6px;font-size:.78rem;width:160px}
+    input.date-in{padding:.25rem .4rem;border:1px solid #ccc;border-radius:6px;font-size:.78rem;width:110px}
+    .status-emailed{color:#1565C0;font-weight:600}
+    .status-responded{color:#2e7d32;font-weight:600}
+    .status-meeting_booked{color:#6a1b9a;font-weight:600}
+    .status-proposal_sent{color:#e65100;font-weight:600}
+    .status-won{color:#1b5e20;font-weight:700}
+    .status-lost{color:#c62828}
+    @media(max-width:900px){table,thead,tbody,th,td,tr{display:block}th{display:none}td{padding:.4rem .6rem;border-bottom:1px solid #eee}}
+  </style>
+</head>
+<body>
+
+<div class="pin-wall" id="pinWall">
+  <div class="pin-form">
+    <h1>🐦 B2B Outreach</h1>
+    <p style="font-size:.85rem;color:#666;margin-bottom:1rem">Two Birds Innovation — Internal</p>
+    <input type="password" id="pinInput" placeholder="PIN" maxlength="4" autocomplete="off">
+    <button onclick="checkPin()">Enter</button>
+    <div class="pin-error" id="pinError"></div>
+  </div>
+</div>
+
+<div class="dashboard" id="dashboardArea">
+  <div class="dash-header">
+    <div>
+      <div class="dash-title">B2B Outreach Dashboard</div>
+      <div class="dash-meta">Two Birds Innovation · Digital Confidence Centre · 30 Ontario prospects</div>
+    </div>
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+      <button class="btn btn-green" onclick="exportCSV()">Export CSV</button>
+      <button class="btn btn-outline" onclick="saveAll()">Save All</button>
+    </div>
+  </div>
+
+  <div class="stats-bar" id="statsBar"></div>
+
+  <div class="controls">
+    <select id="filterType" onchange="renderTable()">
+      <option value="all">All types</option>
+      <option value="library">Libraries</option>
+      <option value="credit_union">Credit Unions</option>
+      <option value="org">Organisations</option>
+    </select>
+    <select id="filterTier" onchange="renderTable()">
+      <option value="all">All tiers</option>
+      <option value="1">Tier 1 only</option>
+      <option value="2">Tier 2 only</option>
+      <option value="3">Tier 3 only</option>
+    </select>
+    <select id="filterStatus" onchange="renderTable()">
+      <option value="all">All statuses</option>
+      <option value="not_contacted">Not contacted</option>
+      <option value="emailed">Emailed</option>
+      <option value="responded">Responded</option>
+      <option value="meeting_booked">Meeting booked</option>
+      <option value="proposal_sent">Proposal sent</option>
+      <option value="won">Won</option>
+      <option value="lost">Lost</option>
+    </select>
+    <input type="text" id="filterSearch" placeholder="Search..." oninput="renderTable()" style="width:140px">
+  </div>
+
+  <div style="overflow-x:auto">
+    <table id="prospectsTable">
+      <thead>
+        <tr>
+          <th>Organisation</th>
+          <th>Type</th>
+          <th>City</th>
+          <th>Tier</th>
+          <th>Contact</th>
+          <th>Status</th>
+          <th>Notes</th>
+          <th>Last Contact</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+const PIN = '2026';
+let prospects = [];
+
+function checkPin() {
+  if (document.getElementById('pinInput').value === PIN) {
+    document.getElementById('pinWall').style.display = 'none';
+    document.getElementById('dashboardArea').style.display = 'block';
+    loadData();
+  } else {
+    document.getElementById('pinError').textContent = 'Incorrect PIN.';
+  }
+}
+document.getElementById('pinInput').addEventListener('keydown', e => { if (e.key === 'Enter') checkPin(); });
+
+function loadData() {
+  fetch('prospects.json').then(r => r.json()).then(data => {
+    prospects = data.prospects;
+    prospects.forEach(p => {
+      const saved = JSON.parse(localStorage.getItem('dcc-b2b-' + p.id) || 'null');
+      if (saved) { p.status = saved.status || p.status; p.notes_user = saved.notes || ''; p.last_contact = saved.last_contact || null; }
+      else { p.notes_user = ''; }
+    });
+    renderStats();
+    renderTable();
+  }).catch(() => {
+    document.getElementById('tableBody').innerHTML = '<tr><td colspan="8" style="color:#c62828;padding:1rem">Could not load prospects.json</td></tr>';
+  });
+}
+
+const STATUS_LABELS = { not_contacted:'Not contacted', emailed:'Emailed', responded:'Responded', meeting_booked:'Meeting booked', proposal_sent:'Proposal sent', won:'Won', lost:'Lost' };
+const TYPE_LABELS = { library:'Library', credit_union:'Credit Union', org:'Organisation' };
+
+function renderStats() {
+  const total = prospects.length;
+  const contacted = prospects.filter(p => p.status !== 'not_contacted').length;
+  const responded = prospects.filter(p => ['responded','meeting_booked','proposal_sent','won'].includes(p.status)).length;
+  const won = prospects.filter(p => p.status === 'won').length;
+  const t1 = prospects.filter(p => p.tier == 1).length;
+  document.getElementById('statsBar').innerHTML =
+    chip('Total', total) + chip('Contacted', contacted, '#1565C0') +
+    chip('Responded', responded, '#2e7d32') + chip('Won', won, '#1b5e20') + chip('Tier 1', t1, '#f57f17');
+}
+function chip(l,v,c){ return '<div class="stat-chip"><strong style="color:'+(c||'#1565C0')+'">'+v+'</strong>'+l+'</div>'; }
+
+function renderTable() {
+  const type = document.getElementById('filterType').value;
+  const tier = document.getElementById('filterTier').value;
+  const status = document.getElementById('filterStatus').value;
+  const search = document.getElementById('filterSearch').value.toLowerCase();
+  const filtered = prospects.filter(p => {
+    if (type !== 'all' && p.type !== type) return false;
+    if (tier !== 'all' && String(p.tier) !== tier) return false;
+    if (status !== 'all' && p.status !== status) return false;
+    if (search && !p.name.toLowerCase().includes(search) && !p.city.toLowerCase().includes(search)) return false;
+    return true;
+  });
+  document.getElementById('tableBody').innerHTML = filtered.map(p => {
+    const typeClass = 'badge-' + p.type;
+    const tierClass = 'tier-' + p.tier;
+    const statusClass = p.status !== 'not_contacted' ? 'status-' + p.status : '';
+    return `<tr>
+      <td><strong>${esc(p.name)}</strong><br><span style="font-size:.72rem;color:#888">${esc(p.notes.substring(0,80))}…</span></td>
+      <td><span class="badge ${typeClass}">${TYPE_LABELS[p.type]||p.type}</span></td>
+      <td>${esc(p.city)}</td>
+      <td><span class="badge ${tierClass}">T${p.tier}</span></td>
+      <td style="font-size:.75rem"><a href="mailto:${esc(p.contact_email)}">${esc(p.contact_email)}</a><br><span style="color:#888">${esc(p.contact_title||'')}</span></td>
+      <td>
+        <select class="status-sel ${statusClass}" data-id="${p.id}" onchange="updateField('${p.id}','status',this.value);renderStats()">
+          ${Object.entries(STATUS_LABELS).map(([v,l]) => `<option value="${v}"${p.status===v?' selected':''}>${l}</option>`).join('')}
+        </select>
+      </td>
+      <td><input class="notes-in" type="text" value="${esc(p.notes_user||'')}" placeholder="Add note…" data-id="${p.id}" onchange="updateField('${p.id}','notes',this.value)"></td>
+      <td><input class="date-in" type="date" value="${p.last_contact||''}" data-id="${p.id}" onchange="updateField('${p.id}','last_contact',this.value)"></td>
+    </tr>`;
+  }).join('');
+}
+
+function updateField(id, field, val) {
+  const p = prospects.find(x => x.id === id);
+  if (!p) return;
+  if (field === 'status') p.status = val;
+  if (field === 'notes') p.notes_user = val;
+  if (field === 'last_contact') p.last_contact = val;
+  saveProspect(p);
+}
+
+function saveProspect(p) {
+  localStorage.setItem('dcc-b2b-' + p.id, JSON.stringify({ status: p.status, notes: p.notes_user, last_contact: p.last_contact }));
+}
+
+function saveAll() {
+  prospects.forEach(saveProspect);
+  alert('All changes saved.');
+}
+
+function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function exportCSV() {
+  const headers = ['id','name','type','city','tier','contact_email','contact_title','website','status','notes_user','last_contact'];
+  const rows = prospects.map(p => headers.map(h => '"' + String(p[h]||'').replace(/"/g,'""') + '"').join(','));
+  const csv = headers.join(',') + '\n' + rows.join('\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv'}));
+  a.download = 'dcc-b2b-prospects-' + new Date().toISOString().slice(0,10) + '.csv';
+  a.click();
+}
+</script>
+</body>
+</html>
