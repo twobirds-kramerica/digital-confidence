@@ -593,6 +593,51 @@
 
       </div>
 
+      <!-- ===== What's New ===== -->
+      <section id="whats-new" aria-labelledby="whats-new-heading" style="margin:2rem 0;">
+        <h2 id="whats-new-heading" data-en="What's New" data-fr="Quoi de neuf">What's New</h2>
+        <p data-en="Recent additions and updates to the Digital Confidence Centre." data-fr="Ajouts et mises à jour récents au Centre de confiance numérique.">Recent additions and updates to the Digital Confidence Centre.</p>
+        <div id="whats-new-cards" class="module-grid" style="margin-top:1rem;">
+          <p id="whats-new-loading" style="color:#888;font-size:0.95rem;" data-en="Loading updates..." data-fr="Chargement des mises à jour...">Loading updates...</p>
+        </div>
+      </section>
+      <script>
+        (function () {
+          var lang = (document.documentElement.getAttribute('data-lang') || 'en');
+          fetch('_data/whats-new.json')
+            .then(function (r) { return r.json(); })
+            .then(function (items) {
+              var container = document.getElementById('whats-new-cards');
+              var loading = document.getElementById('whats-new-loading');
+              if (loading) loading.remove();
+              var fr = (lang === 'fr');
+              items.forEach(function (item) {
+                var card = document.createElement('div');
+                card.className = 'module-card';
+                card.style.cssText = 'display:block;text-decoration:none;';
+                var date = fr ? item.dateFr : item.date;
+                var title = fr ? item.titleFr : item.title;
+                var desc = fr ? item.descriptionFr : item.description;
+                var readLabel = fr ? 'En savoir plus →' : 'Learn more →';
+                card.innerHTML =
+                  '<div class="card-icon">' + item.icon + '</div>' +
+                  '<div class="card-content">' +
+                    '<span style="font-size:0.78rem;color:#888;display:block;margin-bottom:0.25rem;">' + date + '</span>' +
+                    '<h3 style="margin:0 0 0.4rem;">' + title + '</h3>' +
+                    '<p style="margin:0 0 0.5rem;">' + desc + '</p>' +
+                    '<a href="' + item.link + '" style="font-size:0.85rem;color:#1565C0;font-weight:600;">' + readLabel + '</a>' +
+                  '</div>';
+                container.appendChild(card);
+              });
+            })
+            .catch(function () {
+              var loading = document.getElementById('whats-new-loading');
+              if (loading) loading.textContent = '';
+            });
+        })();
+      </script>
+      <!-- ===== End What's New ===== -->
+
       <!-- ===== Scam Alert of the Month ===== -->
       <section id="scam-of-the-month" aria-labelledby="sotm-heading" style="margin:2rem 0;padding:1.25rem 1.5rem;background:#fff3f3;border:1px solid #e57373;border-left:6px solid #c0392b;border-radius:8px;">
         <div id="sotm-loading" style="color:#888;font-size:0.95rem;" data-en="Loading scam alert..." data-fr="Chargement de l'alerte...">Loading scam alert...</div>
@@ -900,7 +945,7 @@
             <a href="resources/support-directory.html">Get Help</a>
           </nav>
           <p class="footer-support">Questions about this site? Leave us a voice message or written note using the Feedback button.</p>
-          <p class="footer-copy">&copy; 2026 Two Birds Innovation. Made with care in Ontario, Canada. &bull; Last updated: March 2026</p>
+          <p class="footer-copy">&copy; 2026 Two Birds Innovation. Made with care in Ontario, Canada. &bull; Last updated: March 2026 &bull; DCC v2.0 — March 2026</p>
           <p class="city-footer-label" style="display:none;"></p>
           <p class="device-footer-label" style="display:none;"></p>
         </div>
