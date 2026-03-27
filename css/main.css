@@ -5906,3 +5906,79 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   80%  { opacity: 1; }
   100% { transform: translateY(180px) rotate(360deg); opacity: 0; }
 }
+
+/* ── EEAT: Module Byline ── */
+.module-byline {
+  font-size: 0.82rem;
+  color: var(--color-text-muted, #666);
+  margin: -0.25rem 0 1.25rem;
+  padding: 0;
+  border: none;
+}
+[data-theme="dark"] .module-byline { color: #a0a0a0; }
+
+/* ── EEAT: Trust Bar ── */
+.eeat-trust-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  padding: 0.65rem 1rem;
+  background: #e8f0fe;
+  border-radius: 10px;
+  margin: 0.75rem 0 1.25rem;
+  font-size: 0.82rem;
+  color: #1a3a6b;
+  align-items: center;
+}
+.eeat-trust-bar span { white-space: nowrap; }
+[data-theme="dark"] .eeat-trust-bar {
+  background: #1a2744;
+  color: #90c4f8;
+}
+
+/* ── EEAT: Sources Block ── */
+.sources-block {
+  border-top: 1px solid var(--color-border, #e0e0e0);
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+}
+.sources-block h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-muted, #666);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  border: none;
+}
+.sources-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.82rem;
+}
+.sources-block ul li { margin-bottom: 0.25rem; }
+.sources-block ul li a { color: var(--color-primary, #1565C0); }
+[data-theme="dark"] .sources-block { border-color: #444; }
+[data-theme="dark"] .sources-block h3 { color: #a0a0a0; }
+
+/* ── EEAT: Credentials Bar ── */
+.credentials-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.credential-badge {
+  background: #e8f0fe;
+  color: #1a3a6b;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+[data-theme="dark"] .credential-badge {
+  background: #1a2744;
+  color: #90c4f8;
+}
