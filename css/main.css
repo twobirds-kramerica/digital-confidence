@@ -4255,9 +4255,10 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 
 /* Unified "Ideas & Feedback" button — bottom-right */
 .dc-unified-feedback-btn {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
+  position: fixed !important;
+  bottom: 80px !important;
+  right: 16px !important;
+  left: auto !important;
   background: linear-gradient(135deg, #1565C0, #1976D2);
   color: #fff;
   border: none;
@@ -4476,7 +4477,10 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 /* Mobile — feedback */
 @media (max-width: 600px) {
   .dc-unified-feedback-btn {
-    bottom: 16px; right: 16px;
+    position: fixed !important;
+    bottom: 80px !important;
+    right: 16px !important;
+    left: auto !important;
     width: 56px; height: 56px;
     border-radius: 50%; padding: 0;
     justify-content: center;
