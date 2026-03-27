@@ -28,6 +28,7 @@
     '14. Smart Home':          '14. Maison intelligente',
     '15. Telehealth':          '15. Télémédecine',
     '16. Travel Safety':       '16. Sécurité en voyage',
+    '17. AI Research':         '17. Recherche avec l\'IA',
     'Living Alone Safely':     'Vivre seul en sécurité',
     'Show Me! (Bonus)':        'Montrez-moi ! (Bonus)',
     'Set Up for a Loved One':  'Pour un proche',
