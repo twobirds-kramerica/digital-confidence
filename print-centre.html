@@ -727,8 +727,9 @@
 
     function emailToMyself() {
       var selected = getSelectedModules();
+      var lang = getPrintLang();
       if (selected.length === 0) {
-        alert('Please select at least one module first.');
+        alert(lang === 'fr' ? 'Veuillez sélectionner au moins un module.' : 'Please select at least one module first.');
         return;
       }
       var lines = ['Digital Confidence Centre — My Cheat Sheet', ''];
@@ -782,15 +783,20 @@
       }
       lines.push('Visit the full course at: https://twobirds-kramerica.github.io/digital-confidence/');
       lines.push('Free help: Connected Canadians 1-855-808-0505');
-      var subject = encodeURIComponent('My Digital Confidence Cheat Sheet');
+      var subject = encodeURIComponent(lang === 'fr' ? 'Mon aide-mémoire — Centre de confiance numérique' : 'My Digital Confidence Cheat Sheet');
       var body = encodeURIComponent(lines.join('\n'));
       window.location.href = 'mailto:?subject=' + subject + '&body=' + body;
     }
 
+    function getPrintLang() {
+      try { return (localStorage.getItem('dc-lang') || 'en') === 'fr' ? 'fr' : 'en'; } catch(e) { return 'en'; }
+    }
+
     function buildCheatSheet() {
       var selected = getSelectedModules();
+      var lang = getPrintLang();
       if (selected.length === 0) {
-        alert('Please select at least one module before building your cheat sheet.');
+        alert(lang === 'fr' ? 'Veuillez sélectionner au moins un module.' : 'Please select at least one module before building your cheat sheet.');
         return;
       }
       var includeGlossary = document.getElementById('opt-glossary').checked;
@@ -820,8 +826,10 @@
       html += '</style>';
       html += '</head><body>';
 
-      html += '<h1>My Digital Confidence Cheat Sheet</h1>';
-      html += '<p style="font-size:12pt;color:#555;">Generated from the Digital Confidence Centre &mdash; ' + new Date().toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' }) + '</p>';
+      var pageTitle = lang === 'fr' ? 'Mon aide-mémoire — Centre de confiance numérique' : 'My Digital Confidence Cheat Sheet';
+      var dateStr = new Date().toLocaleDateString(lang === 'fr' ? 'fr-CA' : 'en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
+      html += '<h1>' + pageTitle + '</h1>';
+      html += '<p style="font-size:12pt;color:#555;">' + (lang === 'fr' ? 'Généré à partir du Centre de confiance numérique &mdash; ' : 'Generated from the Digital Confidence Centre &mdash; ') + dateStr + '</p>';
       html += '<hr class="section-divider">';
 
       // Module tips
