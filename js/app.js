@@ -122,3 +122,49 @@ document.addEventListener('click', function (e) {
     }
   }
 });
+
+/* ── Global Error Boundary ── */
+(function () {
+  var MAX_ERRORS = 10;
+
+  function saveError(msg, src, line) {
+    try {
+      var existing = [];
+      try { existing = JSON.parse(localStorage.getItem('dc-error-log') || '[]'); } catch (e) {}
+      existing.unshift({ ts: new Date().toISOString(), msg: msg, src: src, line: line });
+      if (existing.length > MAX_ERRORS) existing = existing.slice(0, MAX_ERRORS);
+      localStorage.setItem('dc-error-log', JSON.stringify(existing));
+    } catch (e) { /* localStorage unavailable — silently skip */ }
+  }
+
+  window.addEventListener('error', function (e) {
+    saveError(e.message || 'Unknown error', e.filename || '', e.lineno || 0);
+  });
+
+  window.addEventListener('unhandledrejection', function (e) {
+    var msg = e.reason ? (e.reason.message || String(e.reason)) : 'Unhandled promise rejection';
+    saveError(msg, 'promise', 0);
+  });
+})();
+
+/* ── localStorage Availability Banner ── */
+(function () {
+  var lsAvailable = true;
+  try {
+    localStorage.setItem('dc-test', '1');
+    localStorage.removeItem('dc-test');
+  } catch (e) {
+    lsAvailable = false;
+  }
+
+  if (!lsAvailable) {
+    var banner = document.createElement('div');
+    banner.setAttribute('role', 'alert');
+    banner.style.cssText = 'background:#b71c1c;color:#fff;text-align:center;padding:0.6rem 1rem;font-size:0.85rem;position:sticky;top:0;z-index:9999;';
+    banner.innerHTML = '&#9888;&#65039; Your progress cannot be saved right now — private browsing mode or storage is disabled. Your learning is not lost, but progress will reset when you close this tab.';
+    document.addEventListener('DOMContentLoaded', function () {
+      var body = document.body;
+      if (body) body.insertBefore(banner, body.firstChild);
+    });
+  }
+})();
