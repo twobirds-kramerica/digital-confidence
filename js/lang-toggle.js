@@ -54,6 +54,32 @@
     'Digital Confidence Centre':         'Centre de Confiance Numérique'
   };
 
+  /* Structural aria-label translations for shared UI controls */
+  var ARIA_MAP = {
+    'Accessibility controls':            'Contrôles d\'accessibilité',
+    'Small text':                        'Petit texte',
+    'Medium text':                       'Texte moyen',
+    'Large text':                        'Grand texte',
+    'Extra large text':                  'Très grand texte',
+    'Switch to dark mode':               'Passer en mode sombre',
+    'Switch to light mode':              'Passer en mode clair',
+    'Open navigation menu':              'Ouvrir le menu de navigation',
+    'Close navigation':                  'Fermer la navigation',
+    'Main navigation':                   'Navigation principale',
+    'Footer navigation':                 'Navigation du pied de page',
+    'How to have this page read aloud':  'Comment faire lire cette page à voix haute',
+    'Related modules':                   'Modules connexes',
+    'Print this module':                 'Imprimer ce module',
+    'Open settings':                     'Ouvrir les paramètres'
+  };
+
+  /* Placeholder translations */
+  var PLACEHOLDER_MAP = {
+    'Your email address (optional)': 'Votre adresse courriel (facultatif)',
+    'Type here...':                  'Écrivez ici...',
+    'Search...':                     'Rechercher...'
+  };
+
   var FOOTER_LINKS_MAP = {
     'Home':                'Accueil',
     'Modules':             'Modules',
@@ -91,6 +117,36 @@
 
     /* html lang attribute */
     document.documentElement.lang = isFR ? 'fr-CA' : 'en-CA';
+
+    /* --- Structural aria-labels --- */
+    document.querySelectorAll('[aria-label]').forEach(function (el) {
+      var en = el.getAttribute('data-aria-en') || el.getAttribute('aria-label');
+      /* Store original EN value on first run */
+      if (!el.hasAttribute('data-aria-en')) {
+        el.setAttribute('data-aria-en', en);
+      }
+      var fr = ARIA_MAP[en];
+      if (fr) {
+        el.setAttribute('aria-label', isFR ? fr : en);
+      } else if (!isFR) {
+        /* Restore English on toggle back */
+        el.setAttribute('aria-label', en);
+      }
+    });
+
+    /* --- Placeholder text --- */
+    document.querySelectorAll('[placeholder]').forEach(function (el) {
+      var en = el.getAttribute('data-placeholder-en') || el.getAttribute('placeholder');
+      if (!el.hasAttribute('data-placeholder-en')) {
+        el.setAttribute('data-placeholder-en', en);
+      }
+      var fr = PLACEHOLDER_MAP[en];
+      if (fr) {
+        el.setAttribute('placeholder', isFR ? fr : en);
+      } else if (!isFR) {
+        el.setAttribute('placeholder', en);
+      }
+    });
 
     /* --- Nav labels --- */
     document.querySelectorAll('.nav-label').forEach(function (el) {
