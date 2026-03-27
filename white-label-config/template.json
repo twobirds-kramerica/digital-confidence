@@ -1,0 +1,93 @@
+{
+  "_comment": "Digital Confidence Centre — White-Label Configuration Template",
+  "_version": "1.0",
+  "_instructions": "Copy this file and fill in your organisation's details. Send the completed file to Two Birds Innovation to begin onboarding.",
+
+  "organisation": {
+    "name": "Your Organisation Name",
+    "shortName": "Your Org",
+    "type": "credit-union | library | bank | municipality | healthcare",
+    "website": "https://yourorganisation.ca",
+    "contactEmail": "digital@yourorganisation.ca",
+    "phone": "1-XXX-XXX-XXXX",
+    "address": {
+      "street": "123 Main Street",
+      "city": "City Name",
+      "province": "Ontario",
+      "postalCode": "X0X 0X0"
+    },
+    "logoUrl": "URL to your logo (SVG or PNG, at least 200px wide)",
+    "logoAlt": "Your Organisation Name logo",
+    "tagline": "Your tagline for the Digital Skills Centre"
+  },
+
+  "branding": {
+    "primaryColour": "#000000",
+    "primaryColourDark": "#000000",
+    "accentColour": "#000000",
+    "fontFamily": "inherit | 'Font Name', sans-serif",
+    "logoBarStyle": "full-colour | white-on-primary | transparent",
+    "heroImageUrl": "Optional: URL to a hero image showing your members/clients",
+    "poweredByVisible": true,
+    "poweredByPosition": "footer | topbar | both"
+  },
+
+  "content": {
+    "siteTitle": "Digital Skills Centre",
+    "heroHeading": "Free Digital Skills Training for [City/Region] Seniors",
+    "heroSubheading": "Free, friendly, step-by-step digital literacy — brought to you by [Organisation Name].",
+    "modules": {
+      "include": "all | [1,2,3,6,8,10]",
+      "exclude": [],
+      "featured": [1, 2, 3, 6, 8],
+      "customModuleNote": "Optional note added below each module description"
+    },
+    "localHelpInfo": {
+      "show": true,
+      "heading": "Get Help from Our Staff",
+      "description": "Our team is happy to help you one-on-one with any digital question.",
+      "locations": [
+        {
+          "name": "Main Branch",
+          "address": "123 Main Street, City, ON",
+          "hours": "Mon–Fri 9am–5pm",
+          "phone": "1-XXX-XXX-XXXX",
+          "email": "digitalhelp@org.ca"
+        }
+      ]
+    },
+    "customFooterNote": "This Digital Skills Centre is provided by [Organisation Name] in partnership with Digital Confidence Centre — Two Birds Innovation.",
+    "additionalLinks": [
+      {
+        "label": "Visit our website",
+        "url": "https://yourorganisation.ca",
+        "target": "_blank"
+      }
+    ]
+  },
+
+  "analytics": {
+    "ga4PropertyId": "G-XXXXXXXXXX",
+    "clarityProjectId": "XXXXXXXXXX",
+    "cookieConsentRequired": true,
+    "cookiePolicyUrl": "https://yourorganisation.ca/privacy"
+  },
+
+  "deployment": {
+    "hostingType": "github-pages | cloudflare-pages | netlify | self-hosted",
+    "subdomain": "digitalskills.yourorganisation.ca",
+    "customDomainNeeded": true,
+    "sslRequired": true,
+    "targetLaunchDate": "YYYY-MM-DD",
+    "stakeholderApprovalRequired": true,
+    "approvalContact": "Name and email of person who must sign off"
+  },
+
+  "support": {
+    "twobirdsContactEmail": "hello@twobirds.ca",
+    "licenceType": "starter | professional | enterprise",
+    "updateFrequency": "monthly | quarterly | on-request",
+    "trainingIncluded": true,
+    "monthlyReportingIncluded": true
+  }
+}

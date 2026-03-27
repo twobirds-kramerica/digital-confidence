@@ -1,0 +1,69 @@
+/* ============================================================
+   Digital Confidence Centre — White-Label Branding Override
+   Client: London Public Library (Demo)
+   Primary:  #006B6B (library teal)
+   Accent:   #C8471A (warm coral/rust)
+   ============================================================ */
+
+:root {
+  --accent-primary:    #006B6B;
+  --accent-secondary:  #004747;
+  --accent-hover:      #004747;
+  --link-colour:       #006B6B;
+  --btn-primary-bg:    #006B6B;
+  --btn-primary-hover: #004747;
+  --sidebar-bg:        #004747;
+  --sidebar-text:      #ffffff;
+  --sidebar-link-hover-bg: rgba(200, 71, 26, 0.15);
+  --top-bar-bg:        #004747;
+  --top-bar-text:      #ffffff;
+}
+
+.wl-logo-bar {
+  background: #004747;
+  color: #ffffff;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 3px solid #C8471A;
+}
+
+.wl-logo-text { display: flex; flex-direction: column; }
+
+.wl-logo-name { font-size: 1.2rem; font-weight: 700; letter-spacing: .02em; }
+
+.wl-logo-tagline { font-size: .78rem; opacity: .82; letter-spacing: .03em; }
+
+.wl-logo-icon { font-size: 2rem; }
+
+.wl-powered-bar {
+  background: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  font-size: .78rem;
+  padding: 4px 12px;
+  color: #555;
+}
+
+.wl-powered-bar a { color: #006B6B; text-decoration: none; }
+.wl-powered-bar a:hover { text-decoration: underline; }
+
+.wl-footer-note {
+  background: #004747;
+  color: #ccc;
+  text-align: center;
+  padding: 1rem;
+  font-size: .82rem;
+}
+
+.wl-footer-note a { color: #C8471A; }
+
+/* Highlight accent buttons */
+.btn-primary, .dc-unified-feedback-btn {
+  background: #C8471A !important;
+  border-color: #C8471A !important;
+}
+.btn-primary:hover, .dc-unified-feedback-btn:hover {
+  background: #a83814 !important;
+}
