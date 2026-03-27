@@ -789,6 +789,23 @@ var DC_QUIZ = (function () {
   var answered     = [];
   var quizStarted  = false;
 
+  /* ── Encouragement milestones ── */
+  var MILESTONES = {
+    10: { en: '10 questions done! You\'re finding your rhythm. Keep going!', fr: '10 questions! Vous êtes dans votre élan. Continuez!' },
+    20: { en: 'You\'ve answered 20 questions — you\'re a third of the way there!', fr: '20 questions &#8212; un tiers du chemin parcouru!' },
+    30: { en: 'Halfway there! 30 questions completed. You\'re doing really well.', fr: 'À mi-chemin! 30 questions terminées. Vous vous en sortez très bien.' },
+    40: { en: 'Just 20 questions to go. You\'ve got this!', fr: 'Plus que 20 questions. Vous pouvez le faire!' },
+    50: { en: 'Final stretch — only 10 questions left. Almost there!', fr: 'Dernière ligne droite &#8212; plus que 10 questions. Presque!' }
+  };
+
+  function getLang() {
+    try {
+      var l = document.documentElement.getAttribute('data-lang') ||
+              localStorage.getItem('dc-lang') || navigator.language || 'en';
+      return l.toLowerCase().startsWith('fr') ? 'fr' : 'en';
+    } catch (e) { return 'en'; }
+  }
+
   /* ── Public init ────────────────────────────────────────── */
   function init() {
     var container = document.getElementById('quiz-app');
@@ -946,6 +963,26 @@ var DC_QUIZ = (function () {
     var q = questions[currentQ];
     var pct = Math.round((currentQ / questions.length) * 100);
     var letters = ['A', 'B', 'C', 'D'];
+    var lang = getLang();
+
+    var headerLabel  = lang === 'fr' ? 'Évaluation finale' : 'Final Assessment';
+    var qLabel       = lang === 'fr'
+      ? 'Question ' + (currentQ + 1) + ' sur ' + questions.length
+      : 'Question ' + (currentQ + 1) + ' of ' + questions.length;
+    var scoreLabel   = lang === 'fr'
+      ? score + ' correctes jusqu\'ici'
+      : score + ' correct so far';
+    var nextLabel    = currentQ === questions.length - 1
+      ? (lang === 'fr' ? 'Voir mes résultats' : 'See My Results')
+      : (lang === 'fr' ? 'Question suivante &#8594;' : 'Next Question &#8594;');
+
+    var milestoneHTML = '';
+    if (MILESTONES[currentQ]) {
+      milestoneHTML =
+        '<div class="quiz-milestone" role="status">' +
+          '&#127775; ' + MILESTONES[currentQ][lang] +
+        '</div>';
+    }
 
     var optionsHTML = q.options.map(function (opt, i) {
       return '<button class="quiz-option" data-index="' + i + '">' +
@@ -957,12 +994,16 @@ var DC_QUIZ = (function () {
     container.innerHTML =
       '<div class="quiz-container">' +
         '<div class="quiz-header">' +
-          '<h1>Final Assessment</h1>' +
+          '<div class="quiz-header-row">' +
+            '<h1>' + headerLabel + '</h1>' +
+            '<span class="quiz-score-tracker" aria-live="polite">' + scoreLabel + '</span>' +
+          '</div>' +
           '<div class="quiz-progress-bar-wrap">' +
             '<div class="quiz-progress-bar" style="width:' + pct + '%"></div>' +
           '</div>' +
-          '<div class="quiz-progress-label">Question ' + (currentQ + 1) + ' of ' + questions.length + '</div>' +
+          '<div class="quiz-progress-label">' + qLabel + '</div>' +
         '</div>' +
+        milestoneHTML +
         '<div class="quiz-question" id="current-question">' +
           '<span class="quiz-module-tag">' + escHTML(q.module) + '</span>' +
           '<h3>' + escHTML(q.q) + '</h3>' +
@@ -971,7 +1012,7 @@ var DC_QUIZ = (function () {
         '</div>' +
         '<div class="quiz-nav">' +
           '<button class="quiz-btn quiz-btn-primary" id="next-btn" disabled>' +
-            (currentQ === questions.length - 1 ? 'See My Results' : 'Next Question &#8594;') +
+            nextLabel +
           '</button>' +
         '</div>' +
       '</div>';
@@ -1003,7 +1044,10 @@ var DC_QUIZ = (function () {
     options[q.correct].classList.add('correct');
     if (!isCorrect) options[selectedIndex].classList.add('incorrect');
 
-    feedback.textContent = (isCorrect ? '&#x2705; That\'s right! ' : '&#x274C; Not quite. ') + q.explain;
+    var lang = getLang();
+    var correctPfx = lang === 'fr' ? '&#x2705; Exact\u00a0! ' : '&#x2705; That\'s right! ';
+    var wrongPfx   = lang === 'fr' ? '&#x1F4A1; Pas tout \u00e0 fait. ' : '&#x1F4A1; Not quite. ';
+    feedback.innerHTML = (isCorrect ? correctPfx : wrongPfx) + escHTML(q.explain);
     feedback.className = 'quiz-feedback show ' + (isCorrect ? 'correct-fb' : 'incorrect-fb');
     nextBtn.disabled = false;
   }
@@ -1024,9 +1068,13 @@ var DC_QUIZ = (function () {
     var perfect  = score === questions.length;
     var percent  = Math.round((score / questions.length) * 100);
     var icon     = passed ? '&#127942;' : '&#128218;';
-    var heading  = passed ? 'Congratulations &#8212; You Passed!' : 'Great Effort!';
+    var lang     = getLang();
 
-    /* Save to LocalStorage (Phase 3) */
+    var heading  = passed
+      ? (lang === 'fr' ? 'F&#233;licitations &#8212; Vous avez r&#233;ussi!' : 'Congratulations &#8212; You Passed!')
+      : (lang === 'fr' ? 'Bel effort!' : 'Great Effort!');
+
+    /* Save to LocalStorage */
     var dateStr = new Date().toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
     localStorage.setItem('finalQuizScore', percent);
     localStorage.setItem('finalQuizDate', dateStr);
@@ -1034,38 +1082,94 @@ var DC_QUIZ = (function () {
     var extraHTML = '';
     if (perfect) {
       extraHTML = '<div class="confidence-check-box" style="margin-top:16px;">' +
-        '&#127775; <strong>A perfect score!</strong> That is truly exceptional. ' +
-        'You have mastered every topic in this programme.</div>';
+        '&#127775; <strong>' + (lang === 'fr' ? 'Score parfait!' : 'A perfect score!') + '</strong> ' +
+        (lang === 'fr'
+          ? 'C\'est vraiment exceptionnel. Vous avez ma&#238;tris&#233; chaque sujet de ce programme.'
+          : 'That is truly exceptional. You have mastered every topic in this programme.') +
+        '</div>';
     }
 
     var message = passed
-      ? 'You scored ' + score + '/' + questions.length + ' (' + percent + '%). ' +
-        'You have demonstrated strong digital confidence! Enter your name below to get your Certificate of Completion.'
-      : 'You scored ' + score + '/' + questions.length + ' (' + percent + '%). ' +
-        'You need 44/' + questions.length + ' (74%) to pass. ' +
-        'Great effort &#8212; review the modules you found tricky and try again. There is no limit on retakes.';
+      ? (lang === 'fr'
+          ? 'Vous avez obtenu ' + score + '/' + questions.length + ' (' + percent + '&#160;%). Bravo&#160;! Entrez votre pr&#233;nom ci-dessous pour obtenir votre certificat.'
+          : 'You scored ' + score + '/' + questions.length + ' (' + percent + '%). You have demonstrated strong digital confidence! Enter your name below to get your Certificate of Completion.')
+      : (lang === 'fr'
+          ? 'Vous avez obtenu ' + score + '/' + questions.length + ' (' + percent + '&#160;%). Il vous faut 44 bonnes r&#233;ponses sur 60 (74&#160;%) pour r&#233;ussir. Vous pouvez r&#233;essayer autant de fois que vous voulez.'
+          : 'You scored ' + score + '/' + questions.length + ' (' + percent + '%). You need 44/' + questions.length + ' (74%) to pass. Great effort &#8212; review the modules you found tricky and try again. There is no limit on retakes.');
+
+    /* Module breakdown */
+    var moduleMap = {};
+    questions.forEach(function (q, i) {
+      var mod = q.module;
+      if (!moduleMap[mod]) moduleMap[mod] = { correct: 0, total: 0 };
+      moduleMap[mod].total++;
+      if (answered[i]) moduleMap[mod].correct++;
+    });
+
+    var breakdownRows = '';
+    Object.keys(moduleMap).forEach(function (mod) {
+      var m = moduleMap[mod];
+      var modPct = Math.round((m.correct / m.total) * 100);
+      var modPass = modPct >= 74;
+      breakdownRows +=
+        '<tr class="' + (modPass ? 'mod-pass' : 'mod-review') + '">' +
+          '<td>' + escHTML(mod) + '</td>' +
+          '<td style="text-align:center;">' + m.correct + '/' + m.total + '</td>' +
+          '<td style="text-align:center;">' + (modPass ? '&#x2705;' : '&#x26A0;&#xFE0F;') + '</td>' +
+        '</tr>';
+    });
+
+    var breakdownLabel   = lang === 'fr' ? 'R&#233;sultats par module' : 'Results by Module';
+    var breakdownModCol  = lang === 'fr' ? 'Module' : 'Module';
+    var breakdownScoreCol= lang === 'fr' ? 'Score' : 'Score';
+    var breakdownStatusCol = lang === 'fr' ? '&#201;tat' : 'Status';
+
+    var breakdownHTML =
+      '<details class="quiz-breakdown" style="margin-top:28px;text-align:left;">' +
+        '<summary style="font-size:1rem;font-weight:700;cursor:pointer;padding:10px 0;color:var(--accent-primary);">' +
+          '&#128202; ' + breakdownLabel +
+        '</summary>' +
+        '<table class="quiz-breakdown-table">' +
+          '<thead><tr>' +
+            '<th>' + breakdownModCol + '</th>' +
+            '<th style="text-align:center;">' + breakdownScoreCol + '</th>' +
+            '<th style="text-align:center;">' + breakdownStatusCol + '</th>' +
+          '</tr></thead>' +
+          '<tbody>' + breakdownRows + '</tbody>' +
+        '</table>' +
+      '</details>';
+
+    var printLabel = lang === 'fr' ? '&#128424; Imprimer mes r&#233;sultats' : '&#128424; Print My Results';
+    var certLabel  = lang === 'fr' ? '&#127891; Obtenir mon certificat' : '&#127891; Get My Certificate';
+    var retakeLabel = lang === 'fr' ? 'R&#233;essayer' : 'Retake Quiz';
+    var reviewLabel = lang === 'fr' ? 'Revoir les modules' : 'Review Modules';
+    var certNameLabel = lang === 'fr' ? 'Votre pr&#233;nom pour le certificat&#160;:' : 'Your name for the certificate:';
+    var certNamePlaceholder = lang === 'fr' ? 'ex. Marguerite Tremblay' : 'e.g. Margaret Wilson';
+    var resourcesLabel = lang === 'fr' ? 'Continuer vers les ressources &#8594;' : 'Continue to Resources &#8594;';
 
     var nameSection = passed
       ? '<div class="name-input-section" style="margin-top:24px;">' +
           '<label for="cert-name" style="display:block;margin-bottom:8px;font-weight:600;">' +
-            'Your name for the certificate:' +
+            certNameLabel +
           '</label>' +
-          '<input type="text" id="cert-name" placeholder="e.g. Margaret Wilson" maxlength="60" ' +
+          '<input type="text" id="cert-name" placeholder="' + certNamePlaceholder + '" maxlength="60" ' +
             'style="font-size:18px;padding:10px;border:2px solid #ddd;border-radius:8px;width:100%;box-sizing:border-box;">' +
         '</div>' +
         '<div class="quiz-results-actions">' +
-          '<button class="quiz-btn quiz-btn-primary btn-success" id="get-cert-btn">&#127891; Get My Certificate</button>' +
-          '<button class="quiz-btn quiz-btn-secondary" id="retake-btn">Retake Quiz</button>' +
+          '<button class="quiz-btn quiz-btn-primary btn-success" id="get-cert-btn">' + certLabel + '</button>' +
+          '<button class="quiz-btn quiz-btn-secondary" id="print-results-btn">' + printLabel + '</button>' +
+          '<button class="quiz-btn quiz-btn-secondary" id="retake-btn">' + retakeLabel + '</button>' +
         '</div>' +
         '<div style="margin-top:20px;text-align:center;">' +
-          '<a href="resources.html" style="color:var(--accent-primary);font-size:16px;">Continue to Resources &#8594;</a>' +
+          '<a href="resources.html" style="color:var(--accent-primary);font-size:16px;">' + resourcesLabel + '</a>' +
         '</div>'
       : '<div class="quiz-results-actions">' +
-          '<a href="index.html" class="quiz-btn quiz-btn-secondary">Review Modules</a>' +
-          '<button class="quiz-btn quiz-btn-primary" id="retake-btn">Try Again</button>' +
+          '<a href="index.html" class="quiz-btn quiz-btn-secondary">' + reviewLabel + '</a>' +
+          '<button class="quiz-btn quiz-btn-secondary" id="print-results-btn">' + printLabel + '</button>' +
+          '<button class="quiz-btn quiz-btn-primary" id="retake-btn">' + retakeLabel + '</button>' +
         '</div>' +
         '<div style="margin-top:20px;text-align:center;">' +
-          '<a href="resources.html" style="color:var(--accent-primary);font-size:16px;">Continue to Resources &#8594;</a>' +
+          '<a href="resources.html" style="color:var(--accent-primary);font-size:16px;">' + resourcesLabel + '</a>' +
         '</div>';
 
     container.innerHTML =
@@ -1075,6 +1179,7 @@ var DC_QUIZ = (function () {
         '<div class="quiz-results-score ' + (passed ? 'passing' : 'failing') + '">' + percent + '%</div>' +
         '<p class="quiz-results-message">' + message + '</p>' +
         extraHTML +
+        breakdownHTML +
         nameSection +
       '</div></div>';
 
@@ -1085,6 +1190,8 @@ var DC_QUIZ = (function () {
         window.location.href = 'certificate.html';
       });
     }
+    var printBtn = document.getElementById('print-results-btn');
+    if (printBtn) printBtn.addEventListener('click', function () { window.print(); });
     var retakeBtn = document.getElementById('retake-btn');
     if (retakeBtn) retakeBtn.addEventListener('click', function () { startQuiz(container); });
   }
