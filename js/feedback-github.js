@@ -492,13 +492,39 @@ function startVoiceRecording() {
 function sendVoiceNote() {
   if (!_dcAudioBlob) return;
 
-  var ext      = _dcAudioBlob.type.includes('mp4') ? 'mp4' : 'webm';
-  var filename = 'dcc-voice-feedback.' + ext;
-  var subject  = encodeURIComponent('Voice Feedback — Digital Confidence Centre');
-  var body     = encodeURIComponent(
+  var fr = (localStorage.getItem('dc-lang') || navigator.language || 'en').startsWith('fr');
+
+  var ext        = _dcAudioBlob.type.includes('mp4') ? 'mp4' : 'webm';
+  var filename   = 'dcc-voice-feedback.' + ext;
+  var subject    = encodeURIComponent('Voice Feedback — Digital Confidence Centre');
+  var bodyText   = encodeURIComponent(
     'Hello Two Birds,\n\nPlease find my voice feedback attached.\n\nSent from the Digital Confidence Centre feedback form.'
   );
-  var mailtoHref = 'mailto:hello@twobirds.ca?subject=' + subject + '&body=' + body;
+  var mailtoHref = 'mailto:hello@twobirds.ca?subject=' + subject + '&body=' + bodyText;
+
+  var confirmMsg = fr
+    ? '✅ Merci\u00a0! Votre message vocal a été reçu. Nous le réviserons dans les 48 heures.'
+    : '✅ Thank you! Your voice message has been received. We\'ll review it within 48 hours.';
+
+  var fallbackMsg = fr
+    ? 'Nous n\'avons pas pu envoyer automatiquement. Veuillez nous écrire à <a href="mailto:hello@twobirds.ca" style="color:#1565C0">hello@twobirds.ca</a> — nous serions ravis de vous lire.'
+    : 'We couldn\'t send automatically. Please email <a href="mailto:hello@twobirds.ca" style="color:#1565C0">hello@twobirds.ca</a> — we\'d love to hear from you.';
+
+  var closeLabel = fr ? 'Fermer' : 'Close';
+
+  function showVoiceConfirmation(success) {
+    var wrap = document.getElementById('dc-voice-wrap');
+    if (!wrap) return;
+    wrap.innerHTML =
+      '<div style="text-align:center;padding:1.25rem 0.5rem">' +
+        '<p style="font-size:1.15rem;line-height:1.6;font-weight:600;color:#1b5e20;margin-bottom:1rem">' +
+          (success ? confirmMsg : fallbackMsg) +
+        '</p>' +
+        '<button onclick="closeFeedbackModal()" style="background:#1565C0;color:#fff;border:none;border-radius:10px;padding:12px 28px;font-size:1rem;font-weight:700;cursor:pointer">' +
+          closeLabel +
+        '</button>' +
+      '</div>';
+  }
 
   /* Try Web Share API first (works on iOS, Android) */
   var file = new File([_dcAudioBlob], filename, { type: _dcAudioBlob.type });
@@ -507,20 +533,36 @@ function sendVoiceNote() {
       files: [file],
       title: 'Voice Feedback',
       text:  'Voice feedback for the Digital Confidence Centre'
-    }).catch(function () { /* user cancelled share — do nothing */ });
+    })
+    .then(function () { showVoiceConfirmation(true); })
+    .catch(function (err) {
+      /* User cancelled share or it failed */
+      if (err && err.name !== 'AbortError') {
+        showVoiceConfirmation(false);
+      }
+      /* If AbortError (user dismissed share sheet), do nothing — let them retry */
+    });
     return;
   }
 
   /* Fallback: download the file, then open mail client */
-  var url   = URL.createObjectURL(_dcAudioBlob);
+  var url    = URL.createObjectURL(_dcAudioBlob);
   var dlLink = document.createElement('a');
   dlLink.href     = url;
   dlLink.download = filename;
   dlLink.click();
   setTimeout(function () {
     URL.revokeObjectURL(url);
+    /* Try to open mail client */
+    var before = Date.now();
     window.location.href = mailtoHref;
-  }, 800);
+    /* After a short delay, check if the page is still visible (mailto may have failed) */
+    setTimeout(function () {
+      var elapsed = Date.now() - before;
+      /* If we're still here after 1.5s, mailto likely failed silently */
+      showVoiceConfirmation(elapsed < 2000);
+    }, 1500);
+  }, 600);
 }
 
 /* ---- Submit handler ---- */
