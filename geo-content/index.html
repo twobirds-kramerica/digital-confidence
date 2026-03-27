@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>GEO Intent Mapping — Internal Working Document | DCC</title>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; background: #f8fafc; color: #1a1a2e; }
+    h1 { font-size: 1.6rem; color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 0.5rem; }
+    h2 { font-size: 1.1rem; color: #333; margin-top: 2rem; }
+    .meta { background: #fff3cd; border-left: 4px solid #f59e0b; padding: 0.75rem 1rem; border-radius: 0 8px 8px 0; margin: 1rem 0 2rem; font-size: 0.9rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    thead { background: #1565C0; color: #fff; }
+    th { padding: 0.75rem 1rem; text-align: left; font-weight: 600; }
+    td { padding: 0.65rem 1rem; border-bottom: 1px solid #e8ecf0; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f8fafc; }
+    .intent { font-weight: 600; color: #1a1a2e; }
+    .module-link { color: #1565C0; font-weight: 600; }
+    .gap { color: #c62828; font-size: 0.82rem; }
+    .gap-none { color: #2e7d32; font-size: 0.82rem; }
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; margin: 1px; }
+    .tag-high { background: #fce4ec; color: #c62828; }
+    .tag-med { background: #fff3e0; color: #e65100; }
+    .tag-low { background: #e8f5e9; color: #2e7d32; }
+    .num { color: #888; font-weight: 700; font-size: 0.8rem; }
+    .print-note { margin-top: 3rem; font-size: 0.8rem; color: #888; text-align: center; border-top: 1px solid #e0e0e0; padding-top: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>🎯 GEO Intent Mapping — Top 25 Senior User Intents</h1>
+
+  <div class="meta">
+    <strong>⚠ INTERNAL DOCUMENT — NOT INDEXED</strong><br>
+    This page is excluded from search engines and AI crawlers via <code>noindex, nofollow</code>.<br>
+    Last updated: 2026-03-27 &nbsp;|&nbsp; Owner: Two Birds Innovation &nbsp;|&nbsp; Use: Content strategy, GEO gap analysis
+  </div>
+
+  <h2>Purpose</h2>
+  <p>This document maps the top 25 natural-language questions seniors ask about technology to the Digital Confidence Centre content that answers them. The <strong>GEO Gap column</strong> identifies where content is missing or thin — these are the highest-priority content creation opportunities for AI retrieval optimisation.</p>
+
+  <h2>Priority Key</h2>
+  <p><span class="tag tag-high">HIGH</span> Critical gap — AI cannot retrieve a confident answer from DCC content &nbsp;
+     <span class="tag tag-med">MEDIUM</span> Partial coverage — answer exists but lacks depth or schema markup &nbsp;
+     <span class="tag tag-low">LOW</span> Well covered — schema, module, and FAQ entry all present</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width:4%">#</th>
+        <th style="width:28%">User Intent (Natural Language Query)</th>
+        <th style="width:18%">Primary Module</th>
+        <th style="width:22%">Supporting Content</th>
+        <th style="width:28%">GEO Gap / Priority</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="num">1</td>
+        <td class="intent">How do I know if a phone call is a scam?</td>
+        <td><span class="module-link">Module 2: Security Shield</span><br>Module 5: Email &amp; Messages</td>
+        <td>Scam Simulator, FAQ — "What should I do if I think I have been scammed?", CAFC number in Recommended Tools</td>
+        <td><span class="tag tag-med">MEDIUM</span> — Phone-call scam content exists across modules but no dedicated page. <strong>Gap:</strong> No standalone "phone scam checklist" page. Consider a /resources/phone-scam-red-flags.html resource.</td>
+      </tr>
+      <tr>
+        <td class="num">2</td>
+        <td class="intent">Is this email safe to open?</td>
+        <td><span class="module-link">Module 5: Email &amp; Messages</span></td>
+        <td>Scam Simulator Scenario 2, FAQ — "How can I tell if an email is a scam?", HowTo schema added Phase 2</td>
+        <td><span class="tag tag-low">LOW</span> — Well covered. Module 5 HowTo schema now helps AI retrieve this. Email checklist in module is strong.</td>
+      </tr>
+      <tr>
+        <td class="num">3</td>
+        <td class="intent">How do I video call my grandchildren?</td>
+        <td><span class="module-link">Module 8: Stay Connected</span></td>
+        <td>Recommended Tools (FaceTime, Zoom, WhatsApp), FAQ — "How do I video call my grandchildren?"</td>
+        <td><span class="tag tag-low">LOW</span> — FAQPage schema on homepage now answers this. FaceTime how-to steps in Module 8 HowTo schema.</td>
+      </tr>
+      <tr>
+        <td class="num">4</td>
+        <td class="intent">How do I set up online banking safely?</td>
+        <td><span class="module-link">Module 6: Banking &amp; Transactions</span></td>
+        <td>Recommended Tools (TD, RBC, Interac), FAQ — "Is online banking safe for seniors?", HowTo schema added</td>
+        <td><span class="tag tag-low">LOW</span> — Well covered. HowTo schema added in Phase 2 gives AI step-by-step retrieval.</td>
+      </tr>
+      <tr>
+        <td class="num">5</td>
+        <td class="intent">What is a strong password?</td>
+        <td><span class="module-link">Module 3: Passwords &amp; Biometrics</span></td>
+        <td>Glossary (Password entry), FAQ — "What is a strong password?", HowTo schema</td>
+        <td><span class="tag tag-low">LOW</span> — Well covered across module, glossary, and FAQ schema.</td>
+      </tr>
+      <tr>
+        <td class="num">6</td>
+        <td class="intent">How do I use FaceTime on my iPad?</td>
+        <td><span class="module-link">Module 8: Stay Connected</span></td>
+        <td>Recommended Tools (FaceTime card), FAQ — "How do I video call my grandchildren?"</td>
+        <td><span class="tag tag-med">MEDIUM</span> — HowTo steps for FaceTime exist in Module 8 schema. <strong>Gap:</strong> No dedicated FaceTime tutorial page. Consider /resources/facetime-guide-seniors.html.</td>
+      </tr>
+      <tr>
+        <td class="num">7</td>
+        <td class="intent">What should I do if I think I have been scammed?</td>
+        <td><span class="module-link">Module 2: Security Shield</span></td>
+        <td>Scam Simulator, FAQ (schema question), CAFC phone number 1-888-495-8501 in Recommended Tools</td>
+        <td><span class="tag tag-low">LOW</span> — FAQPage schema on homepage and FAQ page answers this. CAFC number is indexable in Recommended Tools.</td>
+      </tr>
+      <tr>
+        <td class="num">8</td>
+        <td class="intent">How do I share photos with family?</td>
+        <td><span class="module-link">Module 7: Photos &amp; Memories</span></td>
+        <td>HowTo schema (step: Create a shared album), FAQ page</td>
+        <td><span class="tag tag-low">LOW</span> — HowTo schema added in Phase 2 covers sharing photos step by step.</td>
+      </tr>
+      <tr>
+        <td class="num">9</td>
+        <td class="intent">Is it safe to shop online?</td>
+        <td><span class="module-link">Module 6: Banking &amp; Transactions</span></td>
+        <td>Module 2 (Security Shield), FAQ — "Is it safe to shop online?", Glossary (HTTPS, padlock)</td>
+        <td><span class="tag tag-med">MEDIUM</span> — Covered but scattered. <strong>Gap:</strong> No dedicated "safe online shopping" checklist page. Could be a resource article.</td>
+      </tr>
+      <tr>
+        <td class="num">10</td>
+        <td class="intent">How do I use Zoom?</td>
+        <td><span class="module-link">Module 8: Stay Connected</span></td>
+        <td>Module 15 (Telehealth — Zoom for doctor appointments), Recommended Tools (Zoom card)</td>
+        <td><span class="tag tag-med">MEDIUM</span> — HowTo steps in Module 8 schema. <strong>Gap:</strong> No standalone Zoom tutorial page for seniors. Consider /resources/zoom-guide-seniors.html.</td>
+      </tr>
+      <tr>
+        <td class="num">11</td>
+        <td class="intent">What is two-factor authentication?</td>
+        <td><span class="module-link">Module 3: Passwords &amp; Biometrics</span></td>
+        <td>Glossary (Two-Factor Authentication entry), FAQ — "What is two-factor authentication and do I need it?"</td>
+        <td><span class="tag tag-low">LOW</span> — FAQPage schema with full answer. Glossary DefinedTermSet covers the term.</td>
+      </tr>
+      <tr>
+        <td class="num">12</td>
+        <td class="intent">How do I book a medical appointment online?</td>
+        <td><span class="module-link">Module 15: Telehealth</span></td>
+        <td>HowTo schema Step 1 (Book a telehealth appointment), Living Alone Hub (planned Phase 7)</td>
+        <td><span class="tag tag-med">MEDIUM</span> — Module 15 HowTo covers this. <strong>Gap:</strong> Ontario health portal specifics (MyChart, Meditech) not yet referenced. Consider adding portal names to Module 15.</td>
+      </tr>
+      <tr>
+        <td class="num">13</td>
+        <td class="intent">What is phishing?</td>
+        <td><span class="module-link">Module 5: Email &amp; Messages</span></td>
+        <td>Glossary (Phishing entry), Scam Simulator Scenario 2, FAQ page</td>
+        <td><span class="tag tag-low">LOW</span> — Well covered. Glossary DefinedTermSet schema makes this highly retrievable by AI.</td>
+      </tr>
+      <tr>
+        <td class="num">14</td>
+        <td class="intent">How do I update my apps?</td>
+        <td><span class="module-link">Module 4: App Store Safety</span></td>
+        <td>Module 2 (Security Shield — automatic updates), Glossary (Update entry), FAQ — "What does update available mean?"</td>
+        <td><span class="tag tag-low">LOW</span> — Well covered in Module 4 HowTo schema and FAQ schema.</td>
+      </tr>
+      <tr>
+        <td class="num">15</td>
+        <td class="intent">Is my iPad being hacked?</td>
+        <td><span class="module-link">Module 2: Security Shield</span></td>
+        <td>Module 1 (Escape Hatch for pop-ups), Scam Simulator (Tech Support Scam), FAQ page</td>
+        <td><span class="tag tag-high">HIGH</span> — High-anxiety query with no dedicated content. <strong>Gap:</strong> No "signs your device has been compromised" page. This is a critical content opportunity — seniors frequently worry about this after a suspicious pop-up.</td>
+      </tr>
+      <tr>
+        <td class="num">16</td>
+        <td class="intent">How do I use e-transfer safely?</td>
+        <td><span class="module-link">Module 6: Banking &amp; Transactions</span></td>
+        <td>Recommended Tools (Interac e-Transfer card), HowTo schema Step 4 (Send an Interac e-Transfer)</td>
+        <td><span class="tag tag-low">LOW</span> — HowTo schema directly covers this. Interac e-Transfer card in Recommended Tools adds context.</td>
+      </tr>
+      <tr>
+        <td class="num">17</td>
+        <td class="intent">What do I do if I get a suspicious text?</td>
+        <td><span class="module-link">Module 5: Email &amp; Messages</span></td>
+        <td>Scam Simulator, Module 2, FAQ page</td>
+        <td><span class="tag tag-med">MEDIUM</span> — SMS/text-specific scam content exists but is secondary to email. <strong>Gap:</strong> No dedicated "suspicious text message checklist" — smishing (SMS phishing) is the fastest-growing scam vector for seniors.</td>
+      </tr>
+      <tr>
+        <td class="num">18</td>
+        <td class="intent">How do I find a trustworthy app?</td>
+        <td><span class="module-link">Module 4: App Store Safety</span></td>
+        <td>HowTo schema (Check the app before downloading), FAQ — "How do I download apps safely?"</td>
+        <td><span class="tag tag-low">LOW</span> — Well covered. Module 4 HowTo schema and FAQ schema both answer this directly.</td>
+      </tr>
+      <tr>
+        <td class="num">19</td>
+        <td class="intent">What is a VPN and do I need one?</td>
+        <td><span class="module-link">FAQ page</span></td>
+        <td>Glossary (VPN entry), FAQ — "What is a VPN and do I need one?", Module 2 (public Wi-Fi risks)</td>
+        <td><span class="tag tag-med">MEDIUM</span> — FAQ schema covers this. <strong>Gap:</strong> Module 16 (Travel Safety) will add public Wi-Fi context. Consider linking the FAQ answer to Module 16 when built.</td>
+      </tr>
+      <tr>
+        <td class="num">20</td>
+        <td class="intent">How do I back up my photos?</td>
+        <td><span class="module-link">Module 7: Photos &amp; Memories</span></td>
+        <td>HowTo schema Step 4 (Set up iCloud Photos backup), Glossary (Cloud entry)</td>
+        <td><span class="tag tag-low">LOW</span> — HowTo schema step directly answers this. Glossary DefinedTermSet explains "the cloud."</td>
+      </tr>
+      <tr>
+        <td class="num">21</td>
+        <td class="intent">How do I use voice assistants safely?</td>
+        <td><span class="module-link">Module 9: Understanding AI</span></td>
+        <td>Module 14 (Smart Home — voice commands), HowTo schemas for both modules</td>
+        <td><span class="tag tag-med">MEDIUM</span> — Covered between Modules 9 and 14. <strong>Gap:</strong> No dedicated "Siri safety guide" or "what Alexa hears" explainer. Could be a targeted blog/resource article.</td>
+      </tr>
+      <tr>
+        <td class="num">22</td>
+        <td class="intent">How do I protect my credit card online?</td>
+        <td><span class="module-link">Module 6: Banking &amp; Transactions</span></td>
+        <td>Module 2 (Security Shield), FAQ — "Is online banking safe for seniors?"</td>
+        <td><span class="tag tag-high">HIGH</span> — <strong>Gap:</strong> No content specifically about credit card safety online (virtual cards, one-time numbers, checking statements). High-intent query from seniors who shop online. Add to Module 6 or create resource article.</td>
+      </tr>
+      <tr>
+        <td class="num">23</td>
+        <td class="intent">What is the Canada Revenue Agency allowed to ask for?</td>
+        <td><span class="module-link">Scam Simulator (CRA scam scenario)</span></td>
+        <td>Module 2, FAQ page, CAFC reference in Recommended Tools</td>
+        <td><span class="tag tag-high">HIGH</span> — CRA scam is the #1 reported fraud targeting Canadian seniors. <strong>Gap:</strong> No dedicated CRA scam explainer with the official rules (CRA never calls demanding immediate payment, never asks for gift cards or Bitcoin). This is a critical content opportunity with Canadian specificity that AI would prize.</td>
+      </tr>
+      <tr>
+        <td class="num">24</td>
+        <td class="intent">How do I set up a smart home device safely?</td>
+        <td><span class="module-link">Module 14: Smart Home</span></td>
+        <td>HowTo schema (all 5 steps cover setup safety), Recommended Tools (coming — smart home category)</td>
+        <td><span class="tag tag-low">LOW</span> — Module 14 HowTo schema covers this well. Speakable schema on module intro also helps AI.</td>
+      </tr>
+      <tr>
+        <td class="num">25</td>
+        <td class="intent">How do I use a health portal to book appointments?</td>
+        <td><span class="module-link">Module 15: Telehealth</span></td>
+        <td>HowTo schema Steps 1–2 (Book appointment, Download app), Living Alone Hub (Phase 7 — Health Technology section)</td>
+        <td><span class="tag tag-med">MEDIUM</span> — Module 15 covers the concept. <strong>Gap:</strong> Ontario-specific portal names (MyChart, Connect Care, Ontario Health) not yet referenced by name. Add to Module 15 and Living Alone Hub for richer AI retrieval.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Priority Action List (Sorted by GEO Impact)</h2>
+  <ol>
+    <li><strong>CRA Scam Explainer</strong> — Dedicated resource: "What is the CRA allowed to ask for?" with official rules. Highest-value Canadian-specific content for AI retrieval.</li>
+    <li><strong>Credit Card Safety Online</strong> — Add section to Module 6 or create /resources/credit-card-safety-online.html</li>
+    <li><strong>Device Hacked / Compromised Signs</strong> — Create /resources/is-my-ipad-hacked.html — high-anxiety query, zero competition in the senior literacy space</li>
+    <li><strong>Phone Scam Red Flags</strong> — Dedicated checklist page at /resources/phone-scam-red-flags.html</li>
+    <li><strong>Smishing Guide</strong> — SMS phishing is fastest-growing; add to Module 5 or create separate resource</li>
+    <li><strong>Ontario Health Portal Names</strong> — Update Module 15 to name MyChart, Connect Care, Ontario Health portals explicitly</li>
+    <li><strong>FaceTime Tutorial</strong> — /resources/facetime-guide-seniors.html for AI retrieval of this high-volume query</li>
+    <li><strong>Zoom Tutorial</strong> — /resources/zoom-guide-seniors.html</li>
+  </ol>
+
+  <p class="print-note">Internal document — Digital Confidence Centre — Two Birds Innovation — Not for distribution</p>
+</body>
+</html>
