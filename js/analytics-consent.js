@@ -76,6 +76,15 @@
       // GA4 was already loaded (returning user path — shouldn't reach here but safe)
       window.gtag('consent', 'update', { analytics_storage: 'granted' });
     }
+    // Load Microsoft Clarity now — replace CLARITY_PROJECT_ID at clarity.microsoft.com
+    if (!window.clarityLoaded) {
+      window.clarityLoaded = true;
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, 'clarity', 'script', 'CLARITY_PROJECT_ID');
+    }
   }
 
   /* ------------------------------------------
