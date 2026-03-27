@@ -217,6 +217,22 @@
       submitBtn.textContent = isFR ? 'Envoyer' : 'Send Feedback';
     }
 
+    /* Generic data-en / data-fr elements (e.g. recommended-tools page) */
+    document.querySelectorAll('[data-fr]').forEach(function (el) {
+      /* Store original EN text on first run if data-en not already set */
+      if (!el.hasAttribute('data-en')) {
+        el.setAttribute('data-en', el.textContent.trim());
+      }
+      var frText = el.getAttribute('data-fr');
+      var enText = el.getAttribute('data-en');
+      if (el.tagName === 'A') {
+        /* For links, preserve href — only swap visible text */
+        el.textContent = isFR ? frText : enText;
+      } else {
+        el.textContent = isFR ? frText : enText;
+      }
+    });
+
     /* Persist */
     try { localStorage.setItem('dc-lang', lang); } catch (e) {}
   }
