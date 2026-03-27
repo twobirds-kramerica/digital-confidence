@@ -3,7 +3,11 @@
     "allow": [
       "Bash(wc:*)",
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:raw.githubusercontent.com)"
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "mcp__context-mode__ctx_execute_file",
+      "mcp__context-mode__ctx_execute",
+      "mcp__context-mode__ctx_batch_execute",
+      "mcp__context-mode__ctx_search"
     ]
   }
 }
