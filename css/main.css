@@ -5722,6 +5722,67 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 .related-desc { font-size: 0.88em; color: #555; line-height: 1.4; }
 
 /* Module Complete Action */
-.module-complete-action { text-align: center; margin: 24px 0 16px; }
-.btn-mark-complete { background: #1565C0; color: white; border: none; padding: 14px 32px; border-radius: 8px; font-size: 1.05em; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+.module-complete-action { text-align: center; margin: 24px 0 16px; position: relative; overflow: hidden; }
+.btn-mark-complete { background: #1565C0; color: white; border: none; padding: 14px 32px; border-radius: 8px; font-size: 1.05em; font-weight: bold; cursor: pointer; transition: background 0.2s; min-height: 52px; }
 .btn-mark-complete:hover { background: #0d47a1; }
+
+/* Completion Banner */
+.mc-complete-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
+  border: 2px solid #16A34A;
+  border-radius: 14px;
+  padding: 1.1rem 1.4rem;
+  margin-bottom: 0.75rem;
+  text-align: left;
+  animation: mc-slide-in 0.4s ease;
+}
+[data-theme="dark"] .mc-complete-banner {
+  background: linear-gradient(135deg, #14532d 0%, #166534 100%);
+  border-color: #22c55e;
+}
+.mc-complete-icon { font-size: 2.2rem; flex-shrink: 0; }
+.mc-complete-msg { margin: 0 0 0.25rem; font-size: 1rem; color: #14532D; }
+[data-theme="dark"] .mc-complete-msg { color: #bbf7d0; }
+.mc-complete-sub { margin: 0; font-size: 0.88rem; color: #166534; }
+[data-theme="dark"] .mc-complete-sub { color: #86efac; }
+
+.mc-print-btn {
+  background: #1565C0;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.65rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.mc-print-btn:hover { background: #0e4fa3; }
+[data-theme="dark"] .mc-print-btn { background: #2563eb; }
+[data-theme="dark"] .mc-print-btn:hover { background: #1d4ed8; }
+
+@keyframes mc-slide-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Confetti */
+.mc-confetti-wrap {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.mc-confetti-piece {
+  position: absolute;
+  top: -12px;
+  animation: mc-confetti-fall linear forwards;
+}
+@keyframes mc-confetti-fall {
+  0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+  80%  { opacity: 1; }
+  100% { transform: translateY(180px) rotate(360deg); opacity: 0; }
+}
