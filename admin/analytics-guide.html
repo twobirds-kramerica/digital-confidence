@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Analytics Guide — Admin — Digital Confidence Centre</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/accessibility.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <style>
+    .admin-gate { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:60vh; text-align:center; }
+    .admin-gate input { font-size:1.1rem; padding:.5rem .75rem; border:2px solid var(--color-border,#ccc); border-radius:8px; margin:.75rem 0; width:200px; text-align:center; }
+    .admin-gate button { padding:.6rem 1.5rem; background:var(--color-primary,#1565C0); color:#fff; border:none; border-radius:8px; cursor:pointer; font-size:1rem; }
+    .admin-content { display:none; }
+    .admin-content.unlocked { display:block; }
+    table { width:100%; border-collapse:collapse; font-size:.9rem; }
+    th { background:var(--color-primary,#1565C0); color:#fff; padding:.5rem .75rem; text-align:left; }
+    td { padding:.5rem .75rem; border-bottom:1px solid var(--color-border,#e0e0e0); vertical-align:top; }
+    tr:nth-child(even) td { background:var(--color-bg-alt,#f5f5f5); }
+    .tag { display:inline-block; padding:.15rem .5rem; border-radius:12px; font-size:.75rem; font-weight:600; margin:.1rem; }
+    .tag-learning { background:#e3f2fd; color:#1565C0; }
+    .tag-safety { background:#fce4ec; color:#c62828; }
+    .tag-engagement { background:#e8f5e9; color:#2e7d32; }
+    .tag-accessibility { background:#f3e5f5; color:#6a1b9a; }
+    .tag-navigation { background:#fff3e0; color:#e65100; }
+    .tag-assessment { background:#e0f2f1; color:#00695c; }
+    .tag-content { background:#fafafa; color:#333; border:1px solid #ccc; }
+    .tag-support { background:#e8eaf6; color:#283593; }
+    .tag-localisation { background:#fff8e1; color:#f57f17; }
+    code { background:var(--color-bg-alt,#f0f0f0); padding:.1rem .35rem; border-radius:4px; font-family:monospace; font-size:.85rem; }
+  </style>
+</head>
+<body>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">DCC Admin — Analytics Guide</span>
+    <span></span>
+  </div>
+
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">✕</button>
+    <div class="sidebar-header"><h2>Admin</h2><p>Analytics Guide</p></div>
+    <nav>
+      <a href="../index.html"><span class="nav-icon">🏠</span><span class="nav-label">Back to Site</span></a>
+      <a href="performance.html"><span class="nav-icon">📊</span><span class="nav-label">Performance</span></a>
+      <a href="feedback-review.html"><span class="nav-icon">💬</span><span class="nav-label">Feedback</span></a>
+      <a href="roadmap.html"><span class="nav-icon">🗺️</span><span class="nav-label">Roadmap</span></a>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <!-- PIN gate -->
+      <div class="admin-gate" id="admin-gate">
+        <h1>Analytics Guide</h1>
+        <p>This page is for DCC administrators only.</p>
+        <input type="password" id="admin-pin" placeholder="Enter PIN" maxlength="4" aria-label="Admin PIN">
+        <button onclick="checkPin()">Unlock</button>
+        <p id="pin-error" style="color:#c62828;display:none">Incorrect PIN. Try again.</p>
+      </div>
+
+      <!-- Admin content (hidden until PIN entered) -->
+      <div class="admin-content" id="admin-content">
+
+        <h1>Analytics Guide — GA4 Event Reference</h1>
+        <p><strong>Property ID:</strong> <code>G-RPH5H5BM52</code> &nbsp;|&nbsp; <strong>File:</strong> <code>js/analytics-events.js</code> &nbsp;|&nbsp; <strong>Last updated:</strong> March 2026</p>
+
+        <p>The Digital Confidence Centre uses Google Analytics 4 with custom events defined in <code>js/analytics-events.js</code>. All events use a safe <code>gtag()</code> wrapper that silently fails if GA is not loaded (e.g., when the user has declined consent or is using an ad blocker). Events never block the user interface.</p>
+
+        <h2>Consent Model</h2>
+        <p>Analytics only fires after the user accepts cookies via the consent banner (<code>js/analytics-consent.js</code>). If the user declines, the GA4 snippet is not loaded and all <code>gtag()</code> calls are no-ops. You may see lower traffic numbers than actual usage — this is expected and correct.</p>
+
+        <h2>Event Reference Table</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Event Name</th>
+              <th>Category</th>
+              <th>When it fires</th>
+              <th>Key parameters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td><code>module_progress_step</code></td><td><span class="tag tag-learning">Learning</span></td><td>User checks a progress checkbox within a module</td><td><code>step_id</code>, <code>page_module</code>, <code>is_beta</code></td></tr>
+            <tr><td>2</td><td><code>module_complete</code></td><td><span class="tag tag-learning">Learning</span></td><td>All checkboxes in a module are checked (once per session)</td><td><code>module_number</code>, <code>value</code>, <code>is_beta</code></td></tr>
+            <tr><td>3</td><td><code>quiz_answer</code></td><td><span class="tag tag-assessment">Assessment</span></td><td>User selects an answer in an in-module quiz</td><td><code>correct</code> (boolean), <code>module_number</code></td></tr>
+            <tr><td>4</td><td><code>quiz_complete</code></td><td><span class="tag tag-assessment">Assessment</span></td><td>Module quiz shows final score</td><td><code>score</code>, <code>out_of</code>, <code>module_number</code></td></tr>
+            <tr><td>5</td><td><code>final_quiz_submit</code></td><td><span class="tag tag-assessment">Assessment</span></td><td>User submits the final quiz (final-quiz.html)</td><td><code>is_beta</code></td></tr>
+            <tr><td>6</td><td><code>feedback_submit</code></td><td><span class="tag tag-engagement">Engagement</span></td><td>Feedback form submitted</td><td><code>event_label</code> (feedback type), <code>page_module</code></td></tr>
+            <tr><td>7</td><td><code>feedback_modal_open</code></td><td><span class="tag tag-engagement">Engagement</span></td><td>User opens the feedback modal/bubble</td><td><code>event_label</code> (page name)</td></tr>
+            <tr><td>8</td><td><code>accessibility_font_size</code></td><td><span class="tag tag-accessibility">Accessibility</span></td><td>User clicks a font size button (A A A A+)</td><td><code>event_label</code> (small/medium/large/xl)</td></tr>
+            <tr><td>9</td><td><code>accessibility_theme</code></td><td><span class="tag tag-accessibility">Accessibility</span></td><td>User toggles dark/light mode</td><td><code>event_label</code> (dark/light)</td></tr>
+            <tr><td>10</td><td><code>accessibility_dyslexic_font</code></td><td><span class="tag tag-accessibility">Accessibility</span></td><td>User toggles dyslexia-friendly font</td><td><code>event_label</code> (Enabled/Disabled)</td></tr>
+            <tr><td>11</td><td><code>language_switch</code></td><td><span class="tag tag-localisation">Localisation</span></td><td>User switches to French or English</td><td><code>event_label</code> (French/English), <code>from_page</code></td></tr>
+            <tr><td>12</td><td><code>video_link_click</code></td><td><span class="tag tag-content">Content</span></td><td>User clicks a video card button</td><td><code>event_label</code> (video title), <code>page_module</code></td></tr>
+            <tr><td>13</td><td><code>video_play</code></td><td><span class="tag tag-content">Content</span></td><td>Native &lt;video&gt; element starts playing</td><td><code>event_label</code> (title), <code>video_id</code></td></tr>
+            <tr><td>14</td><td><code>video_complete</code></td><td><span class="tag tag-content">Content</span></td><td>Native &lt;video&gt; element reaches end</td><td><code>event_label</code> (title), <code>video_id</code></td></tr>
+            <tr><td>15</td><td><code>module_print</code></td><td><span class="tag tag-content">Content</span></td><td>User clicks a Print button</td><td><code>event_label</code> (page title), <code>page_module</code></td></tr>
+            <tr><td>16</td><td><code>outbound_click</code></td><td><span class="tag tag-navigation">Navigation</span></td><td>User clicks any external link (http/https)</td><td><code>event_label</code> (destination URL), <code>link_text</code></td></tr>
+            <tr><td>17</td><td><code>phone_call_click</code></td><td><span class="tag tag-support">Support</span></td><td>User taps a tel: link (phone number)</td><td><code>event_label</code> (phone number)</td></tr>
+            <tr><td>18</td><td><code>scam_scenario_view</code></td><td><span class="tag tag-safety">Safety</span></td><td>User interacts with a scam simulator card</td><td><code>scenario_id</code>, <code>event_label</code></td></tr>
+            <tr><td>19</td><td><code>module_nav</code></td><td><span class="tag tag-navigation">Navigation</span></td><td>User clicks Next or Previous module button</td><td><code>event_label</code> (next/previous), <code>from_module</code></td></tr>
+            <tr><td>20</td><td><code>scroll_depth</code></td><td><span class="tag tag-engagement">Engagement</span></td><td>User scrolls to 25%, 50%, 75%, or 100% of page</td><td><code>event_label</code> (e.g. "75%"), <code>page</code></td></tr>
+            <tr><td>21</td><td><code>time_on_page</code></td><td><span class="tag tag-engagement">Engagement</span></td><td>Page hidden/closed (pagehide event)</td><td><code>value</code> (seconds on page), <code>page_module</code></td></tr>
+            <tr><td>22</td><td><code>page_view_dcc</code></td><td><span class="tag tag-navigation">Navigation</span></td><td>Every page load — augments GA4 auto-tracking</td><td><code>page_module</code>, <code>is_beta</code>, <code>referrer</code></td></tr>
+            <tr><td>23</td><td><code>module_rated</code></td><td><span class="tag tag-engagement">Engagement</span></td><td>User rates a module (1–5 stars)</td><td><code>module</code> (key), <code>rating</code> (1–5) — via module-enhancements.js</td></tr>
+            <tr><td>24</td><td><code>module_shared</code></td><td><span class="tag tag-engagement">Engagement</span></td><td>User taps Share this lesson button</td><td><code>module</code> (key) — via module-enhancements.js</td></tr>
+          </tbody>
+        </table>
+
+        <h2>How to View Events in GA4</h2>
+        <ol>
+          <li>Go to <strong>analytics.google.com</strong> and select property <strong>G-RPH5H5BM52</strong></li>
+          <li>In the left menu, click <strong>Reports → Engagement → Events</strong></li>
+          <li>To filter by event name, use the search box or click any event name in the table</li>
+          <li>For real-time testing: open <strong>Reports → Realtime</strong>, then open the site in another tab and interact — events should appear within 30 seconds</li>
+        </ol>
+
+        <h2>Custom Dimensions to Register</h2>
+        <p>These parameters are sent with events but will show as <em>(not set)</em> in GA4 until you register them as Custom Dimensions. Do this once in GA4 Admin → Custom Definitions → Custom Dimensions:</p>
+        <table>
+          <thead><tr><th>Parameter Name</th><th>Scope</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>page_module</code></td><td>Event</td><td>Module number (1–17) or page slug</td></tr>
+            <tr><td><code>module_number</code></td><td>Event</td><td>Module number as integer</td></tr>
+            <tr><td><code>is_beta</code></td><td>Event</td><td>Whether user arrived via ?beta=true</td></tr>
+            <tr><td><code>scenario_id</code></td><td>Event</td><td>Scam simulator scenario identifier</td></tr>
+            <tr><td><code>correct</code></td><td>Event</td><td>Whether quiz answer was correct (true/false)</td></tr>
+            <tr><td><code>rating</code></td><td>Event</td><td>Star rating (1–5) given to a module</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Beta Tester Tracking</h2>
+        <p>All events include an <code>is_beta</code> parameter. Users who visit any page with <code>?beta=true</code> in the URL are tagged as beta testers in localStorage. To create a GA4 segment for beta testers: <strong>Explore → Segments → Add segment → Event segment</strong> → filter where <code>is_beta = true</code>.</p>
+
+        <h2>Privacy Notes</h2>
+        <ul>
+          <li>No personally identifiable information (PII) is sent to GA4</li>
+          <li>User IDs and IP addresses are not logged</li>
+          <li>Analytics only activates after consent is given (see <code>js/analytics-consent.js</code>)</li>
+          <li>If a user declines consent, all <code>gtag()</code> calls are no-ops — verified by checking <code>typeof gtag !== 'function'</code></li>
+        </ul>
+
+        <p style="margin-top:2rem"><a href="../index.html">← Back to site</a> &nbsp;|&nbsp; <a href="performance.html">→ Performance Dashboard</a></p>
+
+      </div><!-- end admin-content -->
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-copy">&copy; 2026 Two Birds Innovation — Admin Area</p>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    function checkPin() {
+      var pin = document.getElementById('admin-pin').value;
+      if (pin === '2026') {
+        document.getElementById('admin-gate').style.display = 'none';
+        document.getElementById('admin-content').classList.add('unlocked');
+        sessionStorage.setItem('dc-admin-unlocked', '1');
+      } else {
+        document.getElementById('pin-error').style.display = 'block';
+        document.getElementById('admin-pin').value = '';
+      }
+    }
+    document.getElementById('admin-pin').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') checkPin();
+    });
+    // Auto-unlock if already authenticated this session
+    if (sessionStorage.getItem('dc-admin-unlocked') === '1') {
+      document.getElementById('admin-gate').style.display = 'none';
+      document.getElementById('admin-content').classList.add('unlocked');
+    }
+  </script>
+  <script src="../js/app.js" defer></script>
+  <script src="../js/accessibility.js" defer></script>
+</body>
+</html>
