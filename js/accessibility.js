@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initDyslexicFont();
   initBackToTop();
   initBreadcrumb();
+  initTopBarHome();
 });
 
 var FONT_SIZES = ['small', 'medium', 'large', 'xl'];
@@ -170,6 +171,37 @@ function initBackToTop() {
   btn.addEventListener('click', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+}
+
+/* ---- Home Button in Top Bar ---- */
+function initTopBarHome() {
+  var topBar = document.querySelector('.top-bar');
+  if (!topBar) return;
+  if (document.getElementById('dc-home-btn')) return; // already injected
+
+  /* Build correct relative path back to index.html */
+  var path = window.location.pathname;
+  var dccMatch = path.match(/digital-confidence\/(.*)/);
+  var homeHref = 'index.html';
+  if (dccMatch && dccMatch[1]) {
+    var depth = (dccMatch[1].match(/\//g) || []).length;
+    homeHref = depth > 0 ? '../'.repeat(depth) + 'index.html' : 'index.html';
+  }
+
+  var link = document.createElement('a');
+  link.id        = 'dc-home-btn';
+  link.href      = homeHref;
+  link.className = 'top-bar-home';
+  link.setAttribute('aria-label', 'Return to homepage');
+  link.innerHTML = '<span aria-hidden="true">🏠</span><span class="top-bar-home-label">Home</span>';
+
+  /* Replace the empty trailing span, or append */
+  var trailing = topBar.querySelector('span:last-child:not(.site-title)');
+  if (trailing && !trailing.textContent.trim()) {
+    topBar.replaceChild(link, trailing);
+  } else {
+    topBar.appendChild(link);
+  }
 }
 
 /* ---- Breadcrumb on Module Pages ---- */

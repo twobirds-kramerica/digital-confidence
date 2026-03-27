@@ -5314,43 +5314,27 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 .dc-badge-stale    { background: #FFF3E0; color: #E65100; border: 1px solid #FFCC02; }
 
 /* ================================================================
-   EXIT SAFELY BUTTON (exit-safely.js)
-   Inline in the top-bar header — right slot
+   HOME BUTTON IN TOP BAR (accessibility.js — initTopBarHome)
+   Simple text link, no pill shape, consistent with nav styling
    ================================================================ */
-#dc-exit-safely-btn {
-  display: flex;
+.top-bar-home {
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: transparent;
-  color: #1565C0;
-  border: 2px solid #1565C0;
-  border-radius: 50px;
-  padding: 6px 14px;
-  font-size: 0.88rem;
-  font-weight: 700;
-  font-family: inherit;
-  cursor: pointer;
+  gap: 5px;
+  color: var(--text-primary);
   text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
   min-width: 44px;
   min-height: 44px;
+  padding: 0 6px;
+  border-radius: 6px;
   white-space: nowrap;
-  transition: background 0.15s, color 0.15s;
+  transition: color 0.15s;
 }
-#dc-exit-safely-btn:hover {
-  background: #1565C0;
-  color: #fff;
-  text-decoration: none;
-}
-.dc-exit-icon { font-size: 1.1rem; line-height: 1; }
-.dc-exit-label { font-size: 0.85rem; }
-[data-theme="dark"] #dc-exit-safely-btn {
-  color: #90CAF9;
-  border-color: #42A5F5;
-}
-[data-theme="dark"] #dc-exit-safely-btn:hover {
-  background: #1565C0;
-  color: #fff;
-}
+.top-bar-home:hover { color: var(--accent, #1565C0); text-decoration: none; }
+.top-bar-home-label { font-size: 0.85rem; }
+[data-theme="dark"] .top-bar-home { color: var(--text-primary); }
 
 /* Mobile: position feedback btn above exit label so they don't overlap */
 @media (max-width: 600px) {
