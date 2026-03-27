@@ -592,6 +592,58 @@
         </a>
 
       </div>
+
+      <!-- ===== Scam Alert of the Month ===== -->
+      <section id="scam-of-the-month" aria-labelledby="sotm-heading" style="margin:2rem 0;padding:1.25rem 1.5rem;background:#fff3f3;border:1px solid #e57373;border-left:6px solid #c0392b;border-radius:8px;">
+        <div id="sotm-loading" style="color:#888;font-size:0.95rem;" data-en="Loading scam alert..." data-fr="Chargement de l'alerte...">Loading scam alert...</div>
+        <div id="sotm-content" style="display:none;">
+          <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.5rem;">
+            <span style="font-size:1.4rem;" aria-hidden="true">🚨</span>
+            <h2 id="sotm-heading" style="margin:0;font-size:1.1rem;color:#b71c1c;" data-en="Scam Alert of the Month" data-fr="Arnaque du mois">Scam Alert of the Month</h2>
+            <span id="sotm-month" style="font-size:0.85rem;color:#888;"></span>
+            <span id="sotm-severity" style="display:inline-block;background:#c0392b;color:#fff;font-size:0.75rem;font-weight:bold;padding:2px 9px;border-radius:4px;text-transform:uppercase;letter-spacing:0.05em;"></span>
+          </div>
+          <p id="sotm-title" style="font-weight:bold;font-size:1.05rem;margin:0.25rem 0 0.5rem;color:#1a1a1a;"></p>
+          <p id="sotm-summary" style="margin:0.25rem 0 0.75rem;line-height:1.6;"></p>
+          <strong id="sotm-todo-label" data-en="What to do:" data-fr="Que faire :">What to do:</strong>
+          <ul id="sotm-todo-list" style="margin:0.5rem 0 0.75rem 1.25rem;padding:0;line-height:1.7;"></ul>
+          <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:0.75rem;">
+            <a id="sotm-link-alerts" href="scam-alerts/" style="display:inline-block;background:#c0392b;color:#fff;padding:0.5rem 1rem;border-radius:5px;text-decoration:none;font-size:0.9rem;font-weight:bold;" data-en="See All Scam Alerts →" data-fr="Voir toutes les alertes →">See All Scam Alerts →</a>
+            <a id="sotm-link-sim" href="scam-simulator.html" style="display:inline-block;background:#fff;color:#c0392b;border:2px solid #c0392b;padding:0.5rem 1rem;border-radius:5px;text-decoration:none;font-size:0.9rem;font-weight:bold;" data-en="Practise Spotting Scams →" data-fr="S'entraîner à repérer les arnaques →">Practise Spotting Scams →</a>
+          </div>
+        </div>
+      </section>
+      <script>
+        (function() {
+          var lang = (document.documentElement.getAttribute('data-lang') || 'en');
+          fetch('data/scam-of-month.json')
+            .then(function(r) { return r.json(); })
+            .then(function(d) {
+              var fr = (lang === 'fr');
+              document.getElementById('sotm-loading').style.display = 'none';
+              document.getElementById('sotm-content').style.display = 'block';
+              document.getElementById('sotm-month').textContent = fr ? d.monthFr : d.month;
+              document.getElementById('sotm-severity').textContent = fr ? d.severityFr : d.severity;
+              document.getElementById('sotm-title').textContent = fr ? d.titleFr : d.title;
+              document.getElementById('sotm-summary').textContent = fr ? d.summaryFr : d.summary;
+              var items = fr ? d.whatToDoFr : d.whatToDo;
+              var ul = document.getElementById('sotm-todo-list');
+              ul.innerHTML = '';
+              items.forEach(function(item) {
+                var li = document.createElement('li');
+                li.textContent = item;
+                ul.appendChild(li);
+              });
+              document.getElementById('sotm-link-alerts').href = d.alertsPage;
+              document.getElementById('sotm-link-sim').href = d.learnMore;
+            })
+            .catch(function() {
+              document.getElementById('sotm-loading').textContent = '';
+            });
+        })();
+      </script>
+      <!-- ===== End Scam Alert of the Month ===== -->
+
       <!-- EEAT Trust Bar -->
       <div class="eeat-trust-bar" aria-label="Site quality signals">
         <span>✅ WCAG AA Accessible</span>
@@ -844,6 +896,7 @@
             <a href="#" onclick="openFeedbackModal(); return false;">Ideas &amp; Feedback</a> |
             <a href="beta/beta-landing.html">Join Our Beta</a> |
             <a href="b2b/index.html">For Organisations</a> |
+            <a href="scam-alerts/">Scam Alerts</a> |
             <a href="resources/support-directory.html">Get Help</a>
           </nav>
           <p class="footer-support">Questions about this site? Leave us a voice message or written note using the Feedback button.</p>
