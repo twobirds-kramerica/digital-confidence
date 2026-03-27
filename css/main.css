@@ -6119,3 +6119,34 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 [data-theme="dark"] .mi-notes-area { background: #152030; color: #E0E0E0; border-color: #555; }
 [data-theme="dark"] .mi-btn { background: #1e2a38; color: #E0E0E0; border-color: #555; }
 [data-theme="dark"] .mi-btn:hover { background: #1565C0; color: #fff; }
+
+/* ── Homepage Personalisation Panel ─────────────────────────────────────── */
+#dc-progress-personalise { margin: 0.75rem 0 1rem; }
+.dp-banner {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  border: 1.5px solid;
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+}
+.dp-icon { font-size: 1.8rem; flex-shrink: 0; line-height: 1; margin-top: 0.1rem; }
+.dp-text { flex: 1; }
+.dp-title {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.dp-body { font-size: 0.9rem; line-height: 1.6; margin: 0 0 0.6rem; }
+.dp-cta {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  margin-top: 0.2rem;
+}
+.dp-cta:hover { opacity: 0.88; }
