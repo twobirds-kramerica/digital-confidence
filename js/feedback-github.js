@@ -87,7 +87,7 @@ function injectFeedbackStyles() {
     '  background:#f0f0f0;border:1px solid #cccccc;border-radius:20px;',
     '  color:#333333;font-size:0.9rem;font-weight:600;cursor:pointer;',
     '  padding:0.3rem 1rem;margin-bottom:10px;z-index:10;flex-shrink:0;',
-    '  min-height:36px;',
+    '  min-height:44px;',
     '  transition:background 0.15s,color 0.15s,border-color 0.15s;',
     '  width:auto;height:auto;',
     '}',

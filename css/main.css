@@ -185,6 +185,15 @@ body {
   max-width: 100%;
 }
 
+/* Global responsive media */
+img {
+  max-width: 100%;
+  height: auto;
+}
+iframe, video {
+  max-width: 100%;
+}
+
 /* Skip Navigation Link (keyboard / screen reader accessibility) */
 .skip-link {
   position: absolute;
@@ -417,6 +426,10 @@ strong {
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
 }
 
 /* Accessibility Controls — hidden at top-right; controls live in sidebar instead */
@@ -454,6 +467,7 @@ strong {
 /* Module Cards (Home Page) */
 .module-grid {
   display: grid;
+  grid-template-columns: 1fr;
   gap: var(--spacing-md);
   margin: var(--spacing-lg) 0;
 }
@@ -4148,8 +4162,8 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: 999999;
   display: flex;
   align-items: center;
@@ -4191,7 +4205,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   font-weight: 600;
   cursor: pointer;
   padding: 0.3rem 1rem;
-  min-height: 36px;
+  min-height: 44px;
   margin-bottom: 10px;
   z-index: 10;
   flex-shrink: 0;
@@ -4357,7 +4371,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
     white-space: nowrap;
     letter-spacing: 0.03em;
   }
-  .dc-modal-content { padding: 20px 16px 18px; max-height: 95vh; }
+  .dc-modal-content { padding: 20px 16px 18px; max-height: 95vh; max-width: calc(100vw - 32px); width: 100%; }
   .dc-type-help { display: none; }
   .dc-feedback-actions { flex-direction: column; }
   .dc-btn-submit, .dc-btn-cancel { width: 100%; text-align: center; }
@@ -4422,7 +4436,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 .dc-scam-modal {
   position: fixed;
   top: 0; left: 0;
-  width: 100vw; height: 100vh;
+  width: 100%; height: 100%;
   z-index: 1000000;
   display: flex;
   align-items: flex-start;
@@ -4453,7 +4467,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   top: 12px; right: 12px;
   background: #f0f0f0; border: 1px solid #ccc; border-radius: 20px;
   color: #333; font-size: 0.9rem; font-weight: 600;
-  padding: 0.3rem 1rem; min-height: 36px;
+  padding: 0.3rem 1rem; min-height: 44px;
   cursor: pointer; white-space: nowrap;
   transition: background 0.15s, border-color 0.15s;
 }
@@ -4544,7 +4558,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 
 /* Mobile — scam modal */
 @media (max-width: 600px) {
-  .dc-scam-content { padding: 20px 16px; margin: 12px auto; }
+  .dc-scam-content { padding: 20px 16px; margin: 12px auto; max-width: calc(100vw - 32px); width: 100%; }
   .dc-scam-title  { font-size: 20px; }
   .dc-scam-step   { flex-direction: column; gap: 10px; }
   .dc-step-num    { width: 40px; height: 40px; font-size: 18px; }
