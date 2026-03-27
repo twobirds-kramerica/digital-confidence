@@ -26,6 +26,7 @@ var DC_MODULES = [
   'Home Page',
   'Module 1: Mastering the Escape Hatch',
   'Module 2: The Security Shield',
+  'Module 2.5: Everyday Tasks',
   'Module 3: Passwords & Biometrics',
   'Module 4: App Store Safety',
   'Module 5: Email & Messages',
@@ -36,26 +37,35 @@ var DC_MODULES = [
   'Module 10: Grocery & Food Delivery',
   'Module 11: Ride-Sharing Apps',
   'Module 12: Getting the Help You Deserve',
+  'Module 13: Understanding Social Media',
+  'Module 14: Smart Home Basics',
+  'Module 15: Telehealth & Medical Portals',
+  'Bonus: Show Me! (Visual AI)',
   'Resources Page',
   'General / Other'
 ];
 
 /* ---- Page-to-module auto-select map ---- */
 var DC_PAGE_MODULE = {
-  'index.html':     'Home Page',
-  'module-1.html':  'Module 1: Mastering the Escape Hatch',
-  'module-2.html':  'Module 2: The Security Shield',
-  'module-3.html':  'Module 3: Passwords & Biometrics',
-  'module-4.html':  'Module 4: App Store Safety',
-  'module-5.html':  'Module 5: Email & Messages',
-  'module-6.html':  'Module 6: Banking & Transactions',
-  'module-7.html':  'Module 7: Photos & Memories',
-  'module-8.html':  'Module 8: Stay Connected',
-  'module-9.html':  'Module 9: Understanding AI',
-  'module-10.html': 'Module 10: Grocery & Food Delivery',
-  'module-11.html': 'Module 11: Ride-Sharing Apps',
-  'module-12.html': 'Module 12: Getting the Help You Deserve',
-  'resources.html': 'Resources Page'
+  'index.html':          'Home Page',
+  'module-1.html':       'Module 1: Mastering the Escape Hatch',
+  'module-2.html':       'Module 2: The Security Shield',
+  'module-2-5.html':     'Module 2.5: Everyday Tasks',
+  'module-3.html':       'Module 3: Passwords & Biometrics',
+  'module-4.html':       'Module 4: App Store Safety',
+  'module-5.html':       'Module 5: Email & Messages',
+  'module-6.html':       'Module 6: Banking & Transactions',
+  'module-7.html':       'Module 7: Photos & Memories',
+  'module-8.html':       'Module 8: Stay Connected',
+  'module-9.html':       'Module 9: Understanding AI',
+  'module-10.html':      'Module 10: Grocery & Food Delivery',
+  'module-11.html':      'Module 11: Ride-Sharing Apps',
+  'module-12.html':      'Module 12: Getting the Help You Deserve',
+  'module-13.html':      'Module 13: Understanding Social Media',
+  'module-14.html':      'Module 14: Smart Home Basics',
+  'module-15.html':      'Module 15: Telehealth & Medical Portals',
+  'module-visual-ai.html': 'Bonus: Show Me! (Visual AI)',
+  'resources.html':      'Resources Page'
 };
 
 /* ================================================================

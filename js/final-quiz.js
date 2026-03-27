@@ -840,7 +840,7 @@ var DC_QUIZ = (function () {
       bannerHTML =
         '<div class="confidence-check-box">' +
           '&#x2705; <strong>You are ready!</strong><br>' +
-          'You have completed all 11 modules. You can take the Final Assessment now ' +
+          'You have completed all 15 modules. You can take the Final Assessment now ' +
           '&#8212; and you can retake it as many times as you like. There is no pressure and no time limit.' +
         '</div>';
       actionHTML =
@@ -900,7 +900,7 @@ var DC_QUIZ = (function () {
       '<div class="quiz-locked-screen">' +
         '<div class="quiz-locked-icon">&#128274;</div>' +
         '<h1>Final Assessment &#8212; Locked</h1>' +
-        '<p>Complete all 11 learning modules to unlock the Final Assessment and earn your Certificate of Completion.</p>' +
+        '<p>Complete all 15 learning modules to unlock the Final Assessment and earn your Certificate of Completion.</p>' +
         '<ul class="module-checklist">' + statuses + '</ul>' +
         '<p><a href="index.html">&#8592; Return to Home</a> to continue your modules.</p>' +
       '</div>';
