@@ -160,6 +160,30 @@ The following items were categorised as "Claude Code can fix" and were applied a
 
 ---
 
+## PART 5 — WITCHING HOUR MEGA BUILD ADDENDUM (March 27, 2026 — Phase 15)
+
+The following was resolved during the 15-phase mega build and Phase 15 final pass.
+
+| # | Fix | Notes |
+|---|-----|-------|
+| M1 | 21 answer pages (AEO/GEO) built in `/answers/` | All have title, meta, canonical, OG, lang, viewport |
+| M2 | Module ecosystem JS injected (badges, collapsible, rating, share, progress) | Via `js/module-enhancements.js` + `data/module-meta.json` |
+| M3 | French audit — hreflang, ARIA_MAP, PLACEHOLDER_MAP | `js/lang-toggle.js` updated |
+| M4 | SEO technical audit — all new pages audited, fixes applied | See `_audit/seo-audit-march27.md` |
+| M5 | Analytics admin guide created | `admin/analytics-guide.html` (PIN-gated) |
+| M6 | Scam ecosystem — 50 scenarios, scam alerts page, scam of the month | `scam-alerts/index.html`, `data/scam-of-month.json` |
+| M7 | Resource ecosystem — Canadian helplines, device guides | `resources/canadian-helplines.html`, `resources/device-guides.html` |
+| M8 | GitHub Actions — deploy check + monthly report | `.github/workflows/deploy-check.yml`, `monthly-report.yml` |
+| M9 | White-label system — LPL demo, config template | `white-label-demo/london-public-library/`, `white-label-config/template.json` |
+| M10 | Career Coach polish | `career-coach` repo — demo card, shortcuts, history, mobile |
+| M11 | Two Birds Innovation enhancement | `two-birds-innovation` repo — services, philosophy, contact |
+| M12 | Quality Dashboard enhancement | `quality-dashboard` repo — stats, history, alerts, export |
+| M13 | Portfolio archive | `two-birds-portfolio` repo — SESSION-ARCHIVE-MARCH-2026.md |
+| M14 | Kevin's apartment polish | `kevins-apartment-search` repo — comparison, favourites, notes |
+| M15 | Final infrastructure pass | `humans.txt`, `security.txt`, sitemap confirmed 103 URLs, Canadian English clean, scam-alerts canonical fixed, homepage footer updated |
+
+---
+
 ## SUMMARY TABLE
 
 | Category | Count | Items |
@@ -168,8 +192,9 @@ The following items were categorised as "Claude Code can fix" and were applied a
 | Aaron must do | 13 | A1–A13 |
 | Needs decision | 2 | D1–D2 |
 | Auto-fixed by Claude Code | 2 | F1–F2 |
+| Mega build completed | 15 | M1–M15 |
 
-### Priority breakdown (unresolved only):
+### Priority breakdown (unresolved Aaron actions only):
 | Priority | Count |
 |----------|-------|
 | P1 | 0 (all P1 items confirmed resolved or reclassified) |
@@ -179,4 +204,4 @@ The following items were categorised as "Claude Code can fix" and were applied a
 
 ---
 
-*Audit performed March 27, 2026 by Claude Code. No production code was changed during this audit beyond items explicitly marked as auto-fixed.*
+*Audit performed March 27, 2026 by Claude Code. Updated after Witching Hour Mega Build (Phase 15 final pass).*
