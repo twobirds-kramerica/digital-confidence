@@ -147,6 +147,119 @@ document.addEventListener('click', function (e) {
   });
 })();
 
+/* ── Progress Milestone Celebration ── */
+/* Shows a congratulatory banner when the user completes
+   4, 8, 12, or 16 modules. Shown once per milestone. */
+(function () {
+  var MILESTONES = [4, 8, 12, 16];
+
+  var MESSAGES = {
+    4:  { icon: '🌟', text: 'Brilliant — you\'ve finished 4 modules! You\'re building real confidence.' },
+    8:  { icon: '🏅', text: 'Halfway there! 8 modules complete — you should be proud of yourself.' },
+    12: { icon: '🎖️', text: 'Amazing work — 12 modules done! You\'re nearly at the finish line.' },
+    16: { icon: '🏆', text: 'Outstanding! All 16 core modules complete. You have earned your Digital Confidence!' }
+  };
+
+  function countCompletedModules() {
+    var count = 0;
+    try {
+      for (var i = 0; i < localStorage.length; i++) {
+        var key = localStorage.key(i);
+        if (key && key.indexOf('dc-module-') === 0 && key.indexOf('-complete') !== -1) {
+          if (localStorage.getItem(key) === 'true') { count++; }
+        }
+      }
+    } catch (e) { /* localStorage unavailable */ }
+    return count;
+  }
+
+  function showMilestoneBanner(n) {
+    var msg = MESSAGES[n];
+    if (!msg) return;
+
+    var banner = document.createElement('div');
+    banner.id = 'dc-milestone-banner';
+    banner.setAttribute('role', 'alert');
+    banner.setAttribute('aria-live', 'polite');
+    banner.style.cssText = [
+      'background:#E8F5E9',
+      'border:2px solid #2E7D32',
+      'border-radius:10px',
+      'padding:1rem 1.25rem',
+      'margin:1rem 0',
+      'display:flex',
+      'align-items:center',
+      'gap:0.75rem',
+      'font-size:1.05rem',
+      'color:#1b5e20',
+      'position:relative'
+    ].join(';');
+
+    var iconSpan = document.createElement('span');
+    iconSpan.style.cssText = 'font-size:1.75rem;flex-shrink:0;';
+    iconSpan.setAttribute('aria-hidden', 'true');
+    iconSpan.textContent = msg.icon;
+
+    var textSpan = document.createElement('span');
+    textSpan.innerHTML = '<strong>Congratulations!</strong> ' + msg.text;
+
+    var closeBtn = document.createElement('button');
+    closeBtn.textContent = '✕ Close';
+    closeBtn.setAttribute('aria-label', 'Close celebration banner');
+    closeBtn.style.cssText = [
+      'margin-left:auto',
+      'background:none',
+      'border:none',
+      'color:#2E7D32',
+      'font-size:0.85rem',
+      'cursor:pointer',
+      'font-weight:600',
+      'flex-shrink:0',
+      'padding:0.25rem 0.5rem'
+    ].join(';');
+    closeBtn.addEventListener('click', function () {
+      if (banner.parentNode) banner.parentNode.removeChild(banner);
+    });
+
+    banner.appendChild(iconSpan);
+    banner.appendChild(textSpan);
+    banner.appendChild(closeBtn);
+
+    /* Insert at top of main content, below progress bar if present */
+    document.addEventListener('DOMContentLoaded', function () {
+      var main = document.getElementById('main') || document.querySelector('main');
+      if (!main) return;
+      var progressOverview = main.querySelector('.progress-overview');
+      if (progressOverview && progressOverview.nextSibling) {
+        main.insertBefore(banner, progressOverview.nextSibling);
+      } else {
+        main.insertBefore(banner, main.firstChild);
+      }
+    });
+  }
+
+  function checkMilestones() {
+    var completed = countCompletedModules();
+    MILESTONES.forEach(function (n) {
+      if (completed >= n) {
+        var key = 'dc-milestone-' + n;
+        try {
+          if (!localStorage.getItem(key)) {
+            localStorage.setItem(key, 'shown');
+            showMilestoneBanner(n);
+          }
+        } catch (e) { /* silent */ }
+      }
+    });
+  }
+
+  /* Run on page load */
+  checkMilestones();
+
+  /* Also expose so progress.js can trigger after marking a module done */
+  window.dcCheckMilestones = checkMilestones;
+})();
+
 /* ── localStorage Availability Banner ── */
 (function () {
   var lsAvailable = true;
