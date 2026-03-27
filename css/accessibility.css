@@ -122,8 +122,11 @@ textarea:focus-visible,
   border: 0;
 }
 
-/* Dyslexia-friendly font — toggled via .dyslexic-font class on <html> or <body> */
+/* Dyslexia-friendly font — toggled via .dyslexic-font class on <body> (set by accessibility.js) */
+/* Also covers class on <html> for forward compatibility */
+body.dyslexic-font,
 .dyslexic-font body,
 html.dyslexic-font body {
   font-family: 'OpenDyslexic', 'Comic Sans MS', cursive !important;
 }
+
