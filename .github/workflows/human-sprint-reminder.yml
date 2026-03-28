@@ -1,0 +1,50 @@
+name: Weekly Sprint Reminder
+
+on:
+  schedule:
+    # Every Sunday at 8:00 AM EST (13:00 UTC)
+    - cron: '0 13 * * 0'
+  workflow_dispatch:
+
+jobs:
+  sprint-reminder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate sprint reminder summary
+        id: summary
+        run: |
+          echo "## Weekly Sprint Reminder — $(date '+%A, %B %-d, %Y')" > sprint-reminder.txt
+          echo "" >> sprint-reminder.txt
+          echo "### Recent commits (last 7 days)" >> sprint-reminder.txt
+          git log --oneline --since="7 days ago" --format="- %s (%ad)" --date=short >> sprint-reminder.txt || echo "- No commits in the last 7 days" >> sprint-reminder.txt
+          echo "" >> sprint-reminder.txt
+          echo "### Files changed this week" >> sprint-reminder.txt
+          git diff --name-only HEAD~7..HEAD 2>/dev/null | head -20 >> sprint-reminder.txt || echo "- Unable to diff" >> sprint-reminder.txt
+          echo "" >> sprint-reminder.txt
+          echo "### Outstanding human actions from handoff doc" >> sprint-reminder.txt
+          if [ -f "_docs/handoff-to-pro-plan.md" ]; then
+            grep "^\- \[ \]" _docs/handoff-to-pro-plan.md | head -10 >> sprint-reminder.txt || echo "- No outstanding actions found" >> sprint-reminder.txt
+          else
+            echo "- handoff doc not found" >> sprint-reminder.txt
+          fi
+          cat sprint-reminder.txt
+
+      - name: Create GitHub issue with sprint reminder
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const body = fs.readFileSync('sprint-reminder.txt', 'utf8');
+            const today = new Date().toLocaleDateString('en-CA', {
+              weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+            });
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Weekly Sprint Reminder — ${today}`,
+              body: body + '\n\n---\n*Generated automatically by human-sprint-reminder.yml — review and close when done.*',
+              labels: ['sprint', 'reminder']
+            });

@@ -1,0 +1,60 @@
+name: New Branch Alert
+
+on:
+  create:
+
+jobs:
+  branch-alert:
+    if: github.event.ref_type == 'branch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log new branch creation
+        run: |
+          echo "New branch created: ${{ github.event.ref }}"
+          echo "Created by: ${{ github.actor }}"
+          echo "Date: $(date '+%Y-%m-%d %H:%M UTC')"
+
+      - name: Create tracking issue for new branch
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const branch = context.payload.ref;
+            const actor = context.actor;
+            const date = new Date().toLocaleDateString('en-CA', {
+              year: 'numeric', month: 'long', day: 'numeric'
+            });
+
+            // Skip if this is a standard automation branch or main
+            if (branch === 'main' || branch === 'gh-pages' || branch.startsWith('dependabot/')) {
+              console.log(`Skipping alert for branch: ${branch}`);
+              return;
+            }
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Branch created: ${branch} (${date})`,
+              body: [
+                `## New branch detected`,
+                '',
+                `**Branch:** \`${branch}\``,
+                `**Created by:** ${actor}`,
+                `**Date:** ${date}`,
+                '',
+                '### Checklist before merging',
+                '- [ ] Changes tested locally',
+                '- [ ] All modals tested at 150% zoom',
+                '- [ ] Feedback form submits successfully',
+                '- [ ] No new external dependencies without approval',
+                '- [ ] Module labels correctly mapped (if module changes)',
+                '- [ ] Canadian English throughout',
+                '- [ ] sitemap.xml updated if new pages added',
+                '',
+                '---',
+                '*Close this issue when the branch is merged or deleted.*'
+              ].join('\n'),
+              labels: ['branch', 'tracking']
+            });
