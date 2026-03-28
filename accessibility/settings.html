@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Personalise your experience — adjust text size, contrast, spacing, and other accessibility settings on the Digital Confidence Centre.">
+  <title>Accessibility Settings — Digital Confidence Centre</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/accessibility.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/accessibility/settings.html">
+  <meta property="og:title" content="Accessibility Settings — Digital Confidence Centre">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#1565C0">
+  <!-- Early preference restoration — must run before body renders -->
+  <script>
+    (function () {
+      var hc = localStorage.getItem('dc-high-contrast');
+      if (hc === 'true') document.documentElement.classList.add('high-contrast');
+      var theme = localStorage.getItem('dc-theme');
+      if (theme) document.documentElement.setAttribute('data-theme', theme);
+      var fs = localStorage.getItem('dc-font-size');
+      if (fs) document.documentElement.setAttribute('data-font-size', fs);
+    }());
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main" data-en="Skip to main content" data-fr="Passer au contenu principal">Skip to main content</a>
+
+  <!-- Screen reader announcements -->
+  <div id="a11y-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">Digital Confidence Centre</span>
+    <span></span>
+  </div>
+
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">✕</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Free digital literacy for seniors</p>
+    </div>
+    <nav>
+      <a href="../index.html">🏠 Home</a>
+      <a href="../index.html#modules">📚 All Modules</a>
+      <a href="../resources.html">🔗 Resources</a>
+      <a href="shortcuts.html">⌨️ Keyboard Shortcuts</a>
+      <a href="settings.html" aria-current="page">⚙️ Accessibility Settings</a>
+    </nav>
+  </aside>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../index.html" data-en="Home" data-fr="Accueil">Home</a>
+    <span aria-hidden="true"> › </span>
+    <span data-en="Accessibility Settings" data-fr="Paramètres d'accessibilité">Accessibility Settings</span>
+  </nav>
+
+  <main id="main">
+    <div class="module-container" style="max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem;">
+
+      <header class="module-header">
+        <h1 data-en="Accessibility Settings" data-fr="Paramètres d'accessibilité">Accessibility Settings</h1>
+        <p data-en="Adjust how the Digital Confidence Centre looks and works for you. Your settings are saved automatically."
+           data-fr="Ajustez l'apparence et le fonctionnement du Centre de confiance numérique. Vos paramètres sont enregistrés automatiquement.">
+          Adjust how the Digital Confidence Centre looks and works for you. Your settings are saved automatically.
+        </p>
+      </header>
+
+      <!-- TEXT SIZE -->
+      <section class="settings-section" aria-labelledby="section-text-size">
+        <h2 id="section-text-size" data-en="Text Size" data-fr="Taille du texte">Text Size</h2>
+        <p data-en="Choose a text size that is comfortable for reading."
+           data-fr="Choisissez une taille de texte confortable pour la lecture.">
+          Choose a text size that is comfortable for reading.
+        </p>
+        <div class="settings-row" role="group" aria-label="Text size options">
+          <button class="a11y-btn font-size-btn settings-btn" data-size="small" aria-pressed="false">
+            <span style="font-size:0.85rem">A</span>
+            <span class="btn-label" data-en="Small" data-fr="Petit">Small</span>
+          </button>
+          <button class="a11y-btn font-size-btn settings-btn" data-size="medium" aria-pressed="true">
+            <span style="font-size:1rem">A</span>
+            <span class="btn-label" data-en="Medium" data-fr="Moyen">Medium</span>
+          </button>
+          <button class="a11y-btn font-size-btn settings-btn" data-size="large" aria-pressed="false">
+            <span style="font-size:1.2rem">A</span>
+            <span class="btn-label" data-en="Large" data-fr="Grand">Large</span>
+          </button>
+          <button class="a11y-btn font-size-btn settings-btn" data-size="xl" aria-pressed="false">
+            <span style="font-size:1.4rem">A</span>
+            <span class="btn-label" data-en="Extra Large" data-fr="Très grand">Extra Large</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- COLOUR AND CONTRAST -->
+      <section class="settings-section" aria-labelledby="section-contrast">
+        <h2 id="section-contrast" data-en="Colour &amp; Contrast" data-fr="Couleur et contraste">Colour &amp; Contrast</h2>
+
+        <div class="settings-toggle-row">
+          <div class="settings-toggle-label">
+            <strong data-en="Dark Mode" data-fr="Mode sombre">Dark Mode</strong>
+            <p data-en="Dark background with light text — easier on the eyes in low light."
+               data-fr="Fond sombre avec texte clair — plus confortable dans un environnement peu éclairé.">
+              Dark background with light text — easier on the eyes in low light.
+            </p>
+          </div>
+          <button class="a11y-btn theme-toggle-btn toggle-btn" aria-pressed="false"
+                  data-en-on="Dark Mode: On" data-en-off="Dark Mode: Off"
+                  data-fr-on="Mode sombre : Activé" data-fr-off="Mode sombre : Désactivé">
+            <span class="toggle-track" aria-hidden="true"></span>
+            <span class="sr-only">Toggle dark mode</span>
+          </button>
+        </div>
+
+        <div class="settings-toggle-row">
+          <div class="settings-toggle-label">
+            <strong data-en="High Contrast" data-fr="Contraste élevé">High Contrast</strong>
+            <p data-en="Stronger colour contrast for text and buttons — helps if you have low vision."
+               data-fr="Contraste plus fort pour le texte et les boutons — utile en cas de basse vision.">
+              Stronger colour contrast for text and buttons — helps if you have low vision.
+            </p>
+          </div>
+          <button class="a11y-btn high-contrast-btn toggle-btn" aria-pressed="false">
+            <span class="toggle-track" aria-hidden="true"></span>
+            <span class="sr-only">Toggle high contrast</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- READING AIDS -->
+      <section class="settings-section" aria-labelledby="section-reading">
+        <h2 id="section-reading" data-en="Reading Aids" data-fr="Aides à la lecture">Reading Aids</h2>
+
+        <div class="settings-toggle-row">
+          <div class="settings-toggle-label">
+            <strong data-en="Reading Guide" data-fr="Guide de lecture">Reading Guide</strong>
+            <p data-en="A horizontal highlight bar follows your cursor to help you track which line you're reading."
+               data-fr="Une barre de surlignage suit votre curseur pour vous aider à suivre la ligne en cours de lecture.">
+              A horizontal highlight bar follows your cursor to help you track which line you're reading.
+            </p>
+          </div>
+          <button class="a11y-btn reading-guide-btn toggle-btn" aria-pressed="false">
+            <span class="toggle-track" aria-hidden="true"></span>
+            <span class="sr-only">Toggle reading guide</span>
+          </button>
+        </div>
+
+        <div class="settings-toggle-row">
+          <div class="settings-toggle-label">
+            <strong data-en="Increased Text Spacing" data-fr="Espacement de texte augmenté">Increased Text Spacing</strong>
+            <p data-en="More space between letters, words, and lines — helps with dyslexia and reading fatigue."
+               data-fr="Plus d'espace entre les lettres, les mots et les lignes — aide en cas de dyslexie et de fatigue visuelle.">
+              More space between letters, words, and lines — helps with dyslexia and reading fatigue.
+            </p>
+          </div>
+          <button class="a11y-btn text-spacing-btn toggle-btn" aria-pressed="false">
+            <span class="toggle-track" aria-hidden="true"></span>
+            <span class="sr-only">Toggle text spacing</span>
+          </button>
+        </div>
+
+        <div class="settings-toggle-row">
+          <div class="settings-toggle-label">
+            <strong data-en="Reduce Animations" data-fr="Réduire les animations">Reduce Animations</strong>
+            <p data-en="Turns off page transitions and moving elements — helps if movement is distracting or causes discomfort."
+               data-fr="Désactive les transitions de page et les éléments animés — utile si le mouvement est distrayant ou inconfortable.">
+              Turns off page transitions and moving elements — helps if movement is distracting or causes discomfort.
+            </p>
+          </div>
+          <button class="a11y-btn reduce-motion-btn toggle-btn" aria-pressed="false">
+            <span class="toggle-track" aria-hidden="true"></span>
+            <span class="sr-only">Toggle reduce animations</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- RESET -->
+      <section class="settings-section" aria-labelledby="section-reset">
+        <h2 id="section-reset" data-en="Reset Settings" data-fr="Réinitialiser les paramètres">Reset Settings</h2>
+        <p data-en="Return all display settings to their defaults."
+           data-fr="Remettre tous les paramètres d'affichage à leurs valeurs par défaut.">
+          Return all display settings to their defaults.
+        </p>
+        <button id="btn-reset-settings" class="btn-secondary" style="margin-top:0.5rem;">
+          <span data-en="Reset to Defaults" data-fr="Réinitialiser par défaut">Reset to Defaults</span>
+        </button>
+      </section>
+
+      <div class="settings-footer">
+        <p data-en="Settings are saved in your browser and never sent to us."
+           data-fr="Les paramètres sont enregistrés dans votre navigateur et ne nous sont jamais envoyés.">
+          Settings are saved in your browser and never sent to us.
+        </p>
+        <p><a href="shortcuts.html" data-en="View keyboard shortcuts →" data-fr="Voir les raccourcis clavier →">View keyboard shortcuts →</a></p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p data-en="Digital Confidence Centre — Free for all Canadians"
+         data-fr="Centre de confiance numérique — Gratuit pour tous les Canadiens">
+        Digital Confidence Centre — Free for all Canadians
+      </p>
+      <p><a href="../index.html" data-en="← Back to Home" data-fr="← Retour à l'accueil">← Back to Home</a></p>
+    </div>
+  </footer>
+
+  <script src="../js/lang-toggle.js"></script>
+  <script src="../js/accessibility.js"></script>
+  <script src="../js/reading-guide.js"></script>
+  <script src="../js/high-contrast.js"></script>
+  <script src="../js/text-spacing.js"></script>
+  <script src="../js/cognitive-toggles.js"></script>
+  <script>
+    // Reset button
+    document.getElementById('btn-reset-settings').addEventListener('click', function () {
+      ['dc-theme', 'dc-font-size', 'dc-high-contrast', 'dc-reading-guide',
+       'dc-text-spacing', 'dc-reduce-animations', 'dc-dyslexic-font'].forEach(function (k) {
+        localStorage.removeItem(k);
+      });
+      document.documentElement.removeAttribute('data-theme');
+      document.documentElement.setAttribute('data-font-size', 'medium');
+      document.documentElement.classList.remove('high-contrast');
+      document.body.classList.remove('reading-guide', 'text-spacing', 'reduce-motion');
+      location.reload();
+    });
+  </script>
+
+</body>
+</html>
