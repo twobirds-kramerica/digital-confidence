@@ -56,7 +56,7 @@
     message.id = 'dc-confirm-message';
     message.style.cssText = 'font-size:1.05rem;color:#444;margin:0 0 1.5rem;line-height:1.6;';
 
-    /* "No, take me back" — primary / large button */
+    /* "No, take me back" — primary / large button (teal — safe action) */
     var btnNo = document.createElement('button');
     btnNo.id = 'dc-confirm-no';
     btnNo.style.cssText = [
@@ -64,7 +64,7 @@
       'width:100%',
       'padding:0.9rem 1.25rem',
       'margin-bottom:0.75rem',
-      'background:#1565C0',
+      'background:#00796B',
       'color:#fff',
       'border:none',
       'border-radius:8px',
@@ -74,7 +74,7 @@
       'font-family:inherit'
     ].join(';');
 
-    /* "Yes, go ahead" — smaller, muted button */
+    /* "Yes, go ahead" — smaller, muted button (grey — not red, avoids anxiety) */
     var btnYes = document.createElement('button');
     btnYes.id = 'dc-confirm-yes';
     btnYes.style.cssText = [
@@ -82,8 +82,8 @@
       'width:100%',
       'padding:0.65rem 1.25rem',
       'background:#fff',
-      'color:#b71c1c',
-      'border:2px solid #b71c1c',
+      'color:#555',
+      'border:2px solid #bbb',
       'border-radius:8px',
       'font-size:0.95rem',
       'font-weight:600',

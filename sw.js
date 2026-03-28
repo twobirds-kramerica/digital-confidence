@@ -4,7 +4,7 @@
    Cache strategy: Cache-first for assets, network-first for pages.
    ============================================================ */
 
-var CACHE_NAME = 'dcc-v1';
+var CACHE_NAME = 'dcc-v2';
 
 /* Core pages to pre-cache on install */
 var PRECACHE_URLS = [
