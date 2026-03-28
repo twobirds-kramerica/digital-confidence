@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <title>Google Search Console Setup — Digital Confidence Centre</title>
+  <style>
+    body { font-family: Georgia, serif; max-width: 700px; margin: 60px auto; padding: 0 24px; color: #1a1a1a; line-height: 1.7; }
+    h1 { color: #1565C0; }
+    h2 { color: #2e7d32; margin-top: 2em; }
+    code { background: #f0f4ff; padding: 2px 8px; border-radius: 4px; font-family: monospace; font-size: 0.95em; }
+    pre { background: #f0f4ff; padding: 16px; border-radius: 8px; overflow-x: auto; }
+    .step { background: #fff; border-left: 4px solid #1565C0; padding: 12px 16px; margin: 12px 0; }
+    .done { color: #2e7d32; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Google Search Console — Setup Instructions</h1>
+  <p>This file exists to remind you how to verify the Digital Confidence Centre with Google Search Console so Aaron can submit the sitemap and track search performance.</p>
+
+  <h2>Step 1 — Get your verification code</h2>
+  <div class="step">
+    <ol>
+      <li>Go to <strong>search.google.com/search-console</strong> and sign in with your Google account.</li>
+      <li>Click <strong>Add property</strong>.</li>
+      <li>Choose <strong>URL prefix</strong> and enter:<br>
+        <code>https://twobirds-kramerica.github.io/digital-confidence/</code></li>
+      <li>Under <em>Verify ownership</em>, choose <strong>HTML tag</strong>.</li>
+      <li>Copy the content value — it looks like:<br>
+        <code>&lt;meta name="google-site-verification" content="abc123XYZ456..." /&gt;</code></li>
+    </ol>
+  </div>
+
+  <h2>Step 2 — Replace the placeholder in index.html</h2>
+  <div class="step">
+    <p>Open <code>index.html</code> and find this line (near the top of &lt;head&gt;):</p>
+    <pre>&lt;!-- Google Search Console — replace REPLACE_WITH_REAL_CODE with real verification code --&gt;
+&lt;meta name="google-site-verification" content="REPLACE_WITH_REAL_CODE" /&gt;</pre>
+    <p>Replace <code>REPLACE_WITH_REAL_CODE</code> with the value Google gave you.</p>
+  </div>
+
+  <h2>Step 3 — Commit and push</h2>
+  <div class="step">
+    <pre>git add index.html
+git commit -m "chore: Google Search Console verified"
+git push origin main</pre>
+  </div>
+
+  <h2>Step 4 — Verify in Search Console</h2>
+  <div class="step">
+    <p>Go back to Search Console and click <strong>Verify</strong>. GitHub Pages usually deploys within 2–5 minutes, so wait a few minutes before verifying if it fails the first time.</p>
+  </div>
+
+  <h2>Step 5 — Submit your sitemap</h2>
+  <div class="step">
+    <p>Once verified, go to <strong>Sitemaps</strong> in the left sidebar and submit:</p>
+    <code>sitemap.xml</code>
+    <p>The full sitemap URL is:<br>
+    <code>https://twobirds-kramerica.github.io/digital-confidence/sitemap.xml</code></p>
+    <p>The sitemap currently contains <strong>107 URLs</strong>.</p>
+  </div>
+
+  <hr>
+  <p><em>This file is noindex and will not appear in search results. It is for Aaron's reference only.</em></p>
+</body>
+</html>
