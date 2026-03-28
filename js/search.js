@@ -6,10 +6,11 @@
 (function () {
   'use strict';
 
-  var DEBOUNCE_MS = 180;
-  var MAX_RESULTS = 12;
-  var RECENT_KEY  = 'dc-recent-searches';
-  var MAX_RECENT  = 5;
+  var DEBOUNCE_MS   = 180;
+  var MAX_RESULTS   = 12;
+  var RECENT_KEY    = 'dc-recent-searches';
+  var MAX_RECENT    = 5;
+  var ANALYTICS_KEY = 'dc-search-analytics';
 
   var FILTER_TABS = ['All', 'Modules', 'Tips', 'FAQs', 'Glossary', 'Scam Guides'];
 
@@ -94,6 +95,39 @@
     } catch (e) {}
   }
 
+  // ── Search Analytics ─────────────────────────────────────────────────────
+  function logSearchAnalytics(q, resultCount) {
+    if (!q || q.length < 2) return;
+    try {
+      var log = JSON.parse(localStorage.getItem(ANALYTICS_KEY) || '[]');
+      log.push({ q: q, n: resultCount, t: Date.now() });
+      if (log.length > 500) log = log.slice(-500);
+      localStorage.setItem(ANALYTICS_KEY, JSON.stringify(log));
+    } catch (e) {}
+  }
+
+  // ── Did You Mean? (fuzzy suggest on zero results) ─────────────────────────
+  function didYouMean(query) {
+    if (!window.DC_SEARCH_INDEX) return [];
+    var q = normalise(query);
+    var seen = {};
+    var suggestions = [];
+    window.DC_SEARCH_INDEX.forEach(function (item) {
+      var title = normalise(item.title);
+      var words = title.split(/\s+/);
+      words.forEach(function (w) {
+        if (w.length < 4 || seen[w]) return;
+        // Simple: query contains start of word, or word contains start of query
+        var qShort = q.replace(/\s+/g, '');
+        if (w.indexOf(qShort.substring(0, 4)) === 0 || qShort.indexOf(w.substring(0, 4)) === 0) {
+          seen[w] = true;
+          suggestions.push(item.title);
+        }
+      });
+    });
+    return suggestions.slice(0, 3);
+  }
+
   // ── Base URL helper ──────────────────────────────────────────────────────
   function getBaseUrl() {
     var path  = window.location.pathname;
@@ -170,6 +204,9 @@
       '.dc-result-body strong{display:block;font-size:0.88em;}',
       '.dc-result-body span{font-size:0.78em;color:#8AA0B8;line-height:1.3;}',
       '.dc-search-empty{padding:14px;color:#8AA0B8;font-size:0.85em;}',
+      '.dc-dym{margin:6px 0 2px;font-size:0.82em;color:#8AA0B8;}',
+      '.dc-dym-btn{background:none;border:none;color:#00C9A7;cursor:pointer;font-size:1em;text-decoration:underline;padding:0 2px;}',
+      '.dc-dym-btn:hover{color:#F0F4F8;}',
       '.dc-search-empty a{color:#00C9A7;}',
       // Mark highlight
       '.dc-search-dropdown mark,.dc-topbar-results mark{background:#00C9A720;color:#00C9A7;border-radius:2px;padding:0 1px;}',
@@ -229,10 +266,17 @@
 
     var html = buildTabsHTML(activeTab);
 
+    logSearchAnalytics(query, results.length);
     if (!results.length) {
+      var suggestions = didYouMean(query);
+      var dymHtml = suggestions.length
+        ? '<div class="dc-dym">' + t('Did you mean:', 'Vouliez-vous dire :') + ' ' +
+          suggestions.map(function(s){ return '<button class="dc-dym-btn" type="button">' + escHtml(s) + '</button>'; }).join(', ') + '</div>'
+        : '';
       html += '<div class="dc-search-empty">' +
-        t('No results for', 'Aucun résultat pour') + ' "<strong>' + escHtml(query) + '</strong>".<br>' +
-        '<a href="' + base + 'faq.html">' + t('Browse the FAQ', 'Parcourir la FAQ') + ' →</a>' +
+        t('No results for', 'Aucun résultat pour') + ' "<strong>' + escHtml(query) + '</strong>".' +
+        dymHtml +
+        '<br><a href="' + base + 'faq.html">' + t('Browse the FAQ', 'Parcourir la FAQ') + ' →</a>' +
         '</div>';
     } else {
       html += results.map(function (r) {
@@ -248,6 +292,14 @@
 
     dropdown.innerHTML = html;
     dropdown.classList.add('open');
+
+    // Did-you-mean button clicks
+    dropdown.querySelectorAll('.dc-dym-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        input.value = btn.textContent;
+        renderDropdown(dropdown, search(btn.textContent, activeTab), btn.textContent, input);
+      });
+    });
 
     // Tab click handlers
     dropdown.querySelectorAll('.dc-stab').forEach(function(btn){
