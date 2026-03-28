@@ -1,31 +1,37 @@
-# Email Sequence 5: Referral Request
-**Use when:** A contact has been helpful or enthusiastic about DCC
-**Goal:** Ask them to refer DCC to their network
-**Cadence:** 2 emails
+# Email Sequence: Referral Request
+**Trigger:** Contact has been a positive interaction — replied warmly, attended a demo, shared the resource, or said they liked DCC but weren't the right fit
+**Goal:** Get one warm introduction to another decision-maker
+**Cadence:** 2 emails, 7 days apart
 
 ---
 
-## Email 1 — Referral Ask
-**Subject:** A favour — would you share this with one person?
-**Preview text:** Not a big ask — just one introduction.
+## Email 1 — Day 1: The Ask
+**Subject:** One question before I go
+**Preview text:** You mentioned this might not be the right fit — who would it be right for?
 
 ---
 
 Hi [First Name],
 
-I hope you're well. I wanted to reach out with a small ask.
+Thanks again for [taking the time to chat / sharing DCC with your participants / exploring whether this could work for your organisation].
 
-The Digital Confidence Centre has been growing quietly — and the best way it reaches the seniors who need it is through people like you who've seen what it does.
+I completely understand [the timing isn't right / your budget situation / it's not the right fit for your programmes right now].
 
-If you know one person — a colleague at another library, a community program manager, a senior services coordinator — who might find it useful, would you be willing to make an introduction?
+One quick question before I close the loop:
 
-It doesn't need to be formal. Even a quick "you should take a look at this" is more than I could do with a cold email.
+**Is there someone else in your network this might be right for?**
 
-The link: [DCC URL]
+I'm specifically looking to connect with:
+- Library directors or digital programs managers at public libraries
+- Member services or community development staff at credit unions
+- Program coordinators at senior centres, adult day programmes, or community health teams
+- Anyone running digital literacy grants or funding in Ontario
 
-And if you'd find it easier, I'm happy to draft a short note you could forward.
+If a name comes to mind — even a loose connection — a one-line intro email would mean a great deal. I make it easy: just reply with a name and I'll draft the intro for you to forward if you like.
 
-Thank you for everything you've done to support this project.
+And of course: the Digital Confidence Centre is free for any seniors in your network to use anytime at [DCC URL].
+
+Thanks again.
 
 Aaron Patzalek
 Two Birds Innovation | St. Thomas, Ontario
@@ -33,27 +39,47 @@ aaron.patzalek@gmail.com
 
 ---
 **Personalisation notes:**
-- Only send this to contacts who have been clearly positive about DCC — a librarian who shared it with patrons, a coordinator who attended a demo and was enthusiastic
-- "What you've done to support this project" should reference something specific: "Thank you for sharing it at your staff meeting" or "Thank you for the feedback you gave me in January"
+- If they specifically mentioned another organisation or person during the conversation, reference it: "You mentioned [Name] at [Org] — would an intro there make sense?"
+- Keep this email short. The ask is simple. Don't over-explain.
 
 ---
 
-## Email 2 — Follow-up Referral (if no response in 7 days)
-**Subject:** No pressure — just wanted to close the loop
-**Preview text:** Last note on this.
+## Email 2 — Day 7: One Gentle Reminder
+**Subject:** Re: One question before I go
+**Preview text:** No pressure at all — just wanted to make sure this didn't fall through the cracks.
 
 ---
 
 Hi [First Name],
 
-I know my last email was an ask on top of a busy schedule — completely understood if now isn't the right moment.
+Just a quick follow-up on my note last week.
 
-I just wanted to close the loop and say: whenever it's useful, I appreciate anything you're able to share. No pressure.
+No pressure at all — if a referral doesn't come to mind, completely fine. I just wanted to make sure this didn't get buried.
 
-And if you've already mentioned DCC to someone and I just haven't heard about it yet — thank you. It means more than you know.
+If you do think of someone, the intro offer stands: reply with a name and I'll draft something you can forward in 30 seconds.
+
+Thanks again for your time. Wishing you and your team well.
 
 Aaron
 
 ---
-**Personalisation notes:** Keep this very short. The goal is to remove any awkwardness and leave the relationship intact, not to push harder.
 **Send time:** 7 days after Email 1
+**Decision rule:** After this email, no further referral outreach to this contact. Move to "passive" list. The door is open if they come back. Do not ask for a referral again unless they've re-engaged significantly (e.g., attended an event, became a user themselves, or reached out unprompted).
+
+---
+
+## Notes on Referral Sequence Use
+
+**When to use this sequence:**
+- After a completed discovery call that didn't convert
+- After a warm email exchange where they said "not right now"
+- After someone shared DCC with their group but didn't pursue partnership
+- After a conference or event conversation that went well but didn't advance
+
+**When NOT to use this sequence:**
+- After a cold email with no response — ask for a referral only from someone who already knows you
+- After a clearly negative interaction — "not interested, please stop emailing"
+- If you haven't had at least one real exchange (email reply, call, or in-person)
+
+**Referral tracking:**
+Log referrals received in `_b2b/pipeline/referral-log.md` with: date, referrer name, referree name/org, outcome, and whether a thank-you was sent.
