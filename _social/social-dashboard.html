@@ -65,6 +65,28 @@
     .copy-feedback { font-size: 0.72rem; color: #2e7d32; margin-left: 0.25rem; display: none; }
 
     @media (max-width: 600px) { .post-grid { grid-template-columns: 1fr; } }
+
+    /* Tab navigation */
+    .tab-nav { display: flex; gap: 0.25rem; margin-bottom: 1.25rem; border-bottom: 2px solid #e0e0e0; padding-bottom: 0; flex-wrap: wrap; }
+    .tab-btn { padding: 0.55rem 1.1rem; border: none; background: none; font-size: 0.88rem; font-weight: 600; color: #666; cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -2px; border-radius: 6px 6px 0 0; transition: color 0.15s; }
+    .tab-btn:hover { color: #1565C0; background: #f0f4ff; }
+    .tab-btn.active { color: #1565C0; border-bottom-color: #1565C0; background: #f0f4ff; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* LinkedIn v2 / Aaron post cards */
+    .li-post-card { background: #fff; border: 1px solid #e0e0e0; border-left: 4px solid #1565C0; border-radius: 12px; padding: 1rem; }
+    .li-post-preview { font-size: 0.85rem; line-height: 1.55; color: #333; margin-bottom: 0.5rem; }
+    .li-post-hashtags { font-size: 0.75rem; color: #1565C0; margin-bottom: 0.5rem; }
+    .li-post-meta { display: flex; gap: 0.4rem; margin-bottom: 0.6rem; flex-wrap: wrap; align-items: center; }
+    .badge-day { background: #fff8e1; color: #f57f17; }
+    .badge-type { background: #f3e5f5; color: #7b1fa2; }
+    .badge-pillar { background: #e8f5e9; color: #2e7d32; }
+    .badge-week { background: #f5f5f5; color: #555; }
+    .copy-btn { padding: 0.35rem 0.75rem; background: #1565C0; color: #fff; border: none; border-radius: 8px; font-size: 0.78rem; font-weight: 700; cursor: pointer; }
+    .copy-btn.copied { background: #2e7d32; }
+    .li-post-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1rem; }
+    .li-loading { color: #888; font-size: 0.9rem; padding: 1rem 0; }
   </style>
 </head>
 <body>
@@ -85,9 +107,20 @@
   <div class="dash-header">
     <div>
       <div class="dash-title">Social Content Dashboard</div>
-      <div class="dash-meta">Two Birds Innovation · Digital Confidence Centre · 40 posts ready</div>
+      <div class="dash-meta">Two Birds Innovation · Digital Confidence Centre</div>
     </div>
-    <div class="dash-controls">
+  </div>
+
+  <!-- Tab Navigation -->
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('dcc-queue', this)">DCC Content Queue</button>
+    <button class="tab-btn" onclick="switchTab('dcc-posts', this)">DCC Posts</button>
+    <button class="tab-btn" onclick="switchTab('aaron-personal', this)">Aaron Personal</button>
+  </div>
+
+  <!-- Tab: DCC Content Queue (existing) -->
+  <div class="tab-panel active" id="tab-dcc-queue">
+    <div class="dash-controls" style="margin-bottom:1rem">
       <select id="filterPlatform" onchange="renderPosts()">
         <option value="all">All platforms</option>
         <option value="facebook">Facebook only</option>
@@ -102,10 +135,38 @@
       <input type="text" id="filterSearch" placeholder="Search..." oninput="renderPosts()" style="width:140px">
       <button class="btn btn-green" onclick="exportCSV()">Export CSV</button>
     </div>
+    <div class="stats-bar" id="statsBar"></div>
+    <div class="post-grid" id="postGrid"></div>
   </div>
 
-  <div class="stats-bar" id="statsBar"></div>
-  <div class="post-grid" id="postGrid"></div>
+  <!-- Tab: DCC LinkedIn Posts v2 -->
+  <div class="tab-panel" id="tab-dcc-posts">
+    <div class="dash-controls" style="margin-bottom:1rem">
+      <select id="dccPillarFilter" onchange="renderLinkedinPosts('dcc')">
+        <option value="all">All pillars</option>
+        <option value="Education">Education</option>
+        <option value="Safety">Safety</option>
+        <option value="Personal Brand">Personal Brand</option>
+      </select>
+      <input type="text" id="dccSearch" placeholder="Search..." oninput="renderLinkedinPosts('dcc')" style="width:160px">
+    </div>
+    <div id="dccPostsGrid" class="li-post-grid"><p class="li-loading">Loading posts...</p></div>
+  </div>
+
+  <!-- Tab: Aaron Personal LinkedIn Posts -->
+  <div class="tab-panel" id="tab-aaron-personal">
+    <div class="dash-controls" style="margin-bottom:1rem">
+      <select id="aaronPillarFilter" onchange="renderLinkedinPosts('aaron')">
+        <option value="all">All pillars</option>
+        <option value="Employment Gap">Employment Gap</option>
+        <option value="What I've Built">What I've Built</option>
+        <option value="AI Insights">AI Insights</option>
+        <option value="Senior Digital Literacy Mission">Senior Digital Literacy Mission</option>
+      </select>
+      <input type="text" id="aaronSearch" placeholder="Search..." oninput="renderLinkedinPosts('aaron')" style="width:160px">
+    </div>
+    <div id="aaronPostsGrid" class="li-post-grid"><p class="li-loading">Loading posts...</p></div>
+  </div>
 </div>
 
 <script>
@@ -142,6 +203,8 @@ function loadData() {
     .catch(function() {
       document.getElementById('postGrid').innerHTML = '<p style="color:#c62828;padding:1rem">Could not load content-queue.json. Make sure you are serving from the _social/ directory.</p>';
     });
+
+  loadLinkedinPosts();
 }
 
 function renderStats() {
@@ -256,6 +319,92 @@ function exportCSV() {
   a.href = URL.createObjectURL(blob);
   a.download = 'social-content-queue-' + new Date().toISOString().slice(0,10) + '.csv';
   a.click();
+}
+
+// ── Tab switching ──────────────────────────────────────────────────────────────
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ── LinkedIn v2 posts (DCC + Aaron) ───────────────────────────────────────────
+var dccLinkedinPosts = [];
+var aaronLinkedinPosts = [];
+
+function loadLinkedinPosts() {
+  fetch('linkedin-posts-v2.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      dccLinkedinPosts = data;
+      renderLinkedinPosts('dcc');
+    })
+    .catch(function() {
+      document.getElementById('dccPostsGrid').innerHTML = '<p style="color:#c62828;padding:1rem">Could not load linkedin-posts-v2.json. Serve from the _social/ directory.</p>';
+    });
+
+  fetch('aaron-linkedin-posts.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      aaronLinkedinPosts = data;
+      renderLinkedinPosts('aaron');
+    })
+    .catch(function() {
+      document.getElementById('aaronPostsGrid').innerHTML = '<p style="color:#c62828;padding:1rem">Could not load aaron-linkedin-posts.json. Serve from the _social/ directory.</p>';
+    });
+}
+
+function renderLinkedinPosts(source) {
+  var posts = source === 'dcc' ? dccLinkedinPosts : aaronLinkedinPosts;
+  var gridId = source === 'dcc' ? 'dccPostsGrid' : 'aaronPostsGrid';
+  var pillar = document.getElementById(source === 'dcc' ? 'dccPillarFilter' : 'aaronPillarFilter').value;
+  var search = document.getElementById(source === 'dcc' ? 'dccSearch' : 'aaronSearch').value.toLowerCase();
+
+  var filtered = posts.filter(function(p) {
+    if (pillar !== 'all' && p.pillar !== pillar) return false;
+    if (search && !p.text.toLowerCase().includes(search) && !p.pillar.toLowerCase().includes(search)) return false;
+    return true;
+  });
+
+  if (filtered.length === 0) {
+    document.getElementById(gridId).innerHTML = '<p style="color:#888;padding:1rem">No posts match your filters.</p>';
+    return;
+  }
+
+  document.getElementById(gridId).innerHTML = filtered.map(function(p, i) {
+    var preview = p.text.replace(/\\n/g, ' ').substring(0, 100) + (p.text.length > 100 ? '…' : '');
+    var tags = p.hashtags.map(function(h) { return '#' + h; }).join(' ');
+    var uniqueId = source + '-' + (p.week || i);
+    return '<div class="li-post-card">' +
+      '<div class="li-post-meta">' +
+        '<span class="badge badge-week">Week ' + p.week + '</span>' +
+        '<span class="badge badge-pillar">' + escHtml(p.pillar) + '</span>' +
+        '<span class="badge badge-day">' + escHtml(p.best_day) + '</span>' +
+        '<span class="badge badge-type">' + escHtml(p.type) + '</span>' +
+      '</div>' +
+      '<div class="li-post-preview">' + escHtml(preview) + '</div>' +
+      '<div class="li-post-hashtags">' + escHtml(tags) + '</div>' +
+      '<div style="display:flex;gap:0.4rem;align-items:center">' +
+        '<button class="copy-btn" id="copybtn-' + uniqueId + '" onclick="copyLinkedinPost(\'' + uniqueId + '\', ' + JSON.stringify(p.text).replace(/'/g, "\\'") + ', ' + JSON.stringify(p.hashtags) + ')">📋 Copy post</button>' +
+        '<span id="copyfb-' + uniqueId + '" style="font-size:0.75rem;color:#2e7d32;display:none">Copied!</span>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
+function copyLinkedinPost(uniqueId, text, hashtags) {
+  var full = text.replace(/\\n/g, '\n') + '\n\n' + hashtags.map(function(h) { return '#' + h; }).join(' ');
+  navigator.clipboard.writeText(full).then(function() {
+    var btn = document.getElementById('copybtn-' + uniqueId);
+    var fb = document.getElementById('copyfb-' + uniqueId);
+    if (btn) { btn.textContent = 'Copied!'; btn.classList.add('copied'); }
+    if (fb) { fb.style.display = 'inline'; }
+    setTimeout(function() {
+      if (btn) { btn.textContent = '📋 Copy post'; btn.classList.remove('copied'); }
+      if (fb) { fb.style.display = 'none'; }
+    }, 2000);
+  });
 }
 </script>
 </body>
