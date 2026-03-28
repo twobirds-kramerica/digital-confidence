@@ -23,7 +23,11 @@
     '12':  { category: 'further',  time: 'About 20 min', timeFr: 'Environ 20 min' },
     '13':  { category: 'further',  time: 'About 20 min', timeFr: 'Environ 20 min' },
     '14':  { category: 'further',  time: 'About 20 min', timeFr: 'Environ 20 min' },
-    '15':  { category: 'further',  time: 'About 20 min', timeFr: 'Environ 20 min' }
+    '15':  { category: 'further',  time: 'About 20 min', timeFr: 'Environ 20 min' },
+    '16':  { category: 'horizons', time: 'About 20 min', timeFr: 'Environ 20 min' },
+    '17':  { category: 'horizons', time: 'About 20 min', timeFr: 'Environ 20 min' },
+    '18':  { category: 'horizons', time: 'About 20 min', timeFr: 'Environ 20 min' },
+    '19':  { category: 'horizons', time: 'About 20 min', timeFr: 'Environ 20 min' }
   };
 
   var CATEGORIES = [
@@ -31,36 +35,43 @@
       id: 'start',
       en: '🚀 Getting Started',
       fr: '🚀 Pour commencer',
-      desc_en: 'Begin here — these modules build the foundation.',
-      desc_fr: 'Commencez ici — ces modules posent les bases.'
+      desc_en: 'Begin here — these three modules build the foundation (1, 2, 2.5).',
+      desc_fr: 'Commencez ici — ces trois modules posent les bases (1, 2, 2.5).'
     },
     {
       id: 'safe',
       en: '🔐 Staying Safe',
       fr: '🔐 Rester en sécurité',
-      desc_en: 'Protect yourself online with passwords, scam awareness, and safe apps.',
-      desc_fr: 'Protégez-vous en ligne avec des mots de passe et la sensibilisation aux arnaques.'
+      desc_en: 'Protect yourself online with passwords, scam awareness, and safe apps (3, 4, 5).',
+      desc_fr: 'Protégez-vous en ligne avec des mots de passe et la sensibilisation aux arnaques (3, 4, 5).'
     },
     {
       id: 'connect',
       en: '💬 Connecting with Others',
       fr: '💬 Se connecter avec les autres',
-      desc_en: 'Banking, photos, and staying in touch with the people who matter.',
-      desc_fr: 'Banque, photos et rester en contact avec les personnes qui comptent.'
+      desc_en: 'Banking, photos, and staying in touch with the people who matter (6, 7, 8).',
+      desc_fr: 'Banque, photos et rester en contact avec les personnes qui comptent (6, 7, 8).'
     },
     {
       id: 'manage',
       en: '🛒 Managing Your Life Online',
       fr: '🛒 Gérer votre vie en ligne',
-      desc_en: 'AI, grocery delivery, and ride-sharing — modern tools made approachable.',
-      desc_fr: 'IA, épicerie en ligne et covoiturage — des outils modernes rendus accessibles.'
+      desc_en: 'AI, grocery delivery, and ride-sharing — modern tools made approachable (9, 10, 11).',
+      desc_fr: 'IA, épicerie en ligne et covoiturage — des outils modernes rendus accessibles (9, 10, 11).'
     },
     {
       id: 'further',
       en: '🌟 Going Further',
       fr: '🌟 Aller plus loin',
-      desc_en: 'Advanced topics: social media, smart home, and telehealth.',
-      desc_fr: 'Sujets avancés : médias sociaux, maison intelligente et télémédecine.'
+      desc_en: 'Advanced topics: social media, smart home, and telehealth (12, 13, 14, 15).',
+      desc_fr: 'Sujets avancés : médias sociaux, maison intelligente et télémédecine (12, 13, 14, 15).'
+    },
+    {
+      id: 'horizons',
+      en: '🌍 Expanding Your Horizons',
+      fr: '🌍 Élargir vos horizons',
+      desc_en: 'Travel safety, AI research tools, staying connected, and your digital legacy (16, 17, 18, 19).',
+      desc_fr: 'Sécurité en voyage, outils de recherche IA, rester en contact et votre héritage numérique (16, 17, 18, 19).'
     }
   ];
 
@@ -92,6 +103,9 @@
     });
     return n;
   }
+
+  /* ── "Start here" badge only shown for 0 completed (of all 21) ── */
+  var TOTAL_ALL = Object.keys(MODULE_META).length;
 
   /* ── Add time estimate and completion badge to a card ── */
   function enhanceCard(card, moduleNum, lang) {
