@@ -952,9 +952,43 @@ var DC_QUIZ = (function () {
     });
   }
 
-  /* ── Start quiz ──────────────────────────────────────────── */
+  /* ── Start quiz (adaptive: skip questions from passed module quizzes) ── */
   function startQuiz(container) {
     currentQ = 0; score = 0; answered = []; quizStarted = true;
+
+    /* Filter out questions from modules where the user already passed 4/5 */
+    var skipped = 0;
+    questions = questions.filter(function (q) {
+      var modMatch = q.module && q.module.match(/^Module ([\d.]+)/);
+      if (!modMatch) return true;
+      var key = modMatch[1];
+      if (localStorage.getItem('dc-quiz-m' + key + '-passed') === 'true') {
+        skipped++;
+        return false;
+      }
+      return true;
+    });
+
+    /* Show skip notice if any were skipped */
+    if (skipped > 0) {
+      var lang = getLang();
+      var notice = document.createElement('div');
+      notice.style.cssText = [
+        'background:#e3f2fd;border-left:4px solid #1565C0;border-radius:0 8px 8px 0',
+        'padding:14px 18px;margin:0 0 20px;font-size:0.95rem;line-height:1.6'
+      ].join(';');
+      notice.innerHTML = lang === 'fr'
+        ? '&#128218; <strong>Nous avons sauté ' + skipped + ' question' + (skipped > 1 ? 's' : '') + ' que vous avez déjà prouvé savoir.</strong> Ce quiz a été réduit à ' + questions.length + ' questions.'
+        : '&#128218; <strong>We skipped ' + skipped + ' question' + (skipped > 1 ? 's' : '') + ' you already proved you know.</strong> This quiz has been shortened to ' + questions.length + ' question' + (questions.length > 1 ? 's' : '') + '.';
+
+      /* Inject notice into quiz container after it renders */
+      var insertNotice = function () {
+        var qBox = container.querySelector('.quiz-question');
+        if (qBox) qBox.insertBefore(notice, qBox.firstChild);
+      };
+      setTimeout(insertNotice, 0);
+    }
+
     renderQuestion(container);
   }
 
