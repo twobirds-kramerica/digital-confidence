@@ -1,0 +1,370 @@
+{
+  "module-1": [
+    {
+      "q": "What do I do if a scary pop-up appears saying my iPad has a virus?",
+      "a": "Press the Home button (round button at the bottom, or swipe up from the bottom on newer iPads) immediately. This closes the scary screen and returns you to your Home screen. That pop-up cannot hurt your device — it is designed to frighten you into calling a fake number. Do not tap anything on it."
+    },
+    {
+      "q": "Can I break my iPad by pressing the wrong button or tapping the wrong thing?",
+      "a": "No. You cannot break your iPad by pressing any button or tapping any icon. The worst that can happen is something unexpected appearing on screen — and the Home button will always return you to safety. Your device is designed to be forgiving."
+    },
+    {
+      "q": "How do I close an app that has completely frozen?",
+      "a": "On older iPads: double-press the Home button to see all open apps as cards, then swipe the frozen app's card upward off the top of the screen. On newer iPads without a Home button: swipe up from the bottom edge and pause briefly in the middle of the screen, then swipe the frozen app's card upward."
+    },
+    {
+      "q": "What is the App Switcher and when should I use it?",
+      "a": "The App Switcher shows all apps currently open on your device as a row of cards. Use it when an app is frozen, when you want to switch quickly between two apps, or when you want to close apps you are no longer using. Access it by double-pressing the Home button or swiping up and pausing on newer devices."
+    }
+  ],
+  "module-2": [
+    {
+      "q": "What is the 3-Second Rule and when should I use it?",
+      "a": "The 3-Second Rule is a quick mental pause before acting on anything that feels urgent online or on the phone: Stop — put down or ignore whatever triggered the urgency. Breathe — take a breath to calm your reaction. Verify — check the request is genuine before acting. Use it whenever you receive an unexpected call, text, email, or pop-up asking you to do something immediately."
+    },
+    {
+      "q": "How can I tell if a phone call claiming to be from the CRA is real?",
+      "a": "Real CRA agents will never demand immediate payment, threaten arrest, or ask you to pay by gift card, Bitcoin, or wire transfer. If you are unsure, hang up. Look up the CRA's real phone number on canada.ca and call them back yourself. The CRA will never call and demand you stay on the line."
+    },
+    {
+      "q": "Someone asked me to pay with a gift card. Is that a scam?",
+      "a": "Yes — always. No legitimate business, government agency, utility, or family member will ever ask you to pay a bill or debt using gift cards (iTunes, Google Play, Steam, etc.). Gift card payments cannot be reversed or traced. Any request for gift card payment is a scam, regardless of how convincing the story sounds."
+    },
+    {
+      "q": "I think I was scammed. What should I do?",
+      "a": "If you shared financial information, contact your bank immediately using the number on the back of your card. Report the scam to the Canadian Anti-Fraud Centre at 1-888-495-8501 — they collect information that helps protect other Canadians. Do not feel embarrassed; these scams are professionally designed to deceive anyone."
+    },
+    {
+      "q": "What does a real emergency look like vs. a scam emergency?",
+      "a": "Real emergencies do not require immediate, irreversible payments by gift card or wire transfer. Real family members in distress can wait the 60 seconds it takes for you to hang up and call them back on their known number. Real government agencies send written notices before any action. If someone demands you act right now and keeps you on the phone, that pressure is the scam itself."
+    }
+  ],
+  "module-2.5": [
+    {
+      "q": "How do I know if I sent an e-Transfer to the wrong person?",
+      "a": "You will receive a confirmation email from your bank showing the recipient's email address. Check this immediately after sending. If it looks wrong and the transfer has not yet been accepted by the recipient, call your bank's main line right away — they may be able to cancel it. Once accepted, transfers cannot be reversed."
+    },
+    {
+      "q": "Is it safe to book a doctor appointment through an online portal?",
+      "a": "Yes, if you access the portal through your clinic's official website or app. Type your clinic's address directly into the browser rather than clicking a link in an email or text. Look for https:// and your clinic's real domain name in the address bar. Never enter your health card number on a site you reached through an unexpected link."
+    },
+    {
+      "q": "What happens if I turn on Automatic Updates and it starts while I am using my iPad?",
+      "a": "Software updates only install automatically overnight while your iPad is charging and connected to Wi-Fi — they will not interrupt you during use. App updates install quietly in the background at any time but do not interrupt what you are doing. You can continue using your iPad normally."
+    },
+    {
+      "q": "How do I check if my apps have updated recently?",
+      "a": "Open the App Store and tap your profile photo in the top-right corner. Scroll down to see a list of apps that have recently been updated, with dates. If you see an app with an Update button rather than Open, it has a pending update. Tap Update beside each one, or tap Update All to update everything at once."
+    }
+  ],
+  "module-3": [
+    {
+      "q": "What makes a password strong enough to be safe?",
+      "a": "A strong password has at least 12 characters and uses a mix of upper and lowercase letters, numbers, and symbols. Even better is a passphrase: four random unrelated words strung together with hyphens or numbers, such as 'purple-lamp-harbour-78'. This is long enough to be very difficult to crack yet easy to remember."
+    },
+    {
+      "q": "Is Face ID really safe? What happens to my face data?",
+      "a": "Face ID is very safe. Apple stores your face data only as an encrypted mathematical pattern on a secure chip inside your device — it never leaves your iPhone or iPad, is never sent to Apple's servers, and is never accessible to apps. Even Apple cannot read your face data."
+    },
+    {
+      "q": "Why can I not use the same password for my email and my bank?",
+      "a": "If a criminal obtains your password from one account (which happens in data breaches all the time), they immediately try the same password on banking sites, email, and social media. Using unique passwords for every account means one stolen password cannot unlock anything else."
+    },
+    {
+      "q": "I forgot my password. What should I do?",
+      "a": "Use the Forgot Password link on the sign-in page. The service will send a reset link to your email address or a code to your phone. For your Apple ID specifically, use the account recovery process at appleid.apple.com. If you use a password manager, the master password is the only one you need to remember."
+    },
+    {
+      "q": "What is a password manager and do I need one?",
+      "a": "A password manager is an app that creates and remembers strong unique passwords for all your accounts — you only remember one master password. Apple devices have a built-in one called iCloud Keychain (it fills in passwords automatically). Third-party options include 1Password and Bitwarden. Using one significantly improves your security."
+    }
+  ],
+  "module-4": [
+    {
+      "q": "How do I know if an app in the App Store is real or fake?",
+      "a": "Check three things: (1) the developer name — tap the app and look at the name listed below the app title. It should match the company you expect (e.g. 'TD Bank' not 'TDBank Apps Ltd'). (2) The number of ratings — real apps from large companies have tens of thousands of reviews. (3) The rating — below 4 stars with few reviews is a warning sign."
+    },
+    {
+      "q": "An app is asking permission to access my contacts and camera. Should I allow it?",
+      "a": "Only allow permissions that make sense for what the app does. A camera app needs camera access. A flashlight app does not need your contacts. If you are unsure, tap Don't Allow — you can always change this later in Settings → Privacy & Security. Refusing a permission does not break or remove the app."
+    },
+    {
+      "q": "Someone texted me a link to download an app. Is it safe?",
+      "a": "No — never install an app from a link in a text message or email. Only download apps through the official App Store (on iPhone/iPad) or Google Play Store (on Android). Even if the text appears to come from a friend or family member, their account may have been compromised."
+    },
+    {
+      "q": "How do I delete an app I no longer want?",
+      "a": "Press and hold the app icon on your Home screen until a small menu appears or icons start wiggling with a small minus sign. Tap the minus sign on the app you want to remove, then tap Delete App. The app is removed but your data in the App Store remains — you can re-download it for free any time."
+    }
+  ],
+  "module-5": [
+    {
+      "q": "An email from my bank asks me to click a link and verify my account. What should I do?",
+      "a": "Do not tap or click the link. Close the email. Open your bank's app directly on your phone or type your bank's web address yourself into the browser. Log in normally. Real banks do not ask you to verify your account through email links — that is the most common phishing technique used against Canadians."
+    },
+    {
+      "q": "How do I check if an email is really from who it says it is from?",
+      "a": "Tap the sender's name or 'From' field to expand it and see the full email address. Scammers use display names that look real ('Royal Bank of Canada') but the actual email address reveals the truth — it might be 'rbc-alerts@mail-secure-notifications.net' rather than an rbc.com address. If the domain after the @ does not match the real company, it is a scam."
+    },
+    {
+      "q": "I received a text from Canada Post saying I missed a delivery. Should I click the link?",
+      "a": "Do not click it. This is one of the most common scam texts circulating in Canada. If you are expecting a package, go directly to the Canada Post website (canadapost-postescanada.ca) and use your actual tracking number. Canada Post never sends texts asking you to pay a re-delivery fee or confirm personal details."
+    },
+    {
+      "q": "I accidentally clicked a suspicious link. What should I do?",
+      "a": "Close the browser tab immediately. Do not enter any information on the page that opened. If asked to download something, tap Cancel and do not proceed. If you already entered your email, password, or banking details, change that password immediately and call your bank if financial information was involved."
+    }
+  ],
+  "module-6": [
+    {
+      "q": "Someone called saying they are from my bank and need to verify my PIN. Should I give it to them?",
+      "a": "No. Hang up immediately. Your bank already knows your PIN — they will never ask you to confirm it. Call your bank back using the number printed on the back of your debit or credit card, not a number given to you by the caller."
+    },
+    {
+      "q": "Is online banking safe?",
+      "a": "Yes, when done on your own device connected to your home Wi-Fi or cellular data. Canadian banks use strong encryption that protects your information. Use the bank's official app rather than a web browser where possible, always sign out when finished, and never log in on a shared computer or public Wi-Fi network."
+    },
+    {
+      "q": "What is the padlock icon in the browser and why does it matter?",
+      "a": "The padlock icon in your browser's address bar means the connection between your device and the website is encrypted — information you send (like passwords and card numbers) cannot be read by anyone intercepting the connection. Always look for https:// and the padlock before entering any sensitive information online."
+    },
+    {
+      "q": "I closed the browser tab after banking. Is that enough to sign out?",
+      "a": "No. Simply closing a tab does not end your banking session — the session may remain active for up to 30 minutes on some sites. Always tap the Sign Out or Log Out button within your bank's website or app before closing it. This is especially important on any shared device or computer."
+    }
+  ],
+  "module-7": [
+    {
+      "q": "I deleted a photo by accident. Can I get it back?",
+      "a": "Yes, if you act within 30 days. Open the Photos app, scroll down and tap Albums, then scroll to the bottom and tap Recently Deleted. Find your photo and tap Recover. Photos stay in Recently Deleted for 30 days before being permanently removed."
+    },
+    {
+      "q": "What happens to my photos if my iPad is stolen?",
+      "a": "If iCloud Photos is turned on, all your photos and videos are already safely stored in iCloud — they are unaffected by what happens to your device. When you get a new iPad, sign in with the same Apple ID and all your photos will appear automatically. If iCloud Photos is off, photos only stored on your iPad would be lost."
+    },
+    {
+      "q": "How can I share photos with my family without giving them access to all my photos?",
+      "a": "Use Shared Albums in the Photos app. Tap the + icon and create a new Shared Album. Invite only the family members you choose by their Apple ID or email. They can only see photos you add to that album, never your full library. They can also add their own photos to the shared album."
+    },
+    {
+      "q": "How much iCloud storage do I need for my photos?",
+      "a": "Every Apple ID includes 5 GB of free iCloud storage. If you have many years of photos and videos, you may need to upgrade to the 50 GB plan (about $1.29/month in Canada) or 200 GB plan (about $3.99/month). You can check your current usage in Settings → your name → iCloud → Manage Account Storage."
+    }
+  ],
+  "module-8": [
+    {
+      "q": "I tried to FaceTime my daughter but the call failed. Why?",
+      "a": "FaceTime requires both people to have an internet connection (Wi-Fi or cellular). The most common reasons a FaceTime call fails are: poor Wi-Fi signal, the other person's device is off or has Do Not Disturb turned on, or the phone number or email you are calling is not linked to their Apple ID. Ask your daughter to check her FaceTime settings."
+    },
+    {
+      "q": "Can I use FaceTime on an Android phone?",
+      "a": "Yes — Apple now lets iPhone and iPad users send a FaceTime invitation link to anyone, including Android or Windows users. They click the link in their browser and join the call as a guest. However, Android users cannot start a FaceTime call; only Apple device owners can initiate one."
+    },
+    {
+      "q": "What is the best position and lighting for a video call?",
+      "a": "Prop your device at eye level — a cookbook stand, book, or box works well. Sit facing a window or bright light source so the light falls on your face from the front, not behind you. A dark background or a bright window behind you makes it difficult for others to see you clearly."
+    },
+    {
+      "q": "Someone I do not know added me to a group message. What should I do?",
+      "a": "Do not respond to the group and do not tap any links in the messages. You can leave the group by tapping the group name or icon at the top of the conversation, scrolling down, and tapping Leave This Conversation. Block the unknown sender if the messages continue."
+    }
+  ],
+  "module-9": [
+    {
+      "q": "Can I trust the health information I get from an AI chatbot like ChatGPT?",
+      "a": "Not without verification. AI chatbots often provide helpful starting points, but they can state incorrect information with great confidence. For any medical symptom, treatment, or medication question, always confirm the answer with your doctor, a pharmacist, or a trusted website such as Health Canada or the Mayo Clinic before acting on it."
+    },
+    {
+      "q": "Is it safe to ask Siri about my personal health details?",
+      "a": "Siri keeps queries private and processes most requests on-device, but be cautious about sharing very sensitive information. Avoid dictating your Social Insurance Number, banking details, or full health history to any AI assistant. For general questions — 'What are the symptoms of low blood pressure?' — Siri is safe and helpful."
+    },
+    {
+      "q": "How can I tell if a voice message from my grandchild is real or AI-generated?",
+      "a": "Hang up and call your grandchild back on their known number. AI voice cloning can convincingly imitate someone's voice from just a short audio sample. A real emergency can wait the 30 seconds it takes to call back. Real family members will understand; scammers will pressure you to stay on the line and not verify."
+    },
+    {
+      "q": "What kinds of things is AI genuinely helpful for?",
+      "a": "AI is excellent for: drafting letters or emails, explaining something in simple language, suggesting gift ideas, helping plan a trip, finding recipes, summarising a long document, or answering general knowledge questions. Always verify the output for important decisions, but for everyday tasks AI is a practical, safe tool."
+    }
+  ],
+  "module-10": [
+    {
+      "q": "What happens if the store substitutes an item I ordered?",
+      "a": "Most grocery delivery apps (PC Express, Instacart) ask your substitution preference at checkout — you can allow substitutions, block them, or choose item by item. If a substitution is made that you do not want, you can contact the app's customer service for a refund on that item. The substitution preference is always shown before you confirm your order."
+    },
+    {
+      "q": "How do I know the delivery charge before I confirm my order?",
+      "a": "The delivery fee, service fee, and any minimum order requirement are all shown on the checkout screen before you tap Place Order. Scroll through the order summary carefully. You are never charged more than the total shown at checkout — there are no hidden charges added after confirmation."
+    },
+    {
+      "q": "Is my credit card safe in a grocery delivery app?",
+      "a": "Yes. Apps like PC Express, Instacart, and Uber Eats use the same encryption standard used by Canadian banks. Your card number is stored securely and never shared with the delivery person. If you are concerned, you can add a prepaid Visa or Mastercard to the app instead of your main credit card."
+    },
+    {
+      "q": "What if my grocery delivery does not arrive?",
+      "a": "Open the app, go to your order history, find the order, and tap Get Help or Contact Support. All major grocery delivery services have a customer service option within the app. For missing items or wrong charges, most will provide a refund or credit within 24–48 hours."
+    }
+  ],
+  "module-11": [
+    {
+      "q": "How do I confirm the Uber or Lyft driver is the right one?",
+      "a": "When your driver arrives, do three checks: (1) does the driver's name in the app match what the driver tells you? (2) does the licence plate on the car match what the app shows? (3) does the driver say your first name without you prompting them? If all three match, it is safe to get in. If anything does not match, do not get in — cancel and request another driver."
+    },
+    {
+      "q": "Can I see the price before I confirm a ride?",
+      "a": "Yes. Both Uber and Lyft show you the estimated price before you confirm the booking. For standard routes, this price is fixed. For longer trips or surge pricing periods, the app will clearly show you if the price is higher than usual before you confirm. You are never charged without agreeing to the price first."
+    },
+    {
+      "q": "How do I share my trip with a family member so they know I am safe?",
+      "a": "In the Uber app, tap the shield icon (Safety) during your trip and select Share Status. In Lyft, tap Share Route during a ride. This sends your family member a real-time link showing your car's location and estimated arrival time. They do not need to have the app themselves."
+    },
+    {
+      "q": "What should I do if I leave something in an Uber or Lyft?",
+      "a": "Go to your trip history in the app, find the completed trip, and tap Find Lost Item or I Lost an Item. The app will call your driver's phone. You can also report it to Uber or Lyft support through the Help section. Act quickly — drivers have several trips per day."
+    }
+  ],
+  "module-12": [
+    {
+      "q": "I am stuck in an automated phone menu and cannot reach a person. What do I do?",
+      "a": "Say 'representative,' 'agent,' or 'customer service' clearly and slowly. Many systems respond to these words even if they are not listed as options. Pressing 0 also routes to a person on most systems. If that does not work, press * (star) or # (pound). Stay patient — some systems require two or three attempts."
+    },
+    {
+      "q": "Someone called claiming to be from Microsoft and said my computer has a problem. They want me to let them access my computer remotely. Should I?",
+      "a": "No — hang up immediately. This is one of the most common tech support scams in Canada. Microsoft, Apple, and your internet provider will never call you unsolicited to report a problem with your computer. Caller ID can be faked to show a real company name. If you are concerned, hang up and call Microsoft or Apple using the number on their official website."
+    },
+    {
+      "q": "Where can I get free tech help as a Canadian senior?",
+      "a": "Three free resources: Connected Canadians (1-855-808-0505) offers patient, senior-friendly tech support by phone. Cyber-Seniors (1-844-217-3057) connects seniors with trained youth volunteers for tech help. Your local public library often runs free in-person tech help sessions as well — call your branch to ask about their schedule."
+    },
+    {
+      "q": "I gave someone remote access to my computer before I realised it was a scam. What do I do now?",
+      "a": "Disconnect from the internet immediately (turn off Wi-Fi or unplug the cable). Change all your passwords from a different, unaffected device — start with email and banking. Call your bank to put a hold on your account if you shared any financial information. Contact the Canadian Anti-Fraud Centre at 1-888-495-8501."
+    }
+  ],
+  "module-13": [
+    {
+      "q": "How do I make my Facebook profile visible only to friends?",
+      "a": "Tap the three-line menu icon (≡) in the bottom-right corner of Facebook → Settings → Privacy → Who can see your future posts? → change to Friends. Also review Who can send you friend requests? (set to Friends of Friends) and Who can see your friends list? (set to Friends or Only Me)."
+    },
+    {
+      "q": "Someone I met online says they love me and wants to meet but keeps making excuses. They are asking for money. Is this a romance scam?",
+      "a": "This almost certainly is a romance scam. Warning signs: met only online, never able to video call (or video call looks scripted), story involves being abroad or in the military, urgency around money for travel, medical bills, or an investment. Block and report the account. Do not send any money. Call the Canadian Anti-Fraud Centre (1-888-495-8501)."
+    },
+    {
+      "q": "Is Facebook Marketplace safe for buying things locally?",
+      "a": "It can be safe if you follow precautions: meet in a public place during the day (many police stations now have designated safe exchange zones), bring someone with you, only pay cash for in-person transactions, and never pay in advance by e-Transfer or gift card for an item you have not seen. If a deal seems too good to be true, it usually is."
+    },
+    {
+      "q": "I received a friend request from someone I already have as a friend. What is happening?",
+      "a": "This is almost certainly a cloned account. Scammers copy a real person's name and profile photo to create a fake account, then send requests to that person's friends. Do not accept the request. Contact your actual friend directly (by phone or message through the existing connection) to let them know their account may have been cloned."
+    }
+  ],
+  "module-14": [
+    {
+      "q": "I am nervous about smart home devices listening to me. Is that a valid concern?",
+      "a": "It is a reasonable concern with a practical solution. Every voice assistant has a physical mute button — pressing it disables the microphone completely. A red light confirms it is off. When muted, the device cannot hear anything. Many people keep voice assistants muted by default and only unmute when they want to use them."
+    },
+    {
+      "q": "What is the easiest smart home device to start with?",
+      "a": "A smart plug is the safest and simplest entry point. It plugs into any standard outlet, costs $15–$30 at Canadian Tire or Amazon, and lets you control any lamp or appliance using an app or voice commands. You can plug in a bedside lamp and turn it on before you get out of bed in the morning. No electrical work required."
+    },
+    {
+      "q": "Does having smart home devices make my Wi-Fi less secure?",
+      "a": "Smart home devices are only as secure as your Wi-Fi network. Use a strong Wi-Fi password (at least 12 characters, not your address or a birthday). Many home routers also let you create a separate guest Wi-Fi network for smart home devices — this keeps them separate from the network your phone and computer use."
+    },
+    {
+      "q": "What happens to my smart home devices if my internet goes out?",
+      "a": "Most smart home devices stop responding to voice commands and app controls when the internet is down, but devices like smart plugs that were already in an on or off position usually stay that way. Physical switches and buttons on the devices themselves always work regardless of internet connection."
+    }
+  ],
+  "module-15": [
+    {
+      "q": "Does OHIP cover telehealth appointments with my own family doctor?",
+      "a": "Yes. Video and phone appointments with your Ontario family doctor are covered by OHIP at no cost to you — the same as an in-person visit. Your doctor bills OHIP directly. Ask your clinic whether they offer virtual appointments and how to book one."
+    },
+    {
+      "q": "What is the Ontario Telehealth nurse line and how do I use it?",
+      "a": "Ontario Telehealth is a free 24/7 service at 1-866-797-0000. Call any time — evenings, weekends, or holidays — to speak with a registered nurse about your symptoms. The nurse will ask you questions and advise whether you need urgent care, can wait for a doctor's appointment, or can manage at home. No account or registration is needed."
+    },
+    {
+      "q": "My video appointment starts in 10 minutes and my camera is not working. What do I do?",
+      "a": "First, close the app and reopen it — this often resolves camera issues. If that does not work, check Settings → Privacy → Camera and confirm the video call app has permission to access the camera. If the problem continues, call your clinic and ask whether you can switch to a phone call instead — most clinics are happy to accommodate this."
+    },
+    {
+      "q": "What should I prepare before a telehealth appointment?",
+      "a": "Have ready: your health card, a list of all current medications (including doses), a list of symptoms and when they started, a pen and paper to take notes, and a charged device. Sit in a quiet, well-lit room. Test your camera and microphone 5 minutes before the appointment starts. Write down any questions you want to ask so you do not forget them during the call."
+    }
+  ],
+  "module-16": [
+    {
+      "q": "Should I use the hotel Wi-Fi to check my bank balance?",
+      "a": "No. Public Wi-Fi at hotels, airports, and cafes is not secure — someone on the same network could potentially intercept your connection. Use your phone's cellular data (turn off Wi-Fi temporarily) for banking, email, or anything involving passwords or personal information. Alternatively, use a VPN app, which encrypts your connection on any network."
+    },
+    {
+      "q": "What documents should I have backed up digitally before a trip?",
+      "a": "Take photos of: your passport photo page, travel insurance policy (front page showing the policy number and emergency phone number), your credit and debit cards (front only, never the security code), your itinerary, and any prescription medication labels. Store these in iCloud or email them to yourself so you can access them if your bag is lost."
+    },
+    {
+      "q": "My phone was stolen while travelling. What should I do?",
+      "a": "Do these steps in order: (1) Use another device to go to icloud.com/find and mark your iPhone as Lost — this locks it remotely. (2) Contact your bank to suspend any cards linked to Apple Pay or Google Pay. (3) Change your email and key account passwords from a different device. (4) Report the theft to local police and get a report number for your travel insurance claim."
+    },
+    {
+      "q": "Should I turn on roaming when I travel outside Canada?",
+      "a": "Check your phone plan before you travel. Most Canadian carriers offer affordable travel passes ($12–$20/day) that extend your Canadian plan abroad. Without roaming enabled, you will have no cellular data abroad but can still use Wi-Fi. Consider buying a local SIM card for longer trips — your unlocked device will work with any carrier's SIM."
+    }
+  ],
+  "module-17": [
+    {
+      "q": "How do I get better answers from an AI chatbot?",
+      "a": "Be specific about who you are and what you need. Instead of asking 'What is a good exercise?', ask 'I am a 72-year-old Canadian woman with mild arthritis. What low-impact exercises are recommended for joint health?' The more context you give, the more relevant the answer. You can also ask the AI to 'explain in simple language' or 'give me step-by-step instructions.'"
+    },
+    {
+      "q": "I asked an AI a question about my medication and it gave me wrong information. Why?",
+      "a": "AI tools are trained on large amounts of text but are not medical databases. They can confuse drug names, mix up dosages, or present outdated information confidently. This is why you must always verify medical, legal, and financial information from an AI with a trusted professional or authoritative source like Health Canada or your pharmacist."
+    },
+    {
+      "q": "Is it safe to ask an AI chatbot to help me write a letter to my bank?",
+      "a": "Yes, with one important precaution: describe your situation in general terms without including your account numbers, full name and address, SIN, or any personal identifying information. You can say 'I need to write a letter disputing a charge on my account' without mentioning any actual numbers. The AI will give you a useful template you can then fill in privately."
+    },
+    {
+      "q": "What is the difference between Siri, ChatGPT, and Google Assistant?",
+      "a": "Siri (Apple) is built into your iPhone and iPad and works best for device-specific tasks — setting timers, calling contacts, checking your calendar, and quick questions. Google Assistant works similarly on Android and through Google Search. ChatGPT is a more powerful general AI for writing, explaining, and analysing text, but requires an account and internet connection. All three can make mistakes."
+    }
+  ],
+  "module-18": [
+    {
+      "q": "I tried to call my grandson on FaceTime but there was no answer. Did I do something wrong?",
+      "a": "No — if you tapped the correct contact and selected Video, you did everything right. If there was no answer, your grandson was likely busy, had his phone on silent, or was somewhere with no signal. Try again at a time you have arranged in advance. You can also send him a text first saying 'Can we FaceTime in 10 minutes?' so he is ready."
+    },
+    {
+      "q": "What is Friendly Voices and how do I sign up?",
+      "a": "Friendly Voices (1-855-892-5446) is a free Canadian programme that matches older adults with trained volunteers for regular friendly phone conversations. You do not need internet access — it is all done by telephone. Call the number, describe your interests, and they will match you with a compatible volunteer for scheduled weekly calls. There is no cost and no commitment required."
+    },
+    {
+      "q": "How can I meet other seniors online through my interests?",
+      "a": "Many Ontario public libraries run free online groups through Zoom — book clubs, craft circles, discussion groups, and general interest meetups. Call your local library branch to ask what digital programmes they currently offer. Seniors Centres Without Walls (1-877-592-5777) also offers free phone-based programmes across Ontario. No computer is required for phone-based programmes."
+    },
+    {
+      "q": "What is the easiest video calling app for someone who has never tried it before?",
+      "a": "FaceTime is the easiest option for iPhone and iPad users because it is already installed, requires no account setup, and is very simple — tap the app, tap a name, tap Video. If your family member uses Android, WhatsApp video calling is free, easy to set up, and works on any smartphone. Zoom works well for group calls with multiple family members."
+    }
+  ],
+  "module-19": [
+    {
+      "q": "Why should I write down my online accounts for my family?",
+      "a": "Without a list, your family may not know which accounts exist, how to access important emails, or how to close accounts respectfully after you pass away. Digital accounts — email, banking, social media, cloud storage — do not automatically close. A simple written list stored with your will or estate documents is one of the most practical gifts you can leave."
+    },
+    {
+      "q": "What is a Facebook Legacy Contact and how do I set one up?",
+      "a": "A Legacy Contact is a person you trust who can manage certain aspects of your Facebook account after you pass away — they can post a tribute, respond to friend requests, and update your profile photo. To set one: tap the three-line menu → Settings → General → Memorialisation Settings → Choose Legacy Contact. They will not have access to your private messages."
+    },
+    {
+      "q": "What happens to my iCloud photos and Apple ID when I pass away?",
+      "a": "Apple introduced a Digital Legacy programme — you can add trusted people as Legacy Contacts in your Apple ID settings. After you pass away, they can request access to your iCloud content including photos, documents, and messages using your Digital Legacy key. Without this, Apple will not share account content even to family members. Set it up in Settings → your name → Password & Security → Legacy Contact."
+    },
+    {
+      "q": "Should I include my passwords in my will?",
+      "a": "Avoid writing passwords in a will directly, as wills become public documents in many provinces. Instead, write a separate sealed document (not part of the will itself) with your account information, stored with your will or in a sealed envelope given to your executor. Alternatively, use a password manager and share the master password securely with your chosen person."
+    }
+  ]
+}
