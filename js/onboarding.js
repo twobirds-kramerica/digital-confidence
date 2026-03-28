@@ -35,10 +35,10 @@
       goal_family: 'I want to connect with family',
       goal_setup:  'Someone set this up for me',
       step2_safety_title: 'Great choice!',
-      step2_safety_body:  "Let\u2019s start with Module 1 \u2014 it\u2019s about the most important skill on any device, and it takes about 15 minutes.",
-      step2_safety_cta:   'Take me to Module 1 \u2192',
+      step2_safety_body:  "Let\u2019s start with Module 2: The Security Shield \u2014 it shows you exactly how to spot scams, protect your personal information, and stay safe online. It takes about 20 minutes.",
+      step2_safety_cta:   'Take me to Module 2 \u2192',
       step2_family_title: 'Perfect!',
-      step2_family_body:  "Module 8 covers video calls on FaceTime, WhatsApp, and Zoom. It\u2019s easy to follow, even if you\u2019ve never done it before.",
+      step2_family_body:  "Module 8: Stay Connected covers video calls on FaceTime, WhatsApp, and Zoom. It\u2019s easy to follow, even if you\u2019ve never done it before.",
       step2_family_cta:   'Take me to Module 8 \u2192',
       step2_setup_title:  'Welcome!',
       step2_setup_body:   "This site will help you learn at your own pace \u2014 no pressure, no wrong answers, no deadlines. Start whenever you\u2019re ready.",
@@ -69,8 +69,8 @@
       goal_family: 'Je veux rester en contact avec ma famille',
       goal_setup:  'Quelqu\u2019un a configur\u00e9 ceci pour moi',
       step2_safety_title: 'Excellent choix\u00a0!',
-      step2_safety_body:  'Commen\u00e7ons par le Module 1 \u2014 il porte sur la comp\u00e9tence la plus importante pour tout appareil et prend environ 15 minutes.',
-      step2_safety_cta:   'Aller au Module 1 \u2192',
+      step2_safety_body:  'Commen\u00e7ons par le Module 2\u00a0: Le Bouclier de s\u00e9curit\u00e9 \u2014 il vous montre comment rep\u00e9rer les arnaques, prot\u00e9ger vos informations et rester en s\u00e9curit\u00e9 en ligne. Il dure environ 20 minutes.',
+      step2_safety_cta:   'Aller au Module 2 \u2192',
       step2_family_title: 'Parfait\u00a0!',
       step2_family_body:  'Le Module 8 explique les appels vid\u00e9o sur FaceTime, WhatsApp et Zoom. Il est facile \u00e0 suivre, m\u00eame si vous ne l\u2019avez jamais fait.',
       step2_family_cta:   'Aller au Module 8 \u2192',
@@ -99,7 +99,7 @@
   function t(key) { return (isFr ? T.fr : T.en)[key] || key; }
 
   /* ── Goal → module mapping ─────────────────────────────────────────── */
-  var GOAL_MODULE = { safety: 'module-1.html', family: 'module-8.html', setup: 'module-1.html' };
+  var GOAL_MODULE = { safety: 'module-2.html', family: 'module-8.html', setup: 'module-1.html' };
 
   /* ── Build overlay ─────────────────────────────────────────────────── */
   function buildOverlay() {
