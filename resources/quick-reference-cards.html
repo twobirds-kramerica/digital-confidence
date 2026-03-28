@@ -3,520 +3,171 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
-  <meta name="description" content="5 free printable reference cards for seniors — how to spot a scam call, make a FaceTime call, create a strong password, what to do if something goes wrong, and who to call for help.">
   <title>Quick Reference Cards — Digital Confidence Centre</title>
-  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/resources/quick-reference-cards.html">
-  <link rel="alternate" hreflang="en-CA" href="https://twobirds-kramerica.github.io/digital-confidence/resources/quick-reference-cards.html">
-  <link rel="alternate" hreflang="fr-CA" href="https://twobirds-kramerica.github.io/digital-confidence/resources/quick-reference-cards.html">
-  <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/accessibility.css">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta name="description" content="Five printable quick reference cards for common digital tasks. Large text, high contrast — perfect to cut out and keep on the fridge.">
   <meta property="og:title" content="Quick Reference Cards — Digital Confidence Centre">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_CA">
-  <meta name="theme-color" content="#1565C0">
+  <meta property="og:description" content="Five printable cut-out cards covering scam calls, FaceTime, passwords, what to do if something goes wrong, and who to call for help.">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/resources/quick-reference-cards.html">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="stylesheet" href="../css/main.css">
   <style>
-    /* ── Page styles ───────────────────────────────────────── */
-    .qrc-hero {
-      background: linear-gradient(135deg, #00695c 0%, #00897b 100%);
-      color: #fff;
-      border-radius: 16px;
-      padding: 2rem 1.75rem;
-      margin-bottom: 2rem;
-    }
-    .qrc-hero h1 { color: #fff; font-size: clamp(1.4rem, 4vw, 1.9rem); margin-bottom: .5rem; border: none; }
-    .qrc-hero p { opacity: .92; line-height: 1.6; max-width: 580px; }
-
-    .qrc-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      align-items: center;
-      margin-bottom: 2rem;
-    }
-    .btn-print-all {
-      background: #00695c;
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      padding: .7rem 1.4rem;
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background .15s;
-    }
-    .btn-print-all:hover { background: #004d40; }
-
-    .btn-lang-toggle {
-      background: var(--color-bg, #fff);
-      color: var(--color-primary, #1565C0);
-      border: 2px solid var(--color-primary, #1565C0);
-      border-radius: 10px;
-      padding: .65rem 1.2rem;
-      font-size: .95rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background .15s, color .15s;
-    }
-    .btn-lang-toggle:hover { background: var(--color-primary, #1565C0); color: #fff; }
-
-    /* ── Reference card ────────────────────────────────────── */
-    .ref-card {
-      background: #fff;
-      color: #111;
-      border: 1.5px solid #e0e0e0;
-      border-radius: 14px;
-      box-shadow: 0 2px 10px rgba(0,0,0,.09);
-      margin-bottom: 2rem;
-      overflow: hidden;
-    }
-    .ref-card-top {
-      height: 8px;
-    }
-    .ref-card-body {
-      padding: 1.5rem 1.75rem 1.25rem;
-    }
-    .ref-card-number {
-      font-size: .78rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      opacity: .55;
-      margin-bottom: .3rem;
-    }
-    .ref-card-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #111;
-      margin: 0 0 1.1rem;
-      line-height: 1.3;
-    }
-    .ref-card-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1.1rem;
-    }
-    .ref-card-list li {
-      font-size: 1.1rem;
-      line-height: 1.65;
-      padding: .55rem 0;
-      border-bottom: 1px solid #f0f0f0;
-      color: #111;
-    }
-    .ref-card-list li:last-child { border-bottom: none; }
-    .ref-card-note {
-      background: #f5f5f5;
-      border-radius: 8px;
-      padding: .8rem 1rem;
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #333;
-      margin-top: .75rem;
-    }
-    .ref-card-actions {
-      display: flex;
-      gap: .75rem;
-      flex-wrap: wrap;
-      padding: .85rem 1.75rem 1.25rem;
-      border-top: 1px solid #f0f0f0;
-    }
-    .btn-print-card {
-      background: #fff;
-      border: 2px solid #757575;
-      color: #333;
-      border-radius: 8px;
-      padding: .4rem .9rem;
-      font-size: .88rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background .15s, color .15s;
-    }
-    .btn-print-card:hover { background: #333; color: #fff; border-color: #333; }
-
-    /* Colour tops */
-    .card-top-red     { background: #c62828; }
-    .card-top-blue    { background: #1565C0; }
-    .card-top-green   { background: #2e7d32; }
-    .card-top-orange  { background: #e65100; }
-    .card-top-purple  { background: #4a148c; }
-
-    /* Lang content switching */
-    [data-lang-target="fr"] { display: none; }
-    body.lang-fr [data-lang-target="en"] { display: none; }
-    body.lang-fr [data-lang-target="fr"] { display: block; }
-
-    /* ── Print styles ──────────────────────────────────────── */
+    .qrc-intro { max-width: 720px; margin: 0 auto 32px; text-align: center; padding: 0 16px; }
+    .qrc-intro h1 { font-size: 1.8rem; margin-bottom: 12px; }
+    .qrc-intro p { font-size: 1.05rem; line-height: 1.7; }
+    .qrc-actions { text-align: center; margin: 0 auto 40px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-print-all { background: #1565C0; color: #fff; border: none; border-radius: 10px; padding: 14px 28px; font-size: 1.05rem; font-weight: 700; cursor: pointer; min-height: 44px; }
+    .btn-print-all:hover { background: #0d47a1; }
+    .qrc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 960px; margin: 0 auto; padding: 0 16px 40px; }
+    .qrc-card { border: 3px solid #1565C0; border-radius: 12px; padding: 24px 20px; background: #fff; page-break-inside: avoid; }
+    [data-theme="dark"] .qrc-card { background: #1a2d44; border-color: #00C9A7; }
+    .qrc-card-number { display: inline-block; background: #1565C0; color: #fff; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px; }
+    [data-theme="dark"] .qrc-card-number { background: #00796B; }
+    .qrc-card h2 { font-size: 1.2rem; color: #1a237e; margin: 0 0 16px; line-height: 1.4; display: flex; align-items: center; gap: 10px; }
+    [data-theme="dark"] .qrc-card h2 { color: #81d4fa; }
+    .qrc-card h2 .card-emoji { font-size: 1.5rem; flex-shrink: 0; }
+    .qrc-card ol, .qrc-card ul { margin: 0; padding-left: 22px; }
+    .qrc-card li { font-size: 1rem; line-height: 1.7; margin-bottom: 8px; }
+    .qrc-card li strong { color: #1565C0; }
+    [data-theme="dark"] .qrc-card li strong { color: #4dd0e1; }
+    .qrc-card .card-footer { margin-top: 14px; font-size: 0.8rem; color: #888; border-top: 1px solid #eee; padding-top: 8px; text-align: center; }
+    [data-theme="dark"] .qrc-card .card-footer { border-color: #2d4a66; }
     @media print {
-      body { font-size: 14pt; }
-      .accessibility-bar,
-      .top-bar,
-      .sidebar,
-      .sidebar-overlay,
-      .breadcrumb,
-      .qrc-hero,
-      .qrc-actions,
-      .no-print,
-      .ref-card-actions,
-      .site-footer { display: none !important; }
-      .page-wrapper { margin: 0; padding: 0; }
-      .main-content { max-width: 100%; padding: 0; }
-      .ref-card {
-        break-inside: avoid;
-        border: 2px solid #000;
-        box-shadow: none;
-        margin-bottom: 1.5cm;
-        border-radius: 0;
-      }
-      .ref-card-top { height: 6px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .ref-card-body { padding: 1rem 1.25rem; }
-      .ref-card-list li { font-size: 12pt; }
-      .ref-card-title { font-size: 14pt; }
-      .ref-card-note { font-size: 11pt; background: #f0f0f0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .site-header, .sidebar, .sidebar-overlay, .top-bar, .accessibility-bar, .qrc-actions, .site-footer, .module-nav { display: none !important; }
+      body { background: #fff !important; }
+      .qrc-grid { grid-template-columns: 1fr 1fr; gap: 12px; padding: 0; }
+      .qrc-card { border: 2px solid #000; border-radius: 6px; padding: 14px; }
+      .qrc-card h2 { font-size: 14pt; color: #000; }
+      .qrc-card li { font-size: 12pt; color: #000; }
+      .qrc-card-number { background: #000; }
     }
+    @media (max-width: 480px) { .qrc-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
-
   <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
-    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" style="font-size:0.85rem">A</button>
     <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
-    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
-    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
-    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xlarge" aria-label="Extra large text" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn" id="contrast-toggle" aria-label="Toggle high contrast">◐</button>
+    <button class="a11y-btn" id="lang-toggle-btn" aria-label="Toggle French/English">FR</button>
   </div>
 
   <div class="top-bar">
-    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
-    <span class="site-title">Digital Confidence Centre</span>
-    <span></span>
+    <a href="../index.html" class="back-link">← Digital Confidence Centre</a>
   </div>
 
-  <div class="sidebar-overlay" aria-hidden="true"></div>
+  <main class="page-wrapper">
+    <div class="main-content">
 
-  <aside class="sidebar" aria-label="Main navigation">
-    <button class="sidebar-close" aria-label="Close navigation">✕</button>
-    <div class="sidebar-header">
-      <h2>Digital Confidence Centre</h2>
-      <p>Free digital literacy for seniors</p>
-    </div>
-    <nav>
-      <a href="../index.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
-      <a href="../answers/"><span class="nav-icon">❓</span><span class="nav-label">Quick Answers</span></a>
-      <a href="index.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
-      <a href="support-directory.html"><span class="nav-icon">🆘</span><span class="nav-label">Get Help</span></a>
-      <a href="quick-reference-cards.html" aria-current="page"><span class="nav-icon">🃏</span><span class="nav-label">Reference Cards</span></a>
-      <div class="sidebar-a11y-section">
-        <p class="sidebar-a11y-title">Text Size</p>
-        <div class="sidebar-font-row">
-          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
-          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false" style="font-size:1rem">A</button>
-          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
-          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
-        </div>
-      </div>
-    </nav>
-  </aside>
-
-  <div class="page-wrapper">
-    <main class="main-content" id="main">
-
-      <nav class="breadcrumb no-print" aria-label="Breadcrumb" style="font-size:.9rem;margin-bottom:1.5rem;color:var(--color-text-muted,#666)">
-        <a href="../index.html" data-en="Home" data-fr="Accueil" style="color:var(--color-primary,#1565C0);text-decoration:none">Home</a> ›
-        <a href="index.html" data-en="Resources" data-fr="Ressources" style="color:var(--color-primary,#1565C0);text-decoration:none">Resources</a> ›
-        <span aria-current="page" data-en="Quick Reference Cards" data-fr="Cartes de référence rapide">Quick Reference Cards</span>
-      </nav>
-
-      <div class="qrc-hero no-print">
-        <h1 data-en="Quick Reference Cards" data-fr="Cartes de référence rapide">Quick Reference Cards</h1>
-        <p data-en="5 cards you can print, cut out, and keep by your phone. Large text, clear steps, designed for everyday use. Print them all at once or one at a time." data-fr="5 cartes que vous pouvez imprimer, découper et garder près de votre téléphone. Grand texte, étapes claires, conçues pour une utilisation quotidienne. Imprimez-les toutes à la fois ou une à la fois.">5 cards you can print, cut out, and keep by your phone. Large text, clear steps, designed for everyday use. Print them all at once or one at a time.</p>
+      <div class="qrc-intro">
+        <h1 data-en="✂️ Quick Reference Cards" data-fr="✂️ Cartes de référence rapide">✂️ Quick Reference Cards</h1>
+        <p data-en="Print these cards and cut them out. Keep them on the fridge or near your device — large text, clear steps, high contrast. Five cards covering the most common digital tasks." data-fr="Imprimez ces cartes et découpez-les. Gardez-les sur le réfrigérateur ou près de votre appareil — grand texte, étapes claires. Cinq cartes couvrant les tâches numériques les plus courantes.">Print these cards and cut them out. Keep them on the fridge or near your device — large text, clear steps, high contrast. Five cards covering the most common digital tasks.</p>
       </div>
 
-      <div class="qrc-actions no-print">
-        <button class="btn-print-all" onclick="window.print()" aria-label="Print all reference cards">
-          🖨️ <span data-en="Print All Cards" data-fr="Imprimer toutes les cartes">Print All Cards</span>
-        </button>
-        <button class="btn-lang-toggle" id="langToggleBtn" onclick="toggleCardLang()" aria-label="Toggle French version of cards">
-          🇫🇷 <span id="langToggleLabel">Voir en français</span>
-        </button>
+      <div class="qrc-actions">
+        <button class="btn-print-all" onclick="window.print()" data-en="🖨️ Print All 5 Cards" data-fr="🖨️ Imprimer les 5 cartes">🖨️ Print All 5 Cards</button>
+        <a href="../print-centre.html" class="btn btn-secondary" data-en="← Print Centre" data-fr="← Centre d'impression">← Print Centre</a>
       </div>
 
-      <!-- ══════════════════════════════════════════
-           CARD 1 — Scam Calls
-      ══════════════════════════════════════════ -->
-      <section class="ref-card" aria-labelledby="card1-title">
-        <div class="ref-card-top card-top-red"></div>
-        <div class="ref-card-body">
+      <div class="qrc-grid">
 
-          <!-- English -->
-          <div data-lang-target="en">
-            <p class="ref-card-number">Card 1 of 5</p>
-            <h2 class="ref-card-title" id="card1-title">🚨 How to Spot a Scam Call</h2>
-            <ul class="ref-card-list">
-              <li>🚩 <strong>They ask you to pay with gift cards</strong> — real companies never do this. Hang up immediately.</li>
-              <li>🚩 <strong>They say it's urgent and you must act NOW</strong> — scammers use pressure to stop you from thinking. Take your time. Real organisations will wait.</li>
-              <li>🚩 <strong>They ask for your password or SIN</strong> — hang up immediately if this happens. No legitimate organisation will ask for these over the phone.</li>
-            </ul>
-            <div class="ref-card-note">
-              <strong>When in doubt, hang up</strong> and call the company directly using the number on their website or the back of your card. Never call back a number a caller gives you.
-            </div>
-          </div>
-
-          <!-- French -->
-          <div data-lang-target="fr">
-            <p class="ref-card-number">Carte 1 de 5</p>
-            <h2 class="ref-card-title">🚨 Comment repérer un appel frauduleux</h2>
-            <ul class="ref-card-list">
-              <li>🚩 <strong>Ils vous demandent de payer avec des cartes-cadeaux</strong> — les vraies entreprises ne font jamais ça. Raccrochez immédiatement.</li>
-              <li>🚩 <strong>Ils disent que c'est urgent et que vous devez agir MAINTENANT</strong> — les escrocs utilisent la pression pour vous empêcher de réfléchir. Prenez votre temps. Les vraies organisations peuvent attendre.</li>
-              <li>🚩 <strong>Ils demandent votre mot de passe ou votre NAS</strong> — raccrochez immédiatement. Aucune organisation légitime ne demandera ces informations par téléphone.</li>
-            </ul>
-            <div class="ref-card-note">
-              <strong>En cas de doute, raccrochez</strong> et appelez l'entreprise directement en utilisant le numéro sur leur site Web ou au dos de votre carte. Ne rappelez jamais un numéro que l'appelant vous donne.
-            </div>
-          </div>
-
+        <!-- Card 1 -->
+        <div class="qrc-card">
+          <span class="qrc-card-number" data-en="Card 1 of 5" data-fr="Carte 1 sur 5">Card 1 of 5</span>
+          <h2><span class="card-emoji">📞</span> <span data-en="How to Spot a Scam Call" data-fr="Comment repérer un appel frauduleux">How to Spot a Scam Call</span></h2>
+          <p style="font-weight:700;margin:0 0 10px;font-size:0.9rem;" data-en="3 warning signs:" data-fr="3 signes d'alerte :">3 warning signs:</p>
+          <ul>
+            <li><strong data-en="1. Urgency" data-fr="1. Urgence">1. Urgency</strong> — <span data-en="They demand action NOW. Real organisations give you time." data-fr="Ils exigent une action MAINTENANT. Les vraies organisations vous donnent du temps.">They demand action NOW. Real organisations give you time.</span></li>
+            <li><strong data-en="2. Unusual payment" data-fr="2. Paiement inhabituel">2. Unusual payment</strong> — <span data-en="Gift cards, wire transfer, Bitcoin. Hang up immediately." data-fr="Cartes-cadeaux, virement, Bitcoin. Raccrochez immédiatement.">Gift cards, wire transfer, Bitcoin. Hang up immediately.</span></li>
+            <li><strong data-en="3. Secrecy" data-fr="3. Secret">3. Secrecy</strong> — <span data-en="Don't tell anyone. This is a scammer's key tool." data-fr="N'en parlez à personne. C'est l'outil clé de l'escroc.">Don't tell anyone. This is a scammer's key tool.</span></li>
+          </ul>
+          <p style="margin-top:12px;font-size:0.92rem;font-weight:700;" data-en="When in doubt: Hang up. Call back using the number on your card or bill." data-fr="En cas de doute : Raccrochez. Rappelez en utilisant le numéro sur votre carte ou votre facture.">When in doubt: Hang up. Call back using the number on your card or bill.</p>
+          <div class="card-footer">Canadian Anti-Fraud Centre: 1-888-495-8501</div>
         </div>
-        <div class="ref-card-actions no-print">
-          <button class="btn-print-card" onclick="printCard(this)" aria-label="Print card 1">🖨️ Print This Card</button>
+
+        <!-- Card 2 -->
+        <div class="qrc-card">
+          <span class="qrc-card-number" data-en="Card 2 of 5" data-fr="Carte 2 sur 5">Card 2 of 5</span>
+          <h2><span class="card-emoji">📱</span> <span data-en="How to Make a FaceTime Call" data-fr="Comment passer un appel FaceTime">How to Make a FaceTime Call</span></h2>
+          <p style="font-weight:700;margin:0 0 10px;font-size:0.9rem;" data-en="5 steps:" data-fr="5 étapes :">5 steps:</p>
+          <ol>
+            <li data-en="Tap the green FaceTime icon on your Home screen" data-fr="Appuyez sur l'icône verte FaceTime sur votre écran d'accueil">Tap the green FaceTime icon on your Home screen</li>
+            <li data-en="Tap the + button (top right corner)" data-fr="Appuyez sur le bouton + (coin supérieur droit)">Tap the + button (top right corner)</li>
+            <li data-en="Type the person's name or phone number" data-fr="Tapez le nom ou le numéro de téléphone de la personne">Type the person's name or phone number</li>
+            <li data-en="Tap their name when it appears, then tap Video" data-fr="Appuyez sur leur nom quand il apparaît, puis sur Vidéo">Tap their name when it appears, then tap Video</li>
+            <li data-en="To hang up: tap the red circle button" data-fr="Pour raccrocher : appuyez sur le bouton rond rouge">To hang up: tap the red circle button</li>
+          </ol>
+          <div class="card-footer" data-en="FaceTime is free — no cost, no subscription" data-fr="FaceTime est gratuit — aucun coût, aucun abonnement">FaceTime is free — no cost, no subscription</div>
         </div>
-      </section>
 
-      <!-- ══════════════════════════════════════════
-           CARD 2 — FaceTime
-      ══════════════════════════════════════════ -->
-      <section class="ref-card" aria-labelledby="card2-title">
-        <div class="ref-card-top card-top-blue"></div>
-        <div class="ref-card-body">
-
-          <!-- English -->
-          <div data-lang-target="en">
-            <p class="ref-card-number">Card 2 of 5</p>
-            <h2 class="ref-card-title" id="card2-title">📹 How to Make a FaceTime Call</h2>
-            <ol class="ref-card-list" style="list-style:decimal;padding-left:1.6rem">
-              <li>Open the <strong>Contacts</strong> app (the green icon with a person silhouette)</li>
-              <li>Find the person you want to call and tap their name</li>
-              <li>Tap the <strong>camera icon 🎥</strong> for a video call, or the <strong>phone icon 📞</strong> for audio only</li>
-              <li>Wait for them to answer — it may ring several times</li>
-              <li>To end the call: tap the <strong>red button</strong> at the bottom of the screen</li>
-            </ol>
-            <div class="ref-card-note">
-              💡 FaceTime only works if the other person also has an Apple device (iPhone or iPad). It's free to use on Wi-Fi.
-            </div>
-          </div>
-
-          <!-- French -->
-          <div data-lang-target="fr">
-            <p class="ref-card-number">Carte 2 de 5</p>
-            <h2 class="ref-card-title">📹 Comment faire un appel FaceTime</h2>
-            <ol class="ref-card-list" style="list-style:decimal;padding-left:1.6rem">
-              <li>Ouvrez l'application <strong>Contacts</strong> (l'icône verte avec une silhouette de personne)</li>
-              <li>Trouvez la personne que vous voulez appeler et appuyez sur son nom</li>
-              <li>Appuyez sur l'<strong>icône caméra 🎥</strong> pour un appel vidéo, ou sur l'<strong>icône téléphone 📞</strong> pour l'audio uniquement</li>
-              <li>Attendez qu'elle réponde — le téléphone peut sonner plusieurs fois</li>
-              <li>Pour terminer l'appel : appuyez sur le <strong>bouton rouge</strong> en bas de l'écran</li>
-            </ol>
-            <div class="ref-card-note">
-              💡 FaceTime ne fonctionne que si l'autre personne possède également un appareil Apple (iPhone ou iPad). C'est gratuit sur le Wi-Fi.
-            </div>
-          </div>
-
+        <!-- Card 3 -->
+        <div class="qrc-card">
+          <span class="qrc-card-number" data-en="Card 3 of 5" data-fr="Carte 3 sur 5">Card 3 of 5</span>
+          <h2><span class="card-emoji">🔐</span> <span data-en="How to Create a Strong Password" data-fr="Comment créer un mot de passe fort">How to Create a Strong Password</span></h2>
+          <p style="font-weight:700;margin:0 0 10px;font-size:0.9rem;" data-en="3 rules:" data-fr="3 règles :">3 rules:</p>
+          <ul>
+            <li><strong data-en="1. Use a passphrase" data-fr="1. Utilisez une phrase de passe">1. Use a passphrase</strong> — <span data-en="3 or 4 random words: Purple-Lamp-Harbour-78" data-fr="3 ou 4 mots aléatoires : Violet-Lampe-Port-78">3 or 4 random words: Purple-Lamp-Harbour-78</span></li>
+            <li><strong data-en="2. Never repeat" data-fr="2. Ne jamais répéter">2. Never repeat</strong> — <span data-en="Use a different password for each important account" data-fr="Utilisez un mot de passe différent pour chaque compte important">Use a different password for each important account</span></li>
+            <li><strong data-en="3. Never share" data-fr="3. Ne jamais partager">3. Never share</strong> — <span data-en="No real company will ever ask for your password" data-fr="Aucune vraie entreprise ne vous demandera jamais votre mot de passe">No real company will ever ask for your password</span></li>
+          </ul>
+          <p style="margin-top:12px;font-size:0.88rem;" data-en="Write passwords in a notebook kept in a safe place at home." data-fr="Écrivez les mots de passe dans un carnet gardé en lieu sûr à la maison.">Write passwords in a notebook kept in a safe place at home.</p>
+          <div class="card-footer" data-en="Turn on Face ID or Touch ID for extra protection" data-fr="Activez Face ID ou Touch ID pour une protection supplémentaire">Turn on Face ID or Touch ID for extra protection</div>
         </div>
-        <div class="ref-card-actions no-print">
-          <button class="btn-print-card" onclick="printCard(this)" aria-label="Print card 2">🖨️ Print This Card</button>
+
+        <!-- Card 4 -->
+        <div class="qrc-card">
+          <span class="qrc-card-number" data-en="Card 4 of 5" data-fr="Carte 4 sur 5">Card 4 of 5</span>
+          <h2><span class="card-emoji">🆘</span> <span data-en="What to Do If Something Goes Wrong" data-fr="Que faire si quelque chose tourne mal">What to Do If Something Goes Wrong</span></h2>
+          <p style="font-weight:700;margin:0 0 10px;font-size:0.9rem;" data-en="3 steps in order:" data-fr="3 étapes dans l'ordre :">3 steps in order:</p>
+          <ol>
+            <li><strong data-en="Stop and breathe" data-fr="Arrêtez et respirez">Stop and breathe</strong> — <span data-en="A scary screen cannot harm your device." data-fr="Un écran effrayant ne peut pas endommager votre appareil.">A scary screen cannot harm your device.</span></li>
+            <li><strong data-en="Press the Home button" data-fr="Appuyez sur le bouton principal">Press the Home button</strong> — <span data-en="(or swipe up from the bottom). Closes almost everything." data-fr="(ou glissez vers le haut depuis le bas). Ferme presque tout.">(or swipe up from the bottom). Closes almost everything.</span></li>
+            <li><strong data-en="Call for help" data-fr="Appelez à l'aide">Call for help</strong> — <span data-en="Connected Canadians: 1-855-808-0505" data-fr="Canadiens connectés : 1-855-808-0505">Connected Canadians: 1-855-808-0505</span></li>
+          </ol>
+          <p style="margin-top:12px;font-size:0.92rem;font-weight:700;" data-en="You cannot break your device by tapping the wrong thing. You are safe." data-fr="Vous ne pouvez pas endommager votre appareil en appuyant sur quelque chose de faux. Vous êtes en sécurité.">You cannot break your device by tapping the wrong thing. You are safe.</p>
+          <div class="card-footer" data-en="Digital Confidence Centre — free help always available" data-fr="Centre de confiance numérique — aide gratuite toujours disponible">Digital Confidence Centre — free help always available</div>
         </div>
-      </section>
 
-      <!-- ══════════════════════════════════════════
-           CARD 3 — Strong Password
-      ══════════════════════════════════════════ -->
-      <section class="ref-card" aria-labelledby="card3-title">
-        <div class="ref-card-top card-top-green"></div>
-        <div class="ref-card-body">
-
-          <!-- English -->
-          <div data-lang-target="en">
-            <p class="ref-card-number">Card 3 of 5</p>
-            <h2 class="ref-card-title" id="card3-title">🔑 How to Create a Strong Password</h2>
-            <ul class="ref-card-list">
-              <li>✅ <strong>Use 3 random words you can picture:</strong> e.g. <code style="font-size:1rem;background:#f5f5f5;padding:.1rem .3rem;border-radius:4px">BlueSky!River9Maple</code></li>
-              <li>✅ <strong>Make it at least 12 characters long</strong> — the longer, the better</li>
-              <li>❌ <strong>Never use</strong> your name, birthday, pet's name, or the word "password"</li>
-            </ul>
-            <div class="ref-card-note">
-              💡 <strong>Tip:</strong> Write your password on paper and keep it somewhere safe (not on your device). This is safer than using a password that's easy to guess.
-            </div>
-          </div>
-
-          <!-- French -->
-          <div data-lang-target="fr">
-            <p class="ref-card-number">Carte 3 de 5</p>
-            <h2 class="ref-card-title">🔑 Comment créer un mot de passe fort</h2>
-            <ul class="ref-card-list">
-              <li>✅ <strong>Utilisez 3 mots aléatoires que vous pouvez visualiser :</strong> ex. <code style="font-size:1rem;background:#f5f5f5;padding:.1rem .3rem;border-radius:4px">CielBleu!Rivière9Érable</code></li>
-              <li>✅ <strong>Faites-le au moins 12 caractères</strong> — plus c'est long, mieux c'est</li>
-              <li>❌ <strong>N'utilisez jamais</strong> votre nom, votre date de naissance, le nom de votre animal ou le mot « motdepasse »</li>
-            </ul>
-            <div class="ref-card-note">
-              💡 <strong>Conseil :</strong> Écrivez votre mot de passe sur papier et gardez-le dans un endroit sûr (pas sur votre appareil). C'est plus sûr qu'un mot de passe facile à deviner.
-            </div>
-          </div>
-
+        <!-- Card 5 -->
+        <div class="qrc-card">
+          <span class="qrc-card-number" data-en="Card 5 of 5" data-fr="Carte 5 sur 5">Card 5 of 5</span>
+          <h2><span class="card-emoji">📋</span> <span data-en="Who to Call for Help" data-fr="Qui appeler pour obtenir de l'aide">Who to Call for Help</span></h2>
+          <p style="font-weight:700;margin:0 0 10px;font-size:0.9rem;" data-en="3 trusted phone numbers:" data-fr="3 numéros de téléphone de confiance :">3 trusted phone numbers:</p>
+          <ul style="list-style:none;padding:0;">
+            <li style="margin-bottom:12px;">
+              <strong data-en="Tech help — Connected Canadians" data-fr="Aide informatique — Canadiens connectés">Tech help — Connected Canadians</strong><br>
+              <span style="font-size:1.2rem;font-weight:700;color:#1565C0;">1-855-808-0505</span><br>
+              <span style="font-size:0.85rem;" data-en="Free, friendly tech support for Canadian seniors" data-fr="Aide technique gratuite pour les aînés canadiens">Free, friendly tech support for Canadian seniors</span>
+            </li>
+            <li style="margin-bottom:12px;">
+              <strong data-en="Health advice — Ontario Health 811" data-fr="Conseils santé — Santé811 Ontario">Health advice — Ontario Health 811</strong><br>
+              <span style="font-size:1.2rem;font-weight:700;color:#1565C0;">811</span><br>
+              <span style="font-size:0.85rem;" data-en="Free 24/7 nurse advice line (Ontario)" data-fr="Ligne de conseils infirmiers gratuite 24h/7j (Ontario)">Free 24/7 nurse advice line (Ontario)</span>
+            </li>
+            <li>
+              <strong data-en="Scam report — Canadian Anti-Fraud Centre" data-fr="Signalement d'arnaque — Centre antifraude du Canada">Scam report — Canadian Anti-Fraud Centre</strong><br>
+              <span style="font-size:1.2rem;font-weight:700;color:#1565C0;">1-888-495-8501</span><br>
+              <span style="font-size:0.85rem;" data-en="Report scams, get advice" data-fr="Signalez les arnaques, obtenez des conseils">Report scams, get advice</span>
+            </li>
+          </ul>
+          <div class="card-footer">twobirds-kramerica.github.io/digital-confidence/</div>
         </div>
-        <div class="ref-card-actions no-print">
-          <button class="btn-print-card" onclick="printCard(this)" aria-label="Print card 3">🖨️ Print This Card</button>
-        </div>
-      </section>
 
-      <!-- ══════════════════════════════════════════
-           CARD 4 — Something Goes Wrong
-      ══════════════════════════════════════════ -->
-      <section class="ref-card" aria-labelledby="card4-title">
-        <div class="ref-card-top card-top-orange"></div>
-        <div class="ref-card-body">
+      </div><!-- end .qrc-grid -->
 
-          <!-- English -->
-          <div data-lang-target="en">
-            <p class="ref-card-number">Card 4 of 5</p>
-            <h2 class="ref-card-title" id="card4-title">⚠️ What to Do If Something Goes Wrong</h2>
-            <ul class="ref-card-list">
-              <li>1️⃣ <strong>Press the Home button</strong> (or swipe up from the bottom on newer iPads) — this gets you out of anything instantly</li>
-              <li>2️⃣ <strong>If your device is frozen:</strong> hold down the side button until "Slide to power off" appears, then slide to turn it off. Wait 10 seconds, then turn it back on.</li>
-              <li>3️⃣ <strong>If you think you've been scammed:</strong> call your bank immediately — the number is on the back of your bank card. Then call the Canadian Anti-Fraud Centre: <strong>1-888-495-8501</strong></li>
-            </ul>
-          </div>
+      <div class="module-nav">
+        <a href="../print-centre.html" class="btn btn-secondary">← Print Centre</a>
+        <a href="../index.html" class="btn btn-primary btn-next">Back to Home →</a>
+      </div>
 
-          <!-- French -->
-          <div data-lang-target="fr">
-            <p class="ref-card-number">Carte 4 de 5</p>
-            <h2 class="ref-card-title">⚠️ Que faire si quelque chose ne va pas</h2>
-            <ul class="ref-card-list">
-              <li>1️⃣ <strong>Appuyez sur le bouton Accueil</strong> (ou glissez vers le haut depuis le bas sur les nouveaux iPad) — cela vous sort de n'importe quoi instantanément</li>
-              <li>2️⃣ <strong>Si votre appareil est gelé :</strong> maintenez le bouton latéral jusqu'à l'apparition de « Glisser pour éteindre », puis glissez. Attendez 10 secondes, puis rallumez.</li>
-              <li>3️⃣ <strong>Si vous pensez avoir été arnaqué :</strong> appelez votre banque immédiatement — le numéro est au dos de votre carte bancaire. Puis appelez le Centre antifraude du Canada : <strong>1-888-495-8501</strong></li>
-            </ul>
-          </div>
+    </div><!-- end .main-content -->
+  </main>
 
-        </div>
-        <div class="ref-card-actions no-print">
-          <button class="btn-print-card" onclick="printCard(this)" aria-label="Print card 4">🖨️ Print This Card</button>
-        </div>
-      </section>
-
-      <!-- ══════════════════════════════════════════
-           CARD 5 — Who to Call
-      ══════════════════════════════════════════ -->
-      <section class="ref-card" aria-labelledby="card5-title">
-        <div class="ref-card-top card-top-purple"></div>
-        <div class="ref-card-body">
-
-          <!-- English -->
-          <div data-lang-target="en">
-            <p class="ref-card-number">Card 5 of 5</p>
-            <h2 class="ref-card-title" id="card5-title">📞 Who to Call for Help</h2>
-            <ul class="ref-card-list">
-              <li>📞 <strong>Fraud:</strong> Canadian Anti-Fraud Centre<br>
-                  <span style="font-size:1.2rem;font-weight:700;color:#c62828">1-888-495-8501</span>
-                  <span style="font-size:.9rem;color:#555"> — free, Mon–Fri 9 AM–4:45 PM ET</span></li>
-              <li>📞 <strong>Health questions:</strong> Ontario Health811<br>
-                  <span style="font-size:1.2rem;font-weight:700;color:#1565C0">811</span>
-                  <span style="font-size:.9rem;color:#555"> — free, 24/7, speak with a registered nurse</span></li>
-              <li>📞 <strong>Tech help for seniors:</strong> Connected Canadians<br>
-                  <span style="font-size:1.2rem;font-weight:700;color:#2e7d32">1-855-808-0505</span>
-                  <span style="font-size:.9rem;color:#555"> — free one-on-one tech help for seniors</span></li>
-            </ul>
-            <div class="ref-card-note">
-              <strong>Tip:</strong> Cut this card out and keep it near your phone or on the fridge.
-            </div>
-          </div>
-
-          <!-- French -->
-          <div data-lang-target="fr">
-            <p class="ref-card-number">Carte 5 de 5</p>
-            <h2 class="ref-card-title">📞 Qui appeler pour de l'aide</h2>
-            <ul class="ref-card-list">
-              <li>📞 <strong>Fraude :</strong> Centre antifraude du Canada<br>
-                  <span style="font-size:1.2rem;font-weight:700;color:#c62828">1-888-495-8501</span>
-                  <span style="font-size:.9rem;color:#555"> — gratuit, lun–ven 9 h–16 h 45 HE</span></li>
-              <li>📞 <strong>Questions de santé :</strong> Santé811 Ontario<br>
-                  <span style="font-size:1.2rem;font-weight:700;color:#1565C0">811</span>
-                  <span style="font-size:.9rem;color:#555"> — gratuit, 24/7, parlez à une infirmière autorisée</span></li>
-              <li>📞 <strong>Aide technologique pour les aînés :</strong> Canadiens branchés<br>
-                  <span style="font-size:1.2rem;font-weight:700;color:#2e7d32">1-855-808-0505</span>
-                  <span style="font-size:.9rem;color:#555"> — aide technologique individuelle gratuite pour les aînés</span></li>
-            </ul>
-            <div class="ref-card-note">
-              <strong>Conseil :</strong> Découpez cette carte et gardez-la près de votre téléphone ou sur le réfrigérateur.
-            </div>
-          </div>
-
-        </div>
-        <div class="ref-card-actions no-print">
-          <button class="btn-print-card" onclick="printCard(this)" aria-label="Print card 5">🖨️ Print This Card</button>
-        </div>
-      </section>
-
-      <p class="no-print">
-        <a href="index.html" data-en="← Back to all Resources" data-fr="← Retour à toutes les ressources">← Back to all Resources</a>
-        &nbsp;|&nbsp;
-        <a href="canadian-helplines.html" data-en="Canadian Helplines →" data-fr="Lignes d'aide canadiennes →">Canadian Helplines →</a>
-      </p>
-
-      <footer class="site-footer no-print">
-        <div class="footer-inner">
-          <p class="footer-brand">Digital Confidence Centre</p>
-          <p class="footer-tagline">A free learning programme for Canadian seniors</p>
-          <nav class="footer-links" aria-label="Footer navigation">
-            <a href="../index.html">Home</a> |
-            <a href="index.html">Resources</a> |
-            <a href="../about.html">About</a> |
-            <a href="../accessibility.html">Accessibility</a> |
-            <a href="../privacy.html">Privacy Policy</a> |
-            <a href="#" onclick="openFeedbackModal(); return false;">Ideas &amp; Feedback</a> |
-            <a href="support-directory.html">Get Help</a>
-          </nav>
-          <p class="footer-copy">&copy; 2026 Two Birds Innovation. Made with care in Ontario, Canada.</p>
-        </div>
-      </footer>
-
-    </main>
-  </div>
-
-  <script src="../js/search-index.js" defer></script>
-  <script src="../js/search.js" defer></script>
-  <script src="../js/analytics-consent.js" defer></script>
   <script src="../js/app.js" defer></script>
   <script src="../js/lang-toggle.js" defer></script>
   <script src="../js/accessibility.js" defer></script>
-
-  <script>
-    // ── Language toggle for cards ─────────────────────────
-    var cardLang = 'en';
-
-    function toggleCardLang() {
-      cardLang = (cardLang === 'en') ? 'fr' : 'en';
-      document.body.classList.toggle('lang-fr', cardLang === 'fr');
-      var label = document.getElementById('langToggleLabel');
-      if (label) {
-        label.textContent = (cardLang === 'fr') ? 'View in English' : 'Voir en français';
-      }
-    }
-
-    // ── Print a single card ───────────────────────────────
-    // Hides all cards except the one containing the button, then prints.
-    function printCard(btn) {
-      var targetCard = btn.closest('.ref-card');
-      var allCards = document.querySelectorAll('.ref-card');
-      allCards.forEach(function(card) {
-        if (card !== targetCard) {
-          card.style.display = 'none';
-        }
-      });
-      window.print();
-      allCards.forEach(function(card) {
-        card.style.display = '';
-      });
-    }
-  </script>
+  <script src="../js/offline-banner.js" defer></script>
+  <script src="../js/help-button.js" defer></script>
 </body>
 </html>

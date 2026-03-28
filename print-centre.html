@@ -452,6 +452,10 @@
           <li><input type="checkbox" id="mod-13" value="13"><label for="mod-13">Module 13: Social Media</label></li>
           <li><input type="checkbox" id="mod-14" value="14"><label for="mod-14">Module 14: Smart Home</label></li>
           <li><input type="checkbox" id="mod-15" value="15"><label for="mod-15">Module 15: Telehealth</label></li>
+          <li><input type="checkbox" id="mod-16" value="16"><label for="mod-16">Module 16: Travel Safety</label></li>
+          <li><input type="checkbox" id="mod-17" value="17"><label for="mod-17">Module 17: AI Research Tools</label></li>
+          <li><input type="checkbox" id="mod-18" value="18"><label for="mod-18">Module 18: Staying Connected</label></li>
+          <li><input type="checkbox" id="mod-19" value="19"><label for="mod-19">Module 19: Your Digital Legacy</label></li>
         </ul>
         <p class="selection-count" id="selection-count" aria-live="polite">0 modules selected</p>
       </div>
@@ -489,6 +493,13 @@
         <h2>Step 4: Build My Cheat Sheet</h2>
         <p>This generates a 1–2 page summary in large, easy-to-read text with just the key tips from your selected modules. Your printer dialog will open automatically.</p>
         <button class="btn-build-cheatsheet" onclick="buildCheatSheet()" aria-label="Build and print my cheat sheet">📄 Build My Cheat Sheet</button>
+      </div>
+
+      <!-- Quick Reference Cards -->
+      <div class="print-section">
+        <h2>✂️ Quick Reference Cards</h2>
+        <p>Five cut-out cards for the most common situations: spotting a scam call, making a FaceTime call, creating a strong password, what to do if something goes wrong, and who to call for help. Large text, high contrast — designed to live on the fridge.</p>
+        <a href="resources/quick-reference-cards.html" class="btn btn-primary" style="display:inline-block;margin-top:8px;">View &amp; Print Quick Reference Cards →</a>
       </div>
 
       <footer class="site-footer">
@@ -670,6 +681,38 @@
           'Most telehealth video or phone appointments with your Ontario family doctor are covered by OHIP at no cost — just like an in-person visit. Ask your clinic if virtual appointments are available.',
           'Ontario\'s free 24/7 nurse advice line is 1-866-797-0000. Call any time — evenings, weekends, or holidays — to speak with a registered nurse about your symptoms.',
           'For your video appointment, sit in a quiet, well-lit room facing a window, test your camera and microphone a few minutes early, and have your health card and a list of your current medications ready.'
+        ]
+      },
+      '16': {
+        title: 'Module 16: Travel Safety',
+        tips: [
+          'Back up your photos and important documents to iCloud before travelling — if your device is lost or stolen, everything is recoverable when you get home.',
+          'Avoid using public Wi-Fi at airports, hotels, and coffee shops for banking or personal accounts. Use your phone\'s cellular data or a VPN instead. The convenience is not worth the risk.',
+          'Keep a printed copy of your passport photo page, travel insurance policy number, and emergency contact numbers in a separate bag from your main luggage — if your wallet is stolen, you will still have what you need.'
+        ]
+      },
+      '17': {
+        title: 'Module 17: AI Research Tools',
+        tips: [
+          'AI tools like ChatGPT, Google Gemini, and Claude can answer questions, summarise long articles, and help you draft letters — but they sometimes "hallucinate" (confidently state wrong information). Always verify important facts with a second source.',
+          'Never share your Social Insurance Number, banking details, passwords, or home address with any AI chat tool. Your conversations may be stored and used to train the AI.',
+          'A good prompt habit: tell the AI who you are and what you need. Example: "I am a Canadian senior looking for simple instructions on how to..." — this gets you clearer, more relevant answers.'
+        ]
+      },
+      '18': {
+        title: 'Module 18: Staying Connected',
+        tips: [
+          'Video calls with family do not require any technical skill — just tap the FaceTime icon on your iPhone or iPad, tap someone in your contacts, and wait for them to answer. You can hang up at any time by pressing the red button.',
+          'If loneliness is a concern, Friendly Voices (1-855-892-5446) is a free Canadian service that matches seniors with a friendly volunteer for regular phone conversations.',
+          'Online communities for seniors (Facebook groups, Zoom clubs, library programmes) are a wonderful way to connect around a shared interest — ask your local library what digital programmes they offer.'
+        ]
+      },
+      '19': {
+        title: 'Module 19: Your Digital Legacy',
+        tips: [
+          'Make a list of your important online accounts (email, banking, social media) and store the list securely — in a sealed envelope with your will, or in a trusted password manager. This is a gift to your family.',
+          'You can set up a "Legacy Contact" on Facebook (Settings \u2192 General \u2192 Memorialisation Settings) to let a trusted person manage your account after you pass away — or choose to delete the account entirely.',
+          'Your photos stored in iCloud, Google Photos, or on a hard drive are part of your digital estate. Decide now who you want to receive them, and include instructions in your will or estate planning documents.'
         ]
       }
     };
