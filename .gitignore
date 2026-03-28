@@ -13,3 +13,6 @@ Thumbs.db
 # Local editor files
 .vscode/settings.json
 *.swp
+
+# Temporary agent-generated audit/migration scripts
+_audit/*.js
