@@ -54,7 +54,7 @@ function markModuleComplete(moduleNum) {
 }
 
 function resetAllProgress() {
-  for (var m = 1; m <= 16; m++) {
+  for (var m = 1; m <= 19; m++) {
     localStorage.removeItem('dc-module-' + m + '-complete');
     for (var i = 1; i <= 10; i++) {
       localStorage.removeItem('dc-progress-m' + m + '-' + i);
@@ -67,7 +67,7 @@ function resetAllProgress() {
 
 function updateProgressOverview() {
   // Count all progress items across all modules
-  var totalModules = 15;
+  var totalModules = 19;
   var completedModules = 0;
 
   for (var m = 1; m <= totalModules; m++) {

@@ -94,6 +94,27 @@ DCC.isModuleComplete = function(moduleNum) {
 };
 
 /**
+ * Get the stored user name, checking both key variants.
+ * Returns an empty string if no name is found.
+ */
+DCC.getStoredName = function() {
+  return DCC.store.get('dc-user-name') || DCC.store.get('dcc_name') || DCC.store.get('userName') || '';
+};
+
+/**
+ * Get the number of completed modules out of the total.
+ * Returns { completed: N, total: 19 }
+ */
+DCC.getProgress = function() {
+  const total = 19;
+  let completed = 0;
+  for (let i = 1; i <= total; i++) {
+    if (DCC.store.get('dc-module-' + i) === 'complete') completed++;
+  }
+  return { completed, total };
+};
+
+/**
  * Log a non-critical error to localStorage for debugging.
  * Keeps the last 10 errors only.
  */

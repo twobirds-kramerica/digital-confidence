@@ -17,6 +17,7 @@ window.DCC_KEYS = {
   HIGH_CONTRAST:      'dc-high-contrast',
   REDUCE_ANIMATIONS:  'dc-reduce-animations',
   READING_GUIDE:      'dc-reading-guide',
+  TEXT_SPACING:       'dc-text-spacing',
   SPEECH_SPEED:       'dc-speech-speed',
 
   // Onboarding and setup
