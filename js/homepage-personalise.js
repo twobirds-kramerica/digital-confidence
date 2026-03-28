@@ -16,24 +16,30 @@
 (function () {
   'use strict';
 
-  var TOTAL_MODULES = 15;
+  var TOTAL_MODULES = 21;
+  /* Module keys — includes non-numeric filenames mapped to numbers */
+  var MODULE_KEYS = [
+    '1','2','2.5','3','4','5','6','7','8','9','10',
+    '11','12','13','14','15','16','17','18','19'
+  ];
   var isFr = (localStorage.getItem('dc-lang') || navigator.language || 'en').startsWith('fr');
 
   // ── Count completed modules ─────────────────────────────────────────────
   var completed = [];
-  for (var i = 1; i <= TOTAL_MODULES; i++) {
-    if (localStorage.getItem('dc-module-' + i + '-complete') === 'true') {
-      completed.push(i);
+  MODULE_KEYS.forEach(function (key) {
+    if (localStorage.getItem('dc-module-' + key + '-complete') === 'true') {
+      completed.push(key);
     }
-  }
+  });
   var count = completed.length;
-  var userName = (localStorage.getItem('dc-user-name') || '').trim();
+  var userName = (localStorage.getItem('dcc_name') || localStorage.getItem('dc-user-name') || '').trim();
 
   // ── Find the "continue where you left off" module ───────────────────────
   var continueModule = null;
-  for (var m = 1; m <= TOTAL_MODULES; m++) {
-    if (localStorage.getItem('dc-module-' + m + '-complete') !== 'true') {
-      continueModule = m;
+  for (var mi = 0; mi < MODULE_KEYS.length; mi++) {
+    var mk = MODULE_KEYS[mi];
+    if (localStorage.getItem('dc-module-' + mk + '-complete') !== 'true') {
+      continueModule = mk;
       break;
     }
   }
@@ -48,30 +54,51 @@
 
   var content = '';
 
+  /* ── Helper: module href from key ─────────────────────────────────────── */
+  function modHref(key) {
+    var map = {
+      '16': 'module-16-travel-safety.html',
+      '17': 'module-17-ai-research.html',
+      '18': 'module-18-staying-connected.html',
+      '19': 'module-19-digital-legacy.html',
+      '2.5': 'module-2-5.html'
+    };
+    return map[key] || ('module-' + key + '.html');
+  }
+
+  /* ── Personalised name suffix for progress messages ─────────────────── */
+  function nameSuffix() {
+    if (!userName) return '';
+    return isFr ? ', ' + userName + '&nbsp;!' : ', ' + userName + '!';
+  }
+
   if (count === 0) {
     content = buildBanner(
       '🌱',
       isFr ? 'Commençons ensemble' : "Let's get started",
       (greeting ? '<strong>' + escHtml(greeting) + '</strong><br>' : '') +
       (isFr
-        ? 'Vous n\'avez pas encore commencé de module. Essayez le premier&nbsp;— il prend environ 10 minutes.'
-        : "You haven't started any modules yet. Try the first one — it takes about 10 minutes."),
+        ? 'Vous n\'avez pas encore commencé de module. Essayez le premier&nbsp;— il prend environ 15 minutes.'
+        : "You haven't started any modules yet. Try the first one — it takes about 15 minutes."),
       isFr ? 'Commencer le module 1 →' : 'Start Module 1 →',
       'module-1.html',
       '#e8f5e9',
       '#2e7d32'
     );
   } else if (count < 6) {
-    var pct = Math.round((count / TOTAL_MODULES) * 100);
+    var pct = Math.round((count / MODULE_KEYS.length) * 100);
+    var keepGoing = isFr
+      ? 'Continuez comme ça' + nameSuffix()
+      : 'Keep going' + nameSuffix();
     content = buildBanner(
       '🚀',
       isFr ? 'Vous progressez bien&nbsp;!' : "You're making progress!",
       (greeting ? '<strong>' + escHtml(greeting) + '</strong><br>' : '') +
       (isFr
-        ? 'Vous avez terminé <strong>' + count + ' module' + (count > 1 ? 's' : '') + '</strong> sur ' + TOTAL_MODULES + ' (' + pct + '&nbsp;%).'
-        : 'You\'ve completed <strong>' + count + ' module' + (count > 1 ? 's' : '') + '</strong> out of ' + TOTAL_MODULES + ' (' + pct + '%).') +
+        ? 'Vous avez terminé <strong>' + count + ' module' + (count > 1 ? 's' : '') + '</strong> sur 21 (' + pct + '&nbsp;%). ' + keepGoing + '.'
+        : 'You\'ve completed <strong>' + count + ' of 21 modules</strong> (' + pct + '%). ' + keepGoing + '.') +
       (continueModule
-        ? ' <a href="module-' + continueModule + '.html" style="color:#1565C0;font-weight:600">' +
+        ? ' <a href="' + modHref(continueModule) + '" style="color:#1565C0;font-weight:600">' +
           (isFr ? 'Continuer au module ' + continueModule + ' →' : 'Continue to Module ' + continueModule + ' →') + '</a>'
         : ''),
       null, null,
@@ -79,33 +106,39 @@
       '#1565C0'
     );
   } else if (count < 11) {
-    var pct2 = Math.round((count / TOTAL_MODULES) * 100);
+    var pct2 = Math.round((count / MODULE_KEYS.length) * 100);
+    var keepGoing2 = isFr
+      ? 'Continuez' + nameSuffix()
+      : 'Keep it up' + nameSuffix();
     content = buildBanner(
       '🏅',
       isFr ? 'Vous êtes à mi-chemin&nbsp;!' : "You're halfway there!",
       (greeting ? '<strong>' + escHtml(greeting) + '</strong><br>' : '') +
       (isFr
-        ? '<strong>' + count + ' modules terminés</strong> sur ' + TOTAL_MODULES + ' (' + pct2 + '&nbsp;%). Continuez comme ça&nbsp;!'
-        : '<strong>' + count + ' modules completed</strong> out of ' + TOTAL_MODULES + ' (' + pct2 + '%). Keep it up!') +
+        ? '<strong>' + count + ' modules terminés</strong> sur 21 (' + pct2 + '&nbsp;%). ' + keepGoing2 + '.'
+        : '<strong>' + count + ' of 21 modules completed</strong> (' + pct2 + '%). ' + keepGoing2 + '.') +
       (continueModule
-        ? ' <a href="module-' + continueModule + '.html" style="color:#6a1b9a;font-weight:600">' +
+        ? ' <a href="' + modHref(continueModule) + '" style="color:#6a1b9a;font-weight:600">' +
           (isFr ? 'Continuer au module ' + continueModule + ' →' : 'Continue to Module ' + continueModule + ' →') + '</a>'
         : ''),
       null, null,
       '#f3e5f5',
       '#6a1b9a'
     );
-  } else if (count < TOTAL_MODULES) {
-    var pct3 = Math.round((count / TOTAL_MODULES) * 100);
+  } else if (count < MODULE_KEYS.length) {
+    var pct3 = Math.round((count / MODULE_KEYS.length) * 100);
+    var almostThere = isFr
+      ? 'Plus que ' + (MODULE_KEYS.length - count) + ' à faire' + nameSuffix()
+      : 'Almost done' + nameSuffix();
     content = buildBanner(
       '🌟',
       isFr ? 'Presque là&nbsp;!' : "Almost there!",
       (greeting ? '<strong>' + escHtml(greeting) + '</strong><br>' : '') +
       (isFr
-        ? '<strong>' + count + ' modules terminés</strong> sur ' + TOTAL_MODULES + ' (' + pct3 + '&nbsp;%). Plus que ' + (TOTAL_MODULES - count) + ' à faire&nbsp;!'
-        : '<strong>' + count + ' modules completed</strong> out of ' + TOTAL_MODULES + ' (' + pct3 + '%). Only ' + (TOTAL_MODULES - count) + ' left!') +
+        ? '<strong>' + count + ' modules terminés</strong> sur 21 (' + pct3 + '&nbsp;%). ' + almostThere + '.'
+        : '<strong>' + count + ' of 21 modules completed</strong> (' + pct3 + '%). ' + almostThere + '.') +
       (continueModule
-        ? ' <a href="module-' + continueModule + '.html" style="color:#e65100;font-weight:600">' +
+        ? ' <a href="' + modHref(continueModule) + '" style="color:#e65100;font-weight:600">' +
           (isFr ? 'Continuer au module ' + continueModule + ' →' : 'Continue to Module ' + continueModule + ' →') + '</a>'
         : ''),
       null, null,
@@ -118,8 +151,8 @@
       isFr ? 'Félicitations&nbsp;! Tous les modules terminés.' : 'Congratulations! All modules complete.',
       (greeting ? '<strong>' + escHtml(greeting) + '</strong><br>' : '') +
       (isFr
-        ? 'Vous avez terminé tous les ' + TOTAL_MODULES + ' modules du Centre de confiance numérique. Vous êtes prêt·e à naviguer le monde numérique en toute confiance&nbsp;!'
-        : 'You\'ve completed all ' + TOTAL_MODULES + ' Digital Confidence Centre modules. You\'re ready to navigate the digital world with confidence!'),
+        ? 'Vous avez terminé tous les 21 modules du Centre de confiance numérique. Vous êtes prêt·e à naviguer le monde numérique en toute confiance&nbsp;!'
+        : 'You\'ve completed all 21 Digital Confidence Centre modules. You\'re ready to navigate the digital world with confidence!'),
       isFr ? 'Voir votre certificat →' : 'View Your Certificate →',
       'final-quiz.html',
       '#e8f5e9',

@@ -89,20 +89,34 @@
     }
 
     /* ── 3. "Continue where you left off" ──────────────────────────────── */
-    var lastModule = null;
-    var lastVisited = null;
-    var lastTs = 0;
-    for (var i = 1; i <= 17; i++) {
-      var ts = parseInt(localStorage.getItem('dc-module-' + i + '-visited') || '0', 10);
-      if (ts > lastTs) { lastTs = ts; lastModule = i; }
+    var MODULE_KEYS_V2 = [
+      '1','2','2.5','3','4','5','6','7','8','9','10',
+      '11','12','13','14','15','16','17','18','19'
+    ];
+    var MOD_HREF_V2 = {
+      '16': 'module-16-travel-safety.html',
+      '17': 'module-17-ai-research.html',
+      '18': 'module-18-staying-connected.html',
+      '19': 'module-19-digital-legacy.html',
+      '2.5': 'module-2-5.html'
+    };
+    function getModHref(key) {
+      return MOD_HREF_V2[key] || ('module-' + key + '.html');
     }
+
+    var lastModule = null;
+    var lastTs = 0;
+    MODULE_KEYS_V2.forEach(function (key) {
+      var ts = parseInt(localStorage.getItem('dc-module-' + key + '-visited') || '0', 10);
+      if (ts > lastTs) { lastTs = ts; lastModule = key; }
+    });
     /* Fallback: check completed modules */
     if (!lastModule) {
-      for (var j = 1; j <= 17; j++) {
-        if (localStorage.getItem('dc-module-' + j + '-complete') === 'true') {
-          lastModule = j;
+      MODULE_KEYS_V2.forEach(function (key) {
+        if (localStorage.getItem('dc-module-' + key + '-complete') === 'true') {
+          lastModule = key;
         }
-      }
+      });
     }
 
     if (lastModule && lastTs) {
@@ -121,7 +135,7 @@
       continueSection.innerHTML =
         '<strong>📖 ' + contTitle + '</strong><br>' +
         contBody + '<br>' +
-        '<a href="module-' + lastModule + '.html" style="color:#e65100;font-weight:600;margin-top:6px;display:inline-block">' + contLink + '</a>';
+        '<a href="' + getModHref(lastModule) + '" style="color:#e65100;font-weight:600;margin-top:6px;display:inline-block">' + contLink + '</a>';
 
       var h1b = document.querySelector('.main-content h1');
       if (h1b && h1b.parentNode) {
@@ -140,12 +154,23 @@
 /* ── Module visit timestamp tracker (runs on all pages) ──────────────── */
 (function () {
   'use strict';
-  var path = window.location.pathname + window.location.search;
-  var match = path.match(/module-(\d+)/);
-  if (match) {
-    var modNum = parseInt(match[1], 10);
-    if (modNum >= 1 && modNum <= 17) {
-      localStorage.setItem('dc-module-' + modNum + '-visited', Date.now().toString());
-    }
+  var path = window.location.pathname;
+  var file = path.split('/').pop();
+  /* Match numeric module: module-1.html … module-19.html */
+  var numMatch = file.match(/^module-(\d+(?:\.\d+)?)\.html/);
+  if (numMatch) {
+    localStorage.setItem('dc-module-' + numMatch[1] + '-visited', Date.now().toString());
+    return;
+  }
+  /* Match named modules */
+  var namedMap = {
+    'module-16-travel-safety.html': '16',
+    'module-17-ai-research.html':   '17',
+    'module-18-staying-connected.html': '18',
+    'module-19-digital-legacy.html': '19',
+    'module-2-5.html': '2.5'
+  };
+  if (namedMap[file]) {
+    localStorage.setItem('dc-module-' + namedMap[file] + '-visited', Date.now().toString());
   }
 })();
