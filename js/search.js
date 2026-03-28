@@ -106,26 +106,42 @@
     } catch (e) {}
   }
 
-  // ── Did You Mean? (fuzzy suggest on zero results) ─────────────────────────
+  // ── Levenshtein distance ──────────────────────────────────────────────────
+  function levenshtein(a, b) {
+    var m = a.length, n = b.length;
+    var dp = [];
+    for (var i = 0; i <= m; i++) {
+      dp[i] = [i];
+      for (var j = 1; j <= n; j++) {
+        dp[i][j] = i === 0 ? j
+          : j === 0 ? i
+          : a[i-1] === b[j-1] ? dp[i-1][j-1]
+          : 1 + Math.min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]);
+      }
+    }
+    return dp[m][n];
+  }
+
+  // ── Did You Mean? — Levenshtein-based suggestions on zero results ─────────
   function didYouMean(query) {
     if (!window.DC_SEARCH_INDEX) return [];
     var q = normalise(query);
+    var scored = [];
     var seen = {};
-    var suggestions = [];
     window.DC_SEARCH_INDEX.forEach(function (item) {
-      var title = normalise(item.title);
-      var words = title.split(/\s+/);
+      var words = normalise(item.title).split(/\s+/);
       words.forEach(function (w) {
         if (w.length < 4 || seen[w]) return;
-        // Simple: query contains start of word, or word contains start of query
-        var qShort = q.replace(/\s+/g, '');
-        if (w.indexOf(qShort.substring(0, 4)) === 0 || qShort.indexOf(w.substring(0, 4)) === 0) {
+        var dist = levenshtein(q, w);
+        var threshold = Math.max(2, Math.floor(q.length * 0.4));
+        if (dist <= threshold) {
           seen[w] = true;
-          suggestions.push(item.title);
+          scored.push({ title: item.title, dist: dist });
         }
       });
     });
-    return suggestions.slice(0, 3);
+    scored.sort(function (a, b) { return a.dist - b.dist; });
+    return scored.slice(0, 3).map(function (s) { return s.title; });
   }
 
   // ── Base URL helper ──────────────────────────────────────────────────────
@@ -177,6 +193,8 @@
       '.dc-search-input{width:100%;padding:8px 32px 8px 10px;background:#0a1520;border:1px solid #243d59;border-radius:8px;color:#F0F4F8;font-size:0.9em;outline:none;text-overflow:ellipsis;}',
       '.dc-search-input:focus{border-color:#00C9A7;}',
       '.dc-search-icon{position:absolute;right:26px;top:50%;transform:translateY(-50%);color:#8AA0B8;pointer-events:none;font-style:normal;}',
+      '.dc-voice-btn{position:absolute;right:48px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:1em;padding:0;color:#8AA0B8;line-height:1;min-height:32px;min-width:28px;}',
+      '.dc-voice-btn:hover{color:#00C9A7;}',
       // Dropdown
       '.dc-search-dropdown{position:absolute;left:16px;right:16px;top:calc(100% + 2px);background:#1A2D44;border:1px solid #243d59;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.4);z-index:200;overflow:hidden;display:none;max-height:75vh;overflow-y:auto;}',
       '.dc-search-dropdown.open{display:block;}',
@@ -338,12 +356,17 @@
     label.textContent = t('Search this site', 'Rechercher');
     sidebar.insertBefore(label, sidebar.firstChild);
 
+    var hasSpeech = ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window);
+
     var wrap = document.createElement('div');
     wrap.className = 'dc-search-wrap';
     wrap.innerHTML =
       '<input type="search" class="dc-search-input" id="dcSearchInput" placeholder="' +
         t('Search modules, FAQs, glossary…', 'Modules, FAQ, glossaire…') +
         '" autocomplete="off" aria-label="' + t('Search this site', 'Rechercher') + '" aria-owns="dcSearchDropdown" aria-haspopup="listbox" aria-autocomplete="list">' +
+      (hasSpeech
+        ? '<button class="dc-voice-btn" id="dcVoiceBtn" type="button" aria-label="' + t('Voice search', 'Recherche vocale') + '" title="' + t('Voice search', 'Recherche vocale') + '">🎙️</button>'
+        : '') +
       '<i class="dc-search-icon" aria-hidden="true">🔍</i>' +
       '<div class="dc-search-dropdown" id="dcSearchDropdown" role="listbox" aria-label="' + t('Search results', 'Résultats') + '"></div>';
 
@@ -404,6 +427,51 @@
         if (first) { e.preventDefault(); first.focus(); }
       }
     });
+
+    /* ── Voice search ── */
+    var voiceBtn = wrap.querySelector('#dcVoiceBtn');
+    if (voiceBtn && hasSpeech) {
+      var SpeechRecog = window.SpeechRecognition || window.webkitSpeechRecognition;
+      var recognizer = null;
+      var voiceActive = false;
+
+      voiceBtn.addEventListener('click', function () {
+        if (voiceActive) {
+          if (recognizer) recognizer.stop();
+          return;
+        }
+        recognizer = new SpeechRecog();
+        recognizer.lang = isFr() ? 'fr-CA' : 'en-CA';
+        recognizer.interimResults = false;
+        recognizer.maxAlternatives = 1;
+
+        voiceBtn.textContent = '⏹️';
+        voiceBtn.setAttribute('aria-label', t('Stop recording', 'Arrêter l\'enregistrement'));
+        voiceActive = true;
+
+        recognizer.start();
+
+        recognizer.onresult = function (e) {
+          var transcript = e.results[0][0].transcript;
+          input.value = transcript;
+          input.focus();
+          logSearch(transcript);
+          renderDropdown(dropdown, search(transcript, activeTab), transcript, input);
+        };
+
+        recognizer.onerror = function () {
+          voiceBtn.textContent = '🎙️';
+          voiceBtn.setAttribute('aria-label', t('Voice search', 'Recherche vocale'));
+          voiceActive = false;
+        };
+
+        recognizer.onend = function () {
+          voiceBtn.textContent = '🎙️';
+          voiceBtn.setAttribute('aria-label', t('Voice search', 'Recherche vocale'));
+          voiceActive = false;
+        };
+      });
+    }
 
     document.addEventListener('click', function (e) {
       if (!wrap.contains(e.target) && !label.contains(e.target)) closeDropdown(dropdown);
