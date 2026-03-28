@@ -180,20 +180,35 @@
 
   // ── 2D: Section progress bar ──────────────────────────────────────────────
   function initSectionProgress(meta) {
-    var sections = document.querySelectorAll('.main-content h2');
+    var sections = Array.from(document.querySelectorAll('.main-content h2'));
     if (sections.length < 2) return;
     if (document.querySelector('.section-progress-bar')) return;
 
+    var isfr = document.documentElement.lang === 'fr' ||
+      (localStorage.getItem('dc-lang') === 'fr');
+
+    /* ── localStorage key for this module's section progress ── */
+    var storageKey = 'dc-section-progress-' + getModuleKey();
+    var savedSection = parseInt(localStorage.getItem(storageKey) || '1', 10);
+    if (isNaN(savedSection) || savedSection < 1) savedSection = 1;
+
     var total = sections.length;
+    var currentSection = 1;
+
+    /* ── Build progress bar ── */
     var bar = document.createElement('div');
     bar.className = 'section-progress-bar';
     bar.setAttribute('role', 'status');
     bar.setAttribute('aria-live', 'polite');
-    bar.setAttribute('aria-label', 'Section progress');
+    bar.setAttribute('aria-label', isfr ? 'Progression de la section' : 'Section progress');
+
+    var labelOf = isfr ? 'de' : 'of';
+    var labelSection = isfr ? 'Section' : 'Section';
+
     bar.innerHTML =
       '<div class="spb-inner">' +
-        '<span class="spb-text">Section <strong class="spb-current">1</strong> of ' + total + '</span>' +
-        '<div class="spb-track"><div class="spb-fill" style="width:' + Math.round(100 / total) + '%"></div></div>' +
+        '<span class="spb-text">' + labelSection + ' <strong class="spb-current">' + savedSection + '</strong> ' + labelOf + ' ' + total + '</span>' +
+        '<div class="spb-track"><div class="spb-fill" style="width:' + Math.round((savedSection / total) * 100) + '%"></div></div>' +
       '</div>';
 
     document.body.appendChild(bar);
@@ -201,21 +216,77 @@
     var fill = bar.querySelector('.spb-fill');
     var currentEl = bar.querySelector('.spb-current');
 
-    function updateProgress() {
-      var scrollY = window.scrollY + 120;
-      var active = 0;
-      sections.forEach(function (section, idx) {
-        if (section.getBoundingClientRect().top + window.scrollY <= scrollY) {
-          active = idx + 1;
-        }
-      });
-      if (active < 1) active = 1;
-      currentEl.textContent = active;
-      fill.style.width = Math.round((active / total) * 100) + '%';
+    /* ── Resume banner if returning to a partially read module ── */
+    if (savedSection > 1 && savedSection <= total) {
+      var resumeTarget = sections[savedSection - 1];
+      if (resumeTarget && !document.querySelector('.spb-resume-banner')) {
+        var resumeBanner = document.createElement('div');
+        resumeBanner.className = 'spb-resume-banner';
+        resumeBanner.style.cssText = [
+          'background:#fff3e0;border-left:4px solid #e65100;border-radius:0 8px 8px 0',
+          'padding:10px 16px;margin:12px 0;font-size:0.9rem;display:flex',
+          'align-items:center;justify-content:space-between;gap:12px'
+        ].join(';');
+        var resumeText = isfr
+          ? 'Vous en étiez à la section ' + savedSection + ' sur ' + total + ' lors de votre dernière visite.'
+          : 'You were on section ' + savedSection + ' of ' + total + ' last time.';
+        var resumeLink = isfr ? 'Reprendre →' : 'Resume →';
+        resumeBanner.innerHTML =
+          '<span>📖 ' + resumeText + '</span>' +
+          '<a href="#" class="spb-resume-link" style="color:#e65100;font-weight:700;white-space:nowrap;text-decoration:none">' + resumeLink + '</a>';
+
+        var firstSection = document.querySelector('.main-content');
+        if (firstSection) firstSection.insertBefore(resumeBanner, firstSection.firstChild);
+
+        resumeBanner.querySelector('.spb-resume-link').addEventListener('click', function (e) {
+          e.preventDefault();
+          resumeTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          resumeBanner.style.display = 'none';
+        });
+      }
     }
 
-    updateProgress();
-    window.addEventListener('scroll', updateProgress, { passive: true });
+    /* ── IntersectionObserver for section tracking ── */
+    function saveProgress(n) {
+      try { localStorage.setItem(storageKey, String(n)); } catch (err) { /* ignore */ }
+    }
+
+    function updateBar(n) {
+      if (n < 1) n = 1;
+      if (n > total) n = total;
+      currentSection = n;
+      currentEl.textContent = n;
+      fill.style.width = Math.round((n / total) * 100) + '%';
+      bar.setAttribute('aria-label', (isfr ? 'Section ' + n + ' de ' + total : 'Section ' + n + ' of ' + total));
+      saveProgress(n);
+    }
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var idx = sections.indexOf(entry.target);
+            if (idx !== -1) updateBar(idx + 1);
+          }
+        });
+      }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
+
+      sections.forEach(function (section) { observer.observe(section); });
+    } else {
+      /* Fallback: scroll listener */
+      function onScroll() {
+        var scrollY = window.scrollY + 140;
+        var active = 1;
+        sections.forEach(function (section, idx) {
+          if (section.getBoundingClientRect().top + window.scrollY <= scrollY) {
+            active = idx + 1;
+          }
+        });
+        if (active !== currentSection) updateBar(active);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
   }
 
   // ── Bootstrap ──────────────────────────────────────────────────────────────
