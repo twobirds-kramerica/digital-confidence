@@ -2,9 +2,10 @@
    Digital Confidence Centre — Service Worker
    Provides offline access to core pages and assets.
    Cache strategy: Cache-first for assets, network-first for pages.
+   JSON data files: cache-first with network update.
    ============================================================ */
 
-var CACHE_NAME = 'dcc-v2';
+var CACHE_NAME = 'dcc-v3';
 
 /* Core pages to pre-cache on install */
 var PRECACHE_URLS = [
@@ -16,7 +17,14 @@ var PRECACHE_URLS = [
   '/js/app.js',
   '/js/accessibility.js',
   '/js/lang-toggle.js',
-  '/offline.html'
+  '/offline.html',
+  /* JSON data files — cached so quizzes and summaries work offline */
+  '/data/module-quizzes.json',
+  '/data/module-summaries.json',
+  '/data/module-qas.json',
+  '/data/cheat-sheet-tips.json',
+  '/data/module-meta.json',
+  '/data/scam-of-month.json'
 ];
 
 /* ---- Install: pre-cache core assets ---- */
@@ -54,6 +62,30 @@ self.addEventListener('fetch', function (event) {
   /* Only handle GET requests to same origin */
   if (request.method !== 'GET') return;
   if (!request.url.startsWith(self.location.origin)) return;
+
+  var url = request.url;
+
+  /* JSON data files: cache-first, then update cache in background */
+  var isJSON = url.indexOf('/data/') !== -1 && url.indexOf('.json') !== -1;
+  if (isJSON) {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function (cache) {
+        return cache.match(request).then(function (cached) {
+          var networkFetch = fetch(request).then(function (response) {
+            if (response && response.status === 200) {
+              cache.put(request, response.clone());
+            }
+            return response;
+          }).catch(function () {
+            return null;
+          });
+          /* Return cached immediately; update cache in background */
+          return cached || networkFetch;
+        });
+      })
+    );
+    return;
+  }
 
   var isHTML = request.headers.get('Accept') &&
                request.headers.get('Accept').indexOf('text/html') !== -1;

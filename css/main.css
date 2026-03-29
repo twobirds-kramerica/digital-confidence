@@ -4319,6 +4319,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 }
 
 .dc-modal-close {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   float: right;
@@ -5195,6 +5196,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 
 /* Admin analytics panel */
 .glossary-admin-panel {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 200;
