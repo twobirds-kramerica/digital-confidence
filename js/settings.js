@@ -229,7 +229,8 @@ function injectSettingsModal() {
     if (typeof dcOpenWizard === 'function') {
       dcOpenWizard();
     } else {
-      alert('The setup wizard is not available on this page. Please return to the Home page to change your city.');
+      var _sfr = (localStorage.getItem('dc-lang') || document.documentElement.getAttribute('data-lang') || 'en').startsWith('fr');
+      alert(_sfr ? 'L\'assistant de configuration n\'est pas disponible sur cette page. Veuillez retourner \u00e0 la page d\'accueil pour modifier votre ville.' : 'The setup wizard is not available on this page. Please return to the Home page to change your city.');
     }
   });
 
@@ -239,13 +240,15 @@ function injectSettingsModal() {
     if (typeof dcOpenWizard === 'function') {
       dcOpenWizard();
     } else {
-      alert('The setup wizard is not available on this page. Please return to the Home page to change your devices.');
+      var _sfr = (localStorage.getItem('dc-lang') || document.documentElement.getAttribute('data-lang') || 'en').startsWith('fr');
+      alert(_sfr ? 'L\'assistant de configuration n\'est pas disponible sur cette page. Veuillez retourner \u00e0 la page d\'accueil pour modifier vos appareils.' : 'The setup wizard is not available on this page. Please return to the Home page to change your devices.');
     }
   });
 
   /* Reset everything */
   document.getElementById('dc-settings-reset-btn').addEventListener('click', function () {
-    var confirmed = confirm('Are you sure? This will reset your city, devices, text size, and all your progress. You will start fresh from the beginning.');
+    var _sfr = (localStorage.getItem('dc-lang') || document.documentElement.getAttribute('data-lang') || 'en').startsWith('fr');
+    var confirmed = confirm(_sfr ? '\u00cates-vous s\u00fbr(e)\u00a0? Ceci r\u00e9initialisera votre ville, vos appareils, la taille du texte et toute votre progression. Vous recommencerez du d\u00e9but.' : 'Are you sure? This will reset your city, devices, text size, and all your progress. You will start fresh from the beginning.');
     if (confirmed) {
       localStorage.clear();
       location.reload();

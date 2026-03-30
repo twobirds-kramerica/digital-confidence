@@ -18,6 +18,7 @@
   }
 
   function buildHelpButton() {
+    var _hfr = (localStorage.getItem('dc-lang') || document.documentElement.getAttribute('data-lang') || 'en').startsWith('fr');
     /* ── Wrapper ── */
     var wrapper = document.createElement('div');
     wrapper.id = 'dc-help-btn-wrapper';
@@ -32,11 +33,11 @@
     /* ── The Button ── */
     var btn = document.createElement('button');
     btn.id = 'dc-help-btn';
-    btn.setAttribute('aria-label', 'Open help menu');
+    btn.setAttribute('aria-label', _hfr ? 'Ouvrir le menu d\'aide' : 'Open help menu');
     btn.setAttribute('aria-expanded', 'false');
     btn.setAttribute('aria-haspopup', 'true');
     btn.setAttribute('aria-controls', 'dc-help-popover');
-    btn.textContent = '? Help';
+    btn.textContent = _hfr ? '? Aide' : '? Help';
     btn.style.cssText = [
       'background:#1565C0',
       'color:#fff',
@@ -55,7 +56,7 @@
     var popover = document.createElement('div');
     popover.id = 'dc-help-popover';
     popover.setAttribute('role', 'dialog');
-    popover.setAttribute('aria-label', 'Help options');
+    popover.setAttribute('aria-label', _hfr ? 'Options d\'aide' : 'Help options');
     popover.setAttribute('aria-modal', 'false');
     popover.style.cssText = [
       'display:none',

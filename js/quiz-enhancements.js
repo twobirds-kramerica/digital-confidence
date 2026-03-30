@@ -155,8 +155,8 @@
           certField(isFr ? 'Score' : 'Best score', score ? score + '/60' : (isFr ? 'Non enregistré' : 'Not recorded')) +
           certField(isFr ? 'N° de certificat' : 'Certificate no.', certNum) +
         '</div>' +
-        '<a href="mailto:?subject=' + encodeURIComponent('I completed the Digital Confidence Centre!') +
-          '&body=' + encodeURIComponent('I just completed all 17 modules of the Digital Confidence Centre — a free digital literacy program for Canadian seniors. Certificate: ' + certNum + '. Learn more: https://twobirds-kramerica.github.io/digital-confidence/') +
+        '<a href="mailto:?subject=' + encodeURIComponent(isFr ? 'J\u2019ai terminé le Centre de confiance numérique!' : 'I completed the Digital Confidence Centre!') +
+          '&body=' + encodeURIComponent(isFr ? 'Je viens de terminer les 17 modules du Centre de confiance numérique \u2014 un programme gratuit de littératie numérique pour les aînés canadiens. Certificat\u00a0: ' + certNum + '. En savoir plus\u00a0: https://twobirds-kramerica.github.io/digital-confidence/' : 'I just completed all 17 modules of the Digital Confidence Centre \u2014 a free digital literacy program for Canadian seniors. Certificate: ' + certNum + '. Learn more: https://twobirds-kramerica.github.io/digital-confidence/') +
           '" style="display:inline-block;background:#FFB300;color:#000;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;font-size:0.95rem">' +
           (isFr ? '📤 Partager par courriel' : '📤 Share this achievement') +
         '</a>';

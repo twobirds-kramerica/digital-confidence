@@ -143,6 +143,8 @@ function injectUnifiedFeedbackBtn() {
 
 /* ---- Full feedback modal ---- */
 function injectFeedbackModal() {
+  var fr = (localStorage.getItem('dc-lang') || document.documentElement.getAttribute('data-lang') || 'en').startsWith('fr');
+
   var typeOptions = DC_FEEDBACK_TYPES.map(function (t) {
     return [
       '<label class="dc-type-option">',
@@ -182,7 +184,7 @@ function injectFeedbackModal() {
 
           /* FIELD 1: Module dropdown (auto-detected, user-editable) */
           '<div class="dc-feedback-field">',
-            '<label class="dc-feedback-label" for="dc-feedback-module">Which part of the site is this about?</label>',
+            '<label class="dc-feedback-label" for="dc-feedback-module">' + (fr ? 'De quelle partie du site s\'agit-il?' : 'Which part of the site is this about?') + '</label>',
             '<select id="dc-feedback-module" name="module" class="dc-feedback-select">',
               moduleOptions,
             '</select>',
@@ -200,20 +202,20 @@ function injectFeedbackModal() {
 
           /* FIELD 2: Feedback type */
           '<div class="dc-feedback-field">',
-            '<p class="dc-feedback-label">Type of feedback:</p>',
+            '<p class="dc-feedback-label">' + (fr ? 'Type de commentaire\u00a0:' : 'Type of feedback:') + '</p>',
             '<div class="dc-feedback-types" id="dc-feedback-types">' + typeOptions + '</div>',
           '</div>',
 
           /* FIELD 3: Feedback textarea */
           '<div class="dc-feedback-field">',
-            '<label class="dc-feedback-label" for="dc-feedback-text">Your feedback:</label>',
+            '<label class="dc-feedback-label" for="dc-feedback-text">' + (fr ? 'Vos commentaires\u00a0:' : 'Your feedback:') + '</label>',
             '<textarea id="dc-feedback-text" name="message" class="dc-feedback-textarea" rows="5"',
               ' placeholder="Tell us what you noticed\u2026" required></textarea>',
           '</div>',
 
           /* FIELD 4: Submit button (immediately below textarea) */
           '<div class="dc-feedback-actions">',
-            '<button id="dc-submit-btn" class="dc-btn-submit">Send Feedback</button>',
+            '<button id="dc-submit-btn" class="dc-btn-submit">' + (fr ? 'Envoyer' : 'Send Feedback') + '</button>',
           '</div>',
 
           /* FIELD 5: Your Name (Optional) — below submit */
@@ -233,11 +235,11 @@ function injectFeedbackModal() {
         /* Voice tab panel */
         '<div class="dc-tab-panel" id="dc-panel-voice" role="tabpanel" aria-labelledby="dc-tab-voice">',
           '<div class="dc-voice-unsupported" id="dc-voice-unsupported">',
-            '\u26a0\ufe0f Voice recording is not supported on this browser. Please use the Written tab instead.',
+            fr ? '\u26a0\ufe0f L\'enregistrement vocal n\'est pas pris en charge par ce navigateur. Veuillez utiliser l\'onglet \u00c9crit.' : '\u26a0\ufe0f Voice recording is not supported on this browser. Please use the Written tab instead.',
           '</div>',
           '<div class="dc-voice-wrap" id="dc-voice-wrap">',
-            '<p class="dc-voice-hint">Tap <strong>Start Recording</strong> and speak your feedback. Up to 5 minutes.</p>',
-            '<button class="dc-rec-btn" id="dc-rec-btn" type="button">\ud83d\udd34 Start Recording</button>',
+            '<p class="dc-voice-hint">' + (fr ? 'Appuyez sur <strong>D\u00e9marrer l\'enregistrement</strong> et parlez. Maximum 5 minutes.' : 'Tap <strong>Start Recording</strong> and speak your feedback. Up to 5 minutes.') + '</p>',
+            '<button class="dc-rec-btn" id="dc-rec-btn" type="button">\ud83d\udd34 ' + (fr ? 'D\u00e9marrer l\'enregistrement' : 'Start Recording') + '</button>',
             '<div class="dc-rec-timer" id="dc-rec-timer">0:00</div>',
             '<audio class="dc-voice-player" id="dc-voice-player" controls></audio>',
             '<div class="dc-voice-actions" id="dc-voice-actions">',
@@ -252,8 +254,8 @@ function injectFeedbackModal() {
         /* Success state */
         '<div id="dc-feedback-success" class="dc-feedback-success" style="display:none;">',
           '<div class="dc-success-icon">\u2705</div>',
-          '<h3>Thank You!</h3>',
-          '<p>Your feedback has been received.</p>',
+          '<h3>' + (fr ? 'Merci\u00a0!' : 'Thank You!') + '</h3>',
+          '<p>' + (fr ? 'Vos commentaires ont \u00e9t\u00e9 re\u00e7us.' : 'Your feedback has been received.') + '</p>',
           '<p>Nous lisons les commentaires en fran\u00e7ais. French feedback is welcome! / Les commentaires en fran\u00e7ais sont les bienvenus\u00a0!</p>',
           '<p class="dc-reference-num" id="dc-reference-num"></p>',
           '<button onclick="closeFeedbackModal()" class="dc-btn-submit">Close</button>',
@@ -262,8 +264,8 @@ function injectFeedbackModal() {
         /* Error state */
         '<div id="dc-feedback-error" class="dc-feedback-error" style="display:none;">',
           '<div class="dc-error-icon">\u26a0\ufe0f</div>',
-          '<h3>We saved your feedback!</h3>',
-          '<p>There was a connection issue, but your feedback was saved on your device. We\'ll collect it next time.</p>',
+          '<h3>' + (fr ? 'Vos commentaires ont \u00e9t\u00e9 sauvegard\u00e9s\u00a0!' : 'We saved your feedback!') + '</h3>',
+          '<p>' + (fr ? 'Il y a eu un probl\u00e8me de connexion, mais vos commentaires ont \u00e9t\u00e9 sauvegard\u00e9s sur votre appareil.' : 'There was a connection issue, but your feedback was saved on your device. We\'ll collect it next time.') + '</p>',
           '<button onclick="closeFeedbackModal()" class="dc-btn-submit">Close</button>',
         '</div>',
 
@@ -567,6 +569,7 @@ function sendVoiceNote() {
 
 /* ---- Submit handler ---- */
 function handleFeedbackSubmit() {
+  var _fr = (localStorage.getItem('dc-lang') || document.documentElement.getAttribute('data-lang') || 'en').startsWith('fr');
   var nameEl   = document.getElementById('dc-feedback-name');
   var textEl   = document.getElementById('dc-feedback-text');
   var typeEl   = document.querySelector('input[name="dc-feedback-type"]:checked');
@@ -580,13 +583,13 @@ function handleFeedbackSubmit() {
   var userLang = (langEl && langEl.value) ? langEl.value : (navigator.language || 'unknown');
 
   if (!text) {
-    alert('Please share your feedback before submitting.');
+    alert(_fr ? 'Veuillez saisir vos commentaires avant de soumettre.' : 'Please share your feedback before submitting.');
     if (textEl) textEl.focus();
     return;
   }
 
   var submitBtn = document.getElementById('dc-submit-btn');
-  if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending\u2026'; }
+  if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = _fr ? 'Envoi\u2026' : 'Sending\u2026'; }
 
   submitToFormspree(name, type, text, module, userLang);
 }
@@ -686,7 +689,8 @@ function showFeedbackError() {
   var formArea  = document.getElementById('dc-modal-form-area');
   var error     = document.getElementById('dc-feedback-error');
   var submitBtn = document.getElementById('dc-submit-btn');
-  if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Feedback'; }
+  var _fre = (localStorage.getItem('dc-lang') || document.documentElement.getAttribute('data-lang') || 'en').startsWith('fr');
+  if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = _fre ? 'Envoyer' : 'Send Feedback'; }
   if (formArea) formArea.style.display = 'none';
   if (error)    error.style.display    = 'block';
 }
