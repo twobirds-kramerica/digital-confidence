@@ -24,7 +24,10 @@ var PRECACHE_URLS = [
   '/data/module-qas.json',
   '/data/cheat-sheet-tips.json',
   '/data/module-meta.json',
-  '/data/scam-of-month.json'
+  '/data/scam-of-month.json',
+  '/data/answers-index.json',
+  '/data/content-dates.json',
+  '/data/tips-index.json'
 ];
 
 /* ---- Install: pre-cache core assets ---- */
