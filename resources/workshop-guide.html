@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="A free facilitator guide for running Digital Confidence Centre workshops at libraries, community centres, seniors' clubs, and churches across Ontario. Suitable for groups of 4 to 20.">
+  <title>Workshop Facilitator Guide — Digital Confidence Centre</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/resources/workshop-guide.html">
+  <link rel="alternate" hreflang="en-CA" href="https://twobirds-kramerica.github.io/digital-confidence/resources/workshop-guide.html">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/accessibility.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta property="og:title" content="Workshop Facilitator Guide — Digital Confidence Centre">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <meta name="theme-color" content="#1565C0">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Workshop Facilitator Guide: Running a Digital Confidence Centre Session",
+    "description": "A free facilitator guide for running Digital Confidence Centre workshops at libraries, community centres, seniors' clubs, and churches across Ontario.",
+    "url": "https://twobirds-kramerica.github.io/digital-confidence/resources/workshop-guide.html",
+    "author": {"@type": "Organization", "name": "Digital Confidence Centre"},
+    "publisher": {"@type": "Organization", "name": "Two Birds Innovation"},
+    "datePublished": "2026-03-31", "dateModified": "2026-03-31", "inLanguage": "en-CA"
+  }
+  </script>
+  <style>
+    .workshop-hero { background: linear-gradient(135deg, #01579b 0%, #0277bd 100%); color: #fff; border-radius: 16px; padding: 2rem 1.75rem; margin-bottom: 2rem; }
+    .workshop-hero h1 { color: #fff; font-size: clamp(1.4rem, 4vw, 1.9rem); margin-bottom: .5rem; border: none; }
+    .workshop-hero p { opacity: .92; line-height: 1.6; max-width: 580px; }
+    .guide-section { margin-bottom: 2.5rem; }
+    .guide-section h2 { font-size: 1.15rem; color: var(--color-primary, #1565C0); border-bottom: 2px solid currentColor; padding-bottom: .35rem; margin-bottom: 1rem; }
+    .step-card { background: var(--color-bg, #fff); border: 1px solid var(--color-border, #e0e0e0); border-radius: 12px; padding: 1.1rem 1.25rem; margin-bottom: .85rem; border-left: 4px solid #0277bd; }
+    .step-card-title { font-weight: 700; font-size: 1rem; margin-bottom: .35rem; color: #01579b; }
+    .step-card-body { font-size: .92rem; line-height: 1.65; color: var(--color-text, #333); }
+    .callout { background: #e3f2fd; border-left: 4px solid #0277bd; padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin: 1.25rem 0; font-size: .92rem; line-height: 1.6; }
+    .callout strong { display: block; margin-bottom: .25rem; }
+    .warning-note { background: #fff3e0; border-left: 4px solid #e65100; padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin: 1.25rem 0; font-size: .92rem; line-height: 1.6; }
+    .checklist { list-style: none; padding: 0; }
+    .checklist li { padding: .4rem .5rem .4rem 2rem; position: relative; font-size: .92rem; line-height: 1.6; border-bottom: 1px solid var(--color-border, #eee); }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before { content: '☐'; position: absolute; left: .4rem; font-size: 1rem; color: #0277bd; }
+    .agenda-table { width: 100%; border-collapse: collapse; font-size: .9rem; margin: 1rem 0; }
+    .agenda-table th { background: #0277bd; color: #fff; padding: .6rem .75rem; text-align: left; font-weight: 600; }
+    .agenda-table td { padding: .6rem .75rem; border-bottom: 1px solid var(--color-border, #e0e0e0); vertical-align: top; }
+    .agenda-table tr:nth-child(even) td { background: var(--color-bg-alt, #f5f7fa); }
+    .module-badge { display: inline-block; background: #e3f2fd; color: #01579b; font-size: .75rem; font-weight: 700; padding: .15rem .55rem; border-radius: 4px; margin-right: .25rem; }
+    .lang-toggle-btn { display: inline-block; margin: 0 0 1.5rem; padding: .4rem 1rem; background: #1565C0; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: .9rem; font-weight: 600; }
+    .print-note { background: #f3e5f5; border-left: 4px solid #7b1fa2; padding: .75rem 1rem; border-radius: 0 8px 8px 0; font-size: .85rem; margin-bottom: 1.5rem; }
+    @media print {
+      .accessibility-bar, .top-bar, .sidebar, .sidebar-overlay, .breadcrumb, .lang-toggle-btn, .print-note, .site-footer { display: none !important; }
+      body { color: #000; background: #fff; font-size: 11pt; }
+      .workshop-hero { background: #01579b !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 1.25rem !important; margin-bottom: 1rem !important; }
+      .agenda-table th { background: #01579b !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .guide-section { page-break-inside: avoid; }
+      .step-card { border: 1px solid #ccc; page-break-inside: avoid; }
+      h2 { page-break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">Digital Confidence Centre</span>
+    <span></span>
+  </div>
+
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close navigation">✕</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Free digital literacy for seniors</p>
+    </div>
+    <nav>
+      <a href="../index.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a href="../resources.html"><span class="nav-icon">📚</span><span class="nav-label">Resources</span></a>
+      <a href="index.html"><span class="nav-icon">📰</span><span class="nav-label">Resource Articles</span></a>
+      <a href="for-families.html"><span class="nav-icon">👨‍👩‍👧</span><span class="nav-label">For Families</span></a>
+      <a href="workshop-guide.html" aria-current="page"><span class="nav-icon">🏫</span><span class="nav-label">Workshop Guide</span></a>
+      <a href="../resources/support-directory.html"><span class="nav-icon">🆘</span><span class="nav-label">Get Help</span></a>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="font-size:0.9rem;margin-bottom:1.5rem;color:#666">
+        <a href="../index.html" data-en="Home" data-fr="Accueil">Home</a> ›
+        <a href="index.html" data-en="Resources" data-fr="Ressources">Resources</a> ›
+        <span aria-current="page" data-en="Workshop Guide" data-fr="Guide d'atelier">Workshop Guide</span>
+      </nav>
+
+      <button class="lang-toggle-btn" id="langBtn" onclick="toggleLang()" aria-label="Switch language">Français</button>
+
+      <div class="print-note">
+        🖨️ <strong data-en="Printable:" data-fr="Imprimable :">Printable:</strong>
+        <span data-en="Use your browser's Print function (Ctrl+P or Cmd+P) to print a clean copy of this guide with the navigation removed." data-fr="Utilisez la fonction Imprimer de votre navigateur (Ctrl+P ou Cmd+P) pour imprimer une copie propre de ce guide sans la navigation.">Use your browser's Print function (Ctrl+P or Cmd+P) to print a clean copy of this guide with the navigation removed.</span>
+      </div>
+
+      <div class="workshop-hero">
+        <h1 data-en="Workshop Facilitator Guide" data-fr="Guide de l'animateur d'atelier">Workshop Facilitator Guide</h1>
+        <p data-en="Everything you need to run a Digital Confidence Centre session at your library, community centre, seniors' club, or church. Free to use, no registration required." data-fr="Tout ce dont vous avez besoin pour animer une session du Centre de confiance numérique dans votre bibliothèque, centre communautaire, club de personnes âgées ou église. Gratuit, aucune inscription requise.">Everything you need to run a Digital Confidence Centre session at your library, community centre, seniors' club, or church. Free to use, no registration required.</p>
+      </div>
+
+      <div class="guide-section">
+        <h2 data-en="Who This Guide Is For" data-fr="À qui ce guide s'adresse-t-il">Who This Guide Is For</h2>
+        <p data-en="This guide is for anyone who wants to run an in-person digital literacy session using the Digital Confidence Centre. You do not need to be a technology expert — you just need to be comfortable facilitating a group and curious about technology." data-fr="Ce guide s'adresse à toute personne souhaitant animer une session de littératie numérique en personne à l'aide du Centre de confiance numérique. Vous n'avez pas besoin d'être un expert en technologie — vous devez simplement être à l'aise pour animer un groupe et être curieux au sujet de la technologie.">This guide is for anyone who wants to run an in-person digital literacy session using the Digital Confidence Centre. You do not need to be a technology expert — you just need to be comfortable facilitating a group.</p>
+        <p data-en="Typical facilitators include: public library staff, community centre programme coordinators, church volunteers, credit union community liaisons, and trained senior peer educators." data-fr="Les animateurs typiques comprennent : le personnel des bibliothèques publiques, les coordonnateurs de programmes des centres communautaires, les bénévoles des églises, les agents de liaison communautaire des coopératives de crédit et les éducateurs pairs senior formés.">Typical facilitators include: public library staff, community centre programme coordinators, church volunteers, credit union community liaisons, and trained senior peer educators.</p>
+      </div>
+
+      <div class="guide-section">
+        <h2 data-en="Before the Workshop: Setup Checklist" data-fr="Avant l'atelier : liste de vérification de la mise en place">Before the Workshop: Setup Checklist</h2>
+
+        <ul class="checklist">
+          <li data-en="Confirm your venue has reliable Wi-Fi that participants can access" data-fr="Confirmez que votre lieu dispose d'un Wi-Fi fiable auquel les participants peuvent accéder">Confirm your venue has reliable Wi-Fi that participants can access</li>
+          <li data-en="Decide on group size — ideal is 6 to 12 participants, maximum 20" data-fr="Décidez de la taille du groupe — l'idéal est de 6 à 12 participants, maximum 20">Decide on group size — ideal is 6 to 12 participants, maximum 20</li>
+          <li data-en="Ask participants to bring their own iPad, iPhone, or Android device" data-fr="Demandez aux participants d'apporter leur propre iPad, iPhone ou appareil Android">Ask participants to bring their own iPad, iPhone, or Android device</li>
+          <li data-en="Print the DCC website address for anyone who wants to take it home: twobirds-kramerica.github.io/digital-confidence" data-fr="Imprimez l'adresse du site web du CCN pour quiconque souhaite l'emporter chez lui">Print the DCC website address: <strong>twobirds-kramerica.github.io/digital-confidence</strong></li>
+          <li data-en="Preview the module you plan to use so you know its content" data-fr="Prévisualisez le module que vous prévoyez d'utiliser pour en connaître le contenu">Preview the module you plan to use so you know its content</li>
+          <li data-en="Arrange seating so participants can see both you and their own screen" data-fr="Organisez les sièges pour que les participants puissent voir à la fois vous et leur propre écran">Arrange seating so participants can see both you and their own screen</li>
+          <li data-en="Prepare a simple handout with the website URL and the day's plan" data-fr="Préparez un simple document avec l'URL du site web et le plan de la journée">Prepare a simple handout with the website URL and the day's plan</li>
+          <li data-en="Have spare paper and pens for participants to write their own notes" data-fr="Ayez du papier et des stylos en réserve pour que les participants puissent écrire leurs propres notes">Have spare paper and pens for participants to write notes</li>
+        </ul>
+      </div>
+
+      <div class="guide-section">
+        <h2 data-en="Recommended Workshop Formats" data-fr="Formats d'atelier recommandés">Recommended Workshop Formats</h2>
+
+        <div class="step-card">
+          <div class="step-card-title" data-en="Format A: Single Session — 90 Minutes (Best for one-off events)" data-fr="Format A : Session unique — 90 minutes (Idéal pour les événements ponctuels)">Format A: Single Session — 90 Minutes</div>
+          <div class="step-card-body">
+            <table class="agenda-table">
+              <tr><th data-en="Time" data-fr="Durée">Time</th><th data-en="Activity" data-fr="Activité">Activity</th></tr>
+              <tr><td>0:00–0:10</td><td data-en="Welcome, introductions, and ground rules (it is OK to be confused; no question is stupid)" data-fr="Accueil, présentations et règles de base (il est normal d'être confus; aucune question n'est stupide)">Welcome, introductions, and ground rules</td></tr>
+              <tr><td>0:10–0:20</td><td data-en="Open the DCC home page together — let everyone find it on their own device" data-fr="Ouvrir ensemble la page d'accueil du CCN — laissez tout le monde la trouver sur leur propre appareil">Open the DCC home page together</td></tr>
+              <tr><td>0:20–0:50</td><td data-en="Work through one module together (Module 1 or Module 2 recommended for first sessions)" data-fr="Travailler ensemble sur un module (Module 1 ou Module 2 recommandé pour les premières sessions)">Work through one module together (Module 1 or 2 recommended)</td></tr>
+              <tr><td>0:50–1:05</td><td data-en="Try the module quiz — participants answer individually, discuss as a group" data-fr="Essayer le quiz du module — les participants répondent individuellement, discutent en groupe">Try the module quiz together</td></tr>
+              <tr><td>1:05–1:20</td><td data-en="Q&amp;A, share what they learned, write their own personal cheat sheet" data-fr="Questions et réponses, partager ce qu'ils ont appris, écrire leur propre fiche aide-mémoire personnelle">Q&amp;A and personal cheat sheet writing</td></tr>
+              <tr><td>1:20–1:30</td><td data-en="Wrap-up: what to try at home, where to find the next module, how to get help" data-fr="Conclusion : quoi essayer à la maison, où trouver le prochain module, comment obtenir de l'aide">Wrap-up: what to try at home, next module, how to get help</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-card-title" data-en="Format B: Six-Week Series — One Module Per Week (Best for libraries)" data-fr="Format B : Série de six semaines — un module par semaine (Idéal pour les bibliothèques)">Format B: Six-Week Series — One Module Per Week</div>
+          <div class="step-card-body">
+            <p data-en="Each session is 60 minutes. Participants return weekly for a progression of modules. This builds a learning community and allows participants to practice between sessions." data-fr="Chaque session dure 60 minutes. Les participants reviennent chaque semaine pour une progression de modules. Cela construit une communauté d'apprentissage et permet aux participants de pratiquer entre les sessions.">Each session is 60 minutes. Participants return weekly for a progression of modules.</p>
+            <ul style="font-size:.9rem;line-height:2;padding-left:1.5rem;">
+              <li><span class="module-badge">Week 1</span> <span data-en="Module 1: The Escape Hatch (nothing can get broken)" data-fr="Module 1 : La sortie de secours (rien ne peut être cassé)">Module 1: The Escape Hatch</span></li>
+              <li><span class="module-badge">Week 2</span> <span data-en="Module 2: The Security Shield (scam awareness)" data-fr="Module 2 : Le bouclier de sécurité (sensibilisation aux arnaques)">Module 2: The Security Shield</span></li>
+              <li><span class="module-badge">Week 3</span> <span data-en="Module 3: Passwords &amp; Biometrics" data-fr="Module 3 : Mots de passe et biométrie">Module 3: Passwords &amp; Biometrics</span></li>
+              <li><span class="module-badge">Week 4</span> <span data-en="Module 5: Email &amp; Messages (spotting fakes)" data-fr="Module 5 : Courriel et messages (repérer les faux)">Module 5: Email &amp; Messages</span></li>
+              <li><span class="module-badge">Week 5</span> <span data-en="Module 6: Banking &amp; Transactions" data-fr="Module 6 : Banque et transactions">Module 6: Banking &amp; Transactions</span></li>
+              <li><span class="module-badge">Week 6</span> <span data-en="Module 8: Stay Connected (video calling) + graduation!" data-fr="Module 8 : Rester en contact (appels vidéo) + remise des diplômes!">Module 8: Stay Connected + graduation!</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-section">
+        <h2 data-en="Facilitation Techniques That Work" data-fr="Techniques d'animation qui fonctionnent">Facilitation Techniques That Work</h2>
+
+        <div class="step-card">
+          <div class="step-card-title" data-en="The 'Hands Stay On Their Device' Rule" data-fr="La règle « Les mains restent sur leur appareil »">The "Hands Stay On Their Device" Rule</div>
+          <div class="step-card-body" data-en="Never take a participant's device to show them something. This is the single most important rule. When you take the device, they stop learning and start watching. Describe what to look for, point at your own demonstration device, and wait while they find it themselves." data-fr="Ne prenez jamais l'appareil d'un participant pour lui montrer quelque chose. C'est la règle la plus importante. Lorsque vous prenez l'appareil, ils cessent d'apprendre et commencent à observer. Décrivez ce qu'il faut chercher, pointez vers votre propre appareil de démonstration et attendez qu'ils le trouvent eux-mêmes.">Never take a participant's device. Describe what to look for and wait while they find it themselves — this is how the learning sticks.</div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-card-title" data-en="Use a Buddy System for Groups Larger Than 8" data-fr="Utilisez un système de parrainage pour les groupes de plus de 8 personnes">Use a Buddy System for Groups Larger Than 8</div>
+          <div class="step-card-body" data-en="Pair each participant with a neighbour. When someone gets stuck, ask them to ask their buddy first. This reduces the pressure on the facilitator and builds peer connections within the group." data-fr="Associez chaque participant à un voisin. Quand quelqu'un est bloqué, demandez-lui d'abord de demander à son partenaire. Cela réduit la pression sur l'animateur et crée des liens entre les membres du groupe.">Pair each participant with a neighbour. When someone gets stuck, ask them to ask their buddy first — this builds peer confidence.</div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-card-title" data-en="Pause Frequently and Ask 'What Do You See?'" data-fr="Faites des pauses fréquentes et demandez « Qu'est-ce que vous voyez? »">Pause Frequently and Ask "What Do You See?"</div>
+          <div class="step-card-body" data-en="After each step, pause and ask: 'What does your screen look like right now?' This lets you quickly identify who is behind, and gets participants describing technology in their own words — which is part of building fluency." data-fr="Après chaque étape, faites une pause et demandez : « À quoi ressemble votre écran en ce moment? » Cela vous permet d'identifier rapidement qui est en retard, et encourage les participants à décrire la technologie dans leurs propres mots — ce qui fait partie du développement de la fluidité.">After each step, ask "What does your screen look like right now?" This helps you spot who is behind and builds their ability to describe technology.</div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-card-title" data-en="Normalise Getting Things Wrong" data-fr="Normalisez les erreurs">Normalise Getting Things Wrong</div>
+          <div class="step-card-body" data-en="When a participant makes a mistake, say: 'That is a really common one — let me show everyone what to do when that happens.' Reframing mistakes as learning moments for the whole group removes the shame that makes people stop trying." data-fr="Quand un participant fait une erreur, dites : « C'est une très courante — laissez-moi montrer à tout le monde ce qu'on fait quand ça arrive. » Recadrer les erreurs comme des moments d'apprentissage pour tout le groupe élimine la honte qui empêche les gens d'essayer.">When a participant makes a mistake, say: "That is a really common one — let me show everyone what to do when that happens." This removes the shame.</div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-card-title" data-en="End Every Session With a Written Takeaway" data-fr="Terminez chaque session avec un document à emporter">End Every Session With a Written Takeaway</div>
+          <div class="step-card-body" data-en="Leave the last 10 minutes for participants to write down the three most important things they learned, in their own handwriting, on a card or piece of paper. Ask them to put it somewhere they will see it at home — near their device, or on the fridge." data-fr="Laissez les 10 dernières minutes aux participants pour écrire les trois choses les plus importantes qu'ils ont apprises, de leur propre écriture, sur une carte ou une feuille de papier. Demandez-leur de la mettre à un endroit où ils la verront chez eux — près de leur appareil ou sur le réfrigérateur.">Leave 10 minutes for participants to write down the three things they learned, by hand, on a card to take home and display near their device.</div>
+        </div>
+      </div>
+
+      <div class="guide-section">
+        <h2 data-en="Handling Common Challenges" data-fr="Gérer les défis courants">Handling Common Challenges</h2>
+
+        <div class="step-card">
+          <div class="step-card-title" data-en="'My device is different — these instructions do not match my screen'" data-fr="« Mon appareil est différent — ces instructions ne correspondent pas à mon écran »">"My device is different"</div>
+          <div class="step-card-body" data-en="This is expected — there are many versions of iOS and Android, and screens vary. Encourage the participant to describe what they do see, then help them find the equivalent button or option on their device. The DCC content is designed to be device-agnostic where possible." data-fr="C'est prévisible — il existe de nombreuses versions d'iOS et d'Android, et les écrans varient. Encouragez le participant à décrire ce qu'il voit, puis aidez-le à trouver le bouton ou l'option équivalent sur son appareil. Le contenu du CCN est conçu pour être indépendant de l'appareil dans la mesure du possible.">This is expected. Ask them to describe what they see and help them find the equivalent on their device. The DCC content works across devices.</div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-card-title" data-en="One participant is significantly further behind than the rest" data-fr="Un participant est nettement plus en retard que les autres">One participant is significantly further behind</div>
+          <div class="step-card-body" data-en="Assign your buddy to sit with them. Keep the group moving at the pace of the majority. After the session, take five minutes with the person individually and point them to Module 1 to work through at home. Do not slow the whole group — this can frustrate everyone and reduce the sense of achievement." data-fr="Assignez votre partenaire à s'asseoir avec eux. Continuez le groupe au rythme de la majorité. Après la session, prenez cinq minutes individuellement avec la personne et dirigez-la vers le Module 1 à travailler chez elle. Ne ralentissez pas tout le groupe — cela peut frustrer tout le monde.">Assign a buddy. After the session, take five minutes individually to point them to Module 1 to work through at home. Do not slow the whole group.</div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-card-title" data-en="A participant becomes very anxious or upset" data-fr="Un participant devient très anxieux ou bouleversé">A participant becomes very anxious or upset</div>
+          <div class="step-card-body" data-en="Acknowledge their frustration warmly: 'This is genuinely tricky — you are not doing anything wrong.' Offer a short break. Remind them that nothing they do on the DCC can break their device or cost them money. If they need to step out, that is completely fine." data-fr="Reconnaissez chaleureusement leur frustration : « C'est vraiment délicat — vous ne faites rien de mal. » Offrez une courte pause. Rappelez-leur que rien de ce qu'ils font sur le CCN ne peut endommager leur appareil ou leur coûter de l'argent. S'ils ont besoin de sortir, c'est tout à fait correct.">"This is genuinely tricky — you are not doing anything wrong." Offer a break. Remind them: nothing on the DCC can break their device or cost them money.</div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-card-title" data-en="Wi-Fi is unreliable or unavailable" data-fr="Le Wi-Fi est peu fiable ou indisponible">Wi-Fi is unreliable or unavailable</div>
+          <div class="step-card-body" data-en="The DCC does not work fully offline, but you can still run the workshop using your own device displayed on a screen or TV via a cable. Walk participants through the content verbally and have them write down key takeaways. Print any relevant pages in advance if possible." data-fr="Le CCN ne fonctionne pas complètement hors ligne, mais vous pouvez toujours animer l'atelier en utilisant votre propre appareil affiché sur un écran ou une télévision via un câble. Guidez les participants verbalement et demandez-leur d'écrire les points clés. Imprimez les pages pertinentes à l'avance si possible.">Display the DCC on a screen using your own device. Walk participants through content verbally and have them write down key takeaways.</div>
+        </div>
+      </div>
+
+      <div class="guide-section">
+        <h2 data-en="After the Workshop" data-fr="Après l'atelier">After the Workshop</h2>
+
+        <ul class="checklist">
+          <li data-en="Give every participant the DCC website address to take home" data-fr="Donnez à chaque participant l'adresse du site web du CCN à emporter chez lui">Give every participant the DCC website address: <strong>twobirds-kramerica.github.io/digital-confidence</strong></li>
+          <li data-en="Let them know which module to try next on their own" data-fr="Informez-les du prochain module à essayer de leur côté">Let them know which module to try next on their own</li>
+          <li data-en="Share the For Families guide with any family members who attend or are mentioned" data-fr="Partagez le guide Pour les familles avec tout membre de la famille qui participe ou est mentionné">Share the For Families guide with any family members: <strong>/resources/for-families.html</strong></li>
+          <li data-en="Note what worked and what was confusing — consider emailing feedback to the DCC team via the site's feedback form" data-fr="Notez ce qui a fonctionné et ce qui était confus — envisagez d'envoyer des commentaires à l'équipe du CCN via le formulaire de commentaires du site">Note what worked and what was confusing — send feedback via the site's feedback form</li>
+          <li data-en="If you plan to run the workshop again, invite participants to share the programme with one person they know" data-fr="Si vous prévoyez de reprendre l'atelier, invitez les participants à partager le programme avec une personne qu'ils connaissent">Invite participants to tell one person they know about the programme</li>
+        </ul>
+      </div>
+
+      <div class="callout">
+        <strong data-en="Want to partner with the Digital Confidence Centre?" data-fr="Vous souhaitez vous associer au Centre de confiance numérique?">Want to partner with the Digital Confidence Centre?</strong>
+        <span data-en="If you run regular digital literacy programmes for seniors in Ontario and would like to be listed as a community partner, contact us through the feedback form on the DCC website. We welcome libraries, credit unions, community health centres, and seniors' organisations." data-fr="Si vous gérez des programmes réguliers de littératie numérique pour les aînés en Ontario et souhaitez être répertorié comme partenaire communautaire, contactez-nous via le formulaire de commentaires sur le site web du CCN. Nous accueillons les bibliothèques, les coopératives de crédit, les centres de santé communautaire et les organisations de personnes âgées.">If you run regular digital literacy programmes for seniors in Ontario and would like to be listed as a community partner, contact us through the feedback form on the DCC website.</span>
+      </div>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-brand">Digital Confidence Centre</p>
+          <p class="footer-tagline" data-en="A free learning programme for Canadian seniors" data-fr="Un programme d'apprentissage gratuit pour les aînés canadiens">A free learning programme for Canadian seniors</p>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="../index.html">Home</a> |
+            <a href="../resources.html">Resources</a> |
+            <a href="../faq.html">FAQ</a> |
+            <a href="../about.html">About</a> |
+            <a href="../privacy.html">Privacy Policy</a>
+          </nav>
+          <p class="footer-copy">&copy; 2026 Two Birds. Made with care in Ontario, Canada.</p>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    function toggleLang() {
+      var html = document.documentElement;
+      var btn = document.getElementById('langBtn');
+      var isFr = html.getAttribute('lang') === 'fr-CA';
+      if (isFr) {
+        html.setAttribute('lang', 'en-CA');
+        btn.textContent = 'Français';
+        document.querySelectorAll('[data-en]').forEach(function(el) {
+          el.textContent = el.getAttribute('data-en');
+        });
+      } else {
+        html.setAttribute('lang', 'fr-CA');
+        btn.textContent = 'English';
+        document.querySelectorAll('[data-fr]').forEach(function(el) {
+          el.textContent = el.getAttribute('data-fr');
+        });
+      }
+    }
+  </script>
+  <script src="../js/app.js" defer></script>
+  <script src="../js/lang-toggle.js" defer></script>
+  <script src="../js/accessibility.js" defer></script>
+  <script src="../js/offline-banner.js" defer></script>
+</body>
+</html>
