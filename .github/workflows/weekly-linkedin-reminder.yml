@@ -2,8 +2,8 @@ name: Weekly LinkedIn Reminder
 
 on:
   schedule:
-    # Every Monday at 8:00 AM EST (13:00 UTC)
-    - cron: '0 13 * * 1'
+    # Every Tuesday at 8:00 AM EST (13:00 UTC)
+    - cron: '0 13 * * 2'
   workflow_dispatch:
 
 jobs:
@@ -27,12 +27,37 @@ jobs:
           echo "$COMMITS" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
+      - name: Get scheduled LinkedIn post
+        id: linkedin_post
+        run: |
+          WEEK_NUM=$(date +%V | sed 's/^0*//')
+          POST_INDEX=$(( (WEEK_NUM - 1) % $(jq 'length' _social/aaron-linkedin-posts.json) ))
+          POST_TEXT=$(jq -r ".[$POST_INDEX].text" _social/aaron-linkedin-posts.json)
+          POST_PILLAR=$(jq -r ".[$POST_INDEX].pillar" _social/aaron-linkedin-posts.json)
+          POST_HASHTAGS=$(jq -r ".[$POST_INDEX].hashtags | map(\"#\" + .) | join(\" \")" _social/aaron-linkedin-posts.json)
+          POST_BEST_DAY=$(jq -r ".[$POST_INDEX].best_day" _social/aaron-linkedin-posts.json)
+          POST_WEEK=$(jq -r ".[$POST_INDEX].week" _social/aaron-linkedin-posts.json)
+          echo "post_text<<POSTEOF" >> $GITHUB_OUTPUT
+          echo "$POST_TEXT" >> $GITHUB_OUTPUT
+          echo "POSTEOF" >> $GITHUB_OUTPUT
+          echo "post_pillar=$POST_PILLAR" >> $GITHUB_OUTPUT
+          echo "post_hashtags=$POST_HASHTAGS" >> $GITHUB_OUTPUT
+          echo "post_best_day=$POST_BEST_DAY" >> $GITHUB_OUTPUT
+          echo "post_week=$POST_WEEK" >> $GITHUB_OUTPUT
+
       - name: Create LinkedIn reminder issue
         uses: actions/github-script@v7
         with:
           script: |
             const today = new Date().toLocaleDateString('en-CA', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
             const weekActivity = `${{ steps.activity.outputs.weekly_commits }}`;
+
+            // Scheduled post from _social/aaron-linkedin-posts.json
+            const scheduledPostText = `${{ steps.linkedin_post.outputs.post_text }}`;
+            const scheduledPostPillar = '${{ steps.linkedin_post.outputs.post_pillar }}';
+            const scheduledPostHashtags = '${{ steps.linkedin_post.outputs.post_hashtags }}';
+            const scheduledPostBestDay = '${{ steps.linkedin_post.outputs.post_best_day }}';
+            const scheduledPostWeek = '${{ steps.linkedin_post.outputs.post_week }}';
 
             const postIdeas = [
               "Share a tip from Module 2 (Scam Protection) — these get strong engagement from seniors and their families",
@@ -56,7 +81,16 @@ jobs:
               "## This Week's Build Activity",
               weekActivity || 'No commits this week — consider sharing a platform update or thought leadership piece.',
               '',
-              '## Suggested Post Angle',
+              '## Scheduled Post — Week ' + scheduledPostWeek + ' (' + scheduledPostPillar + ')',
+              '> **Best day to post:** ' + scheduledPostBestDay,
+              '',
+              '```',
+              scheduledPostText,
+              '',
+              scheduledPostHashtags,
+              '```',
+              '',
+              '## Alternative Post Angle',
               '> ' + suggestion,
               '',
               '## Quick Post Templates',

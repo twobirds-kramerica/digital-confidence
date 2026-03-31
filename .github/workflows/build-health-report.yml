@@ -1,0 +1,133 @@
+name: HAL Daily Build Health Report
+
+on:
+  schedule:
+    # 7:00 AM EST daily (12:00 UTC)
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+
+jobs:
+  build-health-report:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Gather build metrics
+        id: metrics
+        run: |
+          # Last 5 commits
+          COMMITS=$(git log --oneline -5 --format="- \`%h\` %s (%cr)")
+          echo "last5_commits<<EOF" >> $GITHUB_OUTPUT
+          echo "$COMMITS" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+          # Commits in last 24 hours
+          TODAY=$(git log --oneline --since="24 hours ago" --format="%h" | wc -l | tr -d ' ')
+          echo "commits_today=$TODAY" >> $GITHUB_OUTPUT
+
+          # Commits in last 7 days
+          WEEK=$(git log --oneline --since="7 days ago" --format="%h" | wc -l | tr -d ' ')
+          echo "commits_week=$WEEK" >> $GITHUB_OUTPUT
+
+          # Files changed in last 24 hours
+          FILES=$(git diff --name-only HEAD~${TODAY:-1} HEAD 2>/dev/null | wc -l | tr -d ' ')
+          echo "files_changed=$FILES" >> $GITHUB_OUTPUT
+
+      - name: Get open issues count
+        id: issues
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const all = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100
+            });
+            // Exclude pull requests
+            const issues = all.data.filter(i => !i.pull_request);
+            core.setOutput('open_count', issues.length);
+
+            const labels = {};
+            issues.forEach(i => {
+              i.labels.forEach(l => {
+                labels[l.name] = (labels[l.name] || 0) + 1;
+              });
+            });
+            const labelSummary = Object.entries(labels)
+              .sort((a, b) => b[1] - a[1])
+              .slice(0, 6)
+              .map(([name, count]) => `  - \`${name}\`: ${count}`)
+              .join('\n');
+            core.setOutput('label_summary', labelSummary || '  - (no labels)');
+
+      - name: Create daily build health issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const today = new Date().toLocaleDateString('en-CA', {
+              weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+              timeZone: 'America/Toronto'
+            });
+
+            const last5 = `${{ steps.metrics.outputs.last5_commits }}`;
+            const commitsToday = '${{ steps.metrics.outputs.commits_today }}';
+            const commitsWeek = '${{ steps.metrics.outputs.commits_week }}';
+            const filesChanged = '${{ steps.metrics.outputs.files_changed }}';
+            const openIssues = '${{ steps.issues.outputs.open_count }}';
+            const labelSummary = `${{ steps.issues.outputs.label_summary }}`;
+
+            const body = [
+              '# HAL Daily Build Health Report — ' + today,
+              '',
+              '## Build Activity',
+              '',
+              '| Metric | Count |',
+              '|--------|-------|',
+              `| Commits today | ${commitsToday} |`,
+              `| Commits this week | ${commitsWeek} |`,
+              `| Files changed (last push) | ${filesChanged} |`,
+              `| Open issues | ${openIssues} |`,
+              '',
+              '## Last 5 Commits',
+              last5 || '*No recent commits.*',
+              '',
+              '## Open Issues by Label',
+              labelSummary,
+              '',
+              '## Live Site Links',
+              '- 🌐 [DCC Live Site](https://twobirds-kramerica.github.io/digital-confidence/)',
+              '- 📊 [Quality Dashboard](https://twobirds-kramerica.github.io/quality-dashboard/)',
+              '- 💼 [Career Coach](https://twobirds-kramerica.github.io/career-coach/)',
+              '- 🏠 [Kevin\'s Apartment Search](https://twobirds-kramerica.github.io/kevins-apartment-search/)',
+              '',
+              '## Quality Dashboard Reminder',
+              '> **PIN:** Open the Quality Dashboard and confirm all systems are reporting correctly.',
+              '> Log in at the link above. Check the HAL Stack panel for any pending items.',
+              '',
+              '## HAL Morning Checklist',
+              '- [ ] Review open issues above — close anything completed yesterday',
+              '- [ ] Check Gmail for `subject:⏳` — confirm any pending prompts',
+              '- [ ] Push any staged changes from overnight builds',
+              '- [ ] Check GitHub Actions tab for any failed runs',
+              '- [ ] Update WIP-DASHBOARD.md if sprint state changed',
+              '',
+              '---',
+              '*Generated daily at 7 AM EST by HAL Stack — `build-health-report.yml`*',
+              '*Close this issue when your morning review is complete.*'
+            ].join('\n');
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `📊 HAL Build Health — ${today}`,
+              body: body,
+              labels: ['hal-stack', 'daily-report']
+            });
