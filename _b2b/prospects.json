@@ -1,7 +1,7 @@
 {
   "meta": {
     "generated": "2026-03-27",
-    "total": 30,
+    "total": 32,
     "tiers": {
       "1": "Highest fit — large reach, proven digital literacy interest, likely budget",
       "2": "Strong fit — good reach, may need warm introduction",
@@ -38,7 +38,37 @@
       "tier": 1,
       "population_served": 40000,
       "notes": "Home community — highest personal connection. Ideal for pilot partnership. Aaron should visit in person first.",
-      "status": "not_contacted",
+      "status": "ready",
+      "last_contact": null
+    },
+    {
+      "id": "lib-elgin",
+      "name": "Elgin County Library",
+      "type": "library",
+      "city": "St. Thomas",
+      "region": "Elgin County",
+      "website": "https://www.elgincounty.ca/library",
+      "contact_email": "info@elgincounty.ca",
+      "contact_title": "Library Services Coordinator",
+      "tier": 1,
+      "population_served": 50000,
+      "notes": "County library system serving rural Elgin — 8 branches. Strong seniors programming. Ready — pending Aaron approval before send.",
+      "status": "ready",
+      "last_contact": null
+    },
+    {
+      "id": "lib-aylmer",
+      "name": "Aylmer & East Elgin Community Complex",
+      "type": "library",
+      "city": "Aylmer",
+      "region": "Elgin County",
+      "website": "https://www.aylmer.ca",
+      "contact_email": "info@aylmer.ca",
+      "contact_title": "Community Programs Coordinator",
+      "tier": 2,
+      "population_served": 8000,
+      "notes": "Small community hub with library and programming space. Good pilot site for rural deployment. Ready — pending Aaron approval before send.",
+      "status": "ready",
       "last_contact": null
     },
     {

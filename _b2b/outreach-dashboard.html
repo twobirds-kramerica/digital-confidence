@@ -47,6 +47,8 @@
     .status-proposal_sent{color:#e65100;font-weight:600}
     .status-won{color:#1b5e20;font-weight:700}
     .status-lost{color:#c62828}
+    .status-ready{color:#ff6f00;font-weight:700}
+    .badge-ready{background:#fff3e0;color:#e65100;border:1px solid #ffcc80;font-size:.7rem;font-weight:700;padding:.2rem .5rem;border-radius:20px;text-transform:uppercase;display:inline-block}
     @media(max-width:900px){table,thead,tbody,th,td,tr{display:block}th{display:none}td{padding:.4rem .6rem;border-bottom:1px solid #eee}}
   </style>
 </head>
@@ -66,7 +68,7 @@
   <div class="dash-header">
     <div>
       <div class="dash-title">B2B Outreach Dashboard</div>
-      <div class="dash-meta">Two Birds Innovation · Digital Confidence Centre · 30 Ontario prospects</div>
+      <div class="dash-meta">Two Birds Innovation · Digital Confidence Centre · 32 Ontario prospects</div>
     </div>
     <div style="display:flex;gap:.5rem;flex-wrap:wrap">
       <button class="btn btn-green" onclick="exportCSV()">Export CSV</button>
@@ -92,6 +94,7 @@
     <select id="filterStatus" onchange="renderTable()">
       <option value="all">All statuses</option>
       <option value="not_contacted">Not contacted</option>
+      <option value="ready">Ready to send</option>
       <option value="emailed">Emailed</option>
       <option value="responded">Responded</option>
       <option value="meeting_booked">Meeting booked</option>
@@ -151,7 +154,7 @@ function loadData() {
   });
 }
 
-const STATUS_LABELS = { not_contacted:'Not contacted', emailed:'Emailed', responded:'Responded', meeting_booked:'Meeting booked', proposal_sent:'Proposal sent', won:'Won', lost:'Lost' };
+const STATUS_LABELS = { not_contacted:'Not contacted', ready:'Ready to send', emailed:'Emailed', responded:'Responded', meeting_booked:'Meeting booked', proposal_sent:'Proposal sent', won:'Won', lost:'Lost' };
 const TYPE_LABELS = { library:'Library', credit_union:'Credit Union', org:'Organisation' };
 
 function renderStats() {
