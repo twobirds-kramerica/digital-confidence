@@ -41,6 +41,9 @@
     select.status-sel{padding:.25rem .4rem;border:1px solid #ccc;border-radius:6px;font-size:.78rem;width:130px}
     input.notes-in{padding:.25rem .4rem;border:1px solid #ccc;border-radius:6px;font-size:.78rem;width:160px}
     input.date-in{padding:.25rem .4rem;border:1px solid #ccc;border-radius:6px;font-size:.78rem;width:110px}
+    .btn-copy{padding:.25rem .55rem;border:1px solid #1565C0;border-radius:6px;font-size:.72rem;cursor:pointer;background:#e3f2fd;color:#1565C0;font-weight:600;white-space:nowrap;transition:all .2s}
+    .btn-copy:hover{background:#1565C0;color:#fff}
+    .btn-copy.copied{background:#2e7d32;color:#fff;border-color:#2e7d32}
     .status-emailed{color:#1565C0;font-weight:600}
     .status-responded{color:#2e7d32;font-weight:600}
     .status-meeting_booked{color:#6a1b9a;font-weight:600}
@@ -117,6 +120,7 @@
           <th>Status</th>
           <th>Notes</th>
           <th>Last Contact</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody id="tableBody"></tbody>
@@ -150,7 +154,7 @@ function loadData() {
     renderStats();
     renderTable();
   }).catch(() => {
-    document.getElementById('tableBody').innerHTML = '<tr><td colspan="8" style="color:#c62828;padding:1rem">Could not load prospects.json</td></tr>';
+    document.getElementById('tableBody').innerHTML = '<tr><td colspan="9" style="color:#c62828;padding:1rem">Could not load prospects.json</td></tr>';
   });
 }
 
@@ -198,6 +202,7 @@ function renderTable() {
       </td>
       <td><input class="notes-in" type="text" value="${esc(p.notes_user||'')}" placeholder="Add note…" data-id="${p.id}" onchange="updateField('${p.id}','notes',this.value)"></td>
       <td><input class="date-in" type="date" value="${p.last_contact||''}" data-id="${p.id}" onchange="updateField('${p.id}','last_contact',this.value)"></td>
+      <td>${EMAIL1_TEMPLATES[p.id] ? '<button class="btn-copy" onclick="copyEmail1(\''+p.id+'\',this)">Copy Email 1</button>' : ''}</td>
     </tr>`;
   }).join('');
 }
@@ -221,6 +226,88 @@ function saveAll() {
 }
 
 function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+// Personalised Email 1 templates keyed by prospect ID
+const EMAIL1_TEMPLATES = {
+  'lib-002': `Subject: Free digital literacy resource for your senior patrons
+
+Hi there,
+
+I'm Aaron Patzalek, a product manager here in St. Thomas. I've built something I think your library will find genuinely useful.
+
+The Digital Confidence Centre is a free, bilingual digital literacy platform built specifically for Canadian seniors. It covers the skills your patrons ask about most — avoiding scams, online banking, video calling family, and navigating a smartphone. Fully accessible, works on iPads and computers. No registration. No cost.
+
+Public libraries are exactly where seniors who need this turn for help. Your staff already fields these questions daily. DCC can be the resource you hand patrons when they leave.
+
+As a fellow St. Thomas resident, I'd love for our home library to be the first to try it.
+
+https://twobirds-kramerica.github.io/digital-confidence/
+
+I'm not asking for anything right now — just wondering if it might be useful to your patrons.
+
+Aaron Patzalek
+Two Birds Innovation | St. Thomas, Ontario
+aaron.patzalek@gmail.com`,
+
+  'lib-elgin': `Subject: Free digital literacy resource for your senior patrons
+
+Hi there,
+
+I'm Aaron Patzalek, a product manager from St. Thomas. I've built something I think Elgin County Library will find genuinely useful.
+
+The Digital Confidence Centre is a free, bilingual digital literacy platform built specifically for Canadian seniors. It covers the skills your patrons ask about most — avoiding scams, online banking, video calling family, and navigating a smartphone. Fully accessible, works on iPads and computers. No registration. No cost.
+
+With 8 branches serving rural Elgin, your system reaches seniors who may have limited access to in-person tech support. DCC gives them a resource they can use at home, at their own pace, between library visits.
+
+https://twobirds-kramerica.github.io/digital-confidence/
+
+I'm not asking for anything right now — just wondering if it might be useful to your patrons.
+
+Aaron Patzalek
+Two Birds Innovation | St. Thomas, Ontario
+aaron.patzalek@gmail.com`,
+
+  'lib-aylmer': `Subject: Free digital literacy resource for your senior patrons
+
+Hi there,
+
+I'm Aaron Patzalek, a product manager from nearby St. Thomas. I've built something I think the Aylmer & East Elgin Community Complex will find genuinely useful.
+
+The Digital Confidence Centre is a free, bilingual digital literacy platform built specifically for Canadian seniors. It covers the skills your community members ask about most — avoiding scams, online banking, video calling family, and navigating a smartphone. Fully accessible, works on iPads and computers. No registration. No cost.
+
+As a community hub with programming space, you're ideally positioned to share this with local seniors who may not have other tech support options nearby.
+
+https://twobirds-kramerica.github.io/digital-confidence/
+
+I'm not asking for anything right now — just wondering if it might be useful to your community.
+
+Aaron Patzalek
+Two Birds Innovation | St. Thomas, Ontario
+aaron.patzalek@gmail.com`
+};
+
+function copyEmail1(id, btn) {
+  const text = EMAIL1_TEMPLATES[id];
+  if (!text) return;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy Email 1'; btn.classList.remove('copied'); }, 2000);
+  }).catch(() => {
+    // Fallback for older browsers
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy Email 1'; btn.classList.remove('copied'); }, 2000);
+  });
+}
 
 function exportCSV() {
   const headers = ['id','name','type','city','tier','contact_email','contact_title','website','status','notes_user','last_contact'];
