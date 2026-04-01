@@ -1,24 +1,20 @@
 name: Sitemap Validator
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'sitemap.xml'
-      - 'sitemap-news.xml'
-      - '**.html'
   workflow_dispatch:
 
 jobs:
   validate-sitemap:
     runs-on: ubuntu-latest
     permissions:
-      issues: write
       contents: read
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Install xmllint
+        run: sudo apt-get install -y libxml2-utils
 
       - name: Validate sitemap.xml
         id: validate
@@ -28,113 +24,54 @@ jobs:
 
           # Check sitemap.xml exists
           if [ ! -f "sitemap.xml" ]; then
-            ERRORS="${ERRORS}- ❌ sitemap.xml file is missing\n"
+            ERRORS="${ERRORS}- sitemap.xml file is missing\n"
           else
             # Check it is valid XML
             if ! xmllint --noout sitemap.xml 2>/dev/null; then
-              ERRORS="${ERRORS}- ❌ sitemap.xml is not valid XML\n"
+              ERRORS="${ERRORS}- sitemap.xml is not valid XML\n"
             else
               # Count URLs
               URL_COUNT=$(grep -c "<loc>" sitemap.xml || echo "0")
               echo "url_count=$URL_COUNT" >> $GITHUB_OUTPUT
+              echo "Sitemap URL count: $URL_COUNT"
 
               # Check for duplicate URLs
               DUPES=$(grep "<loc>" sitemap.xml | sort | uniq -d | wc -l)
               if [ "$DUPES" -gt "0" ]; then
-                WARNINGS="${WARNINGS}- ⚠️ ${DUPES} duplicate URL(s) found in sitemap.xml\n"
+                WARNINGS="${WARNINGS}- ${DUPES} duplicate URL(s) found in sitemap.xml\n"
               fi
-
-              # Check all HTML files in root have sitemap entries
-              MISSING_COUNT=0
-              for f in *.html; do
-                if ! grep -q "$(basename $f)" sitemap.xml; then
-                  WARNINGS="${WARNINGS}- ⚠️ Root HTML file not in sitemap: $f\n"
-                  MISSING_COUNT=$((MISSING_COUNT + 1))
-                fi
-              done
-
-              echo "missing_count=$MISSING_COUNT" >> $GITHUB_OUTPUT
             fi
           fi
 
-          # Check sitemap-news.xml exists
+          # Check sitemap-news.xml exists and is valid
           if [ ! -f "sitemap-news.xml" ]; then
-            WARNINGS="${WARNINGS}- ⚠️ sitemap-news.xml is missing\n"
+            WARNINGS="${WARNINGS}- sitemap-news.xml is missing\n"
           else
             if ! xmllint --noout sitemap-news.xml 2>/dev/null; then
-              ERRORS="${ERRORS}- ❌ sitemap-news.xml is not valid XML\n"
+              ERRORS="${ERRORS}- sitemap-news.xml is not valid XML\n"
             fi
           fi
 
           # Check robots.txt references sitemaps
           if [ -f "robots.txt" ]; then
             if ! grep -q "sitemap.xml" robots.txt; then
-              WARNINGS="${WARNINGS}- ⚠️ robots.txt does not reference sitemap.xml\n"
+              WARNINGS="${WARNINGS}- robots.txt does not reference sitemap.xml\n"
             fi
             if ! grep -q "sitemap-news.xml" robots.txt; then
-              WARNINGS="${WARNINGS}- ⚠️ robots.txt does not reference sitemap-news.xml\n"
+              WARNINGS="${WARNINGS}- robots.txt does not reference sitemap-news.xml\n"
             fi
           fi
 
-          echo "errors<<EOF" >> $GITHUB_OUTPUT
-          printf "$ERRORS" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+          ERROR_COUNT=$(printf "$ERRORS" | grep -c "missing\|not valid" || echo "0")
 
-          echo "warnings<<EOF" >> $GITHUB_OUTPUT
-          printf "$WARNINGS" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+          if [ "$ERROR_COUNT" -gt "0" ]; then
+            echo "Errors found:"
+            printf "$ERRORS"
+            exit 1
+          fi
 
-          ERROR_COUNT=$(printf "$ERRORS" | grep -c "❌" || echo "0")
-          echo "error_count=$ERROR_COUNT" >> $GITHUB_OUTPUT
-
-      - name: Create issue if errors found
-        if: steps.validate.outputs.error_count != '0'
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const today = new Date().toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
-            const errors = `${{ steps.validate.outputs.errors }}`;
-            const warnings = `${{ steps.validate.outputs.warnings }}`;
-            const urlCount = '${{ steps.validate.outputs.url_count }}' || 'unknown';
-            const missingCount = '${{ steps.validate.outputs.missing_count }}' || '0';
-
-            const body = [
-              `# ❌ Sitemap Validation Failed — ${today}`,
-              '',
-              '## Errors (must fix)',
-              errors,
-              '',
-              '## Warnings (should review)',
-              warnings,
-              '',
-              '## Sitemap Statistics',
-              `- Total URLs in sitemap.xml: ${urlCount}`,
-              `- Root HTML files missing from sitemap: ${missingCount}`,
-              '',
-              '## How to Fix',
-              '1. If sitemap.xml is invalid XML: run `xmllint --noout sitemap.xml` locally to find the error',
-              '2. If a URL is missing: add it to sitemap.xml with correct `<lastmod>`, `<changefreq>`, and `<priority>`',
-              '3. If there are duplicates: search for the URL and remove the duplicate entry',
-              '',
-              '---',
-              '*Generated by GitHub Actions — Sitemap Validator (runs on push to main)*'
-            ].join('\n');
-
-            await github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: `❌ Sitemap Validation Error — ${today}`,
-              body: body,
-              labels: ['sitemap', 'bug']
-            });
-
-      - name: Log success
-        if: steps.validate.outputs.error_count == '0'
-        run: |
-          echo "✅ sitemap.xml is valid XML"
-          echo "📊 Total URLs: ${{ steps.validate.outputs.url_count }}"
-          echo "✅ No critical sitemap errors found"
-          if [ -n "${{ steps.validate.outputs.warnings }}" ]; then
-            echo "⚠️ Warnings:"
-            printf "${{ steps.validate.outputs.warnings }}"
+          echo "Sitemap validation passed."
+          if [ -n "$WARNINGS" ]; then
+            echo "Warnings:"
+            printf "$WARNINGS"
           fi

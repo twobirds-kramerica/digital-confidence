@@ -1,8 +1,7 @@
 name: Content Count Report
 
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
 
 jobs:
   count:
@@ -10,8 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
 
       - name: Count current files
         id: current
@@ -29,14 +26,6 @@ jobs:
           echo "CSS files: $CSS"
           echo "Sitemap URLs: $SITEMAP"
 
-      - name: Count previous files
-        id: previous
-        run: |
-          git stash 2>/dev/null || true
-          PREV_HTML=$(git show HEAD~1:. 2>/dev/null | grep -c '\.html' || echo 0)
-          CURR_HTML=${{ steps.current.outputs.html }}
-          echo "prev_html=$PREV_HTML" >> $GITHUB_OUTPUT
-
       - name: Post content summary
         uses: actions/github-script@v7
         with:
@@ -47,7 +36,7 @@ jobs:
             const sitemap = '${{ steps.current.outputs.sitemap }}';
 
             const summary = [
-              '## 📊 Content Count Report',
+              '## Content Count Report',
               '',
               '| File Type | Count |',
               '|-----------|-------|',
@@ -56,7 +45,7 @@ jobs:
               '| CSS files | ' + css + ' |',
               '| Sitemap URLs | ' + sitemap + ' |',
               '',
-              '_Generated on push to main — ' + new Date().toLocaleDateString('en-CA') + '_'
+              '_Generated ' + new Date().toLocaleDateString('en-CA') + '_'
             ].join('\n');
 
             core.summary.addRaw(summary).write();

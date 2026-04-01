@@ -1,11 +1,7 @@
 name: Update Sitemap Dates
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - '**.html'
-      - 'sitemap.xml'
+  workflow_dispatch:
 
 jobs:
   update-sitemap:
@@ -17,41 +13,51 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 2
 
       - name: Update sitemap lastmod dates
         run: |
           TODAY=$(date +%Y-%m-%d)
 
-          # Get list of HTML files changed in this push
+          # Get list of HTML files changed in the last commit
           CHANGED=$(git diff --name-only HEAD~1 HEAD 2>/dev/null | grep '\.html$' || true)
 
           if [ -z "$CHANGED" ]; then
-            echo "No HTML files changed. Skipping sitemap update."
-            exit 0
+            echo "No HTML files changed in last commit. Updating all lastmod to today."
+            sed -i "s/<lastmod>[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}<\/lastmod>/<lastmod>${TODAY}<\/lastmod>/g" sitemap.xml
+          else
+            echo "Changed HTML files:"
+            echo "$CHANGED"
+
+            for FILE in $CHANGED; do
+              BASENAME=$(basename "$FILE")
+              if grep -q "$BASENAME" sitemap.xml; then
+                echo "Updating lastmod for: $BASENAME"
+                # Use Python for reliable XML-aware replacement
+                python3 -c "
+import re, sys
+with open('sitemap.xml', 'r') as f:
+    content = f.read()
+pattern = r'(<loc>[^<]*${BASENAME}</loc>\s*<lastmod>)[^<]*(</lastmod>)'
+content = re.sub(pattern.replace('\${BASENAME}', '${BASENAME}'), r'\g<1>${TODAY}\g<2>', content)
+with open('sitemap.xml', 'w') as f:
+    f.write(content)
+"
+              fi
+            done
           fi
 
-          echo "Changed HTML files:"
-          echo "$CHANGED"
-
-          # Update lastmod for each changed file in sitemap.xml
-          for FILE in $CHANGED; do
-            # Convert file path to URL path (strip leading slash if present)
-            URL_PATH="${FILE}"
-
-            # Use sed to update the lastmod for matching <loc> entries
-            sed -i "/<loc>.*${URL_PATH//./\\.}<\/loc>/{n;s/<lastmod>.*<\/lastmod>/<lastmod>${TODAY}<\/lastmod>/}" sitemap.xml
-          done
-
-          echo "Sitemap updated with today's date: ${TODAY}"
+          echo "Sitemap updated with date: ${TODAY}"
 
       - name: Check if sitemap changed
         id: sitemap-diff
         run: |
           if git diff --quiet sitemap.xml; then
             echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No sitemap changes detected."
           else
             echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Sitemap changes detected."
           fi
 
       - name: Commit updated sitemap
