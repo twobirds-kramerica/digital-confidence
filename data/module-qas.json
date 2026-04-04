@@ -436,5 +436,47 @@
       "q": "How do I send a voice message instead of typing?",
       "a": "In your messaging app, look for a small microphone or audio icon next to the text field (not the keyboard microphone — that is voice-to-text). Press and hold the microphone button, speak your message, then release to send. The other person will receive a short audio clip they can play. This is ideal when you want to share your voice but a full phone call is not needed."
     }
+  ],
+  "module-25": [
+    {
+      "q": "What does the dinosaur on my screen mean?",
+      "a": "The dinosaur appears in Chrome when your internet connection is down. It means your device cannot reach the internet — it does NOT mean your device is broken. Try turning Wi-Fi off and back on. If that doesn't work, restart your modem (unplug it, wait 30 seconds, plug it back in). The internet will come back."
+    },
+    {
+      "q": "How do I know if the internet is down for everyone or just me?",
+      "a": "Visit downdetector.ca on your phone's mobile data (not Wi-Fi) and search for your internet provider. If others are reporting problems in your area, the outage is widespread and the provider already knows. You can also ask a neighbour if their internet is working."
+    },
+    {
+      "q": "Should I call my internet provider right away when the internet goes down?",
+      "a": "If the outage affects your whole area (check downdetector.ca), wait 1-2 hours before calling — they already know and are working on it. If the problem seems to be just your home (your neighbour has internet but you don't), try restarting your modem first, then call if it doesn't resolve within 30 minutes."
+    }
+  ],
+  "module-26": [
+    {
+      "q": "Will I miss emergency calls if I turn on Do Not Disturb?",
+      "a": "No. If someone calls you three times in three minutes, the call will come through even during Do Not Disturb — this is a built-in safety feature. You can also set specific people (family, doctor) as exceptions who always reach you regardless of Do Not Disturb settings."
+    },
+    {
+      "q": "How do I stop getting notifications from apps I don't care about?",
+      "a": "Go to Settings → Notifications. You'll see a list of every app. Tap any app and toggle off 'Allow Notifications.' Start with the noisiest ones — games, weather, shopping, news. Keep notifications on for messaging, phone, calendar, and health apps."
+    },
+    {
+      "q": "What is the best Do Not Disturb schedule for a senior?",
+      "a": "Most people benefit from scheduling Do Not Disturb from 9 PM to 8 AM. This ensures a quiet night without missing morning messages. Go to Settings → Focus → Do Not Disturb → Schedule → Add Schedule → set your preferred quiet hours."
+    }
+  ],
+  "module-27": [
+    {
+      "q": "I have thousands of unread emails — should I try to read them all?",
+      "a": "No. Think of your inbox like a river, not a filing cabinet. The old emails are already downstream. Search for anything important by name or subject. For everything else, select all older than 30 days and archive them. You can always search for them later if needed."
+    },
+    {
+      "q": "Is it really safe to click 'unsubscribe' in emails?",
+      "a": "Yes — if the email is from a company you recognise and actually signed up with (a store, a newsletter, a service). The unsubscribe link at the very bottom of their email is legitimate and required by Canadian anti-spam law. However, do NOT click any links in emails from unknown senders — those may be phishing. Just delete them and mark as spam."
+    },
+    {
+      "q": "How do I report spam text messages in Canada?",
+      "a": "Forward the spam text to 7726 (it spells SPAM on your phone keypad). Your mobile provider and the CRTC use these reports to identify and block spam senders. After forwarding, delete the spam text from your messages."
+    }
   ]
 }
