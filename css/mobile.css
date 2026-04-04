@@ -80,6 +80,83 @@
   }
 }
 
+/* 375px phone — minimum viable mobile (iPhone SE, older Android) */
+@media (max-width: 375px) {
+  body {
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  .main-content {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* Ensure all text is readable */
+  .tip-box, .confidence-check, .lesson-section p,
+  .what-you-learn li, .module-intro p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Ensure all buttons are tappable */
+  .btn, button, a.btn, .quiz-option, .nav-link {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 10px 16px;
+    font-size: 1rem;
+  }
+
+  /* Images contained */
+  img, iframe, video, svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Tables scroll horizontally if needed */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Module cards stack fully */
+  .module-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Sidebar nav items large enough to tap */
+  .sidebar nav a {
+    min-height: 44px;
+    padding: 10px 16px;
+    font-size: 1rem;
+  }
+
+  /* Accessibility bar wraps nicely */
+  .accessibility-bar {
+    gap: 4px;
+    padding: 4px;
+  }
+
+  /* Quiz options full-width */
+  .quiz-option {
+    width: 100%;
+    text-align: left;
+  }
+
+  /* Module header */
+  .module-header h1 {
+    font-size: 1.3rem;
+    word-wrap: break-word;
+  }
+
+  /* Stats and grids single column */
+  .stats-bar, .module-grid, .features {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Small phone adjustments */
 @media (max-width: 480px) {
   :root {
