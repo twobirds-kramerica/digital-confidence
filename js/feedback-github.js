@@ -200,22 +200,27 @@ function injectFeedbackModal() {
             '</select>',
           '</div>',
 
-          /* FIELD 2: Feedback type */
+          /* FIELD 2: Feedback type (required) */
           '<div class="dc-feedback-field">',
-            '<p class="dc-feedback-label">' + (fr ? 'Type de commentaire\u00a0:' : 'Type of feedback:') + '</p>',
+            '<p class="dc-feedback-label">' + (fr ? 'Type de commentaire\u00a0: <span style="color:#c62828;">(requis)</span>' : 'Type of feedback: <span style="color:#c62828;">(required)</span>') + '</p>',
             '<div class="dc-feedback-types" id="dc-feedback-types">' + typeOptions + '</div>',
+            '<p class="dc-inline-error" id="dc-error-type" role="alert" style="display:none;color:#c62828;font-size:0.9rem;margin:6px 0 0;">' + (fr ? 'Veuillez choisir un type de commentaire.' : 'Please choose a feedback type so we can help.') + '</p>',
           '</div>',
 
-          /* FIELD 3: Feedback textarea */
+          /* FIELD 3: Feedback textarea (required, min 10 chars) */
           '<div class="dc-feedback-field">',
-            '<label class="dc-feedback-label" for="dc-feedback-text">' + (fr ? 'Vos commentaires\u00a0:' : 'Your feedback:') + '</label>',
+            '<label class="dc-feedback-label" for="dc-feedback-text">' + (fr ? 'Vos commentaires\u00a0: <span style="color:#c62828;">(requis)</span>' : 'Your feedback: <span style="color:#c62828;">(required)</span>') + '</label>',
             '<textarea id="dc-feedback-text" name="message" class="dc-feedback-textarea" rows="5"',
-              ' placeholder="Tell us what you noticed\u2026" required></textarea>',
+              ' placeholder="Tell us what you noticed\u2026" required minlength="10"></textarea>',
+            '<p class="dc-inline-error" id="dc-error-text" role="alert" style="display:none;color:#c62828;font-size:0.9rem;margin:6px 0 0;">' + (fr ? 'Dites-nous en un peu plus \u2014 nous voulons vous entendre.' : 'Please tell us a bit more \u2014 we want to hear from you.') + '</p>',
           '</div>',
+
+          /* Hidden form_type differentiator */
+          '<input type="hidden" name="form_type" value="site_feedback">',
 
           /* FIELD 4: Submit button (immediately below textarea) */
           '<div class="dc-feedback-actions">',
-            '<button id="dc-submit-btn" class="dc-btn-submit">' + (fr ? 'Envoyer' : 'Send Feedback') + '</button>',
+            '<button id="dc-submit-btn" class="dc-btn-submit" disabled>' + (fr ? 'Envoyer' : 'Send Feedback') + '</button>',
           '</div>',
 
           /* FIELD 5: Your Name (Optional) — below submit */
@@ -281,6 +286,13 @@ function injectFeedbackModal() {
   document.getElementById('dc-submit-btn').addEventListener('click', handleFeedbackSubmit);
   document.getElementById('dc-tab-written').addEventListener('click', function () { switchFeedbackTab('written'); });
   document.getElementById('dc-tab-voice').addEventListener('click', function () { switchFeedbackTab('voice'); });
+
+  /* Live validation — enable submit when required fields are filled */
+  document.getElementById('dc-feedback-text').addEventListener('input', validateFeedbackForm);
+  var typeRadios = document.querySelectorAll('input[name="dc-feedback-type"]');
+  for (var i = 0; i < typeRadios.length; i++) {
+    typeRadios[i].addEventListener('change', validateFeedbackForm);
+  }
   document.getElementById('dc-rec-btn').addEventListener('click', toggleVoiceRecording);
   document.getElementById('dc-voice-send-btn').addEventListener('click', sendVoiceNote);
   document.getElementById('dc-voice-redo-btn').addEventListener('click', resetVoiceRecorder);
@@ -567,6 +579,38 @@ function sendVoiceNote() {
   }, 600);
 }
 
+/* ---- Live validation check — enables/disables submit ---- */
+function validateFeedbackForm() {
+  var textEl = document.getElementById('dc-feedback-text');
+  var typeEl = document.querySelector('input[name="dc-feedback-type"]:checked');
+  var submitBtn = document.getElementById('dc-submit-btn');
+  var text = textEl ? textEl.value.trim() : '';
+  var valid = typeEl && text.length >= 10;
+  if (submitBtn) submitBtn.disabled = !valid;
+
+  /* Clear inline errors as user corrects */
+  if (typeEl) {
+    var errType = document.getElementById('dc-error-type');
+    if (errType) errType.style.display = 'none';
+    clearFieldError('dc-feedback-types');
+  }
+  if (text.length >= 10) {
+    var errText = document.getElementById('dc-error-text');
+    if (errText) errText.style.display = 'none';
+    clearFieldError('dc-feedback-text');
+  }
+  return valid;
+}
+
+function showFieldError(fieldId) {
+  var el = document.getElementById(fieldId);
+  if (el) el.style.border = '2px solid #c62828';
+}
+function clearFieldError(fieldId) {
+  var el = document.getElementById(fieldId);
+  if (el) el.style.border = '';
+}
+
 /* ---- Submit handler ---- */
 function handleFeedbackSubmit() {
   var _fr = (localStorage.getItem('dc-lang') || document.documentElement.getAttribute('data-lang') || 'en').startsWith('fr');
@@ -582,9 +626,28 @@ function handleFeedbackSubmit() {
   var module   = (moduleEl && moduleEl.value) ? moduleEl.value : 'General / Other';
   var userLang = (langEl && langEl.value) ? langEl.value : (navigator.language || 'unknown');
 
-  if (!text) {
-    alert(_fr ? 'Veuillez saisir vos commentaires avant de soumettre.' : 'Please share your feedback before submitting.');
-    if (textEl) textEl.focus();
+  /* Inline validation — no alert() dialogs */
+  var hasError = false;
+  var firstInvalid = null;
+
+  if (!typeEl) {
+    var errType = document.getElementById('dc-error-type');
+    if (errType) errType.style.display = 'block';
+    showFieldError('dc-feedback-types');
+    if (!firstInvalid) firstInvalid = document.getElementById('dc-feedback-types');
+    hasError = true;
+  }
+
+  if (!text || text.length < 10) {
+    var errText = document.getElementById('dc-error-text');
+    if (errText) errText.style.display = 'block';
+    showFieldError('dc-feedback-text');
+    if (!firstInvalid) firstInvalid = textEl;
+    hasError = true;
+  }
+
+  if (hasError) {
+    if (firstInvalid) firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
     return;
   }
 
@@ -615,6 +678,7 @@ function submitToFormspree(userName, feedbackType, feedbackText, module, lang) {
   }
 
   var payload = {
+    form_type:     'site_feedback',
     name:          userName,
     feedback_type: feedbackType,
     module:        module,

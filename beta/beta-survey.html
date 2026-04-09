@@ -312,7 +312,7 @@
       </div>
 
       <!-- Survey Form -->
-      <form id="beta-survey-form" action="https://formspree.io/f/xeerqryj" method="POST" novalidate>
+      <form id="beta-survey-form" action="https://formspree.io/f/xeerqryj" method="POST">
         <input type="hidden" name="form-type" value="beta-survey">
 
         <!-- Q1: Confidence scale -->
@@ -320,7 +320,7 @@
           <p class="question-number">Question 1 of 9</p>
           <p class="question-text">How confident do you feel with technology now, compared to when you started?</p>
           <div class="scale-row" role="group" aria-label="Confidence scale 1 to 10">
-            <label><input type="radio" name="confidence-scale" value="1"><span class="scale-num">1</span></label>
+            <label><input type="radio" name="confidence-scale" value="1" required><span class="scale-num">1</span></label>
             <label><input type="radio" name="confidence-scale" value="2"><span class="scale-num">2</span></label>
             <label><input type="radio" name="confidence-scale" value="3"><span class="scale-num">3</span></label>
             <label><input type="radio" name="confidence-scale" value="4"><span class="scale-num">4</span></label>
@@ -341,7 +341,7 @@
         <div class="survey-card">
           <p class="question-number">Question 2 of 9</p>
           <p class="question-text">Which module helped you most?</p>
-          <select name="most-helpful-module" class="survey-select" aria-label="Which module helped you most">
+          <select name="most-helpful-module" class="survey-select" aria-label="Which module helped you most" required>
             <option value="">— Select a module —</option>
             <option value="Module 1: Mastering the Escape Hatch">Module 1: Mastering the Escape Hatch</option>
             <option value="Module 2: The Security Shield">Module 2: The Security Shield</option>
@@ -377,7 +377,7 @@
           <p class="question-text">Did you feel respected and not talked down to?</p>
           <div class="radio-group" role="group" aria-label="Did you feel respected">
             <label>
-              <input type="radio" name="felt-respected" value="Yes">
+              <input type="radio" name="felt-respected" value="Yes" required>
               Yes — the tone felt respectful throughout
             </label>
             <label>
@@ -407,7 +407,7 @@
           <p class="question-text">Would you recommend Digital Confidence Centre to other seniors?</p>
           <div class="radio-group" role="group" aria-label="Would you recommend this">
             <label>
-              <input type="radio" name="would-recommend" value="Yes">
+              <input type="radio" name="would-recommend" value="Yes" required>
               Yes
             </label>
             <label>
@@ -445,7 +445,7 @@
           <p class="question-text">May we use your feedback as a testimonial on the website?</p>
           <div class="radio-group" role="group" aria-label="Testimonial permission">
             <label>
-              <input type="radio" name="testimonial-permission" value="Yes — with my name">
+              <input type="radio" name="testimonial-permission" value="Yes — with my name" required>
               Yes — you may use my name
             </label>
             <label>

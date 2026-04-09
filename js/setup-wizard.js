@@ -470,14 +470,8 @@ function captureEmail() {
       '</div>';
   }
 
-  /* POST to Formspree (non-blocking) */
-  try {
-    fetch('https://formspree.io/f/xeerqryj', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(payload)
-    }).catch(function () { /* offline — localStorage already saved */ });
-  } catch (e) { /* fetch not available — localStorage already saved */ }
+  /* Email saved to localStorage only — onboarding is a welcome flow,
+     not a feedback capture. Feedback goes through the site-wide modal. */
 
   /* Continue to save after a brief moment */
   setTimeout(function () { saveWizard(); }, 1400);
