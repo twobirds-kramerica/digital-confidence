@@ -1,0 +1,34 @@
+{
+  "province": "Nova Scotia",
+  "code": "NS",
+  "telehealth": {
+    "name": "Tele-Care Nova Scotia",
+    "phone": "811",
+    "url": "https://www.nshealth.ca"
+  },
+  "consumer_protection": {
+    "name": "Service Nova Scotia — Consumer Protection",
+    "phone": "1-800-670-4357",
+    "url": "https://www.novascotia.ca/programs-and-services/consumer-protection"
+  },
+  "anti_fraud": {
+    "name": "Canadian Anti-Fraud Centre",
+    "phone": "1-888-495-8501",
+    "url": "https://www.antifraudcentre-centreantifraude.ca",
+    "note": "National — same for all provinces"
+  },
+  "library_tech_help": {
+    "name": "Find your local library",
+    "url": "https://www.publiclibraries.ca",
+    "note": "Search for your local branch for free tech help"
+  },
+  "scam_alerts": {
+    "name": "Get Cyber Safe — Government of Canada",
+    "url": "https://www.getcybersafe.gc.ca"
+  },
+  "211": {
+    "name": "211 Nova Scotia",
+    "phone": "211",
+    "url": "https://ns.211.ca"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "province": "Yukon",
+  "code": "YT",
+  "telehealth": {
+    "name": "Yukon Telehealth",
+    "phone": "811",
+    "url": "https://yukon.ca/en/health-and-wellness",
+    "note": "Virtual appointments available through Yukon Hospitals"
+  },
+  "consumer_protection": {
+    "name": "Consumer Services Yukon",
+    "phone": "1-800-661-0408",
+    "url": "https://yukon.ca/en/doing-business/consumer-protection"
+  },
+  "anti_fraud": {
+    "name": "Canadian Anti-Fraud Centre",
+    "phone": "1-888-495-8501",
+    "url": "https://www.antifraudcentre-centreantifraude.ca",
+    "note": "National — same for all provinces"
+  },
+  "library_tech_help": {
+    "name": "Find your local library",
+    "url": "https://www.publiclibraries.ca",
+    "note": "Search for your local branch for free tech help"
+  },
+  "scam_alerts": {
+    "name": "Get Cyber Safe — Government of Canada",
+    "url": "https://www.getcybersafe.gc.ca"
+  },
+  "211": {
+    "name": "211 Yukon",
+    "phone": "211",
+    "url": "https://211.ca"
+  }
+}

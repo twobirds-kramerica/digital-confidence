@@ -1,0 +1,36 @@
+{
+  "province": "Nunavut",
+  "code": "NU",
+  "telehealth": {
+    "name": "Nunavut Telehealth",
+    "phone": "867-975-5700",
+    "url": "https://www.gov.nu.ca/health",
+    "note": "Telehealth available through regional health centres"
+  },
+  "consumer_protection": {
+    "name": "Consumer Affairs — Community and Government Services",
+    "phone": "1-866-223-8139",
+    "url": "https://www.gov.nu.ca"
+  },
+  "anti_fraud": {
+    "name": "Canadian Anti-Fraud Centre",
+    "phone": "1-888-495-8501",
+    "url": "https://www.antifraudcentre-centreantifraude.ca",
+    "note": "National — same for all provinces"
+  },
+  "library_tech_help": {
+    "name": "Find your local library",
+    "url": "https://www.publiclibraries.ca",
+    "note": "Library services in Nunavut may be limited — federal resource shown"
+  },
+  "scam_alerts": {
+    "name": "Get Cyber Safe — Government of Canada",
+    "url": "https://www.getcybersafe.gc.ca"
+  },
+  "211": {
+    "name": "211 Canada",
+    "phone": "211",
+    "url": "https://211.ca",
+    "note": "National 211 service — territory-specific directory may be limited"
+  }
+}

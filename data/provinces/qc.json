@@ -1,0 +1,40 @@
+{
+  "province": "Quebec",
+  "province_fr": "Québec",
+  "code": "QC",
+  "telehealth": {
+    "name": "Info-Santé",
+    "name_fr": "Info-Santé",
+    "phone": "811",
+    "url": "https://www.quebec.ca/sante/trouver-une-ressource/info-sante-811"
+  },
+  "consumer_protection": {
+    "name": "Office de la protection du consommateur",
+    "name_fr": "Office de la protection du consommateur",
+    "phone": "1-888-672-2556",
+    "url": "https://www.opc.gouv.qc.ca"
+  },
+  "anti_fraud": {
+    "name": "Canadian Anti-Fraud Centre",
+    "name_fr": "Centre antifraude du Canada",
+    "phone": "1-888-495-8501",
+    "url": "https://www.antifraudcentre-centreantifraude.ca",
+    "note": "National — same for all provinces"
+  },
+  "library_tech_help": {
+    "name": "Find your local library",
+    "name_fr": "Trouvez votre bibliothèque locale",
+    "url": "https://www.publiclibraries.ca",
+    "note": "Search for your local branch for free tech help"
+  },
+  "scam_alerts": {
+    "name": "Get Cyber Safe — Government of Canada",
+    "name_fr": "Pensez cybersécurité — Gouvernement du Canada",
+    "url": "https://www.pensezcybersecurite.gc.ca"
+  },
+  "211": {
+    "name": "211 Québec",
+    "phone": "211",
+    "url": "https://www.211quebecregions.ca"
+  }
+}

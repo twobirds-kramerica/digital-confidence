@@ -10,10 +10,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The Digital Confidence Centre is a free, self-paced digital literacy programme for Ontario seniors over 70 — learn to use your iPad and iPhone safely.">
+  <meta name="description" content="The Digital Confidence Centre is a free, self-paced digital literacy programme for Canadian seniors — learn to use your devices safely. Local resources for every province.">
   <meta name="keywords" content="digital literacy seniors Ontario, technology help seniors Windsor London Kitchener, iPad training older adults, online safety seniors, computer lessons seniors Ontario">
-  <meta property="og:title" content="Digital Confidence Centre — Friendly Tech Learning for Ontario Seniors">
-  <meta property="og:description" content="Free, friendly technology training for seniors in Ontario. Stay safe online, learn your devices, and build confidence at your own pace.">
+  <meta property="og:title" content="Digital Confidence Centre — Friendly Tech Learning for Canadian Seniors">
+  <meta property="og:description" content="Free, friendly technology training for seniors across Canada. Stay safe online, learn your devices, and build confidence at your own pace. Local resources for every province.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_CA">
   <meta property="og:locale:alternate" content="fr_CA">
@@ -288,6 +288,12 @@
     <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
     <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
     <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <!-- Location Bar -->
+  <div id="dcc-location-bar" style="background:#E6FAF8;border-bottom:1px solid #B2DFDB;padding:6px 16px;font-size:0.88rem;color:#1B3A4B;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;">
+    <span class="location-label" data-en="Showing general Canadian resources" data-fr="Ressources canadiennes générales">Showing general Canadian resources</span>
+    <button onclick="changeLocation()" class="location-change" style="background:none;border:none;color:#00897B;cursor:pointer;font-size:0.88rem;text-decoration:underline;padding:4px 8px;min-height:44px;font-family:inherit;" data-en="Set my location" data-fr="Définir ma position">Set my location</button>
   </div>
 
   <!-- Top Bar (Mobile) -->
@@ -1106,6 +1112,7 @@
   <script src="js/setup-wizard.js" defer></script>  <script src="js/feedback-github.js" defer></script>
   <script src="js/settings.js" defer></script>
   <script src="js/panic-button.js" defer></script>
+  <script src="js/location.js" defer></script>
   <script src="js/analytics-events.js" defer></script>
   <script src="js/heatmap-init.js" defer></script>
   <script src="js/ab-testing.js" defer></script>

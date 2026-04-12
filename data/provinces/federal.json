@@ -1,0 +1,33 @@
+{
+  "province": "Canada",
+  "code": "CA",
+  "telehealth": {
+    "name": "Health Canada",
+    "phone": "811",
+    "url": "https://www.canada.ca/en/health-canada.html",
+    "note": "Dial 811 in most provinces to reach a nurse"
+  },
+  "consumer_protection": {
+    "name": "Competition Bureau Canada",
+    "phone": "1-800-348-5358",
+    "url": "https://www.competitionbureau.gc.ca"
+  },
+  "anti_fraud": {
+    "name": "Canadian Anti-Fraud Centre",
+    "phone": "1-888-495-8501",
+    "url": "https://www.antifraudcentre-centreantifraude.ca"
+  },
+  "library_tech_help": {
+    "name": "Find your local library",
+    "url": "https://www.publiclibraries.ca"
+  },
+  "scam_alerts": {
+    "name": "Get Cyber Safe — Government of Canada",
+    "url": "https://www.getcybersafe.gc.ca"
+  },
+  "211": {
+    "name": "211 Canada",
+    "phone": "211",
+    "url": "https://211.ca"
+  }
+}

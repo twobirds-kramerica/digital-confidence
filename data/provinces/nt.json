@@ -1,0 +1,36 @@
+{
+  "province": "Northwest Territories",
+  "code": "NT",
+  "telehealth": {
+    "name": "NWT Virtual Care",
+    "phone": "811",
+    "url": "https://www.nthssa.ca",
+    "note": "Virtual care available for all NWT residents"
+  },
+  "consumer_protection": {
+    "name": "Consumer Affairs — Municipal and Community Affairs",
+    "phone": "867-767-9161",
+    "url": "https://www.maca.gov.nt.ca",
+    "note": "Ext 21022 for consumer affairs"
+  },
+  "anti_fraud": {
+    "name": "Canadian Anti-Fraud Centre",
+    "phone": "1-888-495-8501",
+    "url": "https://www.antifraudcentre-centreantifraude.ca",
+    "note": "National — same for all provinces"
+  },
+  "library_tech_help": {
+    "name": "Find your local library",
+    "url": "https://www.publiclibraries.ca",
+    "note": "Search for your local branch for free tech help"
+  },
+  "scam_alerts": {
+    "name": "Get Cyber Safe — Government of Canada",
+    "url": "https://www.getcybersafe.gc.ca"
+  },
+  "211": {
+    "name": "211 Northwest Territories",
+    "phone": "211",
+    "url": "https://211.ca"
+  }
+}

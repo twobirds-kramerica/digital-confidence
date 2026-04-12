@@ -1,0 +1,34 @@
+{
+  "province": "New Brunswick",
+  "code": "NB",
+  "telehealth": {
+    "name": "Tele-Care New Brunswick",
+    "phone": "811",
+    "url": "https://www2.gnb.ca/content/gnb/en/departments/health.html"
+  },
+  "consumer_protection": {
+    "name": "Financial and Consumer Services Commission",
+    "phone": "1-866-933-2222",
+    "url": "https://www.fcnb.ca"
+  },
+  "anti_fraud": {
+    "name": "Canadian Anti-Fraud Centre",
+    "phone": "1-888-495-8501",
+    "url": "https://www.antifraudcentre-centreantifraude.ca",
+    "note": "National — same for all provinces"
+  },
+  "library_tech_help": {
+    "name": "Find your local library",
+    "url": "https://www.publiclibraries.ca",
+    "note": "Search for your local branch for free tech help"
+  },
+  "scam_alerts": {
+    "name": "Get Cyber Safe — Government of Canada",
+    "url": "https://www.getcybersafe.gc.ca"
+  },
+  "211": {
+    "name": "211 New Brunswick",
+    "phone": "211",
+    "url": "https://nb.211.ca"
+  }
+}
