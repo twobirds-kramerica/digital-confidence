@@ -498,11 +498,13 @@
       }
     });
 
-    buildMobileSearch();
+    /* FIX 1: Mobile top-bar search removed. Search lives in sidebar only. */
   }
 
-  // ── Mobile top-bar search ─────────────────────────────────────────────────
+  // ── Mobile top-bar search — DISABLED (FIX 1: search icon removed from header) ──
   function buildMobileSearch() {
+    return; /* Search is accessible via sidebar. Header is hamburger + title + lang only. */
+
     var topBar = document.querySelector('.top-bar');
     if (!topBar || document.getElementById('dc-topbar-search-btn')) return;
 

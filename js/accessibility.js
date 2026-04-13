@@ -187,8 +187,9 @@ function initScrollProgress() {
   }, { passive: true });
 }
 
-/* ---- Home Button in Top Bar ---- */
+/* ---- Home Button in Top Bar — DISABLED (FIX 1: header is hamburger + title + lang only) ---- */
 function initTopBarHome() {
+  return; /* Home link removed from header. Available via sidebar nav and B3 back link. */
   var topBar = document.querySelector('.top-bar');
   if (!topBar) return;
   if (document.getElementById('dc-home-btn')) return; // already injected
