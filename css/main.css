@@ -58,8 +58,8 @@
   --bg-warning: #2E2A1A;
   --bg-danger: #2E1A1A;
   --text-primary: #E0E0E0;
-  --text-secondary: #B0B0B0;
-  --text-muted: #9E9E9E;
+  --text-secondary: #D0D0D0;
+  --text-muted: #BDBDBD;
   --accent-primary: #5DADE2;
   --accent-hover: #85C1E9;
   --accent-success: #58D68D;
@@ -121,6 +121,31 @@
 
 [data-theme="dark"] .tip-block .tip-label {
   color: #F7DC6F;
+}
+
+/* ── A4: Dark mode contrast fixes — all callouts, badges, progress ── */
+[data-theme="dark"] .callout,
+[data-theme="dark"] .info-block,
+[data-theme="dark"] .did-you-know,
+[data-theme="dark"] .fact-box,
+[data-theme="dark"] .module-badge,
+[data-theme="dark"] .mg-badge,
+[data-theme="dark"] .mg-time,
+[data-theme="dark"] .mg-card-status,
+[data-theme="dark"] .progress-label {
+  color: #F7FAFC;
+}
+
+[data-theme="dark"] .mg-card {
+  background: var(--bg-card);
+  color: #F7FAFC;
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .mg-card h3,
+[data-theme="dark"] .mg-card p,
+[data-theme="dark"] .mg-card span {
+  color: #F7FAFC;
 }
 
 [data-theme="dark"] .warning-block {

@@ -269,19 +269,74 @@ document.addEventListener('DOMContentLoaded', function() {
   if (DC_VALID_SPEEDS.indexOf(savedSpeed) === -1) { savedSpeed = 1.0; }
   VOICE_CONFIG.defaultRate = savedSpeed;
 
-  /* Story blocks: ONE Listen button (with inline speed) for the whole block */
-  document.querySelectorAll('.story-block').forEach(function(block) {
-    block.querySelectorAll('.read-aloud-controls').forEach(function(c) { c.remove(); });
-    dcAddReadAloudButton(block);
+  /* D1: ONE "Read this page aloud" button per page, not per section.
+     Reads the entire main content area. */
+  var mainContent = document.querySelector('main, .module-content, article, .main-content');
+  if (!mainContent) mainContent = document.body;
+
+  /* Build the page-level read button */
+  var isFr = (localStorage.getItem('dc-lang') || 'en').startsWith('fr');
+  var pageBtn = document.createElement('div');
+  pageBtn.className = 'read-page-controls';
+  pageBtn.style.cssText = 'display:flex;align-items:center;gap:8px;flex-wrap:nowrap;padding:8px 0;margin-bottom:12px;';
+  pageBtn.innerHTML =
+    '<button class="read-aloud-btn read-page-btn" aria-label="' + (isFr ? 'Lire cette page à voix haute' : 'Read this page aloud') + '" style="min-height:44px;">' +
+      '<span class="read-aloud-icon">\u25B6\uFE0F</span>' +
+      '<span class="read-aloud-label">' + (isFr ? 'Lire cette page' : 'Read this page aloud') + '</span>' +
+    '</button>' +
+    '<div class="speed-controls-inline" style="flex-wrap:nowrap;overflow-x:auto;">' +
+      '<span class="speed-label" style="font-size:12px;">Speed:</span>' +
+      dcBuildSpeedButtons(savedSpeed) +
+    '</div>';
+
+  /* Insert after first heading or at top of main content */
+  var firstH = mainContent.querySelector('h1, h2');
+  if (firstH && firstH.nextSibling) {
+    firstH.parentNode.insertBefore(pageBtn, firstH.nextSibling);
+  } else {
+    mainContent.insertBefore(pageBtn, mainContent.firstChild);
+  }
+
+  var currentSpeed = savedSpeed;
+  var readBtn = pageBtn.querySelector('.read-page-btn');
+
+  readBtn.addEventListener('click', function() {
+    dcToggleReadAloud(mainContent, readBtn, currentSpeed);
   });
 
-  /* Long paragraphs and tip blocks outside of excluded containers */
-  document.querySelectorAll('p, .tip-block, .tip-box, .warning-box').forEach(function(el) {
-    if (el.closest('.story-block, .confidence-check, .confidence-check-box, .quiz-container, .quiz-question, .read-aloud-controls, .visual-example-card, .video-section')) return;
-    /* Skip p elements inside tip/warning containers — the container gets the button */
-    if (el.matches('p') && el.closest('.tip-block, .tip-box, .warning-box')) return;
-    if (dcShouldAddButton(el)) {
-      dcAddReadAloudButton(el);
-    }
+  pageBtn.querySelectorAll('.speed-btn-inline').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      pageBtn.querySelectorAll('.speed-btn-inline').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentSpeed = parseFloat(btn.getAttribute('data-speed'));
+      VOICE_CONFIG.defaultRate = currentSpeed;
+      localStorage.setItem('dc-speech-speed', currentSpeed);
+      if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+        setTimeout(function() { dcReadAloud(mainContent, readBtn, currentSpeed); }, 150);
+      }
+    });
   });
+
+  /* Global stop button */
+  var stopBtn = document.createElement('button');
+  stopBtn.id = 'stop-reading-btn';
+  stopBtn.textContent = isFr ? '\u23F9 Arrêter la lecture' : '\u23F9 Stop reading';
+  stopBtn.style.cssText = 'display:none;position:fixed;bottom:80px;right:16px;z-index:9998;background:#E74C3C;color:#fff;border:none;border-radius:24px;padding:10px 18px;font-size:14px;cursor:pointer;min-height:44px;box-shadow:0 2px 8px rgba(0,0,0,0.3);';
+  document.body.appendChild(stopBtn);
+  stopBtn.addEventListener('click', function() {
+    window.speechSynthesis.cancel();
+    stopBtn.style.display = 'none';
+  });
+
+  /* Show stop button when speech starts, hide when it ends */
+  var origSpeak = window.speechSynthesis.speak.bind(window.speechSynthesis);
+  window.speechSynthesis.speak = function(u) {
+    stopBtn.style.display = 'flex';
+    var origEnd = u.onend;
+    u.onend = function() { stopBtn.style.display = 'none'; if (origEnd) origEnd(); };
+    var origErr = u.onerror;
+    u.onerror = function() { stopBtn.style.display = 'none'; if (origErr) origErr(); };
+    origSpeak(u);
+  };
 });

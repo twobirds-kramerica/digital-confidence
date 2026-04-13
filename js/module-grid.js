@@ -138,6 +138,7 @@
 
   /* ── Build sort toggle ── */
   function buildSortToggle(grid, lang) {
+    return; /* E3: Sort/filter buttons removed — default order is fine for this audience */
     var wrap = document.createElement('div');
     wrap.className = 'mg-sort-wrap';
     wrap.setAttribute('role', 'group');

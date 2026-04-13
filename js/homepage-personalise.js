@@ -73,6 +73,11 @@
   }
 
   if (count === 0) {
+    /* F1: Hide progress section entirely on first visit. Only show after at least 1 module started. */
+    if (!userName && !localStorage.getItem('dc-setup-complete')) {
+      panel.style.display = 'none';
+      return;
+    }
     content = buildBanner(
       '🌱',
       isFr ? 'Commençons ensemble' : "Let's get started",
