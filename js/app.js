@@ -281,3 +281,85 @@ document.addEventListener('click', function (e) {
     });
   }
 })();
+
+/* ============================================
+   B3: Back button — keep user in DCC site
+   ============================================ */
+(function() {
+  history.pushState({page: 'dcc'}, '', window.location.href);
+  window.addEventListener('popstate', function() {
+    var ref = document.referrer || '';
+    if (!ref || !ref.includes('twobirds-kramerica')) {
+      window.location.href = '/digital-confidence/index.html';
+    }
+  });
+
+  /* Add visible "Home" link on module pages (not homepage) */
+  document.addEventListener('DOMContentLoaded', function() {
+    var isHome = window.location.pathname.endsWith('/index.html') ||
+                 window.location.pathname.endsWith('/digital-confidence/') ||
+                 window.location.pathname === '/';
+    if (isHome) return;
+
+    var backLink = document.createElement('a');
+    backLink.href = '/digital-confidence/index.html';
+    backLink.className = 'dcc-back-home';
+    backLink.style.cssText = 'display:inline-block;padding:8px 12px;margin:8px 0 0 12px;font-size:14px;color:#2EC4B6;text-decoration:none;min-height:44px;line-height:28px;';
+    var isFr = (localStorage.getItem('dc-lang') || 'en').startsWith('fr');
+    backLink.textContent = isFr ? '\u2190 Accueil' : '\u2190 Home';
+
+    var main = document.querySelector('.page-wrapper, main, .module-content');
+    if (main) main.insertBefore(backLink, main.firstChild);
+  });
+})();
+
+/* ============================================
+   B4: Help button — bottom-right circle
+   ============================================ */
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    var isFr = (localStorage.getItem('dc-lang') || 'en').startsWith('fr');
+
+    /* Help circle button */
+    var helpBtn = document.createElement('button');
+    helpBtn.id = 'dcc-help-btn';
+    helpBtn.setAttribute('aria-label', isFr ? 'Aide' : 'Help');
+    helpBtn.textContent = '?';
+    helpBtn.style.cssText = 'position:fixed;bottom:24px;right:20px;width:52px;height:52px;border-radius:50%;background:#2EC4B6;color:#fff;border:none;font-size:24px;font-weight:700;cursor:pointer;z-index:9990;box-shadow:0 2px 8px rgba(0,0,0,0.2);display:flex;align-items:center;justify-content:center;';
+
+    /* Help sheet */
+    var helpSheet = document.createElement('div');
+    helpSheet.id = 'dcc-help-sheet';
+    helpSheet.setAttribute('role', 'dialog');
+    helpSheet.setAttribute('aria-label', isFr ? 'Aide' : 'Help');
+    helpSheet.style.cssText = 'display:none;position:fixed;bottom:84px;right:20px;background:#fff;border-radius:12px;padding:20px;max-width:280px;box-shadow:0 4px 20px rgba(0,0,0,0.2);z-index:9991;';
+    helpSheet.innerHTML =
+      '<p style="font-weight:600;margin-bottom:8px;color:#1B3A4B;" data-en="Need help?" data-fr="Besoin d\'aide ?">' + (isFr ? "Besoin d'aide ?" : 'Need help?') + '</p>' +
+      '<p style="font-size:14px;color:#4A5568;margin-bottom:12px;" data-en="Try refreshing the page, or tap Home to start over." data-fr="Essayez de rafra\u00eechir la page, ou tapez Accueil pour recommencer.">' +
+        (isFr ? "Essayez de rafra\u00eechir la page, ou tapez " : 'Try refreshing the page, or tap ') +
+        '<a href="/digital-confidence/index.html" style="color:#2EC4B6;font-weight:600;">' + (isFr ? 'Accueil' : 'Home') + '</a>' +
+        (isFr ? ' pour recommencer.' : ' to start over.') +
+      '</p>' +
+      '<button style="background:#f0f0f0;border:none;border-radius:6px;padding:8px 16px;cursor:pointer;font-size:14px;min-height:44px;width:100%;" data-en="Close" data-fr="Fermer">' + (isFr ? 'Fermer' : 'Close') + '</button>';
+
+    document.body.appendChild(helpBtn);
+    document.body.appendChild(helpSheet);
+
+    helpBtn.addEventListener('click', function() {
+      helpSheet.style.display = helpSheet.style.display === 'none' ? 'block' : 'none';
+    });
+    helpSheet.querySelector('button').addEventListener('click', function() {
+      helpSheet.style.display = 'none';
+    });
+    document.addEventListener('click', function(e) {
+      if (!helpSheet.contains(e.target) && e.target !== helpBtn) {
+        helpSheet.style.display = 'none';
+      }
+    });
+
+    /* Dark mode styles */
+    var style = document.createElement('style');
+    style.textContent = '[data-theme="dark"] #dcc-help-sheet { background: #333; } [data-theme="dark"] #dcc-help-sheet p { color: #E8E8E8; } [data-theme="dark"] #dcc-help-sheet button { background: #444; color: #E8E8E8; }';
+    document.head.appendChild(style);
+  });
+})();

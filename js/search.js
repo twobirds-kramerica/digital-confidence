@@ -364,10 +364,8 @@
       '<input type="search" class="dc-search-input" id="dcSearchInput" placeholder="' +
         t('Search modules, FAQs, glossary…', 'Modules, FAQ, glossaire…') +
         '" autocomplete="off" aria-label="' + t('Search this site', 'Rechercher') + '" aria-owns="dcSearchDropdown" aria-haspopup="listbox" aria-autocomplete="list">' +
-      (hasSpeech
-        ? '<button class="dc-voice-btn" id="dcVoiceBtn" type="button" aria-label="' + t('Voice search', 'Recherche vocale') + '" title="' + t('Voice search', 'Recherche vocale') + '">🎙️</button>'
-        : '') +
-      '<i class="dc-search-icon" aria-hidden="true">🔍</i>' +
+      /* C1: Microphone removed from mobile search. Magnifying glass triggers search. */
+      '<button class="dc-search-submit" type="button" aria-label="' + t('Search', 'Rechercher') + '" style="background:none;border:none;font-size:1.2rem;cursor:pointer;min-width:44px;min-height:44px;padding:0;">🔍</button>' +
       '<div class="dc-search-dropdown" id="dcSearchDropdown" role="listbox" aria-label="' + t('Search results', 'Résultats') + '"></div>';
 
     sidebar.insertBefore(wrap, label.nextSibling);
@@ -427,6 +425,20 @@
         if (first) { e.preventDefault(); first.focus(); }
       }
     });
+
+    /* ── Search submit button (magnifying glass) ── */
+    var submitBtn = wrap.querySelector('.dc-search-submit');
+    if (submitBtn) {
+      submitBtn.addEventListener('click', function() {
+        var q = input.value.trim();
+        if (q) {
+          saveRecent(q);
+          renderDropdown(dropdown, search(q, activeTab), q, input);
+        } else {
+          input.focus();
+        }
+      });
+    }
 
     /* ── Voice search ── */
     var voiceBtn = wrap.querySelector('#dcVoiceBtn');

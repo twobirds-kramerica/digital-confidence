@@ -390,31 +390,37 @@ strong {
   flex: 1;
 }
 
+/* B2: Sidebar close — always visible when sidebar open, clear contrast */
 .sidebar-close {
-  display: none;
   position: absolute;
-  top: var(--spacing-sm);
-  right: var(--spacing-sm);
-  background: none;
-  border: none;
-  font-size: 1.5rem;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
   color: var(--text-primary);
   cursor: pointer;
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-sm);
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 14px;
+  display: flex;
   align-items: center;
   justify-content: center;
   transition: background 0.15s;
+  z-index: 10;
 }
 .sidebar-close:hover {
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.12);
 }
 [data-theme="dark"] .sidebar-close {
-  color: #e0e0e0;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #555;
 }
 [data-theme="dark"] .sidebar-close:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* Top Bar */
@@ -433,29 +439,48 @@ strong {
   justify-content: space-between;
 }
 
+/* B1: Hamburger — no border, no background, no box-shadow in any mode */
 .top-bar .menu-btn {
   background: none;
-  border: 2px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  padding: var(--spacing-xs) var(--spacing-sm);
-  font-size: 1.2rem;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  padding: 0;
+  font-size: 1.4rem;
   color: var(--text-primary);
   cursor: pointer;
-  min-width: var(--tap-target);
-  min-height: var(--tap-target);
+  min-width: 44px;
+  min-height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.top-bar .menu-btn:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+[data-theme="dark"] .top-bar .menu-btn {
+  color: #FFFFFF;
+}
 
+/* B1: Site title — 16px, 500 weight, never truncated to partial word */
 .top-bar .site-title {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
   color: var(--text-primary);
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
   min-width: 0;
+  text-decoration: none;
+}
+/* At very narrow widths, abbreviate to DCC instead of truncating */
+@media (max-width: 360px) {
+  .top-bar .site-title .site-title-full { display: none; }
+  .top-bar .site-title .site-title-short { display: inline; }
+}
+@media (min-width: 361px) {
+  .top-bar .site-title .site-title-short { display: none; }
 }
 
 /* Accessibility Controls — hidden at top-right; controls live in sidebar instead */
