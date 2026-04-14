@@ -6413,6 +6413,90 @@ main, .module-content, article, .content-body, .main-content {
   border-bottom-color: #2EC4B6;
 }
 
+/* ============================================
+   MOBILE LAYOUT FIX — S24 left-skew prevention
+   Covers 360-430px portrait (S24, Pixel, most Android)
+   ============================================ */
+
+/* Force all containers to respect viewport width */
+@media (max-width: 430px) {
+  html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .page-wrapper {
+    width: 100%;
+    max-width: 100vw;
+    flex-direction: column;
+  }
+
+  .main-content {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+  }
+
+  /* Sidebar: hidden by default on mobile, shown only when .open */
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  /* Top bar: full width, no overflow */
+  .top-bar {
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* Location bar: full width, prevent overflow */
+  #dcc-location-bar {
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* All flex containers: allow wrapping */
+  .story-block,
+  .tip-block,
+  .walkthrough-step,
+  .module-card,
+  .mg-card {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Tables: horizontal scroll instead of viewport break */
+  table {
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  /* Images: never wider than viewport */
+  img, video, iframe, svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Pre/code blocks: wrap or scroll */
+  pre, code {
+    max-width: 100%;
+    overflow-x: auto;
+    word-wrap: break-word;
+  }
+}
+
 /* Reduced motion — respect system accessibility preference */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
