@@ -4,20 +4,26 @@
    ============================================ */
 /* Cloudflare CDN ready — see /_docs/cloudflare-readiness.md */
 
-/* CSS Custom Properties */
+/* Inter font — DCC Brand Guidelines v1.1 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* CSS Custom Properties — aligned to DCC Brand Guidelines v1.1 */
 :root {
   /* Light Mode (Default) */
-  --bg-primary: #FAFAF8;
+  --bg-primary: #F5F5F5;       /* Gentle Grey — brand spec */
   --bg-secondary: #F8F9FA;
   --bg-card: #FFFFFF;
+  --bg-warm: #FFF8E1;          /* Warm Sand — brand spec: content cards, gentle warmth */
   --bg-highlight: #EBF5FB;
   --bg-success: #E8F8F5;
   --bg-warning: #FEF9E7;
   --bg-danger: #FDEDEC;
-  --text-primary: #2C3E50;
+  --text-primary: #333333;     /* Text Dark — brand spec (was #2C3E50) */
   --text-secondary: #5D6D7E;
   --text-muted: #5A6B78;       /* darkened: 5.3:1 on white, was 3.0:1 */
-  --accent-primary: #1565C0;   /* darkened: 5.6:1 on light bg, was 3.0:1 */
+  --brand-teal: #00897B;       /* DCC Teal — primary brand colour */
+  --brand-teal-hover: #00796B; /* DCC Teal darkened for hover */
+  --accent-primary: #1565C0;   /* DCC Blue — links, interactive elements */
   --accent-hover: #0D47A1;     /* darkened: 7.8:1 on light bg */
   --accent-success: #27AE60;
   --accent-warning: #F39C12;
@@ -201,7 +207,7 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Arial, sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: var(--line-height);
@@ -333,7 +339,7 @@ strong {
 
 .sidebar-header {
   padding: var(--spacing-md);
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 2px solid var(--brand-teal);
   margin-bottom: var(--spacing-sm);
 }
 
@@ -342,7 +348,7 @@ strong {
   margin: 0;
   padding: 0;
   border: none;
-  color: var(--accent-primary);
+  color: var(--brand-teal);
 }
 
 .sidebar-header p {
@@ -1404,7 +1410,7 @@ strong {
 }
 
 .scam-example .example-label {
-  font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Arial, sans-serif;
   font-weight: 600;
   color: var(--accent-danger);
   display: block;
@@ -1471,7 +1477,7 @@ strong {
 .site-footer {
   text-align: center;
   padding: var(--spacing-lg) var(--spacing-md);
-  border-top: 1px solid var(--border-light);
+  border-top: 3px solid var(--brand-teal);
   color: var(--text-muted);
   font-size: 0.9rem;
   margin-top: var(--spacing-xl);
@@ -2153,14 +2159,14 @@ strong {
 
 .splash-inner h1 {
   font-size: clamp(1.4rem, 4vw, 2.2rem);
-  color: #2C3E50;
+  color: var(--text-primary);
   margin-bottom: clamp(8px, 1.5vh, 16px);
   line-height: 1.2;
 }
 
 .splash-inner .splash-sub {
   font-size: clamp(1rem, 2.5vw, 1.15rem);
-  color: #5D6D7E;
+  color: var(--text-secondary);
   margin-bottom: clamp(8px, 2vh, 20px);
   font-style: italic;
   max-width: 480px;
@@ -2183,7 +2189,7 @@ strong {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #3498DB;
+  background: var(--brand-teal);
   color: #FFFFFF;
   border: none;
   border-radius: var(--radius-sm);
@@ -2197,11 +2203,11 @@ strong {
   max-width: 380px;
   transition: background 0.2s ease;
   margin-bottom: var(--spacing-md);
-  box-shadow: 0 4px 12px rgba(52,152,219,0.3);
+  box-shadow: 0 4px 12px rgba(0,137,123,0.3);
 }
 
 .splash-btn-start:hover {
-  background: #2980B9;
+  background: var(--brand-teal-hover);
 }
 
 .splash-skip {
