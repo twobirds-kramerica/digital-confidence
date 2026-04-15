@@ -26,8 +26,8 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/accessibility.css">
   <link rel="stylesheet" href="css/mobile.css">
-  <!-- Google Search Console — replace REPLACE_WITH_REAL_CODE with real verification code -->
-  <meta name="google-site-verification" content="REPLACE_WITH_REAL_CODE" />
+  <!-- Google Search Console — Aaron: replace with real verification code from GSC dashboard -->
+  <!-- <meta name="google-site-verification" content="REPLACE_WITH_REAL_CODE" /> -->
   <!-- SEO: Author, Robots, Open Graph, Twitter Card -->
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
@@ -965,7 +965,8 @@
           <p class="email-invite-headline">📬 Stay in the Loop</p>
           <p class="email-invite-body">Would you like us to let you know when new lessons are added? We will never share your email, never send spam, and you can unsubscribe anytime with one click.</p>
           <div class="email-invite-form">
-            <input type="email" id="emailCaptureInput" placeholder="Your email address (optional)" aria-label="Your email address" />
+            <label for="emailCaptureInput" class="sr-only">Your email address</label>
+            <input type="email" id="emailCaptureInput" placeholder="Your email address (optional)" />
             <button onclick="submitEmailCapture()" class="email-invite-btn">Yes, keep me posted</button>
           </div>
           <button onclick="dismissEmailCapture()" class="email-invite-dismiss">No thank you</button>
