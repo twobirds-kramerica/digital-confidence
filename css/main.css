@@ -2608,7 +2608,7 @@ strong {
 }
 [data-theme="dark"] .image-placeholder {
   background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
-  border-color: #546E7A;
+  border-color: var(--text-secondary);
 }
 
 /* ── Video Search Cards ───────────────────────────────────── */
@@ -2688,7 +2688,7 @@ strong {
   font-weight: 600;
 }
 .video-card p {
-  color: #546E7A;
+  color: var(--text-secondary);
   margin: 0 0 20px 0;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -3123,7 +3123,7 @@ strong {
 .quiz-unlock-content { text-align: center; }
 .quiz-unlock-icon { font-size: 48px; margin-bottom: 12px; }
 .quiz-unlock-content h3 { margin: 0 0 8px 0; color: #2E7D32; font-size: 20px; }
-.quiz-unlock-content p { color: #546E7A; font-size: 15px; margin: 0 0 16px 0; }
+.quiz-unlock-content p { color: var(--text-secondary); font-size: 15px; margin: 0 0 16px 0; }
 .quiz-unlock-close {
   position: absolute; top: 12px; right: 12px;
   background: none; border: none; font-size: 20px;
@@ -3457,7 +3457,7 @@ strong {
   text-align: right !important;
 }
 [data-theme="dark"] .read-aloud-controls {
-  border-top-color: #546E7A !important;
+  border-top-color: var(--text-secondary) !important;
 }
 
 /* ── Word highlight pulse animation ─────────────────────────── */
@@ -3838,7 +3838,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 #dyslexic-font-toggle:checked + .toggle-switch::after { transform: translateX(28px); }
 .toggle-text { display: flex; flex-direction: column; gap: 4px; }
 .toggle-text strong { color: #2C3E50; font-size: 16px; }
-.toggle-text small { color: #546E7A; font-size: 13px; }
+.toggle-text small { color: var(--text-secondary); font-size: 13px; }
 [data-theme="dark"] .font-option { background: #1E3A5F; border-color: #5DADE2; }
 [data-theme="dark"] .toggle-switch { background: #455A64; }
 [data-theme="dark"] .toggle-text strong { color: #E8E8E8; }
@@ -3897,7 +3897,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 
 /* Warm welcome hero on index */
 [data-theme="light"] .welcome-hero {
-  background: linear-gradient(135deg, #E3F2FD 0%, #FFF8E1 100%);
+  background: linear-gradient(135deg, var(--bg-highlight) 0%, var(--bg-warm) 100%);
 }
 
 /* Dark mode: warmth disabled — keep cool tones */
@@ -4069,7 +4069,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 .speed-label {
   font-size: 11px;
   font-weight: 600;
-  color: #546E7A;
+  color: var(--text-secondary);
   margin-right: 2px;
   white-space: nowrap;
 }
@@ -4080,7 +4080,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   padding: 3px 8px;
   font-size: 11px;
   font-weight: 600;
-  color: #546E7A;
+  color: var(--text-secondary);
   cursor: pointer;
   border-radius: 12px;
   transition: all 0.15s;
@@ -4178,7 +4178,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 
 .podcast-platform-note {
   margin: 4px 0 10px;
-  color: #546E7A;
+  color: var(--text-secondary);
   font-size: 13px;
   line-height: 1.4;
 }
@@ -4416,7 +4416,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 }
 
 .dc-modal-subtitle {
-  color: #546E7A;
+  color: var(--text-secondary);
   font-size: 14px;
   margin: 0 0 18px;
 }
@@ -4500,7 +4500,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 .dc-btn-submit:disabled { background: #90A4AE; cursor: not-allowed; }
 .dc-btn-cancel {
   background: transparent;
-  color: #546E7A;
+  color: var(--text-secondary);
   border: 2px solid #CFD8DC;
   border-radius: 8px;
   padding: 12px 24px;
@@ -4520,7 +4520,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 .dc-success-icon, .dc-error-icon { font-size: 52px; margin-bottom: 16px; }
 .dc-feedback-success h3 { color: #2E7D32; font-size: 24px; margin-bottom: 10px; }
 .dc-feedback-error h3 { color: #E67E22; font-size: 22px; margin-bottom: 10px; }
-.dc-reference-num { color: #546E7A; font-size: 14px; margin: 8px 0 20px; }
+.dc-reference-num { color: var(--text-secondary); font-size: 14px; margin: 8px 0 20px; }
 
 /* Dark mode — feedback */
 [data-theme="dark"] .dc-modal-content {
