@@ -28,6 +28,8 @@
   --accent-success: #27AE60;
   --accent-warning: #F39C12;
   --accent-danger: #E74C3C;
+  --accent-warm: #E8B84B;     /* Warm amber — module card accents */
+  --bg-cool: #EAF4FF;         /* Cool blue — splash/hero gradient end */
   --border-color: #D5DBDB;
   --border-light: #EAEDED;
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
@@ -263,6 +265,10 @@ h1 {
 h2 {
   font-size: 1.6rem;
   font-weight: 600;
+}
+
+/* Section divider only on h2s inside main content area */
+.main-content h2 {
   padding-top: var(--spacing-md);
   border-top: 2px solid var(--border-light);
   margin-top: var(--spacing-xl);
@@ -339,7 +345,7 @@ strong {
 
 .sidebar-header {
   padding: var(--spacing-md);
-  border-bottom: 2px solid var(--brand-teal);
+  border-bottom: none;
   margin-bottom: var(--spacing-sm);
 }
 
@@ -348,7 +354,7 @@ strong {
   margin: 0;
   padding: 0;
   border: none;
-  color: var(--brand-teal);
+  color: #FFFFFF;
 }
 
 .sidebar-header p {
@@ -527,6 +533,14 @@ strong {
   grid-template-columns: 1fr;
   gap: var(--spacing-md);
   margin: var(--spacing-lg) 0;
+}
+
+@media (min-width: 640px) {
+  .module-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .module-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 .module-card {
@@ -1476,8 +1490,8 @@ strong {
 /* Footer */
 .site-footer {
   text-align: center;
-  padding: var(--spacing-lg) var(--spacing-md);
-  border-top: 3px solid var(--brand-teal);
+  padding: var(--spacing-xl) var(--spacing-md);
+  border-top: 2px solid var(--brand-teal);
   color: var(--text-muted);
   font-size: 0.9rem;
   margin-top: var(--spacing-xl);
@@ -2083,22 +2097,22 @@ strong {
 
 /* Module cards: warm amber left accent on hover */
 .module-card:hover {
-  border-left: 4px solid #E8B84B;
+  border-left: 4px solid var(--accent-warm);
 }
 
 /* Story blocks: warm cream tone */
 .story-block {
-  background: #FFF8EC;
+  background: var(--bg-warm);
 }
 
 /* Confidence checks: warm cream-green tone */
 .confidence-check {
-  background: #F0FAF4;
+  background: var(--bg-success);
 }
 
-/* Sidebar header: warm blue-to-indigo gradient */
+/* Sidebar header: brand teal gradient */
 .sidebar-header {
-  background: linear-gradient(135deg, #3A8FC7 0%, #4A5BAD 100%);
+  background: linear-gradient(135deg, var(--brand-teal) 0%, var(--accent-primary) 100%);
   border-radius: var(--radius-sm) var(--radius-sm) 0 0;
   padding: var(--spacing-md);
   border-bottom: 1px solid rgba(255,255,255,0.15);
@@ -2115,7 +2129,7 @@ strong {
 
 /* Welcome hero: soft warm gradient */
 .welcome-hero {
-  background: linear-gradient(135deg, #FFF8EC 0%, #EBF5FB 60%, #EAF4FF 100%);
+  background: linear-gradient(135deg, var(--bg-warm) 0%, var(--bg-highlight) 60%, var(--bg-cool) 100%);
 }
 
 /* Desktop: accessibility bar removed; no extra top padding needed */
@@ -2129,7 +2143,7 @@ strong {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(160deg, #FFF8EC 0%, #EBF5FB 50%, #EAF4FF 100%);
+  background: linear-gradient(160deg, var(--bg-warm) 0%, var(--bg-highlight) 50%, var(--bg-cool) 100%);
   z-index: 99999;
   display: flex;
   align-items: center;
@@ -2174,7 +2188,7 @@ strong {
 
 .splash-desc {
   font-size: clamp(0.875rem, 2vw, 1rem);
-  color: #666;
+  color: var(--text-muted);
   line-height: 1.6;
   max-width: 460px;
   margin-bottom: clamp(16px, 3vh, 32px);
@@ -2213,7 +2227,7 @@ strong {
 .splash-skip {
   display: block;
   font-size: 0.95rem;
-  color: #85929E;
+  color: var(--text-muted);
   cursor: pointer;
   background: none;
   border: none;
@@ -2224,7 +2238,7 @@ strong {
 }
 
 .splash-skip:hover {
-  color: #5D6D7E;
+  color: var(--text-secondary);
 }
 
 @media (max-width: 480px) {
@@ -2681,18 +2695,18 @@ strong {
 }
 .video-card-btn {
   display: inline-block;
-  background: #2196F3;
+  background: var(--accent-primary);
   color: #FFFFFF;
   padding: 12px 24px;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: all 0.2s;
-  box-shadow: 0 2px 8px rgba(33,150,243,0.3);
+  transition: background var(--duration-fast, 150ms) ease;
+  box-shadow: 0 2px 8px rgba(21,101,192,0.3);
 }
 .video-card-btn:hover {
-  background: #1976D2;
+  background: var(--accent-hover);
   color: #FFFFFF;
   transform: translateY(-1px);
 }
@@ -3844,7 +3858,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 /* Warm story blocks */
 [data-theme="light"] .story-block {
   background: #FFFEF7;
-  border-left-color: #E8B84B;
+  border-left-color: var(--accent-warm);
 }
 
 /* Warm confidence checks */
@@ -3854,12 +3868,12 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 
 [data-theme="light"] .confidence-check-box {
   background: #FFFDF0;
-  border-color: #E8B84B;
+  border-color: var(--accent-warm);
 }
 
 /* Module card warm hover accent */
 .module-card:hover {
-  border-left: 4px solid #E8B84B;
+  border-left: 4px solid var(--accent-warm);
   transform: translateY(-2px);
 }
 
@@ -3868,15 +3882,12 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   border-left: 4px solid transparent;
 }
 
-/* Sidebar header warm gradient */
-[data-theme="light"] .sidebar-header {
-  background: linear-gradient(135deg, #1565C0 0%, #283593 100%);
-}
+/* Sidebar header — uses gradient from Phase 1 Polish block, no override needed */
 
 /* Warm tip block accent */
 [data-theme="light"] .tip-block {
   background: #FFFBF0;
-  border-left-color: #E8B84B;
+  border-left-color: var(--accent-warm);
 }
 
 /* Warm exercise block */
@@ -4753,7 +4764,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
    Location Prompt Banner (resources.html)
    ============================================ */
 .lp-banner {
-  background: linear-gradient(135deg, #EBF5FB 0%, #EAF4FF 100%);
+  background: linear-gradient(135deg, var(--bg-highlight) 0%, var(--bg-cool) 100%);
   border: 2px solid #3498DB;
   border-radius: var(--radius-lg);
   margin-bottom: 28px;
@@ -4981,8 +4992,8 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   margin: 0 auto;
 }
 .footer-brand {
-  font-weight: bold;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 1.1rem;
   color: var(--text-primary);
   margin-bottom: 0.25rem;
 }
@@ -5000,12 +5011,12 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   color: var(--text-muted);
   margin-top: 0.5rem;
 }
-[data-theme="dark"] .footer-brand { color: #e0e0e0; }
-[data-theme="dark"] .footer-tagline { color: #aaa; }
-[data-theme="dark"] .footer-support { color: #ccc; }
-[data-theme="dark"] .footer-copy { color: #888; }
-[data-theme="dark"] .footer-links a { color: #90CAF9; }
-[data-theme="dark"] .site-footer { border-color: #333; }
+[data-theme="dark"] .footer-brand { color: var(--text-primary); }
+[data-theme="dark"] .footer-tagline { color: var(--text-muted); }
+[data-theme="dark"] .footer-support { color: var(--text-secondary); }
+[data-theme="dark"] .footer-copy { color: var(--text-muted); }
+[data-theme="dark"] .footer-links a { color: var(--accent-primary); }
+[data-theme="dark"] .site-footer { border-color: var(--border-color); }
 
 /* ── Email Invite Dark Mode (input + button) ── */
 [data-theme="dark"] .email-invite-form input[type="email"] {
