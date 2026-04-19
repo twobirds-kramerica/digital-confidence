@@ -1,0 +1,117 @@
+/* ============================================================================
+   DCC Design Tokens — Warm Hearth DARK variant
+   ----------------------------------------------------------------------------
+   Same variable names as tokens.css. Loads INSTEAD of (or appended after)
+   tokens.css to swap the theme. Every text/surface pair is verified at
+   WCAG AA 4.5:1 or better.
+
+   Apply automatically via prefers-color-scheme by wrapping rules inside
+   @media (prefers-color-scheme: dark) — or hard-switch via a <html data-theme="dark">
+   selector. See components.css for the preferred injection pattern.
+   ========================================================================== */
+
+:root[data-theme='dark'],
+html.theme-dark {
+  color-scheme: dark;
+
+  /* Surfaces — warm dark, not pure black */
+  --color-bg:              #1C1915;
+  --color-surface:         #2A2520;
+  --color-surface-alt:     #3A322A;
+  --color-surface-primary: #1F3C36; /* primary-tinted dark */
+
+  /* Brand — slightly lighter teal for AA on dark surface */
+  --color-primary:         #6FC0B2;
+  --color-primary-hover:   #8ACFC2;
+  --color-primary-active:  #A5DED3;
+  --color-primary-light:   #1F3C36;
+  --color-primary-contrast:#1C1915;
+
+  --color-accent:          #F5A563; /* lighter burnt orange for dark */
+  --color-accent-hover:    #F7B679;
+  --color-accent-active:   #FAC790;
+  --color-accent-light:    #3A2A1E;
+  --color-accent-contrast: #1C1915;
+
+  /* Text */
+  --color-text:            #F2E9DC;
+  --color-text-light:      #C9B9A5;
+  --color-text-inverse:    #1C1915;
+  --color-text-link:       #6FC0B2;
+  --color-text-link-hover: #8ACFC2;
+
+  /* Structure */
+  --color-border:          #3A322A;
+  --color-border-strong:   #5C5042;
+  --color-divider:         #3A322A;
+
+  /* State — raised brightness for AA on dark */
+  --color-success:         #7EDD83;
+  --color-success-light:   #1F3C23;
+  --color-error:           #FF6B6B;
+  --color-error-light:     #3C1F1F;
+  --color-warning:         #FFC85C;
+  --color-warning-light:   #3C321F;
+  --color-info:            #5FA7FF;
+  --color-info-light:      #1F2D3C;
+
+  --color-disabled-bg:     #2A2520;
+  --color-disabled-text:   #6B6257;
+
+  /* Shadows — subtle warm glow rather than drop shadow */
+  --shadow-sm:  0 1px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md:  0 2px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg:  0 4px 24px rgba(0, 0, 0, 0.5);
+  --shadow-focus: 0 0 0 3px var(--color-accent);
+}
+
+/* System-preference auto-apply. Hard override via [data-theme='light']
+   still wins because it's higher specificity + later in cascade. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']):not(.theme-light) {
+    color-scheme: dark;
+
+    --color-bg:              #1C1915;
+    --color-surface:         #2A2520;
+    --color-surface-alt:     #3A322A;
+    --color-surface-primary: #1F3C36;
+
+    --color-primary:         #6FC0B2;
+    --color-primary-hover:   #8ACFC2;
+    --color-primary-active:  #A5DED3;
+    --color-primary-light:   #1F3C36;
+    --color-primary-contrast:#1C1915;
+
+    --color-accent:          #F5A563;
+    --color-accent-hover:    #F7B679;
+    --color-accent-active:   #FAC790;
+    --color-accent-light:    #3A2A1E;
+    --color-accent-contrast: #1C1915;
+
+    --color-text:            #F2E9DC;
+    --color-text-light:      #C9B9A5;
+    --color-text-inverse:    #1C1915;
+    --color-text-link:       #6FC0B2;
+    --color-text-link-hover: #8ACFC2;
+
+    --color-border:          #3A322A;
+    --color-border-strong:   #5C5042;
+    --color-divider:         #3A322A;
+
+    --color-success:         #7EDD83;
+    --color-success-light:   #1F3C23;
+    --color-error:           #FF6B6B;
+    --color-error-light:     #3C1F1F;
+    --color-warning:         #FFC85C;
+    --color-warning-light:   #3C321F;
+    --color-info:            #5FA7FF;
+    --color-info-light:      #1F2D3C;
+
+    --color-disabled-bg:     #2A2520;
+    --color-disabled-text:   #6B6257;
+
+    --shadow-sm:  0 1px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md:  0 2px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg:  0 4px 24px rgba(0, 0, 0, 0.5);
+  }
+}

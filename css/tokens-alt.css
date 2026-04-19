@@ -1,0 +1,66 @@
+/* ============================================================================
+   DCC Design Tokens — ALTERNATE theme TEMPLATE (white-label blank)
+   ----------------------------------------------------------------------------
+   Duplicate this file as `tokens-<partner>.css` and fill in partner colours.
+   All structural tokens (spacing, radius, motion, shadows) inherit from
+   tokens.css and do NOT need to be redefined here. Only override skin.
+
+   The partner CSS is expected to be loaded AFTER tokens.css:
+     <link rel="stylesheet" href="css/tokens.css">
+     <link rel="stylesheet" href="css/tokens-acme.css">
+     <link rel="stylesheet" href="css/fonts.css">
+     <link rel="stylesheet" href="css/components.css">
+
+   Leave variables you don't want to override untouched and delete their lines.
+   ========================================================================== */
+
+:root[data-theme='partner'],
+html.theme-partner {
+  /* --- Colour: surfaces ---------------------------------------------------- */
+  --color-bg:              /* partner page background */;
+  --color-surface:         /* partner card surface */;
+  --color-surface-alt:     /* partner tag/subtle fill */;
+  --color-surface-primary: /* partner tinted fill */;
+
+  /* --- Colour: brand ------------------------------------------------------- */
+  --color-primary:         /* partner primary */;
+  --color-primary-hover:   /* 10% darker */;
+  --color-primary-active:  /* pressed */;
+  --color-primary-light:   /* primary at ~10% saturation */;
+  --color-primary-contrast:/* text on primary; verify AA */;
+
+  --color-accent:          /* partner CTA accent */;
+  --color-accent-hover:    ;
+  --color-accent-active:   ;
+  --color-accent-light:    ;
+  --color-accent-contrast: /* text on accent; verify AA */;
+
+  /* --- Colour: text -------------------------------------------------------- */
+  --color-text:            /* body text on --color-bg; verify 4.5:1 */;
+  --color-text-light:      /* meta text; verify 4.5:1 */;
+  --color-text-inverse:    /* text on primary/accent */;
+  --color-text-link:       ;
+  --color-text-link-hover: ;
+
+  /* --- Colour: structure --------------------------------------------------- */
+  --color-border:          ;
+  --color-border-strong:   ;
+  --color-divider:         ;
+
+  /* --- Typography: swap family if partner has brand fonts ------------------ */
+  /* --font-body:    'PartnerBodyFont', Georgia, serif; */
+  /* --font-heading: 'PartnerHeadingFont', 'Segoe UI', sans-serif; */
+
+  /* --- Logo / favicon path (referenced by styleguide + nav) ---------------- */
+  /* Consuming HTML should point to partner favicon via <link rel="icon"> — */
+  /* no token needed, just remember to swap it when deploying. */
+}
+
+/* --- Partner theme checklist (remove after verification) -------------------
+   [ ] All colour pairs pass WCAG AA (4.5:1 text, 3:1 large text)
+   [ ] Focus ring contrasts against every background it appears on
+   [ ] Logo and favicon swapped in HTML
+   [ ] Tested in light + dark + high-contrast + reduced-motion
+   [ ] Tested at 200% browser zoom
+   [ ] French and Spanish characters render in chosen fonts
+--------------------------------------------------------------------------- */

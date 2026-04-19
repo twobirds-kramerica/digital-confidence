@@ -1,0 +1,90 @@
+/* ============================================================================
+   DCC Design Tokens — HIGH CONTRAST variant
+   ----------------------------------------------------------------------------
+   Loaded when the user opts in (data-theme='high-contrast') OR when the OS
+   reports prefers-contrast: more. Higher contrast ratios, heavier borders,
+   zero transparency.
+   ========================================================================== */
+
+:root[data-theme='high-contrast'],
+html.theme-high-contrast {
+  color-scheme: light;
+
+  --color-bg:              #FFFFFF;
+  --color-surface:         #FFFFFF;
+  --color-surface-alt:     #F2F2F2;
+  --color-surface-primary: #FFFFFF;
+
+  --color-primary:         #00453C; /* ultra-dark teal, AAA on white */
+  --color-primary-hover:   #003329;
+  --color-primary-active:  #001F18;
+  --color-primary-light:   #F2F2F2;
+  --color-primary-contrast:#FFFFFF;
+
+  --color-accent:          #8A3A00; /* ultra-dark burnt orange, AAA */
+  --color-accent-hover:    #6B2D00;
+  --color-accent-active:   #4D2000;
+  --color-accent-light:    #F2F2F2;
+  --color-accent-contrast: #FFFFFF;
+
+  --color-text:            #000000;
+  --color-text-light:      #1A1A1A;
+  --color-text-inverse:    #FFFFFF;
+  --color-text-link:       #00453C;
+  --color-text-link-hover: #003329;
+
+  --color-border:          #000000;
+  --color-border-strong:   #000000;
+  --color-divider:         #000000;
+
+  --color-success:         #006B0E;
+  --color-success-light:   #FFFFFF;
+  --color-error:           #9C0000;
+  --color-error-light:     #FFFFFF;
+  --color-warning:         #7A4F00;
+  --color-warning-light:   #FFFFFF;
+  --color-info:            #003F8A;
+  --color-info-light:      #FFFFFF;
+
+  --color-disabled-bg:     #FFFFFF;
+  --color-disabled-text:   #5C5C5C;
+
+  /* Heavier structure */
+  --shadow-sm:  none;
+  --shadow-md:  none;
+  --shadow-lg:  none;
+  --shadow-focus: 0 0 0 4px var(--color-accent);
+
+  --focus-ring-width: 4px;
+  --focus-ring: 4px solid var(--color-accent);
+}
+
+/* Auto-apply on OS signal unless user has explicitly chosen a different theme. */
+@media (prefers-contrast: more) {
+  :root:not([data-theme='dark']):not([data-theme='light']):not(.theme-dark):not(.theme-light) {
+    --color-bg:              #FFFFFF;
+    --color-surface:         #FFFFFF;
+    --color-surface-alt:     #F2F2F2;
+    --color-surface-primary: #FFFFFF;
+
+    --color-primary:         #00453C;
+    --color-primary-light:   #F2F2F2;
+    --color-primary-contrast:#FFFFFF;
+
+    --color-accent:          #8A3A00;
+    --color-accent-light:    #F2F2F2;
+
+    --color-text:            #000000;
+    --color-text-light:      #1A1A1A;
+    --color-border:          #000000;
+    --color-border-strong:   #000000;
+    --color-divider:         #000000;
+
+    --shadow-sm:  none;
+    --shadow-md:  none;
+    --shadow-lg:  none;
+
+    --focus-ring-width: 4px;
+    --focus-ring: 4px solid var(--color-accent);
+  }
+}

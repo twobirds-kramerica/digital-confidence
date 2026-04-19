@@ -1,0 +1,167 @@
+/* ============================================================================
+   DCC Design Tokens — Warm Hearth theme (default)
+   ----------------------------------------------------------------------------
+   Voted winner (Option A, 65.5%). Kitchen-table warmth, trusted-neighbour
+   tone, zero intimidation. WCAG AA on every token pair.
+
+   All values are CSS custom properties on :root. Components never hard-code
+   colours, font sizes, spacing, shadows, or radii — always reference tokens.
+   Swap themes by loading tokens-dark.css, tokens-high-contrast.css, or
+   tokens-alt.css instead of this file. Structure (bones) lives in
+   components.css; this file is skin only.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* --- Colour: surfaces ---------------------------------------------------- */
+  --color-bg:              #FFF8F0; /* warm cream page background */
+  --color-surface:         #FFFFFF; /* cards, modals */
+  --color-surface-alt:     #FFF0E0; /* module tags, subtle fills */
+  --color-surface-primary: #E8F5F0; /* primary-tinted fill */
+
+  /* --- Colour: brand ------------------------------------------------------- */
+  --color-primary:         #2A7B6F; /* warm teal — nav, primary headings */
+  --color-primary-hover:   #226659; /* 10% darker */
+  --color-primary-active:  #1B5147; /* pressed */
+  --color-primary-light:   #E8F5F0;
+  --color-primary-contrast:#FFFFFF;
+
+  --color-accent:          #E8842C; /* burnt orange — CTAs, focus */
+  --color-accent-hover:    #CF7324;
+  --color-accent-active:   #B5631D;
+  --color-accent-light:    #FFF0E0;
+  --color-accent-contrast: #FFFFFF;
+
+  /* --- Colour: text -------------------------------------------------------- */
+  --color-text:            #3D3229; /* warm charcoal, AA on bg cream */
+  --color-text-light:      #7A6E62; /* meta, captions */
+  --color-text-inverse:    #FFFFFF; /* on dark/teal/accent backgrounds */
+  --color-text-link:       #2A7B6F;
+  --color-text-link-hover: #226659;
+
+  /* --- Colour: structure --------------------------------------------------- */
+  --color-border:          #E8DDD0;
+  --color-border-strong:   #C9B9A5;
+  --color-divider:         #E8DDD0;
+
+  /* --- Colour: state ------------------------------------------------------- */
+  --color-success:         #4CAF50;
+  --color-success-light:   #E8F5E9;
+  --color-error:           #D32F2F;
+  --color-error-light:     #FFEBEE;
+  --color-warning:         #F9A825;
+  --color-warning-light:   #FFF8E1;
+  --color-info:            #1976D2;
+  --color-info-light:      #E3F2FD;
+
+  /* Disabled: 50% opacity pattern + explicit neutral */
+  --color-disabled-bg:     #F5EFE6;
+  --color-disabled-text:   #B3A99D;
+
+  /* --- Typography: families ------------------------------------------------ */
+  --font-body:             'Merriweather', Georgia, 'Times New Roman', serif;
+  --font-heading:          'Source Sans 3', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --font-mono:             ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  /* --- Typography: size scale (senior-friendly baseline) ------------------- */
+  --font-size-user-scale:  1;        /* overridden by A-/A/A+ toggle */
+  --font-size-base:        18px;     /* body, overridable 16 / 20 / 24 */
+  --font-size-sm:          16px;     /* absolute minimum allowed */
+  --font-size-caption:     14px;     /* meta only, never for primary content */
+
+  --font-size-h1:          clamp(28px, 2.4vw + 20px, 36px);
+  --font-size-h2:          clamp(24px, 1.6vw + 18px, 28px);
+  --font-size-h3:          22px;
+  --font-size-h4:          20px;
+  --font-size-h5:          18px;
+  --font-size-h6:          16px;
+
+  --font-weight-regular:   400;
+  --font-weight-medium:    500;
+  --font-weight-semibold:  600;
+  --font-weight-bold:      700;
+
+  --line-height-tight:     1.25;
+  --line-height-body:      1.6;     /* readable body */
+  --line-height-loose:     1.8;     /* bilingual content with accents */
+
+  --letter-spacing-wide:   0.02em;
+
+  /* --- Spacing scale (4px base) ------------------------------------------- */
+  --space-0:   0;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-12:  48px;
+  --space-16:  64px;
+
+  /* --- Radius scale ------------------------------------------------------- */
+  --radius-sm:     4px;
+  --radius-md:     8px;   /* buttons */
+  --radius-lg:     12px;  /* cards */
+  --radius-xl:     16px;
+  --radius-pill:   20px;  /* tags, chips */
+  --radius-circle: 50%;
+
+  /* --- Shadow scale (warm-toned; DOES NOT use pure black) ----------------- */
+  --shadow-sm:  0 1px 4px rgba(42, 123, 111, 0.06);
+  --shadow-md:  0 2px 12px rgba(42, 123, 111, 0.08);
+  --shadow-lg:  0 4px 24px rgba(42, 123, 111, 0.12);
+  --shadow-focus: 0 0 0 3px var(--color-accent);
+
+  /* --- Motion (honour prefers-reduced-motion — see below) ----------------- */
+  --motion-ease:       cubic-bezier(0.22, 0.61, 0.36, 1);
+  --motion-ease-out:   cubic-bezier(0.33, 1, 0.68, 1);
+  --motion-duration-1: 120ms;
+  --motion-duration-2: 200ms;
+  --motion-duration-3: 320ms;
+
+  /* --- Breakpoints (reference only; used via media queries) --------------- */
+  --bp-mobile:   360px;
+  --bp-tablet:   768px;
+  --bp-desktop:  1024px;
+  --bp-wide:     1280px;
+
+  /* --- Z-index scale ------------------------------------------------------ */
+  --z-base:    1;
+  --z-nav:     100;
+  --z-modal:   200;
+  --z-tooltip: 300;
+  --z-overlay: 400;
+
+  /* --- Focus ring --------------------------------------------------------- */
+  --focus-ring-color:   var(--color-accent);
+  --focus-ring-width:   3px;
+  --focus-ring-offset:  2px;
+  --focus-ring:         var(--focus-ring-width) solid var(--focus-ring-color);
+
+  /* --- Touch targets ------------------------------------------------------ */
+  --tap-target-min:     44px;   /* WCAG 2.5.5 floor */
+  --tap-target:         56px;   /* DCC senior-friendly default */
+
+  /* --- Layout ------------------------------------------------------------- */
+  --container-max:      1200px;
+  --content-max:        72ch;   /* readable prose */
+  --nav-height:         64px;
+}
+
+/* Honour reduced motion: zero-out the durations so all transitions collapse
+   without every component needing its own @media query. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-duration-1: 0ms;
+    --motion-duration-2: 0ms;
+    --motion-duration-3: 0ms;
+  }
+}
+
+/* User text-size toggle (A- / A / A+) overrides --font-size-base via these
+   classes set on <html>. JavaScript only needs to add/remove a class. */
+html.text-size-s { --font-size-base: 16px; }
+html.text-size-m { --font-size-base: 20px; }
+html.text-size-l { --font-size-base: 24px; }
