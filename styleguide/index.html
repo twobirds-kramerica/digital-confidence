@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DCC — Warm Hearth Style Guide</title>
+<link rel="icon" href="../../two-birds-portfolio/assets/logos/dcc/dcc-favicon.ico">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/tokens-dark.css">
+<link rel="stylesheet" href="../css/tokens-high-contrast.css">
+<link rel="stylesheet" href="../css/fonts.css">
+<link rel="stylesheet" href="../css/components.css">
+<style>
+  /* Style-guide-only chrome, not part of the component library */
+  .sg-shell { display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
+  @media (min-width: 1024px) { .sg-shell { grid-template-columns: 240px 1fr; } }
+  .sg-toc { position: sticky; top: calc(var(--nav-height) + var(--space-4)); align-self: start; display: none; }
+  @media (min-width: 1024px) { .sg-toc { display: block; } }
+  .sg-toc ul { list-style: none; margin: 0; padding: 0; }
+  .sg-toc a { display: block; padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); color: var(--color-text); text-decoration: none; font-family: var(--font-heading); font-size: var(--font-size-sm); }
+  .sg-toc a:hover { background: var(--color-surface-alt); }
+  .sg-section { padding-block: var(--space-12); border-top: 2px solid var(--color-border); scroll-margin-top: calc(var(--nav-height) + var(--space-4)); }
+  .sg-section:first-of-type { border-top: 0; padding-top: var(--space-6); }
+  .sg-section h2 { color: var(--color-primary); font-size: var(--font-size-h1); }
+  .sg-tag { background: var(--color-surface-alt); padding: 2px var(--space-2); border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: var(--font-size-sm); }
+  .sg-swatch { display: flex; gap: var(--space-3); align-items: center; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); }
+  .sg-swatch__chip { width: 56px; height: 56px; border-radius: var(--radius-md); border: 1px solid var(--color-border); flex-shrink: 0; }
+  .sg-swatch__meta { font-size: var(--font-size-sm); color: var(--color-text-light); font-family: var(--font-mono); }
+  .sg-swatch__name { font-family: var(--font-heading); font-weight: var(--font-weight-semibold); color: var(--color-text); }
+  .sg-space { background: var(--color-primary); height: 24px; border-radius: var(--radius-sm); }
+  .sg-space-row { display: grid; grid-template-columns: 80px 1fr; gap: var(--space-3); align-items: center; }
+  .sg-controls { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-block: var(--space-4); padding: var(--space-4); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); position: sticky; top: var(--nav-height); z-index: 10; }
+  .sg-label { font-family: var(--font-heading); font-size: var(--font-size-sm); color: var(--color-text-light); margin-bottom: var(--space-2); }
+  code { background: var(--color-surface-alt); padding: 0 var(--space-2); border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.9em; }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#sg-main">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="container">
+    <a class="site-nav__brand" href="#"><span aria-hidden="true">🫶</span> DCC Style Guide</a>
+    <div class="site-nav__tools">
+      <div class="text-size-toggle" role="group" aria-label="Text size">
+        <button type="button" aria-pressed="false" aria-label="Smaller text" onclick="setSize('s', event)">A-</button>
+        <button type="button" aria-pressed="true"  aria-label="Default text size" onclick="setSize('m', event)">A</button>
+        <button type="button" aria-pressed="false" aria-label="Larger text" onclick="setSize('l', event)">A+</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="sg-controls" role="group" aria-label="Style guide controls">
+    <strong style="margin-right: var(--space-3); font-family: var(--font-heading);">Theme:</strong>
+    <button class="btn btn--secondary" onclick="setTheme('default')">Default</button>
+    <button class="btn btn--secondary" onclick="setTheme('dark')">Dark</button>
+    <button class="btn btn--secondary" onclick="setTheme('high-contrast')">High contrast</button>
+    <strong style="margin-inline: var(--space-3); font-family: var(--font-heading);">Preview language:</strong>
+    <div class="lang-toggle" role="group" aria-label="Preview language">
+      <button type="button" aria-pressed="true"  onclick="setLang('en', event)">EN</button>
+      <button type="button" aria-pressed="false" onclick="setLang('fr', event)">FR</button>
+      <button type="button" aria-pressed="false" onclick="setLang('es', event)">ES</button>
+    </div>
+  </div>
+
+  <div class="sg-shell">
+    <aside class="sg-toc" aria-label="Contents">
+      <p class="sg-label">Contents</p>
+      <ul>
+        <li><a href="#colors">1. Colour palette</a></li>
+        <li><a href="#typography">2. Typography</a></li>
+        <li><a href="#spacing">3. Spacing</a></li>
+        <li><a href="#radii">4. Radii & shadows</a></li>
+        <li><a href="#buttons">5. Buttons</a></li>
+        <li><a href="#forms">6. Forms</a></li>
+        <li><a href="#cards">7. Cards & modules</a></li>
+        <li><a href="#content">8. Content blocks</a></li>
+        <li><a href="#quiz">9. Quiz</a></li>
+        <li><a href="#progress">10. Progress</a></li>
+        <li><a href="#feedback">11. Feedback</a></li>
+        <li><a href="#footer">12. Footer</a></li>
+        <li><a href="#a11y">13. Accessibility</a></li>
+      </ul>
+    </aside>
+
+    <main id="sg-main">
+
+      <!-- ========== 1. COLOURS ========== -->
+      <section id="colors" class="sg-section">
+        <h2>1. Colour palette</h2>
+        <p>Every pair below has been checked against WCAG AA contrast (4.5:1 for body text, 3:1 for large text). Swap a token file to reskin the whole library.</p>
+
+        <div class="grid grid--3-up">
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:#FFF8F0;"></div><div><div class="sg-swatch__name">Background</div><div class="sg-swatch__meta">--color-bg &middot; #FFF8F0</div></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:#FFFFFF;"></div><div><div class="sg-swatch__name">Surface</div><div class="sg-swatch__meta">--color-surface &middot; #FFFFFF</div></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:#FFF0E0;"></div><div><div class="sg-swatch__name">Surface alt</div><div class="sg-swatch__meta">--color-surface-alt &middot; #FFF0E0</div></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:#2A7B6F;"></div><div><div class="sg-swatch__name">Primary (teal)</div><div class="sg-swatch__meta">--color-primary &middot; #2A7B6F &middot; AA on white</div></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:#E8842C;"></div><div><div class="sg-swatch__name">Accent (burnt orange)</div><div class="sg-swatch__meta">--color-accent &middot; #E8842C &middot; AA on white (large)</div></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:#3D3229;"></div><div><div class="sg-swatch__name">Text (warm charcoal)</div><div class="sg-swatch__meta">--color-text &middot; #3D3229 &middot; AA on bg</div></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:#7A6E62;"></div><div><div class="sg-swatch__name">Text light</div><div class="sg-swatch__meta">--color-text-light &middot; #7A6E62 &middot; AA on bg</div></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:#4CAF50;"></div><div><div class="sg-swatch__name">Success</div><div class="sg-swatch__meta">--color-success &middot; #4CAF50</div></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:#D32F2F;"></div><div><div class="sg-swatch__name">Error</div><div class="sg-swatch__meta">--color-error &middot; #D32F2F &middot; AA on white</div></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:#F9A825;"></div><div><div class="sg-swatch__name">Warning</div><div class="sg-swatch__meta">--color-warning &middot; #F9A825</div></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:#1976D2;"></div><div><div class="sg-swatch__name">Info</div><div class="sg-swatch__meta">--color-info &middot; #1976D2 &middot; AA on white</div></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:#E8DDD0;"></div><div><div class="sg-swatch__name">Border</div><div class="sg-swatch__meta">--color-border &middot; #E8DDD0</div></div></div>
+        </div>
+      </section>
+
+      <!-- ========== 2. TYPOGRAPHY ========== -->
+      <section id="typography" class="sg-section">
+        <h2>2. Typography</h2>
+        <p>Headings: Source Sans 3 (sans-serif). Body: Merriweather (serif). Both self-hosted under SIL OFL. Use the language toggle at the top to preview English, French, and Spanish.</p>
+
+        <h1>H1 — Heading 1, clamp(28px, 36px)</h1>
+        <h2>H2 — Heading 2, clamp(24px, 28px)</h2>
+        <h3>H3 — Heading 3, 22px</h3>
+        <h4>H4 — Heading 4, 20px</h4>
+        <p class="lang-sample" data-en="Body paragraph — Merriweather at the scaled size. Two-Birds kitchen-table tone: warm, plain, zero jargon." data-fr="Paragraphe — Merriweather à la taille actuelle. Ton « table de cuisine » : chaleureux, simple, sans jargon." data-es="Párrafo — Merriweather al tamaño actual. Tono de mesa de cocina: cálido, sencillo, sin tecnicismos.">Body paragraph — Merriweather at the scaled size. Two-Birds kitchen-table tone: warm, plain, zero jargon.</p>
+        <p><small>Caption / meta text — 14px, used for dates and supporting labels only, never primary content.</small></p>
+
+        <h3>Character sets</h3>
+        <p lang="en">English: the quick brown fox jumps over the lazy dog.</p>
+        <p lang="fr">Français : éléphant, hôpital, français, œuvre, naïve, ça marche, Noël.</p>
+        <p lang="es">Español: niño, ¿cómo estás?, ¡qué bien!, corazón, mañana, Málaga.</p>
+      </section>
+
+      <!-- ========== 3. SPACING ========== -->
+      <section id="spacing" class="sg-section">
+        <h2>3. Spacing scale</h2>
+        <p>4px base unit. Use these tokens instead of raw px values. Tokens stretch from hair-thin dividers (4px) to full-section breaks (64px).</p>
+        <div class="stack">
+          <div class="sg-space-row"><span class="sg-tag">--space-1</span><div class="sg-space" style="width: 4px;"></div></div>
+          <div class="sg-space-row"><span class="sg-tag">--space-2</span><div class="sg-space" style="width: 8px;"></div></div>
+          <div class="sg-space-row"><span class="sg-tag">--space-3</span><div class="sg-space" style="width: 12px;"></div></div>
+          <div class="sg-space-row"><span class="sg-tag">--space-4</span><div class="sg-space" style="width: 16px;"></div></div>
+          <div class="sg-space-row"><span class="sg-tag">--space-5</span><div class="sg-space" style="width: 20px;"></div></div>
+          <div class="sg-space-row"><span class="sg-tag">--space-6</span><div class="sg-space" style="width: 24px;"></div></div>
+          <div class="sg-space-row"><span class="sg-tag">--space-8</span><div class="sg-space" style="width: 32px;"></div></div>
+          <div class="sg-space-row"><span class="sg-tag">--space-12</span><div class="sg-space" style="width: 48px;"></div></div>
+          <div class="sg-space-row"><span class="sg-tag">--space-16</span><div class="sg-space" style="width: 64px;"></div></div>
+        </div>
+      </section>
+
+      <!-- ========== 4. RADII & SHADOWS ========== -->
+      <section id="radii" class="sg-section">
+        <h2>4. Radii &amp; shadows</h2>
+        <div class="grid grid--3-up">
+          <div class="card" style="border-radius: 4px; box-shadow: var(--shadow-sm);"><strong>radius-sm (4px)</strong><br>shadow-sm</div>
+          <div class="card" style="border-radius: 8px; box-shadow: var(--shadow-md);"><strong>radius-md (8px)</strong><br>shadow-md — buttons</div>
+          <div class="card" style="border-radius: 12px; box-shadow: var(--shadow-lg);"><strong>radius-lg (12px)</strong><br>shadow-lg — cards</div>
+          <div class="card" style="border-radius: 20px;"><strong>radius-pill (20px)</strong><br>for chips &amp; tags</div>
+          <div class="card" style="border-radius: 50%; width: 120px; height: 120px; display: inline-flex; align-items: center; justify-content: center;"><strong>radius-circle</strong></div>
+        </div>
+      </section>
+
+      <!-- ========== 5. BUTTONS ========== -->
+      <section id="buttons" class="sg-section">
+        <h2>5. Buttons</h2>
+        <div class="stack stack--row">
+          <button class="btn">Primary</button>
+          <button class="btn btn--secondary">Secondary</button>
+          <button class="btn btn--ghost">Ghost</button>
+          <button class="btn" disabled>Disabled</button>
+          <button class="btn btn--lg">Large CTA</button>
+        </div>
+        <p>All buttons are ≥ 56px tall (44px minimum floor) to comfortably meet senior touch target guidance.</p>
+      </section>
+
+      <!-- ========== 6. FORMS ========== -->
+      <section id="forms" class="sg-section">
+        <h2>6. Forms</h2>
+        <form onsubmit="event.preventDefault();">
+          <div class="form-field">
+            <label class="form-label" for="sg-name">Your name <span class="form-required" aria-label="required">*</span></label>
+            <input class="form-input" id="sg-name" type="text">
+            <div class="form-help">Visible labels only — never placeholder-only.</div>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="sg-email">Email (with error state)</label>
+            <input class="form-input" id="sg-email" type="email" aria-invalid="true" aria-describedby="sg-err">
+            <div class="form-error" id="sg-err" role="alert">Please enter a valid email.</div>
+          </div>
+          <fieldset class="form-field">
+            <legend class="form-label">Select your preferred contact</legend>
+            <label class="form-choice"><input type="radio" name="sg-contact" checked><span>Email</span></label>
+            <label class="form-choice"><input type="radio" name="sg-contact"><span>Phone</span></label>
+            <label class="form-choice"><input type="checkbox"><span>It's OK to include me in research</span></label>
+          </fieldset>
+          <div class="form-field">
+            <label class="sr-only" for="sg-search">Search</label>
+            <div class="search"><span aria-hidden="true">🔎</span><input id="sg-search" type="search" placeholder="Search…"></div>
+          </div>
+        </form>
+      </section>
+
+      <!-- ========== 7. CARDS ========== -->
+      <section id="cards" class="sg-section">
+        <h2>7. Cards &amp; modules</h2>
+        <ul class="module-list" aria-label="Module list, 3 items">
+          <li class="card module-card">
+            <span class="module-card__badge">1</span>
+            <h3 class="module-card__title">Passwords that protect you</h3>
+            <div class="module-card__meta"><span class="tag tag--difficulty-easy">Easy</span><span>⏱ 12 min</span></div>
+            <p>Make one strong password you can remember.</p>
+            <div class="progress" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" aria-label="Module progress"><div class="progress__bar" style="width: 40%;"></div></div>
+            <a class="btn" href="#">Continue</a>
+          </li>
+          <li class="card module-card" data-status="complete">
+            <span class="module-card__badge">2</span>
+            <h3 class="module-card__title">Spotting phishing</h3>
+            <div class="module-card__meta"><span class="tag tag--difficulty-medium">Some new words</span><span>⏱ 18 min</span></div>
+            <p>Three-second rule: stop, think, check.</p>
+            <a class="btn btn--secondary" href="#">Review</a>
+          </li>
+          <li class="card module-card module-card--featured">
+            <span class="module-card__badge">★</span>
+            <h3 class="module-card__title">Next up: e-Transfers safely</h3>
+            <p>Send and receive money by email confidently.</p>
+            <a class="btn" href="#">Start now</a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ========== 8. CONTENT BLOCKS ========== -->
+      <section id="content" class="sg-section">
+        <h2>8. Content blocks</h2>
+        <div class="callout callout--tip" role="note">
+          <span class="callout__icon">💡</span>
+          <div><p class="callout__title">Helpful tip</p><p>Every callout uses icon + colour + text — never colour alone.</p></div>
+        </div>
+        <div class="callout callout--warning" role="note">
+          <span class="callout__icon">⚠️</span>
+          <div><p class="callout__title">Watch out</p><p>Legitimate services never ask for your password in an email.</p></div>
+        </div>
+        <div class="callout callout--success" role="note">
+          <span class="callout__icon">✅</span>
+          <div><p class="callout__title">You did it</p><p>Progress carries forward.</p></div>
+        </div>
+        <div class="did-you-know"><p><strong>Did you know?</strong> 82% of scams start with a message that looks like it's from someone you trust.</p></div>
+
+        <h3>Step-by-step</h3>
+        <ol class="steps">
+          <li><div><strong>Open the app.</strong> Tap the icon on your home screen.</div></li>
+          <li><div><strong>Tap "Menu".</strong> A list slides in from the left.</div></li>
+          <li><div><strong>Tap "Settings".</strong> The settings page opens.</div></li>
+        </ol>
+      </section>
+
+      <!-- ========== 9. QUIZ ========== -->
+      <section id="quiz" class="sg-section">
+        <h2>9. Quiz components</h2>
+        <div class="quiz-progress" aria-live="polite">Question 2 of 5</div>
+        <div class="progress" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" aria-label="Quiz progress"><div class="progress__bar" style="width: 40%;"></div></div>
+        <p>&nbsp;</p>
+        <fieldset class="quiz-question">
+          <legend>Which is the safest password approach?</legend>
+          <label class="form-choice"><input type="radio" name="sg-q1"><span>Your birthday</span></label>
+          <label class="form-choice"><input type="radio" name="sg-q1" checked><span>A long phrase only you know</span></label>
+          <label class="form-choice"><input type="radio" name="sg-q1"><span>password123</span></label>
+        </fieldset>
+        <p>&nbsp;</p>
+        <div class="quiz-result">
+          <p class="sg-label">QUIZ COMPLETE</p>
+          <div class="quiz-result__score">4 / 5</div>
+          <p class="quiz-result__message">Great work — you've carried forward everything you've learned.</p>
+          <button class="btn">Review module</button>
+          <button class="btn btn--secondary">Try again</button>
+        </div>
+      </section>
+
+      <!-- ========== 10. PROGRESS ========== -->
+      <section id="progress" class="sg-section">
+        <h2>10. Progress &amp; badges</h2>
+        <div class="progress__label"><span>Overall progress</span><span>8 of 29 modules</span></div>
+        <div class="progress" role="progressbar" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100" aria-label="Overall DCC progress"><div class="progress__bar" style="width: 28%;"></div></div>
+        <p>&nbsp;</p>
+        <div class="stack stack--row">
+          <span class="badge-achievement">🏅 Password pro</span>
+          <span class="badge-achievement">🏅 Phishing spotter</span>
+          <span class="badge-achievement">🏅 Safe shopper</span>
+        </div>
+        <p>&nbsp;</p>
+        <div class="grid grid--3-up">
+          <div class="dashboard-card"><div class="dashboard-card__value">8</div><div class="dashboard-card__label">Modules carried forward</div></div>
+          <div class="dashboard-card"><div class="dashboard-card__value">2h 14m</div><div class="dashboard-card__label">Time invested</div></div>
+          <div class="dashboard-card"><div class="dashboard-card__value">5</div><div class="dashboard-card__label">Weeks in a row</div></div>
+        </div>
+      </section>
+
+      <!-- ========== 11. FEEDBACK ========== -->
+      <section id="feedback" class="sg-section">
+        <h2>11. Feedback: modal, tooltip, toast</h2>
+        <div class="stack stack--row">
+          <button class="btn" onclick="document.getElementById('sg-modal').setAttribute('aria-hidden','false')">Open modal</button>
+          <span class="tooltip" tabindex="0" aria-describedby="sg-tip">Hover or focus
+            <span class="tooltip__text" role="tooltip" id="sg-tip">Tooltip on hover + focus, aria-describedby linked.</span>
+          </span>
+          <button class="btn btn--secondary" onclick="showToast()">Show toast</button>
+        </div>
+      </section>
+
+      <!-- ========== 12. FOOTER ========== -->
+      <section id="footer" class="sg-section">
+        <h2>12. Footer</h2>
+        <footer class="site-footer" style="margin-inline: calc(-1 * var(--space-4));">
+          <div class="container">
+            <div class="site-footer__grid">
+              <div><p><strong>DCC — Digital Confidence Centre</strong></p><p>A project of Two Birds Innovation.</p></div>
+              <div><p class="sg-label">Learn</p><ul><li><a href="#">Modules</a></li><li><a href="#">Resources</a></li></ul></div>
+              <div><p class="sg-label">About</p><ul><li><a href="#">Approach</a></li><li><a href="#">Accessibility</a></li></ul></div>
+              <div><p class="sg-label">Connect</p><ul><li><a href="#">Contact</a></li><li><a href="#">Help</a></li></ul></div>
+            </div>
+            <div class="site-footer__legal">
+              <span>© 2026 Two Birds Innovation</span>
+              <a href="#" class="back-to-top">↑ Back to top</a>
+            </div>
+          </div>
+        </footer>
+      </section>
+
+      <!-- ========== 13. ACCESSIBILITY ========== -->
+      <section id="a11y" class="sg-section">
+        <h2>13. Accessibility</h2>
+
+        <h3>Focus states</h3>
+        <p>Tab through the components below using your keyboard. Every interactive element shows a 3px burnt-orange outline with 2px offset. The focus ring is defined once in <code>tokens.css</code> as <code>--focus-ring</code>.</p>
+        <div class="stack stack--row">
+          <button class="btn">Focusable button</button>
+          <a href="#" class="btn btn--secondary">Focusable link</a>
+          <input class="form-input" type="text" placeholder="Focusable input" style="max-width: 240px;">
+        </div>
+
+        <h3>Skip link</h3>
+        <p>Press Tab when this page has focus — the skip-to-content link appears as the first focusable element and jumps past navigation to the main content.</p>
+
+        <h3>Screen reader markup</h3>
+        <p>The module list above is wrapped in <code>&lt;ul aria-label="Module list"&gt;</code> so screen readers announce "list of N items." Progress bars use <code>role="progressbar"</code> with <code>aria-valuenow</code>, <code>aria-valuemin</code>, and <code>aria-valuemax</code>. Error messages use <code>role="alert"</code>. Toasts use <code>aria-live="polite"</code>.</p>
+
+        <h3>Text size toggle</h3>
+        <p>The A-/A/A+ buttons in the top nav swap the <code>--font-size-base</code> token between 16px, 20px, and 24px by adding a class to <code>&lt;html&gt;</code>. The preference persists in <code>localStorage</code> under the key <code>dcc-text-size</code>.</p>
+
+        <h3>Motion preferences</h3>
+        <p>Every transition in <code>components.css</code> references <code>--motion-duration-*</code> tokens. <code>tokens.css</code> zeros them out inside <code>@media (prefers-reduced-motion: reduce)</code>, so nothing needs a per-component override.</p>
+
+        <h3>Contrast testing checklist</h3>
+        <ul>
+          <li>Text on background: 4.5:1 minimum (WCAG AA) — verified for text on bg, surface, and surface-primary.</li>
+          <li>Large text (18pt+): 3:1 minimum.</li>
+          <li>Interactive element borders: 3:1 against adjacent colour.</li>
+          <li>Focus ring: 3:1 against every background it appears on.</li>
+        </ul>
+
+        <h3>Browser testing</h3>
+        <p>Before each release: keyboard-only nav test, screen reader test (NVDA on Windows), 200% zoom test, high contrast test, reduced motion test, axe-core automated scan.</p>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- Modal (lives outside main so it can overlay) -->
+<div class="modal-backdrop" id="sg-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="sg-modal-title">
+  <div class="modal">
+    <div class="modal__header">
+      <h2 id="sg-modal-title">Feedback</h2>
+      <button class="modal__close" aria-label="Close" onclick="document.getElementById('sg-modal').setAttribute('aria-hidden','true')">✕</button>
+    </div>
+    <form onsubmit="event.preventDefault(); document.getElementById('sg-modal').setAttribute('aria-hidden','true'); showToast();">
+      <div class="form-field"><label class="form-label" for="sg-mf-rating">Rating</label>
+        <select class="form-select" id="sg-mf-rating"><option>★★★★★</option><option>★★★★</option><option>★★★</option><option>★★</option><option>★</option></select></div>
+      <div class="form-field"><label class="form-label" for="sg-mf-text">Comment</label>
+        <textarea class="form-textarea" id="sg-mf-text" rows="4"></textarea></div>
+      <button class="btn" type="submit">Send</button>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="sg-toast" role="status" aria-live="polite" style="display:none;"><strong>Thanks!</strong> Feedback received.</div>
+
+<script>
+  // --- Text size toggle ---------------------------------------------------
+  function setSize(size, ev) {
+    document.documentElement.classList.remove('text-size-s','text-size-m','text-size-l');
+    document.documentElement.classList.add('text-size-' + size);
+    localStorage.setItem('dcc-text-size', size);
+    if (ev) {
+      document.querySelectorAll('.text-size-toggle button').forEach(b => b.setAttribute('aria-pressed','false'));
+      ev.target.setAttribute('aria-pressed','true');
+    }
+  }
+  const savedSize = localStorage.getItem('dcc-text-size');
+  if (savedSize) { setSize(savedSize, null); }
+
+  // --- Theme swap ---------------------------------------------------------
+  function setTheme(theme) {
+    const html = document.documentElement;
+    html.removeAttribute('data-theme');
+    if (theme === 'dark') html.setAttribute('data-theme', 'dark');
+    if (theme === 'high-contrast') html.setAttribute('data-theme', 'high-contrast');
+    localStorage.setItem('dcc-theme', theme);
+  }
+  const savedTheme = localStorage.getItem('dcc-theme');
+  if (savedTheme) setTheme(savedTheme);
+
+  // --- Language preview ---------------------------------------------------
+  const samples = {
+    en: { title: 'DCC Style Guide', intro: 'Every pair below has been checked against WCAG AA contrast.' },
+    fr: { title: 'Guide de style DCC', intro: 'Chaque paire ci-dessous est conforme au contraste WCAG AA.' },
+    es: { title: 'Guía de estilo DCC', intro: 'Cada par ha sido verificado contra el contraste WCAG AA.' }
+  };
+  function setLang(lang, ev) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-sample').forEach(el => {
+      const text = el.getAttribute('data-' + lang);
+      if (text) el.textContent = text;
+    });
+    if (ev) {
+      document.querySelectorAll('.lang-toggle button').forEach(b => b.setAttribute('aria-pressed','false'));
+      ev.target.setAttribute('aria-pressed','true');
+    }
+  }
+
+  // --- Toast --------------------------------------------------------------
+  function showToast() {
+    const t = document.getElementById('sg-toast');
+    t.style.display = 'block';
+    setTimeout(() => { t.style.display = 'none'; }, 3500);
+  }
+</script>
+
+</body>
+</html>
