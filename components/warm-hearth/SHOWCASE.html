@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DCC — Warm Hearth Component Showcase</title>
+<link rel="icon" href="../../../two-birds-portfolio/assets/logos/dcc/dcc-favicon.ico">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/tokens-dark.css">
+<link rel="stylesheet" href="../../css/tokens-high-contrast.css">
+<link rel="stylesheet" href="../../css/fonts.css">
+<link rel="stylesheet" href="../../css/components.css">
+<style>
+  /* Showcase-only layout helpers, not part of the component library */
+  .sc-section { padding-block: var(--space-8); border-top: 1px dashed var(--color-border); }
+  .sc-section:first-of-type { border-top: 0; }
+  .sc-section h2 { color: var(--color-primary); }
+  .sc-label { font-size: var(--font-size-sm); color: var(--color-text-light); margin-bottom: var(--space-2); font-family: var(--font-heading); }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- =================== NAVIGATION =================== -->
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="container">
+    <a class="site-nav__brand" href="#">
+      <span aria-hidden="true">🫶</span>
+      DCC
+    </a>
+    <ul class="site-nav__links">
+      <li><a href="#" aria-current="page">Modules</a></li>
+      <li><a href="#">Resources</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Help</a></li>
+    </ul>
+    <div class="site-nav__tools">
+      <div class="text-size-toggle" role="group" aria-label="Text size">
+        <button type="button" aria-pressed="false" aria-label="Smaller text" onclick="setSize('s')">A-</button>
+        <button type="button" aria-pressed="true"  aria-label="Default text size" onclick="setSize('m')">A</button>
+        <button type="button" aria-pressed="false" aria-label="Larger text" onclick="setSize('l')">A+</button>
+      </div>
+      <button class="nav-hamburger" type="button" aria-label="Open menu" aria-expanded="false" onclick="toggleDrawer()">☰</button>
+    </div>
+  </div>
+</nav>
+
+<aside class="nav-drawer" id="drawer" aria-hidden="true" aria-label="Mobile menu">
+  <ul>
+    <li><a href="#">Modules</a></li>
+    <li><a href="#">Resources</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Help</a></li>
+  </ul>
+</aside>
+
+<main id="main" class="container">
+
+  <!-- =================== BREADCRUMB =================== -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Modules</a></li>
+      <li aria-current="page">Warm Hearth Showcase</li>
+    </ol>
+  </nav>
+
+  <!-- =================== TYPOGRAPHY =================== -->
+  <section class="sc-section">
+    <h1>DCC Warm Hearth Component Showcase</h1>
+    <p>Kitchen-table warmth. Trusted neighbour tone. Zero intimidation. Every component below uses tokens only; swap <code>tokens.css</code> for <code>tokens-dark.css</code> or <code>tokens-high-contrast.css</code> to reskin.</p>
+
+    <h2>Typography</h2>
+    <h1>Heading 1 — Clear and welcoming</h1>
+    <h2>Heading 2 — For section headings</h2>
+    <h3>Heading 3 — For subsections</h3>
+    <p>Body text in Merriweather at 18px with a comfortable 1.6 line height. The text size toggle above scales the body between 16, 20, and 24 pixels and stores the preference.</p>
+    <p lang="fr">Exemple en français : éléphant, hôpital, français, œuvre, naïve, ça marche.</p>
+    <p lang="es">Ejemplo en español: niño, ¿cómo estás?, ¡qué bien!, corazón, mañana.</p>
+  </section>
+
+  <!-- =================== BUTTONS =================== -->
+  <section class="sc-section">
+    <h2>Buttons</h2>
+    <div class="stack stack--row">
+      <button class="btn">Primary action</button>
+      <button class="btn btn--secondary">Secondary action</button>
+      <button class="btn btn--ghost">Tertiary</button>
+      <button class="btn" disabled>Disabled</button>
+      <button class="btn btn--lg">Large CTA</button>
+    </div>
+    <p>&nbsp;</p>
+    <a href="#" class="btn btn--block" style="max-width: 320px;">Block-level button / link</a>
+  </section>
+
+  <!-- =================== FORM =================== -->
+  <section class="sc-section">
+    <h2>Form inputs</h2>
+    <form onsubmit="event.preventDefault(); alert('Demo only — no submission.');">
+      <div class="form-field">
+        <label class="form-label" for="name">Your name <span class="form-required" aria-label="required">*</span></label>
+        <input class="form-input" id="name" name="name" type="text" required aria-describedby="name-help">
+        <div id="name-help" class="form-help">We use this only to personalize greetings.</div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="email">Email address</label>
+        <input class="form-input" id="email" name="email" type="email" aria-invalid="true" aria-describedby="email-err">
+        <div id="email-err" class="form-error" role="alert">Please enter a valid email address.</div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="reason">Why are you here today?</label>
+        <select class="form-select" id="reason">
+          <option>Learning something new</option>
+          <option>Helping a family member</option>
+          <option>Just browsing</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="note">Anything you'd like to add?</label>
+        <textarea class="form-textarea" id="note" rows="4"></textarea>
+      </div>
+
+      <fieldset class="form-field">
+        <legend class="form-label">Preferred contact method</legend>
+        <label class="form-choice">
+          <input type="radio" name="contact" checked>
+          <span>Email</span>
+        </label>
+        <label class="form-choice">
+          <input type="radio" name="contact">
+          <span>Phone call</span>
+        </label>
+        <label class="form-choice">
+          <input type="radio" name="contact">
+          <span>No contact, thanks</span>
+        </label>
+      </fieldset>
+
+      <div class="form-field">
+        <label class="sr-only" for="search">Search</label>
+        <div class="search">
+          <span aria-hidden="true">🔎</span>
+          <input id="search" type="search" placeholder="Search modules…">
+        </div>
+      </div>
+
+      <button class="btn btn--lg" type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- =================== MODULE CARDS =================== -->
+  <section class="sc-section">
+    <h2>Module cards</h2>
+    <ul class="module-list" aria-label="List of 3 modules">
+      <li class="card module-card">
+        <span class="module-card__badge" aria-hidden="true">1</span>
+        <h3 class="module-card__title">Passwords that protect you</h3>
+        <div class="module-card__meta">
+          <span class="tag tag--difficulty-easy">Easy</span>
+          <span>⏱ 12 min</span>
+        </div>
+        <p>Learn how to make one strong password you can remember and reuse safely using a password manager.</p>
+        <div class="progress" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" aria-label="Module progress">
+          <div class="progress__bar" style="width: 40%;"></div>
+        </div>
+        <a class="btn" href="#">Continue</a>
+      </li>
+
+      <li class="card module-card" data-status="complete">
+        <span class="module-card__badge" aria-hidden="true">2</span>
+        <h3 class="module-card__title">Spotting phishing emails</h3>
+        <div class="module-card__meta">
+          <span class="tag tag--difficulty-medium">Some new words</span>
+          <span>⏱ 18 min</span>
+        </div>
+        <p>Three-second rule: stop, think, check. Walk through six real examples.</p>
+        <a class="btn btn--secondary" href="#">Review module</a>
+      </li>
+
+      <li class="card module-card module-card--featured">
+        <span class="module-card__badge" aria-hidden="true">★</span>
+        <h3 class="module-card__title">Suggested next: e-Transfers safely</h3>
+        <div class="module-card__meta">
+          <span class="tag tag--difficulty-easy">Easy</span>
+          <span>⏱ 10 min</span>
+        </div>
+        <p>Send and receive money by email without getting caught by common scams.</p>
+        <a class="btn" href="#">Start now</a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- =================== CALLOUTS =================== -->
+  <section class="sc-section">
+    <h2>Callouts</h2>
+
+    <div class="callout callout--tip" role="note">
+      <span class="callout__icon" aria-hidden="true">💡</span>
+      <div>
+        <p class="callout__title">Helpful tip</p>
+        <p>Paired icon + colour + text, so the meaning is never colour-only.</p>
+      </div>
+    </div>
+
+    <div class="callout callout--warning" role="note">
+      <span class="callout__icon" aria-hidden="true">⚠️</span>
+      <div>
+        <p class="callout__title">Watch out</p>
+        <p>If an email asks for your password, that's always a scam. No legitimate service needs it.</p>
+      </div>
+    </div>
+
+    <div class="callout callout--success" role="note">
+      <span class="callout__icon" aria-hidden="true">✅</span>
+      <div>
+        <p class="callout__title">You did it</p>
+        <p>Progress never disappears — come back any time and pick up where you left off.</p>
+      </div>
+    </div>
+
+    <div class="did-you-know">
+      <p><strong>Did you know?</strong> 82% of scams start with a text or email that looks like it's from someone you trust.</p>
+    </div>
+  </section>
+
+  <!-- =================== STEPS =================== -->
+  <section class="sc-section">
+    <h2>Step-by-step instructions</h2>
+    <ol class="steps">
+      <li><div><strong>Open the app.</strong> Tap the icon on your home screen.</div></li>
+      <li><div><strong>Tap "Menu" (three lines in the top-left corner).</strong> A list will slide in from the left.</div></li>
+      <li><div><strong>Scroll to the bottom and tap "Settings".</strong> The settings page will open.</div></li>
+      <li><div><strong>Tap "Privacy".</strong> You can now review and change what the app has access to.</div></li>
+    </ol>
+  </section>
+
+  <!-- =================== QUIZ =================== -->
+  <section class="sc-section">
+    <h2>Quiz components</h2>
+
+    <div class="quiz-progress" aria-live="polite">Question 2 of 5</div>
+    <div class="progress" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" aria-label="Quiz progress">
+      <div class="progress__bar" style="width: 40%;"></div>
+    </div>
+    <p>&nbsp;</p>
+
+    <fieldset class="quiz-question">
+      <legend>Which of these is the safest way to create a new password?</legend>
+      <label class="form-choice"><input type="radio" name="q1"> <span>Use your birthday so you won't forget it</span></label>
+      <label class="form-choice"><input type="radio" name="q1"> <span>Use the same password as your email</span></label>
+      <label class="form-choice"><input type="radio" name="q1" checked> <span>Use a long phrase that only makes sense to you</span></label>
+      <label class="form-choice"><input type="radio" name="q1"> <span>Use "password123"</span></label>
+    </fieldset>
+    <p>&nbsp;</p>
+
+    <fieldset class="quiz-question">
+      <legend>An email from your bank asking for your password is usually safe.</legend>
+      <label class="form-choice"><input type="radio" name="q2"> <span>True</span></label>
+      <label class="form-choice"><input type="radio" name="q2" checked> <span>False</span></label>
+    </fieldset>
+    <p>&nbsp;</p>
+
+    <div class="quiz-result">
+      <p class="sc-label">QUIZ COMPLETE</p>
+      <div class="quiz-result__score">4 / 5</div>
+      <p class="quiz-result__message">Great work — you've carried forward everything you've learned so far. One question is a good place to revisit, and you can retry anytime.</p>
+      <button class="btn">Review module</button>
+      <button class="btn btn--secondary">Try again</button>
+    </div>
+  </section>
+
+  <!-- =================== PROGRESS & BADGES =================== -->
+  <section class="sc-section">
+    <h2>Progress & badges</h2>
+
+    <div class="progress__label"><span>Overall progress</span><span>8 of 29 modules</span></div>
+    <div class="progress" role="progressbar" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100" aria-label="Overall DCC progress">
+      <div class="progress__bar" style="width: 28%;"></div>
+    </div>
+    <p>&nbsp;</p>
+
+    <div class="stack stack--row">
+      <span class="badge-achievement">🏅 Password pro</span>
+      <span class="badge-achievement">🏅 Phishing spotter</span>
+      <span class="badge-achievement">🏅 Safe shopper</span>
+    </div>
+
+    <p>&nbsp;</p>
+    <div class="grid grid--3-up">
+      <div class="dashboard-card">
+        <div class="dashboard-card__value">8</div>
+        <div class="dashboard-card__label">Modules carried forward</div>
+      </div>
+      <div class="dashboard-card">
+        <div class="dashboard-card__value">2h 14m</div>
+        <div class="dashboard-card__label">Time invested</div>
+      </div>
+      <div class="dashboard-card">
+        <div class="dashboard-card__value">5</div>
+        <div class="dashboard-card__label">Weeks in a row</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== FEEDBACK =================== -->
+  <section class="sc-section">
+    <h2>Feedback elements</h2>
+    <div class="stack stack--row">
+      <button class="btn" onclick="document.getElementById('demo-modal').setAttribute('aria-hidden','false')">Open feedback modal</button>
+      <span class="tooltip" tabindex="0" aria-describedby="tip1">
+        Hover or focus me
+        <span class="tooltip__text" role="tooltip" id="tip1">Tooltips appear on hover and focus, and are screen-reader accessible.</span>
+      </span>
+      <button class="btn btn--secondary" onclick="showToast()">Show success toast</button>
+    </div>
+  </section>
+
+</main>
+
+<!-- =================== FOOTER =================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <p><strong>DCC — Digital Confidence Centre</strong></p>
+        <p>A project of Two Birds Innovation. Free, bilingual digital literacy for Canadian seniors.</p>
+      </div>
+      <div>
+        <p class="sc-label">Learn</p>
+        <ul><li><a href="#">Modules</a></li><li><a href="#">Resources</a></li><li><a href="#">Glossary</a></li></ul>
+      </div>
+      <div>
+        <p class="sc-label">About</p>
+        <ul><li><a href="#">Our approach</a></li><li><a href="#">Accessibility</a></li><li><a href="#">Privacy</a></li></ul>
+      </div>
+      <div>
+        <p class="sc-label">Connect</p>
+        <ul><li><a href="#">Contact</a></li><li><a href="#">Help</a></li></ul>
+      </div>
+    </div>
+    <div class="site-footer__legal">
+      <span>© 2026 Two Birds Innovation</span>
+      <a href="#" class="back-to-top">↑ Back to top</a>
+    </div>
+  </div>
+</footer>
+
+<!-- =================== HELP FAB =================== -->
+<button class="help-fab" aria-label="Need help?" onclick="alert('Help content would appear here.')">?</button>
+
+<!-- =================== MODAL =================== -->
+<div class="modal-backdrop" id="demo-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <div class="modal__header">
+      <h2 id="modal-title">Share your feedback</h2>
+      <button class="modal__close" aria-label="Close dialog" onclick="document.getElementById('demo-modal').setAttribute('aria-hidden','true')">✕</button>
+    </div>
+    <form onsubmit="event.preventDefault(); document.getElementById('demo-modal').setAttribute('aria-hidden','true'); showToast();">
+      <div class="form-field">
+        <label class="form-label" for="rating">How would you rate this module?</label>
+        <select class="form-select" id="rating">
+          <option>★★★★★ — Loved it</option>
+          <option>★★★★ — Good</option>
+          <option>★★★ — OK</option>
+          <option>★★ — Needs work</option>
+          <option>★ — Confusing</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="fb">Anything else?</label>
+        <textarea class="form-textarea" id="fb" rows="4"></textarea>
+      </div>
+      <button class="btn" type="submit">Send feedback</button>
+    </form>
+  </div>
+</div>
+
+<!-- =================== TOAST TEMPLATE =================== -->
+<div class="toast" id="toast" role="status" aria-live="polite" style="display:none;">
+  <strong>Thanks — got it.</strong> Your feedback helps make DCC better for everyone.
+</div>
+
+<script>
+  // Text size toggle
+  function setSize(size) {
+    document.documentElement.classList.remove('text-size-s', 'text-size-m', 'text-size-l');
+    document.documentElement.classList.add('text-size-' + size);
+    localStorage.setItem('dcc-text-size', size);
+    document.querySelectorAll('.text-size-toggle button').forEach(btn => btn.setAttribute('aria-pressed', 'false'));
+    event.target.setAttribute('aria-pressed', 'true');
+  }
+  const savedSize = localStorage.getItem('dcc-text-size');
+  if (savedSize) { document.documentElement.classList.add('text-size-' + savedSize); }
+
+  // Mobile drawer
+  function toggleDrawer() {
+    const drawer = document.getElementById('drawer');
+    const expanded = drawer.getAttribute('aria-hidden') === 'false';
+    drawer.setAttribute('aria-hidden', expanded ? 'true' : 'false');
+    document.querySelector('.nav-hamburger').setAttribute('aria-expanded', !expanded);
+  }
+
+  // Toast
+  function showToast() {
+    const t = document.getElementById('toast');
+    t.style.display = 'block';
+    setTimeout(() => { t.style.display = 'none'; }, 3500);
+  }
+</script>
+
+</body>
+</html>
