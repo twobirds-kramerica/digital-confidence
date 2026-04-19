@@ -2,6 +2,17 @@
 
 A friendly, accessible website designed to help seniors learn technology with confidence. Built with pure HTML, CSS, and JavaScript — no frameworks, no build tools, no dependencies.
 
+## Design system &amp; style guide
+
+The DCC uses the **Warm Hearth** design system (Option A, 65.5% org vote). All colours, fonts, spacing, radii, and motion values live as CSS custom properties in `css/tokens.css` and can be reskinned by swapping to `css/tokens-dark.css`, `css/tokens-high-contrast.css`, or a partner white-label `css/tokens-*.css`. Component styles are in `css/components.css`. Fonts are self-hosted (Merriweather + Source Sans 3, SIL OFL) in `fonts/`.
+
+- **Living style guide:** open `styleguide/index.html` in a browser — theme swap, language preview, full component gallery.
+- **Motion spec:** `styleguide/motion.html`.
+- **Competitive audit:** `styleguide/COMPETITIVE-AUDIT.md`.
+- **Maintenance &amp; governance:** `styleguide/MAINTENANCE.md`.
+- **Component showcase (quick reference):** `components/warm-hearth/SHOWCASE.html`.
+- **DESIGN-SYSTEM.md** is the canonical design-system narrative (covers tokens, fonts, components, accessibility rules).
+
 ## What This Is
 
 An 8-module digital literacy training course for older adults (70+), with a focus on:

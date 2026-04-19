@@ -1,7 +1,21 @@
 # Digital Confidence Centre — Design System
-*Last updated: 2026-03-22*
+*Last updated: 2026-04-19*
 
-This document is the single source of truth for the DCC design system. It reflects what is **actually implemented** in `css/main.css`. Do not invent parallel systems — use what is here.
+This document covers the DCC design system. Two parallel systems currently coexist during the Warm Hearth transition:
+
+1. **Legacy (`css/main.css`) — blue accent, Inter font.** Still in production on all module pages. Do not modify in design-system work; it will be retired during the DCC makeover sprint.
+2. **Warm Hearth (`css/tokens.css` + `css/components.css` + `css/fonts.css`) — teal / burnt orange, Merriweather + Source Sans 3.** Adopted 2026-04-19 after a 65.5% weighted org vote for Option A "Warm Hearth". All new components build against this system.
+
+Single source of truth going forward is the token files and the living style guide at `styleguide/index.html`. Swap themes by loading `tokens-dark.css` or `tokens-high-contrast.css` after `tokens.css`.
+
+- **Tokens:** `css/tokens.css`, `css/tokens-dark.css`, `css/tokens-high-contrast.css`, `css/tokens-alt.css`
+- **Fonts:** `css/fonts.css` (self-hosted, SIL OFL — see `fonts/LICENSE-OFL.txt`)
+- **Components:** `css/components.css` + live demos in `components/warm-hearth/SHOWCASE.html`
+- **Style guide:** `styleguide/index.html` (canonical), `styleguide/motion.html` (interaction spec)
+- **Governance:** `styleguide/MAINTENANCE.md`
+- **Competitive context:** `styleguide/COMPETITIVE-AUDIT.md`
+
+The sections below describe the legacy system, preserved for reference until the makeover sprint completes.
 
 ---
 
