@@ -1,0 +1,13 @@
+{
+  "name": "dcc-playwright-smoke",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright viewport + blank-page smoke tests for DCC (S-029). Runs in CI only; not part of the production site.",
+  "scripts": {
+    "test": "playwright test",
+    "install-browser": "playwright install --with-deps chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0"
+  }
+}

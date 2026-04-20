@@ -21,3 +21,10 @@ Thumbs.db
 
 # Temporary agent-generated audit/migration scripts
 _audit/*.js
+
+# Playwright (S-029) — CI-only test harness, never commit local runs
+tests/playwright/node_modules/
+tests/playwright/test-results/
+tests/playwright/playwright-report/
+tests/playwright/blob-report/
+tests/playwright/.last-run.json

@@ -1,0 +1,93 @@
+name: Viewport smoke (Playwright)
+
+# S-029 — closes the 3rd leg of the 7-LLM-consensus CI triangle.
+# axe-core.yml covers accessibility. link-checker.yml covers lychee.
+# This covers viewport rendering: horizontal overflow + blank-page + missing-h1.
+#
+# Tests 6 representative DCC pages (index, module-1, final-quiz, accessibility,
+# faq, styleguide) at 360 / 768 / 1280 viewports. Chromium only. Screenshots
+# captured only on failure (not on every run — artifact size / cost).
+#
+# Fails the build on any regression; uploads screenshots + trace + HTML report
+# as a single artifact for post-mortem.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - 'css/**'
+      - 'js/**'
+      - 'tests/playwright/**'
+      - '.github/workflows/playwright.yml'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    name: Playwright smoke (3 viewports)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install http-server
+        run: npm install -g http-server@14.1.1
+
+      - name: Install Playwright + test harness
+        working-directory: tests/playwright
+        run: |
+          npm install --no-audit --no-fund
+
+      - name: Install Chromium for Playwright
+        working-directory: tests/playwright
+        run: |
+          npx playwright install --with-deps chromium
+
+      - name: Serve DCC site on :3000
+        run: |
+          http-server . -p 3000 -s --cors &
+          echo $! > /tmp/http-server.pid
+          # Wait for server to answer
+          for i in 1 2 3 4 5 6 7 8; do
+            if curl -sSf http://localhost:3000/ > /dev/null; then
+              echo "Server up."
+              break
+            fi
+            sleep 1
+          done
+
+      - name: Run Playwright smoke tests
+        working-directory: tests/playwright
+        env:
+          PW_BASE_URL: http://localhost:3000
+        run: |
+          npx playwright test
+
+      - name: Stop http-server
+        if: always()
+        run: |
+          if [ -f /tmp/http-server.pid ]; then
+            kill "$(cat /tmp/http-server.pid)" 2>/dev/null || true
+          fi
+
+      - name: Upload Playwright artifact (screenshots + trace + HTML report)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-results
+          path: |
+            tests/playwright/playwright-report/
+            tests/playwright/test-results/
+          retention-days: 14
+          if-no-files-found: ignore
