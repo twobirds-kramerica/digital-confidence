@@ -30,14 +30,34 @@ for (const p of PAGES) {
     await page.waitForLoadState('networkidle', { timeout: 10_000 }).catch(() => {});
 
     // 1. Horizontal overflow detection
-    const { scrollWidth, innerWidth } = await page.evaluate(() => ({
-      scrollWidth: document.documentElement.scrollWidth,
-      innerWidth:  window.innerWidth,
-    }));
+    const { scrollWidth, innerWidth, culprits } = await page.evaluate(() => {
+      const innerWidth = window.innerWidth;
+      const scrollWidth = document.documentElement.scrollWidth;
+      const culprits = [];
+      if (scrollWidth > innerWidth) {
+        // Walk the DOM, find elements whose right edge exceeds innerWidth
+        document.querySelectorAll('*').forEach(el => {
+          const r = el.getBoundingClientRect();
+          if (r.right > innerWidth + 0.5 && r.width > 10) {
+            culprits.push({
+              tag: el.tagName.toLowerCase(),
+              id: el.id || '',
+              cls: (el.className && typeof el.className === 'string') ? el.className.slice(0, 60) : '',
+              right: Math.round(r.right),
+              width: Math.round(r.width),
+              text: (el.textContent || '').trim().slice(0, 50),
+            });
+          }
+        });
+        // Dedupe near-identical ancestors: keep the 5 widest distinct
+        culprits.sort((a, b) => b.right - a.right);
+      }
+      return { scrollWidth, innerWidth, culprits: culprits.slice(0, 8) };
+    });
     const overflow = scrollWidth - innerWidth;
     expect(
       overflow,
-      `${p.name}: horizontal overflow of ${overflow}px (scrollWidth=${scrollWidth}, innerWidth=${innerWidth})`
+      `${p.name}: horizontal overflow ${overflow}px (scrollWidth=${scrollWidth}, innerWidth=${innerWidth})\nTop culprits: ${JSON.stringify(culprits, null, 2)}`
     ).toBeLessThanOrEqual(0);
 
     // 2. Blank-page detection — body text exists
