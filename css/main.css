@@ -5363,7 +5363,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   letter-spacing: 0.5px;
   margin-bottom: var(--spacing-xs);
 }
-.badge-new      { background: var(--navy-light, #dce8f8); color: #2A7B6F; }   /* 5.7:1 ✓ */
+.badge-new      { background: var(--primary-light, #E8F5F0); color: #2A7B6F; }   /* Warm Hearth teal-tinted bg; was cool-blue pre-makeover */
 .badge-updated  { background: #fff3e0; color: #7A5800; }                       /* 6.3:1 ✓ */
 .badge-complete { background: #e8f5e9; color: #155724; }                       /* 7.8:1 ✓ */
 
