@@ -1,7 +1,8 @@
-// Playwright config for DCC viewport + blank-page smoke tests (S-029).
-// Runs a single spec file across 3 viewports as separate projects so failures
-// are reported per-viewport. Chromium only (Chrome mirrors the vast majority
-// of DCC's senior-demographic browsers; cross-browser is P2, deferred).
+// Playwright config for DCC viewport + cross-engine smoke tests.
+// Chromium tests all 3 viewports (catches layout regressions per-viewport).
+// Firefox + WebKit test at desktop-1280 only (catches engine differences:
+// SVG rendering, font metrics, JS API gaps) — viewport bugs are already
+// caught upstream by Chromium, so we don't pay the 3x combinatorial cost.
 
 const { defineConfig, devices } = require('@playwright/test');
 
@@ -23,17 +24,30 @@ module.exports = defineConfig({
   },
 
   projects: [
+    // --- Chromium: all 3 viewports (viewport regressions) ------------------
     {
-      name: 'mobile-360',
+      name: 'chromium-mobile-360',
       use: { ...devices['Desktop Chrome'], viewport: { width: 360, height: 800 } },
     },
     {
-      name: 'tablet-768',
+      name: 'chromium-tablet-768',
       use: { ...devices['Desktop Chrome'], viewport: { width: 768, height: 1024 } },
     },
     {
-      name: 'desktop-1280',
+      name: 'chromium-desktop-1280',
       use: { ...devices['Desktop Chrome'], viewport: { width: 1280, height: 900 } },
+    },
+
+    // --- Cross-engine: Firefox + WebKit at desktop only --------------------
+    // Purpose: catch engine-specific bugs (SVG, font rendering, JS API
+    // surface differences). Viewport bugs are already covered by Chromium.
+    {
+      name: 'firefox-desktop-1280',
+      use: { ...devices['Desktop Firefox'], viewport: { width: 1280, height: 900 } },
+    },
+    {
+      name: 'webkit-desktop-1280',
+      use: { ...devices['Desktop Safari'], viewport: { width: 1280, height: 900 } },
     },
   ],
 });

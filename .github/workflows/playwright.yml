@@ -1,12 +1,19 @@
-name: Viewport smoke (Playwright)
+name: Viewport + cross-engine smoke (Playwright)
 
-# S-029 — closes the 3rd leg of the 7-LLM-consensus CI triangle.
-# axe-core.yml covers accessibility. link-checker.yml covers lychee.
-# This covers viewport rendering: horizontal overflow + blank-page + missing-h1.
+# Playwright CI: catches layout regressions (Chromium × 3 viewports) and
+# engine-specific regressions (Firefox + WebKit at desktop-1280).
 #
-# Tests 6 representative DCC pages (index, module-1, final-quiz, accessibility,
-# faq, styleguide) at 360 / 768 / 1280 viewports. Chromium only. Screenshots
-# captured only on failure (not on every run — artifact size / cost).
+# S-029 shipped the Chromium viewport portion. This revision (item #8 on
+# the Notion backlog) adds Firefox + WebKit cross-engine coverage.
+#
+# Test matrix:
+#   Chromium: 6 pages × 3 viewports = 18 tests (layout / overflow / blank-page)
+#   Firefox:  6 pages × 1 viewport  = 6 tests  (engine diffs)
+#   WebKit:   6 pages × 1 viewport  = 6 tests  (Safari engine diffs)
+#   Total: 30 tests per run.
+#
+# Deferred to a separate follow-up: visual regression baselines + diff
+# thresholds (filed as own Notion item).
 #
 # Fails the build on any regression; uploads screenshots + trace + HTML report
 # as a single artifact for post-mortem.
@@ -26,9 +33,9 @@ on:
 
 jobs:
   smoke:
-    name: Playwright smoke (3 viewports)
+    name: Playwright smoke (Chromium × 3 + Firefox + WebKit)
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     permissions:
       contents: read
 
@@ -49,10 +56,10 @@ jobs:
         run: |
           npm install --no-audit --no-fund
 
-      - name: Install Chromium for Playwright
+      - name: Install Chromium + Firefox + WebKit for Playwright
         working-directory: tests/playwright
         run: |
-          npx playwright install --with-deps chromium
+          npx playwright install --with-deps chromium firefox webkit
 
       - name: Serve DCC site on :3000
         run: |
