@@ -706,7 +706,9 @@ a:hover { color: var(--color-text-link-hover); text-decoration-thickness: 2px; }
   padding: var(--space-2) var(--space-3);
   border-radius: var(--radius-sm);
   font-size: var(--font-size-sm);
-  white-space: nowrap;
+  max-width: min(85vw, 320px);      /* narrow viewports must not cause page overflow */
+  width: max-content;
+  white-space: normal;              /* was nowrap — long tooltips wrapped cleanly */
   opacity: 0; pointer-events: none;
   transition: opacity var(--motion-duration-2) var(--motion-ease);
   z-index: var(--z-tooltip);
