@@ -57,12 +57,13 @@
     <button class="btn btn--secondary" onclick="setTheme('default')">Default</button>
     <button class="btn btn--secondary" onclick="setTheme('dark')">Dark</button>
     <button class="btn btn--secondary" onclick="setTheme('high-contrast')">High contrast</button>
-    <strong style="margin-inline: var(--space-3); font-family: var(--font-heading);">Preview language:</strong>
-    <div class="lang-toggle" role="group" aria-label="Preview language">
+    <strong style="margin-inline: var(--space-3); font-family: var(--font-heading);">Typography preview:</strong>
+    <div class="lang-toggle" role="group" aria-label="Typography preview language">
       <button type="button" aria-pressed="true"  onclick="setLang('en', event)">EN</button>
       <button type="button" aria-pressed="false" onclick="setLang('fr', event)">FR</button>
       <button type="button" aria-pressed="false" onclick="setLang('es', event)">ES</button>
     </div>
+    <small style="color: var(--color-text-light); font-family: var(--font-heading); margin-inline-start: var(--space-3);">Swaps the Typography section samples only — this is a font-rendering preview, not a full site translation.</small>
   </div>
 
   <div class="sg-shell">
@@ -110,17 +111,44 @@
 
       <!-- ========== 2. TYPOGRAPHY ========== -->
       <section id="typography" class="sg-section">
-        <h2>2. Typography</h2>
-        <p>Headings: Source Sans 3 (sans-serif). Body: Merriweather (serif). Both self-hosted under SIL OFL. Use the language toggle at the top to preview English, French, and Spanish.</p>
+        <h2 class="lang-sample"
+            data-en="2. Typography"
+            data-fr="2. Typographie"
+            data-es="2. Tipografía">2. Typography</h2>
+        <p class="lang-sample"
+            data-en="Headings: Source Sans 3 (sans-serif). Body: Merriweather (serif). Both self-hosted under SIL OFL. Use the Typography preview toggle at the top to swap these samples between English, French, and Spanish."
+            data-fr="Titres : Source Sans 3 (sans serif). Corps de texte : Merriweather (serif). Les deux sont auto-hébergées sous licence SIL OFL. Utilisez le sélecteur en haut pour basculer ces exemples entre l'anglais, le français et l'espagnol."
+            data-es="Títulos: Source Sans 3 (sans serif). Cuerpo: Merriweather (serif). Ambas están auto-alojadas bajo licencia SIL OFL. Usa el selector de arriba para alternar estos ejemplos entre inglés, francés y español.">Headings: Source Sans 3 (sans-serif). Body: Merriweather (serif). Both self-hosted under SIL OFL. Use the Typography preview toggle at the top to swap these samples between English, French, and Spanish.</p>
 
-        <h1>H1 — Heading 1, clamp(28px, 36px)</h1>
-        <h2>H2 — Heading 2, clamp(24px, 28px)</h2>
-        <h3>H3 — Heading 3, 22px</h3>
-        <h4>H4 — Heading 4, 20px</h4>
-        <p class="lang-sample" data-en="Body paragraph — Merriweather at the scaled size. Two-Birds kitchen-table tone: warm, plain, zero jargon." data-fr="Paragraphe — Merriweather à la taille actuelle. Ton « table de cuisine » : chaleureux, simple, sans jargon." data-es="Párrafo — Merriweather al tamaño actual. Tono de mesa de cocina: cálido, sencillo, sin tecnicismos.">Body paragraph — Merriweather at the scaled size. Two-Birds kitchen-table tone: warm, plain, zero jargon.</p>
-        <p><small>Caption / meta text — 14px, used for dates and supporting labels only, never primary content.</small></p>
+        <h1 class="lang-sample"
+            data-en="H1 — Heading 1, clamp(28px, 36px)"
+            data-fr="H1 — Titre principal, clamp(28px, 36px)"
+            data-es="H1 — Título principal, clamp(28px, 36px)">H1 — Heading 1, clamp(28px, 36px)</h1>
+        <h2 class="lang-sample"
+            data-en="H2 — Heading 2, clamp(24px, 28px)"
+            data-fr="H2 — Titre de section, clamp(24px, 28px)"
+            data-es="H2 — Título de sección, clamp(24px, 28px)">H2 — Heading 2, clamp(24px, 28px)</h2>
+        <h3 class="lang-sample"
+            data-en="H3 — Heading 3, 22px"
+            data-fr="H3 — Sous-titre, 22px"
+            data-es="H3 — Subtítulo, 22px">H3 — Heading 3, 22px</h3>
+        <h4 class="lang-sample"
+            data-en="H4 — Heading 4, 20px"
+            data-fr="H4 — Titre mineur, 20px"
+            data-es="H4 — Título menor, 20px">H4 — Heading 4, 20px</h4>
+        <p class="lang-sample"
+            data-en="Body paragraph — Merriweather at the scaled size. Two-Birds kitchen-table tone: warm, plain, zero jargon. Come back anytime — your progress carries forward."
+            data-fr="Paragraphe — Merriweather à la taille actuelle. Ton « table de cuisine » de Two Birds : chaleureux, simple, sans jargon. Revenez quand vous voulez — votre progression est conservée."
+            data-es="Párrafo — Merriweather al tamaño actual. Tono de mesa de cocina de Two Birds: cálido, sencillo, sin tecnicismos. Vuelve cuando quieras — tu progreso se conserva.">Body paragraph — Merriweather at the scaled size. Two-Birds kitchen-table tone: warm, plain, zero jargon. Come back anytime — your progress carries forward.</p>
+        <p><small class="lang-sample"
+            data-en="Caption / meta text — 14px, used for dates and supporting labels only, never primary content."
+            data-fr="Légende / texte méta — 14 px, pour les dates et libellés secondaires uniquement, jamais pour le contenu principal."
+            data-es="Leyenda / texto meta — 14 px, para fechas y etiquetas de apoyo solamente, nunca para el contenido principal.">Caption / meta text — 14px, used for dates and supporting labels only, never primary content.</small></p>
 
-        <h3>Character sets</h3>
+        <h3 class="lang-sample"
+            data-en="Character sets — all three always visible, to verify every alphabet renders"
+            data-fr="Jeux de caractères — les trois sont toujours visibles, pour vérifier chaque alphabet"
+            data-es="Juegos de caracteres — los tres siempre visibles, para verificar cada alfabeto">Character sets — all three always visible, to verify every alphabet renders</h3>
         <p lang="en">English: the quick brown fox jumps over the lazy dog.</p>
         <p lang="fr">Français : éléphant, hôpital, français, œuvre, naïve, ça marche, Noël.</p>
         <p lang="es">Español: niño, ¿cómo estás?, ¡qué bien!, corazón, mañana, Málaga.</p>
