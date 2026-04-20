@@ -189,7 +189,7 @@
   }
   </script>
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#1565C0">
+  <meta name="theme-color" content="#2A7B6F">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -294,7 +294,7 @@
   <!-- Location Bar -->
   <div id="dcc-location-bar" style="background:#E6FAF8;border-bottom:1px solid #B2DFDB;padding:6px 16px;font-size:0.88rem;color:#1B3A4B;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;">
     <span class="location-label" data-en="Showing general Canadian resources" data-fr="Ressources canadiennes générales">Showing general Canadian resources</span>
-    <button onclick="changeLocation()" class="location-change" style="background:none;border:none;color:#00897B;cursor:pointer;font-size:0.88rem;text-decoration:underline;padding:4px 8px;min-height:44px;font-family:inherit;" data-en="Set my location" data-fr="Définir ma position">Set my location</button>
+    <button onclick="changeLocation()" class="location-change" style="background:none;border:none;color:#2A7B6F;cursor:pointer;font-size:0.88rem;text-decoration:underline;padding:4px 8px;min-height:44px;font-family:inherit;" data-en="Set my location" data-fr="Définir ma position">Set my location</button>
   </div>
 
   <!-- Top Bar (Mobile) -->
@@ -414,7 +414,7 @@
         <div class="progress-bar-container">
           <div class="progress-bar-fill" style="width: 0%;" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-        <button class="btn-reset-progress" onclick="if(confirm('Reset all your progress? This cannot be undone.')) { resetAllProgress(); }" style="font-size:0.8em;color:#888;background:none;border:none;cursor:pointer;padding:4px;text-decoration:underline;">Reset my progress</button>
+        <button class="btn-reset-progress" onclick="if(confirm('Reset all your progress? This cannot be undone.')) { resetAllProgress(); }" style="font-size:0.8em;color:#595959;background:none;border:none;cursor:pointer;padding:4px;text-decoration:underline;">Reset my progress</button>
       </div>
 
       <!-- About This Site -->
@@ -612,7 +612,7 @@
         </a>
 
         <div class="module-category-divider" style="grid-column:1/-1;margin:1rem 0 0.25rem;padding-top:1.25rem;border-top:2px solid var(--border-color,#e0e0e0);">
-          <span style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#888;">Expanding Your Horizons</span>
+          <span style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#595959;">Expanding Your Horizons</span>
         </div>
 
         <a href="module-18-staying-connected.html" class="module-card" data-module="18">
@@ -700,7 +700,7 @@
         <h2 id="whats-new-heading" data-en="What's New" data-fr="Quoi de neuf">What's New</h2>
         <p data-en="Recent additions and updates to the Digital Confidence Centre." data-fr="Ajouts et mises à jour récents au Centre de confiance numérique.">Recent additions and updates to the Digital Confidence Centre.</p>
         <div id="whats-new-cards" class="module-grid" style="margin-top:1rem;">
-          <p id="whats-new-loading" style="color:#888;font-size:0.95rem;" data-en="Loading updates..." data-fr="Chargement des mises à jour...">Loading updates...</p>
+          <p id="whats-new-loading" style="color:#595959;font-size:0.95rem;" data-en="Loading updates..." data-fr="Chargement des mises à jour...">Loading updates...</p>
         </div>
       </section>
       <script>
@@ -724,10 +724,10 @@
                 card.innerHTML =
                   '<div class="card-icon">' + item.icon + '</div>' +
                   '<div class="card-content">' +
-                    '<span style="font-size:0.78rem;color:#888;display:block;margin-bottom:0.25rem;">' + date + '</span>' +
+                    '<span style="font-size:0.78rem;color:#595959;display:block;margin-bottom:0.25rem;">' + date + '</span>' +
                     '<h3 style="margin:0 0 0.4rem;">' + title + '</h3>' +
                     '<p style="margin:0 0 0.5rem;">' + desc + '</p>' +
-                    '<a href="' + item.link + '" style="font-size:0.85rem;color:#1565C0;font-weight:600;">' + readLabel + '</a>' +
+                    '<a href="' + item.link + '" style="font-size:0.85rem;color:#2A7B6F;font-weight:600;">' + readLabel + '</a>' +
                   '</div>';
                 container.appendChild(card);
               });
@@ -746,12 +746,12 @@
 
       <!-- ===== Scam Alert of the Month ===== -->
       <section id="scam-of-the-month" aria-labelledby="sotm-heading" style="margin:2rem 0;padding:1.25rem 1.5rem;background:#fff3f3;border:1px solid #e57373;border-left:6px solid #c0392b;border-radius:8px;">
-        <div id="sotm-loading" style="color:#888;font-size:0.95rem;" data-en="Loading scam alert..." data-fr="Chargement de l'alerte...">Loading scam alert...</div>
+        <div id="sotm-loading" style="color:#595959;font-size:0.95rem;" data-en="Loading scam alert..." data-fr="Chargement de l'alerte...">Loading scam alert...</div>
         <div id="sotm-content" style="display:none;">
           <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.5rem;">
             <span style="font-size:1.4rem;" aria-hidden="true">🚨</span>
             <h2 id="sotm-heading" style="margin:0;font-size:1.1rem;color:#b71c1c;" data-en="Scam Alert of the Month" data-fr="Arnaque du mois">Scam Alert of the Month</h2>
-            <span id="sotm-month" style="font-size:0.85rem;color:#888;"></span>
+            <span id="sotm-month" style="font-size:0.85rem;color:#595959;"></span>
             <span id="sotm-severity" style="display:inline-block;background:#c0392b;color:#fff;font-size:0.75rem;font-weight:bold;padding:2px 9px;border-radius:4px;text-transform:uppercase;letter-spacing:0.05em;"></span>
           </div>
           <p id="sotm-title" style="font-weight:bold;font-size:1.05rem;margin:0.25rem 0 0.5rem;color:#1a1a1a;"></p>

@@ -10,21 +10,21 @@
 /* CSS Custom Properties — aligned to DCC Brand Guidelines v1.1 */
 :root {
   /* Light Mode (Default) */
-  --bg-primary: #F5F5F5;       /* Gentle Grey — brand spec */
+  --bg-primary: #FFF8F0;       /* Gentle Grey — brand spec */
   --bg-secondary: #F8F9FA;
   --bg-card: #FFFFFF;
-  --bg-warm: #FFF8E1;          /* Warm Sand — brand spec: content cards, gentle warmth */
+  --bg-warm: #FFF0E0;          /* Warm Sand — brand spec: content cards, gentle warmth */
   --bg-highlight: #EBF5FB;
   --bg-success: #E8F8F5;
   --bg-warning: #FEF9E7;
   --bg-danger: #FDEDEC;
-  --text-primary: #333333;     /* Text Dark — brand spec (was #2C3E50) */
+  --text-primary: #3D3229;     /* Text Dark — brand spec (was #2C3E50) */
   --text-secondary: #5D6D7E;
-  --text-muted: #5A6B78;       /* darkened: 5.3:1 on white, was 3.0:1 */
-  --brand-teal: #00897B;       /* DCC Teal — primary brand colour */
-  --brand-teal-hover: #00796B; /* DCC Teal darkened for hover */
-  --accent-primary: #1565C0;   /* DCC Blue — links, interactive elements */
-  --accent-hover: #0D47A1;     /* darkened: 7.8:1 on light bg */
+  --text-muted: #7A6E62;       /* darkened: 5.3:1 on white, was 3.0:1 */
+  --brand-teal: #2A7B6F;       /* DCC Teal — primary brand colour */
+  --brand-teal-hover: #226659; /* DCC Teal darkened for hover */
+  --accent-primary: #2A7B6F;   /* DCC Blue — links, interactive elements */
+  --accent-hover: #226659;     /* darkened: 7.8:1 on light bg */
   --accent-success: #27AE60;
   --accent-warning: #F39C12;
   --accent-danger: #E74C3C;
@@ -60,7 +60,7 @@
 [data-theme="dark"] {
   --bg-primary: #1E1E1E;
   --bg-secondary: #2D2D2D;
-  --bg-card: #333333;
+  --bg-card: #3D3229;
   --bg-highlight: #1B2631;
   --bg-success: #1A2E25;
   --bg-warning: #2E2A1A;
@@ -235,7 +235,7 @@ iframe, video {
   left: 16px;
   z-index: 9999;
   padding: 12px 20px;
-  background: #1565C0;
+  background: #2A7B6F;
   color: #FFFFFF;
   font-size: 1rem;
   font-weight: 600;
@@ -604,7 +604,7 @@ strong {
 .mg-category-title {
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--accent-primary, #1565C0);
+  color: var(--accent-primary, #2A7B6F);
   margin: 0 0 0.2rem;
 }
 
@@ -689,13 +689,13 @@ strong {
 }
 
 .mg-sort-btn:hover {
-  border-color: var(--accent-primary, #1565C0);
-  color: var(--accent-primary, #1565C0);
+  border-color: var(--accent-primary, #2A7B6F);
+  color: var(--accent-primary, #2A7B6F);
 }
 
 .mg-sort-btn.active {
-  background: var(--accent-primary, #1565C0);
-  border-color: var(--accent-primary, #1565C0);
+  background: var(--accent-primary, #2A7B6F);
+  border-color: var(--accent-primary, #2A7B6F);
   color: #fff;
 }
 
@@ -1647,7 +1647,7 @@ strong {
   .tip-box, .warning-box, .three-second-rule-box, .confidence-check,
   .confidence-check-box, .success-state-box, .feeling-stuck-box, .story-block {
     background: #ffffff !important;
-    border: 2px solid #333333 !important;
+    border: 2px solid #3D3229 !important;
     color: #000000 !important;
   }
   [data-theme="dark"] .warning-block,
@@ -1660,7 +1660,7 @@ strong {
   [data-theme="dark"] .confidence-check,
   [data-theme="dark"] .story-block {
     background: #ffffff !important;
-    border: 2px solid #333333 !important;
+    border: 2px solid #3D3229 !important;
     color: #000000 !important;
   }
 }
@@ -1871,7 +1871,7 @@ strong {
 .image-placeholder {
   border: 2px solid #CCCCCC;
   border-radius: var(--radius-md);
-  background: #F5F5F5;
+  background: #FFF8F0;
   padding: var(--spacing-lg) var(--spacing-md);
   margin: var(--spacing-md) 0;
   transition: background 0.2s ease, border-color 0.2s ease;
@@ -2627,7 +2627,7 @@ strong {
 }
 .video-section-icon { font-size: 48px; }
 .video-section h3 {
-  color: #1565C0;
+  color: #2A7B6F;
   margin: 0;
   font-size: 1.5rem;
 }
@@ -2682,7 +2682,7 @@ strong {
 }
 .video-card h4,
 .video-card h3 {
-  color: #1565C0;
+  color: #2A7B6F;
   margin: 0 0 8px 0;
   font-size: 1.05rem;
   font-weight: 600;
@@ -2892,7 +2892,7 @@ strong {
 }
 .section-marker-content h3 {
   margin: 0 0 4px 0;
-  color: #1565C0;
+  color: #2A7B6F;
   font-size: 20px;
   font-weight: 600;
 }
@@ -2930,7 +2930,7 @@ strong {
 }
 .image-placeholder:hover {
   background: linear-gradient(135deg, #D6EAF8 0%, #AED6F1 100%) !important;
-  border-left-color: #1565C0 !important;
+  border-left-color: #2A7B6F !important;
 }
 .image-placeholder .placeholder-inner {
   flex-direction: row !important;
@@ -2949,7 +2949,7 @@ strong {
 }
 .image-placeholder .placeholder-label {
   font-size: 11px !important;
-  color: #1565C0 !important;
+  color: #2A7B6F !important;
   font-weight: 600 !important;
   text-transform: uppercase !important;
   letter-spacing: 1.2px !important;
@@ -3010,7 +3010,7 @@ strong {
   padding: 10px 20px;
   font-size: 16px;
   font-weight: 600;
-  color: #1565C0;
+  color: #2A7B6F;
   cursor: pointer;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
   min-width: 122px; /* prevents width jump between "Listen" and "Pause" */
@@ -3023,9 +3023,9 @@ strong {
 }
 /* Active/playing state */
 .read-aloud-btn.playing {
-  background: #1565C0;
+  background: #2A7B6F;
   color: #ffffff;
-  border-color: #0D47A1;
+  border-color: #226659;
   box-shadow: 0 0 0 3px rgba(21,101,192,0.28), 0 4px 12px rgba(21,101,192,0.35);
   transform: translateY(-1px);
 }
@@ -3057,7 +3057,7 @@ strong {
   color: #1E1E1E;
 }
 [data-theme="dark"] .read-aloud-btn.playing {
-  background: #1565C0;
+  background: #2A7B6F;
   color: #ffffff;
   border-color: #90CAF9;
   box-shadow: 0 0 0 3px rgba(144,202,249,0.3), 0 4px 12px rgba(21,101,192,0.4);
@@ -3178,7 +3178,7 @@ strong {
   background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
   border-radius: 16px;
 }
-.guide-header h1 { margin: 0 0 12px 0; color: #1565C0; }
+.guide-header h1 { margin: 0 0 12px 0; color: #2A7B6F; }
 .guide-header p  { margin: 0; color: #455A64; font-size: 18px; }
 .guide-section { margin-bottom: 48px; }
 .quality-indicator {
@@ -3247,45 +3247,45 @@ strong {
 
 /* video-card-btn: was #5DADE2 bg, no explicit text color */
 [data-theme="dark"] .video-card-btn {
-  background: #1565C0 !important;
+  background: #2A7B6F !important;
   color: #FFFFFF !important;
-  border-color: #0D47A1 !important;
+  border-color: #226659 !important;
 }
 [data-theme="dark"] .video-card-btn:hover {
-  background: #0D47A1 !important;
+  background: #226659 !important;
   color: #FFFFFF !important;
 }
 
 /* btn-primary dark mode */
 [data-theme="dark"] .btn-primary {
-  background: #1565C0;
+  background: #2A7B6F;
   color: #FFFFFF;
-  border-color: #0D47A1;
+  border-color: #226659;
 }
 [data-theme="dark"] .btn-primary:hover {
-  background: #0D47A1;
+  background: #226659;
   color: #FFFFFF;
 }
 
 /* quiz primary button */
 [data-theme="dark"] .quiz-btn-primary {
-  background: #1565C0;
+  background: #2A7B6F;
   color: #FFFFFF;
-  border-color: #0D47A1;
+  border-color: #226659;
 }
 [data-theme="dark"] .quiz-btn-primary:hover {
-  background: #0D47A1;
+  background: #226659;
   color: #FFFFFF;
 }
 
 /* back-btn and resource-btn */
 [data-theme="dark"] .back-btn {
-  background: #1565C0;
+  background: #2A7B6F;
   color: #FFFFFF !important;
-  border-color: #0D47A1;
+  border-color: #226659;
 }
 [data-theme="dark"] .back-btn:hover {
-  background: #0D47A1;
+  background: #226659;
   color: #FFFFFF !important;
 }
 
@@ -3302,19 +3302,19 @@ strong {
 
 /* module nav buttons */
 [data-theme="dark"] .module-nav .btn-primary {
-  background: #1565C0;
+  background: #2A7B6F;
   color: #FFFFFF;
-  border-color: #0D47A1;
+  border-color: #226659;
 }
 
 /* read-aloud button */
 [data-theme="dark"] .read-aloud-btn {
-  background: #1565C0 !important;
-  border-color: #0D47A1 !important;
+  background: #2A7B6F !important;
+  border-color: #226659 !important;
   color: #FFFFFF !important;
 }
 [data-theme="dark"] .read-aloud-btn:hover {
-  background: #0D47A1 !important;
+  background: #226659 !important;
   color: #FFFFFF !important;
 }
 
@@ -3357,7 +3357,7 @@ strong {
 }
 .banner-text {
   margin: 8px 0 0 0;
-  color: #1565C0;
+  color: #2A7B6F;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -3410,7 +3410,7 @@ strong {
 
 /* ── Module 2 gradient hero ──────────────────────────────────── */
 .module-2-hero {
-  background: linear-gradient(135deg, #1565C0 0%, #0D47A1 100%);
+  background: linear-gradient(135deg, #2A7B6F 0%, #226659 100%);
   min-height: 280px;
   display: flex;
   align-items: center;
@@ -3594,7 +3594,7 @@ strong {
 }
 .btn-feedback-submit:hover { background:#F57C00; }
 .btn-feedback-cancel {
-  background:#F5F5F5; color:#546E7A;
+  background:#FFF8F0; color:#546E7A;
   border:none; padding:12px 20px; border-radius:8px;
   font-size:15px; font-weight:600; cursor:pointer; transition:background 0.2s;
 }
@@ -3661,7 +3661,7 @@ strong {
   background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
   border-color: #2196F3;
 }
-[data-theme="light"] .example-title { color: #1565C0; }
+[data-theme="light"] .example-title { color: #2A7B6F; }
 [data-theme="light"] .example-description { color: #37474F; }
 @media (max-width: 768px) {
   .visual-example-card { padding: 24px 16px; }
@@ -3743,7 +3743,7 @@ strong {
 .personalization-banner,
 .device-profile-bar {
   font-size: 0.78rem;
-  color: #888;
+  color: #595959;
   padding: 0.25rem 0;
   margin: 0 0 0.75rem 0;
   background: none;
@@ -4090,11 +4090,11 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 
 .speed-btn-inline:hover {
   background: #E0E7EF;
-  color: #1565C0;
+  color: #2A7B6F;
 }
 
 .speed-btn-inline.active {
-  background: #1565C0;
+  background: #2A7B6F;
   color: #FFFFFF;
   box-shadow: 0 1px 4px rgba(21, 101, 192, 0.35);
 }
@@ -4118,7 +4118,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 }
 
 [data-theme="dark"] .speed-btn-inline.active {
-  background: #1565C0;
+  background: #2A7B6F;
   color: #FFFFFF;
 }
 
@@ -4225,7 +4225,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 }
 
 .resource-contact a {
-  color: #1565C0;
+  color: #2A7B6F;
   text-decoration: none;
   font-weight: 600;
 }
@@ -4272,7 +4272,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 }
 
 .resource-guidance a {
-  color: #1565C0;
+  color: #2A7B6F;
   font-weight: 600;
 }
 
@@ -4326,7 +4326,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   bottom: 80px !important;
   right: 16px !important;
   left: auto !important;
-  background: linear-gradient(135deg, #1565C0, #1976D2);
+  background: linear-gradient(135deg, #2A7B6F, #1976D2);
   color: #fff;
   border: none;
   border-radius: 28px;
@@ -4393,7 +4393,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   background: #f0f0f0;
   border: 1px solid #cccccc;
   border-radius: 20px;
-  color: #333333;
+  color: #3D3229;
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
@@ -4404,7 +4404,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   flex-shrink: 0;
   transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
-.dc-modal-close:hover { background: #e0e0e0; color: #333333; border-color: #999999; }
+.dc-modal-close:hover { background: #e0e0e0; color: #3D3229; border-color: #999999; }
 [data-theme="dark"] .dc-modal-close { background: #333; color: #eee; border-color: #555; }
 
 .dc-modal-title {
@@ -4448,7 +4448,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 .dc-feedback-textarea:focus,
 .dc-feedback-select:focus {
   outline: none;
-  border-color: #1565C0;
+  border-color: #2A7B6F;
   box-shadow: 0 0 0 3px rgba(21,101,192,0.15);
 }
 .dc-field-help { font-size: 12px; color: #90A4AE; margin: 5px 0 0; }
@@ -4475,7 +4475,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   background: #FAFBFC;
 }
 .dc-type-option input:checked + .dc-type-label {
-  border-color: #1565C0;
+  border-color: #2A7B6F;
   background: #E8F0FE;
 }
 .dc-type-option:hover .dc-type-label { border-color: #90A4AE; }
@@ -4486,7 +4486,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 /* Actions */
 .dc-feedback-actions { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
 .dc-btn-submit {
-  background: #1565C0;
+  background: #2A7B6F;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -4496,7 +4496,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   cursor: pointer;
   transition: background 0.2s;
 }
-.dc-btn-submit:hover { background: #0D47A1; }
+.dc-btn-submit:hover { background: #226659; }
 .dc-btn-submit:disabled { background: #90A4AE; cursor: not-allowed; }
 .dc-btn-cancel {
   background: transparent;
@@ -4540,7 +4540,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   background: #1A2F4A; border-color: #42A5F5;
 }
 [data-theme="dark"] .dc-type-text { color: #E8EAF0; }
-[data-theme="dark"] .dc-unified-feedback-btn { background: linear-gradient(135deg, #0D47A1, #1565C0); }
+[data-theme="dark"] .dc-unified-feedback-btn { background: linear-gradient(135deg, #226659, #2A7B6F); }
 
 /* Mobile — feedback */
 @media (max-width: 600px) {
@@ -4563,7 +4563,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
     transform: translateX(-50%);
     font-size: 10px;
     font-weight: 700;
-    color: #1565C0;
+    color: #2A7B6F;
     white-space: nowrap;
     letter-spacing: 0.03em;
   }
@@ -4681,11 +4681,11 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 .dc-scam-step {
   display: flex;
   gap: 18px;
-  background: #F5F5F5;
+  background: #FFF8F0;
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 14px;
-  border-left: 5px solid #1565C0;
+  border-left: 5px solid #2A7B6F;
   align-items: flex-start;
 }
 .dc-scam-step.dc-step-urgent {
@@ -4695,7 +4695,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 .dc-step-num {
   flex-shrink: 0;
   width: 48px; height: 48px;
-  background: #1565C0; color: #fff;
+  background: #2A7B6F; color: #fff;
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-size: 22px; font-weight: 700;
@@ -4722,7 +4722,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   margin: 10px 0;
   line-height: 1.8;
 }
-.dc-contact-block a { color: #1565C0; font-weight: 600; }
+.dc-contact-block a { color: #2A7B6F; font-weight: 600; }
 
 .dc-scam-footer { margin-top: 20px; text-align: center; }
 .dc-reassurance {
@@ -4734,12 +4734,12 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   margin-bottom: 18px;
 }
 .dc-scam-close-btn {
-  background: #1565C0; color: #fff;
+  background: #2A7B6F; color: #fff;
   border: none; border-radius: 10px;
   padding: 16px 40px; font-size: 18px; font-weight: 700;
   cursor: pointer; transition: background 0.2s;
 }
-.dc-scam-close-btn:hover { background: #0D47A1; }
+.dc-scam-close-btn:hover { background: #226659; }
 
 /* Dark mode — scam */
 [data-theme="dark"] .dc-scam-content { background: #1A1A2E; color: #E8EAF0; }
@@ -4794,7 +4794,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   background: #fff;
   border: 2px solid #3498DB;
   border-radius: var(--radius-md);
-  color: #1565C0;
+  color: #2A7B6F;
   cursor: pointer;
   font-family: inherit;
   font-size: 1.05rem;
@@ -5074,7 +5074,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   margin-left: 0.4rem;
 }
 .breadcrumb a {
-  color: var(--accent-color, #1565C0);
+  color: var(--accent-color, #2A7B6F);
 }
 
 /* Language toggle */
@@ -5086,10 +5086,10 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 }
 .lang-btn {
   padding: 0.45rem 1.3rem;
-  border: 2px solid var(--accent-color, #1565C0);
+  border: 2px solid var(--accent-color, #2A7B6F);
   border-radius: 6px;
   background: transparent;
-  color: var(--accent-color, #1565C0);
+  color: var(--accent-color, #2A7B6F);
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
@@ -5097,7 +5097,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 }
 .lang-btn.active,
 .lang-btn:hover {
-  background: var(--accent-color, #1565C0);
+  background: var(--accent-color, #2A7B6F);
   color: #fff;
 }
 
@@ -5118,13 +5118,13 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   font-size: 1.05rem;
   border: 2px solid var(--border-color, #c5cae9);
   border-radius: 8px;
-  background: var(--bg-secondary, #f5f5f5);
+  background: var(--bg-secondary, #FFF8F0);
   color: var(--text-primary, #222);
   display: block;
 }
 #glossary-search:focus {
-  outline: 3px solid var(--accent-color, #1565C0);
-  border-color: var(--accent-color, #1565C0);
+  outline: 3px solid var(--accent-color, #2A7B6F);
+  border-color: var(--accent-color, #2A7B6F);
 }
 
 /* Did You Mean */
@@ -5138,9 +5138,9 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 }
 .dym-suggestion {
   background: none;
-  border: 1px solid var(--accent-color, #1565C0);
+  border: 1px solid var(--accent-color, #2A7B6F);
   border-radius: 4px;
-  color: var(--accent-color, #1565C0);
+  color: var(--accent-color, #2A7B6F);
   padding: 0.2rem 0.6rem;
   font-size: 0.92rem;
   cursor: pointer;
@@ -5148,7 +5148,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   margin-top: 0.3rem;
 }
 .dym-suggestion:hover {
-  background: var(--accent-color, #1565C0);
+  background: var(--accent-color, #2A7B6F);
   color: #fff;
 }
 
@@ -5172,9 +5172,9 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 }
 .cat-btn.active,
 .cat-btn:hover {
-  background: var(--accent-color, #1565C0);
+  background: var(--accent-color, #2A7B6F);
   color: #fff;
-  border-color: var(--accent-color, #1565C0);
+  border-color: var(--accent-color, #2A7B6F);
 }
 
 /* Result count */
@@ -5194,7 +5194,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   font-weight: 700;
   margin: 2rem 0 0.8rem;
   padding-bottom: 0.4rem;
-  border-bottom: 2px solid var(--accent-color, #1565C0);
+  border-bottom: 2px solid var(--accent-color, #2A7B6F);
   color: var(--text-primary, #111);
 }
 
@@ -5210,7 +5210,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 .glossary-entry h3 {
   font-size: 1.1rem;
   margin: 0 0 0.5rem;
-  color: var(--accent-color, #1565C0);
+  color: var(--accent-color, #2A7B6F);
 }
 .entry-plain {
   margin: 0 0 0.45rem;
@@ -5229,7 +5229,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   line-height: 1.5;
 }
 .entry-safety {
-  background: #fff8e1;
+  background: #FFF0E0;
   border-left: 4px solid #f9a825;
   padding: 0.5rem 0.8rem;
   border-radius: 0 6px 6px 0;
@@ -5241,7 +5241,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   display: inline-block;
   margin-top: 0.5rem;
   font-size: 0.88rem;
-  color: var(--accent-color, #1565C0);
+  color: var(--accent-color, #2A7B6F);
 }
 
 /* No-results block */
@@ -5254,7 +5254,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 .link-btn {
   background: none;
   border: none;
-  color: var(--accent-color, #1565C0);
+  color: var(--accent-color, #2A7B6F);
   text-decoration: underline;
   cursor: pointer;
   font-size: inherit;
@@ -5268,7 +5268,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   top: 0;
   z-index: 200;
   background: var(--bg-primary, #fff);
-  border: 2px solid #1565C0;
+  border: 2px solid #2A7B6F;
   border-radius: 8px;
   padding: 1rem 1.2rem;
   margin-bottom: 1.5rem;
@@ -5289,7 +5289,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 }
 .glossary-admin-panel th {
   font-weight: 700;
-  background: var(--bg-secondary, #f5f5f5);
+  background: var(--bg-secondary, #FFF8F0);
 }
 
 /* Screen-reader-only utility */
@@ -5363,7 +5363,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   letter-spacing: 0.5px;
   margin-bottom: var(--spacing-xs);
 }
-.badge-new      { background: var(--navy-light, #dce8f8); color: #1565C0; }   /* 5.7:1 ✓ */
+.badge-new      { background: var(--navy-light, #dce8f8); color: #2A7B6F; }   /* 5.7:1 ✓ */
 .badge-updated  { background: #fff3e0; color: #7A5800; }                       /* 6.3:1 ✓ */
 .badge-complete { background: #e8f5e9; color: #155724; }                       /* 7.8:1 ✓ */
 
@@ -5377,7 +5377,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 .warning-block .warning-label  { color: #7A5800; }  /* 6.3:1 on #FEF9E7 ✓ */
 .danger-block .danger-label    { color: #A93226; }  /* 6.4:1 on #FDEDEC ✓ */
 .confidence-check p            { color: #155724; }  /* 7.8:1 on #E8F8F5 ✓ */
-.tip-block .tip-label          { color: #0D47A1; }  /* 8.1:1 on #EBF5FB ✓ */
+.tip-block .tip-label          { color: #226659; }  /* 8.1:1 on #EBF5FB ✓ */
 /* Dark mode already compliant — no overrides needed */
 [data-theme="dark"] .warning-block .warning-label { color: var(--accent-warning); }
 [data-theme="dark"] .danger-block .danger-label   { color: var(--accent-danger);  }
@@ -5440,7 +5440,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   border: 1px solid #BBDEFB;
 }
 .file-type-card h4 {
-  color: #1565C0;
+  color: #2A7B6F;
   margin: 0 0 6px;
   font-size: 1.05rem;
 }
@@ -5535,7 +5535,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   vertical-align: middle;
 }
 .dc-badge-verified { background: #E8F5E9; color: #2E7D32; border: 1px solid #A5D6A7; }
-.dc-badge-aging    { background: #FFF8E1; color: #6B4500; border: 1px solid #FFE082; }  /* 8.2:1 ✓ */
+.dc-badge-aging    { background: #FFF0E0; color: #6B4500; border: 1px solid #FFE082; }  /* 8.2:1 ✓ */
 .dc-badge-stale    { background: #FFF3E0; color: #7B2D00; border: 1px solid #FFCC02; }  /* 9.4:1 ✓ */
 
 /* ================================================================
@@ -5557,7 +5557,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   white-space: nowrap;
   transition: color 0.15s;
 }
-.top-bar-home:hover { color: var(--accent, #1565C0); text-decoration: none; }
+.top-bar-home:hover { color: var(--accent, #2A7B6F); text-decoration: none; }
 .top-bar-home-label { font-size: 0.85rem; }
 [data-theme="dark"] .top-bar-home { color: var(--text-primary); }
 
@@ -5581,7 +5581,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #1565C0;
+  color: #2A7B6F;
   background: #E3F2FD;
   border: 1px solid #BBDEFB;
   border-radius: 4px;
@@ -5803,7 +5803,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 .testimonials-section h2 {
   font-size: 1.8em;
   margin-bottom: 24px;
-  color: #1565C0;
+  color: #2A7B6F;
 }
 
 .testimonials-grid {
@@ -5838,7 +5838,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 
 .testimonial-author {
   font-weight: bold;
-  color: #1565C0;
+  color: #2A7B6F;
   font-size: 0.95em;
 }
 
@@ -5849,7 +5849,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 
 .testimonials-disclaimer {
   font-size: 0.85em;
-  color: #888;
+  color: #595959;
   font-style: italic;
   margin-top: 8px;
 }
@@ -5897,22 +5897,22 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 }
 .alert-card .alert-icon { font-size: 2em; line-height: 1; }
 .alert-card .alert-content p { margin: 6px 0 10px; font-size: 1.05em; line-height: 1.5; }
-.alert-card .alert-link { color: #1565C0; font-weight: bold; text-decoration: underline; }
+.alert-card .alert-link { color: #2A7B6F; font-weight: bold; text-decoration: underline; }
 
 /* Related Modules */
 .related-modules { margin: 32px 0 16px; padding-top: 24px; border-top: 2px solid #e0e7ff; }
-.related-title { font-size: 1.1em; color: #1565C0; margin-bottom: 16px; }
+.related-title { font-size: 1.1em; color: #2A7B6F; margin-bottom: 16px; }
 .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
 .related-card { display: flex; flex-direction: column; gap: 4px; padding: 16px; background: #f0f4ff; border: 1px solid #c7d2fe; border-radius: 10px; text-decoration: none; color: inherit; transition: background 0.2s; }
 .related-card:hover { background: #e0e7ff; }
 .related-num { font-size: 0.8em; color: #6366f1; font-weight: bold; text-transform: uppercase; }
-.related-name { font-size: 1em; font-weight: bold; color: #1565C0; }
+.related-name { font-size: 1em; font-weight: bold; color: #2A7B6F; }
 .related-desc { font-size: 0.88em; color: #555; line-height: 1.4; }
 
 /* Module Complete Action */
 .module-complete-action { text-align: center; margin: 24px 0 16px; position: relative; overflow: hidden; }
-.btn-mark-complete { background: #1565C0; color: white; border: none; padding: 14px 32px; border-radius: 8px; font-size: 1.05em; font-weight: bold; cursor: pointer; transition: background 0.2s; min-height: 52px; }
-.btn-mark-complete:hover { background: #0d47a1; }
+.btn-mark-complete { background: #2A7B6F; color: white; border: none; padding: 14px 32px; border-radius: 8px; font-size: 1.05em; font-weight: bold; cursor: pointer; transition: background 0.2s; min-height: 52px; }
+.btn-mark-complete:hover { background: #226659; }
 
 /* Completion Banner */
 .mc-complete-banner {
@@ -5938,7 +5938,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 [data-theme="dark"] .mc-complete-sub { color: #86efac; }
 
 .mc-print-btn {
-  background: #1565C0;
+  background: #2A7B6F;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -6026,7 +6026,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   font-size: 0.82rem;
 }
 .sources-block ul li { margin-bottom: 0.25rem; }
-.sources-block ul li a { color: var(--color-primary, #1565C0); }
+.sources-block ul li a { color: var(--color-primary, #2A7B6F); }
 [data-theme="dark"] .sources-block { border-color: #444; }
 [data-theme="dark"] .sources-block h3 { color: #a0a0a0; }
 
@@ -6080,7 +6080,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   gap: 0.75rem;
   line-height: 1.4;
 }
-.qa-question:hover { color: var(--color-primary, #1565C0); }
+.qa-question:hover { color: var(--color-primary, #2A7B6F); }
 .qa-question[aria-expanded="true"] .qa-chevron { transform: rotate(180deg); }
 .qa-chevron {
   font-size: 0.7rem;
@@ -6139,10 +6139,10 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 }
 .mi-star.active { color: #f5a623; }
 .mi-star:hover,
-.mi-star:focus { color: #f5a623; transform: scale(1.15); outline: 2px solid #1565C0; outline-offset: 2px; }
+.mi-star:focus { color: #f5a623; transform: scale(1.15); outline: 2px solid #2A7B6F; outline-offset: 2px; }
 .mi-rating-label {
   font-size: 0.82rem;
-  color: #888;
+  color: #595959;
   display: block;
 }
 /* Notes */
@@ -6158,7 +6158,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   background: var(--color-bg, #fff);
   margin-bottom: 0.75rem;
 }
-.mi-notes-area:focus { outline: 2px solid #1565C0; border-color: #1565C0; }
+.mi-notes-area:focus { outline: 2px solid #2A7B6F; border-color: #2A7B6F; }
 .mi-notes-actions,
 .mi-share-actions {
   display: flex;
@@ -6179,14 +6179,14 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   white-space: nowrap;
   transition: background 0.15s, color 0.15s;
 }
-.mi-btn:hover { background: #1565C0; color: #fff; border-color: #1565C0; }
-.mi-btn:focus { outline: 2px solid #1565C0; outline-offset: 2px; }
+.mi-btn:hover { background: #2A7B6F; color: #fff; border-color: #2A7B6F; }
+.mi-btn:focus { outline: 2px solid #2A7B6F; outline-offset: 2px; }
 /* Dark mode */
 [data-theme="dark"] .mi-section { background: #1e2a38; border-color: #444; }
 [data-theme="dark"] .mi-heading { color: #E0E0E0; }
 [data-theme="dark"] .mi-notes-area { background: #152030; color: #E0E0E0; border-color: #555; }
 [data-theme="dark"] .mi-btn { background: #1e2a38; color: #E0E0E0; border-color: #555; }
-[data-theme="dark"] .mi-btn:hover { background: #1565C0; color: #fff; }
+[data-theme="dark"] .mi-btn:hover { background: #2A7B6F; color: #fff; }
 
 /* ── Homepage Personalisation Panel ─────────────────────────────────────── */
 #dc-progress-personalise { margin: 0.75rem 0 1rem; }
@@ -6253,7 +6253,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   font-family: inherit;
 }
 #dc-help-btn {
-  background: #1565C0;
+  background: #2A7B6F;
   color: #fff;
   border: none;
   border-radius: 22px;
@@ -6268,7 +6268,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 }
 #dc-help-btn:hover,
 #dc-help-btn:focus-visible {
-  background: #0d47a1;
+  background: #226659;
   outline: 3px solid #90caf9;
   outline-offset: 2px;
 }
@@ -6304,7 +6304,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   border-color: #333;
 }
 [data-theme="dark"] #dc-help-popover a {
-  color: #f5f5f5;
+  color: #FFF8F0;
   border-bottom-color: #333;
 }
 [data-theme="dark"] #dc-help-popover a:hover { background: #2a2a2a; }
@@ -6323,7 +6323,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 #dc-confirm-overlay.open { display: flex; }
 [data-theme="dark"] #dc-confirm-overlay > div {
   background: #1e1e1e;
-  color: #f5f5f5;
+  color: #FFF8F0;
 }
 
 /* Print — hide interactive UI elements */
@@ -6354,7 +6354,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   width: auto !important;
   min-height: 44px;
   border-radius: 8px;
-  background: var(--accent-primary, #1565C0);
+  background: var(--accent-primary, #2A7B6F);
   color: #fff;
   border: none;
   cursor: pointer;
@@ -6386,9 +6386,9 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   white-space: nowrap;
 }
 .speed-btn-inline.active {
-  background: var(--accent-primary, #1565C0);
+  background: var(--accent-primary, #2A7B6F);
   color: #fff;
-  border-color: var(--accent-primary, #1565C0);
+  border-color: var(--accent-primary, #2A7B6F);
 }
 
 /* FIX 3: Content bottom padding so help button never overlaps last element */
