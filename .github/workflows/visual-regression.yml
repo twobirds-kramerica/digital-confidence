@@ -1,0 +1,126 @@
+name: Visual regression (Playwright)
+
+# Visual regression tests for DCC — separate from playwright.yml to keep
+# smoke CI fast and deterministic.
+#
+# TWO MODES (via workflow_dispatch input):
+#
+# 1. Compare (default): runs visual.spec.js against committed baselines in
+#    tests/playwright/__screenshots__/. Fails on diffs exceeding the
+#    per-test maxDiffPixelRatio threshold. Uploads diff images on failure.
+#
+# 2. Update snapshots: regenerates baselines with `--update-snapshots`,
+#    then commits and pushes the new PNGs back to main. Use after an
+#    intentional visual change (new theme, deliberate layout revision).
+#
+# Currently triggers on workflow_dispatch only. After first baseline
+# generation is committed, extend with `push:` trigger so every commit
+# gets regression-checked.
+#
+# Scope: Chromium at desktop-1280 only. Cross-engine visual differences
+# (Firefox/WebKit font rendering vs Chromium) are expected and would
+# produce noise; those engines are covered by smoke.spec.js for
+# functional correctness.
+
+on:
+  workflow_dispatch:
+    inputs:
+      update_snapshots:
+        description: 'Regenerate baselines (commits back to main)'
+        type: boolean
+        default: false
+
+jobs:
+  visual:
+    name: Visual regression (Chromium desktop-1280)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install http-server
+        run: npm install -g http-server@14.1.1
+
+      - name: Install Playwright harness
+        working-directory: tests/playwright
+        run: npm install --no-audit --no-fund
+
+      - name: Install Chromium for Playwright
+        working-directory: tests/playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Serve DCC site on :3000
+        run: |
+          http-server . -p 3000 -s --cors &
+          echo $! > /tmp/http-server.pid
+          for i in 1 2 3 4 5 6 7 8; do
+            if curl -sSf http://localhost:3000/ > /dev/null; then
+              echo "Server up."
+              break
+            fi
+            sleep 1
+          done
+
+      - name: Run visual regression (compare mode)
+        if: ${{ inputs.update_snapshots != true }}
+        working-directory: tests/playwright
+        env:
+          PW_BASE_URL: http://localhost:3000
+        run: |
+          npx playwright test visual.spec.js --project=chromium-desktop-1280
+
+      - name: Regenerate baselines (update mode)
+        if: ${{ inputs.update_snapshots == true }}
+        working-directory: tests/playwright
+        env:
+          PW_BASE_URL: http://localhost:3000
+        run: |
+          npx playwright test visual.spec.js --project=chromium-desktop-1280 --update-snapshots
+
+      - name: Stop http-server
+        if: always()
+        run: |
+          if [ -f /tmp/http-server.pid ]; then
+            kill "$(cat /tmp/http-server.pid)" 2>/dev/null || true
+          fi
+
+      - name: Commit regenerated baselines
+        if: ${{ inputs.update_snapshots == true }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git status --porcelain tests/playwright/__screenshots__/ | grep -q .; then
+            git add tests/playwright/__screenshots__/
+            git commit -m "chore(visual): regenerate baselines via visual-regression.yml
+
+          Triggered by workflow_dispatch with update_snapshots=true.
+          Run: ${{ github.run_id }}
+          Actor: ${{ github.actor }}"
+            git push origin main
+            echo "Baselines committed and pushed."
+          else
+            echo "No baseline changes — nothing to commit."
+          fi
+
+      - name: Upload Playwright artifact (diffs / screenshots / trace)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-regression-results
+          path: |
+            tests/playwright/playwright-report/
+            tests/playwright/test-results/
+          retention-days: 14
+          if-no-files-found: ignore

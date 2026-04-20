@@ -79,7 +79,9 @@ jobs:
         env:
           PW_BASE_URL: http://localhost:3000
         run: |
-          npx playwright test
+          # Restrict to smoke.spec.js so visual.spec.js (handled by
+          # visual-regression.yml) doesn't run here before baselines exist
+          npx playwright test smoke.spec.js
 
       - name: Stop http-server
         if: always()
