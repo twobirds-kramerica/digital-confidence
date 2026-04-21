@@ -29,6 +29,11 @@ for (const p of PAGES) {
     await page.goto(p.path, { waitUntil: 'domcontentloaded' });
     await page.waitForLoadState('networkidle', { timeout: 10_000 }).catch(() => {});
 
+    // Wait for @font-face loads to finish. Without this, the "two consecutive
+    // stable screenshots" check flakes on styleguide because the fallback
+    // font gets swapped mid-capture. Pattern borrowed from Playwright docs.
+    await page.evaluate(() => document.fonts && document.fonts.ready).catch(() => {});
+
     // Disable animations to avoid anti-aliasing / motion flakiness
     await page.addStyleTag({
       content: `
@@ -40,8 +45,9 @@ for (const p of PAGES) {
       `,
     });
 
-    // Give the disabled-animation styles a beat to apply
-    await page.waitForTimeout(200);
+    // Give deferred JS (e.g., keyboard-helper modal injection on styleguide)
+    // a beat to finish DOM mutations before we ask for stable screenshots.
+    await page.waitForTimeout(500);
 
     await expect(page).toHaveScreenshot(`${p.name}.png`, {
       fullPage: true,
