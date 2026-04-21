@@ -8,6 +8,11 @@ const { defineConfig, devices } = require('@playwright/test');
 
 module.exports = defineConfig({
   testDir: '.',
+  // Centralise baseline snapshots under __screenshots__/ so the
+  // visual-regression.yml commit step can diff one directory.
+  // Preserves {-projectName} and {-snapshotSuffix} so multi-project /
+  // multi-OS baselines don't collide.
+  snapshotPathTemplate: '__screenshots__/{testFilePath}/{arg}{-projectName}{-snapshotSuffix}{ext}',
   timeout: 30_000,
   expect: { timeout: 5_000 },
   fullyParallel: true,

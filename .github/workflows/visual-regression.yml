@@ -23,6 +23,22 @@ name: Visual regression (Playwright)
 # functional correctness.
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - 'css/**'
+      - 'js/**'
+      - '.github/workflows/visual-regression.yml'
+      - 'tests/playwright/visual.spec.js'
+      - 'tests/playwright/playwright.config.js'
+  pull_request:
+    branches: [main]
+    paths:
+      - '**.html'
+      - 'css/**'
+      - 'js/**'
+      - 'tests/playwright/visual.spec.js'
   workflow_dispatch:
     inputs:
       update_snapshots:
