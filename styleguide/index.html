@@ -84,6 +84,7 @@
         <li><a href="#feedback">11. Feedback</a></li>
         <li><a href="#footer">12. Footer</a></li>
         <li><a href="#a11y">13. Accessibility</a></li>
+        <li><a href="#s030">14. S-030 components</a></li>
       </ul>
     </aside>
 
@@ -385,6 +386,43 @@
         <p>Before each release: keyboard-only nav test, screen reader test (NVDA on Windows), 200% zoom test, high contrast test, reduced motion test, axe-core automated scan.</p>
       </section>
 
+      <section id="s030" class="sg-section">
+        <h2>14. S-030 accessibility components</h2>
+        <p>Four user-visible accessibility components bundled together. All use design tokens only; behaviour degrades gracefully when a browser API is missing.</p>
+
+        <h3>Read-aloud (page level)</h3>
+        <p>Injects a single button below the page <code>&lt;h1&gt;</code> of every module. Uses the Web Speech API via <code>js/read-aloud.js</code>, which delegates to the existing <code>speech-config.js</code> voice engine. Click once to listen; click again to stop.</p>
+        <div class="read-aloud-page" role="group" aria-label="Read-aloud demo">
+          <button class="read-aloud-page-btn" type="button" aria-pressed="false" onclick="dccSgReadAloudDemo(this)">
+            <span class="read-aloud-icon" aria-hidden="true">▶️</span>
+            <span class="read-aloud-label">Read this page aloud</span>
+          </button>
+          <span class="read-aloud-page-hint">Click once to listen. Click again to stop.</span>
+        </div>
+
+        <h3>Module progress dots</h3>
+        <p>One dot per <code>&lt;h2&gt;</code> section. Dots fill as the reader scrolls past each section; progress persists per page slug in <code>localStorage</code>.</p>
+        <nav class="module-progress-dots" aria-label="Module progress (demo)">
+          <ol class="module-progress-dots__list">
+            <li class="module-progress-dots__item is-complete"><span class="module-progress-dots__dot" aria-hidden="true"></span><span class="sr-only">Section 1 read</span></li>
+            <li class="module-progress-dots__item is-complete"><span class="module-progress-dots__dot" aria-hidden="true"></span><span class="sr-only">Section 2 read</span></li>
+            <li class="module-progress-dots__item is-complete"><span class="module-progress-dots__dot" aria-hidden="true"></span><span class="sr-only">Section 3 read</span></li>
+            <li class="module-progress-dots__item"><span class="module-progress-dots__dot" aria-hidden="true"></span><span class="sr-only">Section 4 not yet read</span></li>
+            <li class="module-progress-dots__item"><span class="module-progress-dots__dot" aria-hidden="true"></span><span class="sr-only">Section 5 not yet read</span></li>
+            <li class="module-progress-dots__item"><span class="module-progress-dots__dot" aria-hidden="true"></span><span class="sr-only">Section 6 not yet read</span></li>
+          </ol>
+          <span class="module-progress-dots__counter">3 of 6 sections read</span>
+        </nav>
+
+        <h3>Keyboard-shortcut helper</h3>
+        <p>Press <kbd>?</kbd> anywhere on the site (except inside a text input) to open a modal listing keyboard shortcuts. <kbd>Esc</kbd> closes. Focus is trapped inside the dialog.</p>
+        <button class="btn" type="button" onclick="if(window.event)window.event.preventDefault();var e=new KeyboardEvent('keydown',{key:'?',bubbles:true});document.dispatchEvent(e);">Preview the shortcut list</button>
+
+        <h3>Still-with-us check-in banner</h3>
+        <p>Shows a non-blocking banner bottom-left after 8 minutes of idle reading, or at 50% scroll depth — whichever happens first. One-click opt-out. Resume-later button saves scroll position.</p>
+        <button class="btn btn--secondary" type="button" onclick="dccSgCheckInDemo()">Preview the check-in banner</button>
+      </section>
+
     </main>
   </div>
 </div>
@@ -457,7 +495,67 @@
     t.style.display = 'block';
     setTimeout(() => { t.style.display = 'none'; }, 3500);
   }
+
+  // --- S-030 component demos ----------------------------------------------
+  function dccSgReadAloudDemo(btn) {
+    if (!('speechSynthesis' in window)) {
+      alert('This browser does not support the Web Speech API.');
+      return;
+    }
+    const icon  = btn.querySelector('.read-aloud-icon');
+    const label = btn.querySelector('.read-aloud-label');
+    if (window.speechSynthesis.speaking) {
+      window.speechSynthesis.cancel();
+      btn.classList.remove('playing');
+      btn.setAttribute('aria-pressed', 'false');
+      if (icon) icon.textContent = '▶️';
+      if (label) label.textContent = 'Read this page aloud';
+      return;
+    }
+    const sample = 'This is a demo of the page-level read aloud button. ' +
+      'In a real module, this button reads the main content from top to bottom.';
+    const u = new SpeechSynthesisUtterance(sample);
+    u.onend = u.onerror = function () {
+      btn.classList.remove('playing');
+      btn.setAttribute('aria-pressed', 'false');
+      if (icon) icon.textContent = '▶️';
+      if (label) label.textContent = 'Read this page aloud';
+    };
+    btn.classList.add('playing');
+    btn.setAttribute('aria-pressed', 'true');
+    if (icon) icon.textContent = '⏹️';
+    if (label) label.textContent = 'Stop reading';
+    window.speechSynthesis.speak(u);
+  }
+
+  function dccSgCheckInDemo() {
+    /* Force the banner even if the user has opted-out or seen it recently. */
+    try {
+      localStorage.removeItem('dcc-check-in-opt-out');
+      localStorage.removeItem('dcc-check-in-last-shown');
+    } catch (e) {}
+    const existing = document.getElementById('dcc-check-in');
+    if (existing) existing.parentNode.removeChild(existing);
+    const s = document.createElement('script');
+    s.src = '../js/check-in.js';
+    s.onload = function () {
+      /* The component binds to scroll/idle; trigger immediately by
+         dispatching a synthetic condition. Simplest: show the banner
+         by setting the scroll pct to 100. */
+      setTimeout(function () {
+        const b = document.getElementById('dcc-check-in');
+        if (b) {
+          b.removeAttribute('hidden');
+          b.classList.add('is-visible');
+        }
+      }, 50);
+    };
+    document.head.appendChild(s);
+  }
 </script>
+
+<!-- S-030 components loaded for live keyboard helper + progress dots in context -->
+<script src="../js/keyboard-helper.js" defer></script>
 
 </body>
 </html>
