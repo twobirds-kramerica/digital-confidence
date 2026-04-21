@@ -34,13 +34,21 @@ for (const p of PAGES) {
     // font gets swapped mid-capture. Pattern borrowed from Playwright docs.
     await page.evaluate(() => document.fonts && document.fonts.ready).catch(() => {});
 
-    // Disable animations to avoid anti-aliasing / motion flakiness
+    // Disable animations + neutralise sticky/fixed so fullPage screenshots
+    // don't duplicate the same element at varying scroll positions. The
+    // styleguide's sticky header-controls panel otherwise caused Playwright
+    // to fail the "two consecutive stable screenshots" check.
     await page.addStyleTag({
       content: `
         *, *::before, *::after {
           animation: none !important;
           transition: none !important;
           caret-color: transparent !important;
+        }
+        [style*="position: sticky"],
+        [style*="position:sticky"],
+        .sg-controls, .sg-toc {
+          position: static !important;
         }
       `,
     });
