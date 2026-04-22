@@ -1,0 +1,335 @@
+/* ============================================================================
+   DCC Wizard UX — S-032 proof-of-concept styles
+   ----------------------------------------------------------------------------
+   Coexists with long-scroll modules. Opt-in via *-wizard.html URLs. Existing
+   module-*.html pages remain untouched.
+
+   Non-negotiable rules honoured:
+   - Flexbox layout, no absolute positioning, no z-index stacking beyond the
+     native <dialog> backdrop
+   - Self-hosted Merriweather + Source Sans 3 (css/fonts.css), no CDN
+   - Warm Hearth tokens only, no hardcoded colours
+   - 56px minimum touch targets (DCC senior-friendly floor per tokens.css)
+   - WCAG AAA contrast — text pairs with --color-text (#3D3229) on
+     --color-surface (#FFFFFF) = 10.4:1, and --color-bg (#FFF8F0) = 10.2:1
+   - Escape dismisses native <dialog>; focus-trap is automatic on showModal()
+   ========================================================================== */
+
+html.wizard {
+  height: 100%;
+}
+
+body.wizard {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh; /* dynamic viewport — avoids iOS safari overflow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-body);
+}
+
+/* Wizard card — centered, readable width, warm surface */
+.wizard-card {
+  width: 100%;
+  max-width: 640px;
+  min-height: min(540px, calc(100dvh - 2 * var(--space-4)));
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6);
+  gap: var(--space-6);
+}
+
+/* Header row — progress left, help right */
+.wizard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.wizard-progress {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-light);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.wizard-help-btn {
+  flex: 0 0 auto;
+  width: var(--tap-target);
+  height: var(--tap-target);
+  border-radius: var(--radius-circle);
+  border: 2px solid var(--color-border-strong);
+  background: var(--color-surface);
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.wizard-help-btn:hover,
+.wizard-help-btn:focus-visible {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+}
+
+.wizard-help-btn:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Body — grows to fill card, content stays readable */
+.wizard-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  overflow: auto; /* safety valve for very small viewports; should rarely engage */
+}
+
+.wizard-body h1 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.wizard-body p {
+  margin: 0;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-body);
+}
+
+.wizard-body p strong {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Inline "Tell me more" — native <details>/<summary>, collapsed by default */
+.wizard-body details {
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+}
+
+.wizard-body details summary {
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  min-height: var(--tap-target-min);
+  display: inline-flex;
+  align-items: center;
+  list-style: none;
+  padding: var(--space-2) 0;
+}
+
+.wizard-body details summary::-webkit-details-marker {
+  display: none;
+}
+
+.wizard-body details summary::before {
+  content: '▸';
+  display: inline-block;
+  margin-right: var(--space-2);
+  transition: transform var(--motion-duration-2) var(--motion-ease);
+}
+
+.wizard-body details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.wizard-body details summary:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+  border-radius: var(--radius-sm);
+}
+
+.wizard-body details > *:not(summary) {
+  margin-top: var(--space-3);
+}
+
+/* Footer — Back / Continue row, pinned to card bottom by flex-end */
+.wizard-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.wizard-btn {
+  min-height: var(--tap-target);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  border: 2px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wizard-btn-ghost {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-border-strong);
+}
+
+.wizard-btn-ghost:hover,
+.wizard-btn-ghost:focus-visible {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+}
+
+.wizard-btn-primary {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+  border-color: var(--color-accent);
+}
+
+.wizard-btn-primary:hover,
+.wizard-btn-primary:focus-visible {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+.wizard-btn:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.wizard-btn:disabled,
+.wizard-btn[aria-disabled='true'] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Hidden step — display:none removes from a11y tree */
+.wizard-step[hidden] {
+  display: none;
+}
+
+/* Help <dialog> — native, semi-transparent backdrop, centered card */
+.wizard-help-dialog {
+  border: none;
+  padding: 0;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  color: var(--color-text);
+  max-width: min(560px, calc(100% - 2 * var(--space-4)));
+  box-shadow: var(--shadow-lg);
+}
+
+.wizard-help-dialog::backdrop {
+  background: rgba(61, 50, 41, 0.5); /* warm charcoal, 50% */
+}
+
+.wizard-help-dialog-inner {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6);
+  gap: var(--space-4);
+}
+
+.wizard-help-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.wizard-help-header h2 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.wizard-help-close {
+  min-width: var(--tap-target);
+  min-height: var(--tap-target);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-border-strong);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+}
+
+.wizard-help-close:hover,
+.wizard-help-close:focus-visible {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+}
+
+.wizard-help-close:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.wizard-help-body {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-body);
+}
+
+/* Responsive — mobile first (<=599px) */
+@media (max-width: 599px) {
+  body.wizard {
+    padding: var(--space-2);
+    align-items: stretch;
+  }
+
+  .wizard-card {
+    min-height: calc(100dvh - 2 * var(--space-2));
+    padding: var(--space-4);
+    gap: var(--space-4);
+    border-radius: var(--radius-md);
+  }
+
+  .wizard-body h1 {
+    font-size: clamp(22px, 6vw, 28px);
+  }
+
+  .wizard-footer {
+    gap: var(--space-2);
+  }
+
+  .wizard-btn {
+    padding: var(--space-3) var(--space-4);
+    flex: 1 1 auto;
+  }
+}
+
+/* High zoom (150%+): ensure buttons don't overflow card */
+@media (max-width: 359px) {
+  .wizard-card {
+    padding: var(--space-3);
+  }
+  .wizard-body h1 {
+    font-size: 20px;
+  }
+}

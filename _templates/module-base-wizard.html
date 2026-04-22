@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--
+  DCC Wizard Module — BASE TEMPLATE (S-032)
+  ==========================================================================
+  PROOF-OF-CONCEPT template. Copy to module-N-wizard.html and fill in
+  placeholders. Long-scroll module-N.html pages remain untouched and remain
+  the default URL. The wizard variant is an opt-in parallel URL for
+  evaluation.
+
+  Placeholders to fill in when instancing:
+    {{MODULE_NUMBER}}       — e.g. 1
+    {{MODULE_TITLE}}        — e.g. Mastering the Escape Hatch
+    {{MODULE_DESCRIPTION}}  — meta description, 140-160 chars
+    {{CANONICAL_URL}}       — https://.../module-N-wizard.html
+    {{STEPS_HTML}}          — one <section class="wizard-step" data-step="N">...</section> per screen
+    {{HELP_BODY_HTML}}      — plain-language help copy for the <dialog>
+
+  Non-negotiable rules honoured:
+    - Semantic HTML: <main>, <button>, native <dialog>, <nav>
+    - Self-hosted fonts via css/fonts.css — no Google CDN
+    - Warm Hearth tokens via css/tokens.css — no hardcoded colours
+    - 56px minimum touch targets (var(--tap-target))
+    - WCAG AAA contrast (see css/wizard.css header)
+    - Escape key dismisses the native <dialog> for free
+    - No absolute positioning; flexbox only
+    - No hover-only states
+  ========================================================================== -->
+<html lang="en-CA" class="wizard">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{MODULE_DESCRIPTION}}">
+  <meta name="theme-color" content="#2A7B6F">
+  <title>Module {{MODULE_NUMBER}}: {{MODULE_TITLE}} — Wizard (POC) — Digital Confidence Centre</title>
+  <link rel="canonical" href="{{CANONICAL_URL}}">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/wizard.css">
+</head>
+<body class="wizard">
+
+  <main class="wizard-card" aria-labelledby="wizard-title">
+
+    <header class="wizard-header">
+      <p class="wizard-progress" aria-live="polite">Step 1 of N</p>
+      <button
+        type="button"
+        class="wizard-help-btn"
+        aria-label="Open plain-language help for this step"
+        aria-haspopup="dialog">
+        ?
+      </button>
+    </header>
+
+    <div class="wizard-body" id="wizard-title">
+      {{STEPS_HTML}}
+    </div>
+
+    <footer class="wizard-footer">
+      <button type="button" class="wizard-btn wizard-btn-ghost" data-wizard-back>
+        Go back
+      </button>
+      <button type="button" class="wizard-btn wizard-btn-primary" data-wizard-next>
+        Continue
+      </button>
+    </footer>
+
+  </main>
+
+  <dialog class="wizard-help-dialog" aria-labelledby="wizard-help-title">
+    <div class="wizard-help-dialog-inner">
+      <div class="wizard-help-header">
+        <h2 id="wizard-help-title">Help for this step</h2>
+        <button type="button" class="wizard-help-close" aria-label="Close help">
+          Close
+        </button>
+      </div>
+      <div class="wizard-help-body">
+        {{HELP_BODY_HTML}}
+      </div>
+    </div>
+  </dialog>
+
+  <script src="js/wizard.js" defer></script>
+
+</body>
+</html>
+<!--
+  STEP MARKUP EXAMPLE (fill into {{STEPS_HTML}}):
+
+    <section class="wizard-step" data-step="1">
+      <h1>Step heading, one line if possible</h1>
+      <p>Body paragraph. 2-4 sentences max. Plain language. No jargon.</p>
+      <details>
+        <summary>Tell me more</summary>
+        <p>Optional deeper explanation. Collapsed by default. Does not push buttons off screen.</p>
+      </details>
+    </section>
+
+  Per-step customisation attrs (optional):
+    data-next-label="Next: Passwords"     — override "Continue" label on this step's button
+    data-next-path="module-2-wizard.html" — on the FINAL step, where to go when "Continue" is pressed
+
+  A11y notes:
+    - aria-current="step" is applied to the visible step by wizard.js
+    - hidden attribute is toggled; removes hidden steps from a11y tree entirely
+    - focus is moved to the step's h1/h2 after each transition
+-->

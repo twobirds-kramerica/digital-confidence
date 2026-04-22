@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--
+  Module 1 — Wizard POC (S-032)
+  ==========================================================================
+  PARALLEL URL to module-1.html. The long-scroll version at module-1.html
+  is the default and remains untouched. This is an evaluation proof-of-
+  concept for the slide-wizard UX pattern: one concept per screen, 2-4
+  sentences per body, "Tell me more" for secondary detail.
+
+  Content policy: paragraphs are copied verbatim from module-1.html where
+  possible. Lossy reshape is inherent to slide-wizard vs long-scroll and
+  is acknowledged up-front — this POC covers the CORE concept in 5 screens;
+  the full module has 10 H2 sections. Full-parity wizard conversion is a
+  separate sprint if this POC is approved.
+
+  See module-1.html for canonical content, SEO schema blocks, analytics
+  consent scaffolding, and the long-scroll reading experience.
+  ========================================================================== -->
+<html lang="en-CA" class="wizard">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Module 1 (wizard proof-of-concept): learn the one skill that changes everything — how to get back to safety on your iPad or iPhone.">
+  <meta name="theme-color" content="#2A7B6F">
+  <meta name="robots" content="noindex, follow">
+  <title>Module 1: The Escape Hatch — Wizard (POC) — Digital Confidence Centre</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/module-1-wizard.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/wizard.css">
+</head>
+<body class="wizard">
+
+  <main class="wizard-card" aria-labelledby="wizard-title">
+
+    <header class="wizard-header">
+      <p class="wizard-progress" aria-live="polite">Step 1 of 5</p>
+      <button
+        type="button"
+        class="wizard-help-btn"
+        aria-label="Open plain-language help for this step"
+        aria-haspopup="dialog">
+        ?
+      </button>
+    </header>
+
+    <div class="wizard-body" id="wizard-title">
+
+      <section class="wizard-step" data-step="1">
+        <h1>Module 1: Mastering the Escape Hatch</h1>
+        <p><strong>What you will learn:</strong> The single most important skill in using any device — how to get back to safety, no matter what happens on your screen.</p>
+        <p>This takes about 20 to 30 minutes. Go at your own pace. Nothing on this page can harm your device. You cannot break anything by reading.</p>
+      </section>
+
+      <section class="wizard-step" data-step="2" hidden>
+        <h1>Margaret's Story</h1>
+        <p>Margaret, 74, was browsing recipes on her iPad one Tuesday morning. She tapped on a link, and suddenly her screen was filled with flashing colours and a loud voice saying her iPad had a virus. Her heart raced. She thought her iPad was broken — or worse.</p>
+        <p>Here is the good news: Margaret's iPad was perfectly fine the entire time. That scary message was a fake — a common trick designed to frighten people.</p>
+        <details>
+          <summary>Tell me more about what happened to Margaret</summary>
+          <p>Margaret did what many of us would do: she panicked. She pressed every button she could find. Nothing seemed to work. Finally, she unplugged her iPad and hid it in a drawer for three days.</p>
+          <p>If Margaret had known the one skill we are about to learn, she could have closed that fake warning in about two seconds and gone right back to her butter tart recipe. That skill is what we call <strong>the Escape Hatch</strong>.</p>
+        </details>
+      </section>
+
+      <section class="wizard-step" data-step="3" hidden>
+        <h1>The Golden Rule: Nothing Is Permanent</h1>
+        <p><strong>You cannot break your iPad by tapping the wrong thing.</strong> You cannot accidentally delete the internet. You cannot "ruin" your device by opening the wrong app.</p>
+        <p>Almost everything you do on your iPad can be undone, closed, or fixed.</p>
+        <details>
+          <summary>Tell me more — why is it so forgiving?</summary>
+          <p>Think of your iPad like a library. When you open an app, it is like picking a book off the shelf. When you close the app, you are putting the book back. The book is still there. The library is still there. You have not changed anything permanent.</p>
+          <p>Even if you accidentally delete an app, you can get it back. Even if you type something in the wrong place, you can erase it. Even if a strange website pops up on your screen, you can close it. Your iPad is remarkably forgiving.</p>
+        </details>
+      </section>
+
+      <section class="wizard-step" data-step="4" hidden>
+        <h1>Your Three Escape Hatches</h1>
+        <p>There are three ways to get back to safety from anywhere on your device. You only need to learn one to feel in control — the other two are bonuses.</p>
+        <p>The Home button is your best friend. No matter how lost or confused you feel, pressing it always takes you back to familiar ground. You cannot break anything by pressing it, so press it as often as you like.</p>
+      </section>
+
+      <section class="wizard-step" data-step="5" hidden data-next-label="Back to the full lesson" data-next-path="module-1.html">
+        <h1>Escape Hatch #1: The Home Button</h1>
+        <p>On older iPads, look at the very bottom edge, below the screen. You will see a round, slightly indented circle. That is your <strong>Home button</strong>.</p>
+        <p>Press it once with your thumb or finger. Not hard — a gentle, firm press. Whatever was on your screen disappears, and you are back at your Home screen.</p>
+        <details>
+          <summary>Tell me more — what if I have a newer iPad?</summary>
+          <p>Newer iPads do not have a round button. Instead, look at the very bottom edge of the screen. You will see a thin, dark horizontal line.</p>
+          <p>Place your finger on that line and <strong>swipe upward</strong> — slide your finger from the bottom of the screen toward the middle. You are back at your Home screen. Safe and sound.</p>
+        </details>
+      </section>
+
+    </div>
+
+    <footer class="wizard-footer">
+      <button type="button" class="wizard-btn wizard-btn-ghost" data-wizard-back>
+        Go back
+      </button>
+      <button type="button" class="wizard-btn wizard-btn-primary" data-wizard-next>
+        Continue
+      </button>
+    </footer>
+
+  </main>
+
+  <dialog class="wizard-help-dialog" aria-labelledby="wizard-help-title">
+    <div class="wizard-help-dialog-inner">
+      <div class="wizard-help-header">
+        <h2 id="wizard-help-title">Help for this lesson</h2>
+        <button type="button" class="wizard-help-close" aria-label="Close help">
+          Close
+        </button>
+      </div>
+      <div class="wizard-help-body">
+        <p><strong>You are in a safe place.</strong> Nothing on this page can harm your device. You cannot break anything by reading or by pressing any button here.</p>
+        <p>Use <strong>Go back</strong> to return to the previous step. Use <strong>Continue</strong> to move forward.</p>
+        <p>If a step has a <strong>Tell me more</strong> link, tap it to see extra detail. Tap it again to hide the detail.</p>
+        <p>To close this help box, press the <strong>Close</strong> button, press the <strong>Escape</strong> key on your keyboard, or tap outside this box.</p>
+        <p>To see the full long-form lesson with all the detail, you can always <a href="module-1.html">open the full Module 1 page</a>.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="js/wizard.js" defer></script>
+
+</body>
+</html>
