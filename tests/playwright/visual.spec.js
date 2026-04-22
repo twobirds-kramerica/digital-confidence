@@ -15,19 +15,30 @@
 
 const { test, expect } = require('@playwright/test');
 
-// NOTE: styleguide (/styleguide/index.html) is intentionally excluded from
-// visual regression. Its keyboard-helper auto-injection + sticky controls
-// panel + live font loads make Playwright's "two consecutive stable
-// screenshots" check flake 100% of the time in compare mode, even with
-// fonts.ready, animation disabling, and sticky-to-static overrides. The
-// fix needs a styleguide-specific approach (viewport clip + mask known-
-// unstable regions). Filed as follow-up S-DCC-VIS-STYLEGUIDE-STABLE.
+// Per-page options. Styleguide needs extra stabilisation: wait for the
+// keyboard-helper modal to finish async-injecting, then mask the known-
+// dynamic regions so they don't affect pixel diffs.
+// S-DCC-VIS-STYLEGUIDE-STABLE (2026-04-21) added styleguide back after
+// earlier attempts failed — new approach: mask the kbd-help dialog +
+// S-030 components section via the Playwright mask: option.
 const PAGES = [
   { name: 'home',          path: '/' },
   { name: 'module-1',      path: '/module-1.html' },
   { name: 'final-quiz',    path: '/final-quiz.html' },
   { name: 'accessibility', path: '/accessibility.html' },
   { name: 'faq',           path: '/faq.html' },
+  {
+    name: 'styleguide',
+    path: '/styleguide/index.html',
+    // Wait for the keyboard-helper modal to inject into <body>.
+    // It's appended on DOMContentLoaded by js/keyboard-helper.js.
+    waitForSelector: '#dcc-kbd-help',
+    // Mask regions that cause sub-pixel anti-aliasing flakiness:
+    //  - the kbd-help dialog DOM (hidden but still in tree)
+    //  - the S-030 live-demos section (read-aloud/progress-dots/check-in)
+    //    which renders with dynamic state
+    mask: ['#dcc-kbd-help', '#s030'],
+  },
 ];
 
 for (const p of PAGES) {
@@ -36,14 +47,19 @@ for (const p of PAGES) {
     await page.waitForLoadState('networkidle', { timeout: 10_000 }).catch(() => {});
 
     // Wait for @font-face loads to finish. Without this, the "two consecutive
-    // stable screenshots" check flakes on styleguide because the fallback
-    // font gets swapped mid-capture. Pattern borrowed from Playwright docs.
+    // stable screenshots" check flakes when the fallback font gets swapped
+    // mid-capture. Pattern borrowed from Playwright docs.
     await page.evaluate(() => document.fonts && document.fonts.ready).catch(() => {});
 
+    // Per-page wait for async-injected DOM (styleguide's keyboard-helper
+    // modal; harmless no-op on pages without one).
+    if (p.waitForSelector) {
+      await page.waitForSelector(p.waitForSelector, { state: 'attached', timeout: 5_000 })
+        .catch(() => {});
+    }
+
     // Disable animations + neutralise sticky/fixed so fullPage screenshots
-    // don't duplicate the same element at varying scroll positions. The
-    // styleguide's sticky header-controls panel otherwise caused Playwright
-    // to fail the "two consecutive stable screenshots" check.
+    // don't duplicate the same element at varying scroll positions.
     await page.addStyleTag({
       content: `
         *, *::before, *::after {
@@ -59,14 +75,23 @@ for (const p of PAGES) {
       `,
     });
 
-    // Give deferred JS (e.g., keyboard-helper modal injection on styleguide)
-    // a beat to finish DOM mutations before we ask for stable screenshots.
+    // Force scroll to top so fullPage captures from a consistent origin.
+    await page.evaluate(() => window.scrollTo(0, 0));
+
+    // Give deferred JS one more beat after our style injection + scroll.
     await page.waitForTimeout(500);
 
-    await expect(page).toHaveScreenshot(`${p.name}.png`, {
+    // Build the screenshot options. Locators for `mask:` must be built
+    // from the Playwright `page` object at call time.
+    const screenshotOpts = {
       fullPage: true,
       maxDiffPixelRatio: 0.02,
       animations: 'disabled',
-    });
+    };
+    if (Array.isArray(p.mask) && p.mask.length) {
+      screenshotOpts.mask = p.mask.map(sel => page.locator(sel));
+    }
+
+    await expect(page).toHaveScreenshot(`${p.name}.png`, screenshotOpts);
   });
 }
