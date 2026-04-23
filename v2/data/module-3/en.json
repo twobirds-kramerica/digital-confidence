@@ -1,0 +1,77 @@
+{
+  "moduleId": "module-3",
+  "language": "en",
+  "title": "Module 3: Passwords & Biometrics",
+  "timeEstimate": "About 8 minutes",
+  "screens": [
+    {
+      "type": "orientation",
+      "heading": "You are safe here",
+      "reassurance": "You cannot break anything by reading. Your existing passwords will still work when you finish.",
+      "goal": "By the end of this module, you will understand why passwords matter, how to make strong ones, and how to use your face or fingerprint instead.",
+      "timeEstimate": "About 8 minutes"
+    },
+    {
+      "type": "content",
+      "heading": "Security terms in plain language",
+      "body": [
+        "Password: a word or phrase you type to prove you are you. Think of it as the key to your front door.",
+        "Biometrics: your face, your fingerprint, or your voice. Your device recognises you the way a neighbour recognises you.",
+        "Two-factor authentication (2FA): one key plus a second key. Even if a scammer steals your password, they still cannot get in without the second key."
+      ],
+      "tellMeMore": "You may also hear 'passkey'. A passkey is a newer kind of key that lives on your device and never leaves it. Some banks and websites are starting to use them. You do not need to set them up unless the website asks you to; they are a smoother version of what you already do."
+    },
+    {
+      "type": "content",
+      "heading": "Biometrics: your face or fingerprint is your password",
+      "body": [
+        "If your iPad or iPhone has Face ID or Touch ID turned on, your device unlocks when it sees your face or feels your finger. No typing. No remembering.",
+        "This is safer than a typed password for most seniors because nobody can watch you type it in a coffee shop and nobody can guess it.",
+        "Your face and fingerprint never leave your device. Apple does not get copies. Neither do the apps you use."
+      ],
+      "tellMeMore": "If you wear glasses and Face ID does not work, you can re-train it while wearing them. Settings → Face ID & Passcode → Set Up an Alternate Appearance. For Touch ID, you can register up to five fingerprints (for example, both thumbs and a couple of index fingers) so any of them will unlock your device."
+    },
+    {
+      "type": "content",
+      "heading": "Creating strong passwords",
+      "body": [
+        "A strong password is long and easy for you to remember, but hard for a stranger to guess. 'Password123' is not strong. 'ThreeRedAppleTreesInSpring!' is strong and memorable.",
+        "Never reuse the same password on more than one important site. If a scammer steals it from one site, they try it everywhere else.",
+        "Never share your password, even with family. If someone needs access, give them their own login."
+      ],
+      "tellMeMore": "A good trick: pick three random words you can picture, then add one number and one punctuation mark. 'LampPianoTiger47!' is easier to remember than 'Xk9!p3RqZ' and just as hard to guess. Never use your name, your birthday, your address, or your spouse's name — these are the first things scammers try."
+    },
+    {
+      "type": "content",
+      "heading": "Password managers: your digital vault",
+      "body": [
+        "A password manager is an app that remembers all your passwords so you only have to remember one master password. Your iPad and iPhone already have one built in (iCloud Keychain).",
+        "It is safer than a sticky note on the fridge. It is safer than a notebook in the drawer. It is far safer than reusing one password everywhere.",
+        "When you visit a website, the password manager types the password for you. You just use Face ID or Touch ID to approve."
+      ],
+      "tellMeMore": "iCloud Keychain is free and built in. If you want a separate app, 1Password and Bitwarden are both well-reviewed and available in Canada. All three let you share a password with a spouse or child for emergencies without giving them your master password."
+    },
+    {
+      "type": "content",
+      "heading": "Two-factor authentication: the double lock",
+      "body": [
+        "When you turn on two-factor authentication, logging in takes one extra step. You type your password, then a code is sent to your phone. You type the code. Now you are in.",
+        "This matters because a password alone can be stolen. A code that only comes to your phone cannot be stolen from across the world.",
+        "Turn this on for your bank, your email, and any important account. It takes 2 minutes per account and blocks nearly every remote scam."
+      ],
+      "tellMeMore": "The most common way to receive the code is a text message to your phone. Some apps offer an 'authenticator app' instead (Microsoft Authenticator, Google Authenticator). These are even safer because the code is generated on your device and never travels over SMS. Either way, turning on 2FA is the single biggest security upgrade most seniors can make."
+    },
+    {
+      "type": "summary",
+      "heading": "You have the keys to the kingdom",
+      "takeaways": [
+        "Your face or fingerprint is safer than a typed password for day-to-day use.",
+        "Strong passwords are long and memorable. 'ThreeRedAppleTreesInSpring!' beats 'Password123'.",
+        "Never reuse passwords across important sites. Use the built-in iCloud Keychain or a password manager app.",
+        "Turn on two-factor authentication for bank, email, and important accounts. It takes 2 minutes and blocks nearly every remote scam.",
+        "Never share your password, even with family. Give them their own login if they need access."
+      ],
+      "confidence": "You now know how to protect your accounts with strong passwords, biometrics, and two-factor authentication."
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "moduleId": "module-2",
+  "language": "en",
+  "title": "Module 2: The Security Shield",
+  "timeEstimate": "About 8 minutes",
+  "screens": [
+    {
+      "type": "orientation",
+      "heading": "You are safe here",
+      "reassurance": "You cannot break anything by reading. No clicks below will charge you or change your data.",
+      "goal": "By the end of this module, you will recognise the seven most common scams that target Canadian seniors and know what to do about each one.",
+      "timeEstimate": "About 8 minutes"
+    },
+    {
+      "type": "content",
+      "heading": "The truth about scams in Canada",
+      "body": [
+        "Every year, thousands of Canadian seniors lose money to scams. The Canadian Anti-Fraud Centre tracks these reports, and the number keeps going up.",
+        "Here is the important part: scammers are not targeting you because you are old or because you are foolish. They are targeting you because you answer your phone, check your email, and care about your family. Those are good qualities, not weaknesses."
+      ],
+      "tellMeMore": "The scammers have entire call centres full of people whose full-time job is to sound convincing. They buy lists of phone numbers. They use caller ID spoofing to make their calls look like they come from the CRA, your bank, or even your grandchild. The tricks are professional. Your guard does not need to be higher. It just needs to know what to look for."
+    },
+    {
+      "type": "content",
+      "heading": "Scam 1: The CRA phone scam",
+      "body": [
+        "Someone calls claiming to be from the Canada Revenue Agency. They say you owe back taxes. They demand immediate payment by gift cards, bitcoin, or wire transfer. They threaten arrest if you do not pay right now.",
+        "This is always a scam. The CRA will never call demanding immediate payment. They will never ask for gift cards. They will never threaten you with arrest over the phone.",
+        "What to do: hang up. Do not press any buttons. Do not call them back from the number they gave you."
+      ],
+      "tellMeMore": "If you are worried there might be a real issue, call the CRA yourself at 1-800-959-8281 (the number printed on their official website, canada.ca). Never use the number the caller gave you. Scammers set up fake 'verification' lines that sound exactly like the CRA."
+    },
+    {
+      "type": "content",
+      "heading": "Scam 2: The grandparent scam",
+      "body": [
+        "You get a call or text: 'Grandma? I'm in trouble. Please don't tell Mom and Dad.' The voice sounds like a grandchild. They say they have been arrested, hurt, or stranded, and they need money wired right away.",
+        "This is always a scam. The voice may even sound like your grandchild because scammers now use AI to clone voices from social media videos.",
+        "What to do: hang up. Call your grandchild directly on a number you already have. Call their parents. The real grandchild will be fine."
+      ],
+      "tellMeMore": "Set up a family code word with your children and grandchildren. Something only they would know, like the name of a childhood pet or a made-up word. If a 'grandchild' calls in trouble and cannot say the code word, it is not them."
+    },
+    {
+      "type": "content",
+      "heading": "Scam 3: Fake bank emails (phishing)",
+      "body": [
+        "You get an email from what looks like your bank. It says your account has been locked or there is suspicious activity. It asks you to click a link to verify your identity.",
+        "This is always a scam. Real banks will never email you a link to log in. They will ask you to visit their website directly or call the number on the back of your card.",
+        "What to do: do not click the link. Delete the email. If you are worried, call your bank using the number on the back of your card."
+      ],
+      "tellMeMore": "Three quick checks: (1) Does the sender's email address match your bank exactly? Scammers use lookalikes like 'rbcanada.com' instead of 'rbc.com'. (2) Does it use your real name? Real banks do. Scammers often say 'Dear Customer'. (3) Does it create urgency? ('Act in 24 hours or your account will be closed.') That urgency is a scam tell."
+    },
+    {
+      "type": "content",
+      "heading": "The 3-Second Rule for every suspicious message",
+      "body": [
+        "Stop. Breathe. Verify.",
+        "Stop: do not click. Do not call back. Do not answer the question.",
+        "Breathe: take three slow breaths. Scammers rely on panic. Panic is their tool.",
+        "Verify: call the organisation yourself using a number from their official website or the back of your card. Never use the number the message gave you."
+      ],
+      "tellMeMore": "This rule works for every scam in this module and any new scam you meet in the future. If you only remember one thing from this lesson, remember this: Stop, Breathe, Verify. The three seconds it takes to think is worth more than the hours or days of stress from a wrong move."
+    },
+    {
+      "type": "summary",
+      "heading": "You are better protected than 90% of people",
+      "takeaways": [
+        "You now know the three most common scams: CRA, grandparent, and phishing. Most scams are variations of these three.",
+        "The 3-Second Rule (Stop, Breathe, Verify) works on every new scam.",
+        "Real institutions do not demand immediate payment. They do not threaten arrest. They do not ask for gift cards.",
+        "A family code word is a free tool that blocks the grandparent scam.",
+        "When in doubt, hang up or delete. You lose nothing by being cautious."
+      ],
+      "confidence": "You now know how to recognise scams that target Canadian seniors and what to do about each one."
+    }
+  ]
+}
