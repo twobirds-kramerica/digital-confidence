@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--
+  DCC v2 — Wizard shell (S-DCC-V2 Phase 4)
+  ============================================================================
+  Single-page wizard. Reads ?module=<moduleId> + optional ?lang=<en|fr> from
+  URL, fetches data/<moduleId>/<lang>.json, and renders step-by-step.
+
+  Inline fallback: module-1 EN is embedded so the wizard works at file://
+  without a dev server. fetch() attempt happens first; fallback kicks in
+  only if fetch fails.
+
+  Non-negotiable rules honoured:
+    - Semantic HTML (<main>, <button>, native <dialog>, <section>, <details>)
+    - Tokens-only CSS via wizard.css imports
+    - Self-hosted fonts, no Google CDN
+    - WCAG AAA contrast
+    - 44px minimum tap targets (56px on desktop per DCC token)
+    - Escape dismisses all dialogs
+    - Language toggle preserves current step
+  ============================================================================ -->
+<html lang="en-CA" class="wizard">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Digital Confidence Centre v2 — wizard-first learning for seniors. One step at a time, at your own pace.">
+  <meta name="theme-color" content="#2A7B6F">
+  <meta name="robots" content="noindex, follow">
+  <title>DCC v2 — Wizard (Preview)</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/v2/wizard.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="css/wizard.css">
+  <link rel="stylesheet" href="css/wizard-mobile.css">
+  <link rel="stylesheet" href="css/wizard-tablet.css">
+</head>
+<body class="wizard">
+
+  <header class="wizard-topbar" role="banner">
+    <div class="wizard-topbar-left">
+      <p class="wizard-progress" aria-live="polite" data-wizard-progress>Step 1 of 1</p>
+      <button type="button" class="wizard-mapbtn" data-wizard-map aria-haspopup="dialog">Module Map</button>
+    </div>
+    <div class="wizard-topbar-right">
+      <button type="button" class="wizard-langbtn" data-wizard-lang aria-label="Switch language">FR</button>
+      <button type="button" class="wizard-helpbtn" data-wizard-help aria-label="Open plain-language help" aria-haspopup="dialog">?</button>
+    </div>
+  </header>
+
+  <div class="wizard-stage">
+    <main class="wizard-card" aria-labelledby="wizard-title" data-wizard-card>
+
+      <div class="wizard-body" id="wizard-title" data-wizard-body>
+        <!-- Dynamically rendered by wizard.js -->
+        <h1>Loading...</h1>
+        <p>If this screen does not change within a few seconds, please reload the page.</p>
+      </div>
+
+      <footer class="wizard-footer" data-wizard-footer>
+        <button type="button" class="wizard-btn wizard-btn-ghost" data-wizard-back hidden>Go back</button>
+        <button type="button" class="wizard-btn wizard-btn-primary" data-wizard-next>Continue</button>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- Module map dialog -->
+  <dialog class="wizard-dialog" data-wizard-mapdialog aria-labelledby="wizard-map-title">
+    <div class="wizard-dialog-inner">
+      <div class="wizard-dialog-header">
+        <h2 id="wizard-map-title">Module map</h2>
+        <button type="button" class="wizard-dialog-close" data-wizard-mapdialog-close aria-label="Close module map">Close</button>
+      </div>
+      <ul class="wizard-map-list" data-wizard-map-list>
+        <!-- Populated by wizard.js -->
+      </ul>
+    </div>
+  </dialog>
+
+  <!-- Help dialog -->
+  <dialog class="wizard-dialog" data-wizard-helpdialog aria-labelledby="wizard-help-title">
+    <div class="wizard-dialog-inner">
+      <div class="wizard-dialog-header">
+        <h2 id="wizard-help-title">Help</h2>
+        <button type="button" class="wizard-dialog-close" data-wizard-helpdialog-close aria-label="Close help">Close</button>
+      </div>
+      <div data-wizard-help-body>
+        <p><strong>You are in a safe place.</strong> Nothing on this page can harm your device. You cannot break anything by reading or by pressing any button here.</p>
+        <p>Use <strong>Go back</strong> to return to the previous step. Use <strong>Continue</strong> to move forward.</p>
+        <p>If a step has a <strong>Tell me more</strong> link, tap it to see extra detail. Tap it again to hide it.</p>
+        <p>Tap <strong>Module Map</strong> at the top to see all the steps in this module and jump to any one of them.</p>
+        <p>Tap <strong>FR</strong> (or <strong>EN</strong>) at the top to switch languages. Your place in the lesson is kept.</p>
+        <p>To close this help box, press the <strong>Close</strong> button, press the <strong>Escape</strong> key on your keyboard, or tap outside this box.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Inline fallback: module-1 EN content for file:// / no-fetch scenarios.
+       Mirrors data/module-1/en.json. wizard.js reads this if fetch fails. -->
+  <script id="wizard-fallback-module-1-en" type="application/json">
+  {
+    "moduleId": "module-1",
+    "language": "en",
+    "title": "Module 1: The Escape Hatch",
+    "timeEstimate": "About 6 minutes",
+    "screens": [
+      {"type":"orientation","heading":"You are safe here","reassurance":"You cannot break anything. You can stop and come back any time.","goal":"By the end of this module, you will know how to get back to safety on your iPad or iPhone, no matter what shows up on your screen.","timeEstimate":"About 6 minutes"},
+      {"type":"content","heading":"Margaret's story","body":["Margaret, 74, was browsing recipes on her iPad one Tuesday morning. She tapped on a link, and suddenly her screen was filled with flashing colours and a loud voice saying her iPad had a virus.","Her heart raced. She thought her iPad was broken, or worse.","Here is the good news: Margaret's iPad was perfectly fine the entire time. That scary message was a fake — a common trick designed to frighten people."],"tellMeMore":"Margaret did what many of us would do: she panicked. She pressed every button she could find. Nothing seemed to work. Finally, she unplugged her iPad and hid it in a drawer for three days. If Margaret had known the one skill we are about to learn, she could have closed that fake warning in about two seconds."},
+      {"type":"content","heading":"The golden rule: nothing is permanent","body":["You cannot break your iPad by tapping the wrong thing. You cannot accidentally delete the internet. You cannot ruin your device by opening the wrong app.","Almost everything you do on your iPad can be undone, closed, or fixed."],"tellMeMore":"Think of your iPad like a library. When you open an app, it is like picking a book off the shelf. When you close the app, you are putting the book back. The book is still there. The library is still there. You have not changed anything permanent. Even if you accidentally delete an app, you can get it back. Even if a strange website pops up on your screen, you can close it. Your iPad is remarkably forgiving."},
+      {"type":"content","heading":"Your three escape hatches","body":["There are three ways to get back to safety from anywhere on your device. You only need to learn one to feel in control. The other two are bonuses.","The Home button is your best friend. No matter how lost or confused you feel, pressing it always takes you back to familiar ground. You cannot break anything by pressing it, so press it as often as you like."]},
+      {"type":"content","heading":"Escape Hatch #1: the Home button","body":["On older iPads, look at the very bottom edge, below the screen. You will see a round, slightly indented circle. That is your Home button.","Press it once with your thumb or finger. Not hard — a gentle, firm press. Whatever was on your screen disappears, and you are back at your Home screen."],"tellMeMore":"Newer iPads do not have a round button. Instead, look at the very bottom edge of the screen. You will see a thin, dark horizontal line. Place your finger on that line and swipe upward — slide your finger from the bottom of the screen toward the middle. You are back at your Home screen. Safe and sound."},
+      {"type":"summary","heading":"Well done — you have the most important skill","takeaways":["You now know that nothing on your iPad is permanent. You can always undo, close, or fix.","You can use the Home button (or Home gesture on newer iPads) to return to safety from anywhere.","Scary pop-ups cannot harm your device. They are a trick designed to frighten you into tapping something you should not.","If anything feels wrong, one press on the Home button takes you back to your familiar screen."],"confidence":"You now know how to get back to safety on your iPad or iPhone, no matter what happens on your screen."}
+    ]
+  }
+  </script>
+
+  <script src="js/wizard.js" defer></script>
+  <script src="js/certificate.js" defer></script>
+
+</body>
+</html>

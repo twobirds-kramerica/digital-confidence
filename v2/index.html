@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--
+  DCC v2 — Module menu (S-DCC-V2 Phase 4)
+  ============================================================================
+  Landing page for the wizard-first variant. Lists all modules from
+  data/index.json with an EN/FR toggle. Each card links to wizard.html
+  with ?module=<id>. Modules without screenCount > 0 show as "Coming soon"
+  and are not tappable.
+  ============================================================================ -->
+<html lang="en-CA" class="wizard">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Digital Confidence Centre v2 — module menu. Pick a lesson, go at your own pace.">
+  <meta name="theme-color" content="#2A7B6F">
+  <meta name="robots" content="noindex, follow">
+  <title>DCC v2 — Module Menu (Preview)</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="css/wizard.css">
+  <link rel="stylesheet" href="css/wizard-mobile.css">
+  <link rel="stylesheet" href="css/wizard-tablet.css">
+  <style>
+    /* Index-specific overrides — stay inside tokens + layout rules. */
+    body.wizard { display: block; }
+    .index-header {
+      padding: var(--space-6) var(--space-6) var(--space-4);
+      text-align: center;
+    }
+    .index-header h1 {
+      font-family: var(--font-heading);
+      font-size: var(--font-size-h1);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      margin: 0 0 var(--space-2);
+    }
+    .index-header p {
+      margin: 0 auto;
+      max-width: 48ch;
+      color: var(--color-text);
+    }
+    .index-lang-row {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-2);
+      padding: var(--space-4);
+    }
+    .index-lang-btn {
+      min-height: var(--tap-target);
+      padding: var(--space-2) var(--space-5);
+      border-radius: var(--radius-md);
+      border: 2px solid var(--color-border-strong);
+      background: var(--color-surface);
+      color: var(--color-primary);
+      font-family: var(--font-heading);
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-semibold);
+      cursor: pointer;
+    }
+    .index-lang-btn[aria-pressed="true"] {
+      background: var(--color-primary);
+      color: var(--color-primary-contrast);
+      border-color: var(--color-primary);
+    }
+    .index-lang-btn:focus-visible {
+      outline: var(--focus-ring);
+      outline-offset: var(--focus-ring-offset);
+    }
+    .index-grid {
+      display: grid;
+      gap: var(--space-4);
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      padding: 0 var(--space-6) var(--space-12);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .index-card {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      padding: var(--space-5);
+      background: var(--color-surface);
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      color: var(--color-text);
+      text-decoration: none;
+      min-height: 140px;
+    }
+    .index-card:hover,
+    .index-card:focus-visible {
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-md);
+    }
+    .index-card:focus-visible {
+      outline: var(--focus-ring);
+      outline-offset: var(--focus-ring-offset);
+    }
+    .index-card-title {
+      font-family: var(--font-heading);
+      font-size: var(--font-size-h4);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      margin: 0;
+    }
+    .index-card-meta {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-light);
+      margin: 0;
+    }
+    .index-card[aria-disabled="true"] {
+      opacity: 0.6;
+      pointer-events: none;
+      background: var(--color-surface-alt);
+    }
+    .index-card-coming-soon {
+      font-family: var(--font-heading);
+      font-size: var(--font-size-caption);
+      font-weight: var(--font-weight-semibold);
+      text-transform: uppercase;
+      letter-spacing: var(--letter-spacing-wide);
+      color: var(--color-text-light);
+    }
+    .index-footer {
+      text-align: center;
+      padding: var(--space-6);
+      color: var(--color-text-light);
+      font-size: var(--font-size-sm);
+    }
+    .index-footer a {
+      color: var(--color-text-link);
+    }
+  </style>
+</head>
+<body class="wizard">
+
+  <header class="index-header">
+    <h1 data-i18n-key="header-title">Digital Confidence Centre — v2 (Preview)</h1>
+    <p data-i18n-key="header-sub">Pick a lesson. One step at a time, at your own pace.</p>
+  </header>
+
+  <nav class="index-lang-row" aria-label="Language selector">
+    <button type="button" class="index-lang-btn" data-lang="en" aria-pressed="true">English</button>
+    <button type="button" class="index-lang-btn" data-lang="fr" aria-pressed="false">Français</button>
+  </nav>
+
+  <main>
+    <ul class="index-grid" data-module-grid role="list">
+      <li><p>Loading modules...</p></li>
+    </ul>
+  </main>
+
+  <footer class="index-footer">
+    <p data-i18n-key="footer">This is a preview of the DCC v2 wizard-first UI. The <a href="../">full v1 site</a> remains available at the main URL.</p>
+  </footer>
+
+  <script>
+    (function () {
+      var LS_LANG = 'dcc-language';
+      var I18N = {
+        en: {
+          'header-title': 'Digital Confidence Centre — v2 (Preview)',
+          'header-sub': 'Pick a lesson. One step at a time, at your own pace.',
+          'footer': 'This is a preview of the DCC v2 wizard-first UI. The <a href="../">full v1 site</a> remains available at the main URL.',
+          'coming-soon': 'Coming soon',
+        },
+        fr: {
+          'header-title': 'Centre de Confiance Numérique — v2 (Aperçu)',
+          'header-sub': 'Choisissez une leçon. Une étape à la fois, à votre rythme.',
+          'footer': "Ceci est un aperçu de l'interface-assistant v2 du CCN. Le <a href=\"../\">site v1 complet</a> reste disponible à l'adresse principale.",
+          'coming-soon': 'À venir',
+        },
+      };
+
+      function currentLang() {
+        try {
+          var s = window.localStorage.getItem(LS_LANG);
+          return s === 'fr' ? 'fr' : 'en';
+        } catch (e) { return 'en'; }
+      }
+
+      function applyLang(lang) {
+        document.documentElement.setAttribute('lang', lang === 'fr' ? 'fr-CA' : 'en-CA');
+        var dict = I18N[lang];
+        document.querySelectorAll('[data-i18n-key]').forEach(function (el) {
+          var k = el.getAttribute('data-i18n-key');
+          if (dict[k]) el.innerHTML = dict[k];
+        });
+        document.querySelectorAll('.index-lang-btn').forEach(function (btn) {
+          btn.setAttribute('aria-pressed', btn.getAttribute('data-lang') === lang ? 'true' : 'false');
+        });
+        try { window.localStorage.setItem(LS_LANG, lang); } catch (e) { /* ignore */ }
+        renderModules(lang);
+      }
+
+      function renderModules(lang) {
+        var grid = document.querySelector('[data-module-grid]');
+        grid.innerHTML = '';
+        var url = 'data/index.json';
+        var done = function (data) {
+          (data.modules || []).forEach(function (m) {
+            var isReady = (m.screenCount || 0) > 0;
+            var title = m['title-' + lang] || m['title-en'];
+            var li = document.createElement('li');
+            var a = document.createElement('a');
+            a.className = 'index-card';
+            if (isReady) {
+              a.setAttribute('href', 'wizard.html?module=' + encodeURIComponent(m.id) + '&lang=' + lang);
+            } else {
+              a.setAttribute('aria-disabled', 'true');
+              a.setAttribute('href', '#');
+            }
+            var h = document.createElement('h2');
+            h.className = 'index-card-title';
+            h.textContent = title;
+            var meta = document.createElement('p');
+            meta.className = 'index-card-meta';
+            meta.textContent = m.timeEstimate || '';
+            a.appendChild(h);
+            a.appendChild(meta);
+            if (!isReady) {
+              var cs = document.createElement('p');
+              cs.className = 'index-card-coming-soon';
+              cs.textContent = I18N[lang]['coming-soon'];
+              a.appendChild(cs);
+            }
+            li.appendChild(a);
+            grid.appendChild(li);
+          });
+        };
+        try {
+          if (typeof fetch === 'function' && location.protocol !== 'file:') {
+            fetch(url).then(function (r) { return r.json(); }).then(done).catch(function () {
+              grid.innerHTML = '<li><p>Could not load module list. Please reload the page.</p></li>';
+            });
+          } else {
+            grid.innerHTML = '<li><p>Open this page via a web server (not file://) to see the module list.</p></li>';
+          }
+        } catch (e) {
+          grid.innerHTML = '<li><p>Could not load module list: ' + e.message + '</p></li>';
+        }
+      }
+
+      document.querySelectorAll('.index-lang-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          applyLang(btn.getAttribute('data-lang'));
+        });
+      });
+
+      applyLang(currentLang());
+    })();
+  </script>
+
+</body>
+</html>
