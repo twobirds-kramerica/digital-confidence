@@ -1,0 +1,107 @@
+/* ============================================================================
+   DCC v2 — Wizard mobile breakpoints (375px, 390px)
+   ----------------------------------------------------------------------------
+   iPhone SE (375x667) and iPhone 13 Pro (390x844) are our two primary mobile
+   test viewports. Overrides are additive over wizard.css (desktop baseline).
+   ========================================================================== */
+
+@media (max-width: 599px) {
+  body.wizard {
+    /* Allow the stage to stretch flush on small screens */
+  }
+
+  .wizard-topbar {
+    flex-wrap: wrap;
+    padding: var(--space-2) var(--space-3);
+    gap: var(--space-2);
+    min-height: auto;
+  }
+
+  .wizard-topbar-left,
+  .wizard-topbar-right {
+    gap: var(--space-2);
+  }
+
+  .wizard-mapbtn,
+  .wizard-langbtn {
+    min-width: var(--tap-target-min);
+    min-height: var(--tap-target-min);
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-size-sm);
+  }
+
+  .wizard-helpbtn {
+    width: var(--tap-target-min);
+    height: var(--tap-target-min);
+  }
+
+  .wizard-progress {
+    font-size: var(--font-size-caption);
+  }
+
+  .wizard-stage {
+    padding: var(--space-3);
+    align-items: stretch;
+  }
+
+  .wizard-card {
+    min-height: calc(100dvh - var(--nav-height) - 2 * var(--space-3));
+    padding: var(--space-4);
+    gap: var(--space-4);
+    border-radius: var(--radius-md);
+    max-width: 100%;
+  }
+
+  .wizard-body h1 {
+    font-size: clamp(22px, 6.5vw, 28px);
+  }
+
+  .wizard-body .wizard-reassurance {
+    font-size: var(--font-size-h5);
+  }
+
+  .wizard-footer {
+    gap: var(--space-2);
+  }
+
+  .wizard-btn {
+    padding: var(--space-3) var(--space-4);
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .wizard-btn-ghost {
+    flex: 0 0 auto;
+  }
+
+  /* Dialogs go near-full-width on mobile */
+  .wizard-dialog {
+    max-width: calc(100% - 2 * var(--space-2));
+    margin: var(--space-2);
+  }
+
+  .wizard-dialog-inner {
+    padding: var(--space-4);
+    gap: var(--space-3);
+  }
+
+  .wizard-dialog-header h2 {
+    font-size: var(--font-size-h3);
+  }
+}
+
+/* Extra-narrow (359px and below, e.g., high-zoom on small screens) */
+@media (max-width: 359px) {
+  .wizard-card {
+    padding: var(--space-3);
+  }
+
+  .wizard-body h1 {
+    font-size: 20px;
+  }
+
+  .wizard-btn {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-size-sm);
+  }
+}

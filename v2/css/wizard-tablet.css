@@ -1,0 +1,54 @@
+/* ============================================================================
+   DCC v2 — Wizard tablet breakpoints (768px, 1024px)
+   ----------------------------------------------------------------------------
+   iPad portrait (768x1024) and iPad landscape / small laptop (1024x768).
+   Card widens, touch targets stay at DCC default (--tap-target = 56px), and
+   the layout gets a bit more air than the tight mobile view.
+   ========================================================================== */
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .wizard-stage {
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .wizard-card {
+    max-width: 640px;
+    padding: var(--space-8);
+    gap: var(--space-6);
+  }
+
+  .wizard-body h1 {
+    font-size: var(--font-size-h1);
+  }
+
+  .wizard-topbar {
+    padding: var(--space-3) var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .wizard-stage {
+    padding: var(--space-12) var(--space-8);
+  }
+
+  .wizard-card {
+    max-width: 680px;
+    padding: var(--space-8);
+  }
+
+  .wizard-topbar {
+    padding: var(--space-3) var(--space-8);
+  }
+}
+
+/* 1280px+ — wide desktop, centred card with generous margins; base rules
+   already handle this well. Keep a subtle widening for readability. */
+@media (min-width: 1280px) {
+  .wizard-stage {
+    padding: var(--space-16) var(--space-8);
+  }
+
+  .wizard-card {
+    max-width: 720px;
+  }
+}
