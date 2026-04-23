@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 1,
+  "description": "Index of all DCC v2 wizard modules. Each entry points to per-module JSON content under data/<moduleId>/<lang>.json. Modules without screenCount > 0 have not yet been converted to wizard format (Phase 7 work).",
+  "modules": [
+    {
+      "id": "module-1",
+      "title-en": "Module 1: The Escape Hatch",
+      "title-fr": "Module 1: Maîtriser la Sortie de Secours",
+      "screenCount": 6,
+      "timeEstimate": "About 6 minutes",
+      "legacyUrl": "/module-1.html"
+    },
+    {
+      "id": "module-2",
+      "title-en": "Module 2: The Security Shield",
+      "title-fr": "Module 2: Le Bouclier de Sécurité",
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-2.html"
+    },
+    {
+      "id": "module-2-5",
+      "title-en": "Module 2.5: Everyday Digital Tasks",
+      "title-fr": null,
+      "screenCount": 0,
+      "timeEstimate": "About 5-8 minutes",
+      "legacyUrl": "/module-2-5.html"
+    },
+    {
+      "id": "module-3",
+      "title-en": "Module 3: Passwords & Biometrics",
+      "title-fr": "Module 3: Mots de Passe et Biométrie",
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-3.html"
+    },
+    {
+      "id": "module-4",
+      "title-en": "Module 4: App Store Safety",
+      "title-fr": "Module 4: Sécurité des Applications",
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-4.html"
+    },
+    {
+      "id": "module-5",
+      "title-en": "Module 5: Email & Messages",
+      "title-fr": "Module 5: Courriels et Messages",
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-5.html"
+    },
+    {
+      "id": "module-6",
+      "title-en": "Module 6: Banking & Transactions",
+      "title-fr": "Module 6: Services Bancaires en Ligne",
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-6.html"
+    },
+    {
+      "id": "module-7",
+      "title-en": "Module 7: Photos & Memories",
+      "title-fr": "Module 7: Photos et Souvenirs",
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-7.html"
+    },
+    {
+      "id": "module-8",
+      "title-en": "Module 8: Stay Connected",
+      "title-fr": "Module 8: Restez Connecté",
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-8.html"
+    },
+    {
+      "id": "module-9",
+      "title-en": "Module 9: Understanding AI",
+      "title-fr": "Module 9: Comprendre l'Intelligence Artificielle",
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-9.html"
+    },
+    {
+      "id": "module-10",
+      "title-en": "Module 10: Grocery & Food Delivery",
+      "title-fr": "Module 10: Épicerie et Livraison à Domicile",
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-10.html"
+    },
+    {
+      "id": "module-11",
+      "title-en": "Module 11: Ride-Sharing Apps",
+      "title-fr": "Module 11: Applications de Covoiturage — Uber et Lyft",
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-11.html"
+    },
+    {
+      "id": "module-12",
+      "title-en": "Module 12: Getting the Help You Deserve",
+      "title-fr": "Module 12: Obtenir l'Aide que Vous Méritez",
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-12.html"
+    },
+    {
+      "id": "module-13",
+      "title-en": "Module 13: Understanding Social Media",
+      "title-fr": null,
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-13.html"
+    },
+    {
+      "id": "module-14",
+      "title-en": "Module 14: Smart Home Basics",
+      "title-fr": null,
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-14.html"
+    },
+    {
+      "id": "module-15",
+      "title-en": "Module 15: Telehealth & Medical Portals",
+      "title-fr": null,
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-15.html"
+    },
+    {
+      "id": "module-16",
+      "title-en": "Module 16: Staying Safe When You Travel",
+      "title-fr": null,
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-16-travel-safety.html"
+    },
+    {
+      "id": "module-17",
+      "title-en": "Module 17: Using AI for Research",
+      "title-fr": null,
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-17-ai-research.html"
+    },
+    {
+      "id": "module-18",
+      "title-en": "Module 18: Staying Connected When It Matters Most",
+      "title-fr": null,
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-18-staying-connected.html"
+    },
+    {
+      "id": "module-19",
+      "title-en": "Module 19: Your Digital Life — Keeping It Safe and Organised",
+      "title-fr": null,
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-19-digital-legacy.html"
+    },
+    {
+      "id": "module-20",
+      "title-en": "Module 20: Understanding Your Internet Plan",
+      "title-fr": null,
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-20-internet-plan.html"
+    },
+    {
+      "id": "module-21",
+      "title-en": "Module 21: Understanding Your Mobile Plan",
+      "title-fr": null,
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-21-mobile-plan.html"
+    },
+    {
+      "id": "module-22",
+      "title-en": "Module 22: TV and Home Phone",
+      "title-fr": null,
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-22-tv-home-phone.html"
+    },
+    {
+      "id": "module-23",
+      "title-en": "Module 23: Buying and Selling Online Safely",
+      "title-fr": null,
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-23-online-marketplace.html"
+    },
+    {
+      "id": "module-24",
+      "title-en": "Module 24: Staying in Touch — Communication Apps",
+      "title-fr": null,
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-24-communication.html"
+    },
+    {
+      "id": "module-25",
+      "title-en": "Module 25: When Things Stop Working",
+      "title-fr": null,
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-25-outage-detection.html"
+    },
+    {
+      "id": "module-26",
+      "title-en": "Module 26: Managing Your Notifications",
+      "title-fr": null,
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-26-notifications.html"
+    },
+    {
+      "id": "module-27",
+      "title-en": "Module 27: Your Inbox — Managing Email and Spam",
+      "title-fr": null,
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-27-inbox-spam.html"
+    },
+    {
+      "id": "module-visual-ai",
+      "title-en": "Show Me! Using Your Camera to Learn Anything",
+      "title-fr": null,
+      "screenCount": 0,
+      "timeEstimate": "About 6-10 minutes",
+      "legacyUrl": "/module-visual-ai.html"
+    }
+  ]
+}
