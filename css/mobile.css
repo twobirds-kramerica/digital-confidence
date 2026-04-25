@@ -372,3 +372,66 @@
     padding: var(--spacing-lg) var(--spacing-xl);
   }
 }
+
+/* ============================================================================
+   HOTFIX 2026-04-25 — mobile horizontal bleed + broken flyouts
+   ----------------------------------------------------------------------------
+   Symptoms reported live: words cut off off the right edge on phones; flyouts
+   (popovers / dropdowns / dialogs) bleeding past viewport. Defensive cap so no
+   element can push layout wider than the viewport, regardless of which inline
+   style or third-party widget caused it.
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* Modern overflow-x value prevents horizontal scroll without creating a
+     new scroll context (vs hidden which does). Falls back to hidden where
+     unsupported. */
+  html, body {
+    overflow-x: clip;
+    overflow-x: hidden;
+  }
+
+  /* Hard-cap responsive media to viewport */
+  img, table, iframe, video, svg, embed, object {
+    max-width: 100% !important;
+    height: auto;
+  }
+
+  /* Long URLs / code / strings: wrap instead of overflowing */
+  pre, code, kbd, samp {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+    max-width: 100%;
+  }
+
+  /* Tables: horizontal-scroll instead of viewport bleed */
+  .table-wrapper, table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Flyouts / popovers / dropdowns / sidebars cap to viewport-minus-gutter */
+  .flyout, .popover, .dropdown, .dropdown-menu, .menu-flyout,
+  [role="menu"], [role="tooltip"], [role="listbox"],
+  .sidebar:not(.sidebar-overlay),
+  .a11y-flyout, .accessibility-flyout {
+    max-width: calc(100vw - 16px) !important;
+    box-sizing: border-box;
+  }
+
+  /* Right-edge anchored absolutely-positioned elements: clamp to viewport */
+  [style*="right:"], [style*="right="] {
+    max-width: calc(100vw - 16px) !important;
+  }
+
+  /* Defensive — any direct child of body cannot push the layout wider than
+     the viewport. Doesn't affect intentional horizontal scroll containers
+     because those are children-of-children, not direct body children. */
+  body > * {
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+}
