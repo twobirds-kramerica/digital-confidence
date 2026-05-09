@@ -188,6 +188,20 @@
             <span class="sr-only">Toggle reduce animations</span>
           </button>
         </div>
+
+        <div class="settings-toggle-row">
+          <div class="settings-toggle-label">
+            <strong data-en="Bionic Reading" data-fr="Lecture bionique">Bionic Reading</strong>
+            <p data-en="Bolds the first part of each word to guide your eye — can make dense text easier to scan."
+               data-fr="Met en gras la première partie de chaque mot pour guider votre regard — peut faciliter la lecture de textes denses.">
+              Bolds the first part of each word to guide your eye — can make dense text easier to scan.
+            </p>
+          </div>
+          <button class="a11y-btn bionic-reading-btn toggle-btn" aria-pressed="false">
+            <span class="toggle-track" aria-hidden="true"></span>
+            <span class="sr-only">Toggle bionic reading</span>
+          </button>
+        </div>
       </section>
 
       <!-- RESET -->
@@ -230,11 +244,12 @@
   <script src="../js/high-contrast.js" defer></script>
   <script src="../js/text-spacing.js" defer></script>
   <script src="../js/cognitive-toggles.js" defer></script>
+  <script src="../js/bionic-reading.js" defer></script>
   <script>
     // Reset button
     document.getElementById('btn-reset-settings').addEventListener('click', function () {
       ['dc-theme', 'dc-font-size', 'dc-high-contrast', 'dc-reading-guide',
-       'dc-text-spacing', 'dc-reduce-animations', 'dc-dyslexic-font'].forEach(function (k) {
+       'dc-text-spacing', 'dc-reduce-animations', 'dc-dyslexic-font', 'dc-bionic-reading'].forEach(function (k) {
         localStorage.removeItem(k);
       });
       document.documentElement.removeAttribute('data-theme');

@@ -190,6 +190,20 @@ body.reading-guide dd:hover {
 }
 
 /* ============================================
+   Bionic Reading (S-BIONIC-001)
+   Bold fixation points injected by bionic-reading.js as <b class="dc-b">
+   ============================================ */
+body.bionic-reading b.dc-b {
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Slightly soften bold weight in dark mode so it's not too heavy */
+[data-theme="dark"] body.bionic-reading b.dc-b {
+  font-weight: 600;
+}
+
+/* ============================================
    aria-live Announcer Region (Phase 4A)
    ============================================ */
 #dc-live-region {

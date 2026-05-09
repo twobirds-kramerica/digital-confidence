@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initHighContrast();
   initReadingGuide();
   initReduceAnimations();
+  initBionicReading();
   initAriaCurrentNav();
 });
 
@@ -398,5 +399,38 @@ function initReduceAnimations() {
 
   btn.addEventListener('click', function () {
     setReduceAnimations(!document.body.classList.contains('reduce-motion'));
+  });
+}
+
+/* ============================================
+   S-BIONIC-001 — Bionic Reading bar button
+   Logic lives in js/bionic-reading.js
+   ============================================ */
+function initBionicReading() {
+  var isOn = localStorage.getItem('dc-bionic-reading') === 'true';
+
+  var bar = document.querySelector('.accessibility-bar');
+  if (!bar || bar.querySelector('.bionic-reading-btn')) return;
+
+  var btn = document.createElement('button');
+  btn.className = 'a11y-btn bionic-reading-btn';
+  btn.setAttribute('aria-label', 'Toggle bionic reading — bolds first part of each word');
+  btn.setAttribute('aria-pressed', isOn ? 'true' : 'false');
+  btn.setAttribute('title', 'Bionic Reading');
+  btn.textContent = '𝐁';
+  if (isOn) btn.classList.add('active');
+
+  /* Insert before reading guide button, or fall back left */
+  var rgBtn = bar.querySelector('.reading-guide-btn');
+  var hcBtn = bar.querySelector('.high-contrast-btn');
+  var themeBtn = bar.querySelector('.theme-toggle-btn');
+  var insertBefore = rgBtn || hcBtn || themeBtn;
+  if (insertBefore) bar.insertBefore(btn, insertBefore);
+  else bar.appendChild(btn);
+
+  btn.addEventListener('click', function () {
+    if (window.DCC_BionicReading) {
+      window.DCC_BionicReading.toggle();
+    }
   });
 }
