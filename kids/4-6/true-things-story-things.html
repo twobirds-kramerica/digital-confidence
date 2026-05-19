@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A caregiver-led activity that helps children aged 4–6 sort TRUE THINGS from STORY THINGS — building the vocabulary foundation for critical thinking about media and screens.">
+  <meta property="og:title" content="True things and story things · DCC Kids · Ages 4–6">
+  <meta property="og:description" content="Help your child sort true things from story things. A 10-minute caregiver-led activity — no screens required.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/4-6/true-things-story-things.html">
+  <title>True things and story things · DCC Kids · Ages 4–6</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="icon" href="../../favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "True things and story things",
+    "description": "A caregiver-led activity for children aged 4–6. Builds the vocabulary foundation for critical thinking: TRUE THINGS vs. STORY THINGS, with 'I'm not sure' as a celebrated answer.",
+    "url": "https://twobirds-kramerica.github.io/digital-confidence/kids/4-6/true-things-story-things.html",
+    "educationalLevel": "PreK–Grade 1",
+    "learningResourceType": "Activity",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Children aged 4–6, with caregiver"
+    },
+    "inLanguage": "en-CA",
+    "isAccessibleForFree": true,
+    "dateModified": "2026-05-19",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Digital Confidence Centre — Kids Digital Literacy",
+      "url": "https://twobirds-kramerica.github.io/digital-confidence/"
+    }
+  }
+  </script>
+  <style>
+    /* ── Kids module overrides ───────────────────────────────── */
+    :root {
+      --kids-green:       #2E7D32;
+      --kids-green-bg:    #E8F5E9;
+      --kids-green-light: #C8E6C9;
+      --kids-yellow:      #F57F17;
+      --kids-yellow-bg:   #FFF9C4;
+      --kids-yellow-light:#FFF59D;
+      --kids-purple-bg:   #EDE7F6;
+      --kids-purple:      #6A1B9A;
+      --kids-radius:      20px;
+      --kids-font-xl:     2rem;
+      --kids-font-lg:     1.35rem;
+      --kids-font-base:   1.125rem;
+    }
+
+    /* Page base */
+    body { background: #FFF8F0; }
+
+    .kids-skip-link {
+      position: absolute;
+      left: -9999px;
+    }
+    .kids-skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      z-index: 9999;
+      background: var(--brand-teal);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+    }
+
+    /* Caregiver banner */
+    .caregiver-banner {
+      background: var(--brand-teal);
+      color: #fff;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+    .caregiver-banner a { color: #b2dfdb; text-decoration: underline; }
+
+    /* Breadcrumb nav */
+    .kids-nav {
+      background: #fff;
+      border-bottom: 2px solid var(--kids-green-light);
+      padding: 0.75rem 1.5rem;
+      font-size: 0.875rem;
+    }
+    .kids-nav a { color: var(--brand-teal); text-decoration: none; }
+    .kids-nav a:hover { text-decoration: underline; }
+    .kids-nav span { color: var(--text-muted); margin: 0 0.4rem; }
+
+    /* Hero */
+    .kids-hero {
+      background: linear-gradient(135deg, #E8F5E9 0%, #FFF9C4 100%);
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+      border-bottom: 3px solid var(--kids-green-light);
+    }
+    .kids-hero .badge-row {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .badge-age    { background: var(--kids-green-light);  color: var(--kids-green); }
+    .badge-cat    { background: #E3F2FD; color: #0D47A1; }
+    .badge-time   { background: #FFF3E0; color: #E65100; }
+    .badge-screen { background: #FCE4EC; color: #880E4F; }
+
+    .kids-hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      color: var(--text-primary);
+      margin: 0.5rem 0 0.75rem;
+      line-height: 1.2;
+    }
+    .kids-hero .tagline {
+      font-size: var(--kids-font-lg);
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* Main layout */
+    .kids-main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* Section headings */
+    .kids-section { margin-bottom: 2.5rem; }
+    .kids-section h2 {
+      font-size: var(--kids-font-xl);
+      color: var(--text-primary);
+      margin: 0 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .kids-section h3 {
+      font-size: var(--kids-font-lg);
+      color: var(--text-primary);
+      margin: 1.25rem 0 0.5rem;
+    }
+
+    /* Big idea cards */
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin: 1.25rem 0;
+    }
+    .concept-card {
+      border-radius: var(--kids-radius);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      border: 3px solid transparent;
+    }
+    .concept-card .icon { font-size: 2.5rem; margin-bottom: 0.5rem; display: block; }
+    .concept-card .label {
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+    .concept-card .desc {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    .concept-card.true  { background: var(--kids-green-bg);  border-color: var(--kids-green-light);  }
+    .concept-card.story { background: var(--kids-yellow-bg); border-color: var(--kids-yellow-light); }
+    .concept-card.unsure{ background: var(--kids-purple-bg); border-color: #CE93D8; }
+    .concept-card.true  .label { color: var(--kids-green); }
+    .concept-card.story .label { color: var(--kids-yellow); }
+    .concept-card.unsure .label { color: var(--kids-purple); }
+
+    /* Callout box */
+    .kids-callout {
+      background: var(--bg-warm);
+      border-left: 5px solid var(--brand-teal);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      font-size: var(--kids-font-base);
+    }
+    .kids-callout strong { color: var(--brand-teal); }
+
+    /* What you'll need */
+    .needs-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .needs-list li {
+      background: #fff;
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      padding: 0.6rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: var(--kids-font-base);
+      font-weight: 500;
+    }
+    .needs-list li .needs-icon { font-size: 1.4rem; }
+
+    /* Steps */
+    .steps-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+      counter-reset: steps;
+    }
+    .steps-list li {
+      counter-increment: steps;
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      align-items: flex-start;
+    }
+    .steps-list li::before {
+      content: counter(steps);
+      background: var(--brand-teal);
+      color: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .steps-list li .step-text {
+      padding-top: 0.35rem;
+      font-size: var(--kids-font-base);
+      line-height: 1.55;
+    }
+
+    /* Statements table */
+    .statements-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.25rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .statement-item {
+      background: #fff;
+      border-radius: 14px;
+      border: 2px solid var(--border-light);
+      padding: 1rem 1.25rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.75rem;
+      align-items: start;
+      box-shadow: var(--shadow-sm);
+    }
+    .statement-text {
+      font-size: var(--kids-font-base);
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.45;
+    }
+    .statement-num {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+    .statement-answer {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.2rem;
+    }
+    .answer-badge {
+      display: inline-block;
+      padding: 0.3rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .answer-true   { background: var(--kids-green-bg);  color: var(--kids-green);  border: 2px solid var(--kids-green-light); }
+    .answer-story  { background: var(--kids-yellow-bg); color: var(--kids-yellow); border: 2px solid var(--kids-yellow-light); }
+    .answer-unsure { background: var(--kids-purple-bg); color: var(--kids-purple); border: 2px solid #CE93D8; }
+    .statement-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-style: italic;
+      text-align: right;
+      max-width: 180px;
+    }
+
+    /* Gamification block */
+    .sticker-block {
+      background: linear-gradient(135deg, #FFF9C4, #FFF3E0);
+      border: 3px solid var(--kids-yellow-light);
+      border-radius: var(--kids-radius);
+      padding: 1.5rem 1.25rem;
+      margin: 1.25rem 0;
+      text-align: center;
+    }
+    .sticker-block .sticker-icon { font-size: 3rem; display: block; margin-bottom: 0.5rem; }
+    .sticker-block h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.2rem;
+      color: var(--kids-yellow);
+    }
+    .sticker-block p { font-size: var(--kids-font-base); color: var(--text-primary); margin: 0; line-height: 1.5; }
+
+    /* Caregiver notes section */
+    .caregiver-section {
+      background: #fff;
+      border: 2px solid var(--border-color);
+      border-radius: var(--kids-radius);
+      padding: 1.5rem 1.25rem;
+      margin-top: 2rem;
+    }
+    .caregiver-section h2 {
+      font-size: 1.25rem;
+      color: var(--brand-teal);
+      margin: 0 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--kids-green-light);
+    }
+    .caregiver-section p, .caregiver-section li {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .caregiver-section ul {
+      padding-left: 1.25rem;
+      margin: 0.5rem 0;
+    }
+    .caregiver-section .source-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0;
+    }
+    .caregiver-section .source-list li {
+      padding: 0.2rem 0;
+      font-size: 0.88rem;
+    }
+    .caregiver-section .source-list li::before {
+      content: "→ ";
+      color: var(--brand-teal);
+    }
+
+    /* No-print caregiver label */
+    .for-caregiver-label {
+      display: inline-block;
+      background: var(--brand-teal);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+    }
+
+    /* Good/Avoid callout */
+    .do-avoid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    @media (max-width: 500px) {
+      .do-avoid { grid-template-columns: 1fr; }
+      .concept-grid { grid-template-columns: 1fr; }
+    }
+    .do-box, .avoid-box {
+      border-radius: 12px;
+      padding: 1rem;
+    }
+    .do-box   { background: var(--kids-green-bg);  border: 2px solid var(--kids-green-light); }
+    .avoid-box{ background: #FDEDEC; border: 2px solid #FFCDD2; }
+    .do-box h4   { color: var(--kids-green);  font-size: 0.9rem; margin: 0 0 0.4rem; }
+    .avoid-box h4{ color: #C62828; font-size: 0.9rem; margin: 0 0 0.4rem; }
+    .do-box ul, .avoid-box ul { padding-left: 1.1rem; margin: 0; }
+    .do-box li, .avoid-box li { font-size: 0.85rem; line-height: 1.5; }
+
+    /* Footer */
+    .kids-footer {
+      background: var(--brand-teal);
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.875rem;
+      margin-top: 3rem;
+    }
+    .kids-footer a { color: #b2dfdb; }
+
+    /* Print */
+    @media print {
+      .caregiver-banner, .kids-nav { display: none; }
+      .kids-hero { padding: 1rem; }
+      body { background: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <a class="kids-skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Caregiver banner -->
+  <div class="caregiver-banner" role="banner">
+    🧑‍🤝‍🧑 This activity is for <strong>you and your child to do together</strong> — no screens needed. &nbsp;
+    <a href="../../index.html">Back to Digital Confidence Centre</a>
+  </div>
+
+  <!-- Breadcrumb nav -->
+  <nav class="kids-nav" aria-label="Breadcrumb">
+    <a href="../../index.html">DCC</a>
+    <span aria-hidden="true">›</span>
+    <span>Kids</span>
+    <span aria-hidden="true">›</span>
+    <span>Ages 4–6</span>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">True things and story things</span>
+  </nav>
+
+  <!-- Hero -->
+  <header class="kids-hero" role="banner">
+    <div class="badge-row">
+      <span class="badge badge-age">Ages 4–6</span>
+      <span class="badge badge-cat">Critical Thinking</span>
+      <span class="badge badge-time">⏱ 10 minutes</span>
+      <span class="badge badge-screen">📵 No screens</span>
+    </div>
+    <h1>True things and story things</h1>
+    <p class="tagline">
+      Help your child sort what's real from what's made up —
+      and celebrate the brave answer: <strong>"I'm not sure."</strong>
+    </p>
+  </header>
+
+  <!-- Main content -->
+  <main id="main-content" class="kids-main">
+
+    <!-- The big idea -->
+    <section class="kids-section" aria-labelledby="big-idea-heading">
+      <h2 id="big-idea-heading">💡 The big idea</h2>
+      <p style="font-size: var(--kids-font-base); line-height: 1.6;">
+        Some things are <strong>TRUE things</strong>. Some things are <strong>STORY things</strong>.
+        And sometimes, the honest answer is <strong>"I'm not sure"</strong> — and that's the bravest answer of all.
+      </p>
+
+      <div class="concept-grid" role="list">
+        <div class="concept-card true" role="listitem">
+          <span class="icon">🟢</span>
+          <span class="label">TRUE things</span>
+          <span class="desc">Things that really happened, or things that are really real in the world.</span>
+        </div>
+        <div class="concept-card story" role="listitem">
+          <span class="icon">🟡</span>
+          <span class="label">STORY things</span>
+          <span class="desc">Things someone made up — a bedtime story, a cartoon, a character who isn't real.</span>
+        </div>
+        <div class="concept-card unsure" role="listitem">
+          <span class="icon">🙌</span>
+          <span class="label">I'M NOT SURE</span>
+          <span class="desc">Both hands up. This is the brave, smart answer — even grown-ups say it.</span>
+        </div>
+      </div>
+
+      <div class="kids-callout">
+        <strong>Why does this matter on screens?</strong><br>
+        Sometimes on a screen, a person or a cartoon will say something that <em>sounds</em> like a TRUE thing but is really a STORY thing.
+        If your child knows about TRUE and STORY, they can pause and ask a grown-up instead of accepting it as fact.
+      </div>
+    </section>
+
+    <!-- What you'll need -->
+    <section class="kids-section" aria-labelledby="needs-heading">
+      <h2 id="needs-heading">🛒 What you'll need</h2>
+      <ul class="needs-list" role="list">
+        <li><span class="needs-icon">🟩</span> One green card or paper (TRUE)</li>
+        <li><span class="needs-icon">🟨</span> One yellow card or paper (STORY)</li>
+        <li><span class="needs-icon">⭐</span> Stickers for the "brave thinker" reward</li>
+        <li><span class="needs-icon">📋</span> This page — you read the statements aloud</li>
+      </ul>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">
+        No cards? No problem. Your child can point to your left hand (TRUE) or right hand (STORY),
+        or raise both hands for "I'm not sure."
+      </p>
+    </section>
+
+    <!-- How to play -->
+    <section class="kids-section" aria-labelledby="how-heading">
+      <h2 id="how-heading">🎮 How to play</h2>
+      <ol class="steps-list" role="list">
+        <li><span class="step-text">Set out the green card and the yellow card in front of your child.</span></li>
+        <li><span class="step-text">Explain: <em>"I'm going to say something. If you think it's a TRUE thing, touch the green card. If you think it's a STORY thing, touch the yellow card. If you're not sure — put both hands up. That's the brave answer!"</em></span></li>
+        <li><span class="step-text">Read each statement below, one at a time. Pause after each one and let your child respond.</span></li>
+        <li><span class="step-text">Every time they say "I'm not sure" — give them a sticker right away. That's the win.</span></li>
+        <li><span class="step-text">For statements 3 and 5, say "I'm not sure either" out loud yourself. Model the habit.</span></li>
+      </ol>
+    </section>
+
+    <!-- The six statements -->
+    <section class="kids-section" aria-labelledby="statements-heading">
+      <h2 id="statements-heading">🗣️ The six statements</h2>
+      <p style="font-size: var(--kids-font-base); color: var(--text-secondary); margin-bottom: 1rem;">
+        Read each one aloud. The answer is shown for you — your child doesn't see it.
+      </p>
+
+      <ul class="statements-list" role="list" aria-label="Activity statements">
+
+        <li class="statement-item">
+          <div>
+            <div class="statement-num">Statement 1</div>
+            <div class="statement-text">"The sun will come up tomorrow."</div>
+          </div>
+          <div class="statement-answer">
+            <span class="answer-badge answer-true">🟢 TRUE</span>
+          </div>
+        </li>
+
+        <li class="statement-item">
+          <div>
+            <div class="statement-num">Statement 2</div>
+            <div class="statement-text">"Dragons live in our backyard."</div>
+          </div>
+          <div class="statement-answer">
+            <span class="answer-badge answer-story">🟡 STORY</span>
+          </div>
+        </li>
+
+        <li class="statement-item" style="border-color: #CE93D8;">
+          <div>
+            <div class="statement-num">Statement 3 ⭐ model "I'm not sure"</div>
+            <div class="statement-text">"If you don't brush your teeth, they turn green."</div>
+          </div>
+          <div class="statement-answer">
+            <span class="answer-badge answer-unsure">🙌 NOT SURE</span>
+            <span class="statement-note">Actually STORY — but let the ambiguity be the lesson</span>
+          </div>
+        </li>
+
+        <li class="statement-item">
+          <div>
+            <div class="statement-num">Statement 4</div>
+            <div class="statement-text">"[Use a real memory] Grandma called us on the phone yesterday."</div>
+          </div>
+          <div class="statement-answer">
+            <span class="answer-badge answer-true">🟢 TRUE</span>
+            <span class="statement-note">Replace with any real recent event</span>
+          </div>
+        </li>
+
+        <li class="statement-item" style="border-color: #CE93D8;">
+          <div>
+            <div class="statement-num">Statement 5 ⭐ model "I'm not sure"</div>
+            <div class="statement-text">"Cats can talk to each other in meows."</div>
+          </div>
+          <div class="statement-answer">
+            <span class="answer-badge answer-unsure">🙌 NOT SURE</span>
+            <span class="statement-note">Honestly — yes-ish. Model the uncertainty aloud.</span>
+          </div>
+        </li>
+
+        <li class="statement-item" style="border-color: #FFCDD2;">
+          <div>
+            <div class="statement-num">Statement 6 — safety tie-in</div>
+            <div class="statement-text">"The video said I needed to tell them my address to win a prize."</div>
+          </div>
+          <div class="statement-answer">
+            <span class="answer-badge answer-story">🟡 STORY</span>
+            <span class="statement-note">A STORY thing said in a TRUE-THING voice</span>
+          </div>
+        </li>
+
+      </ul>
+
+      <div class="kids-callout">
+        💬 <strong>After statement 6</strong>, you can say: <em>"If anything on a screen asks for your address, your name, or your phone number — that's a grown-up question. Come find me."</em>
+        You don't need to explain further. The vocabulary does the work.
+      </div>
+    </section>
+
+    <!-- Gamification -->
+    <section class="kids-section" aria-labelledby="sticker-heading">
+      <div class="sticker-block">
+        <span class="sticker-icon" role="img" aria-label="star sticker">⭐</span>
+        <h3 id="sticker-heading">The Brave Thinker Sticker</h3>
+        <p>
+          Every time your child says <strong>"I'm not sure"</strong> — give them a sticker immediately.
+          The sticker is for the honest pause, not the right answer.
+          Over a week of short rounds, they can trade 10–15 stickers for a shared activity they choose.
+        </p>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem;">
+        This reverses the usual "right answer = reward" pattern that trains guessing instead of thinking.
+      </p>
+    </section>
+
+    <!-- Signs of growth -->
+    <section class="kids-section" aria-labelledby="growth-heading">
+      <h2 id="growth-heading">🌱 Signs it's working</h2>
+      <ul style="font-size: var(--kids-font-base); line-height: 1.8; padding-left: 1.5rem;">
+        <li>Your child uses the words "true thing" or "story thing" during the day unprompted.</li>
+        <li>They say "I'm not sure" instead of guessing when they don't know something.</li>
+        <li>They ask <em>"Is that a true thing or a story thing?"</em> about something they see or hear.</li>
+        <li>They come to you with a question about something on a screen.</li>
+      </ul>
+      <div class="kids-callout">
+        <strong>Next step at ages 7–9:</strong> The same vocabulary unlocks "Is this an ad or a news story?" —
+        the next critical-thinking skill in the DCC Kids sequence.
+      </div>
+    </section>
+
+    <!-- Caregiver notes -->
+    <aside class="caregiver-section" aria-labelledby="caregiver-heading">
+      <span class="for-caregiver-label">For caregivers</span>
+      <h2 id="caregiver-heading">Why this skill matters — the research</h2>
+
+      <p>
+        Children aged 4–6 are in Piaget's <em>preoperational stage</em> — they can use language and symbols
+        but have not yet developed the abstract thinking that separates "things that happened" from "things someone invented."
+        Magical thinking at this age is developmentally normal and healthy.
+      </p>
+      <p>
+        This activity does <strong>not</strong> ask your child to stop believing in Santa Claus or dragons.
+        It builds a neutral vocabulary — TRUE / STORY / NOT SURE — they can apply <em>intentionally</em>
+        when they encounter something on a screen that needs checking.
+      </p>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">What the research shows</h3>
+      <p>
+        Sharon &amp; Woolley (2004) found that 7–8-year-olds display adult-like categorical distinctions
+        while 3–4-year-olds treat the real world "like one of many worlds." The 4–6 window is exactly
+        when this vocabulary foundation forms — and when it has the most lasting impact.
+      </p>
+      <p>
+        Common Sense Media notes that children this age are "developing a firmer sense of reality and fantasy"
+        but still have very active imaginations. Explicit vocabulary helps them navigate ambiguity
+        without losing the creativity that makes that age so rich.
+      </p>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">Good practice / avoid</h3>
+      <div class="do-avoid">
+        <div class="do-box">
+          <h4>✅ Good</h4>
+          <ul>
+            <li>Short rounds — 5–10 minutes</li>
+            <li>Mix obvious + ambiguous statements</li>
+            <li>Model "I'm not sure" yourself</li>
+            <li>Celebrate the pause, not the score</li>
+          </ul>
+        </div>
+        <div class="avoid-box">
+          <h4>🚫 Avoid</h4>
+          <ul>
+            <li>Turning it into a test with scoring</li>
+            <li>Using scary or upsetting examples</li>
+            <li>Doing it only on a screen</li>
+            <li>Shaming a wrong answer</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">Screen time guidance</h3>
+      <p>
+        This activity is deliberately screen-free. Once the vocabulary is solid (1–2 weeks of short daily rounds),
+        the same TRUE / STORY / NOT SURE habit can be applied to statements made by characters on any show or app your child watches.
+      </p>
+      <p>
+        For media recommendations: <a href="https://www.commonsensemedia.org" target="_blank" rel="noopener">Common Sense Media</a>
+        provides age-based reviews to help you choose what's appropriate before your child sees it.
+      </p>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">Sources</h3>
+      <ul class="source-list">
+        <li>Piaget, J. (1952). <em>The Origins of Intelligence in Children.</em> International Universities Press.</li>
+        <li>Sharon, T. &amp; Woolley, J.D. (2004). Do monsters dream? Young children's understanding of the fantasy/reality distinction. <em>British Journal of Developmental Psychology, 22</em>(2), 293–310.</li>
+        <li>Common Sense Media. How We Rate and Review by Age: 5–7 Years. commonsensemedia.org</li>
+        <li>Erikson, E. H. (1950/1963). <em>Childhood and Society.</em> W. W. Norton &amp; Company.</li>
+      </ul>
+    </aside>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="kids-footer" role="contentinfo">
+    <p>
+      <a href="../../index.html">Digital Confidence Centre</a> · Kids Digital Literacy · Ages 4–6 ·
+      <a href="../../copyright.html">© 2026 Two Birds Innovation</a>
+    </p>
+    <p style="margin-top: 0.4rem; font-size: 0.8rem;">
+      Canadian content · Free to use · No data collected · Built in St. Thomas, Ontario
+    </p>
+  </footer>
+
+</body>
+</html>
