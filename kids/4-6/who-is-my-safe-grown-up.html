@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A caregiver-led activity that helps children aged 4–6 identify their safe grown-ups and practise asking for help — essential for online and offline safety.">
+  <meta property="og:title" content="Who is my safe grown-up? · DCC Kids · Ages 4–6">
+  <meta property="og:description" content="Help your child name their safe grown-ups and practise the most important safety phrase they'll ever learn. A 10-minute caregiver-led activity — no screens required.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/4-6/who-is-my-safe-grown-up.html">
+  <title>Who is my safe grown-up? · DCC Kids · Ages 4–6</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="icon" href="../../favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Who is my safe grown-up?",
+    "description": "A caregiver-led activity for children aged 4–6. Helps children identify trusted adults in their lives, practise asking for help, and understand the golden rule: safe grown-ups never ask you to keep secrets from other safe grown-ups.",
+    "url": "https://twobirds-kramerica.github.io/digital-confidence/kids/4-6/who-is-my-safe-grown-up.html",
+    "educationalLevel": "PreK–Grade 1",
+    "learningResourceType": "Activity",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Children aged 4–6, with caregiver"
+    },
+    "inLanguage": "en-CA",
+    "isAccessibleForFree": true,
+    "dateModified": "2026-05-21",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Digital Confidence Centre — Kids Digital Literacy",
+      "url": "https://twobirds-kramerica.github.io/digital-confidence/"
+    }
+  }
+  </script>
+  <style>
+    /* ── Kids module overrides ───────────────────────────────── */
+    :root {
+      --kids-green:       #2E7D32;
+      --kids-green-bg:    #E8F5E9;
+      --kids-green-light: #C8E6C9;
+      --kids-blue:        #1565C0;
+      --kids-blue-bg:     #E3F2FD;
+      --kids-blue-light:  #BBDEFB;
+      --kids-warm-bg:     #FFF8F0;
+      --kids-orange:      #E65100;
+      --kids-orange-bg:   #FFF3E0;
+      --kids-orange-light:#FFE0B2;
+      --kids-purple-bg:   #EDE7F6;
+      --kids-purple:      #6A1B9A;
+      --kids-radius:      20px;
+      --kids-font-xl:     2rem;
+      --kids-font-lg:     1.35rem;
+      --kids-font-base:   1.125rem;
+    }
+
+    body { background: #F0F7FF; }
+
+    .kids-skip-link {
+      position: absolute;
+      left: -9999px;
+    }
+    .kids-skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      z-index: 9999;
+      background: var(--brand-teal);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+    }
+
+    .caregiver-banner {
+      background: var(--brand-teal);
+      color: #fff;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+    .caregiver-banner a { color: #b2dfdb; text-decoration: underline; }
+
+    .kids-nav {
+      background: #fff;
+      border-bottom: 2px solid var(--kids-blue-light);
+      padding: 0.75rem 1.5rem;
+      font-size: 0.875rem;
+    }
+    .kids-nav a { color: var(--brand-teal); text-decoration: none; }
+    .kids-nav a:hover { text-decoration: underline; }
+    .kids-nav span { color: var(--text-muted); margin: 0 0.4rem; }
+
+    .kids-hero {
+      background: linear-gradient(135deg, #E3F2FD 0%, #E8F5E9 100%);
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+      border-bottom: 3px solid var(--kids-blue-light);
+    }
+    .kids-hero .badge-row {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .badge-age    { background: var(--kids-green-light);  color: var(--kids-green); }
+    .badge-cat    { background: var(--kids-blue-bg); color: var(--kids-blue); }
+    .badge-time   { background: #FFF9C4; color: #E65100; }
+    .badge-screen { background: #FCE4EC; color: #880E4F; }
+
+    .kids-hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      color: var(--text-primary);
+      margin: 0.5rem 0 0.75rem;
+      line-height: 1.2;
+    }
+    .kids-hero .tagline {
+      font-size: var(--kids-font-lg);
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    .kids-main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    .kids-section { margin-bottom: 2.5rem; }
+    .kids-section h2 {
+      font-size: var(--kids-font-xl);
+      color: var(--text-primary);
+      margin: 0 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .kids-section h3 {
+      font-size: var(--kids-font-lg);
+      color: var(--text-primary);
+      margin: 1.25rem 0 0.5rem;
+    }
+
+    .kids-callout {
+      background: var(--kids-blue-bg);
+      border-left: 5px solid var(--kids-blue);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      font-size: var(--kids-font-base);
+    }
+    .kids-callout strong { color: var(--kids-blue); }
+
+    .kids-callout.teal {
+      background: var(--bg-warm);
+      border-left-color: var(--brand-teal);
+    }
+    .kids-callout.teal strong { color: var(--brand-teal); }
+
+    /* Golden rule box */
+    .golden-rule {
+      background: linear-gradient(135deg, #FFF9C4, #FFF3E0);
+      border: 3px solid var(--kids-orange-light);
+      border-radius: var(--kids-radius);
+      padding: 1.5rem 1.25rem;
+      margin: 1.25rem 0;
+      text-align: center;
+    }
+    .golden-rule .rule-icon { font-size: 2.5rem; display: block; margin-bottom: 0.5rem; }
+    .golden-rule .rule-text {
+      font-size: var(--kids-font-lg);
+      font-weight: 700;
+      color: var(--kids-orange);
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+    .golden-rule .rule-sub {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Safe person cards */
+    .person-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 0.75rem;
+      margin: 1.25rem 0;
+    }
+    .person-card {
+      background: #fff;
+      border: 2px solid var(--kids-blue-light);
+      border-radius: 16px;
+      padding: 1.25rem 0.75rem;
+      text-align: center;
+    }
+    .person-card .person-icon { font-size: 2rem; display: block; margin-bottom: 0.4rem; }
+    .person-card .person-name { font-size: 0.9rem; font-weight: 600; color: var(--text-primary); }
+    .person-card .person-note { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem; }
+
+    /* Naming activity box */
+    .naming-activity {
+      background: var(--kids-blue-bg);
+      border: 2px solid var(--kids-blue-light);
+      border-radius: var(--kids-radius);
+      padding: 1.5rem 1.25rem;
+      margin: 1.25rem 0;
+    }
+    .naming-activity h3 {
+      color: var(--kids-blue);
+      margin: 0 0 0.75rem;
+      font-size: 1.1rem;
+    }
+    .name-slot {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #fff;
+      border: 2px solid var(--kids-blue-light);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .name-slot .slot-num {
+      background: var(--kids-blue);
+      color: #fff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .name-slot .slot-line {
+      flex: 1;
+      border-bottom: 2px dashed var(--kids-blue-light);
+      height: 2px;
+      margin-top: 0.5rem;
+    }
+    .name-slot .slot-hint { font-size: 0.82rem; color: var(--text-muted); }
+
+    /* Phrase practice */
+    .phrase-box {
+      background: #fff;
+      border: 3px solid var(--kids-blue);
+      border-radius: var(--kids-radius);
+      padding: 1.5rem 1.25rem;
+      margin: 1.25rem 0;
+      text-align: center;
+    }
+    .phrase-big {
+      font-size: clamp(1.3rem, 4vw, 1.8rem);
+      font-weight: 700;
+      color: var(--kids-blue);
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+    }
+    .phrase-sub {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .steps-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+      counter-reset: steps;
+    }
+    .steps-list li {
+      counter-increment: steps;
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      align-items: flex-start;
+    }
+    .steps-list li::before {
+      content: counter(steps);
+      background: var(--kids-blue);
+      color: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .steps-list li .step-text {
+      padding-top: 0.35rem;
+      font-size: var(--kids-font-base);
+      line-height: 1.55;
+    }
+
+    .sticker-block {
+      background: linear-gradient(135deg, var(--kids-blue-bg), #E8F5E9);
+      border: 3px solid var(--kids-blue-light);
+      border-radius: var(--kids-radius);
+      padding: 1.5rem 1.25rem;
+      margin: 1.25rem 0;
+      text-align: center;
+    }
+    .sticker-block .sticker-icon { font-size: 3rem; display: block; margin-bottom: 0.5rem; }
+    .sticker-block h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.2rem;
+      color: var(--kids-blue);
+    }
+    .sticker-block p { font-size: var(--kids-font-base); color: var(--text-primary); margin: 0; line-height: 1.5; }
+
+    .caregiver-section {
+      background: #fff;
+      border: 2px solid var(--border-color);
+      border-radius: var(--kids-radius);
+      padding: 1.5rem 1.25rem;
+      margin-top: 2rem;
+    }
+    .caregiver-section h2 {
+      font-size: 1.25rem;
+      color: var(--brand-teal);
+      margin: 0 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--kids-blue-light);
+    }
+    .caregiver-section p, .caregiver-section li {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .caregiver-section ul {
+      padding-left: 1.25rem;
+      margin: 0.5rem 0;
+    }
+    .caregiver-section .source-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0;
+    }
+    .caregiver-section .source-list li {
+      padding: 0.2rem 0;
+      font-size: 0.88rem;
+    }
+    .caregiver-section .source-list li::before {
+      content: "→ ";
+      color: var(--brand-teal);
+    }
+
+    .for-caregiver-label {
+      display: inline-block;
+      background: var(--brand-teal);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+    }
+
+    .facilitator-note {
+      background: #FFF3E0;
+      border: 2px solid var(--kids-orange-light);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+    }
+    .facilitator-note strong { color: var(--kids-orange); }
+
+    .do-avoid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    @media (max-width: 500px) {
+      .do-avoid { grid-template-columns: 1fr; }
+      .person-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .do-box, .avoid-box {
+      border-radius: 12px;
+      padding: 1rem;
+    }
+    .do-box   { background: var(--kids-green-bg);  border: 2px solid var(--kids-green-light); }
+    .avoid-box{ background: #FDEDEC; border: 2px solid #FFCDD2; }
+    .do-box h4   { color: var(--kids-green);  font-size: 0.9rem; margin: 0 0 0.4rem; }
+    .avoid-box h4{ color: #C62828; font-size: 0.9rem; margin: 0 0 0.4rem; }
+    .do-box ul, .avoid-box ul { padding-left: 1.1rem; margin: 0; }
+    .do-box li, .avoid-box li { font-size: 0.85rem; line-height: 1.5; }
+
+    .prev-module-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: #FFF3E0;
+      border: 2px solid var(--kids-orange-light);
+      border-radius: var(--kids-radius);
+      padding: 1rem 1.25rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      margin-bottom: 2rem;
+      transition: box-shadow 0.15s;
+    }
+    .prev-module-link:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .prev-module-link .arrow { font-size: 1.5rem; }
+    .prev-module-link .link-text { font-size: var(--kids-font-base); font-weight: 600; }
+    .prev-module-link .link-sub  { font-size: 0.85rem; color: var(--text-muted); }
+
+    .kids-footer {
+      background: var(--brand-teal);
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.875rem;
+      margin-top: 3rem;
+    }
+    .kids-footer a { color: #b2dfdb; }
+
+    @media print {
+      .caregiver-banner, .kids-nav { display: none; }
+      .kids-hero { padding: 1rem; }
+      body { background: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <a class="kids-skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="caregiver-banner" role="banner">
+    🧑‍🤝‍🧑 This activity is for <strong>you and your child to do together</strong> — no screens needed. &nbsp;
+    <a href="../../index.html">Back to Digital Confidence Centre</a>
+  </div>
+
+  <nav class="kids-nav" aria-label="Breadcrumb">
+    <a href="../../index.html">DCC</a>
+    <span aria-hidden="true">›</span>
+    <span>Kids</span>
+    <span aria-hidden="true">›</span>
+    <span>Ages 4–6</span>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Who is my safe grown-up?</span>
+  </nav>
+
+  <header class="kids-hero" role="banner">
+    <div class="badge-row">
+      <span class="badge badge-age">Ages 4–6</span>
+      <span class="badge badge-cat">Emotional Safety</span>
+      <span class="badge badge-time">⏱ 10 minutes</span>
+      <span class="badge badge-screen">📵 No screens</span>
+    </div>
+    <h1>Who is my safe grown-up?</h1>
+    <p class="tagline">
+      Help your child name the trusted adults in their life —
+      and practise the most important safety phrase they'll ever learn.
+    </p>
+  </header>
+
+  <main id="main-content" class="kids-main">
+
+    <a href="secret-stuff-share-stuff.html" class="prev-module-link" aria-label="Previous activity: Secret stuff and share stuff">
+      <span class="arrow">←</span>
+      <div>
+        <div class="link-text">Did the previous activity? Secret stuff and share stuff</div>
+        <div class="link-sub">These two activities go together — do them in the same session if you can.</div>
+      </div>
+    </a>
+
+    <section class="kids-section" aria-labelledby="big-idea-heading">
+      <h2 id="big-idea-heading">💡 The big idea</h2>
+      <p style="font-size: var(--kids-font-base); line-height: 1.6;">
+        A <strong>safe grown-up</strong> is an adult your child can go to any time they feel
+        confused, scared, or unsure — about something on a screen, or anything else.
+        Knowing who your safe grown-ups are <em>before</em> something feels wrong makes it
+        much easier to ask for help when it matters.
+      </p>
+
+      <div class="golden-rule">
+        <span class="rule-icon" role="img" aria-label="gold star">⭐</span>
+        <div class="rule-text">Safe grown-ups never ask you to keep secrets<br>from other safe grown-ups.</div>
+        <div class="rule-sub">
+          This is the golden rule. If an adult — online or in person — asks a child
+          to keep something secret from their parents or caregivers, that is a warning sign.
+          Say this to your child plainly and often.
+        </div>
+      </div>
+
+      <div class="kids-callout">
+        <strong>Connection to Secret stuff and share stuff:</strong><br>
+        Knowing SECRET STUFF from SHARE STUFF only works if your child knows exactly
+        who to go to when they're not sure. These two skills build on each other.
+        "When in doubt — go to your safe grown-up" is the bridge.
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="who-heading">
+      <h2 id="who-heading">🧑‍🤝‍🧑 Who can be a safe grown-up?</h2>
+      <p style="font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+        Safe grown-ups are adults who your child knows and trusts. They do not have to be family members.
+        <strong>Even 1 or 2 safe grown-ups is enough.</strong>
+      </p>
+
+      <div class="person-grid" role="list">
+        <div class="person-card" role="listitem">
+          <span class="person-icon">👪</span>
+          <div class="person-name">Parent or caregiver</div>
+          <div class="person-note">The first safe grown-up</div>
+        </div>
+        <div class="person-card" role="listitem">
+          <span class="person-icon">👴👵</span>
+          <div class="person-name">Grandparent</div>
+          <div class="person-note">Family network</div>
+        </div>
+        <div class="person-card" role="listitem">
+          <span class="person-icon">🏫</span>
+          <div class="person-name">Teacher</div>
+          <div class="person-note">At school every day</div>
+        </div>
+        <div class="person-card" role="listitem">
+          <span class="person-icon">📚</span>
+          <div class="person-name">Librarian</div>
+          <div class="person-note">A community safe adult</div>
+        </div>
+        <div class="person-card" role="listitem">
+          <span class="person-icon">🏥</span>
+          <div class="person-name">School counsellor</div>
+          <div class="person-note">Trained to help kids</div>
+        </div>
+        <div class="person-card" role="listitem">
+          <span class="person-icon">🏘️</span>
+          <div class="person-name">Trusted neighbour</div>
+          <div class="person-note">Someone you both know well</div>
+        </div>
+      </div>
+
+      <p style="font-size: 0.9rem; color: var(--text-muted); text-align: center;">
+        A teacher, a librarian, or a school counsellor counts — especially for children with smaller family networks.
+        The list does not need to be long. It needs to be real.
+      </p>
+    </section>
+
+    <section class="kids-section" aria-labelledby="activity-heading">
+      <h2 id="activity-heading">🎮 The activity</h2>
+      <p style="font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+        This is a conversation activity, not a worksheet. You guide; your child responds out loud.
+      </p>
+
+      <ol class="steps-list" role="list">
+        <li><span class="step-text">Ask your child: <em>"Who are your safe grown-ups? Name as many as you can think of."</em> Write them down in the boxes below (or just say them out loud). Even one or two is a great start.</span></li>
+        <li><span class="step-text">For each person your child names, confirm: <em>"Yes! If something feels wrong, you can always go to [name]. They will help you."</em></span></li>
+        <li><span class="step-text">Practise the phrase together. Point to yourself and say: <em>"Try saying: 'I need to talk to a safe grown-up.'"</em> Say it with them. Say it three times.</span></li>
+        <li><span class="step-text">Ask: <em>"What if you felt scared by something on a screen? What would you do?"</em> The goal: they say your name, or another safe grown-up's name.</span></li>
+        <li><span class="step-text">Remind them of the golden rule one more time: <em>"Safe grown-ups never ask you to keep something secret from me. If that ever happens — that's when you need to come and tell me right away."</em></span></li>
+      </ol>
+
+      <div class="naming-activity">
+        <h3>My safe grown-ups:</h3>
+        <div class="name-slot">
+          <div class="slot-num">1</div>
+          <div class="slot-line"></div>
+          <div class="slot-hint">First safe grown-up</div>
+        </div>
+        <div class="name-slot">
+          <div class="slot-num">2</div>
+          <div class="slot-line"></div>
+          <div class="slot-hint">Second safe grown-up</div>
+        </div>
+        <div class="name-slot">
+          <div class="slot-num">3</div>
+          <div class="slot-line"></div>
+          <div class="slot-hint">Third safe grown-up (if they have one)</div>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.75rem 0 0;">
+          Print this page and fill it in together — or just say the names out loud. Either works.
+        </p>
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="phrase-heading">
+      <h2 id="phrase-heading">🗣️ The phrase to practise</h2>
+      <div class="phrase-box">
+        <div class="phrase-big">"I need to talk to a safe grown-up."</div>
+        <div class="phrase-sub">Say this with your child three times. Then ask them to say it alone. It should feel easy and normal — not scary.</div>
+      </div>
+
+      <div class="kids-callout">
+        <strong>Why practise a phrase?</strong><br>
+        When children are scared or confused, they often freeze. Having a specific, practised phrase
+        gives them something concrete to do — like a fire drill for safety situations.
+        The phrase works for online situations, in-person situations, and anything in between.
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="sticker-heading">
+      <div class="sticker-block">
+        <span class="sticker-icon" role="img" aria-label="shield sticker">🛡️</span>
+        <h3 id="sticker-heading">The Safety Champion Sticker</h3>
+        <p>
+          Give a sticker every time your child practises the phrase, names a safe grown-up unprompted,
+          or comes to you with something that felt wrong or confusing.
+          Each of those moments is exactly what this activity is building toward.
+        </p>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem;">
+        The sticker is for the courage to ask — not for perfect answers.
+      </p>
+    </section>
+
+    <section class="kids-section" aria-labelledby="growth-heading">
+      <h2 id="growth-heading">🌱 Signs it's working</h2>
+      <ul style="font-size: var(--kids-font-base); line-height: 1.8; padding-left: 1.5rem;">
+        <li>Your child can name at least one safe grown-up without prompting.</li>
+        <li>They say "I'll ask my safe grown-up" when they encounter something confusing on a screen.</li>
+        <li>They use the phrase: <em>"I need to talk to a safe grown-up."</em></li>
+        <li>They come to you proactively when something feels wrong — even something small.</li>
+      </ul>
+      <div class="kids-callout teal">
+        <strong>Revisit this activity:</strong> As children grow and their social world expands,
+        their list of safe grown-ups may change. Revisit this conversation at the start of each
+        school year — a new teacher, a new counsellor, a new neighbour can all be added.
+      </div>
+    </section>
+
+    <aside class="caregiver-section" aria-labelledby="caregiver-heading">
+      <span class="for-caregiver-label">For caregivers</span>
+      <h2 id="caregiver-heading">Why this skill matters — the research</h2>
+
+      <p>
+        Research on child safety consistently identifies one factor as the strongest predictor of a child
+        disclosing abuse or unsafe situations: knowing who their safe adults are and having explicitly
+        practised asking them for help. This is true for both in-person and online situations.
+      </p>
+      <p>
+        Finkelhor &amp; Hashima (2001) found that children who could name a trusted adult were
+        significantly more likely to disclose concerns. The disclosure gap is not a trust gap —
+        it is a vocabulary and practise gap. Children who have not rehearsed asking for help
+        are less likely to do so when it matters.
+      </p>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">Naming 1 or 2 safe grown-ups is enough</h3>
+      <p>
+        Some children — particularly those in single-parent households, care arrangements, or with
+        limited extended family — may struggle to name 3 or more safe adults. This is normal and does not
+        reflect a problem. What matters is that the people named are real and reachable.
+        A teacher, a school counsellor, or a librarian is a fully legitimate safe grown-up.
+        Reinforce this explicitly: "Even one is enough. You have [name], and that's real."
+      </p>
+
+      <div class="facilitator-note">
+        <strong>For library programme facilitators and teachers:</strong><br>
+        Some children running this activity may be from foster care, domestic violence situations,
+        recent bereavement, or other disrupted family circumstances. If a child struggles to name people
+        or becomes upset during the naming activity, redirect gently:
+        <em>"Your teacher or your librarian can be a safe grown-up too. You don't have to list everyone right now."</em>
+        Do not press. The goal is one name, said with confidence — not a complete list.
+      </div>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">The golden rule explained</h3>
+      <p>
+        "Safe grown-ups never ask you to keep secrets from other safe grown-ups" is gold-standard
+        child protection language, widely used by SaferKids programmes and child safety organisations.
+        It gives children a clear, testable rule that works in-person and online.
+        If someone pressures a child to hide something from their parents — whether online or in person —
+        that pressure itself is the warning sign. Children do not need to evaluate the content of the secret;
+        they only need to notice the secrecy demand.
+      </p>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">Good practice / avoid</h3>
+      <div class="do-avoid">
+        <div class="do-box">
+          <h4>✅ Good</h4>
+          <ul>
+            <li>Name specific people with your child — not just categories</li>
+            <li>Confirm: "Yes, [name] is a safe grown-up — you can always go to them"</li>
+            <li>Practise the phrase in a calm, normal moment (not after a scary event)</li>
+            <li>Revisit each school year as their world changes</li>
+          </ul>
+        </div>
+        <div class="avoid-box">
+          <h4>🚫 Avoid</h4>
+          <ul>
+            <li>Pushing for a list of 3–5 names if 1–2 is what they have</li>
+            <li>Making the activity feel serious or scary — keep it warm and practical</li>
+            <li>Framing all strangers as dangerous — nuance matters at this age</li>
+            <li>Making them feel anxious about "what if" scenarios</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">Sources</h3>
+      <ul class="source-list">
+        <li>Finkelhor, D. &amp; Hashima, P. Y. (2001). The victimization of children and youth. <em>Handbook of Youth and Justice.</em> Springer.</li>
+        <li>SaferKids Ontario. Safe and Unsafe Secrets — Age-Appropriate Safety Education. saferkids.ca</li>
+        <li>Childnet International. SMART Rules for Internet Safety. childnet.com</li>
+        <li>PREVNet Canada. Promoting Relationships and Eliminating Violence. prevnet.ca</li>
+        <li>Public Health Agency of Canada. Child Maltreatment Prevention — trusted adult framework.</li>
+      </ul>
+    </aside>
+
+  </main>
+
+  <footer class="kids-footer" role="contentinfo">
+    <p>
+      <a href="../../index.html">Digital Confidence Centre</a> · Kids Digital Literacy · Ages 4–6 ·
+      <a href="../../copyright.html">© 2026 Two Birds Innovation</a>
+    </p>
+    <p style="margin-top: 0.4rem; font-size: 0.8rem;">
+      Canadian content · Free to use · No data collected · Built in St. Thomas, Ontario
+    </p>
+  </footer>
+
+</body>
+</html>
