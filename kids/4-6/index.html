@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DCC Kids Ages 4–6 — 3 caregiver-led digital literacy activities for children in PreK to Grade 1. Build critical thinking, privacy, and safety skills offline.">
+  <meta property="og:title" content="DCC Kids Ages 4–6 · Digital Literacy Activities · Digital Confidence Centre">
+  <meta property="og:description" content="3 free, offline caregiver-led activities for children aged 4–6. Critical thinking, tech safety, and emotional safety — backed by research.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/4-6/">
+  <title>DCC Kids · Ages 4–6 · 3 Activities</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="icon" href="../../favicon.ico">
+  <style>
+    :root {
+      --kids-green:       #2E7D32;
+      --kids-green-bg:    #E8F5E9;
+      --kids-green-light: #C8E6C9;
+      --kids-blue:        #1565C0;
+      --kids-blue-bg:     #E3F2FD;
+      --kids-orange:      #E65100;
+      --kids-orange-bg:   #FFF3E0;
+      --kids-orange-light:#FFE0B2;
+      --kids-radius:      20px;
+      --kids-font-xl:     2rem;
+      --kids-font-lg:     1.35rem;
+      --kids-font-base:   1.125rem;
+    }
+
+    body { background: #FFF8F0; }
+
+    .caregiver-banner {
+      background: var(--brand-teal);
+      color: #fff;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .caregiver-banner a { color: #b2dfdb; text-decoration: underline; }
+
+    .kids-nav {
+      background: #fff;
+      border-bottom: 2px solid var(--kids-green-light);
+      padding: 0.75rem 1.5rem;
+      font-size: 0.875rem;
+    }
+    .kids-nav a { color: var(--brand-teal); text-decoration: none; }
+    .kids-nav a:hover { text-decoration: underline; }
+    .kids-nav span { color: var(--text-muted); margin: 0 0.4rem; }
+
+    .kids-hero {
+      background: linear-gradient(135deg, #E8F5E9 0%, #FFF9C4 100%);
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+      border-bottom: 3px solid var(--kids-green-light);
+    }
+    .kids-hero .hero-tag {
+      display: inline-block;
+      background: var(--kids-green-bg);
+      color: var(--kids-green);
+      border: 2px solid var(--kids-green-light);
+      border-radius: 20px;
+      padding: 0.3rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .kids-hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      color: var(--text-primary);
+      margin: 0 0 0.6rem;
+      line-height: 1.2;
+    }
+    .kids-hero .tagline {
+      font-size: var(--kids-font-lg);
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    .kids-main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 0 0 1rem;
+    }
+
+    /* Module cards */
+    .module-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+
+    .module-card {
+      background: #fff;
+      border: 2px solid var(--border-color);
+      border-radius: var(--kids-radius);
+      padding: 1.5rem 1.5rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: start;
+      transition: box-shadow 0.15s, border-color 0.15s, transform 0.1s;
+      box-shadow: var(--shadow-sm);
+    }
+    .module-card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      border-color: var(--brand-teal);
+      transform: translateY(-2px);
+    }
+
+    .module-card .card-main { flex: 1; }
+
+    .module-card .badge-row {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.6rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 14px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge-ct   { background: #E3F2FD; color: #0D47A1; }
+    .badge-ts   { background: #FFF3E0; color: #BF360C; }
+    .badge-es   { background: var(--kids-blue-bg); color: var(--kids-blue); }
+    .badge-time { background: #FFF9C4; color: #E65100; }
+    .badge-screen { background: #FCE4EC; color: #880E4F; }
+
+    .module-card h2 {
+      font-size: 1.25rem;
+      color: var(--text-primary);
+      margin: 0 0 0.4rem;
+      line-height: 1.3;
+    }
+    .module-card .card-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .module-card .card-arrow {
+      font-size: 1.5rem;
+      color: var(--brand-teal);
+      align-self: center;
+      flex-shrink: 0;
+    }
+
+    /* Coming soon placeholder */
+    .coming-soon-block {
+      background: #F8F8F8;
+      border: 2px dashed #DDD;
+      border-radius: var(--kids-radius);
+      padding: 1.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+    }
+    .coming-soon-block .cs-icon { font-size: 2rem; display: block; margin-bottom: 0.4rem; }
+    .coming-soon-block p { font-size: 0.95rem; margin: 0; line-height: 1.5; }
+
+    /* Sequence note */
+    .sequence-note {
+      background: var(--kids-green-bg);
+      border-left: 5px solid var(--brand-teal);
+      border-radius: 0 12px 12px 0;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2.5rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .sequence-note strong { color: var(--brand-teal); }
+
+    .kids-footer {
+      background: var(--brand-teal);
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.875rem;
+      margin-top: 3rem;
+    }
+    .kids-footer a { color: #b2dfdb; }
+
+    @media (max-width: 520px) {
+      .module-card { grid-template-columns: 1fr; }
+      .module-card .card-arrow { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="caregiver-banner" role="banner">
+    🧑‍🤝‍🧑 These activities are for <strong>caregivers and children to do together</strong> — no screens needed. &nbsp;
+    <a href="../../index.html">Back to Digital Confidence Centre</a>
+  </div>
+
+  <nav class="kids-nav" aria-label="Breadcrumb">
+    <a href="../../index.html">DCC</a>
+    <span aria-hidden="true">›</span>
+    <a href="../index.html">Kids</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Ages 4–6</span>
+  </nav>
+
+  <header class="kids-hero" role="banner">
+    <div class="hero-tag">Ages 4–6 · PreK to Grade 1</div>
+    <h1>Digital Literacy Activities</h1>
+    <p class="tagline">
+      3 offline activities to build your child's first digital literacy skills —
+      critical thinking, privacy, and safety.
+    </p>
+  </header>
+
+  <main class="kids-main">
+
+    <div class="sequence-note">
+      <strong>Suggested order:</strong> Start with activity 1 (True things and story things) to build shared vocabulary.
+      Activities 2 and 3 (Secret stuff + Who is my safe grown-up?) work best as a pair — do them in the same session if you can.
+    </div>
+
+    <p class="section-label">3 activities · 10 minutes each · no screens</p>
+
+    <div class="module-grid" role="list">
+
+      <a href="true-things-story-things.html" class="module-card" role="listitem">
+        <div class="card-main">
+          <div class="badge-row">
+            <span class="badge badge-ct">Critical Thinking</span>
+            <span class="badge badge-time">⏱ 10 min</span>
+            <span class="badge badge-screen">📵 No screens</span>
+          </div>
+          <h2>True things and story things</h2>
+          <p class="card-desc">
+            Help your child sort TRUE THINGS from STORY THINGS — and celebrate
+            the bravest answer of all: <em>"I'm not sure."</em>
+            Builds vocabulary for spotting misinformation before it matters.
+          </p>
+        </div>
+        <span class="card-arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a href="secret-stuff-share-stuff.html" class="module-card" role="listitem">
+        <div class="card-main">
+          <div class="badge-row">
+            <span class="badge badge-ts">Tech Safety</span>
+            <span class="badge badge-time">⏱ 10 min</span>
+            <span class="badge badge-screen">📵 No screens</span>
+          </div>
+          <h2>Secret stuff and share stuff</h2>
+          <p class="card-desc">
+            Teach your child the difference between SECRET STUFF (keep it in the family)
+            and SHARE STUFF (safe to tell people).
+            Builds the foundation for online privacy before your child ever has an account.
+          </p>
+        </div>
+        <span class="card-arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a href="who-is-my-safe-grown-up.html" class="module-card" role="listitem">
+        <div class="card-main">
+          <div class="badge-row">
+            <span class="badge badge-es">Emotional Safety</span>
+            <span class="badge badge-time">⏱ 10 min</span>
+            <span class="badge badge-screen">📵 No screens</span>
+          </div>
+          <h2>Who is my safe grown-up?</h2>
+          <p class="card-desc">
+            Help your child name their trusted adults and practise the most important
+            safety phrase they'll ever learn: <em>"I need to talk to a safe grown-up."</em>
+            Do this one right after Secret stuff and share stuff.
+          </p>
+        </div>
+        <span class="card-arrow" aria-hidden="true">→</span>
+      </a>
+
+    </div>
+
+    <div class="coming-soon-block">
+      <span class="cs-icon">🔨</span>
+      <p><strong>5 more activities coming</strong> for this age group —
+      including My device has eyes, ears, and a memory (Tech Safety),
+      Big feelings are real (Emotional Safety), and more.</p>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="../index.html" style="color: var(--brand-teal); font-size: 0.95rem; text-decoration: none;">
+        ← All age groups
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="kids-footer" role="contentinfo">
+    <p>
+      <a href="../../index.html">Digital Confidence Centre</a> · Kids Digital Literacy · Ages 4–6 ·
+      <a href="../../copyright.html">© 2026 Two Birds Innovation</a>
+    </p>
+    <p style="margin-top: 0.4rem; font-size: 0.8rem;">
+      Canadian content · Free to use · No data collected · Built in St. Thomas, Ontario
+    </p>
+  </footer>
+
+</body>
+</html>

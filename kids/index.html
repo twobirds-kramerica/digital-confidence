@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DCC Kids — free, caregiver-led digital literacy activities for children aged 4–15. No screens required. Built for Canadian families and libraries.">
+  <meta property="og:title" content="DCC Kids · Digital Literacy for Children · Digital Confidence Centre">
+  <meta property="og:description" content="Free, caregiver-led digital literacy activities for children aged 4–15. Offline activities, backed by research. Choose your child's age group.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/">
+  <title>DCC Kids · Digital Literacy for Children · Ages 4–15</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="icon" href="../favicon.ico">
+  <style>
+    :root {
+      --kids-green:       #2E7D32;
+      --kids-green-bg:    #E8F5E9;
+      --kids-green-light: #C8E6C9;
+      --kids-radius:      20px;
+      --kids-font-xl:     2rem;
+      --kids-font-lg:     1.35rem;
+      --kids-font-base:   1.125rem;
+    }
+
+    body { background: #F5F9FF; }
+
+    .caregiver-banner {
+      background: var(--brand-teal);
+      color: #fff;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .caregiver-banner a { color: #b2dfdb; text-decoration: underline; }
+
+    .kids-nav {
+      background: #fff;
+      border-bottom: 2px solid var(--kids-green-light);
+      padding: 0.75rem 1.5rem;
+      font-size: 0.875rem;
+    }
+    .kids-nav a { color: var(--brand-teal); text-decoration: none; }
+    .kids-nav a:hover { text-decoration: underline; }
+    .kids-nav span { color: var(--text-muted); margin: 0 0.4rem; }
+
+    .kids-hero {
+      background: linear-gradient(135deg, #E3F2FD 0%, #E8F5E9 60%, #FFF9C4 100%);
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+      border-bottom: 3px solid var(--kids-green-light);
+    }
+    .kids-hero h1 {
+      font-size: clamp(2rem, 6vw, 3rem);
+      color: var(--text-primary);
+      margin: 0 0 0.75rem;
+      line-height: 1.15;
+    }
+    .kids-hero .tagline {
+      font-size: var(--kids-font-lg);
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 1.25rem;
+      line-height: 1.5;
+    }
+    .kids-hero .hero-badges {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .hero-badge {
+      background: #fff;
+      border: 2px solid var(--kids-green-light);
+      border-radius: 20px;
+      padding: 0.35rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--kids-green);
+    }
+
+    .kids-main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    .section-heading {
+      font-size: var(--kids-font-xl);
+      color: var(--text-primary);
+      margin: 0 0 0.5rem;
+    }
+    .section-sub {
+      font-size: var(--kids-font-base);
+      color: var(--text-secondary);
+      margin: 0 0 1.75rem;
+    }
+
+    /* Age group grid */
+    .age-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+
+    .age-card {
+      background: #fff;
+      border: 2px solid var(--border-color);
+      border-radius: var(--kids-radius);
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      text-decoration: none;
+      color: var(--text-primary);
+      transition: box-shadow 0.15s, border-color 0.15s, transform 0.1s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .age-card.active {
+      border-color: var(--brand-teal);
+      background: #F0FAFA;
+    }
+    .age-card.active:hover {
+      box-shadow: 0 6px 20px rgba(0,128,128,0.15);
+      transform: translateY(-2px);
+    }
+    .age-card.coming-soon {
+      opacity: 0.55;
+      cursor: default;
+    }
+    .age-card .age-icon { font-size: 2.5rem; display: block; }
+    .age-card .age-label {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--brand-teal);
+      line-height: 1.2;
+    }
+    .age-card.coming-soon .age-label { color: var(--text-muted); }
+    .age-card .age-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+    .age-card .activity-count {
+      display: inline-block;
+      background: var(--kids-green-bg);
+      color: var(--kids-green);
+      border: 1.5px solid var(--kids-green-light);
+      border-radius: 12px;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+    .age-card .coming-tag {
+      display: inline-block;
+      background: #F5F5F5;
+      color: var(--text-muted);
+      border: 1.5px solid #E0E0E0;
+      border-radius: 12px;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-top: 0.25rem;
+    }
+
+    /* How it works */
+    .how-section {
+      background: #fff;
+      border: 2px solid var(--border-color);
+      border-radius: var(--kids-radius);
+      padding: 1.75rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .how-section h2 {
+      font-size: 1.25rem;
+      color: var(--brand-teal);
+      margin: 0 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--kids-green-light);
+    }
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .how-item {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+    .how-item .how-icon {
+      font-size: 1.75rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .how-item .how-text { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
+    .how-item .how-text strong { color: var(--text-primary); }
+
+    .kids-footer {
+      background: var(--brand-teal);
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.875rem;
+      margin-top: 3rem;
+    }
+    .kids-footer a { color: #b2dfdb; }
+
+    @media (max-width: 480px) {
+      .age-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="caregiver-banner" role="banner">
+    🧑‍🤝‍🧑 These activities are for <strong>caregivers and children to do together</strong> — no screens needed. &nbsp;
+    <a href="../index.html">Back to Digital Confidence Centre</a>
+  </div>
+
+  <nav class="kids-nav" aria-label="Breadcrumb">
+    <a href="../index.html">DCC</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Kids</span>
+  </nav>
+
+  <header class="kids-hero" role="banner">
+    <h1>DCC Kids</h1>
+    <p class="tagline">
+      Free, caregiver-led digital literacy activities for children aged 4–15.
+      Backed by research. No screens required.
+    </p>
+    <div class="hero-badges">
+      <span class="hero-badge">📵 Offline activities</span>
+      <span class="hero-badge">🇨🇦 Canadian content</span>
+      <span class="hero-badge">🏫 Library-ready</span>
+      <span class="hero-badge">🔒 No data collected</span>
+    </div>
+  </header>
+
+  <main class="kids-main">
+
+    <h2 class="section-heading">Choose your child's age group</h2>
+    <p class="section-sub">Each age group has activities matched to what children are developmentally ready to learn.</p>
+
+    <div class="age-grid" role="list">
+
+      <a href="4-6/" class="age-card active" role="listitem" aria-label="Ages 4–6, 3 activities available">
+        <span class="age-icon">🌱</span>
+        <span class="age-label">Ages 4–6</span>
+        <span class="age-desc">PreK to Grade 1. Building the first vocabulary for a digital world.</span>
+        <span class="activity-count">3 activities ready</span>
+      </a>
+
+      <div class="age-card coming-soon" role="listitem" aria-label="Ages 7–9, coming soon">
+        <span class="age-icon">📚</span>
+        <span class="age-label">Ages 7–9</span>
+        <span class="age-desc">Grades 2–4. Sorting information and building online confidence.</span>
+        <span class="coming-tag">Coming soon</span>
+      </div>
+
+      <div class="age-card coming-soon" role="listitem" aria-label="Ages 10–12, coming soon">
+        <span class="age-icon">🔍</span>
+        <span class="age-label">Ages 10–12</span>
+        <span class="age-desc">Grades 5–7. Critical thinking for a world of ads, algorithms, and AI.</span>
+        <span class="coming-tag">Coming soon</span>
+      </div>
+
+      <div class="age-card coming-soon" role="listitem" aria-label="Ages 13–15, coming soon">
+        <span class="age-icon">🌐</span>
+        <span class="age-label">Ages 13–15</span>
+        <span class="age-desc">Grades 8–10. Navigating social media, deepfakes, and digital identity.</span>
+        <span class="coming-tag">Coming soon</span>
+      </div>
+
+    </div>
+
+    <div class="how-section">
+      <h2>How these activities work</h2>
+      <div class="how-grid">
+        <div class="how-item">
+          <span class="how-icon">🧑‍🤝‍🧑</span>
+          <div class="how-text"><strong>Do it together.</strong> Every activity is designed for one caregiver and one child. No solo screen time required.</div>
+        </div>
+        <div class="how-item">
+          <span class="how-icon">⏱</span>
+          <div class="how-text"><strong>10 minutes each.</strong> Short enough for a library programme or a quiet evening. Long enough to make it stick.</div>
+        </div>
+        <div class="how-item">
+          <span class="how-icon">📋</span>
+          <div class="how-text"><strong>Print or read aloud.</strong> Each page works on a phone, a tablet, or printed. No special materials needed.</div>
+        </div>
+        <div class="how-item">
+          <span class="how-icon">🔬</span>
+          <div class="how-text"><strong>Research-backed.</strong> Every activity cites its developmental and media literacy sources in a caregiver section at the bottom.</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="kids-footer" role="contentinfo">
+    <p>
+      <a href="../index.html">Digital Confidence Centre</a> · Kids Digital Literacy ·
+      <a href="../copyright.html">© 2026 Two Birds Innovation</a>
+    </p>
+    <p style="margin-top: 0.4rem; font-size: 0.8rem;">
+      Canadian content · Free to use · No data collected · Built in St. Thomas, Ontario
+    </p>
+  </footer>
+
+</body>
+</html>
