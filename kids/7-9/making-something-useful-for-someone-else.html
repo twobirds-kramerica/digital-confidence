@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DCC Kids Ages 7–9 · Making Something Useful for Someone Else · A caregiver-led activity about digital creativity and giving.">
+  <meta property="og:title" content="Making Something Useful for Someone Else · DCC Kids Ages 7–9">
+  <meta property="og:description" content="Free offline activity for ages 7–9. Discover the two kinds of useful — practically helpful and emotionally helpful — and make something for someone you care about.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/7-9/making-something-useful-for-someone-else.html">
+  <title>Making Something Useful for Someone Else · DCC Kids Ages 7–9</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="icon" href="../../favicon.ico">
+  <style>
+    :root {
+      --kids-green:        #2E7D32;
+      --kids-green-bg:     #E8F5E9;
+      --kids-green-light:  #C8E6C9;
+      --kids-orange:       #E65100;
+      --kids-orange-mid:   #F57C00;
+      --kids-orange-bg:    #FFF3E0;
+      --kids-orange-light: #FFE0B2;
+      --kids-amber:        #F9A825;
+      --kids-amber-bg:     #FFF8E1;
+      --kids-amber-light:  #FFECB3;
+      --kids-radius:       20px;
+      --kids-font-xl:      2rem;
+      --kids-font-lg:      1.35rem;
+      --kids-font-base:    1.125rem;
+    }
+
+    body { background: #FFFAF2; }
+
+    /* ── Caregiver banner ── */
+    .caregiver-banner {
+      background: var(--brand-teal);
+      color: #fff;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .caregiver-banner a { color: #b2dfdb; text-decoration: underline; }
+
+    /* ── Breadcrumb nav ── */
+    .kids-nav {
+      background: #fff;
+      border-bottom: 2px solid var(--kids-orange-light);
+      padding: 0.75rem 1.5rem;
+      font-size: 0.875rem;
+    }
+    .kids-nav a { color: var(--brand-teal); text-decoration: none; }
+    .kids-nav a:hover { text-decoration: underline; }
+    .kids-nav span { color: var(--text-muted); margin: 0 0.4rem; }
+
+    /* ── Hero ── */
+    .kids-hero {
+      background: linear-gradient(135deg, #FFF3E0 0%, #FFECB3 100%);
+      padding: 2.75rem 1.5rem 2.25rem;
+      text-align: center;
+      border-bottom: 3px solid var(--kids-orange-light);
+    }
+    .kids-hero h1 {
+      font-size: clamp(1.75rem, 5vw, 2.6rem);
+      color: var(--text-primary);
+      margin: 0 0 0.6rem;
+      line-height: 1.2;
+    }
+    .kids-hero .tagline {
+      font-size: var(--kids-font-lg);
+      color: var(--text-secondary);
+      max-width: 580px;
+      margin: 0 auto 1.25rem;
+      line-height: 1.5;
+    }
+    .hero-badges {
+      display: flex;
+      justify-content: center;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+    .hero-badge {
+      background: #fff;
+      border: 2px solid var(--kids-orange-light);
+      border-radius: 20px;
+      padding: 0.3rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--kids-orange);
+    }
+
+    /* ── Main layout ── */
+    .kids-main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2.25rem 1.25rem 4rem;
+    }
+
+    /* ── Section blocks ── */
+    .kids-section {
+      background: #fff;
+      border: 2px solid var(--border-color);
+      border-radius: var(--kids-radius);
+      padding: 1.75rem 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+    .kids-section .section-icon {
+      font-size: 2.25rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .kids-section .section-title {
+      font-size: 1.3rem;
+      color: var(--brand-teal);
+      margin: 0 0 0.85rem;
+      line-height: 1.25;
+    }
+    .kids-section p {
+      font-size: var(--kids-font-base);
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin: 0 0 0.85rem;
+    }
+    .kids-section p:last-child { margin-bottom: 0; }
+
+    /* ── Two-kinds reference card (printable) ── */
+    .two-kinds-card {
+      border: 2.5px solid var(--kids-orange-light);
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 1rem 0 0;
+    }
+    .two-kinds-card .card-header {
+      background: var(--kids-orange-bg);
+      padding: 0.6rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--kids-orange);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 2px solid var(--kids-orange-light);
+    }
+    .two-kinds-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .kind-col {
+      padding: 1.25rem 1rem;
+    }
+    .kind-col:first-child {
+      background: var(--kids-green-bg);
+      border-right: 2px solid var(--border-color);
+    }
+    .kind-col:last-child {
+      background: #E3F2FD;
+    }
+    .kind-col .kind-label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .kind-col:first-child .kind-label { color: var(--kids-green); }
+    .kind-col:last-child .kind-label { color: #1565C0; }
+    .kind-col .kind-def {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+      margin: 0 0 0.6rem;
+    }
+    .kind-col .kind-example {
+      font-size: 0.82rem;
+      background: rgba(255,255,255,0.7);
+      border-radius: 8px;
+      padding: 0.4rem 0.65rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    /* ── Who could you make something for? ── */
+    .for-whom-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .for-whom-card {
+      background: var(--kids-orange-bg);
+      border: 2px solid var(--kids-orange-light);
+      border-radius: 14px;
+      padding: 0.85rem 0.75rem;
+      text-align: center;
+    }
+    .for-whom-card .fw-icon { font-size: 1.75rem; display: block; margin-bottom: 0.3rem; }
+    .for-whom-card .fw-label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--kids-orange);
+      line-height: 1.3;
+    }
+
+    /* ── Ideas grid ── */
+    .ideas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+    .idea-card {
+      background: var(--kids-amber-bg);
+      border: 2px solid var(--kids-amber-light);
+      border-radius: 14px;
+      padding: 1rem 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .idea-card .idea-icon { font-size: 1.6rem; }
+    .idea-card .idea-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.25;
+    }
+    .idea-card .idea-kind {
+      font-size: 0.78rem;
+      font-weight: 600;
+      border-radius: 10px;
+      padding: 0.15rem 0.55rem;
+      display: inline-block;
+      width: fit-content;
+    }
+    .idea-card .idea-kind.kind-practical {
+      background: var(--kids-green-bg);
+      color: var(--kids-green);
+    }
+    .idea-card .idea-kind.kind-emotional {
+      background: #E3F2FD;
+      color: #1565C0;
+    }
+    .idea-card .idea-kind.kind-both {
+      background: var(--kids-orange-bg);
+      color: var(--kids-orange);
+    }
+    .idea-card .idea-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    /* ── Make It Now steps ── */
+    .make-steps {
+      counter-reset: make-step;
+      list-style: none;
+      padding: 0;
+      margin: 0.85rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .make-steps li {
+      counter-increment: make-step;
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+      background: var(--kids-orange-bg);
+      border: 2px solid var(--kids-orange-light);
+      border-radius: 14px;
+      padding: 0.85rem 1rem;
+    }
+    .make-steps li::before {
+      content: counter(make-step);
+      background: var(--kids-orange-mid);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .make-steps li .step-text {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .make-steps li .step-text strong { color: var(--text-primary); }
+
+    /* ── Sharing box ── */
+    .sharing-box {
+      background: #E8F5E9;
+      border: 2.5px solid var(--kids-green-light);
+      border-radius: 14px;
+      padding: 1.25rem 1.1rem;
+      margin-top: 1rem;
+    }
+    .sharing-box .sharing-heading {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--kids-green);
+      margin: 0 0 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .sharing-box p {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin: 0 0 0.5rem;
+    }
+    .sharing-box p:last-child { margin-bottom: 0; }
+
+    /* ── Library variant note ── */
+    .library-note {
+      background: #EDE7F6;
+      border: 2px solid #D1C4E9;
+      border-left: 5px solid #7B1FA2;
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      margin-top: 1rem;
+    }
+    .library-note .ln-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #6A1B9A;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.45rem;
+    }
+    .library-note p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* ── Discussion questions ── */
+    .discussion-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.85rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .discussion-list li {
+      background: var(--kids-amber-bg);
+      border: 2px solid var(--kids-amber-light);
+      border-radius: 12px;
+      padding: 0.8rem 1rem;
+      font-size: var(--kids-font-base);
+      color: var(--text-secondary);
+      line-height: 1.5;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+    .discussion-list li::before {
+      content: "💬";
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+
+    /* ── Sticker block ── */
+    .sticker-block {
+      background: linear-gradient(135deg, var(--kids-orange-bg) 0%, var(--kids-amber-bg) 100%);
+      border: 3px solid var(--kids-orange-light);
+      border-radius: var(--kids-radius);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      margin-bottom: 1.75rem;
+    }
+    .sticker-block .sticker-icon { font-size: 3.5rem; display: block; margin-bottom: 0.5rem; }
+    .sticker-block .sticker-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--kids-orange);
+      margin: 0 0 0.4rem;
+    }
+    .sticker-block .sticker-sub {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 380px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* ── Signs it's working ── */
+    .signs-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.85rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .signs-list li {
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .signs-list li::before { content: "✅"; flex-shrink: 0; }
+
+    /* ── Module navigation ── */
+    .module-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 2rem 0 0;
+      flex-wrap: wrap;
+    }
+    .module-nav a {
+      background: #fff;
+      border: 2px solid var(--kids-orange-light);
+      border-radius: 14px;
+      padding: 0.75rem 1.1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--brand-teal);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: box-shadow 0.15s;
+      max-width: 48%;
+    }
+    .module-nav a:hover { box-shadow: 0 3px 12px rgba(0,128,128,0.15); text-decoration: underline; }
+    .module-nav a.next-link { margin-left: auto; text-align: right; }
+
+    /* ── Caregiver section ── */
+    .caregiver-section {
+      background: #fff;
+      border: 2px solid var(--border-color);
+      border-top: 4px solid var(--brand-teal);
+      border-radius: var(--kids-radius);
+      padding: 1.75rem 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .caregiver-section h2 {
+      font-size: 1.1rem;
+      color: var(--brand-teal);
+      margin: 0 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--kids-orange-light);
+    }
+    .caregiver-section h3 {
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      margin: 1.25rem 0 0.4rem;
+    }
+    .caregiver-section p, .caregiver-section li {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .caregiver-section ul { padding-left: 1.25rem; margin: 0.25rem 0 0; }
+    .caregiver-section li { margin-bottom: 0.3rem; }
+    .sme-annotation {
+      background: var(--kids-orange-bg);
+      border-left: 4px solid var(--kids-orange-mid);
+      border-radius: 8px;
+      padding: 0.65rem 0.9rem;
+      margin: 0.75rem 0;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+    .sme-annotation strong { color: var(--kids-orange); }
+    .sources-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .sources-list li {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── Footer ── */
+    .kids-footer {
+      background: var(--brand-teal);
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.875rem;
+      margin-top: 3rem;
+    }
+    .kids-footer a { color: #b2dfdb; }
+
+    /* ── Print ── */
+    @media print {
+      .caregiver-banner, .kids-nav, .kids-footer, .module-nav { display: none; }
+      .two-kinds-card { border: 2px solid #333; page-break-inside: avoid; }
+      body { background: #fff; }
+    }
+
+    @media (max-width: 520px) {
+      .two-kinds-grid { grid-template-columns: 1fr; }
+      .two-kinds-grid .kind-col:first-child { border-right: none; border-bottom: 2px solid var(--border-color); }
+      .for-whom-grid { grid-template-columns: repeat(3, 1fr); }
+      .module-nav a { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="caregiver-banner" role="banner">
+    🧑‍🤝‍🧑 These activities are for <strong>caregivers and children to do together</strong> — no screens needed. &nbsp;
+    <a href="../index.html">Back to DCC Kids</a>
+  </div>
+
+  <nav class="kids-nav" aria-label="Breadcrumb">
+    <a href="../../index.html">DCC</a>
+    <span aria-hidden="true">›</span>
+    <a href="../index.html">Kids</a>
+    <span aria-hidden="true">›</span>
+    <a href="index.html">Ages 7–9</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Making Something Useful</span>
+  </nav>
+
+  <header class="kids-hero" role="banner">
+    <h1>Making Something Useful<br>for Someone Else</h1>
+    <p class="tagline">
+      The things you make can help someone do something — or help someone <em>feel</em> something. Both kinds count.
+    </p>
+    <div class="hero-badges">
+      <span class="hero-badge">🎨 Creative Making</span>
+      <span class="hero-badge">⏱ 15 minutes</span>
+      <span class="hero-badge">📵 No screens needed</span>
+      <span class="hero-badge">Ages 7–9</span>
+    </div>
+  </header>
+
+  <main class="kids-main">
+
+    <!-- Section 1: Big Idea -->
+    <section class="kids-section" aria-labelledby="big-idea-title">
+      <span class="section-icon" aria-hidden="true">💡</span>
+      <h2 class="section-title" id="big-idea-title">The Big Idea</h2>
+      <p>
+        When you make something — a drawing, a note, a card, a list — and give it to someone you care about,
+        it doesn't just sit on a table. It does something.
+      </p>
+      <p>
+        Making things for other people is one of the most creative things you can do, because you have to
+        think about <strong>what they need</strong>, not just what you like. And what people need isn't
+        always a tool or a gadget — sometimes it's a kind word, a drawing that makes them smile, or a
+        birthday card they keep for years.
+      </p>
+      <p>
+        <strong>Today's activity: think of one person in your life, and make something useful for them.</strong>
+      </p>
+    </section>
+
+    <!-- Section 2: Two Kinds of Useful -->
+    <section class="kids-section" aria-labelledby="two-kinds-title">
+      <span class="section-icon" aria-hidden="true">🔑</span>
+      <h2 class="section-title" id="two-kinds-title">Two Kinds of Useful</h2>
+      <p>Not everything useful looks the same. Here are the two kinds — both matter.</p>
+
+      <div class="two-kinds-card" role="region" aria-label="Two kinds of useful reference card">
+        <div class="card-header">📋 Reference Card — Two Kinds of Useful</div>
+        <div class="two-kinds-grid">
+          <div class="kind-col">
+            <div class="kind-label">🛠 Practically Useful</div>
+            <div class="kind-def">Helps someone <strong>do something</strong> — complete a task, find information, or learn a skill.</div>
+            <div class="kind-example">A how-to guide, a step-by-step list, a map of the neighbourhood</div>
+          </div>
+          <div class="kind-col">
+            <div class="kind-label">💛 Emotionally Useful</div>
+            <div class="kind-def">Helps someone <strong>feel something</strong> — cared for, seen, celebrated, or cheered up.</div>
+            <div class="kind-example">A birthday card, a drawing of their favourite animal, a "reasons I love you" note</div>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:1rem; font-size:0.95rem; color:var(--text-secondary);">
+        Some things are both! A drawing with instructions on how to care for a pet is practically <em>and</em> emotionally useful.
+      </p>
+    </section>
+
+    <!-- Section 3: Who Could You Make Something For? -->
+    <section class="kids-section" aria-labelledby="for-whom-title">
+      <span class="section-icon" aria-hidden="true">🤔</span>
+      <h2 class="section-title" id="for-whom-title">Who Could You Make Something For?</h2>
+      <p>Think of someone in your life. It could be someone nearby — or someone you want to let know you're thinking of them.</p>
+
+      <div class="for-whom-grid" role="list" aria-label="Examples of people you could make something for">
+        <div class="for-whom-card" role="listitem">
+          <span class="fw-icon" aria-hidden="true">👵</span>
+          <div class="fw-label">A grandparent</div>
+        </div>
+        <div class="for-whom-card" role="listitem">
+          <span class="fw-icon" aria-hidden="true">👯</span>
+          <div class="fw-label">A friend</div>
+        </div>
+        <div class="for-whom-card" role="listitem">
+          <span class="fw-icon" aria-hidden="true">👩‍👦</span>
+          <div class="fw-label">A parent or caregiver</div>
+        </div>
+        <div class="for-whom-card" role="listitem">
+          <span class="fw-icon" aria-hidden="true">👶</span>
+          <div class="fw-label">A younger sibling</div>
+        </div>
+        <div class="for-whom-card" role="listitem">
+          <span class="fw-icon" aria-hidden="true">🏫</span>
+          <div class="fw-label">A teacher</div>
+        </div>
+        <div class="for-whom-card" role="listitem">
+          <span class="fw-icon" aria-hidden="true">🐾</span>
+          <div class="fw-label">A pet (yes, really!)</div>
+        </div>
+      </div>
+
+      <p style="margin-top:1rem; font-size:0.9rem; color:var(--text-secondary);">
+        <strong>Got someone in mind?</strong> Hold that person in your head for the rest of the activity.
+      </p>
+    </section>
+
+    <!-- Section 4: Ideas for What to Make -->
+    <section class="kids-section" aria-labelledby="ideas-title">
+      <span class="section-icon" aria-hidden="true">✨</span>
+      <h2 class="section-title" id="ideas-title">Ideas for What to Make</h2>
+      <p>You don't need a computer or tablet for any of these. Paper, pencil, and time are enough.</p>
+
+      <div class="ideas-grid" role="list" aria-label="Ideas for things to make">
+        <div class="idea-card" role="listitem">
+          <span class="idea-icon" aria-hidden="true">🎂</span>
+          <div class="idea-title">A birthday card</div>
+          <span class="idea-kind kind-emotional">Emotionally useful</span>
+          <div class="idea-desc">Draw it, fold it, decorate it. Write one sentence that's just for them.</div>
+        </div>
+        <div class="idea-card" role="listitem">
+          <span class="idea-icon" aria-hidden="true">📋</span>
+          <div class="idea-title">A step-by-step guide</div>
+          <span class="idea-kind kind-practical">Practically useful</span>
+          <div class="idea-desc">Pick something you know how to do well. Write it so someone else could follow along.</div>
+        </div>
+        <div class="idea-card" role="listitem">
+          <span class="idea-icon" aria-hidden="true">🖼</span>
+          <div class="idea-title">A drawing of something they love</div>
+          <span class="idea-kind kind-emotional">Emotionally useful</span>
+          <div class="idea-desc">Their favourite animal, place, or thing. Shows you pay attention to what matters to them.</div>
+        </div>
+        <div class="idea-card" role="listitem">
+          <span class="idea-icon" aria-hidden="true">💌</span>
+          <div class="idea-title">A "reasons I appreciate you" note</div>
+          <span class="idea-kind kind-emotional">Emotionally useful</span>
+          <div class="idea-desc">Write 3–5 specific things you genuinely appreciate about that person. No vague ones.</div>
+        </div>
+        <div class="idea-card" role="listitem">
+          <span class="idea-icon" aria-hidden="true">🗺</span>
+          <div class="idea-title">A neighbourhood map</div>
+          <span class="idea-kind kind-both">Both kinds</span>
+          <div class="idea-desc">Draw the streets, parks, or favourite spots near your home — useful AND a keepsake.</div>
+        </div>
+        <div class="idea-card" role="listitem">
+          <span class="idea-icon" aria-hidden="true">📖</span>
+          <div class="idea-title">A short story or comic</div>
+          <span class="idea-kind kind-both">Both kinds</span>
+          <div class="idea-desc">A story starring them as the hero. Or a funny comic about something you both know.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Make It Now -->
+    <section class="kids-section" aria-labelledby="make-it-title">
+      <span class="section-icon" aria-hidden="true">🛠</span>
+      <h2 class="section-title" id="make-it-title">Make It Now</h2>
+      <p>You'll need: paper, pencil or crayons, and about 10 minutes of quiet time to think and create.</p>
+
+      <ol class="make-steps" role="list" aria-label="Steps to make something useful for someone else">
+        <li>
+          <div class="step-text">
+            <strong>Choose your person.</strong> Say their name out loud. Picture them in your mind.
+            What do they like? What might they need right now?
+          </div>
+        </li>
+        <li>
+          <div class="step-text">
+            <strong>Decide what kind of useful.</strong> Does this person need help doing something
+            (practically useful)? Or do they need to feel something — cared for, celebrated, or cheered up
+            (emotionally useful)? Pick one, or aim for both.
+          </div>
+        </li>
+        <li>
+          <div class="step-text">
+            <strong>Choose what to make.</strong> Pick one of the ideas from the list above, or invent
+            your own. There's no wrong answer — as long as you made it thinking about <em>them</em>.
+          </div>
+        </li>
+        <li>
+          <div class="step-text">
+            <strong>Make it.</strong> Take your time. Write slowly. Draw carefully. This is a gift — it
+            doesn't have to be perfect, but it should be genuinely made for that person.
+          </div>
+        </li>
+        <li>
+          <div class="step-text">
+            <strong>Decide how to share it.</strong> Talk with your caregiver about the best way to give
+            it or show it to the person you made it for. (See the sharing section below.)
+          </div>
+        </li>
+      </ol>
+
+      <!-- Library variant -->
+      <div class="library-note" role="note" aria-label="Library group variant">
+        <div class="ln-label">📚 Library Group Variant</div>
+        <p>
+          If you're doing this activity with a group, you can make something for <strong>another person in this room</strong>
+          — a classmate, a library friend, or someone sitting nearby. Ask your facilitator how to exchange
+          what you made at the end of the activity.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 6: How to Share It -->
+    <section class="kids-section" aria-labelledby="sharing-title">
+      <span class="section-icon" aria-hidden="true">🎁</span>
+      <h2 class="section-title" id="sharing-title">How to Share It</h2>
+      <p>
+        Making something is only half of it — giving it matters too. Here's how to share what you made in a way that feels right.
+      </p>
+
+      <div class="sharing-box" role="region" aria-label="Sharing with permission">
+        <div class="sharing-heading">✅ With your caregiver's permission</div>
+        <p>
+          If you want to give or show what you made to someone outside your home — a grandparent, a friend,
+          a teacher — talk with your caregiver first. Together, you can decide the best way to share it:
+          hand it directly, take a photo to send, or mail it.
+        </p>
+        <p>
+          You made it. It's yours to give. But checking in means the gift lands in the best possible way.
+        </p>
+      </div>
+
+      <p style="margin-top:1rem; font-size:0.9rem; color:var(--text-secondary);">
+        <strong>Already in the same room?</strong> You can hand it over right now! The person you're doing this activity
+        with might be the person you made something for — and that's a great surprise.
+      </p>
+    </section>
+
+    <!-- Section 7: Talk About It Together -->
+    <section class="kids-section" aria-labelledby="discuss-title">
+      <span class="section-icon" aria-hidden="true">💬</span>
+      <h2 class="section-title" id="discuss-title">Talk About It Together</h2>
+      <p>There are no right answers here — just interesting ones.</p>
+
+      <ul class="discussion-list" role="list" aria-label="Discussion questions">
+        <li>Why did you choose that person? What made you think of them?</li>
+        <li>Did you make something practically useful, emotionally useful, or both? How did you decide?</li>
+        <li>How do you think that person will feel when they receive it? Does imagining that change how you made it?</li>
+        <li>Is there a difference between making something by hand and making something on a screen? Does it matter?</li>
+      </ul>
+    </section>
+
+    <!-- Sticker block -->
+    <div class="sticker-block" role="complementary" aria-label="Achievement sticker">
+      <span class="sticker-icon" role="img" aria-label="Award ribbon">🏅</span>
+      <div class="sticker-title">Maker for Good Award</div>
+      <p class="sticker-sub">
+        You made something for someone else — and that's a creative act and a kind one.
+        You thought about what they need, not just what you wanted to make.
+      </p>
+    </div>
+
+    <!-- Signs it's working -->
+    <section class="kids-section" aria-labelledby="signs-title">
+      <span class="section-icon" aria-hidden="true">🌱</span>
+      <h2 class="section-title" id="signs-title">Signs It's Working</h2>
+      <p>You'll know this activity landed when you see these things:</p>
+      <ul class="signs-list" role="list">
+        <li>Your child can name both kinds of useful — practical and emotional — in their own words.</li>
+        <li>They chose a specific person and can explain why they chose them.</li>
+        <li>They thought about the other person's feelings or needs while making it, not just what looked good.</li>
+        <li>They asked about how to share it, rather than assuming they could send or give it without checking.</li>
+      </ul>
+    </section>
+
+    <!-- Module navigation -->
+    <nav class="module-nav" aria-label="Module navigation">
+      <a href="watching-to-learn-vs-watching-to-pass-time.html" class="prev-link">
+        ← Watching to learn vs watching to pass time
+      </a>
+      <a href="building-a-safe-online-identity.html" class="next-link">
+        Building a safe online identity →
+      </a>
+    </nav>
+
+    <!-- Caregiver section -->
+    <section class="caregiver-section" aria-labelledby="caregiver-title">
+      <h2 id="caregiver-title">🧑‍🤝‍🧑 Caregiver Notes &amp; Sources</h2>
+
+      <h3>What this activity builds</h3>
+      <p>
+        Making something for another person develops perspective-taking, empathy, and creative problem-solving
+        simultaneously. Children at this age are moving from primarily egocentric thinking toward an understanding
+        of other people's inner states — this activity gives that development a concrete, joyful outlet.
+      </p>
+
+      <h3>About "both kinds of useful"</h3>
+      <div class="sme-annotation">
+        <strong>Dr. Lena (Child Development)</strong> — "Useful" includes emotionally useful. Children at this
+        age often assume that something is only valuable if it solves a practical problem. This framing explicitly
+        validates emotional giving — kind notes, birthday cards, drawings that show care — as equally meaningful
+        acts of making. Do not let children shortchange emotional gifts as "not really useful."
+      </div>
+
+      <h3>Sharing with permission</h3>
+      <div class="sme-annotation">
+        <strong>Frank (Library &amp; Frontline Practitioner)</strong> — The sharing step should always be framed
+        as "with your caregiver's permission, you can give or show what you made." This is not a restriction on
+        creativity — it's a concrete practice of checking in before sharing anything, which extends naturally to
+        digital sharing as children grow older. For library group settings, the in-room variant ("make something
+        for another person in this room") removes any privacy concern and allows immediate gratification at the
+        end of the session.
+      </div>
+
+      <h3>Developmental context</h3>
+      <p>
+        Ages 7–9 (Grades 2–4) mark a significant shift in social cognition. Children begin to understand
+        that others have internal states that differ from their own — and they want to act on that knowledge.
+        Creative giving activities channel this developmental leap into a tangible, positive skill. Research
+        on "prosocial creativity" suggests children who practise making things for others show higher empathy
+        scores and stronger collaborative tendencies (Eisenberg et al., 2014).
+      </p>
+
+      <h3>Facilitator notes (library/group settings)</h3>
+      <p>
+        If running this in a group, have materials (paper, pencils, crayons) ready before the session begins.
+        Announce the library variant ("make for someone in this room") at Step 2 of the Make It Now section —
+        children need to know before they choose what to make. Build in a brief sharing moment at the end of
+        the session where children can present what they made and why they chose that type of gift.
+      </p>
+
+      <h3>Sources</h3>
+      <ul class="sources-list" role="list">
+        <li>Eisenberg, N., Spinrad, T.L., &amp; Knafo-Noam, A. (2014). Prosocial development. In <em>Handbook of Child Psychology</em>, 7th ed. Wiley.</li>
+        <li>Runco, M.A. (2014). <em>Creativity: Theories and Themes.</em> Academic Press. (on prosocial creativity and creative giving)</li>
+        <li>Selman, R.L. (1980). <em>The Growth of Interpersonal Understanding.</em> Academic Press. (perspective-taking stages, ages 6–10)</li>
+        <li>Media Smarts Canada (2022). <em>Digital literacy framework for elementary learners.</em> mediasmarts.ca</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="kids-footer" role="contentinfo">
+    <p>
+      <a href="../../index.html">Digital Confidence Centre</a> · Kids Digital Literacy ·
+      <a href="../../copyright.html">© 2026 Two Birds Innovation</a>
+    </p>
+    <p style="margin-top: 0.4rem; font-size: 0.8rem;">
+      Canadian content · Free to use · No data collected · Built in St. Thomas, Ontario
+    </p>
+  </footer>
+
+</body>
+</html>
