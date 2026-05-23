@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A caregiver-led activity that teaches children aged 4–6 that their device has a camera, microphone, and memory — and that they get to choose who uses them. Four short micro-sessions, 5–10 minutes each.">
+  <meta property="og:title" content="My device has eyes, ears, and a memory · DCC Kids · Ages 4–6">
+  <meta property="og:description" content="Help your child understand what their device can see, hear, and remember — and practise pausing before tapping. Four 5-10 minute activities for the week.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/4-6/my-device-has-eyes-ears-memory.html">
+  <title>My device has eyes, ears, and a memory · DCC Kids · Ages 4–6</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="icon" href="../../favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "My device has eyes, ears, and a memory — and I get to choose who uses them",
+    "description": "A caregiver-led activity for children aged 4–6. Four short micro-sessions teach children that devices can see, hear, and remember — and that pausing before tapping is the one habit that protects everything.",
+    "url": "https://twobirds-kramerica.github.io/digital-confidence/kids/4-6/my-device-has-eyes-ears-memory.html",
+    "educationalLevel": "PreK–Grade 1",
+    "learningResourceType": "Activity",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Children aged 4–6, with caregiver"
+    },
+    "inLanguage": "en-CA",
+    "isAccessibleForFree": true,
+    "dateModified": "2026-05-22",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Digital Confidence Centre — Kids Digital Literacy",
+      "url": "https://twobirds-kramerica.github.io/digital-confidence/"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --kids-green:        #2E7D32;
+      --kids-green-bg:     #E8F5E9;
+      --kids-green-light:  #C8E6C9;
+      --kids-blue:         #1565C0;
+      --kids-blue-bg:      #E3F2FD;
+      --kids-blue-light:   #BBDEFB;
+      --kids-purple:       #6A1B9A;
+      --kids-purple-bg:    #EDE7F6;
+      --kids-purple-light: #CE93D8;
+      --kids-orange:       #E65100;
+      --kids-orange-bg:    #FFF3E0;
+      --kids-orange-light: #FFE0B2;
+      --kids-red:          #C62828;
+      --kids-red-bg:       #FFEBEE;
+      --kids-red-light:    #FFCDD2;
+      --kids-radius:       20px;
+      --kids-font-xl:      2rem;
+      --kids-font-lg:      1.35rem;
+      --kids-font-base:    1.125rem;
+    }
+
+    body { background: #F3F0FF; }
+
+    .kids-skip-link { position: absolute; left: -9999px; }
+    .kids-skip-link:focus {
+      left: 1rem; top: 1rem; z-index: 9999;
+      background: var(--brand-teal); color: #fff;
+      padding: 0.5rem 1rem; border-radius: 6px;
+    }
+
+    .caregiver-banner {
+      background: var(--brand-teal); color: #fff;
+      text-align: center; padding: 0.75rem 1rem;
+      font-size: 0.95rem; font-weight: 500;
+    }
+    .caregiver-banner a { color: #b2dfdb; text-decoration: underline; }
+
+    .kids-nav {
+      background: #fff;
+      border-bottom: 2px solid var(--kids-purple-light);
+      padding: 0.75rem 1.5rem; font-size: 0.875rem;
+    }
+    .kids-nav a { color: var(--brand-teal); text-decoration: none; }
+    .kids-nav a:hover { text-decoration: underline; }
+    .kids-nav span { color: var(--text-muted); margin: 0 0.4rem; }
+
+    .kids-hero {
+      background: linear-gradient(135deg, #EDE7F6 0%, #E3F2FD 100%);
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+      border-bottom: 3px solid var(--kids-purple-light);
+    }
+    .kids-hero .badge-row {
+      display: flex; justify-content: center;
+      gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;
+    }
+    .badge {
+      display: inline-block; padding: 0.25rem 0.75rem;
+      border-radius: 20px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em;
+    }
+    .badge-age    { background: var(--kids-green-light); color: var(--kids-green); }
+    .badge-cat    { background: var(--kids-purple-bg);   color: var(--kids-purple); }
+    .badge-time   { background: #FFF9C4; color: var(--kids-orange); }
+    .badge-screen { background: #FCE4EC; color: #880E4F; }
+
+    .kids-hero h1 {
+      font-size: clamp(1.7rem, 5vw, 2.5rem);
+      color: var(--text-primary); margin: 0.5rem 0 0.75rem; line-height: 1.2;
+    }
+    .kids-hero .tagline {
+      font-size: var(--kids-font-lg); color: var(--text-secondary);
+      max-width: 580px; margin: 0 auto; line-height: 1.5;
+    }
+
+    .kids-main { max-width: 780px; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+
+    .kids-section { margin-bottom: 2.5rem; }
+    .kids-section h2 {
+      font-size: var(--kids-font-xl); color: var(--text-primary);
+      margin: 0 0 1rem; display: flex; align-items: center; gap: 0.5rem;
+    }
+
+    /* Multi-session notice */
+    .session-notice {
+      background: var(--kids-purple-bg);
+      border: 2px solid var(--kids-purple-light);
+      border-radius: var(--kids-radius);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .session-notice .notice-icon { font-size: 2rem; flex-shrink: 0; }
+    .session-notice .notice-text { font-size: var(--kids-font-base); line-height: 1.6; color: var(--text-primary); }
+    .session-notice strong { color: var(--kids-purple); }
+
+    /* Materials box */
+    .materials-box {
+      background: #fff;
+      border: 2px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;
+    }
+    .materials-box .mat-label {
+      font-size: 0.85rem; font-weight: 700; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.05em; flex-shrink: 0;
+    }
+    .materials-box .mat-item {
+      background: #F5F5F5; border-radius: 8px;
+      padding: 0.3rem 0.75rem; font-size: 0.9rem; font-weight: 500;
+    }
+
+    /* Session cards */
+    .session-card {
+      background: #fff;
+      border: 2px solid var(--border-color);
+      border-radius: var(--kids-radius);
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .session-header {
+      padding: 1.1rem 1.5rem;
+      display: flex; align-items: center; gap: 1rem;
+      border-bottom: 2px solid var(--border-light);
+    }
+    .session-num {
+      width: 44px; height: 44px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; font-weight: 700; color: #fff; flex-shrink: 0;
+    }
+    .session-num.eye    { background: var(--kids-blue); }
+    .session-num.ear    { background: var(--kids-green); }
+    .session-num.memory { background: var(--kids-purple); }
+    .session-num.voice  { background: var(--kids-orange); }
+
+    .session-title-block { flex: 1; }
+    .session-label {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.15rem;
+    }
+    .session-title { font-size: 1.2rem; font-weight: 700; color: var(--text-primary); line-height: 1.2; }
+
+    .optional-tag {
+      background: #F5F5F5; color: var(--text-muted);
+      border: 1.5px solid #DDD; border-radius: 10px;
+      padding: 0.2rem 0.65rem; font-size: 0.75rem; font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .session-body { padding: 1.25rem 1.5rem; }
+
+    .kids-callout {
+      border-left: 5px solid var(--brand-teal);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 0.9rem 1.1rem; margin: 1rem 0;
+      font-size: var(--kids-font-base); line-height: 1.55;
+    }
+    .kids-callout.blue   { background: var(--kids-blue-bg);   border-color: var(--kids-blue); }
+    .kids-callout.green  { background: var(--kids-green-bg);  border-color: var(--kids-green); }
+    .kids-callout.purple { background: var(--kids-purple-bg); border-color: var(--kids-purple); }
+    .kids-callout.orange { background: var(--kids-orange-bg); border-color: var(--kids-orange); }
+    .kids-callout.teal   { background: var(--bg-warm);        border-color: var(--brand-teal); }
+    .kids-callout strong { color: inherit; }
+
+    /* State toggle display */
+    .state-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin: 1rem 0;
+    }
+    .state-card {
+      border-radius: 14px; padding: 1rem 0.9rem; text-align: center;
+    }
+    .state-card.on  { background: var(--kids-red-bg);   border: 2px solid var(--kids-red-light); }
+    .state-card.off { background: var(--kids-green-bg); border: 2px solid var(--kids-green-light); }
+    .state-card .state-icon { font-size: 2rem; display: block; margin-bottom: 0.35rem; }
+    .state-card .state-label { font-size: 1rem; font-weight: 700; display: block; margin-bottom: 0.2rem; }
+    .state-card.on  .state-label { color: var(--kids-red); }
+    .state-card.off .state-label { color: var(--kids-green); }
+    .state-card .state-desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; }
+
+    /* Steps */
+    .steps-list { list-style: none; padding: 0; margin: 1rem 0; counter-reset: steps; }
+    .steps-list li {
+      counter-increment: steps; display: flex; gap: 0.9rem;
+      margin-bottom: 0.9rem; align-items: flex-start;
+    }
+    .steps-list li::before {
+      content: counter(steps);
+      background: var(--brand-teal); color: #fff;
+      width: 32px; height: 32px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.9rem; flex-shrink: 0;
+    }
+    .steps-list li .step-text {
+      padding-top: 0.25rem; font-size: var(--kids-font-base); line-height: 1.5;
+    }
+
+    /* Pause moment */
+    .pause-moment {
+      background: linear-gradient(135deg, #EDE7F6, #E3F2FD);
+      border: 2px solid var(--kids-purple-light);
+      border-radius: 14px; padding: 1rem 1.1rem; margin-top: 1rem;
+      display: flex; gap: 0.75rem; align-items: flex-start;
+    }
+    .pause-moment .pause-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .pause-moment .pause-text { font-size: var(--kids-font-base); line-height: 1.5; }
+    .pause-moment strong { color: var(--kids-purple); }
+
+    /* Sticker block */
+    .sticker-block {
+      background: linear-gradient(135deg, var(--kids-purple-bg), var(--kids-blue-bg));
+      border: 3px solid var(--kids-purple-light);
+      border-radius: var(--kids-radius); padding: 1.5rem 1.25rem;
+      margin: 1.25rem 0; text-align: center;
+    }
+    .sticker-block .sticker-icon { font-size: 3rem; display: block; margin-bottom: 0.5rem; }
+    .sticker-block h3 { margin: 0 0 0.5rem; font-size: 1.2rem; color: var(--kids-purple); }
+    .sticker-block p { font-size: var(--kids-font-base); color: var(--text-primary); margin: 0; line-height: 1.5; }
+
+    /* Caregiver section */
+    .caregiver-section {
+      background: #fff; border: 2px solid var(--border-color);
+      border-radius: var(--kids-radius); padding: 1.5rem 1.25rem; margin-top: 2rem;
+    }
+    .caregiver-section h2 {
+      font-size: 1.25rem; color: var(--brand-teal); margin: 0 0 0.75rem;
+      padding-bottom: 0.5rem; border-bottom: 2px solid var(--kids-purple-light);
+    }
+    .caregiver-section p, .caregiver-section li {
+      font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;
+    }
+    .caregiver-section ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+    .caregiver-section .source-list { list-style: none; padding: 0; margin: 0.5rem 0; }
+    .caregiver-section .source-list li { padding: 0.2rem 0; font-size: 0.88rem; }
+    .caregiver-section .source-list li::before { content: "→ "; color: var(--brand-teal); }
+
+    .for-caregiver-label {
+      display: inline-block; background: var(--brand-teal); color: #fff;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em;
+      padding: 0.2rem 0.6rem; border-radius: 4px; margin-bottom: 0.6rem; text-transform: uppercase;
+    }
+
+    .do-avoid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+    .do-box, .avoid-box { border-radius: 12px; padding: 1rem; }
+    .do-box   { background: var(--kids-green-bg); border: 2px solid var(--kids-green-light); }
+    .avoid-box{ background: #FDEDEC; border: 2px solid var(--kids-red-light); }
+    .do-box h4   { color: var(--kids-green); font-size: 0.9rem; margin: 0 0 0.4rem; }
+    .avoid-box h4{ color: var(--kids-red);   font-size: 0.9rem; margin: 0 0 0.4rem; }
+    .do-box ul, .avoid-box ul { padding-left: 1.1rem; margin: 0; }
+    .do-box li, .avoid-box li { font-size: 0.85rem; line-height: 1.5; }
+
+    .kids-footer {
+      background: var(--brand-teal); color: rgba(255,255,255,0.85);
+      text-align: center; padding: 1.5rem 1rem;
+      font-size: 0.875rem; margin-top: 3rem;
+    }
+    .kids-footer a { color: #b2dfdb; }
+
+    @media (max-width: 520px) {
+      .state-grid { grid-template-columns: 1fr; }
+      .do-avoid   { grid-template-columns: 1fr; }
+      .materials-box { flex-direction: column; gap: 0.5rem; }
+    }
+
+    @media print {
+      .caregiver-banner, .kids-nav { display: none; }
+      .kids-hero { padding: 1rem; }
+      body { background: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <a class="kids-skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="caregiver-banner" role="banner">
+    🧑‍🤝‍🧑 These activities are for <strong>you and your child to do together</strong> — one short session at a time. &nbsp;
+    <a href="../../index.html">Back to Digital Confidence Centre</a>
+  </div>
+
+  <nav class="kids-nav" aria-label="Breadcrumb">
+    <a href="../../index.html">DCC</a>
+    <span aria-hidden="true">›</span>
+    <a href="../index.html">Kids</a>
+    <span aria-hidden="true">›</span>
+    <a href="index.html">Ages 4–6</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">My device has eyes, ears, and a memory</span>
+  </nav>
+
+  <header class="kids-hero" role="banner">
+    <div class="badge-row">
+      <span class="badge badge-age">Ages 4–6</span>
+      <span class="badge badge-cat">Tech Safety</span>
+      <span class="badge badge-time">⏱ 4 × 10 min</span>
+      <span class="badge badge-screen">📱 Device optional</span>
+    </div>
+    <h1>My device has eyes, ears, and a memory</h1>
+    <p class="tagline">
+      And I get to choose who uses them.
+      Four short activities — one a day or one a week — to build the one habit that protects everything.
+    </p>
+  </header>
+
+  <main id="main-content" class="kids-main">
+
+    <div class="session-notice">
+      <span class="notice-icon" role="img" aria-label="calendar">📅</span>
+      <div class="notice-text">
+        <strong>Do one part per day or one per week.</strong>
+        Each session takes 5–10 minutes. Spreading them out gives the habit time to form between sessions — that's how the skill sticks at this age.
+        Part 4 is optional and only applies if your family has a smart speaker.
+      </div>
+    </div>
+
+    <div class="materials-box" role="note" aria-label="Materials needed">
+      <span class="mat-label">Materials</span>
+      <span class="mat-item">📋 This page</span>
+      <span class="mat-item">🟨 1 sticky note or webcam cover (~$0.10)</span>
+      <span class="mat-item">⭐ Stickers for the reward</span>
+      <span class="mat-item">📱 Device (for Parts 2–3, if available)</span>
+    </div>
+
+    <!-- THE ONE HABIT -->
+    <section class="kids-section" aria-labelledby="habit-heading">
+      <h2 id="habit-heading">💡 The one habit</h2>
+      <p style="font-size: var(--kids-font-base); line-height: 1.6;">
+        Every session teaches the same thing in a different way:
+      </p>
+      <div class="pause-moment" style="margin: 1rem 0 0.5rem;">
+        <span class="pause-icon">✋</span>
+        <div class="pause-text">
+          <strong>Pause and ask a grown-up before tapping.</strong><br>
+          That's the whole skill. An app that wants to use the camera, microphone, or your location is asking for something big.
+          At age 4–6, the right answer is always: pause, find a grown-up, ask.
+        </div>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.75rem;">
+        You don't need your child to "understand permissions." You need them to pause before tapping a button that asks for something.
+        That pause is the goal.
+      </p>
+    </section>
+
+    <!-- PART 1: THE EYE -->
+    <div class="session-card" id="part-1">
+      <div class="session-header">
+        <div class="session-num eye" aria-hidden="true">👁</div>
+        <div class="session-title-block">
+          <div class="session-label">Part 1 · The eye</div>
+          <div class="session-title">The camera — working or resting?</div>
+        </div>
+      </div>
+      <div class="session-body">
+        <div class="state-grid" role="list">
+          <div class="state-card on" role="listitem">
+            <span class="state-icon">📷</span>
+            <span class="state-label">The eye is WORKING</span>
+            <span class="state-desc">The camera can see. Someone — or some app — might be watching.</span>
+          </div>
+          <div class="state-card off" role="listitem">
+            <span class="state-icon">🙈</span>
+            <span class="state-label">The eye is RESTING</span>
+            <span class="state-desc">Covered or face-down. Nothing can see in. Safe.</span>
+          </div>
+        </div>
+
+        <div class="kids-callout blue">
+          <strong>Opener:</strong> Hold the device camera facing your child and say:
+          <em>"This is the eye. Right now, can it see you?"</em>
+          Let them look at themselves on screen. Then cover it with your hand and ask again.
+          The eye is either working or resting. That's the whole idea.
+        </div>
+
+        <ol class="steps-list" role="list">
+          <li><span class="step-text">Show your child where the front camera is on your device. Let them wave at themselves.</span></li>
+          <li><span class="step-text">Ask: <em>"Is the eye working right now? Can it see you?"</em></span></li>
+          <li><span class="step-text">Cover the camera with your thumb. Ask: <em>"Now?"</em> Let them discover the eye is resting.</span></li>
+          <li><span class="step-text">Take the sticky note. Together, stick it over the camera lens. Say: <em>"Now the eye is always resting until we choose to wake it up."</em></span></li>
+          <li><span class="step-text">Ask: <em>"What would you do if an app asked to use the eye?"</em> Wait for them. The answer you're building toward: <em>"Ask you first."</em></span></li>
+        </ol>
+
+        <div class="pause-moment">
+          <span class="pause-icon">✋</span>
+          <div class="pause-text">
+            <strong>The pause moment:</strong> <em>"If any app or game asks to use the camera — that's the eye. It's a big ask. We pause and find a grown-up first. Always."</em>
+          </div>
+        </div>
+
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem;">
+          The sticky note does not need to stay permanently — the habit does.
+          If your child wants to remove it to take a photo together, that's fine. Let them put it back themselves.
+        </p>
+      </div>
+    </div>
+
+    <!-- PART 2: THE EARS -->
+    <div class="session-card" id="part-2">
+      <div class="session-header">
+        <div class="session-num ear" aria-hidden="true">👂</div>
+        <div class="session-title-block">
+          <div class="session-label">Part 2 · The ears</div>
+          <div class="session-title">The microphone — is it listening?</div>
+        </div>
+      </div>
+      <div class="session-body">
+        <div class="kids-callout green">
+          <strong>The idea:</strong> The microphone is the device's ear. Some apps ask to listen all the time.
+          Some only listen when you tap the mic button. Some should never need to listen at all.
+          Your child doesn't need to know which is which — they need to know that <em>any</em> mic permission is a grown-up question.
+        </div>
+
+        <ol class="steps-list" role="list">
+          <li><span class="step-text">Say: <em>"Devices have ears too — they're called microphones. Right now, is this one listening to us?"</em> Let them guess. Answer: we don't always know — that's why we're careful.</span></li>
+          <li><span class="step-text">Open the voice assistant on your device (Siri, Google, etc.) and show them it responds to your voice. Say: <em>"It was listening for its name. When it heard it, it woke up."</em></span></li>
+          <li><span class="step-text">Say: <em>"Some apps ask to listen ALL the time, not just for their name. That's a big ask."</em></span></li>
+          <li><span class="step-text">Ask: <em>"If a game asked to listen to you, what would you do?"</em> Practise together: <em>"Pause. Find a grown-up. Ask."</em></span></li>
+        </ol>
+
+        <div class="pause-moment">
+          <span class="pause-icon">✋</span>
+          <div class="pause-text">
+            <strong>The pause moment:</strong> <em>"If an app asks to use the microphone — that's the ears. Another big ask. Pause and get me before you tap anything."</em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART 3: THE MEMORY -->
+    <div class="session-card" id="part-3">
+      <div class="session-header">
+        <div class="session-num memory" aria-hidden="true">🧠</div>
+        <div class="session-title-block">
+          <div class="session-label">Part 3 · The memory</div>
+          <div class="session-title">What does the device remember?</div>
+        </div>
+      </div>
+      <div class="session-body">
+        <div class="kids-callout purple">
+          <strong>The idea:</strong> Devices remember where they have been, what they have photographed, and what apps have been used.
+          This part introduces the concept simply: devices have a very good memory, and that memory belongs to your family, not to apps.
+        </div>
+
+        <ol class="steps-list" role="list">
+          <li><span class="step-text">Say: <em>"Do you know what this device remembers?"</em> Let them list things: photos, videos, games, music. Confirm each one.</span></li>
+          <li><span class="step-text">Show them the photo gallery — just scroll past a few recent photos together. Say: <em>"The device remembered all of these. It has a very good memory."</em></span></li>
+          <li><span class="step-text">Ask: <em>"What if an app wanted to look at all these photos? Should it?"</em> Answer together: No — photos are private. Apps need to ask, and grown-ups decide.</span></li>
+          <li><span class="step-text">Explain location: <em>"Some apps also ask to remember WHERE we go. Like a map that tracks us. That's another big ask — always a grown-up question."</em></span></li>
+          <li><span class="step-text">Practise once more: <em>"Eye, ears, memory — what do we do if an app asks for any of them?"</em> Wait for: <em>"Pause. Ask you."</em></span></li>
+        </ol>
+
+        <div class="pause-moment">
+          <span class="pause-icon">✋</span>
+          <div class="pause-text">
+            <strong>The pause moment:</strong> <em>"Photos, videos, and where we go — that's our family's memory, not the app's. If anything asks to see it or track it, come get me first."</em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART 4: THE VOICE IN THE HOUSE (OPTIONAL) -->
+    <div class="session-card" id="part-4">
+      <div class="session-header">
+        <div class="session-num voice" aria-hidden="true">🔊</div>
+        <div class="session-title-block">
+          <div class="session-label">Part 4 · The voice in the house</div>
+          <div class="session-title">Smart speakers — always listening?</div>
+        </div>
+        <span class="optional-tag">Optional</span>
+      </div>
+      <div class="session-body">
+        <div class="kids-callout orange">
+          <strong>Only do this part if your family has a smart speaker</strong> (Amazon Echo, Google Home, Apple HomePod, or similar).
+          Library programmes: this part requires bringing your own device — skip it for drop-in sessions without one.
+        </div>
+
+        <ol class="steps-list" role="list">
+          <li><span class="step-text">Point to the smart speaker and ask: <em>"Is this one listening right now?"</em> The honest answer: yes — always, for its wake word.</span></li>
+          <li><span class="step-text">Demonstrate: say the wake word and ask it a simple question (weather, a joke). Then say: <em>"It was waiting for its name the whole time."</em></span></li>
+          <li><span class="step-text">Explain: <em>"We chose to let it listen for its name. That was our decision. We're in charge of it, not the other way around."</em></span></li>
+          <li><span class="step-text">Ask: <em>"What would you do if it heard something private by accident?"</em> Answer: we can mute it (show the mute button), or just talk about private things in a different room.</span></li>
+          <li><span class="step-text">Show them the mute button. Let them press it and watch the light change. Say: <em>"Now its ears are off. We put them off."</em></span></li>
+        </ol>
+
+        <div class="pause-moment">
+          <span class="pause-icon">✋</span>
+          <div class="pause-text">
+            <strong>The pause moment:</strong> <em>"We are in charge of which ears are open in this house. If something doesn't sound right, we can turn them off."</em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STICKER -->
+    <section class="kids-section" aria-labelledby="sticker-heading">
+      <div class="sticker-block">
+        <span class="sticker-icon" role="img" aria-label="shield">🛡️</span>
+        <h3 id="sticker-heading">The Device Guardian Sticker</h3>
+        <p>
+          Give a sticker after each part your child completes — one per session, earned by finishing.
+          At the end of all four parts (three or four, if Part 4 applies), they are a
+          Device Guardian: someone who knows their device has eyes, ears, and a memory — and chooses
+          who gets to use them.
+        </p>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem;">
+        The big reward is the vocabulary, not the sticker. Watch for them using the words unprompted.
+      </p>
+    </section>
+
+    <!-- SIGNS IT'S WORKING -->
+    <section class="kids-section" aria-labelledby="growth-heading">
+      <h2 id="growth-heading">🌱 Signs it's working</h2>
+      <ul style="font-size: var(--kids-font-base); line-height: 1.8; padding-left: 1.5rem;">
+        <li>Your child pauses when a game pops up asking for "permission" and comes to get you.</li>
+        <li>They refer to the camera as "the eye" unprompted.</li>
+        <li>They ask whether something is "looking" or "listening" before using an unfamiliar app.</li>
+        <li>They point out the camera on a device you hadn't thought about (laptop, tablet, doorbell).</li>
+      </ul>
+      <div class="kids-callout teal">
+        <strong>Next step at ages 7–9:</strong> The same awareness grows into "what does this app actually need my location for?" —
+        the next level of permission literacy in the DCC Kids sequence.
+      </div>
+    </section>
+
+    <!-- CAREGIVER SECTION -->
+    <aside class="caregiver-section" aria-labelledby="caregiver-heading">
+      <span class="for-caregiver-label">For caregivers</span>
+      <h2 id="caregiver-heading">Why this skill matters — the research</h2>
+
+      <p>
+        Children aged 4–6 interact with devices largely through touch and voice, with no awareness that
+        tapping an "OK" button on a permission request has any consequence beyond closing the popup.
+        Radesky et al. (2020) found that children this age treat permission prompts as obstacles to the content they want,
+        not as decisions with privacy implications.
+      </p>
+      <p>
+        The goal of this activity is not conceptual understanding of permissions — that is a 7-9 year old skill.
+        The goal is a single behavioural habit: <strong>pause before tapping anything that asks for something.</strong>
+        Research on habit formation at this age (Erikson, 1950; AAP, 2021) supports spaced repetition across several days
+        over a single long session. That is why these four parts are designed as separate micro-sessions.
+      </p>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">About DCC and your device's camera and microphone</h3>
+      <p>
+        DCC never requests camera, microphone, or location permissions on any page. No page in this programme will
+        trigger a permission popup on your device. The trust this module builds in your child is not undermined by
+        using DCC itself — that is a deliberate design commitment.
+      </p>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">On the "always listening" concept</h3>
+      <p>
+        Smart speakers do listen continuously for their wake word. This is accurate, and you can tell your child so.
+        The framing that protects children is not "it's not really listening" — it's "we chose this, and we can
+        choose to turn it off." Agency over the device is the lesson, not false reassurance.
+      </p>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">Good practice / avoid</h3>
+      <div class="do-avoid">
+        <div class="do-box">
+          <h4>✅ Good</h4>
+          <ul>
+            <li>One part per day or per week — spaced repetition works</li>
+            <li>Let them physically interact: cover the camera, press mute</li>
+            <li>Use "working / resting" language — it's developmentally correct</li>
+            <li>Model the pause habit yourself in front of them</li>
+          </ul>
+        </div>
+        <div class="avoid-box">
+          <h4>🚫 Avoid</h4>
+          <ul>
+            <li>Doing all four parts in one sitting — too long for this age</li>
+            <li>Framing devices as dangerous or scary — the goal is agency, not fear</li>
+            <li>Testing them with a real app permission popup unprepared</li>
+            <li>Asking them to "understand" permissions — just practise the pause</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">Sources</h3>
+      <ul class="source-list">
+        <li>Radesky, J. et al. (2020). Overstimulated consumers or next-generation learners? <em>JAMA Pediatrics.</em></li>
+        <li>American Academy of Pediatrics (AAP). (2021). Media and Young Minds. <em>Pediatrics, 138</em>(5).</li>
+        <li>CCCP / Cybertip.ca. Online Safety for Kids Under 8. cybertip.ca</li>
+        <li>Erikson, E. H. (1950/1963). <em>Childhood and Society.</em> W. W. Norton.</li>
+        <li>MediaSmarts Canada. (2023). Young Canadians in a Wired World. mediasmarts.ca</li>
+        <li>Education 2.0 Conference. (2021). Digital literacy in early childhood: awareness over understanding.</li>
+      </ul>
+    </aside>
+
+  </main>
+
+  <footer class="kids-footer" role="contentinfo">
+    <p>
+      <a href="../../index.html">Digital Confidence Centre</a> · Kids Digital Literacy · Ages 4–6 ·
+      <a href="../../copyright.html">© 2026 Two Birds Innovation</a>
+    </p>
+    <p style="margin-top: 0.4rem; font-size: 0.8rem;">
+      Canadian content · Free to use · No data collected · Built in St. Thomas, Ontario
+    </p>
+  </footer>
+
+</body>
+</html>
