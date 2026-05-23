@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A caregiver-led activity that teaches children aged 4–6 that big feelings are real — and that they get to choose what they do next. Especially useful when screens are involved.">
+  <meta property="og:title" content="Big feelings are real · DCC Kids · Ages 4–6">
+  <meta property="og:description" content="Help your child name a big feeling and choose what to do next. A 10-minute caregiver-led activity — no screens required.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/4-6/big-feelings-are-real.html">
+  <title>Big feelings are real · DCC Kids · Ages 4–6</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="icon" href="../../favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Big feelings are real; I get to choose what I do next",
+    "description": "A caregiver-led activity for children aged 4–6. Teaches children to name a big feeling and then choose their next action — separating the feeling from the response. Useful for screen-related frustration, excitement, and disappointment.",
+    "url": "https://twobirds-kramerica.github.io/digital-confidence/kids/4-6/big-feelings-are-real.html",
+    "educationalLevel": "PreK–Grade 1",
+    "learningResourceType": "Activity",
+    "audience": { "@type": "Audience", "audienceType": "Children aged 4–6, with caregiver" },
+    "inLanguage": "en-CA",
+    "isAccessibleForFree": true,
+    "dateModified": "2026-05-22",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Digital Confidence Centre — Kids Digital Literacy",
+      "url": "https://twobirds-kramerica.github.io/digital-confidence/"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --kids-green:        #2E7D32;
+      --kids-green-bg:     #E8F5E9;
+      --kids-green-light:  #C8E6C9;
+      --kids-coral:        #BF360C;
+      --kids-coral-bg:     #FBE9E7;
+      --kids-coral-light:  #FFCCBC;
+      --kids-blue:         #1565C0;
+      --kids-blue-bg:      #E3F2FD;
+      --kids-blue-light:   #BBDEFB;
+      --kids-purple-bg:    #EDE7F6;
+      --kids-purple:       #6A1B9A;
+      --kids-radius:       20px;
+      --kids-font-xl:      2rem;
+      --kids-font-lg:      1.35rem;
+      --kids-font-base:    1.125rem;
+    }
+    body { background: #FFF3F0; }
+    .kids-skip-link { position:absolute;left:-9999px; }
+    .kids-skip-link:focus { left:1rem;top:1rem;z-index:9999;background:var(--brand-teal);color:#fff;padding:.5rem 1rem;border-radius:6px; }
+    .caregiver-banner { background:var(--brand-teal);color:#fff;text-align:center;padding:.75rem 1rem;font-size:.95rem;font-weight:500; }
+    .caregiver-banner a { color:#b2dfdb;text-decoration:underline; }
+    .kids-nav { background:#fff;border-bottom:2px solid var(--kids-coral-light);padding:.75rem 1.5rem;font-size:.875rem; }
+    .kids-nav a { color:var(--brand-teal);text-decoration:none; }
+    .kids-nav a:hover { text-decoration:underline; }
+    .kids-nav span { color:var(--text-muted);margin:0 .4rem; }
+    .kids-hero { background:linear-gradient(135deg,#FBE9E7 0%,#E3F2FD 100%);padding:2.5rem 1.5rem 2rem;text-align:center;border-bottom:3px solid var(--kids-coral-light); }
+    .kids-hero .badge-row { display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem; }
+    .badge { display:inline-block;padding:.25rem .75rem;border-radius:20px;font-size:.8rem;font-weight:600;letter-spacing:.02em; }
+    .badge-age  { background:var(--kids-green-light);color:var(--kids-green); }
+    .badge-cat  { background:var(--kids-coral-bg);color:var(--kids-coral); }
+    .badge-time { background:#FFF9C4;color:#E65100; }
+    .badge-screen { background:#FCE4EC;color:#880E4F; }
+    .kids-hero h1 { font-size:clamp(1.8rem,5vw,2.6rem);color:var(--text-primary);margin:.5rem 0 .75rem;line-height:1.2; }
+    .kids-hero .tagline { font-size:var(--kids-font-lg);color:var(--text-secondary);max-width:560px;margin:0 auto;line-height:1.5; }
+    .kids-main { max-width:760px;margin:0 auto;padding:1.5rem 1.25rem 4rem; }
+    .kids-section { margin-bottom:2.5rem; }
+    .kids-section h2 { font-size:var(--kids-font-xl);color:var(--text-primary);margin:0 0 1rem;display:flex;align-items:center;gap:.5rem; }
+    .feelings-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.75rem;margin:1.25rem 0; }
+    .feeling-card { background:#fff;border:2px solid var(--border-light);border-radius:14px;padding:1rem .75rem;text-align:center;box-shadow:var(--shadow-sm); }
+    .feeling-card .f-icon { font-size:2rem;display:block;margin-bottom:.3rem; }
+    .feeling-card .f-name { font-size:.95rem;font-weight:700;color:var(--text-primary); }
+    .two-part { display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.25rem 0; }
+    .part-box { border-radius:14px;padding:1.1rem 1rem; }
+    .part-box.feel { background:var(--kids-coral-bg);border:2px solid var(--kids-coral-light); }
+    .part-box.choose { background:var(--kids-green-bg);border:2px solid var(--kids-green-light); }
+    .part-box h3 { font-size:1rem;font-weight:700;margin:0 0 .4rem; }
+    .part-box.feel h3 { color:var(--kids-coral); }
+    .part-box.choose h3 { color:var(--kids-green); }
+    .part-box p { font-size:.9rem;color:var(--text-secondary);margin:0;line-height:1.5; }
+    .kids-callout { background:var(--bg-warm);border-left:5px solid var(--brand-teal);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:1rem 1.25rem;margin:1.25rem 0;font-size:var(--kids-font-base); }
+    .kids-callout strong { color:var(--brand-teal); }
+    .kids-callout.blue { background:var(--kids-blue-bg);border-color:var(--kids-blue); }
+    .kids-callout.blue strong { color:var(--kids-blue); }
+    .steps-list { list-style:none;padding:0;margin:1rem 0;counter-reset:steps; }
+    .steps-list li { counter-increment:steps;display:flex;gap:1rem;margin-bottom:1rem;align-items:flex-start; }
+    .steps-list li::before { content:counter(steps);background:var(--brand-teal);color:#fff;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;flex-shrink:0; }
+    .steps-list li .step-text { padding-top:.35rem;font-size:var(--kids-font-base);line-height:1.55; }
+    .choice-list { list-style:none;padding:0;margin:1rem 0;display:flex;flex-direction:column;gap:.6rem; }
+    .choice-item { background:#fff;border:2px solid var(--kids-green-light);border-radius:12px;padding:.8rem 1rem;font-size:var(--kids-font-base);display:flex;align-items:center;gap:.75rem; }
+    .choice-item .ch-icon { font-size:1.4rem;flex-shrink:0; }
+    .sticker-block { background:linear-gradient(135deg,var(--kids-coral-bg),var(--kids-blue-bg));border:3px solid var(--kids-coral-light);border-radius:var(--kids-radius);padding:1.5rem 1.25rem;margin:1.25rem 0;text-align:center; }
+    .sticker-block .sticker-icon { font-size:3rem;display:block;margin-bottom:.5rem; }
+    .sticker-block h3 { margin:0 0 .5rem;font-size:1.2rem;color:var(--kids-coral); }
+    .sticker-block p { font-size:var(--kids-font-base);color:var(--text-primary);margin:0;line-height:1.5; }
+    .caregiver-section { background:#fff;border:2px solid var(--border-color);border-radius:var(--kids-radius);padding:1.5rem 1.25rem;margin-top:2rem; }
+    .caregiver-section h2 { font-size:1.25rem;color:var(--brand-teal);margin:0 0 .75rem;padding-bottom:.5rem;border-bottom:2px solid var(--kids-coral-light); }
+    .caregiver-section p,.caregiver-section li { font-size:.95rem;color:var(--text-secondary);line-height:1.6; }
+    .caregiver-section ul { padding-left:1.25rem;margin:.5rem 0; }
+    .caregiver-section .source-list { list-style:none;padding:0;margin:.5rem 0; }
+    .caregiver-section .source-list li { padding:.2rem 0;font-size:.88rem; }
+    .caregiver-section .source-list li::before { content:"→ ";color:var(--brand-teal); }
+    .for-caregiver-label { display:inline-block;background:var(--brand-teal);color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.05em;padding:.2rem .6rem;border-radius:4px;margin-bottom:.6rem;text-transform:uppercase; }
+    .do-avoid { display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0; }
+    .do-box,.avoid-box { border-radius:12px;padding:1rem; }
+    .do-box   { background:var(--kids-green-bg);border:2px solid var(--kids-green-light); }
+    .avoid-box{ background:#FDEDEC;border:2px solid #FFCDD2; }
+    .do-box h4   { color:var(--kids-green);font-size:.9rem;margin:0 0 .4rem; }
+    .avoid-box h4{ color:#C62828;font-size:.9rem;margin:0 0 .4rem; }
+    .do-box ul,.avoid-box ul { padding-left:1.1rem;margin:0; }
+    .do-box li,.avoid-box li { font-size:.85rem;line-height:1.5; }
+    .kids-footer { background:var(--brand-teal);color:rgba(255,255,255,.85);text-align:center;padding:1.5rem 1rem;font-size:.875rem;margin-top:3rem; }
+    .kids-footer a { color:#b2dfdb; }
+    @media (max-width:500px) { .do-avoid{grid-template-columns:1fr} .two-part{grid-template-columns:1fr} .feelings-grid{grid-template-columns:repeat(3,1fr)} }
+    @media print { .caregiver-banner,.kids-nav{display:none} .kids-hero{padding:1rem} body{background:#fff} }
+  </style>
+</head>
+<body>
+  <a class="kids-skip-link" href="#main-content">Skip to main content</a>
+  <div class="caregiver-banner" role="banner">
+    🧑‍🤝‍🧑 This activity is for <strong>you and your child to do together</strong> — no screens needed. &nbsp;
+    <a href="../../index.html">Back to Digital Confidence Centre</a>
+  </div>
+  <nav class="kids-nav" aria-label="Breadcrumb">
+    <a href="../../index.html">DCC</a><span aria-hidden="true">›</span>
+    <a href="../index.html">Kids</a><span aria-hidden="true">›</span>
+    <a href="index.html">Ages 4–6</a><span aria-hidden="true">›</span>
+    <span aria-current="page">Big feelings are real</span>
+  </nav>
+  <header class="kids-hero" role="banner">
+    <div class="badge-row">
+      <span class="badge badge-age">Ages 4–6</span>
+      <span class="badge badge-cat">Emotional Safety</span>
+      <span class="badge badge-time">⏱ 10 minutes</span>
+      <span class="badge badge-screen">📵 No screens</span>
+    </div>
+    <h1>Big feelings are real</h1>
+    <p class="tagline">And I get to choose what I do next. Screens are exciting — that's exactly why big feelings make sense. This activity gives children the words and the pause.</p>
+  </header>
+  <main id="main-content" class="kids-main">
+
+    <section class="kids-section" aria-labelledby="big-idea-heading">
+      <h2 id="big-idea-heading">💡 The big idea</h2>
+      <div class="two-part">
+        <div class="part-box feel">
+          <h3>The feeling is real</h3>
+          <p>Big feelings — frustration, excitement, disappointment, joy — are completely real. They are not wrong. They are not too much. They are information.</p>
+        </div>
+        <div class="part-box choose">
+          <h3>The choice is yours</h3>
+          <p>What you do with the feeling is a choice. And choices can be practised, just like anything else.</p>
+        </div>
+      </div>
+      <div class="kids-callout blue">
+        <strong>Why screens bring big feelings:</strong><br>
+        Games and videos are designed to be exciting — bright colours, sounds, surprises, rewards. That's why big feelings often happen right after screen time ends or when something goes wrong in a game. The feeling makes complete sense. This activity gives children a word for it and a next step.
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="feelings-heading">
+      <h2 id="feelings-heading">🌡️ Name the feeling</h2>
+      <p style="font-size:var(--kids-font-base);color:var(--text-secondary);margin-bottom:1rem;">Point to one of these and name it together. You can use any of these — or make up your own name for it.</p>
+      <div class="feelings-grid" role="list">
+        <div class="feeling-card" role="listitem"><span class="f-icon">😤</span><span class="f-name">Frustrated</span></div>
+        <div class="feeling-card" role="listitem"><span class="f-icon">😢</span><span class="f-name">Sad</span></div>
+        <div class="feeling-card" role="listitem"><span class="f-icon">😠</span><span class="f-name">Angry</span></div>
+        <div class="feeling-card" role="listitem"><span class="f-icon">😟</span><span class="f-name">Worried</span></div>
+        <div class="feeling-card" role="listitem"><span class="f-icon">🤩</span><span class="f-name">Excited</span></div>
+        <div class="feeling-card" role="listitem"><span class="f-icon">😔</span><span class="f-name">Disappointed</span></div>
+      </div>
+      <p style="font-size:.9rem;color:var(--text-muted);">Excited is here too — big feelings are not only hard ones. Knowing you're very excited is the same skill as knowing you're very angry.</p>
+    </section>
+
+    <section class="kids-section" aria-labelledby="how-heading">
+      <h2 id="how-heading">🎮 How to play</h2>
+      <ol class="steps-list" role="list">
+        <li><span class="step-text">Ask your child to name a big feeling they have had recently — or one they are having right now. Point to the feelings grid if it helps. Say: <em>"That feeling is real. It makes complete sense."</em></span></li>
+        <li><span class="step-text">Say: <em>"Now here is the interesting part. The feeling is real — but what you do next is your choice."</em></span></li>
+        <li><span class="step-text">Read the choices below together. Ask which one feels right for the feeling they named. Let them pick.</span></li>
+        <li><span class="step-text">Do the chosen thing together, right now if possible. If they chose "move your body," stand up and shake out your hands together.</span></li>
+        <li><span class="step-text">After: <em>"Did that help even a little?"</em> No wrong answer. The point is the pause and the pick, not the outcome.</span></li>
+      </ol>
+
+      <h3 style="font-size:var(--kids-font-lg);margin:1.25rem 0 .75rem;">Things I can choose to do</h3>
+      <ul class="choice-list" role="list">
+        <li class="choice-item"><span class="ch-icon">🤸</span> Move my body — jump, shake, stretch, walk to the window</li>
+        <li class="choice-item"><span class="ch-icon">🫁</span> Take three big breaths — in through the nose, out through the mouth</li>
+        <li class="choice-item"><span class="ch-icon">🗣️</span> Say the feeling out loud — just name it, even if nothing changes</li>
+        <li class="choice-item"><span class="ch-icon">🤝</span> Ask a grown-up for a hug or to sit beside me</li>
+        <li class="choice-item"><span class="ch-icon">🎨</span> Draw the feeling — no words needed, any marks are fine</li>
+        <li class="choice-item"><span class="ch-icon">⏸️</span> Wait. Sit quietly for a minute and let the feeling get a little smaller.</li>
+      </ul>
+
+      <div class="kids-callout">
+        <strong>After screen time specifically:</strong> If the big feeling happened right after a screen turned off or a game ended, say this: <em>"Screens are really exciting — that's why the feeling is so big right now. That makes complete sense. Let's pick something to do with it."</em>
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="sticker-heading">
+      <div class="sticker-block">
+        <span class="sticker-icon" role="img" aria-label="heart">❤️</span>
+        <h3 id="sticker-heading">The Feeling Namer Sticker</h3>
+        <p>Give a sticker for the attempt — naming the feeling and picking something to do — not for how the feeling resolved. Sticker for effort, not outcome. That's the rule at this age.</p>
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="growth-heading">
+      <h2 id="growth-heading">🌱 Signs it's working</h2>
+      <ul style="font-size:var(--kids-font-base);line-height:1.8;padding-left:1.5rem;">
+        <li>Your child names the feeling before reacting — even just a word or two.</li>
+        <li>They suggest a choice from the list without prompting when upset.</li>
+        <li>They use the feeling names for positive feelings too, not just hard ones.</li>
+        <li>They ask for a hug or a breath rather than escalating.</li>
+      </ul>
+      <div class="kids-callout">
+        <strong>Next step at ages 7–9:</strong> This grows into "I notice when content is trying to make me feel something, and I can choose whether to act on it" — emotional literacy applied to media and online spaces.
+      </div>
+    </section>
+
+    <aside class="caregiver-section" aria-labelledby="caregiver-heading">
+      <span class="for-caregiver-label">For caregivers</span>
+      <h2 id="caregiver-heading">Why this skill matters — the research</h2>
+      <p>Siegel &amp; Bryson (2011) describe the "name it to tame it" process: labelling an emotion activates the prefrontal cortex and reduces amygdala reactivity. For children aged 4–6, this is not abstract — naming a feeling literally changes what the brain does with it. The vocabulary does real neurological work.</p>
+      <p>Kopp (1982) and Eisenberg (2000) both identify emotion regulation as a foundational skill that predicts social and academic outcomes across childhood. Radesky et al. (2020) found that young children who practise emotion regulation strategies in non-screen contexts are better equipped to manage frustration during screen use and at screen-off transitions.</p>
+      <p>The framing in this module — <em>"screens are exciting, that's why big feelings make sense"</em> — is intentional. Framing screen-related emotions as dangerous or manipulative creates caregiver anxiety and defensiveness in children. Framing them as a natural consequence of genuinely exciting content gives children agency: the feeling is understandable, and the next step is theirs to choose.</p>
+      <h3 style="font-size:1rem;color:var(--text-primary);margin:1.25rem 0 .4rem;">Good practice / avoid</h3>
+      <div class="do-avoid">
+        <div class="do-box"><h4>✅ Good</h4><ul>
+          <li>Validate first — "that feeling makes sense" before any redirect</li>
+          <li>Do the chosen activity with them, not just suggest it</li>
+          <li>Use this during calm moments too, not only in crisis</li>
+          <li>Include positive big feelings like excitement</li>
+        </ul></div>
+        <div class="avoid-box"><h4>🚫 Avoid</h4><ul>
+          <li>"Don't feel that way" — feelings cannot be wrong</li>
+          <li>Using screen removal as punishment tied to big feelings</li>
+          <li>Skipping the validation and jumping straight to a solution</li>
+          <li>Expecting the feeling to resolve — the goal is the pause and the pick</li>
+        </ul></div>
+      </div>
+      <h3 style="font-size:1rem;color:var(--text-primary);margin:1.25rem 0 .4rem;">Sources</h3>
+      <ul class="source-list">
+        <li>Siegel, D.J. &amp; Bryson, T.P. (2011). <em>The Whole-Brain Child.</em> Delacorte Press.</li>
+        <li>Kopp, C.B. (1982). Antecedents of self-regulation. <em>Developmental Psychology, 18</em>(2), 199–214.</li>
+        <li>Eisenberg, N. et al. (2000). Emotion regulation and its relation to quality of social functioning. <em>Child Development, 71</em>(1).</li>
+        <li>Radesky, J. et al. (2020). Overstimulated consumers or next-generation learners? <em>JAMA Pediatrics.</em></li>
+        <li>Erikson, E.H. (1950/1963). <em>Childhood and Society.</em> W.W. Norton.</li>
+      </ul>
+    </aside>
+  </main>
+  <footer class="kids-footer" role="contentinfo">
+    <p><a href="../../index.html">Digital Confidence Centre</a> · Kids Digital Literacy · Ages 4–6 · <a href="../../copyright.html">© 2026 Two Birds Innovation</a></p>
+    <p style="margin-top:.4rem;font-size:.8rem;">Canadian content · Free to use · No data collected · Built in St. Thomas, Ontario</p>
+  </footer>
+</body>
+</html>

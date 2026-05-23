@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A caregiver-led activity that teaches children aged 4–6 how to share ideas and give credit when making things together — the foundation for ethical creative collaboration online and off.">
+  <meta property="og:title" content="Making something together · DCC Kids · Ages 4–6">
+  <meta property="og:description" content="Help your child learn to share ideas, give credit, and make things together. A 10-minute caregiver-led activity — no screens required.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/4-6/making-something-together.html">
+  <title>Making something together · DCC Kids · Ages 4–6</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="icon" href="../../favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Making something together — sharing ideas and giving credit",
+    "description": "A caregiver-led activity for children aged 4–6. Teaches the social foundation of creative collaboration: sharing ideas, building on someone else's work, and naming who helped make something.",
+    "url": "https://twobirds-kramerica.github.io/digital-confidence/kids/4-6/making-something-together.html",
+    "educationalLevel": "PreK–Grade 1",
+    "learningResourceType": "Activity",
+    "audience": { "@type": "Audience", "audienceType": "Children aged 4–6, with caregiver" },
+    "inLanguage": "en-CA",
+    "isAccessibleForFree": true,
+    "dateModified": "2026-05-22",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Digital Confidence Centre — Kids Digital Literacy",
+      "url": "https://twobirds-kramerica.github.io/digital-confidence/"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --kids-green:        #2E7D32;
+      --kids-green-bg:     #E8F5E9;
+      --kids-green-light:  #C8E6C9;
+      --kids-yellow:       #F57F17;
+      --kids-yellow-bg:    #FFF9C4;
+      --kids-yellow-light: #FFF59D;
+      --kids-amber:        #E65100;
+      --kids-amber-bg:     #FFF3E0;
+      --kids-amber-light:  #FFE0B2;
+      --kids-purple-bg:    #EDE7F6;
+      --kids-purple:       #6A1B9A;
+      --kids-radius:       20px;
+      --kids-font-xl:      2rem;
+      --kids-font-lg:      1.35rem;
+      --kids-font-base:    1.125rem;
+    }
+    body { background: #FFFDE7; }
+    .kids-skip-link { position: absolute; left: -9999px; }
+    .kids-skip-link:focus { left:1rem;top:1rem;z-index:9999;background:var(--brand-teal);color:#fff;padding:.5rem 1rem;border-radius:6px; }
+    .caregiver-banner { background:var(--brand-teal);color:#fff;text-align:center;padding:.75rem 1rem;font-size:.95rem;font-weight:500; }
+    .caregiver-banner a { color:#b2dfdb;text-decoration:underline; }
+    .kids-nav { background:#fff;border-bottom:2px solid var(--kids-yellow-light);padding:.75rem 1.5rem;font-size:.875rem; }
+    .kids-nav a { color:var(--brand-teal);text-decoration:none; }
+    .kids-nav a:hover { text-decoration:underline; }
+    .kids-nav span { color:var(--text-muted);margin:0 .4rem; }
+    .kids-hero { background:linear-gradient(135deg,#FFF9C4 0%,#E8F5E9 100%);padding:2.5rem 1.5rem 2rem;text-align:center;border-bottom:3px solid var(--kids-yellow-light); }
+    .kids-hero .badge-row { display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem; }
+    .badge { display:inline-block;padding:.25rem .75rem;border-radius:20px;font-size:.8rem;font-weight:600;letter-spacing:.02em; }
+    .badge-age { background:var(--kids-green-light);color:var(--kids-green); }
+    .badge-cat { background:var(--kids-amber-bg);color:var(--kids-amber); }
+    .badge-time { background:#FFF9C4;color:var(--kids-yellow); }
+    .badge-screen { background:#FCE4EC;color:#880E4F; }
+    .kids-hero h1 { font-size:clamp(1.8rem,5vw,2.6rem);color:var(--text-primary);margin:.5rem 0 .75rem;line-height:1.2; }
+    .kids-hero .tagline { font-size:var(--kids-font-lg);color:var(--text-secondary);max-width:560px;margin:0 auto;line-height:1.5; }
+    .kids-main { max-width:760px;margin:0 auto;padding:1.5rem 1.25rem 4rem; }
+    .kids-section { margin-bottom:2.5rem; }
+    .kids-section h2 { font-size:var(--kids-font-xl);color:var(--text-primary);margin:0 0 1rem;display:flex;align-items:center;gap:.5rem; }
+    .concept-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin:1.25rem 0; }
+    .concept-card { border-radius:var(--kids-radius);padding:1.5rem 1rem;text-align:center;border:3px solid transparent; }
+    .concept-card .icon { font-size:2.5rem;margin-bottom:.5rem;display:block; }
+    .concept-card .label { font-size:1.05rem;font-weight:700;display:block;margin-bottom:.3rem; }
+    .concept-card .desc { font-size:.88rem;line-height:1.4; }
+    .concept-card.mine  { background:var(--kids-yellow-bg);border-color:var(--kids-yellow-light); }
+    .concept-card.yours { background:var(--kids-green-bg); border-color:var(--kids-green-light); }
+    .concept-card.ours  { background:var(--kids-amber-bg); border-color:var(--kids-amber-light); }
+    .concept-card.mine  .label { color:var(--kids-yellow); }
+    .concept-card.yours .label { color:var(--kids-green);  }
+    .concept-card.ours  .label { color:var(--kids-amber);  }
+    .kids-callout { background:var(--bg-warm);border-left:5px solid var(--brand-teal);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:1rem 1.25rem;margin:1.25rem 0;font-size:var(--kids-font-base); }
+    .kids-callout strong { color:var(--brand-teal); }
+    .needs-list { list-style:none;padding:0;margin:1rem 0;display:flex;flex-wrap:wrap;gap:.75rem; }
+    .needs-list li { background:#fff;border:2px solid var(--border-color);border-radius:12px;padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem;font-size:var(--kids-font-base);font-weight:500; }
+    .needs-list li .needs-icon { font-size:1.4rem; }
+    .steps-list { list-style:none;padding:0;margin:1rem 0;counter-reset:steps; }
+    .steps-list li { counter-increment:steps;display:flex;gap:1rem;margin-bottom:1rem;align-items:flex-start; }
+    .steps-list li::before { content:counter(steps);background:var(--brand-teal);color:#fff;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;flex-shrink:0; }
+    .steps-list li .step-text { padding-top:.35rem;font-size:var(--kids-font-base);line-height:1.55; }
+    .credit-card { background:#fff;border:2px solid var(--kids-yellow-light);border-radius:14px;padding:1.25rem;margin:1rem 0; }
+    .credit-card .credit-label { font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--kids-yellow);margin-bottom:.4rem; }
+    .credit-card .credit-text { font-size:var(--kids-font-base);font-weight:600;color:var(--text-primary);line-height:1.4; }
+    .sticker-block { background:linear-gradient(135deg,var(--kids-yellow-bg),var(--kids-amber-bg));border:3px solid var(--kids-yellow-light);border-radius:var(--kids-radius);padding:1.5rem 1.25rem;margin:1.25rem 0;text-align:center; }
+    .sticker-block .sticker-icon { font-size:3rem;display:block;margin-bottom:.5rem; }
+    .sticker-block h3 { margin:0 0 .5rem;font-size:1.2rem;color:var(--kids-yellow); }
+    .sticker-block p { font-size:var(--kids-font-base);color:var(--text-primary);margin:0;line-height:1.5; }
+    .caregiver-section { background:#fff;border:2px solid var(--border-color);border-radius:var(--kids-radius);padding:1.5rem 1.25rem;margin-top:2rem; }
+    .caregiver-section h2 { font-size:1.25rem;color:var(--brand-teal);margin:0 0 .75rem;padding-bottom:.5rem;border-bottom:2px solid var(--kids-yellow-light); }
+    .caregiver-section p,.caregiver-section li { font-size:.95rem;color:var(--text-secondary);line-height:1.6; }
+    .caregiver-section ul { padding-left:1.25rem;margin:.5rem 0; }
+    .caregiver-section .source-list { list-style:none;padding:0;margin:.5rem 0; }
+    .caregiver-section .source-list li { padding:.2rem 0;font-size:.88rem; }
+    .caregiver-section .source-list li::before { content:"→ ";color:var(--brand-teal); }
+    .for-caregiver-label { display:inline-block;background:var(--brand-teal);color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.05em;padding:.2rem .6rem;border-radius:4px;margin-bottom:.6rem;text-transform:uppercase; }
+    .do-avoid { display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0; }
+    .do-box,.avoid-box { border-radius:12px;padding:1rem; }
+    .do-box   { background:var(--kids-green-bg);border:2px solid var(--kids-green-light); }
+    .avoid-box{ background:#FDEDEC;border:2px solid #FFCDD2; }
+    .do-box h4   { color:var(--kids-green);font-size:.9rem;margin:0 0 .4rem; }
+    .avoid-box h4{ color:#C62828;font-size:.9rem;margin:0 0 .4rem; }
+    .do-box ul,.avoid-box ul { padding-left:1.1rem;margin:0; }
+    .do-box li,.avoid-box li { font-size:.85rem;line-height:1.5; }
+    .kids-footer { background:var(--brand-teal);color:rgba(255,255,255,.85);text-align:center;padding:1.5rem 1rem;font-size:.875rem;margin-top:3rem; }
+    .kids-footer a { color:#b2dfdb; }
+    @media (max-width:500px) { .do-avoid{grid-template-columns:1fr} .concept-grid{grid-template-columns:1fr} }
+    @media print { .caregiver-banner,.kids-nav{display:none} .kids-hero{padding:1rem} body{background:#fff} }
+  </style>
+</head>
+<body>
+  <a class="kids-skip-link" href="#main-content">Skip to main content</a>
+  <div class="caregiver-banner" role="banner">
+    🧑‍🤝‍🧑 This activity is for <strong>you and your child to do together</strong> — no screens needed. &nbsp;
+    <a href="../../index.html">Back to Digital Confidence Centre</a>
+  </div>
+  <nav class="kids-nav" aria-label="Breadcrumb">
+    <a href="../../index.html">DCC</a><span aria-hidden="true">›</span>
+    <a href="../index.html">Kids</a><span aria-hidden="true">›</span>
+    <a href="index.html">Ages 4–6</a><span aria-hidden="true">›</span>
+    <span aria-current="page">Making something together</span>
+  </nav>
+  <header class="kids-hero" role="banner">
+    <div class="badge-row">
+      <span class="badge badge-age">Ages 4–6</span>
+      <span class="badge badge-cat">Creative Making</span>
+      <span class="badge badge-time">⏱ 10 minutes</span>
+      <span class="badge badge-screen">📵 No screens</span>
+    </div>
+    <h1>Making something together</h1>
+    <p class="tagline">Sharing ideas, building on what someone else started, and saying who helped — the foundation for creating with others online and off.</p>
+  </header>
+  <main id="main-content" class="kids-main">
+
+    <section class="kids-section" aria-labelledby="big-idea-heading">
+      <h2 id="big-idea-heading">💡 The big idea</h2>
+      <p style="font-size:var(--kids-font-base);line-height:1.6;">
+        When we make something together, three things are true at the same time:
+      </p>
+      <div class="concept-grid" role="list">
+        <div class="concept-card mine" role="listitem">
+          <span class="icon">✏️</span>
+          <span class="label">MY idea</span>
+          <span class="desc">Something I thought of and added. That part is mine.</span>
+        </div>
+        <div class="concept-card yours" role="listitem">
+          <span class="icon">💬</span>
+          <span class="label">YOUR idea</span>
+          <span class="desc">Something you thought of and added. That part is yours.</span>
+        </div>
+        <div class="concept-card ours" role="listitem">
+          <span class="icon">🎨</span>
+          <span class="label">OUR thing</span>
+          <span class="desc">What we made together. It belongs to both of us — and we both get credit.</span>
+        </div>
+      </div>
+      <div class="kids-callout">
+        <strong>Why this matters on screens:</strong><br>
+        When children share videos, photos, stories, or drawings online — they will remix and build on other people's work. Knowing that ideas come from someone and that person deserves credit is the foundation for all of that.
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="needs-heading">
+      <h2 id="needs-heading">🛒 What you'll need</h2>
+      <ul class="needs-list" role="list">
+        <li><span class="needs-icon">📄</span> One piece of paper</li>
+        <li><span class="needs-icon">✏️</span> Crayons or markers</li>
+        <li><span class="needs-icon">⭐</span> Stickers for the reward</li>
+      </ul>
+      <p style="font-size:.9rem;color:var(--text-muted);">No paper? Use a whiteboard, a sidewalk, or just take turns building a story out loud.</p>
+    </section>
+
+    <section class="kids-section" aria-labelledby="how-heading">
+      <h2 id="how-heading">🎮 How to play</h2>
+      <ol class="steps-list" role="list">
+        <li><span class="step-text">Put one piece of paper between you. Say: <em>"We're going to make something together. I'll start."</em> Draw or write one thing — a shape, a character, a single line of a story. Anything.</span></li>
+        <li><span class="step-text">Pass it to your child and say: <em>"Now you add something."</em> Let them add whatever they want without guidance. Accept it.</span></li>
+        <li><span class="step-text">Take turns adding to it — 3 or 4 rounds each. No corrections. Every addition counts.</span></li>
+        <li><span class="step-text">When you're done, look at it together and ask: <em>"Whose idea was the [sun / robot / squiggly line]?"</em> Name each piece: "That part was yours. That part was mine."</span></li>
+        <li><span class="step-text">Ask: <em>"What do we call this thing we made?"</em> Let them name it. Write the name at the top. Then write both your names underneath.</span></li>
+      </ol>
+
+      <div class="credit-card">
+        <div class="credit-label">The credit line — say it together</div>
+        <div class="credit-text">"Made by [child's name] and [your name]."</div>
+      </div>
+
+      <div class="kids-callout">
+        <strong>The key question to ask:</strong> <em>"If someone else wanted to use our drawing — what would you want them to say?"</em>
+        Most children at this age will say some version of "say it was ours" or "tell people we made it."
+        That instinct is exactly right. Name it: <em>"That's called giving credit. It means saying who made something."</em>
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="sticker-heading">
+      <div class="sticker-block">
+        <span class="sticker-icon" role="img" aria-label="art palette">🎨</span>
+        <h3 id="sticker-heading">The Co-Creator Sticker</h3>
+        <p>Give a sticker when your child names who contributed what — either during the activity or any time after, without prompting. "That was your idea" said spontaneously is the skill landing.</p>
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="growth-heading">
+      <h2 id="growth-heading">🌱 Signs it's working</h2>
+      <ul style="font-size:var(--kids-font-base);line-height:1.8;padding-left:1.5rem;">
+        <li>Your child says "we made this" instead of "I made this" when both contributed.</li>
+        <li>They name whose idea was whose without being asked.</li>
+        <li>They ask before changing or adding to something someone else started.</li>
+        <li>They understand that sharing a drawing someone else made is fine — but saying you drew it is not.</li>
+      </ul>
+      <div class="kids-callout">
+        <strong>Next step at ages 7–9:</strong> This grows into "when I remix, I name the original" — the next creative-making skill in the DCC Kids sequence.
+      </div>
+    </section>
+
+    <aside class="caregiver-section" aria-labelledby="caregiver-heading">
+      <span class="for-caregiver-label">For caregivers</span>
+      <h2 id="caregiver-heading">Why this skill matters — the research</h2>
+      <p>Piaget (1952) and Vygotsky (1978) both identified collaborative play as central to cognitive and moral development at ages 4–6. Children at this stage are moving from parallel play (playing beside each other) to cooperative play (making things together). Explicitly naming contributions — "that was your idea, this was mine" — builds the attribution reflex that underlies both creative ethics and academic integrity.</p>
+      <p>Common Sense Media's Copyright &amp; Creativity curriculum for K–6 identifies credit-giving as the first and most age-appropriate entry point into intellectual property concepts. At 4–6, children do not yet grasp copyright law — but they viscerally understand fairness. "Say who made it" is a fairness rule, not a legal one, and that framing sticks.</p>
+      <h3 style="font-size:1rem;color:var(--text-primary);margin:1.25rem 0 .4rem;">Good practice / avoid</h3>
+      <div class="do-avoid">
+        <div class="do-box"><h4>✅ Good</h4><ul>
+          <li>Accept every contribution without correcting it</li>
+          <li>Name contributions as they happen: "Oh, that was your idea — the wings"</li>
+          <li>Let them name the finished piece and both makers</li>
+          <li>Do this with any medium: blocks, clay, a story, a song</li>
+        </ul></div>
+        <div class="avoid-box"><h4>🚫 Avoid</h4><ul>
+          <li>Redirecting or improving their additions during the activity</li>
+          <li>Claiming the finished thing is "yours" to post or share without naming them</li>
+          <li>Turning credit into a lesson about copyright law — too abstract at this age</li>
+          <li>Treating copying as automatically wrong — context matters</li>
+        </ul></div>
+      </div>
+      <h3 style="font-size:1rem;color:var(--text-primary);margin:1.25rem 0 .4rem;">Sources</h3>
+      <ul class="source-list">
+        <li>Piaget, J. (1952). <em>The Origins of Intelligence in Children.</em> International Universities Press.</li>
+        <li>Vygotsky, L.S. (1978). <em>Mind in Society.</em> Harvard University Press.</li>
+        <li>Common Sense Media. Copyright &amp; Creativity curriculum, K–6. commonsensemedia.org</li>
+        <li>Lessig, L. (2004). <em>Free Culture.</em> Penguin Press.</li>
+        <li>Bers, M.U. (2018). <em>Coding as a Playground.</em> Routledge.</li>
+      </ul>
+    </aside>
+  </main>
+  <footer class="kids-footer" role="contentinfo">
+    <p><a href="../../index.html">Digital Confidence Centre</a> · Kids Digital Literacy · Ages 4–6 · <a href="../../copyright.html">© 2026 Two Birds Innovation</a></p>
+    <p style="margin-top:.4rem;font-size:.8rem;">Canadian content · Free to use · No data collected · Built in St. Thomas, Ontario</p>
+  </footer>
+</body>
+</html>
