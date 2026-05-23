@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DCC Kids Ages 10–12 — caregiver-led digital literacy activities for children in Grades 5–7. Critical thinking, privacy, safety, and creative skills for the age of algorithms, AI, and growing online independence.">
+  <meta property="og:title" content="DCC Kids Ages 10–12 · Digital Literacy Activities · Digital Confidence Centre">
+  <meta property="og:description" content="Free, caregiver-led digital literacy activities for children aged 10–12. Spotting hidden ads, source tracing, password security, grooming awareness, AI ethics, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/10-12/">
+  <title>DCC Kids · Ages 10–12 · Digital Literacy Activities</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="icon" href="../../favicon.ico">
+  <style>
+    :root {
+      --kids-indigo:        #3949AB;
+      --kids-indigo-bg:     #E8EAF6;
+      --kids-indigo-light:  #C5CAE9;
+      --kids-green:         #2E7D32;
+      --kids-green-bg:      #E8F5E9;
+      --kids-green-light:   #C8E6C9;
+      --kids-amber:         #E65100;
+      --kids-amber-bg:      #FFF3E0;
+      --kids-amber-light:   #FFE0B2;
+      --kids-radius:        20px;
+      --kids-font-xl:       2rem;
+      --kids-font-lg:       1.35rem;
+      --kids-font-base:     1.125rem;
+    }
+
+    body { background: #F5F0FF; }
+
+    .caregiver-banner {
+      background: var(--brand-teal); color: #fff;
+      text-align: center; padding: 0.75rem 1rem;
+      font-size: 0.95rem; font-weight: 500;
+    }
+    .caregiver-banner a { color: #b2dfdb; text-decoration: underline; }
+
+    .kids-nav {
+      background: #fff; border-bottom: 2px solid var(--kids-indigo-light);
+      padding: 0.75rem 1.5rem; font-size: 0.875rem;
+    }
+    .kids-nav a { color: var(--brand-teal); text-decoration: none; }
+    .kids-nav a:hover { text-decoration: underline; }
+    .kids-nav span { color: var(--text-muted); margin: 0 0.4rem; }
+
+    .kids-hero {
+      background: linear-gradient(135deg, #EDE7F6 0%, #E8EAF6 100%);
+      padding: 2.5rem 1.5rem 2rem; text-align: center;
+      border-bottom: 3px solid var(--kids-indigo-light);
+    }
+    .kids-hero .hero-tag {
+      display: inline-block; background: var(--kids-indigo-bg); color: var(--kids-indigo);
+      border: 2px solid var(--kids-indigo-light); border-radius: 20px;
+      padding: 0.3rem 1rem; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.75rem;
+    }
+    .kids-hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.6rem); color: var(--text-primary);
+      margin: 0 0 0.6rem; line-height: 1.2;
+    }
+    .kids-hero .tagline {
+      font-size: var(--kids-font-lg); color: var(--text-secondary);
+      max-width: 560px; margin: 0 auto; line-height: 1.5;
+    }
+
+    .kids-main { max-width: 860px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+
+    .section-label {
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--text-muted); margin: 0 0 1rem;
+    }
+
+    .module-grid { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2rem; }
+
+    .module-card {
+      background: #fff; border: 2px solid var(--border-color); border-radius: var(--kids-radius);
+      padding: 1.5rem; text-decoration: none; color: var(--text-primary);
+      display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: start;
+      transition: box-shadow 0.15s, border-color 0.15s, transform 0.1s;
+      box-shadow: var(--shadow-sm);
+    }
+    .module-card:hover {
+      box-shadow: 0 6px 20px rgba(57,73,171,0.15); border-color: var(--kids-indigo);
+      transform: translateY(-2px);
+    }
+
+    .module-card .badge-row { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+    .badge {
+      display: inline-block; padding: 0.2rem 0.6rem;
+      border-radius: 14px; font-size: 0.75rem; font-weight: 600;
+    }
+    .badge-ct   { background: #E3F2FD; color: #0D47A1; }
+    .badge-ts   { background: #FFF3E0; color: #BF360C; }
+    .badge-cm   { background: #FFF9C4; color: #F57F17; }
+    .badge-lr   { background: #EDE7F6; color: #4527A0; }
+    .badge-es   { background: var(--kids-indigo-bg); color: var(--kids-indigo); }
+    .badge-time { background: #FFF9C4; color: #E65100; }
+    .badge-screen { background: #FCE4EC; color: #880E4F; }
+
+    .module-card h2 { font-size: 1.25rem; color: var(--text-primary); margin: 0 0 0.4rem; line-height: 1.3; }
+    .module-card .card-desc { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5; margin: 0; }
+    .module-card .card-arrow { font-size: 1.5rem; color: var(--kids-indigo); align-self: center; flex-shrink: 0; }
+
+    .module-card-soon {
+      background: #F8F8F8; border: 2px dashed #DDD; border-radius: var(--kids-radius);
+      padding: 1.25rem 1.5rem; display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: start;
+    }
+    .module-card-soon .badge-row { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+    .module-card-soon h2 { font-size: 1.15rem; color: var(--text-muted); margin: 0 0 0.3rem; line-height: 1.3; }
+    .module-card-soon .card-desc { font-size: 0.9rem; color: #aaa; line-height: 1.45; margin: 0; }
+    .soon-tag {
+      background: #eee; color: #aaa; border-radius: 14px;
+      padding: 0.2rem 0.6rem; font-size: 0.75rem; font-weight: 700;
+      align-self: start; white-space: nowrap;
+    }
+
+    .sequence-note {
+      background: var(--kids-indigo-bg); border-left: 5px solid var(--kids-indigo);
+      border-radius: 0 12px 12px 0; padding: 1rem 1.25rem; margin-bottom: 2.5rem;
+      font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;
+    }
+    .sequence-note strong { color: var(--kids-indigo); }
+
+    .age-nav {
+      display: flex; gap: 0.75rem; flex-wrap: wrap;
+      border-top: 2px solid var(--border-color); padding-top: 2rem; margin-top: 2rem;
+    }
+    .age-nav a {
+      display: inline-block; padding: 0.5rem 1.25rem; border-radius: 20px;
+      font-size: 0.9rem; font-weight: 600; text-decoration: none;
+      transition: box-shadow 0.15s;
+    }
+    .age-nav a:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .age-nav .current { background: var(--kids-indigo-bg); color: var(--kids-indigo); border: 2px solid var(--kids-indigo-light); }
+    .age-nav .done    { background: var(--kids-green-bg); color: var(--kids-green); border: 2px solid var(--kids-green-light); }
+    .age-nav .soon    { background: #F8F8F8; color: #aaa; border: 2px dashed #DDD; }
+    .age-nav .back    { background: transparent; color: var(--brand-teal); border: 2px solid var(--brand-teal); }
+
+    .kids-footer {
+      background: var(--brand-teal); color: rgba(255,255,255,0.85);
+      text-align: center; padding: 1.5rem 1rem; font-size: 0.875rem; margin-top: 3rem;
+    }
+    .kids-footer a { color: #b2dfdb; }
+
+    @media (max-width: 520px) {
+      .module-card, .module-card-soon { grid-template-columns: 1fr; }
+      .module-card .card-arrow { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="caregiver-banner" role="banner">
+    🧑‍🤝‍🧑 These activities are designed for <strong>caregivers and children to do together</strong>. &nbsp;
+    <a href="../../index.html">Back to Digital Confidence Centre</a>
+  </div>
+
+  <nav class="kids-nav" aria-label="Breadcrumb">
+    <a href="../../index.html">DCC</a>
+    <span aria-hidden="true">›</span>
+    <a href="../index.html">Kids</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Ages 10–12</span>
+  </nav>
+
+  <header class="kids-hero" role="banner">
+    <div class="hero-tag">Ages 10–12 · Grades 5–7</div>
+    <h1>Digital Literacy Activities</h1>
+    <p class="tagline">
+      Skills for the age of algorithms, AI, and growing online independence —
+      critical thinking, privacy, safety, and creative responsibility.
+    </p>
+  </header>
+
+  <main class="kids-main">
+
+    <div class="sequence-note">
+      <strong>Where to start:</strong> Begin with "Spotting a 'please don't tell your parent' message" —
+      it addresses the most important safety skill at this age and sets the tone for everything that follows.
+      "Creating a strong password you can remember" is a great second activity and unlocks the password manager module.
+    </div>
+
+    <p class="section-label">1 activity ready · 8 building now</p>
+
+    <div class="module-grid" role="list">
+
+      <a href="spotting-please-dont-tell-your-parent.html" class="module-card" role="listitem" aria-label="Spotting a 'please don't tell your parent' message — available now">
+        <div class="card-main">
+          <div class="badge-row">
+            <span class="badge badge-es">Emotional Safety</span>
+            <span class="badge badge-time">⏱ 20 min</span>
+            <span class="badge badge-screen">📵 No screens</span>
+          </div>
+          <h2>Spotting a 'please don't tell your parent' message</h2>
+          <p class="card-desc">
+            Adults who want to harm children online use specific, recognisable patterns —
+            secrecy requests, flattery, gifts, platform switches. This activity teaches those
+            patterns by name, and practises a clear response.
+          </p>
+        </div>
+        <span class="card-arrow" aria-hidden="true">→</span>
+      </a>
+
+      <div class="module-card-soon" role="listitem" aria-label="Creating a strong password you can remember — coming soon">
+        <div class="card-main">
+          <div class="badge-row">
+            <span class="badge badge-ts">Tech Safety</span>
+            <span class="badge badge-time">⏱ 20 min</span>
+            <span class="badge badge-screen">📵 No screens</span>
+          </div>
+          <h2>Creating a strong password you can remember</h2>
+          <p class="card-desc">The passphrase method — a silly sentence that's both secure and memorable. Prerequisite for the password manager activity.</p>
+        </div>
+        <span class="soon-tag">Coming soon</span>
+      </div>
+
+      <div class="module-card-soon" role="listitem" aria-label="Following a story back to where it started — coming soon">
+        <div class="card-main">
+          <div class="badge-row">
+            <span class="badge badge-ct">Critical Thinking</span>
+            <span class="badge badge-time">⏱ 20 min</span>
+            <span class="badge badge-screen">📵 No screens</span>
+          </div>
+          <h2>Following a story back to where it started</h2>
+          <p class="card-desc">The SIFT method — Stop, Investigate the source, Find better coverage, Trace claims to origin. Includes a timed 60-second source trace activity.</p>
+        </div>
+        <span class="soon-tag">Coming soon</span>
+      </div>
+
+      <div class="module-card-soon" role="listitem" aria-label="Using a password manager — coming soon">
+        <div class="card-main">
+          <div class="badge-row">
+            <span class="badge badge-ts">Tech Safety</span>
+            <span class="badge badge-time">⏱ 60–90 min (family setup)</span>
+          </div>
+          <h2>Using a password manager</h2>
+          <p class="card-desc">A family setup activity for Bitwarden or 1Password — Diceware master passphrase, one-time setup, all accounts in one place. Requires the strong password activity first.</p>
+        </div>
+        <span class="soon-tag">Coming soon</span>
+      </div>
+
+      <div class="module-card-soon" role="listitem" aria-label="Spotting hidden advertising — coming soon">
+        <div class="card-main">
+          <div class="badge-row">
+            <span class="badge badge-ct">Critical Thinking</span>
+            <span class="badge badge-time">⏱ 20 min</span>
+          </div>
+          <h2>Spotting hidden advertising — when someone you like is paid to say so</h2>
+          <p class="card-desc">Influencer marketing, parasocial trust, and the #ad disclosure rules. Includes an Ad Detective Challenge activity with printable examples.</p>
+        </div>
+        <span class="soon-tag">Coming soon</span>
+      </div>
+
+      <div class="module-card-soon" role="listitem" aria-label="Is this an ad, or did they really mean it? — coming soon">
+        <div class="card-main">
+          <div class="badge-row">
+            <span class="badge badge-ct">Critical Thinking</span>
+            <span class="badge badge-time">⏱ 20 min</span>
+          </div>
+          <h2>Is this an ad, or did they really mean it?</h2>
+          <p class="card-desc">YouTube and TikTok influencer marketing — spotting disclosures, understanding why parasocial trust makes ads more persuasive, not less.</p>
+        </div>
+        <span class="soon-tag">Coming soon</span>
+      </div>
+
+      <div class="module-card-soon" role="listitem" aria-label="When I remix something, I name who made the original — coming soon">
+        <div class="card-main">
+          <div class="badge-row">
+            <span class="badge badge-cm">Creative Making</span>
+            <span class="badge badge-time">⏱ 15 min</span>
+            <span class="badge badge-screen">📵 No screens</span>
+          </div>
+          <h2>When I remix something, I name who made the original</h2>
+          <p class="card-desc">Fan art, memes, Roblox mods, TikTok stitches — every remix credits the creator. Creative Commons, Canadian copyright, and why attribution is how creative communities work.</p>
+        </div>
+        <span class="soon-tag">Coming soon</span>
+      </div>
+
+      <div class="module-card-soon" role="listitem" aria-label="Making a story with AI as my helper, not my author — coming soon">
+        <div class="card-main">
+          <div class="badge-row">
+            <span class="badge badge-cm">Creative Making</span>
+            <span class="badge badge-time">⏱ 20 min</span>
+          </div>
+          <h2>Making a story with AI as my helper, not my author</h2>
+          <p class="card-desc">The "My Line / AI Line" story — children write 7 of 10 lines themselves. Covers story ownership, what AI-assisted means, and a key safety signal (real AI tools don't ask personal questions about home).</p>
+        </div>
+        <span class="soon-tag">Coming soon</span>
+      </div>
+
+      <div class="module-card-soon" role="listitem" aria-label="Asking good questions when I search or ask AI — coming soon">
+        <div class="card-main">
+          <div class="badge-row">
+            <span class="badge badge-lr">Learning</span>
+            <span class="badge badge-time">⏱ 20 min</span>
+          </div>
+          <h2>Asking good questions when I search or ask AI</h2>
+          <p class="card-desc">From vague to searchable — the Three-Why Game, comparing Google vs AI answers, and understanding why different sources return different results.</p>
+        </div>
+        <span class="soon-tag">Coming soon</span>
+      </div>
+
+    </div>
+
+    <div class="age-nav" role="navigation" aria-label="Age groups">
+      <a href="../4-6/index.html" class="done">✅ Ages 4–6 (complete)</a>
+      <a href="../7-9/index.html" class="done">✅ Ages 7–9 (complete)</a>
+      <a href="index.html" class="current">→ Ages 10–12 (building)</a>
+      <a href="../index.html" class="soon">Ages 13–15 (coming soon)</a>
+      <a href="../index.html" class="back">← All age groups</a>
+    </div>
+
+  </main>
+
+  <footer class="kids-footer" role="contentinfo">
+    <p>
+      <a href="../../index.html">Digital Confidence Centre</a> · Kids Digital Literacy · Ages 10–12 ·
+      <a href="../../copyright.html">© 2026 Two Birds Innovation</a>
+    </p>
+    <p style="margin-top: 0.4rem; font-size: 0.8rem;">
+      Canadian content · Free to use · No data collected · Built in St. Thomas, Ontario
+    </p>
+  </footer>
+
+</body>
+</html>
