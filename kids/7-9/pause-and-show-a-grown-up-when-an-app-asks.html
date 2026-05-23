@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DCC Kids Ages 7–9 · Pause and Show a Grown-Up When an App Asks · A caregiver-led activity about reading permission requests and building confident decision-making.">
+  <meta property="og:title" content="Pause and Show a Grown-Up When an App Asks · DCC Kids Ages 7–9">
+  <meta property="og:description" content="Free offline activity for ages 7–9. Learn to pause, read, ask yourself if it makes sense, and check with an adult — the four-step upgrade from 'always ask first.'">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/7-9/pause-and-show-a-grown-up-when-an-app-asks.html">
+  <title>Pause and Show a Grown-Up When an App Asks · DCC Kids Ages 7–9</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="icon" href="../../favicon.ico">
+  <style>
+    :root {
+      --kids-cyan:         #00695C;
+      --kids-cyan-mid:     #00897B;
+      --kids-cyan-bg:      #E0F2F1;
+      --kids-cyan-light:   #B2DFDB;
+      --kids-blue:         #1565C0;
+      --kids-blue-bg:      #E3F2FD;
+      --kids-blue-light:   #BBDEFB;
+      --kids-green:        #2E7D32;
+      --kids-green-bg:     #E8F5E9;
+      --kids-green-light:  #C8E6C9;
+      --kids-amber:        #E65100;
+      --kids-amber-bg:     #FFF3E0;
+      --kids-amber-light:  #FFE0B2;
+      --kids-red:          #C62828;
+      --kids-red-bg:       #FFEBEE;
+      --kids-red-light:    #FFCDD2;
+      --kids-radius:       20px;
+      --kids-font-xl:      2rem;
+      --kids-font-lg:      1.35rem;
+      --kids-font-base:    1.125rem;
+    }
+
+    body { background: #F0FBFF; }
+
+    /* ── Caregiver banner ── */
+    .caregiver-banner {
+      background: var(--brand-teal);
+      color: #fff;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .caregiver-banner a { color: #b2dfdb; text-decoration: underline; }
+
+    /* ── Breadcrumb nav ── */
+    .kids-nav {
+      background: #fff;
+      border-bottom: 2px solid var(--kids-cyan-light);
+      padding: 0.75rem 1.5rem;
+      font-size: 0.875rem;
+    }
+    .kids-nav a { color: var(--brand-teal); text-decoration: none; }
+    .kids-nav a:hover { text-decoration: underline; }
+    .kids-nav span { color: var(--text-muted); margin: 0 0.4rem; }
+
+    /* ── Hero ── */
+    .kids-hero {
+      background: linear-gradient(135deg, #E0F2F1 0%, #E3F2FD 100%);
+      padding: 2.75rem 1.5rem 2.25rem;
+      text-align: center;
+      border-bottom: 3px solid var(--kids-cyan-light);
+    }
+    .kids-hero h1 {
+      font-size: clamp(1.75rem, 5vw, 2.6rem);
+      color: var(--text-primary);
+      margin: 0 0 0.6rem;
+      line-height: 1.2;
+    }
+    .kids-hero .tagline {
+      font-size: var(--kids-font-lg);
+      color: var(--text-secondary);
+      max-width: 580px;
+      margin: 0 auto 1.25rem;
+      line-height: 1.5;
+    }
+    .hero-badges {
+      display: flex;
+      justify-content: center;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+    .hero-badge {
+      background: #fff;
+      border: 2px solid var(--kids-cyan-light);
+      border-radius: 20px;
+      padding: 0.3rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--kids-cyan);
+    }
+
+    /* ── Main layout ── */
+    .kids-main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2.25rem 1.25rem 4rem;
+    }
+
+    /* ── Section blocks ── */
+    .kids-section {
+      background: #fff;
+      border: 2px solid var(--border-color);
+      border-radius: var(--kids-radius);
+      padding: 1.75rem 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+    .kids-section .section-icon {
+      font-size: 2.25rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .kids-section .section-title {
+      font-size: 1.3rem;
+      color: var(--brand-teal);
+      margin: 0 0 0.85rem;
+      line-height: 1.25;
+    }
+    .kids-section p {
+      font-size: var(--kids-font-base);
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin: 0 0 0.85rem;
+    }
+    .kids-section p:last-child { margin-bottom: 0; }
+
+    /* ── Upgrade note from 4-6 ── */
+    .upgrade-box {
+      background: var(--kids-blue-bg);
+      border: 2px solid var(--kids-blue-light);
+      border-left: 5px solid var(--kids-blue);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      margin-top: 1rem;
+    }
+    .upgrade-box .ub-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--kids-blue);
+      margin-bottom: 0.4rem;
+    }
+    .upgrade-box p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* ── Four-step progression (printable card) ── */
+    .four-steps-card {
+      border: 2.5px solid var(--kids-cyan-light);
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 1rem 0 0;
+    }
+    .four-steps-card .card-header {
+      background: var(--kids-cyan-bg);
+      padding: 0.6rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--kids-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 2px solid var(--kids-cyan-light);
+    }
+    .four-steps-rows {
+      display: flex;
+      flex-direction: column;
+    }
+    .step-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: flex-start;
+      padding: 0.9rem 1rem;
+      gap: 0.85rem;
+      border-bottom: 1.5px solid var(--border-color);
+    }
+    .step-row:last-child { border-bottom: none; }
+    .step-num {
+      background: var(--kids-cyan-mid);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      width: 1.8rem;
+      height: 1.8rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-content .step-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 0.25rem;
+    }
+    .step-content .step-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+      margin: 0;
+    }
+    .step-content .step-example {
+      font-size: 0.82rem;
+      color: var(--kids-cyan);
+      font-style: italic;
+      margin-top: 0.3rem;
+    }
+
+    /* ── Two-tier permissions ── */
+    .tier-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    .tier-col {
+      border-radius: 14px;
+      padding: 1.1rem 1rem;
+    }
+    .tier-col.always-ask {
+      background: var(--kids-red-bg);
+      border: 2px solid var(--kids-red-light);
+    }
+    .tier-col.start-deciding {
+      background: var(--kids-green-bg);
+      border: 2px solid var(--kids-green-light);
+    }
+    .tier-col .tier-label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin: 0 0 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      line-height: 1.3;
+    }
+    .tier-col.always-ask .tier-label { color: var(--kids-red); }
+    .tier-col.start-deciding .tier-label { color: var(--kids-green); }
+    .tier-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .tier-col ul li {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .tier-col.always-ask ul li::before { content: "🛑"; position: absolute; left: 0; font-size: 0.75rem; }
+    .tier-col.start-deciding ul li::before { content: "✓"; position: absolute; left: 0; color: var(--kids-green); font-weight: 700; }
+
+    /* ── Permission dialog cards (printable) ── */
+    .dialog-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .dialog-card {
+      border: 2.5px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .dialog-card .dc-header {
+      background: #F5F5F5;
+      border-bottom: 1.5px solid var(--border-color);
+      padding: 0.5rem 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .dialog-card .dc-dots {
+      display: flex;
+      gap: 0.25rem;
+    }
+    .dialog-card .dc-dots span {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: #ccc;
+      display: block;
+    }
+    .dialog-card .dc-app-name {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .dialog-card .dc-body {
+      padding: 0.85rem;
+    }
+    .dialog-card .dc-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 0.35rem;
+      line-height: 1.3;
+    }
+    .dialog-card .dc-message {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+      margin: 0 0 0.75rem;
+    }
+    .dialog-card .dc-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .dc-btn {
+      border-radius: 8px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-align: center;
+      border: 1.5px solid;
+    }
+    .dc-btn.allow { background: #E3F2FD; border-color: #90CAF9; color: #1565C0; }
+    .dc-btn.deny { background: #FAFAFA; border-color: #E0E0E0; color: #616161; }
+
+    .dialog-card .dc-verdict {
+      margin-top: 0.65rem;
+      padding-top: 0.65rem;
+      border-top: 1.5px dashed var(--border-color);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--kids-cyan);
+      display: none; /* hidden for print card version */
+    }
+
+    /* Sorting row below dialog cards */
+    .dialog-sort-legend {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+    }
+    .sort-badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+    .sort-badge.makes-sense { background: var(--kids-green-bg); color: var(--kids-green); }
+    .sort-badge.not-sure { background: var(--kids-amber-bg); color: var(--kids-amber); }
+    .sort-badge.seems-wrong { background: var(--kids-red-bg); color: var(--kids-red); }
+
+    .dialog-answers {
+      margin-top: 1rem;
+      background: var(--kids-cyan-bg);
+      border: 2px solid var(--kids-cyan-light);
+      border-radius: 14px;
+      padding: 1rem 1.1rem;
+    }
+    .dialog-answers .da-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--kids-cyan);
+      margin-bottom: 0.5rem;
+    }
+    .dialog-answers ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .dialog-answers ul li {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+    }
+
+    /* ── Discussion questions ── */
+    .discussion-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.85rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .discussion-list li {
+      background: var(--kids-cyan-bg);
+      border: 2px solid var(--kids-cyan-light);
+      border-radius: 12px;
+      padding: 0.8rem 1rem;
+      font-size: var(--kids-font-base);
+      color: var(--text-secondary);
+      line-height: 1.5;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+    .discussion-list li::before {
+      content: "💬";
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+
+    /* ── Sticker block ── */
+    .sticker-block {
+      background: linear-gradient(135deg, var(--kids-cyan-bg) 0%, var(--kids-blue-bg) 100%);
+      border: 3px solid var(--kids-cyan-light);
+      border-radius: var(--kids-radius);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      margin-bottom: 1.75rem;
+    }
+    .sticker-block .sticker-icon { font-size: 3.5rem; display: block; margin-bottom: 0.5rem; }
+    .sticker-block .sticker-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--kids-cyan);
+      margin: 0 0 0.4rem;
+    }
+    .sticker-block .sticker-sub {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 380px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* ── Signs it's working ── */
+    .signs-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.85rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .signs-list li {
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .signs-list li::before { content: "✅"; flex-shrink: 0; }
+
+    /* ── Cohort complete badge ── */
+    .cohort-complete {
+      background: linear-gradient(135deg, var(--kids-green-bg) 0%, var(--kids-cyan-bg) 100%);
+      border: 3px solid var(--kids-green-light);
+      border-radius: var(--kids-radius);
+      padding: 1.5rem 1.5rem;
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .cohort-complete .cc-icon { font-size: 2.5rem; display: block; margin-bottom: 0.5rem; }
+    .cohort-complete .cc-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--kids-green);
+      margin: 0 0 0.35rem;
+    }
+    .cohort-complete .cc-sub {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      max-width: 440px;
+      margin: 0 auto;
+      line-height: 1.55;
+    }
+    .cohort-complete a {
+      display: inline-block;
+      margin-top: 0.85rem;
+      background: var(--brand-teal);
+      color: #fff;
+      border-radius: 12px;
+      padding: 0.5rem 1.25rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .cohort-complete a:hover { opacity: 0.85; }
+
+    /* ── Module navigation ── */
+    .module-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 2rem 0 0;
+      flex-wrap: wrap;
+    }
+    .module-nav a {
+      background: #fff;
+      border: 2px solid var(--kids-cyan-light);
+      border-radius: 14px;
+      padding: 0.75rem 1.1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--brand-teal);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: box-shadow 0.15s;
+      max-width: 60%;
+    }
+    .module-nav a:hover { box-shadow: 0 3px 12px rgba(0,128,128,0.15); text-decoration: underline; }
+
+    /* ── Caregiver section ── */
+    .caregiver-section {
+      background: #fff;
+      border: 2px solid var(--border-color);
+      border-top: 4px solid var(--brand-teal);
+      border-radius: var(--kids-radius);
+      padding: 1.75rem 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .caregiver-section h2 {
+      font-size: 1.1rem;
+      color: var(--brand-teal);
+      margin: 0 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--kids-cyan-light);
+    }
+    .caregiver-section h3 {
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      margin: 1.25rem 0 0.4rem;
+    }
+    .caregiver-section p, .caregiver-section li {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .caregiver-section ul { padding-left: 1.25rem; margin: 0.25rem 0 0; }
+    .caregiver-section li { margin-bottom: 0.3rem; }
+    .sme-annotation {
+      background: var(--kids-cyan-bg);
+      border-left: 4px solid var(--kids-cyan-mid);
+      border-radius: 8px;
+      padding: 0.65rem 0.9rem;
+      margin: 0.75rem 0;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+    .sme-annotation strong { color: var(--kids-cyan); }
+    .sources-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .sources-list li {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── Footer ── */
+    .kids-footer {
+      background: var(--brand-teal);
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.875rem;
+      margin-top: 3rem;
+    }
+    .kids-footer a { color: #b2dfdb; }
+
+    /* ── Print ── */
+    @media print {
+      .caregiver-banner, .kids-nav, .kids-footer, .module-nav, .cohort-complete { display: none; }
+      .dialog-card { border: 2px solid #333; page-break-inside: avoid; }
+      .dialog-card .dc-verdict { display: block; }
+      body { background: #fff; }
+    }
+
+    @media (max-width: 520px) {
+      .tier-grid { grid-template-columns: 1fr; }
+      .module-nav a { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="caregiver-banner" role="banner">
+    🧑‍🤝‍🧑 These activities are for <strong>caregivers and children to do together</strong> — no screens needed for most. &nbsp;
+    <a href="../index.html">Back to DCC Kids</a>
+  </div>
+
+  <nav class="kids-nav" aria-label="Breadcrumb">
+    <a href="../../index.html">DCC</a>
+    <span aria-hidden="true">›</span>
+    <a href="../index.html">Kids</a>
+    <span aria-hidden="true">›</span>
+    <a href="index.html">Ages 7–9</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Pause and Show a Grown-Up</span>
+  </nav>
+
+  <header class="kids-hero" role="banner">
+    <h1>Pause and Show a Grown-Up<br>When an App Asks for Something</h1>
+    <p class="tagline">
+      At 7–9, you're ready for more than "always ask first."
+      You can learn to pause, read, think — and then decide whether to ask.
+    </p>
+    <div class="hero-badges">
+      <span class="hero-badge">🔒 Tech Safety</span>
+      <span class="hero-badge">⏱ 15 minutes</span>
+      <span class="hero-badge">📵 No screens needed</span>
+      <span class="hero-badge">Ages 7–9</span>
+    </div>
+  </header>
+
+  <main class="kids-main">
+
+    <!-- Section 1: The Upgrade -->
+    <section class="kids-section" aria-labelledby="upgrade-title">
+      <span class="section-icon" aria-hidden="true">⬆️</span>
+      <h2 class="section-title" id="upgrade-title">The Upgrade from Ages 4–6</h2>
+      <p>
+        When you were younger, the rule was simple: <strong>if an app asks for something,
+        pause and show a grown-up before tapping.</strong> That was exactly right for that age — and it
+        still applies to the big important things.
+      </p>
+      <p>
+        Now you're 7, 8, or 9. You use devices more independently. You can read the words on a
+        permission screen. You're ready for a more powerful version of the same skill.
+      </p>
+
+      <div class="upgrade-box" role="note">
+        <div class="ub-label">⬆️ The ages 7-9 upgrade</div>
+        <p>
+          Instead of "pause and show a grown-up" for <em>everything</em>, you can now use four steps:
+          pause, read, ask yourself if it makes sense — and then ask an adult if you're unsure.
+          For the big stuff, the rule is still the same. But now you can start to think for yourself
+          on the smaller stuff too.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2: The Four Steps -->
+    <section class="kids-section" aria-labelledby="four-steps-title">
+      <span class="section-icon" aria-hidden="true">🧠</span>
+      <h2 class="section-title" id="four-steps-title">The Four Steps</h2>
+      <p>When an app pops up and asks for something, do these four things — in order.</p>
+
+      <div class="four-steps-card" role="region" aria-label="The four-step permission process">
+        <div class="card-header">📋 Four Steps for App Permission Requests</div>
+        <div class="four-steps-rows">
+          <div class="step-row">
+            <div class="step-num" aria-label="Step 1">1</div>
+            <div class="step-content">
+              <div class="step-name">Pause</div>
+              <div class="step-desc">Don't tap anything yet. Stop and look at the screen before you do anything.</div>
+              <div class="step-example">Stop your finger before it moves.</div>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num" aria-label="Step 2">2</div>
+            <div class="step-content">
+              <div class="step-name">Read</div>
+              <div class="step-desc">Read every word on the screen. What is the app asking for? What does it want access to?</div>
+              <div class="step-example">"This app wants to know your location" — what does that mean?</div>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num" aria-label="Step 3">3</div>
+            <div class="step-content">
+              <div class="step-name">Ask yourself: does this make sense?</div>
+              <div class="step-desc">Does it make sense for this app to ask for this? A game asking for your contacts? Odd. A map app asking for your location? That makes sense.</div>
+              <div class="step-example">Would this app even work without this? Or does it just want to collect your information?</div>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num" aria-label="Step 4">4</div>
+            <div class="step-content">
+              <div class="step-name">Ask an adult if you're unsure</div>
+              <div class="step-desc">If you're not sure whether to allow or deny — ask before you tap. It's never wrong to ask, and it's always quick.</div>
+              <div class="step-example">"Can you look at this? I don't know if I should tap allow."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Always-Ask vs Can-Decide -->
+    <section class="kids-section" aria-labelledby="tiers-title">
+      <span class="section-icon" aria-hidden="true">⚖️</span>
+      <h2 class="section-title" id="tiers-title">Two Kinds of Permission Requests</h2>
+      <p>
+        Not all permission requests are equal. Some are high-stakes — always check with a grown-up first.
+        Others are lower-stakes — you can start to think about these yourself using the four steps.
+      </p>
+
+      <div class="tier-grid" role="region" aria-label="Permission request categories">
+        <div class="tier-col always-ask">
+          <div class="tier-label">🛑 Always ask a grown-up first</div>
+          <ul>
+            <li><strong>Your location</strong> (where you are, where you go)</li>
+            <li><strong>Your contacts</strong> (your family and friends' info)</li>
+            <li><strong>Your camera</strong> (can see what you see)</li>
+            <li><strong>Your microphone</strong> (can hear what you say)</li>
+            <li><strong>Your photos</strong> (access to your pictures)</li>
+          </ul>
+        </div>
+        <div class="tier-col start-deciding">
+          <div class="tier-label">✓ You can start to think through these yourself</div>
+          <ul>
+            <li><strong>Notifications</strong> (app wants to send you alerts)</li>
+            <li><strong>Background app refresh</strong> (runs when you're not looking)</li>
+            <li><strong>Wi-Fi or Bluetooth</strong> for the specific feature you want</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="margin-top:1rem; font-size:0.9rem; color:var(--text-secondary);">
+        <strong>When in doubt, always use Step 4:</strong> ask an adult before you tap.
+        It takes 10 seconds and is never the wrong choice.
+      </p>
+    </section>
+
+    <!-- Section 4: Permission Dialog Sorting Activity -->
+    <section class="kids-section" aria-labelledby="sort-title">
+      <span class="section-icon" aria-hidden="true">🗂</span>
+      <h2 class="section-title" id="sort-title">The Sorting Activity</h2>
+      <p>
+        Here are three app permission dialogs — the kind of pop-up windows you see on real phones and tablets.
+        For each one, talk with your caregiver and decide:
+      </p>
+
+      <div class="dialog-sort-legend" role="list" aria-label="Sort categories">
+        <span class="sort-badge makes-sense">✅ Makes sense for this app</span>
+        <span class="sort-badge not-sure">🤔 Not sure — I'd ask</span>
+        <span class="sort-badge seems-wrong">🚫 Seems wrong — I'd say no</span>
+      </div>
+
+      <div class="dialog-cards" role="list" aria-label="Permission dialog examples to sort">
+
+        <div class="dialog-card" role="listitem">
+          <div class="dc-header">
+            <div class="dc-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="dc-app-name">Google Maps</div>
+          </div>
+          <div class="dc-body">
+            <div class="dc-title">"Google Maps" Would Like to Use Your Location</div>
+            <div class="dc-message">Your location will be used to show directions and find places near you.</div>
+            <div class="dc-buttons">
+              <div class="dc-btn allow">Allow While Using App</div>
+              <div class="dc-btn deny">Don't Allow</div>
+            </div>
+            <div class="dc-verdict">✅ Makes sense — a maps app needs your location to work.</div>
+          </div>
+        </div>
+
+        <div class="dialog-card" role="listitem">
+          <div class="dc-header">
+            <div class="dc-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="dc-app-name">Puzzle Game</div>
+          </div>
+          <div class="dc-body">
+            <div class="dc-title">"Puzzle Game" Would Like to Access Your Contacts</div>
+            <div class="dc-message">Puzzle Game wants to find friends who also play. This will access all contacts in your phone.</div>
+            <div class="dc-buttons">
+              <div class="dc-btn allow">Allow</div>
+              <div class="dc-btn deny">Don't Allow</div>
+            </div>
+            <div class="dc-verdict">🚫 Seems wrong — does a puzzle game really need your contacts? Ask an adult.</div>
+          </div>
+        </div>
+
+        <div class="dialog-card" role="listitem">
+          <div class="dc-header">
+            <div class="dc-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="dc-app-name">Weather App</div>
+          </div>
+          <div class="dc-body">
+            <div class="dc-title">"Weather App" Would Like to Send You Notifications</div>
+            <div class="dc-message">Receive daily weather forecasts and alerts.</div>
+            <div class="dc-buttons">
+              <div class="dc-btn allow">Allow</div>
+              <div class="dc-btn deny">Don't Allow</div>
+            </div>
+            <div class="dc-verdict">🤔 Not sure — notifications are lower stakes, but decide if you want alerts popping up.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="dialog-answers" role="note" aria-label="Discussion answers">
+        <div class="da-label">💬 After you sort them, talk about these:</div>
+        <ul>
+          <li>Which one was easiest to sort? Why?</li>
+          <li>The puzzle game wanted contacts — why might an app ask for something it doesn't really need?</li>
+          <li>Would you give the weather app notifications? Why or why not — it's genuinely a "your choice" question.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 5: Discussion Questions -->
+    <section class="kids-section" aria-labelledby="discuss-title">
+      <span class="section-icon" aria-hidden="true">💬</span>
+      <h2 class="section-title" id="discuss-title">Talk About It Together</h2>
+      <p>Use the four steps out loud together. There are no trick questions here.</p>
+      <ul class="discussion-list" role="list" aria-label="Discussion questions">
+        <li>Can you name the four steps from memory? Try without looking at the card.</li>
+        <li>Think of an app you use. What kind of permissions do you think it has — location, camera, contacts? Check it together.</li>
+        <li>Why would an app ask for something it doesn't need? What might they do with that information?</li>
+        <li>What's something a grown-up is better at noticing than you are, when it comes to app permissions?</li>
+      </ul>
+    </section>
+
+    <!-- Sticker block -->
+    <div class="sticker-block" role="complementary" aria-label="Achievement sticker">
+      <span class="sticker-icon" role="img" aria-label="Wise decision maker">🧠</span>
+      <div class="sticker-title">Wise Chooser Award</div>
+      <p class="sticker-sub">
+        You don't just tap "Allow" on everything. You pause, read, think,
+        and ask. That's more than most grown-ups do.
+      </p>
+    </div>
+
+    <!-- Signs it's working -->
+    <section class="kids-section" aria-labelledby="signs-title">
+      <span class="section-icon" aria-hidden="true">🌱</span>
+      <h2 class="section-title" id="signs-title">Signs It's Working</h2>
+      <ul class="signs-list" role="list">
+        <li>Your child can name the four steps — pause, read, ask yourself, ask an adult — without prompting.</li>
+        <li>They understand the difference between high-stakes permissions (location, camera, contacts) and lower-stakes ones (notifications).</li>
+        <li>When they encounter a real permission dialog, they pause before tapping — rather than reflexively tapping "Allow."</li>
+        <li>They can articulate why the puzzle game + contacts scenario is suspicious ("it doesn't need contacts to work").</li>
+      </ul>
+    </section>
+
+    <!-- Cohort complete -->
+    <div class="cohort-complete" role="complementary" aria-label="Ages 7-9 cohort complete">
+      <span class="cc-icon" role="img" aria-label="Celebration">🎉</span>
+      <div class="cc-title">Ages 7–9 Cohort Complete!</div>
+      <p class="cc-sub">
+        You've finished all 7 activities in the Ages 7–9 programme — emotional safety, critical thinking,
+        learning habits, creative making, and tech safety. Every single one.
+      </p>
+      <a href="index.html">See all Ages 7–9 activities</a>
+    </div>
+
+    <!-- Module navigation -->
+    <nav class="module-nav" aria-label="Module navigation">
+      <a href="building-a-safe-online-identity.html" class="prev-link">
+        ← Building a safe online identity
+      </a>
+    </nav>
+
+    <!-- Caregiver section -->
+    <section class="caregiver-section" aria-labelledby="caregiver-title">
+      <h2 id="caregiver-title">🧑‍🤝‍🧑 Caregiver Notes &amp; Sources</h2>
+
+      <h3>What this activity builds</h3>
+      <p>
+        This module is the developmental upgrade of the Ages 4–6 Row 1r skill ("My device has eyes,
+        ears, and a memory"). At ages 4–6, the appropriate response to any app permission was "pause
+        and show a grown-up." At ages 7–9, children using devices semi-independently need a more
+        nuanced framework — one that teaches decision-making, not just deference.
+      </p>
+
+      <h3>Framing shift: deference to growing agency</h3>
+      <div class="sme-annotation">
+        <strong>Vera (Privacy &amp; Compliance)</strong> — The framing must shift from full deferral
+        to growing agency: "I look at what the app is asking, then decide if it seems right, then
+        ask an adult if I'm unsure" — not just "always show a grown-up." Full deferral is still
+        correct for high-stakes requests (location, contacts, camera, microphone). For lower-stakes
+        requests (notifications, Bluetooth for a specific feature), children at this age can begin
+        practising independent evaluation. The skill is to know the difference.
+      </div>
+
+      <h3>The four-step developmental progression</h3>
+      <div class="sme-annotation">
+        <strong>Dr. Lena (Child Development)</strong> — The developmental shift from age 4-6 to 7-9
+        is precisely from "always show a grown-up" to "pause → read → ask yourself if it makes sense
+        → ask an adult if unsure." Four concrete steps, not just a reflex. This teaches
+        decision-making scaffolded by adult oversight — which is appropriate for children who are
+        beginning to use devices semi-independently. The four steps must be explicit and concrete
+        rather than summarised as "think before tapping" — the specificity of each step is what
+        makes it transferable to new situations.
+      </div>
+
+      <h3>Printable permission dialog cards</h3>
+      <div class="sme-annotation">
+        <strong>Frank (Library &amp; Frontline Practitioner)</strong> — The activity becomes concrete
+        with real app permission dialog examples. The three printed cards in this module represent
+        common permission types. For library programme facilitators: print the dialog cards section,
+        cut out the three cards, and have children physically sort them into the three piles (Makes
+        sense / Not sure / Seems wrong) as a group activity. The physical sorting makes it tactile
+        and discussable. The "puzzle game wants contacts" card reliably generates strong discussion
+        in group settings — use it as the anchor for the conversation.
+      </div>
+
+      <h3>Checking real devices together</h3>
+      <p>
+        The "Talk About It Together" question about checking a real app's permissions is valuable
+        if you have time. On iPhone: Settings → [App Name] → view permissions. On Android:
+        Settings → Apps → [App Name] → Permissions. Reviewing one or two real apps together
+        is a high-transfer activity that reinforces everything in this module.
+      </p>
+
+      <h3>Sources</h3>
+      <ul class="sources-list" role="list">
+        <li>Privacy Commissioner of Canada (2023). <em>Privacy considerations for apps used by children.</em> priv.gc.ca</li>
+        <li>Common Sense Media (2023). <em>Privacy and internet safety for kids: grades 3-5.</em> commonsense.org</li>
+        <li>MediaSmarts Canada (2022). <em>Digital literacy framework for elementary learners.</em> mediasmarts.ca</li>
+        <li>Inhelder, B., &amp; Piaget, J. (1958). <em>The Growth of Logical Thinking from Childhood to Adolescence.</em> Basic Books. (concrete operational reasoning, ages 7-11)</li>
+        <li>Canadian Centre for Child Protection (2024). <em>Cybertip.ca: App safety guidance.</em> cybertip.ca</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="kids-footer" role="contentinfo">
+    <p>
+      <a href="../../index.html">Digital Confidence Centre</a> · Kids Digital Literacy ·
+      <a href="../../copyright.html">© 2026 Two Birds Innovation</a>
+    </p>
+    <p style="margin-top: 0.4rem; font-size: 0.8rem;">
+      Canadian content · Free to use · No data collected · Built in St. Thomas, Ontario
+    </p>
+  </footer>
+
+</body>
+</html>

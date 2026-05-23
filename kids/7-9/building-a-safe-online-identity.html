@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DCC Kids Ages 7–9 · Building a Safe Online Identity · A caregiver-led activity about what to share, what to protect, and why combinations matter.">
+  <meta property="og:title" content="Building a Safe Online Identity · DCC Kids Ages 7–9">
+  <meta property="og:description" content="Free offline activity for ages 7–9. Learn why it's combinations of information — not single pieces — that create risk, and how to build a healthy online profile.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/7-9/building-a-safe-online-identity.html">
+  <title>Building a Safe Online Identity · DCC Kids Ages 7–9</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="icon" href="../../favicon.ico">
+  <style>
+    :root {
+      --kids-indigo:        #283593;
+      --kids-indigo-mid:    #3949AB;
+      --kids-indigo-bg:     #E8EAF6;
+      --kids-indigo-light:  #C5CAE9;
+      --kids-purple:        #6A1B9A;
+      --kids-purple-bg:     #F3E5F5;
+      --kids-purple-light:  #E1BEE7;
+      --kids-green:         #2E7D32;
+      --kids-green-bg:      #E8F5E9;
+      --kids-green-light:   #C8E6C9;
+      --kids-red:           #C62828;
+      --kids-red-bg:        #FFEBEE;
+      --kids-red-light:     #FFCDD2;
+      --kids-radius:        20px;
+      --kids-font-xl:       2rem;
+      --kids-font-lg:       1.35rem;
+      --kids-font-base:     1.125rem;
+    }
+
+    body { background: #F5F2FF; }
+
+    /* ── Caregiver banner ── */
+    .caregiver-banner {
+      background: var(--brand-teal);
+      color: #fff;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .caregiver-banner a { color: #b2dfdb; text-decoration: underline; }
+
+    /* ── Breadcrumb nav ── */
+    .kids-nav {
+      background: #fff;
+      border-bottom: 2px solid var(--kids-indigo-light);
+      padding: 0.75rem 1.5rem;
+      font-size: 0.875rem;
+    }
+    .kids-nav a { color: var(--brand-teal); text-decoration: none; }
+    .kids-nav a:hover { text-decoration: underline; }
+    .kids-nav span { color: var(--text-muted); margin: 0 0.4rem; }
+
+    /* ── Hero ── */
+    .kids-hero {
+      background: linear-gradient(135deg, #E8EAF6 0%, #EDE7F6 100%);
+      padding: 2.75rem 1.5rem 2.25rem;
+      text-align: center;
+      border-bottom: 3px solid var(--kids-indigo-light);
+    }
+    .kids-hero h1 {
+      font-size: clamp(1.75rem, 5vw, 2.6rem);
+      color: var(--text-primary);
+      margin: 0 0 0.6rem;
+      line-height: 1.2;
+    }
+    .kids-hero .tagline {
+      font-size: var(--kids-font-lg);
+      color: var(--text-secondary);
+      max-width: 580px;
+      margin: 0 auto 1.25rem;
+      line-height: 1.5;
+    }
+    .hero-badges {
+      display: flex;
+      justify-content: center;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+    .hero-badge {
+      background: #fff;
+      border: 2px solid var(--kids-indigo-light);
+      border-radius: 20px;
+      padding: 0.3rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--kids-indigo);
+    }
+
+    /* ── Main layout ── */
+    .kids-main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2.25rem 1.25rem 4rem;
+    }
+
+    /* ── Section blocks ── */
+    .kids-section {
+      background: #fff;
+      border: 2px solid var(--border-color);
+      border-radius: var(--kids-radius);
+      padding: 1.75rem 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+    .kids-section .section-icon {
+      font-size: 2.25rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .kids-section .section-title {
+      font-size: 1.3rem;
+      color: var(--brand-teal);
+      margin: 0 0 0.85rem;
+      line-height: 1.25;
+    }
+    .kids-section p {
+      font-size: var(--kids-font-base);
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin: 0 0 0.85rem;
+    }
+    .kids-section p:last-child { margin-bottom: 0; }
+
+    /* ── Combinations lesson ── */
+    .combo-demo {
+      border: 2.5px solid var(--kids-indigo-light);
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 1rem 0 0;
+    }
+    .combo-demo .demo-header {
+      background: var(--kids-indigo-bg);
+      padding: 0.6rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--kids-indigo);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 2px solid var(--kids-indigo-light);
+    }
+    .combo-rows {
+      display: flex;
+      flex-direction: column;
+    }
+    .combo-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      padding: 0.85rem 1rem;
+      gap: 1rem;
+      border-bottom: 1.5px solid var(--border-color);
+    }
+    .combo-row:last-child { border-bottom: none; }
+    .combo-row .info-text {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+    .combo-row .info-text strong { color: var(--text-primary); }
+    .combo-badge {
+      font-size: 0.78rem;
+      font-weight: 700;
+      border-radius: 12px;
+      padding: 0.2rem 0.7rem;
+      white-space: nowrap;
+    }
+    .badge-ok { background: var(--kids-green-bg); color: var(--kids-green); }
+    .badge-maybe { background: #FFF9C4; color: #E65100; }
+    .badge-careful { background: var(--kids-red-bg); color: var(--kids-red); }
+
+    /* ── Share/protect grid ── */
+    .sp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    .sp-col {
+      border-radius: 14px;
+      padding: 1.1rem 1rem;
+    }
+    .sp-col.share-col {
+      background: var(--kids-green-bg);
+      border: 2px solid var(--kids-green-light);
+    }
+    .sp-col.protect-col {
+      background: var(--kids-red-bg);
+      border: 2px solid var(--kids-red-light);
+    }
+    .sp-col .sp-label {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0 0 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .sp-col.share-col .sp-label { color: var(--kids-green); }
+    .sp-col.protect-col .sp-label { color: var(--kids-red); }
+    .sp-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .sp-col ul li {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .sp-col.share-col ul li::before { content: "✓"; position: absolute; left: 0; color: var(--kids-green); font-weight: 700; }
+    .sp-col.protect-col ul li::before { content: "🔒"; position: absolute; left: 0; font-size: 0.8rem; }
+
+    /* ── Account reality note ── */
+    .account-note {
+      background: var(--kids-indigo-bg);
+      border: 2px solid var(--kids-indigo-light);
+      border-left: 5px solid var(--kids-indigo-mid);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      margin-top: 1rem;
+    }
+    .account-note .an-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--kids-indigo);
+      margin-bottom: 0.4rem;
+    }
+    .account-note p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* ── Sorting activity ── */
+    .sort-intro {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0 0 1rem;
+    }
+    .sort-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.85rem;
+      margin-top: 0.25rem;
+    }
+    .sort-card {
+      background: var(--kids-indigo-bg);
+      border: 2px solid var(--kids-indigo-light);
+      border-radius: 14px;
+      padding: 1rem;
+    }
+    .sort-card .sc-scenario {
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+    .sort-card .sc-question {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      font-style: italic;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .sort-card .sc-answer {
+      font-size: 0.8rem;
+      color: var(--kids-indigo);
+      font-weight: 600;
+      background: #fff;
+      border-radius: 8px;
+      padding: 0.3rem 0.6rem;
+      border: 1.5px solid var(--kids-indigo-light);
+    }
+
+    /* ── Awareness box (stranger framing) ── */
+    .awareness-box {
+      background: #FFF9C4;
+      border: 2px solid #FFF176;
+      border-left: 5px solid #F9A825;
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      margin-top: 1rem;
+    }
+    .awareness-box .aw-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #E65100;
+      margin-bottom: 0.4rem;
+    }
+    .awareness-box p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin: 0 0 0.5rem;
+    }
+    .awareness-box p:last-child { margin-bottom: 0; }
+
+    /* ── Discussion questions ── */
+    .discussion-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.85rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .discussion-list li {
+      background: var(--kids-indigo-bg);
+      border: 2px solid var(--kids-indigo-light);
+      border-radius: 12px;
+      padding: 0.8rem 1rem;
+      font-size: var(--kids-font-base);
+      color: var(--text-secondary);
+      line-height: 1.5;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+    .discussion-list li::before {
+      content: "💬";
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+
+    /* ── Sticker block ── */
+    .sticker-block {
+      background: linear-gradient(135deg, var(--kids-indigo-bg) 0%, var(--kids-purple-bg) 100%);
+      border: 3px solid var(--kids-indigo-light);
+      border-radius: var(--kids-radius);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      margin-bottom: 1.75rem;
+    }
+    .sticker-block .sticker-icon { font-size: 3.5rem; display: block; margin-bottom: 0.5rem; }
+    .sticker-block .sticker-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--kids-indigo);
+      margin: 0 0 0.4rem;
+    }
+    .sticker-block .sticker-sub {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 380px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* ── Signs it's working ── */
+    .signs-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.85rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .signs-list li {
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .signs-list li::before { content: "✅"; flex-shrink: 0; }
+
+    /* ── Module navigation ── */
+    .module-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 2rem 0 0;
+      flex-wrap: wrap;
+    }
+    .module-nav a {
+      background: #fff;
+      border: 2px solid var(--kids-indigo-light);
+      border-radius: 14px;
+      padding: 0.75rem 1.1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--brand-teal);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: box-shadow 0.15s;
+      max-width: 48%;
+    }
+    .module-nav a:hover { box-shadow: 0 3px 12px rgba(0,128,128,0.15); text-decoration: underline; }
+    .module-nav a.next-link { margin-left: auto; text-align: right; }
+
+    /* ── Caregiver section ── */
+    .caregiver-section {
+      background: #fff;
+      border: 2px solid var(--border-color);
+      border-top: 4px solid var(--brand-teal);
+      border-radius: var(--kids-radius);
+      padding: 1.75rem 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .caregiver-section h2 {
+      font-size: 1.1rem;
+      color: var(--brand-teal);
+      margin: 0 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--kids-indigo-light);
+    }
+    .caregiver-section h3 {
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      margin: 1.25rem 0 0.4rem;
+    }
+    .caregiver-section p, .caregiver-section li {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .caregiver-section ul { padding-left: 1.25rem; margin: 0.25rem 0 0; }
+    .caregiver-section li { margin-bottom: 0.3rem; }
+    .sme-annotation {
+      background: var(--kids-indigo-bg);
+      border-left: 4px solid var(--kids-indigo-mid);
+      border-radius: 8px;
+      padding: 0.65rem 0.9rem;
+      margin: 0.75rem 0;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+    .sme-annotation strong { color: var(--kids-indigo); }
+    .sources-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .sources-list li {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── Footer ── */
+    .kids-footer {
+      background: var(--brand-teal);
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.875rem;
+      margin-top: 3rem;
+    }
+    .kids-footer a { color: #b2dfdb; }
+
+    /* ── Print ── */
+    @media print {
+      .caregiver-banner, .kids-nav, .kids-footer, .module-nav { display: none; }
+      body { background: #fff; }
+    }
+
+    @media (max-width: 520px) {
+      .sp-grid { grid-template-columns: 1fr; }
+      .module-nav a { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="caregiver-banner" role="banner">
+    🧑‍🤝‍🧑 These activities are for <strong>caregivers and children to do together</strong> — no screens needed for most. &nbsp;
+    <a href="../index.html">Back to DCC Kids</a>
+  </div>
+
+  <nav class="kids-nav" aria-label="Breadcrumb">
+    <a href="../../index.html">DCC</a>
+    <span aria-hidden="true">›</span>
+    <a href="../index.html">Kids</a>
+    <span aria-hidden="true">›</span>
+    <a href="index.html">Ages 7–9</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Building a Safe Online Identity</span>
+  </nav>
+
+  <header class="kids-hero" role="banner">
+    <h1>Building a Safe Online Identity</h1>
+    <p class="tagline">
+      One piece of information about you is usually fine. It's when pieces get combined
+      that strangers can build a picture of who and where you are.
+    </p>
+    <div class="hero-badges">
+      <span class="hero-badge">🔒 Tech Safety</span>
+      <span class="hero-badge">⏱ 20 minutes</span>
+      <span class="hero-badge">📵 No screens needed</span>
+      <span class="hero-badge">Ages 7–9</span>
+    </div>
+  </header>
+
+  <main class="kids-main">
+
+    <!-- Section 1: Big Idea -->
+    <section class="kids-section" aria-labelledby="big-idea-title">
+      <span class="section-icon" aria-hidden="true">💡</span>
+      <h2 class="section-title" id="big-idea-title">The Big Idea</h2>
+      <p>
+        If someone asks you your first name, that's fine — everyone knows first names.
+        If they ask your first name <em>and</em> what school you go to <em>and</em> what street
+        you live on — now they know a lot more than you intended to share.
+      </p>
+      <p>
+        <strong>The lesson at ages 7–9 isn't "never share anything."</strong>
+        It's this: information combines. One piece is usually fine. Multiple pieces together
+        can give someone you've never met offline a lot of information about your real life.
+      </p>
+      <p>
+        This activity will help you understand which combinations are safe — and which ones to pause before sharing.
+      </p>
+    </section>
+
+    <!-- Section 2: Same Information, Different Contexts -->
+    <section class="kids-section" aria-labelledby="combo-title">
+      <span class="section-icon" aria-hidden="true">🔍</span>
+      <h2 class="section-title" id="combo-title">Same Information, Different Combinations</h2>
+      <p>Here's how the same information can feel very different depending on what else is shared at the same time.</p>
+
+      <div class="combo-demo" role="region" aria-label="Information combination examples">
+        <div class="demo-header">📋 Same facts — different combinations — different risk</div>
+        <div class="combo-rows">
+          <div class="combo-row">
+            <div class="info-text">
+              <strong>"My name is Jordan."</strong><br>
+              First name only.
+            </div>
+            <span class="combo-badge badge-ok">Usually fine</span>
+          </div>
+          <div class="combo-row">
+            <div class="info-text">
+              <strong>"I'm Jordan and I go to Riverside School."</strong><br>
+              Name + school.
+            </div>
+            <span class="combo-badge badge-maybe">Pause and think</span>
+          </div>
+          <div class="combo-row">
+            <div class="info-text">
+              <strong>"I'm Jordan, I go to Riverside School, and I walk home on Oak Street after 3:30."</strong><br>
+              Name + school + location + routine.
+            </div>
+            <span class="combo-badge badge-careful">Protect this</span>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:1rem; font-size:0.9rem; color:var(--text-secondary);">
+        Notice that Jordan never meant to share their whole daily schedule. But when pieces stack up,
+        a picture forms that Jordan didn't intend to create.
+      </p>
+    </section>
+
+    <!-- Section 3: What to Share, What to Protect -->
+    <section class="kids-section" aria-labelledby="sp-title">
+      <span class="section-icon" aria-hidden="true">🛡</span>
+      <h2 class="section-title" id="sp-title">What to Share, What to Protect</h2>
+      <p>This isn't about secrets — it's about knowing which things belong to everyone and which things belong to your real life.</p>
+
+      <div class="sp-grid" role="region" aria-label="Share vs protect reference">
+        <div class="sp-col share-col">
+          <div class="sp-label">✅ Usually fine to share</div>
+          <ul>
+            <li>A username or display name (not your real name)</li>
+            <li>Your favourite game, show, or sport</li>
+            <li>What province or country you live in</li>
+            <li>How old you are (age group, not exact birthday)</li>
+            <li>A drawing or creative work you made</li>
+          </ul>
+        </div>
+        <div class="sp-col protect-col">
+          <div class="sp-label">🔒 Protect these</div>
+          <ul>
+            <li>Your full name (first + last together)</li>
+            <li>Your school name or teacher's name</li>
+            <li>Your home address or street</li>
+            <li>Your phone number</li>
+            <li>Your daily routine (where you go, when you're alone)</li>
+            <li>Passwords to any account</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="margin-top:1rem; font-size:0.9rem; color:var(--text-secondary);">
+        <strong>Biggest thing to remember:</strong> It's not one piece — it's combinations.
+        First name alone is fine. First name + school + street is a lot.
+      </p>
+    </section>
+
+    <!-- Section 4: If You Already Have Accounts -->
+    <section class="kids-section" aria-labelledby="accounts-title">
+      <span class="section-icon" aria-hidden="true">🎮</span>
+      <h2 class="section-title" id="accounts-title">If You Already Have Accounts</h2>
+      <p>
+        Many children in Grades 2–4 already play Roblox, Minecraft online, or use other apps where
+        other people can see a profile or username. That's the reality — and this activity is for you too.
+      </p>
+
+      <div class="account-note" role="note">
+        <div class="an-label">🎮 If you have any apps or games where people can see your profile…</div>
+        <p>
+          Look at your username and profile together with your caregiver. Ask: Does your username
+          include your real name? Does your profile say what school you go to or where you live?
+          What would someone know about you just from looking at your profile?
+        </p>
+      </div>
+
+      <p style="margin-top:1rem; font-size:0.9rem; color:var(--text-secondary);">
+        <strong>Don't have any accounts yet?</strong> That's fine too — this activity still applies.
+        When you do set up an account someday, you'll already know what to keep private.
+      </p>
+    </section>
+
+    <!-- Section 5: Sorting Activity -->
+    <section class="kids-section" aria-labelledby="sort-title">
+      <span class="section-icon" aria-hidden="true">🗂</span>
+      <h2 class="section-title" id="sort-title">The Sorting Game</h2>
+      <p class="sort-intro">
+        Read each scenario with your caregiver. For each one, talk about whether it's "Usually fine,"
+        "Pause and think," or "Protect this." There's no timer — take your time.
+      </p>
+
+      <div class="sort-cards" role="list" aria-label="Sorting game scenarios">
+        <div class="sort-card" role="listitem">
+          <div class="sc-scenario">Mia uses "RocketMia22" as her username.</div>
+          <div class="sc-question">Can someone figure out her real name, age, or location from this?</div>
+          <div class="sc-answer">Usually fine — display name, no real info</div>
+        </div>
+        <div class="sort-card" role="listitem">
+          <div class="sc-scenario">Sam's game profile says "Sam L., Grade 3, St. Thomas."</div>
+          <div class="sc-question">What does a stranger now know about Sam?</div>
+          <div class="sc-answer">Protect this — name + grade + city is too much combined</div>
+        </div>
+        <div class="sort-card" role="listitem">
+          <div class="sc-scenario">Alex says their favourite show is about dinosaurs in an online fan group.</div>
+          <div class="sc-question">Does this help a stranger find Alex in real life?</div>
+          <div class="sc-answer">Usually fine — a preference, no locating info</div>
+        </div>
+        <div class="sort-card" role="listitem">
+          <div class="sc-scenario">Jordan's bio says "I walk to Riverside School every morning at 8:15."</div>
+          <div class="sc-question">What could a stranger do with this information?</div>
+          <div class="sc-answer">Protect this — school name + daily routine + time = too much</div>
+        </div>
+        <div class="sort-card" role="listitem">
+          <div class="sc-scenario">Chris says they're 8 years old in a kids' game chat.</div>
+          <div class="sc-question">Does this help a stranger find Chris in real life?</div>
+          <div class="sc-answer">Pause and think — age alone is low risk, but avoid combining with other info</div>
+        </div>
+        <div class="sort-card" role="listitem">
+          <div class="sc-scenario">Maya's profile has her first name, province ("Ontario"), and a photo.</div>
+          <div class="sc-question">What does a stranger have now if they piece these together?</div>
+          <div class="sc-answer">Pause and think — first name + province is often OK, but adding a photo raises the combination risk</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Online-Only Friendships -->
+    <section class="kids-section" aria-labelledby="online-friends-title">
+      <span class="section-icon" aria-hidden="true">🤝</span>
+      <h2 class="section-title" id="online-friends-title">Online-Only Friendships</h2>
+      <p>
+        Sometimes you meet people online — in a game, in a fan group, or in a comment section —
+        who seem really friendly. Most of the time, that's just people being nice online. And it's OK to be friendly back.
+      </p>
+
+      <div class="awareness-box" role="note" aria-label="Good to know about online-only contact">
+        <div class="aw-label">💡 Good to know</div>
+        <p>
+          Every now and then, someone online will try to become a trusted friend before asking
+          for personal information. This doesn't mean everyone online is a stranger to be afraid
+          of — the vast majority of online spaces are fine. But it's one reason the combination
+          rule matters: share what's normal online, protect what belongs to your real life.
+        </p>
+        <p>
+          <strong>The simple test:</strong> "Would a stranger knowing this help them find me in real life?"
+          If yes — that's something to protect. If no — you're probably fine.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 7: Discussion Questions -->
+    <section class="kids-section" aria-labelledby="discuss-title">
+      <span class="section-icon" aria-hidden="true">💬</span>
+      <h2 class="section-title" id="discuss-title">Talk About It Together</h2>
+      <p>There are no wrong answers — just interesting ones.</p>
+      <ul class="discussion-list" role="list" aria-label="Discussion questions">
+        <li>Look at something you use online together. What does your profile or username tell a stranger about you? What would you change?</li>
+        <li>What's the difference between a "game friend" and a real-life friend? Does that change what you'd share with them?</li>
+        <li>If you combined your first name, your school, and a photo of yourself — could someone you'd never met in real life find you in real life? Does that feel like too much?</li>
+        <li>Is there anything you've shared online before that you'd do differently now?</li>
+      </ul>
+    </section>
+
+    <!-- Sticker block -->
+    <div class="sticker-block" role="complementary" aria-label="Achievement sticker">
+      <span class="sticker-icon" role="img" aria-label="Shield">🛡</span>
+      <div class="sticker-title">Identity Guardian</div>
+      <p class="sticker-sub">
+        You understand that one piece of information is usually fine —
+        and that combinations are what matter. That's a grown-up kind of thinking.
+      </p>
+    </div>
+
+    <!-- Signs it's working -->
+    <section class="kids-section" aria-labelledby="signs-title">
+      <span class="section-icon" aria-hidden="true">🌱</span>
+      <h2 class="section-title" id="signs-title">Signs It's Working</h2>
+      <ul class="signs-list" role="list">
+        <li>Your child can name the "combination rule" — that single pieces are usually fine but stacking them creates risk.</li>
+        <li>They can distinguish between a display name and their real name without prompting.</li>
+        <li>If they already have accounts, they can look at their own profiles with a critical eye.</li>
+        <li>They understand online friendships exist on a different spectrum from offline friendships — and that's OK — without being afraid of all online interaction.</li>
+      </ul>
+    </section>
+
+    <!-- Module navigation -->
+    <nav class="module-nav" aria-label="Module navigation">
+      <a href="making-something-useful-for-someone-else.html" class="prev-link">
+        ← Making something useful for someone else
+      </a>
+      <a href="pause-and-show-a-grown-up-when-an-app-asks.html" class="next-link">
+        Pause and show a grown-up when an app asks →
+      </a>
+    </nav>
+
+    <!-- Caregiver section -->
+    <section class="caregiver-section" aria-labelledby="caregiver-title">
+      <h2 id="caregiver-title">🧑‍🤝‍🧑 Caregiver Notes &amp; Sources</h2>
+
+      <h3>What this activity builds</h3>
+      <p>
+        The "combination rule" is a developmentally appropriate upgrade from the 4-6 age band's
+        binary "share / don't share" framework. Children aged 7–9 are capable of understanding
+        that context modulates risk — this is the foundational skill for all digital privacy
+        reasoning they'll need as they get older.
+      </p>
+
+      <h3>Acknowledging account reality</h3>
+      <div class="sme-annotation">
+        <strong>Vera (Privacy &amp; Compliance)</strong> — At age 7-9, many children already have active
+        accounts on Roblox, gaming platforms, and YouTube despite platform age limits. This module
+        must acknowledge that reality honestly. "If you have any apps or games where people can see
+        your profile..." is more honest and more actionable than "when you someday have an account."
+        Children who already have accounts will engage more deeply with an activity that speaks to
+        their current situation. Also: any awareness of the stranger-posing-as-peer dynamic must be
+        framed carefully to create vigilance without creating blanket fear of online interaction —
+        most online spaces are safe, most online people are benign.
+      </div>
+
+      <h3>The combination lesson</h3>
+      <div class="sme-annotation">
+        <strong>Dr. Lena (Child Development)</strong> — Context-dependency is the key cognitive shift
+        at ages 7-9 that wasn't present at 4-6. Piaget's concrete operational stage means children
+        can now hold multiple variables simultaneously and understand that the same piece of information
+        has different implications depending on what accompanies it. Use a specific worked example:
+        full name alone is different from full name + school + photo together. Without a concrete
+        example, the rule remains abstract and won't transfer to new situations.
+      </div>
+
+      <h3>Variant prompts for group settings</h3>
+      <div class="sme-annotation">
+        <strong>Frank (Library &amp; Frontline Practitioner)</strong> — Library programmes will
+        encounter a mix of children who have accounts and those who don't. Both groups should feel
+        included and relevant. The variant prompts ("If you have an account..." / "When you do have
+        one...") ensure no child feels excluded from the exercise. Facilitators should avoid
+        asking children to name specific platforms they use — keep it generic.
+      </div>
+
+      <h3>Avoiding overcorrection</h3>
+      <p>
+        Privacy activities at this age can produce one of two failure modes: children who share
+        everything, or children who are afraid of all online interaction. Neither is the goal.
+        The "combination rule" thread throughout this activity is designed to produce nuanced
+        judgment — most things are fine to share; certain combinations create risk.
+      </p>
+
+      <h3>Sources</h3>
+      <ul class="sources-list" role="list">
+        <li>Childnet International (2021). <em>SMART Rules for Online Safety.</em> childnet.com</li>
+        <li>Cybertip.ca / Canadian Centre for Child Protection (2024). <em>Online safety and grooming awareness.</em> cybertip.ca</li>
+        <li>Privacy Commissioner of Canada (2021). <em>PIPEDA and children's privacy.</em> priv.gc.ca</li>
+        <li>Finkelhor, D. (2012). <em>Crimes against Children Research Center: Online victimisation risk factors.</em> CCRC.</li>
+        <li>MediaSmarts Canada (2022). <em>Digital literacy framework for elementary learners.</em> mediasmarts.ca</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="kids-footer" role="contentinfo">
+    <p>
+      <a href="../../index.html">Digital Confidence Centre</a> · Kids Digital Literacy ·
+      <a href="../../copyright.html">© 2026 Two Birds Innovation</a>
+    </p>
+    <p style="margin-top: 0.4rem; font-size: 0.8rem;">
+      Canadian content · Free to use · No data collected · Built in St. Thomas, Ontario
+    </p>
+  </footer>
+
+</body>
+</html>
