@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A caregiver-led activity for children aged 7–9: sorting online information into verified, opinion, and invented. Critical thinking for the age of social media and shared links.">
+  <meta property="og:title" content="Real, made-up, or somewhere in between · DCC Kids · Ages 7–9">
+  <meta property="og:description" content="Not everything online is true. Help your child learn to sort facts, opinions, and invented claims — a skill that lasts a lifetime.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/7-9/real-made-up-or-somewhere-in-between.html">
+  <title>Real, made-up, or somewhere in between · DCC Kids · Ages 7–9</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="icon" href="../../favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Real, made-up, or somewhere in between — sorting what I find online",
+    "description": "A caregiver-led activity for children aged 7–9. Teaches the three-bucket framework: verified, opinion, and invented — for sorting online information. Builds on the Ages 4–6 real/pretend/maybe-made-up foundation.",
+    "url": "https://twobirds-kramerica.github.io/digital-confidence/kids/7-9/real-made-up-or-somewhere-in-between.html",
+    "educationalLevel": "Grade 2–4",
+    "learningResourceType": "Activity",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Children aged 7–9, with caregiver"
+    },
+    "inLanguage": "en-CA",
+    "isAccessibleForFree": true,
+    "dateModified": "2026-05-23",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Digital Confidence Centre — Kids Digital Literacy",
+      "url": "https://twobirds-kramerica.github.io/digital-confidence/"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --kids-green:       #2E7D32;
+      --kids-green-bg:    #E8F5E9;
+      --kids-green-light: #C8E6C9;
+      --kids-blue:        #1565C0;
+      --kids-blue-bg:     #E3F2FD;
+      --kids-blue-light:  #BBDEFB;
+      --kids-orange:      #E65100;
+      --kids-orange-bg:   #FFF3E0;
+      --kids-orange-light:#FFE0B2;
+      --kids-yellow:      #F57F17;
+      --kids-yellow-bg:   #FFFDE7;
+      --kids-yellow-light:#FFF9C4;
+      --kids-red:         #C62828;
+      --kids-red-bg:      #FFEBEE;
+      --kids-red-light:   #FFCDD2;
+      --kids-purple-bg:   #EDE7F6;
+      --kids-purple:      #6A1B9A;
+      --kids-radius:      20px;
+      --kids-font-xl:     2rem;
+      --kids-font-lg:     1.35rem;
+      --kids-font-base:   1.125rem;
+    }
+
+    body { background: #FFFBF0; }
+
+    .kids-skip-link { position: absolute; left: -9999px; }
+    .kids-skip-link:focus {
+      left: 1rem; top: 1rem; z-index: 9999;
+      background: var(--brand-teal); color: #fff;
+      padding: 0.5rem 1rem; border-radius: 6px;
+    }
+
+    .caregiver-banner {
+      background: var(--brand-teal); color: #fff;
+      text-align: center; padding: 0.75rem 1rem;
+      font-size: 0.95rem; font-weight: 500; letter-spacing: 0.01em;
+    }
+    .caregiver-banner a { color: #b2dfdb; text-decoration: underline; }
+
+    .kids-nav {
+      background: #fff; border-bottom: 2px solid var(--kids-yellow-light);
+      padding: 0.75rem 1.5rem; font-size: 0.875rem;
+    }
+    .kids-nav a { color: var(--brand-teal); text-decoration: none; }
+    .kids-nav a:hover { text-decoration: underline; }
+    .kids-nav span { color: var(--text-muted); margin: 0 0.4rem; }
+
+    .kids-hero {
+      background: linear-gradient(135deg, #FFFDE7 0%, #FFF3E0 100%);
+      padding: 2.5rem 1.5rem 2rem; text-align: center;
+      border-bottom: 3px solid var(--kids-yellow-light);
+    }
+    .kids-hero .badge-row {
+      display: flex; justify-content: center; gap: 0.5rem;
+      flex-wrap: wrap; margin-bottom: 1rem;
+    }
+    .badge {
+      display: inline-block; padding: 0.25rem 0.75rem;
+      border-radius: 20px; font-size: 0.8rem;
+      font-weight: 600; letter-spacing: 0.02em;
+    }
+    .badge-age    { background: var(--kids-green-light); color: var(--kids-green); }
+    .badge-cat    { background: var(--kids-yellow-light); color: var(--kids-yellow); }
+    .badge-time   { background: #FFF9C4; color: #E65100; }
+    .badge-screen { background: #FCE4EC; color: #880E4F; }
+
+    .kids-hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      color: var(--text-primary); margin: 0.5rem 0 0.75rem; line-height: 1.2;
+    }
+    .kids-hero .tagline {
+      font-size: var(--kids-font-lg); color: var(--text-secondary);
+      max-width: 560px; margin: 0 auto; line-height: 1.5;
+    }
+
+    .kids-main { max-width: 760px; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+
+    .kids-section { margin-bottom: 2.5rem; }
+    .kids-section h2 {
+      font-size: var(--kids-font-xl); color: var(--text-primary);
+      margin: 0 0 1rem; display: flex; align-items: center; gap: 0.5rem;
+    }
+    .kids-section h3 { font-size: var(--kids-font-lg); color: var(--text-primary); margin: 1.25rem 0 0.5rem; }
+
+    .kids-callout {
+      background: var(--kids-yellow-bg); border-left: 5px solid var(--kids-yellow);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: var(--kids-font-base);
+    }
+    .kids-callout strong { color: var(--kids-yellow); }
+    .kids-callout.teal { background: #E0F2F1; border-left-color: var(--brand-teal); }
+    .kids-callout.teal strong { color: var(--brand-teal); }
+    .kids-callout.blue { background: var(--kids-blue-bg); border-left-color: var(--kids-blue); }
+    .kids-callout.blue strong { color: var(--kids-blue); }
+
+    /* Three buckets */
+    .bucket-row {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem; margin: 1.25rem 0;
+    }
+    .bucket-card {
+      border-radius: 16px; padding: 1.25rem 0.9rem; text-align: center;
+    }
+    .bucket-card.verified { background: var(--kids-green-bg); border: 3px solid var(--kids-green-light); }
+    .bucket-card.opinion  { background: var(--kids-yellow-bg); border: 3px solid var(--kids-yellow-light); }
+    .bucket-card.invented { background: var(--kids-red-bg);   border: 3px solid var(--kids-red-light); }
+    .bucket-icon { font-size: 2.2rem; display: block; margin-bottom: 0.4rem; }
+    .bucket-label { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .bucket-card.verified .bucket-label { color: var(--kids-green); }
+    .bucket-card.opinion  .bucket-label { color: var(--kids-yellow); }
+    .bucket-card.invented .bucket-label { color: var(--kids-red); }
+    .bucket-def { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; }
+
+    /* Sorting cards */
+    .sort-card {
+      background: #fff; border: 2px solid #ddd; border-radius: 14px;
+      padding: 1rem 1.25rem; margin-bottom: 0.75rem;
+    }
+    .sort-card .sort-text { font-size: var(--kids-font-base); line-height: 1.5; font-weight: 500; }
+    .sort-card .sort-answer {
+      margin-top: 0.6rem; font-size: 0.9rem;
+      color: var(--text-muted); border-top: 1px dashed #ddd; padding-top: 0.5rem;
+    }
+    .sort-card .sort-answer em { font-style: normal; font-weight: 600; }
+    .sort-card.is-verified { border-left: 5px solid var(--kids-green); }
+    .sort-card.is-opinion  { border-left: 5px solid var(--kids-yellow); }
+    .sort-card.is-invented { border-left: 5px solid var(--kids-red); }
+
+    .steps-list { list-style: none; padding: 0; margin: 1rem 0; counter-reset: steps; }
+    .steps-list li {
+      counter-increment: steps; display: flex; gap: 1rem;
+      margin-bottom: 1rem; align-items: flex-start;
+    }
+    .steps-list li::before {
+      content: counter(steps); background: var(--kids-yellow); color: #fff;
+      width: 36px; height: 36px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 1rem; flex-shrink: 0;
+    }
+    .steps-list li .step-text { padding-top: 0.35rem; font-size: var(--kids-font-base); line-height: 1.55; }
+
+    .cross-link {
+      display: flex; align-items: center; gap: 1rem;
+      background: var(--kids-orange-bg); border: 2px solid var(--kids-orange-light);
+      border-radius: var(--kids-radius); padding: 1rem 1.25rem;
+      text-decoration: none; color: var(--text-primary); margin-bottom: 2rem;
+      transition: box-shadow 0.15s;
+    }
+    .cross-link:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .cross-link .arrow { font-size: 1.5rem; }
+    .cross-link .link-text { font-size: var(--kids-font-base); font-weight: 600; }
+    .cross-link .link-sub  { font-size: 0.85rem; color: var(--text-muted); }
+
+    .nav-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 2rem; }
+    .nav-link-prev, .nav-link-next {
+      flex: 1; min-width: 220px; display: flex; align-items: center; gap: 0.75rem;
+      border-radius: var(--kids-radius); padding: 1rem 1.25rem;
+      text-decoration: none; color: var(--text-primary); transition: box-shadow 0.15s;
+    }
+    .nav-link-prev:hover, .nav-link-next:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .nav-link-prev { background: #F3E5F5; border: 2px solid #CE93D8; }
+    .nav-link-next { background: var(--kids-green-bg); border: 2px solid var(--kids-green-light); }
+    .nav-link-prev .arrow, .nav-link-next .arrow { font-size: 1.5rem; }
+    .nav-link-prev .link-text, .nav-link-next .link-text { font-size: 1rem; font-weight: 600; }
+    .nav-link-prev .link-sub, .nav-link-next .link-sub { font-size: 0.82rem; color: var(--text-muted); }
+
+    .sticker-block {
+      background: linear-gradient(135deg, var(--kids-yellow-bg), var(--kids-green-bg));
+      border: 3px solid var(--kids-yellow-light); border-radius: var(--kids-radius);
+      padding: 1.5rem 1.25rem; margin: 1.25rem 0; text-align: center;
+    }
+    .sticker-block .sticker-icon { font-size: 3rem; display: block; margin-bottom: 0.5rem; }
+    .sticker-block h3 { margin: 0 0 0.5rem; font-size: 1.2rem; color: var(--kids-yellow); }
+    .sticker-block p { font-size: var(--kids-font-base); color: var(--text-primary); margin: 0; line-height: 1.5; }
+
+    .caregiver-section {
+      background: #fff; border: 2px solid var(--border-color);
+      border-radius: var(--kids-radius); padding: 1.5rem 1.25rem; margin-top: 2rem;
+    }
+    .caregiver-section h2 {
+      font-size: 1.25rem; color: var(--brand-teal); margin: 0 0 0.75rem;
+      padding-bottom: 0.5rem; border-bottom: 2px solid var(--kids-yellow-light);
+    }
+    .caregiver-section p, .caregiver-section li {
+      font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;
+    }
+    .caregiver-section ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+    .caregiver-section .source-list { list-style: none; padding: 0; margin: 0.5rem 0; }
+    .caregiver-section .source-list li { padding: 0.2rem 0; font-size: 0.88rem; }
+    .caregiver-section .source-list li::before { content: "→ "; color: var(--brand-teal); }
+
+    .for-caregiver-label {
+      display: inline-block; background: var(--brand-teal); color: #fff;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em;
+      padding: 0.2rem 0.6rem; border-radius: 4px; margin-bottom: 0.6rem; text-transform: uppercase;
+    }
+
+    .facilitator-note {
+      background: var(--kids-orange-bg); border: 2px solid var(--kids-orange-light);
+      border-radius: 12px; padding: 1rem 1.25rem; margin: 1rem 0;
+    }
+    .facilitator-note strong { color: var(--kids-orange); }
+
+    @media (max-width: 520px) {
+      .bucket-row { grid-template-columns: 1fr; }
+      .nav-links { flex-direction: column; }
+    }
+
+    .kids-footer {
+      background: var(--brand-teal); color: rgba(255,255,255,0.85);
+      text-align: center; padding: 1.5rem 1rem; font-size: 0.875rem; margin-top: 3rem;
+    }
+    .kids-footer a { color: #b2dfdb; }
+
+    @media print {
+      .caregiver-banner, .kids-nav { display: none; }
+      .kids-hero { padding: 1rem; }
+      body { background: #fff; }
+      .sort-card .sort-answer { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="kids-skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="caregiver-banner" role="banner">
+    🧑‍🤝‍🧑 This activity works best when a grown-up and child do it together. &nbsp;
+    <a href="../../index.html">Back to Digital Confidence Centre</a>
+  </div>
+
+  <nav class="kids-nav" aria-label="Breadcrumb">
+    <a href="../../index.html">DCC</a>
+    <span aria-hidden="true">›</span>
+    <a href="../index.html">Kids</a>
+    <span aria-hidden="true">›</span>
+    <a href="index.html">Ages 7–9</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Real, made-up, or somewhere in between</span>
+  </nav>
+
+  <header class="kids-hero" role="banner">
+    <div class="badge-row">
+      <span class="badge badge-age">Ages 7–9</span>
+      <span class="badge badge-cat">Critical Thinking</span>
+      <span class="badge badge-time">⏱ 20 minutes</span>
+      <span class="badge badge-screen">📵 No screens needed</span>
+    </div>
+    <h1>Real, made-up, or somewhere in between</h1>
+    <p class="tagline">
+      Not everything online is true — and some things are tricky because they're real
+      <em>opinions</em>, not real <em>facts</em>. Learn to sort what you find.
+    </p>
+  </header>
+
+  <main id="main-content" class="kids-main">
+
+    <a href="../4-6/real-pretend-maybe-made-up.html" class="cross-link" aria-label="Related activity from Ages 4–6: Real, pretend, maybe-made-up">
+      <span class="arrow">🔁</span>
+      <div>
+        <div class="link-text">Builds on the Ages 4–6 activity: "Real, pretend, maybe-made-up"</div>
+        <div class="link-sub">Same idea — but now we add a third bucket that's trickier to spot.</div>
+      </div>
+    </a>
+
+    <section class="kids-section" aria-labelledby="big-idea-heading">
+      <h2 id="big-idea-heading">💡 The big idea</h2>
+      <p style="font-size: var(--kids-font-base); line-height: 1.6;">
+        When you were younger, you learned the difference between real things and pretend things.
+        That was a great start. Now there's a new challenge: some things online are <em>opinions</em>
+        — things people believe or think — and they can sound just like facts.
+      </p>
+      <p style="font-size: var(--kids-font-base); line-height: 1.6;">
+        At ages 7–9, you're ready for three buckets instead of two.
+        The trick is learning to tell them apart.
+      </p>
+    </section>
+
+    <section class="kids-section" aria-labelledby="buckets-heading">
+      <h2 id="buckets-heading">🪣 The three buckets</h2>
+
+      <div class="bucket-row" role="list">
+        <div class="bucket-card verified" role="listitem">
+          <span class="bucket-icon" role="img" aria-label="verified checkmark">✅</span>
+          <div class="bucket-label">VERIFIED</div>
+          <div class="bucket-def">Something that can be checked and confirmed. Experts and evidence agree. It's the same no matter who you ask.</div>
+        </div>
+        <div class="bucket-card opinion" role="listitem">
+          <span class="bucket-icon" role="img" aria-label="opinion thought bubble">💭</span>
+          <div class="bucket-label">OPINION</div>
+          <div class="bucket-def">What someone thinks or believes. It can be thoughtful and interesting — but different people might think differently.</div>
+        </div>
+        <div class="bucket-card invented" role="listitem">
+          <span class="bucket-icon" role="img" aria-label="invented false X">❌</span>
+          <div class="bucket-label">INVENTED</div>
+          <div class="bucket-def">Not true. Made up, wrong, or a myth that's been repeated so many times people think it's real.</div>
+        </div>
+      </div>
+
+      <div class="kids-callout blue">
+        <strong>The tricky one is OPINION.</strong> Opinions can sound confident and be stated strongly —
+        but that doesn't make them facts. <em>"Dogs are better than cats"</em> is an opinion.
+        <em>"Dogs are the most popular pet in Canada"</em> is a fact you can check.
+        Both might be said with equal confidence, but only one can be verified.
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="activity-heading">
+      <h2 id="activity-heading">🎮 Sort these statements — which bucket?</h2>
+      <p style="font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+        Read each statement out loud. Before flipping for the answer, decide together: Verified, Opinion, or Invented?
+        You can print this page and cut the cards for an offline sorting activity.
+      </p>
+
+      <div class="sort-card is-verified">
+        <div class="sort-text">"Canada has 10 provinces and 3 territories."</div>
+        <div class="sort-answer"><em>VERIFIED</em> — You can look this up in any atlas or on the Government of Canada website. It's the same everywhere.</div>
+      </div>
+
+      <div class="sort-card is-opinion">
+        <div class="sort-text">"Pizza is the best food ever."</div>
+        <div class="sort-answer"><em>OPINION</em> — Lots of people agree, but "best food" is what someone thinks. Someone else might say sushi or apples.</div>
+      </div>
+
+      <div class="sort-card is-invented">
+        <div class="sort-text">"If you touch a frog, you'll get warts."</div>
+        <div class="sort-answer"><em>INVENTED</em> — This is a myth. Frogs don't cause warts. The myth has been around for a long time, but it's not true.</div>
+      </div>
+
+      <div class="sort-card is-opinion">
+        <div class="sort-text">"Cats are smarter than dogs."</div>
+        <div class="sort-answer"><em>OPINION</em> — Some people think cats are smarter; others disagree. "Smarter" is tricky to measure and people mean different things by it.</div>
+      </div>
+
+      <div class="sort-card is-verified">
+        <div class="sort-text">"Blue whales are the largest animals that have ever lived."</div>
+        <div class="sort-answer"><em>VERIFIED</em> — Scientists have confirmed this. You can find it in encyclopaedias and on science websites — the same answer everywhere.</div>
+      </div>
+
+      <div class="sort-card is-invented">
+        <div class="sort-text">"Chocolate milk comes from brown cows."</div>
+        <div class="sort-answer"><em>INVENTED</em> — This is a myth. All milk comes from cows regardless of colour; chocolate milk is regular milk with chocolate added.</div>
+      </div>
+
+      <div class="facilitator-note" style="margin-top: 1.25rem;">
+        <strong>No internet? No problem.</strong> This activity is fully printable — cut out the six cards and
+        sort them into three labelled piles. This works perfectly in library programmes, classrooms,
+        or at home with no device needed. Cover the answers before printing if you want children to guess first.
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="check-heading">
+      <h2 id="check-heading">🔎 How to check a VERIFIED claim</h2>
+      <ol class="steps-list" role="list">
+        <li><span class="step-text"><strong>Ask: can this be looked up?</strong> Verified facts can be found in books, encyclopaedias, and trusted websites — not just one person's social media post.</span></li>
+        <li><span class="step-text"><strong>Look for the same answer in two places.</strong> If two different sources say the same thing, it's much more likely to be verified.</span></li>
+        <li><span class="step-text"><strong>Ask a grown-up to help you navigate.</strong> Any online searching or navigation must be done with adult supervision. Never look things up alone online.</span></li>
+      </ol>
+
+      <div class="kids-callout teal">
+        <strong>Online rule:</strong> Any time this activity suggests looking something up online,
+        do it <strong>with a grown-up's help</strong> — never alone. An adult helps you find safe, trustworthy sources
+        and can spot things that might be misleading.
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="sticker-heading">
+      <div class="sticker-block">
+        <span class="sticker-icon" role="img" aria-label="magnifying glass">🔍</span>
+        <h3 id="sticker-heading">The Fact-Finder Badge</h3>
+        <p>
+          Award this sticker when your child correctly identifies an opinion, spots an invented claim,
+          or asks "can we check that?" about something they hear or see.
+          Noticing the question is the whole skill.
+        </p>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem;">
+        The badge is for asking the question — not for getting the answer right every time.
+      </p>
+    </section>
+
+    <section class="kids-section" aria-labelledby="growth-heading">
+      <h2 id="growth-heading">🌱 Signs it's working</h2>
+      <ul style="font-size: var(--kids-font-base); line-height: 1.8; padding-left: 1.5rem;">
+        <li>Your child asks "is that a fact or an opinion?" when someone says something confidently.</li>
+        <li>They notice when an opinion sounds like a fact.</li>
+        <li>They ask to check something before believing it.</li>
+        <li>They understand that being wrong isn't shameful — invented things fool adults too.</li>
+      </ul>
+      <div class="kids-callout">
+        <strong>Keep it playful:</strong> The goal isn't to make children suspicious of everything.
+        It's to give them a habit of pausing and asking "which bucket is this?"
+        — especially when they're about to share something with someone else.
+      </div>
+    </section>
+
+    <div class="nav-links">
+      <a href="telling-a-grown-up-when-something-feels-weird.html" class="nav-link-prev" aria-label="Previous activity: Telling a grown-up when something online feels weird">
+        <span class="arrow">←</span>
+        <div>
+          <div class="link-text">Previous: Telling a grown-up</div>
+          <div class="link-sub">When something online feels weird</div>
+        </div>
+      </a>
+      <a href="online-kindness-counts.html" class="nav-link-next" aria-label="Next activity: Online kindness counts">
+        <span class="arrow">→</span>
+        <div>
+          <div class="link-text">Next: Online kindness counts</div>
+          <div class="link-sub">Words stick longer online than in person</div>
+        </div>
+      </a>
+    </div>
+
+    <aside class="caregiver-section" aria-labelledby="caregiver-heading">
+      <span class="for-caregiver-label">For caregivers</span>
+      <h2 id="caregiver-heading">Why this skill matters — the research</h2>
+
+      <p>
+        At ages 7–9, children are at Piaget's concrete operational stage — they're beginning to
+        classify and sort information, but they still rely heavily on surface features.
+        A confidently stated claim <em>sounds</em> like a fact, even when it's an opinion or a myth.
+        The three-bucket framework gives them a concrete sorting tool that matches this developmental stage.
+      </p>
+      <p>
+        MediaSmarts Canada's "Break the Fake" research shows that the opinion/fact confusion is one of the
+        most persistent critical thinking gaps across all ages — not just children. Introducing the distinction
+        early, with concrete examples, builds a habit that lasts a lifetime.
+      </p>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">Why "invented" instead of "made-up"</h3>
+      <p>
+        "Invented" is the better word for ages 7–9. "Made-up" carries a dismissive tone that can
+        feel like a personal accusation when a child believed the claim. "Invented" sounds neutral
+        — it's about the information, not about the person who shared it.
+        Using "invented" models the respectful, curious tone you want children to bring to fact-checking.
+      </p>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">The offline fallback</h3>
+      <p>
+        The six sorting cards in this activity are designed to work fully without internet access.
+        Print the page, cover the answers, and cut the cards. Sorting physical cards into three
+        labelled piles is a tactile, discussable activity that works in library programmes,
+        classrooms, and homes without reliable internet connectivity.
+      </p>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">Sources</h3>
+      <ul class="source-list">
+        <li>Piaget, J. (1952). <em>The Origins of Intelligence in Children.</em> International Universities Press.</li>
+        <li>MediaSmarts Canada. Break the Fake — media literacy for children. mediasmarts.ca</li>
+        <li>Lewandowsky, S. et al. (2012). Misinformation and its correction. <em>Psychological Science in the Public Interest.</em></li>
+        <li>Stanford History Education Group (SHEG). Civic Online Reasoning. sheg.stanford.edu</li>
+        <li>Caulfield, M. (2019). SIFT: Four moves for online verification. hapgood.us</li>
+      </ul>
+    </aside>
+
+  </main>
+
+  <footer class="kids-footer" role="contentinfo">
+    <p>
+      <a href="../../index.html">Digital Confidence Centre</a> · Kids Digital Literacy · Ages 7–9 ·
+      <a href="../../copyright.html">© 2026 Two Birds Innovation</a>
+    </p>
+    <p style="margin-top: 0.4rem; font-size: 0.8rem;">
+      Canadian content · Free to use · No data collected · Built in St. Thomas, Ontario
+    </p>
+  </footer>
+
+</body>
+</html>

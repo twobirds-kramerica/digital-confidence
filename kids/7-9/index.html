@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DCC Kids Ages 7–9 — caregiver-led digital literacy activities for children in Grades 2–4. Build critical thinking, privacy, and safety skills offline.">
+  <meta property="og:title" content="DCC Kids Ages 7–9 · Digital Literacy Activities · Digital Confidence Centre">
+  <meta property="og:description" content="Free, offline caregiver-led activities for children aged 7–9. Emotional safety, critical thinking, tech safety, and creative making — backed by research.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/7-9/">
+  <title>DCC Kids · Ages 7–9 · Digital Literacy Activities</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="icon" href="../../favicon.ico">
+  <style>
+    :root {
+      --kids-green:       #2E7D32;
+      --kids-green-bg:    #E8F5E9;
+      --kids-green-light: #C8E6C9;
+      --kids-blue:        #1565C0;
+      --kids-blue-bg:     #E3F2FD;
+      --kids-teal:        #00695C;
+      --kids-teal-bg:     #E0F2F1;
+      --kids-teal-light:  #B2DFDB;
+      --kids-orange:      #E65100;
+      --kids-orange-bg:   #FFF3E0;
+      --kids-orange-light:#FFE0B2;
+      --kids-yellow-bg:   #FFFDE7;
+      --kids-yellow-light:#FFF9C4;
+      --kids-radius:      20px;
+      --kids-font-xl:     2rem;
+      --kids-font-lg:     1.35rem;
+      --kids-font-base:   1.125rem;
+    }
+
+    body { background: #F0FFF4; }
+
+    .caregiver-banner {
+      background: var(--brand-teal); color: #fff;
+      text-align: center; padding: 0.75rem 1rem;
+      font-size: 0.95rem; font-weight: 500;
+    }
+    .caregiver-banner a { color: #b2dfdb; text-decoration: underline; }
+
+    .kids-nav {
+      background: #fff; border-bottom: 2px solid var(--kids-teal-light);
+      padding: 0.75rem 1.5rem; font-size: 0.875rem;
+    }
+    .kids-nav a { color: var(--brand-teal); text-decoration: none; }
+    .kids-nav a:hover { text-decoration: underline; }
+    .kids-nav span { color: var(--text-muted); margin: 0 0.4rem; }
+
+    .kids-hero {
+      background: linear-gradient(135deg, #E0F2F1 0%, #E8F5E9 100%);
+      padding: 2.5rem 1.5rem 2rem; text-align: center;
+      border-bottom: 3px solid var(--kids-teal-light);
+    }
+    .kids-hero .hero-tag {
+      display: inline-block; background: var(--kids-teal-bg); color: var(--kids-teal);
+      border: 2px solid var(--kids-teal-light); border-radius: 20px;
+      padding: 0.3rem 1rem; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.75rem;
+    }
+    .kids-hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.6rem); color: var(--text-primary);
+      margin: 0 0 0.6rem; line-height: 1.2;
+    }
+    .kids-hero .tagline {
+      font-size: var(--kids-font-lg); color: var(--text-secondary);
+      max-width: 560px; margin: 0 auto; line-height: 1.5;
+    }
+
+    .kids-main { max-width: 860px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+
+    .section-label {
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--text-muted); margin: 0 0 1rem;
+    }
+
+    .module-grid { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2rem; }
+
+    .module-card {
+      background: #fff; border: 2px solid var(--border-color); border-radius: var(--kids-radius);
+      padding: 1.5rem; text-decoration: none; color: var(--text-primary);
+      display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: start;
+      transition: box-shadow 0.15s, border-color 0.15s, transform 0.1s;
+      box-shadow: var(--shadow-sm);
+    }
+    .module-card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1); border-color: var(--brand-teal);
+      transform: translateY(-2px);
+    }
+
+    .module-card .badge-row { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+    .badge {
+      display: inline-block; padding: 0.2rem 0.6rem;
+      border-radius: 14px; font-size: 0.75rem; font-weight: 600;
+    }
+    .badge-ct   { background: #E3F2FD; color: #0D47A1; }
+    .badge-ts   { background: #FFF3E0; color: #BF360C; }
+    .badge-cm   { background: #FFF9C4; color: #F57F17; }
+    .badge-lr   { background: #EDE7F6; color: #6A1B9A; }
+    .badge-es   { background: var(--kids-teal-bg); color: var(--kids-teal); }
+    .badge-time { background: #FFF9C4; color: #E65100; }
+    .badge-screen { background: #FCE4EC; color: #880E4F; }
+
+    .module-card h2 { font-size: 1.25rem; color: var(--text-primary); margin: 0 0 0.4rem; line-height: 1.3; }
+    .module-card .card-desc { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5; margin: 0; }
+    .module-card .card-arrow { font-size: 1.5rem; color: var(--brand-teal); align-self: center; flex-shrink: 0; }
+
+    /* Coming soon placeholder cards */
+    .module-card-soon {
+      background: #F8F8F8; border: 2px dashed #DDD; border-radius: var(--kids-radius);
+      padding: 1.25rem 1.5rem; display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: start;
+    }
+    .module-card-soon .badge-row { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+    .module-card-soon h2 { font-size: 1.15rem; color: var(--text-muted); margin: 0 0 0.3rem; line-height: 1.3; }
+    .module-card-soon .card-desc { font-size: 0.9rem; color: #aaa; line-height: 1.45; margin: 0; }
+    .soon-tag {
+      background: #eee; color: #aaa; border-radius: 14px;
+      padding: 0.2rem 0.6rem; font-size: 0.75rem; font-weight: 700;
+      align-self: start; white-space: nowrap;
+    }
+
+    .sequence-note {
+      background: var(--kids-teal-bg); border-left: 5px solid var(--brand-teal);
+      border-radius: 0 12px 12px 0; padding: 1rem 1.25rem; margin-bottom: 2.5rem;
+      font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;
+    }
+    .sequence-note strong { color: var(--brand-teal); }
+
+    .age-nav {
+      display: flex; gap: 0.75rem; flex-wrap: wrap;
+      border-top: 2px solid var(--border-color); padding-top: 2rem; margin-top: 2rem;
+    }
+    .age-nav a {
+      display: inline-block; padding: 0.5rem 1.25rem; border-radius: 20px;
+      font-size: 0.9rem; font-weight: 600; text-decoration: none;
+      transition: box-shadow 0.15s;
+    }
+    .age-nav a:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .age-nav .current { background: var(--kids-teal-bg); color: var(--kids-teal); border: 2px solid var(--kids-teal-light); }
+    .age-nav .done    { background: var(--kids-green-bg); color: var(--kids-green); border: 2px solid var(--kids-green-light); }
+    .age-nav .soon    { background: #F8F8F8; color: #aaa; border: 2px dashed #DDD; }
+    .age-nav .back    { background: transparent; color: var(--brand-teal); border: 2px solid var(--brand-teal); }
+
+    .kids-footer {
+      background: var(--brand-teal); color: rgba(255,255,255,0.85);
+      text-align: center; padding: 1.5rem 1rem; font-size: 0.875rem; margin-top: 3rem;
+    }
+    .kids-footer a { color: #b2dfdb; }
+
+    @media (max-width: 520px) {
+      .module-card, .module-card-soon { grid-template-columns: 1fr; }
+      .module-card .card-arrow { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="caregiver-banner" role="banner">
+    🧑‍🤝‍🧑 These activities are for <strong>caregivers and children to do together</strong> — no screens needed for most. &nbsp;
+    <a href="../../index.html">Back to Digital Confidence Centre</a>
+  </div>
+
+  <nav class="kids-nav" aria-label="Breadcrumb">
+    <a href="../../index.html">DCC</a>
+    <span aria-hidden="true">›</span>
+    <a href="../index.html">Kids</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Ages 7–9</span>
+  </nav>
+
+  <header class="kids-hero" role="banner">
+    <div class="hero-tag">Ages 7–9 · Grades 2–4</div>
+    <h1>Digital Literacy Activities</h1>
+    <p class="tagline">
+      Activities for the age of semi-independent screen time —
+      emotional safety, critical thinking, privacy, and kindness online.
+    </p>
+  </header>
+
+  <main class="kids-main">
+
+    <div class="sequence-note">
+      <strong>Suggested starting point:</strong> Start with "Telling a grown-up when something online feels weird" —
+      it builds directly on the Ages 4–6 safe grown-up work and sets the tone for everything else.
+      "Real, made-up, or somewhere in between" is a great second activity.
+    </div>
+
+    <p class="section-label">3 activities ready · 4 coming soon · 7 total in cohort</p>
+
+    <div class="module-grid" role="list">
+
+      <a href="telling-a-grown-up-when-something-feels-weird.html" class="module-card" role="listitem">
+        <div class="card-main">
+          <div class="badge-row">
+            <span class="badge badge-es">Emotional Safety</span>
+            <span class="badge badge-time">⏱ 15 min</span>
+            <span class="badge badge-screen">📵 No screens</span>
+          </div>
+          <h2>Telling a grown-up when something online feels weird</h2>
+          <p class="card-desc">
+            When something online feels wrong — even if your child can't explain why — that feeling is a signal.
+            This activity helps them notice it, name it, and bring it to a trusted adult.
+            Builds directly on the Ages 4–6 "Who is my safe grown-up?" activity.
+          </p>
+        </div>
+        <span class="card-arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a href="real-made-up-or-somewhere-in-between.html" class="module-card" role="listitem">
+        <div class="card-main">
+          <div class="badge-row">
+            <span class="badge badge-ct">Critical Thinking</span>
+            <span class="badge badge-time">⏱ 20 min</span>
+            <span class="badge badge-screen">📵 No screens needed</span>
+          </div>
+          <h2>Real, made-up, or somewhere in between</h2>
+          <p class="card-desc">
+            The three-bucket upgrade from the Ages 4–6 real/pretend/maybe activity.
+            Children aged 7–9 are ready for a new challenge: the OPINION bucket —
+            things that sound like facts but are really just what someone thinks.
+            Includes 6 printable sorting cards for offline use.
+          </p>
+        </div>
+        <span class="card-arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a href="online-kindness-counts.html" class="module-card" role="listitem">
+        <div class="card-main">
+          <div class="badge-row">
+            <span class="badge badge-es">Emotional Safety</span>
+            <span class="badge badge-time">⏱ 15 min</span>
+            <span class="badge badge-screen">📵 No screens</span>
+          </div>
+          <h2>Online kindness counts — words stick longer online than in person</h2>
+          <p class="card-desc">
+            Typed words don't disappear like spoken ones. They can stay forever, be shared, and be read again
+            when someone is already feeling low. Introduces the bystander vs. upstander distinction —
+            and a simple one-act kindness challenge to practise the habit.
+          </p>
+        </div>
+        <span class="card-arrow" aria-hidden="true">→</span>
+      </a>
+
+    </div>
+
+    <p class="section-label" style="margin-top: 1rem;">Coming soon</p>
+
+    <div class="module-grid" role="list">
+
+      <div class="module-card-soon" role="listitem" aria-label="Coming soon: Watching to learn vs. watching to pass time">
+        <div class="card-main">
+          <div class="badge-row">
+            <span class="badge badge-lr">Learning</span>
+            <span class="badge badge-time">⏱ 15 min</span>
+          </div>
+          <h2>Watching to learn vs. watching to pass time</h2>
+          <p class="card-desc">Four concrete moves for "watching with a job to do" — metacognitive awareness for 7–9 year olds, with a visual reference card to display during the activity.</p>
+        </div>
+        <span class="soon-tag">Coming soon</span>
+      </div>
+
+      <div class="module-card-soon" role="listitem" aria-label="Coming soon: Making something useful for someone else">
+        <div class="card-main">
+          <div class="badge-row">
+            <span class="badge badge-cm">Creative Making</span>
+            <span class="badge badge-time">⏱ 20 min</span>
+          </div>
+          <h2>Making something useful for someone else</h2>
+          <p class="card-desc">Design and create something for a specific person in your life — a card, a drawing, a guide. "Useful" includes emotionally useful. Builds empathy-driven making.</p>
+        </div>
+        <span class="soon-tag">Coming soon</span>
+      </div>
+
+      <div class="module-card-soon" role="listitem" aria-label="Coming soon: Building a safe online identity">
+        <div class="card-main">
+          <div class="badge-row">
+            <span class="badge badge-ts">Tech Safety</span>
+            <span class="badge badge-time">⏱ 20 min</span>
+          </div>
+          <h2>Building a safe online identity — what to share, what to protect</h2>
+          <p class="card-desc">At 7–9, many children already have accounts. This activity teaches context-dependency: it's not single pieces of information that are risky — it's combinations.</p>
+        </div>
+        <span class="soon-tag">Coming soon</span>
+      </div>
+
+      <div class="module-card-soon" role="listitem" aria-label="Coming soon: Pause and show a grown-up whenever an app asks for something">
+        <div class="card-main">
+          <div class="badge-row">
+            <span class="badge badge-ts">Tech Safety</span>
+            <span class="badge badge-time">⏱ 15 min</span>
+          </div>
+          <h2>Pause and show a grown-up whenever an app asks for something</h2>
+          <p class="card-desc">The developmental upgrade from the Ages 4–6 "pause before tapping" skill. At 7–9, the skill shifts: pause → read → decide if it makes sense → ask if unsure. Includes printable permission dialog examples.</p>
+        </div>
+        <span class="soon-tag">Coming soon</span>
+      </div>
+
+    </div>
+
+    <div class="age-nav" role="navigation" aria-label="Age groups">
+      <a href="../4-6/index.html" class="done">✅ Ages 4–6 (complete)</a>
+      <a href="index.html" class="current">→ Ages 7–9 (in progress)</a>
+      <a href="../index.html" class="soon">Ages 10–12 (coming soon)</a>
+      <a href="../index.html" class="soon">Ages 13–15 (coming soon)</a>
+      <a href="../index.html" class="back">← All age groups</a>
+    </div>
+
+  </main>
+
+  <footer class="kids-footer" role="contentinfo">
+    <p>
+      <a href="../../index.html">Digital Confidence Centre</a> · Kids Digital Literacy · Ages 7–9 ·
+      <a href="../../copyright.html">© 2026 Two Birds Innovation</a>
+    </p>
+    <p style="margin-top: 0.4rem; font-size: 0.8rem;">
+      Canadian content · Free to use · No data collected · Built in St. Thomas, Ontario
+    </p>
+  </footer>
+
+</body>
+</html>

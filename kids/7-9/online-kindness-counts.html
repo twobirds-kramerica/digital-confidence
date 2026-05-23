@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A caregiver-led activity for children aged 7–9: understanding why words online stick longer than words in person, and what to do when unkindness happens.">
+  <meta property="og:title" content="Online kindness counts · DCC Kids · Ages 7–9">
+  <meta property="og:description" content="Online words don't disappear like spoken words do. Help your child understand why kindness online matters — and what to do when unkindness happens.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/7-9/online-kindness-counts.html">
+  <title>Online kindness counts · DCC Kids · Ages 7–9</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="icon" href="../../favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Online kindness counts — words stick longer online than in person",
+    "description": "A caregiver-led activity for children aged 7–9. Explores why online words last longer than spoken words, what to do when unkindness happens online, and the difference between a bystander and an upstander.",
+    "url": "https://twobirds-kramerica.github.io/digital-confidence/kids/7-9/online-kindness-counts.html",
+    "educationalLevel": "Grade 2–4",
+    "learningResourceType": "Activity",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Children aged 7–9, with caregiver"
+    },
+    "inLanguage": "en-CA",
+    "isAccessibleForFree": true,
+    "dateModified": "2026-05-23",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Digital Confidence Centre — Kids Digital Literacy",
+      "url": "https://twobirds-kramerica.github.io/digital-confidence/"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --kids-green:       #2E7D32;
+      --kids-green-bg:    #E8F5E9;
+      --kids-green-light: #C8E6C9;
+      --kids-blue:        #1565C0;
+      --kids-blue-bg:     #E3F2FD;
+      --kids-blue-light:  #BBDEFB;
+      --kids-orange:      #E65100;
+      --kids-orange-bg:   #FFF3E0;
+      --kids-orange-light:#FFE0B2;
+      --kids-teal:        #00695C;
+      --kids-teal-bg:     #E0F2F1;
+      --kids-teal-light:  #B2DFDB;
+      --kids-purple:      #6A1B9A;
+      --kids-purple-bg:   #EDE7F6;
+      --kids-purple-light:#CE93D8;
+      --kids-radius:      20px;
+      --kids-font-xl:     2rem;
+      --kids-font-lg:     1.35rem;
+      --kids-font-base:   1.125rem;
+    }
+
+    body { background: #F0FFF4; }
+
+    .kids-skip-link { position: absolute; left: -9999px; }
+    .kids-skip-link:focus {
+      left: 1rem; top: 1rem; z-index: 9999;
+      background: var(--brand-teal); color: #fff;
+      padding: 0.5rem 1rem; border-radius: 6px;
+    }
+
+    .caregiver-banner {
+      background: var(--brand-teal); color: #fff;
+      text-align: center; padding: 0.75rem 1rem;
+      font-size: 0.95rem; font-weight: 500; letter-spacing: 0.01em;
+    }
+    .caregiver-banner a { color: #b2dfdb; text-decoration: underline; }
+
+    .kids-nav {
+      background: #fff; border-bottom: 2px solid var(--kids-teal-light);
+      padding: 0.75rem 1.5rem; font-size: 0.875rem;
+    }
+    .kids-nav a { color: var(--brand-teal); text-decoration: none; }
+    .kids-nav a:hover { text-decoration: underline; }
+    .kids-nav span { color: var(--text-muted); margin: 0 0.4rem; }
+
+    .kids-hero {
+      background: linear-gradient(135deg, #E0F2F1 0%, #E8F5E9 100%);
+      padding: 2.5rem 1.5rem 2rem; text-align: center;
+      border-bottom: 3px solid var(--kids-teal-light);
+    }
+    .kids-hero .badge-row {
+      display: flex; justify-content: center; gap: 0.5rem;
+      flex-wrap: wrap; margin-bottom: 1rem;
+    }
+    .badge {
+      display: inline-block; padding: 0.25rem 0.75rem;
+      border-radius: 20px; font-size: 0.8rem;
+      font-weight: 600; letter-spacing: 0.02em;
+    }
+    .badge-age    { background: var(--kids-green-light); color: var(--kids-green); }
+    .badge-cat    { background: var(--kids-teal-bg); color: var(--kids-teal); }
+    .badge-time   { background: #FFF9C4; color: #E65100; }
+    .badge-screen { background: #FCE4EC; color: #880E4F; }
+
+    .kids-hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      color: var(--text-primary); margin: 0.5rem 0 0.75rem; line-height: 1.2;
+    }
+    .kids-hero .tagline {
+      font-size: var(--kids-font-lg); color: var(--text-secondary);
+      max-width: 560px; margin: 0 auto; line-height: 1.5;
+    }
+
+    .kids-main { max-width: 760px; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+
+    .kids-section { margin-bottom: 2.5rem; }
+    .kids-section h2 {
+      font-size: var(--kids-font-xl); color: var(--text-primary);
+      margin: 0 0 1rem; display: flex; align-items: center; gap: 0.5rem;
+    }
+    .kids-section h3 { font-size: var(--kids-font-lg); color: var(--text-primary); margin: 1.25rem 0 0.5rem; }
+
+    .kids-callout {
+      background: var(--kids-teal-bg); border-left: 5px solid var(--kids-teal);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: var(--kids-font-base);
+    }
+    .kids-callout strong { color: var(--kids-teal); }
+    .kids-callout.green { background: var(--kids-green-bg); border-left-color: var(--kids-green); }
+    .kids-callout.green strong { color: var(--kids-green); }
+    .kids-callout.blue { background: var(--kids-blue-bg); border-left-color: var(--kids-blue); }
+    .kids-callout.blue strong { color: var(--kids-blue); }
+    .kids-callout.purple { background: var(--kids-purple-bg); border-left-color: var(--kids-purple); }
+    .kids-callout.purple strong { color: var(--kids-purple); }
+
+    /* Why online is different cards */
+    .why-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.75rem; margin: 1.25rem 0;
+    }
+    .why-card {
+      background: #fff; border: 2px solid var(--kids-teal-light);
+      border-radius: 16px; padding: 1.25rem 1rem;
+    }
+    .why-card .why-icon { font-size: 2rem; display: block; margin-bottom: 0.4rem; }
+    .why-card .why-title { font-size: 1rem; font-weight: 700; color: var(--kids-teal); margin-bottom: 0.3rem; }
+    .why-card .why-text  { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.45; }
+
+    /* Upstander vs bystander */
+    .compare-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0;
+    }
+    .compare-card { border-radius: 16px; padding: 1.25rem; }
+    .compare-card.bystander { background: #FFF8F0; border: 2px solid var(--kids-orange-light); }
+    .compare-card.upstander { background: var(--kids-green-bg); border: 2px solid var(--kids-green-light); }
+    .compare-card h3 { font-size: 1.1rem; margin: 0 0 0.5rem; }
+    .compare-card.bystander h3 { color: var(--kids-orange); }
+    .compare-card.upstander h3 { color: var(--kids-green); }
+    .compare-card p { font-size: 0.9rem; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+
+    .steps-list { list-style: none; padding: 0; margin: 1rem 0; counter-reset: steps; }
+    .steps-list li {
+      counter-increment: steps; display: flex; gap: 1rem;
+      margin-bottom: 1rem; align-items: flex-start;
+    }
+    .steps-list li::before {
+      content: counter(steps); background: var(--kids-teal); color: #fff;
+      width: 36px; height: 36px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 1rem; flex-shrink: 0;
+    }
+    .steps-list li .step-text { padding-top: 0.35rem; font-size: var(--kids-font-base); line-height: 1.55; }
+
+    .phrase-box {
+      background: #fff; border: 3px solid var(--kids-teal);
+      border-radius: var(--kids-radius); padding: 1.5rem 1.25rem;
+      margin: 1.25rem 0; text-align: center;
+    }
+    .phrase-big {
+      font-size: clamp(1.2rem, 4vw, 1.7rem); font-weight: 700;
+      color: var(--kids-teal); line-height: 1.3; margin-bottom: 0.5rem;
+    }
+    .phrase-sub { font-size: 0.95rem; color: var(--text-secondary); }
+
+    .nav-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 2rem; }
+    .nav-link-prev, .nav-link-next {
+      flex: 1; min-width: 220px; display: flex; align-items: center; gap: 0.75rem;
+      border-radius: var(--kids-radius); padding: 1rem 1.25rem;
+      text-decoration: none; color: var(--text-primary); transition: box-shadow 0.15s;
+    }
+    .nav-link-prev:hover, .nav-link-next:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .nav-link-prev { background: #FFFDE7; border: 2px solid #FFF9C4; }
+    .nav-link-next { background: var(--kids-blue-bg); border: 2px solid var(--kids-blue-light); }
+    .nav-link-prev .arrow, .nav-link-next .arrow { font-size: 1.5rem; }
+    .nav-link-prev .link-text, .nav-link-next .link-text { font-size: 1rem; font-weight: 600; }
+    .nav-link-prev .link-sub, .nav-link-next .link-sub { font-size: 0.82rem; color: var(--text-muted); }
+
+    .sticker-block {
+      background: linear-gradient(135deg, var(--kids-teal-bg), var(--kids-green-bg));
+      border: 3px solid var(--kids-teal-light); border-radius: var(--kids-radius);
+      padding: 1.5rem 1.25rem; margin: 1.25rem 0; text-align: center;
+    }
+    .sticker-block .sticker-icon { font-size: 3rem; display: block; margin-bottom: 0.5rem; }
+    .sticker-block h3 { margin: 0 0 0.5rem; font-size: 1.2rem; color: var(--kids-teal); }
+    .sticker-block p { font-size: var(--kids-font-base); color: var(--text-primary); margin: 0; line-height: 1.5; }
+
+    .caregiver-section {
+      background: #fff; border: 2px solid var(--border-color);
+      border-radius: var(--kids-radius); padding: 1.5rem 1.25rem; margin-top: 2rem;
+    }
+    .caregiver-section h2 {
+      font-size: 1.25rem; color: var(--brand-teal); margin: 0 0 0.75rem;
+      padding-bottom: 0.5rem; border-bottom: 2px solid var(--kids-teal-light);
+    }
+    .caregiver-section p, .caregiver-section li {
+      font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;
+    }
+    .caregiver-section ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+    .caregiver-section .source-list { list-style: none; padding: 0; margin: 0.5rem 0; }
+    .caregiver-section .source-list li { padding: 0.2rem 0; font-size: 0.88rem; }
+    .caregiver-section .source-list li::before { content: "→ "; color: var(--brand-teal); }
+
+    .for-caregiver-label {
+      display: inline-block; background: var(--brand-teal); color: #fff;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em;
+      padding: 0.2rem 0.6rem; border-radius: 4px; margin-bottom: 0.6rem; text-transform: uppercase;
+    }
+
+    .facilitator-note {
+      background: var(--kids-orange-bg); border: 2px solid var(--kids-orange-light);
+      border-radius: 12px; padding: 1rem 1.25rem; margin: 1rem 0;
+    }
+    .facilitator-note strong { color: var(--kids-orange); }
+
+    @media (max-width: 520px) {
+      .compare-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { flex-direction: column; }
+    }
+
+    .kids-footer {
+      background: var(--brand-teal); color: rgba(255,255,255,0.85);
+      text-align: center; padding: 1.5rem 1rem; font-size: 0.875rem; margin-top: 3rem;
+    }
+    .kids-footer a { color: #b2dfdb; }
+
+    @media print {
+      .caregiver-banner, .kids-nav { display: none; }
+      .kids-hero { padding: 1rem; }
+      body { background: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <a class="kids-skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="caregiver-banner" role="banner">
+    🧑‍🤝‍🧑 This activity works best when a grown-up and child do it together. &nbsp;
+    <a href="../../index.html">Back to Digital Confidence Centre</a>
+  </div>
+
+  <nav class="kids-nav" aria-label="Breadcrumb">
+    <a href="../../index.html">DCC</a>
+    <span aria-hidden="true">›</span>
+    <a href="../index.html">Kids</a>
+    <span aria-hidden="true">›</span>
+    <a href="index.html">Ages 7–9</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Online kindness counts</span>
+  </nav>
+
+  <header class="kids-hero" role="banner">
+    <div class="badge-row">
+      <span class="badge badge-age">Ages 7–9</span>
+      <span class="badge badge-cat">Emotional Safety</span>
+      <span class="badge badge-time">⏱ 15 minutes</span>
+      <span class="badge badge-screen">📵 No screens</span>
+    </div>
+    <h1>Online kindness counts</h1>
+    <p class="tagline">
+      Words you type online don't disappear the way spoken words do.
+      They stick around — and they can travel further than you expect.
+    </p>
+  </header>
+
+  <main id="main-content" class="kids-main">
+
+    <section class="kids-section" aria-labelledby="big-idea-heading">
+      <h2 id="big-idea-heading">💡 The big idea</h2>
+      <p style="font-size: var(--kids-font-base); line-height: 1.6;">
+        When you say something unkind out loud, the words disappear after a moment.
+        The person remembers how they felt, but the words are gone.
+      </p>
+      <p style="font-size: var(--kids-font-base); line-height: 1.6;">
+        When you type something online, it works differently.
+        The words can stay there <strong>forever</strong> — and the person can read them again
+        and again, especially when they're already feeling low.
+        Online kindness is one of the most important kinds of kindness there is.
+      </p>
+    </section>
+
+    <section class="kids-section" aria-labelledby="why-heading">
+      <h2 id="why-heading">📱 Why online is different</h2>
+
+      <div class="why-grid" role="list">
+        <div class="why-card" role="listitem">
+          <span class="why-icon" role="img" aria-label="timer">⏳</span>
+          <div class="why-title">Words don't disappear</div>
+          <div class="why-text">A typed message or comment stays until someone deletes it — and sometimes even after that.</div>
+        </div>
+        <div class="why-card" role="listitem">
+          <span class="why-icon" role="img" aria-label="share">📤</span>
+          <div class="why-title">They can be shared</div>
+          <div class="why-text">Anyone can screenshot or forward a message. You can't control who sees it once it's sent.</div>
+        </div>
+        <div class="why-card" role="listitem">
+          <span class="why-icon" role="img" aria-label="face">😐</span>
+          <div class="why-title">You can't see their face</div>
+          <div class="why-text">You can't tell how someone is really feeling when they read your words — sometimes people are more hurt than they let on.</div>
+        </div>
+        <div class="why-card" role="listitem">
+          <span class="why-icon" role="img" aria-label="read again">🔁</span>
+          <div class="why-title">They can be read again and again</div>
+          <div class="why-text">Unkind words online can be read over and over — each time can feel just as bad as the first time.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="scenarios-heading">
+      <h2 id="scenarios-heading">🎮 Talk about it</h2>
+      <p style="font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+        Read each situation out loud and discuss. There's no single right answer — the point is to think it through.
+      </p>
+
+      <div class="kids-callout" style="margin-bottom: 0.75rem;">
+        <strong>Situation 1:</strong> You send a joke to a friend in a group chat and some kids laugh, but one person seems quiet after. You're not sure if it hurt their feelings.
+        <br><em style="font-size: 0.9rem; color: var(--text-muted);">Worth checking in? What would you say?</em>
+      </div>
+      <div class="kids-callout" style="margin-bottom: 0.75rem;">
+        <strong>Situation 2:</strong> You see a comment on a game or video that's mean about another player. Other people are ignoring it.
+        <br><em style="font-size: 0.9rem; color: var(--text-muted);">What would a kind person do? What are the options?</em>
+      </div>
+      <div class="kids-callout" style="margin-bottom: 0.75rem;">
+        <strong>Situation 3:</strong> Someone sends you a message that makes you feel bad. You want to send something back that's just as mean.
+        <br><em style="font-size: 0.9rem; color: var(--text-muted);">Why might waiting 10 minutes before responding be a good idea?</em>
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="upstander-heading">
+      <h2 id="upstander-heading">🦸 Bystander or upstander?</h2>
+      <p style="font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+        When you see something unkind happen online, you have a choice about what to do.
+      </p>
+
+      <div class="compare-grid" role="list">
+        <div class="compare-card bystander" role="listitem">
+          <h3>😶 Bystander</h3>
+          <p>Someone who sees what's happening but doesn't do anything — they scroll past, stay quiet, or just watch.</p>
+        </div>
+        <div class="compare-card upstander" role="listitem">
+          <h3>🦸 Upstander</h3>
+          <p>Someone who sees what's happening and does something kind — says a supportive word, tells a trusted adult, or simply refuses to pile on.</p>
+        </div>
+      </div>
+
+      <div class="kids-callout green">
+        <strong>Being an upstander doesn't have to be big.</strong> Sometimes it's just:
+        sending one kind message to the person who was hurt, telling a grown-up what you saw,
+        or choosing not to share something unkind further. Small choices add up.
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="unkind-heading">
+      <h2 id="unkind-heading">🛡️ When unkind things happen to you</h2>
+      <ol class="steps-list" role="list">
+        <li><span class="step-text"><strong>Don't respond right away.</strong> It's okay to wait. Sending something back while you're upset usually makes things worse — for everyone.</span></li>
+        <li><span class="step-text"><strong>Screenshot it.</strong> Take a screenshot of the message or comment so you have a record. Don't delete anything yet.</span></li>
+        <li><span class="step-text"><strong>Tell a grown-up.</strong> Show them the screenshot. You don't have to deal with this alone — it's their job to help you figure out what to do next.</span></li>
+        <li><span class="step-text"><strong>Block if you need to.</strong> Blocking someone is not rude — it's a safety tool. A grown-up can help you do it.</span></li>
+      </ol>
+
+      <div class="phrase-box">
+        <div class="phrase-big">"I saw something online that wasn't kind. Can I show you?"</div>
+        <div class="phrase-sub">Say this with your child three times. Then have them say it alone. This is the sentence that gets help.</div>
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="challenge-heading">
+      <h2 id="challenge-heading">💚 The upstander challenge</h2>
+      <div class="kids-callout purple">
+        <strong>One act of online kindness this week.</strong><br>
+        It can be a nice comment, a supportive message to a friend, a compliment on someone's project,
+        or just choosing not to share something unkind.
+        Tell your grown-up what you did — that's the whole challenge.
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="sticker-heading">
+      <div class="sticker-block">
+        <span class="sticker-icon" role="img" aria-label="heart">💚</span>
+        <h3 id="sticker-heading">The Kindness Champion Sticker</h3>
+        <p>
+          Award this sticker when your child completes the upstander challenge,
+          tells you about something unkind they saw online, or asks for your help before responding
+          to something that upset them. All three are exactly what this activity builds toward.
+        </p>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem;">
+        The sticker is for choosing kindness — even when it would be easy not to.
+      </p>
+    </section>
+
+    <section class="kids-section" aria-labelledby="growth-heading">
+      <h2 id="growth-heading">🌱 Signs it's working</h2>
+      <ul style="font-size: var(--kids-font-base); line-height: 1.8; padding-left: 1.5rem;">
+        <li>Your child pauses before responding to something that upset them online.</li>
+        <li>They come to you when they see someone being treated unkindly — even if it's not about them.</li>
+        <li>They think about how the other person might feel before sending a message.</li>
+        <li>They understand that saying nothing can also be a kind choice in some situations.</li>
+      </ul>
+      <div class="kids-callout">
+        <strong>Normalise bringing online things offline:</strong> If your child shows you something
+        unkind they saw — praise them for telling you, even if it was minor.
+        That habit is the one that protects them when something bigger happens.
+      </div>
+    </section>
+
+    <div class="nav-links">
+      <a href="real-made-up-or-somewhere-in-between.html" class="nav-link-prev" aria-label="Previous activity: Real, made-up, or somewhere in between">
+        <span class="arrow">←</span>
+        <div>
+          <div class="link-text">Previous: Real, made-up, or…</div>
+          <div class="link-sub">Sorting what you find online</div>
+        </div>
+      </a>
+      <a href="index.html" class="nav-link-next" aria-label="Back to Ages 7–9 activities">
+        <span class="arrow">↑</span>
+        <div>
+          <div class="link-text">All Ages 7–9 activities</div>
+          <div class="link-sub">See the full list</div>
+        </div>
+      </a>
+    </div>
+
+    <aside class="caregiver-section" aria-labelledby="caregiver-heading">
+      <span class="for-caregiver-label">For caregivers</span>
+      <h2 id="caregiver-heading">Why this skill matters — the research</h2>
+
+      <p>
+        Ages 7–9 is when Kohlberg's Stage 3 moral development becomes active — children care
+        deeply about what their peers think and about being seen as a "good person."
+        Online kindness work at this age taps directly into that motivation: children want to be the
+        person who does the kind thing. The upstander concept gives them a role to step into.
+      </p>
+      <p>
+        Valkenburg and Peter (2009) found that online communication significantly affects
+        children's emotional well-being — both as recipients and as contributors.
+        PREVNet Canada's research consistently shows that the bystander-to-upstander shift
+        is one of the most effective levers in reducing online unkindness.
+        Children who know what an upstander does are significantly more likely to act as one.
+      </p>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">Framing note: empowering, not alarming</h3>
+      <div class="facilitator-note">
+        <strong>If a child in your group has experienced online unkindness:</strong><br>
+        The "words stick longer online" framing can occasionally trigger distress in children who have
+        been on the receiving end of unkind messages. If a child becomes upset during this activity,
+        the response is not "be more careful about what you say online."
+        It is: <em>"That sounds hard. Let's talk to a trusted adult about what happened and what we can do."</em>
+        Redirect to support — don't redirect to caution.
+      </div>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">The upstander model in practice</h3>
+      <p>
+        Research shows that children are more likely to act as upstanders when they have practised
+        the language and have a clear understanding of what "doing something kind" looks like in context.
+        The challenge at the end of this activity — one act of online kindness this week — is deliberately
+        low-stakes: it's about building the habit, not the heroic moment.
+      </p>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">Sources</h3>
+      <ul class="source-list">
+        <li>Valkenburg, P. M. &amp; Peter, J. (2009). Social consequences of the internet for adolescents. <em>Current Directions in Psychological Science.</em></li>
+        <li>PREVNet Canada. Promoting Relationships and Eliminating Violence. prevnet.ca</li>
+        <li>Kohlberg, L. (1976). Moral stages and moralization. In T. Lickona (Ed.), <em>Moral Development and Behavior.</em></li>
+        <li>MediaSmarts Canada. Digital Literacy Framework — Online Relationships and Citizenship. mediasmarts.ca</li>
+        <li>Common Sense Media. Digital Citizenship curriculum — Empathy and Online Community. commonsense.org</li>
+      </ul>
+    </aside>
+
+  </main>
+
+  <footer class="kids-footer" role="contentinfo">
+    <p>
+      <a href="../../index.html">Digital Confidence Centre</a> · Kids Digital Literacy · Ages 7–9 ·
+      <a href="../../copyright.html">© 2026 Two Birds Innovation</a>
+    </p>
+    <p style="margin-top: 0.4rem; font-size: 0.8rem;">
+      Canadian content · Free to use · No data collected · Built in St. Thomas, Ontario
+    </p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A caregiver-led activity for children aged 7–9: recognising the 'something feels weird' signal and telling a grown-up. Emotional safety for the age of semi-independent screen time.">
+  <meta property="og:title" content="Telling a grown-up when something online feels weird · DCC Kids · Ages 7–9">
+  <meta property="og:description" content="When something online feels wrong, even if your child can't explain why — that feeling is a signal. Help them name it, trust it, and use it.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/7-9/telling-a-grown-up-when-something-feels-weird.html">
+  <title>Telling a grown-up when something online feels weird · DCC Kids · Ages 7–9</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="icon" href="../../favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Telling a grown-up when something online feels weird",
+    "description": "A caregiver-led activity for children aged 7–9. Builds the habit of recognising the 'something feels weird' signal and telling a trusted adult — an essential disclosure skill as children begin using devices more independently.",
+    "url": "https://twobirds-kramerica.github.io/digital-confidence/kids/7-9/telling-a-grown-up-when-something-feels-weird.html",
+    "educationalLevel": "Grade 2–4",
+    "learningResourceType": "Activity",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Children aged 7–9, with caregiver"
+    },
+    "inLanguage": "en-CA",
+    "isAccessibleForFree": true,
+    "dateModified": "2026-05-23",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Digital Confidence Centre — Kids Digital Literacy",
+      "url": "https://twobirds-kramerica.github.io/digital-confidence/"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --kids-green:       #2E7D32;
+      --kids-green-bg:    #E8F5E9;
+      --kids-green-light: #C8E6C9;
+      --kids-blue:        #1565C0;
+      --kids-blue-bg:     #E3F2FD;
+      --kids-blue-light:  #BBDEFB;
+      --kids-orange:      #E65100;
+      --kids-orange-bg:   #FFF3E0;
+      --kids-orange-light:#FFE0B2;
+      --kids-purple-bg:   #EDE7F6;
+      --kids-purple:      #6A1B9A;
+      --kids-radius:      20px;
+      --kids-font-xl:     2rem;
+      --kids-font-lg:     1.35rem;
+      --kids-font-base:   1.125rem;
+    }
+
+    body { background: #F0F7FF; }
+
+    .kids-skip-link { position: absolute; left: -9999px; }
+    .kids-skip-link:focus {
+      left: 1rem; top: 1rem; z-index: 9999;
+      background: var(--brand-teal); color: #fff;
+      padding: 0.5rem 1rem; border-radius: 6px;
+    }
+
+    .caregiver-banner {
+      background: var(--brand-teal); color: #fff;
+      text-align: center; padding: 0.75rem 1rem;
+      font-size: 0.95rem; font-weight: 500; letter-spacing: 0.01em;
+    }
+    .caregiver-banner a { color: #b2dfdb; text-decoration: underline; }
+
+    .kids-nav {
+      background: #fff; border-bottom: 2px solid var(--kids-blue-light);
+      padding: 0.75rem 1.5rem; font-size: 0.875rem;
+    }
+    .kids-nav a { color: var(--brand-teal); text-decoration: none; }
+    .kids-nav a:hover { text-decoration: underline; }
+    .kids-nav span { color: var(--text-muted); margin: 0 0.4rem; }
+
+    .kids-hero {
+      background: linear-gradient(135deg, #E8F5E9 0%, #E3F2FD 100%);
+      padding: 2.5rem 1.5rem 2rem; text-align: center;
+      border-bottom: 3px solid var(--kids-green-light);
+    }
+    .kids-hero .badge-row {
+      display: flex; justify-content: center; gap: 0.5rem;
+      flex-wrap: wrap; margin-bottom: 1rem;
+    }
+    .badge {
+      display: inline-block; padding: 0.25rem 0.75rem;
+      border-radius: 20px; font-size: 0.8rem;
+      font-weight: 600; letter-spacing: 0.02em;
+    }
+    .badge-age    { background: var(--kids-green-light); color: var(--kids-green); }
+    .badge-cat    { background: var(--kids-blue-bg); color: var(--kids-blue); }
+    .badge-time   { background: #FFF9C4; color: #E65100; }
+    .badge-screen { background: #FCE4EC; color: #880E4F; }
+
+    .kids-hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      color: var(--text-primary); margin: 0.5rem 0 0.75rem; line-height: 1.2;
+    }
+    .kids-hero .tagline {
+      font-size: var(--kids-font-lg); color: var(--text-secondary);
+      max-width: 560px; margin: 0 auto; line-height: 1.5;
+    }
+
+    .kids-main { max-width: 760px; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+
+    .kids-section { margin-bottom: 2.5rem; }
+    .kids-section h2 {
+      font-size: var(--kids-font-xl); color: var(--text-primary);
+      margin: 0 0 1rem; display: flex; align-items: center; gap: 0.5rem;
+    }
+    .kids-section h3 { font-size: var(--kids-font-lg); color: var(--text-primary); margin: 1.25rem 0 0.5rem; }
+
+    .kids-callout {
+      background: var(--kids-blue-bg); border-left: 5px solid var(--kids-blue);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: var(--kids-font-base);
+    }
+    .kids-callout strong { color: var(--kids-blue); }
+    .kids-callout.teal { background: #E0F2F1; border-left-color: var(--brand-teal); }
+    .kids-callout.teal strong { color: var(--brand-teal); }
+    .kids-callout.green { background: var(--kids-green-bg); border-left-color: var(--kids-green); }
+    .kids-callout.green strong { color: var(--kids-green); }
+
+    .feeling-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.75rem; margin: 1.25rem 0;
+    }
+    .feeling-card {
+      background: var(--kids-blue-bg); border: 2px solid var(--kids-blue-light);
+      border-radius: 16px; padding: 1.25rem 1rem; text-align: center;
+    }
+    .feeling-card .feeling-icon { font-size: 2rem; display: block; margin-bottom: 0.4rem; }
+    .feeling-card .feeling-text { font-size: var(--kids-font-base); font-weight: 600; color: var(--kids-blue); line-height: 1.35; }
+    .feeling-card .feeling-sub  { font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.2rem; }
+
+    .steps-list { list-style: none; padding: 0; margin: 1rem 0; counter-reset: steps; }
+    .steps-list li {
+      counter-increment: steps; display: flex; gap: 1rem;
+      margin-bottom: 1rem; align-items: flex-start;
+    }
+    .steps-list li::before {
+      content: counter(steps); background: var(--kids-blue); color: #fff;
+      width: 36px; height: 36px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 1rem; flex-shrink: 0;
+    }
+    .steps-list li .step-text { padding-top: 0.35rem; font-size: var(--kids-font-base); line-height: 1.55; }
+
+    .phrase-box {
+      background: #fff; border: 3px solid var(--kids-blue);
+      border-radius: var(--kids-radius); padding: 1.5rem 1.25rem;
+      margin: 1.25rem 0; text-align: center;
+    }
+    .phrase-big {
+      font-size: clamp(1.3rem, 4vw, 1.8rem); font-weight: 700;
+      color: var(--kids-blue); line-height: 1.3; margin-bottom: 0.5rem;
+    }
+    .phrase-sub { font-size: 0.95rem; color: var(--text-secondary); }
+
+    .cross-link {
+      display: flex; align-items: center; gap: 1rem;
+      background: var(--kids-orange-bg); border: 2px solid var(--kids-orange-light);
+      border-radius: var(--kids-radius); padding: 1rem 1.25rem;
+      text-decoration: none; color: var(--text-primary); margin-bottom: 2rem;
+      transition: box-shadow 0.15s;
+    }
+    .cross-link:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .cross-link .arrow { font-size: 1.5rem; }
+    .cross-link .link-text { font-size: var(--kids-font-base); font-weight: 600; }
+    .cross-link .link-sub  { font-size: 0.85rem; color: var(--text-muted); }
+
+    .next-module-link {
+      display: flex; align-items: center; gap: 1rem;
+      background: var(--kids-green-bg); border: 2px solid var(--kids-green-light);
+      border-radius: var(--kids-radius); padding: 1rem 1.25rem;
+      text-decoration: none; color: var(--text-primary); margin-top: 2rem;
+      transition: box-shadow 0.15s;
+    }
+    .next-module-link:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .next-module-link .arrow { font-size: 1.5rem; }
+    .next-module-link .link-text { font-size: var(--kids-font-base); font-weight: 600; }
+    .next-module-link .link-sub  { font-size: 0.85rem; color: var(--text-muted); }
+
+    .sticker-block {
+      background: linear-gradient(135deg, var(--kids-blue-bg), var(--kids-green-bg));
+      border: 3px solid var(--kids-blue-light); border-radius: var(--kids-radius);
+      padding: 1.5rem 1.25rem; margin: 1.25rem 0; text-align: center;
+    }
+    .sticker-block .sticker-icon { font-size: 3rem; display: block; margin-bottom: 0.5rem; }
+    .sticker-block h3 { margin: 0 0 0.5rem; font-size: 1.2rem; color: var(--kids-blue); }
+    .sticker-block p { font-size: var(--kids-font-base); color: var(--text-primary); margin: 0; line-height: 1.5; }
+
+    .caregiver-section {
+      background: #fff; border: 2px solid var(--border-color);
+      border-radius: var(--kids-radius); padding: 1.5rem 1.25rem; margin-top: 2rem;
+    }
+    .caregiver-section h2 {
+      font-size: 1.25rem; color: var(--brand-teal); margin: 0 0 0.75rem;
+      padding-bottom: 0.5rem; border-bottom: 2px solid var(--kids-blue-light);
+    }
+    .caregiver-section p, .caregiver-section li {
+      font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;
+    }
+    .caregiver-section ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+    .caregiver-section .source-list { list-style: none; padding: 0; margin: 0.5rem 0; }
+    .caregiver-section .source-list li { padding: 0.2rem 0; font-size: 0.88rem; }
+    .caregiver-section .source-list li::before { content: "→ "; color: var(--brand-teal); }
+
+    .for-caregiver-label {
+      display: inline-block; background: var(--brand-teal); color: #fff;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em;
+      padding: 0.2rem 0.6rem; border-radius: 4px; margin-bottom: 0.6rem; text-transform: uppercase;
+    }
+
+    .facilitator-note {
+      background: #FFF3E0; border: 2px solid var(--kids-orange-light);
+      border-radius: 12px; padding: 1rem 1.25rem; margin: 1rem 0;
+    }
+    .facilitator-note strong { color: var(--kids-orange); }
+
+    .do-avoid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+    @media (max-width: 520px) {
+      .do-avoid { grid-template-columns: 1fr; }
+      .feeling-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .do-box, .avoid-box { border-radius: 12px; padding: 1rem; }
+    .do-box   { background: var(--kids-green-bg); border: 2px solid var(--kids-green-light); }
+    .avoid-box{ background: #FDEDEC; border: 2px solid #FFCDD2; }
+    .do-box h4   { color: var(--kids-green); font-size: 0.9rem; margin: 0 0 0.4rem; }
+    .avoid-box h4{ color: #C62828; font-size: 0.9rem; margin: 0 0 0.4rem; }
+    .do-box ul, .avoid-box ul { padding-left: 1.1rem; margin: 0; }
+    .do-box li, .avoid-box li { font-size: 0.85rem; line-height: 1.5; }
+
+    .kids-footer {
+      background: var(--brand-teal); color: rgba(255,255,255,0.85);
+      text-align: center; padding: 1.5rem 1rem; font-size: 0.875rem; margin-top: 3rem;
+    }
+    .kids-footer a { color: #b2dfdb; }
+
+    @media print {
+      .caregiver-banner, .kids-nav { display: none; }
+      .kids-hero { padding: 1rem; }
+      body { background: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <a class="kids-skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="caregiver-banner" role="banner">
+    🧑‍🤝‍🧑 This activity works best when a grown-up and child do it together. &nbsp;
+    <a href="../../index.html">Back to Digital Confidence Centre</a>
+  </div>
+
+  <nav class="kids-nav" aria-label="Breadcrumb">
+    <a href="../../index.html">DCC</a>
+    <span aria-hidden="true">›</span>
+    <a href="../index.html">Kids</a>
+    <span aria-hidden="true">›</span>
+    <a href="index.html">Ages 7–9</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Telling a grown-up when something online feels weird</span>
+  </nav>
+
+  <header class="kids-hero" role="banner">
+    <div class="badge-row">
+      <span class="badge badge-age">Ages 7–9</span>
+      <span class="badge badge-cat">Emotional Safety</span>
+      <span class="badge badge-time">⏱ 15 minutes</span>
+      <span class="badge badge-screen">📵 No screens</span>
+    </div>
+    <h1>Telling a grown-up when something online feels weird</h1>
+    <p class="tagline">
+      When something online feels wrong — even if your child can't explain exactly why —
+      that feeling is a signal. Help them notice it, name it, and use it.
+    </p>
+  </header>
+
+  <main id="main-content" class="kids-main">
+
+    <a href="../4-6/who-is-my-safe-grown-up.html" class="cross-link" aria-label="Related activity from Ages 4–6: Who is my safe grown-up?">
+      <span class="arrow">🛡️</span>
+      <div>
+        <div class="link-text">Did the Ages 4–6 activity? "Who is my safe grown-up?"</div>
+        <div class="link-sub">That safe grown-up list is exactly what you'll use here. Same list — bigger situations.</div>
+      </div>
+    </a>
+
+    <section class="kids-section" aria-labelledby="big-idea-heading">
+      <h2 id="big-idea-heading">💡 The big idea</h2>
+      <p style="font-size: var(--kids-font-base); line-height: 1.6;">
+        When something online feels wrong — a message, a video, something a person said — your body knows
+        before your brain can fully explain it. That feeling is called a <strong>signal</strong>.
+        It doesn't mean something is definitely wrong. It means: <em>this is worth talking about with a grown-up.</em>
+      </p>
+      <p style="font-size: var(--kids-font-base); line-height: 1.6;">
+        The skill isn't "never go online." The skill is:
+        <strong>notice when something feels off — and tell someone you trust.</strong>
+        You won't get in trouble for telling. Telling is exactly the right thing to do.
+      </p>
+    </section>
+
+    <section class="kids-section" aria-labelledby="feels-weird-heading">
+      <h2 id="feels-weird-heading">🔍 What "feels weird" might feel like</h2>
+      <p style="font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+        "Feels weird" is different for everyone. Your body gives you signals. Here are some common ones:
+      </p>
+
+      <div class="feeling-grid" role="list">
+        <div class="feeling-card" role="listitem">
+          <span class="feeling-icon" role="img" aria-label="tight stomach">😬</span>
+          <div class="feeling-text">Your stomach feels tight</div>
+          <div class="feeling-sub">Like butterflies, but not the good kind</div>
+        </div>
+        <div class="feeling-card" role="listitem">
+          <span class="feeling-icon" role="img" aria-label="want to close screen">😰</span>
+          <div class="feeling-text">You want to close the screen fast</div>
+          <div class="feeling-sub">Something in you says: get away from this</div>
+        </div>
+        <div class="feeling-card" role="listitem">
+          <span class="feeling-icon" role="img" aria-label="something seems off">🤔</span>
+          <div class="feeling-text">Something seems wrong but you can't say why</div>
+          <div class="feeling-sub">You don't know exactly what — but something is off</div>
+        </div>
+        <div class="feeling-card" role="listitem">
+          <span class="feeling-icon" role="img" aria-label="confused or scared">😕</span>
+          <div class="feeling-text">You feel confused or a little scared</div>
+          <div class="feeling-sub">The message, image, or video doesn't seem right</div>
+        </div>
+        <div class="feeling-card" role="listitem">
+          <span class="feeling-icon" role="img" aria-label="told to keep a secret">🤫</span>
+          <div class="feeling-text">Someone tells you not to tell anyone</div>
+          <div class="feeling-sub">If someone online says "keep this secret" — that's a very big signal</div>
+        </div>
+        <div class="feeling-card" role="listitem">
+          <span class="feeling-icon" role="img" aria-label="something felt mean">💔</span>
+          <div class="feeling-text">It felt mean, strange, or just "off"</div>
+          <div class="feeling-sub">You're not sure what to do about it</div>
+        </div>
+      </div>
+
+      <div class="kids-callout">
+        <strong>You don't need to be sure.</strong> If you're <em>unsure</em> about something, that's already a reason to tell.
+        "I'm not sure about this — can you look at it with me?" is a perfect thing to say.
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="steps-heading">
+      <h2 id="steps-heading">🪜 Three steps to follow</h2>
+
+      <ol class="steps-list" role="list">
+        <li>
+          <span class="step-text">
+            <strong>Notice.</strong> Pay attention to how you feel when you're online.
+            If your body gives you a signal — tight stomach, wanting to close the screen, feeling
+            confused or scared — don't push the feeling away. It's there for a reason.
+          </span>
+        </li>
+        <li>
+          <span class="step-text">
+            <strong>Name it.</strong> You don't need a perfect explanation.
+            "Something felt weird" is enough. "I saw something and I'm not sure about it" works perfectly too.
+          </span>
+        </li>
+        <li>
+          <span class="step-text">
+            <strong>Tell a grown-up.</strong> Go to someone on your safe grown-up list.
+            You can show them the screen, describe what happened, or just say the words in the box below.
+          </span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="kids-section" aria-labelledby="phrase-heading">
+      <h2 id="phrase-heading">🗣️ What to say</h2>
+      <div class="phrase-box">
+        <div class="phrase-big">"Something online felt weird. Can you look at it with me?"</div>
+        <div class="phrase-sub">Say this with your child three times. Then have them say it alone. Keep it calm — this should feel like a normal, useful sentence.</div>
+      </div>
+
+      <div class="kids-callout teal">
+        <strong>Remember your safe grown-up list?</strong><br>
+        If you did the "Who is my safe grown-up?" activity — this is exactly when you use it.
+        Go to one of those people. If your first person isn't available, go to the next person on your list.
+        Any safe grown-up on your list is the right person to tell.
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="practice-heading">
+      <h2 id="practice-heading">🎮 Practice together</h2>
+      <p style="font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+        Read each situation out loud. Ask your child: <em>"Would this give you a weird feeling? What would you do?"</em>
+      </p>
+
+      <div class="kids-callout" style="margin-bottom: 0.75rem;">
+        <strong>Situation 1:</strong> You're playing an online game and a player you've never met messages you asking for your real name and your school.
+        <br><em style="color: var(--text-muted); font-size: 0.95rem;">This is a weird-feeling situation. Tell a grown-up right away — don't answer the message.</em>
+      </div>
+      <div class="kids-callout" style="margin-bottom: 0.75rem;">
+        <strong>Situation 2:</strong> You see a video of someone being really mean to another kid. It makes you feel upset and uncomfortable.
+        <br><em style="color: var(--text-muted); font-size: 0.95rem;">Upset feelings about online content are worth talking about. Tell a grown-up what you saw.</em>
+      </div>
+      <div class="kids-callout" style="margin-bottom: 0.75rem;">
+        <strong>Situation 3:</strong> A message pops up saying you've won a prize, but something about it seems off. You're not sure if it's real.
+        <br><em style="color: var(--text-muted); font-size: 0.95rem;">"I'm not sure" is enough reason to show a grown-up before clicking anything.</em>
+      </div>
+      <div class="kids-callout" style="margin-bottom: 0.75rem;">
+        <strong>Situation 4:</strong> You watched a video and it seemed normal, but afterward you just felt a bit strange — you can't explain why.
+        <br><em style="color: var(--text-muted); font-size: 0.95rem;">Even "I feel weird and I don't know why" is worth saying out loud to a grown-up.</em>
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="safe-heading">
+      <h2 id="safe-heading">✅ What happens when you tell</h2>
+      <div class="kids-callout green">
+        <strong>You won't get in trouble.</strong><br>
+        Telling a grown-up when something feels weird is not a mistake — it is the right thing to do.
+        Grown-ups want to know. They're not going to be angry. They're going to be glad you told them.
+      </div>
+      <ul style="font-size: var(--kids-font-base); line-height: 1.8; padding-left: 1.5rem; margin: 1rem 0;">
+        <li>Your grown-up will look at it with you.</li>
+        <li>They might say "You're right, let's block that" — or "I think that's okay, here's why."</li>
+        <li>Either way, you did exactly the right thing by asking.</li>
+        <li>The more times you tell, the easier it gets — and the safer you'll be.</li>
+      </ul>
+    </section>
+
+    <section class="kids-section" aria-labelledby="sticker-heading">
+      <div class="sticker-block">
+        <span class="sticker-icon" role="img" aria-label="star">⭐</span>
+        <h3 id="sticker-heading">The Brave Spotter Award</h3>
+        <p>
+          Give a sticker every time your child notices a weird feeling and tells you about it —
+          even if it turns out to be nothing. The noticing and the telling is the whole skill.
+        </p>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem;">
+        The sticker is for being brave enough to say "something felt off" — not for being right about it.
+      </p>
+    </section>
+
+    <section class="kids-section" aria-labelledby="growth-heading">
+      <h2 id="growth-heading">🌱 Signs it's working</h2>
+      <ul style="font-size: var(--kids-font-base); line-height: 1.8; padding-left: 1.5rem;">
+        <li>Your child comes to you with "something felt weird" — including about small things.</li>
+        <li>They can describe what a weird feeling feels like in their body.</li>
+        <li>They say the phrase without being prompted: <em>"Can you look at this with me?"</em></li>
+        <li>They don't hide things online because they're worried about getting in trouble.</li>
+      </ul>
+      <div class="kids-callout teal">
+        <strong>Keep the door open:</strong> The goal is for your child to always feel comfortable
+        bringing online weirdness to you — not just big scary things. A low-stakes "that seemed weird,
+        want to look?" moment now makes high-stakes disclosure much easier later.
+      </div>
+    </section>
+
+    <a href="real-made-up-or-somewhere-in-between.html" class="next-module-link" aria-label="Next activity: Real, made-up, or somewhere in between">
+      <span class="arrow">→</span>
+      <div>
+        <div class="link-text">Next: Real, made-up, or somewhere in between</div>
+        <div class="link-sub">Learn to sort what you find online — verified, opinion, or invented.</div>
+      </div>
+    </a>
+
+    <aside class="caregiver-section" aria-labelledby="caregiver-heading">
+      <span class="for-caregiver-label">For caregivers</span>
+      <h2 id="caregiver-heading">Why this skill matters — the research</h2>
+
+      <p>
+        Disclosure — the moment a child tells a trusted adult that something felt wrong — is the most
+        important safety behaviour we can build in children. Research consistently shows that the barrier
+        to disclosure is not a lack of trust in adults; it is a lack of practise. Children who have
+        explicitly rehearsed telling a grown-up are significantly more likely to do so when it matters.
+      </p>
+      <p>
+        At ages 7–9, children are beginning to use devices with more independence. The window between
+        "supervised screen time" and "something weird happens" is growing. Building the habit of bringing
+        online weirdness to a trusted adult — <em>before</em> it becomes something serious —
+        is one of the most protective things you can do.
+      </p>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">How to respond when they tell you</h3>
+      <div class="do-avoid">
+        <div class="do-box">
+          <h4>✅ Good responses</h4>
+          <ul>
+            <li>"Thank you for telling me."</li>
+            <li>"Let's look at it together."</li>
+            <li>"You did exactly the right thing."</li>
+            <li>Stay calm, even if you're concerned</li>
+            <li>Take every "weird feeling" seriously, even small ones</li>
+          </ul>
+        </div>
+        <div class="avoid-box">
+          <h4>🚫 Avoid</h4>
+          <ul>
+            <li>"Why were you looking at that?"</li>
+            <li>Reacting with visible alarm or anger</li>
+            <li>Taking the device away as an immediate consequence</li>
+            <li>Dismissing: "That's nothing, don't worry about it"</li>
+            <li>Making them feel they did something wrong by telling</li>
+          </ul>
+        </div>
+      </div>
+      <p>
+        If your child tells you and the response creates anxiety or consequences for them,
+        they are less likely to tell next time. A calm, grateful response — even when it turns
+        out to be nothing — builds the habit that protects them when it really matters.
+      </p>
+
+      <div class="facilitator-note">
+        <strong>For library programme facilitators and school staff:</strong><br>
+        Running this module may prompt a child to disclose that something online has already felt weird or scary.
+        Take it seriously. Respond calmly. Follow your organisation's safeguarding protocol —
+        your library or school will have one. You are not expected to investigate or resolve the situation yourself;
+        your role is to receive the disclosure calmly and follow the protocol.
+        <em>If you are unsure what your organisation's protocol is, find out before running this module.</em>
+      </div>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">Sources</h3>
+      <ul class="source-list">
+        <li>Finkelhor, D. (2008). <em>Childhood Victimization.</em> Oxford University Press. (disclosure barriers in child online safety)</li>
+        <li>Canadian Centre for Child Protection. Safeguarding resources for children aged 7–12. protectchildren.ca</li>
+        <li>Cybertip.ca. Reporting child sexual exploitation online. cybertip.ca</li>
+        <li>PREVNet Canada. Promoting Relationships and Eliminating Violence Network. prevnet.ca</li>
+        <li>MediaSmarts Canada. Digital Literacy Framework — Emotional Safety. mediasmarts.ca</li>
+        <li>Childnet International. SMART Rules for Internet Safety. childnet.com</li>
+      </ul>
+    </aside>
+
+  </main>
+
+  <footer class="kids-footer" role="contentinfo">
+    <p>
+      <a href="../../index.html">Digital Confidence Centre</a> · Kids Digital Literacy · Ages 7–9 ·
+      <a href="../../copyright.html">© 2026 Two Birds Innovation</a>
+    </p>
+    <p style="margin-top: 0.4rem; font-size: 0.8rem;">
+      Canadian content · Free to use · No data collected · Built in St. Thomas, Ontario
+    </p>
+  </footer>
+
+</body>
+</html>
