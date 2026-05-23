@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A caregiver-led activity that teaches children aged 4–6 to sort pictures into real, pretend, and maybe-made-up — building the visual literacy foundation for spotting AI-generated images.">
+  <meta property="og:title" content="Real, pretend, and maybe-made-up pictures · DCC Kids · Ages 4–6">
+  <meta property="og:description" content="Help your child sort pictures into real, pretend, and maybe-made-up. Two short sessions — no internet required.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/4-6/real-pretend-maybe-made-up.html">
+  <title>Real, pretend, and maybe-made-up pictures · DCC Kids · Ages 4–6</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="icon" href="../../favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Real, pretend, and maybe-made-up pictures",
+    "description": "A caregiver-led activity for children aged 4–6. Two sessions: Session 1 introduces real vs. pretend pictures. Session 2 adds maybe-made-up (AI-generated style). All three example pictures are embedded — no internet required.",
+    "url": "https://twobirds-kramerica.github.io/digital-confidence/kids/4-6/real-pretend-maybe-made-up.html",
+    "educationalLevel": "PreK–Grade 1",
+    "learningResourceType": "Activity",
+    "audience": { "@type": "Audience", "audienceType": "Children aged 4–6, with caregiver" },
+    "inLanguage": "en-CA",
+    "isAccessibleForFree": true,
+    "dateModified": "2026-05-23",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Digital Confidence Centre — Kids Digital Literacy",
+      "url": "https://twobirds-kramerica.github.io/digital-confidence/"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --kids-green:        #2E7D32;
+      --kids-green-bg:     #E8F5E9;
+      --kids-green-light:  #C8E6C9;
+      --kids-yellow:       #F57F17;
+      --kids-yellow-bg:    #FFF9C4;
+      --kids-yellow-light: #FFF59D;
+      --kids-purple:       #6A1B9A;
+      --kids-purple-bg:    #EDE7F6;
+      --kids-purple-light: #CE93D8;
+      --kids-radius:       20px;
+      --kids-font-xl:      2rem;
+      --kids-font-lg:      1.35rem;
+      --kids-font-base:    1.125rem;
+    }
+    body { background: #F9F3FF; }
+    .kids-skip-link { position:absolute;left:-9999px; }
+    .kids-skip-link:focus { left:1rem;top:1rem;z-index:9999;background:var(--brand-teal);color:#fff;padding:.5rem 1rem;border-radius:6px; }
+    .caregiver-banner { background:var(--brand-teal);color:#fff;text-align:center;padding:.75rem 1rem;font-size:.95rem;font-weight:500; }
+    .caregiver-banner a { color:#b2dfdb;text-decoration:underline; }
+    .kids-nav { background:#fff;border-bottom:2px solid var(--kids-purple-light);padding:.75rem 1.5rem;font-size:.875rem; }
+    .kids-nav a { color:var(--brand-teal);text-decoration:none; }
+    .kids-nav a:hover { text-decoration:underline; }
+    .kids-nav span { color:var(--text-muted);margin:0 .4rem; }
+    .kids-hero { background:linear-gradient(135deg,#EDE7F6 0%,#FFF9C4 100%);padding:2.5rem 1.5rem 2rem;text-align:center;border-bottom:3px solid var(--kids-purple-light); }
+    .kids-hero .badge-row { display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem; }
+    .badge { display:inline-block;padding:.25rem .75rem;border-radius:20px;font-size:.8rem;font-weight:600;letter-spacing:.02em; }
+    .badge-age    { background:var(--kids-green-light);color:var(--kids-green); }
+    .badge-cat    { background:var(--kids-purple-bg);color:var(--kids-purple); }
+    .badge-time   { background:var(--kids-yellow-bg);color:var(--kids-yellow); }
+    .badge-screen { background:#FCE4EC;color:#880E4F; }
+    .kids-hero h1 { font-size:clamp(1.8rem,5vw,2.6rem);color:var(--text-primary);margin:.5rem 0 .75rem;line-height:1.2; }
+    .kids-hero .tagline { font-size:var(--kids-font-lg);color:var(--text-secondary);max-width:580px;margin:0 auto;line-height:1.5; }
+    .kids-main { max-width:780px;margin:0 auto;padding:1.5rem 1.25rem 4rem; }
+    .kids-section { margin-bottom:2.5rem; }
+    .kids-section h2 { font-size:var(--kids-font-xl);color:var(--text-primary);margin:0 0 1rem;display:flex;align-items:center;gap:.5rem; }
+
+    /* Two-session notice */
+    .session-notice { background:var(--kids-purple-bg);border:2px solid var(--kids-purple-light);border-radius:var(--kids-radius);padding:1.25rem 1.5rem;margin-bottom:2rem;display:flex;gap:1rem;align-items:flex-start; }
+    .session-notice .notice-icon { font-size:2rem;flex-shrink:0; }
+    .session-notice .notice-text { font-size:var(--kids-font-base);line-height:1.6;color:var(--text-primary); }
+    .session-notice strong { color:var(--kids-purple); }
+
+    /* Concept cards */
+    .concept-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin:1.25rem 0; }
+    .concept-card { border-radius:var(--kids-radius);padding:1.5rem 1rem;text-align:center;border:3px solid transparent; }
+    .concept-card .icon { font-size:2.5rem;margin-bottom:.5rem;display:block; }
+    .concept-card .label { font-size:1.05rem;font-weight:700;display:block;margin-bottom:.3rem; }
+    .concept-card .desc { font-size:.88rem;line-height:1.4; }
+    .concept-card.real    { background:var(--kids-green-bg);  border-color:var(--kids-green-light); }
+    .concept-card.pretend { background:var(--kids-yellow-bg); border-color:var(--kids-yellow-light); }
+    .concept-card.maybe   { background:var(--kids-purple-bg); border-color:var(--kids-purple-light); }
+    .concept-card.real    .label { color:var(--kids-green);  }
+    .concept-card.pretend .label { color:var(--kids-yellow); }
+    .concept-card.maybe   .label { color:var(--kids-purple); }
+
+    /* Picture cards with embedded SVGs */
+    .pictures-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;margin:1.5rem 0; }
+    .picture-card { background:#fff;border:2px solid var(--border-light);border-radius:var(--kids-radius);overflow:hidden;box-shadow:var(--shadow-sm); }
+    .picture-card .pic-frame { background:#f8f8f8;display:flex;align-items:center;justify-content:center;padding:1rem;min-height:160px; }
+    .picture-card .pic-frame svg { width:130px;height:130px; }
+    .picture-card .pic-info { padding:.9rem 1rem; }
+    .picture-card .pic-num { font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text-muted);margin-bottom:.25rem; }
+    .picture-card .pic-title { font-size:1rem;font-weight:700;color:var(--text-primary);margin-bottom:.2rem; }
+    .picture-card .pic-hint { font-size:.82rem;color:var(--text-muted);line-height:1.4; }
+    .picture-card.reveal-real    { border-color:var(--kids-green-light); }
+    .picture-card.reveal-pretend { border-color:var(--kids-yellow-light); }
+    .picture-card.reveal-maybe   { border-color:var(--kids-purple-light); }
+    .answer-pill { display:inline-block;padding:.2rem .7rem;border-radius:12px;font-size:.78rem;font-weight:700;margin-top:.35rem; }
+    .answer-real    { background:var(--kids-green-bg);color:var(--kids-green);   border:1.5px solid var(--kids-green-light); }
+    .answer-pretend { background:var(--kids-yellow-bg);color:var(--kids-yellow); border:1.5px solid var(--kids-yellow-light); }
+    .answer-maybe   { background:var(--kids-purple-bg);color:var(--kids-purple); border:1.5px solid var(--kids-purple-light); }
+
+    /* Session blocks */
+    .session-block { background:#fff;border:2px solid var(--border-color);border-radius:var(--kids-radius);padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow-sm); }
+    .session-block .session-header { display:flex;align-items:center;gap:.75rem;margin-bottom:1.1rem; }
+    .session-num { width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;color:#fff;flex-shrink:0; }
+    .session-num.s1 { background:var(--kids-yellow); }
+    .session-num.s2 { background:var(--kids-purple); }
+    .session-block .session-title { font-size:1.15rem;font-weight:700;color:var(--text-primary); }
+
+    .kids-callout { background:var(--bg-warm);border-left:5px solid var(--brand-teal);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:1rem 1.25rem;margin:1.1rem 0;font-size:var(--kids-font-base); }
+    .kids-callout strong { color:var(--brand-teal); }
+    .kids-callout.purple { background:var(--kids-purple-bg);border-color:var(--kids-purple); }
+    .kids-callout.purple strong { color:var(--kids-purple); }
+
+    .steps-list { list-style:none;padding:0;margin:1rem 0;counter-reset:steps; }
+    .steps-list li { counter-increment:steps;display:flex;gap:.9rem;margin-bottom:.9rem;align-items:flex-start; }
+    .steps-list li::before { content:counter(steps);background:var(--brand-teal);color:#fff;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;flex-shrink:0; }
+    .steps-list li .step-text { padding-top:.2rem;font-size:var(--kids-font-base);line-height:1.55; }
+
+    .sticker-block { background:linear-gradient(135deg,var(--kids-purple-bg),var(--kids-yellow-bg));border:3px solid var(--kids-purple-light);border-radius:var(--kids-radius);padding:1.5rem 1.25rem;margin:1.25rem 0;text-align:center; }
+    .sticker-block .sticker-icon { font-size:3rem;display:block;margin-bottom:.5rem; }
+    .sticker-block h3 { margin:0 0 .5rem;font-size:1.2rem;color:var(--kids-purple); }
+    .sticker-block p { font-size:var(--kids-font-base);color:var(--text-primary);margin:0;line-height:1.5; }
+
+    .caregiver-section { background:#fff;border:2px solid var(--border-color);border-radius:var(--kids-radius);padding:1.5rem 1.25rem;margin-top:2rem; }
+    .caregiver-section h2 { font-size:1.25rem;color:var(--brand-teal);margin:0 0 .75rem;padding-bottom:.5rem;border-bottom:2px solid var(--kids-purple-light); }
+    .caregiver-section p,.caregiver-section li { font-size:.95rem;color:var(--text-secondary);line-height:1.6; }
+    .caregiver-section ul { padding-left:1.25rem;margin:.5rem 0; }
+    .caregiver-section .source-list { list-style:none;padding:0;margin:.5rem 0; }
+    .caregiver-section .source-list li { padding:.2rem 0;font-size:.88rem; }
+    .caregiver-section .source-list li::before { content:"→ ";color:var(--brand-teal); }
+    .for-caregiver-label { display:inline-block;background:var(--brand-teal);color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.05em;padding:.2rem .6rem;border-radius:4px;margin-bottom:.6rem;text-transform:uppercase; }
+    .do-avoid { display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0; }
+    .do-box,.avoid-box { border-radius:12px;padding:1rem; }
+    .do-box   { background:var(--kids-green-bg);border:2px solid var(--kids-green-light); }
+    .avoid-box{ background:#FDEDEC;border:2px solid #FFCDD2; }
+    .do-box h4   { color:var(--kids-green);font-size:.9rem;margin:0 0 .4rem; }
+    .avoid-box h4{ color:#C62828;font-size:.9rem;margin:0 0 .4rem; }
+    .do-box ul,.avoid-box ul { padding-left:1.1rem;margin:0; }
+    .do-box li,.avoid-box li { font-size:.85rem;line-height:1.5; }
+    .kids-footer { background:var(--brand-teal);color:rgba(255,255,255,.85);text-align:center;padding:1.5rem 1rem;font-size:.875rem;margin-top:3rem; }
+    .kids-footer a { color:#b2dfdb; }
+    @media (max-width:500px) { .do-avoid{grid-template-columns:1fr} .concept-grid{grid-template-columns:1fr} .pictures-grid{grid-template-columns:1fr} }
+    @media print { .caregiver-banner,.kids-nav{display:none} .kids-hero{padding:1rem} body{background:#fff} }
+  </style>
+</head>
+<body>
+  <a class="kids-skip-link" href="#main-content">Skip to main content</a>
+  <div class="caregiver-banner" role="banner">
+    🧑‍🤝‍🧑 This activity is for <strong>you and your child to do together</strong> — no screens needed. &nbsp;
+    <a href="../../index.html">Back to Digital Confidence Centre</a>
+  </div>
+  <nav class="kids-nav" aria-label="Breadcrumb">
+    <a href="../../index.html">DCC</a><span aria-hidden="true">›</span>
+    <a href="../index.html">Kids</a><span aria-hidden="true">›</span>
+    <a href="index.html">Ages 4–6</a><span aria-hidden="true">›</span>
+    <span aria-current="page">Real, pretend, and maybe-made-up pictures</span>
+  </nav>
+  <header class="kids-hero" role="banner">
+    <div class="badge-row">
+      <span class="badge badge-age">Ages 4–6</span>
+      <span class="badge badge-cat">Learning</span>
+      <span class="badge badge-time">⏱ 2 × 10 min</span>
+      <span class="badge badge-screen">📵 No screens</span>
+    </div>
+    <h1>Real, pretend, and maybe-made-up pictures</h1>
+    <p class="tagline">Two short sessions to build visual literacy — sorting pictures into what's real, what's made-up, and what looks real but might not be.</p>
+  </header>
+
+  <main id="main-content" class="kids-main">
+
+    <div class="session-notice">
+      <span class="notice-icon" role="img" aria-label="two days">📅</span>
+      <div class="notice-text">
+        <strong>Two sessions — do them on different days.</strong>
+        Session 1 introduces real vs. pretend. Session 2 adds the tricky third category: maybe-made-up. Introducing all three at once is too much for this age group. Give the first two categories a day to settle before adding the third.
+      </div>
+    </div>
+
+    <!-- THE THREE PICTURES -->
+    <section class="kids-section" aria-labelledby="pictures-heading">
+      <h2 id="pictures-heading">🖼️ The three pictures</h2>
+      <p style="font-size:var(--kids-font-base);color:var(--text-secondary);margin-bottom:.5rem;">All three pictures are right here — no internet needed. These are the ones you and your child will sort together.</p>
+
+      <div class="pictures-grid" role="list">
+
+        <!-- Picture 1: Real — a dog -->
+        <div class="picture-card reveal-real" role="listitem">
+          <div class="pic-frame" aria-label="A drawing of a brown dog">
+            <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Body -->
+              <ellipse cx="65" cy="82" rx="38" ry="26" fill="#A0522D"/>
+              <!-- Head -->
+              <circle cx="65" cy="50" r="22" fill="#A0522D"/>
+              <!-- Ears (floppy) -->
+              <ellipse cx="46" cy="44" rx="10" ry="16" fill="#8B4513" transform="rotate(-15 46 44)"/>
+              <ellipse cx="84" cy="44" rx="10" ry="16" fill="#8B4513" transform="rotate(15 84 44)"/>
+              <!-- Eyes -->
+              <circle cx="57" cy="47" r="4" fill="#2C1810"/>
+              <circle cx="73" cy="47" r="4" fill="#2C1810"/>
+              <circle cx="58.5" cy="45.5" r="1.2" fill="#fff"/>
+              <circle cx="74.5" cy="45.5" r="1.2" fill="#fff"/>
+              <!-- Nose -->
+              <ellipse cx="65" cy="57" rx="5" ry="4" fill="#2C1810"/>
+              <!-- Nostrils -->
+              <ellipse cx="62.5" cy="58" rx="1.5" ry="1" fill="#5C2A0A"/>
+              <ellipse cx="67.5" cy="58" rx="1.5" ry="1" fill="#5C2A0A"/>
+              <!-- Mouth -->
+              <path d="M 60 62 Q 65 66 70 62" stroke="#2C1810" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <!-- Legs -->
+              <rect x="34" y="100" width="12" height="22" rx="6" fill="#A0522D"/>
+              <rect x="52" y="102" width="12" height="20" rx="6" fill="#A0522D"/>
+              <rect x="66" y="102" width="12" height="20" rx="6" fill="#A0522D"/>
+              <rect x="84" y="100" width="12" height="22" rx="6" fill="#A0522D"/>
+              <!-- Tail -->
+              <path d="M 103 80 Q 118 65 112 55" stroke="#A0522D" stroke-width="7" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="pic-info">
+            <div class="pic-num">Picture 1</div>
+            <div class="pic-title">A dog</div>
+            <div class="pic-hint">Does this look like a real animal you could meet?</div>
+            <span class="answer-pill answer-real">🟢 REAL</span>
+          </div>
+        </div>
+
+        <!-- Picture 2: Pretend — a dragon -->
+        <div class="picture-card reveal-pretend" role="listitem">
+          <div class="pic-frame" aria-label="A drawing of a green dragon">
+            <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Body -->
+              <ellipse cx="65" cy="88" rx="30" ry="22" fill="#2E7D32"/>
+              <!-- Neck -->
+              <rect x="56" y="60" width="18" height="32" rx="9" fill="#2E7D32"/>
+              <!-- Head -->
+              <ellipse cx="65" cy="52" rx="20" ry="16" fill="#2E7D32"/>
+              <!-- Snout -->
+              <ellipse cx="65" cy="62" rx="12" ry="8" fill="#388E3C"/>
+              <!-- Horns -->
+              <polygon points="52,38 48,22 56,36" fill="#1B5E20"/>
+              <polygon points="78,38 82,22 74,36" fill="#1B5E20"/>
+              <!-- Eyes -->
+              <ellipse cx="57" cy="48" rx="5" ry="5" fill="#FFD600"/>
+              <ellipse cx="73" cy="48" rx="5" ry="5" fill="#FFD600"/>
+              <ellipse cx="57" cy="48" rx="2.5" ry="4" fill="#1A237E"/>
+              <ellipse cx="73" cy="48" rx="2.5" ry="4" fill="#1A237E"/>
+              <!-- Nostrils -->
+              <circle cx="61" cy="63" r="2" fill="#1B5E20"/>
+              <circle cx="69" cy="63" r="2" fill="#1B5E20"/>
+              <!-- Wings -->
+              <path d="M 35 75 L 8 45 L 28 70 Z" fill="#4CAF50" stroke="#2E7D32" stroke-width="1"/>
+              <path d="M 95 75 L 122 45 L 102 70 Z" fill="#4CAF50" stroke="#2E7D32" stroke-width="1"/>
+              <!-- Tail -->
+              <path d="M 90 95 Q 115 100 118 88 Q 120 78 108 80" stroke="#2E7D32" stroke-width="9" fill="none" stroke-linecap="round"/>
+              <polygon points="108,80 120,73 114,86" fill="#1B5E20"/>
+              <!-- Fire -->
+              <path d="M 58 68 Q 52 76 56 82 Q 50 74 54 86 Q 46 78 52 90 Q 44 80 50 94" stroke="#FF6F00" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <path d="M 65 70 Q 62 80 65 86 Q 59 78 62 92" stroke="#FF8F00" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M 72 68 Q 78 76 74 82 Q 80 74 76 86" stroke="#FFA000" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="pic-info">
+            <div class="pic-num">Picture 2</div>
+            <div class="pic-title">A dragon</div>
+            <div class="pic-hint">Have you ever seen one of these at the zoo?</div>
+            <span class="answer-pill answer-pretend">🟡 PRETEND</span>
+          </div>
+        </div>
+
+        <!-- Picture 3: Maybe-made-up — a purple glowing rabbit -->
+        <div class="picture-card reveal-maybe" role="listitem">
+          <div class="pic-frame" aria-label="A drawing of a purple rabbit with glowing eyes">
+            <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Glow effect behind body -->
+              <ellipse cx="65" cy="80" rx="36" ry="26" fill="#E1BEE7" opacity="0.5"/>
+              <!-- Body -->
+              <ellipse cx="65" cy="85" rx="30" ry="24" fill="#7B1FA2"/>
+              <!-- Head -->
+              <circle cx="65" cy="56" r="20" fill="#7B1FA2"/>
+              <!-- Ears (long) -->
+              <ellipse cx="53" cy="26" rx="8" ry="20" fill="#7B1FA2"/>
+              <ellipse cx="53" cy="26" rx="4" ry="16" fill="#CE93D8"/>
+              <ellipse cx="77" cy="26" rx="8" ry="20" fill="#7B1FA2"/>
+              <ellipse cx="77" cy="26" rx="4" ry="16" fill="#CE93D8"/>
+              <!-- Eyes — star-shaped / glowing -->
+              <circle cx="57" cy="53" r="7" fill="#FFD600"/>
+              <circle cx="73" cy="53" r="7" fill="#FFD600"/>
+              <!-- Star pupils -->
+              <polygon points="57,47 58.5,51 63,51 59.5,54 61,58 57,55 53,58 54.5,54 51,51 55.5,51" fill="#4A148C" transform="scale(0.6) translate(38,32)"/>
+              <polygon points="57,47 58.5,51 63,51 59.5,54 61,58 57,55 53,58 54.5,54 51,51 55.5,51" fill="#4A148C" transform="scale(0.6) translate(65,32)"/>
+              <circle cx="57" cy="53" r="3" fill="#4A148C"/>
+              <circle cx="73" cy="53" r="3" fill="#4A148C"/>
+              <circle cx="55.5" cy="51.5" r="1" fill="#fff"/>
+              <circle cx="71.5" cy="51.5" r="1" fill="#fff"/>
+              <!-- Nose -->
+              <ellipse cx="65" cy="63" rx="3.5" ry="2.5" fill="#F06292"/>
+              <!-- Mouth -->
+              <path d="M 61 66 Q 65 70 69 66" stroke="#F06292" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <!-- Tiny floating stars around it -->
+              <text x="15" y="50" font-size="12" fill="#CE93D8">✦</text>
+              <text x="100" y="45" font-size="10" fill="#CE93D8">✦</text>
+              <text x="22" y="95" font-size="8"  fill="#CE93D8">✦</text>
+              <text x="105" y="100" font-size="9" fill="#CE93D8">✦</text>
+              <!-- Legs/feet -->
+              <ellipse cx="46" cy="106" rx="14" ry="9" fill="#7B1FA2"/>
+              <ellipse cx="84" cy="106" rx="14" ry="9" fill="#7B1FA2"/>
+              <!-- Small tail -->
+              <circle cx="93" cy="88" r="8" fill="#CE93D8"/>
+            </svg>
+          </div>
+          <div class="pic-info">
+            <div class="pic-num">Picture 3</div>
+            <div class="pic-title">A purple glowing rabbit</div>
+            <div class="pic-hint">Rabbits are real — but does THIS one look like it could really exist?</div>
+            <span class="answer-pill answer-maybe">🙌 MAYBE-MADE-UP</span>
+          </div>
+        </div>
+
+      </div>
+
+      <p style="font-size:.85rem;color:var(--text-muted);text-align:center;margin-top:.5rem;">
+        These pictures are embedded in this page and work without an internet connection — suitable for library and classroom use.
+      </p>
+    </section>
+
+    <!-- SESSION 1 -->
+    <div class="session-block" id="session-1">
+      <div class="session-header">
+        <div class="session-num s1" aria-hidden="true">1</div>
+        <div class="session-title">Session 1 — Real or pretend?</div>
+      </div>
+
+      <div class="concept-grid" style="margin-bottom:1.25rem;" role="list">
+        <div class="concept-card real" role="listitem">
+          <span class="icon">🟢</span>
+          <span class="label">REAL</span>
+          <span class="desc">A picture of something that actually exists in the world.</span>
+        </div>
+        <div class="concept-card pretend" role="listitem">
+          <span class="icon">🟡</span>
+          <span class="label">PRETEND</span>
+          <span class="desc">A picture of something someone made up — it doesn't exist anywhere.</span>
+        </div>
+      </div>
+
+      <ol class="steps-list" role="list">
+        <li><span class="step-text">Show your child Picture 1 (the dog). Ask: <em>"Is this a real animal, or did someone make it up?"</em> Let them answer. Confirm: <em>"Yes — dogs are real. This is a REAL picture."</em></span></li>
+        <li><span class="step-text">Show Picture 2 (the dragon). Ask the same question. Confirm: <em>"Dragons are pretend — someone imagined them. This is a PRETEND picture."</em></span></li>
+        <li><span class="step-text">Go back and forth between the two — point to one, let them call it. Swap order a few times. The goal is fluency with just two categories before the next session.</span></li>
+        <li><span class="step-text">Ask: <em>"Where do you think pretend pictures come from?"</em> Let them answer. Guide toward: <em>"Someone drew it, or a computer made it — but it came from someone's imagination."</em></span></li>
+      </ol>
+
+      <div class="kids-callout">
+        <strong>Stop here for today.</strong> Leave Picture 3 face-down or just skip scrolling past it. Let real and pretend settle overnight before adding a third category.
+      </div>
+    </div>
+
+    <!-- SESSION 2 -->
+    <div class="session-block" id="session-2">
+      <div class="session-header">
+        <div class="session-num s2" aria-hidden="true">2</div>
+        <div class="session-title">Session 2 — And one more: maybe-made-up</div>
+      </div>
+
+      <div class="concept-grid" role="list">
+        <div class="concept-card real" role="listitem">
+          <span class="icon">🟢</span>
+          <span class="label">REAL</span>
+          <span class="desc">Something that really exists. You could see one in person.</span>
+        </div>
+        <div class="concept-card pretend" role="listitem">
+          <span class="icon">🟡</span>
+          <span class="label">PRETEND</span>
+          <span class="desc">Something made up. No one has ever seen a real one.</span>
+        </div>
+        <div class="concept-card maybe" role="listitem">
+          <span class="icon">🙌</span>
+          <span class="label">MAYBE-MADE-UP</span>
+          <span class="desc">Looks almost real — but something feels off. A computer might have made it.</span>
+        </div>
+      </div>
+
+      <div class="kids-callout purple" style="margin:1.25rem 0;">
+        <strong>Introduce the idea:</strong> <em>"Sometimes computers can make pictures that look almost real. The thing in the picture might be real — like a rabbit — but the picture was made by a computer that got some things slightly wrong. That's a MAYBE-MADE-UP picture."</em>
+      </div>
+
+      <ol class="steps-list" role="list">
+        <li><span class="step-text">Review Pictures 1 and 2 quickly: <em>"Remember these? Real — pretend. Good."</em></span></li>
+        <li><span class="step-text">Show Picture 3 (the purple glowing rabbit). Ask: <em>"What do you think? Real, pretend, or... something else?"</em> Let them wrestle with it.</span></li>
+        <li><span class="step-text">Introduce the third category: <em>"This one is MAYBE-MADE-UP. Rabbits are real — but this rabbit glows purple and has star eyes. It looks like a computer made it and got a few things wrong."</em></span></li>
+        <li><span class="step-text">Ask: <em>"How did you know something felt off?"</em> Listen. Their instinct — "the colour is wrong," "eyes don't look like that" — is exactly the skill. Name it: <em>"That feeling of 'something is wrong here' is really important. It's what helps us spot made-up pictures."</em></span></li>
+        <li><span class="step-text">Sort all three pictures together one more time using all three categories.</span></li>
+      </ol>
+
+      <div class="kids-callout">
+        <strong>The one-sentence takeaway:</strong> <em>"If a picture looks almost real but something feels off — pause. It might be a computer picture. Ask a grown-up before you decide it's true."</em>
+      </div>
+    </div>
+
+    <!-- STICKER -->
+    <section class="kids-section" aria-labelledby="sticker-heading">
+      <div class="sticker-block">
+        <span class="sticker-icon" role="img" aria-label="magnifying glass">🔍</span>
+        <h3 id="sticker-heading">The Picture Detective Sticker</h3>
+        <p>One sticker after Session 1. One sticker after Session 2. A third sticker any time they spot a "something feels off" moment on their own — looking at a picture on a screen or in a book. That's the skill working in the wild.</p>
+      </div>
+    </section>
+
+    <!-- SIGNS IT'S WORKING -->
+    <section class="kids-section" aria-labelledby="growth-heading">
+      <h2 id="growth-heading">🌱 Signs it's working</h2>
+      <ul style="font-size:var(--kids-font-base);line-height:1.8;padding-left:1.5rem;">
+        <li>Your child sorts real and pretend pictures quickly and correctly after Session 1.</li>
+        <li>They notice when something "looks wrong" in a picture without prompting.</li>
+        <li>They ask "did a computer make this?" when they see an unusual image.</li>
+        <li>They come to you with a picture and say "I'm not sure if this is real."</li>
+      </ul>
+      <div class="kids-callout">
+        <strong>Next step at ages 7–9:</strong> "Real, pretend, maybe-made-up" grows into "I know what deepfakes are and I can spot the signs" — the next visual literacy skill in the DCC Kids sequence.
+      </div>
+    </section>
+
+    <!-- CAREGIVER -->
+    <aside class="caregiver-section" aria-labelledby="caregiver-heading">
+      <span class="for-caregiver-label">For caregivers</span>
+      <h2 id="caregiver-heading">Why this skill matters — the research</h2>
+      <p>Piaget's classification research (1952) established that children aged 4–6 are in the preoperational stage, where categories are still forming. Lewandowsky et al. (2012) found that even adults struggle with reality-monitoring when images are realistic enough — children have even less resistance. Introducing the vocabulary early — before the child has a large library of AI-generated images to confuse them — is the right developmental window.</p>
+      <p>MediaSmarts Canada's Break the Fake programme identifies picture-sorting as the most accessible entry point for critical media literacy at this age. The three-category system (real / pretend / maybe) is adapted from their age-appropriate framework for PreK–Grade 1.</p>
+      <h3 style="font-size:1rem;color:var(--text-primary);margin:1.25rem 0 .4rem;">About the embedded pictures</h3>
+      <p>All three images in this module are hand-drawn SVG illustrations — no external URLs, no AI-generated content. They are designed to be representative of the three categories without requiring internet access. Library programmes, classrooms, and home use all work offline. If you want to extend this activity with real AI-generated examples, search image tools with your child — with a grown-up's help, never alone — and sort them together using the same three categories.</p>
+      <h3 style="font-size:1rem;color:var(--text-primary);margin:1.25rem 0 .4rem;">Good practice / avoid</h3>
+      <div class="do-avoid">
+        <div class="do-box"><h4>✅ Good</h4><ul>
+          <li>Do Session 1 and Session 2 on different days — the split is intentional</li>
+          <li>Reward the "something feels off" instinct — that's the skill</li>
+          <li>When extending online, always navigate together, never send them alone</li>
+          <li>Accept "I'm not sure" — that is the right answer for maybe-made-up</li>
+        </ul></div>
+        <div class="avoid-box"><h4>🚫 Avoid</h4><ul>
+          <li>Running both sessions back-to-back — cognitive overload at this age</li>
+          <li>Correcting them if they say maybe-made-up is pretend — the categories overlap</li>
+          <li>Sending them to find AI images independently — adult supervision is required</li>
+          <li>Making it scary — the goal is a curious instinct, not fear of images</li>
+        </ul></div>
+      </div>
+      <h3 style="font-size:1rem;color:var(--text-primary);margin:1.25rem 0 .4rem;">Sources</h3>
+      <ul class="source-list">
+        <li>Piaget, J. (1952). <em>The Origins of Intelligence in Children.</em> International Universities Press.</li>
+        <li>Lewandowsky, S. et al. (2012). Misinformation and its correction. <em>Psychological Science in the Public Interest, 13</em>(3), 106–131.</li>
+        <li>MediaSmarts Canada. Break the Fake — Early Childhood strand. mediasmarts.ca</li>
+        <li>Common Sense Media. AI Literacy for Young Children. commonsensemedia.org</li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer class="kids-footer" role="contentinfo">
+    <p><a href="../../index.html">Digital Confidence Centre</a> · Kids Digital Literacy · Ages 4–6 · <a href="../../copyright.html">© 2026 Two Birds Innovation</a></p>
+    <p style="margin-top:.4rem;font-size:.8rem;">Canadian content · Free to use · No data collected · Built in St. Thomas, Ontario</p>
+  </footer>
+</body>
+</html>
