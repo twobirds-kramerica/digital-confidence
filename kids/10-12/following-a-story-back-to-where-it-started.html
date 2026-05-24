@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A caregiver-led activity for children aged 10–12: learning the SIFT method for source tracing — Stop, Investigate the source, Find better coverage, Trace claims to their origin.">
+  <meta property="og:title" content="Following a story back to where it started · DCC Kids · Ages 10–12">
+  <meta property="og:description" content="The SIFT method for 10–12 year olds: how to trace a viral claim to its original source in 60 seconds. Includes a worked example and a timed source trace challenge.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/10-12/following-a-story-back-to-where-it-started.html">
+  <title>Following a story back to where it started · DCC Kids · Ages 10–12</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="icon" href="../../favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Following a story back to where it started",
+    "description": "A caregiver-led activity for children aged 10–12. Teaches the SIFT framework — Stop, Investigate the source, Find better coverage, Trace claims to origin — through a worked example and a 60-second timed source trace challenge.",
+    "url": "https://twobirds-kramerica.github.io/digital-confidence/kids/10-12/following-a-story-back-to-where-it-started.html",
+    "educationalLevel": "Grade 5–7",
+    "learningResourceType": "Activity",
+    "audience": { "@type": "Audience", "audienceType": "Children aged 10–12, with caregiver" },
+    "inLanguage": "en-CA",
+    "isAccessibleForFree": true,
+    "dateModified": "2026-05-23",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Digital Confidence Centre — Kids Digital Literacy",
+      "url": "https://twobirds-kramerica.github.io/digital-confidence/"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --kids-indigo:        #3949AB;
+      --kids-indigo-bg:     #E8EAF6;
+      --kids-indigo-light:  #C5CAE9;
+      --kids-blue:          #0D47A1;
+      --kids-blue-bg:       #E3F2FD;
+      --kids-blue-light:    #BBDEFB;
+      --kids-green:         #2E7D32;
+      --kids-green-bg:      #E8F5E9;
+      --kids-green-light:   #C8E6C9;
+      --kids-amber:         #E65100;
+      --kids-amber-bg:      #FFF3E0;
+      --kids-amber-light:   #FFE0B2;
+      --kids-radius:        20px;
+      --kids-font-xl:       2rem;
+      --kids-font-lg:       1.35rem;
+      --kids-font-base:     1.125rem;
+    }
+
+    body { background: #F5F0FF; }
+
+    .kids-skip-link { position: absolute; left: -9999px; }
+    .kids-skip-link:focus {
+      left: 1rem; top: 1rem; z-index: 9999;
+      background: var(--brand-teal); color: #fff;
+      padding: 0.5rem 1rem; border-radius: 6px;
+    }
+
+    .caregiver-banner {
+      background: var(--brand-teal); color: #fff;
+      text-align: center; padding: 0.75rem 1rem;
+      font-size: 0.95rem; font-weight: 500;
+    }
+    .caregiver-banner a { color: #b2dfdb; text-decoration: underline; }
+
+    .kids-nav {
+      background: #fff; border-bottom: 2px solid var(--kids-indigo-light);
+      padding: 0.75rem 1.5rem; font-size: 0.875rem;
+    }
+    .kids-nav a { color: var(--brand-teal); text-decoration: none; }
+    .kids-nav a:hover { text-decoration: underline; }
+    .kids-nav span { color: var(--text-muted); margin: 0 0.4rem; }
+
+    .kids-hero {
+      background: linear-gradient(135deg, #E3F2FD 0%, #E8EAF6 100%);
+      padding: 2.5rem 1.5rem 2rem; text-align: center;
+      border-bottom: 3px solid var(--kids-blue-light);
+    }
+    .kids-hero .badge-row {
+      display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;
+    }
+    .badge {
+      display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px;
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em;
+    }
+    .badge-age    { background: var(--kids-indigo-bg); color: var(--kids-indigo); }
+    .badge-cat    { background: var(--kids-blue-bg); color: var(--kids-blue); }
+    .badge-time   { background: #FFF9C4; color: #E65100; }
+    .badge-screen { background: #FFF9C4; color: #F57F17; }
+
+    .kids-hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.6rem); color: var(--text-primary);
+      margin: 0.5rem 0 0.75rem; line-height: 1.2;
+    }
+    .kids-hero .tagline {
+      font-size: var(--kids-font-lg); color: var(--text-secondary);
+      max-width: 560px; margin: 0 auto; line-height: 1.5;
+    }
+
+    .kids-main { max-width: 760px; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+    .kids-section { margin-bottom: 2.5rem; }
+    .kids-section h2 {
+      font-size: var(--kids-font-xl); color: var(--text-primary);
+      margin: 0 0 1rem; display: flex; align-items: center; gap: 0.5rem;
+    }
+
+    .kids-callout {
+      background: var(--kids-blue-bg); border-left: 5px solid var(--kids-blue);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: var(--kids-font-base);
+    }
+    .kids-callout strong { color: var(--kids-blue); }
+    .kids-callout.indigo { background: var(--kids-indigo-bg); border-left-color: var(--kids-indigo); }
+    .kids-callout.indigo strong { color: var(--kids-indigo); }
+    .kids-callout.green  { background: var(--kids-green-bg); border-left-color: var(--kids-green); }
+    .kids-callout.green  strong { color: var(--kids-green); }
+    .kids-callout.amber  { background: var(--kids-amber-bg); border-left-color: var(--kids-amber); }
+    .kids-callout.amber  strong { color: var(--kids-amber); }
+
+    /* SIFT framework card */
+    .sift-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0;
+    }
+    .sift-card {
+      background: #fff; border: 2px solid var(--kids-blue-light);
+      border-radius: 16px; padding: 1.25rem 1rem;
+    }
+    .sift-card .sift-letter {
+      font-size: 2.5rem; font-weight: 900; color: var(--kids-blue);
+      line-height: 1; display: block; margin-bottom: 0.3rem;
+    }
+    .sift-card .sift-word {
+      font-size: 1.1rem; font-weight: 700; color: var(--text-primary);
+      margin-bottom: 0.4rem; display: block;
+    }
+    .sift-card .sift-desc { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
+
+    /* Printable SIFT reference card */
+    .sift-card-print {
+      background: var(--kids-blue-bg); border: 3px solid var(--kids-blue);
+      border-radius: var(--kids-radius); padding: 1.25rem; margin: 1.25rem 0;
+    }
+    .sift-card-print h3 { color: var(--kids-blue); font-size: 1rem; margin: 0 0 0.75rem; }
+    .sift-card-print .sift-row { display: flex; gap: 0.75rem; margin-bottom: 0.5rem; align-items: flex-start; }
+    .sift-card-print .sift-row:last-child { margin-bottom: 0; }
+    .sift-card-print .sl { font-weight: 900; color: var(--kids-blue); font-size: 1.3rem; width: 28px; flex-shrink: 0; }
+    .sift-card-print .sd { font-size: 0.9rem; line-height: 1.5; }
+    .sift-card-print .sd strong { color: var(--kids-blue); }
+
+    /* Worked example */
+    .worked-example {
+      background: #fff; border: 2px solid var(--kids-indigo-light);
+      border-radius: var(--kids-radius); padding: 1.5rem 1.25rem; margin: 1.25rem 0;
+    }
+    .worked-example .claim-box {
+      background: var(--kids-amber-bg); border: 2px solid var(--kids-amber-light);
+      border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem;
+      font-size: var(--kids-font-base); font-style: italic; line-height: 1.5;
+    }
+    .worked-example .claim-box strong { color: var(--kids-amber); font-style: normal; }
+    .we-step {
+      display: flex; gap: 1rem; margin-bottom: 1.25rem; align-items: flex-start;
+    }
+    .we-step:last-child { margin-bottom: 0; }
+    .we-letter {
+      background: var(--kids-indigo); color: #fff;
+      width: 38px; height: 38px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 1.2rem; flex-shrink: 0;
+    }
+    .we-content { font-size: var(--kids-font-base); line-height: 1.6; padding-top: 0.15rem; }
+    .we-content .we-label { font-weight: 700; color: var(--kids-indigo); display: block; margin-bottom: 0.2rem; }
+    .we-result {
+      display: inline-block; background: var(--kids-green-bg); color: var(--kids-green);
+      border: 1.5px solid var(--kids-green-light); border-radius: 8px;
+      padding: 0.2rem 0.7rem; font-size: 0.9rem; font-weight: 600; margin-top: 0.3rem;
+    }
+
+    /* 60-second challenge */
+    .challenge-box {
+      background: #fff; border: 3px solid var(--kids-indigo);
+      border-radius: var(--kids-radius); padding: 1.5rem 1.25rem; margin: 1.25rem 0;
+    }
+    .challenge-box h3 { color: var(--kids-indigo); font-size: 1.2rem; margin: 0 0 0.75rem; }
+    .challenge-claim {
+      background: var(--kids-indigo-bg); border: 2px solid var(--kids-indigo-light);
+      border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1rem;
+      font-size: var(--kids-font-lg); font-style: italic; text-align: center;
+      line-height: 1.5; color: var(--text-primary);
+    }
+    .challenge-steps { list-style: none; padding: 0; counter-reset: ch; }
+    .challenge-steps li { counter-increment: ch; display: flex; gap: 0.75rem; margin-bottom: 0.6rem; }
+    .challenge-steps li::before {
+      content: counter(ch); background: var(--kids-indigo); color: #fff;
+      width: 28px; height: 28px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.85rem; flex-shrink: 0;
+    }
+    .challenge-steps li span { font-size: var(--kids-font-base); line-height: 1.5; padding-top: 0.2rem; }
+    .challenge-answer {
+      background: var(--kids-green-bg); border: 2px solid var(--kids-green-light);
+      border-radius: 12px; padding: 1rem 1.25rem; margin-top: 0.75rem;
+      font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;
+    }
+    .challenge-answer strong { color: var(--kids-green); }
+
+    /* When to use SIFT */
+    .decision-box {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin: 1.25rem 0;
+    }
+    .dec-card { border-radius: 14px; padding: 1rem; }
+    .dec-card.yes { background: var(--kids-green-bg); border: 2px solid var(--kids-green-light); }
+    .dec-card.no  { background: #F8F8F8; border: 2px solid #DDD; }
+    .dec-card h4 { font-size: 0.9rem; margin: 0 0 0.4rem; }
+    .dec-card.yes h4 { color: var(--kids-green); }
+    .dec-card.no  h4 { color: var(--text-muted); }
+    .dec-card ul { padding-left: 1rem; margin: 0; }
+    .dec-card li { font-size: 0.85rem; line-height: 1.6; }
+
+    .nav-links {
+      display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;
+    }
+    .back-link, .next-module-link {
+      flex: 1; min-width: 200px; display: flex; align-items: center; gap: 0.75rem;
+      border-radius: var(--kids-radius); padding: 1rem 1.25rem;
+      text-decoration: none; color: var(--text-primary); transition: box-shadow 0.15s;
+    }
+    .back-link { background: var(--kids-indigo-bg); border: 2px solid var(--kids-indigo-light); }
+    .back-link:hover { box-shadow: 0 4px 12px rgba(57,73,171,0.15); }
+    .next-module-link { background: var(--kids-green-bg); border: 2px solid var(--kids-green-light); }
+    .next-module-link:hover { box-shadow: 0 4px 12px rgba(46,125,50,0.15); }
+    .link-arrow { font-size: 1.3rem; }
+    .link-text  { font-size: var(--kids-font-base); font-weight: 600; }
+    .link-sub   { font-size: 0.85rem; color: var(--text-muted); }
+
+    .caregiver-section {
+      background: #fff; border: 2px solid var(--border-color);
+      border-radius: var(--kids-radius); padding: 1.5rem 1.25rem; margin-top: 2rem;
+    }
+    .caregiver-section h2 {
+      font-size: 1.25rem; color: var(--brand-teal); margin: 0 0 0.75rem;
+      padding-bottom: 0.5rem; border-bottom: 2px solid var(--kids-blue-light);
+    }
+    .caregiver-section p, .caregiver-section li {
+      font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;
+    }
+    .caregiver-section ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+    .caregiver-section .source-list { list-style: none; padding: 0; }
+    .caregiver-section .source-list li { padding: 0.2rem 0; font-size: 0.88rem; }
+    .caregiver-section .source-list li::before { content: "→ "; color: var(--brand-teal); }
+    .for-caregiver-label {
+      display: inline-block; background: var(--brand-teal); color: #fff;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em;
+      padding: 0.2rem 0.6rem; border-radius: 4px; margin-bottom: 0.6rem; text-transform: uppercase;
+    }
+    .facilitator-note {
+      background: var(--kids-amber-bg); border: 2px solid var(--kids-amber-light);
+      border-radius: 12px; padding: 1rem 1.25rem; margin: 1rem 0;
+      font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;
+    }
+    .facilitator-note strong { color: var(--kids-amber); }
+
+    .kids-footer {
+      background: var(--brand-teal); color: rgba(255,255,255,0.85);
+      text-align: center; padding: 1.5rem 1rem; font-size: 0.875rem; margin-top: 3rem;
+    }
+    .kids-footer a { color: #b2dfdb; }
+
+    @media (max-width: 520px) {
+      .sift-grid { grid-template-columns: 1fr; }
+      .decision-box { grid-template-columns: 1fr; }
+      .nav-links { flex-direction: column; }
+    }
+    @media print {
+      .caregiver-banner, .kids-nav { display: none; }
+      body { background: #fff; }
+      .sift-card-print { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <a class="kids-skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="caregiver-banner" role="banner">
+    🧑‍🤝‍🧑 This activity works best when a caregiver and child do it together. &nbsp;
+    <a href="../../index.html">Back to Digital Confidence Centre</a>
+  </div>
+
+  <nav class="kids-nav" aria-label="Breadcrumb">
+    <a href="../../index.html">DCC</a>
+    <span aria-hidden="true">›</span>
+    <a href="../index.html">Kids</a>
+    <span aria-hidden="true">›</span>
+    <a href="index.html">Ages 10–12</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Following a story back to where it started</span>
+  </nav>
+
+  <header class="kids-hero" role="banner">
+    <div class="badge-row">
+      <span class="badge badge-age">Ages 10–12</span>
+      <span class="badge badge-cat">Critical Thinking</span>
+      <span class="badge badge-time">⏱ 20 minutes</span>
+      <span class="badge badge-screen">💻 Internet optional</span>
+    </div>
+    <h1>Following a story back to where it started</h1>
+    <p class="tagline">
+      When a claim goes viral, the original source is often very different
+      from how it gets shared. SIFT is a 60-second method for tracing any story
+      back to where it actually started.
+    </p>
+  </header>
+
+  <main id="main-content" class="kids-main">
+
+    <section class="kids-section" aria-labelledby="big-idea-heading">
+      <h2 id="big-idea-heading">💡 The big idea</h2>
+      <p style="font-size: var(--kids-font-base); line-height: 1.6;">
+        When something interesting or surprising gets shared online — a news headline, a health claim,
+        a "did you know" fact — the version you see has usually already passed through dozens of people.
+        Each time it's shared, it gets a little more simplified, a little more dramatic, and a little
+        further from where it started.
+      </p>
+      <p style="font-size: var(--kids-font-base); line-height: 1.6;">
+        SIFT is a short, four-step method for checking whether a claim is worth trusting —
+        and finding out where it actually came from. It takes about 60 seconds when you know how.
+      </p>
+      <div class="kids-callout indigo">
+        <strong>The most important habit:</strong> leave the page.
+        Most people check claims by reading more of the same page — looking for more detail in the
+        same article. That doesn't work. The way to check a claim is to leave that page and look
+        for independent sources. This is the single hardest habit to build, and the most valuable one.
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="sift-heading">
+      <h2 id="sift-heading">🔍 The SIFT method</h2>
+
+      <div class="sift-grid" role="list" aria-label="SIFT steps">
+        <div class="sift-card" role="listitem">
+          <span class="sift-letter" aria-hidden="true">S</span>
+          <span class="sift-word">Stop</span>
+          <div class="sift-desc">Before you read, share, or react — pause. Notice if the headline or claim is making you feel a strong emotion. Strong emotions are designed to make you share before you think.</div>
+        </div>
+        <div class="sift-card" role="listitem">
+          <span class="sift-letter" aria-hidden="true">I</span>
+          <span class="sift-word">Investigate the source</span>
+          <div class="sift-desc">Who published this? Is it a news organisation? A blog? A social media account? Leave the page and look up the source before reading the content itself.</div>
+        </div>
+        <div class="sift-card" role="listitem">
+          <span class="sift-letter" aria-hidden="true">F</span>
+          <span class="sift-word">Find better coverage</span>
+          <div class="sift-desc">Search for the same claim from other sources. Are reputable organisations covering it? If the story is only on one site, that's a signal worth noting.</div>
+        </div>
+        <div class="sift-card" role="listitem">
+          <span class="sift-letter" aria-hidden="true">T</span>
+          <span class="sift-word">Trace claims to their origin</span>
+          <div class="sift-desc">Find the original source of the claim — the actual study, the actual quote, the actual event. Often what's being shared is a simplified or distorted version of the real thing.</div>
+        </div>
+      </div>
+
+      <div class="sift-card-print" role="region" aria-label="Printable SIFT reference card">
+        <h3>📋 SIFT quick reference (print this)</h3>
+        <div class="sift-row">
+          <div class="sl">S</div>
+          <div class="sd"><strong>Stop</strong> — pause before you share or react. Notice strong emotions.</div>
+        </div>
+        <div class="sift-row">
+          <div class="sl">I</div>
+          <div class="sd"><strong>Investigate the source</strong> — leave the page and look up who published this.</div>
+        </div>
+        <div class="sift-row">
+          <div class="sl">F</div>
+          <div class="sd"><strong>Find better coverage</strong> — search for the same claim from other sources.</div>
+        </div>
+        <div class="sift-row">
+          <div class="sl">T</div>
+          <div class="sd"><strong>Trace to origin</strong> — find the actual study, quote, or event the claim came from.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="example-heading">
+      <h2 id="example-heading">🔬 Worked example — step by step</h2>
+      <p style="font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+        Let's SIFT a claim that's taught in many schools and shared millions of times online.
+        Work through each step together before reading the result.
+      </p>
+
+      <div class="worked-example" role="region" aria-label="Worked SIFT example">
+        <div class="claim-box">
+          <strong>The claim:</strong> "The Great Wall of China is the only man-made structure visible from space with the naked eye."
+        </div>
+
+        <div class="we-step">
+          <div class="we-letter">S</div>
+          <div class="we-content">
+            <span class="we-label">Stop</span>
+            This claim has been repeated in textbooks and classrooms for decades.
+            It feels credible — which is exactly when SIFT is most useful.
+            Is this claim worth checking? <em>(Yes — it's widely repeated and believed.)</em>
+          </div>
+        </div>
+
+        <div class="we-step">
+          <div class="we-letter">I</div>
+          <div class="we-content">
+            <span class="we-label">Investigate the source</span>
+            Where does this claim appear? Most versions don't cite any specific source.
+            That's already a signal. Who would actually know the answer?
+            <em>(Astronauts who have been to space, and space agencies like NASA and the Canadian Space Agency.)</em>
+          </div>
+        </div>
+
+        <div class="we-step">
+          <div class="we-letter">F</div>
+          <div class="we-content">
+            <span class="we-label">Find better coverage</span>
+            Search "Great Wall of China visible from space NASA." What do the space agencies say?
+            <br>NASA states directly that the Great Wall is not visible from space with the naked eye.
+            Chinese astronaut Yang Liwei — the first Chinese person in space — confirmed he could not see it.
+            Canadian astronaut Chris Hadfield has addressed the same question. All agree: the claim is false.
+            <span class="we-result">Multiple independent credible sources agree: not visible from space.</span>
+          </div>
+        </div>
+
+        <div class="we-step">
+          <div class="we-letter">T</div>
+          <div class="we-content">
+            <span class="we-label">Trace to origin</span>
+            Where did this claim start? Researchers have traced it to a 1932 American school textbook
+            written before anyone had ever been to space. It was stated as a fact, repeated in other
+            textbooks, and spread for decades — entirely without evidence, because no one had yet been
+            to space to check.
+            <span class="we-result">Origin: 1932 textbook claim — made up before space travel existed.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="kids-callout green">
+        <strong>What SIFT found:</strong> A claim repeated in classrooms for 90+ years — traced
+        back to a pre-space-age textbook that made it up. The claim is false. The origin is traceable.
+        This is what SIFT is for.
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="challenge-heading">
+      <h2 id="challenge-heading">⏱ 60-second source trace</h2>
+      <p style="font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+        Now try it. Set a timer for 60 seconds. Read the claim below and work through SIFT together.
+        If you have internet access, search it. If not, discuss what you'd look for and why.
+      </p>
+
+      <div class="challenge-box" role="region" aria-label="60-second challenge">
+        <h3>Your turn: SIFT this claim</h3>
+        <div class="challenge-claim">
+          "We only use 10% of our brains."
+        </div>
+        <ol class="challenge-steps">
+          <li><span><strong>Stop.</strong> What's your first reaction? Does this seem plausible?</span></li>
+          <li><span><strong>Investigate.</strong> Who is making this claim? Can you find a specific original source?</span></li>
+          <li><span><strong>Find better coverage.</strong> What do neuroscientists, universities, or science organisations say about it?</span></li>
+          <li><span><strong>Trace.</strong> Where did this idea come from originally? Can you find out?</span></li>
+        </ol>
+        <div class="challenge-answer">
+          <strong>The answer (read after you've tried):</strong> The "10% of brains" claim is false.
+          Brain imaging studies show activity across virtually all brain regions. The myth likely
+          traces to misquotations of early 20th-century psychologists and self-help culture —
+          not neuroscience. It spread because it's a flattering idea: the suggestion that most
+          of your potential is untapped. That emotional appeal is part of why it persists.
+        </div>
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="when-heading">
+      <h2 id="when-heading">🎯 When to use SIFT</h2>
+      <p style="font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+        You don't need to SIFT everything. The question is: <strong>does this claim matter?</strong>
+      </p>
+
+      <div class="decision-box" role="list">
+        <div class="dec-card yes" role="listitem">
+          <h4>✅ SIFT this</h4>
+          <ul>
+            <li>Health or medical claims you're about to act on</li>
+            <li>News stories that make you angry or very excited</li>
+            <li>Facts you're about to share with someone else</li>
+            <li>Information that could affect a decision</li>
+            <li>Claims that seem too surprising to be true</li>
+          </ul>
+        </div>
+        <div class="dec-card no" role="listitem">
+          <h4>⬜ Lower priority</h4>
+          <ul>
+            <li>Entertainment content you're not going to share</li>
+            <li>Opinions clearly labelled as opinions</li>
+            <li>Trivial facts where being wrong doesn't matter</li>
+            <li>Content from sources you've already verified and trust</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="kids-callout amber">
+        <strong>You don't have to check everything.</strong> The goal is to build the habit of
+        pausing before sharing — and to know how to check when it matters. Even doing S (Stop)
+        before every share is a meaningful improvement over not pausing at all.
+      </div>
+    </section>
+
+    <div class="nav-links">
+      <a href="creating-a-strong-password.html" class="back-link" aria-label="Previous: Creating a strong password">
+        <span class="link-arrow">←</span>
+        <div>
+          <div class="link-text">Previous: Creating a strong password</div>
+          <div class="link-sub">The passphrase method for ages 10–12.</div>
+        </div>
+      </a>
+    </div>
+
+    <aside class="caregiver-section" aria-labelledby="caregiver-heading">
+      <span class="for-caregiver-label">For caregivers</span>
+      <h2 id="caregiver-heading">Why this skill matters — the research</h2>
+
+      <p>
+        Mike Caulfield's SIFT framework (2019) was developed specifically to address the finding that
+        traditional "read carefully and evaluate" approaches to media literacy are ineffective.
+        Research from the Stanford History Education Group (SHEG) and the RAND Corporation's Truth
+        Decay project shows that most people — including experts — are poor at evaluating sources when
+        reading within a page. The most effective strategy is lateral reading: leaving the page
+        immediately and looking for independent information about the source before reading the content.
+      </p>
+      <p>
+        At ages 10–12, children are developmentally entering formal operational thinking (Piaget),
+        which makes source reasoning possible in a way it wasn't at younger ages. They can hold
+        two representations simultaneously: "what this page claims" and "what other evidence shows."
+        SIFT is a structured way to develop this capacity before misinformation habits solidify.
+      </p>
+      <p>
+        The worked example and 60-second challenge are designed to give children the experience
+        of SIFT working — finding a claim false with traceable evidence. Without this experience,
+        children often accept SIFT as a concept but don't transfer it to practice.
+      </p>
+
+      <div class="facilitator-note">
+        <strong>For library programme facilitators:</strong><br>
+        The worked example (Great Wall claim) and the 60-second challenge (10% brain myth) are
+        fully functional as printed paper activities — no internet required. If you have library
+        internet access, the challenge becomes a live search activity. If you don't, discuss the
+        steps verbally: "What would you search? What source would you trust?" The reasoning process
+        matters more than the search itself.
+        <br><br>
+        Important: some library content filters may block fact-checking aggregators
+        (Snopes, PolitiFact, FactCheck.org). Pre-check or print the relevant fact-check pages before
+        your session. MediaSmarts Canada resources (mediasmarts.ca) are generally available on
+        library networks and provide excellent Canadian examples.
+      </div>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">Sources</h3>
+      <ul class="source-list">
+        <li>Caulfield, M. (2019). <em>SIFT (The Four Moves).</em> Pressbooks. (lateral reading and source verification)</li>
+        <li>Stanford History Education Group. <em>Civic Online Reasoning.</em> sheg.stanford.edu</li>
+        <li>RAND Corporation. <em>Truth Decay: An Initial Exploration of the Diminishing Role of Facts.</em> 2018. rand.org</li>
+        <li>Breakstone, J., Smith, M., Wineburg, S., et al. (2021). Students' civic online reasoning: A national portrait. <em>Educational Researcher, 50</em>(8), 505–515.</li>
+        <li>MediaSmarts Canada. <em>Critical Thinking and Media Literacy.</em> mediasmarts.ca</li>
+        <li>NASA. "Is the Great Wall of China the only man-made structure visible from space?" nasa.gov (on record: no)</li>
+      </ul>
+    </aside>
+
+  </main>
+
+  <footer class="kids-footer" role="contentinfo">
+    <p>
+      <a href="../../index.html">Digital Confidence Centre</a> · Kids Digital Literacy · Ages 10–12 ·
+      <a href="../../copyright.html">© 2026 Two Birds Innovation</a>
+    </p>
+    <p style="margin-top: 0.4rem; font-size: 0.8rem;">
+      Canadian content · Free to use · No data collected · Built in St. Thomas, Ontario
+    </p>
+  </footer>
+
+</body>
+</html>

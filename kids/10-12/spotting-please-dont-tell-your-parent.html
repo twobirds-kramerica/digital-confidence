@@ -208,6 +208,18 @@
     }
     .back-link:hover { box-shadow: 0 4px 12px rgba(57,73,171,0.2); }
 
+    .next-module-link {
+      display: flex; align-items: center; gap: 1rem;
+      background: var(--kids-indigo-bg); border: 2px solid var(--kids-indigo-light);
+      border-radius: var(--kids-radius); padding: 1rem 1.25rem;
+      text-decoration: none; color: var(--text-primary); margin-top: 2rem;
+      transition: box-shadow 0.15s;
+    }
+    .next-module-link:hover { box-shadow: 0 4px 12px rgba(57,73,171,0.2); }
+    .next-module-link .arrow { font-size: 1.5rem; color: var(--kids-indigo); }
+    .next-module-link .link-text { font-size: var(--kids-font-base); font-weight: 600; }
+    .next-module-link .link-sub  { font-size: 0.85rem; color: var(--text-muted); }
+
     .caregiver-section {
       background: #fff; border: 2px solid var(--border-color);
       border-radius: var(--kids-radius); padding: 1.5rem 1.25rem; margin-top: 2rem;
@@ -503,6 +515,14 @@
         Telling a trusted adult is the right thing to do, and you will not be in trouble for it.
       </p>
     </div>
+
+    <a href="creating-a-strong-password.html" class="next-module-link" aria-label="Next activity: Creating a strong password you can remember">
+      <span class="arrow">→</span>
+      <div>
+        <div class="link-text">Next: Creating a strong password you can remember</div>
+        <div class="link-sub">The passphrase method — a silly sentence that becomes a secure, memorable password.</div>
+      </div>
+    </a>
 
     <aside class="caregiver-section" aria-labelledby="caregiver-heading">
       <span class="for-caregiver-label">For caregivers</span>
