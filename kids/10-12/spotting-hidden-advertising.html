@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A kid-led activity for children aged 10–12: understanding why influencer advertising feels like advice from a friend, how Canadian disclosure rules work, and how to spot content that should be labelled but isn't.">
+  <meta property="og:title" content="Spotting hidden advertising · DCC Kids · Ages 10–12">
+  <meta property="og:description" content="When you feel like you know someone online, their recommendations feel like advice, not ads. This activity explains why — and teaches you to spot the ones that should be disclosed but aren't.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/10-12/spotting-hidden-advertising.html">
+  <title>Spotting hidden advertising · DCC Kids · Ages 10–12</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="icon" href="../../favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Spotting hidden advertising — when someone you like is paid to say so",
+    "description": "A kid-led activity for children aged 10–12. Explains parasocial relationships and why influencer ads feel more persuasive than banner ads, how Canadian disclosure rules work, and how to recognise undisclosed paid promotions.",
+    "url": "https://twobirds-kramerica.github.io/digital-confidence/kids/10-12/spotting-hidden-advertising.html",
+    "educationalLevel": "Grade 5–7",
+    "learningResourceType": "Activity",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Children aged 10–12, kid-led with caregiver check-in"
+    },
+    "inLanguage": "en-CA",
+    "isAccessibleForFree": true,
+    "dateModified": "2026-05-26",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Digital Confidence Centre — Kids Digital Literacy",
+      "url": "https://twobirds-kramerica.github.io/digital-confidence/"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --kids-indigo:        #3949AB;
+      --kids-indigo-bg:     #E8EAF6;
+      --kids-indigo-light:  #C5CAE9;
+      --kids-amber:         #E65100;
+      --kids-amber-bg:      #FFF3E0;
+      --kids-amber-light:   #FFE0B2;
+      --kids-green:         #2E7D32;
+      --kids-green-bg:      #E8F5E9;
+      --kids-green-light:   #C8E6C9;
+      --kids-radius:        20px;
+      --kids-font-xl:       2rem;
+      --kids-font-lg:       1.35rem;
+      --kids-font-base:     1.125rem;
+    }
+
+    body { background: #F5F0FF; }
+
+    .caregiver-banner {
+      background: var(--brand-teal); color: #fff;
+      text-align: center; padding: 0.75rem 1rem;
+      font-size: 0.95rem; font-weight: 500;
+    }
+    .caregiver-banner a { color: #b2dfdb; text-decoration: underline; }
+
+    .kids-nav {
+      background: #fff; border-bottom: 2px solid var(--kids-indigo-light);
+      padding: 0.75rem 1.5rem; font-size: 0.875rem;
+    }
+    .kids-nav a { color: var(--brand-teal); text-decoration: none; }
+    .kids-nav a:hover { text-decoration: underline; }
+    .kids-nav span { color: var(--text-muted); margin: 0 0.4rem; }
+
+    .kids-hero {
+      background: linear-gradient(135deg, #E3F2FD 0%, #E8EAF6 100%);
+      padding: 2.5rem 1.5rem 2rem; text-align: center;
+      border-bottom: 3px solid var(--kids-indigo-light);
+    }
+    .kids-hero .hero-tag {
+      display: inline-block; background: var(--kids-indigo-bg); color: var(--kids-indigo);
+      border: 2px solid var(--kids-indigo-light); border-radius: 20px;
+      padding: 0.3rem 1rem; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.75rem;
+    }
+    .kids-hero h1 {
+      font-size: clamp(1.6rem, 5vw, 2.4rem); color: var(--text-primary);
+      margin: 0 0 0.6rem; line-height: 1.2;
+    }
+    .kids-hero .tagline {
+      font-size: var(--kids-font-lg); color: var(--text-secondary);
+      max-width: 560px; margin: 0 auto; line-height: 1.5;
+    }
+    .badge-row { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem; }
+    .badge {
+      display: inline-block; padding: 0.25rem 0.75rem;
+      border-radius: 14px; font-size: 0.8rem; font-weight: 600;
+    }
+    .badge-ct     { background: #E3F2FD; color: #0D47A1; }
+    .badge-time   { background: #FFF9C4; color: #E65100; }
+    .badge-screen { background: #FCE4EC; color: #880E4F; }
+
+    .kids-main { max-width: 760px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+
+    .kids-section { margin-bottom: 2.5rem; }
+    .kids-section h2 {
+      font-size: 1.4rem; color: var(--text-primary); margin: 0 0 1rem; line-height: 1.3;
+    }
+    .kids-section p {
+      font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.65; margin: 0 0 0.85rem;
+    }
+
+    /* Big idea */
+    .big-idea {
+      background: var(--kids-indigo-bg); border: 3px solid var(--kids-indigo-light);
+      border-radius: var(--kids-radius); padding: 1.5rem 1.25rem; margin-bottom: 2rem;
+    }
+    .big-idea .idea-label {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--kids-indigo); margin: 0 0 0.5rem;
+    }
+    .big-idea p {
+      font-size: var(--kids-font-lg); color: var(--text-primary);
+      line-height: 1.5; margin: 0; font-weight: 500;
+    }
+
+    /* Parasocial explainer */
+    .parasocial-box {
+      background: #fff; border: 2px solid var(--border-color);
+      border-radius: var(--kids-radius); padding: 1.25rem; margin: 1.25rem 0;
+    }
+    .parasocial-box h3 {
+      font-size: 1.05rem; color: var(--kids-indigo); margin: 0 0 0.6rem;
+    }
+    .parasocial-box p {
+      font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.6; margin: 0 0 0.5rem;
+    }
+    .parasocial-box p:last-child { margin: 0; }
+
+    /* Two-layer grid */
+    .layer-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0;
+    }
+    .layer-card {
+      border-radius: var(--kids-radius); padding: 1.1rem;
+    }
+    .layer-easy {
+      background: var(--kids-green-bg); border: 2px solid var(--kids-green-light);
+    }
+    .layer-hard {
+      background: var(--kids-amber-bg); border: 2px solid var(--kids-amber-light);
+    }
+    .layer-card h3 { font-size: 1rem; margin: 0 0 0.4rem; }
+    .layer-easy h3 { color: var(--kids-green); }
+    .layer-hard h3 { color: var(--kids-amber); }
+    .layer-card p { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin: 0 0 0.4rem; }
+    .layer-card p:last-child { margin: 0; }
+    .layer-card .examples { font-size: 0.85rem; color: var(--text-muted); }
+
+    /* Disclosure rules */
+    .disclosure-grid {
+      display: flex; flex-direction: column; gap: 0.85rem; margin: 1.25rem 0;
+    }
+    .disclosure-row {
+      display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;
+      background: #fff; border: 2px solid var(--border-color);
+      border-radius: 14px; padding: 0.9rem 1rem;
+    }
+    .disclosure-row .disc-icon { font-size: 1.4rem; }
+    .disclosure-row .disc-body { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.55; }
+    .disclosure-row .disc-body strong { color: var(--text-primary); display: block; margin-bottom: 0.15rem; }
+    .disc-ok   { border-color: var(--kids-green-light); background: var(--kids-green-bg); }
+    .disc-fail { border-color: #FFCDD2; background: #FFF5F5; }
+
+    /* Callouts */
+    .kids-callout {
+      border-radius: var(--kids-radius); padding: 1rem 1.25rem; margin: 1.25rem 0;
+      font-size: var(--kids-font-base); line-height: 1.6;
+    }
+    .kids-callout.amber {
+      background: var(--kids-amber-bg); border: 2px solid var(--kids-amber-light);
+      color: var(--text-secondary);
+    }
+    .kids-callout.amber strong { color: var(--kids-amber); }
+    .kids-callout.indigo {
+      background: var(--kids-indigo-bg); border: 2px solid var(--kids-indigo-light);
+      color: var(--text-secondary);
+    }
+    .kids-callout.indigo strong { color: var(--kids-indigo); }
+    .kids-callout.green {
+      background: var(--kids-green-bg); border: 2px solid var(--kids-green-light);
+      color: var(--text-secondary);
+    }
+    .kids-callout.green strong { color: var(--kids-green); }
+
+    /* Detective challenge */
+    .challenge-box {
+      background: #fff; border: 3px solid var(--kids-indigo);
+      border-radius: var(--kids-radius); padding: 1.5rem 1.25rem; margin: 1.25rem 0;
+    }
+    .challenge-box .challenge-label {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--kids-indigo); margin: 0 0 0.5rem;
+    }
+    .challenge-box h3 { font-size: 1.15rem; color: var(--text-primary); margin: 0 0 0.75rem; }
+    .challenge-box .roles {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.25rem;
+    }
+    .role-card {
+      background: var(--kids-indigo-bg); border: 2px solid var(--kids-indigo-light);
+      border-radius: 12px; padding: 0.75rem 1rem;
+    }
+    .role-card h4 { font-size: 0.95rem; color: var(--kids-indigo); margin: 0 0 0.3rem; }
+    .role-card p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin: 0; }
+
+    .detective-scenarios { display: flex; flex-direction: column; gap: 0.85rem; }
+    .scenario-card {
+      background: #FAFAFA; border: 2px solid var(--border-color);
+      border-radius: 14px; padding: 1rem 1.1rem;
+    }
+    .scenario-card .scenario-num {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.35rem;
+    }
+    .scenario-card .scenario-text {
+      font-size: var(--kids-font-base); color: var(--text-primary); line-height: 1.6;
+      margin-bottom: 0.6rem; font-style: italic;
+    }
+    .scenario-card .scenario-q {
+      font-size: 0.9rem; color: var(--kids-indigo); font-weight: 600;
+    }
+    .scenario-reveal {
+      margin-top: 0.6rem; padding: 0.6rem 0.85rem;
+      border-radius: 8px; font-size: 0.88rem; line-height: 1.55;
+    }
+    .reveal-ok   { background: var(--kids-green-bg); color: var(--kids-green); border: 1px solid var(--kids-green-light); }
+    .reveal-fail { background: #FFF5F5; color: #C62828; border: 1px solid #FFCDD2; }
+
+    /* Trust moment */
+    .trust-box {
+      background: var(--kids-indigo-bg); border-left: 5px solid var(--kids-indigo);
+      border-radius: 0 var(--kids-radius) var(--kids-radius) 0;
+      padding: 1.25rem 1.25rem 1.25rem 1.4rem; margin: 1.25rem 0;
+    }
+    .trust-box p {
+      font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.65; margin: 0 0 0.5rem;
+    }
+    .trust-box p:last-child { margin: 0; }
+    .trust-box strong { color: var(--kids-indigo); }
+
+    /* Check-in card */
+    .check-card {
+      background: var(--kids-green-bg); border: 2px solid var(--kids-green-light);
+      border-radius: var(--kids-radius); padding: 1.25rem;
+    }
+    .check-card h3 {
+      font-size: 1.05rem; color: var(--kids-green); margin: 0 0 0.75rem;
+    }
+    .check-card ul { padding-left: 1.25rem; margin: 0; }
+    .check-card li { font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.7; }
+
+    /* Caregiver section */
+    .caregiver-section {
+      background: #fff; border: 2px solid var(--border-color);
+      border-radius: var(--kids-radius); padding: 1.5rem 1.25rem; margin-top: 2rem;
+    }
+    .caregiver-section h2 { font-size: 1.25rem; color: var(--brand-teal); margin: 0 0 0.75rem; }
+    .caregiver-section p, .caregiver-section li {
+      font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;
+    }
+    .caregiver-section ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+    .caregiver-section .source-list { list-style: none; padding: 0; margin: 0.5rem 0; }
+    .caregiver-section .source-list li { padding: 0.2rem 0; font-size: 0.88rem; }
+    .caregiver-section .source-list li::before { content: "→ "; color: var(--brand-teal); }
+
+    .for-caregiver-label {
+      display: inline-block; background: #E0F2F1; color: var(--brand-teal);
+      border-radius: 14px; padding: 0.2rem 0.75rem; font-size: 0.8rem; font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .do-avoid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;
+    }
+    .do-box {
+      background: var(--kids-green-bg); border: 2px solid var(--kids-green-light);
+      border-radius: 12px; padding: 1rem;
+    }
+    .avoid-box {
+      background: #FFF5F5; border: 2px solid #FFCDD2;
+      border-radius: 12px; padding: 1rem;
+    }
+    .do-box h4 { color: var(--kids-green); margin: 0 0 0.5rem; font-size: 0.95rem; }
+    .avoid-box h4 { color: #C62828; margin: 0 0 0.5rem; font-size: 0.95rem; }
+    .do-box ul, .avoid-box ul { padding-left: 1.1rem; margin: 0; }
+    .do-box li, .avoid-box li { font-size: 0.9rem; line-height: 1.6; }
+
+    .facilitator-note {
+      background: #FFF3E0; border-left: 5px solid var(--kids-amber);
+      border-radius: 0 12px 12px 0; padding: 1rem 1.1rem; margin-top: 1.25rem;
+      font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;
+    }
+    .facilitator-note strong { color: var(--kids-amber); display: block; margin-bottom: 0.4rem; }
+    .facilitator-note p { margin: 0 0 0.5rem; font-size: 0.92rem; }
+    .facilitator-note p:last-child { margin: 0; }
+
+    .kids-footer {
+      background: var(--brand-teal); color: rgba(255,255,255,0.85);
+      text-align: center; padding: 1.5rem 1rem; font-size: 0.875rem; margin-top: 3rem;
+    }
+    .kids-footer a { color: #b2dfdb; }
+
+    @media (max-width: 540px) {
+      .layer-grid { grid-template-columns: 1fr; }
+      .challenge-box .roles { grid-template-columns: 1fr; }
+      .do-avoid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="caregiver-banner" role="banner">
+    🧑‍🤝‍🧑 This activity is designed for children to lead, with a caregiver check-in at the end. &nbsp;
+    <a href="../../index.html">Back to Digital Confidence Centre</a>
+  </div>
+
+  <nav class="kids-nav" aria-label="Breadcrumb">
+    <a href="../../index.html">DCC</a>
+    <span aria-hidden="true">›</span>
+    <a href="../index.html">Kids</a>
+    <span aria-hidden="true">›</span>
+    <a href="index.html">Ages 10–12</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Spotting hidden advertising</span>
+  </nav>
+
+  <header class="kids-hero" role="banner">
+    <div class="hero-tag">Ages 10–12 · Grades 5–7</div>
+    <h1>Spotting hidden advertising</h1>
+    <p class="tagline">
+      When someone you like is paid to say so — why influencer ads feel like
+      advice from a friend, and how to tell the difference.
+    </p>
+    <div class="badge-row">
+      <span class="badge badge-ct">Critical Thinking</span>
+      <span class="badge badge-time">⏱ 20 min</span>
+      <span class="badge badge-screen">📵 No screens</span>
+    </div>
+  </header>
+
+  <main class="kids-main">
+
+    <div class="big-idea" role="note">
+      <p class="idea-label">The big idea</p>
+      <p>
+        When you feel like you know someone — even online — their recommendations feel like advice
+        from a friend, not advertising. That feeling is real. It's also exactly why companies pay
+        popular creators to recommend products.
+      </p>
+    </div>
+
+    <section class="kids-section" aria-labelledby="parasocial-heading">
+      <h2 id="parasocial-heading">Why online recommendations feel personal</h2>
+
+      <div class="parasocial-box">
+        <h3>What a parasocial relationship is</h3>
+        <p>
+          When you watch or follow someone regularly, your brain starts treating them like someone
+          you actually know. You learn their opinions, their humour, their habits — and you start
+          to trust them the way you'd trust a friend. This is called a <strong>parasocial relationship</strong>.
+          It's normal, and it's not a weakness.
+        </p>
+        <p>
+          But it matters for ads. A recommendation from a stranger in a TV ad is easy to ignore.
+          A recommendation from someone you've been following for two years feels completely different —
+          it feels like a friend saying "you should try this." That's why companies pay popular creators
+          large amounts of money to recommend their products.
+        </p>
+        <p>
+          <strong>The creator you really like is more valuable to an advertiser than a famous celebrity
+          you don't follow.</strong> Familiarity is the product.
+        </p>
+      </div>
+
+      <p>
+        A creator with 200,000 followers might earn $1,000–$5,000 for a single sponsored post.
+        A creator with 2 million followers might earn $10,000–$50,000. They are paid specifically
+        because their audience trusts them.
+      </p>
+    </section>
+
+    <section class="kids-section" aria-labelledby="layers-heading">
+      <h2 id="layers-heading">Two layers of online advertising</h2>
+      <p>
+        Online advertising isn't just banners and pop-ups. There's a second layer that's
+        harder to see — and it works precisely because it's harder to see.
+      </p>
+
+      <div class="layer-grid" role="list">
+        <div class="layer-card layer-easy" role="listitem">
+          <h3>Layer 1: Obvious ads</h3>
+          <p>You already know these are ads. They don't hide it.</p>
+          <p class="examples">Banner ads, YouTube pre-rolls, sponsored search results, "AD" labels on social posts from brands</p>
+        </div>
+        <div class="layer-card layer-hard" role="listitem">
+          <h3>Layer 2: Paid recommendations</h3>
+          <p>A creator you follow is paid to recommend something. It looks like their genuine opinion — but they were paid to say it.</p>
+          <p class="examples">Unboxing videos, "honest reviews," gaming gear recommendations, skincare routines, clothing try-ons</p>
+        </div>
+      </div>
+
+      <div class="kids-callout amber">
+        <strong>Vera's note (Canadian Ad Standards):</strong> There is a third layer even harder to see.
+        What you watch, like, and search teaches platforms what to show you. The ads that reach you
+        aren't random — they're chosen based on your behaviour. #ad labels only address the surface.
+        The targeting happens before you ever see a post.
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="rules-heading">
+      <h2 id="rules-heading">How disclosure is supposed to work</h2>
+      <p>
+        In Canada, creators are required by Ad Standards Canada to disclose paid partnerships
+        and gifted products clearly. The disclosure must be visible and at the <strong>start</strong>
+        of the content — not buried at the end of a long caption after most people have already
+        made up their mind.
+      </p>
+
+      <div class="disclosure-grid" role="list">
+        <div class="disclosure-row disc-ok" role="listitem">
+          <div class="disc-icon" aria-hidden="true">✅</div>
+          <div class="disc-body">
+            <strong>This counts as disclosure</strong>
+            #ad or #sponsored in the first line of the caption, or said out loud within the first
+            15 seconds of a video. Clear, early, and impossible to miss.
+          </div>
+        </div>
+        <div class="disclosure-row disc-fail" role="listitem">
+          <div class="disc-icon" aria-hidden="true">🚫</div>
+          <div class="disc-body">
+            <strong>This does not count</strong>
+            #ad buried after 20 other hashtags at the end of a long caption. By the time you'd
+            see it, you've already read the recommendation.
+          </div>
+        </div>
+        <div class="disclosure-row disc-fail" role="listitem">
+          <div class="disc-icon" aria-hidden="true">🚫</div>
+          <div class="disc-body">
+            <strong>This does not count</strong>
+            No disclosure at all. The creator was paid or gifted the product and said nothing.
+            This is the most common form of hidden advertising.
+          </div>
+        </div>
+        <div class="disclosure-row disc-ok" role="listitem">
+          <div class="disc-icon" aria-hidden="true">✅</div>
+          <div class="disc-body">
+            <strong>Most creators who disclose are doing the right thing</strong>
+            A creator who says "this video is sponsored by..." at the start is being honest.
+            The lesson is not "all influencer recommendations are fake" — it's
+            "learn to tell the disclosed ones from the undisclosed ones."
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="challenge-heading">
+      <h2 id="challenge-heading">The Ad Detective Challenge</h2>
+      <p>
+        Read through these scenarios. For each one, decide: is this disclosed? Is the disclosure
+        placed correctly? Do it with a partner if you can — one person as the Detective,
+        one as the Witness.
+      </p>
+
+      <div class="challenge-box">
+        <p class="challenge-label">Activity</p>
+        <h3>Detective and Witness</h3>
+        <div class="roles" role="list">
+          <div class="role-card" role="listitem">
+            <h4>🔍 The Detective</h4>
+            <p>Read each scenario and give a verdict: disclosed, not disclosed, or unclear. Explain your reasoning.</p>
+          </div>
+          <div class="role-card" role="listitem">
+            <h4>👁 The Witness</h4>
+            <p>Listen to the detective's reasoning. Do you agree? What would you need to know to be certain?</p>
+          </div>
+        </div>
+
+        <div class="detective-scenarios" role="list">
+
+          <div class="scenario-card" role="listitem">
+            <div class="scenario-num">Scenario 1</div>
+            <div class="scenario-text">
+              A gaming creator opens their video with: "Before we get started — today's video is
+              brought to you by [headset brand]. I've been using them for a month and I genuinely
+              think they're good, but this is a paid sponsorship." Then they review the headset.
+            </div>
+            <div class="scenario-q">Is this properly disclosed? How do you know?</div>
+            <div class="scenario-reveal reveal-ok">
+              ✅ Yes — disclosed early, clearly, and the creator flagged it as paid. This is the right way to do it.
+              You can still make up your own mind about whether you trust the review.
+            </div>
+          </div>
+
+          <div class="scenario-card" role="listitem">
+            <div class="scenario-num">Scenario 2</div>
+            <div class="scenario-text">
+              A beauty creator posts a skincare routine video. In the description, after 12 lines
+              of product links, it says: "Some products in this video were gifted. #gifted #ad".
+              The video itself never mentions that any products were paid for.
+            </div>
+            <div class="scenario-q">Does the buried hashtag count as proper disclosure?</div>
+            <div class="scenario-reveal reveal-fail">
+              🚫 No. Disclosure buried after product links that most viewers never read does not meet
+              Canadian Ad Standards. It needs to be visible, early, and clear — not hidden in the fine print.
+            </div>
+          </div>
+
+          <div class="scenario-card" role="listitem">
+            <div class="scenario-num">Scenario 3</div>
+            <div class="scenario-text">
+              A creator you follow posts about a new energy drink. The caption says
+              "Honestly obsessed with this right now. Tastes incredible." No #ad, no #sponsored,
+              no mention of payment or gifting. The drink company is tagged in the post.
+            </div>
+            <div class="scenario-q">How would you know if this was paid for or just genuine enthusiasm?</div>
+            <div class="scenario-reveal reveal-fail">
+              🚫 You cannot tell — and that's the problem. If it was paid or gifted and no disclosure
+              appears, the rules were broken. The company tag alone doesn't count as disclosure.
+              "Maybe they just love it" is exactly what makes hidden ads hard to spot.
+            </div>
+          </div>
+
+          <div class="scenario-card" role="listitem">
+            <div class="scenario-num">Scenario 4</div>
+            <div class="scenario-text">
+              A creator recommends a specific laptop bag in a study-with-me video. They say:
+              "I got this bag a few months ago and use it every day — link below if you want one."
+              No sponsorship mention. The link is an affiliate link that pays them a cut of every sale.
+            </div>
+            <div class="scenario-q">Is an affiliate link that pays the creator the same as a paid sponsorship? Does it need to be disclosed?</div>
+            <div class="scenario-reveal reveal-fail">
+              🚫 Yes — affiliate links that earn the creator money are a financial relationship
+              and need to be disclosed under Canadian Ad Standards. "Link below" without disclosing
+              the financial arrangement is incomplete. The correct disclosure: "affiliate link" or
+              "I earn a small commission if you buy through this link."
+            </div>
+          </div>
+
+          <div class="scenario-card" role="listitem">
+            <div class="scenario-num">Scenario 5</div>
+            <div class="scenario-text">
+              A creator says at the start of a video: "Heads up — the first 60 seconds of this video
+              is a paid ad for [app name]. After that, it's my regular content." They then do
+              60 seconds clearly marked as an ad, then continue with their usual video.
+            </div>
+            <div class="scenario-q">Is this a good or a bad example? What did the creator do right?</div>
+            <div class="scenario-reveal reveal-ok">
+              ✅ This is a good example. The creator disclosed immediately, stated the time boundary,
+              and separated the ad from their regular content. You can skip the first 60 seconds if
+              you want, or watch it knowing exactly what it is. This is honest.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="trust-heading">
+      <h2 id="trust-heading">What to do when it's someone you really like</h2>
+
+      <div class="trust-box">
+        <p>
+          The hardest part of this skill is using it on creators you actually follow.
+          It's easy to spot hidden ads from someone you don't care about.
+          It's harder when the recommendation comes from someone whose content you watch every week.
+        </p>
+        <p>
+          <strong>That feeling of disappointment when you realise a favourite creator didn't disclose
+          is the lesson working.</strong> It means you understood what trust is worth.
+        </p>
+        <p>
+          The goal is not to distrust every creator — it's to notice the ones who are honest about
+          their relationships with brands, and to hold that distinction. A creator who consistently
+          discloses is someone whose recommendations you can weight more heavily.
+          One who hides it is telling you something about how they value your trust.
+        </p>
+      </div>
+
+      <p>
+        One practical habit: when a creator recommends something you're considering buying,
+        take 10 seconds to look for a disclosure. If you can't find one, that's worth knowing
+        before you decide.
+      </p>
+    </section>
+
+    <div class="check-card" role="note" aria-labelledby="checkin-heading">
+      <h3 id="checkin-heading">✅ Caregiver check-in</h3>
+      <ul>
+        <li>Can your child name at least one creator whose recommendations feel like a friend's advice? (That's a parasocial relationship.)</li>
+        <li>Can they explain what proper disclosure looks like vs. a buried hashtag?</li>
+        <li>Did the detective challenge turn up any "I'm not sure" moments? Those are the interesting ones to talk through.</li>
+        <li>If a favourite creator came up: how did the child feel about finding or not finding a disclosure? The feeling matters.</li>
+      </ul>
+    </div>
+
+    <aside class="caregiver-section" aria-labelledby="caregiver-heading">
+      <span class="for-caregiver-label">For caregivers</span>
+      <h2 id="caregiver-heading">Why this module exists — the research</h2>
+
+      <p>
+        Parasocial relationships — one-directional emotional bonds with media figures — were
+        first described by Horton and Wohl (1956) and are now well-documented in digital contexts.
+        Research consistently shows that parasocial relationships with online creators increase
+        purchase intentions and reduce scepticism toward those creators' recommendations
+        (Colliander &amp; Dahlén, 2011; Jin &amp; Phua, 2014). The effect is stronger for
+        children and adolescents precisely because developmental media literacy is still forming.
+      </p>
+      <p>
+        The key insight this module is built around: influencer advertising works <em>because</em>
+        of trust, not despite it. Children who feel they know a creator are more persuaded
+        by that creator's recommendations than by explicit ads from brands they don't follow.
+        A module that only teaches "look for #ad" misses this. Children also need to understand
+        why the trust relationship is what makes the ad effective.
+      </p>
+      <p>
+        Canadian Ad Standards requires that any material connection between a creator and a brand
+        (payment, gifting, or affiliate relationship) be disclosed clearly and early in content.
+        However, enforcement is complaint-based, and children are unlikely to file complaints —
+        making media literacy the practical defence.
+      </p>
+      <p>
+        A second layer worth naming with older children: behavioural targeting means that the ads
+        reaching them are not random. Platforms collect data on what they watch, search, and interact
+        with, and use it to target them with personalised commercial content. The #ad label addresses
+        the visible layer; the targeting system operates beneath it.
+      </p>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">How to approach this activity</h3>
+      <div class="do-avoid">
+        <div class="do-box">
+          <h4>✅ Helpful approaches</h4>
+          <ul>
+            <li>Let the child lead — this activity is designed for their age level to run independently</li>
+            <li>If a specific creator they follow comes up, treat it with care: "It's okay to feel disappointed. That feeling means you understood something real."</li>
+            <li>Frame it as a skill, not a cynical worldview: most creators who disclose are being honest</li>
+            <li>Have 6–8 printed examples ready for the detective challenge if doing this in a group</li>
+            <li>Ask the check-in questions after, not during — the child should finish the activity first</li>
+          </ul>
+        </div>
+        <div class="avoid-box">
+          <h4>🚫 Avoid</h4>
+          <ul>
+            <li>Naming specific creators as deceptive — the lesson is about the pattern, not specific people</li>
+            <li>Framing all influencer content as advertising — most creators who disclose are doing the right thing</li>
+            <li>Dismissing the child's parasocial connection ("they don't actually know you") — the connection is real; the lesson is about how it's used</li>
+            <li>Making this feel like surveillance of the child's media choices</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="facilitator-note">
+        <strong>For library programme facilitators and school staff:</strong>
+        <p>
+          This activity is designed to run without internet access or video clips — essential
+          for library settings where YouTube and social media platforms may be filtered.
+        </p>
+        <p>
+          The detective challenge works best with printed examples. Prepare 6–8 printed screenshots
+          of real or realistic social media posts — a mix of properly disclosed and undisclosed sponsored
+          content. For library pairs, the detective-and-witness format (one reads and decides,
+          one listens and challenges) keeps discussion active without requiring live content.
+        </p>
+        <p>
+          Prepare caregivers: if a child mentions that a creator they follow hasn't been disclosing,
+          don't dismiss or confirm it. The correct response is: "That's worth looking into. What
+          would you look for to be sure?" The skill is the habit of checking, not the verdict.
+        </p>
+      </div>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">Sources</h3>
+      <ul class="source-list">
+        <li>Horton, D., &amp; Wohl, R. R. (1956). Mass communication and para-social interaction. <em>Psychiatry, 19</em>(3), 215–229.</li>
+        <li>Colliander, J., &amp; Dahlén, M. (2011). Following the fashionable friend. <em>Journal of Interactive Marketing, 25</em>(1), 11–20.</li>
+        <li>Jin, S. A. A., &amp; Phua, J. (2014). Following celebrities' tweets about brands. <em>Journal of Advertising, 43</em>(2), 181–195.</li>
+        <li>Ad Standards Canada. <em>Disclosure Requirements for Influencer Marketing</em>. adstandards.ca</li>
+        <li>MediaSmarts Canada. <em>Advertising and Marketing to Kids</em>. mediasmarts.ca</li>
+        <li>Canadian Radio-television and Telecommunications Commission (CRTC). <em>Broadcasting and digital content</em>. crtc.gc.ca</li>
+      </ul>
+    </aside>
+
+  </main>
+
+  <footer class="kids-footer" role="contentinfo">
+    <p>
+      <a href="../../index.html">Digital Confidence Centre</a> · Kids Digital Literacy · Ages 10–12 ·
+      <a href="../../copyright.html">© 2026 Two Birds Innovation</a>
+    </p>
+    <p style="margin-top: 0.4rem; font-size: 0.8rem;">
+      Canadian content · Free to use · No data collected · Built in St. Thomas, Ontario
+    </p>
+  </footer>
+
+</body>
+</html>
