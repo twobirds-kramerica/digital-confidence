@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A kid-led activity for children aged 10–12: writing a story where you contribute at least 7 of 10 lines — understanding AI-assisted vs AI-generated, the story ownership meter, and a safety signal to know about AI chat tools.">
+  <meta property="og:title" content="Making a story with AI as my helper, not my author · DCC Kids · Ages 10–12">
+  <meta property="og:description" content="When you write 7 of 10 lines, the story is yours. This activity teaches the My Line / AI Line rule, what AI-assisted means, and how to keep ownership of creative work made with AI help.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/10-12/making-a-story-with-ai-as-my-helper-not-my-author.html">
+  <title>Making a story with AI as my helper, not my author · DCC Kids · Ages 10–12</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="icon" href="../../favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Making a story with AI as my helper, not my author",
+    "description": "A kid-led activity for children aged 10–12. The My Line / AI Line rule (7 of 10 lines must be the child's), AI-assisted vs AI-generated distinction, the story ownership meter, and a no-login library variant using pre-printed AI sentence options.",
+    "url": "https://twobirds-kramerica.github.io/digital-confidence/kids/10-12/making-a-story-with-ai-as-my-helper-not-my-author.html",
+    "educationalLevel": "Grade 5–7",
+    "learningResourceType": "Activity",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Children aged 10–12, kid-leads with caregiver check-in"
+    },
+    "inLanguage": "en-CA",
+    "isAccessibleForFree": true,
+    "dateModified": "2026-05-27",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Digital Confidence Centre — Kids Digital Literacy",
+      "url": "https://twobirds-kramerica.github.io/digital-confidence/"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --kids-indigo:        #3949AB;
+      --kids-indigo-bg:     #E8EAF6;
+      --kids-indigo-light:  #C5CAE9;
+      --kids-amber:         #E65100;
+      --kids-amber-bg:      #FFF3E0;
+      --kids-amber-light:   #FFE0B2;
+      --kids-green:         #2E7D32;
+      --kids-green-bg:      #E8F5E9;
+      --kids-green-light:   #C8E6C9;
+      --kids-yellow:        #F57F17;
+      --kids-yellow-bg:     #FFF9C4;
+      --kids-yellow-light:  #FFF59D;
+      --kids-radius:        20px;
+      --kids-font-xl:       2rem;
+      --kids-font-lg:       1.35rem;
+      --kids-font-base:     1.125rem;
+    }
+
+    body { background: #F5F0FF; }
+
+    .caregiver-banner {
+      background: var(--brand-teal); color: #fff;
+      text-align: center; padding: 0.75rem 1rem;
+      font-size: 0.95rem; font-weight: 500;
+    }
+    .caregiver-banner a { color: #b2dfdb; text-decoration: underline; }
+
+    .kids-nav {
+      background: #fff; border-bottom: 2px solid var(--kids-indigo-light);
+      padding: 0.75rem 1.5rem; font-size: 0.875rem;
+    }
+    .kids-nav a { color: var(--brand-teal); text-decoration: none; }
+    .kids-nav a:hover { text-decoration: underline; }
+    .kids-nav span { color: var(--text-muted); margin: 0 0.4rem; }
+
+    .kids-hero {
+      background: linear-gradient(135deg, #EDE7F6 0%, #FFF9C4 100%);
+      padding: 2.5rem 1.5rem 2rem; text-align: center;
+      border-bottom: 3px solid var(--kids-yellow-light);
+    }
+    .kids-hero .hero-tag {
+      display: inline-block; background: var(--kids-yellow-bg); color: var(--kids-yellow);
+      border: 2px solid var(--kids-yellow-light); border-radius: 20px;
+      padding: 0.3rem 1rem; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.75rem;
+    }
+    .kids-hero h1 {
+      font-size: clamp(1.5rem, 5vw, 2.3rem); color: var(--text-primary);
+      margin: 0 0 0.6rem; line-height: 1.2;
+    }
+    .kids-hero .tagline {
+      font-size: var(--kids-font-lg); color: var(--text-secondary);
+      max-width: 560px; margin: 0 auto; line-height: 1.5;
+    }
+    .badge-row { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem; }
+    .badge {
+      display: inline-block; padding: 0.25rem 0.75rem;
+      border-radius: 14px; font-size: 0.8rem; font-weight: 600;
+    }
+    .badge-cm     { background: var(--kids-yellow-bg); color: var(--kids-yellow); }
+    .badge-time   { background: #FFF9C4; color: #E65100; }
+    .badge-screen { background: #FCE4EC; color: #880E4F; }
+
+    .kids-main { max-width: 760px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+
+    .kids-section { margin-bottom: 2.5rem; }
+    .kids-section h2 {
+      font-size: 1.4rem; color: var(--text-primary); margin: 0 0 1rem; line-height: 1.3;
+    }
+    .kids-section p {
+      font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.65; margin: 0 0 0.85rem;
+    }
+
+    /* Big idea */
+    .big-idea {
+      background: var(--kids-yellow-bg); border: 3px solid var(--kids-yellow-light);
+      border-radius: var(--kids-radius); padding: 1.5rem 1.25rem; margin-bottom: 2rem;
+    }
+    .big-idea .idea-label {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--kids-yellow); margin: 0 0 0.5rem;
+    }
+    .big-idea p {
+      font-size: var(--kids-font-lg); color: var(--text-primary);
+      line-height: 1.5; margin: 0; font-weight: 500;
+    }
+
+    /* Age restriction notice */
+    .age-notice {
+      background: #FFF5F5; border: 2px solid #FFCDD2;
+      border-radius: var(--kids-radius); padding: 1.1rem 1.25rem; margin-bottom: 2rem;
+    }
+    .age-notice .notice-label {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: #C62828; margin: 0 0 0.4rem;
+    }
+    .age-notice p {
+      font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin: 0 0 0.4rem;
+    }
+    .age-notice p:last-child { margin: 0; }
+    .age-notice strong { color: #C62828; }
+
+    /* Callouts */
+    .kids-callout {
+      border-radius: var(--kids-radius); padding: 1rem 1.25rem; margin: 1.25rem 0;
+      font-size: var(--kids-font-base); line-height: 1.6;
+    }
+    .kids-callout.amber {
+      background: var(--kids-amber-bg); border: 2px solid var(--kids-amber-light);
+      color: var(--text-secondary);
+    }
+    .kids-callout.amber strong { color: var(--kids-amber); }
+    .kids-callout.indigo {
+      background: var(--kids-indigo-bg); border: 2px solid var(--kids-indigo-light);
+      color: var(--text-secondary);
+    }
+    .kids-callout.indigo strong { color: var(--kids-indigo); }
+    .kids-callout.green {
+      background: var(--kids-green-bg); border: 2px solid var(--kids-green-light);
+      color: var(--text-secondary);
+    }
+    .kids-callout.green strong { color: var(--kids-green); }
+
+    /* My Line / AI Line rule */
+    .rule-card {
+      background: #fff; border: 3px solid var(--kids-indigo);
+      border-radius: var(--kids-radius); padding: 1.25rem; margin: 1.25rem 0;
+    }
+    .rule-card .rule-label {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--kids-indigo); margin: 0 0 0.5rem;
+    }
+    .line-breakdown {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.75rem;
+    }
+    .my-lines {
+      background: var(--kids-green-bg); border: 2px solid var(--kids-green-light);
+      border-radius: 14px; padding: 0.85rem;
+    }
+    .ai-lines {
+      background: var(--kids-indigo-bg); border: 2px solid var(--kids-indigo-light);
+      border-radius: 14px; padding: 0.85rem;
+    }
+    .my-lines h4 { color: var(--kids-green); margin: 0 0 0.3rem; font-size: 0.95rem; }
+    .ai-lines h4 { color: var(--kids-indigo); margin: 0 0 0.3rem; font-size: 0.95rem; }
+    .my-lines p, .ai-lines p { font-size: 0.9rem; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+
+    /* AI-assisted vs AI-generated */
+    .distinction-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0;
+    }
+    .distinction-card {
+      border-radius: 14px; padding: 1.1rem;
+    }
+    .distinction-card.assisted {
+      background: var(--kids-green-bg); border: 2px solid var(--kids-green-light);
+    }
+    .distinction-card.generated {
+      background: var(--kids-amber-bg); border: 2px solid var(--kids-amber-light);
+    }
+    .distinction-card h3 { font-size: 1rem; margin: 0 0 0.4rem; }
+    .distinction-card.assisted h3 { color: var(--kids-green); }
+    .distinction-card.generated h3 { color: var(--kids-amber); }
+    .distinction-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin: 0 0 0.4rem; }
+    .distinction-card p:last-child { margin: 0; }
+    .distinction-card .examples { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+
+    /* Ownership meter */
+    .meter-section {
+      background: #fff; border: 2px solid var(--border-color);
+      border-radius: var(--kids-radius); padding: 1.25rem; margin: 1.25rem 0;
+    }
+    .meter-section h3 { font-size: 1.05rem; color: var(--text-primary); margin: 0 0 0.75rem; }
+    .meter-track {
+      display: flex; gap: 0.35rem; margin: 0.75rem 0; flex-wrap: wrap;
+    }
+    .meter-step {
+      flex: 1; min-width: 40px; height: 2.5rem; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700; border: 2px solid;
+    }
+    .meter-step.low    { background: #FFF5F5; border-color: #FFCDD2; color: #C62828; }
+    .meter-step.mid    { background: var(--kids-amber-bg); border-color: var(--kids-amber-light); color: var(--kids-amber); }
+    .meter-step.good   { background: var(--kids-green-bg); border-color: var(--kids-green-light); color: var(--kids-green); }
+    .meter-step.target { background: var(--kids-green); border-color: var(--kids-green); color: #fff; }
+    .meter-labels {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem;
+      font-size: 0.8rem; color: var(--text-muted); margin-top: 0.35rem;
+    }
+    .meter-labels span:nth-child(2) { text-align: center; }
+    .meter-labels span:nth-child(3) { text-align: right; }
+
+    /* Story scaffolds */
+    .activity-box {
+      background: #fff; border: 3px solid var(--kids-indigo);
+      border-radius: var(--kids-radius); padding: 1.5rem 1.25rem; margin: 1.25rem 0;
+    }
+    .activity-box .activity-label {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--kids-indigo); margin: 0 0 0.5rem;
+    }
+    .activity-box h3 { font-size: 1.15rem; color: var(--text-primary); margin: 0 0 1rem; }
+
+    .variant-tabs {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem;
+    }
+    .variant-tab {
+      border-radius: 12px; padding: 0.85rem 1rem; border: 2px solid;
+    }
+    .variant-tab.primary {
+      background: var(--kids-green-bg); border-color: var(--kids-green-light);
+    }
+    .variant-tab.secondary {
+      background: #F8F8F8; border-color: var(--border-color);
+    }
+    .variant-tab h4 { font-size: 0.93rem; margin: 0 0 0.25rem; }
+    .variant-tab.primary h4 { color: var(--kids-green); }
+    .variant-tab.secondary h4 { color: var(--text-muted); }
+    .variant-tab p { font-size: 0.85rem; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+
+    .prompt-picker {
+      display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.25rem;
+    }
+    .prompt-option {
+      background: var(--kids-indigo-bg); border: 2px solid var(--kids-indigo-light);
+      border-radius: 12px; padding: 0.85rem 1rem;
+    }
+    .prompt-option .p-num {
+      font-size: 0.75rem; font-weight: 700; color: var(--kids-indigo);
+      letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.2rem;
+    }
+    .prompt-option p { font-size: var(--kids-font-base); color: var(--text-primary); font-weight: 600; margin: 0; line-height: 1.45; }
+
+    .story-scaffold {
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .story-line {
+      display: grid; grid-template-columns: 1.75rem 1fr; gap: 0.75rem; align-items: start;
+    }
+    .line-num {
+      width: 1.75rem; height: 1.75rem; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700; flex-shrink: 0; margin-top: 0.1rem;
+    }
+    .line-num.mine { background: var(--kids-green-bg); color: var(--kids-green); border: 2px solid var(--kids-green-light); }
+    .line-num.ai   { background: var(--kids-indigo-bg); color: var(--kids-indigo); border: 2px solid var(--kids-indigo-light); }
+    .line-content { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; }
+    .line-content.mine-blank {
+      background: var(--kids-green-bg); border-bottom: 2px solid var(--kids-green-light);
+      border-radius: 6px 6px 0 0; padding: 0.4rem 0.6rem;
+      color: var(--kids-green); font-style: italic;
+    }
+    .ai-choices {
+      background: var(--kids-indigo-bg); border: 2px solid var(--kids-indigo-light);
+      border-radius: 8px; padding: 0.5rem 0.75rem; margin-top: 0.25rem;
+    }
+    .ai-choices .choice-label {
+      font-size: 0.72rem; font-weight: 700; color: var(--kids-indigo);
+      text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;
+    }
+    .ai-choices .choice {
+      font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; padding: 0.25rem 0;
+      border-bottom: 1px solid var(--kids-indigo-light);
+    }
+    .ai-choices .choice:last-child { border-bottom: none; }
+    .ai-choices .choice em { color: var(--kids-indigo); font-style: normal; font-weight: 600; }
+    .ai-choices .choice-own {
+      font-size: 0.85rem; color: var(--text-muted); padding-top: 0.25rem; font-style: italic;
+    }
+
+    .scaffold-footer {
+      margin-top: 0.85rem; padding: 0.75rem 0.85rem;
+      background: var(--kids-indigo-bg); border-radius: 10px;
+      font-size: 0.88rem; color: var(--kids-indigo); line-height: 1.55;
+    }
+
+    /* Safety callout */
+    .safety-box {
+      background: #FFF5F5; border: 2px solid #FFCDD2;
+      border-radius: var(--kids-radius); padding: 1.25rem; margin: 1.25rem 0;
+    }
+    .safety-box .safety-label {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: #C62828; margin: 0 0 0.5rem;
+    }
+    .safety-box p {
+      font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.65; margin: 0 0 0.6rem;
+    }
+    .safety-box p:last-child { margin: 0; }
+    .safety-box strong { color: #C62828; }
+
+    /* Check-in card */
+    .check-card {
+      background: var(--kids-green-bg); border: 2px solid var(--kids-green-light);
+      border-radius: var(--kids-radius); padding: 1.25rem;
+    }
+    .check-card h3 { font-size: 1.05rem; color: var(--kids-green); margin: 0 0 0.75rem; }
+    .check-card ul { padding-left: 1.25rem; margin: 0; }
+    .check-card li { font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.7; }
+
+    /* Caregiver section */
+    .caregiver-section {
+      background: #fff; border: 2px solid var(--border-color);
+      border-radius: var(--kids-radius); padding: 1.5rem 1.25rem; margin-top: 2rem;
+    }
+    .caregiver-section h2 { font-size: 1.25rem; color: var(--brand-teal); margin: 0 0 0.75rem; }
+    .caregiver-section p, .caregiver-section li {
+      font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;
+    }
+    .caregiver-section ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+    .caregiver-section .source-list { list-style: none; padding: 0; margin: 0.5rem 0; }
+    .caregiver-section .source-list li { padding: 0.2rem 0; font-size: 0.88rem; }
+    .caregiver-section .source-list li::before { content: "→ "; color: var(--brand-teal); }
+
+    .for-caregiver-label {
+      display: inline-block; background: #E0F2F1; color: var(--brand-teal);
+      border-radius: 14px; padding: 0.2rem 0.75rem; font-size: 0.8rem; font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .do-avoid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;
+    }
+    .do-box {
+      background: var(--kids-green-bg); border: 2px solid var(--kids-green-light);
+      border-radius: 12px; padding: 1rem;
+    }
+    .avoid-box {
+      background: #FFF5F5; border: 2px solid #FFCDD2;
+      border-radius: 12px; padding: 1rem;
+    }
+    .do-box h4 { color: var(--kids-green); margin: 0 0 0.5rem; font-size: 0.95rem; }
+    .avoid-box h4 { color: #C62828; margin: 0 0 0.5rem; font-size: 0.95rem; }
+    .do-box ul, .avoid-box ul { padding-left: 1.1rem; margin: 0; }
+    .do-box li, .avoid-box li { font-size: 0.9rem; line-height: 1.6; }
+
+    .facilitator-note {
+      background: #FFF3E0; border-left: 5px solid var(--kids-amber);
+      border-radius: 0 12px 12px 0; padding: 1rem 1.1rem; margin-top: 1.25rem;
+      font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;
+    }
+    .facilitator-note strong { color: var(--kids-amber); display: block; margin-bottom: 0.4rem; }
+    .facilitator-note p { margin: 0 0 0.5rem; font-size: 0.92rem; }
+    .facilitator-note p:last-child { margin: 0; }
+
+    .kids-footer {
+      background: var(--brand-teal); color: rgba(255,255,255,0.85);
+      text-align: center; padding: 1.5rem 1rem; font-size: 0.875rem; margin-top: 3rem;
+    }
+    .kids-footer a { color: #b2dfdb; }
+
+    @media (max-width: 540px) {
+      .line-breakdown { grid-template-columns: 1fr; }
+      .distinction-grid { grid-template-columns: 1fr; }
+      .variant-tabs { grid-template-columns: 1fr; }
+      .do-avoid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="caregiver-banner" role="banner">
+    🧑‍🤝‍🧑 This activity is designed for children to lead, with a caregiver check-in at the end. &nbsp;
+    <a href="../../index.html">Back to Digital Confidence Centre</a>
+  </div>
+
+  <nav class="kids-nav" aria-label="Breadcrumb">
+    <a href="../../index.html">DCC</a>
+    <span aria-hidden="true">›</span>
+    <a href="../index.html">Kids</a>
+    <span aria-hidden="true">›</span>
+    <a href="index.html">Ages 10–12</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">AI story helper</span>
+  </nav>
+
+  <header class="kids-hero" role="banner">
+    <div class="hero-tag">Ages 10–12 · Grades 5–7</div>
+    <h1>Making a story with AI as my helper, not my author</h1>
+    <p class="tagline">
+      When you write 7 of 10 lines, the story is yours.
+      How to use AI as a creative tool while keeping ownership of what you make.
+    </p>
+    <div class="badge-row">
+      <span class="badge badge-cm">Creative Making</span>
+      <span class="badge badge-time">⏱ 20 min</span>
+      <span class="badge badge-screen">💻 Device optional</span>
+    </div>
+  </header>
+
+  <main class="kids-main">
+
+    <div class="big-idea" role="note">
+      <p class="idea-label">The big idea</p>
+      <p>
+        AI can suggest a sentence. You decide whether to use it,
+        change it, or throw it away and write something better.
+        That decision — made 7 times out of 10 — is what makes the story yours.
+      </p>
+    </div>
+
+    <div class="age-notice" role="alert">
+      <p class="notice-label">Before you use any AI chat tool</p>
+      <p>
+        Most AI chat tools — ChatGPT, Claude, Gemini — have a
+        <strong>minimum age of 13</strong> to create an account.
+        This activity is designed so you can do it <strong>without creating any account at all</strong>
+        — the AI sentence options are already included below as pre-written choices.
+      </p>
+      <p>
+        If you want to try it with a real AI tool, use a parent or caregiver's account
+        in a supervised session — not your own. That also applies to school projects.
+      </p>
+    </div>
+
+    <section class="kids-section" aria-labelledby="rule-heading">
+      <h2 id="rule-heading">The My Line / AI Line Rule</h2>
+      <p>
+        The rule is simple: in a 10-line story, you write at least 7 lines yourself.
+        AI can contribute up to 3 — and even those you can rewrite, reject, or use only
+        as a starting point. The point is that the core creative decisions stay with you.
+      </p>
+
+      <div class="rule-card" role="note">
+        <p class="rule-label">My Line / AI Line Rule</p>
+        <p style="font-size: var(--kids-font-lg); color: var(--text-primary); font-weight: 600; margin: 0 0 0.75rem;">
+          Minimum 7 of 10 lines: yours.
+        </p>
+        <div class="line-breakdown" role="list">
+          <div class="my-lines" role="listitem">
+            <h4>Your lines (7 minimum)</h4>
+            <p>Lines 1, 2, 4, 5, 7, 8, 10 — the opening, the middle, and the ending. The decisions that shape the story. You write these.</p>
+          </div>
+          <div class="ai-lines" role="listitem">
+            <h4>AI contribution (3 maximum)</h4>
+            <p>Lines 3, 6, 9 — you can use a pre-written AI suggestion, rewrite it, combine it with your own idea, or skip it entirely. Your choice.</p>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        Why 7 out of 10? Because creative ownership isn't about whether AI touched the work —
+        it's about whether <em>you</em> made the meaningful decisions. Setting up the character,
+        building the conflict, and writing the ending are the choices that define a story.
+        If those are yours, the story is yours.
+      </p>
+    </section>
+
+    <section class="kids-section" aria-labelledby="distinction-heading">
+      <h2 id="distinction-heading">AI-assisted vs AI-generated — knowing the difference</h2>
+      <p>
+        This is a distinction that matters — for school projects, for your creative identity,
+        and for how you talk about work you've made.
+      </p>
+
+      <div class="distinction-grid" role="list">
+        <div class="distinction-card assisted" role="listitem">
+          <h3>✅ AI-assisted</h3>
+          <p>You made the core work. AI helped with parts — suggested a sentence, offered an option, corrected a spelling.</p>
+          <p class="examples">Examples: You wrote 7 of 10 story lines. You used spell-check. You used auto-correct. You asked AI for one synonym and chose one.</p>
+          <p><strong>You can say:</strong> "I wrote this with some AI suggestions."</p>
+        </div>
+        <div class="distinction-card generated" role="listitem">
+          <h3>⚠️ AI-generated</h3>
+          <p>AI made most or all of the work. You provided the prompt and accepted the output with little or no change.</p>
+          <p class="examples">Examples: You typed "write me a story about a robot" and submitted what came back. You asked AI to write the introduction of your essay.</p>
+          <p><strong>You cannot say:</strong> "I wrote this." You can say: "This was generated by AI."</p>
+        </div>
+      </div>
+
+      <div class="kids-callout indigo">
+        <strong>Why the distinction matters:</strong> Teachers will ask what you contributed.
+        Employers will ask what you built. Other creators will ask what ideas were yours.
+        Being able to clearly answer — "I wrote these parts; AI helped with these" — is
+        a skill that will matter more as AI tools become more common, not less.
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="meter-heading">
+      <h2 id="meter-heading">The story ownership meter</h2>
+      <p>
+        After you finish writing, mark where your story falls on the ownership meter.
+        Count how many lines were genuinely yours — not just accepted AI output.
+      </p>
+
+      <div class="meter-section" role="note">
+        <h3>How many of the 10 lines did you write (or significantly rewrite)?</h3>
+        <div class="meter-track" role="list" aria-label="Ownership meter from 1 to 10">
+          <div class="meter-step low"  role="listitem" aria-label="1 out of 10">1</div>
+          <div class="meter-step low"  role="listitem" aria-label="2 out of 10">2</div>
+          <div class="meter-step low"  role="listitem" aria-label="3 out of 10">3</div>
+          <div class="meter-step mid"  role="listitem" aria-label="4 out of 10">4</div>
+          <div class="meter-step mid"  role="listitem" aria-label="5 out of 10">5</div>
+          <div class="meter-step mid"  role="listitem" aria-label="6 out of 10">6</div>
+          <div class="meter-step good" role="listitem" aria-label="7 out of 10">7</div>
+          <div class="meter-step good" role="listitem" aria-label="8 out of 10">8</div>
+          <div class="meter-step good" role="listitem" aria-label="9 out of 10">9</div>
+          <div class="meter-step target" role="listitem" aria-label="10 out of 10">10</div>
+        </div>
+        <div class="meter-labels" aria-hidden="true">
+          <span>AI-generated territory</span>
+          <span>Getting there</span>
+          <span>✅ It's yours</span>
+        </div>
+      </div>
+
+      <p>
+        The target is 7 or above. If you're at 4 or 5, go back and rewrite two more lines
+        from scratch — change the direction, add a detail only you would think of, give the
+        character a reaction that came from your imagination. Then re-count.
+      </p>
+    </section>
+
+    <section class="kids-section" aria-labelledby="safety-heading">
+      <h2 id="safety-heading">One safety thing to know</h2>
+
+      <div class="safety-box" role="note">
+        <p class="safety-label">Important</p>
+        <p>
+          Real AI writing tools — the ones built by reputable companies for general use —
+          <strong>do not ask you personal questions about your home, your school, your parents,
+          or where you live.</strong>
+        </p>
+        <p>
+          If a tool that calls itself "AI" asks you personal questions, offers to be your
+          friend, or asks you to keep your conversations secret — that is not how legitimate
+          AI writing tools work. Tell a caregiver immediately.
+        </p>
+        <p>
+          AI writing tools are text tools. They help with sentences. They do not need to
+          know your name, your age, where you go to school, or who your friends are.
+        </p>
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="activity-heading">
+      <h2 id="activity-heading">The activity — write your story</h2>
+      <p>
+        Choose one of the three prompts below. Write lines 1, 2, 4, 5, 7, 8, and 10 yourself.
+        For lines 3, 6, and 9, you can choose one of the pre-written AI options, rewrite one,
+        or skip AI entirely and write your own.
+      </p>
+
+      <div class="activity-box">
+        <p class="activity-label">Activity · Kid-leads · No device needed</p>
+        <h3>Choose your story prompt</h3>
+
+        <div class="variant-tabs" role="list">
+          <div class="variant-tab primary" role="listitem">
+            <h4>✅ No-login version (recommended)</h4>
+            <p>Pre-written AI options are included below — no device, no account, no internet needed.</p>
+          </div>
+          <div class="variant-tab secondary" role="listitem">
+            <h4>With a real AI tool</h4>
+            <p>Use a caregiver's account only. Ask AI for one sentence at a time. Apply the 7-of-10 rule.</p>
+          </div>
+        </div>
+
+        <div class="prompt-picker" role="list" aria-label="Story prompts">
+          <div class="prompt-option" role="listitem">
+            <p class="p-num">Prompt A</p>
+            <p>A young inventor builds a machine that can remember everyone's forgotten dreams.</p>
+          </div>
+          <div class="prompt-option" role="listitem">
+            <p class="p-num">Prompt B</p>
+            <p>A library discovers that every book has a secret door to the world inside it.</p>
+          </div>
+          <div class="prompt-option" role="listitem">
+            <p class="p-num">Prompt C</p>
+            <p>A child finds a map in the attic that leads not to treasure, but to a conversation their grandparent never finished.</p>
+          </div>
+        </div>
+
+        <p style="font-size: 0.93rem; color: var(--text-secondary); margin: 0 0 1rem;">
+          The AI options below work for any of the three prompts — they're designed
+          to connect to whichever story you chose. You are not required to use them.
+        </p>
+
+        <div class="story-scaffold" role="list" aria-label="Story lines scaffold">
+
+          <div class="story-line" role="listitem">
+            <div class="line-num mine" aria-label="Line 1, your line">1</div>
+            <div class="line-content mine-blank">Your line — introduce the setting or character in your own words.</div>
+          </div>
+
+          <div class="story-line" role="listitem">
+            <div class="line-num mine" aria-label="Line 2, your line">2</div>
+            <div class="line-content mine-blank">Your line — add one detail that makes the world feel specific.</div>
+          </div>
+
+          <div class="story-line" role="listitem">
+            <div class="line-num ai" aria-label="Line 3, AI option or yours">3</div>
+            <div class="line-content">
+              <div class="ai-choices">
+                <p class="choice-label">AI options for line 3 — pick one, rewrite it, or write your own:</p>
+                <p class="choice"><em>Option A:</em> "The machine hummed like a question no one had thought to ask yet."</p>
+                <p class="choice"><em>Option B:</em> "There was a door in the back of the library that had never been there before."</p>
+                <p class="choice"><em>Option C:</em> "The map was drawn in pencil so faint it could have been breath on glass."</p>
+                <p class="choice-own">Or skip AI entirely and write line 3 yourself.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="story-line" role="listitem">
+            <div class="line-num mine" aria-label="Line 4, your line">4</div>
+            <div class="line-content mine-blank">Your line — what does the main character want or decide to do?</div>
+          </div>
+
+          <div class="story-line" role="listitem">
+            <div class="line-num mine" aria-label="Line 5, your line">5</div>
+            <div class="line-content mine-blank">Your line — something goes wrong, or something unexpected is discovered.</div>
+          </div>
+
+          <div class="story-line" role="listitem">
+            <div class="line-num ai" aria-label="Line 6, AI option or yours">6</div>
+            <div class="line-content">
+              <div class="ai-choices">
+                <p class="choice-label">AI options for line 6 — pick one, rewrite it, or write your own:</p>
+                <p class="choice"><em>Option A:</em> "Every dream it stored had a colour — and some of them were colours that didn't have names."</p>
+                <p class="choice"><em>Option B:</em> "The first door she opened led somewhere cold and green, with a smell like old rain."</p>
+                <p class="choice"><em>Option C:</em> "The handwriting changed halfway down the page, as if someone else had picked up the pen."</p>
+                <p class="choice-own">Or skip AI entirely and write line 6 yourself.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="story-line" role="listitem">
+            <div class="line-num mine" aria-label="Line 7, your line">7</div>
+            <div class="line-content mine-blank">Your line — the character makes a choice. What do they do next?</div>
+          </div>
+
+          <div class="story-line" role="listitem">
+            <div class="line-num mine" aria-label="Line 8, your line">8</div>
+            <div class="line-content mine-blank">Your line — something changes because of that choice.</div>
+          </div>
+
+          <div class="story-line" role="listitem">
+            <div class="line-num ai" aria-label="Line 9, AI option or yours">9</div>
+            <div class="line-content">
+              <div class="ai-choices">
+                <p class="choice-label">AI options for line 9 — pick one, rewrite it, or write your own:</p>
+                <p class="choice"><em>Option A:</em> "She realised the machine wasn't storing dreams — it was storing the feeling of having had them."</p>
+                <p class="choice"><em>Option B:</em> "Behind every door was a version of the story that the book had never dared to tell out loud."</p>
+                <p class="choice"><em>Option C:</em> "The conversation had never been finished because no one had known how to start it."</p>
+                <p class="choice-own">Or skip AI entirely and write line 9 yourself.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="story-line" role="listitem">
+            <div class="line-num mine" aria-label="Line 10, your line">10</div>
+            <div class="line-content mine-blank">Your line — the ending. This one is always yours.</div>
+          </div>
+
+        </div>
+
+        <div class="scaffold-footer">
+          When you're done: count your lines. How many are genuinely yours?
+          Mark your score on the ownership meter. If you're at 7 or above — the story is yours.
+        </div>
+      </div>
+    </section>
+
+    <div class="kids-callout green">
+      <strong>After the activity:</strong> Can you explain what you contributed?
+      "I wrote the opening, the conflict, the character's decision, and the ending.
+      I used one AI suggestion for line 3 and rewrote it. Lines 6 and 9 are entirely mine."
+      That's what AI-assisted sounds like when you know what you made.
+    </div>
+
+    <div class="check-card" role="note" aria-labelledby="checkin-heading">
+      <h3 id="checkin-heading">✅ Caregiver check-in</h3>
+      <ul>
+        <li>What was your child's score on the ownership meter? Was it 7 or above?</li>
+        <li>Which lines were the hardest to write? Which came most naturally?</li>
+        <li>Did they use any of the AI options? Did they change them, or use them as-is?</li>
+        <li>Can they explain the difference between AI-assisted and AI-generated in their own words?</li>
+        <li>If a teacher asked "what did you contribute to this?" — could they answer clearly?</li>
+      </ul>
+    </div>
+
+    <aside class="caregiver-section" aria-labelledby="caregiver-heading">
+      <span class="for-caregiver-label">For caregivers</span>
+      <h2 id="caregiver-heading">Why this module exists — the research</h2>
+
+      <p>
+        This module addresses the most significant open question in 10–12 digital literacy
+        right now: how children should relate to generative AI tools as creative collaborators.
+        The research grounding comes from two intersecting areas — creative identity development
+        and media literacy.
+      </p>
+      <p>
+        Erik Erikson's stage of <em>industry vs inferiority</em> (ages 6–12) identifies
+        children's core developmental drive as wanting to produce real, competent work.
+        Children this age are motivated by the feeling of genuine accomplishment, not just
+        completion. A module that frames AI as a tool for producing output faster misses
+        this entirely — and likely backfires. The My Line / AI Line rule works precisely
+        because it preserves the child's sense of genuine authorship while giving them
+        meaningful exposure to how AI tools function.
+      </p>
+      <p>
+        The AI-assisted vs AI-generated distinction matters for an immediate practical reason:
+        schools are developing AI use policies, and children who understand this distinction
+        can navigate them honestly. It also matters for longer-term creative identity —
+        children who understand what they actually contributed to a piece of creative work
+        develop stronger creative self-concept than children who cannot identify what was theirs.
+      </p>
+      <p>
+        The age restriction note (13+ for most AI chat tools) is not optional framing —
+        it is the correct legal and terms-of-service position. Children who use AI tools
+        under a parent's account in a supervised session are operating within what the
+        platforms intend for under-13 access.
+      </p>
+      <p>
+        The safety signal — AI writing tools do not ask personal questions about home or
+        school — is directly relevant to online safety at this age. Children who understand
+        that legitimate AI tools are text tools with no interest in personal details can
+        recognise when a platform framed as "AI" is attempting something different.
+      </p>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">How to approach this activity</h3>
+      <div class="do-avoid">
+        <div class="do-box">
+          <h4>✅ Helpful approaches</h4>
+          <ul>
+            <li>Let the child choose their prompt and run the activity independently — the kid-leads format is intentional at this age</li>
+            <li>Ask about their ownership score: "How many were yours?" Not "was the story good?"</li>
+            <li>If they used an AI option: "Did you change it? Does it sound like you?" — these are the useful questions</li>
+            <li>The no-login variant is the default and the best one for most settings — pre-printed options remove account and network friction entirely</li>
+          </ul>
+        </div>
+        <div class="avoid-box">
+          <h4>🚫 Avoid</h4>
+          <ul>
+            <li>Letting the child create their own AI tool account — the 13+ minimum applies</li>
+            <li>Framing AI as "cheating" — the lesson is about understanding the tool, not avoiding it</li>
+            <li>Praising the story quality rather than the creative decisions — quality is not the point; authorship is</li>
+            <li>Skipping the ownership meter — marking where the story falls is the reflective step that makes the distinction concrete</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="facilitator-note">
+        <strong>For library programme facilitators and school staff:</strong>
+        <p>
+          This activity is fully self-contained without any device or internet access.
+          Print the story scaffold and AI options for each participant.
+          The three story prompts and pre-written AI sentence options are included in this page
+          and can be printed directly — no additional preparation required beyond printing.
+        </p>
+        <p>
+          The no-login variant is the appropriate choice for library settings: it avoids
+          account management, parental consent logistics, network restrictions, and
+          age-verification requirements. Do not facilitate children signing into any
+          AI tool account during a library session.
+        </p>
+        <p>
+          The ownership meter works well as a physical sticker activity in group settings —
+          each child marks their score with a sticker on a printed 1–10 scale.
+          The group debrief question: "Who got 7 or above? What made lines 7, 8, and 10 the
+          hardest?" — this surfaces the actual creative decision-making and makes the
+          distinction concrete.
+        </p>
+        <p>
+          If a child asks "can I use AI for my school assignment?" — the correct response
+          is "check with your teacher first." School AI policies are evolving; this activity
+          gives children the vocabulary to have that conversation accurately.
+        </p>
+      </div>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">Sources</h3>
+      <ul class="source-list">
+        <li>Erikson, E. H. (1963). <em>Childhood and Society</em> (2nd ed.). W. W. Norton &amp; Company.</li>
+        <li>Craft, A. (2005). <em>Creativity in Schools: Tensions and Dilemmas.</em> Routledge.</li>
+        <li>Office of the Privacy Commissioner of Canada. <em>Artificial Intelligence: Guidance for Individuals.</em> priv.gc.ca</li>
+        <li>OpenAI. <em>Terms of Use — Age requirements.</em> openai.com/policies/terms-of-use</li>
+        <li>MediaSmarts Canada. <em>Digital Media Literacy in Canada: A Framework.</em> mediasmarts.ca</li>
+        <li>Government of Canada. <em>Artificial Intelligence and Data Act (AIDA) — Bill C-27.</em> justice.gc.ca</li>
+      </ul>
+    </aside>
+
+  </main>
+
+  <footer class="kids-footer" role="contentinfo">
+    <p>
+      <a href="../../index.html">Digital Confidence Centre</a> · Kids Digital Literacy · Ages 10–12 ·
+      <a href="../../copyright.html">© 2026 Two Birds Innovation</a>
+    </p>
+    <p style="margin-top: 0.4rem; font-size: 0.8rem;">
+      Canadian content · Free to use · No data collected · Built in St. Thomas, Ontario
+    </p>
+  </footer>
+
+</body>
+</html>
