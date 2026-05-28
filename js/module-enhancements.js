@@ -207,8 +207,8 @@
 
     bar.innerHTML =
       '<div class="spb-inner">' +
-        '<span class="spb-text">' + labelSection + ' <strong class="spb-current">' + savedSection + '</strong> ' + labelOf + ' ' + total + '</span>' +
-        '<div class="spb-track"><div class="spb-fill" style="width:' + Math.round((savedSection / total) * 100) + '%"></div></div>' +
+        '<span class="spb-text">' + labelSection + ' <strong class="spb-current">1</strong> ' + labelOf + ' ' + total + '</span>' +
+        '<div class="spb-track"><div class="spb-fill" style="width:' + Math.round((1 / total) * 100) + '%"></div></div>' +
       '</div>';
 
     document.body.appendChild(bar);

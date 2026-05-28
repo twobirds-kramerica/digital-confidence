@@ -407,8 +407,8 @@ strong {
   position: absolute;
   top: 8px;
   right: 8px;
-  background: rgba(0, 0, 0, 0.06);
-  border: 1px solid var(--border-color);
+  background: #ffffff;
+  border: 1.5px solid #666;
   border-radius: 8px;
   font-size: 0.9rem;
   font-weight: 600;
@@ -424,15 +424,15 @@ strong {
   z-index: 10;
 }
 .sidebar-close:hover {
-  background: rgba(0, 0, 0, 0.12);
+  background: #e8ecf0;
 }
 [data-theme="dark"] .sidebar-close {
   color: #FFFFFF;
-  background: rgba(255, 255, 255, 0.1);
-  border-color: #555;
+  background: rgba(255, 255, 255, 0.18);
+  border-color: #aaa;
 }
 [data-theme="dark"] .sidebar-close:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 /* Top Bar */
