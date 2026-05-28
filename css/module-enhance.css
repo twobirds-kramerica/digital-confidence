@@ -256,3 +256,25 @@ body:has(.section-progress-bar) .site-footer {
   .section-progress-bar { padding: 0.4rem 0.75rem; }
   .spb-text { font-size: 0.75rem; }
 }
+
+/* Wizard CTA banner — links module long-scroll to v2 step-by-step wizard */
+.wizard-cta-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #f0f7f5;
+  border: 1.5px solid #2A7B6F;
+  border-radius: 8px;
+  padding: 0.85rem 1.1rem;
+  margin: 1rem 0 1.5rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.wizard-cta-banner .wizard-cta-icon { font-size: 1.4rem; flex-shrink: 0; }
+.wizard-cta-banner a { color: #1a5c52; font-weight: 600; text-underline-offset: 3px; }
+.wizard-cta-banner a:hover { color: #0d3d36; }
+@media (prefers-color-scheme: dark) {
+  .wizard-cta-banner { background: #0d2e2a; border-color: #3d9e8f; }
+  .wizard-cta-banner a { color: #5dc5b7; }
+  .wizard-cta-banner a:hover { color: #87d9cf; }
+}

@@ -347,6 +347,7 @@
         return;
       }
       state.data = data;
+      document.title = data.title + ' — Digital Confidence Centre';
       // Restore progress
       var savedStep = parseInt(storageGet(LS_PROGRESS(state.moduleId), '0'), 10);
       var hashStep = parseStepFromHash();
@@ -397,6 +398,7 @@
         }
         state.language = newLang;
         state.data = data;
+        document.title = data.title + ' — Digital Confidence Centre';
         // Clamp step to new length
         if (savedStep >= state.data.screens.length) savedStep = state.data.screens.length - 1;
         state.currentStep = savedStep;
