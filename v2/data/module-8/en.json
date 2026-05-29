@@ -1,0 +1,67 @@
+{
+  "moduleId": "module-8",
+  "language": "en",
+  "title": "Module 8: Stay Connected",
+  "timeEstimate": "About 8 minutes",
+  "screens": [
+    {
+      "type": "orientation",
+      "heading": "You are safe here",
+      "reassurance": "This module will not call or message anyone. You are just reading.",
+      "goal": "By the end of this module, you will be able to make and receive video calls, join group calls with the whole family, and share photos so everyone stays close — no matter the distance.",
+      "timeEstimate": "About 8 minutes"
+    },
+    {
+      "type": "content",
+      "heading": "Gloria's story",
+      "body": [
+        "Gloria, 75, has three children and seven grandchildren. Her youngest daughter moved to Calgary. Before FaceTime, Gloria saw the Calgary grandchildren twice a year.",
+        "'Now I see them every Sunday morning,' Gloria says. 'We have Grandma Gloria's Sunday Breakfast Club. I make my coffee, they make their pancakes, and we eat breakfast together over FaceTime. My littlest granddaughter, who is four, shows me her drawings.'",
+        "'Technology did not replace being there,' she says. 'But it gave me so much more time with my family than I would have had otherwise.'"
+      ],
+      "tellMeMore": "Video calls use your internet connection (Wi-Fi or mobile data), not your phone minutes. A one-hour video call with family typically uses about 200 MB of data. If you are on Wi-Fi, it is completely free. If you are on mobile data, check with your provider — most plans include several gigabytes per month, which is plenty for regular video calls."
+    },
+    {
+      "type": "content",
+      "heading": "Making a FaceTime call (iPhone and iPad)",
+      "body": [
+        "Open the FaceTime app (green icon with a white video camera). You will see a list of recent calls. To start a new call, tap the + button in the top right corner.",
+        "Type the person's name (if they are in your Contacts) or their email address or phone number. Tap the green Video button. Their phone will ring, and when they answer, you will see their face.",
+        "To end the call, tap the red X button. You cannot accidentally call anyone by just having the app open."
+      ],
+      "tellMeMore": "For the best video call experience: sit facing a window or a lamp so your face is well lit. Hold the device at eye level (prop it up on a book or stand if needed) rather than looking down at it — it feels more natural to the person you are calling. A stable connection makes a huge difference; if the picture is choppy, move closer to your Wi-Fi router."
+    },
+    {
+      "type": "content",
+      "heading": "Video calls on Android and across devices",
+      "body": [
+        "FaceTime only works between Apple devices. If your family uses Android phones, use Google Meet or WhatsApp Video instead — both are free and work on any device.",
+        "WhatsApp: download from the App Store or Google Play Store, create a free account, and tap the video camera icon next to any contact's name to start a video call.",
+        "Google Meet: go to meet.google.com or use the Google Meet app. Tap 'New Meeting' and share the link with family — they can join from any device, even a computer."
+      ],
+      "tellMeMore": "Zoom is another popular option for family calls, especially if you want to join group calls that a grandchild or family member organises. You do not need an account to join a Zoom call — you just tap the link they send you and choose 'Join.' The host (whoever set up the meeting) manages everything."
+    },
+    {
+      "type": "content",
+      "heading": "Group calls and shared albums",
+      "body": [
+        "FaceTime supports group calls with up to 32 people. Start a call normally, then tap the + button during the call to add more family members.",
+        "Shared Photo Albums let your whole family see each other's photos automatically. Open Photos → Albums → + → Shared Album → invite family by email. Everyone adds photos; everyone sees them.",
+        "Group texts work the same way: open a new message in the Messages app and add multiple names or numbers. Everything you type goes to everyone in the group."
+      ],
+      "tellMeMore": "A weekly family video call takes some organisation at first. One tip that works well: designate a regular time (Sunday mornings, like Gloria's Breakfast Club) and a regular app. Once it is a habit, everyone joins automatically and no one needs a reminder. The hardest part is the first call — after that, it becomes something everyone looks forward to."
+    },
+    {
+      "type": "summary",
+      "heading": "Distance is no longer a barrier",
+      "takeaways": [
+        "FaceTime (iPhone/iPad to iPhone/iPad) is the easiest video call option for Apple families. WhatsApp or Google Meet work across all devices.",
+        "Sit facing a light source and hold the camera at eye level for the best video call experience.",
+        "Group FaceTime supports up to 32 people — the whole family at once.",
+        "Shared Albums let everyone in the family see and add photos automatically.",
+        "A regular weekly call time turns video calling from a chore into the highlight of the week."
+      ],
+      "confidence": "You can now reach any member of your family, face to face, from wherever you are. Distance is just a number."
+    }
+  ]
+}

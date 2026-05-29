@@ -1,0 +1,67 @@
+{
+  "moduleId": "module-6",
+  "language": "en",
+  "title": "Module 6: Banking & Transactions",
+  "timeEstimate": "About 8 minutes",
+  "screens": [
+    {
+      "type": "orientation",
+      "heading": "You are safe here",
+      "reassurance": "This module contains no bank links and no forms. You are just reading. Nothing can affect your accounts.",
+      "goal": "By the end of this module, you will understand how to check your bank balance, pay bills, and e-transfer safely — and why online banking is actually more secure than you might expect.",
+      "timeEstimate": "About 8 minutes"
+    },
+    {
+      "type": "content",
+      "heading": "Jean's story",
+      "body": [
+        "Jean, 73, drove to her bank branch every Friday for years — rain, snow, construction. Then her daughter showed her the RBC mobile app. 'I was terrified,' Jean recalls. 'What if someone stole my money through the phone? What if I pressed the wrong button?'",
+        "Her daughter sat with her and they checked the balance together. Jean realised everything she could see at the bank counter, she could see on her iPad — without leaving her kitchen.",
+        "'Now I check my balance every morning with my coffee,' Jean says. This module will give you that same confidence."
+      ],
+      "tellMeMore": "Every major Canadian bank offers a mobile app: RBC, TD, Scotiabank, BMO, CIBC, and most credit unions. These apps are available free from the App Store or Google Play Store. Your bank's name is your best search term. Look for the official app from the bank's own developer name."
+    },
+    {
+      "type": "content",
+      "heading": "Why online banking is safer than you might think",
+      "body": [
+        "Canadian banks use the same security technology that protects military communications. Your session is encrypted, which means no one can read it even if they intercept it.",
+        "If someone does fraudulently access your account, Canadian banks guarantee they will reimburse any money lost to fraud — as long as you follow basic safety rules (never share your password, always sign out).",
+        "In fact, checking your balance online every day makes you safer — you notice unusual charges faster than with a monthly paper statement."
+      ],
+      "tellMeMore": "The most important safety habit: always sign out of your banking app after you finish. Tap the 'Sign Out' or 'Log Out' button — do not just close the app. This is especially important if other people use your iPad. Also: never do your banking on public Wi-Fi (at a café or library). Wait until you are on your home network."
+    },
+    {
+      "type": "content",
+      "heading": "Checking your balance and transactions",
+      "body": [
+        "Open your bank app and sign in with your username and password (or use Face ID or Touch ID if you have set it up — this is very secure).",
+        "Your accounts will appear on the home screen with their current balances. Tap on any account to see a list of recent transactions.",
+        "Review your transactions regularly. If you see anything you do not recognise, tap on it to get more details. If it is truly unfamiliar, call your bank immediately using the number on the back of your card."
+      ],
+      "tellMeMore": "Most banking apps also let you set up alerts: a text or notification every time a purchase is made on your account over a certain amount (say, $50). This is one of the most powerful fraud-detection tools available, and it is free. Look for 'Alerts' or 'Notifications' in your bank app settings."
+    },
+    {
+      "type": "content",
+      "heading": "Paying bills and e-Transfers safely",
+      "body": [
+        "To pay a bill: in your bank app, look for 'Pay Bills' or 'Bill Payments.' Add the company you want to pay (your utility, phone company, etc.) as a payee. Enter the amount and confirm. The payment goes through in one to two business days.",
+        "To send money to a person using Interac e-Transfer: look for 'Send Money' or 'e-Transfer.' Enter the recipient's email address or phone number, the amount, and a security question they must answer. The money arrives within minutes.",
+        "Only e-Transfer to people you know and trust. Never e-Transfer to someone you have met only online, no matter how convincing their story is."
+      ],
+      "tellMeMore": "Interac e-Transfer is the safest digital way to pay someone in Canada. Unlike wire transfers, you can cancel an e-Transfer before the recipient deposits it. Look for the 'Cancel' option in your Transfers history if you need to. However, once someone deposits the transfer, it cannot be reversed — so always double-check the recipient's email address before sending."
+    },
+    {
+      "type": "summary",
+      "heading": "Your money is safe — and now you can manage it from your kitchen",
+      "takeaways": [
+        "Canadian banks guarantee to reimburse fraud losses when you follow basic safety rules.",
+        "Always sign out of your banking app after each session. Never use banking on public Wi-Fi.",
+        "Check your transactions regularly — early detection is your best protection.",
+        "Set up transaction alerts in your bank app to be notified of any purchases over a set amount.",
+        "e-Transfer is safe for sending money to people you know. Never e-Transfer to strangers, no matter the reason."
+      ],
+      "confidence": "You now understand how to check your balance, pay bills, and send money safely. Online banking puts you in control of your finances from anywhere."
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "moduleId": "module-4",
+  "language": "en",
+  "title": "Module 4: App Store Safety",
+  "timeEstimate": "About 7 minutes",
+  "screens": [
+    {
+      "type": "orientation",
+      "heading": "You are safe here",
+      "reassurance": "You cannot break anything by reading. Nothing on this page will charge you or download anything.",
+      "goal": "By the end of this module, you will know how to find and download apps safely — and how to avoid fake apps and hidden subscription charges.",
+      "timeEstimate": "About 7 minutes"
+    },
+    {
+      "type": "content",
+      "heading": "Frank's story",
+      "body": [
+        "Frank, 76, wanted to download a weather app for his iPad. He opened what he thought was the App Store, searched for 'weather,' and tapped 'Get.' He was immediately asked for his credit card number. Two weeks later, he found a $49.99 charge on his statement from a company he had never heard of.",
+        "Frank had downloaded a fake app from a website pretending to be the App Store. His mistake was completely understandable — the fake store looked very real.",
+        "There are clear ways to make sure you are always using the real App Store, and this module will show you every one of them."
+      ],
+      "tellMeMore": "Fake apps and websites pretending to be the App Store are a major source of scams targeting seniors. The safest rule: only open the App Store by tapping its icon on your Home screen. Never open it from a link in an email, a text message, or a website. The real App Store icon looks like a blue square with a white letter A made of drawing tools."
+    },
+    {
+      "type": "content",
+      "heading": "Finding the real App Store",
+      "body": [
+        "On an iPad or iPhone, the App Store icon is always on your Home screen. It looks like a blue square with a white stylised letter A. Tap it directly.",
+        "On Android, the app store is called Google Play Store. Its icon is a colourful triangle on a white background.",
+        "Both stores are already installed on your device. You never need to download them from anywhere."
+      ],
+      "tellMeMore": "If you cannot find the App Store icon on your Home screen, swipe down from the middle of the screen to open the search bar, then type 'App Store.' It will appear at the top of the results. Tap it and you are in the right place."
+    },
+    {
+      "type": "content",
+      "heading": "Downloading an app safely",
+      "body": [
+        "In the App Store, type what you are looking for in the search bar at the top. Look for apps from well-known companies — for example, 'Netflix' from Netflix, 'RBC' from Royal Bank of Canada, or 'The Weather Network' from Pelmorex Weather Networks.",
+        "Tap 'Get' (free apps) or the price button (paid apps). You will be asked to confirm with your Face ID, Touch ID, or Apple ID password. That is normal and safe.",
+        "If any app ever asks for your credit card number before you have tapped 'Get,' stop immediately. That is a scam."
+      ],
+      "tellMeMore": "Check the app's reviews and the number of ratings before downloading. An app with 50,000 ratings and four stars is almost certainly genuine. An app with 3 ratings is a warning sign. Also check the developer name — it should match the company you expect. 'RBC Mobile' from 'Royal Bank of Canada' is real. 'RBC Mobile' from 'QuickApps Ltd' is suspicious."
+    },
+    {
+      "type": "content",
+      "heading": "Subscriptions and hidden costs",
+      "body": [
+        "Many apps are free to download but charge a weekly or monthly subscription to keep using them. Before you tap 'Get,' look at the price area carefully. If it says 'In-App Purchases,' there may be future charges.",
+        "When an app asks for a subscription, a screen will appear clearly showing what it costs and how often. Read it carefully. You do not have to say yes.",
+        "To see all your active subscriptions on an iPhone or iPad: go to Settings, tap your name at the top, then tap Subscriptions."
+      ],
+      "tellMeMore": "If you accidentally subscribe to something, you can cancel within the first few days and usually get a full refund. Go to Settings → your name → Subscriptions → find the app → Cancel Subscription. If you already have a charge you do not recognise, call Apple Support at 1-800-275-2273. They are very helpful with accidental purchases."
+    },
+    {
+      "type": "summary",
+      "heading": "You now know how to shop the App Store safely",
+      "takeaways": [
+        "Always open the App Store by tapping its icon on your Home screen — never from a link in an email or website.",
+        "Check the app's developer name and number of reviews before downloading.",
+        "If any site asks for your credit card before you tap 'Get,' it is a scam.",
+        "Many apps are free to download but have subscriptions. Read the subscription screen carefully before agreeing.",
+        "You can check and cancel all your subscriptions in Settings → your name → Subscriptions."
+      ],
+      "confidence": "You now have the knowledge to find, download, and manage apps safely — without being tricked by fake stores or hidden charges."
+    }
+  ]
+}

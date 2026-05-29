@@ -1,0 +1,67 @@
+{
+  "moduleId": "module-5",
+  "language": "en",
+  "title": "Module 5: Email & Messages",
+  "timeEstimate": "About 8 minutes",
+  "screens": [
+    {
+      "type": "orientation",
+      "heading": "You are safe here",
+      "reassurance": "Nothing on this page will send any emails or messages. You are just reading.",
+      "goal": "By the end of this module, you will be able to send and receive emails and text messages confidently, and spot the ones that are not safe to open.",
+      "timeEstimate": "About 8 minutes"
+    },
+    {
+      "type": "content",
+      "heading": "Rose's story",
+      "body": [
+        "Rose, 71, loves getting emails from her grandchildren — photos, funny stories, weekend plans. But she also received about 30 unwanted emails a day and was afraid to open any of them.",
+        "'I worried every message might be a virus,' Rose says. Then she learned what to look for.",
+        "Now Rose confidently sorts through her inbox every morning, keeps the messages she wants, and deletes the rest — without a moment of worry. You will feel the same way by the end of this module."
+      ],
+      "tellMeMore": "Most scary-looking emails are exactly like junk mail in your real mailbox: annoying, but harmless as long as you throw them away without opening the envelope. The key is knowing which ones to open and which ones to delete — and that is a skill, not luck."
+    },
+    {
+      "type": "content",
+      "heading": "Email: your digital mailbox",
+      "body": [
+        "Email works just like a real mailbox. Messages arrive in your Inbox. You can read them, reply, forward them to someone else, or delete them.",
+        "To read an email: tap on it. To reply: tap the arrow pointing left (Reply). To delete: swipe left and tap Delete, or tap the trash can icon.",
+        "You can also write a new email: tap the compose button (usually a pencil or a square with a pencil). Type the person's email address, a subject line, your message, and tap Send."
+      ],
+      "tellMeMore": "Three email safety rules: (1) Never click a link in an email asking you to log in to your bank, CRA, or any account — go directly to that website by typing the address yourself. (2) If an email has spelling mistakes, creates urgency, or asks for personal information, delete it. (3) When in doubt, call the person or organisation directly using a phone number you already trust."
+    },
+    {
+      "type": "content",
+      "heading": "Text messages: iMessage and SMS",
+      "body": [
+        "On an iPhone, text messages go through the Messages app. Blue bubbles are iMessages (sent to other Apple devices over Wi-Fi or data, free). Green bubbles are regular SMS texts (sent through your phone network, may use your text allowance).",
+        "To send a text: open Messages, tap the compose button, type the person's name or number, type your message, and tap the Send arrow.",
+        "Text messages are great for quick messages — 'On my way,' 'Running 10 minutes late,' 'Love you.' They do not need to be as formal as email."
+      ],
+      "tellMeMore": "On Android, the default texting app is called Messages (from Google). It works the same way. Blue bubbles usually mean a chat message sent over Wi-Fi; green bubbles mean regular SMS. If someone sends you a text message from a number you do not recognise asking you to click a link or call a number, do not do it — this is often a scam called 'smishing' (SMS phishing)."
+    },
+    {
+      "type": "content",
+      "heading": "Spotting an email that is not safe",
+      "body": [
+        "Safe emails: from people you know, about things you expect, no links asking you to log in anywhere.",
+        "Delete without opening: emails from strangers, anything saying your account is locked or you owe money, anything with urgent threats ('Your account will be closed in 24 hours').",
+        "The golden rule: real banks, the CRA, and the government will never email you a link to log in and never threaten you. If the email creates panic, it is designed to. Take a breath and delete it."
+      ],
+      "tellMeMore": "Check the sender's actual email address, not just the display name. An email that says 'TD Bank' but comes from 'support@td-verify-account.com' is not from TD Bank. The real TD Bank sends from addresses ending in '@td.com' only. If the address looks strange or long, delete the email."
+    },
+    {
+      "type": "summary",
+      "heading": "Your digital mailbox is open for business",
+      "takeaways": [
+        "Email works like a real mailbox: read, reply, forward, or delete.",
+        "Text messages (SMS) are for quick, casual communication. Blue bubbles on iPhone are iMessages; green are regular texts.",
+        "Never click a link in an email asking you to log in to a bank or government account. Go directly to the website yourself.",
+        "If an email creates urgency, panic, or asks for personal information — delete it. Real institutions do not do this.",
+        "Check the actual email address of the sender, not just the display name."
+      ],
+      "confidence": "You can now send and receive emails and text messages confidently, and you know how to tell the safe ones from the unsafe ones."
+    }
+  ]
+}
