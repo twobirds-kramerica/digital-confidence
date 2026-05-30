@@ -1,0 +1,67 @@
+{
+  "moduleId": "module-14",
+  "language": "en",
+  "title": "Module 14: Smart Home Basics",
+  "timeEstimate": "About 8 minutes",
+  "screens": [
+    {
+      "type": "orientation",
+      "heading": "You are safe here",
+      "reassurance": "This module will not connect to any devices in your home. You are just reading.",
+      "goal": "By the end of this module, you will understand what smart home devices are, which ones are genuinely useful for seniors living independently, and how to start with just one device — safely.",
+      "timeEstimate": "About 8 minutes"
+    },
+    {
+      "type": "content",
+      "heading": "Robert's story",
+      "body": [
+        "Robert, 77, of Woodstock, Ontario. His family had one persistent worry every winter: his old furnace, and whether Robert would notice if it stopped working while he slept.",
+        "His son-in-law suggested a Nest smart thermostat. Robert was sceptical — 'My thermostat works fine.' But within three weeks his heating bill dropped by $40, he could check his house temperature from his phone while visiting his sister, and the app quietly alerted his son-in-law when the temperature dropped unexpectedly at 2am — a faulty furnace igniter, caught before any pipes froze.",
+        "'I was not looking for a smart home,' Robert says. 'But I found one device that actually makes a difference for me. The rest I leave well alone.' That is the right approach."
+      ],
+      "tellMeMore": "You do not need to buy a whole 'smart home system.' The most useful approach for most people is to start with one device that solves a specific problem you already have — then decide if you want more. Robert's problem was furnace monitoring. Yours might be something different: answering the door without getting up, turning off lights you forgot about, or having a voice assistant set your medication reminders."
+    },
+    {
+      "type": "content",
+      "heading": "The most useful smart home devices for seniors",
+      "body": [
+        "Smart thermostats (Nest, Ecobee): control your home's temperature from your phone, anywhere. Can alert family if the temperature drops or rises unexpectedly. Saves money by learning your patterns. Installation requires a professional — ask your utility company about rebates.",
+        "Video doorbells (Ring, Nest Hello): see and speak to anyone at your door from your phone — even from another room or another city. Useful for safely screening visitors. Records footage so you can see who came while you were out.",
+        "Smart plugs: plug any lamp or appliance into a smart plug, and you can turn it on or off from your phone — or with a voice command. No wiring required. A great first device to try."
+      ],
+      "tellMeMore": "Smart plugs cost about $15–30 and are available at Canadian Tire, Walmart, or Best Buy. They work with Alexa, Google Home, and Siri. Plug a lamp into one, connect it to your Wi-Fi using the app, and say 'Alexa, turn on the living room lamp.' That is the entire setup. If you decide it is not for you, just unplug it — nothing permanent has changed."
+    },
+    {
+      "type": "content",
+      "heading": "Voice assistants — Alexa, Google Home, and Siri",
+      "body": [
+        "A voice assistant is a small speaker that listens for your voice and responds to commands. 'Hey Alexa, what's the weather today?' 'Hey Google, set a timer for 30 minutes.' 'Hey Siri, call my daughter.' — all hands-free.",
+        "Amazon Echo (uses Alexa) and Google Nest (uses Google Assistant) are the most popular standalone speakers. They cost $50–150. Siri is already on your iPhone or iPad for free.",
+        "Most useful commands for seniors: medication reminders, weather, timers, calling family by name, playing music, and asking general questions — 'What time does the pharmacy close?'"
+      ],
+      "tellMeMore": "Voice assistants are always listening for their wake word (Alexa, Hey Google, Hey Siri). This concerns some people. You can mute the microphone on any device with a physical button — a red light appears to confirm it is off. Your conversations are not shared with advertisers, but they are processed on company servers. For most everyday use, the convenience outweighs the privacy trade-off — but the choice is entirely yours."
+    },
+    {
+      "type": "content",
+      "heading": "Safety and independence — the real smart home benefit",
+      "body": [
+        "For seniors living alone, the most valuable smart home use is not convenience — it is peace of mind for you and your family.",
+        "Medical alert systems (Life Alert, Apple Watch fall detection) can call for help automatically if you fall. Smart doorbells let you screen visitors safely. Temperature alerts can catch heating failures. Motion sensors can quietly tell family that you are up and moving normally.",
+        "None of these require a full smart home renovation. Each is a single device solving a single problem."
+      ],
+      "tellMeMore": "Apple Watch has a built-in fall detection feature (Series 4 and later). If it detects a hard fall and you do not respond within 60 seconds, it automatically calls emergency services and shares your location. You can also press the side button to call for help manually. This is one of the most powerful safety tools available — and it works even if your phone is in the next room."
+    },
+    {
+      "type": "summary",
+      "heading": "Start with one device that solves one real problem",
+      "takeaways": [
+        "You do not need a 'smart home.' Start with one device that solves a specific problem you have.",
+        "Smart thermostats can alert family to heating failures — potentially preventing frozen pipes or dangerous cold.",
+        "Smart plugs are the easiest starting point — $15-30, no wiring, reversible.",
+        "Voice assistants are hands-free helpers for reminders, timers, music, and calling family.",
+        "Apple Watch fall detection automatically calls emergency services if you fall and do not respond."
+      ],
+      "confidence": "You now understand the smart home devices most useful for independent living — and how to start with just one, simply and safely."
+    }
+  ]
+}

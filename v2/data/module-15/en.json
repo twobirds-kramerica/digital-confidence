@@ -1,0 +1,67 @@
+{
+  "moduleId": "module-15",
+  "language": "en",
+  "title": "Module 15: Telehealth & Medical Portals",
+  "timeEstimate": "About 8 minutes",
+  "screens": [
+    {
+      "type": "orientation",
+      "heading": "You are safe here",
+      "reassurance": "This module will not access any medical records or make any appointments. You are just reading.",
+      "goal": "By the end of this module, you will know how to book appointments online, access your medical records, use telehealth video visits, and reach a nurse 24/7 for free — all without leaving your home.",
+      "timeEstimate": "About 8 minutes"
+    },
+    {
+      "type": "content",
+      "heading": "Helen's story",
+      "body": [
+        "Helen, 78, from Chatham, Ontario. After her hip replacement, getting to her doctor's office was exhausting and painful. When telephone appointments became available, Helen discovered something wonderful: most of her check-ins did not require being there in person.",
+        "She now does her quarterly blood pressure review by phone, books her lab work online, and refills prescriptions through the Shoppers Drug Mart app. The only trips she makes are for tests or issues that truly require hands-on examination.",
+        "'I used to spend half a day on a single appointment — driving, parking, waiting. Now I do most of it from my kitchen.' This module covers everything Helen uses — and more."
+      ],
+      "tellMeMore": "Telehealth became widely available during the pandemic and stayed. Most Ontario family doctors now offer telephone or video appointments for follow-ups, prescription renewals, and routine check-ins. Ask your doctor's office what they offer. If they do not provide telehealth, virtual-only clinics like Maple and Tia Health are available 24/7 by phone or video — no family doctor required."
+    },
+    {
+      "type": "content",
+      "heading": "Booking appointments and lab work online",
+      "body": [
+        "Most Ontario family doctors use one of two patient portals: Ocean or MyChart. Your clinic will give you a code to set up your portal account. Once logged in, you can book, reschedule, or cancel appointments without calling.",
+        "Ontario Health (MyChart) also lets you see your lab results, vaccination records, and imaging reports — often before your doctor's office calls you about them.",
+        "For lab work: LifeLabs and Dynacare (the two main Ontario lab chains) both have online booking. Go to their website, enter your address, see available locations and appointment times, and book in under five minutes."
+      ],
+      "tellMeMore": "If your clinic does not use an online portal, many will accept email booking requests. Ask the receptionist: 'Can I book follow-up appointments by email?' This simple question has worked for many people who found phone booking difficult. You can also ask a family member to book on your behalf — just give them your health card number and date of birth."
+    },
+    {
+      "type": "content",
+      "heading": "Video doctor visits",
+      "body": [
+        "A video visit is a regular appointment that happens over FaceTime, Zoom, or a similar app instead of in person. Your doctor sends you a link, you tap it at appointment time, and they can see and hear you clearly.",
+        "Video visits work well for: prescription renewals, mental health check-ins, post-surgical follow-ups where no physical exam is needed, and reviewing test results.",
+        "What you need: your iPad or phone, good Wi-Fi, and a quiet spot with good lighting facing a window. You do not need to install any special app for most video visits — you tap a link the doctor sends you."
+      ],
+      "tellMeMore": "Virtual-only clinics that do not require a family doctor: Maple (getmaple.ca) and Tia Health connect you with a licensed Canadian physician by video in minutes, 24/7. A visit typically costs $49–79 if not covered by your provincial health plan. OHIP covers virtual visits with your own family doctor but may not cover visits with a virtual-only clinic — check with your insurer."
+    },
+    {
+      "type": "content",
+      "heading": "Free 24/7 nurse line and prescription refills",
+      "body": [
+        "Telehealth Ontario (1-866-797-0000) connects you to a registered nurse, 24 hours a day, 7 days a week, completely free. Call when you have a health question, are worried about a symptom, or are not sure if you need to go to the emergency room.",
+        "For prescription refills: most pharmacies now have apps (Shoppers Drug Mart, Pharmasave, Rexall) that let you request refills, see your medication history, and get notified when your order is ready for pickup or delivery.",
+        "Many pharmacies also offer medication delivery for seniors — call and ask. Some charge a small fee; others offer it free for customers 65 and older."
+      ],
+      "tellMeMore": "The Shoppers Drug Mart app also lets you track your PC Optimum points, manage your immunisation history, and set medication reminders. You can have your pharmacist review all your medications for potential interactions (called a MedsCheck) free of charge if you take three or more prescription medications. This is available in person, by phone, and increasingly by video."
+    },
+    {
+      "type": "summary",
+      "heading": "Your healthcare is now accessible from your kitchen",
+      "takeaways": [
+        "Book appointments and lab work online through your clinic's patient portal (Ocean, MyChart) or the lab's website (LifeLabs, Dynacare).",
+        "Video visits work for prescription renewals, follow-ups, and test result reviews — you just tap a link.",
+        "Telehealth Ontario (1-866-797-0000): free 24/7 nurse line. Call when you are unsure if a symptom needs attention.",
+        "Pharmacy apps (Shoppers Drug Mart, Rexall) handle prescription refills and can arrange delivery.",
+        "Free MedsCheck: ask your pharmacist to review all your medications for interactions — free if you take three or more."
+      ],
+      "confidence": "You can now manage most of your routine healthcare without leaving home — and reach a nurse any time of day or night for free."
+    }
+  ]
+}

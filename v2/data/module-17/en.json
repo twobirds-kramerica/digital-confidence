@@ -1,0 +1,67 @@
+{
+  "moduleId": "module-17",
+  "language": "en",
+  "title": "Module 17: Using AI for Research",
+  "timeEstimate": "About 8 minutes",
+  "screens": [
+    {
+      "type": "orientation",
+      "heading": "You are safe here",
+      "reassurance": "This module will not send anything to any AI service. You are just reading.",
+      "goal": "By the end of this module, you will know how to use AI tools to research health questions, get plain-language explanations, write helpful messages, and protect your privacy while doing so.",
+      "timeEstimate": "About 8 minutes"
+    },
+    {
+      "type": "content",
+      "heading": "What AI is good at — and what it is not",
+      "body": [
+        "AI is excellent at explaining things in plain language, summarising complex documents, generating ideas, and answering general questions about topics that are well-established.",
+        "AI is not a substitute for professional advice. It does not know your medical history, your other medications, your specific circumstances, or the latest breaking news. It can get facts wrong — confidently.",
+        "The right approach: use AI as a starting point to understand something, then verify important information with a professional (your doctor, pharmacist, lawyer, or financial adviser)."
+      ],
+      "tellMeMore": "AI tools that are safe and free to use: Claude (claude.ai) from Anthropic, ChatGPT (chat.openai.com) from OpenAI, and Gemini (gemini.google.com) from Google. All three are available in a web browser or app. You do not need to create an account to try Claude — just visit the website and start typing."
+    },
+    {
+      "type": "content",
+      "heading": "Using AI for health questions safely",
+      "body": [
+        "AI is genuinely useful for understanding health topics in plain language. Good examples: 'What are the general side effects of metformin?' or 'Can you explain what a herniated disc is in simple terms?' or 'What questions should I ask my doctor before starting a new blood pressure medication?'",
+        "After getting an AI answer, verify it with your pharmacist (free, in person or by phone) or your doctor. Pharmacists at any Canadian drugstore can answer medication questions for free — no appointment needed.",
+        "Never share your full name, OHIP number, SIN, or specific medical history with any AI tool. Ask general questions — you get the same useful information without the privacy risk."
+      ],
+      "tellMeMore": "The golden rule for AI privacy: before typing anything, ask yourself — 'Would I be comfortable if this was posted on a community bulletin board?' Instead of 'I take 10mg of metformin and my doctor is Dr. Smith,' type: 'What are the general side effects of metformin?' The answer is just as useful — without your personal details attached."
+    },
+    {
+      "type": "content",
+      "heading": "Practical things to try right now",
+      "body": [
+        "AI is useful for everyday tasks that have nothing to do with technology: 'Write a birthday card message for my brother who loves fishing and turns 70 this week.' 'What are good indoor plants for a sunny Ontario apartment that are hard to kill?' 'Help me write an email to my landlord asking about a repair that has not been fixed.'",
+        "For Canadian-specific questions: 'What is the difference between RRSP and TFSA in Canada?' or 'What day trips are good from London, Ontario for someone who loves history?' AI handles these well — just verify financial information with your bank.",
+        "For translation: 'Translate this into French: How do I get to the pharmacy?' Or paste a foreign-language document and ask for a summary in English."
+      ],
+      "tellMeMore": "You can also use AI to help you prepare for a doctor's appointment: 'I have an appointment about my knee pain. What questions should I ask?' AI will generate a list of questions — bring it with you. This is one of the most practical and immediately useful things AI can do for healthcare, and it does not require sharing any personal information."
+    },
+    {
+      "type": "content",
+      "heading": "When AI is not enough — call a professional",
+      "body": [
+        "Use AI for general understanding. Call a professional for: any new or worsening symptom; stopping or changing a medication; chest pain, trouble breathing, sudden confusion, or severe pain (call 911); deciding whether a supplement or treatment is right for your specific situation.",
+        "Telehealth Ontario (1-866-797-0000): free 24/7 nurse line — always the right call when you are unsure whether something needs medical attention.",
+        "Canadian Anti-Fraud Centre (1-888-495-8501): if AI-generated content was used to scam you, or if you are unsure whether a message or website is legitimate."
+      ],
+      "tellMeMore": "AI cannot replace your pharmacist. A Canadian pharmacist can review all your medications for dangerous interactions, answer questions about dosing and side effects, advise on over-the-counter remedies, and refer you to a doctor when needed — all for free, with no appointment, simply by walking in or calling. This is one of Canada's most underused healthcare resources."
+    },
+    {
+      "type": "summary",
+      "heading": "AI is your research assistant — not your doctor",
+      "takeaways": [
+        "Use AI for plain-language explanations, general questions, writing help, and research starting points.",
+        "Never share your OHIP number, SIN, full address, or specific medical details with any AI tool.",
+        "Golden rule: ask general questions ('what are the side effects of X?') not personal ones ('I am taking X — is it safe for me?').",
+        "Verify important health information with your pharmacist (free, no appointment) or doctor.",
+        "Telehealth Ontario (1-866-797-0000): free 24/7 nurse line for health concerns that need a real professional."
+      ],
+      "confidence": "You can now use AI to get clear answers to health questions, write helpful messages, and research almost anything — safely and with your privacy protected."
+    }
+  ]
+}

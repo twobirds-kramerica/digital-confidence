@@ -1,0 +1,67 @@
+{
+  "moduleId": "module-16",
+  "language": "en",
+  "title": "Module 16: Staying Safe When You Travel",
+  "timeEstimate": "About 7 minutes",
+  "screens": [
+    {
+      "type": "orientation",
+      "heading": "You are safe here",
+      "reassurance": "This module will not access your location or any travel accounts. You are just reading.",
+      "goal": "By the end of this module, you will know how to keep your device and accounts safe when travelling — including what to do about hotel Wi-Fi, digital boarding passes, and checking your bank from abroad.",
+      "timeEstimate": "About 7 minutes"
+    },
+    {
+      "type": "content",
+      "heading": "Margaret's story",
+      "body": [
+        "Margaret, 74, from St. Thomas, Ontario. After retiring, she and her husband take one big trip per year — Florida in winter, and Portugal last spring. 'The world is different now,' she says. 'Everything is on the phone. Boarding passes, hotel check-in, maps, even my bank. I love it.'",
+        "'But I learned the hard way that I needed to be careful with Wi-Fi in hotels.' Margaret connected to the hotel's Wi-Fi and checked her bank account — on a network that turned out to be unencrypted, shared by hundreds of strangers.",
+        "Nothing happened that time. But she learned to do it differently. This module shows you how."
+      ],
+      "tellMeMore": "Hotel Wi-Fi is convenient but genuinely riskier than your home network. Anyone on the same Wi-Fi can potentially intercept unencrypted data. The good news: modern banking apps and websites use encryption (HTTPS) that protects your data even on shared Wi-Fi. The higher risk is fake Wi-Fi hotspots — networks in hotels and airports named 'Hotel Free WiFi' or 'Airport WiFi' that are actually set up by criminals to intercept your data."
+    },
+    {
+      "type": "content",
+      "heading": "Before you leave: setting up your device",
+      "body": [
+        "Tell your bank you are travelling. Call the number on the back of your card or do it through your banking app (look for 'Travel Notification'). This prevents your card from being blocked when charges appear from another country.",
+        "Download any apps you will need before you go — your airline's app, your hotel's app, Google Maps for your destination (you can download offline maps). App stores can be slow on foreign Wi-Fi.",
+        "Take a photo of your passport, travel insurance card, and credit cards (front and back) and store the photos in a secure folder, or email them to a trusted family member. If you lose your wallet or passport, you have the key numbers."
+      ],
+      "tellMeMore": "Enable Find My iPhone (or Find My Device on Android) before you leave. If your phone is lost or stolen, you can see its location on a map, lock it remotely, and erase it if necessary — all from any web browser. This has helped many travellers recover lost devices or, at minimum, ensure their personal data is protected."
+    },
+    {
+      "type": "content",
+      "heading": "Safe Wi-Fi on the road",
+      "body": [
+        "When connecting to hotel or airport Wi-Fi: always look for the official network name at the front desk — do not just pick the strongest signal. Ask: 'What is the exact name of your Wi-Fi network?' A legitimate hotel staff member always knows.",
+        "What is safe on hotel Wi-Fi: browsing, news, streaming Netflix, sending emails. What needs extra care: banking, shopping, entering passwords.",
+        "Your mobile data (4G/5G) is much more secure than public Wi-Fi. If you are checking your bank account in a café or airport, turn off Wi-Fi and use your mobile data instead. A few minutes of data use costs very little and is far safer."
+      ],
+      "tellMeMore": "A VPN (Virtual Private Network) encrypts everything you send over any network. Apps like NordVPN or ExpressVPN cost about $5–10 per month and are easy to use — tap a button to turn on, tap again to turn off. If you travel regularly and use public Wi-Fi often, a VPN is a worthwhile investment. Ask a family member or your local library's technology help desk for setup assistance."
+    },
+    {
+      "type": "content",
+      "heading": "Digital boarding passes and travel tools",
+      "body": [
+        "Digital boarding passes: download your airline's app, log in, and your boarding pass appears as a QR code on your screen. The gate agent scans it directly — no printing required. Save it to your Wallet app (iPhone) or Google Wallet (Android) so it is accessible even without Wi-Fi.",
+        "Google Maps offline: search for your destination, tap the three dots, select 'Download offline map.' The map saves to your device and works without internet. Incredibly useful in areas with poor signal.",
+        "Translation: the Google Translate app can translate signs using your camera in real time — point your phone at a menu, sign, or form and the translation appears overlaid on the image instantly."
+      ],
+      "tellMeMore": "Apple Maps and Google Maps both have 'Share Location' features. Tell a trusted family member you will share your live location while travelling — they can see exactly where you are at any time, which provides peace of mind for both of you. On iPhone: open Maps, tap your name at the bottom, and select 'Share My Location.'"
+    },
+    {
+      "type": "summary",
+      "heading": "Explore confidently — your device has your back",
+      "takeaways": [
+        "Tell your bank you are travelling before you leave — prevents card blocks on foreign transactions.",
+        "Always ask hotel staff for the exact Wi-Fi network name. Never guess or pick the strongest signal.",
+        "For banking while travelling: turn off Wi-Fi and use your mobile data — far more secure.",
+        "Download offline Google Maps for your destination before you leave.",
+        "Digital boarding passes live in your phone's Wallet — no printing needed, works offline."
+      ],
+      "confidence": "You can now travel with your device as a confident companion — with your accounts protected and the right tools ready before you even leave home."
+    }
+  ]
+}
