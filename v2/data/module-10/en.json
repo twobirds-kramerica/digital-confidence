@@ -1,0 +1,67 @@
+{
+  "moduleId": "module-10",
+  "language": "en",
+  "title": "Module 10: Grocery & Food Delivery",
+  "timeEstimate": "About 7 minutes",
+  "screens": [
+    {
+      "type": "orientation",
+      "heading": "You are safe here",
+      "reassurance": "This module will not place any orders or share your information. You are just reading.",
+      "goal": "By the end of this module, you will know how to order groceries and restaurant meals for delivery — including how to pay safely, request substitutions, and get a refund if something is wrong.",
+      "timeEstimate": "About 7 minutes"
+    },
+    {
+      "type": "content",
+      "heading": "Linda's story",
+      "body": [
+        "Linda, 78, has mild arthritis in her knees. The weekly grocery run had become exhausting — the parking lot, the heavy cart, the bags up the front steps. Her daughter suggested grocery delivery.",
+        "Linda was nervous: What if the produce was bad? What if her credit card was stolen? Her daughter helped her place the first order. The shopper texted a photo asking 'Is this the right yogurt?' — which made Linda laugh. Everything arrived perfectly in an hour.",
+        "'It has genuinely changed my life,' Linda says. 'I don't know why I was so worried.'"
+      ],
+      "tellMeMore": "Grocery delivery apps are completely safe when downloaded from the official App Store or Google Play Store. Your payment information is encrypted — as secure as any major Canadian retailer. You see the full total before you confirm. Common Canadian options: Instacart (works with most major grocery chains), Walmart Grocery, Loblaws PC Express, Amazon Fresh in some cities."
+    },
+    {
+      "type": "content",
+      "heading": "How grocery delivery works",
+      "body": [
+        "Download the store's app or visit their website. Create a free account with your email address and a password. Enter your delivery address.",
+        "Browse and add items to your cart exactly like in the store — search by name or browse categories. When ready, tap 'Checkout,' review your order, choose a delivery time, and pay.",
+        "A personal shopper picks your order. If an item is out of stock, they will offer a substitution and often send you a photo to confirm. Your groceries arrive at your door, usually within a few hours."
+      ],
+      "tellMeMore": "Leave a note for the shopper at checkout: 'Please leave bags inside the screen door' or 'Ring the bell twice.' Shoppers read these and follow them. You can also rate the shopper after delivery — most are excellent and appreciate the feedback. If anything is wrong with your order, the app's help section makes it easy to request a refund or credit."
+    },
+    {
+      "type": "content",
+      "heading": "Restaurant food delivery",
+      "body": [
+        "Apps like DoorDash, Uber Eats, and SkipTheDishes let you order from local restaurants and have meals delivered in 30–60 minutes.",
+        "Browse restaurants near you, see menus with photos and prices, and add items to your cart. The full price (including delivery fee and tip) is shown before you confirm. Pay by credit or debit card saved in the app.",
+        "You can track your order on a map in real time — watch it travel from the restaurant to your door. A notification tells you when it arrives."
+      ],
+      "tellMeMore": "Delivery fees can add up quickly — typically $3–8 per order, plus the suggested tip. For regular use, some apps offer monthly memberships (DashPass, Uber One) that waive the delivery fee for a flat monthly rate. If you order weekly, the membership often saves money. You can cancel the membership any time from the app's account settings."
+    },
+    {
+      "type": "content",
+      "heading": "Paying safely and getting refunds",
+      "body": [
+        "Add your credit or debit card to the app once. Your full card number is never shown again — the app stores only a secure token. This is the same technology major banks use.",
+        "If something arrives wrong or missing: open the app, go to your recent orders, tap the order, and select 'Report an issue.' You will usually receive a credit or refund within minutes — no phone call needed.",
+        "Never pay for a delivery order by gift card, wire transfer, or e-Transfer. Legitimate delivery apps only accept card payments."
+      ],
+      "tellMeMore": "Most delivery apps also offer a 'contactless delivery' option — the driver leaves your order at the door, takes a photo, and you receive the photo as confirmation. This is the default for many orders now and is completely safe."
+    },
+    {
+      "type": "summary",
+      "heading": "Groceries and meals come to you now",
+      "takeaways": [
+        "Grocery apps (Instacart, PC Express, Walmart) let a shopper pick and deliver your order — usually same day.",
+        "Food delivery apps (DoorDash, Uber Eats, SkipTheDishes) bring restaurant meals in 30–60 minutes.",
+        "Your card information is encrypted. The full total is always shown before you confirm.",
+        "Wrong or missing items? Report within the app for an instant refund — no phone call needed.",
+        "Never pay for delivery by gift card or e-Transfer. Card payments only."
+      ],
+      "confidence": "You can now order groceries and restaurant meals for delivery, pay safely, and handle any issues — all from your device."
+    }
+  ]
+}

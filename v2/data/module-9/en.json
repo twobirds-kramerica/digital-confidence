@@ -1,0 +1,67 @@
+{
+  "moduleId": "module-9",
+  "language": "en",
+  "title": "Module 9: Understanding AI",
+  "timeEstimate": "About 9 minutes",
+  "screens": [
+    {
+      "type": "orientation",
+      "heading": "You are safe here",
+      "reassurance": "This module contains no AI tools and will not collect any information about you. You are just reading.",
+      "goal": "By the end of this module, you will understand what AI is, what it can and cannot do, how to spot AI-generated fakes, and how to try a few helpful AI tools safely.",
+      "timeEstimate": "About 9 minutes"
+    },
+    {
+      "type": "content",
+      "heading": "Margaret's story",
+      "body": [
+        "Margaret, 72, saw a convincing photo on Facebook of her friend Helen at a tropical resort. When she called Helen to congratulate her, Helen laughed — she had never been there. The photo was AI-generated.",
+        "That got Margaret wondering: if AI could make that photo, what else could it do? Could someone make a fake photo of her?",
+        "Margaret decided to learn about AI before she had to deal with it in a stressful situation. By the end, she was not scared — she was actually using AI to help plan her garden. That is the goal of this module."
+      ],
+      "tellMeMore": "AI stands for Artificial Intelligence. It is software that has been trained on enormous amounts of text, photos, and other data until it can do things that used to require human intelligence — like writing, translating, answering questions, and generating images. The key word is 'trained.' AI does not think or feel. It finds patterns in the data it was trained on and produces outputs based on those patterns."
+    },
+    {
+      "type": "content",
+      "heading": "What AI actually is — in plain language",
+      "body": [
+        "Think of AI like a very fast, very well-read assistant who has read millions of books, articles, and websites. When you ask it a question, it searches its memory for the most likely helpful answer.",
+        "AI does not have opinions, feelings, or consciousness. It cannot access your device or your accounts unless you specifically give it permission. It cannot 'get into' your email by reading about it.",
+        "The most common AI tools you will encounter: ChatGPT and Claude (for conversation and writing help), Google Search (has AI summaries now), Siri and Google Assistant (voice assistants), and AI photo tools."
+      ],
+      "tellMeMore": "AI makes mistakes. It can confidently give you wrong information — this is called 'hallucination.' Always double-check important facts (medical, legal, financial) from an AI with a reliable source. AI is a helpful starting point, not an authority."
+    },
+    {
+      "type": "content",
+      "heading": "What to watch out for: fakes and scams using AI",
+      "body": [
+        "AI-generated photos: realistic images of people, places, or events that never happened. Signs: slightly blurry edges, odd hands or fingers, backgrounds that do not quite make sense.",
+        "AI voice cloning: scammers can clone a person's voice from a few seconds of audio. If someone calls claiming to be a family member in trouble and asks for money — hang up and call that person directly on their real number.",
+        "Deepfake videos: AI-generated videos of real people saying things they never said. If a video of someone seems off — stiff movements, blinking that looks wrong, voice slightly out of sync — be sceptical."
+      ],
+      "tellMeMore": "The Stop-Breathe-Verify rule from Module 2 applies perfectly here. If something looks off — a photo, a video, a voice — Stop. Breathe. Verify by checking with the person directly through a trusted channel. Real family members and real institutions will always let you verify."
+    },
+    {
+      "type": "content",
+      "heading": "Trying AI tools safely",
+      "body": [
+        "Claude (claude.ai) and ChatGPT (chat.openai.com) are the two most trusted AI assistants. Both have free tiers. You can ask them almost anything: 'What are good exercises for knee pain?' 'Help me write a birthday message for my grandson.' 'What does this letter from my insurance company mean?'",
+        "Privacy rule: never tell an AI your full name, address, banking details, or passwords. Treat it like a helpful stranger — useful for general information, but not for personal secrets.",
+        "You can also use AI for fun: ask it to write a short poem about your garden, plan a recipe using ingredients you have, or explain something in simpler language."
+      ],
+      "tellMeMore": "Siri (Apple) and Google Assistant (Android) are AI assistants already on your device. Press and hold the Home button or say 'Hey Siri' / 'Hey Google' to try them. Ask: 'What is the weather tomorrow?' or 'Set a timer for 20 minutes.' These assistants do not store your conversations and are safe for everyday use."
+    },
+    {
+      "type": "summary",
+      "heading": "AI is a tool — and now you know how to use it wisely",
+      "takeaways": [
+        "AI is software trained on data. It does not think or feel — it finds patterns and generates outputs.",
+        "AI-generated fakes (photos, voices, videos) are real and growing. Stop-Breathe-Verify applies to anything that seems off.",
+        "Voice cloning scams: if a 'family member' calls in distress and asks for money, hang up and call their real number.",
+        "Never share personal details (name, address, banking) with any AI tool.",
+        "Claude and ChatGPT are safe starting points for helpful, general questions."
+      ],
+      "confidence": "You now understand what AI is, how to spot fakes, and how to try AI tools without being tricked or putting your privacy at risk."
+    }
+  ]
+}

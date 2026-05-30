@@ -1,0 +1,67 @@
+{
+  "moduleId": "module-11",
+  "language": "en",
+  "title": "Module 11: Ride-Sharing Apps",
+  "timeEstimate": "About 7 minutes",
+  "screens": [
+    {
+      "type": "orientation",
+      "heading": "You are safe here",
+      "reassurance": "This module will not request any rides or share your location. You are just reading.",
+      "goal": "By the end of this module, you will know how to request an Uber safely, verify your driver before getting in, and feel confident using ride-sharing for appointments, errands, or travel.",
+      "timeEstimate": "About 7 minutes"
+    },
+    {
+      "type": "content",
+      "heading": "Robert's story",
+      "body": [
+        "Robert, 76, had always driven himself everywhere. When his car went in for a week-long repair, he needed to get to a doctor's appointment across town. His daughter suggested Uber.",
+        "'I do not want a stranger driving me around,' Robert said. His daughter showed him how it worked — you see the driver's name, photo, car model, and licence plate before they arrive. This driver had 4.9 stars over 2,000 trips.",
+        "The driver arrived on time. Robert checked the licence plate against the app — a match. He made his appointment with ten minutes to spare. 'It is actually more comfortable than a taxi,' he says. 'And I feel safer because I can see everything before I get in.'"
+      ],
+      "tellMeMore": "Ride-sharing is not hailing a random taxi. Uber and Lyft drivers are screened, rated, and tracked by GPS throughout your ride. Every trip is recorded — the route, the driver, the time. Your family can share your live location. If anything goes wrong, there is a full digital trail and in-app emergency support."
+    },
+    {
+      "type": "content",
+      "heading": "Requesting an Uber — step by step",
+      "body": [
+        "Open the Uber app. Your current location appears automatically on the map. Tap 'Where to?' and type your destination.",
+        "The app shows you available cars nearby, the estimated arrival time (usually 2–8 minutes), and the price upfront. Tap 'Request.' A driver accepts and their details appear: name, photo, car model, colour, and licence plate.",
+        "Wait outside when the car is 1–2 minutes away. Before getting in: check the licence plate matches the app. The driver will confirm your name. If either does not match — do not get in. Cancel and request another."
+      ],
+      "tellMeMore": "You can also share your trip with a family member from within the app. Tap 'Share status' and send them a link — they can watch your trip live on their phone. This is a reassuring feature for both you and your family. Payment is automatic — your card is charged at the end of the trip. You never need cash."
+    },
+    {
+      "type": "content",
+      "heading": "Staying safe every ride",
+      "body": [
+        "The three checks before getting in: (1) licence plate matches the app, (2) car make and colour matches, (3) driver says your name without being asked. All three should match.",
+        "Sit in the back seat. This gives you more personal space and an easier exit.",
+        "If you ever feel unsafe during a ride: the app has a safety button (a shield icon). Tap it to share your location with emergency services or call 911 directly."
+      ],
+      "tellMeMore": "After every ride, you rate the driver (1–5 stars) and they rate you. High-rated drivers are the most reliable. If a ride is exceptional, add a cash tip or tip through the app. If a driver is unprofessional — even slightly — give them fewer stars and leave a note. This keeps the service quality high for everyone."
+    },
+    {
+      "type": "content",
+      "heading": "Getting the Uber app set up",
+      "body": [
+        "Download Uber from the App Store (iPhone/iPad) or Google Play (Android). Create a free account with your email address. Add a credit or debit card — your card number is encrypted and never shown again.",
+        "Lyft is the main alternative to Uber in Canada. It works identically. Some cities have more Uber drivers; others have more Lyft. Having both apps installed gives you options.",
+        "You can set up Uber on your behalf for an elderly parent: Uber for Family lets you add family members, pay for their rides, and see their trip status from your own phone."
+      ],
+      "tellMeMore": "If you are not comfortable with apps, Uber has a phone option in some cities — you call a number and a dispatcher books the ride for you. Ask a family member or library staff to help you find this option in your area. Some municipalities also have senior-specific ride programmes that partner with Uber — your local library or senior centre can help you find these."
+    },
+    {
+      "type": "summary",
+      "heading": "You now have a driver on demand",
+      "takeaways": [
+        "Before getting in: check licence plate, car details, and that the driver says your first name. All three must match.",
+        "Sit in the back seat. The app's safety button connects you to emergency services instantly.",
+        "Payment is automatic — no cash needed. The price is shown before you confirm.",
+        "Share your trip with a family member so they can watch you travel in real time.",
+        "Uber for Family lets a family member pay for and monitor your rides."
+      ],
+      "confidence": "You can now request, verify, and complete a safe Uber ride — to any appointment, errand, or destination."
+    }
+  ]
+}
