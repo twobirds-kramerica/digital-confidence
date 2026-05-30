@@ -1,0 +1,68 @@
+{
+  "moduleId": "module-20",
+  "language": "en",
+  "title": "Module 20: Understanding Your Internet Plan",
+  "timeEstimate": "About 7 minutes",
+  "screens": [
+    {
+      "type": "orientation",
+      "heading": "You are safe here",
+      "reassurance": "This module will not change your internet plan or contact your provider. You are just reading.",
+      "goal": "By the end of this module, you will understand what your internet plan includes, what a data cap is, whether you are paying for more speed than you need, and how to have an informed conversation with your provider.",
+      "timeEstimate": "About 7 minutes"
+    },
+    {
+      "type": "content",
+      "heading": "The overage trap — when your bill surprises you",
+      "body": [
+        "Many Canadian internet plans include a monthly data cap — a limit on how much data you can download and upload. When you exceed that cap, your provider either slows your connection significantly or charges extra.",
+        "The problem: providers rarely explain this clearly when you sign up. You only discover the cap when an unexpected charge appears on your bill — or when your internet slows to a crawl in the last week of the month.",
+        "How to check your data cap: log in to your provider's website or app, look for 'Usage,' 'My Account,' or 'Data Usage.' Most providers show a monthly bar graph of your usage. If you are consistently near the limit, it may be time to upgrade. If you are consistently at 30% or less, you may be paying for more than you need."
+      ],
+      "tellMeMore": "Providers are required by the CRTC to notify you when you reach 75% and 100% of your data cap. If you are not receiving these notifications, log in to your account and make sure your contact email is correct. You can also set up automatic alerts from most provider apps."
+    },
+    {
+      "type": "content",
+      "heading": "Speed — what you actually need",
+      "body": [
+        "Internet speed is measured in Mbps (megabits per second). More is faster, but most home users do not need as much as providers sell.",
+        "For most seniors: 25 Mbps download is plenty for video calls, streaming Netflix, browsing, and email. If only one or two people use the internet in your home, 50 Mbps is generous. You would only need 100 Mbps or more if multiple people are streaming 4K video simultaneously.",
+        "Think of it like a water pipe. You pay for pipe width (speed), not for how much water you actually use (data). Most people pay for a much wider pipe than they ever need."
+      ],
+      "tellMeMore": "Test your actual speed for free at fast.com or speedtest.net. Run the test while connected to your home Wi-Fi. If the result is close to what you are paying for, your connection is working correctly. If it is significantly lower, call your provider — slow speeds relative to your plan are a service issue they are obligated to address."
+    },
+    {
+      "type": "content",
+      "heading": "What uses data — and how much",
+      "body": [
+        "Light data use (up to 50 GB/month): email, browsing websites, video calls, light streaming. Most seniors living alone fall into this category.",
+        "Moderate use (50-150 GB/month): regular Netflix or YouTube viewing, downloading photos, some music streaming.",
+        "Heavy use (150 GB+): 4K video streaming, large file downloads, video gaming. Very few seniors reach this level.",
+        "Wi-Fi does not use your home internet data when you are away from home — mobile data is separate. Your home internet cap only applies when you are connected to your home Wi-Fi."
+      ],
+      "tellMeMore": "Streaming video is the biggest data user. One hour of Netflix in standard definition uses about 1 GB. In HD, about 3 GB. In 4K, about 7 GB. If you stream two hours of Netflix per day in HD, that is roughly 180 GB per month from streaming alone. Many Canadian providers offer plans with no data cap for $10-20 more per month — if you stream regularly, this can be worth the upgrade."
+    },
+    {
+      "type": "content",
+      "heading": "How to negotiate a better deal",
+      "body": [
+        "Internet providers count on customer inertia. Long-term customers almost always pay more than new customers for the same service. Every year or two, it is worth calling your provider and asking: 'What is your best current offer for existing customers?'",
+        "The most effective phrase: 'I have been a loyal customer for [X] years. I have seen promotions for new customers at [lower price]. Can you match that or offer me something similar?' Most retention agents have the authority to reduce your bill.",
+        "If they say no: ask to be transferred to the loyalty or retention department. This department exists specifically to keep customers from leaving and has more flexibility."
+      ],
+      "tellMeMore": "Bundling internet with TV or home phone from the same provider is often sold as a 'deal' — but run the numbers. Sometimes it is cheaper to buy each service separately from different providers. The CRTC's website (crtc.gc.ca) has a comparison tool. The Competition Bureau's internet plan comparison tool at pricecompare.ca also helps."
+    },
+    {
+      "type": "summary",
+      "heading": "You are now a more informed internet customer",
+      "takeaways": [
+        "Check your monthly data usage in your provider's app or website — you may be paying for a cap you never reach.",
+        "25-50 Mbps is plenty for most single-person or couple households.",
+        "Test your actual speed at fast.com — if it is much lower than your plan, call your provider.",
+        "Call your provider yearly and ask for their best current offer for existing customers.",
+        "Ask to speak to the 'loyalty' or 'retention' department — they have authority to reduce your bill."
+      ],
+      "confidence": "You now understand your internet plan well enough to check whether you are getting value for money — and how to ask for a better deal."
+    }
+  ]
+}

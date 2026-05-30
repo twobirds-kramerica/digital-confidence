@@ -1,0 +1,67 @@
+{
+  "moduleId": "module-27",
+  "language": "en",
+  "title": "Module 27: Your Inbox — Managing Email and Spam",
+  "timeEstimate": "About 7 minutes",
+  "screens": [
+    {
+      "type": "orientation",
+      "heading": "You are safe here",
+      "reassurance": "This module will not send, delete, or change any emails. You are just reading.",
+      "goal": "By the end of this module, you will know how to tame a cluttered inbox, safely unsubscribe from unwanted emails, deal with spam, and keep only what actually matters in your email.",
+      "timeEstimate": "About 7 minutes"
+    },
+    {
+      "type": "content",
+      "heading": "Robert's 14,327 emails",
+      "body": [
+        "Robert opened his email app and saw 14,327 unread messages. 'I have not read most of these in years,' he admitted. 'But every time I think about dealing with them I just close the app and walk away.'",
+        "The number does not matter. You will never read 14,327 emails — but that is fine. The goal is not to achieve inbox zero. The goal is to quickly find the emails that actually matter, and ignore the rest.",
+        "This module gives you a simple, no-stress system that takes about 20 minutes to set up and keeps your inbox manageable from that point on."
+      ],
+      "tellMeMore": "Most email overload comes from newsletter and promotional email that accumulates over years. Every online purchase, loyalty card signup, or website registration usually results in ongoing email. The good news: most of this can be removed in bulk. You do not have to read 14,327 emails. You just need to delete or archive them all at once."
+    },
+    {
+      "type": "content",
+      "heading": "Archive vs Delete — the most important distinction",
+      "body": [
+        "Delete: permanently removes the email. It goes to your Trash folder and is erased after 30 days. Use this for spam, junk, and anything you are sure you do not need.",
+        "Archive: moves the email out of your inbox but keeps it. If you ever need it, it is searchable. Use this for emails you are not sure about — receipts, correspondence, health information.",
+        "The keyboard shortcut on iPad and iPhone: swipe left on an email to see quick options (Archive or Delete, depending on your settings). You can also tap 'Edit,' select multiple emails, and Archive or Delete them all at once."
+      ],
+      "tellMeMore": "In Gmail (the most common email service), 'Archive All' is your fastest reset: tap Edit in your inbox, tap Select All, then tap Archive. Every email moves out of your inbox into your archive — still searchable, but not cluttering your view. You can do this in under 30 seconds for thousands of emails. This is not deleting — nothing is lost. It is just filing everything at once."
+    },
+    {
+      "type": "content",
+      "heading": "Unsubscribing safely",
+      "body": [
+        "Most unwanted emails come from legitimate newsletters and promotional lists you signed up for at some point. These are safe to unsubscribe from.",
+        "Safe to unsubscribe: newsletters from retailers you have shopped with, charity emails, news newsletters, loyalty programme emails, app update notifications.",
+        "Do NOT click Unsubscribe on: emails claiming to be from your bank, the CRA, or any government that you did not ask for; emails from senders you do not recognise at all. For unknown senders, simply mark as spam (press and hold the email, tap 'Mark as Spam') — do not click any link inside it."
+      ],
+      "tellMeMore": "A free service called Unroll.me (available in Canada) scans your inbox, shows you all your subscriptions in one list, and lets you unsubscribe from multiple lists in one click. It is safe and CASL-compliant. However, you do give it permission to read your email headers — some people prefer to unsubscribe manually. Both approaches work."
+    },
+    {
+      "type": "content",
+      "heading": "Handling spam and junk email",
+      "body": [
+        "Spam that slips past your filter: mark it as junk or spam. On iPhone Mail: tap the flag icon or press and hold and select 'Mark as Junk.' On Gmail: tap the three dots and select 'Report Spam.' The more you mark, the better your filter learns.",
+        "If you are receiving a lot of spam from the same sender: tap the sender's name, tap 'Block this Contact.' No more emails from that address.",
+        "Never reply to spam to 'unsubscribe' from unknown senders. Replying confirms your email address is active — you will receive even more spam."
+      ],
+      "tellMeMore": "Your email provider's spam filter catches most spam automatically — it goes directly to your Junk folder without you seeing it. Check your Junk folder occasionally to make sure legitimate emails have not been incorrectly filtered. If a real email is in Junk: open it and tap 'Not Junk' or 'Move to Inbox.' This teaches the filter what you actually want."
+    },
+    {
+      "type": "summary",
+      "heading": "Your inbox works for you now",
+      "takeaways": [
+        "The number of unread emails does not matter. Your goal is finding what you need quickly — not reading everything.",
+        "Archive = kept but out of inbox. Delete = gone. When in doubt, archive.",
+        "Select All + Archive in Gmail clears your entire inbox in under 30 seconds without deleting anything.",
+        "Unsubscribe from newsletters and promotional email — but never click links in emails from unknown senders.",
+        "Mark spam emails as Junk — your filter learns and catches more over time."
+      ],
+      "confidence": "You now have a practical, stress-free system for managing your email — no matter how many messages have built up. Your inbox is under control."
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "moduleId": "module-22",
+  "language": "en",
+  "title": "Module 22: TV and Home Phone",
+  "timeEstimate": "About 7 minutes",
+  "screens": [
+    {
+      "type": "orientation",
+      "heading": "You are safe here",
+      "reassurance": "This module will not change any of your services or contact any provider. You are just reading.",
+      "goal": "By the end of this module, you will know whether you are paying too much for TV and home phone, what free and low-cost alternatives exist, and how to have an informed conversation with your provider about reducing your bill.",
+      "timeEstimate": "About 7 minutes"
+    },
+    {
+      "type": "content",
+      "heading": "The bundle trap",
+      "body": [
+        "Most Canadian cable providers (Rogers, Bell, Cogeco, Shaw/Freedom, Eastlink) sell 'bundles' — packages that combine internet, cable TV, and home phone for one monthly price. Bundles are marketed as savings. They are not always.",
+        "Check your actual bill: how much are you paying for each component? Then check what each would cost separately from different providers. Many people find their 'bundled deal' costs $30-60 more per month than unbundled alternatives.",
+        "The key question: do you actually use all three services? Many Canadian seniors have a home phone they rarely use and cable TV channels they never watch — but they keep the bundle because it seems easier."
+      ],
+      "tellMeMore": "You can negotiate your bundle price the same way you negotiate internet and mobile: call your provider, say you have been a loyal customer, mention you are considering alternatives, and ask what they can offer. Most retention agents have authority to offer $20-40 per month in discounts to keep a customer. Ask specifically: 'What promotions are available for existing customers?'"
+    },
+    {
+      "type": "content",
+      "heading": "Do you still need cable TV?",
+      "body": [
+        "Cable TV (with 100+ channels, a cable box, and a monthly fee) is the most expensive way to watch television. Most Canadians pay $60-120 per month for cable. The question worth asking: do you watch more than 10 of those 100+ channels regularly?",
+        "Free alternatives: CBC Gem (CBC's streaming service, free with internet connection), YouTube (free), and Pluto TV (free, ad-supported streaming with live channels). Many libraries offer free access to streaming services through their apps.",
+        "Low-cost alternatives: Netflix ($17-23/month), Crave ($9-22/month), and Amazon Prime Video ($10/month for the video-only tier) each offer thousands of hours of content for less than a typical cable bill."
+      ],
+      "tellMeMore": "If you do want to keep some live TV without cable, YouTube TV ($34 USD/month) and FuboTV offer live Canadian channels over the internet. Or ask your provider about a smaller channel package — most offer a 'skinny basic' tier with 30-40 channels for $20-25/month. The CRTC requires Canadian cable providers to offer this entry-level package."
+    },
+    {
+      "type": "content",
+      "heading": "Do you still need a home phone?",
+      "body": [
+        "The honest question: who calls you on your home phone? If the answer is mostly telemarketers and robocalls — with the occasional family member who has your cell number too — you may not need it.",
+        "A home phone line from a cable bundle typically costs $20-30 per month. Over a year, that is $240-360 for a service you may use rarely.",
+        "The main reasons to keep a home phone: you have family members who prefer calling it, you feel safer having a landline for emergencies, or your medical alert device requires a landline. These are valid reasons. But if none applies, eliminating the home phone is usually the easiest way to reduce your bill."
+      ],
+      "tellMeMore": "If you want to keep a landline for emergencies but reduce cost: VoIP services like MagicJack or Ooma provide a home phone connection over your internet for $5-10 per month after an initial device purchase. Call quality is equivalent to a traditional landline. Ask a tech-savvy family member to help set one up."
+    },
+    {
+      "type": "content",
+      "heading": "The skinny basic TV package",
+      "body": [
+        "By CRTC regulation, every Canadian cable provider must offer a 'skinny basic' entry-level package with local and regional channels for no more than $25 per month.",
+        "This package includes CBC, CTV, Global, local news, and a few educational channels. If you mainly watch local news, Canadian drama, and sports highlights, this tier may be sufficient — at a fraction of your current bill.",
+        "To add specific channels you want (e.g., a sports network or a French-language channel), you can pick individual channels or small themed packs. This a la carte approach often costs less than a full cable package."
+      ],
+      "tellMeMore": "An over-the-air (OTA) antenna is another option for free TV. A $25-40 indoor antenna picks up all local broadcast channels in HD — CBC, CTV, Global, City, and more — completely free with no monthly fee. Signal quality depends on your distance from broadcast towers. Search 'TV Fool' or 'Antenna Web' with your address to see which channels are available in your area."
+    },
+    {
+      "type": "summary",
+      "heading": "Your TV and phone bill is negotiable",
+      "takeaways": [
+        "Check if your bundle is actually saving you money by pricing each service separately.",
+        "The CRTC requires cable providers to offer a 'skinny basic' TV package at no more than $25/month.",
+        "Free TV streaming: CBC Gem, YouTube, and Pluto TV cost nothing with your internet connection.",
+        "Netflix, Crave, and Amazon Prime Video offer extensive content for far less than cable.",
+        "If you rarely use your home phone, eliminating it is usually the easiest way to cut your bill."
+      ],
+      "confidence": "You now have the knowledge to question your TV and home phone bills and make informed choices about what you actually need."
+    }
+  ]
+}

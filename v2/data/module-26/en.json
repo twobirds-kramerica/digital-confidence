@@ -1,0 +1,67 @@
+{
+  "moduleId": "module-26",
+  "language": "en",
+  "title": "Module 26: Managing Your Notifications",
+  "timeEstimate": "About 6 minutes",
+  "screens": [
+    {
+      "type": "orientation",
+      "heading": "You are safe here",
+      "reassurance": "This module will not change any settings. You are just reading.",
+      "goal": "By the end of this module, you will know how to turn off notifications from apps that do not need your attention, set quiet hours so your phone does not disturb you at night, and keep only the alerts that actually matter.",
+      "timeEstimate": "About 6 minutes"
+    },
+    {
+      "type": "content",
+      "heading": "Helen's 47 notifications",
+      "body": [
+        "Helen picked up her iPad after a two-hour nap and found 47 notification banners waiting for her. A weather app. A news app. A shopping app reminding her of items in her cart. A game she had downloaded months ago and never opened.",
+        "'I felt like I had missed something important,' Helen said. 'Then I realised: none of it was important. Not one of those 47 things needed my attention.'",
+        "Notifications are designed by app developers to bring you back to their app. Every ping, badge, or banner is a pull on your attention — whether you want it or not. You are allowed to turn them off."
+      ],
+      "tellMeMore": "The average smartphone user receives over 80 notifications per day. Research consistently shows that notification overload increases anxiety and reduces the ability to focus. You are not obligated to respond to every notification, and you are not obligated to receive them. Your device works on your terms."
+    },
+    {
+      "type": "content",
+      "heading": "Turning off notifications you do not need",
+      "body": [
+        "On iPhone/iPad: go to Settings, scroll down and tap Notifications. You will see a list of every app on your device. Tap any app to see its notification settings. To silence it completely, turn off 'Allow Notifications' at the top.",
+        "The apps that genuinely need notification permission: Messages, Phone, your banking app, your pharmacy app, any medical alert or appointment reminder app.",
+        "The apps you can safely silence: news apps, weather apps, shopping apps, games, social media (unless you actively want those), food delivery apps (you can check the status yourself when expecting an order)."
+      ],
+      "tellMeMore": "On Android: go to Settings > Apps (or Notifications). Tap each app to see and change its notification settings. The process is identical to iPhone — allow for important apps, turn off for everything else. You can also tap and hold any notification banner when it appears and choose 'Turn off notifications' right there — without going to Settings."
+    },
+    {
+      "type": "content",
+      "heading": "Do Not Disturb and quiet hours",
+      "body": [
+        "Do Not Disturb silences all notifications while you sleep, rest, or want uninterrupted time. Emergency calls from your contacts still come through.",
+        "On iPhone/iPad: go to Settings > Focus > Do Not Disturb. Turn it on manually, or tap 'Add Schedule' to set automatic quiet hours (for example, 10pm to 7am every night).",
+        "On Android: go to Settings > Notifications > Do Not Disturb. Turn on and set a schedule. You can also allow calls from specific contacts (like your children) to ring through even during Do Not Disturb."
+      ],
+      "tellMeMore": "The Control Centre shortcut makes Do Not Disturb easy to turn on quickly. On iPhone: swipe down from the top right corner of the screen. You will see a moon icon — tap it to turn Do Not Disturb on or off instantly. No need to go through Settings every time."
+    },
+    {
+      "type": "content",
+      "heading": "Badge numbers and banner styles",
+      "body": [
+        "Notification badges are the red numbers on app icons (like '47' on your Messages icon). They count unread items. You can turn them off for apps where you do not want to see the count: Settings > Notifications > tap the app > turn off Badges.",
+        "Banner style controls how notifications appear on screen: 'Temporary' banners appear briefly and disappear on their own. 'Persistent' banners stay until you dismiss them. For most apps, Temporary is less intrusive.",
+        "Lock screen notifications show your message previews to anyone who picks up your phone. For sensitive apps (banking, messages), go to Settings > Notifications > the app > Show Previews > 'When Unlocked Only.'"
+      ],
+      "tellMeMore": "Notification Summary (iPhone) is a useful feature that batches non-urgent notifications and delivers them once in the morning and once in the evening — instead of interrupting you throughout the day. To enable it: Settings > Notifications > Scheduled Summary > turn on and set your preferred delivery times."
+    },
+    {
+      "type": "summary",
+      "heading": "Your attention is yours to protect",
+      "takeaways": [
+        "You are allowed to turn off notifications from any app that does not genuinely need your attention.",
+        "Keep notifications on for: Messages, Phone, banking, pharmacy, and any medical or appointment reminders.",
+        "Turn off notifications for: news, weather, shopping, games, and social media apps.",
+        "Do Not Disturb with a scheduled quiet time (10pm-7am) gives you uninterrupted rest.",
+        "The moon icon in Control Centre turns Do Not Disturb on and off instantly."
+      ],
+      "confidence": "You are now in control of your notifications — not the other way around. Your device works on your schedule."
+    }
+  ]
+}

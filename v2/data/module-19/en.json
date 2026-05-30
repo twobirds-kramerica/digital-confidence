@@ -1,0 +1,67 @@
+{
+  "moduleId": "module-19",
+  "language": "en",
+  "title": "Module 19: Your Digital Life — Keeping It Safe and Organised",
+  "timeEstimate": "About 8 minutes",
+  "screens": [
+    {
+      "type": "orientation",
+      "heading": "You are safe here",
+      "reassurance": "This module will not change any settings or accounts. You are just reading.",
+      "goal": "By the end of this module, you will know how to take stock of your digital accounts, back up your photos so they can never be lost, and set up a simple system so your family can access what matters if something happens to you.",
+      "timeEstimate": "About 8 minutes"
+    },
+    {
+      "type": "content",
+      "heading": "Your digital inventory — knowing what you have",
+      "body": [
+        "Most people have more digital accounts than they realise: email, online banking, shopping sites, streaming services, social media, health portals, and more. Each has a password. Each holds some personal information.",
+        "The first step is simply knowing what you have. Take a piece of paper and write down every service you can think of — even ones you barely use. That list is your digital inventory.",
+        "You do not need to do anything with it immediately. But having it means you — or a trusted family member — can take action quickly if something goes wrong."
+      ],
+      "tellMeMore": "A password manager like 1Password or Bitwarden stores all your accounts and passwords in one secure, encrypted place. You remember one strong master password; the app remembers all the rest. If you are not ready for that, a physical notebook kept in a secure place at home is a perfectly valid starting point — just do not label it 'Passwords.'"
+    },
+    {
+      "type": "content",
+      "heading": "Accounts to keep, accounts to close",
+      "body": [
+        "Keep: online banking and financial accounts, email (one main account), health portals (Ontario Health, your pharmacy), and any shopping or streaming accounts you actually use.",
+        "Consider closing: accounts for services you no longer use, old email addresses you have not checked in years, shopping accounts on sites you have visited once. Fewer accounts means fewer passwords, fewer potential breaches.",
+        "How to close an account: most services have a 'Delete Account' or 'Close Account' option under Settings or Account. If you cannot find it, search for '[service name] how to delete account' — there are step-by-step guides for every major service."
+      ],
+      "tellMeMore": "You do not have to close every unused account immediately. Start with the ones that have your credit card number stored. Those are the highest priority to close if you are not using the service — a breach of that company would expose your card. Streaming services, gaming accounts, and old newsletters can wait."
+    },
+    {
+      "type": "content",
+      "heading": "Protecting your digital photos — backup is everything",
+      "body": [
+        "Your digital photos are your memories. Unlike physical photos, digital files can disappear instantly — a lost phone, a broken iPad, a stolen device. The solution is backup: keeping a copy somewhere other than your device.",
+        "The simplest backup for iPhone/iPad users: turn on iCloud Photos. Go to Settings, tap your name, tap iCloud, tap Photos, and turn on iCloud Photos. Your photos will automatically back up to Apple's secure servers. You get 5 GB free; 50 GB costs 99 cents per month.",
+        "Android users: Google Photos backs up automatically when connected to Wi-Fi. Download the Google Photos app and sign in with your Google account — it handles the rest."
+      ],
+      "tellMeMore": "A second backup is even better. Once a month, connect your device to a computer and copy your photos to a USB drive or external hard drive. This creates a physical backup separate from the cloud. Hardware stores and pharmacies sell USB drives for $15–20. Label it with the date of your last backup and keep it somewhere safe."
+    },
+    {
+      "type": "content",
+      "heading": "Planning for trusted access",
+      "body": [
+        "One of the most practical gifts you can give your family: a document called a Digital Instructions document. It lists your key accounts, where to find your passwords, and what you would want done with your accounts when you no longer need them.",
+        "Store this document in a sealed envelope with your will, or in a secure physical location your family knows about. Update it once a year.",
+        "Apple has a Legacy Contact feature — a trusted person who can access your Apple account data if you pass away. Set it up: go to Settings, tap your name, tap Password and Security, tap Legacy Contact."
+      ],
+      "tellMeMore": "You do not have to include your actual passwords in this document — just the location of your password manager, or the physical notebook where they are stored. Instructions like 'My banking passwords are in the blue notebook in the filing cabinet' are enough. The goal is to prevent your family from being locked out of important accounts during an already difficult time."
+    },
+    {
+      "type": "summary",
+      "heading": "Your digital life is more manageable than it seems",
+      "takeaways": [
+        "A digital inventory — just a written list of your accounts — is the most important first step.",
+        "Close accounts that have your credit card stored but that you no longer use.",
+        "Turn on iCloud Photos or Google Photos to back up your memories automatically.",
+        "Create a Digital Instructions document and store it with your will or important papers.",
+        "Apple Legacy Contact lets a trusted person access your Apple data after you pass away."
+      ],
+      "confidence": "You now have a practical plan for keeping your digital life safe, organised, and accessible — for yourself and for the people you love."
+    }
+  ]
+}

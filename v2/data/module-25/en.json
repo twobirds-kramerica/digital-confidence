@@ -1,0 +1,68 @@
+{
+  "moduleId": "module-25",
+  "language": "en",
+  "title": "Module 25: When Things Stop Working",
+  "timeEstimate": "About 7 minutes",
+  "screens": [
+    {
+      "type": "orientation",
+      "heading": "You are safe here",
+      "reassurance": "This module will not change any settings on your device. You are just reading.",
+      "goal": "By the end of this module, you will know how to figure out why your internet or app stopped working, whether the problem is with your device or with the service itself, and the four troubleshooting steps that fix most problems.",
+      "timeEstimate": "About 7 minutes"
+    },
+    {
+      "type": "content",
+      "heading": "The dinosaur on your screen",
+      "body": [
+        "When your internet connection drops, Chrome shows a small cartoon dinosaur. Safari shows a message like 'Cannot Connect to the Internet.' Other apps say 'No Connection' or show a spinning circle that never stops.",
+        "These screens are not errors you caused. They simply mean your device cannot reach the internet right now. Something between your device and the internet has stopped working — and it is almost always fixable.",
+        "The key question to ask first: is it just you, or is something bigger going on?"
+      ],
+      "tellMeMore": "When your internet stops working, the problem is usually one of three things: (1) your Wi-Fi router needs a restart, (2) your internet service provider (ISP) has an outage in your area, or (3) the specific website or app you are trying to use is down. Each has a different fix — so diagnosing first saves time."
+    },
+    {
+      "type": "content",
+      "heading": "Is it just you? How to find out",
+      "body": [
+        "Step 1: Check another device. If your iPad has no internet but your phone does (using mobile data), the problem is your Wi-Fi network or router. If neither device has internet, the problem is likely your router or your ISP.",
+        "Step 2: Check if the specific website or app is down for everyone. Go to downdetector.com on your phone (using mobile data) and search for the service. If thousands of others are also reporting outages, the problem is on their end — not yours.",
+        "Step 3: Check your router. Look for the lights on your router (the box that provides your Wi-Fi). If any lights are red or off, your internet connection from your provider may be disrupted."
+      ],
+      "tellMeMore": "Your ISP has a service status page on their website and often posts outage updates on Twitter/X. Search for your provider's name plus 'outage' or 'service status.' Bell, Rogers, Cogeco, and Telus all have status pages. If there is a confirmed outage in your area, the only thing to do is wait — they are usually resolved within a few hours."
+    },
+    {
+      "type": "content",
+      "heading": "The four fixes that solve most problems",
+      "body": [
+        "Fix 1 — Restart your device: Press and hold the power button, slide to power off, wait 30 seconds, turn back on. This clears temporary errors and fixes more problems than any other single step.",
+        "Fix 2 — Restart your router: Unplug the power cable from the back of the router, wait 30 seconds, plug it back in. Wait 2 minutes for it to fully restart. This resets your connection to your ISP.",
+        "Fix 3 — Check your Wi-Fi connection: On iPhone/iPad, go to Settings > Wi-Fi. Make sure you are connected to your home network (your network name should have a checkmark). If not, tap your network name and enter your Wi-Fi password.",
+        "Fix 4 — Force close and reopen the app: On iPhone/iPad, swipe up from the bottom and pause to see open apps. Find the problem app and swipe it upward to close it. Then reopen it from your Home screen."
+      ],
+      "tellMeMore": "If none of the four fixes work, call your internet provider's technical support line. The number is on your bill or their website. Tell them: 'My internet is not working. I have already restarted my router and my device.' This tells them you have done the basics and speeds up their troubleshooting. They can often diagnose the problem remotely and schedule a technician if needed."
+    },
+    {
+      "type": "content",
+      "heading": "When an app stops working",
+      "body": [
+        "If one specific app is misbehaving (crashing, showing errors, not loading): first check if there is an update available. Open the App Store (iPhone/iPad) or Google Play (Android), go to Updates, and update the problem app.",
+        "If updating does not help: delete the app and reinstall it. Tap and hold the app icon, tap 'Remove App' or 'Delete App,' confirm, then search for it in the App Store and reinstall. This clears any corrupted data.",
+        "If a website is not loading: try a different browser. If Safari is giving you trouble, try Chrome (free in the App Store). If Chrome has issues, try Safari. A problem in one browser is usually not a problem in another."
+      ],
+      "tellMeMore": "Many apps stop working correctly when your device runs an older version of iOS or Android that the app no longer supports. If you consistently have problems with multiple apps, check for a system update: Settings > General > Software Update. Installing the latest iOS or Android update often resolves multiple app issues at once."
+    },
+    {
+      "type": "summary",
+      "heading": "Most problems have simple solutions",
+      "takeaways": [
+        "The dinosaur screen just means no internet — you did not break anything.",
+        "Check downdetector.com to see if an outage is affecting everyone, not just you.",
+        "The four fixes: restart your device, restart your router, check your Wi-Fi connection, force-close and reopen the app.",
+        "For persistent app problems: update the app, or delete and reinstall it.",
+        "If nothing works: call your ISP and tell them you have already restarted your router and device."
+      ],
+      "confidence": "You now know how to diagnose and fix the most common internet and app problems — calmly and systematically."
+    }
+  ]
+}
