@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Confidence — Participant Reference Card</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <style>
+    /* ── Print-first layout ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:  #1a2744;
+      --teal:  #2A7B6F;
+      --amber: #c8960c;
+      --red:   #c0392b;
+      --green: #2d7a45;
+      --cream: #FAF7F0;
+      --grey:  #555;
+    }
+
+    html { font-size: 14px; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #f5f5f5;
+      color: var(--navy);
+      line-height: 1.5;
+    }
+
+    /* Screen: show one page at a time */
+    .page {
+      width: 8.5in;
+      min-height: 11in;
+      background: white;
+      margin: 1.5rem auto;
+      padding: 0.6in 0.65in;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    }
+
+    /* Print: proper page breaks */
+    @media print {
+      html { font-size: 12px; }
+      body { background: white; }
+      .page {
+        width: 100%;
+        min-height: 0;
+        margin: 0;
+        padding: 0.4in 0.5in;
+        box-shadow: none;
+        page-break-after: always;
+      }
+      .page:last-child { page-break-after: avoid; }
+      .no-print { display: none !important; }
+    }
+
+    /* ── Page header ── */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 3px solid var(--teal);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .page-header h1 {
+      font-size: 1.5rem;
+      color: var(--navy);
+      font-weight: bold;
+    }
+    .page-header .session-badge {
+      background: var(--teal);
+      color: white;
+      padding: 0.2rem 0.7rem;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      white-space: nowrap;
+      margin-top: 0.25rem;
+    }
+    .page-subtitle {
+      font-size: 0.9rem;
+      color: var(--grey);
+      font-family: Arial, sans-serif;
+      margin-top: 0.2rem;
+    }
+
+    /* ── Two-column grid ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    /* ── Section card ── */
+    .card {
+      border: 1.5px solid #ddd;
+      border-radius: 6px;
+      padding: 0.65rem 0.75rem;
+      break-inside: avoid;
+    }
+    .card.teal   { border-left: 4px solid var(--teal);  }
+    .card.amber  { border-left: 4px solid var(--amber); }
+    .card.red    { border-left: 4px solid var(--red);   }
+    .card.green  { border-left: 4px solid var(--green); }
+    .card.navy   { border-left: 4px solid var(--navy);  }
+
+    .card h2 {
+      font-size: 0.95rem;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: var(--navy);
+    }
+    .card.teal  h2 { color: var(--teal); }
+    .card.amber h2 { color: #a07810; }
+    .card.red   h2 { color: var(--red); }
+    .card.green h2 { color: var(--green); }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .card ul li {
+      font-size: 0.85rem;
+      padding: 0.2rem 0 0.2rem 1.1rem;
+      position: relative;
+      line-height: 1.4;
+    }
+    .card ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-weight: bold;
+    }
+    .card ul li.warn::before { content: '⚠'; color: var(--amber); }
+    .card ul li.no::before   { content: '✗'; color: var(--red); }
+    .card ul li.dot::before  { content: '•'; color: var(--navy); }
+
+    /* ── Scam alert block ── */
+    .scam-block {
+      background: #fde8e6;
+      border: 2px solid var(--red);
+      border-radius: 6px;
+      padding: 0.65rem 0.75rem;
+      margin-top: 0.75rem;
+    }
+    .scam-block h2 {
+      font-size: 0.95rem;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      color: var(--red);
+      margin-bottom: 0.4rem;
+    }
+    .scam-block p {
+      font-size: 0.85rem;
+      line-height: 1.4;
+      margin-bottom: 0.35rem;
+    }
+    .scam-block .rule {
+      background: white;
+      border-left: 3px solid var(--red);
+      padding: 0.3rem 0.5rem;
+      font-size: 0.85rem;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      margin-bottom: 0.2rem;
+    }
+
+    /* ── Full-width section ── */
+    .full-width {
+      margin-top: 0.75rem;
+      break-inside: avoid;
+    }
+
+    /* ── Phone number table ── */
+    .phone-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.83rem;
+      margin-top: 0.35rem;
+    }
+    .phone-table th {
+      background: var(--navy);
+      color: white;
+      padding: 0.3rem 0.5rem;
+      text-align: left;
+      font-family: Arial, sans-serif;
+      font-size: 0.8rem;
+    }
+    .phone-table td {
+      padding: 0.3rem 0.5rem;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+    }
+    .phone-table tr:nth-child(even) td { background: #f8f8f8; }
+    .phone-table .num { font-weight: bold; white-space: nowrap; font-family: 'Courier New', monospace; }
+
+    /* ── QR / URL strip ── */
+    .url-strip {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border: 1.5px solid var(--teal);
+      border-radius: 6px;
+      padding: 0.5rem 0.75rem;
+      margin-top: 0.75rem;
+      background: #f0f8f6;
+    }
+    .url-strip .qr-box {
+      width: 60px;
+      height: 60px;
+      border: 2px solid var(--teal);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.62rem;
+      color: var(--grey);
+      text-align: center;
+      flex-shrink: 0;
+      line-height: 1.3;
+    }
+    .url-strip .url-text {
+      font-family: 'Courier New', monospace;
+      font-size: 0.95rem;
+      font-weight: bold;
+      color: var(--teal);
+    }
+    .url-strip .url-sub {
+      font-size: 0.78rem;
+      color: var(--grey);
+      font-family: Arial, sans-serif;
+      margin-top: 0.15rem;
+    }
+
+    /* ── Footer ── */
+    .page-footer {
+      margin-top: 0.75rem;
+      border-top: 1px solid #ddd;
+      padding-top: 0.4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      color: #888;
+      font-family: Arial, sans-serif;
+    }
+
+    /* ── Print button ── */
+    .print-btn {
+      display: block;
+      margin: 0.75rem auto;
+      padding: 0.6rem 2rem;
+      background: var(--teal);
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-size: 1rem;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+      width: fit-content;
+    }
+    .print-btn:hover { background: #1e5e55; }
+
+    /* ── Page 2 specific ── */
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+    }
+    .benefit-item {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 0.5rem 0.65rem;
+    }
+    .benefit-item h3 {
+      font-size: 0.85rem;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      color: var(--teal);
+      margin-bottom: 0.25rem;
+    }
+    .benefit-item p {
+      font-size: 0.78rem;
+      line-height: 1.4;
+      color: #444;
+    }
+    .benefit-item .phone {
+      font-family: 'Courier New', monospace;
+      font-size: 0.82rem;
+      font-weight: bold;
+      color: var(--navy);
+      margin-top: 0.2rem;
+    }
+
+    .notes-box {
+      border: 1.5px dashed #ccc;
+      border-radius: 6px;
+      padding: 0.5rem 0.75rem;
+      min-height: 80px;
+      margin-top: 0.5rem;
+    }
+    .notes-label {
+      font-size: 0.75rem;
+      color: #aaa;
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="print-btn no-print" onclick="window.print()">🖨️ Print Both Pages</button>
+
+  <!-- ── PAGE 1: Skills Reference ──────────────────────────── -->
+  <div class="page">
+    <div class="page-header">
+      <div>
+        <h1>Digital Confidence — Quick Reference</h1>
+        <p class="page-subtitle">Take this home — it summarises what we covered today.</p>
+      </div>
+      <div class="session-badge">PAGE 1 OF 2</div>
+    </div>
+
+    <div class="two-col">
+
+      <!-- Staying Safe Online -->
+      <div class="card teal">
+        <h2>🔒 Staying Safe Online</h2>
+        <ul>
+          <li>Use a different password for each important account</li>
+          <li>A passphrase is easier to remember: <em>PurpleDogEatsCarrots!</em></li>
+          <li>Lock your phone with a PIN or fingerprint</li>
+          <li>Only shop on websites that start with <strong>https://</strong></li>
+          <li>Log out of online banking when you are done</li>
+          <li class="warn">Public Wi-Fi: do not check banking or email</li>
+        </ul>
+      </div>
+
+      <!-- Pop-Ups and Scary Messages -->
+      <div class="card amber">
+        <h2>⚠️ Pop-Ups and Scary Messages</h2>
+        <ul>
+          <li>A real tech company will never call you about a virus</li>
+          <li>A pop-up saying "your computer is infected" is almost always fake</li>
+          <li class="no">Never call a phone number from a pop-up</li>
+          <li class="no">Never let anyone connect to your computer remotely unless you know them</li>
+          <li>To close a scary pop-up: close the whole browser (Alt + F4 on Windows; Cmd + Q on Mac)</li>
+          <li>When in doubt, turn off the screen and ask someone you trust</li>
+        </ul>
+      </div>
+
+      <!-- Email and Messages -->
+      <div class="card navy">
+        <h2>📧 Email and Messages</h2>
+        <ul>
+          <li>You can look without clicking — hover over a link to see where it goes</li>
+          <li class="warn">Unexpected attachments: do not open unless you were expecting them</li>
+          <li class="no">The CRA will never email or text you asking for payment</li>
+          <li class="no">Your bank will never ask for your full password by email</li>
+          <li>If a message asks you to "act immediately," slow down — that is a pressure tactic</li>
+          <li>Report suspicious email: forward to <strong>spam@antifraudcentre.ca</strong></li>
+        </ul>
+      </div>
+
+      <!-- Online Banking -->
+      <div class="card green">
+        <h2>🏦 Online Banking Basics</h2>
+        <ul>
+          <li>Always type your bank's address directly — do not search for it</li>
+          <li>The address bar should show a padlock icon and your bank's name</li>
+          <li>Log out completely when finished — do not just close the tab</li>
+          <li>Set up text alerts for transactions over $50</li>
+          <li class="warn">Check your statement monthly for charges you do not recognise</li>
+          <li>Call the number on the back of your card if something looks wrong</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Scam alert full width -->
+    <div class="scam-block">
+      <h2>🚨 The Three Most Common Scams — Know These Cold</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;margin-top:0.35rem">
+        <div>
+          <div class="rule">CRA / Tax Scam</div>
+          <p>You owe tax and must pay now by gift card, wire transfer, or Bitcoin. The real CRA sends letters by mail and does not demand immediate payment by phone.</p>
+        </div>
+        <div>
+          <div class="rule">Grandparent Scam</div>
+          <p>Someone calls pretending to be your grandchild in trouble, asking for emergency cash and secrecy. Always hang up and call your grandchild directly on their real number.</p>
+        </div>
+        <div>
+          <div class="rule">Tech Support Scam</div>
+          <p>A caller or pop-up says your computer has a virus and they need remote access to fix it. Hang up. Microsoft and Apple do not call you. Never grant remote access to a stranger.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="url-strip">
+      <div class="qr-box">Scan for<br>full site</div>
+      <div>
+        <div class="url-text">twobirds-kramerica.github.io/digital-confidence/</div>
+        <div class="url-sub">Free — no login — works on any device — 29 modules and 26 guides</div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Digital Confidence Centre &nbsp;·&nbsp; Two Birds Innovation &nbsp;·&nbsp; St. Thomas, Ontario</span>
+      <span>Free to share &nbsp;·&nbsp; Canadian content</span>
+    </div>
+  </div>
+
+  <!-- ── PAGE 2: Benefits & Resources ──────────────────────── -->
+  <div class="page">
+    <div class="page-header">
+      <div>
+        <h1>Canadian Benefits Quick Reference</h1>
+        <p class="page-subtitle">Government benefits and services many seniors miss — all free to apply for.</p>
+      </div>
+      <div class="session-badge">PAGE 2 OF 2</div>
+    </div>
+
+    <div class="benefit-grid">
+
+      <div class="benefit-item">
+        <h3>💰 Guaranteed Income Supplement (GIS)</h3>
+        <p>Monthly supplement for low-income OAS recipients. Up to $1,065/month for single seniors. Many eligible seniors have never applied. Must file taxes every year to keep it.</p>
+        <p class="phone">1-800-277-9914 &nbsp;·&nbsp; canada.ca/gis</p>
+      </div>
+
+      <div class="benefit-item">
+        <h3>🦷 Canada Dental Care Plan (CDCP)</h3>
+        <p>Free or low-cost dental coverage for eligible Canadians with income under $90,000. Enrol through My Service Canada Account or call Service Canada.</p>
+        <p class="phone">1-833-537-4342 &nbsp;·&nbsp; canada.ca/dental</p>
+      </div>
+
+      <div class="benefit-item">
+        <h3>🍁 CRA My Account</h3>
+        <p>View your tax return, check benefit payment dates, update direct deposit, and download tax slips — all online. Free. No waiting on hold.</p>
+        <p class="phone">1-800-959-8281 &nbsp;·&nbsp; cra-arc.gc.ca</p>
+      </div>
+
+      <div class="benefit-item">
+        <h3>🇨🇦 My Service Canada Account</h3>
+        <p>View your CPP and OAS payments, update your bank for direct deposit, check GIS eligibility, and download T4A slips. Same login as CRA for most people.</p>
+        <p class="phone">1-800-277-9914 &nbsp;·&nbsp; canada.ca/msca</p>
+      </div>
+
+      <div class="benefit-item">
+        <h3>💊 Ontario Drug Benefit (ODB)</h3>
+        <p>Ontario seniors 65+ pay only $6.11 per covered prescription. GIS recipients pay $2 with no annual deductible. Show your health card at any pharmacy — you may already be enrolled.</p>
+        <p class="phone">1-800-268-1154 &nbsp;·&nbsp; ontario.ca/drugs</p>
+      </div>
+
+      <div class="benefit-item">
+        <h3>🌷 Ontario Trillium Benefit (OTB)</h3>
+        <p>Energy, property tax, and sales tax credits paid monthly to eligible Ontario residents. Applied for on your Ontario tax return (Form ON-BEN). Frances's story: $1,847 recovered.</p>
+        <p class="phone">1-877-627-6645 &nbsp;·&nbsp; ontario.ca/trillium</p>
+      </div>
+
+      <div class="benefit-item">
+        <h3>📋 GST/HST Credit</h3>
+        <p>Quarterly tax-free payment (~$130 every 3 months for a single person with low income). Calculated automatically when you file taxes. January, April, July, October.</p>
+        <p class="phone">1-800-959-1953 &nbsp;·&nbsp; canada.ca/gst-credit</p>
+      </div>
+
+      <div class="benefit-item">
+        <h3>🏥 Free Tax Clinics (CVITP)</h3>
+        <p>Community Volunteer Income Tax Program — trained volunteers file your taxes for free if you have a simple return. Available at libraries, community centres, and seniors' groups across Canada.</p>
+        <p class="phone">1-800-959-8281 &nbsp;·&nbsp; canada.ca/cvitp</p>
+      </div>
+
+    </div>
+
+    <!-- Important contacts table -->
+    <div class="full-width">
+      <div class="card navy" style="margin-top:0.6rem;padding:0.6rem 0.75rem">
+        <h2 style="margin-bottom:0.4rem">📞 Report a Scam or Get Help</h2>
+        <table class="phone-table">
+          <thead>
+            <tr><th>If you need to…</th><th>Call</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Report a scam or fraud</td><td class="num">1-888-495-8501 &nbsp;·&nbsp; Canadian Anti-Fraud Centre</td></tr>
+            <tr><td>Report an online scam (RCMP)</td><td class="num">reportcybercrime.ca</td></tr>
+            <tr><td>Report a suspicious email</td><td class="num">spam@antifraudcentre.ca</td></tr>
+            <tr><td>Bank card blocked unexpectedly</td><td class="num">Number on the back of your card</td></tr>
+            <tr><td>Need help with your computer</td><td class="num">Ask your local library — many have free drop-in help</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Notes area -->
+    <div class="full-width" style="margin-top:0.5rem">
+      <p class="notes-label">Notes from today's session</p>
+      <div class="notes-box"></div>
+    </div>
+
+    <div class="page-footer">
+      <span>Digital Confidence Centre &nbsp;·&nbsp; Two Birds Innovation &nbsp;·&nbsp; St. Thomas, Ontario</span>
+      <span>twobirds-kramerica.github.io/digital-confidence/ &nbsp;·&nbsp; Free to share</span>
+    </div>
+  </div>
+
+</body>
+</html>
