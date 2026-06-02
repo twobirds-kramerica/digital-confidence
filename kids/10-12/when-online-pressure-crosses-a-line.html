@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A caregiver-led activity for children aged 10–12: understanding the spectrum from uncomfortable peer pressure to real threats, the surprises-vs-secrets test, and what to do when someone online says 'do it or else'.">
+  <meta property="og:title" content="When Online Pressure Crosses a Line · DCC Kids · Ages 10–12">
+  <meta property="og:description" content="Peer coercion, screenshot threats, and the surprises-vs-secrets test. Helps children aged 10–12 recognise when pressure becomes a threat — and practise what to do.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/10-12/when-online-pressure-crosses-a-line.html">
+  <title>When Online Pressure Crosses a Line · DCC Kids · Ages 10–12</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <link rel="stylesheet" href="../../css/tokens-dark.css">
+  <link rel="stylesheet" href="../../css/fonts.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="icon" href="../../favicon.ico">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "When Online Pressure Crosses a Line",
+    "description": "A caregiver-led activity for children aged 10–12. Teaches the coercion spectrum, the surprises-vs-secrets test, how to recognise digital threats, and a practised response.",
+    "url": "https://twobirds-kramerica.github.io/digital-confidence/kids/10-12/when-online-pressure-crosses-a-line.html",
+    "educationalLevel": "Grade 5–7",
+    "learningResourceType": "Activity",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Children aged 10–12, with caregiver"
+    },
+    "inLanguage": "en-CA",
+    "isAccessibleForFree": true,
+    "dateModified": "2026-06-01",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Digital Confidence Centre — Kids Digital Literacy",
+      "url": "https://twobirds-kramerica.github.io/digital-confidence/"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --kids-indigo:        #3949AB;
+      --kids-indigo-bg:     #E8EAF6;
+      --kids-indigo-light:  #C5CAE9;
+      --kids-amber:         #E65100;
+      --kids-amber-bg:      #FFF3E0;
+      --kids-amber-light:   #FFE0B2;
+      --kids-green:         #2E7D32;
+      --kids-green-bg:      #E8F5E9;
+      --kids-green-light:   #C8E6C9;
+      --kids-red:           #B71C1C;
+      --kids-red-bg:        #FFEBEE;
+      --kids-red-light:     #FFCDD2;
+      --kids-radius:        20px;
+      --kids-font-xl:       2rem;
+      --kids-font-lg:       1.35rem;
+      --kids-font-base:     1.125rem;
+    }
+
+    body { background: #F5F0FF; }
+
+    .kids-skip-link { position: absolute; left: -9999px; }
+    .kids-skip-link:focus {
+      left: 1rem; top: 1rem; z-index: 9999;
+      background: var(--brand-teal); color: #fff;
+      padding: 0.5rem 1rem; border-radius: 6px;
+    }
+
+    .caregiver-banner {
+      background: var(--brand-teal); color: #fff;
+      text-align: center; padding: 0.75rem 1rem;
+      font-size: 0.95rem; font-weight: 500; letter-spacing: 0.01em;
+    }
+    .caregiver-banner a { color: #b2dfdb; text-decoration: underline; }
+
+    .kids-nav {
+      background: #fff; border-bottom: 2px solid var(--kids-indigo-light);
+      padding: 0.75rem 1.5rem; font-size: 0.875rem;
+    }
+    .kids-nav a { color: var(--brand-teal); text-decoration: none; }
+    .kids-nav a:hover { text-decoration: underline; }
+    .kids-nav span { color: var(--text-muted); margin: 0 0.4rem; }
+
+    .kids-hero {
+      background: linear-gradient(135deg, #EDE7F6 0%, #E8EAF6 100%);
+      padding: 2.5rem 1.5rem 2rem; text-align: center;
+      border-bottom: 3px solid var(--kids-indigo-light);
+    }
+    .kids-hero .badge-row {
+      display: flex; justify-content: center; gap: 0.5rem;
+      flex-wrap: wrap; margin-bottom: 1rem;
+    }
+    .badge {
+      display: inline-block; padding: 0.25rem 0.75rem;
+      border-radius: 20px; font-size: 0.8rem;
+      font-weight: 600; letter-spacing: 0.02em;
+    }
+    .badge-age    { background: var(--kids-indigo-bg); color: var(--kids-indigo); }
+    .badge-cat    { background: var(--kids-amber-bg); color: var(--kids-amber); }
+    .badge-time   { background: #FFF9C4; color: #E65100; }
+    .badge-screen { background: #FCE4EC; color: #880E4F; }
+
+    .kids-hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      color: var(--text-primary); margin: 0.5rem 0 0.75rem; line-height: 1.2;
+    }
+    .kids-hero .tagline {
+      font-size: var(--kids-font-lg); color: var(--text-secondary);
+      max-width: 560px; margin: 0 auto; line-height: 1.5;
+    }
+
+    .kids-main { max-width: 760px; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+
+    .kids-section { margin-bottom: 2.5rem; }
+    .kids-section h2 {
+      font-size: var(--kids-font-xl); color: var(--text-primary);
+      margin: 0 0 1rem; display: flex; align-items: center; gap: 0.5rem;
+    }
+    .kids-section h3 { font-size: var(--kids-font-lg); color: var(--text-primary); margin: 1.25rem 0 0.5rem; }
+
+    .kids-callout {
+      background: var(--kids-indigo-bg); border-left: 5px solid var(--kids-indigo);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: var(--kids-font-base);
+    }
+    .kids-callout strong { color: var(--kids-indigo); }
+    .kids-callout.amber { background: var(--kids-amber-bg); border-left-color: var(--kids-amber); }
+    .kids-callout.amber strong { color: var(--kids-amber); }
+    .kids-callout.green { background: var(--kids-green-bg); border-left-color: var(--kids-green); }
+    .kids-callout.green strong { color: var(--kids-green); }
+    .kids-callout.red { background: var(--kids-red-bg); border-left-color: var(--kids-red); }
+    .kids-callout.red strong { color: var(--kids-red); }
+
+    /* Spectrum bar */
+    .spectrum-wrapper {
+      border-radius: 16px; overflow: hidden; margin: 1.25rem 0;
+      border: 2px solid var(--border-color);
+    }
+    .spectrum-row {
+      display: grid; grid-template-columns: 2fr 3fr;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .spectrum-row:last-child { border-bottom: none; }
+    .spectrum-level {
+      padding: 1rem 1.25rem; font-size: 0.95rem; font-weight: 700;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .spectrum-desc {
+      padding: 1rem 1.25rem; font-size: 0.9rem; color: var(--text-secondary);
+      line-height: 1.5; border-left: 1px solid var(--border-color);
+    }
+    .lvl-green { background: var(--kids-green-bg); color: var(--kids-green); }
+    .lvl-amber { background: var(--kids-amber-bg); color: var(--kids-amber); }
+    .lvl-red   { background: var(--kids-red-bg);   color: var(--kids-red); }
+
+    /* Surprises vs Secrets comparison */
+    .sv-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0;
+    }
+    .sv-col { border-radius: 16px; padding: 1.25rem 1rem; }
+    .sv-col.surprise { background: var(--kids-green-bg); border: 2px solid var(--kids-green-light); }
+    .sv-col.secret   { background: var(--kids-amber-bg); border: 2px solid var(--kids-amber-light); }
+    .sv-col h3 { font-size: 1rem; font-weight: 700; margin: 0 0 0.6rem; padding-bottom: 0.4rem; border-bottom: 2px solid; }
+    .sv-col.surprise h3 { color: var(--kids-green); border-color: var(--kids-green-light); }
+    .sv-col.secret   h3 { color: var(--kids-amber); border-color: var(--kids-amber-light); }
+    .sv-col ul { padding-left: 1.1rem; margin: 0; }
+    .sv-col li { font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary); }
+
+    /* Signal cards */
+    .signal-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.75rem; margin: 1.25rem 0;
+    }
+    .signal-card {
+      background: var(--kids-amber-bg); border: 2px solid var(--kids-amber-light);
+      border-radius: 16px; padding: 1.25rem 1rem;
+    }
+    .signal-card .signal-icon { font-size: 1.75rem; display: block; margin-bottom: 0.4rem; }
+    .signal-card .signal-title { font-size: 1rem; font-weight: 700; color: var(--kids-amber); margin-bottom: 0.3rem; line-height: 1.3; }
+    .signal-card .signal-desc  { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.4; }
+
+    /* Phrase cards */
+    .phrase-card {
+      background: #fff; border: 2px solid var(--kids-indigo-light);
+      border-radius: 16px; padding: 1.25rem; margin-bottom: 1rem;
+    }
+    .phrase-card .phrase-number {
+      display: inline-block; background: var(--kids-indigo); color: #fff;
+      font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem;
+      border-radius: 10px; margin-bottom: 0.6rem;
+    }
+    .phrase-card .phrase-text {
+      font-size: var(--kids-font-base); font-style: italic; color: var(--text-primary);
+      line-height: 1.5; margin-bottom: 0.75rem;
+      padding: 0.75rem 1rem; background: var(--kids-amber-bg);
+      border-left: 4px solid var(--kids-amber); border-radius: 0 8px 8px 0;
+    }
+    .phrase-card .phrase-why { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
+    .phrase-card .phrase-why strong { color: var(--kids-amber); }
+
+    /* Response box */
+    .response-box {
+      background: #fff; border: 3px solid var(--kids-indigo);
+      border-radius: var(--kids-radius); padding: 1.5rem 1.25rem;
+      margin: 1.25rem 0; text-align: center;
+    }
+    .response-big {
+      font-size: clamp(1.3rem, 4vw, 1.8rem); font-weight: 700;
+      color: var(--kids-indigo); line-height: 1.3; margin-bottom: 0.5rem;
+    }
+    .response-sub { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5; }
+
+    /* Not your fault */
+    .not-your-fault {
+      background: var(--kids-green-bg); border: 3px solid var(--kids-green-light);
+      border-radius: var(--kids-radius); padding: 1.5rem 1.25rem; margin: 1.25rem 0;
+    }
+    .not-your-fault h3 { color: var(--kids-green); font-size: 1.2rem; margin: 0 0 0.75rem; }
+    .not-your-fault p { font-size: var(--kids-font-base); color: var(--text-primary); line-height: 1.6; margin: 0 0 0.5rem; }
+    .not-your-fault p:last-child { margin: 0; }
+
+    .back-link {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: var(--kids-indigo-bg); border: 2px solid var(--kids-indigo-light);
+      border-radius: var(--kids-radius); padding: 0.9rem 1.25rem;
+      text-decoration: none; color: var(--kids-indigo); font-weight: 600;
+      font-size: var(--kids-font-base); transition: box-shadow 0.15s; margin-bottom: 2rem;
+    }
+    .back-link:hover { box-shadow: 0 4px 12px rgba(57,73,171,0.2); }
+
+    .next-module-link {
+      display: flex; align-items: center; gap: 1rem;
+      background: var(--kids-indigo-bg); border: 2px solid var(--kids-indigo-light);
+      border-radius: var(--kids-radius); padding: 1rem 1.25rem;
+      text-decoration: none; color: var(--text-primary); margin-top: 2rem;
+      transition: box-shadow 0.15s;
+    }
+    .next-module-link:hover { box-shadow: 0 4px 12px rgba(57,73,171,0.2); }
+    .next-module-link .arrow { font-size: 1.5rem; color: var(--kids-indigo); }
+    .next-module-link .link-text { font-size: var(--kids-font-base); font-weight: 600; }
+    .next-module-link .link-sub  { font-size: 0.85rem; color: var(--text-muted); }
+
+    .caregiver-section {
+      background: #fff; border: 2px solid var(--border-color);
+      border-radius: var(--kids-radius); padding: 1.5rem 1.25rem; margin-top: 2rem;
+    }
+    .caregiver-section h2 {
+      font-size: 1.25rem; color: var(--brand-teal); margin: 0 0 0.75rem;
+      padding-bottom: 0.5rem; border-bottom: 2px solid var(--kids-indigo-light);
+    }
+    .caregiver-section p, .caregiver-section li {
+      font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;
+    }
+    .caregiver-section ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+    .caregiver-section .source-list { list-style: none; padding: 0; margin: 0.5rem 0; }
+    .caregiver-section .source-list li { padding: 0.2rem 0; font-size: 0.88rem; }
+    .caregiver-section .source-list li::before { content: "→ "; color: var(--brand-teal); }
+
+    .for-caregiver-label {
+      display: inline-block; background: var(--brand-teal); color: #fff;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em;
+      padding: 0.2rem 0.6rem; border-radius: 4px; margin-bottom: 0.6rem; text-transform: uppercase;
+    }
+
+    .facilitator-note {
+      background: #FFF3E0; border: 2px solid var(--kids-amber-light);
+      border-radius: 12px; padding: 1.25rem; margin: 1.25rem 0;
+    }
+    .facilitator-note strong { color: var(--kids-amber); }
+    .facilitator-note p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin: 0.4rem 0; }
+    .facilitator-note p:first-child { margin-top: 0; }
+    .facilitator-note p:last-child { margin-bottom: 0; }
+
+    .kids-footer {
+      background: var(--brand-teal); color: rgba(255,255,255,0.85);
+      text-align: center; padding: 1.5rem 1rem; font-size: 0.875rem; margin-top: 3rem;
+    }
+    .kids-footer a { color: #b2dfdb; }
+
+    @media (max-width: 520px) {
+      .sv-grid { grid-template-columns: 1fr; }
+      .signal-grid { grid-template-columns: 1fr 1fr; }
+      .spectrum-row { grid-template-columns: 1fr; }
+      .spectrum-desc { border-left: none; border-top: 1px solid var(--border-color); }
+    }
+
+    @media print {
+      .caregiver-banner, .kids-nav { display: none; }
+      .kids-hero { padding: 1rem; }
+      body { background: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <a class="kids-skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="caregiver-banner" role="banner">
+    🧑‍🤝‍🧑 This activity works best when a caregiver and child do it together. &nbsp;
+    <a href="../../index.html">Back to Digital Confidence Centre</a>
+  </div>
+
+  <nav class="kids-nav" aria-label="Breadcrumb">
+    <a href="../../index.html">DCC</a>
+    <span aria-hidden="true">›</span>
+    <a href="../index.html">Kids</a>
+    <span aria-hidden="true">›</span>
+    <a href="index.html">Ages 10–12</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">When online pressure crosses a line</span>
+  </nav>
+
+  <header class="kids-hero" role="banner">
+    <div class="badge-row">
+      <span class="badge badge-age">Ages 10–12</span>
+      <span class="badge badge-cat">Emotional Safety</span>
+      <span class="badge badge-time">⏱ 25 minutes</span>
+      <span class="badge badge-screen">📵 No screens</span>
+    </div>
+    <h1>When online pressure crosses a line</h1>
+    <p class="tagline">
+      "Do it or else." Knowing the difference between uncomfortable peer pressure
+      and an actual threat — and having a practised response ready for both.
+    </p>
+  </header>
+
+  <main id="main-content" class="kids-main">
+
+    <a href="index.html" class="back-link" aria-label="Back to Ages 10–12 activities">
+      <span aria-hidden="true">←</span>
+      <span>Back to Ages 10–12</span>
+    </a>
+
+    <section class="kids-section" aria-labelledby="big-idea-heading">
+      <h2 id="big-idea-heading">💡 The big idea</h2>
+      <p style="font-size: var(--kids-font-base); line-height: 1.6;">
+        Not every uncomfortable message is a threat. But some messages that feel like "just joking"
+        or "just peer pressure" are actually real coercion — and recognising which is which matters.
+      </p>
+      <p style="font-size: var(--kids-font-base); line-height: 1.6;">
+        This activity gives you a simple way to tell the difference, a test you can apply to any
+        uncomfortable situation, and a phrase that works whether it's a peer or an adult.
+      </p>
+      <div class="kids-callout green">
+        <strong>The goal is not to make you suspicious of everyone.</strong>
+        Most people you interact with online mean you no harm. This activity is about the specific
+        situation where someone is using pressure or threats to get you to do something you don't
+        want to do — or to keep something secret that shouldn't be secret.
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="spectrum-heading">
+      <h2 id="spectrum-heading">📊 The pressure spectrum</h2>
+      <p style="font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+        Online pressure exists on a spectrum from normal social dynamics to real threats.
+        Here is how to tell where a situation falls:
+      </p>
+
+      <div class="spectrum-wrapper" role="list">
+        <div class="spectrum-row" role="listitem">
+          <div class="spectrum-level lvl-green">✅ Uncomfortable but normal</div>
+          <div class="spectrum-desc">"Everyone's doing it" or "Why are you being so sensitive?" — annoying and possibly unkind, but not a threat. No action required beyond ignoring or setting a limit.</div>
+        </div>
+        <div class="spectrum-row" role="listitem">
+          <div class="spectrum-level lvl-amber">⚠️ Pressure worth naming</div>
+          <div class="spectrum-desc">"If you don't post that, you can't sit with us" — real social consequences being used as leverage. Tell a trusted adult, especially if it's repeated.</div>
+        </div>
+        <div class="spectrum-row" role="listitem">
+          <div class="spectrum-level lvl-red">🚨 A threat</div>
+          <div class="spectrum-desc">"Do this or I'll post your photo / screenshot this / tell everyone X" — this is coercion. Tell a trusted adult immediately. Take a screenshot first if safe to do so.</div>
+        </div>
+        <div class="spectrum-row" role="listitem">
+          <div class="spectrum-level lvl-red" style="color:#880E4F;background:#FCE4EC;">🚨 Adult coercion</div>
+          <div class="spectrum-desc">Any adult — including a caregiver — using digital tools to threaten, control, or demand secrecy. Tell a different trusted adult (teacher, school counsellor, another family member). Report to Kids Help Phone: 1-800-668-6868.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="test-heading">
+      <h2 id="test-heading">🎁 The surprises-vs-secrets test</h2>
+      <p style="font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+        When someone asks you to keep something secret and it feels uncomfortable, use this test:
+      </p>
+
+      <div class="sv-grid" role="list">
+        <div class="sv-col surprise" role="listitem">
+          <h3>🎉 A surprise</h3>
+          <ul>
+            <li>Has a reveal date ("after the party")</li>
+            <li>Makes both people feel good</li>
+            <li>Doesn't involve hiding a <em>person</em> from your parents</li>
+            <li>Doesn't make you feel afraid or ashamed</li>
+            <li>Example: "Don't tell Maya — it's a surprise party for her birthday"</li>
+          </ul>
+        </div>
+        <div class="sv-col secret" role="listitem">
+          <h3>⚠️ A pressure secret</h3>
+          <ul>
+            <li>No reveal date — it just has to stay hidden</li>
+            <li>Makes you feel scared, trapped, or guilty</li>
+            <li>Involves hiding a <em>person</em> or a <em>relationship</em> from your parents</li>
+            <li>Involves hiding something you did that makes you feel bad</li>
+            <li>Example: "Don't tell your parents we're talking — just between us"</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="kids-callout">
+        <strong>The key question is:</strong> Does keeping this secret make you feel good or make you feel trapped?
+        A real surprise feels exciting. A pressure secret feels heavy — like you're carrying something alone
+        that you shouldn't have to carry.
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="tactics-heading">
+      <h2 id="tactics-heading">📱 Digital coercion tactics to know</h2>
+      <p style="font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+        These are the most common ways coercion shows up in digital spaces for 10–12 year olds.
+        Knowing the name for something makes it easier to see clearly.
+      </p>
+
+      <div class="signal-grid" role="list">
+        <div class="signal-card" role="listitem">
+          <span class="signal-icon" role="img" aria-label="screenshot threat">📸</span>
+          <div class="signal-title">Screenshot threat</div>
+          <div class="signal-desc">"Do this or I'll screenshot what you said and send it around." They've saved something you said and are using it as leverage.</div>
+        </div>
+        <div class="signal-card" role="listitem">
+          <span class="signal-icon" role="img" aria-label="exclusion threat">🚫</span>
+          <div class="signal-title">Exclusion threat</div>
+          <div class="signal-desc">"Say this in the group chat or you're out." The group chat or friend group is being used as a tool to control behaviour.</div>
+        </div>
+        <div class="signal-card" role="listitem">
+          <span class="signal-icon" role="img" aria-label="image-based threat">🖼️</span>
+          <div class="signal-title">Image-based threat</div>
+          <div class="signal-desc">"I have that photo of you — do this or I'll post it." This is illegal in Canada when the image is private or intimate. Report to Cybertip.ca.</div>
+        </div>
+        <div class="signal-card" role="listitem">
+          <span class="signal-icon" role="img" aria-label="cumulative pressure">🔄</span>
+          <div class="signal-title">Cumulative pressure</div>
+          <div class="signal-desc">No single message is a clear threat — but the same person keeps pushing, over and over, wearing you down. The pattern is the problem.</div>
+        </div>
+        <div class="signal-card" role="listitem">
+          <span class="signal-icon" role="img" aria-label="adult using digital control">🔒</span>
+          <div class="signal-title">Adult using digital control</div>
+          <div class="signal-desc">An adult (including a caregiver) demanding passwords, reading all messages, or using digital access as a punishment or threat. Tell a different trusted adult.</div>
+        </div>
+        <div class="signal-card" role="listitem">
+          <span class="signal-icon" role="img" aria-label="delete the evidence">🗑️</span>
+          <div class="signal-title">"Delete this before they see"</div>
+          <div class="signal-desc">Being asked to delete messages or photos so there's no record. Someone who wants no record of their contact with you is protecting themselves, not you.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="phrases-heading">
+      <h2 id="phrases-heading">🎭 Four scenarios to discuss together</h2>
+      <p style="font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
+        Caregiver: read each scenario out loud. Before explaining, ask: <em>"Where on the spectrum does this fall? Is this a surprise or a pressure secret?"</em>
+      </p>
+
+      <div class="phrase-card">
+        <div class="phrase-number">Scenario 1</div>
+        <div class="phrase-text">"Send me that photo of you from your profile or I'll tell everyone you said those things about them."</div>
+        <div class="phrase-why">
+          <strong>This is a threat — screenshot plus image request.</strong> Two things are happening: leverage is being used (threatening to share something), and a photo is being demanded. This is near the top of the spectrum. Screenshot the message, tell a trusted adult, do not send anything.
+        </div>
+      </div>
+
+      <div class="phrase-card">
+        <div class="phrase-number">Scenario 2</div>
+        <div class="phrase-text">"If you don't say you hate Jordan in the group chat, you're not invited to the thing on Saturday."</div>
+        <div class="phrase-why">
+          <strong>Pressure with exclusion threat.</strong> This is real coercion — social consequences being used as a tool. You're being asked to harm a third person to protect your own status. This is worth telling a caregiver or a teacher about, especially if it keeps happening.
+        </div>
+      </div>
+
+      <div class="phrase-card">
+        <div class="phrase-number">Scenario 3</div>
+        <div class="phrase-text">A friend messages you: "I told my sister something in confidence and now I want you to promise not to tell anyone — not even your parents — okay?"</div>
+        <div class="phrase-why">
+          <strong>Apply the surprises-vs-secrets test.</strong> If the secret is something harmless ("she has a crush"), this is a normal peer confidence — you can agree or say you'd rather not keep secrets from your parents. If the secret involves someone being hurt or unsafe, a trusted adult should know regardless.
+        </div>
+      </div>
+
+      <div class="phrase-card">
+        <div class="phrase-number">Scenario 4</div>
+        <div class="phrase-text">An adult in your life says: "I read all your messages and if I see anything I don't like, you're losing your phone — so you better not say anything about this."</div>
+        <div class="phrase-why">
+          <strong>Adult using digital access as a threat.</strong> Caregivers have the right to set rules about phone use, but using access to messages as a way to threaten or silence a child crosses into coercion. If this is happening to you, talk to a school counsellor, another trusted adult, or call Kids Help Phone at 1-800-668-6868.
+        </div>
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="response-heading">
+      <h2 id="response-heading">🗣️ What to say — practise until it's automatic</h2>
+      <p style="font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+        You don't need to argue, defend yourself, or explain. One phrase works for almost every situation:
+      </p>
+
+      <div class="response-box">
+        <div class="response-big">"I need to talk to a trusted adult about this."</div>
+        <div class="response-sub">
+          Caregiver: say this together three times. Then have your child say it alone.<br>
+          This works for peers and adults. It names what you're about to do — which is exactly right.
+        </div>
+      </div>
+
+      <div class="kids-callout">
+        <strong>You don't have to respond in the moment.</strong> Closing the app,
+        stepping away from the screen, and going to a trusted adult is a complete response.
+        You don't owe anyone an explanation for why you stopped replying.
+      </div>
+
+      <h3>What to do immediately:</h3>
+      <ol style="font-size: var(--kids-font-base); line-height: 2; padding-left: 1.5rem;">
+        <li>If safe to do so: screenshot the message or conversation (evidence)</li>
+        <li>Do not comply with what's being demanded — giving in rarely ends the pressure</li>
+        <li>Tell a trusted adult — parent, caregiver, teacher, or school counsellor</li>
+        <li>If the trusted adult is the source of the coercion: tell a different trusted adult or call Kids Help Phone (1-800-668-6868)</li>
+        <li>If the coercion involves a private image or sexual content: report to Cybertip.ca — it is confidential and free</li>
+      </ol>
+    </section>
+
+    <div class="not-your-fault" role="note" aria-label="Important message for children">
+      <h3>Complying once is not your fault.</h3>
+      <p>
+        When someone threatens you or pressures you, you may have done something to make the pressure
+        stop — sent a message, said something you didn't mean, gone along with something that felt wrong.
+        That is a normal response to an unfair situation.
+      </p>
+      <p>
+        It does not mean you chose it. It does not mean you caused it. And it does not mean the person
+        pressuring you gets to keep doing it. Telling a trusted adult is still the right step — even
+        if it happened before this activity.
+      </p>
+    </div>
+
+    <section class="caregiver-section" aria-labelledby="facilitator-heading">
+      <div class="for-caregiver-label">For caregivers and facilitators</div>
+      <h2 id="facilitator-heading">Notes on running this activity</h2>
+
+      <p><strong>Why this module exists alongside "Spotting a 'please don't tell your parent' message":</strong>
+      That module covers adult grooming patterns. This module covers peer coercion and the broader
+      spectrum of digital pressure — including the uncomfortable reality that adults in a child's
+      own life can also be sources of coercion. These are different enough to warrant separate activities.</p>
+
+      <p><strong>The adult-coercion scenario (Scenario 4):</strong> This is intentionally included
+      because children need to know that coercion by a caregiver is still coercion, and that they
+      have somewhere to turn. The language is careful — it acknowledges that caregivers have legitimate
+      authority over device use, while distinguishing that from using digital access as a threat.
+      If a child responds to this scenario with recognition rather than surprise, treat that as a
+      signal to follow up privately.</p>
+
+      <p><strong>For library and school facilitation:</strong> Scenario 4 may generate strong reactions.
+      If the group includes children in complex home situations, it is worth pausing after Scenario 4
+      and naming Kids Help Phone explicitly: "This number is for any child, for any reason, anytime —
+      it's free and it's confidential." Write it on the board: <strong>1-800-668-6868</strong>.</p>
+
+      <p><strong>The complying-once framing:</strong> The "not your fault" section directly addresses
+      the guilt children feel when they've already complied with a coercive demand. This is intentional.
+      Research on disclosure patterns (Hershkowitz, Lanes &amp; Lamb, 2007; London et al., 2008) shows
+      that shame about prior compliance is a major barrier to reporting — naming it directly reduces it.</p>
+
+      <ul>
+        <li><strong>Sources used:</strong></li>
+        <li>MediaSmarts Canada — Digital Media Literacy for Youth</li>
+        <li>Kids Help Phone — <a href="https://kidshelpphone.ca" target="_blank" rel="noopener noreferrer">kidshelpphone.ca</a> (1-800-668-6868)</li>
+        <li>Canadian Centre for Child Protection — <a href="https://www.cybertip.ca" target="_blank" rel="noopener noreferrer">Cybertip.ca</a></li>
+        <li>Public Safety Canada — Cyberbullying and coercive online behaviour</li>
+        <li>Hershkowitz, Lanes &amp; Lamb (2007) — Exploring the disclosure of child sexual abuse with alleged victims and their parents</li>
+      </ul>
+    </section>
+
+    <a href="index.html" class="next-module-link" aria-label="Back to all Ages 10–12 activities">
+      <div>
+        <div class="link-text">← Back to Ages 10–12 activities</div>
+        <div class="link-sub">See all 10 activities in this cohort</div>
+      </div>
+    </a>
+
+  </main>
+
+  <footer class="kids-footer" role="contentinfo">
+    <p>
+      <a href="../../index.html">Digital Confidence Centre</a> · Kids Digital Literacy · Ages 10–12 ·
+      <a href="../../copyright.html">© 2026 Two Birds Innovation</a>
+    </p>
+    <p style="margin-top: 0.4rem; font-size: 0.8rem;">
+      Canadian content · Free to use · No data collected · Built in St. Thomas, Ontario
+    </p>
+  </footer>
+
+</body>
+</html>
