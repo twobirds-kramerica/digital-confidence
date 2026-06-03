@@ -60,6 +60,12 @@
       + '</div>'
       + '<form class="dcc-quiz-form" id="dcc-quiz-form-' + opts.phase + '">';
 
+    // Record start time on before-quiz render
+    if (opts.phase === 'before') {
+      var existing = getModuleResults(opts.moduleId);
+      if (!existing.startTime) saveModuleResults(opts.moduleId, { startTime: new Date().toISOString() });
+    }
+
     opts.questions.forEach(function(q, i) {
       var qId = prefix + '_q' + i;
       // Use phase-specific wording if provided, else fallback to default
@@ -140,6 +146,7 @@
         var surprise = opts.phase === 'after' ? (document.getElementById(prefix + '_surprise')?.value || '') : '';
         var timestamp = new Date().toISOString();
         var record = { answers: answers, score: score, confidence: conf, timestamp: timestamp };
+        if (opts.phase === 'after') { record.endTime = timestamp; }
         if (surprise) record.surprise = surprise;
 
         // Save to localStorage

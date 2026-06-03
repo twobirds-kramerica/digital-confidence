@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>DCC Session Export — Facilitator Panel</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:     #1a2744;
+      --teal:     #2A7B6F;
+      --teal-lt:  #e0f0ee;
+      --green:    #2d7a45;
+      --green-lt: #e8f5ee;
+      --amber:    #c8960c;
+      --amber-lt: #fdf3d0;
+      --red:      #c0392b;
+      --red-lt:   #fde8e6;
+      --grey:     #555;
+      --border:   #ddd;
+      --bg:       #f8f7f4;
+      --white:    #fff;
+    }
+    body { font-family: -apple-system, 'Segoe UI', sans-serif; background: var(--bg); color: var(--navy); line-height: 1.6; font-size: 16px; }
+    a { color: var(--teal); }
+
+    .admin-header {
+      background: var(--navy); color: #fff;
+      padding: 1.25rem 2rem;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;
+    }
+    .admin-header h1 { font-size: 1.2rem; font-weight: 700; }
+    .admin-header p  { font-size: 0.82rem; opacity: 0.7; margin-top: 0.15rem; }
+    .admin-back { color: rgba(255,255,255,0.7); font-size: 0.85rem; text-decoration: none; }
+    .admin-back:hover { color: #fff; }
+
+    .admin-main { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+    /* Cohort setup */
+    .cohort-box {
+      background: var(--white); border: 1.5px solid var(--border);
+      border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;
+    }
+    .cohort-box h2 { font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--navy); }
+    .cohort-input-row { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: flex-end; }
+    .cohort-field { flex: 1; min-width: 240px; }
+    .cohort-field label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--grey); margin-bottom: 4px; }
+    .cohort-field input {
+      width: 100%; border: 1px solid var(--border); border-radius: 8px;
+      padding: 8px 12px; font-family: inherit; font-size: 0.9rem;
+      color: var(--navy); background: var(--white);
+    }
+    .cohort-field input:focus { outline: 2px solid rgba(42,123,111,0.35); border-color: var(--teal); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.55rem 1.25rem; border-radius: 8px; font-family: inherit;
+      font-size: 0.88rem; font-weight: 600; cursor: pointer; border: none;
+      transition: all 0.15s;
+    }
+    .btn-primary { background: var(--teal); color: #fff; }
+    .btn-primary:hover { background: #1e5e55; }
+    .btn-danger  { background: var(--red-lt); color: var(--red); border: 1px solid var(--red); }
+    .btn-danger:hover  { background: var(--red); color: #fff; }
+    .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--navy); }
+    .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
+
+    /* Results table */
+    .results-section { margin-bottom: 2rem; }
+    .results-section h2 { font-size: 1rem; font-weight: 700; margin-bottom: 1rem; }
+    .results-empty {
+      background: var(--white); border: 1.5px dashed var(--border);
+      border-radius: 12px; padding: 2.5rem; text-align: center;
+      color: var(--grey); font-size: 0.9rem;
+    }
+    .results-empty a { color: var(--teal); }
+
+    .table-wrap { overflow-x: auto; border-radius: 12px; box-shadow: 0 2px 8px rgba(26,39,68,0.08); }
+    table { width: 100%; border-collapse: collapse; background: var(--white); font-size: 0.875rem; }
+    thead { background: var(--navy); color: #fff; }
+    thead th { padding: 0.7rem 0.9rem; text-align: left; font-weight: 600; white-space: nowrap; }
+    tbody tr { border-bottom: 1px solid #f0f0f0; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: #f8f8f8; }
+    td { padding: 0.65rem 0.9rem; vertical-align: middle; }
+    .score-good { color: var(--green); font-weight: 700; }
+    .score-ok   { color: var(--amber); font-weight: 700; }
+    .score-low  { color: var(--red);   font-weight: 700; }
+    .delta-pos  { color: var(--green); font-weight: 700; }
+    .delta-zero { color: var(--grey); }
+    .delta-neg  { color: var(--red); font-weight: 700; }
+
+    /* Summary cards */
+    .summary-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem; margin-bottom: 2rem;
+    }
+    .summary-card {
+      background: var(--white); border: 1.5px solid var(--border);
+      border-radius: 12px; padding: 1.1rem 1rem; text-align: center;
+    }
+    .summary-card .sc-value { font-size: 2rem; font-weight: 800; color: var(--teal); line-height: 1; }
+    .summary-card .sc-label { font-size: 0.75rem; color: var(--grey); margin-top: 0.3rem; }
+
+    /* Export actions */
+    .export-bar {
+      display: flex; gap: 0.75rem; flex-wrap: wrap;
+      margin-top: 1.5rem; align-items: center;
+    }
+
+    .notice {
+      background: var(--amber-lt); border: 1px solid rgba(200,150,12,0.3);
+      border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.82rem;
+      color: #7a5c00; margin-top: 1rem; line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="admin-header">
+    <div>
+      <h1>DCC Facilitator Panel — Session Export</h1>
+      <p>Knowledge check results stored on this device · No personal data · <strong>Admin view only</strong></p>
+    </div>
+    <a href="index.html" class="admin-back">← Back to DCC</a>
+  </div>
+
+  <main class="admin-main">
+
+    <!-- Cohort setup -->
+    <div class="cohort-box">
+      <h2>1. Name this cohort</h2>
+      <p style="font-size:0.85rem;color:var(--grey);margin-bottom:0.9rem">This label appears in the exported report. Use a format your grant compliance team will recognise.</p>
+      <div class="cohort-input-row">
+        <div class="cohort-field">
+          <label for="cohortName">Cohort / Group Name</label>
+          <input type="text" id="cohortName" placeholder="e.g. St. Thomas Public Library — June 3, 2026" value="">
+        </div>
+        <div class="cohort-field" style="max-width:220px">
+          <label for="facilitatorName">Facilitator Name (optional)</label>
+          <input type="text" id="facilitatorName" placeholder="e.g. Jane Smith">
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="results-section">
+      <h2>2. Session Summary</h2>
+      <div class="summary-grid" id="summaryGrid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    <!-- Results table -->
+    <div class="results-section">
+      <h2>3. Per-Module Results</h2>
+      <div id="resultsContainer">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    <!-- Export -->
+    <div class="results-section">
+      <h2>4. Export and Clear</h2>
+      <div class="export-bar">
+        <button class="btn btn-primary" id="btnExport" onclick="exportCSV()">⬇ Download CSV Report</button>
+        <button class="btn btn-outline" id="btnPrint" onclick="window.print()">🖨 Print Summary</button>
+        <button class="btn btn-danger"  id="btnClear" onclick="confirmClear()">🗑 Clear Session Data</button>
+      </div>
+      <div class="notice" role="note">
+        <strong>Privacy reminder:</strong> Click "Clear Session Data" after exporting to remove all quiz results from this device. Results are stored only in this browser and are never sent to any server.
+      </div>
+    </div>
+
+  </main>
+
+  <script src="js/quiz-check.js"></script>
+  <script>
+  var MODULE_LABELS = {
+    'module-ai-literacy':    'What Is AI, Really?',
+    'module-17-ai-research': 'Module 17: Using AI for Research',
+    'module-3':              'Module 3: Staying Safe Online',
+    'module-1':              'Module 1: Getting Started',
+    'module-6':              'Module 6: Banking & Transactions'
+    // Extend as more modules get quizzes
+  };
+
+  function getLabel(moduleId) {
+    return MODULE_LABELS[moduleId] || moduleId;
+  }
+
+  function formatScore(score, total) {
+    if (score === undefined || score === null) return '—';
+    return score + '/' + (total || 5);
+  }
+
+  function formatDelta(delta) {
+    if (delta === undefined || delta === null) return '—';
+    var cls = delta > 0 ? 'delta-pos' : delta < 0 ? 'delta-neg' : 'delta-zero';
+    var sign = delta >= 0 ? '+' : '';
+    return '<span class="' + cls + '">' + sign + delta + '</span>';
+  }
+
+  function scoreClass(score) {
+    if (score >= 4) return 'score-good';
+    if (score >= 2) return 'score-ok';
+    return 'score-low';
+  }
+
+  function minutesBetween(start, end) {
+    if (!start || !end) return null;
+    var ms = new Date(end).getTime() - new Date(start).getTime();
+    if (isNaN(ms) || ms < 0) return null;
+    return Math.round(ms / 60000);
+  }
+
+  function renderAll() {
+    var all = DCC_QUIZ && DCC_QUIZ.getAllResults ? DCC_QUIZ.getAllResults() : getAllResultsDirect();
+    var keys = Object.keys(all);
+
+    // Summary cards
+    var grid = document.getElementById('summaryGrid');
+    var completed = keys.filter(function(k) { return all[k].after; }).length;
+    var started   = keys.filter(function(k) { return all[k].before; }).length;
+    var deltas = keys.map(function(k) {
+      var r = all[k];
+      if (r.before && r.after && typeof r.before.score === 'number' && typeof r.after.score === 'number')
+        return r.after.score - r.before.score;
+      return null;
+    }).filter(function(d) { return d !== null; });
+    var avgDelta = deltas.length ? (deltas.reduce(function(a,b){return a+b;},0) / deltas.length).toFixed(1) : '—';
+
+    var confDeltas = keys.map(function(k) {
+      var r = all[k];
+      if (r.before && r.after && typeof r.before.confidence === 'number' && typeof r.after.confidence === 'number')
+        return r.after.confidence - r.before.confidence;
+      return null;
+    }).filter(function(d) { return d !== null; });
+    var avgConfDelta = confDeltas.length ? (confDeltas.reduce(function(a,b){return a+b;},0) / confDeltas.length).toFixed(1) : '—';
+
+    grid.innerHTML = [
+      { v: started, l: 'Modules started' },
+      { v: completed, l: 'Modules completed' },
+      { v: avgDelta === '—' ? '—' : (avgDelta >= 0 ? '+' : '') + avgDelta, l: 'Avg knowledge gain' },
+      { v: avgConfDelta === '—' ? '—' : (avgConfDelta >= 0 ? '+' : '') + avgConfDelta, l: 'Avg confidence gain' }
+    ].map(function(item) {
+      return '<div class="summary-card"><div class="sc-value">' + item.v + '</div><div class="sc-label">' + item.l + '</div></div>';
+    }).join('');
+
+    // Results table
+    var container = document.getElementById('resultsContainer');
+    if (!keys.length) {
+      container.innerHTML = '<div class="results-empty">No quiz results found on this device.<br><br>To collect data, open a <a href="module-ai-literacy.html">DCC module with a knowledge check</a> and complete the before and after quizzes. Results are saved automatically.</div>';
+      return;
+    }
+
+    var rows = keys.map(function(moduleId) {
+      var r = all[moduleId];
+      var b = r.before || {};
+      var a = r.after  || {};
+      var delta = (typeof b.score === 'number' && typeof a.score === 'number') ? (a.score - b.score) : null;
+      var confDelta = (typeof b.confidence === 'number' && typeof a.confidence === 'number') ? (a.confidence - b.confidence) : null;
+      var mins = minutesBetween(r.startTime || (b.timestamp), a.endTime || (a.timestamp));
+      var bCls = typeof b.score === 'number' ? scoreClass(b.score) : '';
+      var aCls = typeof a.score === 'number' ? scoreClass(a.score) : '';
+      return '<tr>'
+        + '<td>' + getLabel(moduleId) + '</td>'
+        + '<td>' + (b.timestamp ? b.timestamp.slice(0,10) : '—') + '</td>'
+        + '<td class="' + bCls + '">' + formatScore(b.score, 5) + '</td>'
+        + '<td class="' + aCls + '">' + formatScore(a.score, 5) + '</td>'
+        + '<td>' + formatDelta(delta) + '</td>'
+        + '<td>' + (typeof b.confidence === 'number' ? b.confidence + '/5' : '—') + '</td>'
+        + '<td>' + (typeof a.confidence === 'number' ? a.confidence + '/5' : '—') + '</td>'
+        + '<td>' + formatDelta(confDelta) + '</td>'
+        + '<td>' + (mins !== null ? mins + ' min' : '—') + '</td>'
+        + '</tr>';
+    }).join('');
+
+    container.innerHTML = '<div class="table-wrap"><table>'
+      + '<thead><tr>'
+      + '<th>Module</th><th>Date</th>'
+      + '<th>Before</th><th>After</th><th>Δ Score</th>'
+      + '<th>Conf. Before</th><th>Conf. After</th><th>Δ Conf.</th>'
+      + '<th>Time</th>'
+      + '</tr></thead>'
+      + '<tbody>' + rows + '</tbody>'
+      + '</table></div>';
+  }
+
+  // Direct localStorage read (fallback)
+  function getAllResultsDirect() {
+    try { return JSON.parse(localStorage.getItem('dcc_quiz_results') || '{}'); }
+    catch(e) { return {}; }
+  }
+
+  function exportCSV() {
+    var cohort = document.getElementById('cohortName').value.trim() || 'Unnamed cohort';
+    var facilitator = document.getElementById('facilitatorName').value.trim() || '';
+    var all = getAllResultsDirect();
+    var keys = Object.keys(all);
+
+    if (!keys.length) {
+      alert('No quiz results to export. Complete at least one module knowledge check first.');
+      return;
+    }
+
+    var lines = [
+      '# DCC Session Export',
+      '# Cohort: ' + cohort,
+      (facilitator ? '# Facilitator: ' + facilitator : ''),
+      '# Exported: ' + new Date().toISOString().slice(0,16).replace('T', ' '),
+      '',
+      'Module,Date,Before Score (/5),After Score (/5),Delta Score,Confidence Before (/5),Confidence After (/5),Delta Confidence,Time on Module (min),Surprise Response'
+    ].filter(Boolean);
+
+    keys.forEach(function(moduleId) {
+      var r = all[moduleId];
+      var b = r.before || {};
+      var a = r.after  || {};
+      var delta = (typeof b.score === 'number' && typeof a.score === 'number') ? (a.score - b.score) : '';
+      var confDelta = (typeof b.confidence === 'number' && typeof a.confidence === 'number') ? (a.confidence - b.confidence) : '';
+      var mins = minutesBetween(r.startTime || b.timestamp, a.endTime || a.timestamp);
+      var surprise = a.surprise ? '"' + a.surprise.replace(/"/g, '""') + '"' : '';
+      lines.push([
+        '"' + getLabel(moduleId) + '"',
+        b.timestamp ? b.timestamp.slice(0,10) : '',
+        typeof b.score === 'number' ? b.score : '',
+        typeof a.score === 'number' ? a.score : '',
+        delta,
+        typeof b.confidence === 'number' ? b.confidence : '',
+        typeof a.confidence === 'number' ? a.confidence : '',
+        confDelta,
+        mins !== null ? mins : '',
+        surprise
+      ].join(','));
+    });
+
+    // Summary row
+    var afterScores = keys.map(function(k){ return all[k].after && all[k].after.score; }).filter(function(s){ return typeof s === 'number'; });
+    var beforeScores = keys.map(function(k){ return all[k].before && all[k].before.score; }).filter(function(s){ return typeof s === 'number'; });
+    var avgBefore = beforeScores.length ? (beforeScores.reduce(function(a,b){return a+b;},0)/beforeScores.length).toFixed(1) : '';
+    var avgAfter  = afterScores.length  ? (afterScores.reduce(function(a,b){return a+b;},0)/afterScores.length).toFixed(1)  : '';
+    var avgDelta  = (avgBefore && avgAfter) ? (parseFloat(avgAfter) - parseFloat(avgBefore)).toFixed(1) : '';
+    lines.push('');
+    lines.push('"COHORT SUMMARY","' + cohort + '",' + avgBefore + ',' + avgAfter + ',' + avgDelta + ',,,,,"Modules completed: ' + keys.filter(function(k){return all[k].after;}).length + '"');
+
+    var csv = lines.join('\n');
+    var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    var filename = 'dcc-session-' + new Date().toISOString().slice(0,10) + '.csv';
+    a.href = url; a.download = filename; a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function confirmClear() {
+    if (confirm('Clear all quiz results from this device? This cannot be undone. Export the CSV first if you need the data.')) {
+      localStorage.removeItem('dcc_quiz_results');
+      renderAll();
+    }
+  }
+
+  // Expose getAllResults via DCC_QUIZ if loaded
+  if (window.DCC_QUIZ) {
+    DCC_QUIZ.getAllResults = getAllResultsDirect;
+  }
+
+  renderAll();
+  </script>
+</body>
+</html>
