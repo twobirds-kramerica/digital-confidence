@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/accessibility.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/print.css">
+  <link rel="stylesheet" href="css/quiz-check.css">
   <!-- SEO: Author, Robots, Open Graph, Twitter Card -->
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
@@ -228,6 +229,9 @@
   <noscript>
     <div style="padding:20px;font-family:Georgia,serif;max-width:800px;margin:0 auto">
       <h1>Digital Confidence Centre</h1>
+
+      <!-- Before quiz -->
+      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start" style="margin-bottom:1.5rem"></div>
 
       <div class="module-intro">
         <p class="module-time">⏱ About 20–30 minutes — go at your own pace</p>
@@ -1006,6 +1010,9 @@
           </div>
         </div>
       </div>
+      <!-- After quiz -->
+      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the module" style="margin:2rem 0"></div>
+
       <div class="sources-block">
         <h3 data-en="Sources &amp; References" data-fr="Sources et références">Sources &amp; References</h3>
         <ul>
@@ -1018,6 +1025,51 @@
   <script src="js/speech-config.js" defer></script>
   <script src="js/read-aloud.js" defer></script>
   <script src="js/app.js" defer></script>
+  <script src="js/quiz-check.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var QUESTIONS = [
+      {
+        text: 'What is the safest way to check your bank balance?',
+        text_after: 'What is the safest way to check your bank balance?',
+        options: ['Search for your bank on Google and click the top result', 'Type your bank\'s web address directly into the address bar', 'Open the link your bank sent you by email', 'Use a banking app someone installed on your phone for you'],
+        correct: 1
+      },
+      {
+        text: 'You receive an e-Transfer from someone you don\'t know. What should you do?',
+        text_after: 'An e-Transfer arrives from an unknown person. What should you do?',
+        options: ['Accept it — unexpected money is not a scam', 'Decline it — accepting unknown e-Transfers can link your account to a scam', 'Accept it and then report it to police', 'Forward it to a family member to decide'],
+        correct: 1
+      },
+      {
+        text: 'Which of these should you NEVER share with anyone who contacts you?',
+        text_after: 'Which piece of information should you never share with someone who contacts you?',
+        options: ['Your postal code', 'Your banking password or PIN', 'Your province of residence', 'Your first name'],
+        correct: 1
+      },
+      {
+        text: 'Your bank calls and asks you to confirm your account number to verify your identity. What do you do?',
+        text_after: 'Your bank calls asking you to confirm your account number. What do you do?',
+        options: ['Provide it — they are your bank and need to verify you', 'Hang up and call the number on the back of your bank card', 'Give only the last 4 digits', 'Ask them to email you instead'],
+        correct: 1
+      },
+      {
+        text: 'What does the padlock icon in your browser\'s address bar tell you?',
+        text_after: 'What does the padlock icon in the browser address bar mean?',
+        options: ['The website is owned by the government', 'Your connection to the site is encrypted — your data is harder to intercept', 'The site has been checked for scams', 'You are signed in safely'],
+        correct: 1
+      }
+    ];
+    if (window.DCC_QUIZ) {
+      DCC_QUIZ.init({
+        moduleId: 'module-6-banking',
+        questions: QUESTIONS,
+        beforeContainerId: 'dcc-before-quiz',
+        afterContainerId:  'dcc-after-quiz'
+      });
+    }
+  });
+  </script>
   <script src="js/lang-toggle.js" defer></script>
   <script src="js/accessibility.js" defer></script>
   <script src="js/progress.js" defer></script>
