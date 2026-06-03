@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/accessibility.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/print.css">
+  <link rel="stylesheet" href="css/quiz-check.css">
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
@@ -254,6 +255,9 @@
         <p>Prefer to go one step at a time? <a href="v2/wizard.html?module=module-17">Try the guided step-by-step version <span aria-hidden="true">→</span></a></p>
       </div>
 
+      <!-- Before quiz — inserted by quiz-check.js -->
+      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start"></div>
+
       <div class="module-intro">
         <p class="module-time" data-en="⏱ About 25–35 minutes — go at your own pace" data-fr="⏱ Environ 25–35 minutes — allez à votre rythme">⏱ About 25–35 minutes — go at your own pace</p>
         <div class="confidence-check-box">
@@ -426,6 +430,9 @@
         <span data-en="You now know: what AI tools are and which ones you might use, how to ask good questions and get clearer answers, how to check whether AI answers are trustworthy, what personal information to keep private, and dozens of practical ways AI can help you in daily life. You have earned this." data-fr="Vous savez maintenant : ce que sont les outils d'IA et lesquels vous pourriez utiliser, comment poser de bonnes questions et obtenir des réponses plus claires, comment vérifier si les réponses de l'IA sont fiables, quelles informations personnelles garder privées et des dizaines de façons pratiques dont l'IA peut vous aider dans la vie quotidienne. Vous l'avez mérité.">You now know: what AI tools are and which ones you might use, how to ask good questions and get clearer answers, how to check whether AI answers are trustworthy, what personal information to keep private, and dozens of practical ways AI can help you in daily life. You have earned this.</span>
       </div>
 
+      <!-- After quiz — inserted by quiz-check.js -->
+      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the module"></div>
+
       <!-- ═══ MODULE NAV ═══ -->
       <div class="module-nav-footer">
         <a href="module-16-travel-safety.html" class="module-nav-prev">← Module 16: Travel Safety</a>
@@ -535,5 +542,51 @@
   <script src="js/module-progress.js" defer></script>
   <script src="js/check-in.js" defer></script>
   <script src="js/read-aloud.js" defer></script>
+  <script src="js/quiz-check.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var QUESTIONS = [
+      {
+        text: 'How often can AI tools give wrong or made-up answers?',
+        text_after: 'After this module — how often can AI tools give wrong or made-up answers?',
+        options: ['Almost never — AI is very accurate', 'Sometimes — they can make mistakes', 'Only when you ask tricky questions', 'I am not sure'],
+        correct: 1
+      },
+      {
+        text: 'Which of these should you avoid sharing with an AI tool?',
+        text_after: 'Which of these should you avoid sharing with an AI tool? (This should feel clearer now.)',
+        options: ['Your city or province', 'Your full name, SIN, or banking details', 'A question about a news story', 'The name of a book you enjoyed'],
+        correct: 1
+      },
+      {
+        text: 'If an AI gives you health or medical advice, what is the safest next step?',
+        text_after: 'If an AI gives you health or medical advice, what is the safest next step?',
+        options: ['Follow it — AI knows a lot about health', 'Ask the AI for more detail', 'Confirm with your doctor or pharmacist', 'Share it with a family member first'],
+        correct: 2
+      },
+      {
+        text: 'What is a good way to check whether an AI answer is accurate?',
+        text_after: 'What is a good way to check whether an AI answer is accurate?',
+        options: ['Ask the same AI the question again', 'Trust it if it sounds confident', 'Look it up on a trusted website (Government of Canada, Mayo Clinic, etc.)', 'Ask a friend if they agree'],
+        correct: 2
+      },
+      {
+        text: 'The 3-Second Rule says: before sharing information online, you should…',
+        text_after: 'You learned the 3-Second Rule. What does it say to do before sharing information online?',
+        options: ['Read the information twice before sharing', 'Stop, breathe, and verify before sharing', 'Check your privacy settings first', 'Ask the AI if it is safe to share'],
+        correct: 1
+      }
+    ];
+
+    if (window.DCC_QUIZ) {
+      DCC_QUIZ.init({
+        moduleId: 'module-17-ai-research',
+        questions: QUESTIONS,
+        beforeContainerId: 'dcc-before-quiz',
+        afterContainerId:  'dcc-after-quiz'
+      });
+    }
+  });
+  </script>
 </body>
 </html>
