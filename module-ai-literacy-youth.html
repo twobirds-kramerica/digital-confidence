@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Literacy for Canadian Youth — four real situations happening right now involving AI, deepfakes, voice cloning, and academic honesty. Scenario-based learning for ages 12–18.">
+  <meta name="keywords" content="AI literacy youth Canada, deepfake teens school, voice cloning scam teens, AI cheating school Canada, AI for youth education Canada, digital literacy 12-18">
+  <meta property="og:title" content="AI in Real Life — Scenario-Based AI Literacy for Canadian Youth (Ages 12–18)">
+  <meta property="og:description" content="Four real situations happening to young Canadians right now. What would you do? Interactive scenario-based learning on AI, deepfakes, voice cloning, and using AI as a tool vs. letting it do your thinking.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/module-ai-literacy-youth.html">
+  <title>AI in Real Life — Youth AI Literacy · Digital Confidence Centre</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/tokens-dark.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/print.css">
+  <link rel="stylesheet" href="css/quiz-check.css">
+  <meta name="author" content="Digital Confidence Centre">
+  <meta name="robots" content="index, follow">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2A7B6F">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <style>
+    /* Youth module colour overrides */
+    :root {
+      --youth-indigo:    #3949AB;
+      --youth-indigo-bg: #E8EAF6;
+      --youth-teal:      #00897B;
+      --youth-teal-bg:   #E0F2F1;
+      --youth-amber:     #F57C00;
+      --youth-amber-bg:  #FFF3E0;
+      --youth-green:     #2E7D32;
+      --youth-green-bg:  #E8F5E9;
+      --youth-red:       #C62828;
+      --youth-red-bg:    #FFEBEE;
+    }
+
+    .youth-hero {
+      background: linear-gradient(135deg, #1a2744 0%, #3949AB 100%);
+      color: #fff;
+      padding: 2.5rem 0 2rem;
+      text-align: center;
+      margin: -1.5rem -1.5rem 2rem;
+      border-radius: 0 0 16px 16px;
+    }
+    .youth-hero .eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 0.25rem 0.9rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .youth-hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+    .youth-hero p { font-size: 1rem; opacity: 0.85; max-width: 520px; margin: 0 auto; line-height: 1.55; }
+
+    /* Progress bar */
+    .scenario-progress {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .progress-pip {
+      width: 32px; height: 6px; border-radius: 3px;
+      background: var(--youth-indigo-bg);
+      transition: background 0.25s;
+    }
+    .progress-pip.done { background: var(--youth-indigo); }
+    .progress-pip.active { background: var(--youth-teal); }
+    .progress-label { font-size: 0.8rem; color: var(--color-text-light,#7A6E62); font-weight: 600; }
+
+    /* Scenario card */
+    .scenario-card {
+      background: var(--color-surface,#fff);
+      border: 2px solid var(--youth-indigo-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      display: none;
+    }
+    .scenario-card.active { display: block; }
+
+    .scenario-header {
+      background: var(--youth-indigo-bg);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .scenario-num {
+      background: var(--youth-indigo);
+      color: #fff;
+      width: 2rem; height: 2rem;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: 800; flex-shrink: 0;
+    }
+    .scenario-tag { font-size: 0.78rem; font-weight: 700; color: var(--youth-indigo); text-transform: uppercase; letter-spacing: 0.06em; }
+
+    .scenario-body { padding: 1.5rem; }
+    .scenario-title { font-size: 1.1rem; font-weight: 700; color: var(--color-text,#3D3229); margin-bottom: 0.75rem; }
+    .scenario-story {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 1.25rem;
+      padding: 1rem 1.25rem;
+      background: #fafaf8;
+      border-left: 4px solid var(--youth-indigo);
+      border-radius: 0 10px 10px 0;
+    }
+    .scenario-question { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; }
+
+    /* Answer options */
+    .answer-options { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem; }
+    .answer-btn {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      border: 2px solid var(--color-divider,#e0e0e0);
+      border-radius: 10px;
+      background: var(--color-surface,#fff);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.9rem;
+      text-align: left;
+      color: var(--color-text,#3D3229);
+      transition: all 0.15s;
+      width: 100%;
+    }
+    .answer-btn:hover:not(:disabled) { border-color: var(--youth-indigo); background: var(--youth-indigo-bg); }
+    .answer-btn .ans-letter {
+      flex-shrink: 0; width: 1.5rem; height: 1.5rem;
+      background: var(--youth-indigo-bg);
+      color: var(--youth-indigo);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700;
+      margin-top: 1px;
+    }
+    .answer-btn.selected-correct {
+      border-color: var(--youth-green);
+      background: var(--youth-green-bg);
+    }
+    .answer-btn.selected-correct .ans-letter { background: var(--youth-green); color: #fff; }
+    .answer-btn.selected-wrong {
+      border-color: var(--youth-red);
+      background: var(--youth-red-bg);
+    }
+    .answer-btn.selected-wrong .ans-letter { background: var(--youth-red); color: #fff; }
+    .answer-btn.reveal-correct {
+      border-color: var(--youth-green);
+      background: var(--youth-green-bg);
+      opacity: 0.7;
+    }
+    .answer-btn:disabled { cursor: default; }
+
+    /* Debrief */
+    .scenario-debrief {
+      display: none;
+      margin-top: 1rem;
+      padding: 1rem 1.25rem;
+      border-radius: 10px;
+      border-left: 4px solid var(--youth-teal);
+      background: var(--youth-teal-bg);
+    }
+    .scenario-debrief.visible { display: block; }
+    .debrief-label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.07em; color: var(--youth-teal); margin-bottom: 0.4rem; }
+    .scenario-debrief p { font-size: 0.9rem; line-height: 1.6; color: #1a3a38; }
+
+    .btn-next-scenario {
+      display: none;
+      margin-top: 1rem;
+      background: var(--youth-indigo);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 0.65rem 1.75rem;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-next-scenario:hover { background: #2c3a8c; }
+    .btn-next-scenario.visible { display: inline-flex; align-items: center; gap: 0.4rem; }
+
+    /* All-done block */
+    .scenarios-complete {
+      display: none;
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--youth-indigo-bg);
+      border-radius: 16px;
+      margin-bottom: 2rem;
+    }
+    .scenarios-complete.visible { display: block; }
+    .sc-icon { font-size: 3rem; margin-bottom: 0.75rem; }
+    .sc-score { font-size: 1.5rem; font-weight: 800; color: var(--youth-indigo); }
+    .sc-sub { font-size: 0.9rem; color: var(--color-text-light,#7A6E62); margin-top: 0.4rem; }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">AI in Real Life — Youth</span>
+    <span></span>
+  </div>
+
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close menu">Close &#10005;</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Youth AI Literacy</p>
+    </div>
+    <nav>
+      <a href="index.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a>
+      <a href="digital-literacy-101.html"><span class="nav-icon">📚</span><span class="nav-label">All Modules</span></a>
+      <a href="module-ai-literacy-youth.html" aria-current="page"><span class="nav-icon">🎯</span><span class="nav-label">AI in Real Life (Youth)</span></a>
+      <a href="module-ai-literacy.html"><span class="nav-icon">🤖</span><span class="nav-label">What Is AI? (Adults)</span></a>
+      <a href="kids/index.html"><span class="nav-icon">🧒</span><span class="nav-label">DCC Kids (Ages 4–12)</span></a>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <div class="youth-hero">
+        <div class="eyebrow">Ages 12–18 · AI Literacy</div>
+        <h1>AI in Real Life</h1>
+        <p>Four real situations happening to young Canadians right now. What would you do?</p>
+      </div>
+
+      <!-- Before quiz -->
+      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start" style="margin-bottom:2rem"></div>
+
+      <!-- Scenario progress -->
+      <div class="scenario-progress" id="scenarioProgress" role="progressbar" aria-label="Scenario progress" aria-valuenow="0" aria-valuemax="4">
+        <div class="progress-pip active" id="pip-0"></div>
+        <div class="progress-pip" id="pip-1"></div>
+        <div class="progress-pip" id="pip-2"></div>
+        <div class="progress-pip" id="pip-3"></div>
+        <span class="progress-label" id="progressLabel">Scenario 1 of 4</span>
+      </div>
+
+      <!-- Scenario 1 -->
+      <div class="scenario-card active" id="scenario-0" role="region" aria-label="Scenario 1: The Essay That Got Flagged">
+        <div class="scenario-header">
+          <div class="scenario-num">1</div>
+          <div>
+            <div class="scenario-tag">Academic Integrity</div>
+          </div>
+        </div>
+        <div class="scenario-body">
+          <div class="scenario-title">The Essay That Got Flagged</div>
+          <div class="scenario-story">
+            A Grade 10 student used an AI chatbot to write a paragraph for a history assignment. The teacher's AI detection tool flagged it. The student argued: "I didn't think it was cheating — I just used it to start."
+          </div>
+          <p class="scenario-question">What's the difference between using AI as a tool and having AI do your thinking for you?</p>
+          <div class="answer-options" id="opts-0">
+            <button class="answer-btn" data-q="0" data-val="0"><span class="ans-letter">A</span> There is no difference — all AI use is cheating in school</button>
+            <button class="answer-btn" data-q="0" data-val="1"><span class="ans-letter">B</span> Using AI to brainstorm or get unstuck is a tool skill. Submitting AI writing as your own thinking is misrepresentation.</button>
+            <button class="answer-btn" data-q="0" data-val="2"><span class="ans-letter">C</span> It depends whether the teacher can detect it</button>
+            <button class="answer-btn" data-q="0" data-val="3"><span class="ans-letter">D</span> If you edit the AI's writing, it becomes your own work</button>
+          </div>
+          <div class="scenario-debrief" id="debrief-0">
+            <div class="debrief-label">The key distinction</div>
+            <p>AI is a tool — like a dictionary or a calculator. Using it to brainstorm, get unstuck, or understand a concept is a legitimate skill. Submitting AI-generated text as your own thinking is misrepresentation — the assignment is testing your analysis, not your ability to prompt an AI. Most schools are updating their policies, but the ethical line does not move: did you do the thinking?</p>
+          </div>
+          <button class="btn-next-scenario" id="next-0" onclick="nextScenario(1)">Next scenario →</button>
+        </div>
+      </div>
+
+      <!-- Scenario 2 -->
+      <div class="scenario-card" id="scenario-1" role="region" aria-label="Scenario 2: The Deepfake in the Group Chat">
+        <div class="scenario-header">
+          <div class="scenario-num">2</div>
+          <div>
+            <div class="scenario-tag">Deepfakes &amp; Verification</div>
+          </div>
+        </div>
+        <div class="scenario-body">
+          <div class="scenario-title">The Deepfake in the Group Chat</div>
+          <div class="scenario-story">
+            A video circulated in a school group chat showing the principal saying something embarrassing. It looked completely real. Students who shared it faced consequences — even though they didn't create it. An AI image tool made it in under five minutes.
+          </div>
+          <p class="scenario-question">What should you do before sharing something like this?</p>
+          <div class="answer-options" id="opts-1">
+            <button class="answer-btn" data-q="1" data-val="0"><span class="ans-letter">A</span> Share it — if it came from someone you trust, it is probably real</button>
+            <button class="answer-btn" data-q="1" data-val="1"><span class="ans-letter">B</span> Only share it if it is funny, not mean</button>
+            <button class="answer-btn" data-q="1" data-val="2"><span class="ans-letter">C</span> Verify before sharing — one search on CBC or CTV takes 30 seconds. Sharing is amplifying. Your name goes on it.</button>
+            <button class="answer-btn" data-q="1" data-val="3"><span class="ans-letter">D</span> Report it to the school, then share it yourself</button>
+          </div>
+          <div class="scenario-debrief" id="debrief-1">
+            <div class="debrief-label">Sharing is amplifying</div>
+            <p>When you share something — even if you did not create it — your name goes on it. AI-generated images and videos can be created in minutes and look completely real. A 30-second search on CBC.ca, CTV News, or a basic Google search with "site:cbc.ca" can tell you whether something significant actually happened. If you cannot verify it in 30 seconds, do not share it. The original video got 4,000 shares. The correction got 80.</p>
+          </div>
+          <button class="btn-next-scenario" id="next-1" onclick="nextScenario(2)">Next scenario →</button>
+        </div>
+      </div>
+
+      <!-- Scenario 3 -->
+      <div class="scenario-card" id="scenario-2" role="region" aria-label="Scenario 3: The AI That Levelled the Playing Field">
+        <div class="scenario-header">
+          <div class="scenario-num">3</div>
+          <div>
+            <div class="scenario-tag">Access &amp; Equity</div>
+          </div>
+        </div>
+        <div class="scenario-body">
+          <div class="scenario-title">The AI That Levelled the Playing Field</div>
+          <div class="scenario-story">
+            A 13-year-old with dyslexia found an AI text-to-speech tool that read books, articles, and assignments aloud to him. He started completing more reading than anyone in his class.
+          </div>
+          <p class="scenario-question">What does this example show about AI?</p>
+          <div class="answer-options" id="opts-2">
+            <button class="answer-btn" data-q="2" data-val="0"><span class="ans-letter">A</span> AI makes school too easy and gives an unfair advantage</button>
+            <button class="answer-btn" data-q="2" data-val="1"><span class="ans-letter">B</span> AI can give everyone access to the same information regardless of how they learn. That is one of its most powerful uses.</button>
+            <button class="answer-btn" data-q="2" data-val="2"><span class="ans-letter">C</span> AI tools are only for people with diagnosed learning differences</button>
+            <button class="answer-btn" data-q="2" data-val="3"><span class="ans-letter">D</span> AI is replacing human teachers and that is a problem</button>
+          </div>
+          <div class="scenario-debrief" id="debrief-2">
+            <div class="debrief-label">The equity angle</div>
+            <p>AI accessibility tools — text-to-speech, translation, real-time captioning, image description — remove barriers that have always existed for some learners. This is one of the most meaningful applications of AI: not replacing human capability, but giving everyone access to the same information regardless of how their brain processes it. The student's reading comprehension was never the issue. The format was.</p>
+          </div>
+          <button class="btn-next-scenario" id="next-2" onclick="nextScenario(3)">Next scenario →</button>
+        </div>
+      </div>
+
+      <!-- Scenario 4 -->
+      <div class="scenario-card" id="scenario-3" role="region" aria-label="Scenario 4: The Call That Sounded Like Dad">
+        <div class="scenario-header">
+          <div class="scenario-num">4</div>
+          <div>
+            <div class="scenario-tag">Voice Cloning &amp; Scams</div>
+          </div>
+        </div>
+        <div class="scenario-body">
+          <div class="scenario-title">The Call That Sounded Like Dad</div>
+          <div class="scenario-story">
+            A 16-year-old received a call that sounded exactly like her father saying he'd been in an accident and needed money transferred immediately. AI voice cloning used recordings from social media.
+          </div>
+          <p class="scenario-question">What is the correct response?</p>
+          <div class="answer-options" id="opts-3">
+            <button class="answer-btn" data-q="3" data-val="0"><span class="ans-letter">A</span> Transfer the money first — you can sort it out later</button>
+            <button class="answer-btn" data-q="3" data-val="1"><span class="ans-letter">B</span> Ask the caller questions only your dad would know</button>
+            <button class="answer-btn" data-q="3" data-val="2"><span class="ans-letter">C</span> Hang up and call back on a known number. Real emergencies will still be emergencies in 60 seconds.</button>
+            <button class="answer-btn" data-q="3" data-val="3"><span class="ans-letter">D</span> Ask your parent to send a photo to prove who they are</button>
+          </div>
+          <div class="scenario-debrief" id="debrief-3">
+            <div class="debrief-label">The voice clone rule</div>
+            <p>AI voice cloning can recreate anyone's voice from a few minutes of audio — and social media gives scammers a library of recordings to work from. The voice sounding real proves nothing. The correct response is always: hang up, call back on a number you already have saved. A real emergency will still be a real emergency in 60 seconds. Anyone who says there is no time to verify is using urgency as a weapon.</p>
+          </div>
+          <button class="btn-next-scenario" id="next-3" onclick="completedScenarios()">See your results →</button>
+        </div>
+      </div>
+
+      <!-- All scenarios complete -->
+      <div class="scenarios-complete" id="scenariosComplete" role="status" aria-live="polite">
+        <div class="sc-icon">🎯</div>
+        <div class="sc-score" id="scenarioScore">0 / 4 correct</div>
+        <div class="sc-sub" id="scenarioSub">Complete the after quiz below to see your full results.</div>
+      </div>
+
+      <!-- After quiz -->
+      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the scenarios" style="margin:2rem 0"></div>
+
+      <!-- Success state -->
+      <div class="tip-block" style="border-left-color:#3949ab;background:#E8EAF6" role="note">
+        <span class="tip-label" style="color:#3949ab">✅ Success State — What a completed module looks like</span>
+        <p>When you have finished:</p>
+        <ul style="margin:0.5rem 0 0;padding-left:1.25rem;line-height:2">
+          <li>The "Quick Check — Before You Start" section above shows <strong>Recorded</strong></li>
+          <li>All four scenario cards show a debrief — you have read all four</li>
+          <li>The "Quick Check — After" shows your score and delta</li>
+          <li>You can explain the voice clone rule in one sentence without looking</li>
+        </ul>
+      </div>
+
+      <section class="related-modules" aria-label="Related modules">
+        <h3 class="related-title">Keep Going</h3>
+        <div class="related-grid">
+          <a href="module-ai-literacy.html" class="related-card">
+            <span class="related-num">Module</span>
+            <span class="related-name">What Is AI, Really? (Adults 55+)</span>
+            <span class="related-desc">The adult version — same topics, more stories, the 3-Second Rule in depth. Good to share with a parent or grandparent.</span>
+          </a>
+          <a href="kids/10-12/when-online-pressure-crosses-a-line.html" class="related-card">
+            <span class="related-num">Kids 10–12</span>
+            <span class="related-name">When Online Pressure Crosses a Line</span>
+            <span class="related-desc">Coercion, screenshot threats, and the surprises-vs-secrets test — for ages 10–12 but relevant to anyone.</span>
+          </a>
+        </div>
+      </section>
+
+      <div class="module-nav-footer">
+        <a href="digital-literacy-101.html" class="module-nav-prev">← All Modules</a>
+        <a href="module-ai-literacy.html" class="module-nav-next">What Is AI? (Adults) →</a>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Digital Confidence Centre</p>
+      <p class="footer-tagline">A free digital learning programme for all Canadians</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a> |
+        <a href="digital-literacy-101.html">Modules</a> |
+        <a href="resources/index.html">Resources</a> |
+        <a href="kids/index.html">Kids</a> |
+        <a href="about.html">About</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Two Birds Innovation. Made with care in Ontario, Canada.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+  <script src="js/lang-toggle.js" defer></script>
+  <script src="js/accessibility.js" defer></script>
+  <script src="js/settings.js" defer></script>
+  <script src="js/quiz-check.js" defer></script>
+  <script>
+  // Correct answers for the 4 interactive scenarios (0-indexed option)
+  var SCENARIO_CORRECT = [1, 2, 1, 2];
+  var scenarioAnswered  = [false, false, false, false];
+  var scenarioCorrect   = [false, false, false, false];
+
+  function answerScenario(q, val) {
+    if (scenarioAnswered[q]) return;
+    scenarioAnswered[q] = true;
+    var correct = val === SCENARIO_CORRECT[q];
+    scenarioCorrect[q] = correct;
+
+    // Style all options
+    var opts = document.querySelectorAll('[data-q="' + q + '"]');
+    opts.forEach(function(btn) {
+      btn.disabled = true;
+      var bval = parseInt(btn.dataset.val, 10);
+      if (bval === SCENARIO_CORRECT[q]) btn.classList.add(correct ? 'selected-correct' : 'reveal-correct');
+      if (!correct && bval === val) btn.classList.add('selected-wrong');
+    });
+
+    // Show debrief
+    var debrief = document.getElementById('debrief-' + q);
+    if (debrief) debrief.classList.add('visible');
+
+    // Show next button
+    var next = document.getElementById('next-' + q);
+    if (next) next.classList.add('visible');
+
+    // Update progress
+    updateProgress(q);
+  }
+
+  function nextScenario(idx) {
+    // Hide current, show next
+    var current = document.getElementById('scenario-' + (idx - 1));
+    var next = document.getElementById('scenario-' + idx);
+    if (current) current.classList.remove('active');
+    if (next) next.classList.add('active');
+    updateProgress(idx);
+    if (next) next.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function completedScenarios() {
+    var current = document.getElementById('scenario-3');
+    if (current) current.classList.remove('active');
+    var done = document.getElementById('scenariosComplete');
+    var scoreEl = document.getElementById('scenarioScore');
+    var subEl   = document.getElementById('scenarioSub');
+    var total = scenarioCorrect.filter(Boolean).length;
+    if (scoreEl) scoreEl.textContent = total + ' / 4 correct';
+    var msg = total === 4 ? 'Perfect — you got all four right.'
+            : total >= 3 ? 'Strong — one to review.'
+            : total >= 2 ? 'Good start — look back at the debriefs for the ones you missed.'
+            : 'Review the debriefs above, then take the after quiz.';
+    if (subEl) subEl.textContent = msg + ' Complete the after quiz below to see your full results.';
+    if (done) { done.classList.add('visible'); done.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+
+    // Save scenario accuracy to quiz storage so admin export can include it
+    if (window.DCC_QUIZ) {
+      var record = {};
+      scenarioCorrect.forEach(function(v, i) { record['scenario_' + (i+1)] = v ? 1 : 0; });
+      record.scenario_total = total;
+      // Attach to after-quiz module results
+      try {
+        var all = JSON.parse(localStorage.getItem('dcc_quiz_results') || '{}');
+        all['module-ai-literacy-youth'] = Object.assign(all['module-ai-literacy-youth'] || {}, { scenarios: record });
+        localStorage.setItem('dcc_quiz_results', JSON.stringify(all));
+      } catch(e) {}
+    }
+  }
+
+  function updateProgress(current) {
+    for (var i = 0; i < 4; i++) {
+      var pip = document.getElementById('pip-' + i);
+      if (!pip) continue;
+      pip.classList.remove('done', 'active');
+      if (i < current) pip.classList.add('done');
+      else if (i === current) pip.classList.add('active');
+    }
+    var label = document.getElementById('progressLabel');
+    if (label) label.textContent = current < 4 ? 'Scenario ' + (current + 1) + ' of 4' : 'All scenarios done';
+  }
+
+  // Wire answer buttons
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.answer-btn[data-q]');
+    if (!btn) return;
+    var q = parseInt(btn.dataset.q, 10);
+    var val = parseInt(btn.dataset.val, 10);
+    answerScenario(q, val);
+  });
+
+  // Before/after quiz questions (youth-appropriate framing)
+  document.addEventListener('DOMContentLoaded', function() {
+    var QUESTIONS = [
+      {
+        text: 'Can AI tools confidently give wrong or made-up information?',
+        text_after: 'After the scenarios — can AI tools confidently give wrong or made-up information?',
+        options: ['No — AI always checks facts before answering', 'Yes — AI sounds confident even when it is wrong', 'Only when the question is hard', 'Only older AI tools do this'],
+        correct: 1
+      },
+      {
+        text: 'You see a video in a group chat that looks shocking. What should you do first?',
+        text_after: 'You see a shocking video in a group chat. What should you do first?',
+        options: ['Share it with people you trust', 'React and keep scrolling', 'Verify it on a news site before sharing or reacting', 'Screenshot it in case it disappears'],
+        correct: 2
+      },
+      {
+        text: 'Using AI to brainstorm for an assignment is:',
+        text_after: 'Using AI to brainstorm ideas for your own writing is:',
+        options: ['Always cheating', 'A tool skill — submitting AI text as your own thinking is the line', 'Fine as long as you edit it a bit', 'Only allowed with teacher permission'],
+        correct: 1
+      },
+      {
+        text: 'A call comes in that sounds exactly like a family member saying it is an emergency. You should:',
+        text_after: 'A call sounds exactly like a family member in an emergency. What is the right move?',
+        options: ['Follow their instructions immediately', 'Ask them a question only they would know', 'Hang up and call back on their real saved number', 'Put them on hold and call 911'],
+        correct: 2
+      },
+      {
+        text: 'AI text-to-speech and translation tools are most accurately described as:',
+        text_after: 'AI text-to-speech and translation tools are best described as:',
+        options: ['Cheating tools that undermine learning', 'Accessibility tools that remove barriers', 'Only useful for people with disabilities', 'Something schools should ban'],
+        correct: 1
+      }
+    ];
+
+    if (window.DCC_QUIZ) {
+      DCC_QUIZ.init({
+        moduleId: 'module-ai-literacy-youth',
+        questions: QUESTIONS,
+        beforeContainerId: 'dcc-before-quiz',
+        afterContainerId:  'dcc-after-quiz'
+      });
+    }
+  });
+  </script>
+</body>
+</html>
