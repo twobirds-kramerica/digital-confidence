@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/accessibility.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/print.css">
+  <link rel="stylesheet" href="css/quiz-check.css">
   <!-- SEO: Author, Robots, Open Graph, Twitter Card -->
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
@@ -236,6 +237,9 @@
   <noscript>
     <div style="padding:20px;font-family:Georgia,serif;max-width:800px;margin:0 auto">
       <h1>Digital Confidence Centre</h1>
+
+      <!-- Before quiz -->
+      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start" style="margin-bottom:1.5rem"></div>
 
       <div class="module-intro">
         <p class="module-time">⏱ About 20–30 minutes — go at your own pace</p>
@@ -1242,6 +1246,9 @@
           </div>
         </div>
       </div>
+      <!-- After quiz -->
+      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the module" style="margin:2rem 0"></div>
+
       <div class="sources-block">
         <h3 data-en="Sources &amp; References" data-fr="Sources et références">Sources &amp; References</h3>
         <ul>
@@ -1254,6 +1261,51 @@
   <script src="js/speech-config.js" defer></script>
   <script src="js/read-aloud.js" defer></script>
   <script src="js/app.js" defer></script>
+  <script src="js/quiz-check.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var QUESTIONS = [
+      {
+        text: 'Your screen freezes and nothing responds. What is the best first step?',
+        text_after: 'When your screen freezes and nothing responds, the best first step is:',
+        options: ['Call your phone company right away', 'Press the Home button or try a gentle restart', 'Assume it is broken and needs repair', 'Hand it to someone else immediately'],
+        correct: 1
+      },
+      {
+        text: 'True or false: If you press the wrong button on your phone, you could permanently damage it.',
+        text_after: 'True or false: Pressing a wrong button can permanently damage your phone.',
+        options: ['True — phones are very fragile', 'False — most mistakes are easily undone with a tap or a restart', 'True — one wrong tap can delete everything', 'False — but only if you have a warranty'],
+        correct: 1
+      },
+      {
+        text: 'On an iPhone or iPad, which button or action takes you back to the main screen?',
+        text_after: 'On an iPhone or iPad, which takes you back to the main screen?',
+        options: ['The volume button', 'The side power button', 'The Home button (round) or swipe up from the bottom edge', 'Shaking the device'],
+        correct: 2
+      },
+      {
+        text: 'A screen pops up saying "Your phone has a virus! Call this number NOW!" What should you do?',
+        text_after: 'A pop-up says "Your phone has a virus — call this number NOW!" What do you do?',
+        options: ['Call the number immediately', 'Close the browser and ask a trusted person before doing anything else', 'Buy the anti-virus software it is advertising', 'Turn off the phone and call your phone company'],
+        correct: 1
+      },
+      {
+        text: 'When is a good time to ask someone for help with your device?',
+        text_after: 'When is a good time to ask for help with your device?',
+        options: ['Any time you feel unsure or confused — there is no wrong time', 'Only when the screen is completely blank', 'Only when something is visibly broken', 'Only if you are about to lose money'],
+        correct: 0
+      }
+    ];
+    if (window.DCC_QUIZ) {
+      DCC_QUIZ.init({
+        moduleId: 'module-1-escape-hatch',
+        questions: QUESTIONS,
+        beforeContainerId: 'dcc-before-quiz',
+        afterContainerId:  'dcc-after-quiz'
+      });
+    }
+  });
+  </script>
   <script src="js/lang-toggle.js" defer></script>
   <script src="js/accessibility.js" defer></script>
   <script src="js/progress.js" defer></script>
