@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/accessibility.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/print.css">
+  <link rel="stylesheet" href="css/quiz-check.css">
   <!-- SEO: Author, Robots, Open Graph, Twitter Card -->
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
@@ -236,6 +237,9 @@
   <noscript>
     <div style="padding:20px;font-family:Georgia,serif;max-width:800px;margin:0 auto">
       <h1>Digital Confidence Centre</h1>
+
+      <!-- Before quiz -->
+      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start" style="margin-bottom:1.5rem"></div>
 
       <div class="module-intro">
         <p class="module-time">⏱ About 20–30 minutes — go at your own pace</p>
@@ -1401,6 +1405,9 @@
           </div>
         </div>
       </div>
+      <!-- After quiz -->
+      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the module" style="margin:2rem 0"></div>
+
       <div class="sources-block">
         <h3 data-en="Sources &amp; References" data-fr="Sources et références">Sources &amp; References</h3>
         <ul>
@@ -1412,6 +1419,51 @@
   </div>
   <script src="js/speech-config.js" defer></script>
   <script src="js/read-aloud.js" defer></script>
+  <script src="js/quiz-check.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var QUESTIONS = [
+      {
+        text: 'Which of these is the safest type of password?',
+        text_after: 'Which type of password is safest?',
+        options: ['Short and easy to remember, like your pet\'s name', 'A passphrase — three or four unrelated words, like PurpleDogEatsCarrots!', 'Your name and birthdate', 'The same strong password used for every account'],
+        correct: 1
+      },
+      {
+        text: 'The CRA calls and says you owe money and must pay right now by gift card. What should you do?',
+        text_after: 'The CRA calls demanding immediate payment by gift card. The correct response is:',
+        options: ['Pay immediately to avoid arrest', 'Hang up and call the CRA directly at 1-800-959-8281', 'Ask for more time to pay', 'Give your banking information to set up a payment plan'],
+        correct: 1
+      },
+      {
+        text: 'What is a phishing email?',
+        text_after: 'What is a phishing email?',
+        options: ['Spam from a store you once used', 'A fake email designed to trick you into giving away passwords or personal information', 'An email that takes too long to load', 'A chain email asking you to forward it'],
+        correct: 1
+      },
+      {
+        text: 'Which of these is a warning sign that a pop-up on your screen might be a scam?',
+        text_after: 'Which of these signals a scam pop-up?',
+        options: ['It tells you to call a phone number to fix a problem on your device', 'It uses the Windows or Apple logo', 'It appeared on a website you normally trust', 'It asks you to close the window'],
+        correct: 0
+      },
+      {
+        text: 'You get a text saying your package is waiting — click a link to confirm delivery. You were not expecting anything. What do you do?',
+        text_after: 'An unexpected package-delivery text with a link arrives. What is the safest response?',
+        options: ['Click the link to find out what it is', 'Delete the message without clicking', 'Call the delivery company using the number in the text', 'Forward it to a family member to check'],
+        correct: 1
+      }
+    ];
+    if (window.DCC_QUIZ) {
+      DCC_QUIZ.init({
+        moduleId: 'module-3-staying-safe',
+        questions: QUESTIONS,
+        beforeContainerId: 'dcc-before-quiz',
+        afterContainerId:  'dcc-after-quiz'
+      });
+    }
+  });
+  </script>
   <script src="js/app.js" defer></script>
   <script src="js/lang-toggle.js" defer></script>
   <script src="js/accessibility.js" defer></script>
