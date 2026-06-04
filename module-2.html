@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/accessibility.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/print.css">
+  <link rel="stylesheet" href="css/quiz-check.css">
   <!-- SEO: Author, Robots, Open Graph, Twitter Card -->
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
@@ -237,6 +238,7 @@
     <div style="padding:20px;font-family:Georgia,serif;max-width:800px;margin:0 auto">
       <h1>Digital Confidence Centre</h1>
 
+      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start" style="margin-bottom:1.5rem"></div>
       <div class="module-intro">
         <p class="module-time">⏱ About 20–30 minutes — go at your own pace</p>
         <div class="confidence-check-box">
@@ -1107,6 +1109,7 @@
           <a href="resources/scam-deep-dives/romance-scam-seniors.html" class="btn btn-secondary" style="font-size:0.82rem">Romance Scams →</a>
         </div>
       </div>
+      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the module" style="margin:2rem 0"></div>
       <div class="sources-block">
         <h3 data-en="Sources &amp; References" data-fr="Sources et références">Sources &amp; References</h3>
         <ul>
@@ -1119,6 +1122,51 @@
   <script src="js/speech-config.js" defer></script>
   <script src="js/read-aloud.js" defer></script>
   <script src="js/app.js" defer></script>
+  <script src="js/quiz-check.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var QUESTIONS = [
+      {
+        text: 'What does a PIN or passcode on your phone protect you from?',
+        text_after: 'What does a PIN or passcode on your phone protect you from?',
+        options: ['It protects your phone from viruses', 'It prevents anyone else from accessing your apps, photos, and accounts if your phone is lost or stolen', 'It stops telemarketers from calling', 'It charges your phone faster'],
+        correct: 1
+      },
+      {
+        text: 'Two-factor authentication (2FA) means:',
+        text_after: 'Two-factor authentication (2FA) means:',
+        options: ['You need two passwords to log in', 'After entering your password, you also confirm with a second step — usually a code sent to your phone', 'Your account is twice as hard to remember', 'You share your account with two people'],
+        correct: 1
+      },
+      {
+        text: 'Someone calls saying they are from your bank\'s security team and need your 6-digit verification code to protect your account. What should you do?',
+        text_after: 'A caller from "your bank\'s security team" needs your 6-digit verification code. What should you do?',
+        options: ['Give it — it is for your protection', 'Hang up immediately and call the bank back on the number from your card', 'Give only the first three digits', 'Ask them to send an email instead'],
+        correct: 1
+      },
+      {
+        text: 'Which type of lock screen is considered the most secure on a smartphone?',
+        text_after: 'Which type of lock screen is most secure on a smartphone?',
+        options: ['Swipe to unlock — it is the simplest', 'A 4-digit PIN', 'A strong 6-digit PIN, a passphrase, or Face/fingerprint ID', 'No lock — so you can get in quickly in emergencies'],
+        correct: 2
+      },
+      {
+        text: 'You get a text message with a 6-digit code you did not request. What does this usually mean?',
+        text_after: 'You receive a 6-digit code by text that you did not request. What does this usually mean?',
+        options: ['A reward or prize is waiting for you', 'Someone may be trying to log into one of your accounts using your phone number', 'Your phone is being updated automatically', 'The bank is sending you a statement'],
+        correct: 1
+      }
+    ];
+    if (window.DCC_QUIZ) {
+      DCC_QUIZ.init({
+        moduleId: 'module-2-security-shield',
+        questions: QUESTIONS,
+        beforeContainerId: 'dcc-before-quiz',
+        afterContainerId:  'dcc-after-quiz'
+      });
+    }
+  });
+  </script>
   <script src="js/lang-toggle.js" defer></script>
   <script src="js/accessibility.js" defer></script>
   <script src="js/progress.js" defer></script>
