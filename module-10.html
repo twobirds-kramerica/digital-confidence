@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/accessibility.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/print.css">
+  <link rel="stylesheet" href="css/quiz-check.css">
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
   <meta property="og:url" content="https://twobirds-kramerica.github.io/digital-confidence/module-10.html">
@@ -224,6 +225,7 @@
     <div style="padding:20px;font-family:Georgia,serif;max-width:800px;margin:0 auto">
       <h1>Digital Confidence Centre — Module 10: Grocery &amp; Food Delivery</h1>
 
+      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start" style="margin-bottom:1.5rem"></div>
       <div class="module-intro">
         <p class="module-time">⏱ About 20–30 minutes — go at your own pace</p>
         <div class="confidence-check-box">
@@ -850,6 +852,7 @@
           </div>
         </div>
       </div>
+      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the module" style="margin:2rem 0"></div>
       <div class="sources-block">
         <h3 data-en="Sources &amp; References" data-fr="Sources et références">Sources &amp; References</h3>
         <ul>
@@ -862,6 +865,51 @@
   <script src="js/speech-config.js" defer></script>
   <script src="js/read-aloud.js" defer></script>
   <script src="js/app.js" defer></script>
+  <script src="js/quiz-check.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var QUESTIONS = [
+      {
+        text: 'You receive a text saying your Canada Post package is delayed and you must click a link to pay a redelivery fee. What should you do?',
+        text_after: 'A text says your Canada Post package is delayed — click a link to pay a fee. What should you do?',
+        options: ['Click the link and pay the fee', 'Call Canada Post at 1-866-607-6301 to check your delivery status directly', 'Reply to the text asking for more information', 'Forward it to a family member to decide'],
+        correct: 1
+      },
+      {
+        text: 'Before entering your credit card details to buy groceries online, you should check that:',
+        text_after: 'Before entering credit card details to shop online, you should check that:',
+        options: ['The website has lots of nice photos and looks professional', 'The website address starts with https:// and shows a padlock icon', 'The store sent you an advertisement by email first', 'The prices are lower than in-store'],
+        correct: 1
+      },
+      {
+        text: 'A grocery delivery app asks for your location when you open it. This is:',
+        text_after: 'A grocery delivery app asks for your location when you open it. This is:',
+        options: ['Always a privacy violation — deny it', 'Reasonable — it needs your location to show local store options and deliver to you', 'A sign the app is a scam', 'Optional but it makes the app run faster'],
+        correct: 1
+      },
+      {
+        text: 'What is the safest way to pay when ordering food or groceries online?',
+        text_after: 'What is the safest payment method for online food or grocery orders?',
+        options: ['E-transfer directly to the restaurant', 'Prepaid gift card from a drugstore', 'Credit card or a trusted payment service like PayPal', 'Cash on delivery — always safer than online payment'],
+        correct: 2
+      },
+      {
+        text: 'You ordered groceries online and the wrong items arrived. What is the first step?',
+        text_after: 'You ordered groceries online and the wrong items arrived. First step?',
+        options: ['Post a complaint on social media', 'Contact the store or app\'s customer service through the app or their official website', 'Send an email to any contact email you can find online', 'Accept the items and order again'],
+        correct: 1
+      }
+    ];
+    if (window.DCC_QUIZ) {
+      DCC_QUIZ.init({
+        moduleId: 'module-10-grocery',
+        questions: QUESTIONS,
+        beforeContainerId: 'dcc-before-quiz',
+        afterContainerId:  'dcc-after-quiz'
+      });
+    }
+  });
+  </script>
   <script src="js/lang-toggle.js" defer></script>
   <script src="js/accessibility.js" defer></script>
   <script src="js/progress.js" defer></script>
