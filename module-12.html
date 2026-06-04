@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/accessibility.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/print.css">
+  <link rel="stylesheet" href="css/quiz-check.css">
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
   <meta property="og:url" content="https://twobirds-kramerica.github.io/digital-confidence/module-12.html">
@@ -458,6 +459,7 @@
   <div class="page-wrapper">
     <main class="main-content" id="main">
 
+      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start" style="margin-bottom:1.5rem"></div>
       <h1>Module 12: Getting the Help You Deserve</h1>
       <p><strong>What you will learn:</strong> How to escape automated phone systems, use scripts to slow down rushed service reps, manage well-meaning family helpers, and stay safe when someone offers remote access to your device.</p>
       <img class="module-hero-image" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&h=400&fit=crop" alt="A confident senior woman on the phone, calm and in control, with a notebook open beside her" width="1200" height="400" loading="eager">
@@ -1000,6 +1002,7 @@
           </div>
         </div>
       </div>
+      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the module" style="margin:2rem 0"></div>
       <div class="sources-block">
         <h3 data-en="Sources &amp; References" data-fr="Sources et références">Sources &amp; References</h3>
         <ul>
@@ -1012,6 +1015,51 @@
   <script src="js/speech-config.js" defer></script>
   <script src="js/read-aloud.js" defer></script>
   <script src="js/app.js" defer></script>
+  <script src="js/quiz-check.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var QUESTIONS = [
+      {
+        text: 'A tech support person on the phone asks for remote access to your computer to fix a problem. What should you do?',
+        text_after: 'A tech support caller asks for remote access to your computer to fix something. What should you do?',
+        options: ['Grant access if they give you their company name and employee number', 'Never grant remote access to someone who called you unsolicited — hang up and call the company directly', 'Allow access only for 10 minutes and watch everything they do', 'Ask a family member to be present on the call first'],
+        correct: 1
+      },
+      {
+        text: 'You are on hold with a government agency for 45 minutes. What is a good strategy?',
+        text_after: 'You are stuck on hold with a government agency for 45 minutes. A good strategy is:',
+        options: ['Call back and hope for a shorter wait', 'Ask when you first get through: "Is there a better time to call or a way to avoid this wait?"', 'Only call in the morning — lines are always shorter', 'Hang up and use the website instead — phone calls no longer work'],
+        correct: 1
+      },
+      {
+        text: 'A well-meaning family member wants to "fix" your phone and takes it from you without explaining what they are doing. What is a reasonable response?',
+        text_after: 'A family member takes your phone to "fix it" without explaining. A reasonable response is:',
+        options: ['Let them — family members always have your best interests in mind', 'Ask them to explain what they are doing and do it in front of you so you can learn', 'Tell them not to touch it and learn to fix it yourself', 'Lock your phone with a new PIN they do not know'],
+        correct: 1
+      },
+      {
+        text: 'When speaking with a fast-talking customer service representative, a useful phrase is:',
+        text_after: 'When a customer service rep is talking too fast to follow, a useful phrase is:',
+        options: ['"I am going to record this call."', '"Please slow down — I need a moment to write this down."', '"Can you transfer me to your supervisor right away?"', '"I will call back when I have someone with me."'],
+        correct: 1
+      },
+      {
+        text: 'Connected Canadians is:',
+        text_after: 'Connected Canadians is:',
+        options: ['A paid tech support company for seniors', 'A free service where trained volunteers help Canadian seniors with technology questions', 'A government programme run by Service Canada', 'A phone plan designed for seniors'],
+        correct: 1
+      }
+    ];
+    if (window.DCC_QUIZ) {
+      DCC_QUIZ.init({
+        moduleId: 'module-12-getting-help',
+        questions: QUESTIONS,
+        beforeContainerId: 'dcc-before-quiz',
+        afterContainerId:  'dcc-after-quiz'
+      });
+    }
+  });
+  </script>
   <script src="js/lang-toggle.js" defer></script>
   <script src="js/accessibility.js" defer></script>
   <script src="js/progress.js" defer></script>
