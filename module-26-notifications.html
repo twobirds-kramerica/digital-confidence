@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/accessibility.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/print.css">
+  <link rel="stylesheet" href="css/quiz-check.css">
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
   <meta property="og:url" content="https://twobirds-kramerica.github.io/digital-confidence/module-26-notifications.html">
@@ -174,6 +175,7 @@
       <div class="module-header">
         <div class="module-number-badge">Module 26</div>
         <h1 data-en="Managing Your Notifications" data-fr="Gérer vos notifications">Managing Your Notifications</h1>
+      <div class="dcc-quiz-container" id="dcc-before-quiz" style="margin-bottom:1.5rem"></div>
       </div>
 
       <div class="module-intro">
@@ -578,10 +580,16 @@
       </div>
 
       <div class="dc-newsletter-slot" style="margin:2rem 0 1rem"></div>
+
+      <div class="dcc-quiz-container" id="dcc-after-quiz" style="margin:2rem 0"></div>
     </main>
   </div>
 
   <script src="js/speech-config.js" defer></script>
+  <script src="js/quiz-check.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded',function(){var Q=[{text:'Turning off non-essential app notifications helps because',text_after:'Turning off non-essential notifications helps because',options:['It speeds up your internet', 'It reduces interruptions and helps you focus on what actually matters to you', 'It prevents apps from updating automatically', 'It reduces your monthly data usage'],correct:1}, {text:'Do Not Disturb mode on your phone',text_after:'Do Not Disturb mode on your phone',options:['Blocks all calls permanently', 'Silences notifications and calls during set hours while allowing emergency calls through', 'Deletes incoming messages during the quiet period', 'Reduces your battery drain'],correct:1}, {text:'A badge notification is',text_after:'A badge notification is',options:['A pop-up that takes over your screen', 'The small red number that appears on an app icon showing unread items', 'A sound alert that plays when you receive a message', 'A vibration pattern unique to each app'],correct:1}, {text:'To reduce notification overwhelm the most effective approach is',text_after:'To reduce notification overwhelm the most effective approach is',options:['Turn off all notifications for every app', 'Review each app s notification settings and keep only the ones that are genuinely useful to you', 'Delete social media apps entirely', 'Only use your phone two hours per day'],correct:1}, {text:'Quiet Hours or Scheduled Summary on iPhones and Androids lets you',text_after:'Quiet Hours or Scheduled Summary lets you',options:['Never receive notifications from specific people', 'Batch notifications to deliver at a time you choose reducing interruptions throughout the day', 'Automatically reply to messages during quiet periods', 'Forward notifications to a family member'],correct:1}];if(window.DCC_QUIZ){DCC_QUIZ.init({moduleId:'module-26-notifications',questions:Q,beforeContainerId:'dcc-before-quiz',afterContainerId:'dcc-after-quiz'});}});
+  </script>
   <script src="js/read-aloud.js" defer></script>
   <script src="js/app.js" defer></script>
   <script src="js/lang-toggle.js" defer></script>

@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/accessibility.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/print.css">
+  <link rel="stylesheet" href="css/quiz-check.css">
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
   <meta property="og:url" content="https://twobirds-kramerica.github.io/digital-confidence/module-25-outage-detection.html">
@@ -177,6 +178,7 @@
       <div class="module-header">
         <div class="module-number-badge">Module 25</div>
         <h1 data-en="When Things Stop Working" data-fr="Quand les choses cessent de fonctionner">When Things Stop Working</h1>
+      <div class="dcc-quiz-container" id="dcc-before-quiz" style="margin-bottom:1.5rem"></div>
       </div>
 
       <div class="module-intro">
@@ -537,10 +539,16 @@
       </div>
 
       <div class="dc-newsletter-slot" style="margin:2rem 0 1rem"></div>
+
+      <div class="dcc-quiz-container" id="dcc-after-quiz" style="margin:2rem 0"></div>
     </main>
   </div>
 
   <script src="js/speech-config.js" defer></script>
+  <script src="js/quiz-check.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded',function(){var Q=[{text:'When your internet stops working the first thing to check is',text_after:'When internet stops working the first thing to check is',options:['Call your internet provider immediately', 'Whether the problem is with your device router or the provider by checking other devices', 'Unplug your router and leave it off for an hour', 'Replace your router'],correct:1}, {text:'Downdetector is a website that',text_after:'Downdetector is a website that',options:['Provides government internet repair services', 'Shows real-time reports of outages for major internet and service providers', 'Monitors your personal internet speed', 'Sells replacement routers'],correct:1}, {text:'Restarting your router typically involves',text_after:'Restarting your router typically involves',options:['Pressing a factory reset button', 'Unplugging it waiting 30 seconds and plugging it back in', 'Calling your provider to do it remotely', 'Updating its software manually'],correct:1}, {text:'If your internet is slow during evenings but fine in the morning this likely indicates',text_after:'Internet slow in evenings but fine mornings likely indicates',options:['Your router is overheating', 'Network congestion from many users on your street or building using the internet at the same time', 'Your plan has a daily data limit', 'Your device needs to be replaced'],correct:1}, {text:'The four fixes to try before calling your internet provider are',text_after:'Before calling your internet provider the four fixes to try are',options:['Restart router restart device check cables check status page', 'Restart your phone twice wait an hour call a neighbour to check theirs', 'Only restart the router everything else requires a technician', 'Change your Wi-Fi password update your device and restart the router'],correct:0}];if(window.DCC_QUIZ){DCC_QUIZ.init({moduleId:'module-25-outage-detection',questions:Q,beforeContainerId:'dcc-before-quiz',afterContainerId:'dcc-after-quiz'});}});
+  </script>
   <script src="js/read-aloud.js" defer></script>
   <script src="js/app.js" defer></script>
   <script src="js/lang-toggle.js" defer></script>
