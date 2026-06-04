@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/accessibility.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/print.css">
+  <link rel="stylesheet" href="css/quiz-check.css">
   <!-- SEO: Author, Robots, Open Graph, Twitter Card -->
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
@@ -228,6 +229,7 @@
     <div style="padding:20px;font-family:Georgia,serif;max-width:800px;margin:0 auto">
       <h1>Digital Confidence Centre</h1>
 
+      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start" style="margin-bottom:1.5rem"></div>
       <div class="module-intro">
         <p class="module-time">⏱ About 20–30 minutes — go at your own pace</p>
         <div class="confidence-check-box">
@@ -1502,6 +1504,7 @@
           </div>
         </div>
       </div>
+      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the module" style="margin:2rem 0"></div>
       <div class="sources-block">
         <h3 data-en="Sources &amp; References" data-fr="Sources et références">Sources &amp; References</h3>
         <ul>
@@ -1514,6 +1517,51 @@
   <script src="js/speech-config.js" defer></script>
   <script src="js/read-aloud.js" defer></script>
   <script src="js/app.js" defer></script>
+  <script src="js/quiz-check.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var QUESTIONS = [
+      {
+        text: 'To make a FaceTime or video call, both people need:',
+        text_after: 'To make a FaceTime or video call, both people need:',
+        options: ['A special video calling subscription', 'The same type of phone', 'A working internet connection (Wi-Fi or mobile data)', 'A camera that they purchased separately'],
+        correct: 2
+      },
+      {
+        text: 'A stranger sends you a FaceTime request. What should you do?',
+        text_after: 'A stranger sends you a FaceTime request. What should you do?',
+        options: ['Accept it — it might be important', 'Accept only if they leave a voicemail first', 'Decline it — only accept calls from people you know', 'Block your phone immediately'],
+        correct: 2
+      },
+      {
+        text: 'WhatsApp messages are "end-to-end encrypted." This means:',
+        text_after: 'WhatsApp uses "end-to-end encryption." This means:',
+        options: ['Only WhatsApp employees can read your messages', 'Only you and the person you are messaging can read the messages', 'Your messages are deleted after 24 hours', 'Your phone company can see your messages'],
+        correct: 1
+      },
+      {
+        text: 'You want to video call your grandchild who uses an Android phone. FaceTime will not work. A good alternative is:',
+        text_after: 'Your grandchild has an Android phone. FaceTime won\'t work between you. A good alternative is:',
+        options: ['Regular phone call only — video requires matching phones', 'WhatsApp or Google Meet — both work across iPhone and Android', 'Zoom but only on a computer, not a phone', 'You need to buy them an iPhone first'],
+        correct: 1
+      },
+      {
+        text: 'During a video call, your screen shows a small picture of you in the corner. This is called:',
+        text_after: 'The small picture of yourself you see during a video call is called:',
+        options: ['A selfie preview', 'Your profile picture', 'A picture-in-picture or self-view', 'A camera malfunction'],
+        correct: 2
+      }
+    ];
+    if (window.DCC_QUIZ) {
+      DCC_QUIZ.init({
+        moduleId: 'module-8-stay-connected',
+        questions: QUESTIONS,
+        beforeContainerId: 'dcc-before-quiz',
+        afterContainerId:  'dcc-after-quiz'
+      });
+    }
+  });
+  </script>
   <script src="js/lang-toggle.js" defer></script>
   <script src="js/accessibility.js" defer></script>
   <script src="js/progress.js" defer></script>
