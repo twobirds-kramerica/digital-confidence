@@ -21,6 +21,8 @@
   }
 
   function buildWidget(slot) {
+    if (slot.dataset.newsletterInjected) return;
+    slot.dataset.newsletterInjected = 'true';
     if (isConfirmed()) {
       slot.innerHTML = buildConfirmedHTML();
       return;

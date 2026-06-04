@@ -11,6 +11,7 @@
   border: 2px solid var(--color-primary, #2A7B6F);
   border-radius: 16px;
   padding: 1.75rem 1.5rem;
+  color-scheme: light; /* force light mode — seniors on Android system dark mode must see quiz text */
 }
 
 .dcc-quiz-header { margin-bottom: 1.25rem; }
@@ -157,4 +158,39 @@
 
 @media print {
   .dcc-quiz-container { display: none; }
+}
+
+/* ── Dark mode: explicit overrides so Android system dark mode cannot invert quiz colours ──
+   color-scheme: light on .dcc-quiz should handle most cases, but some Android browsers
+   partially honour it. These declarations make quiz text and controls readable in all cases. */
+@media (prefers-color-scheme: dark) {
+  .dcc-quiz {
+    background: #ffffff;
+    border-color: #2A7B6F;
+    color: #1a1a1a;
+  }
+  .dcc-quiz-title  { color: #2A7B6F; }
+  .dcc-quiz-sub    { color: #555555; }
+  .dcc-quiz-question { border-bottom-color: #dddddd; }
+  .dcc-quiz-qtext  { color: #1a1a1a; }
+  .dcc-quiz-qnum   { background: #2A7B6F; color: #ffffff; }
+  .dcc-quiz-opt    { color: #1a1a1a; background: transparent; }
+  .dcc-quiz-opt:hover { background: #FFF0E0; }
+  .dcc-quiz-opt input[type="radio"]:checked + .dcc-quiz-opt-text {
+    color: #2A7B6F;
+  }
+  .dcc-quiz-confidence { background: #FFF0E0; }
+  .dcc-quiz-conf-label { color: #1a1a1a; }
+  .dcc-conf-min, .dcc-conf-max { color: #555555; }
+  .dcc-conf-value  { color: #2A7B6F; }
+  .dcc-quiz-surprise-label { color: #1a1a1a; }
+  .dcc-quiz-surprise-input {
+    background: #ffffff;
+    color: #1a1a1a;
+    border-color: #2A7B6F;
+  }
+  .dcc-quiz-submit { background: #2A7B6F; color: #ffffff; }
+  .dcc-quiz-submit:hover { background: #1e5e55; }
+  .dcc-quiz-done p { color: #1a1a1a; }
+  .dcc-quiz-delta  { background: #FFF0E0; color: #1a1a1a; }
 }
