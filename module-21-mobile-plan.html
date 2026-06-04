@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/accessibility.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/print.css">
+  <link rel="stylesheet" href="css/quiz-check.css">
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
   <meta property="og:url" content="https://twobirds-kramerica.github.io/digital-confidence/module-21-mobile-plan.html">
@@ -173,6 +174,7 @@
       <div class="module-header">
         <div class="module-number-badge">Module 21</div>
         <h1 data-en="Understanding Your Mobile Plan" data-fr="Comprendre Votre Forfait Mobile">Understanding Your Mobile Plan</h1>
+      <div class="dcc-quiz-container" id="dcc-before-quiz" style="margin-bottom:1.5rem"></div>
       </div>
 
       <div class="module-intro">
@@ -556,10 +558,16 @@
       </div>
 
       <div class="dc-newsletter-slot" style="margin:2rem 0 1rem"></div>
+
+      <div class="dcc-quiz-container" id="dcc-after-quiz" style="margin:2rem 0"></div>
     </main>
   </div>
 
   <script src="js/speech-config.js" defer></script>
+  <script src="js/quiz-check.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded',function(){var Q=[{text:'Long-term customers often pay more for mobile plans because',text_after:'Long-term mobile customers often pay more because',options:['They use more data', 'Carriers save promotional pricing for new customers and do not automatically lower existing bills', 'Their phones are older', 'They have better coverage'],correct:1}, {text:'Roaming charges occur when',text_after:'Roaming charges happen when',options:['You use your phone at home during peak hours', 'You use your phone outside your carrier s coverage area especially internationally', 'You use too much data in one month', 'You call numbers in other provinces'],correct:1}, {text:'To avoid unexpected roaming charges when travelling internationally you should',text_after:'To avoid international roaming charges you should',options:['Turn off data roaming in settings or get a travel add-on before you leave', 'Only make calls not use data', 'Switch to a new carrier when you land', 'Only use your phone on Wi-Fi and disable calls'],correct:0}, {text:'Budget mobile carriers often offer lower prices because',text_after:'Budget mobile carriers offer lower prices because',options:['Their coverage is always worse than the big three', 'They operate on the same networks as major carriers but with less overhead and marketing', 'They do not comply with CRTC regulations', 'They limit calls to local numbers only'],correct:1}, {text:'Number porting means',text_after:'Number porting means',options:['Getting a new phone number when you switch carriers', 'Keeping your existing phone number when switching to a new carrier', 'Transferring contacts to a new phone', 'Forwarding calls from one number to another'],correct:1}];if(window.DCC_QUIZ){DCC_QUIZ.init({moduleId:'module-21-mobile-plan',questions:Q,beforeContainerId:'dcc-before-quiz',afterContainerId:'dcc-after-quiz'});}});
+  </script>
   <script src="js/read-aloud.js" defer></script>
   <script src="js/app.js" defer></script>
   <script src="js/lang-toggle.js" defer></script>

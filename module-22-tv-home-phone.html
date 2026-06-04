@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/accessibility.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/print.css">
+  <link rel="stylesheet" href="css/quiz-check.css">
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
   <meta property="og:url" content="https://twobirds-kramerica.github.io/digital-confidence/module-22-tv-home-phone.html">
@@ -174,6 +175,7 @@
       <div class="module-header">
         <div class="module-number-badge">Module 22</div>
         <h1 data-en="TV and Home Phone — Cut the Costs, Keep What Matters" data-fr="Télévision et Téléphone Résidentiel — Réduisez les Coûts, Gardez l'Essentiel">TV and Home Phone — Cut the Costs, Keep What Matters</h1>
+      <div class="dcc-quiz-container" id="dcc-before-quiz" style="margin-bottom:1.5rem"></div>
       </div>
 
       <div class="module-intro">
@@ -552,10 +554,16 @@
       </div>
 
       <div class="dc-newsletter-slot" style="margin:2rem 0 1rem"></div>
+
+      <div class="dcc-quiz-container" id="dcc-after-quiz" style="margin:2rem 0"></div>
     </main>
   </div>
 
   <script src="js/speech-config.js" defer></script>
+  <script src="js/quiz-check.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded',function(){var Q=[{text:'The CRTC skinny basic cable package in Canada must include',text_after:'The CRTC skinny basic cable package must include',options:['All major US networks and sports channels', 'A minimum set of Canadian channels at a regulated maximum price', 'Only local channels', 'Unlimited internet bundled with TV'],correct:1}, {text:'If you want to cancel a bundled TV internet and phone package you should',text_after:'To cancel a bundled TV internet and phone package you should',options:['Just stop paying and they will cancel it automatically', 'Call the retention line ask for the cancellation department and get confirmation in writing', 'Only cancel TV keep internet and phone', 'Wait until the contract ends even if you are unhappy'],correct:1}, {text:'Free streaming services like CBC Gem and CTV are',text_after:'Free streaming services like CBC Gem and CTV are',options:['Only available with a cable subscription', 'Available free online with no subscription required', 'Only for people under 65', 'Blocked outside Ontario'],correct:1}, {text:'The bundle trap refers to',text_after:'The bundle trap refers to',options:['Paying for faster internet than you need', 'Being locked into a high combined bill for multiple services that would cost less separately', 'Getting too many streaming services', 'Having a long TV antenna cable'],correct:1}, {text:'Your internet and TV promotional rate will usually increase after',text_after:'Promotional rates for internet and TV usually increase after',options:['5 years', '6 months', '12 to 24 months depending on your contract', 'Never they are permanent rates'],correct:2}];if(window.DCC_QUIZ){DCC_QUIZ.init({moduleId:'module-22-tv-home-phone',questions:Q,beforeContainerId:'dcc-before-quiz',afterContainerId:'dcc-after-quiz'});}});
+  </script>
   <script src="js/read-aloud.js" defer></script>
   <script src="js/app.js" defer></script>
   <script src="js/lang-toggle.js" defer></script>
