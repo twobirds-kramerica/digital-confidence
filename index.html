@@ -830,6 +830,21 @@
         one-on-one help from a trained volunteer. Funded by the Government of Canada.
       </div>
 
+      <!-- My Progress -->
+      <div id="dcc-progress-widget" style="display:none;background:#fff;border:1.5px solid var(--color-primary,#2A7B6F);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:2rem">
+        <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap">
+          <div style="flex:1;min-width:0">
+            <p style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--color-primary,#2A7B6F);margin-bottom:0.2rem">Your Progress</p>
+            <p style="font-size:1rem;font-weight:700;color:var(--color-text,#3D3229)" id="dcc-progress-text">0 of 29 modules with results</p>
+            <div style="height:6px;background:#e0f0ee;border-radius:3px;margin-top:0.5rem;overflow:hidden">
+              <div id="dcc-progress-bar" style="height:100%;background:var(--color-primary,#2A7B6F);border-radius:3px;transition:width 0.4s;width:0%"></div>
+            </div>
+          </div>
+          <a href="digital-literacy-101.html" class="btn-primary" style="display:inline-block;background:var(--color-primary,#2A7B6F);color:#fff;border-radius:50px;padding:0.55rem 1.25rem;font-size:0.85rem;font-weight:700;text-decoration:none;white-space:nowrap">Continue learning →</a>
+        </div>
+        <p style="font-size:0.75rem;color:var(--color-text-light,#7A6E62);margin-top:0.6rem" id="dcc-progress-detail"></p>
+      </div>
+
       <!-- Canadian Government Benefits -->
       <h2>Canadian Government Benefits — Are You Getting Everything You're Entitled To?</h2>
       <p>Many Canadian seniors are missing government benefits they have already earned. These free guides explain what you qualify for, how to check, and how to apply — in plain language, step by step.</p>
@@ -1216,5 +1231,38 @@
   <script src="js/dcc-news-feed.js" defer></script>
   <script src="js/homepage-freshness.js" defer></script>
   <script src="js/qa-audit.js" defer></script>
+  <script>
+  // DCC Progress Widget — reads localStorage quiz results and shows personal progress
+  document.addEventListener('DOMContentLoaded', function() {
+    try {
+      var results = JSON.parse(localStorage.getItem('dcc_quiz_results') || '{}');
+      var keys = Object.keys(results);
+      if (!keys.length) return;
+      var completed = keys.filter(function(k) { return results[k].after; });
+      var started = keys.filter(function(k) { return results[k].before; });
+      var total = 29;
+      var count = Math.max(completed.length, started.length);
+      if (!count) return;
+      var widget = document.getElementById('dcc-progress-widget');
+      var textEl = document.getElementById('dcc-progress-text');
+      var barEl = document.getElementById('dcc-progress-bar');
+      var detailEl = document.getElementById('dcc-progress-detail');
+      if (!widget) return;
+      widget.style.display = '';
+      textEl.textContent = count + ' of ' + total + ' module' + (count !== 1 ? 's' : '') + ' started';
+      barEl.style.width = Math.round((count / total) * 100) + '%';
+      // Find last module touched
+      var lastKey = keys.sort(function(a,b) {
+        var ta = (results[a].after && results[a].after.timestamp) || (results[a].before && results[a].before.timestamp) || '';
+        var tb = (results[b].after && results[b].after.timestamp) || (results[b].before && results[b].before.timestamp) || '';
+        return ta < tb ? 1 : -1;
+      })[0];
+      if (lastKey && detailEl) {
+        var lastDate = ((results[lastKey].after || results[lastKey].before || {}).timestamp || '').slice(0,10);
+        detailEl.textContent = 'Last activity: ' + (lastDate || 'recently') + ' · Results saved in this browser.';
+      }
+    } catch(e) {}
+  });
+  </script>
 </body>
 </html>
