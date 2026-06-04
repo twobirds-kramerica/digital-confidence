@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/accessibility.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/print.css">
+  <link rel="stylesheet" href="css/quiz-check.css">
   <!-- SEO: Author, Robots, Open Graph, Twitter Card -->
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
@@ -228,6 +229,9 @@
   <noscript>
     <div style="padding:20px;font-family:Georgia,serif;max-width:800px;margin:0 auto">
       <h1>Digital Confidence Centre</h1>
+
+      <!-- Before quiz -->
+      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start" style="margin-bottom:1.5rem"></div>
 
       <div class="module-intro">
         <p class="module-time">⏱ About 20–30 minutes — go at your own pace</p>
@@ -974,6 +978,9 @@
           </div>
         </div>
       </div>
+      <!-- After quiz -->
+      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the module" style="margin:2rem 0"></div>
+
       <div class="sources-block">
         <h3 data-en="Sources &amp; References" data-fr="Sources et références">Sources &amp; References</h3>
         <ul>
@@ -986,6 +993,51 @@
   <script src="js/speech-config.js" defer></script>
   <script src="js/read-aloud.js" defer></script>
   <script src="js/app.js" defer></script>
+  <script src="js/quiz-check.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var QUESTIONS = [
+      {
+        text: 'The safest place to download apps for your iPhone or iPad is:',
+        text_after: 'The safest place to download apps for an iPhone or iPad is:',
+        options: ['Any website that offers a free version of the app you want', 'The Apple App Store', 'Google Play', 'Links sent by friends or family'],
+        correct: 1
+      },
+      {
+        text: 'Before downloading an app, which of these should you check?',
+        text_after: 'Before downloading any app, what should you check?',
+        options: ['How colourful the icon is', 'User reviews, ratings, and how many people have downloaded it', 'Whether it was featured in an advertisement you saw', 'How long the description is'],
+        correct: 1
+      },
+      {
+        text: 'An app you downloaded a year ago is now asking permission to access your contacts and location. What should you do?',
+        text_after: 'An old app asks permission to access your contacts and location. What should you do?',
+        options: ['Grant all permissions — it probably needs them to work', 'Deny both — apps never need contacts or location to function', 'Ask yourself whether the app actually needs those things to do its job', 'Delete the app immediately'],
+        correct: 2
+      },
+      {
+        text: 'You signed up for a "free 7-day trial" of an app. What should you do immediately after signing up?',
+        text_after: 'After signing up for a free trial, what is the safest immediate step?',
+        options: ['Wait to see if you like the app before deciding', 'Cancel the subscription right away so it cannot renew', 'Email the company to confirm your trial', 'Turn off your phone\'s internet'],
+        correct: 1
+      },
+      {
+        text: 'An app asks for permission to access your microphone. You use it for word games, never voice calls. What should you do?',
+        text_after: 'A word game app asks for microphone access. You never use voice in it. What should you do?',
+        options: ['Grant it — it must need it for something', 'Deny it — microphone access is not needed for a word game', 'Only grant it temporarily', 'Uninstall the app'],
+        correct: 1
+      }
+    ];
+    if (window.DCC_QUIZ) {
+      DCC_QUIZ.init({
+        moduleId: 'module-4-app-store',
+        questions: QUESTIONS,
+        beforeContainerId: 'dcc-before-quiz',
+        afterContainerId:  'dcc-after-quiz'
+      });
+    }
+  });
+  </script>
   <script src="js/lang-toggle.js" defer></script>
   <script src="js/accessibility.js" defer></script>
   <script src="js/progress.js" defer></script>
