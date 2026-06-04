@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/accessibility.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/print.css">
+  <link rel="stylesheet" href="css/quiz-check.css">
   <!-- SEO: Author, Robots, Open Graph, Twitter Card -->
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
@@ -229,6 +230,7 @@
     <div style="padding:20px;font-family:Georgia,serif;max-width:800px;margin:0 auto">
       <h1>Digital Confidence Centre</h1>
 
+      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start" style="margin-bottom:1.5rem"></div>
       <div class="module-intro">
         <p class="module-time">⏱ About 20–30 minutes — go at your own pace</p>
         <div class="confidence-check-box">
@@ -1131,6 +1133,7 @@
           </div>
         </div>
       </div>
+      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the module" style="margin:2rem 0"></div>
       <div class="sources-block">
         <h3 data-en="Sources &amp; References" data-fr="Sources et références">Sources &amp; References</h3>
         <ul>
@@ -1143,6 +1146,51 @@
   <script src="js/speech-config.js" defer></script>
   <script src="js/read-aloud.js" defer></script>
   <script src="js/app.js" defer></script>
+  <script src="js/quiz-check.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var QUESTIONS = [
+      {
+        text: 'You receive an email saying your bank account is suspended and you must click a link immediately. What should you do?',
+        text_after: 'An email says your bank account is suspended — click a link immediately. What should you do?',
+        options: ['Click the link and follow the steps to restore access', 'Forward it to a family member to check', 'Delete it and call your bank directly on the number from the back of your card', 'Reply asking if it is real'],
+        correct: 2
+      },
+      {
+        text: 'A legitimate email from your bank will:',
+        text_after: 'A legitimate email from a real bank will:',
+        options: ['Ask for your full password to verify your identity', 'Contain urgent language like "Act immediately or your account will be closed"', 'Use your name (not "Dear Customer") and link to the bank\'s real website', 'Come from a Gmail or Hotmail address'],
+        correct: 2
+      },
+      {
+        text: 'You want to unsubscribe from a newsletter. The safest way is:',
+        text_after: 'You want to unsubscribe from a newsletter. The safest way is:',
+        options: ['Reply to the email asking to be removed', 'Click the Unsubscribe link at the bottom of a legitimate newsletter email', 'Forward the email to spam@antifraudcentre.ca', 'Never click anything in an email'],
+        correct: 1
+      },
+      {
+        text: 'Your friend\'s email address just sent you a strange message with a link and no personal note. What probably happened?',
+        text_after: 'Your friend\'s email sent a strange message with only a link and no personal note. What probably happened?',
+        options: ['Your friend forwarded something interesting', 'Your friend\'s email account was hacked or compromised', 'It is a test from your internet provider', 'Your friend is trying to share a file with you'],
+        correct: 1
+      },
+      {
+        text: 'Canada\'s anti-spam law (CASL) means that companies must:',
+        text_after: 'Canada\'s anti-spam law (CASL) requires that companies must:',
+        options: ['Delete your email from their system when you unsubscribe', 'Get your permission before sending you commercial email', 'Only send emails on weekdays', 'Use Canadian servers to send email'],
+        correct: 1
+      }
+    ];
+    if (window.DCC_QUIZ) {
+      DCC_QUIZ.init({
+        moduleId: 'module-5-email-messages',
+        questions: QUESTIONS,
+        beforeContainerId: 'dcc-before-quiz',
+        afterContainerId:  'dcc-after-quiz'
+      });
+    }
+  });
+  </script>
   <script src="js/lang-toggle.js" defer></script>
   <script src="js/accessibility.js" defer></script>
   <script src="js/progress.js" defer></script>
