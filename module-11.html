@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/accessibility.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/print.css">
+  <link rel="stylesheet" href="css/quiz-check.css">
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
   <meta property="og:url" content="https://twobirds-kramerica.github.io/digital-confidence/module-11.html">
@@ -224,6 +225,7 @@
     <div style="padding:20px;font-family:Georgia,serif;max-width:800px;margin:0 auto">
       <h1>Digital Confidence Centre — Module 11: Ride-Sharing</h1>
 
+      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start" style="margin-bottom:1.5rem"></div>
       <div class="module-intro">
         <p class="module-time">⏱ About 20–30 minutes — go at your own pace</p>
         <div class="confidence-check-box">
@@ -835,6 +837,7 @@
           </div>
         </div>
       </div>
+      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the module" style="margin:2rem 0"></div>
       <div class="sources-block">
         <h3 data-en="Sources &amp; References" data-fr="Sources et références">Sources &amp; References</h3>
         <ul>
@@ -847,6 +850,51 @@
   <script src="js/speech-config.js" defer></script>
   <script src="js/read-aloud.js" defer></script>
   <script src="js/app.js" defer></script>
+  <script src="js/quiz-check.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var QUESTIONS = [
+      {
+        text: 'Before getting into an Uber or Lyft, you should:',
+        text_after: 'Before getting into a ride-share vehicle, you should:',
+        options: ['Trust the driver — they were vetted by the company', 'Check that the licence plate, car colour, and driver photo match what the app shows', 'Only check if it is dark outside', 'Ask the driver for their full name before confirming'],
+        correct: 1
+      },
+      {
+        text: 'Your Uber driver asks your name before you say anything. This is:',
+        text_after: 'Your ride-share driver asks your name first before you say anything. This is:',
+        options: ['Suspicious — you should know their name, not the other way around', 'Normal — drivers always confirm the passenger\'s name', 'A new Uber safety requirement', 'A sign that you should cancel the ride'],
+        correct: 1
+      },
+      {
+        text: 'A stranger offers to share your Uber ride to save money. What should you do?',
+        text_after: 'A stranger at the pickup spot offers to share your Uber ride to save money. What should you do?',
+        options: ['Agree — it\'s free extra money for both of you', 'Decline — only the person who booked the ride should be in it', 'Ask the Uber driver to decide', 'Share the ride but keep your belongings close'],
+        correct: 1
+      },
+      {
+        text: 'After a ride-share trip ends, you realise you left your phone in the car. What should you do first?',
+        text_after: 'You left your phone in a ride-share car. What should you do first?',
+        options: ['Call your own phone number from another phone', 'Contact the driver through the app\'s "lost item" feature — do not give out personal information', 'Post on social media that you lost your phone', 'Report it to police immediately'],
+        correct: 1
+      },
+      {
+        text: 'What information does a legitimate ride-share app need to book a trip?',
+        text_after: 'What information does a legitimate ride-share app actually need to book a trip?',
+        options: ['Your SIN and date of birth to verify your identity', 'Your pickup location, destination, and a payment method', 'A photo of your face for the driver to verify you', 'Your home address and phone number stored in the account'],
+        correct: 1
+      }
+    ];
+    if (window.DCC_QUIZ) {
+      DCC_QUIZ.init({
+        moduleId: 'module-11-ride-sharing',
+        questions: QUESTIONS,
+        beforeContainerId: 'dcc-before-quiz',
+        afterContainerId:  'dcc-after-quiz'
+      });
+    }
+  });
+  </script>
   <script src="js/lang-toggle.js" defer></script>
   <script src="js/accessibility.js" defer></script>
   <script src="js/progress.js" defer></script>
