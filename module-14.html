@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/accessibility.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/print.css">
+  <link rel="stylesheet" href="css/quiz-check.css">
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="Module 14: Smart Home Basics — Digital Confidence Centre">
@@ -353,6 +354,7 @@
   <noscript>
     <div style="padding:20px;font-family:Georgia,serif;max-width:800px;margin:0 auto">
       <h1>Digital Confidence Centre — Module 14: Smart Home Basics</h1>
+      <div class="dcc-quiz-container" id="dcc-before-quiz" style="margin-bottom:1.5rem"></div>
 
       <div class="module-intro">
         <p class="module-time">&#9203; About 25–35 minutes — go at your own pace</p>
@@ -1001,9 +1003,18 @@
       </footer>
 
       <div id="progress-announcer" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+
+      <div class="dcc-quiz-container" id="dcc-after-quiz" style="margin:2rem 0"></div>
     </main>
   </div>
   <script src="js/speech-config.js" defer></script>
+  <script src="js/quiz-check.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded',function(){
+    var Q=[{text:'Smart speaker wake word means it only sends data when activated',text_after:'Smart speaker wake word means',options:['It is always recording and sending everything', 'It only sends data when the wake word is detected', 'It only works when connected to your TV', 'It requires a monthly subscription'],correct:1}, {text:'Email says smart home hacked click link to fix',text_after:'Email says smart home device hacked click link',options:['Click the link immediately', 'Delete the email and check via the official app only', 'Unplug and dispose of the device', 'Forward to your internet provider'],correct:1}, {text:'Good reason to use a smart doorbell camera',text_after:'A benefit of a smart doorbell camera is',options:['It automatically locks your door', 'You can see who is at your door from your phone when away', 'It calls 911 automatically', 'It replaces your existing door lock'],correct:1}, {text:'Best place for smart home device instructions',text_after:'Best place to find smart home device instructions',options:['Any website that comes up in a search', 'The official manufacturer app or website', 'Facebook groups for tech advice', 'YouTube videos with many subscribers'],correct:1}, {text:'Temporarily mute smart speaker easiest way',text_after:'Temporarily mute a smart speaker easiest way',options:['Unplug it from the wall', 'Press the physical mute button on the device', 'Cover it with a cloth', 'Change your Wi-Fi password'],correct:1}];
+    if(window.DCC_QUIZ){DCC_QUIZ.init({moduleId:'module-14-smart-home',questions:Q,beforeContainerId:'dcc-before-quiz',afterContainerId:'dcc-after-quiz'});}
+  });
+  </script>
   <script src="js/read-aloud.js" defer></script>
   <script src="js/app.js" defer></script>
   <script src="js/lang-toggle.js" defer></script>

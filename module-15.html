@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/accessibility.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/print.css">
+  <link rel="stylesheet" href="css/quiz-check.css">
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="Module 15: Telehealth &amp; Medical Portals — Digital Confidence Centre">
@@ -319,6 +320,7 @@
   <noscript>
     <div style="padding:20px;font-family:Georgia,serif;max-width:800px;margin:0 auto">
       <h1>Digital Confidence Centre — Module 15: Telehealth &amp; Medical Portals</h1>
+      <div class="dcc-quiz-container" id="dcc-before-quiz" style="margin-bottom:1.5rem"></div>
       <p>Free digital literacy training for seniors in Ontario.</p>
       <nav><a href="index.html">Home</a> |
             <a href="digital-literacy-101.html">Modules</a> | <a href="module-15.html">Module 15</a></nav>
@@ -1019,6 +1021,8 @@
       </footer>
 
       <div id="progress-announcer" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+
+      <div class="dcc-quiz-container" id="dcc-after-quiz" style="margin:2rem 0"></div>
     </main>
   </div>
 
@@ -1049,6 +1053,13 @@
   <script src="js/keyboard-helper.js" defer></script>
   <script src="js/module-progress.js" defer></script>
   <script src="js/check-in.js" defer></script>
+  <script src="js/quiz-check.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded',function(){
+    var Q=[{text:'Telehealth lets you see a provider by video or phone without travelling',text_after:'Telehealth allows you to',options:['Only refill prescriptions online', 'See or speak with a healthcare provider by video or phone without travelling to a clinic', 'Only communicate with your own family doctor', 'Book in-person appointments faster'],correct:1}, {text:'Telehealth Ontario operates 24 hours 7 days a week',text_after:'Telehealth Ontario operating hours',options:['Monday to Friday 9am to 5pm', '24 hours a day 7 days a week', 'On weekends only', 'Only during cold and flu season'],correct:1}, {text:'Before video appointment test camera microphone find quiet space',text_after:'Before a video appointment with your doctor',options:['Call ahead to confirm your credit card is on file', 'Test your camera and microphone find a quiet space and have medications nearby', 'Download a new app every time for security', 'Ask a neighbour to sit with you'],correct:1}, {text:'Unknown number texts saying doctor wants telehealth call verify first',text_after:'Unknown number texts saying doctor wants an immediate call',options:['Join the call doctors sometimes use new numbers', 'Call your doctor office on their known number to verify before joining', 'Block the number immediately', 'Forward the text to family to decide'],correct:1}, {text:'Telehealth Ontario serves Ontario residents only',text_after:'Telehealth Ontario serves',options:['All of Canada equally', 'Ontario residents only', 'Ontario and Quebec', 'Ontario British Columbia and Alberta'],correct:1}];
+    if(window.DCC_QUIZ){DCC_QUIZ.init({moduleId:'module-15-telehealth',questions:Q,beforeContainerId:'dcc-before-quiz',afterContainerId:'dcc-after-quiz'});}
+  });
+  </script>
   <script src="js/read-aloud.js" defer></script>
 </body>
 </html>

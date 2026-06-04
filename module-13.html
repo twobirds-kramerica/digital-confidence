@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/accessibility.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/print.css">
+  <link rel="stylesheet" href="css/quiz-check.css">
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
@@ -183,6 +184,7 @@
   <noscript>
     <div style="padding:20px;font-family:Georgia,serif;max-width:800px;margin:0 auto">
       <h1>Digital Confidence Centre</h1>
+      <div class="dcc-quiz-container" id="dcc-before-quiz" style="margin-bottom:1.5rem"></div>
       <nav>
         <a href="index.html">Home</a> |
         <a href="module-12.html">Module 12</a> |
@@ -772,6 +774,8 @@
       </div>
 
       <div class="dc-newsletter-slot" style="margin:2rem 0 1rem"></div>
+
+      <div class="dcc-quiz-container" id="dcc-after-quiz" style="margin:2rem 0"></div>
     </main>
   </div>
 
@@ -802,6 +806,13 @@
   <script src="js/keyboard-helper.js" defer></script>
   <script src="js/module-progress.js" defer></script>
   <script src="js/check-in.js" defer></script>
+  <script src="js/quiz-check.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded',function(){
+    var Q=[{text:'Social media Public setting means anyone can see it',text_after:'Social media Public setting means',options:['Only friends can see it', 'Anyone on the internet can see it including strangers', 'Only people in your city', 'Only logged-in users'],correct:1}, {text:'Friend requests from strangers safest approach',text_after:'Friend requests from people you do not know safest approach',options:['Accept all more connections is better', 'Only accept people you know or can verify', 'Never use friend features', 'Accept if photo looks friendly'],correct:1}, {text:'Chain message share or bad luck what to do',text_after:'Chain message share or bad luck what to do',options:['Share it harmless fun', 'Do not share it viral chain message', 'Share only with family', 'Report to police'],correct:1}, {text:'Grandchild posts home address online you should',text_after:'Home address posted online you should',options:['Not worry just one photo', 'Ask them to remove it home address sharing is a safety risk', 'Comment positively on the photo', 'Only ask if they have many followers'],correct:1}, {text:'Privacy settings on social media control',text_after:'Privacy settings on social media control',options:['How fast posts load', 'Who can see your posts photos and personal info', 'How many ads you see', 'Whether your phone battery drains faster'],correct:1}];
+    if(window.DCC_QUIZ){DCC_QUIZ.init({moduleId:'module-13-social-media',questions:Q,beforeContainerId:'dcc-before-quiz',afterContainerId:'dcc-after-quiz'});}
+  });
+  </script>
   <script src="js/read-aloud.js" defer></script>
 </body>
 </html>
