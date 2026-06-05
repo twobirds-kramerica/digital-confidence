@@ -42,10 +42,23 @@
 - resources.html → Resources Page
 
 ## Accessibility Standards
-- Font sizing: Support 4-level font size system already in place — do not break it
+- Font sizing: Support 4-level font size system already in place — do not break it. Body text minimum: 18px.
 - High zoom: All UI must remain functional and non-overflowing at 150–200% browser zoom
 - Dyslexia-friendly fonts: Preserve any existing font choices made for readability
 - iPad-first responsive design
+- WCAG AA mandatory: contrast ratio ≥ 4.5:1 for body text, ≥ 3:1 for large text/UI components
+- Before any commit touching HTML/CSS: run axe-core locally or confirm GitHub Actions passes on push
+- Dark mode: before marking any visual sprint done, test on Android Chrome. File Aaron action P1 if this test cannot be done locally.
+
+## Anxiety-First Language
+Target audience is older adults who may fear technology. Never use: "wrong", "failed", "incorrect", "error" as user-facing feedback. Use: "let's try again", "not quite — here's a hint", "good try". Module copy is frozen — apply this rule to any new UI text, feedback messages, or error states only.
+
+## HAL Stack Integration
+This repo is part of the Two Birds HAL Stack. Global context: `C:\twobirds\two-birds-portfolio\CLAUDE.md`.
+- Global SESSION-STATE.md tracks sprint history
+- Persona reviews run at sprint completion (see global CLAUDE.md SPRINT COMPLETION rule)
+- ADR required if this sprint introduces a significant architectural choice
+- Commit convention: `feat(dcc):`, `fix(dcc):`, `chore(dcc):`
 
 ## Localisation
 - Canadian English spelling throughout (Centre, Labour, Colour, etc.)
