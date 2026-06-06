@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "brand.schema.json",
+  "title": "DCC Brand",
+  "description": "Per-brand configuration for the DCC site generator",
+  "type": "object",
+  "required": ["id", "product_name", "base_url", "tokens_css", "nav_links"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Brand slug (e.g. warm-hearth, kids, institutional, acpl)"
+    },
+    "product_name": {
+      "type": "string",
+      "description": "Full product name (e.g. 'Digital Confidence Centre')"
+    },
+    "tagline": { "type": "string" },
+    "base_url": {
+      "type": "string",
+      "description": "Canonical base URL for this deployment"
+    },
+    "logo": {
+      "type": "object",
+      "required": ["path", "alt"],
+      "properties": {
+        "path": { "type": "string" },
+        "alt": { "type": "string" },
+        "width": { "type": "integer" },
+        "height": { "type": "integer" }
+      }
+    },
+    "tokens_css": {
+      "type": "string",
+      "description": "Path (relative to digital-confidence root) to the brand token file"
+    },
+    "primary_colour": { "type": "string" },
+    "ga_id": {
+      "type": "string",
+      "description": "Google Analytics measurement ID (optional)"
+    },
+    "clarity_id": {
+      "type": "string",
+      "description": "Microsoft Clarity project ID (optional)"
+    },
+    "og_image_default": {
+      "type": "string",
+      "description": "Default OG image URL"
+    },
+    "nav_links": {
+      "type": "array",
+      "description": "Sidebar navigation links (in order)",
+      "items": {
+        "type": "object",
+        "required": ["href", "label"],
+        "properties": {
+          "href": { "type": "string" },
+          "label": { "type": "string" },
+          "icon": { "type": "string" }
+        }
+      }
+    },
+    "client_name": {
+      "type": "string",
+      "description": "For white-label: client organisation name"
+    },
+    "content_licence": {
+      "type": "string",
+      "description": "Content licence statement (e.g. 'Licensed from Two Birds Innovation')"
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "id": "module-05",
+  "number": "5",
+  "slug": "module-5",
+  "title": "Email & Messages",
+  "nav_label": "5. Email & Messages",
+  "nav_icon": "✉️",
+  "description": "Module 5: Send emails and texts safely, spot phishing attempts, and manage your inbox confidently on iPad and iPhone. Free digital literacy for Ontario seniors.",
+  "keywords": "email safety seniors, spam email identification, block phone calls iPhone, send photos family iPad, text message safety seniors Ontario",
+  "date_published": "2026-03-07",
+  "estimated_minutes": 30,
+  "hero_image": {
+    "url": "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=1200&h=400&fit=crop&v=2",
+    "alt": "A senior woman reading a message on her tablet, smiling with enjoyment",
+    "width": 1200,
+    "height": 400
+  },
+  "intro": "How to use email and text messages safely, spot scam messages, block unwanted callers, and communicate with family and friends with confidence.",
+  "story": {
+    "label": "Rose's Story",
+    "paragraphs": [
+      "Rose, 71, loves getting emails from her grandchildren. Photos of the kids, funny stories about school, weekend plans — email is her window into their lives when she cannot visit in person. But Rose also receives about 30 unwanted emails a day: advertisements she never signed up for, warnings about accounts she does not have, and messages from people she has never met.",
+      "\"I used to be afraid to open my email,\" Rose says. \"I worried every message might be a virus. But once I learned what to look for, I realised most of those scary emails are like junk mail in your real mailbox — annoying, but harmless as long as you throw them away without opening the envelope.\"",
+      "Now Rose confidently sorts through her inbox every morning, keeps the messages she wants, and deletes the ones she does not — without a moment of worry."
+    ]
+  },
+  "confidence_check": "You are about to learn one of the most useful skills in the digital world — communicating by email and text. Millions of people your age use these tools every day, and you can too.",
+  "sections": [
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Email Basics: Your Digital Mailbox"
+    },
+    {
+      "type": "paragraph",
+      "content": "Your email app — <strong>Mail</strong> on iPhone/iPad, <strong>Gmail</strong> on Android — works like a set of mailboxes at a post office. New messages arrive in your <strong>Inbox</strong>. Messages you have sent are in <strong>Sent</strong>. Unwanted messages your app caught go to <strong>Junk</strong> or <strong>Spam</strong>."
+    },
+    {
+      "type": "list",
+      "heading": "The five mailbox folders you need to know:",
+      "items": [
+        { "term": "Inbox", "definition": "Where new mail arrives — like the slot in your mailbox." },
+        { "term": "Sent", "definition": "Copies of emails you have sent, so you can look back at them." },
+        { "term": "Drafts", "definition": "Emails you started writing but have not sent yet." },
+        { "term": "Junk / Spam", "definition": "Emails your app thinks are junk. Check this occasionally — real emails can land here by mistake." },
+        { "term": "Trash / Bin", "definition": "Emails you deleted. They stay here for a while, so you can recover one if needed." }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "How to Spot a Scam Email"
+    },
+    {
+      "type": "paragraph",
+      "content": "Scam emails are designed to make you feel <em>urgent</em> or <em>afraid</em> so you act without thinking. Learning to pause and check is your best protection."
+    },
+    {
+      "type": "warning",
+      "content": "<strong>Warning signs of a scam email:</strong> urgent language (\"Act now or your account will be closed\"), sender addresses that look slightly wrong (paypa1.com instead of paypal.com), requests for your password or banking details, messages claiming you won a prize you did not enter, and attachments from people you do not know."
+    },
+    {
+      "type": "tip",
+      "content": "<strong>When in doubt, delete it.</strong> A legitimate bank, government office, or company will never ask for your password by email. If you are unsure, call the organisation directly using a phone number from their official website — not from the email."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Sending an Email"
+    },
+    {
+      "type": "paragraph",
+      "content": "Sending an email is like writing a letter: you add the recipient's email address, write a subject line (a short description of what the email is about), type your message, and press Send."
+    },
+    {
+      "type": "tip",
+      "content": "<strong>Sending photos is easy.</strong> Tap the attachment icon (a paperclip or photo icon) and choose the photo from your gallery. On iPhone, tap the photo icon in the keyboard row above your keyboard. Your grandchildren will love it."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "You receive an email saying your bank account will be closed unless you click a link immediately. What should you do?",
+      "options": [
+        "Click the link and enter your information to protect your account",
+        "Delete the email and call your bank directly using the number on their official website",
+        "Reply to the email asking if it is real",
+        "Forward the email to a friend to check"
+      ],
+      "correct": 1,
+      "explanation": "This is a classic phishing scam. Legitimate banks never close your account without writing to you first, and they never ask for your login by email. Always call the bank directly using the number on their website or the back of your card."
+    },
+    {
+      "question": "A real email from a company you trust goes to your Junk folder by mistake. What should you do?",
+      "options": [
+        "Leave it there — if it is in junk it must be spam",
+        "Mark it as 'Not Junk' so future emails from this sender reach your inbox",
+        "Delete it and assume you do not need it",
+        "Forward it to yourself from a different address"
+      ],
+      "correct": 1,
+      "explanation": "Marking a real email as 'Not Junk' or 'Not Spam' teaches your email app to recognise trusted senders. Most email apps have a 'Not Junk' or 'Move to Inbox' button when you open a message in the Junk folder."
+    },
+    {
+      "question": "What is the safest way to send a photo to family by email?",
+      "options": [
+        "Text them the photo instead — email is not safe for photos",
+        "Attach the photo using your email app's attachment feature",
+        "Print the photo and mail it — digital photos are always at risk",
+        "Only share photos on social media, never by email"
+      ],
+      "correct": 1,
+      "explanation": "Attaching a photo to an email is completely safe when you are sending it to someone you know and trust. Use your email app's attachment or photo icon — it is just like putting a photo in an envelope."
+    }
+  ],
+  "prev_module": {
+    "slug": "module-4.html",
+    "label": "4. App Store Safety"
+  },
+  "next_module": {
+    "slug": "module-6.html",
+    "label": "6. Banking"
+  },
+  "accessibility": {
+    "read_aloud": true,
+    "bionic_reading": true,
+    "dyslexia_font": true
+  }
+}

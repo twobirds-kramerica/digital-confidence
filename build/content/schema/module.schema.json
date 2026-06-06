@@ -1,0 +1,167 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "module.schema.json",
+  "title": "DCC Module",
+  "description": "Schema for a Digital Confidence Centre learning module",
+  "type": "object",
+  "required": ["id", "number", "slug", "title", "description", "intro", "sections"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique module ID (e.g. module-05)",
+      "pattern": "^module-[0-9a-z\\-]+$"
+    },
+    "number": {
+      "type": ["string", "number"],
+      "description": "Display module number (e.g. '5' or '2.5')"
+    },
+    "slug": {
+      "type": "string",
+      "description": "HTML filename without extension (e.g. module-5)"
+    },
+    "title": {
+      "type": "string",
+      "description": "Module title (e.g. 'Email & Messages')"
+    },
+    "nav_label": {
+      "type": "string",
+      "description": "Short label used in sidebar nav (e.g. '5. Email & Messages')"
+    },
+    "nav_icon": {
+      "type": "string",
+      "description": "Emoji icon for sidebar nav"
+    },
+    "description": {
+      "type": "string",
+      "description": "Meta description (~155 chars)"
+    },
+    "keywords": {
+      "type": "string",
+      "description": "Meta keywords (comma-separated)"
+    },
+    "date_published": {
+      "type": "string",
+      "description": "ISO 8601 date (e.g. 2026-03-07)"
+    },
+    "estimated_minutes": {
+      "type": "integer",
+      "description": "Estimated completion time in minutes"
+    },
+    "hero_image": {
+      "type": "object",
+      "required": ["url", "alt"],
+      "properties": {
+        "url": { "type": "string" },
+        "alt": { "type": "string" },
+        "width": { "type": "integer" },
+        "height": { "type": "integer" }
+      }
+    },
+    "intro": {
+      "type": "string",
+      "description": "Opening 'What you will learn' sentence"
+    },
+    "story": {
+      "type": "object",
+      "description": "Opening persona story block",
+      "required": ["label", "paragraphs"],
+      "properties": {
+        "label": { "type": "string", "description": "e.g. \"Rose's Story\"" },
+        "paragraphs": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "confidence_check": {
+      "type": "string",
+      "description": "Text for the confidence-check-box (encouragement before content begins)"
+    },
+    "sections": {
+      "type": "array",
+      "description": "Main content sections",
+      "items": {
+        "type": "object",
+        "required": ["type"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["heading", "paragraph", "tip", "warning", "list", "callout", "quiz", "device_variant"]
+          },
+          "heading": { "type": "string" },
+          "level": { "type": "integer", "enum": [2, 3, 4] },
+          "content": { "type": "string", "description": "HTML content (may include inline tags)" },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "term": { "type": "string" },
+                "definition": { "type": "string" },
+                "text": { "type": "string" }
+              }
+            }
+          },
+          "variants": {
+            "type": "array",
+            "description": "Device-specific content variants",
+            "items": {
+              "type": "object",
+              "required": ["devices", "content"],
+              "properties": {
+                "devices": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                },
+                "content": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "quiz": {
+      "type": "array",
+      "description": "Quiz questions (also used for Schema.org FAQPage)",
+      "items": {
+        "type": "object",
+        "required": ["question", "options", "correct"],
+        "properties": {
+          "question": { "type": "string" },
+          "options": {
+            "type": "array",
+            "items": { "type": "string" },
+            "minItems": 2
+          },
+          "correct": {
+            "type": "integer",
+            "description": "0-based index of the correct option"
+          },
+          "explanation": { "type": "string" }
+        }
+      }
+    },
+    "prev_module": {
+      "type": "object",
+      "properties": {
+        "slug": { "type": "string" },
+        "label": { "type": "string" }
+      }
+    },
+    "next_module": {
+      "type": "object",
+      "properties": {
+        "slug": { "type": "string" },
+        "label": { "type": "string" }
+      }
+    },
+    "accessibility": {
+      "type": "object",
+      "properties": {
+        "read_aloud": { "type": "boolean" },
+        "bionic_reading": { "type": "boolean" },
+        "dyslexia_font": { "type": "boolean" }
+      }
+    }
+  }
+}

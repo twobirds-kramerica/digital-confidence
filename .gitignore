@@ -15,6 +15,9 @@ backups/feedback/
 .DS_Store
 Thumbs.db
 
+# Generator output (built on deploy — not committed)
+dist/
+
 # Local editor files
 .vscode/settings.json
 *.swp

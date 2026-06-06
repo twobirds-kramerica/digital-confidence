@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{MODULE_DESCRIPTION}}">
+  <meta name="keywords" content="{{MODULE_KEYWORDS}}">
+  <meta property="og:title" content="Module {{MODULE_NUMBER}}: {{MODULE_TITLE}} — {{PRODUCT_NAME}}">
+  <meta property="og:description" content="{{MODULE_DESCRIPTION}}">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="{{BASE_URL}}/{{MODULE_SLUG}}.html">
+  <title>Module {{MODULE_NUMBER}}: {{MODULE_TITLE}} — {{PRODUCT_NAME}}</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="{{TOKENS_CSS}}">
+  <link rel="stylesheet" href="css/tokens-dark.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/module-enhance.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/print.css">
+  <link rel="stylesheet" href="css/quiz-check.css">
+  <meta name="author" content="{{PRODUCT_NAME}}">
+  <meta name="robots" content="index, follow">
+  <meta property="og:url" content="{{BASE_URL}}/{{MODULE_SLUG}}.html">
+  <meta property="og:image" content="{{HERO_IMAGE_URL}}">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{BASE_URL}}/{{MODULE_SLUG}}.html">
+  <meta property="twitter:title" content="Module {{MODULE_NUMBER}}: {{MODULE_TITLE}} | {{PRODUCT_NAME}}">
+  <meta property="twitter:description" content="{{MODULE_DESCRIPTION}}">
+  <meta property="twitter:image" content="{{HERO_IMAGE_URL}}">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Module {{MODULE_NUMBER}}: {{MODULE_TITLE}}",
+    "description": "{{MODULE_DESCRIPTION}}",
+    "url": "{{BASE_URL}}/{{MODULE_SLUG}}.html",
+    "educationalLevel": "Beginner",
+    "learningResourceType": "Tutorial",
+    "audience": { "@type": "Audience", "audienceType": "Senior adults" },
+    "inLanguage": "en-CA",
+    "isAccessibleForFree": true,
+    "isPartOf": {
+      "@type": "Course",
+      "name": "{{PRODUCT_NAME}} — Senior Technology Training",
+      "url": "{{BASE_URL}}/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {{SCHEMA_FAQ_JSON}}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Module {{MODULE_NUMBER}}: {{MODULE_TITLE}}",
+    "description": "{{MODULE_DESCRIPTION}}",
+    "url": "{{BASE_URL}}/{{MODULE_SLUG}}.html",
+    "datePublished": "{{DATE_PUBLISHED}}",
+    "dateModified": "{{DATE_PUBLISHED}}",
+    "author": {"@type": "Organization", "name": "{{PRODUCT_NAME}}"},
+    "publisher": {"@type": "Organization", "name": "{{PRODUCT_NAME}}"},
+    "inLanguage": "en-CA",
+    "audience": {"@type": "Audience", "audienceType": "Seniors aged 70+"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{BASE_URL}}/"},
+      {"@type": "ListItem", "position": 2, "name": "Module {{MODULE_NUMBER}}: {{MODULE_TITLE}}", "item": "{{BASE_URL}}/{{MODULE_SLUG}}.html"}
+    ]
+  }
+  </script>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="{{PRIMARY_COLOUR}}">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Digital Confidence">
+  {{ANALYTICS_BLOCK}}
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <script src="js/search-index.js" defer></script>
+  <script src="js/search.js" defer></script>
+  <script src="js/analytics-consent.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">Module {{MODULE_NUMBER}}: {{MODULE_TITLE}}</span>
+    <span></span>
+  </div>
+
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close menu">Close ✕</button>
+    <div class="sidebar-header">
+      <h2>{{PRODUCT_NAME}}</h2>
+      <p>Your learning journey</p>
+    </div>
+    <nav>
+      {{NAV_LINKS_HTML}}
+      <div class="sidebar-a11y-section">
+        <p class="sidebar-a11y-title">Text Size</p>
+        <div class="sidebar-font-row">
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false" style="font-size:1rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+        </div>
+        <p class="sidebar-a11y-title">Screen Colour</p>
+        <div class="sidebar-theme-row">
+          <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+        </div>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <h1>Module {{MODULE_NUMBER}}: {{MODULE_TITLE}}</h1>
+      <p><strong>What you will learn:</strong> {{MODULE_INTRO}}</p>
+      <img class="module-hero-image" src="{{HERO_IMAGE_URL}}" alt="{{HERO_IMAGE_ALT}}" width="{{HERO_IMAGE_WIDTH}}" height="{{HERO_IMAGE_HEIGHT}}" loading="eager">
+
+      <div class="wizard-cta-banner" role="note">
+        <span class="wizard-cta-icon" aria-hidden="true">🪄</span>
+        <p>Prefer to go one step at a time? <a href="v2/wizard.html?module={{MODULE_SLUG}}">Try the guided step-by-step version <span aria-hidden="true">→</span></a></p>
+      </div>
+
+      {{STORY_BLOCK_HTML}}
+
+      <div class="confidence-check-box">
+        <span class="check-icon">💪</span>
+        <p>{{CONFIDENCE_CHECK}}</p>
+        <p class="check-subtext">Take it one step at a time. There is no rush.</p>
+      </div>
+
+      {{SECTIONS_HTML}}
+
+      {{QUIZ_HTML}}
+
+      {{MODULE_NAV_HTML}}
+
+    </main>
+  </div>
+
+  <script src="js/app.js" defer></script>
+  <script src="js/accessibility.js" defer></script>
+  <script src="js/cognitive-toggles.js" defer></script>
+  <script src="js/quiz.js" defer></script>
+  <script src="js/progress.js" defer></script>
+  <script src="js/exit-safely.js" defer></script>
+  <script src="js/read-aloud.js" defer></script>
+  <script src="js/feedback-widget.js" defer></script>
+</body>
+</html>
