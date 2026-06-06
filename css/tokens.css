@@ -59,6 +59,11 @@
   --color-disabled-bg:     #F5EFE6;
   --color-disabled-text:   #B3A99D;
 
+  /* --- Colour: overlays --------------------------------------------------- */
+  --color-nav-hover:       rgba(255,255,255,0.12); /* nav button hover/active scrim */
+  --color-nav-active:      rgba(255,255,255,0.20); /* nav button pressed state */
+  --color-scrim:           rgba(61,50,41,0.55);    /* modal/overlay warm-charcoal scrim */
+
   /* --- Typography: families ------------------------------------------------ */
   --font-body:             'Merriweather', Georgia, 'Times New Roman', serif;
   --font-heading:          'Source Sans 3', 'Segoe UI', 'Helvetica Neue', sans-serif;

@@ -197,7 +197,7 @@ a:hover { color: var(--color-text-link-hover); text-decoration-thickness: 2px; }
 }
 .site-nav__links a:hover,
 .site-nav__links a[aria-current="page"] {
-  background: rgba(255,255,255,0.12);
+  background: var(--color-nav-hover);
 }
 
 .site-nav__tools { display: flex; gap: var(--space-2); margin-inline-start: auto; }
@@ -212,7 +212,7 @@ a:hover { color: var(--color-text-link-hover); text-decoration-thickness: 2px; }
   border-radius: var(--radius-md);
 }
 @media (min-width: 1024px) { .nav-hamburger { display: none; } }
-.nav-hamburger:hover { background: rgba(255,255,255,0.12); }
+.nav-hamburger:hover { background: var(--color-nav-hover); }
 
 /* Mobile menu: slide-in from right */
 .nav-drawer {
@@ -392,9 +392,9 @@ a:hover { color: var(--color-text-link-hover); text-decoration-thickness: 2px; }
   border-radius: var(--radius-md);
 }
 .text-size-toggle button[aria-pressed="true"] {
-  background: rgba(255,255,255,0.2);
+  background: var(--color-nav-active);
 }
-.text-size-toggle button:hover { background: rgba(255,255,255,0.12); }
+.text-size-toggle button:hover { background: var(--color-nav-hover); }
 .text-size-toggle button:nth-child(1) { font-size: 0.875rem; }
 .text-size-toggle button:nth-child(2) { font-size: 1rem; }
 .text-size-toggle button:nth-child(3) { font-size: 1.25rem; }
@@ -669,7 +669,7 @@ a:hover { color: var(--color-text-link-hover); text-decoration-thickness: 2px; }
 /* --- Feedback: modal, tooltip, toast, help FAB ---------------------------- */
 .modal-backdrop {
   position: fixed; inset: 0;
-  background: rgba(61,50,41,0.55);
+  background: var(--color-scrim);
   z-index: var(--z-modal);
   display: none;
   align-items: center; justify-content: center;
@@ -899,7 +899,7 @@ a:hover { color: var(--color-text-link-hover); text-decoration-thickness: 2px; }
 .kbd-help {
   position: fixed;
   inset: 0;
-  background: rgba(61, 50, 41, 0.55); /* warm-charcoal scrim */
+  background: var(--color-scrim);
   z-index: var(--z-modal);
   display: flex;
   align-items: center;
