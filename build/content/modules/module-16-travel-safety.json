@@ -1,0 +1,569 @@
+{
+  "id": "module-16-travel-safety",
+  "number": 16,
+  "slug": "module-16-travel-safety",
+  "title": "Travel Safety",
+  "description": "Module 16: Stay safe when you travel — protect your device, avoid travel scams, use public Wi-Fi safely, and know what to do when something goes wrong.",
+  "keywords": "travel safety seniors technology, public WiFi hotel seniors, travel scams Canada, device safety travel, seniors travel tips iPad iPhone",
+  "date_published": "March 2026",
+  "hero_image": {
+    "url": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&h=400&fit=crop",
+    "alt": "Aerial view of an airport runway with a plane taking off at sunset, representing travel preparation",
+    "width": 1200,
+    "height": 400
+  },
+  "intro": "<span data-en=\"How to prepare your devices before a trip, use public Wi-Fi safely, avoid travel scams, protect yourself at airports, and know exactly who to call if something goes wrong — at home or abroad.\" data-fr=\"Comment préparer vos appareils avant un voyage, utiliser le Wi-Fi public en toute sécurité, éviter les arnaques de voyage, vous protéger dans les aéroports et savoir qui appeler si quelque chose tourne mal — au Canada ou à l&#x27;étranger.\">How to prepare your devices before a trip, use public Wi-Fi safely, avoid travel scams, protect yourself at airports, and know exactly who to call if something goes wrong — at home or abroad.</span>",
+  "story": {
+    "label": "Margaret's Story",
+    "paragraphs": [
+      "Margaret, 74, from St. Thomas, Ontario. After retiring, Margaret and her husband began taking one big trip per year — Florida in the winter, and Portugal last spring. \"The world is different now,\" she says. \"Everything is on the phone. Boarding passes, hotel check-in, maps, even my bank. I love it — but I learned the hard way that I needed to be careful with Wi-Fi in hotels.\"",
+      "This module is for Margaret, and for every traveller who wants to enjoy their trip without worrying about what might be happening to their accounts back home."
+    ]
+  },
+  "confidence_check": "✅ You are in a safe place.\n          Nothing on this page can harm your device. You cannot break anything by reading. If anything feels overwhelming, take a break and come back later.",
+  "sections": [
+    {
+      "type": "raw_html",
+      "content": "<div class=\"module-intro\">\n        <p class=\"module-time\" data-en=\"⏱ About 30–40 minutes — go at your own pace\" data-fr=\"⏱ Environ 30–40 minutes — allez à votre rythme\">⏱ About 30–40 minutes — go at your own pace</p>\n        <div class=\"confidence-check-box\">\n          ✅ <strong data-en=\"You are in a safe place.\" data-fr=\"Vous êtes dans un endroit sûr.\">You are in a safe place.</strong><br>\n          <span data-en=\"Nothing on this page can harm your device. You cannot break anything by reading. If anything feels overwhelming, take a break and come back later.\" data-fr=\"Rien sur cette page ne peut endommager votre appareil. Vous ne pouvez rien casser en lisant. Si quelque chose vous semble trop difficile, faites une pause et revenez plus tard.\">Nothing on this page can harm your device. You cannot break anything by reading. If anything feels overwhelming, take a break and come back later.</span>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"progress-item\">\n        <input type=\"checkbox\" class=\"progress-checkbox\" id=\"m16-1\" data-id=\"m16-1\">\n        <label class=\"progress-label\" for=\"m16-1\" data-en=\"Part 1: Before You Go — Setting Up Your Device\" data-fr=\"Partie 1 : Avant de partir — Préparer votre appareil\">Part 1: Before You Go — Setting Up Your Device</label>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"progress-item\">\n        <input type=\"checkbox\" class=\"progress-checkbox\" id=\"m16-2\" data-id=\"m16-2\">\n        <label class=\"progress-label\" for=\"m16-2\" data-en=\"Part 2: Safe Use of Public Wi-Fi\" data-fr=\"Partie 2 : Utiliser le Wi-Fi public en toute sécurité\">Part 2: Safe Use of Public Wi-Fi</label>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"progress-item\">\n        <input type=\"checkbox\" class=\"progress-checkbox\" id=\"m16-3\" data-id=\"m16-3\">\n        <label class=\"progress-label\" for=\"m16-3\" data-en=\"Part 3: Hotel Safety\" data-fr=\"Partie 3 : Sécurité à l&#x27;hôtel\">Part 3: Hotel Safety</label>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"progress-item\">\n        <input type=\"checkbox\" class=\"progress-checkbox\" id=\"m16-4\" data-id=\"m16-4\">\n        <label class=\"progress-label\" for=\"m16-4\" data-en=\"Part 4: Flying Safely\" data-fr=\"Partie 4 : Voyager en avion en toute sécurité\">Part 4: Flying Safely</label>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"progress-item\">\n        <input type=\"checkbox\" class=\"progress-checkbox\" id=\"m16-5\" data-id=\"m16-5\">\n        <label class=\"progress-label\" for=\"m16-5\" data-en=\"Part 5: Car Travel Safety\" data-fr=\"Partie 5 : Sécurité en voyage en voiture\">Part 5: Car Travel Safety</label>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"progress-item\">\n        <input type=\"checkbox\" class=\"progress-checkbox\" id=\"m16-6\" data-id=\"m16-6\">\n        <label class=\"progress-label\" for=\"m16-6\" data-en=\"Part 6: Keeping in Touch With Family\" data-fr=\"Partie 6 : Rester en contact avec votre famille\">Part 6: Keeping in Touch With Family</label>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"progress-item\">\n        <input type=\"checkbox\" class=\"progress-checkbox\" id=\"m16-7\" data-id=\"m16-7\">\n        <label class=\"progress-label\" for=\"m16-7\" data-en=\"Part 7: Spotting Travel Scams\" data-fr=\"Partie 7 : Reconnaître les arnaques de voyage\">Part 7: Spotting Travel Scams</label>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"progress-item\">\n        <input type=\"checkbox\" class=\"progress-checkbox\" id=\"m16-8\" data-id=\"m16-8\">\n        <label class=\"progress-label\" for=\"m16-8\" data-en=\"Part 8: If Something Goes Wrong\" data-fr=\"Partie 8 : Si quelque chose tourne mal\">Part 8: If Something Goes Wrong</label>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "✈️ Part 1: Before You Go — Setting Up Your Device"
+    },
+    {
+      "type": "paragraph",
+      "content": "A little preparation before you leave home makes a huge difference. The best time to set up your device's safety features is when you are relaxed at home — not rushing at an airport gate."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Your Pre-Travel Checklist"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "✅ Back up your phone or iPad to iCloud (Settings → Your Name → iCloud → iCloud Backup → Back Up Now)"
+        },
+        {
+          "text": "✅ Update your iOS to the latest version (Settings → General → Software Update)"
+        },
+        {
+          "text": "✅ Enable Find My iPhone (Settings → Your Name → Find My → Find My iPhone → On)"
+        },
+        {
+          "text": "✅ Write down your 5 most important phone numbers on paper and keep it in your luggage — not just on your phone"
+        },
+        {
+          "text": "✅ Photograph your passport and keep the photo in iCloud — do not email it to yourself"
+        },
+        {
+          "text": "✅ Let your bank know you are travelling (call the number on the back of your card) to prevent your card being blocked"
+        },
+        {
+          "text": "✅ Charge all devices fully the night before departure"
+        }
+      ]
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"three-second-rule\" role=\"note\" aria-label=\"3-Second Rule reminder\">\n        <span class=\"rule-badge\" data-en=\"⏱ 3-Second Rule\" data-fr=\"⏱ Règle des 3 secondes\">⏱ 3-Second Rule</span>\n        <p data-en=\"Before you leave: Stop. Check your backup. Check your Find My setting. Those 3 seconds of checking could save you enormous stress if your device is lost or stolen on your trip.\" data-fr=\"Avant de partir : Arrêtez-vous. Vérifiez votre sauvegarde. Vérifiez votre paramètre Localiser. Ces 3 secondes de vérification pourraient vous éviter un stress énorme si votre appareil est perdu ou volé pendant votre voyage.\">Before you leave: Stop. Check your backup. Check your Find My setting. Those 3 seconds of checking could save you enormous stress if your device is lost or stolen on your trip.</p>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "📶 Part 2: Safe Use of Public Wi-Fi"
+    },
+    {
+      "type": "paragraph",
+      "content": "Public Wi-Fi is available almost everywhere — hotels, airports, cafés, cruise ships, and tourist attractions. It is convenient. It is also the number one place where travellers get their financial information stolen."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "The Simple Rule"
+    },
+    {
+      "type": "tip",
+      "content": "Never do online banking on hotel Wi-Fi, café Wi-Fi, airport Wi-Fi, or any public Wi-Fi. For banking and anything sensitive, switch to mobile data (your phone's cellular signal) or wait until you are home."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "What Is Safe to Do on Public Wi-Fi?"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "✅ Reading news websites and general browsing"
+        },
+        {
+          "text": "✅ Watching videos on Netflix, YouTube, or CBC Gem"
+        },
+        {
+          "text": "✅ Video calls with family (FaceTime, Zoom, WhatsApp)"
+        },
+        {
+          "text": "✅ Checking maps and directions"
+        },
+        {
+          "text": "✅ Reading emails (but not clicking suspicious links)"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "What Is NOT Safe on Public Wi-Fi?"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "❌ Online banking or checking your bank balance"
+        },
+        {
+          "text": "❌ Making purchases or entering credit card numbers"
+        },
+        {
+          "text": "❌ Logging into important accounts (email, Apple ID, government sites)"
+        }
+      ]
+    },
+    {
+      "type": "tip",
+      "content": "Swipe up from the bottom of your screen (or swipe down from the top-right on newer iPhones) to open Control Centre. Tap the Wi-Fi icon to turn it off. Your phone will automatically use your cellular data instead. Remember to turn Wi-Fi back on when you return to a trusted network."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "🏨 Part 3: Hotel Safety"
+    },
+    {
+      "type": "paragraph",
+      "content": "Hotels are generally safe and professional — but there are a few simple habits that can protect your privacy and your belongings during your stay."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "At Check-In"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Ask the front desk to write down your room number rather than saying it aloud — someone nearby could overhear"
+        },
+        {
+          "text": "Do not announce your full name, room number, or check-out date to others in the lobby"
+        },
+        {
+          "text": "Keep your room key card away from your phone — the magnetic strip can be demagnetised"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "In Your Room"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Use the door's security chain or latch when you are inside your room"
+        },
+        {
+          "text": "Store your passport and extra cash in the in-room safe, not in a suitcase or bedside drawer"
+        },
+        {
+          "text": "Remember: hotel Wi-Fi is not secure for banking (see Part 2)"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "🛫 Part 4: Flying Safely"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Juice Jacking — A Real Risk at Airports"
+    },
+    {
+      "type": "paragraph",
+      "content": "Those convenient USB charging ports at airport gates, in hotel lobbies, and at shopping malls look harmless — but they can be compromised. This is called juice jacking: a USB port that has been secretly modified to steal data from your device, or to install software without your knowledge."
+    },
+    {
+      "type": "tip",
+      "content": "Always carry your own wall charger and plug into a regular electrical outlet. If you must use a USB port in an emergency, bring a USB data blocker (a small, cheap adapter that passes power but blocks data — available online for under $15 CAD). Never plug in to a USB cable that is already attached to a wall."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "At Airport Security"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Place your phone and tablet in your carry-on bag before putting it on the security belt — they are easy to grab by strangers otherwise"
+        },
+        {
+          "text": "Never leave your belongings unattended at the security tray — walk through as soon as they are on the belt"
+        },
+        {
+          "text": "Enable Airplane Mode for the flight (Settings → Airplane Mode) — Wi-Fi will ask to join networks when you land; be selective"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "🚗 Part 5: Car Travel Safety"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Using GPS Apps Safely"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Download offline maps before you go — in Apple Maps or Google Maps, tap the three lines, then Offline Maps, then Select Your Own Map. This way your GPS works even without mobile data or cell coverage."
+        },
+        {
+          "text": "Mount your phone safely in a dashboard holder — do not hold it while driving"
+        },
+        {
+          "text": "Set your destination before you start driving — not while you are already moving"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "If You Get Lost"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Pull over safely before looking at your phone — never try to navigate while driving"
+        },
+        {
+          "text": "Use Siri: say \"Hey Siri, directions to [name of place]\" — hands-free and safe"
+        },
+        {
+          "text": "Store your destination address as a contact before leaving so you can ask Siri to navigate to it easily"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Emergency Contacts for the Road"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "🇨🇦 Within Canada: 911 for any emergency"
+        },
+        {
+          "text": "🇺🇸 In the United States: 911 works the same as in Canada"
+        },
+        {
+          "text": "CAA (Canadian Automobile Association) roadside assistance: 1-800-268-3750"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "📞 Part 6: Keeping in Touch With Family While Away"
+    },
+    {
+      "type": "paragraph",
+      "content": "Staying in regular contact with family at home is one of the most important safety habits a traveller can have — not just for emergencies, but for peace of mind on both sides."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Set a Daily Check-In Time"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Agree on a specific time each day to send a short message or make a quick call — even just \"All good, heading to dinner!\""
+        },
+        {
+          "text": "If the family member at home does not hear from you by that time, they know to follow up"
+        },
+        {
+          "text": "Use WhatsApp or iMessage — both work over Wi-Fi internationally with no extra charge"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Sharing Your Location"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "In the iPhone Messages app, you can share your real-time location with a family member for a set period (1 hour, until end of day, or indefinitely). Tap the person's name at the top of a conversation, then Share My Location."
+        },
+        {
+          "text": "The Find My app also lets trusted family members see your location — ask a family member to help set this up before you go"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "🚨 Part 7: Spotting Travel Scams"
+    },
+    {
+      "type": "paragraph",
+      "content": "Travel scammers target tourists, and seniors in particular. They are often polished, friendly, and plausible — which is exactly what makes them dangerous. Knowing the patterns in advance is your best protection."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Common Travel Scams — Know These Patterns"
+    },
+    {
+      "type": "tip",
+      "content": "You search for a hotel or flight online and find a site that looks like a real travel agency but is actually fake. You pay, receive a confirmation, but when you arrive — there is no reservation. Book only through well-known, reputable sites: Booking.com, Expedia, Airbnb, or directly with the hotel or airline."
+    },
+    {
+      "type": "tip",
+      "content": "If you receive an email, text, or social media message offering an incredible travel deal — a free cruise, a 5-star hotel for $30/night, deeply discounted flights — it is almost certainly a scam designed to steal your credit card information. Legitimate travel deals do exist, but they come from reputable sources, not unsolicited messages."
+    },
+    {
+      "type": "tip",
+      "content": "People at airports and tourist sites may approach you offering cheap taxi rides or unofficial tours. These can lead to overcharging, detours to shops that pay commissions, or worse. Use official, metered taxis or rideshare apps like Uber where available. Ask your hotel to arrange taxis for you — they use trusted companies."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"three-second-rule\" role=\"note\" aria-label=\"3-Second Rule reminder\">\n        <span class=\"rule-badge\" data-en=\"⏱ 3-Second Rule\" data-fr=\"⏱ Règle des 3 secondes\">⏱ 3-Second Rule</span>\n        <p data-en=\"Any travel offer that arrives unsolicited (email, text, social media) and sounds incredibly good — stop, breathe, and do nothing for 3 seconds. Then ask: did I sign up for this? Did I initiate this? If the answer is no, it is almost certainly a scam.\" data-fr=\"Toute offre de voyage qui arrive sans que vous l&#x27;ayez demandée (courriel, texto, réseaux sociaux) et qui semble incroyablement bonne — arrêtez, respirez et ne faites rien pendant 3 secondes. Puis demandez-vous : est-ce que je me suis inscrit à ceci ? Est-ce que j&#x27;ai initié ce contact ? Si la réponse est non, c&#x27;est presque certainement une arnaque.\">Any travel offer that arrives unsolicited (email, text, social media) and sounds incredibly good — stop, breathe, and do nothing for 3 seconds. Then ask: did I sign up for this? Did I initiate this? If the answer is no, it is almost certainly a scam.</p>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "🆘 Part 8: If Something Goes Wrong"
+    },
+    {
+      "type": "paragraph",
+      "content": "Most trips go perfectly. But knowing what to do in advance — before you need it — means you will handle any problem calmly and effectively."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "If Your Phone Is Stolen or Lost"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "From any internet-connected device (another phone, a hotel computer), go to icloud.com/find and log in with your Apple ID to locate, lock, or remotely erase your phone"
+        },
+        {
+          "text": "Call your bank immediately to freeze any cards registered in Apple Pay or stored on the device"
+        },
+        {
+          "text": "Report the theft to local police and obtain a police report number for your travel insurance claim"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "If You Have Been Defrauded While Travelling"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Report immediately to your bank — they can often stop or reverse transactions if you act quickly"
+        },
+        {
+          "text": "When back in Canada, report to the Canadian Anti-Fraud Centre: 1-888-495-8501"
+        },
+        {
+          "text": "Keep all receipts, screenshots, and evidence — you will need them for insurance and police reports"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Canadian Embassy and Consulate Contacts"
+    },
+    {
+      "type": "tip",
+      "content": "If you are in serious trouble abroad — arrest, serious illness, lost passport — contact the Canadian consulate or embassy in that country. The 24-hour Emergency Watch and Response Centre in Ottawa can connect you: +1-613-996-8885 (collect calls accepted). Website: travel.gc.ca"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Write These Numbers Down Before You Travel"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Your bank's international customer service number (on the back of your card)"
+        },
+        {
+          "text": "Your travel insurance company's emergency line"
+        },
+        {
+          "text": "Canadian Emergency Watch Centre: +1-613-996-8885"
+        },
+        {
+          "text": "A trusted family member or friend at home"
+        },
+        {
+          "text": "Canadian Anti-Fraud Centre (for fraud reporting when home): 1-888-495-8501"
+        }
+      ]
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"module-nav-footer\">\n        <a href=\"module-15.html\" class=\"module-nav-prev\">← Module 15: Telehealth</a>\n        <a href=\"module-visual-ai.html\" class=\"module-nav-next\">Show Me! (Bonus) →</a>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"quick-answers-accordion\" id=\"quick-answers\">\n        <h2 data-en=\"Quick Answers\" data-fr=\"Réponses rapides\">Quick Answers</h2>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>Is it safe to use public Wi-Fi when I travel?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>Public Wi-Fi at airports, hotels, and cafes is not secure. Avoid logging into your bank or email on public Wi-Fi. Use your mobile data plan instead — it is much more secure. If you must use public Wi-Fi, avoid entering any passwords or financial information.</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>How do I avoid phone scams when I am travelling?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>Be cautious of unsolicited calls claiming your travel booking has a problem. Call the airline, hotel, or travel agency directly using the number on their official website — not the number given to you by the caller.</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>What should I do if my phone is lost or stolen while travelling?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>Use Apple Find My app to locate, lock, or erase your device remotely. Call your bank to put a hold on your cards. Report the theft to local police and get a reference number for insurance.</p>\n          </div>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"sources-block\">\n        <h3 data-en=\"Sources &amp; References\" data-fr=\"Sources et références\">Sources &amp; References</h3>\n        <ul>\n        <li><a href=\"https://travel.gc.ca\" target=\"_blank\" rel=\"noopener noreferrer\">Travel.gc.ca — Official Government of Canada travel safety</a></li>\n        <li><a href=\"https://www.getcybersafe.gc.ca\" target=\"_blank\" rel=\"noopener noreferrer\">Get Cyber Safe — Travel security tips</a></li>\n        </ul>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"dcc-quiz-container\" id=\"dcc-after-quiz\" style=\"margin:2rem 0\"></div>"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Before travelling internationally, you should back up your devices because:",
+      "options": [
+        "Customs may delete your photos",
+        "Devices can be lost, stolen, or damaged while travelling",
+        "Airlines require it before boarding",
+        "It speeds up your phone during the flight"
+      ],
+      "correct": 1,
+      "explanation": "Travel increases the risk of device loss or damage. A recent backup (to iCloud or a computer) means your photos and data are safe even if your phone is gone."
+    },
+    {
+      "question": "Using public Wi-Fi in a hotel or airport is:",
+      "options": [
+        "Always completely safe",
+        "Risky for banking or sharing personal information — use a VPN or your phone's cellular data instead",
+        "Required by law in Ontario",
+        "Only unsafe in the USA"
+      ],
+      "correct": 1,
+      "explanation": "Public Wi-Fi networks can be monitored by others. For banking or anything sensitive, use your phone's mobile data connection instead — it is encrypted."
+    },
+    {
+      "question": "A \"travel scam\" might look like:",
+      "options": [
+        "Your hotel room key not working",
+        "Fake booking websites that take your money without providing accommodation",
+        "A long queue at the airport",
+        "Weather delays on your flight"
+      ],
+      "correct": 1,
+      "explanation": "Fake travel websites look professional but take your payment and provide no booking. Always verify: book directly through the hotel's official site or a known service like Booking.com."
+    },
+    {
+      "question": "To avoid international roaming charges on your phone, you can:",
+      "options": [
+        "Turn off your phone for the entire trip",
+        "Buy a local SIM card, use a travel data plan from your carrier, or turn off data roaming",
+        "Only use the phone in your hotel room",
+        "Call your carrier from abroad — it is free"
+      ],
+      "correct": 1,
+      "explanation": "Contact your carrier before you leave to discuss travel plans. Options include day passes, international plans, or buying a local SIM card at your destination."
+    },
+    {
+      "question": "The most important document to have a digital and printed copy of while travelling is:",
+      "options": [
+        "Your library card",
+        "Your passport (photo page), travel insurance details, and emergency contacts",
+        "Your bank statement",
+        "Your home address"
+      ],
+      "correct": 1,
+      "explanation": "Photograph your passport photo page, travel insurance card, and emergency contacts. Store copies in email or iCloud. If your passport is lost, these copies speed up replacement."
+    }
+  ],
+  "prev_module": {
+    "slug": "module-15.html",
+    "label": "Module 15: Telehealth"
+  },
+  "next_module": {
+    "slug": "module-17-ai-research.html",
+    "label": "Module 17: AI Research Tools"
+  },
+  "accessibility": {
+    "lang": "en-CA",
+    "wcag_level": "AA"
+  },
+  "category": "Safety",
+  "category_icon": "✈️",
+  "difficulty": "Intermediate",
+  "time": "25 min",
+  "what_you_learn": [
+    "How to use Google Maps and Apple Maps offline",
+    "How to stay safe on hotel and airport WiFi",
+    "How to use travel booking apps safely",
+    "How to keep your phone secure while travelling"
+  ],
+  "summary": "Travelling is more enjoyable when you know your devices and data are safe. This module covers maps, hotel WiFi, travel apps, and keeping your phone secure while you are away from home."
+}

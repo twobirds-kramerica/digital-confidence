@@ -1,0 +1,374 @@
+{
+  "id": "module-5",
+  "number": 5,
+  "slug": "module-5",
+  "title": "Email & Messages",
+  "description": "Module 5: Send emails and texts safely, spot phishing attempts, and manage your inbox confidently on iPad and iPhone. Free digital literacy for Ontario seniors.",
+  "keywords": "email safety seniors, spam email identification, block phone calls iPhone, send photos family iPad, text message safety seniors Ontario",
+  "date_published": "2026-03-07",
+  "hero_image": {
+    "url": "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=1200&h=400&fit=crop&v=2",
+    "alt": "A senior woman reading a message on her tablet, smiling with enjoyment",
+    "width": 1200,
+    "height": 400
+  },
+  "intro": "How to use email and text messages safely, spot scam messages, block unwanted callers, and communicate with family and friends with confidence.",
+  "story": {
+    "label": "Rose's Story",
+    "paragraphs": [
+      "Rose, 71, loves getting emails from her grandchildren. Photos of the kids, funny stories about school, weekend plans — email is her window into their lives when she cannot visit in person. But Rose also receives about 30 unwanted emails a day: advertisements she never signed up for, warnings about accounts she does not have, and messages from people she has never met.",
+      "\"I used to be afraid to open my email,\" Rose says. \"I worried every message might be a virus. But once I learned what to look for, I realised most of those scary emails are like junk mail in your real mailbox — annoying, but harmless as long as you throw them away without opening the envelope.\"",
+      "Now Rose confidently sorts through her inbox every morning, keeps the messages she wants, and deletes the ones she does not — without a moment of worry."
+    ]
+  },
+  "confidence_check": "You are about to learn one of the most useful skills in the digital world — communicating by email and text. Millions of people your age use these tools every day, and you can too. Take it one step at a time. There is no rush.",
+  "sections": [
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Email Basics: Your Digital Mailbox"
+    },
+    {
+      "type": "device_variant",
+      "variants": [
+        {
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "content": "<p>Your iPad comes with the <strong>Mail</strong> app — it looks like a white envelope on a blue background. This is where all your email arrives, whether you use Gmail, Yahoo, Outlook, or another email service.</p>\n\n      <p>Think of the Mail app like a set of mailboxes at a post office:</p>\n\n      <ul class=\"content-list\">\n        <li><strong>Inbox:</strong> Where new mail arrives. This is like the \"new mail\" slot in your mailbox.</li>\n        <li><strong>Sent:</strong> Copies of emails you have sent, so you can look back at them.</li>\n        <li><strong>Drafts:</strong> Emails you started writing but have not sent yet.</li>\n        <li><strong>Junk (or <a href=\"digital-literacy-101.html#term-spam\" class=\"glossary-link\">Spam</a>):</strong> Emails that your iPad thinks are junk mail. Check this occasionally — sometimes real emails land here by mistake.</li>\n        <li><strong>Trash:</strong> Emails you have deleted. They stay here for a while before being permanently removed, so you can recover something if you delete it by accident.</li>\n      </ul>"
+        },
+        {
+          "devices": [
+            "android-phone",
+            "android-tablet"
+          ],
+          "content": "<p>Your Android device comes with the <strong>Gmail</strong> app — it looks like a colourful envelope with red, yellow, green, and blue stripes. This is where all your email arrives. If you use a different email service like Yahoo or Outlook, you can add those accounts to Gmail too.</p>\n\n      <p>Think of the Gmail app like a set of mailboxes at a post office:</p>\n\n      <ul class=\"content-list\">\n        <li><strong>Inbox:</strong> Where new mail arrives. This is like the \"new mail\" slot in your mailbox.</li>\n        <li><strong>Sent:</strong> Copies of emails you have sent, so you can look back at them.</li>\n        <li><strong>Drafts:</strong> Emails you started writing but have not sent yet.</li>\n        <li><strong>Spam:</strong> Emails that Gmail thinks are junk mail. Check this occasionally — sometimes real emails land here by mistake.</li>\n        <li><strong>Bin (or Trash):</strong> Emails you have deleted. They stay here for 30 days before being permanently removed, so you can recover something if you delete it by accident.</li>\n      </ul>"
+        },
+        {
+          "devices": [
+            "windows"
+          ],
+          "content": "<p>On your Windows computer, you have two good options for reading email:</p>\n\n      <ul class=\"content-list\">\n        <li><strong>Mail app</strong> (built into Windows) — looks like a blue envelope. You can add your Gmail, Outlook, Yahoo, or any email account to it. Great for beginners.</li>\n        <li><strong>Web browser</strong> — open Edge or Chrome and go directly to <strong>gmail.com</strong>, <strong>outlook.com</strong>, or <strong>mail.yahoo.com</strong>. No app needed — just like checking a website.</li>\n      </ul>\n\n      <p>Either option shows you the same familiar folders:</p>\n\n      <ul class=\"content-list\">\n        <li><strong>Inbox:</strong> Where new mail arrives.</li>\n        <li><strong>Sent:</strong> Copies of emails you have sent.</li>\n        <li><strong>Drafts:</strong> Emails you started but have not sent yet.</li>\n        <li><strong>Junk/Spam:</strong> Emails your computer thinks are junk mail. Worth checking occasionally.</li>\n        <li><strong>Deleted/Bin/Trash:</strong> Emails you have deleted — they stay here for a while, so you can get them back if needed.</li>\n      </ul>\n\n      <div class=\"tip-block\">\n        <span class=\"tip-label\">Which Option is Easier?</span>\n        <p>If you have a Gmail address, the easiest approach for a Windows computer is to simply open <strong>Edge or Chrome</strong> and go to <strong>gmail.com</strong>. You will see the same familiar Gmail layout you may already know from other devices. No setup needed — just sign in with your Google account email and password.</p>\n      </div>"
+        }
+      ]
+    },
+    {
+      "type": "tip",
+      "content": "If your inbox feels overwhelming, do not worry about reading every single email. Focus on messages from people you know. You can always delete the rest — just like tossing junk mail from your letterbox into the recycling bin."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Sending an Email"
+    },
+    {
+      "type": "device_variant",
+      "variants": [
+        {
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "content": "<div class=\"walkthrough\">\n        <h3>Writing and Sending an Email</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open the <strong>Mail</strong> app (white envelope on blue background).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Look for a small icon that looks like a <strong>square with a pencil</strong> — usually in the top-right or bottom-right corner. Tap it. This starts a new email.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">In the <strong>\"To\"</strong> field, type the email address of the person you want to write to. If they are in your Contacts, their name will appear as you type — tap it to select them.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Tap the <strong>\"Subject\"</strong> field and type a short description of what your email is about (for example, \"Sunday Dinner Plans\").</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Tap the large blank area below the subject and type your message.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">6</span>\n          <span class=\"step-text\">When you are done, look for the <strong>upward-pointing arrow</strong> button (usually blue, in the top-right corner). Tap it to send.</span>\n        </div>\n      </div>\n\n      <div class=\"visual-example-card\" role=\"img\" aria-label=\"Compose Email Screen\">\n        <div class=\"example-icon\">✉️</div>\n        <div class=\"example-content\">\n          <h4 class=\"example-title\">Compose Email Screen</h4>\n          <p class=\"example-description\">Every email has three parts: the To field (recipient's address), the Subject line (a brief description), and the body — the large area where you type your actual message.</p>\n        </div>\n      </div>\n\n      <div class=\"tip-block\">\n        <span class=\"tip-label\">Oops, I Sent It Too Soon!</span>\n        <p>If you accidentally send an email before you are ready, some email services offer a short \"undo\" window. On Apple Mail, you may see an <strong>\"Undo Send\"</strong> button at the bottom of the screen for about 10 seconds after sending. Tap it quickly if you need to make changes.</p>\n      </div>"
+        },
+        {
+          "devices": [
+            "android-phone",
+            "android-tablet"
+          ],
+          "content": "<div class=\"walkthrough\">\n        <h3>Writing and Sending an Email</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open the <strong>Gmail</strong> app (colourful envelope icon).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Look for the <strong>pencil icon</strong> or a round button labelled <strong>\"Compose\"</strong> in the bottom-right corner. Tap it. This starts a new email.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">In the <strong>\"To\"</strong> field, type the email address of the person you want to write to. If they are in your Contacts, their name will appear as you type — tap it to select them.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Tap the <strong>\"Subject\"</strong> field and type a short description of what your email is about (for example, \"Sunday Dinner Plans\").</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Tap the <strong>\"Compose email\"</strong> area below the subject and type your message.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">6</span>\n          <span class=\"step-text\">When you are done, tap the <strong>paper plane icon</strong> in the top-right corner to send your email.</span>\n        </div>\n      </div>\n\n      <div class=\"tip-block\">\n        <span class=\"tip-label\">Oops, I Sent It Too Soon!</span>\n        <p>If you accidentally send an email before you are ready, Gmail shows an <strong>\"Undo\"</strong> message at the bottom of the screen for about 5 seconds after sending. Tap it quickly to cancel the send and make your changes. You can also increase this window to 30 seconds in Gmail's settings.</p>\n      </div>"
+        },
+        {
+          "devices": [
+            "windows"
+          ],
+          "content": "<div class=\"walkthrough\">\n        <h3>Writing and Sending an Email (Gmail in your browser)</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open <strong>Edge or Chrome</strong> and go to <strong>gmail.com</strong>. Sign in with your Google email and password if asked.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Click the large <strong>\"Compose\"</strong> button on the left side of the screen (it is usually white with a pencil icon). A new email window will pop up in the bottom-right corner of the screen.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Click in the <strong>\"To\"</strong> field and type the email address of the person you want to write to. If they are saved in your Contacts, their name will appear as you type — click it to select them.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Click in the <strong>\"Subject\"</strong> field and type a short description (for example, \"Sunday Dinner Plans\").</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Click in the large blank area and type your message.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">6</span>\n          <span class=\"step-text\">When you are done, click the blue <strong>\"Send\"</strong> button at the bottom of the compose window.</span>\n        </div>\n      </div>\n\n      <div class=\"tip-block\">\n        <span class=\"tip-label\">Oops, I Sent It Too Soon!</span>\n        <p>Gmail shows a small <strong>\"Undo\"</strong> notification at the bottom of the screen for about 5 seconds after sending. Click it quickly to cancel the send. You can also go to Gmail <strong>Settings → General → Undo Send</strong> and set the window to 30 seconds for more breathing room.</p>\n</div>"
+        }
+      ]
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">💛</span>\n        <p>Confidence Check: You can write and send an email. That is a powerful skill for staying connected with the people you love.</p>\n      </div>"
+    },
+    {
+      "type": "tip",
+      "content": "Before sending an important email, double-check the address in the \"To\" field. A small typo could send your message to the wrong person. Take a moment to review before tapping send."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Spotting Scam Emails"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"visual-example-card\" role=\"img\" aria-label=\"Real Email vs Spam\">\n        <div class=\"example-icon\">📧</div>\n        <div class=\"example-content\">\n          <h4 class=\"example-title\">Real Email vs Spam</h4>\n          <p class=\"example-description\">A legitimate email comes from an official address like @rbc.com. A spam email uses odd addresses like @rbc-security-helpdesk.net — never click links in emails from unknown senders.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "paragraph",
+      "content": "You learned about <a href=\"digital-literacy-101.html#term-phishing\" class=\"glossary-link\">phishing</a> emails in Module 2. Here is a quick refresher with practical tips for your daily email routine:"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"walkthrough\">\n        <h3>The Email Safety Check (Do This for Every Unfamiliar Email)</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\"><strong>Check the sender.</strong> Tap the sender's name at the top to see the full email address. Does it look right? (Example: \"rbc.com\" is real; \"rbc-alerts-canada.com\" is fake.)</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\"><strong>Look for urgency.</strong> \"Act now!\" \"Your account will be closed!\" Real companies give you time.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\"><strong>Check the greeting.</strong> \"Dear Customer\" is a red flag. Your bank and other services know your name.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\"><strong>Hover over links (do not tap them).</strong> On an iPad, press and hold a link (do not lift your finger). A preview will pop up showing where the link actually goes. If the address looks suspicious, do not tap it.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\"><strong>When in doubt, delete it.</strong> If a real company needs you, they will send another message or call you.</span>\n        </div>\n      </div>"
+    },
+    {
+      "type": "warning",
+      "content": "Never tap a link in an email that asks you to \"verify your account\" or \"confirm your identity.\" Legitimate companies will never ask you to do this by email. If you are unsure, open your web browser and go to the company's website directly."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"visual-example-card\" role=\"img\" aria-label=\"Suspicious Email Red Flags\">\n        <div class=\"example-icon\">🚩</div>\n        <div class=\"example-content\">\n          <h4 class=\"example-title\">Suspicious Email Red Flags</h4>\n          <p class=\"example-description\">Red flags include urgent demands (Act now or your account closes!), generic greetings (Dear Customer), and links that do not match the sender's organisation name.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"three-second-rule-box\">\n        <h3>Remember the 3-Second Rule</h3>\n        <p>Stop. Breathe. Think before you tap. If something feels urgent or too good to be true, that is your signal to pause.</p>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"three-second-rule\">\n        <h3>The 3-Second Rule for Emails</h3>\n        <div class=\"steps\">\n          <div class=\"step\">\n            <span class=\"step-icon\">✋</span>\n            <span class=\"step-name\">Stop</span>\n            <span class=\"step-desc\">Do not tap any links in unexpected emails.</span>\n          </div>\n          <div class=\"step\">\n            <span class=\"step-icon\">🫁</span>\n            <span class=\"step-name\">Breathe</span>\n            <span class=\"step-desc\">No real company will close your account because you took a few minutes to think.</span>\n          </div>\n          <div class=\"step\">\n            <span class=\"step-icon\">🔍</span>\n            <span class=\"step-name\">Verify</span>\n            <span class=\"step-desc\">Go to the company's website directly or call the number on your bank card.</span>\n          </div>\n        </div>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Text Messages: iMessage and Regular Texts"
+    },
+    {
+      "type": "device_variant",
+      "variants": [
+        {
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "content": "<p>The <strong>Messages</strong> app (green speech bubble icon) handles both regular text messages and iMessage (Apple's messaging service). Here is the difference:</p>\n\n      <ul class=\"content-list\">\n        <li><strong>Blue bubbles</strong> mean the message was sent through iMessage (Apple to Apple). These are encrypted, meaning they are very secure.</li>\n        <li><strong>Green bubbles</strong> mean the message was sent as a regular text to someone who does not use an Apple device. These are less secure but still fine for everyday conversation.</li>\n      </ul>\n\n      <div class=\"visual-example-card\" role=\"img\" aria-label=\"iMessage Conversation\">\n        <div class=\"example-icon\">💬</div>\n        <div class=\"example-content\">\n          <h4 class=\"example-title\">iMessage Conversation</h4>\n          <p class=\"example-description\">Blue speech bubbles in Apple's Messages app mean the message was sent over the internet using iMessage — free, fast, and encrypted. Green bubbles are standard text messages.</p>\n        </div>\n      </div>"
+        },
+        {
+          "devices": [
+            "android-phone",
+            "android-tablet"
+          ],
+          "content": "<p>The <strong>Messages</strong> app (usually a blue or green speech bubble icon labelled \"Messages\") is where you send and receive text messages on Android. Most Android phones come with <strong>Google Messages</strong>, which supports both regular texts and a newer, more secure system called <strong>RCS</strong> (Rich Communication Services).</p>\n\n      <ul class=\"content-list\">\n        <li><strong>RCS messages</strong> appear when both people are using Google Messages. These are more secure and allow you to send higher-quality photos and see when someone is typing.</li>\n        <li><strong>Regular SMS texts</strong> are used when the other person does not have Google Messages. These work fine for everyday conversation.</li>\n      </ul>\n\n      <div class=\"visual-example-card\" role=\"img\" aria-label=\"Google Messages\">\n        <div class=\"example-icon\">💬</div>\n        <div class=\"example-content\">\n          <h4 class=\"example-title\">Google Messages</h4>\n          <p class=\"example-description\">Google Messages on Android lists your conversations sorted by most recent. Tap any conversation to open it and read the full history of messages between you.</p>\n        </div>\n      </div>\n\n      <div class=\"tip-block\">\n        <span class=\"tip-label\">Good to Know</span>\n        <p>If you are not sure which Messages app you have, look for the one made by Google. You can also download <strong>Google Messages</strong> from the Play Store for free. It is the most popular texting app on Android.</p>\n      </div>"
+        }
+      ]
+    },
+    {
+      "type": "warning",
+      "content": "Scam text messages are becoming more common. If you receive a text from an unknown number with a link — especially one claiming to be from Canada Post, your bank, or a delivery service — do not tap the link. Delete the message straight away."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Blocking Unwanted Callers and Texters"
+    },
+    {
+      "type": "paragraph",
+      "content": "Getting calls from unknown numbers or annoying text messages? You can block them."
+    },
+    {
+      "type": "device_variant",
+      "variants": [
+        {
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "content": "<div class=\"walkthrough\">\n        <h3>Blocking a Phone Number</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open the <strong>Phone</strong> app (green icon with a white telephone).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap <strong>\"Recents\"</strong> at the bottom to see your call history.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Find the number you want to block. Tap the small <strong>\"i\" icon</strong> (a circle with a lowercase \"i\") next to it.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Scroll to the bottom of the screen and tap <strong>\"Block this Caller.\"</strong></span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Confirm by tapping <strong>\"Block Contact.\"</strong> That number can never call or text you again.</span>\n        </div>\n      </div>\n\n      <div class=\"walkthrough\">\n        <h3>Silencing Unknown Callers</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open <strong>Settings</strong> (grey gears).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Scroll down and tap <strong>\"Phone\"</strong> (on iPhone) or look for call settings.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Turn on <strong>\"Silence Unknown Callers.\"</strong> This sends calls from numbers not in your contacts directly to voicemail. If it is a real person, they will leave a message.</span>\n        </div>\n      </div>"
+        },
+        {
+          "devices": [
+            "android-phone",
+            "android-tablet"
+          ],
+          "content": "<div class=\"walkthrough\">\n        <h3>Blocking a Phone Number</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open the <strong>Phone</strong> app (usually a blue or green phone icon).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap <strong>\"Recents\"</strong> to see your call history.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Find the number you want to block. <strong>Tap and hold</strong> on the number (press and keep your finger there for a moment).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">A menu will appear. Tap <strong>\"Block number\"</strong> or <strong>\"Block/report spam.\"</strong></span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Confirm by tapping <strong>\"Block.\"</strong> That number can no longer call or text you.</span>\n        </div>\n      </div>\n\n      <div class=\"walkthrough\">\n        <h3>Filtering Spam Calls</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open the <strong>Phone</strong> app.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap the <strong>three dots</strong> (menu) in the top-right corner, then tap <strong>\"Settings.\"</strong></span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Look for <strong>\"Caller ID &amp; spam\"</strong> and turn on <strong>\"Filter spam calls.\"</strong> Google will automatically detect and warn you about suspected spam calls. If it is a real person, they will leave a voicemail.</span>\n        </div>\n      </div>"
+        }
+      ]
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">💛</span>\n        <p>Confidence Check: You now have the tools to control who can reach you. Your phone is your space, and you decide who gets in.</p>\n      </div>"
+    },
+    {
+      "type": "tip",
+      "content": "After you block a number, they cannot call or text you any more. But do not worry — you can always unblock them later if you change your mind. Blocking is not permanent."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Sending Photos to Family"
+    },
+    {
+      "type": "paragraph",
+      "content": "One of the most joyful things about your device is sharing photos with loved ones. Here is how:"
+    },
+    {
+      "type": "device_variant",
+      "variants": [
+        {
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "content": "<div class=\"walkthrough\">\n        <h3>Sending a Photo by Text Message</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open the <strong>Messages</strong> app (green speech bubble).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Open a conversation with the person you want to send the photo to (or start a new message).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Look for the <strong>\"+\" button</strong> or the <strong>camera icon</strong> near the text input area.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Tap <strong>\"Photos\"</strong> and select the picture you want to send.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Tap the <strong>blue send arrow</strong> to send it.</span>\n        </div>\n      </div>\n\n      \n\n      <div class=\"walkthrough\">\n        <h3>Sending a Photo by Email</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open the <strong>Photos</strong> app (colourful flower icon) and find the photo you want to share.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap the <strong>share button</strong> — it looks like a square with an upward arrow coming out of it.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Tap <strong>\"Mail.\"</strong> A new email will open with the photo already attached.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Type the recipient's email address, add a subject and message, and tap send.</span>\n        </div>\n      </div>"
+        },
+        {
+          "devices": [
+            "android-phone",
+            "android-tablet"
+          ],
+          "content": "<div class=\"walkthrough\">\n        <h3>Sending a Photo by Text Message</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open the <strong>Messages</strong> app (speech bubble icon).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Open a conversation with the person you want to send the photo to (or start a new message).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Look for the <strong>\"+\" button</strong> or the <strong>photo icon</strong> (a small mountain-and-sun picture) near the text input area. Tap it.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Your recent photos will appear. Tap the one you want to send. You can also tap <strong>\"Gallery\"</strong> to browse all your photos.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Tap the <strong>send arrow</strong> to send it.</span>\n        </div>\n      </div>\n\n      <div class=\"walkthrough\">\n        <h3>Sending a Photo by Email</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open <strong>Google Photos</strong> (colourful pinwheel icon) or your <strong>Gallery</strong> app and find the photo you want to share.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap the <strong>share button</strong> — it looks like three dots connected by lines (a \"less than\" symbol with dots).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Tap <strong>\"Gmail\"</strong> from the sharing options. A new email will open with the photo already attached.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Type the recipient's email address, add a subject and message, and tap the <strong>paper plane icon</strong> to send.</span>\n        </div>\n      </div>"
+        },
+        {
+          "devices": [
+            "windows"
+          ],
+          "content": "<div class=\"walkthrough\">\n        <h3>Sending a Photo by Email on Windows</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open your email in the browser (for example, go to <strong>gmail.com</strong> in Edge or Chrome) and click <strong>\"Compose\"</strong> to start a new email.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Fill in the <strong>To</strong> field, Subject, and your message text.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">At the bottom of the compose window, look for the <strong>paperclip icon</strong> (it means \"attach a file\"). Click it.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">A file browser window will open. Navigate to where your photo is saved — usually in <strong>Pictures</strong> or <strong>Downloads</strong>. Click your photo once to select it, then click <strong>\"Open.\"</strong></span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">The photo will appear attached to your email. Click <strong>\"Send\"</strong> when you are ready.</span>\n        </div>\n      </div>\n\n      <div class=\"tip-block\">\n        <span class=\"tip-label\">Helpful Hint: Right-Click Shortcut</span>\n        <p>If you find the photo you want to send using <strong>File Explorer</strong> (the yellow folder), you can right-click on the photo and choose <strong>\"Share\"</strong> or <strong>\"Send to → Mail Recipient\"</strong>. This opens a new email with the photo already attached. Much faster!</p>\n      </div>"
+        }
+      ]
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"video-section\">\n        <div class=\"video-section-header\">\n          <div class=\"video-section-icon\">📺</div>\n          <h3>Email & Messages Tutorials</h3>\n        </div>\n        <div class=\"video-grid\">\n        <div class=\"video-card\">\n          <div class=\"video-card-thumbnail\">\n            <div class=\"video-card-play-icon\">▶️</div>\n            <div class=\"video-card-topic-icon\">📧</div>\n          </div>\n          <h4>iPhone Mail App Tutorial</h4>\n          <p>Master reading, writing, and organising email on your iPhone or iPad.</p>\n          <a href=\"https://www.youtube.com/results?search_query=email+app+tutorial+for+beginners+iPhone&amp;sp=CAMSAhAB\" target=\"_blank\" rel=\"noopener\" class=\"video-card-btn\">Watch Tutorials</a>\n        </div>\n        <div class=\"video-card\">\n          <div class=\"video-card-thumbnail\">\n            <div class=\"video-card-play-icon\">▶️</div>\n            <div class=\"video-card-topic-icon\">🚫</div>\n          </div>\n          <h4>Block Spam & Scam Emails</h4>\n          <p>Keep your inbox clean by blocking unwanted emails and reporting scams.</p>\n          <a href=\"https://www.youtube.com/results?search_query=how+to+block+spam+emails+and+texts&amp;sp=CAMSAhAB\" target=\"_blank\" rel=\"noopener\" class=\"video-card-btn\">Watch Tutorials</a>\n        </div>\n        </div>\n        <div class=\"video-safety-note\">\n          <div class=\"video-safety-note-icon\">✓</div>\n          <p>These links open YouTube in a new tab. YouTube is safe and free to use — you can watch as many videos as you like without signing in.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"video-help-link\">\n        <p>📚 New to YouTube? <a href=\"search-guide.html\">Learn how to spot quality videos and avoid ads</a></p>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"exercise-block\">\n        <h3>Practical Exercise: Safe Communication Practice</h3>\n        <ol class=\"numbered-list\">\n          <li>Open the Mail app and find one email from someone you know. Read it and reply with a short message like \"Thank you for this — I am practising my email skills!\"</li>\n          <li>Find one suspicious-looking email in your inbox (you probably have one). Check the sender's address. Can you spot any red flags? Delete it.</li>\n          <li>Send a photo to a family member using either Messages or Mail. Ask them to confirm they received it.</li>\n          <li>Block one unwanted number from your recent calls list.</li>\n        </ol>\n        <div class=\"success-state\">\n          <strong>Success looks like this:</strong> You can send and receive emails, spot suspicious messages, send photos to family, and block unwanted callers. Your device is working for you, not against you.\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"success-state-box\">\n        <span class=\"success-icon\">✅</span>\n        <p><strong>Well done!</strong> You have practised safe communication skills — sending emails, spotting scams, sharing photos, and blocking unwanted contacts. You are in control of your digital mailbox.</p>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"local-help-section\">\n        <h3>🤝 Need In-Person Help?</h3>\n        <p>Your local community offers free technology support for seniors:</p>\n        <div class=\"local-help-grid\">\n          <div class=\"local-help-dynamic-wrap local-help-card\" id=\"lh-library\">\n            <div class=\"local-help-card-icon\">📚</div>\n            <h4>Your Local Library</h4>\n            <p>Many libraries offer free tech workshops and one-on-one help sessions.</p>\n          </div>\n          <div class=\"local-help-dynamic-wrap local-help-card\" id=\"lh-senior\">\n            <div class=\"local-help-card-icon\">👥</div>\n            <h4>Senior Centre</h4>\n            <p>Community centres often host technology classes and support groups.</p>\n          </div>\n          <div class=\"local-help-card\">\n            <div class=\"local-help-card-icon\">📞</div>\n            <h4>Connected Canadians</h4>\n            <p>Free one-on-one tech support by phone or video call.<br><strong><a href=\"tel:+18558080505\">1-855-808-0505</a></strong></p>\n          </div>\n          <div class=\"local-help-card\">\n            <div class=\"local-help-card-icon\">🌐</div>\n            <h4>Cyber-Seniors</h4>\n            <p>Free tech training from trained volunteers.<br><strong><a href=\"tel:+18442173057\">1-844-217-3057</a></strong></p>\n          </div>\n        </div>\n        <div class=\"local-help-dynamic\"></div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">🎉</span>\n        <p>Congratulations! You have completed Module 5!</p>\n        <p class=\"check-text\">You are now a confident communicator. Email and messaging are tools for staying close to the people you care about — and you know how to use them safely.</p>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"feeling-stuck-box\">\n        <h4>Feeling Stuck?</h4>\n        <p>You do not have to figure this out alone. These free services are staffed by real, patient people who love helping:</p>\n        <p class=\"resource-phone\"><strong>Connected Canadians</strong> — <a href=\"tel:+18558080505\">1-855-808-0505</a></p>\n        <p class=\"resource-phone\"><strong>Cyber-Seniors</strong> — <a href=\"tel:+18442173057\">1-844-217-3057</a></p>\n        <p>Both services are free, Canadian, and specialise in helping older adults with technology at your own pace.</p>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div style=\"text-align:center;padding:1rem 0 0.5rem\">\n    <button class=\"btn-print\" onclick=\"window.print()\" aria-label=\"Print this module\">🖨️ Print This Module</button>\n  </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<section class=\"related-modules\" aria-label=\"Related modules\">\n        <h3 class=\"related-title\">Related Modules</h3>\n        <div class=\"related-grid\">\n          <a href=\"module-2.html\" class=\"related-card\">\n            <span class=\"related-num\">Module 2</span>\n            <span class=\"related-name\">The Security Shield</span>\n            <span class=\"related-desc\">Email scams are one of the most common threats — the Security Shield gives you the framework to stop them.</span>\n          </a>\n          <a href=\"module-3.html\" class=\"related-card\">\n            <span class=\"related-num\">Module 3</span>\n            <span class=\"related-name\">Passwords &amp; Biometrics</span>\n            <span class=\"related-desc\">A hacked email account usually means a stolen password — strong credentials keep your inbox yours.</span>\n          </a>\n          <a href=\"module-6.html\" class=\"related-card\">\n            <span class=\"related-num\">Module 6</span>\n            <span class=\"related-name\">Banking &amp; Transactions</span>\n            <span class=\"related-desc\">Many banking scams begin with a fake email or text message — spot them here before any money moves.</span>\n          </a>\n        </div>\n      </section>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"module-complete-action\">\n        <button class=\"btn-mark-complete\" onclick=\"markModuleComplete(5)\" aria-label=\"Mark Module 5 complete\">✓ Mark this module complete</button>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"dc-newsletter-slot\" style=\"margin:2rem 0 1rem\"></div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<footer class=\"site-footer\">\n        <div class=\"footer-inner\">\n          <p class=\"footer-brand\">Digital Confidence Centre</p>\n          <p class=\"footer-tagline\">A free digital learning programme for all Canadians</p>\n          <nav class=\"footer-links\" aria-label=\"Footer navigation\">\n            <a href=\"index.html\">Home</a> |\n            <a href=\"digital-literacy-101.html\">Modules</a> |\n            <a href=\"resources.html\">Resources</a> |\n            <a href=\"tips/index.html\">Newsletter</a> |\n            <a href=\"print-centre.html\">Print Centre</a> |\n            <a href=\"recommended-tools.html\">Recommended Tools</a> |\n            <a href=\"faq.html\">FAQ</a> |\n            <a href=\"glossary.html\">Glossary</a> |\n            <a href=\"whats-coming.html\">What's Coming</a> |\n            <a href=\"family-setup.html\">For Families</a> |\n            <a href=\"about.html\">About</a> |\n            <a href=\"privacy.html\">Privacy Policy</a> |\n            <a href=\"accessibility.html\">Accessibility</a> |\n            <a href=\"#\" onclick=\"openFeedbackModal(); return false;\">Ideas &amp; Feedback</a> |\n            <a href=\"resources/support-directory.html\">Get Help</a>\n          </nav>\n          <p class=\"footer-support\">Questions about this site? Leave us a voice message or written note using the Feedback button.</p>\n          <p class=\"footer-copy\">&copy; 2026 Two Birds Innovation. Made with care in Ontario, Canada.</p>\n          <p class=\"city-footer-label\" style=\"display:none;\"></p>\n          <p class=\"device-footer-label\" style=\"display:none;\"></p>\n        </div>\n      </footer>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div id=\"progress-announcer\" aria-live=\"polite\" aria-atomic=\"true\" class=\"sr-only\"></div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"quick-answers-accordion\" id=\"quick-answers\">\n        <h2 data-en=\"Quick Answers\" data-fr=\"Réponses rapides\">Quick Answers</h2>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>How can I tell if an email is from my real bank?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>Check the sender full email address — not just the display name. Your bank email will come from their official domain (e.g., @rbc.com), not @rbcalert.info or @gmail.com. If unsure, close the email and log in to your bank website directly.</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>Is it safe to click links in emails?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>Treat links in unexpected emails with caution. If the email is urgent, claims something is wrong with your account, or promises a reward — do not click the link. Open a browser and type the company address directly.</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>What is a phishing email?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>Phishing is when a criminal sends a fake email that looks like it is from your bank, Canada Post, Amazon, or the government. The goal is to trick you into entering your password or credit card number. Apply the 3-Second Rule: pause, be suspicious, and go to the real website yourself.</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>What should I do if I accidentally clicked a suspicious link?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>Do not enter any information on the page that opened. Close the tab immediately. If you are unsure, call your bank fraud line. If no financial information was entered, you are likely fine — but changing your email password as a precaution is a good idea.</p>\n          </div>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"dcc-quiz-container\" id=\"dcc-after-quiz\" aria-label=\"Knowledge check — after the module\" style=\"margin:2rem 0\"></div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"sources-block\">\n        <h3 data-en=\"Sources &amp; References\" data-fr=\"Sources et références\">Sources &amp; References</h3>\n        <ul>\n        <li><a href=\"https://www.getcybersafe.gc.ca/en/resources/phishing\" target=\"_blank\" rel=\"noopener noreferrer\">Phishing — Get Cyber Safe Canada</a></li>\n        <li><a href=\"https://fightspam.gc.ca\" target=\"_blank\" rel=\"noopener noreferrer\">Fight Spam — Government of Canada (CRTC)</a></li>\n        </ul>\n      </div>"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What is spam email?",
+      "options": [
+        "A type of canned meat",
+        "Unwanted email, usually trying to sell something or scam you",
+        "Email from the government",
+        "A subscription newsletter"
+      ],
+      "correct": 1,
+      "explanation": "Spam is any unwanted email sent in bulk. It ranges from annoying marketing to dangerous phishing attempts. Most email apps filter it automatically into a Spam folder."
+    },
+    {
+      "question": "You receive an email asking you to click a link to \"verify your account.\" The safest response is:",
+      "options": [
+        "Click the link — it probably is your bank",
+        "Do not click — log in directly to your account through the official website or app",
+        "Reply to ask if it is real",
+        "Forward it to a friend"
+      ],
+      "correct": 1,
+      "explanation": "Always go directly to your bank's official app or website — never through a link in an email. Scammers create convincing fake login pages at fake web addresses."
+    },
+    {
+      "question": "What does BCC mean in an email?",
+      "options": [
+        "Big Carbon Copy",
+        "Blind Carbon Copy — sends to someone without other recipients seeing",
+        "Back-up Copy Check",
+        "British Columbia Communication"
+      ],
+      "correct": 1,
+      "explanation": "BCC (Blind Carbon Copy) lets you include someone on an email without other recipients knowing. It protects privacy when emailing groups."
+    },
+    {
+      "question": "If you receive a text message from an unknown number with a link, you should:",
+      "options": [
+        "Tap the link to find out what it is",
+        "Delete the message — do not tap any links from unknown senders",
+        "Reply to ask who sent it",
+        "Forward it to 911"
+      ],
+      "correct": 1,
+      "explanation": "Never tap links from unknown senders. Smishing (SMS phishing) is increasingly common. Legitimate organisations do not send unsolicited texts with links."
+    },
+    {
+      "question": "Which is the most important thing to do when you have finished using your email on a shared computer?",
+      "options": [
+        "Clear the browser cache",
+        "Sign out / log out of your account",
+        "Delete all your messages",
+        "Change your password every time"
+      ],
+      "correct": 1,
+      "explanation": "Signing out closes your session. Without this, the next person to use the computer could access your email by pressing Back in the browser."
+    }
+  ],
+  "prev_module": {
+    "slug": "module-4.html",
+    "label": "Module 4: App Store Safety"
+  },
+  "next_module": {
+    "slug": "module-6.html",
+    "label": "Module 6: Banking & Transactions"
+  },
+  "accessibility": {
+    "lang": "en-CA",
+    "wcag_level": "AA"
+  },
+  "category": "Communication",
+  "category_icon": "✉️",
+  "difficulty": "Beginner",
+  "time": "25 min",
+  "what_you_learn": [
+    "How to spot a phishing email",
+    "What to do with suspicious text messages",
+    "How spam filters work and how to use them",
+    "Safe habits for email and messaging"
+  ],
+  "summary": "Email and text messages are how most scam attempts reach you. You will learn to tell the difference between a real message and a fake one, and what to do when you receive something suspicious."
+}

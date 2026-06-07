@@ -1,0 +1,308 @@
+{
+  "id": "module-2-5",
+  "number": 2.5,
+  "slug": "module-2-5",
+  "title": "Common Digital Tasks",
+  "description": "Everyday digital skills for Ontario seniors — send an e-Transfer, book appointments online, use Google Maps, video call family, and safely back up photos.",
+  "keywords": "email attachments seniors, how to print iPad, download folder Windows Mac, file organisation seniors Ontario, send photos by email",
+  "date_published": "March 2026",
+  "hero_image": {
+    "url": "https://images.unsplash.com/photo-1587440871875-191322ee64b0?w=1200&h=400&fit=crop",
+    "alt": "A person sitting comfortably at a table using an iPad",
+    "width": 1200,
+    "height": 400
+  },
+  "intro": "Eight practical skills for everyday digital life — from sending money safely and booking doctor appointments online, to video calling family and keeping your photos backed up. Each section walks you through the steps, one at a time, iOS-first.",
+  "story": {
+    "label": "Dorothy's Story",
+    "paragraphs": [
+      "Dorothy, 76, lives in St. Thomas. For years she relied on her son to book appointments, transfer money, and get directions. Then her son moved to Calgary. \"I had to learn,\" she says, \"or I'd be stuck.\"",
+      "With a bit of patient practice, Dorothy now sends e-Transfers to her grandchildren, books her own physio appointments online, and video calls her son every Sunday. \"My iPad does more than I ever thought possible,\" she says. \"I just needed someone to show me the steps.\"",
+      "This module is that patient guide. Eight real-life tasks, one step at a time."
+    ]
+  },
+  "confidence_check": "✅ You are in a safe place.\n          Nothing on this page can harm your device. You cannot break anything by reading.\n          If anything feels overwhelming, take a break and come back — your progress is saved.",
+  "sections": [
+    {
+      "type": "raw_html",
+      "content": "<div class=\"module-intro\">\n        <p class=\"module-time\">⏱ About 35–45 minutes — go at your own pace</p>\n        <div class=\"confidence-check-box\">\n          ✅ <strong>You are in a safe place.</strong><br>\n          Nothing on this page can harm your device. You cannot break anything by reading.\n          If anything feels overwhelming, take a break and come back — your progress is saved.\n        </div>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Section 1: How to Send an e-Transfer Safely"
+    },
+    {
+      "type": "paragraph",
+      "content": "An Interac e-Transfer lets you send money from your bank account directly to another person, using only their email address or phone number. It is one of the most common ways Canadians pay each other for things like rent, splitting a bill, or sending a birthday gift to a grandchild."
+    },
+    {
+      "type": "paragraph",
+      "content": "Most Canadian banks support it, and it works right from their app on your iPad or iPhone. The steps are similar no matter which bank you use."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"walkthrough\">\n        <h4>How to Send an e-Transfer (iOS — most banks)</h4>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open your bank's app on your iPad or iPhone and sign in.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Look for a section called <strong>Interac e-Transfer</strong>, <strong>Send Money</strong>, or <strong>Pay &amp; Transfer</strong>. It is usually on the main menu or dashboard.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Tap <strong>Send</strong>.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Choose or add a <strong>recipient</strong>. Enter their email address or phone number exactly as they have given it to you.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Type the <strong>amount</strong> you want to send.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">6</span>\n          <span class=\"step-text\">Add a <strong>message</strong> if you like (optional), such as \"Happy birthday!\" or \"For groceries.\"</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">7</span>\n          <span class=\"step-text\">Create a <strong>security question</strong> and answer — something only the recipient will know. Tell them the answer separately (by phone, not in the e-Transfer message).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">8</span>\n          <span class=\"step-text\">Review the details carefully, then tap <strong>Send</strong>. You will receive a confirmation that the transfer was sent.</span>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"three-second-rule-box\">\n        <h4>3-Second Rule for e-Transfers</h4>\n        <p><strong>Stop.</strong> Double-check the email or phone number before you tap Send. e-Transfers sent to the wrong address are very difficult to recover. <strong>Breathe.</strong> Is this person someone you actually know? Did they ask you to send money through a message you were not expecting? If yes — stop and verify by calling them first. <strong>Verify.</strong> Real banks and Canada Revenue will never ask you to pay using e-Transfer.</p>\n      </div>"
+    },
+    {
+      "type": "tip",
+      "content": "Once a recipient has accepted your e-Transfer, it cannot be cancelled. Before sending, always verify the email address or phone number is correct. If you accidentally send to the wrong address and they have not yet accepted, your bank may be able to cancel it — call them right away."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">💛</span>\n        <p><strong>Confidence Check — Section 1:</strong> Which of the following is the safest way to share the e-Transfer security answer with the recipient?</p>\n        <ul class=\"content-list\">\n          <li>A) Include it in the e-Transfer message</li>\n          <li>B) Send it in a separate email right after</li>\n          <li>C) Call them and tell them the answer by phone ✅</li>\n          <li>D) Use a simple answer like \"yes\" so it is easy to guess</li>\n        </ul>\n        <p><em>Answer: C. Always share the security answer by phone — this is what keeps the transfer safe even if the email is intercepted.</em></p>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Section 2: How to Book a Medical Appointment Online"
+    },
+    {
+      "type": "paragraph",
+      "content": "Many doctors, clinics, and specialists in Ontario now allow you to book appointments through their website or a patient portal. It is faster than waiting on hold, and you can do it any time of day from your iPad or iPhone."
+    },
+    {
+      "type": "paragraph",
+      "content": "The most common patient portal in Ontario is <strong>MyChart</strong> (used by many hospitals and clinics). Your doctor may also use their own booking system. These steps cover the general process — the buttons may look slightly different on each site."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"walkthrough\">\n        <h4>How to Book an Appointment Online (General Steps — iPad/iPhone)</h4>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Ask your doctor's office for their online booking website address or the name of their patient portal. Write it down.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Open <strong>Safari</strong> on your iPad or iPhone and type in the website address.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">If this is your first visit, look for a <strong>Register</strong> or <strong>Create Account</strong> button. You will usually need your health card number and email address.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Once registered, sign in with your email and password.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Look for a button that says <strong>Book Appointment</strong>, <strong>Request a Visit</strong>, or <strong>Schedule.</strong></span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">6</span>\n          <span class=\"step-text\">Choose the <strong>type of appointment</strong> (e.g., \"Annual physical,\" \"Follow-up,\" \"In-person,\" or \"Virtual visit\").</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">7</span>\n          <span class=\"step-text\">Select a <strong>date and time</strong> from the available calendar. Tap the time slot you want.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">8</span>\n          <span class=\"step-text\">Confirm your details and tap <strong>Book</strong> or <strong>Confirm Appointment</strong>. You should receive a confirmation email.</span>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"three-second-rule-box\">\n        <h4>3-Second Rule for Health Websites</h4>\n        <p>Before entering your health card number or personal information, make sure the website address starts with <strong>https://</strong> and shows a padlock icon in the address bar. This means the connection is secure. Never enter health information on a website you found through a random link in an email.</p>\n      </div>"
+    },
+    {
+      "type": "tip",
+      "content": "After booking, take a screenshot of the confirmation page. On iPad or iPhone, press the <strong>Side button</strong> and <strong>Volume Up</strong> at the same time. The screenshot saves to your Photos app. That way you have a record of the date and time even if the confirmation email is hard to find later."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">💛</span>\n        <p><strong>Confidence Check — Section 2:</strong> You want to book a doctor appointment online. What should you verify before entering your health card number on the website?</p>\n        <ul class=\"content-list\">\n          <li>A) That the website has a nice design</li>\n          <li>B) That the address starts with https:// and shows a padlock ✅</li>\n          <li>C) That the website was the first result in Google</li>\n          <li>D) That the website loads quickly</li>\n        </ul>\n        <p><em>Answer: B. The padlock and https:// mean your information is encrypted and being sent securely.</em></p>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Section 3: How to Use Google Maps to Get Directions"
+    },
+    {
+      "type": "paragraph",
+      "content": "Google Maps is a free app that gives you turn-by-turn directions to anywhere in Canada. It knows current traffic, road closures, and even bus routes. Think of it as a patient navigator sitting beside you — it recalculates if you take a wrong turn, and it never gets frustrated."
+    },
+    {
+      "type": "paragraph",
+      "content": "The Maps app is already on most iPhones and iPads. You can also use Google Maps — both work the same way for basic directions."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"walkthrough\">\n        <h4>How to Get Directions in Apple Maps (iPad/iPhone)</h4>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Find the <strong>Maps</strong> app on your Home screen. It looks like a road map with a red pin.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap the <strong>search bar</strong> at the bottom of the screen and type your destination — for example, \"St. Thomas Elgin General Hospital.\"</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Tap the correct result from the list. A map appears showing the location.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Tap the <strong>Directions</strong> button (the blue button at the bottom or the car/walking icon).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Choose your travel mode: 🚗 <strong>Drive</strong>, 🚶 <strong>Walk</strong>, or 🚌 <strong>Transit</strong>.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">6</span>\n          <span class=\"step-text\">Tap <strong>Go</strong>. The app will speak each turn aloud so you can keep your eyes on the road.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">7</span>\n          <span class=\"step-text\">To stop navigation, tap anywhere on the screen, then tap <strong>End</strong> or <strong>Cancel Route.</strong></span>\n        </div>\n      </div>"
+    },
+    {
+      "type": "tip",
+      "content": "You can search for a destination before you leave home, so you know how long the trip will take and what route to expect. Just tap <strong>Leave Now</strong> or enter a departure time to see estimated arrival times. This is especially helpful for medical appointments where being on time matters."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">💛</span>\n        <p><strong>Confidence Check — Section 3:</strong> You are using Apple Maps for driving directions and you miss a turn. What happens?</p>\n        <ul class=\"content-list\">\n          <li>A) The app stops working and you have to start over</li>\n          <li>B) The app automatically recalculates a new route from your current location ✅</li>\n          <li>C) You have to pull over and search for a new route</li>\n          <li>D) An error message appears and you must call someone for help</li>\n        </ul>\n        <p><em>Answer: B. Navigation apps automatically recalculate the route if you take a wrong turn — no need to panic or pull over.</em></p>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Section 4: How to Download and Use an App Safely"
+    },
+    {
+      "type": "paragraph",
+      "content": "Your iPad and iPhone have access to millions of apps through the <strong>App Store</strong> — and the vast majority are completely safe and free to download. Apps can help you with everything from reading the news to calling family to tracking your medications."
+    },
+    {
+      "type": "paragraph",
+      "content": "Downloading an app from the App Store is safe because Apple reviews every app before it is listed. Still, a few simple habits will keep you protected."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"walkthrough\">\n        <h4>How to Download an App from the App Store (iPad/iPhone)</h4>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Find the <strong>App Store</strong> app on your Home screen. It is a blue square with a white letter \"A\" made of pencils.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap the <strong>Search</strong> icon (magnifying glass) at the bottom right.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Type the name of the app you want — for example, \"Zoom\" or \"CBC News.\"</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Look at the results. Check the app name, developer name, and star rating. Trusted apps have thousands of reviews and a recognisable developer name.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Tap the app to see its full listing. Read the first few reviews to make sure others have had a good experience.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">6</span>\n          <span class=\"step-text\">Tap <strong>Get</strong> (for free apps) or the price button (for paid apps). You may be asked to confirm with Face ID or your Apple ID password.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">7</span>\n          <span class=\"step-text\">Wait for the download to finish. The app appears on your Home screen.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">8</span>\n          <span class=\"step-text\">When you open the app for the first time, it may ask for permissions (location, camera, notifications). Only tap <strong>Allow</strong> for permissions that make sense for what the app does.</span>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"three-second-rule-box\">\n        <h4>3-Second Rule for App Downloads</h4>\n        <p><strong>Stop.</strong> Did someone send you a link to download an app from outside the App Store? That is a red flag — only download apps through the App Store, never from a website link. <strong>Breathe.</strong> Does the app ask for more permissions than it needs? A recipe app has no reason to access your contacts. <strong>Verify.</strong> Check the reviews and the developer name. A real app from a known company will show a clear publisher name like \"Apple Inc.\" or \"CBC/Radio-Canada.\"</p>\n      </div>"
+    },
+    {
+      "type": "tip",
+      "content": "If an app you downloaded turns out to be one you do not want, deleting it is easy. Press and hold on the app icon on your Home screen until a small menu appears, then tap <strong>Remove App</strong> → <strong>Delete App.</strong> The app and all its data are removed from your device."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">💛</span>\n        <p><strong>Confidence Check — Section 4:</strong> You want to download a weather app. Your friend texts you a link to download it from a website. What should you do?</p>\n        <ul class=\"content-list\">\n          <li>A) Tap the link — your friend recommended it so it must be safe</li>\n          <li>B) Go to the App Store and search for the weather app yourself instead ✅</li>\n          <li>C) Tap the link but close the app immediately if it looks wrong</li>\n          <li>D) Ask your friend to install it for you by borrowing your iPad</li>\n        </ul>\n        <p><em>Answer: B. Always download apps directly from the App Store, not from links in text messages or emails. The App Store is Apple's safe, verified source.</em></p>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Section 5: How to Video Call on an iPad or iPhone"
+    },
+    {
+      "type": "paragraph",
+      "content": "Video calling lets you see the face of the person you are talking to — whether they are in the next town or across the country. FaceTime is built into every iPhone and iPad, and it is free as long as you are connected to Wi-Fi."
+    },
+    {
+      "type": "paragraph",
+      "content": "If your family member uses an Android phone, you can video call them using <strong>Zoom</strong>, <strong>WhatsApp</strong>, or <strong>Google Meet</strong> instead — all are free and work on iPad."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"walkthrough\">\n        <h4>How to Make a FaceTime Video Call (iPad/iPhone)</h4>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Find the <strong>FaceTime</strong> app on your Home screen. It looks like a green square with a white video camera.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap the <strong>+</strong> (plus) button in the top right corner.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Type the name, phone number, or email address of the person you want to call. Their name will appear if they are in your Contacts.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Tap <strong>Video</strong> to start a video call, or <strong>Audio</strong> for voice only.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Your call connects. You will see your own face in a small box at the corner — you can tap and drag this box to move it out of the way.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">6</span>\n          <span class=\"step-text\">During the call, tap the screen to see the controls. You can mute yourself (microphone button), turn off your camera (camera button), or end the call (red phone button).</span>\n        </div>\n      </div>"
+    },
+    {
+      "type": "tip",
+      "content": "For the best video call experience, prop your iPad up on a stand or lean it against something so it is at eye level. Good lighting makes a big difference — sit facing a window if possible, so the light falls on your face rather than behind you. If the call is choppy or freezing, move closer to your Wi-Fi router."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">💛</span>\n        <p><strong>Confidence Check — Section 5:</strong> You are on a FaceTime call and the video and audio are cutting in and out. What is the most likely cause?</p>\n        <ul class=\"content-list\">\n          <li>A) Your iPad has a broken screen</li>\n          <li>B) FaceTime is not available in Canada</li>\n          <li>C) Your Wi-Fi connection is slow or weak ✅</li>\n          <li>D) The other person's iPad is broken</li>\n        </ul>\n        <p><em>Answer: C. Choppy audio and video are almost always caused by a slow or weak Wi-Fi signal. Try moving closer to your router.</em></p>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Section 6: How to Back Up Your Photos to iCloud"
+    },
+    {
+      "type": "paragraph",
+      "content": "Your photos are precious — birthdays, grandchildren, holidays, and everyday moments that cannot be replaced. iCloud backup means a copy of all your photos is saved automatically to Apple's secure storage. If your iPad is ever lost, stolen, or broken, your photos are safe and can be restored to a new device."
+    },
+    {
+      "type": "paragraph",
+      "content": "Apple gives you 5 GB of free iCloud storage. Most people find this fills up quickly with photos, so consider the 50 GB plan for $1.29 per month — it is worth it for peace of mind."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"walkthrough\">\n        <h4>How to Turn On iCloud Photos (iPad/iPhone)</h4>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open the <strong>Settings</strong> app (the grey gear icon on your Home screen).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap your <strong>name</strong> at the very top of Settings (this opens your Apple ID settings).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Tap <strong>iCloud.</strong></span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Tap <strong>Photos.</strong></span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Make sure <strong>Sync this iPhone</strong> (or \"Sync this iPad\") is turned on. The toggle should be green.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">6</span>\n          <span class=\"step-text\">Choose <strong>Optimise iPhone Storage</strong> — this keeps smaller versions on your device and the full-quality originals in iCloud. This saves space on your device.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">7</span>\n          <span class=\"step-text\">Your photos now back up automatically whenever your iPad is connected to Wi-Fi. You do not need to do anything further — it happens in the background.</span>\n        </div>\n      </div>"
+    },
+    {
+      "type": "tip",
+      "content": "To check that your backup is working, go to <strong>Settings → your name → iCloud → iCloud Backup</strong> and look for the date and time of the last successful backup. If it says \"Last successful backup: Today,\" you are all set. If it has not backed up in several days, make sure your iPad is plugged in and connected to Wi-Fi."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">💛</span>\n        <p><strong>Confidence Check — Section 6:</strong> You accidentally drop your iPad and the screen shatters. You set up iCloud Photos last month. What happens to your photos?</p>\n        <ul class=\"content-list\">\n          <li>A) All your photos are lost forever</li>\n          <li>B) Your photos are safe in iCloud and can be restored to a new iPad ✅</li>\n          <li>C) Your photos are saved in your email</li>\n          <li>D) Apple will send your photos back on a USB stick</li>\n        </ul>\n        <p><em>Answer: B. When iCloud Photos is turned on, all your photos are automatically backed up. A new iPad signed into the same Apple ID will restore them completely.</em></p>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Section 7: How to Check Your Data Usage"
+    },
+    {
+      "type": "paragraph",
+      "content": "Your iPhone or iPad uses <strong>data</strong> to connect to the internet when you are away from home Wi-Fi — such as when you are out shopping, at a clinic, or visiting a friend. Your phone plan includes a set amount of data each month, and going over that limit can result in extra charges from your carrier."
+    },
+    {
+      "type": "paragraph",
+      "content": "Checking your data usage takes about 30 seconds and can save you from a surprise on your phone bill."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"walkthrough\">\n        <h4>How to Check Data Usage on iPhone/iPad</h4>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open the <strong>Settings</strong> app.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap <strong>Cellular</strong> (on iPhone) or <strong>Mobile Data</strong> (on some iPad models with a data plan).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">At the top you will see <strong>Current Period</strong> — this shows how much data you have used since you last reset the counter.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Scroll down to see a list of apps and how much data each one has used. This helps you spot which apps are using the most.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">To reset this counter at the start of each billing cycle, scroll to the very bottom and tap <strong>Reset Statistics.</strong></span>\n        </div>\n      </div>"
+    },
+    {
+      "type": "tip",
+      "content": "Streaming video (like YouTube or Netflix) uses large amounts of data very quickly. Whenever possible, do your video watching at home on Wi-Fi rather than on cellular data. To check if your device is on Wi-Fi, look for the Wi-Fi icon (curved lines) in the top right corner of your screen. If you see it, you are on Wi-Fi and not using your data plan."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">💛</span>\n        <p><strong>Confidence Check — Section 7:</strong> You want to watch a long video on your iPhone. Which of the following will use your cellular data plan?</p>\n        <ul class=\"content-list\">\n          <li>A) Watching it at home connected to your home Wi-Fi</li>\n          <li>B) Watching it at a coffee shop on their free Wi-Fi</li>\n          <li>C) Watching it while walking in a park with no Wi-Fi nearby ✅</li>\n          <li>D) Watching it at the library on their Wi-Fi</li>\n        </ul>\n        <p><em>Answer: C. When there is no Wi-Fi available, your device switches to your cellular data plan. Videos use a lot of data, so save streaming for when you are connected to Wi-Fi.</em></p>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Section 8: How to Update Your Apps and Software"
+    },
+    {
+      "type": "paragraph",
+      "content": "Keeping your apps and iPad software up to date is one of the most important things you can do for your security. Updates fix problems that hackers might exploit, add useful new features, and keep your device running smoothly. Think of it like getting a booster shot — it keeps your device healthy."
+    },
+    {
+      "type": "paragraph",
+      "content": "Updating is free and safe. It does not delete your photos, messages, or settings."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"walkthrough\">\n        <h4>How to Update Your Apps (iPad/iPhone)</h4>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open the <strong>App Store</strong> app.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap your <strong>profile picture or initials</strong> in the top right corner.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Scroll down to see <strong>Pending Updates</strong>. This shows all the apps with available updates.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Tap <strong>Update All</strong> to update every app at once. Or tap <strong>Update</strong> next to individual apps.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Wait for the updates to download and install. This usually takes 1–3 minutes depending on your Wi-Fi speed.</span>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"walkthrough\">\n        <h4>How to Update iOS (the iPad/iPhone Operating System)</h4>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open <strong>Settings.</strong></span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap <strong>General.</strong></span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Tap <strong>Software Update.</strong></span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">If an update is available, tap <strong>Download and Install.</strong></span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Your iPad may need to restart. This is normal — it will come back on by itself in a few minutes.</span>\n        </div>\n      </div>"
+    },
+    {
+      "type": "tip",
+      "content": "You can turn on <strong>Automatic Updates</strong> so your iPad installs updates on its own overnight while it charges. Go to <strong>Settings → App Store → App Updates</strong> and turn on the toggle. For iOS updates, go to <strong>Settings → General → Software Update → Automatic Updates</strong> and turn on all options. Once set, you never have to think about it again."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">💛</span>\n        <p><strong>Confidence Check — Section 8:</strong> A pop-up appears on your iPhone saying \"iOS 18.3 is now available. Would you like to update?\" This arrived through Settings. What should you do?</p>\n        <ul class=\"content-list\">\n          <li>A) Ignore it — updates can cause problems</li>\n          <li>B) Call Apple first to verify the update is real</li>\n          <li>C) Tap Download and Install — this is a legitimate system update ✅</li>\n          <li>D) Delete the message and wait for someone to tell you it is safe</li>\n        </ul>\n        <p><em>Answer: C. Software update prompts that appear inside your Settings app are always legitimate. These updates are important for your security. It is updates that arrive through pop-ups in websites or text messages that you should ignore.</em></p>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Your Progress Checklist"
+    },
+    {
+      "type": "paragraph",
+      "content": "Tick each item when you feel confident about it. Your progress is saved automatically."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"checklist\">\n        <div class=\"progress-item\">\n          <input type=\"checkbox\" class=\"progress-checkbox\" data-id=\"m2-5-1\" id=\"m2-5-1\">\n          <label class=\"progress-label\" for=\"m2-5-1\">I can send an Interac e-Transfer safely, including the security question</label>\n        </div>\n        <div class=\"progress-item\">\n          <input type=\"checkbox\" class=\"progress-checkbox\" data-id=\"m2-5-2\" id=\"m2-5-2\">\n          <label class=\"progress-label\" for=\"m2-5-2\">I know how to find my doctor's online booking portal and book an appointment</label>\n        </div>\n        <div class=\"progress-item\">\n          <input type=\"checkbox\" class=\"progress-checkbox\" data-id=\"m2-5-3\" id=\"m2-5-3\">\n          <label class=\"progress-label\" for=\"m2-5-3\">I can use Apple Maps or Google Maps to get turn-by-turn directions</label>\n        </div>\n        <div class=\"progress-item\">\n          <input type=\"checkbox\" class=\"progress-checkbox\" data-id=\"m2-5-4\" id=\"m2-5-4\">\n          <label class=\"progress-label\" for=\"m2-5-4\">I know how to safely download an app from the App Store</label>\n        </div>\n        <div class=\"progress-item\">\n          <input type=\"checkbox\" class=\"progress-checkbox\" data-id=\"m2-5-5\" id=\"m2-5-5\">\n          <label class=\"progress-label\" for=\"m2-5-5\">I can start a FaceTime video call on my iPad or iPhone</label>\n        </div>\n        <div class=\"progress-item\">\n          <input type=\"checkbox\" class=\"progress-checkbox\" data-id=\"m2-5-6\" id=\"m2-5-6\">\n          <label class=\"progress-label\" for=\"m2-5-6\">I have iCloud Photos turned on and my photos are being backed up</label>\n        </div>\n        <div class=\"progress-item\">\n          <input type=\"checkbox\" class=\"progress-checkbox\" data-id=\"m2-5-7\" id=\"m2-5-7\">\n          <label class=\"progress-label\" for=\"m2-5-7\">I know how to check my cellular data usage in Settings</label>\n        </div>\n        <div class=\"progress-item\">\n          <input type=\"checkbox\" class=\"progress-checkbox\" data-id=\"m2-5-8\" id=\"m2-5-8\">\n          <label class=\"progress-label\" for=\"m2-5-8\">I can update my apps and iOS software to keep my device secure</label>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"local-help-section\">\n        <h2>Get Help in Ontario</h2>\n        <p>If you would like someone to walk through these steps with you in person, these free Ontario services are here for you:</p>\n        <ul class=\"content-list\">\n          <li><strong>Canadians Getting Connected:</strong> <a href=\"tel:18558080505\">1-855-808-0505</a> — free digital literacy coaching for seniors across Ontario</li>\n          <li><strong>Cyber-Seniors:</strong> <a href=\"tel:18442173057\">1-844-217-3057</a> — free tech help from trained volunteers</li>\n          <li><strong>Your local library:</strong> Many Ontario public libraries offer free one-on-one technology appointments. Call your branch to ask.</li>\n        </ul>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div style=\"text-align:center;padding:1rem 0 0.5rem\">\n    <button class=\"btn-print\" onclick=\"window.print()\" aria-label=\"Print this module\">🖨️ Print This Module</button>\n  </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<section class=\"related-modules\" aria-label=\"Related modules\">\n        <h3 class=\"related-title\">Related Modules</h3>\n        <div class=\"related-grid\">\n          <a href=\"module-3.html\" class=\"related-card\">\n            <span class=\"related-num\">Module 3</span>\n            <span class=\"related-name\">Passwords &amp; Biometrics</span>\n            <span class=\"related-desc\">Secure the accounts you use for everyday tasks with strong passwords and fingerprint login.</span>\n          </a>\n          <a href=\"module-6.html\" class=\"related-card\">\n            <span class=\"related-num\">Module 6</span>\n            <span class=\"related-name\">Banking &amp; Transactions</span>\n            <span class=\"related-desc\">Put your everyday digital skills to work for safe, confident online banking and purchases.</span>\n          </a>\n          <a href=\"module-7.html\" class=\"related-card\">\n            <span class=\"related-num\">Module 7</span>\n            <span class=\"related-name\">Photos &amp; Memories</span>\n            <span class=\"related-desc\">Use the camera and photo sharing skills you've practised to preserve and share your memories.</span>\n          </a>\n        </div>\n      </section>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"module-complete-action\">\n        <button class=\"btn-mark-complete\" onclick=\"markModuleComplete(&#x27;2-5&#x27;)\" aria-label=\"Mark Module 2-5 complete\">✓ Mark this module complete</button>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"dc-newsletter-slot\" style=\"margin:2rem 0 1rem\"></div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"dcc-quiz-container\" id=\"dcc-after-quiz\" style=\"margin:2rem 0\"></div>"
+    }
+  ],
+  "quiz": [],
+  "prev_module": {
+    "slug": "module-2.html",
+    "label": "Module 2: The Security Shield"
+  },
+  "next_module": {
+    "slug": "module-3.html",
+    "label": "Module 3: Passwords & Biometrics"
+  },
+  "accessibility": {
+    "lang": "en-CA",
+    "wcag_level": "AA"
+  },
+  "category": "Everyday Skills",
+  "category_icon": "📂",
+  "difficulty": "Beginner",
+  "time": "20 min",
+  "what_you_learn": [
+    "How to search for information online",
+    "How to send a text message",
+    "How to use Google Maps for directions",
+    "How to take and share a photo"
+  ],
+  "summary": "Practical, step-by-step instructions for the most common tasks people do on their devices every day — looking things up, sending a message, using maps, and more."
+}

@@ -1,0 +1,353 @@
+{
+  "id": "module-6",
+  "number": 6,
+  "slug": "module-6",
+  "title": "Banking & Transactions",
+  "description": "Ontario seniors can bank safely online using their iPad or iPhone — this module covers secure login, recognising bank scams, and protecting your finances.",
+  "keywords": "online banking seniors Ontario, Apple Pay tutorial, safe online shopping iPad, banking app safety seniors, e-transfer seniors",
+  "date_published": "2026-03-07",
+  "hero_image": {
+    "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=400&fit=crop&v=2",
+    "alt": "A person using a smartphone to complete a safe online banking transaction",
+    "width": 1200,
+    "height": 400
+  },
+  "intro": "How to check your balance, pay bills, and make safe purchases online — all from your iPad. Online banking is secure, convenient, and less scary than you think.",
+  "story": {
+    "label": "Jean's Story",
+    "paragraphs": [
+      "Jean, 73, had been driving to her local bank branch every Friday to check her account balance. Rain, snow, construction — it did not matter. She trusted the bank teller and she trusted the printed receipt.",
+      "Then the pandemic changed everything. The branch limited hours, the lineups were long, and Jean's daughter suggested she try mobile banking. \"I was terrified,\" Jean recalls. \"What if someone stole my money through the phone? What if I pressed the wrong button and accidentally sent my savings somewhere?\"",
+      "Jean's daughter sat with her and walked her through the RBC app. They checked her balance together. They looked at recent transactions. Jean realised that everything she could see at the bank counter, she could see on her iPad — without leaving her kitchen.",
+      "\"I still go to the branch sometimes,\" Jean says with a smile. \"But now it is because I want to, not because I have to. And I check my balance every morning with my coffee.\""
+    ]
+  },
+  "confidence_check": "You are about to learn how to manage your money safely on your device. This is one of the most practical skills you will gain, and it is much simpler than you might expect. Thousands of Canadians your age bank online every day. You can too.",
+  "sections": [
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Why Online Banking Is Actually Safer Than You Think"
+    },
+    {
+      "type": "paragraph",
+      "content": "This might surprise you, but online banking through your bank's official app is extremely secure. Here is why:"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "<strong>Bank apps use encryption.</strong> Encryption scrambles your information so that even if someone intercepted it, they would see only nonsense. It is like writing a letter in a secret code that only you and the bank know."
+        },
+        {
+          "text": "<strong>Your bank monitors for unusual activity.</strong> If someone tries to log in from an unfamiliar location or make an unusual purchase, your bank's security systems flag it immediately."
+        },
+        {
+          "text": "<strong>Face ID adds another layer.</strong> If you set up Face ID (Module 3), no one can open your banking app without your face."
+        },
+        {
+          "text": "<strong>Canadian banks carry deposit insurance.</strong> The Canada Deposit Insurance Corporation (CDIC) protects your deposits up to $100,000. Even in the unlikely event something went wrong, your money is protected."
+        }
+      ]
+    },
+    {
+      "type": "tip",
+      "content": "Banks spend billions of dollars on security every year. The security systems protecting your online banking are the same ones protecting the bank itself. When you use the official app, you are behind the same walls as the bank's own vault."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">💛</span>\n        <p>Confidence Check: Online banking is not a risk — it is a well-guarded service. You deserve the convenience of checking your accounts from home.</p>\n      </div>"
+    },
+    {
+      "type": "warning",
+      "content": "Your bank will never phone, email, or text you to ask for your <a href=\"digital-literacy-101.html#term-password\" class=\"glossary-link\">password</a>, PIN, or security questions. If someone contacts you claiming to be from your bank and asks for this information, hang up or delete the message immediately. Then call your bank directly using the number on the back of your bank card."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"three-second-rule-box\">\n        <h3>Remember the 3-Second Rule</h3>\n        <p>Stop. Breathe. Think before you tap. If something feels urgent or too good to be true, that is your signal to pause.</p>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Getting Your Bank's Real App"
+    },
+    {
+      "type": "device_variant",
+      "variants": [
+        {
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "content": "<p>The most important step is downloading the <strong>real</strong> app from the <strong>real</strong> App Store. Use what you learned in Module 4:</p>\n\n      <div class=\"walkthrough\">\n        <h3>Downloading Your Bank's App</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open the <strong>App Store</strong> (blue icon with white \"A\").</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap <strong>Search</strong> and type your bank's name. For example: \"RBC Mobile\" or \"TD Canada Trust\" or \"BMO\".</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\"><strong>Verify the developer.</strong> The real RBC app is made by \"Royal Bank of Canada.\" The real TD app is made by \"TD Bank Group.\" Look for the official name.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Check the ratings — official bank apps have millions of downloads and high ratings.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Tap <strong>\"Get\"</strong> and confirm with Face ID.</span>\n        </div>\n      </div>\n\n      <div class=\"visual-example-card\" role=\"img\" aria-label=\"Official Bank App\">\n        <div class=\"example-icon\">🏦</div>\n        <div class=\"example-content\">\n          <h4 class=\"example-title\">Official Bank App</h4>\n          <p class=\"example-description\">The official banking app is published under your bank's exact legal company name and has millions of downloads with thousands of verified reviews — look for both before installing.</p>\n        </div>\n      </div>\n\n      <div class=\"warning-block\">\n        <span class=\"warning-label\">Critical Safety Rule</span>\n        <p>Never log into your bank through a link in an email, a text message, or a website someone sent you. Always open the banking app directly from your Home screen, or type the bank's web address yourself in Safari.</p>\n      </div>"
+        },
+        {
+          "devices": [
+            "android-phone",
+            "android-tablet"
+          ],
+          "content": "<p>The most important step is downloading the <strong>real</strong> app from the <strong>real</strong> Google Play Store. Use what you learned in Module 4:</p>\n\n      <div class=\"walkthrough\">\n        <h3>Downloading Your Bank's App</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open the <strong>Google Play Store</strong> (colourful triangle icon).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap the <strong>search bar</strong> at the top and type your bank's name. For example: \"RBC Mobile\" or \"TD Canada Trust\" or \"BMO.\"</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\"><strong>Verify the developer.</strong> The real RBC app is made by \"Royal Bank of Canada.\" The real TD app is made by \"TD Bank Group.\" Look for the official name underneath the app title.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Check the download count and ratings — official bank apps have millions of downloads and high ratings.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Tap <strong>\"Install\"</strong> and wait for it to download. You may need to confirm with your fingerprint or screen lock.</span>\n        </div>\n      </div>\n\n      <div class=\"warning-block\">\n        <span class=\"warning-label\">Critical Safety Rule</span>\n        <p>Never log into your bank through a link in an email, a text message, or a website someone sent you. Always open the banking app directly from your Home screen, or type the bank's web address yourself in Chrome.</p>\n      </div>"
+        },
+        {
+          "devices": [
+            "windows"
+          ],
+          "content": "<p>On your Windows computer, you do not need to install an app — your bank has a full website you can use in your browser. Here is how to set it up safely:</p>\n\n      <div class=\"walkthrough\">\n        <h3>Bookmarking Your Bank's Real Website</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open <strong>Edge or Chrome</strong> on your computer.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Type your bank's website address directly into the address bar at the very top of the browser — <strong>not</strong> into a search box. For example, type: <strong>rbc.com</strong> or <strong>td.com</strong> or <strong>bmo.com</strong>.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Once you are on your bank's real website, look for the <strong>star icon</strong> in the address bar (or press <strong>Ctrl+D</strong>). This saves the page as a <strong>bookmark</strong> so you can find it easily next time.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">From now on, <strong>always open your banking website from your bookmark</strong> — never from a link in an email or a text message.</span>\n        </div>\n      </div>\n\n      <div class=\"warning-block\">\n        <span class=\"warning-label\">Critical Safety Rule</span>\n        <p>Never click a link in an email or text message to log into your bank. Always type the web address yourself (like <strong>rbc.com</strong>) or click your saved bookmark. This is the single most important habit to protect yourself from banking scams.</p>\n      </div>"
+        }
+      ]
+    },
+    {
+      "type": "tip",
+      "content": "Once you have downloaded your bank's app (or bookmarked the website on your computer), you can find it easily. You might place it near your other frequently used apps. That way you always know exactly where it is."
+    },
+    {
+      "type": "warning",
+      "content": "Be careful when searching for your bank's app. Scammers sometimes create fake banking apps with similar names. Always check the developer name — it should match your bank's official name (for example, \"Royal Bank of Canada\" for RBC)."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Checking Your Balance"
+    },
+    {
+      "type": "device_variant",
+      "variants": [
+        {
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "content": "<div class=\"walkthrough\">\n        <h3>Viewing Your Account Balance</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open your <strong>banking app</strong> from the Home screen.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Sign in with your username and password, or use <strong>Face ID</strong> if you have set it up.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Your account balances will appear on the main screen. You will see your chequing account, savings account, and any credit cards.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Tap on any account to see <strong>recent transactions</strong> — a list of money going in and out.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">When you are done, <strong>sign out</strong> (look for a \"Sign Out\" or \"Log Out\" button, usually in the menu) and close the app.</span>\n        </div>\n      </div>"
+        },
+        {
+          "devices": [
+            "android-phone",
+            "android-tablet"
+          ],
+          "content": "<div class=\"walkthrough\">\n        <h3>Viewing Your Account Balance</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open your <strong>banking app</strong> from the Home screen.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Sign in with your username and password, or use your <strong>fingerprint</strong> or <strong>face unlock</strong> if you have set it up.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Your account balances will appear on the main screen. You will see your chequing account, savings account, and any credit cards.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Tap on any account to see <strong>recent transactions</strong> — a list of money going in and out.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">When you are done, <strong>sign out</strong> (look for a \"Sign Out\" or \"Log Out\" button, usually in the menu or behind the three-dot icon) and close the app.</span>\n        </div>\n      </div>"
+        },
+        {
+          "devices": [
+            "windows"
+          ],
+          "content": "<div class=\"walkthrough\">\n        <h3>Viewing Your Account Balance in the Browser</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open <strong>Edge or Chrome</strong> and click your <strong>bank's bookmark</strong>, or type your bank's web address directly into the address bar.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Look for the <strong>\"Sign In\"</strong> or <strong>\"Online Banking\"</strong> button on the bank's website. Click it.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Enter your <strong>username</strong> (often your card number or a username you chose) and <strong>password.</strong> Your browser may offer to fill these in automatically if you saved them.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Your account summary will appear, showing balances for your chequing account, savings, and credit cards. Click on any account to see recent transactions.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">When finished, always click <strong>\"Sign Out\"</strong> or <strong>\"Log Out\"</strong> — usually in the top right corner or in a menu. Then close the browser tab.</span>\n        </div>\n      </div>\n\n      <div class=\"tip-block\">\n        <span class=\"tip-label\">Good Habit: Always Sign Out</span>\n        <p>Always click Sign Out when you finish your online banking session — especially on a shared or family computer. Simply closing the browser window is not enough. Signing out makes sure no one else can access your account if they open the browser later.</p>\n      </div>"
+        }
+      ]
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"visual-example-card\" role=\"img\" aria-label=\"Banking App Home Screen\">\n        <div class=\"example-icon\">💳</div>\n        <div class=\"example-content\">\n          <h4 class=\"example-title\">Banking App Home Screen</h4>\n          <p class=\"example-description\">The banking app main screen shows your account balances at a glance — chequing, savings, and credit cards listed clearly. Tap any account to see your recent transactions.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"three-second-rule\">\n        <h3>The 3-Second Rule for Banking</h3>\n        <div class=\"steps\">\n          <div class=\"step\">\n            <span class=\"step-icon\">✋</span>\n            <span class=\"step-name\">Stop</span>\n            <span class=\"step-desc\">Never rush a financial transaction. There is no deadline.</span>\n          </div>\n          <div class=\"step\">\n            <span class=\"step-icon\">🫁</span>\n            <span class=\"step-name\">Breathe</span>\n            <span class=\"step-desc\">Double-check amounts and recipients before confirming.</span>\n          </div>\n          <div class=\"step\">\n            <span class=\"step-icon\">🔍</span>\n            <span class=\"step-name\">Verify</span>\n            <span class=\"step-desc\">Does this look right? Is this the correct amount and the right person?</span>\n          </div>\n</div>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Paying Bills Online"
+    },
+    {
+      "type": "paragraph",
+      "content": "Most Canadian banks allow you to pay bills (hydro, internet, phone, property tax) directly through the app. The process varies by bank, but here is the general approach:"
+    },
+    {
+      "type": "raw_html",
+      "content": "<ol class=\"numbered-list\">\n        <li>Sign into your banking app.</li>\n        <li>Look for <strong>\"Pay Bills\"</strong> or <strong>\"Bill Payment\"</strong> in the menu.</li>\n        <li>Select the company you want to pay (like your local utility company or \"Bell Canada\"). If it is your first time, you may need to add the company and enter your account number from your paper bill.</li>\n        <li>Enter the <strong>amount</strong> you want to pay.</li>\n        <li>Choose which account to pay from (usually your chequing account).</li>\n        <li><strong>Review everything carefully</strong> before tapping \"Confirm\" or \"Pay.\"</li>\n      </ol>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"visual-example-card\" role=\"img\" aria-label=\"Bill Payment Screen\">\n        <div class=\"example-icon\">🧾</div>\n        <div class=\"example-content\">\n          <h4 class=\"example-title\">Bill Payment Screen</h4>\n          <p class=\"example-description\">The bill payment screen asks you to select a payee (the company you are paying), enter your account number with them, and type the amount — then confirm with fingerprint or PIN.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "tip",
+      "content": "If you are nervous about paying a bill online for the first time, start with a small amount — like paying $10 toward your phone bill. Watch for the payment to appear on your next statement. Once you see it worked, you will feel confident paying the full amount."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">💛</span>\n        <p>Confidence Check: Paying bills from your kitchen table is a wonderful convenience. No more stamps, no more lineups, no more driving in the snow.</p>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"visual-example-card\" role=\"img\" aria-label=\"Interac e-Transfer Screen\">\n        <div class=\"example-icon\">💸</div>\n        <div class=\"example-content\">\n          <h4 class=\"example-title\">Interac e-Transfer Screen</h4>\n          <p class=\"example-description\">The e-Transfer screen asks for the recipient's email or mobile number and the dollar amount. Always double-check the address before sending — transfers can be difficult to reverse.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Safe Online Shopping"
+    },
+    {
+      "type": "device_variant",
+      "variants": [
+        {
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "content": "<p>Buying things online can be safe and convenient if you follow these guidelines:</p>\n\n      <ul class=\"content-list\">\n        <li><strong>Stick to well-known stores.</strong> Amazon.ca, Walmart.ca, Canadian Tire, and other large retailers have strong security.</li>\n        <li><strong>Look for the lock icon.</strong> In Safari, look at the address bar at the top. You should see a small padlock icon before the website address. This means the connection is secure (encrypted).</li>\n        <li><strong>Use Apple Pay when possible.</strong> Apple Pay does not share your actual credit card number with the store. It uses a special one-time code instead. This is safer than typing your card number.</li>\n        <li><strong>Be cautious with unfamiliar websites.</strong> If you find a deal on a website you have never heard of, search for reviews of that store first.</li>\n        <li><strong>Save receipts.</strong> Your email will receive a receipt after each purchase. Keep these for your records.</li>\n      </ul>\n\n      <div class=\"walkthrough\">\n        <h3>Setting Up Apple Pay</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open <strong>Settings</strong> (grey gears).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap <strong>\"Wallet &amp; Apple Pay.\"</strong></span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Tap <strong>\"Add Card\"</strong> and follow the instructions. You can hold your credit card in front of the camera and it will read the numbers automatically, or you can type them in.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Your bank will verify the card (this may take a moment).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Once verified, you can use Apple Pay wherever you see the Apple Pay symbol — both online and in stores.</span>\n        </div>\n      </div>"
+        },
+        {
+          "devices": [
+            "android-phone",
+            "android-tablet"
+          ],
+          "content": "<p>Buying things online can be safe and convenient if you follow these guidelines:</p>\n\n      <ul class=\"content-list\">\n        <li><strong>Stick to well-known stores.</strong> Amazon.ca, Walmart.ca, Canadian Tire, and other large retailers have strong security.</li>\n        <li><strong>Look for the lock icon.</strong> In Chrome, look at the address bar at the top. You should see a small padlock icon before the website address. This means the connection is secure (encrypted).</li>\n        <li><strong>Use Google Wallet when possible.</strong> Google Wallet (formerly Google Pay) does not share your actual credit card number with the store. It uses a special one-time code instead. This is safer than typing your card number.</li>\n        <li><strong>Be cautious with unfamiliar websites.</strong> If you find a deal on a website you have never heard of, search for reviews of that store first.</li>\n        <li><strong>Save receipts.</strong> Your email will receive a receipt after each purchase. Keep these for your records.</li>\n      </ul>\n\n      <div class=\"walkthrough\">\n        <h3>Setting Up Google Wallet</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open the <strong>Google Wallet</strong> app. If you do not have it, download it from the Play Store (developer: Google LLC).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap <strong>\"Add to Wallet\"</strong> and then <strong>\"Payment card.\"</strong></span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">You can point your camera at your credit card to scan the numbers automatically, or type them in by hand.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Your bank will verify the card. You may need to confirm by text message or a call from your bank.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Once verified, you can use Google Wallet to pay in stores (hold your phone near the payment terminal) and online wherever you see the Google Pay symbol.</span>\n        </div>\n      </div>"
+        },
+        {
+          "devices": [
+            "windows"
+          ],
+          "content": "<p>Shopping online on your Windows computer works through your web browser. The same safety rules apply:</p>\n\n      <ul class=\"content-list\">\n        <li><strong>Stick to well-known stores.</strong> Amazon.ca, Walmart.ca, Canadian Tire, and other large retailers have strong security.</li>\n        <li><strong>Look for the padlock icon.</strong> In Edge or Chrome, look at the address bar at the top of the browser. You should see a small padlock before the web address — this means the connection is secure (encrypted). Never enter your payment information on a site without this padlock.</li>\n        <li><strong>Use a credit card, not your debit card.</strong> Credit cards have stronger fraud protection. If something goes wrong, your bank can reverse the charge. A debit card comes directly out of your bank account, which is harder to recover.</li>\n        <li><strong>Let your browser save the payment info securely.</strong> Microsoft Edge and Chrome can save your credit card information securely and fill it in automatically. This is safer than typing your card number repeatedly.</li>\n        <li><strong>Save your email receipts.</strong> Your email inbox will receive a receipt after each purchase. Keep these for your records.</li>\n      </ul>\n\n      <div class=\"tip-block\">\n        <span class=\"tip-label\">How to Tell If a Website Is Safe</span>\n        <p>Before entering any payment information, look at the web address (<a href=\"digital-literacy-101.html#term-url\" class=\"glossary-link\">URL</a>) at the top of the browser. It should start with <strong>https://</strong> — the \"s\" stands for secure. You should also see the padlock icon. If the padlock is missing or there is a warning message, close the website immediately and do not enter any information.</p>\n      </div>"
+        }
+      ]
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"visual-example-card\" role=\"img\" aria-label=\"Secure Connection Padlock\">\n        <div class=\"example-icon\">🔒</div>\n        <div class=\"example-content\">\n          <h4 class=\"example-title\">Secure Connection Padlock</h4>\n          <p class=\"example-description\">The padlock icon in your browser address bar confirms the connection is encrypted. Your banking details are scrambled and cannot be read by anyone monitoring the network.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "warning",
+      "content": "Never buy from a website that: asks you to pay by wire transfer or gift cards, has prices that seem too good to be true (a $1,200 iPad for $99), has no contact information or physical address, or has a website address that looks misspelled or strange."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"video-section\">\n        <div class=\"video-section-header\">\n          <div class=\"video-section-icon\">📺</div>\n          <h3>Banking Tutorials</h3>\n        </div>\n        <div class=\"video-grid\">\n        <div class=\"video-card\">\n          <div class=\"video-card-thumbnail\">\n            <div class=\"video-card-play-icon\">▶️</div>\n            <div class=\"video-card-topic-icon\">💳</div>\n          </div>\n          <h4>Online Banking Basics</h4>\n          <p>Check your balance, pay bills, and view transactions safely from your iPad.</p>\n          <a href=\"https://www.youtube.com/results?search_query=online+banking+tutorial+for+beginners&amp;sp=CAMSAhAB\" target=\"_blank\" rel=\"noopener\" class=\"video-card-btn\">Watch Tutorials</a>\n        </div>\n        <div class=\"video-card\">\n          <div class=\"video-card-thumbnail\">\n            <div class=\"video-card-play-icon\">▶️</div>\n            <div class=\"video-card-topic-icon\">🏦</div>\n          </div>\n          <h4>Mobile Banking Safety</h4>\n          <p>How to bank safely — password tips, secure connections, and fraud alerts.</p>\n          <a href=\"https://www.youtube.com/results?search_query=mobile+banking+safety+tips+and+tricks&amp;sp=CAMSAhAB\" target=\"_blank\" rel=\"noopener\" class=\"video-card-btn\">Watch Tutorials</a>\n        </div>\n        </div>\n        <div class=\"video-safety-note\">\n          <div class=\"video-safety-note-icon\">✓</div>\n          <p>These links open YouTube in a new tab. YouTube is safe and free to use — you can watch as many videos as you like without signing in.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"video-help-link\">\n        <p>📚 New to YouTube? <a href=\"search-guide.html\">Learn how to spot quality videos and avoid ads</a></p>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"exercise-block\">\n        <h3>Practical Exercise: Banking Confidence Builder</h3>\n        <ol class=\"numbered-list\">\n          <li>Download your bank's official app from the App Store (verify the developer name first).</li>\n          <li>Log in and check your account balance. Compare it with your most recent paper statement.</li>\n          <li>Look at your recent transactions. Do you recognise everything? If not, contact your bank.</li>\n          <li>Sign out of the app when you are done.</li>\n        </ol>\n        <div class=\"success-state\">\n          <strong>Success looks like this:</strong> You can log into your banking app, check your balance, review transactions, and sign out — all without anxiety. You know the safety rules for online banking.\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"local-help-section\">\n        <h3>🤝 Need In-Person Help?</h3>\n        <p>Your local community offers free technology support for seniors:</p>\n        <div class=\"local-help-grid\">\n          <div class=\"local-help-dynamic-wrap local-help-card\" id=\"lh-library\">\n            <div class=\"local-help-card-icon\">📚</div>\n            <h4>Your Local Library</h4>\n            <p>Many libraries offer free tech workshops and one-on-one help sessions.</p>\n          </div>\n          <div class=\"local-help-dynamic-wrap local-help-card\" id=\"lh-senior\">\n            <div class=\"local-help-card-icon\">👥</div>\n            <h4>Senior Centre</h4>\n            <p>Community centres often host technology classes and support groups.</p>\n          </div>\n          <div class=\"local-help-card\">\n            <div class=\"local-help-card-icon\">📞</div>\n            <h4>Connected Canadians</h4>\n            <p>Free one-on-one tech support by phone or video call.<br><strong><a href=\"tel:+18558080505\">1-855-808-0505</a></strong></p>\n          </div>\n          <div class=\"local-help-card\">\n            <div class=\"local-help-card-icon\">🌐</div>\n            <h4>Cyber-Seniors</h4>\n            <p>Free tech training from trained volunteers.<br><strong><a href=\"tel:+18442173057\">1-844-217-3057</a></strong></p>\n          </div>\n        </div>\n        <div class=\"local-help-dynamic\"></div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">🎉</span>\n        <p>Congratulations! You have completed Module 6!</p>\n        <p class=\"check-text\">Online banking and shopping are now tools you can use with confidence. You have earned this freedom and convenience.</p>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"feeling-stuck-box\">\n        <h4>Feeling Stuck?</h4>\n        <p>You do not have to figure this out alone. These free services are staffed by real, patient people who love helping:</p>\n        <p class=\"resource-phone\"><strong>Connected Canadians</strong> — <a href=\"tel:+18558080505\">1-855-808-0505</a></p>\n        <p class=\"resource-phone\"><strong>Cyber-Seniors</strong> — <a href=\"tel:+18442173057\">1-844-217-3057</a></p>\n        <p>Both services are free, Canadian, and specialise in helping older adults with technology at your own pace.</p>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div style=\"text-align:center;padding:1rem 0 0.5rem\">\n    <button class=\"btn-print\" onclick=\"window.print()\" aria-label=\"Print this module\">🖨️ Print This Module</button>\n  </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<section class=\"related-modules\" aria-label=\"Related modules\">\n        <h3 class=\"related-title\">Related Modules</h3>\n        <div class=\"related-grid\">\n          <a href=\"module-3.html\" class=\"related-card\">\n            <span class=\"related-num\">Module 3</span>\n            <span class=\"related-name\">Passwords &amp; Biometrics</span>\n            <span class=\"related-desc\">A strong, unique password for your banking app is one of the most important steps you can take to protect your money.</span>\n          </a>\n          <a href=\"module-5.html\" class=\"related-card\">\n            <span class=\"related-num\">Module 5</span>\n            <span class=\"related-name\">Email &amp; Messages</span>\n            <span class=\"related-desc\">Fraud often starts with a fake bank email or text — recognise these attempts before any harm is done.</span>\n          </a>\n          <a href=\"module-2.html\" class=\"related-card\">\n            <span class=\"related-num\">Module 2</span>\n            <span class=\"related-name\">The Security Shield</span>\n            <span class=\"related-desc\">Understand the tactics fraudsters use so you can stay one step ahead when banking online.</span>\n          </a>\n          <a href=\"resources/cra-guide.html\" class=\"related-card\" style=\"border-left:3px solid var(--color-primary,#2A7B6F)\">\n            <span class=\"related-num\">🍁 Guide</span>\n            <span class=\"related-name\">CRA My Account</span>\n            <span class=\"related-desc\">Use your online banking skills to set up direct deposit for your CRA tax refund — and to view your benefit payment schedule.</span>\n          </a>\n          <a href=\"resources/service-canada-guide.html\" class=\"related-card\" style=\"border-left:3px solid var(--color-primary,#2A7B6F)\">\n            <span class=\"related-num\">🇨🇦 Guide</span>\n            <span class=\"related-name\">My Service Canada Account</span>\n            <span class=\"related-desc\">Set up direct deposit for your CPP and OAS payments — no more waiting for cheques to arrive.</span>\n          </a>\n        </div>\n      </section>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"module-complete-action\">\n        <button class=\"btn-mark-complete\" onclick=\"markModuleComplete(6)\" aria-label=\"Mark Module 6 complete\">✓ Mark this module complete</button>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"dc-newsletter-slot\" style=\"margin:2rem 0 1rem\"></div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<footer class=\"site-footer\">\n        <div class=\"footer-inner\">\n          <p class=\"footer-brand\">Digital Confidence Centre</p>\n          <p class=\"footer-tagline\">A free digital learning programme for all Canadians</p>\n          <nav class=\"footer-links\" aria-label=\"Footer navigation\">\n            <a href=\"index.html\">Home</a> |\n            <a href=\"digital-literacy-101.html\">Modules</a> |\n            <a href=\"resources.html\">Resources</a> |\n            <a href=\"tips/index.html\">Newsletter</a> |\n            <a href=\"print-centre.html\">Print Centre</a> |\n            <a href=\"recommended-tools.html\">Recommended Tools</a> |\n            <a href=\"faq.html\">FAQ</a> |\n            <a href=\"glossary.html\">Glossary</a> |\n            <a href=\"whats-coming.html\">What's Coming</a> |\n            <a href=\"family-setup.html\">For Families</a> |\n            <a href=\"about.html\">About</a> |\n            <a href=\"privacy.html\">Privacy Policy</a> |\n            <a href=\"accessibility.html\">Accessibility</a> |\n            <a href=\"#\" onclick=\"openFeedbackModal(); return false;\">Ideas &amp; Feedback</a> |\n            <a href=\"resources/support-directory.html\">Get Help</a>\n          </nav>\n          <p class=\"footer-support\">Questions about this site? Leave us a voice message or written note using the Feedback button.</p>\n          <p class=\"footer-copy\">&copy; 2026 Two Birds Innovation. Made with care in Ontario, Canada.</p>\n          <p class=\"city-footer-label\" style=\"display:none;\"></p>\n          <p class=\"device-footer-label\" style=\"display:none;\"></p>\n        </div>\n      </footer>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div id=\"progress-announcer\" aria-live=\"polite\" aria-atomic=\"true\" class=\"sr-only\"></div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"quick-answers-accordion\" id=\"quick-answers\">\n        <h2 data-en=\"Quick Answers\" data-fr=\"Réponses rapides\">Quick Answers</h2>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>Is online banking safe for seniors?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>Yes, when you access it through your bank official app or website — not through a link in an email. Use your home Wi-Fi or mobile data, not public Wi-Fi at a coffee shop. Enable two-factor authentication if your bank offers it.</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>How do I use e-transfer safely?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>Only send e-transfers to people you know personally. Double-check the email address before confirming — one wrong letter sends money to the wrong person. Set up Autodeposit so incoming transfers go straight to your account without a security question.</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>What is the e-transfer overpayment scam?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>Someone sends you a fake e-transfer for more than agreed, then asks you to send the difference back. The original e-transfer was fake — but the money you send back is real. Never send an e-transfer to refund or return part of a payment you received.</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>What should I do if I notice an unexpected transaction on my account?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>Call your bank immediately using the number on the back of your card. Do not use a phone number from an email or pop-up. Report it as fraud. Your bank fraud team can freeze your card and investigate.</p>\n          </div>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"dcc-quiz-container\" id=\"dcc-after-quiz\" aria-label=\"Knowledge check — after the module\" style=\"margin:2rem 0\"></div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"sources-block\">\n        <h3 data-en=\"Sources &amp; References\" data-fr=\"Sources et références\">Sources &amp; References</h3>\n        <ul>\n        <li><a href=\"https://www.interac.ca/en/consumers/products/interac-e-transfer/security/\" target=\"_blank\" rel=\"noopener noreferrer\">Interac e-Transfer Security (Interac Corp.)</a></li>\n        <li><a href=\"https://www.canada.ca/en/financial-consumer-agency.html\" target=\"_blank\" rel=\"noopener noreferrer\">Financial Consumer Agency of Canada (FCAC)</a></li>\n        </ul>\n      </div>"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What is Interac e-Transfer?",
+      "options": [
+        "A way to pay for goods at a store with cash",
+        "A way to send money to another person using email or a phone number",
+        "A type of credit card",
+        "A Canadian government benefit payment"
+      ],
+      "correct": 1,
+      "explanation": "Interac e-Transfer is a Canadian service that lets you send money between bank accounts using only an email address or phone number. It is widely used and safe."
+    },
+    {
+      "question": "Which of these is a sign that an online shopping site may not be safe?",
+      "options": [
+        "It has https:// at the start of the address",
+        "The price is extremely low and there are no reviews",
+        "It asks you to create an account",
+        "It is listed on Google"
+      ],
+      "correct": 1,
+      "explanation": "Unrealistically low prices and no reviews are major warning signs. Scam shopping sites often disappear after collecting payments, never shipping the goods."
+    },
+    {
+      "question": "You notice an unfamiliar transaction on your bank statement. What should you do first?",
+      "options": [
+        "Wait to see if it fixes itself",
+        "Contact your bank immediately to report it",
+        "Post about it on Facebook",
+        "Move all your money to a different account"
+      ],
+      "correct": 1,
+      "explanation": "Contact your bank immediately. Most banks have 24/7 fraud lines. Acting quickly can stop further transactions and often leads to a refund."
+    },
+    {
+      "question": "What is the purpose of a credit score?",
+      "options": [
+        "It is your social media rating",
+        "It shows lenders how reliably you pay back borrowed money",
+        "It measures how much money you have saved",
+        "It is a government ID number"
+      ],
+      "correct": 1,
+      "explanation": "A credit score is a number (typically 300–900 in Canada) that reflects your borrowing and repayment history. Lenders use it to decide whether to offer loans."
+    },
+    {
+      "question": "To pay safely online, the website address should start with:",
+      "options": [
+        "http://",
+        "www://",
+        "https://",
+        "ftp://"
+      ],
+      "correct": 2,
+      "explanation": "The 's' in https:// stands for 'secure'. It means the connection between your browser and the website is encrypted, protecting your payment information."
+    }
+  ],
+  "prev_module": {
+    "slug": "module-5.html",
+    "label": "Module 5: Email & Messages"
+  },
+  "next_module": {
+    "slug": "module-7.html",
+    "label": "Module 7: Photos & Memories"
+  },
+  "accessibility": {
+    "lang": "en-CA",
+    "wcag_level": "AA"
+  },
+  "category": "Finance",
+  "category_icon": "🏦",
+  "difficulty": "Intermediate",
+  "time": "30 min",
+  "what_you_learn": [
+    "How to use online banking safely",
+    "How to pay with Apple Pay",
+    "How to send and receive Interac e-Transfers",
+    "How to spot financial scams before they happen"
+  ],
+  "summary": "You will learn how to use online banking safely, how to shop online without risk, and how to spot and avoid financial scams targeting seniors. Includes Apple Pay, Interac e-Transfer, and mobile banking."
+}

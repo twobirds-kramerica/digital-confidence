@@ -1,0 +1,385 @@
+{
+  "id": "module-12",
+  "number": 12,
+  "slug": "module-12",
+  "title": "Getting the Help You Deserve",
+  "description": "Module 12: Learn your consumer rights online, handle billing disputes, and get better help from customer service. Free digital literacy for Ontario seniors.",
+  "keywords": "consumer rights Canada seniors, tech support scams seniors, customer service tips Ontario, CCTS complaints, OBSI ombudsman, digital confidence module 12",
+  "date_published": "2026-03-23",
+  "hero_image": {
+    "url": "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&h=400&fit=crop",
+    "alt": "A confident senior woman on the phone, calm and in control, with a notebook open beside her",
+    "width": 1200,
+    "height": 400
+  },
+  "intro": "",
+  "story": {
+    "label": "You Deserve Good Help",
+    "paragraphs": [
+      "Getting help with technology — or with a bill, a charge, or a complaint — should not feel like a battle. But it sometimes does. You wait on hold, press endless buttons, and still feel like you did not get what you needed.",
+      "This module is about changing that. You have rights as a consumer in Canada. You have resources available to you. And you have the right to ask for help at your own pace, in plain language, until you fully understand what is happening.",
+      "You deserve good help. This module shows you how to get it."
+    ]
+  },
+  "confidence_check": "The One Rule for Remote Access If someone contacts YOU asking for access to your device — hang up. No exceptions. A real company, real bank, or real government agency will never call you out of the blue and ask to access your device. If you accidentally gave someone access, turn your device off immediately and call a trusted family member or the Canadian Anti-Fraud Centre: 1-888-495-4416.",
+  "sections": [
+    {
+      "type": "raw_html",
+      "content": "<div class=\"dcc-quiz-container\" id=\"dcc-before-quiz\" aria-label=\"Knowledge check — before you start\" style=\"margin-bottom:1.5rem\"></div>"
+    },
+    {
+      "type": "paragraph",
+      "content": "<strong>What you will learn:</strong> How to escape automated phone systems, use scripts to slow down rushed service reps, manage well-meaning family helpers, and stay safe when someone offers remote access to your device."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"progress-item\">\n        <input type=\"checkbox\" class=\"progress-checkbox\" id=\"m12-1\" data-id=\"m12-1\">\n        <label class=\"progress-label\" for=\"m12-1\">Section 1: The Chatbot Trap</label>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"progress-item\">\n        <input type=\"checkbox\" class=\"progress-checkbox\" id=\"m12-2\" data-id=\"m12-2\">\n        <label class=\"progress-label\" for=\"m12-2\">Section 2: Breaking Language Barriers</label>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"progress-item\">\n        <input type=\"checkbox\" class=\"progress-checkbox\" id=\"m12-3\" data-id=\"m12-3\">\n        <label class=\"progress-label\" for=\"m12-3\">Section 3: Managing Well-Meaning Helpers</label>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"progress-item\">\n        <input type=\"checkbox\" class=\"progress-checkbox\" id=\"m12-4\" data-id=\"m12-4\">\n        <label class=\"progress-label\" for=\"m12-4\">Section 4: Safe Remote Support</label>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "📞 Section 1: The Chatbot Trap"
+    },
+    {
+      "type": "paragraph",
+      "content": "When you call a company and reach an automated phone system — sometimes called an IVR (Interactive Voice Response) — it can feel like there is no way out. The system asks questions, gives you options, and loops back to the start if it does not understand you."
+    },
+    {
+      "type": "paragraph",
+      "content": "The good news: most automated systems have escape routes. You just need to know the magic words."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Magic Words That Reach a Real Person"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"magic-words-grid\">\n        <div class=\"magic-word-card\">\n          <span class=\"magic-word\">\"Representative\"</span>\n          <span class=\"magic-word-note\">Works on most Canadian telecom, bank, and utility systems</span>\n        </div>\n        <div class=\"magic-word-card\">\n          <span class=\"magic-word\">\"Agent\"</span>\n          <span class=\"magic-word-note\">Especially effective with Rogers, Bell, Telus, and Shaw</span>\n        </div>\n        <div class=\"magic-word-card\">\n          <span class=\"magic-word\">Press 0</span>\n          <span class=\"magic-word-note\">The zero key transfers to a live operator on many systems</span>\n        </div>\n        <div class=\"magic-word-card\">\n          <span class=\"magic-word\">\"I need help\"</span>\n          <span class=\"magic-word-note\">Triggers a transfer on some banking and utility systems</span>\n        </div>\n        <div class=\"magic-word-card\">\n          <span class=\"magic-word\">\"Operator\"</span>\n          <span class=\"magic-word-note\">An older phrase that still works on many government lines</span>\n        </div>\n        <div class=\"magic-word-card\">\n          <span class=\"magic-word\">Press 0 0 0</span>\n          <span class=\"magic-word-note\">Pressing zero three times rapidly bypasses some stubborn menus</span>\n        </div>\n      </div>"
+    },
+    {
+      "type": "tip",
+      "content": "Write down: your account number, the amount in question, and the date it appeared. Having this ready means the call goes faster and you sound confident — which genuinely helps. Tuesdays through Thursdays, 10am–noon, are typically the shortest wait times."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Canadian Escalation Resources"
+    },
+    {
+      "type": "paragraph",
+      "content": "When a company will not resolve your complaint — here is who to call next, completely free of charge:"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"walkthrough\">\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">\n            <strong>CCTS — Commissioner for Complaints for Telecom-television Services</strong><br>\n            For phone, internet, and cable problems your provider has not resolved after 30 days.<br>\n            Website: <strong>ccts-cprst.ca</strong> &nbsp;|&nbsp; Phone: <strong>1-888-221-1687</strong><br>\n            <em>Free. No lawyer needed. Available across Canada.</em>\n          </span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">\n            <strong>OBSI — Ombudsman for Banking Services and Investments</strong><br>\n            For banking or investment problems your bank will not resolve.<br>\n            Website: <strong>obsi.ca</strong> &nbsp;|&nbsp; Phone: <strong>1-888-451-4519</strong><br>\n            <em>Free. Independent. Banks are required to co-operate.</em>\n          </span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">\n            <strong>Consumer Protection Ontario</strong><br>\n            For purchases, contracts, door-to-door sales, and any consumer complaint in Ontario.<br>\n            Website: <strong>consumerprotection.on.ca</strong> &nbsp;|&nbsp; Phone: <strong>1-800-889-9768</strong><br>\n            <em>Free call from anywhere in Ontario.</em>\n          </span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">\n            <strong>Office of the Privacy Commissioner of Canada</strong><br>\n            If a company is misusing your personal information.<br>\n            Website: <strong>priv.gc.ca</strong> &nbsp;|&nbsp; Phone: <strong>1-800-282-1376</strong>\n          </span>\n        </div>\n      </div>"
+    },
+    {
+      "type": "tip",
+      "content": "Keep a small notebook beside your phone. Write down: date, time, company name, the name of the person you spoke with, and what they agreed to do. This is your evidence if you need to escalate. A screenshot of a chat conversation works too."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Practice Scenario"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"practice-scenario\">\n        <p><strong>The situation:</strong> You call your internet provider because your bill went up $15 this month with no warning. The automated system keeps asking you to press 1 for billing, then loops back to the main menu. You have tried three times.</p>\n        <button class=\"scenario-toggle\" onclick=\"this.nextElementSibling.style.display = this.nextElementSibling.style.display === &#x27;block&#x27; ? &#x27;none&#x27; : &#x27;block&#x27;; this.textContent = this.textContent === &#x27;👁 Show what to do&#x27; ? &#x27;👁 Hide answer&#x27; : &#x27;👁 Show what to do&#x27;\">👁 Show what to do</button>\n        <div class=\"scenario-answer\" style=\"display:none\">\n          <p><strong>What to do:</strong> Say the word <strong>\"representative\"</strong> clearly as soon as the automated greeting finishes. If that does not work, press <strong>0</strong> twice. If you still cannot get through, hang up and call back — sometimes you reach a different routing path on the second attempt. Once you reach a person: \"I am calling about an unexpected $15 increase on my bill this month. I would like to understand what changed.\" Write down whatever they tell you and the name of the agent. If they say they cannot reverse it, ask: \"Can you transfer me to a supervisor?\" You are allowed to ask that.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "🗣️ Section 2: Breaking Language Barriers"
+    },
+    {
+      "type": "paragraph",
+      "content": "Even when you do reach a real person, help can still feel frustrating. Agents sometimes speak quickly, use technical words, or seem impatient. You may feel embarrassed to say you did not understand — or worried you are taking too long."
+    },
+    {
+      "type": "paragraph",
+      "content": "<strong>You have every right to ask them to slow down.</strong> Customer service agents are trained to help you — not the other way around."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Scripts That Actually Work"
+    },
+    {
+      "type": "paragraph",
+      "content": "These exact phrases are polite, professional, and get results. You can write them on a sticky note and keep it by your phone."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"script-box\">\n        <div class=\"script-line\">\n          <span class=\"script-label\">To slow them down:</span>\n          <span class=\"script-text\">\"I am sorry — could you please speak a little more slowly? I want to make sure I understand everything correctly.\"</span>\n        </div>\n        <div class=\"script-line\">\n          <span class=\"script-label\">To ask for plain language:</span>\n          <span class=\"script-text\">\"Could you explain that without the technical terms? I just need to understand what is happening in simple language.\"</span>\n        </div>\n        <div class=\"script-line\">\n          <span class=\"script-label\">To confirm what you heard:</span>\n          <span class=\"script-text\">\"Let me make sure I have this right — you are saying that [repeat back what you understood]. Is that correct?\"</span>\n        </div>\n        <div class=\"script-line\">\n          <span class=\"script-label\">To ask for time:</span>\n          <span class=\"script-text\">\"I need a moment to write this down. Can you hold for just a second?\"</span>\n        </div>\n        <div class=\"script-line\">\n          <span class=\"script-label\">To escalate politely:</span>\n          <span class=\"script-text\">\"I appreciate your help. Would it be possible to speak with a supervisor? I just want to make sure I am getting the right information.\"</span>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">💛</span>\n        <p>You do not owe anyone a quick phone call. You have the right to understand every word of every agreement before you say yes. A good agent will wait for you. An impatient one is a reason to call back and speak to someone else.</p>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Switching Channels When Phone Is Not Working"
+    },
+    {
+      "type": "paragraph",
+      "content": "Sometimes the phone is not the best channel. Here is when to switch:"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"walkthrough\">\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\"><strong>Ask for email confirmation:</strong> \"Could you send me a summary of what we agreed to by email? I like to have things in writing.\" This protects you and often motivates agents to be more careful about what they promise.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\"><strong>Use online chat instead of phone:</strong> Many companies have live chat on their website. The advantage: everything is already in writing, and you can take as long as you need to type your question without feeling rushed.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\"><strong>Write a formal letter or email:</strong> For serious disputes (billing errors, contract disagreements), a written complaint is more powerful than a phone call. Companies are legally required to respond to written complaints.</span>\n        </div>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Practice Scenario"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"practice-scenario\">\n        <p><strong>The situation:</strong> You call about a mysterious charge and the agent speaks very quickly, uses acronyms you do not recognise, and seems to be in a hurry. You say \"sorry\" and agree to something you did not fully understand, then feel confused after you hang up.</p>\n        <button class=\"scenario-toggle\" onclick=\"this.nextElementSibling.style.display = this.nextElementSibling.style.display === &#x27;block&#x27; ? &#x27;none&#x27; : &#x27;block&#x27;; this.textContent = this.textContent === &#x27;👁 Show what to do&#x27; ? &#x27;👁 Hide answer&#x27; : &#x27;👁 Show what to do&#x27;\">👁 Show what to do</button>\n        <div class=\"scenario-answer\" style=\"display:none\">\n          <p><strong>What to do — during the call:</strong> Stop and say: <em>\"I need a moment — could you slow down and walk me through that again in simpler terms? I want to make sure I understand before I agree to anything.\"</em> Do not apologise for needing clarity — this is your right.</p>\n          <p><strong>What to do — after the call:</strong> Call back and say: <em>\"I spoke with someone earlier today and I am not sure I understood the full terms of what I agreed to. Could you look up the account notes and help me understand?\"</em> You can undo an agreement you did not fully understand, especially within 10 days on most Canadian contracts.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "👨‍👩‍👧 Section 3: Managing Well-Meaning Helpers"
+    },
+    {
+      "type": "paragraph",
+      "content": "Having a family member help with technology is a gift. But it can also feel uncomfortable — they move quickly, they take over, and suddenly things on your phone have changed and you are not sure what happened or how to undo it."
+    },
+    {
+      "type": "paragraph",
+      "content": "This is not about ingratitude. It is about learning. The best helpers teach. The well-meaning but rushed ones accidentally make you more dependent."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "The \"Show Me\" Rule"
+    },
+    {
+      "type": "tip",
+      "content": "<strong>\"Can you show me how to do that — without doing it for me?\"</strong>"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "The 5-Minute Timeout Rule"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"script-box\">\n        <div class=\"script-line\">\n          <span class=\"script-label\">When they move too fast:</span>\n          <span class=\"script-text\">\"Could you do that one more time, slowly? I want to try it myself so I remember next time.\"</span>\n        </div>\n        <div class=\"script-line\">\n          <span class=\"script-label\">When they are about to take over:</span>\n          <span class=\"script-text\">\"Give me five minutes to try this on my own first. If I am stuck after that, I will ask you.\"</span>\n        </div>\n        <div class=\"script-line\">\n          <span class=\"script-label\">When they have already done it for you:</span>\n          <span class=\"script-text\">\"Thank you — now can you show me how you did that? I want to be able to do it myself next time.\"</span>\n        </div>\n        <div class=\"script-line\">\n          <span class=\"script-label\">When they want to change your settings:</span>\n          <span class=\"script-text\">\"I would rather keep my settings the way I have them. Can you just help me with this one thing?\"</span>\n        </div>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "When to Accept Help vs. Push Back"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"walkthrough\">\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">✅</span>\n          <span class=\"step-text\"><strong>Accept help:</strong> When something is broken, causing you stress, or you have genuinely tried and cannot figure it out. Accepting help for these things is wise, not weak.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">✅</span>\n          <span class=\"step-text\"><strong>Accept help:</strong> When the helper explains what they are doing as they go and invites you to try it yourself afterwards.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">🛑</span>\n          <span class=\"step-text\"><strong>Push back:</strong> When someone wants to change passwords, settings, or accounts \"to make things easier\" — especially if you did not ask. Your device and your accounts belong to you.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">🛑</span>\n          <span class=\"step-text\"><strong>Push back:</strong> When someone is doing things so fast you have no idea what changed. Ask them to undo it and start over slowly — it is completely reasonable.</span>\n        </div>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Practice Scenario"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"practice-scenario\">\n        <p><strong>The situation:</strong> Your grandson is visiting and offers to help you set up a new app. He starts tapping through screens so fast you lose track, and before you can ask any questions, it is all done. You feel grateful but also unsure what just happened.</p>\n        <button class=\"scenario-toggle\" onclick=\"this.nextElementSibling.style.display = this.nextElementSibling.style.display === &#x27;block&#x27; ? &#x27;none&#x27; : &#x27;block&#x27;; this.textContent = this.textContent === &#x27;👁 Show what to do&#x27; ? &#x27;👁 Hide answer&#x27; : &#x27;👁 Show what to do&#x27;\">👁 Show what to do</button>\n        <div class=\"scenario-answer\" style=\"display:none\">\n          <p><strong>What to say:</strong> <em>\"Thank you for setting that up! Before you go, can you walk me through how you did it? I want to understand what you pressed so I know how to use it. Could you delete it and let me try installing it myself while you watch?\"</em></p>\n          <p>Most young people are happy to do this — they just assume older adults want things done, not taught. Simply asking changes the dynamic. You are not being difficult. You are being a good student.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "🖥️ Section 4: Safe Remote Support"
+    },
+    {
+      "type": "paragraph",
+      "content": "Sometimes a technical helper — whether a family member, a computer store, or a support line you contacted — needs to see your screen. This is called <strong>remote access</strong>: they can view and sometimes control your device from another location over the internet."
+    },
+    {
+      "type": "paragraph",
+      "content": "Remote access can be completely safe. It can also be one of the most dangerous scams targeting seniors. The difference comes down to one question: <strong>Did you contact them first?</strong>"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Legitimate Remote Support Tools"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"walkthrough\">\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">\n            <strong>Windows Quick Assist</strong> (built into Windows 10 and 11)<br>\n            How to use: Search \"Quick Assist\" on your Windows computer. You can receive help from someone you trust. You control when it starts and when it ends.<br>\n            <em>Free. No download needed. Microsoft will never ask you to use it unsolicited.</em>\n          </span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">\n            <strong>Apple Screen Sharing / FaceTime Screen Share</strong><br>\n            For iPhones and iPads: In FaceTime, tap the screen and choose \"Share My Screen.\" The other person can see your screen but cannot control it.<br>\n            <em>Built-in. Safe. You can stop sharing at any time by tapping the screen again.</em>\n          </span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">\n            <strong>TeamViewer</strong> (for computers)<br>\n            A legitimate tool used by many IT professionals. Only use it if you downloaded it yourself from teamviewer.com after contacting a trusted helper.<br>\n            <em>Warning: Scammers also pretend to use TeamViewer — always verify who asked you to install it.</em>\n          </span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">\n            <strong>AnyDesk</strong> (for computers)<br>\n            Similar to TeamViewer. Legitimate when used with a trusted helper you contacted.<br>\n            <em>Same warning applies: never install it because someone called you first.</em>\n          </span>\n        </div>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "The Remote Access Safety Checklist"
+    },
+    {
+      "type": "paragraph",
+      "content": "Before allowing anyone to access your device, check ALL six of these. If even one is \"No\" — do not proceed."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"safety-checklist\">\n        <div class=\"checklist-item\">\n          <span class=\"check-num\">1</span>\n          <span class=\"check-text\"><strong>I contacted them first</strong> — I called or emailed this person/company, they did not contact me out of the blue.</span>\n        </div>\n        <div class=\"checklist-item\">\n          <span class=\"check-num\">2</span>\n          <span class=\"check-text\"><strong>I know who this person is</strong> — It is a family member, a friend, or a company I have used before and trust.</span>\n        </div>\n        <div class=\"checklist-item\">\n          <span class=\"check-num\">3</span>\n          <span class=\"check-text\"><strong>I understand what they will do</strong> — They have explained clearly what they need to see and why, before the session begins.</span>\n        </div>\n        <div class=\"checklist-item\">\n          <span class=\"check-num\">4</span>\n          <span class=\"check-text\"><strong>No one has asked for payment via gift card</strong> — Legitimate helpers and companies never ask for payment in iTunes cards, Google Play cards, or cryptocurrency.</span>\n        </div>\n        <div class=\"checklist-item\">\n          <span class=\"check-num\">5</span>\n          <span class=\"check-text\"><strong>I can end the session at any time</strong> — I know how to close the app or turn off my device to stop the connection immediately.</span>\n        </div>\n        <div class=\"checklist-item\">\n          <span class=\"check-num\">6</span>\n          <span class=\"check-text\"><strong>I am not feeling pressured</strong> — No one is rushing me, creating urgency, or telling me something terrible will happen if I do not act immediately.</span>\n        </div>\n      </div>"
+    },
+    {
+      "type": "warning",
+      "content": "Never allow remote access if someone <strong>called YOU unexpectedly</strong> — even if Caller ID shows Apple, Microsoft, your bank, or the Canada Revenue Agency. Caller ID can be faked. This is one of the most costly scams targeting seniors. Scammers may sound official, use real company names, and create genuine urgency. <strong>Hang up anyway.</strong> Call the real company back using the number on their official website."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Practice Scenario"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"practice-scenario\">\n        <p><strong>The situation:</strong> Your phone rings. A caller says they are from \"Microsoft Security\" and your computer has been sending error reports. They say they can fix it remotely but need you to download a program called AnyDesk first. They sound professional and urgent.</p>\n        <button class=\"scenario-toggle\" onclick=\"this.nextElementSibling.style.display = this.nextElementSibling.style.display === &#x27;block&#x27; ? &#x27;none&#x27; : &#x27;block&#x27;; this.textContent = this.textContent === &#x27;👁 Show what to do&#x27; ? &#x27;👁 Hide answer&#x27; : &#x27;👁 Show what to do&#x27;\">👁 Show what to do</button>\n        <div class=\"scenario-answer\" style=\"display:none\">\n          <p><strong>What to do:</strong> Hang up the phone without explaining yourself. You do not owe them a reason.</p>\n          <p><strong>Why:</strong> Microsoft does not monitor individual computers and does not call customers about errors. This is a tech-support scam. If you downloaded anything or gave them access before realising — turn off your device immediately, then call a trusted person or the Canadian Anti-Fraud Centre at 1-888-495-4416.</p>\n          <p><strong>If you feel unsure:</strong> Call Microsoft directly at 1-800-642-7676 and ask if they contacted you. They will confirm they did not.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "⭐ Key Takeaways from Module 12"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"takeaways-grid\">\n        <div class=\"takeaway-card\">\n          <span class=\"takeaway-icon\">📞</span>\n          <strong>Magic words work</strong>\n          <p>Say \"representative\" or \"agent,\" or press 0 to escape automated phone systems.</p>\n        </div>\n        <div class=\"takeaway-card\">\n          <span class=\"takeaway-icon\">⚖️</span>\n          <strong>Escalation is your right</strong>\n          <p>CCTS, OBSI, and Consumer Protection Ontario are free resources that companies must respond to.</p>\n        </div>\n        <div class=\"takeaway-card\">\n          <span class=\"takeaway-icon\">🗣️</span>\n          <strong>Scripts reduce stress</strong>\n          <p>\"Could you slow down?\" and \"Can you explain that without technical terms?\" are powerful and professional.</p>\n        </div>\n        <div class=\"takeaway-card\">\n          <span class=\"takeaway-icon\">👨‍👩‍👧</span>\n          <strong>\"Show me\" beats \"do it for me\"</strong>\n          <p>Every step a helper teaches you is a step you own forever. Ask to try it yourself.</p>\n        </div>\n        <div class=\"takeaway-card\">\n          <span class=\"takeaway-icon\">🖥️</span>\n          <strong>Remote access requires consent</strong>\n          <p>Safe only when you contacted them first, you know who they are, and you can stop at any time.</p>\n        </div>\n        <div class=\"takeaway-card\">\n          <span class=\"takeaway-icon\">🛑</span>\n          <strong>Unsolicited calls = hang up</strong>\n          <p>No real company calls you out of the blue and asks to access your device. No exceptions.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"feeling-stuck-box\">\n        <h4>Canadian Resources for Getting Help</h4>\n        <p class=\"resource-phone\"><strong>Connected Canadians</strong> (free tech help for seniors) — <a href=\"tel:+18558080505\">1-855-808-0505</a></p>\n        <p class=\"resource-phone\"><strong>Cyber-Seniors</strong> (intergenerational tech support) — <a href=\"tel:+18442173057\">1-844-217-3057</a></p>\n        <p class=\"resource-phone\"><strong>Consumer Protection Ontario</strong> — <a href=\"tel:+18008899768\">1-800-889-9768</a></p>\n        <p class=\"resource-phone\"><strong>CCTS</strong> (telecom complaints) — <a href=\"tel:+18882211687\">1-888-221-1687</a></p>\n        <p class=\"resource-phone\"><strong>OBSI</strong> (banking complaints) — <a href=\"tel:+18884514519\">1-888-451-4519</a></p>\n        <p class=\"resource-phone\"><strong>Canadian Anti-Fraud Centre</strong> — <a href=\"tel:+18884954416\">1-888-495-4416</a></p>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">🎉</span>\n        <p>You have completed Module 12!</p>\n        <p class=\"check-text\">You now know how to escape automated phone systems, use scripts to get what you need from service reps, guide family helpers so you actually learn instead of just getting things done for you, and protect yourself from remote-access scams. You have the tools, the words, and the knowledge. You deserve good help — and now you know how to get it.</p>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div style=\"text-align:center;padding:1rem 0 0.5rem\">\n    <button class=\"btn-print\" onclick=\"window.print()\" aria-label=\"Print this module\">🖨️ Print This Module</button>\n  </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<section class=\"related-modules\" aria-label=\"Related modules\">\n        <h3 class=\"related-title\">Related Modules</h3>\n        <div class=\"related-grid\">\n          <a href=\"module-1.html\" class=\"related-card\">\n            <span class=\"related-num\">Module 1</span>\n            <span class=\"related-name\">Mastering the Escape Hatch</span>\n            <span class=\"related-desc\">When something unexpected happens during a support call, knowing how to escape puts the power back in your hands.</span>\n          </a>\n          <a href=\"module-2.html\" class=\"related-card\">\n            <span class=\"related-num\">Module 2</span>\n            <span class=\"related-name\">The Security Shield</span>\n            <span class=\"related-desc\">Recognise fake \"tech support\" scams that impersonate real companies and ask for remote access.</span>\n          </a>\n          <a href=\"module-5.html\" class=\"related-card\">\n            <span class=\"related-num\">Module 5</span>\n            <span class=\"related-name\">Email &amp; Messages</span>\n            <span class=\"related-desc\">Scam support requests often arrive by email — use your email skills to tell genuine contact from fraud.</span>\n          </a>\n        </div>\n      </section>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"module-complete-action\">\n        <button class=\"btn-mark-complete\" onclick=\"markModuleComplete(12)\" aria-label=\"Mark Module 12 complete\">✓ Mark this module complete</button>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"dc-newsletter-slot\" style=\"margin:2rem 0 1rem\"></div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<footer class=\"site-footer\">\n        <div class=\"footer-inner\">\n          <p class=\"footer-brand\">Digital Confidence Centre</p>\n          <p class=\"footer-tagline\">A free digital learning programme for all Canadians</p>\n          <nav class=\"footer-links\" aria-label=\"Footer navigation\">\n            <a href=\"index.html\">Home</a> |\n            <a href=\"digital-literacy-101.html\">Modules</a> |\n            <a href=\"resources.html\">Resources</a> |\n            <a href=\"tips/index.html\">Newsletter</a> |\n            <a href=\"print-centre.html\">Print Centre</a> |\n            <a href=\"recommended-tools.html\">Recommended Tools</a> |\n            <a href=\"faq.html\">FAQ</a> |\n            <a href=\"glossary.html\">Glossary</a> |\n            <a href=\"whats-coming.html\">What's Coming</a> |\n            <a href=\"family-setup.html\">For Families</a> |\n            <a href=\"about.html\">About</a> |\n            <a href=\"privacy.html\">Privacy Policy</a> |\n            <a href=\"accessibility.html\">Accessibility</a> |\n            <a href=\"#\" onclick=\"openFeedbackModal(); return false;\">Ideas &amp; Feedback</a> |\n            <a href=\"resources/support-directory.html\">Get Help</a>\n          </nav>\n          <p class=\"footer-support\">Questions about this site? Leave us a voice message or written note using the Feedback button.</p>\n          <p class=\"footer-copy\">&copy; 2026 Two Birds Innovation. Made with care in Ontario, Canada.</p>\n          <p class=\"city-footer-label\" style=\"display:none;\"></p>\n          <p class=\"device-footer-label\" style=\"display:none;\"></p>\n        </div>\n      </footer>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div id=\"progress-announcer\" aria-live=\"polite\" aria-atomic=\"true\" class=\"sr-only\"></div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"quick-answers-accordion\" id=\"quick-answers\">\n        <h2 data-en=\"Quick Answers\" data-fr=\"Réponses rapides\">Quick Answers</h2>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>Who can I call for free tech help as a senior in Canada?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>Connected Canadians (1-855-808-0505) provides free, friendly telephone tech support specifically for Canadian seniors. Volunteers help with iPads, iPhones, email, video calls, and more. No appointment needed.</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>What is the Canadian Anti-Fraud Centre?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>The Canadian Anti-Fraud Centre (CAFC) is the national hub for reporting fraud and cybercrime. If you have been targeted by a scam, call 1-888-495-8501. Reporting helps protect other Canadians.</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>Can my local library help me with technology?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>Many Ontario public libraries offer free digital literacy programs, one-on-one tech help sessions, and computer access. Contact your local branch to ask about senior tech help programs — they are often free and designed for older adults.</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>What if I feel embarrassed asking for help with technology?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>You never need to feel embarrassed. Millions of Canadians are learning these skills for the first time. Connected Canadians volunteers are trained to be patient and non-judgmental. Asking for help is a sign of good judgement.</p>\n          </div>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"dcc-quiz-container\" id=\"dcc-after-quiz\" aria-label=\"Knowledge check — after the module\" style=\"margin:2rem 0\"></div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"sources-block\">\n        <h3 data-en=\"Sources &amp; References\" data-fr=\"Sources et références\">Sources &amp; References</h3>\n        <ul>\n        <li><a href=\"https://connectedcanadians.ca\" target=\"_blank\" rel=\"noopener noreferrer\">Connected Canadians — Free tech support for seniors</a></li>\n        <li><a href=\"https://www.antifraudcentre-centreantifraude.ca\" target=\"_blank\" rel=\"noopener noreferrer\">Canadian Anti-Fraud Centre — Report a scam</a></li>\n        </ul>\n      </div>"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "When waiting on hold with a customer service line, what is a useful strategy?",
+      "options": [
+        "Hang up and try a different company",
+        "Press 0 or say \"representative\" to reach a person faster, or use a callback option",
+        "Call 911 for help",
+        "Write an angry letter instead"
+      ],
+      "correct": 1,
+      "explanation": "Many phone systems respond to '0' or 'representative' as a shortcut to a live agent. Callback options mean you do not lose your place in the queue."
+    },
+    {
+      "question": "Under Canadian consumer protection law, you generally have the right to:",
+      "options": [
+        "Return any product for any reason forever",
+        "A refund or exchange if a product is defective or not as described",
+        "Sue any company in the USA",
+        "A free replacement after 5 years"
+      ],
+      "correct": 1,
+      "explanation": "Consumer protection laws in Ontario and across Canada give you the right to a refund or exchange when a product is defective, misrepresented, or not delivered as promised."
+    },
+    {
+      "question": "A technician says they need \"remote access\" to your device to fix a problem you did not ask about. You should:",
+      "options": [
+        "Allow it — they are probably from Apple",
+        "Refuse. Never allow remote access from someone who contacted you unsolicited.",
+        "Give access but watch what they do",
+        "Ask them to call back tomorrow"
+      ],
+      "correct": 1,
+      "explanation": "Remote access scams are common. Scammers pretending to be from Microsoft, Apple, or your bank ask for remote access, then steal files and install malware. Always refuse."
+    },
+    {
+      "question": "If a family helper is managing your devices, it is good practice to:",
+      "options": [
+        "Give them your banking password too",
+        "Set clear boundaries about what they can access, and review your accounts regularly",
+        "Let them change all your passwords",
+        "Delete your accounts when they leave"
+      ],
+      "correct": 1,
+      "explanation": "Helpers should only have access to what they need. Review your accounts periodically to ensure nothing unexpected has occurred. You keep control of banking passwords."
+    },
+    {
+      "question": "The best way to document a dispute with a company is to:",
+      "options": [
+        "Tell your friends",
+        "Keep written records of all calls, emails, and receipts with dates and names",
+        "Call the company every day",
+        "Post a negative review immediately"
+      ],
+      "correct": 1,
+      "explanation": "Document everything: dates, times, names of representatives, what was said, and any reference numbers. This paper trail is essential if you escalate to consumer protection agencies."
+    }
+  ],
+  "prev_module": {
+    "slug": "module-11.html",
+    "label": "Module 11: Ride-Sharing Apps"
+  },
+  "next_module": {
+    "slug": "module-13.html",
+    "label": "Module 13: Social Media"
+  },
+  "accessibility": {
+    "lang": "en-CA",
+    "wcag_level": "AA"
+  },
+  "category": "Support",
+  "category_icon": "🤝",
+  "difficulty": "Beginner",
+  "time": "20 min",
+  "what_you_learn": [
+    "Where to get reliable tech help",
+    "How to use Apple Support",
+    "Free tech support programmes in Ontario",
+    "How to avoid fake tech support scams"
+  ],
+  "summary": "Getting help with technology should never feel embarrassing. This module shows you where to find reliable support — from Apple's own resources to local programs in Ontario."
+}

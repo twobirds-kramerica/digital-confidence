@@ -156,6 +156,9 @@ def build_section_html(section: dict) -> str:
             )
         return "\n".join(parts)
 
+    if stype == "raw_html":
+        return section.get("content", "")
+
     # Unknown type — render as paragraph
     return f"      <!-- unknown section type: {escape(stype)} -->"
 

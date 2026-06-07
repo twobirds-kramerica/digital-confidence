@@ -1,0 +1,520 @@
+{
+  "id": "module-3",
+  "number": 3,
+  "slug": "module-3",
+  "title": "Passwords & Biometrics",
+  "description": "Module 3: Learn to create strong passwords, set up Face ID, and use two-factor authentication on your iPhone. Free digital literacy for Ontario seniors.",
+  "keywords": "strong passwords seniors, Face ID tutorial iPad, two-factor authentication explained, password manager seniors, digital security older adults Ontario",
+  "date_published": "2026-03-07",
+  "hero_image": {
+    "url": "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1200&h=400&fit=crop&v=2",
+    "alt": "A person using a fingerprint sensor on a smartphone to log in securely",
+    "width": 1200,
+    "height": 400
+  },
+  "intro": "How to keep your accounts secure without memorizing dozens of passwords. We will cover Face ID, password managers, and what those security terms actually mean in plain language.",
+  "story": {
+    "label": "Helen's Story",
+    "paragraphs": [
+      "Helen, 69, had one password for everything: her late husband's name followed by their anniversary year. She used it for her email, her bank, her iPad, Amazon, Facebook — everything. \"It's easy to remember,\" she told her daughter.",
+      "Then one day, Helen noticed strange purchases on her Amazon account — three expensive Bluetooth speakers she had never ordered. Someone had figured out her password (it turns out her husband's name and their anniversary were both on her Facebook profile) and used it to get into her Amazon account. Because Helen used the same password everywhere, the thief also tried it on her email — and got in.",
+      "Helen spent two stressful weeks changing passwords, calling her bank, and locking down her accounts. But the experience taught her something she now shares with every friend: \"One password for everything is like one key for your house, your car, and your safety deposit box. If someone copies that key, they get into everything.\"",
+      "Today, Helen uses Face ID and a password manager. She says managing her passwords is now easier than it was before — and far, far safer."
+    ]
+  },
+  "confidence_check": "You already know the most important security terms. That knowledge is your foundation. Most people never learn what these words actually mean — you are already ahead.",
+  "sections": [
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Security Terms in Plain Language"
+    },
+    {
+      "type": "paragraph",
+      "content": "Before we go further, let us define some words you might hear. Think of this as your personal dictionary:"
+    },
+    {
+      "type": "tip",
+      "content": "<strong>Password:</strong> A secret word or phrase that proves you are who you say you are. Like a key to a lock."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">💛</span>\n        <p>Confidence Check: Those terms are not so scary when they are explained properly, are they? You are building your tech vocabulary.</p>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Biometrics: Your Face or Fingerprint Is Your Password"
+    },
+    {
+      "type": "paragraph",
+      "content": "Modern devices can recognise you by your face or fingerprint. This is one of the most convenient and secure ways to protect your device."
+    },
+    {
+      "type": "device_variant",
+      "variants": [
+        {
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "content": "<h3 data-freshness-id=\"module-3-section-1\">Face ID on iPad and iPhone</h3>\n\n      <p>If your iPad or iPhone is a newer model, it likely has Face ID.</p>\n\n      <p><strong>How Face ID works:</strong> When you set up Face ID, your device takes a detailed map of your face using special sensors. It does not take a regular photograph — it creates a mathematical model of the shape of your face. This model is stored only on your device (it is never sent to Apple or anyone else). When you pick up your device and look at the screen, it checks: \"Is this the same face?\" If yes, it unlocks.</p>\n\n      <div class=\"walkthrough\">\n        <h4>Setting Up Face ID</h4>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Find the <strong>Settings</strong> app on your Home screen. It looks like grey mechanical gears.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap <strong>Settings</strong> to open it.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Scroll down the left side and tap <strong>\"Face ID &amp; Passcode\"</strong>.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">You will need to enter your current passcode (the number you type to unlock your iPad).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Tap <strong>\"Set Up Face ID\"</strong>.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">6</span>\n          <span class=\"step-text\">Hold your iPad at arm's length and position your face in the circle on the screen. Slowly move your head in a circle, as if you are tracing the outline of a large clock with your nose.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">7</span>\n          <span class=\"step-text\">You will need to do this twice. Follow the on-screen instructions.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">8</span>\n          <span class=\"step-text\">When it says \"Face ID is now set up\" — you are done! Your face is now your password.</span>\n        </div>\n      </div>\n\n      <div class=\"visual-example-card\" role=\"img\" aria-label=\"Face ID Setup\">\n        <div class=\"example-icon\">🍎</div>\n        <div class=\"example-content\">\n          <h4 class=\"example-title\">Face ID Setup</h4>\n          <p class=\"example-description\">The Face ID setup in iPhone Settings guides you through a simple face scan — look at your phone and slowly move your head in a circle once. It takes about 30 seconds total.</p>\n        </div>\n      </div>\n\n      <div class=\"tip-block\">\n        <span class=\"tip-label\">Good to Know</span>\n        <p>Face ID works with glasses on or off, and it adapts as your appearance changes gradually over time. It does not work with a face covering, so you may need your passcode when wearing a mask. Face ID will also not let someone unlock your device while you are sleeping — your eyes need to be open and looking at the screen.</p>\n      </div>"
+        },
+        {
+          "devices": [
+            "android-phone",
+            "android-tablet"
+          ],
+          "content": "<h3>Fingerprint and Face Unlock on Android</h3>\n\n      <p>Most Android phones and tablets come with a fingerprint reader, and many newer models also offer face unlock. The fingerprint reader is usually found on the back of the device, on the side (built into the power button), or under the screen itself. Setting it up is straightforward and takes just a couple of minutes.</p>\n\n      <div class=\"walkthrough\">\n        <h4>Setting Up Fingerprint Unlock on Android</h4>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open the <strong>Settings</strong> app (the gear icon on your Home screen or in the App Drawer).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Scroll down and tap <strong>\"Security\"</strong> or <strong>\"Biometrics and Security\"</strong> (the exact name varies slightly between Samsung, Google Pixel, and other brands).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Tap <strong>\"Fingerprint\"</strong> or <strong>\"Fingerprints\"</strong>.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">You will be asked to enter your current PIN, pattern, or password (the code you normally use to unlock your device). If you do not have one set up yet, the device will ask you to create one first.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Tap <strong>\"Add fingerprint.\"</strong> The device will ask you to place your finger on the fingerprint sensor.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">6</span>\n          <span class=\"step-text\">Gently tap and lift your finger on the sensor repeatedly. The screen will show you how much of your fingerprint has been captured. Move your finger slightly each time to cover all the edges.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">7</span>\n          <span class=\"step-text\">When the device says your fingerprint has been added — you are done! Your finger is now your password.</span>\n        </div>\n      </div>\n\n      <div class=\"walkthrough\">\n        <h4>Setting Up Face Unlock on Android</h4>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open <strong>Settings</strong> and go to <strong>\"Security\"</strong> or <strong>\"Biometrics and Security.\"</strong></span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap <strong>\"Face recognition\"</strong> or <strong>\"Face Unlock.\"</strong></span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Enter your PIN, pattern, or password when prompted.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Hold your device at arm's length and position your face inside the circle on the screen. Hold still while the camera scans your face.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">When the device confirms your face has been registered, you are all set.</span>\n        </div>\n      </div>\n\n      <div class=\"visual-example-card\" role=\"img\" aria-label=\"Fingerprint Setup\">\n        <div class=\"example-icon\">🤖</div>\n        <div class=\"example-content\">\n          <h4 class=\"example-title\">Fingerprint Setup</h4>\n          <p class=\"example-description\">The fingerprint setup in Android Settings asks you to repeatedly press and lift your finger on the sensor until it has learned every edge of your fingerprint.</p>\n        </div>\n      </div>\n\n      <div class=\"tip-block\">\n        <span class=\"tip-label\">Good to Know</span>\n        <p>Android fingerprint unlock is very reliable and works even if your hands are slightly damp. Face unlock on Android is convenient, but on most devices it is slightly less secure than fingerprint — some models can be unlocked with a good photograph. For best security, use fingerprint as your primary method and face unlock as a backup. You can have both set up at the same time.</p>\n      </div>"
+        },
+        {
+          "devices": [
+            "windows"
+          ],
+          "content": "<h3>Windows Hello: PIN, Face, and Fingerprint on Windows</h3>\n\n      <p>Windows computers have a built-in sign-in system called <strong>Windows Hello</strong>. It lets you sign in with a PIN, your face (on computers with the right camera), or a fingerprint (on computers with a fingerprint reader). A Windows Hello PIN is especially useful — it is different from your Microsoft account password, and it only works on that specific computer.</p>\n\n      <div class=\"walkthrough\">\n        <h4>Setting Up a Windows Hello PIN</h4>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Click the <strong>Start button</strong> (Windows logo, bottom left) and then click the <strong>Settings gear icon</strong>.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Click <strong>\"Accounts\"</strong> from the list on the left side.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Click <strong>\"Sign-in options.\"</strong></span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Under <strong>\"Windows Hello PIN,\"</strong> click <strong>\"Add\"</strong> or <strong>\"Set up.\"</strong></span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">You will be asked to confirm your Microsoft account password first, then choose a PIN of at least 4 digits. Write it down and keep it in a safe place.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">6</span>\n          <span class=\"step-text\">Once set up, you will type this shorter PIN to sign in instead of your long password. Much easier to remember!</span>\n        </div>\n      </div>\n\n      <div class=\"tip-block\">\n        <span class=\"tip-label\">Good to Know</span>\n        <p>Your Windows Hello PIN is tied to your specific computer — it cannot be used anywhere else. This means even if someone finds your PIN written down, they cannot use it to access your account from another device. It is safe to write your PIN on paper and store it securely.</p>\n      </div>"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Creating Strong Passwords"
+    },
+    {
+      "type": "paragraph",
+      "content": "For accounts where you still need a typed password, here is how to make a good one:"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"danger-block\">\n        <span class=\"danger-label\">Weak Passwords (Do Not Use These)</span>\n        <p>123456, password, your name, your pet's name, your birthday, your anniversary, your address, \"qwerty,\" or any single word found in the dictionary.</p>\n      </div>"
+    },
+    {
+      "type": "warning",
+      "content": "Using the same password for multiple accounts is like using the same key for your house, your car, and your safety deposit box. If a thief copies that one key, they get into everything."
+    },
+    {
+      "type": "paragraph",
+      "content": "A strong password is like a strong lock — it has multiple parts that work together. The best way to create one is the <strong>passphrase method</strong>:"
+    },
+    {
+      "type": "tip",
+      "content": "Instead of a single word, use a short phrase of random words. For example:"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"visual-example-card\" role=\"img\" aria-label=\"Passphrase\">\n        <div class=\"example-icon\">🔑</div>\n        <div class=\"example-content\">\n          <h4 class=\"example-title\">Passphrase</h4>\n          <p class=\"example-description\">A passphrase like Purple-Teacup-Bridge-44 is easy to remember (picture a purple teacup on a bridge) yet extremely difficult for any computer to guess.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "paragraph",
+      "content": "The key rules for passwords:"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "<strong>Never use the same password twice.</strong> Each account should have its own unique password."
+        },
+        {
+          "text": "<strong>Never share your passwords</strong> with anyone — not even someone who says they are from Apple or your bank."
+        },
+        {
+          "text": "<strong>Make them long.</strong> A 16-character passphrase is far stronger than an 8-character password with random symbols."
+        }
+      ]
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">💛</span>\n        <p>Confidence Check: You do not need to be a computer expert to have strong passwords. A silly phrase you can picture in your mind is all you need.</p>\n      </div>"
+    },
+    {
+      "type": "tip",
+      "content": "Write your master password on paper and keep it in a locked drawer or a safe — never on a sticky note attached to your device. A paper backup in a secure location is perfectly fine."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Password Managers: Your Digital Vault"
+    },
+    {
+      "type": "paragraph",
+      "content": "\"But how am I supposed to remember a different password for every account?\" Great question. The answer is: you are not. A password manager does it for you."
+    },
+    {
+      "type": "device_variant",
+      "variants": [
+        {
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "content": "<p>Your iPad comes with a built-in password manager called <strong>iCloud Keychain</strong>. Here is what it does:</p>\n\n      <ul class=\"content-list\">\n        <li>When you create a new account on a website, your iPad offers to <strong>save the password</strong> for you.</li>\n        <li>When you return to that website, your iPad <strong>fills in the password automatically</strong> — you do not need to type it.</li>\n        <li>It can <strong>suggest strong passwords</strong> when you are creating a new account.</li>\n        <li>It <strong>warns you</strong> if one of your saved passwords has been found in a data breach.</li>\n        <li>All of this is protected by your Face ID or passcode — no one else can see your passwords.</li>\n      </ul>\n\n      <div class=\"walkthrough\">\n        <h3 data-freshness-id=\"module-3-section-2\">Making Sure iCloud Keychain Is Turned On</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open <strong>Settings</strong> (the grey gears icon).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap your <strong>name</strong> at the very top of the Settings screen (it shows your name and \"Apple ID, iCloud, Media &amp; Purchases\").</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Tap <strong>\"iCloud\"</strong>.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Tap <strong>\"Passwords and Keychain\"</strong>.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Make sure the switch next to <strong>\"Sync this iPad\"</strong> is turned on (green). If it is already green, you are all set.</span>\n        </div>\n      </div>\n\n      <div class=\"visual-example-card\" role=\"img\" aria-label=\"Password Manager App\">\n        <div class=\"example-icon\">🗝️</div>\n        <div class=\"example-content\">\n          <h4 class=\"example-title\">Password Manager App</h4>\n          <p class=\"example-description\">A password manager stores all your passwords securely in one place. You only need to remember one master password — it fills in all the others for you automatically.</p>\n        </div>\n      </div>\n\n      <div class=\"walkthrough\">\n        <h3>Viewing Your Saved Passwords</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open <strong>Settings</strong>.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Scroll down and tap <strong>\"Passwords\"</strong>.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Use Face ID or enter your passcode to see your saved passwords.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">You will see a list of websites and the passwords saved for each one. Tap any entry to see the details.</span>\n        </div>\n      </div>"
+        },
+        {
+          "devices": [
+            "android-phone",
+            "android-tablet"
+          ],
+          "content": "<p>Your Android device comes with a built-in password manager called <strong>Google Password Manager</strong>. It works through your Google account and your Chrome browser. Here is what it does:</p>\n\n      <ul class=\"content-list\">\n        <li>When you create a new account on a website in Chrome, your device offers to <strong>save the password</strong> for you.</li>\n        <li>When you return to that website, your device <strong>fills in the password automatically</strong> — you do not need to type it.</li>\n        <li>It can <strong>suggest strong passwords</strong> when you are creating a new account.</li>\n        <li>It <strong>warns you</strong> if one of your saved passwords has been found in a data breach (called a \"Password Checkup\").</li>\n        <li>All of this is protected by your screen lock (fingerprint, face unlock, or PIN) — no one else can see your passwords.</li>\n      </ul>\n\n      <div class=\"walkthrough\">\n        <h3>Making Sure Google Password Manager Is Turned On</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open the <strong>Chrome</strong> app (the colourful circle icon).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap the <strong>three dots</strong> in the top-right corner of the screen.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Tap <strong>\"Settings\"</strong>.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Tap <strong>\"Password Manager\"</strong> (or <strong>\"Passwords\"</strong> on some versions).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Make sure <strong>\"Offer to save passwords\"</strong> is turned on (the switch should be blue). If it is already on, you are all set.</span>\n        </div>\n      </div>\n\n      <div class=\"walkthrough\">\n        <h3>Viewing Your Saved Passwords</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open the <strong>Settings</strong> app on your device.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap <strong>\"Passwords and accounts\"</strong> or <strong>\"Google\"</strong> and then <strong>\"Password Manager.\"</strong></span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Use your fingerprint, face unlock, or PIN to confirm your identity.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">You will see a list of websites and apps with saved passwords. Tap any entry to see the details.</span>\n        </div>\n      </div>\n\n      <div class=\"tip-block\">\n        <span class=\"tip-label\">Helpful Hint</span>\n        <p>You can also visit <strong>passwords.google.com</strong> in any web browser to see all your saved passwords. You will need to sign in with your Google account. This is handy if you want to review your passwords on a computer as well.</p>\n      </div>"
+        },
+        {
+          "devices": [
+            "windows"
+          ],
+          "content": "<p>Your Windows computer comes with a built-in password manager inside <strong>Microsoft Edge</strong> (your web browser). It works very similarly to the iPad and Android versions. Here is what it does:</p>\n\n      <ul class=\"content-list\">\n        <li>When you create a new account on a website, Edge offers to <strong>save the password</strong> for you.</li>\n        <li>When you return to that website, Edge <strong>fills in the password automatically</strong> — you do not need to type it.</li>\n        <li>It can <strong>suggest strong passwords</strong> when you are creating a new account.</li>\n        <li>It <strong>monitors for data breaches</strong> and alerts you if any of your saved passwords have been compromised.</li>\n        <li>All of this is protected by your Windows Hello PIN or computer password.</li>\n      </ul>\n\n      <div class=\"walkthrough\">\n        <h3>Turning On Password Saving in Microsoft Edge</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open <strong>Microsoft Edge</strong> (the blue wave icon on your taskbar or Start menu).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Click the <strong>three dots (...)</strong> in the top-right corner of the browser.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Click <strong>\"Settings.\"</strong></span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">On the left side, click <strong>\"Passwords\"</strong> (or search \"Passwords\" in the search bar at the top of Settings).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Make sure <strong>\"Offer to save passwords\"</strong> is turned on (the switch should be blue/on). If it is already on, you are all set.</span>\n        </div>\n      </div>\n\n      <div class=\"walkthrough\">\n        <h3>Viewing Your Saved Passwords in Edge</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open <strong>Edge</strong>, click the <strong>three dots (...)</strong>, then <strong>Settings → Passwords.</strong></span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">You will see a list of all saved passwords. Click the <strong>eye icon</strong> next to any entry to see the password (you may be asked to confirm with your Windows Hello PIN).</span>\n        </div>\n      </div>\n\n      <div class=\"tip-block\">\n        <span class=\"tip-label\">Helpful Hint</span>\n        <p>If you prefer to use <strong>Google Chrome</strong> on your Windows computer, Chrome has its own built-in password manager that works identically. You can also visit <strong>passwords.google.com</strong> in any browser to see your Google-saved passwords. Both systems work beautifully — use whichever browser you are comfortable with.</p>\n      </div>"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "What About Third-Party Password Managers?"
+    },
+    {
+      "type": "paragraph",
+      "content": "Your device's built-in password manager (iCloud Keychain, Google Password Manager, or Microsoft Edge) is free, already set up, and works perfectly for most people. However, some people prefer a separate app — especially if they use multiple types of devices (for example, an iPhone and a Windows computer)."
+    },
+    {
+      "type": "paragraph",
+      "content": "Here are the three most trusted options if you decide you want one:"
+    },
+    {
+      "type": "tip",
+      "content": "<span class=\"tip-label\">Third-Party Password Manager Comparison</span>\n        <table style=\"width:100%;border-collapse:collapse;font-size:0.9em;margin-top:8px\">\n          <thead>\n            <tr style=\"border-bottom:2px solid #1565C0;text-align:left\">\n              <th style=\"padding:6px 8px\">App</th>\n              <th style=\"padding:6px 8px\">Cost</th>\n              <th style=\"padding:6px 8px\">Best For</th>\n              <th style=\"padding:6px 8px\">Ease of Use</th>\n            </tr>\n          </thead>\n          <tbody>\n            <tr style=\"border-bottom:1px solid rgba(128,128,128,0.2)\">\n              <td style=\"padding:6px 8px\"><strong>Bitwarden</strong></td>\n              <td style=\"padding:6px 8px\">Free (paid: $10/yr)</td>\n              <td style=\"padding:6px 8px\">Best free option — open source, widely trusted</td>\n              <td style=\"padding:6px 8px\">Moderate</td>\n            </tr>\n            <tr style=\"border-bottom:1px solid rgba(128,128,128,0.2)\">\n              <td style=\"padding:6px 8px\"><strong>1Password</strong></td>\n              <td style=\"padding:6px 8px\">~$36/yr</td>\n              <td style=\"padding:6px 8px\">Easiest to use, excellent for families, works on all devices</td>\n              <td style=\"padding:6px 8px\">Very easy</td>\n            </tr>\n            <tr>\n              <td style=\"padding:6px 8px\"><strong>LastPass</strong></td>\n              <td style=\"padding:6px 8px\">Free (limited) / $36/yr</td>\n              <td style=\"padding:6px 8px\">Long-standing service; had a security incident in 2022 — acceptable if you change your master password</td>\n              <td style=\"padding:6px 8px\">Easy</td>\n            </tr>\n          </tbody>\n        </table>"
+    },
+    {
+      "type": "tip",
+      "content": "<strong>For most seniors: use your built-in password manager. It is free, already there, and works beautifully.</strong> If a family member suggests a third-party app and offers to help you set it up, Bitwarden (free) or 1Password (paid, easiest) are excellent choices. You do not need to rush into this — start with what is already on your device."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "How to Set Up a Third-Party Password Manager"
+    },
+    {
+      "type": "paragraph",
+      "content": "If you decide to try a third-party password manager, here is how to get started with <strong>1Password</strong> — the easiest option for beginners. There is a 14-day free trial so you can try it before you pay a cent."
+    },
+    {
+      "type": "raw_html",
+      "content": "<ol class=\"numbered-list\">\n        <li><strong>Download the app.</strong> On your iPhone or iPad, open the App Store and search for \"1Password.\" Download the app — it is free to install for the trial. On Android, find it in the Google Play Store.</li>\n        <li><strong>Create your account.</strong> Open 1Password and tap \"Create Account.\" Enter your email address. You will receive a confirmation email — open it and tap the link to confirm.</li>\n        <li><strong>Create your Master Password.</strong> Choose ONE strong password you will remember. Three or four random words strung together work well: <em>\"Sunset-Garden-Bicycle-Maple\"</em> — long and easy to picture, but very hard to guess.</li>\n        <li><strong>Write your Master Password on paper.</strong> Write it clearly and keep it in a safe place at home — a drawer, a lockbox, or with your important documents. <strong>This is the one time paper is better than digital.</strong></li>\n        <li><strong>Add your first password.</strong> Open a website you use often. When you see the login page, 1Password will offer to save your username and password. Tap \"Save Login.\" Done!</li>\n        <li><strong>Next time you log in.</strong> When you return to that website, 1Password will offer to fill in your username and password automatically. Just tap \"Fill\" — no typing needed.</li>\n        <li><strong>Let it create new passwords.</strong> Next time you sign up for a new account, tap \"Generate Password\" in 1Password. It creates a strong random password and saves it. You never need to see or remember it.</li>\n      </ol>"
+    },
+    {
+      "type": "warning",
+      "content": "Your Master Password is the key that unlocks every other password. <strong>Never save it digitally</strong> — not in a text file, not in an email draft, not in Notes on your phone. Write it on paper, store it at home, and do not share it with anyone except a trusted family member kept for emergencies."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Two-Factor Authentication: The Double Lock"
+    },
+    {
+      "type": "paragraph",
+      "content": "Imagine your front door had two locks — a regular lock and a deadbolt. Even if someone copied your key, they still could not get in without also having the deadbolt key. That is what two-factor authentication does for your online accounts."
+    },
+    {
+      "type": "paragraph",
+      "content": "When you turn on two-factor authentication (let us call it \"the double lock\"), logging in works like this:"
+    },
+    {
+      "type": "raw_html",
+      "content": "<ol class=\"numbered-list\">\n        <li>You type your password as usual (the first lock).</li>\n        <li>The website sends a <strong>short code</strong> (usually 6 numbers) to your phone or iPad (the second lock).</li>\n        <li>You type that code into the website.</li>\n        <li>Now the website knows it is really you — because even if someone stole your password, they would also need your phone to get the code.</li>\n      </ol>"
+    },
+    {
+      "type": "paragraph",
+      "content": "Your Apple ID already uses two-factor authentication by default. When you sign in on a new device, Apple sends a code to your other devices. This is normal and it is protecting you."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"visual-example-card\" role=\"img\" aria-label=\"Two-Factor Verification Code\">\n        <div class=\"example-icon\">📲</div>\n        <div class=\"example-content\">\n          <h4 class=\"example-title\">Two-Factor Verification Code</h4>\n          <p class=\"example-description\">A two-factor code arrives as a text message with a 6-digit number that expires in about 30 seconds. Enter it right after typing your password to complete the login.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"three-second-rule\">\n        <h3>The 3-Second Rule for Codes</h3>\n        <div class=\"steps\">\n          <div class=\"step\">\n            <span class=\"step-icon\">✋</span>\n            <span class=\"step-name\">Stop</span>\n            <span class=\"step-desc\">Did you request this code?</span>\n          </div>\n          <div class=\"step\">\n            <span class=\"step-icon\">🫁</span>\n            <span class=\"step-name\">Breathe</span>\n            <span class=\"step-desc\">If you did not try to log in, someone else might be trying.</span>\n          </div>\n          <div class=\"step\">\n            <span class=\"step-icon\">🔍</span>\n            <span class=\"step-name\">Verify</span>\n            <span class=\"step-desc\">Never share a verification code with anyone who calls or texts you. Change your password if you did not request it.</span>\n          </div>\n</div>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "The Four Types of Two-Factor Authentication"
+    },
+    {
+      "type": "paragraph",
+      "content": "There are a few different ways to set up your \"second lock.\" Here they are from easiest to most advanced — you only need to pick one:"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"resource-card\">\n        <h4>1. Text Message Code (SMS) — Easiest for Beginners</h4>\n        <p>When you log in, the website sends a 6-digit code to your phone as a text message. You type the code to complete the login. Takes about 10 extra seconds. No special app required — just your mobile phone number.</p>\n        <span class=\"efficacy-badge\">Best for beginners</span>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"resource-card\">\n        <h4>2. Email Code</h4>\n        <p>Similar to SMS, but the code is sent to your email address instead of your phone. Good backup option if you prefer not to give out your phone number.</p>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"resource-card\">\n        <h4>3. Authenticator App — More Advanced</h4>\n        <p>Apps like <strong>Google Authenticator</strong> or <strong>Microsoft Authenticator</strong> generate codes every 30 seconds — even without internet connection. More secure than SMS because codes are not sent over the phone network. Requires one-time setup per account.</p>\n        <span class=\"efficacy-badge\">Best for maximum security</span>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"resource-card\">\n        <h4>4. Face ID or Fingerprint + Password</h4>\n        <p>Using your face or fingerprint combined with your password. If you already use Face ID on your iPhone, you are doing this for your Apple account — Apple enables it by default.</p>\n        <span class=\"efficacy-badge\">Already on your iPhone or iPad</span>\n      </div>"
+    },
+    {
+      "type": "tip",
+      "content": "<strong>Start with your email and your bank.</strong> These two accounts are the most important to protect, and once they are secured, the rest follows naturally."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Turn On the Double Lock for Your Gmail Account"
+    },
+    {
+      "type": "paragraph",
+      "content": "Gmail (Google's email service) is used by millions of Canadians. Here is how to turn on two-factor authentication so your email is protected even if someone guesses your password."
+    },
+    {
+      "type": "device_variant",
+      "variants": [
+        {
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "content": "<h4>📱 On iPhone or iPad (in the Gmail app or Safari)</h4>\n        <ol class=\"numbered-list\">\n          <li>Open the <strong>Gmail app</strong> (red and white envelope icon) and make sure you are signed in.</li>\n          <li>Tap your <strong>profile photo</strong> (your initial or photo, top right corner).</li>\n          <li>Tap <strong>Manage your Google Account</strong>.</li>\n          <li>Tap the <strong>Security</strong> tab at the top.</li>\n          <li>Scroll down to <strong>How you sign in to Google</strong>.</li>\n          <li>Tap <strong>2-Step Verification</strong>.</li>\n          <li>Tap <strong>Get started</strong> and follow the steps. Google will ask you to enter your phone number so it can send you a code by text message.</li>\n          <li>Enter the code Google sends you to confirm it works, then tap <strong>Turn on</strong>.</li>\n        </ol>\n        <div class=\"tip-block\">\n          <span class=\"tip-label\">What to Expect After Turning On 2FA</span>\n          <p>The next time you sign in to Gmail on a new device or after logging out, Google will send a 6-digit code to your phone. Just type in the code and you are in. On your own phone or iPad, you usually stay signed in and will not be asked for a code every time.</p>\n        </div>"
+        },
+        {
+          "devices": [
+            "android-phone",
+            "android-tablet"
+          ],
+          "content": "<h4>🤖 On Android</h4>\n        <ol class=\"numbered-list\">\n          <li>Open the <strong>Gmail app</strong> and tap your <strong>profile photo</strong> (top right).</li>\n          <li>Tap <strong>Manage your Google Account</strong>.</li>\n          <li>Tap the <strong>Security</strong> tab.</li>\n          <li>Tap <strong>2-Step Verification</strong> under \"How you sign in to Google.\"</li>\n          <li>Tap <strong>Get started</strong>. Enter your password if asked.</li>\n          <li>Choose <strong>Text message</strong> as your verification method and enter your phone number.</li>\n          <li>Enter the code Google sends you, then tap <strong>Turn on</strong>.</li>\n        </ol>"
+        },
+        {
+          "devices": [
+            "windows",
+            "mac",
+            "chromebook"
+          ],
+          "content": "<h4>💻 On Windows, Mac, or Chromebook</h4>\n        <ol class=\"numbered-list\">\n          <li>Open your browser and go to <strong>myaccount.google.com</strong>.</li>\n          <li>Click <strong>Security</strong> in the left menu.</li>\n          <li>Under \"How you sign in to Google,\" click <strong>2-Step Verification</strong>.</li>\n          <li>Click <strong>Get started</strong> and sign in if asked.</li>\n          <li>Follow the prompts to add your phone number.</li>\n          <li>Enter the test code Google sends to confirm it works.</li>\n          <li>Click <strong>Turn on</strong>.</li>\n        </ol>"
+        }
+      ]
+    },
+    {
+      "type": "warning",
+      "content": "Never give your 2FA code to anyone. A legitimate company will never call you and ask for your 6-digit code. If someone calls asking for your code — whether they say they are from Google, your bank, or the government — hang up immediately. That code is the key to your account, and giving it away hands them complete access."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Answering Your Questions About the Double Lock"
+    },
+    {
+      "type": "raw_html",
+      "content": "<details class=\"faq-item\">\n        <summary>What if I lose my phone?</summary>\n        <div class=\"faq-answer\">\n          <p>When you set up 2FA, most services show you a set of <strong>backup codes</strong> — a list of one-time emergency codes. Print these or write them on paper and store them with your important documents. If you lose your phone, use a backup code to get in, then update your settings.</p>\n          <p>You can also contact the company's customer support line. They have a process for verifying your identity and restoring access — it may take a day or two, but it works.</p>\n        </div>\n      </details>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<details class=\"faq-item\">\n        <summary>Will I need a code every single time I log in?</summary>\n        <div class=\"faq-answer\">\n          <p>No! Most services remember your own device for 30 days or longer. Once you log in successfully on your home computer or phone, you will not be asked for a code again for weeks. You mainly get a code when you log in on a <em>new</em> device or after a long time away from the site.</p>\n        </div>\n      </details>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<details class=\"faq-item\">\n        <summary>Is it really worth the extra step?</summary>\n        <div class=\"faq-answer\">\n          <p>Yes — absolutely. Two-factor authentication stops over 99% of automated account hacking attempts. That 10 extra seconds once a month is a small price for knowing your bank account, email, and photos are protected. Security professionals use 2FA on every important account they own.</p>\n        </div>\n      </details>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<details class=\"faq-item\">\n        <summary>Do I have to use it?</summary>\n        <div class=\"faq-answer\">\n          <p>Most websites make it optional — but some banks and government sites are starting to require it. Even where it is optional, enabling it for your bank and email is strongly recommended. Think of it like wearing a seatbelt: not every drive ends in an accident, but it is the right habit that protects you when it matters.</p>\n        </div>\n      </details>"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "A Real Example: Logging In to Your Bank with the Double Lock"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"visual-example-card\" role=\"img\" aria-label=\"Banking 2FA login example\">\n        <div class=\"example-icon\">🏦</div>\n        <div class=\"example-content\">\n          <h4 class=\"example-title\">Online Banking Login — Step by Step</h4>\n          <ol style=\"margin:8px 0 0;padding-left:20px;line-height:2\">\n            <li>Visit your bank's website (type the address yourself — <em>never</em> click a link in an email)</li>\n            <li>Enter your username and password as usual (the first lock)</li>\n            <li>The bank sends a 6-digit code to your phone by text message</li>\n            <li>Open your text messages — the code arrives within seconds</li>\n            <li>Type the 6-digit code into the bank website</li>\n            <li>Tick \"Remember this device for 30 days\" if the option appears</li>\n            <li>You are in — and your account is protected!</li>\n          </ol>\n          <p style=\"margin-top:12px;color:#1565C0;font-weight:600;\">That is the double lock in action — simple, fast, and enormously effective.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">💛</span>\n        <p>Confidence Check: You now understand the three layers of security: a strong password, a password manager, and the double lock. You are more secure than most people online.</p>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"video-section\">\n        <div class=\"video-section-header\">\n          <div class=\"video-section-icon\">📺</div>\n          <h3>Password & Security Tutorials</h3>\n        </div>\n        <div class=\"video-grid\">\n        <div class=\"video-card\">\n          <div class=\"video-card-thumbnail\">\n            <div class=\"video-card-play-icon\">▶️</div>\n            <div class=\"video-card-topic-icon\">🔑</div>\n          </div>\n          <h4>Password Manager Tutorial</h4>\n          <p>Learn how to create and safely store strong passwords on your iPhone or iPad.</p>\n          <a href=\"https://www.youtube.com/results?search_query=password+manager+tutorial+for+beginners&amp;sp=CAMSAhAB\" target=\"_blank\" rel=\"noopener\" class=\"video-card-btn\">Watch Tutorials</a>\n        </div>\n        <div class=\"video-card\">\n          <div class=\"video-card-thumbnail\">\n            <div class=\"video-card-play-icon\">▶️</div>\n            <div class=\"video-card-topic-icon\">👤</div>\n          </div>\n          <h4>Face ID & Fingerprint Setup</h4>\n          <p>Set up Face ID or fingerprint recognition so you never have to type a password.</p>\n          <a href=\"https://www.youtube.com/results?search_query=Face+ID+and+Touch+ID+setup+guide&amp;sp=CAMSAhAB\" target=\"_blank\" rel=\"noopener\" class=\"video-card-btn\">Watch Tutorials</a>\n        </div>\n        </div>\n        <div class=\"video-safety-note\">\n          <div class=\"video-safety-note-icon\">✓</div>\n          <p>These links open YouTube in a new tab. YouTube is safe and free to use — you can watch as many videos as you like without signing in.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"video-help-link\">\n        <p>📚 New to YouTube? <a href=\"search-guide.html\">Learn how to spot quality videos and avoid ads</a></p>\n      </div>"
+    },
+    {
+      "type": "warning",
+      "content": "No legitimate company will ever ask you for a verification code over the phone. If someone calls and asks for a code that was sent to your device, hang up immediately — it is a scam."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"three-second-rule-box\">\n        <h4>Remember the 3-Second Rule</h4>\n        <p>Stop. Breathe. Think before you tap. If something feels urgent or too good to be true, that is your signal to pause.</p>\n      </div>"
+    },
+    {
+      "type": "tip",
+      "content": "If you receive a verification code you did not request, do not panic — but do change the password for that account as soon as possible. It means someone is trying to log in as you."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"exercise-block\">\n        <h3>Practical Exercise: Strengthen Your Security</h3>\n        <p>Let us put what you have learned into action. Work through these steps at your own pace — you do not need to do them all in one sitting.</p>\n\n        <div class=\"device-content\" data-devices=\"iphone,ipad\">\n        <ol class=\"numbered-list\">\n          <li><strong>Check Face ID:</strong> Go to Settings → Face ID &amp; Passcode and make sure Face ID is set up. If it is not, follow the walkthrough above to set it up.</li>\n          <li><strong>Check your Keychain:</strong> Go to Settings → Passwords and look at your saved passwords. Are any of them marked with a warning triangle? If so, those passwords may have been found in a data breach — consider changing them.</li>\n          <li><strong>Create a passphrase:</strong> Think of three random words and a number. Write it down on paper and store it in a safe place (like a locked drawer — never on a sticky note on your iPad).</li>\n          <li><strong>Change one password:</strong> Pick one account (perhaps an online shopping site — start with something that is not your bank) and change the password to your new passphrase.</li>\n        </ol>\n\n        <div class=\"success-state\">\n          <strong>Success looks like this:</strong> Face ID is set up and working. You have at least one strong passphrase password. You know where your saved passwords are stored on your iPad.\n        </div>\n        </div>\n\n        <div class=\"device-content\" data-devices=\"android-phone,android-tablet\">\n        <ol class=\"numbered-list\">\n          <li><strong>Check your fingerprint or face unlock:</strong> Go to Settings → Security (or Biometrics and Security) and make sure at least one fingerprint is registered. If not, follow the walkthrough above to set it up.</li>\n          <li><strong>Check your saved passwords:</strong> Open Chrome, tap the three dots, then Settings → Password Manager. Look at your saved passwords. If there is a \"Password Checkup\" option, tap it to see if any of your passwords have been found in a data breach — consider changing those.</li>\n          <li><strong>Create a passphrase:</strong> Think of three random words and a number. Write it down on paper and store it in a safe place (like a locked drawer — never on a sticky note near your device).</li>\n          <li><strong>Change one password:</strong> Pick one account (perhaps an online shopping site — start with something that is not your bank) and change the password to your new passphrase.</li>\n        </ol>\n\n        <div class=\"success-state\">\n          <strong>Success looks like this:</strong> Fingerprint or face unlock is set up and working. You have at least one strong passphrase password. You know where your saved passwords are stored on your Android device.\n        </div>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"success-state-box\">\n        <span class=\"success-icon\">✅</span>\n        <p><strong>Well done!</strong> You have strengthened your device's security with biometrics and better passwords. Every step you take makes your accounts safer.</p>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Quick Check: Test Your Knowledge"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"quiz-container\" id=\"module3-quiz\">\n        <div class=\"quiz-question\" data-correct=\"b\">\n          <h3>1. Which is the strongest password?</h3>\n          <button class=\"quiz-option\" data-answer=\"a\">MyName1954!</button>\n          <button class=\"quiz-option\" data-answer=\"b\">Purple-Teacup-Bridge-44</button>\n          <button class=\"quiz-option\" data-answer=\"c\">password123</button>\n          <div class=\"quiz-feedback\" data-correct-text=\"Well done! A passphrase with random words is much harder to guess than a name with a year or a common word.\" data-incorrect-text=\"The strongest option is &#x27;Purple-Teacup-Bridge-44&#x27; — a passphrase of random words is hard for computers to crack but easy for you to remember.\"></div>\n        </div>\n\n        <div class=\"quiz-question\" data-correct=\"a\">\n          <h3>2. What does a password manager do?</h3>\n          <button class=\"quiz-option\" data-answer=\"a\">Securely stores all your passwords so you only need to remember one</button>\n          <button class=\"quiz-option\" data-answer=\"b\">Sends your passwords to Apple for safekeeping</button>\n          <button class=\"quiz-option\" data-answer=\"c\">Makes all your accounts use the same password</button>\n          <div class=\"quiz-feedback\" data-correct-text=\"Exactly! A password manager is your secure digital vault. You remember one password, it remembers the rest.\" data-incorrect-text=\"A password manager securely stores all your passwords on your device so you only need to remember one master password (or use Face ID).\"></div>\n        </div>\n\n        <div class=\"quiz-question\" data-correct=\"c\">\n          <h3>3. You receive a text message with a verification code that you did not request. What should you do?</h3>\n          <button class=\"quiz-option\" data-answer=\"a\">Ignore it — codes expire and it is nothing to worry about</button>\n          <button class=\"quiz-option\" data-answer=\"b\">Reply to the text with \"STOP\"</button>\n          <button class=\"quiz-option\" data-answer=\"c\">Do not share the code with anyone, and consider changing your password for that account</button>\n          <div class=\"quiz-feedback\" data-correct-text=\"Correct! An unexpected code could mean someone is trying to access your account. Never share it, and change your password to be safe.\" data-incorrect-text=\"An unexpected verification code could mean someone has your password and is trying to log in. Never share the code, and change your password for that account.\"></div>\n        </div>\n\n        <div class=\"quiz-score\">\n          <p class=\"score-number\"></p>\n          <p class=\"score-message\"></p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Module 3 Progress Checklist"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"checklist\">\n        <div class=\"progress-item\">\n          <input type=\"checkbox\" class=\"progress-checkbox\" data-id=\"m3-1\" id=\"m3-1\">\n          <label class=\"progress-label\" for=\"m3-1\">I understand what Face ID, passwords, and two-factor authentication mean</label>\n        </div>\n        <div class=\"progress-item\">\n          <input type=\"checkbox\" class=\"progress-checkbox\" data-id=\"m3-2\" id=\"m3-2\">\n          <label class=\"progress-label\" for=\"m3-2\">Face ID is set up on my device</label>\n        </div>\n        <div class=\"progress-item\">\n          <input type=\"checkbox\" class=\"progress-checkbox\" data-id=\"m3-3\" id=\"m3-3\">\n          <label class=\"progress-label\" for=\"m3-3\">I know how to create a strong passphrase</label>\n        </div>\n        <div class=\"progress-item\">\n          <input type=\"checkbox\" class=\"progress-checkbox\" data-id=\"m3-4\" id=\"m3-4\">\n          <label class=\"progress-label\" for=\"m3-4\">I know where my saved passwords are stored</label>\n        </div>\n        <div class=\"progress-item\">\n          <input type=\"checkbox\" class=\"progress-checkbox\" data-id=\"m3-5\" id=\"m3-5\">\n          <label class=\"progress-label\" for=\"m3-5\">I have changed at least one weak password</label>\n        </div>\n        <div class=\"progress-item\">\n          <input type=\"checkbox\" class=\"progress-checkbox\" data-id=\"m3-6\" id=\"m3-6\">\n          <label class=\"progress-label\" for=\"m3-6\">I understand why I should never share verification codes</label>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"local-help-section\">\n        <h3>🤝 Need In-Person Help?</h3>\n        <p>Your local community offers free technology support for seniors:</p>\n        <div class=\"local-help-grid\">\n          <div class=\"local-help-dynamic-wrap local-help-card\" id=\"lh-library\">\n            <div class=\"local-help-card-icon\">📚</div>\n            <h4>Your Local Library</h4>\n            <p>Many libraries offer free tech workshops and one-on-one help sessions.</p>\n          </div>\n          <div class=\"local-help-dynamic-wrap local-help-card\" id=\"lh-senior\">\n            <div class=\"local-help-card-icon\">👥</div>\n            <h4>Senior Centre</h4>\n            <p>Community centres often host technology classes and support groups.</p>\n          </div>\n          <div class=\"local-help-card\">\n            <div class=\"local-help-card-icon\">📞</div>\n            <h4>Connected Canadians</h4>\n            <p>Free one-on-one tech support by phone or video call.<br><strong><a href=\"tel:+18558080505\">1-855-808-0505</a></strong></p>\n          </div>\n          <div class=\"local-help-card\">\n            <div class=\"local-help-card-icon\">🌐</div>\n            <h4>Cyber-Seniors</h4>\n            <p>Free tech training from trained volunteers.<br><strong><a href=\"tel:+18442173057\">1-844-217-3057</a></strong></p>\n          </div>\n        </div>\n        <div class=\"local-help-dynamic\"></div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">🎉</span>\n        <p>Congratulations! You have completed Module 3!</p>\n        <p class=\"check-text\">Your accounts are now protected by strong, unique passwords, a password manager, and biometrics. That is a fortress of security, and you built it yourself.</p>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"feeling-stuck-box\">\n        <h4>Feeling Stuck?</h4>\n        <p>You do not have to figure this out alone. These free services are staffed by real, patient people who love helping:</p>\n        <p class=\"resource-phone\"><strong>Connected Canadians</strong> — <a href=\"tel:+18558080505\">1-855-808-0505</a></p>\n        <p class=\"resource-phone\"><strong>Cyber-Seniors</strong> — <a href=\"tel:+18442173057\">1-844-217-3057</a></p>\n        <p>Both services are free, Canadian, and specialise in helping older adults with technology at your own pace.</p>\n      </div>"
+    },
+    {
+      "type": "warning",
+      "content": "A scammer calls pretending to be your bank and says your card has been compromised. They offer to send a courier to pick it up. <strong>Your bank will NEVER send someone to collect your card.</strong> If this happens, hang up and call the number printed on the back of your card."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div style=\"text-align:center;padding:1rem 0 0.5rem\">\n    <button class=\"btn-print\" onclick=\"window.print()\" aria-label=\"Print this module\">🖨️ Print This Module</button>\n  </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<section class=\"related-modules\" aria-label=\"Related modules\">\n        <h3 class=\"related-title\">Related Modules</h3>\n        <div class=\"related-grid\">\n          <a href=\"module-2.html\" class=\"related-card\">\n            <span class=\"related-num\">Module 2</span>\n            <span class=\"related-name\">The Security Shield</span>\n            <span class=\"related-desc\">Passwords work best alongside the broader security habits that keep scammers away from your devices.</span>\n          </a>\n          <a href=\"module-5.html\" class=\"related-card\">\n            <span class=\"related-num\">Module 5</span>\n            <span class=\"related-name\">Email &amp; Messages</span>\n            <span class=\"related-desc\">Criminals often try to steal passwords through fake emails — learn to spot them before it's too late.</span>\n          </a>\n          <a href=\"module-6.html\" class=\"related-card\">\n            <span class=\"related-num\">Module 6</span>\n            <span class=\"related-name\">Banking &amp; Transactions</span>\n            <span class=\"related-desc\">Strong passwords are your first line of defence for protecting your bank account online.</span>\n          </a>\n        </div>\n      </section>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"module-complete-action\">\n        <button class=\"btn-mark-complete\" onclick=\"markModuleComplete(3)\" aria-label=\"Mark Module 3 complete\">✓ Mark this module complete</button>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"email-invite-box\" id=\"emailInviteBox\">\n        <div class=\"email-invite-inner\">\n          <p class=\"email-invite-headline\">📬 Stay in the Loop</p>\n          <p class=\"email-invite-body\">Would you like us to let you know when new lessons are added? We will never share your email, never send spam, and you can unsubscribe anytime with one click.</p>\n          <div class=\"email-invite-form\">\n            <input type=\"email\" id=\"emailCaptureInput\" placeholder=\"Your email address (optional)\" aria-label=\"Your email address\">\n            <button onclick=\"submitEmailCapture()\" class=\"email-invite-btn\">Yes, keep me posted</button>\n          </div>\n          <button onclick=\"dismissEmailCapture()\" class=\"email-invite-dismiss\">No thank you</button>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"dc-newsletter-slot\" style=\"margin:2rem 0 1rem\"></div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<footer class=\"site-footer\">\n        <div class=\"footer-inner\">\n          <p class=\"footer-brand\">Digital Confidence Centre</p>\n          <p class=\"footer-tagline\">A free digital learning programme for all Canadians</p>\n          <nav class=\"footer-links\" aria-label=\"Footer navigation\">\n            <a href=\"index.html\">Home</a> |\n            <a href=\"digital-literacy-101.html\">Modules</a> |\n            <a href=\"resources.html\">Resources</a> |\n            <a href=\"tips/index.html\">Newsletter</a> |\n            <a href=\"print-centre.html\">Print Centre</a> |\n            <a href=\"recommended-tools.html\">Recommended Tools</a> |\n            <a href=\"faq.html\">FAQ</a> |\n            <a href=\"glossary.html\">Glossary</a> |\n            <a href=\"whats-coming.html\">What's Coming</a> |\n            <a href=\"family-setup.html\">For Families</a> |\n            <a href=\"about.html\">About</a> |\n            <a href=\"privacy.html\">Privacy Policy</a> |\n            <a href=\"accessibility.html\">Accessibility</a> |\n            <a href=\"#\" onclick=\"openFeedbackModal(); return false;\">Ideas &amp; Feedback</a> |\n            <a href=\"resources/support-directory.html\">Get Help</a>\n          </nav>\n          <p class=\"footer-support\">Questions about this site? Leave us a voice message or written note using the Feedback button.</p>\n          <p class=\"footer-copy\">&copy; 2026 Two Birds Innovation. Made with care in Ontario, Canada.</p>\n          <p class=\"city-footer-label\" style=\"display:none;\"></p>\n          <p class=\"device-footer-label\" style=\"display:none;\"></p>\n        </div>\n      </footer>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div id=\"progress-announcer\" aria-live=\"polite\" aria-atomic=\"true\" class=\"sr-only\"></div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"quick-answers-accordion\" id=\"quick-answers\">\n        <h2 data-en=\"Quick Answers\" data-fr=\"Réponses rapides\">Quick Answers</h2>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>What makes a password strong?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>A strong password is at least 12 characters long and mixes uppercase letters, lowercase letters, numbers, and symbols. It does not include your name, birthday, or pet name. The best passwords are passphrases — four random words together, like PurpleTulip!RainyBoat22.</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>Is it safe to use Face ID or Touch ID?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>Yes. Face ID (face recognition) and Touch ID (fingerprint) are among the safest ways to unlock your device. Your biometric data is stored only on your device — it never goes to Apple servers. Using them is more secure than a 4-digit PIN.</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>Where should I keep a list of my passwords?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>A small notebook kept in a safe place at home is acceptable. Apple Keychain password manager is also very safe and remembers passwords for you. Never save passwords in an email, a text, or a document on your phone.</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>How often should I change my passwords?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>Change a password immediately if you suspect it has been stolen or if a company announces a data breach. Otherwise, using a strong unique password matters more than changing it frequently.</p>\n          </div>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"dcc-quiz-container\" id=\"dcc-after-quiz\" aria-label=\"Knowledge check — after the module\" style=\"margin:2rem 0\"></div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"sources-block\">\n        <h3 data-en=\"Sources &amp; References\" data-fr=\"Sources et références\">Sources &amp; References</h3>\n        <ul>\n        <li><a href=\"https://www.getcybersafe.gc.ca/en/resources/passphrases-vs-passwords\" target=\"_blank\" rel=\"noopener noreferrer\">Passphrases vs. Passwords — Get Cyber Safe Canada</a></li>\n        <li><a href=\"https://cyber.gc.ca\" target=\"_blank\" rel=\"noopener noreferrer\">Canadian Centre for Cyber Security</a></li>\n        </ul>\n      </div>"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What makes a password strong?",
+      "options": [
+        "Using your pet's name",
+        "A mix of upper and lower case letters, numbers, and symbols — at least 12 characters",
+        "Using your birthday",
+        "A single common word"
+      ],
+      "correct": 1,
+      "explanation": "A strong password is long (12+ characters), unique, and uses a mix of character types. Avoid anything personally connected to you like names or birthdays."
+    },
+    {
+      "question": "What is two-factor authentication (2FA)?",
+      "options": [
+        "A second password you create",
+        "A security step where a code is sent to your phone to confirm it's really you",
+        "Two people sharing one account",
+        "A type of antivirus software"
+      ],
+      "correct": 1,
+      "explanation": "Two-factor authentication adds a second check — usually a code sent by text to your phone. Even if someone steals your password, they still cannot get in."
+    },
+    {
+      "question": "Face ID or a fingerprint is safer than a PIN because:",
+      "options": [
+        "It is quicker",
+        "No one else has your face or fingerprint",
+        "You can share it with family",
+        "It never needs updating"
+      ],
+      "correct": 1,
+      "explanation": "Biometrics (your face or fingerprint) are unique to you. Nobody can guess or steal them the way they can steal a PIN or password."
+    },
+    {
+      "question": "You have the same password for your email and your bank. This is:",
+      "options": [
+        "A good idea — easier to remember",
+        "Risky — if one is stolen, both are at risk",
+        "Required by the bank",
+        "Recommended by Apple"
+      ],
+      "correct": 1,
+      "explanation": "Password reuse is one of the biggest security risks. If a scammer gets one password, they will immediately try it on your bank, email, and other accounts."
+    },
+    {
+      "question": "A password manager does what?",
+      "options": [
+        "Resets your password every day",
+        "Stores your passwords securely so you only need one master password",
+        "Shares passwords with your family",
+        "Sends passwords to Apple for safekeeping"
+      ],
+      "correct": 1,
+      "explanation": "A password manager (like Apple's built-in Passwords app) stores all your passwords in an encrypted vault. You only remember one master password."
+    }
+  ],
+  "prev_module": {
+    "slug": "module-2-5.html",
+    "label": "Module 2.5: Common Digital Tasks"
+  },
+  "next_module": {
+    "slug": "module-4.html",
+    "label": "Module 4: App Store Safety"
+  },
+  "accessibility": {
+    "lang": "en-CA",
+    "wcag_level": "AA"
+  },
+  "category": "Safety",
+  "category_icon": "🔑",
+  "difficulty": "Beginner",
+  "time": "25 min",
+  "what_you_learn": [
+    "What makes a password strong",
+    "How to use a passphrase (three random words)",
+    "How to set up and use Touch ID or Face ID",
+    "How to use your iPhone's built-in password manager"
+  ],
+  "summary": "Passwords are your first line of defence. You will learn how to create strong passwords, use your device's password manager, and set up Touch ID or Face ID so you almost never need to type a password again."
+}

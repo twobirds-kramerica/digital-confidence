@@ -1,0 +1,70 @@
+{
+  "id": "module-ai-literacy-youth",
+  "number": "module-ai-literacy-youth",
+  "slug": "module-ai-literacy-youth",
+  "title": "Module Ai Literacy Youth",
+  "description": "AI Literacy for Canadian Youth — four real situations happening right now involving AI, deepfakes, voice cloning, and academic honesty. Scenario-based learning for ages 12–18.",
+  "keywords": "AI literacy youth Canada, deepfake teens school, voice cloning scam teens, AI cheating school Canada, AI for youth education Canada, digital literacy 12-18",
+  "date_published": "",
+  "hero_image": {},
+  "intro": "",
+  "story": null,
+  "confidence_check": "",
+  "sections": [
+    {
+      "type": "raw_html",
+      "content": "<div class=\"youth-hero\">\n        <div class=\"eyebrow\">Ages 12–18 · AI Literacy</div>\n        <h1>AI in Real Life</h1>\n        <p>Four real situations happening to young Canadians right now. What would you do?</p>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"dcc-quiz-container\" id=\"dcc-before-quiz\" aria-label=\"Knowledge check — before you start\" style=\"margin-bottom:2rem\"></div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"scenario-progress\" id=\"scenarioProgress\" role=\"progressbar\" aria-label=\"Scenario progress\" aria-valuenow=\"0\" aria-valuemax=\"4\">\n        <div class=\"progress-pip active\" id=\"pip-0\"></div>\n        <div class=\"progress-pip\" id=\"pip-1\"></div>\n        <div class=\"progress-pip\" id=\"pip-2\"></div>\n        <div class=\"progress-pip\" id=\"pip-3\"></div>\n        <span class=\"progress-label\" id=\"progressLabel\">Scenario 1 of 4</span>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"scenario-card active\" id=\"scenario-0\" role=\"region\" aria-label=\"Scenario 1: The Essay That Got Flagged\">\n        <div class=\"scenario-header\">\n          <div class=\"scenario-num\">1</div>\n          <div>\n            <div class=\"scenario-tag\">Academic Integrity</div>\n          </div>\n        </div>\n        <div class=\"scenario-body\">\n          <div class=\"scenario-title\">The Essay That Got Flagged</div>\n          <div class=\"scenario-story\">\n            A Grade 10 student used an AI chatbot to write a paragraph for a history assignment. The teacher's AI detection tool flagged it. The student argued: \"I didn't think it was cheating — I just used it to start.\"\n          </div>\n          <p class=\"scenario-question\">What's the difference between using AI as a tool and having AI do your thinking for you?</p>\n          <div class=\"answer-options\" id=\"opts-0\">\n            <button class=\"answer-btn\" data-q=\"0\" data-val=\"0\"><span class=\"ans-letter\">A</span> There is no difference — all AI use is cheating in school</button>\n            <button class=\"answer-btn\" data-q=\"0\" data-val=\"1\"><span class=\"ans-letter\">B</span> Using AI to brainstorm or get unstuck is a tool skill. Submitting AI writing as your own thinking is misrepresentation.</button>\n            <button class=\"answer-btn\" data-q=\"0\" data-val=\"2\"><span class=\"ans-letter\">C</span> It depends whether the teacher can detect it</button>\n            <button class=\"answer-btn\" data-q=\"0\" data-val=\"3\"><span class=\"ans-letter\">D</span> If you edit the AI's writing, it becomes your own work</button>\n          </div>\n          <div class=\"scenario-debrief\" id=\"debrief-0\">\n            <div class=\"debrief-label\">The key distinction</div>\n            <p>AI is a tool — like a dictionary or a calculator. Using it to brainstorm, get unstuck, or understand a concept is a legitimate skill. Submitting AI-generated text as your own thinking is misrepresentation — the assignment is testing your analysis, not your ability to prompt an AI. Most schools are updating their policies, but the ethical line does not move: did you do the thinking?</p>\n          </div>\n          <button class=\"btn-next-scenario\" id=\"next-0\" onclick=\"nextScenario(1)\">Next scenario →</button>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"scenario-card\" id=\"scenario-1\" role=\"region\" aria-label=\"Scenario 2: The Deepfake in the Group Chat\">\n        <div class=\"scenario-header\">\n          <div class=\"scenario-num\">2</div>\n          <div>\n            <div class=\"scenario-tag\">Deepfakes &amp; Verification</div>\n          </div>\n        </div>\n        <div class=\"scenario-body\">\n          <div class=\"scenario-title\">The Deepfake in the Group Chat</div>\n          <div class=\"scenario-story\">\n            A video circulated in a school group chat showing the principal saying something embarrassing. It looked completely real. Students who shared it faced consequences — even though they didn't create it. An AI image tool made it in under five minutes.\n          </div>\n          <p class=\"scenario-question\">What should you do before sharing something like this?</p>\n          <div class=\"answer-options\" id=\"opts-1\">\n            <button class=\"answer-btn\" data-q=\"1\" data-val=\"0\"><span class=\"ans-letter\">A</span> Share it — if it came from someone you trust, it is probably real</button>\n            <button class=\"answer-btn\" data-q=\"1\" data-val=\"1\"><span class=\"ans-letter\">B</span> Only share it if it is funny, not mean</button>\n            <button class=\"answer-btn\" data-q=\"1\" data-val=\"2\"><span class=\"ans-letter\">C</span> Verify before sharing — one search on CBC or CTV takes 30 seconds. Sharing is amplifying. Your name goes on it.</button>\n            <button class=\"answer-btn\" data-q=\"1\" data-val=\"3\"><span class=\"ans-letter\">D</span> Report it to the school, then share it yourself</button>\n          </div>\n          <div class=\"scenario-debrief\" id=\"debrief-1\">\n            <div class=\"debrief-label\">Sharing is amplifying</div>\n            <p>When you share something — even if you did not create it — your name goes on it. AI-generated images and videos can be created in minutes and look completely real. A 30-second search on CBC.ca, CTV News, or a basic Google search with \"site:cbc.ca\" can tell you whether something significant actually happened. If you cannot verify it in 30 seconds, do not share it. The original video got 4,000 shares. The correction got 80.</p>\n          </div>\n          <button class=\"btn-next-scenario\" id=\"next-1\" onclick=\"nextScenario(2)\">Next scenario →</button>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"scenario-card\" id=\"scenario-2\" role=\"region\" aria-label=\"Scenario 3: The AI That Levelled the Playing Field\">\n        <div class=\"scenario-header\">\n          <div class=\"scenario-num\">3</div>\n          <div>\n            <div class=\"scenario-tag\">Access &amp; Equity</div>\n          </div>\n        </div>\n        <div class=\"scenario-body\">\n          <div class=\"scenario-title\">The AI That Levelled the Playing Field</div>\n          <div class=\"scenario-story\">\n            A 13-year-old with dyslexia found an AI text-to-speech tool that read books, articles, and assignments aloud to him. He started completing more reading than anyone in his class.\n          </div>\n          <p class=\"scenario-question\">What does this example show about AI?</p>\n          <div class=\"answer-options\" id=\"opts-2\">\n            <button class=\"answer-btn\" data-q=\"2\" data-val=\"0\"><span class=\"ans-letter\">A</span> AI makes school too easy and gives an unfair advantage</button>\n            <button class=\"answer-btn\" data-q=\"2\" data-val=\"1\"><span class=\"ans-letter\">B</span> AI can give everyone access to the same information regardless of how they learn. That is one of its most powerful uses.</button>\n            <button class=\"answer-btn\" data-q=\"2\" data-val=\"2\"><span class=\"ans-letter\">C</span> AI tools are only for people with diagnosed learning differences</button>\n            <button class=\"answer-btn\" data-q=\"2\" data-val=\"3\"><span class=\"ans-letter\">D</span> AI is replacing human teachers and that is a problem</button>\n          </div>\n          <div class=\"scenario-debrief\" id=\"debrief-2\">\n            <div class=\"debrief-label\">The equity angle</div>\n            <p>AI accessibility tools — text-to-speech, translation, real-time captioning, image description — remove barriers that have always existed for some learners. This is one of the most meaningful applications of AI: not replacing human capability, but giving everyone access to the same information regardless of how their brain processes it. The student's reading comprehension was never the issue. The format was.</p>\n          </div>\n          <button class=\"btn-next-scenario\" id=\"next-2\" onclick=\"nextScenario(3)\">Next scenario →</button>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"scenario-card\" id=\"scenario-3\" role=\"region\" aria-label=\"Scenario 4: The Call That Sounded Like Dad\">\n        <div class=\"scenario-header\">\n          <div class=\"scenario-num\">4</div>\n          <div>\n            <div class=\"scenario-tag\">Voice Cloning &amp; Scams</div>\n          </div>\n        </div>\n        <div class=\"scenario-body\">\n          <div class=\"scenario-title\">The Call That Sounded Like Dad</div>\n          <div class=\"scenario-story\">\n            A 16-year-old received a call that sounded exactly like her father saying he'd been in an accident and needed money transferred immediately. AI voice cloning used recordings from social media.\n          </div>\n          <p class=\"scenario-question\">What is the correct response?</p>\n          <div class=\"answer-options\" id=\"opts-3\">\n            <button class=\"answer-btn\" data-q=\"3\" data-val=\"0\"><span class=\"ans-letter\">A</span> Transfer the money first — you can sort it out later</button>\n            <button class=\"answer-btn\" data-q=\"3\" data-val=\"1\"><span class=\"ans-letter\">B</span> Ask the caller questions only your dad would know</button>\n            <button class=\"answer-btn\" data-q=\"3\" data-val=\"2\"><span class=\"ans-letter\">C</span> Hang up and call back on a known number. Real emergencies will still be emergencies in 60 seconds.</button>\n            <button class=\"answer-btn\" data-q=\"3\" data-val=\"3\"><span class=\"ans-letter\">D</span> Ask your parent to send a photo to prove who they are</button>\n          </div>\n          <div class=\"scenario-debrief\" id=\"debrief-3\">\n            <div class=\"debrief-label\">The voice clone rule</div>\n            <p>AI voice cloning can recreate anyone's voice from a few minutes of audio — and social media gives scammers a library of recordings to work from. The voice sounding real proves nothing. The correct response is always: hang up, call back on a number you already have saved. A real emergency will still be a real emergency in 60 seconds. Anyone who says there is no time to verify is using urgency as a weapon.</p>\n          </div>\n          <button class=\"btn-next-scenario\" id=\"next-3\" onclick=\"completedScenarios()\">See your results →</button>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"scenarios-complete\" id=\"scenariosComplete\" role=\"status\" aria-live=\"polite\">\n        <div class=\"sc-icon\">🎯</div>\n        <div class=\"sc-score\" id=\"scenarioScore\">0 / 4 correct</div>\n        <div class=\"sc-sub\" id=\"scenarioSub\">Complete the after quiz below to see your full results.</div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"dcc-quiz-container\" id=\"dcc-after-quiz\" aria-label=\"Knowledge check — after the scenarios\" style=\"margin:2rem 0\"></div>"
+    },
+    {
+      "type": "tip",
+      "content": "When you have finished:"
+    },
+    {
+      "type": "raw_html",
+      "content": "<section class=\"related-modules\" aria-label=\"Related modules\">\n        <h3 class=\"related-title\">Keep Going</h3>\n        <div class=\"related-grid\">\n          <a href=\"module-ai-literacy.html\" class=\"related-card\">\n            <span class=\"related-num\">Module</span>\n            <span class=\"related-name\">What Is AI, Really? (Adults 55+)</span>\n            <span class=\"related-desc\">The adult version — same topics, more stories, the 3-Second Rule in depth. Good to share with a parent or grandparent.</span>\n          </a>\n          <a href=\"kids/10-12/when-online-pressure-crosses-a-line.html\" class=\"related-card\">\n            <span class=\"related-num\">Kids 10–12</span>\n            <span class=\"related-name\">When Online Pressure Crosses a Line</span>\n            <span class=\"related-desc\">Coercion, screenshot threats, and the surprises-vs-secrets test — for ages 10–12 but relevant to anyone.</span>\n          </a>\n        </div>\n      </section>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"module-nav-footer\">\n        <a href=\"digital-literacy-101.html\" class=\"module-nav-prev\">← All Modules</a>\n        <a href=\"module-ai-literacy.html\" class=\"module-nav-next\">What Is AI? (Adults) →</a>\n      </div>"
+    }
+  ],
+  "quiz": [],
+  "prev_module": null,
+  "next_module": null,
+  "accessibility": {
+    "lang": "en-CA",
+    "wcag_level": "AA"
+  }
+}

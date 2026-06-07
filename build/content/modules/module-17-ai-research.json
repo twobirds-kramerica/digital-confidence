@@ -1,0 +1,444 @@
+{
+  "id": "module-17-ai-research",
+  "number": 17,
+  "slug": "module-17-ai-research",
+  "title": "AI Research Tools",
+  "description": "Module 17: Use AI tools like ChatGPT, Siri, and Google Gemini to research topics, fact-check answers, and get everyday help. Guide for Ontario seniors.",
+  "keywords": "AI research seniors, ChatGPT seniors Canada, Siri questions seniors, Google Gemini Ontario, artificial intelligence older adults, fact checking AI answers, seniors AI tools",
+  "date_published": "March 2026",
+  "hero_image": {
+    "url": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&h=400&fit=crop",
+    "alt": "A person using a tablet to interact with an AI assistant, representing the use of artificial intelligence for research and learning",
+    "width": 1200,
+    "height": 400
+  },
+  "intro": "<span data-en=\"How to use AI tools like Siri, ChatGPT, and Google Gemini to find information, ask better questions, check whether answers are accurate, protect your privacy, and know when to call a professional instead.\" data-fr=\"Comment utiliser des outils d&#x27;IA comme Siri, ChatGPT et Google Gemini pour trouver des informations, poser de meilleures questions, vérifier l&#x27;exactitude des réponses, protéger votre vie privée et savoir quand appeler un professionnel à la place.\">How to use AI tools like Siri, ChatGPT, and Google Gemini to find information, ask better questions, check whether answers are accurate, protect your privacy, and know when to call a professional instead.</span>",
+  "story": null,
+  "confidence_check": "✅ You are in a safe place.\n          Nothing on this page can harm your device. You cannot break anything by reading. AI tools are just very smart search engines — you are always in control.",
+  "sections": [
+    {
+      "type": "raw_html",
+      "content": "<div class=\"dcc-quiz-container\" id=\"dcc-before-quiz\" aria-label=\"Knowledge check — before you start\"></div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"module-intro\">\n        <p class=\"module-time\" data-en=\"⏱ About 25–35 minutes — go at your own pace\" data-fr=\"⏱ Environ 25–35 minutes — allez à votre rythme\">⏱ About 25–35 minutes — go at your own pace</p>\n        <div class=\"confidence-check-box\">\n          ✅ <strong data-en=\"You are in a safe place.\" data-fr=\"Vous êtes dans un endroit sûr.\">You are in a safe place.</strong><br>\n          <span data-en=\"Nothing on this page can harm your device. You cannot break anything by reading. AI tools are just very smart search engines — you are always in control.\" data-fr=\"Rien sur cette page ne peut endommager votre appareil. Vous ne pouvez rien casser en lisant. Les outils d&#x27;IA sont simplement des moteurs de recherche très intelligents — vous avez toujours le contrôle.\">Nothing on this page can harm your device. You cannot break anything by reading. AI tools are just very smart search engines — you are always in control.</span>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"story-box\">\n        <h3 data-en=\"Dorothy&#x27;s Story\" data-fr=\"L&#x27;histoire de Dorothy\">Dorothy's Story</h3>\n        <p data-en=\"Dorothy, 74, from Woodstock, Ontario, wanted to know more about her new blood pressure medication before her next doctor&#x27;s appointment. She used to spend hours on confusing health websites, often finishing more worried than when she started. A friend showed her how to ask Siri: &#x27;What does lisinopril do, in simple terms?&#x27; The answer came back clear and plain. She wrote down two follow-up questions for her doctor. &#x27;I felt like I actually had something useful to bring to my appointment for once,&#x27; she said.\" data-fr=\"Dorothy, 74 ans, de Woodstock en Ontario, voulait en savoir plus sur son nouveau médicament pour la tension artérielle avant son prochain rendez-vous médical. Elle passait des heures sur des sites de santé compliqués, terminant souvent plus inquiète qu&#x27;au début. Une amie lui a montré comment demander à Siri : &#x27;Que fait le lisinopril, en termes simples ?&#x27; La réponse est arrivée claire et accessible. Elle a noté deux questions de suivi pour son médecin. &#x27;Pour une fois, j&#x27;avais quelque chose d&#x27;utile à apporter à mon rendez-vous,&#x27; a-t-elle dit.\">Dorothy, 74, from Woodstock, Ontario, wanted to know more about her new blood pressure medication before her next doctor's appointment. She used to spend hours on confusing health websites, often finishing more worried than when she started. A friend showed her how to ask Siri: \"What does lisinopril do, in simple terms?\" The answer came back clear and plain. She wrote down two follow-up questions for her doctor. \"I felt like I actually had something useful to bring to my appointment for once,\" she said.</p>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "1. What Is AI Research?"
+    },
+    {
+      "type": "paragraph",
+      "content": "Artificial intelligence (AI) tools are programmes that can answer questions, explain things, and have a back-and-forth conversation with you — like texting a very knowledgeable friend who never gets impatient. They are not magic, they are not alive, and they do not always get things right. But used wisely, they can be genuinely helpful."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "The Main AI Tools You May Encounter"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Siri — built into every iPhone and iPad. Tap the small circle at the bottom of the screen or say \"Hey Siri.\" Best for quick questions, setting reminders, making calls, and playing music."
+        },
+        {
+          "text": "ChatGPT — a free tool at chat.openai.com. Best for detailed explanations, writing help, recipes, and longer conversations."
+        },
+        {
+          "text": "Google Gemini — built into Google Search and available at gemini.google.com. Best if you already use Google and want AI answers alongside regular search results."
+        },
+        {
+          "text": "Alexa — Amazon's voice assistant. Found on Amazon Echo smart speakers. Best for home control (lights, timers, weather) and quick spoken questions."
+        }
+      ]
+    },
+    {
+      "type": "tip",
+      "content": "Before acting on anything an AI tells you, pause 3 seconds and ask yourself: \"Does this seem sensible? Should I check this somewhere else?\" AI tools are helpful but not perfect. One quick check can save a lot of trouble."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "2. Asking AI Good Questions"
+    },
+    {
+      "type": "paragraph",
+      "content": "The better your question, the better the answer. You do not need special knowledge — just write the way you would speak to another person."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Examples of Good Questions to Ask AI"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "\"What is a simple recipe for lentil soup that takes less than an hour?\""
+        },
+        {
+          "text": "\"Can you explain what a blood pressure reading of 140/90 means in plain language?\""
+        },
+        {
+          "text": "\"What are good questions to ask my pharmacist about drug interactions?\""
+        },
+        {
+          "text": "\"What is the history of Woodstock, Ontario?\""
+        },
+        {
+          "text": "\"Help me write a birthday message for my granddaughter who is turning 16.\""
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Tips for Getting Better Answers"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Add \"in simple terms\" or \"for someone who is not a doctor\" to health questions"
+        },
+        {
+          "text": "If the answer is too long, type: \"Can you give me a shorter version?\""
+        },
+        {
+          "text": "If the answer is confusing, type: \"Can you explain that with an example?\""
+        },
+        {
+          "text": "You can ask follow-up questions in the same conversation — the AI remembers what you asked before"
+        },
+        {
+          "text": "Specify your location when it matters: \"in Ontario\" or \"in Canada\" for local information"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "3. Checking What AI Tells You"
+    },
+    {
+      "type": "paragraph",
+      "content": "AI tools can make mistakes. They sometimes give outdated information, invent facts (this is called \"hallucination\"), or misunderstand your question. That does not mean they are useless — it means you should treat their answers the way you would treat advice from a friend: helpful, but worth a second opinion."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Where to Double-Check Important Information"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Health questions: canada.ca/health, Mayo Clinic (mayoclinic.org), or your pharmacist"
+        },
+        {
+          "text": "Government benefits: canada.ca or Service Canada (1-800-277-9914)"
+        },
+        {
+          "text": "Local news and events: your local newspaper's website"
+        },
+        {
+          "text": "Legal or financial questions: always consult a professional — AI is not a replacement for a lawyer or financial adviser"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Warning Signs That an AI Answer May Be Wrong"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "The answer gives a very specific phone number, address, or dollar amount — always verify these independently"
+        },
+        {
+          "text": "The answer sounds too alarming or too reassuring about a health symptom"
+        },
+        {
+          "text": "The AI seems very certain about something it could not possibly know (like what will happen in the future)"
+        },
+        {
+          "text": "The answer says \"as of my last update\" or \"my training data\" — this means it may not have current information"
+        }
+      ]
+    },
+    {
+      "type": "tip",
+      "content": "For anything important, search the same question on Google. If the top two or three results from different websites agree with what the AI said, you can be more confident. If they disagree, trust the established websites over the AI."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "4. Health Information and AI"
+    },
+    {
+      "type": "paragraph",
+      "content": "Many people use AI to research health topics — and that is completely understandable. AI can explain medical words in plain language, help you think of questions for your doctor, and give you a general sense of what a condition or medication involves. But there are clear limits."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Good Uses of AI for Health"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Ask AI to explain a medical term your doctor used that you did not fully understand"
+        },
+        {
+          "text": "Use AI to prepare a list of questions before a doctor's appointment"
+        },
+        {
+          "text": "Ask about general side effects of a medication (then verify with your pharmacist)"
+        },
+        {
+          "text": "Get a plain-language summary of a health condition after your diagnosis"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "When AI Is Not Enough — Call a Professional"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "You have a new or worsening symptom — call Telehealth Ontario free: 1-866-797-0000"
+        },
+        {
+          "text": "You are considering stopping or changing a medication"
+        },
+        {
+          "text": "You have chest pain, trouble breathing, sudden confusion, or severe pain — call 911"
+        },
+        {
+          "text": "You want to know if a treatment or supplement is right for your specific situation"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "5. Protecting Your Privacy with AI"
+    },
+    {
+      "type": "paragraph",
+      "content": "When you type something into an AI tool, that information is sent to a company's computer servers. The company may store your conversation for months or years and may use it to improve their AI. This is normal — but it means you should be thoughtful about what you share."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Never Share These Things with AI"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Your full name combined with your address, phone number, or birthdate"
+        },
+        {
+          "text": "Your Social Insurance Number (SIN) or health card number (OHIP)"
+        },
+        {
+          "text": "Banking details, credit card numbers, or online banking passwords"
+        },
+        {
+          "text": "Your daily routine or when your home is empty"
+        },
+        {
+          "text": "Passwords or PIN numbers of any kind"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Safe Ways to Ask Personal Questions"
+    },
+    {
+      "type": "paragraph",
+      "content": "Instead of typing \"I take 10mg of metformin and my doctor is Dr. Smith at St. Thomas hospital,\" type: \"What are the general side effects of metformin?\" You get the same useful answer without sharing personal details."
+    },
+    {
+      "type": "tip",
+      "content": "Before typing anything into an AI tool, ask yourself: \"Would I be comfortable if this message was posted on a community bulletin board?\" If the answer is no — leave that detail out."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "6. Helpful AI Tools for Everyday Life"
+    },
+    {
+      "type": "paragraph",
+      "content": "Once you are comfortable with the basics, AI can be a genuinely handy helper for all sorts of everyday tasks. Here are some ideas to try."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Practical Things to Try With AI"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "\"Write a birthday card message for my brother who loves fishing and turning 70.\""
+        },
+        {
+          "text": "\"Translate this sentence into French: How do I get to the pharmacy?\""
+        },
+        {
+          "text": "\"What are good indoor plants for a sunny Ontario apartment that are hard to kill?\""
+        },
+        {
+          "text": "\"Suggest some easy chair exercises for someone with knee pain.\""
+        },
+        {
+          "text": "\"Help me write an email to my landlord asking about a repair that has not been fixed.\""
+        },
+        {
+          "text": "\"What is the difference between RRSP and TFSA in Canada?\" (then verify with your bank or a financial adviser)"
+        },
+        {
+          "text": "\"What are good day trips from London, Ontario for a senior who loves history?\""
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Using Siri on Your iPad Every Day"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "\"Hey Siri, set a timer for 20 minutes.\""
+        },
+        {
+          "text": "\"Hey Siri, call my daughter.\""
+        },
+        {
+          "text": "\"Hey Siri, what is the weather in St. Thomas today?\""
+        },
+        {
+          "text": "\"Hey Siri, remind me at 3pm to take my medication.\""
+        },
+        {
+          "text": "\"Hey Siri, how do I get to the Elgin County Library?\""
+        }
+      ]
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"dcc-quiz-container\" id=\"dcc-after-quiz\" aria-label=\"Knowledge check — after the module\"></div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"module-nav-footer\">\n        <a href=\"module-16-travel-safety.html\" class=\"module-nav-prev\">← Module 16: Travel Safety</a>\n        <a href=\"module-visual-ai.html\" class=\"module-nav-next\">Show Me! (Bonus) →</a>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"quick-answers-accordion\" id=\"quick-answers\">\n        <h2 data-en=\"Quick Answers\" data-fr=\"Réponses rapides\">Quick Answers</h2>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>Can I trust health information from an AI?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>Use AI for general background information only — never for a diagnosis or treatment plan. AI tools can be wrong or outdated about Canadian healthcare specifically. Always confirm health information with your doctor, pharmacist, or Health811 (Ontario free health advice line).</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>How do I write a good question for an AI chatbot?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>Be specific. Instead of \"tell me about heart health,\" try \"what are the recommended daily steps for a 75-year-old with mild arthritis?\" Add context about your situation. Avoid questions that need precise legal or financial answers.</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>What is the difference between a search engine and an AI?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>A search engine (Google, Bing) shows you links to websites where you find the answer yourself. An AI chatbot reads those websites and writes you a direct answer. AI is faster but may be wrong. Search engines let you check the original source yourself.</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>Is it private when I ask an AI a question?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>No — assume anything you type into an AI chatbot may be stored and reviewed by the company. Never share your full name, address, phone number, medical details, or banking information in an AI conversation.</p>\n          </div>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"sources-block\">\n        <h3 data-en=\"Sources &amp; References\" data-fr=\"Sources et références\">Sources &amp; References</h3>\n        <ul>\n        <li><a href=\"https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai.html\" target=\"_blank\" rel=\"noopener noreferrer\">Responsible use of AI — Government of Canada</a></li>\n        <li><a href=\"https://cyber.gc.ca\" target=\"_blank\" rel=\"noopener noreferrer\">Canadian Centre for Cyber Security</a></li>\n        </ul>\n      </div>"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "ChatGPT, Claude, and Google Gemini are examples of:",
+      "options": [
+        "Social media platforms",
+        "AI language models that can answer questions and help with writing",
+        "Antivirus software",
+        "Operating systems"
+      ],
+      "correct": 1,
+      "explanation": "These are large language models (LLMs) — AI systems trained on vast amounts of text that can answer questions, summarise information, and help with writing in a conversational way."
+    },
+    {
+      "question": "When an AI gives you a medical, legal, or financial answer, you should:",
+      "options": [
+        "Trust it completely — AI has access to all current information",
+        "Use it as a starting point but verify with a qualified professional",
+        "Never ask AI about these topics",
+        "Print the answer and bring it to your doctor"
+      ],
+      "correct": 1,
+      "explanation": "AI can provide useful background information, but it can make mistakes and does not know your personal situation. Always verify important decisions with qualified professionals."
+    },
+    {
+      "question": "AI tools can \"hallucinate,\" which means they sometimes:",
+      "options": [
+        "Create visual art",
+        "Generate confident-sounding but completely false information",
+        "Refuse to answer difficult questions",
+        "Require you to pay for accurate answers"
+      ],
+      "correct": 1,
+      "explanation": "AI hallucinations happen when the system generates plausible-sounding but factually incorrect content. Always cross-check important facts from AI with a reliable source."
+    },
+    {
+      "question": "To protect your privacy when using AI tools, you should:",
+      "options": [
+        "Use your full legal name and address so they can personalise answers",
+        "Avoid sharing personal details like your home address, SIN, or financial information",
+        "Always share your email address",
+        "Use the same account for everything"
+      ],
+      "correct": 1,
+      "explanation": "Treat AI chatbots like a public bulletin board — do not share anything you would not want stored or potentially seen by others. SIN, banking details, and home address should never be shared."
+    },
+    {
+      "question": "A good way to check whether an AI's answer is accurate is to:",
+      "options": [
+        "Ask the AI the same question three times",
+        "Cross-reference the answer with a trusted website or authoritative source",
+        "Ask a different AI the same question",
+        "Trust it if it sounds confident"
+      ],
+      "correct": 1,
+      "explanation": "Verify important AI answers using trusted sources: Government of Canada websites, your bank's official site, or established health organisations. Confidence in tone is not a reliability indicator."
+    }
+  ],
+  "prev_module": {
+    "slug": "module-16-travel-safety.html",
+    "label": "Module 16: Travel Safety"
+  },
+  "next_module": {
+    "slug": "resources.html",
+    "label": "Resources Library"
+  },
+  "accessibility": {
+    "lang": "en-CA",
+    "wcag_level": "AA"
+  },
+  "category": "Technology",
+  "category_icon": "🔍",
+  "difficulty": "Advanced",
+  "time": "30 min",
+  "what_you_learn": [
+    "How ChatGPT and AI chatbots work",
+    "How to write good questions (prompts) to get useful answers",
+    "How to fact-check AI responses",
+    "When AI is helpful and when to be cautious"
+  ],
+  "summary": "AI research tools like ChatGPT and Perplexity can answer questions, summarise articles, and help with writing. You will learn how to use them effectively and critically — knowing when to trust the answer and when to verify."
+}

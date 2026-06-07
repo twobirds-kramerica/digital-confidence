@@ -1,0 +1,446 @@
+{
+  "id": "module-9",
+  "number": 9,
+  "slug": "module-9",
+  "title": "Understanding AI",
+  "description": "Ontario seniors can understand artificial intelligence, spot AI voice cloning scams, and use AI tools safely with the guidance in this plain-language module.",
+  "keywords": "AI for seniors Ontario, artificial intelligence beginners, deepfake detection seniors, ChatGPT safety seniors, digital confidence module 9",
+  "date_published": "2026-03-07",
+  "hero_image": {
+    "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&h=400&fit=crop&v=2",
+    "alt": "A confident senior sitting at a computer, comfortable and engaged with technology",
+    "width": 1200,
+    "height": 400
+  },
+  "intro": "What artificial intelligence really is, how to spot AI-powered scams and deepfakes, how to protect your privacy, and how to try a few safe AI tools that can make your life easier.",
+  "story": {
+    "label": "Margaret's AI Encounter",
+    "paragraphs": [
+      "Margaret, 72, was scrolling through Facebook when she spotted a photo of her friend Helen at what looked like a glamorous tropical resort. \"Helen never mentioned going on a trip!\" she thought. When Margaret called to congratulate her, Helen laughed — she had never been to a resort in her life. The photo had been created by an AI app that someone had used to make a fun fantasy image.",
+      "But that got Margaret wondering: if AI could make a photo that convincing, what else could it do? Could someone make a fake photo of her? Could they make a fake video? How could she tell what was real?",
+      "Margaret decided to learn about AI before she had to deal with it in a stressful situation. By the end of her research, she was not scared — she was actually excited. She had tried using AI to help plan her garden and found it surprisingly helpful.",
+      "That is the goal of this module: to give you the same calm, informed understanding that Margaret found."
+    ]
+  },
+  "confidence_check": "✅ Confidence Check\n        You are doing great, and your device is safe. You now understand what AI really is — and that is more than most people know. Take a breath — you are in control.",
+  "sections": [
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "🤖 What Is AI? (In Plain Language)"
+    },
+    {
+      "type": "tip",
+      "content": "Think of AI as a <strong>very smart autocomplete</strong> — like your phone's keyboard suggestions, but one that has learned from reading millions of books, websites, and conversations. When you ask it a question, it predicts the most helpful response based on everything it has learned."
+    },
+    {
+      "type": "paragraph",
+      "content": "You have already been using AI for years without knowing it:"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "<strong>Siri and Google Assistant</strong> — voice assistants on your phone that understand spoken questions"
+        },
+        {
+          "text": "<strong>Autocorrect</strong> — suggests the right spelling as you type"
+        },
+        {
+          "text": "<strong>Photo sorting</strong> — your Photos app can group pictures by faces automatically"
+        },
+        {
+          "text": "<strong>Spam filters</strong> — your email moves junk mail to a Spam folder without you asking"
+        },
+        {
+          "text": "<strong>Netflix / YouTube recommendations</strong> — suggests videos and shows you might like"
+        }
+      ]
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"visual-example-card\" role=\"img\" aria-label=\"AI in Everyday Life\">\n        <div class=\"example-icon\">🔮</div>\n        <div class=\"example-content\">\n          <h4 class=\"example-title\">AI Is Already Part of Your Day</h4>\n          <p class=\"example-description\">Every time your phone corrects a typo, suggests a contact name, or unlocks with your face, that is AI at work. It is a tool — not magic, not a robot, not something to fear.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "paragraph",
+      "content": "<strong>What AI is NOT:</strong> Science fiction robots, a sentient being with feelings or plans, something that \"knows\" you personally, or something magical. It is a tool — like a very sophisticated calculator or dictionary."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">💛</span>\n        <p>Confidence Check: You have already been using AI successfully for years. This is just learning the name for something familiar.</p>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "😨 Should I Be Scared of AI?"
+    },
+    {
+      "type": "paragraph",
+      "content": "Short answer: <strong>No.</strong> But being informed and careful is always smart with any technology."
+    },
+    {
+      "type": "tip",
+      "content": "AI is a tool, like a car. A car can be used to take you safely to the grocery store, or — in the wrong hands — it can cause harm. The car itself is not good or evil. The same is true of AI."
+    },
+    {
+      "type": "paragraph",
+      "content": "The real concern with AI is not the technology itself — it is <strong>people who misuse it</strong>. Just as <a href=\"digital-literacy-101.html#term-scam\" class=\"glossary-link\">scammers</a> use phones and email to trick people, some scammers now use AI to make their tricks more convincing. The good news: the same common sense that protects you from regular scams protects you from AI-powered scams too."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "🚨 What to Watch Out For"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Deepfake Videos and Audio"
+    },
+    {
+      "type": "paragraph",
+      "content": "AI can create realistic fake videos of real people saying things they never actually said. These are called <strong>deepfakes</strong>."
+    },
+    {
+      "type": "warning",
+      "content": "<strong>Deepfakes are often used for:</strong> political misinformation, celebrity scams pretending a famous person recommends an investment, and — most dangerously — impersonating family members to ask for money."
+    },
+    {
+      "type": "paragraph",
+      "content": "<strong>How to spot a deepfake video:</strong>"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Unnatural or limited blinking — real people blink naturally and often"
+        },
+        {
+          "text": "Lip sync slightly off — the mouth does not quite match the words"
+        },
+        {
+          "text": "Weird lighting on the face compared to the background"
+        },
+        {
+          "text": "Slightly blurry edges around the face or hairline"
+        },
+        {
+          "text": "The person seems stiff or robotic compared to how they normally move"
+        }
+      ]
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"three-second-rule\">\n        <h3>The 3-Second Rule for Shocking Content</h3>\n        <div class=\"steps\">\n          <div class=\"step\">\n            <span class=\"step-icon\">✋</span>\n            <span class=\"step-name\">Stop</span>\n            <span class=\"step-desc\">Pause before reacting or sharing.</span>\n          </div>\n          <div class=\"step\">\n            <span class=\"step-icon\">🫁</span>\n            <span class=\"step-name\">Breathe</span>\n            <span class=\"step-desc\">Emotional content is designed to skip your judgment.</span>\n          </div>\n          <div class=\"step\">\n            <span class=\"step-icon\">🔍</span>\n            <span class=\"step-name\">Verify</span>\n            <span class=\"step-desc\">Check a reputable news source before believing it.</span>\n          </div>\n        </div>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "AI-Generated Scam Emails"
+    },
+    {
+      "type": "paragraph",
+      "content": "Scammers now use AI to write more convincing <a href=\"digital-literacy-101.html#term-phishing\" class=\"glossary-link\">phishing</a> emails. The grammar is better, the tone sounds more human, and the spelling is correct. But the red flags remain the same:"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Urgency — \"Act immediately or your account will be closed\""
+        },
+        {
+          "text": "Requests for money, gift cards, or personal information"
+        },
+        {
+          "text": "Unknown or suspicious sender address"
+        },
+        {
+          "text": "Links that do not match the company they claim to be from"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": "Apply the same security rules you learned in <a href=\"module-2.html\">Module 2: The Security Shield</a>. AI makes scam emails look better, but it cannot change their fundamental tactics."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Fake AI-Generated Photos"
+    },
+    {
+      "type": "paragraph",
+      "content": "AI can create realistic photos of events that never happened — politicians \"saying\" things they never said, fake product reviews with AI-generated happy customers, and news stories that are entirely fabricated."
+    },
+    {
+      "type": "tip",
+      "content": "If a photo seems shocking or unbelievable, ask: <strong>\"Does this appear on any reputable news sites like CBC, CTV, or the Toronto Star?\"</strong> If only unknown websites are sharing it, be very skeptical."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Voice Cloning — The Grandparent Scam 2.0"
+    },
+    {
+      "type": "paragraph",
+      "content": "This is the most important AI scam for seniors to know about. Scammers can now clone a loved one's voice using just a few seconds of audio from social media."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"scam-example\">\n        <span class=\"example-label\">Example of a voice cloning scam (this type of call is NOT real)</span>\n        <p>\"Grandma? It's me, Tyler. I'm in trouble — I got in a car accident and I need bail money right away. Please don't tell Mom and Dad. Can you send $2,000 through an e-transfer?\"</p>\n      </div>"
+    },
+    {
+      "type": "paragraph",
+      "content": "The voice sounds exactly like your grandchild. Your heart races. But here is how to protect yourself:"
+    },
+    {
+      "type": "tip",
+      "content": "Create a secret code word with your family right now. If anyone calls claiming to be a family member in trouble, ask for the code word. A real family member will know it. A scammer will not."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"three-second-rule-box\">\n        🛑 <strong>The 3-Second Rule</strong><br>\n        Before you tap, click, or reply — pause for just 3 seconds:<br>\n        <strong>1. Stop</strong> — Do not tap anything yet.<br>\n        <strong>2. Breathe</strong> — Take one slow breath.<br>\n        <strong>3. Verify</strong> — Did I expect this message? Does the sender look right?<br>\n        When in doubt, close it and call someone you trust.\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "🔒 Privacy Concerns with AI Tools"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "What Not to Share with AI Chatbots"
+    },
+    {
+      "type": "warning",
+      "content": "When using AI chat tools like ChatGPT, <strong>never share:</strong> your Social Insurance Number, banking information, passwords, home address, medical details, or any other personal information. Your conversations may be saved and used to improve the AI system."
+    },
+    {
+      "type": "paragraph",
+      "content": "<strong>Safe to share with AI:</strong> General questions, recipe ideas, how-to instructions, help writing a thank-you note, questions about history or science. Think of it like asking a knowledgeable stranger at a library — helpful for general questions, but no personal details."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "heading": "Companies May Save Your Data"
+    },
+    {
+      "type": "paragraph",
+      "content": "Free AI services often keep your questions and answers. Photos you upload might be stored on their servers. When in doubt, look for \"privacy mode\" or \"incognito\" settings in AI tools, or choose Canadian-based services that follow PIPEDA privacy law."
+    },
+    {
+      "type": "tip",
+      "content": "Your iPad or iPhone's built-in AI features — like photo enhancement and Face ID — process everything <strong>on your device only</strong>. Apple does not see your photos or your face. That data never leaves your device."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "✨ Beginner-Friendly AI Tools to Try"
+    },
+    {
+      "type": "paragraph",
+      "content": "Here are three safe, easy AI tools you can try today. Start with just one — there is no rush."
+    },
+    {
+      "type": "device_variant",
+      "variants": [
+        {
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "content": "<div class=\"exercise-block\">\n          <h3>📸 1. iPhone/iPad Photo Enhancement (Built-in, 100% Safe)</h3>\n          <p>Your Photos app uses AI to automatically improve your pictures. All processing happens on your device — Apple does not see your photos.</p>\n          <ol class=\"numbered-list\">\n            <li>Open the <strong>Photos</strong> app on your iPad or iPhone.</li>\n            <li>Tap on any photo — try an old family photo or a dim one taken indoors.</li>\n            <li>Tap <strong>Edit</strong> (top right corner).</li>\n            <li>Tap the <strong>magic wand icon</strong> (✨ a small sparkle shape) — this is the Auto Enhance button.</li>\n            <li>Watch the photo improve instantly! You can compare by tapping the wand again to toggle.</li>\n            <li>Tap <strong>Done</strong> to save the improved version. Your original is never lost.</li>\n          </ol>\n        </div>"
+        },
+        {
+          "devices": [
+            "android-phone",
+            "android-tablet"
+          ],
+          "content": "<div class=\"exercise-block\">\n          <h3>📸 1. Android Photo Enhancement (Google Photos, Free &amp; Safe)</h3>\n          <p>Google Photos has a built-in AI that automatically improves your pictures. It is free and works on any Android phone or tablet.</p>\n          <ol class=\"numbered-list\">\n            <li>Open the <strong>Google Photos</strong> app (colourful pinwheel icon). If it is not installed, search \"Google Photos\" in the Google Play Store and install it free.</li>\n            <li>Tap on any photo — try an old family photo or a dim one taken indoors.</li>\n            <li>Tap the <strong>Edit</strong> button (pencil icon) at the bottom.</li>\n            <li>Tap <strong>Suggestions</strong> — Google automatically shows you the best improvements.</li>\n            <li>Tap the one you like to apply it instantly.</li>\n            <li>Tap <strong>Save copy</strong> to keep the improved version. Your original photo is always kept.</li>\n          </ol>\n        </div>"
+        },
+        {
+          "devices": [
+            "windows",
+            "mac",
+            "chromebook"
+          ],
+          "content": "<div class=\"exercise-block\">\n          <h3>📸 1. Computer Photo Enhancement (Google Photos, Free &amp; Safe)</h3>\n          <p>You can enhance photos from any computer using Google Photos in your web browser — no download needed.</p>\n          <ol class=\"numbered-list\">\n            <li>Open your web browser and go to <strong>photos.google.com</strong>.</li>\n            <li>Sign in with your Google (Gmail) account. If you do not have one, creating an account is free.</li>\n            <li>Click on any photo you have uploaded.</li>\n            <li>Click the <strong>Edit</strong> button (pencil icon) in the top right.</li>\n            <li>Click <strong>Auto</strong> under the Adjust section to let AI enhance the photo automatically.</li>\n            <li>Click <strong>Save copy</strong> when you are happy with the result.</li>\n          </ol>\n        </div>"
+        }
+      ]
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"exercise-block\">\n        <h3>🔍 2. Google Lens (Identify Objects, Read Text)</h3>\n        <p>Google Lens lets you point your camera at almost anything and get information about it.</p>\n        <div class=\"device-content\" data-devices=\"iphone,ipad\">\n          <p><strong>On iPhone/iPad:</strong> Download the free <strong>Google</strong> app from the App Store. Open it, and tap the colourful viewfinder icon (🔍) next to the search bar.</p>\n        </div>\n        <div class=\"device-content\" data-devices=\"android-phone,android-tablet\">\n          <p><strong>On Android:</strong> Google Lens is already built in. Open the <strong>Google app</strong> or your <strong>Camera app</strong> — look for the Lens icon (colourful viewfinder).</p>\n        </div>\n        <div class=\"device-content\" data-devices=\"windows,mac,chromebook\">\n          <p><strong>On a computer:</strong> Go to <strong>lens.google.com</strong> in your browser and upload a photo, or use it inside Google Search by clicking the camera icon in the search bar.</p>\n        </div>\n        <ol class=\"numbered-list\">\n          <li>Open the <strong>Google app</strong> or <strong>Google Photos</strong> on your device.</li>\n          <li>Look for the Lens icon — it looks like a small colourful camera viewfinder.</li>\n          <li><strong>Try it on a plant:</strong> Point at any plant in your home or garden. Google tells you what type of plant it is.</li>\n          <li><strong>Try it on text:</strong> Point at a label, sign, or even a printed menu in another language — Google translates it instantly.</li>\n          <li><strong>Try it on food:</strong> Point at a dish you do not recognise and Google identifies it.</li>\n        </ol>\n        <p>It is free and requires no account login.</p>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"exercise-block\">\n        <h3>💬 3. ChatGPT for Everyday Help (Free Version)</h3>\n        <p>ChatGPT is an AI you can have a conversation with. Think of it as a very patient, knowledgeable helper.</p>\n        <div class=\"tip-box\">\n          <span class=\"tip-box-label\">Before You Start</span>\n          <p>Remember: never share personal information. Use it for general questions only.</p>\n        </div>\n        <p><strong>Ideas for what to ask:</strong></p>\n        <ul class=\"content-list\">\n          <li>\"Give me a recipe idea using chicken, potatoes, and carrots\"</li>\n          <li>\"Help me write a thank-you note to my neighbour who brought me soup\"</li>\n          <li>\"Explain what a TFSA is in simple language\"</li>\n          <li>\"What are five easy exercises for seniors with knee pain?\"</li>\n          <li>\"What should I look for when buying a new toaster?\"</li>\n        </ul>\n        <p>To access: visit <strong>chat.openai.com</strong> (a free account is needed — use your email address to sign up). No payment information required for the free version.</p>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"video-section\">\n        <div class=\"video-section-header\">\n          <div class=\"video-section-icon\">📺</div>\n          <h3>Video Lab — AI Made Simple</h3>\n        </div>\n        <div class=\"video-grid\">\n          <div class=\"video-card\">\n            <div class=\"video-card-thumbnail\">\n              <div class=\"video-card-play-icon\">▶️</div>\n              <div class=\"video-card-topic-icon\">🤖</div>\n            </div>\n            <h4>What Is AI? Explained Simply</h4>\n            <p>A beginner-friendly introduction to artificial intelligence — what it is, how it works, and why it matters for everyday life.</p>\n            <a href=\"https://www.youtube.com/results?search_query=what+is+artificial+intelligence+explained+simply+beginners&amp;sp=CAMSAhAB\" target=\"_blank\" rel=\"noopener\" class=\"video-card-btn\">Watch Tutorials</a>\n          </div>\n          <div class=\"video-card\">\n            <div class=\"video-card-thumbnail\">\n              <div class=\"video-card-play-icon\">▶️</div>\n              <div class=\"video-card-topic-icon\">🎭</div>\n            </div>\n            <h4>How to Spot Deepfake Videos</h4>\n            <p>Learn the visual and audio clues that reveal when a video has been artificially manipulated — including tips from security experts.</p>\n            <a href=\"https://www.youtube.com/results?search_query=how+to+spot+deepfake+videos+for+beginners&amp;sp=CAMSAhAB\" target=\"_blank\" rel=\"noopener\" class=\"video-card-btn\">Watch Tutorials</a>\n          </div>\n          <div class=\"video-card\">\n            <div class=\"video-card-thumbnail\">\n              <div class=\"video-card-play-icon\">▶️</div>\n              <div class=\"video-card-topic-icon\">✨</div>\n            </div>\n            <h4>Safe AI Tools for Everyday Life</h4>\n            <p>A walkthrough of beginner-friendly AI tools including photo enhancement, Google Lens, and ChatGPT — with tips for staying safe.</p>\n            <a href=\"https://www.youtube.com/results?search_query=safe+AI+tools+for+seniors+beginners+2024&amp;sp=CAMSAhAB\" target=\"_blank\" rel=\"noopener\" class=\"video-card-btn\">Watch Tutorials</a>\n          </div>\n        </div>\n        <div class=\"video-safety-note\">\n          <div class=\"video-safety-note-icon\">✓</div>\n          <p>These links open YouTube search results in a new tab. You can browse and choose the video that looks clearest and most recent.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"video-help-link\">\n        <p>📚 New to YouTube? <a href=\"search-guide.html\">Learn how to spot quality videos and avoid ads</a></p>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Practical Exercise: Try One Safe AI Tool"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"exercise-block\">\n        <h3>Your Challenge This Week</h3>\n        <p>Choose just ONE of the three tools above and try it for five minutes with something low-stakes — enhance a family photo, identify a plant, or ask for a recipe idea.</p>\n        <ul class=\"content-list\">\n          <li>Notice how it feels: exciting? Surprising? A bit confusing?</li>\n          <li>All of those reactions are completely normal and valid.</li>\n          <li>There is no wrong way to explore.</li>\n        </ul>\n        <div class=\"success-state\">\n          <strong>Success looks like this:</strong> You tried one AI tool, you were not overwhelmed, and you walked away with one useful result — even if it was just seeing your photo look better with the tap of a button.\n        </div>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Quick Check: Test Your Knowledge"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"quiz-container\" id=\"module9-quiz\">\n        <div class=\"quiz-question\" data-correct=\"b\">\n          <h3>1. What is artificial intelligence?</h3>\n          <button class=\"quiz-option\" data-answer=\"a\">A sentient robot that thinks and feels like a person</button>\n          <button class=\"quiz-option\" data-answer=\"b\">A computer tool that predicts helpful responses based on patterns it has learned</button>\n          <button class=\"quiz-option\" data-answer=\"c\">A secret government surveillance system</button>\n          <div class=\"quiz-feedback\" data-correct-text=\"Exactly right! AI is a tool — a very sophisticated one, but a tool. It does not think or feel.\" data-incorrect-text=\"Not quite. AI is a computer tool that predicts helpful responses based on patterns it has learned from millions of documents and examples. It is not sentient.\"></div>\n        </div>\n\n        <div class=\"quiz-question\" data-correct=\"c\">\n          <h3>2. You receive a phone call that sounds exactly like your grandchild, saying they are in trouble and need money urgently. What should you do?</h3>\n          <button class=\"quiz-option\" data-answer=\"a\">Send the money immediately — it sounds just like them!</button>\n          <button class=\"quiz-option\" data-answer=\"b\">Ignore all calls from family members from now on</button>\n          <button class=\"quiz-option\" data-answer=\"c\">Hang up, then call your grandchild back on their real phone number to verify</button>\n          <div class=\"quiz-feedback\" data-correct-text=\"Perfect! AI can clone voices, so always hang up and call back on a known number. Your family secret code word helps too.\" data-incorrect-text=\"Voice cloning means a call can sound exactly like a loved one but be fake. Always hang up and call your grandchild directly on their real number to verify.\"></div>\n        </div>\n\n        <div class=\"quiz-question\" data-correct=\"a\">\n          <h3>3. Which of these is safe to share with a free AI chatbot like ChatGPT?</h3>\n          <button class=\"quiz-option\" data-answer=\"a\">Asking for recipe ideas using vegetables you have at home</button>\n          <button class=\"quiz-option\" data-answer=\"b\">Your bank account number so it can help with your finances</button>\n          <button class=\"quiz-option\" data-answer=\"c\">Your Social Insurance Number to get personalized advice</button>\n          <div class=\"quiz-feedback\" data-correct-text=\"Well done! General questions like recipe ideas are perfectly safe. Never share personal financial or identity information with any AI chatbot.\" data-incorrect-text=\"Never share banking details or your SIN with any AI chatbot. Stick to general questions like recipe ideas, how-to instructions, or help writing a letter.\"></div>\n        </div>\n\n        <div class=\"quiz-score\">\n          <p class=\"score-number\"></p>\n          <p class=\"score-message\"></p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Module 9 Progress Checklist"
+    },
+    {
+      "type": "paragraph",
+      "content": "Check off each item as you feel confident with it."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"checklist\">\n        <div class=\"progress-item\">\n          <input type=\"checkbox\" class=\"progress-checkbox\" data-id=\"m9-1\" id=\"m9-1\">\n          <label class=\"progress-label\" for=\"m9-1\">I understand that AI is a tool, not a robot or magic</label>\n        </div>\n        <div class=\"progress-item\">\n          <input type=\"checkbox\" class=\"progress-checkbox\" data-id=\"m9-2\" id=\"m9-2\">\n          <label class=\"progress-label\" for=\"m9-2\">I can name two signs that a video might be a deepfake</label>\n        </div>\n        <div class=\"progress-item\">\n          <input type=\"checkbox\" class=\"progress-checkbox\" data-id=\"m9-3\" id=\"m9-3\">\n          <label class=\"progress-label\" for=\"m9-3\">I know not to share personal information with AI chatbots</label>\n        </div>\n        <div class=\"progress-item\">\n          <input type=\"checkbox\" class=\"progress-checkbox\" data-id=\"m9-4\" id=\"m9-4\">\n          <label class=\"progress-label\" for=\"m9-4\">I have discussed a family safe word with a loved one</label>\n        </div>\n        <div class=\"progress-item\">\n          <input type=\"checkbox\" class=\"progress-checkbox\" data-id=\"m9-5\" id=\"m9-5\">\n          <label class=\"progress-label\" for=\"m9-5\">I tried at least one safe AI tool (photo enhancement, Google Lens, or ChatGPT)</label>\n        </div>\n        <div class=\"progress-item\">\n          <input type=\"checkbox\" class=\"progress-checkbox\" data-id=\"m9-6\" id=\"m9-6\">\n          <label class=\"progress-label\" for=\"m9-6\">I know to hang up and call back when a call seems suspicious</label>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"local-help-section\">\n        <h3>🤝 Need In-Person Help?</h3>\n        <p>Your local community offers free technology support for seniors:</p>\n        <div class=\"local-help-grid\">\n          <div class=\"local-help-dynamic-wrap local-help-card\" id=\"lh-library\">\n            <div class=\"local-help-card-icon\">📚</div>\n            <h4>Your Local Library</h4>\n            <p>Many libraries offer free tech workshops and one-on-one help sessions.</p>\n          </div>\n          <div class=\"local-help-dynamic-wrap local-help-card\" id=\"lh-senior\">\n            <div class=\"local-help-card-icon\">👥</div>\n            <h4>Senior Centre</h4>\n            <p>Community centres often host technology classes and support groups.</p>\n          </div>\n          <div class=\"local-help-card\">\n            <div class=\"local-help-card-icon\">📞</div>\n            <h4>Connected Canadians</h4>\n            <p>Free one-on-one tech support by phone or video call.<br><strong><a href=\"tel:+18558080505\">1-855-808-0505</a></strong></p>\n          </div>\n          <div class=\"local-help-card\">\n            <div class=\"local-help-card-icon\">🌐</div>\n            <h4>Cyber-Seniors</h4>\n            <p>Free tech training from trained volunteers.<br><strong><a href=\"tel:+18442173057\">1-844-217-3057</a></strong></p>\n          </div>\n        </div>\n        <div class=\"local-help-dynamic\"></div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">🎉</span>\n        <p>Congratulations — you have completed Module 9!</p>\n        <p class=\"check-text\">You now know more about AI than most people. You understand what to watch for, and you know it is just a tool — not magic, not scary. Your device is still safe, and you are in control. Be proud of yourself.</p>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"feeling-stuck-box\">\n        <h4>Feeling Stuck?</h4>\n        <p>You do not have to figure this out alone. These free services are staffed by real, patient people who love helping:</p>\n        <p class=\"resource-phone\"><strong>Connected Canadians</strong> — <a href=\"tel:+18558080505\">1-855-808-0505</a></p>\n        <p class=\"resource-phone\"><strong>Cyber-Seniors</strong> — <a href=\"tel:+18442173057\">1-844-217-3057</a></p>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div style=\"text-align:center;padding:1rem 0 0.5rem\">\n    <button class=\"btn-print\" onclick=\"window.print()\" aria-label=\"Print this module\">🖨️ Print This Module</button>\n  </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<section class=\"related-modules\" aria-label=\"Related modules\">\n        <h3 class=\"related-title\">Related Modules</h3>\n        <div class=\"related-grid\">\n          <a href=\"module-2.html\" class=\"related-card\">\n            <span class=\"related-num\">Module 2</span>\n            <span class=\"related-name\">The Security Shield</span>\n            <span class=\"related-desc\">AI can be used to create convincing scams — your Security Shield habits are more important than ever.</span>\n          </a>\n          <a href=\"module-5.html\" class=\"related-card\">\n            <span class=\"related-num\">Module 5</span>\n            <span class=\"related-name\">Email &amp; Messages</span>\n            <span class=\"related-desc\">AI-generated phishing emails are harder to spot — use your email safety skills to stay alert.</span>\n          </a>\n          <a href=\"module-3.html\" class=\"related-card\">\n            <span class=\"related-num\">Module 3</span>\n            <span class=\"related-name\">Passwords &amp; Biometrics</span>\n            <span class=\"related-desc\">AI tools sometimes ask you to sign in — strong passwords and biometrics keep those accounts safe.</span>\n          </a>\n        </div>\n      </section>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"module-complete-action\">\n        <button class=\"btn-mark-complete\" onclick=\"markModuleComplete(9)\" aria-label=\"Mark Module 9 complete\">✓ Mark this module complete</button>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"dc-newsletter-slot\" style=\"margin:2rem 0 1rem\"></div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<footer class=\"site-footer\">\n        <div class=\"footer-inner\">\n          <p class=\"footer-brand\">Digital Confidence Centre</p>\n          <p class=\"footer-tagline\">A free digital learning programme for all Canadians</p>\n          <nav class=\"footer-links\" aria-label=\"Footer navigation\">\n            <a href=\"index.html\">Home</a> |\n            <a href=\"digital-literacy-101.html\">Modules</a> |\n            <a href=\"resources.html\">Resources</a> |\n            <a href=\"tips/index.html\">Newsletter</a> |\n            <a href=\"print-centre.html\">Print Centre</a> |\n            <a href=\"recommended-tools.html\">Recommended Tools</a> |\n            <a href=\"faq.html\">FAQ</a> |\n            <a href=\"glossary.html\">Glossary</a> |\n            <a href=\"whats-coming.html\">What's Coming</a> |\n            <a href=\"family-setup.html\">For Families</a> |\n            <a href=\"about.html\">About</a> |\n            <a href=\"privacy.html\">Privacy Policy</a> |\n            <a href=\"accessibility.html\">Accessibility</a> |\n            <a href=\"#\" onclick=\"openFeedbackModal(); return false;\">Ideas &amp; Feedback</a> |\n            <a href=\"resources/support-directory.html\">Get Help</a>\n          </nav>\n          <p class=\"footer-support\">Questions about this site? Leave us a voice message or written note using the Feedback button.</p>\n          <p class=\"footer-copy\">&copy; 2026 Two Birds Innovation. Made with care in Ontario, Canada.</p>\n          <p class=\"city-footer-label\" style=\"display:none;\"></p>\n          <p class=\"device-footer-label\" style=\"display:none;\"></p>\n        </div>\n      </footer>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div id=\"progress-announcer\" aria-live=\"polite\" aria-atomic=\"true\" class=\"sr-only\"></div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"quick-answers-accordion\" id=\"quick-answers\">\n        <h2 data-en=\"Quick Answers\" data-fr=\"Réponses rapides\">Quick Answers</h2>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>What is artificial intelligence (AI)?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>Artificial intelligence is computer software that can have conversations, answer questions, write text, and generate images. Tools like Siri, Google Assistant, and ChatGPT are all forms of AI. They process enormous amounts of text to predict helpful responses.</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>Can AI give me wrong information?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>Yes. AI tools can sound very confident while being completely wrong — this is called \"hallucination.\" Always check important information from an AI against a trusted source: your doctor, your bank, a government website, or a reliable news outlet.</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>Is it safe to share personal information with AI tools?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>No. Do not share your full name, address, phone number, health information, banking details, or passwords with any AI chatbot. Treat it like a public website — the information you type may be used to train the AI system.</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>What can AI actually help me with?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>AI is genuinely useful for general questions, getting a recipe explained simply, drafting a letter, finding gift ideas, or learning about a topic you are curious about. It is a helpful tool — but not a substitute for professional advice from a doctor, lawyer, or financial adviser.</p>\n          </div>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"dcc-quiz-container\" id=\"dcc-after-quiz\" aria-label=\"Knowledge check — after the module\" style=\"margin:2rem 0\"></div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"sources-block\">\n        <h3 data-en=\"Sources &amp; References\" data-fr=\"Sources et références\">Sources &amp; References</h3>\n        <ul>\n        <li><a href=\"https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai.html\" target=\"_blank\" rel=\"noopener noreferrer\">Responsible use of AI — Government of Canada</a></li>\n        <li><a href=\"https://www.getcybersafe.gc.ca\" target=\"_blank\" rel=\"noopener noreferrer\">Get Cyber Safe — Government of Canada</a></li>\n        </ul>\n      </div>"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What is artificial intelligence (AI)?",
+      "options": [
+        "A type of robot that can clean your house",
+        "Computer systems that can perform tasks that normally require human thinking, like answering questions",
+        "A new type of operating system replacing Windows",
+        "A social media platform"
+      ],
+      "correct": 1,
+      "explanation": "AI refers to computer systems that can learn, reason, and make decisions — tasks that previously required human intelligence. Siri, ChatGPT, and Google Search all use AI."
+    },
+    {
+      "question": "Siri is an example of:",
+      "options": [
+        "A security camera system",
+        "A voice-activated AI assistant built into Apple devices",
+        "A paid subscription service",
+        "A Canadian government app"
+      ],
+      "correct": 1,
+      "explanation": "Siri is Apple's built-in voice assistant. It is free, private (your voice stays on your device by default), and can set reminders, make calls, answer questions, and more."
+    },
+    {
+      "question": "If an AI gives you health advice, you should:",
+      "options": [
+        "Follow it immediately — AI is always accurate",
+        "Use it as a starting point, but always confirm with a real doctor or pharmacist",
+        "Ignore it completely — AI is never right",
+        "Share it on Facebook for others to use"
+      ],
+      "correct": 1,
+      "explanation": "AI can provide helpful general information about health topics, but it does not know your full medical history. Always confirm important health decisions with your doctor."
+    },
+    {
+      "question": "A \"deepfake\" video is:",
+      "options": [
+        "A video filmed underwater",
+        "A video that uses AI to make someone appear to say or do something they never did",
+        "A type of news broadcast",
+        "A training video for divers"
+      ],
+      "correct": 1,
+      "explanation": "Deepfakes use AI to swap faces or generate realistic fake videos. They are used in scams (fake CEO calls) and misinformation. If a video seems impossible, verify it."
+    },
+    {
+      "question": "What is the main privacy concern with AI voice assistants like Siri?",
+      "options": [
+        "They drain your battery too quickly",
+        "They may be listening for their \"wake word\" and could accidentally record conversations",
+        "They cost too much money per month",
+        "They replace your mobile data"
+      ],
+      "correct": 1,
+      "explanation": "Devices with voice assistants listen for their wake word (\"Hey Siri\"). Occasionally they activate by accident. You can review and delete voice recordings in your privacy settings."
+    }
+  ],
+  "prev_module": {
+    "slug": "module-8.html",
+    "label": "Module 8: Stay Connected"
+  },
+  "next_module": {
+    "slug": "module-10.html",
+    "label": "Module 10: Grocery & Food Delivery"
+  },
+  "accessibility": {
+    "lang": "en-CA",
+    "wcag_level": "AA"
+  },
+  "category": "Technology",
+  "category_icon": "🤖",
+  "difficulty": "Intermediate",
+  "time": "25 min",
+  "what_you_learn": [
+    "What artificial intelligence is in plain language",
+    "How to use Siri and voice assistants",
+    "How AI tools like ChatGPT work",
+    "How to spot AI-generated content and deepfakes"
+  ],
+  "summary": "Artificial intelligence is already part of your daily life — from Siri to spam filters. This module explains what AI is, how to use it helpfully, and how to tell when it might be wrong."
+}

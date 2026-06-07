@@ -1,0 +1,385 @@
+{
+  "id": "module-4",
+  "number": 4,
+  "slug": "module-4",
+  "title": "App Store Safety",
+  "description": "Module 4: Download apps safely from the App Store, spot fakes, and keep your iPad secure from harmful downloads. Free digital literacy for Ontario seniors.",
+  "keywords": "App Store safety seniors, download apps iPad seniors, fake apps how to spot, Google Play Store guide, Microsoft Store tutorial, app permissions explained",
+  "date_published": "2026-03-07",
+  "hero_image": {
+    "url": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&h=400&fit=crop&v=2",
+    "alt": "A colourful smartphone screen showing a grid of app icons",
+    "width": 1200,
+    "height": 400
+  },
+  "intro": "How to find, download, and verify apps safely. You will learn to spot fake apps, understand what permissions mean, and keep your device running smoothly.",
+  "story": {
+    "label": "Frank's Story",
+    "paragraphs": [
+      "Frank, 76, wanted to download a weather app for his iPad. His friend had recommended one, so Frank opened what he thought was the App Store and searched for \"weather.\" He found an app that looked right, tapped \"Get,\" and was immediately asked for his credit card number. Frank entered it, thinking this was normal.",
+      "Two weeks later, Frank noticed a $49.99 charge on his credit card from a company he had never heard of. It turned out he had downloaded a fake weather app that signed him up for a weekly subscription. The \"App Store\" he had used was actually a website pretending to be the App Store.",
+      "Frank's mistake was understandable — the fake store looked very real. But there are clear ways to make sure you are using the real App Store, downloading real apps, and never getting tricked by hidden fees. That is what this module is all about."
+    ]
+  },
+  "confidence_check": "You now know how to find and use the real App Store. That is the first line of defence. Everything that follows builds on this foundation.",
+  "sections": [
+    {
+      "type": "tip",
+      "content": "The safest way to open the App Store is to tap its icon directly on your Home screen — never from a link in an email, text message, or website."
+    },
+    {
+      "type": "raw_html",
+      "content": "<details class=\"appstore-guide\">\n        <summary>How do I use the App Store on my device?</summary>\n\n        <details class=\"appstore-platform\" data-devices=\"iphone,ipad\">\n          <summary>📱 Apple App Store (iPhone / iPad) — blue icon with white \"A\"</summary>\n          <div class=\"appstore-platform-body\">\n            <ol>\n              <li><strong>Open the App Store</strong> — tap the blue icon with the white letter \"A\" on your Home screen.</li>\n              <li><strong>Search for an app</strong> — tap the magnifying glass icon at the bottom, then type the name of the app you want.</li>\n              <li><strong>Review the app</strong> — check the star rating (4 or higher is good), the number of reviews, and who made it.</li>\n              <li><strong>Download</strong> — tap <strong>Get</strong> (free apps) or the price button (paid apps). You may need to confirm with Face ID, Touch ID, or your Apple ID <a href=\"digital-literacy-101.html#term-password\" class=\"glossary-link\">password</a>.</li>\n              <li><strong>Allow permissions</strong> — when the app opens for the first time, it may ask for access to your location, camera, or contacts. You can choose \"Allow\" or \"Don't Allow\" for each one.</li>\n            </ol>\n          </div>\n        </details>\n\n        <details class=\"appstore-platform\" data-devices=\"android-phone,android-tablet\">\n          <summary>🤖 Google Play Store (Android) — colourful triangle icon</summary>\n          <div class=\"appstore-platform-body\">\n            <ol>\n              <li><strong>Open the Play Store</strong> — tap the colourful triangle icon (blue, green, red, and yellow) on your Home screen or app drawer. It may be labelled \"Play Store.\"</li>\n              <li><strong>Search for an app</strong> — tap the search bar at the top and type the name of the app you want.</li>\n              <li><strong>Review the app</strong> — check the star rating, number of installs, and who published it (look for well-known names).</li>\n              <li><strong>Download</strong> — tap <strong>Install</strong> (free apps) or the price button (paid apps). You may need to confirm with your fingerprint or Google account password.</li>\n              <li><strong>Allow permissions</strong> — the first time you open the app, it may ask for access to your location, camera, or contacts. Read each request carefully before choosing \"Allow.\"</li>\n            </ol>\n          </div>\n        </details>\n\n        <details class=\"appstore-platform\" data-devices=\"windows\">\n          <summary>🖥️ Microsoft Store (Windows) — blue shopping bag icon</summary>\n          <div class=\"appstore-platform-body\">\n            <ol>\n              <li><strong>Open the Microsoft Store</strong> — click the blue shopping bag icon in your taskbar at the bottom of the screen, or search \"Microsoft Store\" in the Start menu.</li>\n              <li><strong>Search for an app</strong> — type the name of the app in the search bar at the top of the Store window.</li>\n              <li><strong>Review the app</strong> — check the star rating, number of reviews, and the publisher name.</li>\n              <li><strong>Download</strong> — click <strong>Get</strong> (free) or the price button (paid). You may need to sign in with your Microsoft account.</li>\n              <li><strong>Allow permissions</strong> — some apps will ask for permissions (camera, microphone, location) when you first use them. You can choose what to allow in your Windows Settings if you change your mind later.</li>\n            </ol>\n          </div>\n        </details>\n      </details>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "The Real App Store: How to Find It"
+    },
+    {
+      "type": "device_variant",
+      "variants": [
+        {
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "content": "<p>The App Store is the only safe place to download apps on your iPad or iPhone. It is run by Apple, and every app in it has been reviewed for safety. Here is how to find the real one:</p>\n\n      <div class=\"walkthrough\">\n        <h3 data-freshness-id=\"module-4-section-1\">Finding and Opening the App Store</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Look on your Home screen for a <strong>blue icon with a white letter \"A\" made of lines</strong> (like sticks arranged in an A shape). This is the App Store.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap it once to open it.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">You will see a screen with featured apps, categories, and a search bar at the top.</span>\n        </div>\n      </div>"
+        },
+        {
+          "devices": [
+            "android-phone",
+            "android-tablet"
+          ],
+          "content": "<p>The Google Play Store is the only safe place to download apps on your Android phone or tablet. It is run by Google, and apps in it are reviewed for safety. Here is how to find the real one:</p>\n\n      <div class=\"walkthrough\">\n        <h3>Finding and Opening the Google Play Store</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Look on your Home screen for a <strong>colourful triangle icon</strong> (it looks like a sideways play button in blue, green, red, and yellow). This is the <strong>Google Play Store</strong>. You might also see it labelled simply as \"Play Store.\"</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap it once to open it.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">You will see a screen with featured apps, categories, and a search bar at the top.</span>\n        </div>\n      </div>"
+        }
+      ]
+    },
+    {
+      "type": "warning",
+      "content": "Never download apps from a website, a link in an email, or a link in a text message. Only use the official app store on your device. If someone sends you a link to download an app, ignore it — find the app yourself in the real App Store or Play Store."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">💛</span>\n        <p>Confidence Check: The App Store is your safe shopping centre for apps. If you stick to the App Store, you are already ahead of the game.</p>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "How to Search for and Download an App"
+    },
+    {
+      "type": "device_variant",
+      "variants": [
+        {
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "content": "<div class=\"walkthrough\">\n        <h3>Downloading an App Step by Step</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open the <strong>App Store</strong> (blue icon with white \"A\").</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap the <strong>Search</strong> tab at the bottom of the screen (it looks like a magnifying glass).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Tap the search bar at the top and type the name of the app you want. For example, type \"The Weather Network.\"</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">A list of results will appear. <strong>Before you download anything, check the app carefully</strong> (see the verification checklist below).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">When you find the right app, tap the blue <strong>\"Get\"</strong> button (for free apps) or the price button (for paid apps).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">6</span>\n          <span class=\"step-text\">Confirm with <strong>Face ID</strong> or your passcode.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">7</span>\n          <span class=\"step-text\">The app will download and appear on your Home screen. You can tap it to open it.</span>\n        </div>\n      </div>"
+        },
+        {
+          "devices": [
+            "android-phone",
+            "android-tablet"
+          ],
+          "content": "<div class=\"visual-example-card\" role=\"img\" aria-label=\"Play Store Search Results\">\n        <div class=\"example-icon\">🏪</div>\n        <div class=\"example-content\">\n          <h4 class=\"example-title\">Play Store Search Results</h4>\n          <p class=\"example-description\">Play Store results show the app name, developer, star rating, and download count. For a banking app, confirm the developer matches your bank's official company name.</p>\n        </div>\n      </div>\n\n      <div class=\"walkthrough\">\n        <h3>Downloading an App Step by Step</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open the <strong>Google Play Store</strong> (colourful triangle icon).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap the <strong>search bar</strong> at the top of the screen. It usually says \"Search for apps &amp; games.\"</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Type the name of the app you want. For example, type \"The Weather Network.\" Then tap the search button on your keyboard.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">A list of results will appear. <strong>Before you download anything, check the app carefully</strong> (see the verification checklist below).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">When you find the right app, tap the green <strong>\"Install\"</strong> button (for free apps) or the button showing the price (for paid apps).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">6</span>\n          <span class=\"step-text\">If prompted, confirm with your <strong>fingerprint, face unlock, or Google account password</strong>.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">7</span>\n          <span class=\"step-text\">The app will download and appear on your Home screen and in your App Drawer. You can tap it to open it.</span>\n        </div>\n      </div>"
+        }
+      ]
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"visual-example-card\" role=\"img\" aria-label=\"Real App vs Copycat App\">\n        <div class=\"example-icon\">⚠️</div>\n        <div class=\"example-content\">\n          <h4 class=\"example-title\">Real App vs Copycat App</h4>\n          <p class=\"example-description\">A real bank app is published by the bank itself and has millions of downloads. A copycat uses a similar name and logo but comes from an unknown developer with very few reviews.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "How to Spot a Real App vs. a Fake App"
+    },
+    {
+      "type": "paragraph",
+      "content": "When you search the App Store, you might see several apps with similar names. Here is how to pick the real one:"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "<strong>Check the developer name.</strong> The developer's name appears below the app name in small text. For example, the real \"RBC Mobile\" app is made by \"Royal Bank of Canada.\" If the developer name looks unfamiliar or is misspelled, be cautious."
+        },
+        {
+          "text": "<strong>Look at the number of ratings.</strong> Popular, legitimate apps have thousands or millions of ratings. A fake copycat might have very few — perhaps dozens or even none."
+        }
+      ]
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"visual-example-card\" role=\"img\" aria-label=\"App Store Listing\">\n        <div class=\"example-icon\">✅</div>\n        <div class=\"example-content\">\n          <h4 class=\"example-title\">App Store Listing</h4>\n          <p class=\"example-description\">The developer name appears just below the app title on the store listing. For your bank app, it should match your bank's official legal company name exactly.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "<strong>Read the star rating.</strong> Most real apps from established companies have ratings of 3.5 stars or above (out of 5). Very low ratings (below 2 stars) are a warning sign."
+        },
+        {
+          "text": "<strong>Check the screenshots.</strong> Scroll down to see pictures of what the app looks like. Do they look professional? Do they match what you would expect?"
+        },
+        {
+          "text": "<strong>Look for the \"In-App Purchases\" label.</strong> If an app says \"In-App Purchases\" below the \"Get\" button, that means the app is free to download but may ask you to pay for extra features inside the app. This is not always bad, but be aware of it."
+        }
+      ]
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"three-second-rule\">\n        <h3>The 3-Second Rule for Apps</h3>\n        <div class=\"steps\">\n          <div class=\"step\">\n            <span class=\"step-icon\">✋</span>\n            <span class=\"step-name\">Stop</span>\n            <span class=\"step-desc\">Before tapping \"Get,\" pause and check the details.</span>\n          </div>\n          <div class=\"step\">\n            <span class=\"step-icon\">🫁</span>\n            <span class=\"step-name\">Breathe</span>\n            <span class=\"step-desc\">There is no rush. The app will still be there in five minutes.</span>\n          </div>\n          <div class=\"step\">\n            <span class=\"step-icon\">🔍</span>\n            <span class=\"step-name\">Verify</span>\n            <span class=\"step-desc\">Check the developer, ratings, and reviews. Does everything look right?</span>\n          </div>\n        </div>\n      </div>"
+    },
+    {
+      "type": "warning",
+      "content": "If an app has very few ratings, a developer name you do not recognise, or screenshots that look sloppy, do not download it. A legitimate app from a major company will always have thousands of ratings."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"three-second-rule-box\">\n        <h4>Remember the 3-Second Rule</h4>\n        <p>Stop. Breathe. Think before you tap. If something feels urgent or too good to be true, that is your signal to pause.</p>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Understanding App Permissions"
+    },
+    {
+      "type": "paragraph",
+      "content": "When you first open a new app, it might ask for permission to access parts of your iPad. These requests appear as small pop-up boxes. Here is what the common ones mean:"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "<strong>\"[App Name] Would Like to Send You Notifications\"</strong> — This means the app wants to send you alerts and reminders, even when you are not using it. Tap <strong>\"Allow\"</strong> if you want reminders (like a weather alert) or <strong>\"Don't Allow\"</strong> if you do not want to be bothered."
+        },
+        {
+          "text": "<strong>\"[App Name] Would Like to Access Your Location\"</strong> — The app wants to know where you are. A weather or maps app needs this to work properly. A game or flashlight app does not. Choose \"While Using the App\" for apps that genuinely need your location, and \"Don't Allow\" for apps that do not."
+        },
+        {
+          "text": "<strong>\"[App Name] Would Like to Access Your Photos\"</strong> — The app wants to see pictures stored on your iPad. A photo editing app needs this; a calculator app does not."
+        },
+        {
+          "text": "<strong>\"[App Name] Would Like to Access Your Contacts\"</strong> — The app wants to see your address book. Only allow this for communication apps like FaceTime or Messages."
+        },
+        {
+          "text": "<strong>\"[App Name] Would Like to Track Your Activity\"</strong> — The app wants to follow what you do on other apps and websites to show you targeted advertisements. Almost always, tap <strong>\"Ask App Not to Track.\"</strong>"
+        }
+      ]
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"visual-example-card\" role=\"img\" aria-label=\"Permission Request Popup\">\n        <div class=\"example-icon\">🔐</div>\n        <div class=\"example-content\">\n          <h4 class=\"example-title\">Permission Request Popup</h4>\n          <p class=\"example-description\">When an app asks to access your location, camera, or contacts, read carefully. Tapping Don't Allow is always safe if you are uncertain why the app needs access.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "tip",
+      "content": "If you are not sure, choose <strong>\"Don't Allow.\"</strong> You can always change your mind later in Settings. Saying \"no\" never breaks an app — at worst, one feature might not work, and the app will tell you."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">💛</span>\n        <p>Confidence Check: You are now an informed app shopper. You know how to find real apps and protect your privacy when using them.</p>\n      </div>"
+    },
+    {
+      "type": "tip",
+      "content": "When in doubt about a permission, choose \"Don't Allow.\" You can always change your mind later in Settings, and saying no never breaks an app."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Subscriptions and Hidden Costs"
+    },
+    {
+      "type": "paragraph",
+      "content": "Some apps are free to download but charge a monthly or yearly fee to keep using them. This is called a <strong>subscription</strong>. It is like a magazine subscription — you pay regularly to keep getting it."
+    },
+    {
+      "type": "paragraph",
+      "content": "Subscriptions are not necessarily bad, but you should always know what you are signing up for. Here is how to check:"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"walkthrough\">\n        <h3>Checking Your Subscriptions</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Open <strong>Settings</strong> (the grey gears icon).</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\">Tap your <strong>name</strong> at the top.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">Tap <strong>\"Subscriptions.\"</strong></span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">You will see a list of all active subscriptions. If you see something you do not recognise or no longer want, tap it and choose <strong>\"Cancel Subscription.\"</strong></span>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"visual-example-card\" role=\"img\" aria-label=\"In-App Purchase Controls\">\n        <div class=\"example-icon\">💳</div>\n        <div class=\"example-content\">\n          <h4 class=\"example-title\">In-App Purchase Controls</h4>\n          <p class=\"example-description\">In Screen Time (iPhone/iPad) or Digital Wellbeing (Android) settings you can require a password before any purchase — this prevents accidental charges completely.</p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "warning",
+      "content": "Some apps offer a \"free trial\" that automatically converts to a paid subscription after 3 or 7 days. If you try a free trial, set a reminder on your phone to cancel before the trial ends — or cancel immediately after signing up (you will still get the full trial period, but it will not charge you afterward)."
+    },
+    {
+      "type": "warning",
+      "content": "Some \"free trial\" apps will charge you automatically after a few days. If you sign up for a free trial, set a reminder to cancel before the trial ends — or cancel right away (you still get the full trial period)."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Deleting Apps You Do Not Want"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"walkthrough\">\n        <h3>Removing an App from Your iPad</h3>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">1</span>\n          <span class=\"step-text\">Find the app icon on your Home screen.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">2</span>\n          <span class=\"step-text\"><strong>Press and hold</strong> the icon for about two seconds. The icons will start to wiggle.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">3</span>\n          <span class=\"step-text\">You will see a small <strong>\"X\"</strong> or a <strong>minus sign</strong> in the corner of each app. Tap it on the app you want to remove.</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">4</span>\n          <span class=\"step-text\">Tap <strong>\"Delete App\"</strong> to confirm. (If you change your mind, you can always download it again from the App Store.)</span>\n        </div>\n        <div class=\"walkthrough-step\">\n          <span class=\"step-num\">5</span>\n          <span class=\"step-text\">Press the Home button (or tap \"Done\") to stop the wiggling.</span>\n        </div>\n      </div>"
+    },
+    {
+      "type": "paragraph",
+      "content": "Remember: deleting an app does not cancel a subscription. If you are paying for an app monthly, you need to cancel the subscription separately (using the steps above) before deleting the app."
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"video-section\">\n        <div class=\"video-section-header\">\n          <div class=\"video-section-icon\">📺</div>\n          <h3>App Store Tutorials</h3>\n        </div>\n        <div class=\"video-grid\">\n        <div class=\"video-card\">\n          <div class=\"video-card-thumbnail\">\n            <div class=\"video-card-play-icon\">▶️</div>\n            <div class=\"video-card-topic-icon\">📱</div>\n          </div>\n          <h4>Download Apps Safely</h4>\n          <p>Learn how to find and download trustworthy apps on your device.</p>\n          <a href=\"https://www.youtube.com/results?search_query=how+to+download+apps+safely+tutorial&amp;sp=CAMSAhAB\" target=\"_blank\" rel=\"noopener\" class=\"video-card-btn\">Watch Tutorials</a>\n        </div>\n        <div class=\"video-card\">\n          <div class=\"video-card-thumbnail\">\n            <div class=\"video-card-play-icon\">▶️</div>\n            <div class=\"video-card-topic-icon\">🛡️</div>\n          </div>\n          <h4>App Store Safety Guide</h4>\n          <p>How to spot fake apps, check reviews, and understand permissions.</p>\n          <a href=\"https://www.youtube.com/results?search_query=App+Store+safety+guide+for+beginners&amp;sp=CAMSAhAB\" target=\"_blank\" rel=\"noopener\" class=\"video-card-btn\">Watch Tutorials</a>\n        </div>\n        </div>\n        <div class=\"video-safety-note\">\n          <div class=\"video-safety-note-icon\">✓</div>\n          <p>These links open YouTube in a new tab. YouTube is safe and free to use — you can watch as many videos as you like without signing in.</p>\n</div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"video-help-link\">\n        <p>📚 New to YouTube? <a href=\"search-guide.html\">Learn how to spot quality videos and avoid ads</a></p>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"exercise-block\">\n        <h3>Practical Exercise: App Store Explorer</h3>\n        <ol class=\"numbered-list\">\n          <li>Open the App Store and search for <strong>\"The Weather Network.\"</strong> Check the developer name, star rating, and number of reviews. Do not download it — this is practice.</li>\n          <li>Go to Settings → [Your Name] → Subscriptions and check if you have any active subscriptions you did not know about.</li>\n          <li>If you have any apps on your Home screen that you do not recognise or no longer use, practise deleting one.</li>\n        </ol>\n        <div class=\"success-state\">\n          <strong>Success looks like this:</strong> You can confidently search for an app, verify it is legitimate by checking the developer and ratings, and you know where to find and cancel subscriptions.\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"success-state-box\">\n        <span class=\"success-icon\">✅</span>\n        <p><strong>Well done!</strong> You have practised searching for apps, checking their legitimacy, and reviewing your subscriptions.</p>\n      </div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "heading": "Quick Check: Test Your Knowledge"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"quiz-container\" id=\"module4-quiz\">\n        <div class=\"quiz-question\" data-correct=\"b\">\n          <h3>1. Where is the only safe place to download apps for your iPad?</h3>\n          <button class=\"quiz-option\" data-answer=\"a\">From a link someone texted you</button>\n          <button class=\"quiz-option\" data-answer=\"b\">The App Store app on your iPad</button>\n          <button class=\"quiz-option\" data-answer=\"c\">Any website that shows apps</button>\n          <div class=\"quiz-feedback\" data-correct-text=\"Exactly right! The App Store on your iPad is the only safe place. Never download apps from links in emails or texts.\" data-incorrect-text=\"The only safe place is the App Store app on your iPad (the blue icon with the white A). Never download from links in emails or texts.\"></div>\n        </div>\n\n        <div class=\"quiz-question\" data-correct=\"a\">\n          <h3>2. An app asks permission to \"Track Your Activity across other companies' apps and websites.\" What should you do?</h3>\n          <button class=\"quiz-option\" data-answer=\"a\">Tap \"Ask App Not to Track\"</button>\n          <button class=\"quiz-option\" data-answer=\"b\">Tap \"Allow\" so the app works properly</button>\n          <button class=\"quiz-option\" data-answer=\"c\">Delete the app immediately</button>\n          <div class=\"quiz-feedback\" data-correct-text=\"Good choice! Tracking is about targeted advertisements, not app functionality. You can almost always say no.\" data-incorrect-text=\"The best choice is &#x27;Ask App Not to Track.&#x27; This permission is about targeted ads, not about making the app work. The app will function fine without it.\"></div>\n        </div>\n\n        <div class=\"quiz-question\" data-correct=\"c\">\n          <h3>3. You deleted an app, but you are still being charged $9.99 per month. Why?</h3>\n          <button class=\"quiz-option\" data-answer=\"a\">Your iPad is broken</button>\n          <button class=\"quiz-option\" data-answer=\"b\">Someone hacked your account</button>\n          <button class=\"quiz-option\" data-answer=\"c\">Deleting an app does not cancel its subscription — you need to cancel separately in Settings</button>\n          <div class=\"quiz-feedback\" data-correct-text=\"That is right! Deleting an app and cancelling a subscription are two separate steps. Go to Settings → Your Name → Subscriptions to cancel.\" data-incorrect-text=\"Deleting an app does not cancel its subscription. You need to go to Settings → Your Name → Subscriptions to cancel the payment.\"></div>\n        </div>\n\n        <div class=\"quiz-score\">\n          <p class=\"score-number\"></p>\n          <p class=\"score-message\"></p>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"local-help-section\">\n        <h3>🤝 Need In-Person Help?</h3>\n        <p>Your local community offers free technology support for seniors:</p>\n        <div class=\"local-help-grid\">\n          <div class=\"local-help-dynamic-wrap local-help-card\" id=\"lh-library\">\n            <div class=\"local-help-card-icon\">📚</div>\n            <h4>Your Local Library</h4>\n            <p>Many libraries offer free tech workshops and one-on-one help sessions.</p>\n          </div>\n          <div class=\"local-help-dynamic-wrap local-help-card\" id=\"lh-senior\">\n            <div class=\"local-help-card-icon\">👥</div>\n            <h4>Senior Centre</h4>\n            <p>Community centres often host technology classes and support groups.</p>\n          </div>\n          <div class=\"local-help-card\">\n            <div class=\"local-help-card-icon\">📞</div>\n            <h4>Connected Canadians</h4>\n            <p>Free one-on-one tech support by phone or video call.<br><strong><a href=\"tel:+18558080505\">1-855-808-0505</a></strong></p>\n          </div>\n          <div class=\"local-help-card\">\n            <div class=\"local-help-card-icon\">🌐</div>\n            <h4>Cyber-Seniors</h4>\n            <p>Free tech training from trained volunteers.<br><strong><a href=\"tel:+18442173057\">1-844-217-3057</a></strong></p>\n          </div>\n        </div>\n        <div class=\"local-help-dynamic\"></div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"confidence-check\">\n        <span class=\"check-icon\">🎉</span>\n        <p>Congratulations! You have completed Module 4!</p>\n        <p class=\"check-text\">You are now a smart app shopper who knows how to stay safe in the App Store. Onwards to email and messages!</p>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"feeling-stuck-box\">\n        <h4>Feeling Stuck?</h4>\n        <p>You do not have to figure this out alone. These free services are staffed by real, patient people who love helping:</p>\n        <p class=\"resource-phone\"><strong>Connected Canadians</strong> — <a href=\"tel:+18558080505\">1-855-808-0505</a></p>\n        <p class=\"resource-phone\"><strong>Cyber-Seniors</strong> — <a href=\"tel:+18442173057\">1-844-217-3057</a></p>\n        <p>Both services are free, Canadian, and specialise in helping older adults with technology at your own pace.</p>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div style=\"text-align:center;padding:1rem 0 0.5rem\">\n    <button class=\"btn-print\" onclick=\"window.print()\" aria-label=\"Print this module\">🖨️ Print This Module</button>\n  </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<section class=\"related-modules\" aria-label=\"Related modules\">\n        <h3 class=\"related-title\">Related Modules</h3>\n        <div class=\"related-grid\">\n          <a href=\"module-1.html\" class=\"related-card\">\n            <span class=\"related-num\">Module 1</span>\n            <span class=\"related-name\">Mastering the Escape Hatch</span>\n            <span class=\"related-desc\">If an app installation goes wrong or something unexpected appears, knowing how to escape keeps you safe.</span>\n          </a>\n          <a href=\"module-2.html\" class=\"related-card\">\n            <span class=\"related-num\">Module 2</span>\n            <span class=\"related-name\">The Security Shield</span>\n            <span class=\"related-desc\">Understand what makes an app trustworthy or risky — essential context for safe App Store browsing.</span>\n          </a>\n          <a href=\"module-9.html\" class=\"related-card\">\n            <span class=\"related-num\">Module 9</span>\n            <span class=\"related-name\">Understanding AI</span>\n            <span class=\"related-desc\">AI-powered apps are everywhere in the App Store — learn what they are and how to use them wisely.</span>\n          </a>\n        </div>\n      </section>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"module-complete-action\">\n        <button class=\"btn-mark-complete\" onclick=\"markModuleComplete(4)\" aria-label=\"Mark Module 4 complete\">✓ Mark this module complete</button>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"dc-newsletter-slot\" style=\"margin:2rem 0 1rem\"></div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<footer class=\"site-footer\">\n        <div class=\"footer-inner\">\n          <p class=\"footer-brand\">Digital Confidence Centre</p>\n          <p class=\"footer-tagline\">A free digital learning programme for all Canadians</p>\n          <nav class=\"footer-links\" aria-label=\"Footer navigation\">\n            <a href=\"index.html\">Home</a> |\n            <a href=\"digital-literacy-101.html\">Modules</a> |\n            <a href=\"resources.html\">Resources</a> |\n            <a href=\"tips/index.html\">Newsletter</a> |\n            <a href=\"print-centre.html\">Print Centre</a> |\n            <a href=\"recommended-tools.html\">Recommended Tools</a> |\n            <a href=\"faq.html\">FAQ</a> |\n            <a href=\"glossary.html\">Glossary</a> |\n            <a href=\"whats-coming.html\">What's Coming</a> |\n            <a href=\"family-setup.html\">For Families</a> |\n            <a href=\"about.html\">About</a> |\n            <a href=\"privacy.html\">Privacy Policy</a> |\n            <a href=\"accessibility.html\">Accessibility</a> |\n            <a href=\"#\" onclick=\"openFeedbackModal(); return false;\">Ideas &amp; Feedback</a> |\n            <a href=\"resources/support-directory.html\">Get Help</a>\n          </nav>\n          <p class=\"footer-support\">Questions about this site? Leave us a voice message or written note using the Feedback button.</p>\n          <p class=\"footer-copy\">&copy; 2026 Two Birds Innovation. Made with care in Ontario, Canada.</p>\n          <p class=\"city-footer-label\" style=\"display:none;\"></p>\n          <p class=\"device-footer-label\" style=\"display:none;\"></p>\n        </div>\n      </footer>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div id=\"progress-announcer\" aria-live=\"polite\" aria-atomic=\"true\" class=\"sr-only\"></div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"quick-answers-accordion\" id=\"quick-answers\">\n        <h2 data-en=\"Quick Answers\" data-fr=\"Réponses rapides\">Quick Answers</h2>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>How do I know if an app is safe to download?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>Only download apps from the official Apple App Store (the blue icon with letter A). Read reviews and check the developer name. Free apps from well-known companies like TD Bank or Canada Post are generally safe. Avoid apps with very few reviews.</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>Can a virus get onto my iPhone through an app?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>iPhone and iPad viruses from App Store apps are extremely rare. Apple reviews every app before it appears in the store. The main risk is apps that ask for more personal information than they need.</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>What should I do if an app asks to access my contacts, camera, or location?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>Ask yourself: does this app need that? A flashlight app does not need your contacts. A navigation app reasonably needs your location. Tap \"Don't Allow\" if the request seems unnecessary. You can change permissions anytime in Settings > Privacy.</p>\n          </div>\n        </div>\n        <div class=\"qa-item\">\n          <button class=\"qa-question\" aria-expanded=\"false\">\n            <span>How do I delete an app I no longer want?</span>\n            <span class=\"qa-chevron\" aria-hidden=\"true\">&#9660;</span>\n          </button>\n          <div class=\"qa-answer\" hidden>\n            <p>Press and hold the app icon until a small menu appears. Tap \"Remove App\" then \"Delete App.\" This permanently removes the app. Your other apps and photos are not affected.</p>\n          </div>\n        </div>\n      </div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"dcc-quiz-container\" id=\"dcc-after-quiz\" aria-label=\"Knowledge check — after the module\" style=\"margin:2rem 0\"></div>"
+    },
+    {
+      "type": "raw_html",
+      "content": "<div class=\"sources-block\">\n        <h3 data-en=\"Sources &amp; References\" data-fr=\"Sources et références\">Sources &amp; References</h3>\n        <ul>\n        <li><a href=\"https://support.apple.com/en-ca/HT201354\" target=\"_blank\" rel=\"noopener noreferrer\">App Store safety guidelines (Apple Support Canada)</a></li>\n        <li><a href=\"https://www.bbb.org/ca\" target=\"_blank\" rel=\"noopener noreferrer\">Better Business Bureau Canada</a></li>\n        </ul>\n      </div>"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Where is the safest place to download apps on an iPhone or iPad?",
+      "options": [
+        "Any website on the internet",
+        "Only from the Apple App Store",
+        "From email links",
+        "From your friend's device via Bluetooth"
+      ],
+      "correct": 1,
+      "explanation": "The Apple App Store reviews every app before listing it. Downloading apps from any other source bypasses these safety checks."
+    },
+    {
+      "question": "Before installing a new app, you should check:",
+      "options": [
+        "The app's colour scheme",
+        "Reviews, the developer's name, and what permissions it requests",
+        "Whether it has a Canadian flag",
+        "How many photos it has"
+      ],
+      "correct": 1,
+      "explanation": "Check the developer name, star rating, number of reviews, and permission requests. A legitimate app from a known company will request only the permissions it truly needs."
+    },
+    {
+      "question": "An app asks for permission to access your contacts and location. You should:",
+      "options": [
+        "Always allow everything",
+        "Think about whether the app actually needs this — deny what it does not need",
+        "Delete the app immediately",
+        "Allow location but never contacts"
+      ],
+      "correct": 1,
+      "explanation": "Always question permissions. A flashlight app has no reason to need your location. A contacts app does not need your camera. Deny permissions that do not make sense."
+    },
+    {
+      "question": "Why is it important to keep your apps updated?",
+      "options": [
+        "Updates add more ads",
+        "Updates fix security problems and bugs",
+        "Updates delete your photos",
+        "Updates make the app smaller"
+      ],
+      "correct": 1,
+      "explanation": "App updates often contain security patches that fix vulnerabilities discovered after the app was released. Keeping apps updated is one of the easiest ways to stay protected."
+    },
+    {
+      "question": "A pop-up says you must install an app NOW or your phone will be damaged. You should:",
+      "options": [
+        "Install it immediately",
+        "Close the pop-up — this is a scam",
+        "Call your phone provider",
+        "Turn off Wi-Fi first, then install it"
+      ],
+      "correct": 1,
+      "explanation": "Urgency is always a red flag. Real system alerts do not come from websites. Close the pop-up using your Home button and ignore the message entirely."
+    }
+  ],
+  "prev_module": {
+    "slug": "module-3.html",
+    "label": "Module 3: Passwords & Biometrics"
+  },
+  "next_module": {
+    "slug": "module-5.html",
+    "label": "Module 5: Email & Messages"
+  },
+  "accessibility": {
+    "lang": "en-CA",
+    "wcag_level": "AA"
+  },
+  "category": "Device Basics",
+  "category_icon": "📱",
+  "difficulty": "Beginner",
+  "time": "20 min",
+  "what_you_learn": [
+    "How to find and download apps from the App Store",
+    "How to update apps to keep them secure",
+    "How to recognise fake or low-quality apps",
+    "How to delete apps you no longer need"
+  ],
+  "summary": "The App Store is Apple's safe marketplace for apps. You will learn how to find, download, update, and delete apps safely — and how to spot fake apps before you install them."
+}
