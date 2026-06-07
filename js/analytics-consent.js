@@ -110,7 +110,7 @@
     banner.innerHTML =
       '<div class="dc-consent-inner">' +
         '<p class="dc-consent-text">' +
-          'We use analytics to understand how seniors use this site and improve it. ' +
+          'We use analytics to understand how people use this site and improve it. ' +
           'No personal information is collected. ' +
           '<a href="privacy.html" class="dc-consent-learn">Learn more</a>' +
         '</p>' +
