@@ -177,6 +177,24 @@
   --accent-warm:        var(--color-accent);
   --border-color:       var(--color-border);
   --border-light:       var(--color-border);
+
+  /* --- main.css structural aliases ─────────────────────────────────────── */
+  --line-height:        var(--line-height-body);
+  --max-width:          900px;
+  --sidebar-width:      280px;
+
+  /* Spacing aliases (main.css used xs/sm/md/lg/xl; canonical tokens use space-N) */
+  --spacing-xs:         var(--space-2);   /* 8px  */
+  --spacing-sm:         var(--space-3);   /* 12px */
+  --spacing-md:         var(--space-6);   /* 24px */
+  --spacing-lg:         36px;            /* no direct space-N token */
+  --spacing-xl:         var(--space-12);  /* 48px */
+
+  /* Animation aliases (main.css names; canonical are --motion-duration-N) */
+  --duration-fast:      150ms;
+  --duration-normal:    250ms;
+  --duration-slow:      400ms;
+  --ease-standard:      cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Honour reduced motion: zero-out the durations so all transitions collapse

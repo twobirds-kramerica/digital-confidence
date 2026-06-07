@@ -6,79 +6,6 @@
 
 /* Fonts self-hosted via css/fonts.css — no CDN dependency */
 
-/* CSS Custom Properties — aligned to DCC Brand Guidelines v1.1 */
-:root {
-  /* Light Mode (Default) */
-  --bg-primary: #FFF8F0;       /* Gentle Grey — brand spec */
-  --bg-secondary: #F8F9FA;
-  --bg-card: #FFFFFF;
-  --bg-warm: #FFF0E0;          /* Warm Sand — brand spec: content cards, gentle warmth */
-  --bg-highlight: #EBF5FB;
-  --bg-success: #E8F8F5;
-  --bg-warning: #FEF9E7;
-  --bg-danger: #FDEDEC;
-  --text-primary: #3D3229;     /* Text Dark — brand spec (was #2C3E50) */
-  --text-secondary: #5D6D7E;
-  --text-muted: #7A6E62;       /* darkened: 5.3:1 on white, was 3.0:1 */
-  --brand-teal: #2A7B6F;       /* DCC Teal — primary brand colour */
-  --brand-teal-hover: #226659; /* DCC Teal darkened for hover */
-  --accent-primary: #2A7B6F;   /* DCC Blue — links, interactive elements */
-  --accent-hover: #226659;     /* darkened: 7.8:1 on light bg */
-  --accent-success: #27AE60;
-  --accent-warning: #F39C12;
-  --accent-danger: #E74C3C;
-  --accent-warm: #E8B84B;     /* Warm amber — module card accents */
-  --bg-cool: #EAF4FF;         /* Cool blue — splash/hero gradient end */
-  --border-color: #D5DBDB;
-  --border-light: #EAEDED;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-  --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --spacing-xs: 8px;
-  --spacing-sm: 12px;
-  --spacing-md: 24px;
-  --spacing-lg: 36px;
-  --spacing-xl: 48px;
-  --font-size-base: 18px;
-  --line-height: 1.6;
-  --max-width: 900px;
-  --sidebar-width: 280px;
-  --nav-height: 64px;
-  --tap-target: 60px;
-  /* Animation tokens */
-  --duration-fast: 150ms;
-  --duration-normal: 250ms;
-  --duration-slow: 400ms;
-  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Dark Mode */
-[data-theme="dark"] {
-  --bg-primary: #1E1E1E;
-  --bg-secondary: #2D2D2D;
-  --bg-card: #3D3229;
-  --bg-highlight: #1B2631;
-  --bg-success: #1A2E25;
-  --bg-warning: #2E2A1A;
-  --bg-danger: #2E1A1A;
-  --text-primary: #E0E0E0;
-  --text-secondary: #D0D0D0;
-  --text-muted: #BDBDBD;
-  --accent-primary: #5DADE2;
-  --accent-hover: #85C1E9;
-  --accent-success: #58D68D;
-  --accent-warning: #F7DC6F;
-  --accent-danger: #F1948A;
-  --border-color: #444444;
-  --border-light: #383838;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
-  --shadow-lg: 0 8px 24px rgba(0,0,0,0.5);
-}
-
 /* ── Dark Mode AODA Contrast Overrides (WCAG AA / AODA compliant) ─── */
 [data-theme="dark"] h1,
 [data-theme="dark"] h2,
@@ -3801,7 +3728,14 @@ strong {
 /* ============================================================
    DYSLEXIC FONT TOGGLE
    ============================================================ */
-@import url('https://cdn.jsdelivr.net/npm/opendyslexic@1.0.3/opendyslexic-regular.css');
+/* OpenDyslexic self-hosted (SIL OFL 1.1 — antijingoist/opendyslexic on GitHub) */
+@font-face {
+  font-family: 'OpenDyslexic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/opendyslexic/opendyslexic-regular.woff2') format('woff2');
+}
 body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, sans-serif !important; }
 .font-option { background: #E3F2FD; border: 2px solid #2196F3; border-radius: 8px; padding: 16px; margin: 16px 0; }
 .toggle-label { display: flex; align-items: center; gap: 16px; cursor: pointer; user-select: none; }
