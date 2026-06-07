@@ -63,6 +63,30 @@ html.theme-dark {
   --shadow-md:  0 2px 12px rgba(0, 0, 0, 0.4);
   --shadow-lg:  0 4px 24px rgba(0, 0, 0, 0.5);
   --shadow-focus: 0 0 0 3px var(--color-accent);
+
+  /* Legacy namespace bridge — maps main.css old tokens to warm-dark values */
+  --bg-primary:         var(--color-bg);
+  --bg-secondary:       var(--color-surface);
+  --bg-card:            var(--color-surface);
+  --bg-warm:            var(--color-surface-alt);
+  --bg-highlight:       var(--color-surface-primary);
+  --bg-success:         var(--color-success-light);
+  --bg-warning:         var(--color-warning-light);
+  --bg-danger:          var(--color-error-light);
+  --bg-cool:            var(--color-info-light);
+  --text-primary:       var(--color-text);
+  --text-secondary:     var(--color-text-light);
+  --text-muted:         var(--color-text-light);
+  --brand-teal:         var(--color-primary);
+  --brand-teal-hover:   var(--color-primary-hover);
+  --accent-primary:     var(--color-primary);
+  --accent-hover:       var(--color-primary-hover);
+  --accent-success:     var(--color-success);
+  --accent-warning:     var(--color-warning);
+  --accent-danger:      var(--color-error);
+  --accent-warm:        var(--color-accent);
+  --border-color:       var(--color-border);
+  --border-light:       var(--color-border);
 }
 
 /* System-preference auto-apply. Hard override via [data-theme='light']
@@ -113,5 +137,29 @@ html.theme-dark {
     --shadow-sm:  0 1px 4px rgba(0, 0, 0, 0.3);
     --shadow-md:  0 2px 12px rgba(0, 0, 0, 0.4);
     --shadow-lg:  0 4px 24px rgba(0, 0, 0, 0.5);
+
+    /* Legacy namespace bridge */
+    --bg-primary:         var(--color-bg);
+    --bg-secondary:       var(--color-surface);
+    --bg-card:            var(--color-surface);
+    --bg-warm:            var(--color-surface-alt);
+    --bg-highlight:       var(--color-surface-primary);
+    --bg-success:         var(--color-success-light);
+    --bg-warning:         var(--color-warning-light);
+    --bg-danger:          var(--color-error-light);
+    --bg-cool:            var(--color-info-light);
+    --text-primary:       var(--color-text);
+    --text-secondary:     var(--color-text-light);
+    --text-muted:         var(--color-text-light);
+    --brand-teal:         var(--color-primary);
+    --brand-teal-hover:   var(--color-primary-hover);
+    --accent-primary:     var(--color-primary);
+    --accent-hover:       var(--color-primary-hover);
+    --accent-success:     var(--color-success);
+    --accent-warning:     var(--color-warning);
+    --accent-danger:      var(--color-error);
+    --accent-warm:        var(--color-accent);
+    --border-color:       var(--color-border);
+    --border-light:       var(--color-border);
   }
 }

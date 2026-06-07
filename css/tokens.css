@@ -153,6 +153,30 @@
   --container-max:      1200px;
   --content-max:        72ch;   /* readable prose */
   --nav-height:         64px;
+
+  /* --- Legacy namespace bridge (main.css → tokens.css) ─────────────────── */
+  --bg-primary:         var(--color-bg);
+  --bg-secondary:       var(--color-surface-alt);
+  --bg-card:            var(--color-surface);
+  --bg-warm:            var(--color-surface-alt);
+  --bg-highlight:       var(--color-surface-primary);
+  --bg-success:         var(--color-success-light);
+  --bg-warning:         var(--color-warning-light);
+  --bg-danger:          var(--color-error-light);
+  --bg-cool:            var(--color-info-light);
+  --text-primary:       var(--color-text);
+  --text-secondary:     var(--color-text-light);
+  --text-muted:         var(--color-text-light);
+  --brand-teal:         var(--color-primary);
+  --brand-teal-hover:   var(--color-primary-hover);
+  --accent-primary:     var(--color-primary);
+  --accent-hover:       var(--color-primary-hover);
+  --accent-success:     var(--color-success);
+  --accent-warning:     var(--color-warning);
+  --accent-danger:      var(--color-error);
+  --accent-warm:        var(--color-accent);
+  --border-color:       var(--color-border);
+  --border-light:       var(--color-border);
 }
 
 /* Honour reduced motion: zero-out the durations so all transitions collapse

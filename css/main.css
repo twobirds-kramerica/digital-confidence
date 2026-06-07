@@ -4,8 +4,7 @@
    ============================================ */
 /* Cloudflare CDN ready — see /_docs/cloudflare-readiness.md */
 
-/* Inter font — DCC Brand Guidelines v1.1 */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* Fonts self-hosted via css/fonts.css — no CDN dependency */
 
 /* CSS Custom Properties — aligned to DCC Brand Guidelines v1.1 */
 :root {
@@ -209,7 +208,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Arial, sans-serif;
+  font-family: var(--font-body);
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: var(--line-height);
@@ -1424,7 +1423,7 @@ strong {
 }
 
 .scam-example .example-label {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Arial, sans-serif;
+  font-family: var(--font-heading);
   font-weight: 600;
   color: var(--accent-danger);
   display: block;
