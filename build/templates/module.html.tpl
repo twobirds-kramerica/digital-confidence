@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en-CA" data-theme="light" data-font-size="medium">
+<html lang="en-CA" data-font-size="medium">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>(function(){var t=localStorage.getItem('dc-theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
   <meta name="description" content="{{MODULE_DESCRIPTION}}">
   <meta name="keywords" content="{{MODULE_KEYWORDS}}">
   <meta property="og:title" content="Module {{MODULE_NUMBER}}: {{MODULE_TITLE}} — {{PRODUCT_NAME}}">

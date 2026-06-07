@@ -50,7 +50,8 @@ var FONT_LABELS = ['A', 'A', 'A', 'A', 'A', 'A'];
 
 function loadPreferences() {
   var savedFont = localStorage.getItem('dc-font-size') || 'medium';
-  var savedTheme = localStorage.getItem('dc-theme') || 'light';
+  var savedTheme = localStorage.getItem('dc-theme') ||
+    (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   document.documentElement.setAttribute('data-font-size', savedFont);
   document.documentElement.setAttribute('data-theme', savedTheme);
   updateFontButtons(savedFont);
