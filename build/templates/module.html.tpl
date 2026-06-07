@@ -24,12 +24,12 @@
   <meta name="author" content="{{PRODUCT_NAME}}">
   <meta name="robots" content="index, follow">
   <meta property="og:url" content="{{BASE_URL}}/{{MODULE_SLUG}}.html">
-  <meta property="og:image" content="{{HERO_IMAGE_URL}}">
+  <meta property="og:image" content="{{OG_IMAGE_DEFAULT}}">
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="{{BASE_URL}}/{{MODULE_SLUG}}.html">
   <meta property="twitter:title" content="Module {{MODULE_NUMBER}}: {{MODULE_TITLE}} | {{PRODUCT_NAME}}">
   <meta property="twitter:description" content="{{MODULE_DESCRIPTION}}">
-  <meta property="twitter:image" content="{{HERO_IMAGE_URL}}">
+  <meta property="twitter:image" content="{{OG_IMAGE_DEFAULT}}">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",

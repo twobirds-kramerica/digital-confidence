@@ -297,6 +297,7 @@ def render_module(module: dict, brand: dict, template: str) -> str:
         "BASE_URL":           brand.get("base_url", "").rstrip("/"),
         "TOKENS_CSS":         brand.get("tokens_css", "css/tokens.css"),
         "PRIMARY_COLOUR":     brand.get("primary_colour", "#2A7B6F"),
+        "OG_IMAGE_DEFAULT":  brand.get("og_image_default", hero.get("url", "")),
         # Complex blocks
         "NAV_LINKS_HTML":     build_nav_links_html(brand.get("nav_links", [])),
         "STORY_BLOCK_HTML":   build_story_block_html(module.get("story")),

@@ -135,7 +135,7 @@
 
   .module-nav .btn {
     width: 100%;
-    text-align: centre;
+    text-align: center;
   }
 
   /* Code blocks scroll */
@@ -342,6 +342,17 @@
     font-size: 0.85rem;
     word-break: break-word;
   }
+
+  /* xl/xxl/xxxl heading caps — prevents horizontal overflow on narrow phones */
+  [data-font-size="xl"] h1,
+  [data-font-size="xxl"] h1,
+  [data-font-size="xxxl"] h1 { font-size: 2rem; }
+  [data-font-size="xl"] h2,
+  [data-font-size="xxl"] h2,
+  [data-font-size="xxxl"] h2 { font-size: 1.65rem; }
+  [data-font-size="xl"] h3,
+  [data-font-size="xxl"] h3,
+  [data-font-size="xxxl"] h3 { font-size: 1.4rem; }
 }
 
 /* iPad specific (most important target) */

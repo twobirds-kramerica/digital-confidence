@@ -18,7 +18,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  background: var(--color-primary, #1565C0);
+  background: var(--color-primary, #2A7B6F);
   color: #fff;
   font-size: 0.8rem;
   font-weight: 600;
@@ -148,7 +148,7 @@
 .star-btn:focus {
   color: #f59e0b;
   transform: scale(1.15);
-  outline: 2px solid var(--color-primary, #1565C0);
+  outline: 2px solid var(--color-primary, #2A7B6F);
   outline-offset: 2px;
   border-radius: 2px;
 }
@@ -181,9 +181,9 @@
 
 .module-share-btn:hover,
 .module-share-btn:focus {
-  border-color: var(--color-primary, #1565C0);
+  border-color: var(--color-primary, #2A7B6F);
   background: var(--color-bg-alt, #f0f4ff);
-  outline: 2px solid var(--color-primary, #1565C0);
+  outline: 2px solid var(--color-primary, #2A7B6F);
   outline-offset: 2px;
 }
 
@@ -226,7 +226,7 @@
 
 .spb-fill {
   height: 100%;
-  background: var(--color-primary, #1565C0);
+  background: var(--color-primary, #2A7B6F);
   border-radius: 3px;
   transition: width 0.3s ease;
 }
