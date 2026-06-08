@@ -384,7 +384,7 @@ strong {
   cursor: pointer;
   border-radius: var(--radius-sm);
   user-select: none;
-  min-height: 36px;
+  min-height: 44px;
   transition: color 0.15s;
 }
 .snav-header:hover {
@@ -3735,7 +3735,7 @@ details.snav-group[open] > .snav-header::after {
   border: 1px solid #2C6FBF;
   border-radius: 3px;
   cursor: pointer;
-  min-height: 24px;
+  min-height: 44px;
   text-decoration: underline;
 }
 .device-indicator-empty {
@@ -6353,7 +6353,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 .speed-btn-inline {
   font-size: 12px !important;
   padding: 4px 8px !important;
-  min-height: 32px;
+  min-height: 44px;
   border: 1px solid var(--border-color);
   border-radius: 6px;
   background: none;
