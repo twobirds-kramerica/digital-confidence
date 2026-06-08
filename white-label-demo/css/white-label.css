@@ -68,7 +68,7 @@
 
 .sidebar nav a[aria-current="page"] {
   background: rgba(0, 166, 81, 0.2);
-  border-left: 3px solid #00A651;
+  border-top: 3px solid #00A651;
   color: #ffffff;
 }
 
