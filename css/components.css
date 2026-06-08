@@ -1118,3 +1118,46 @@ a:hover { color: var(--color-text-link-hover); text-decoration-thickness: 2px; }
   .coach-tip { padding: var(--space-4) var(--space-4); }
 }
 
+/* Connect With Youth — intergenerational activity prompt */
+.connect-activity {
+  background: var(--color-primary-light);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+  margin: var(--space-6) 0;
+}
+
+.connect-activity__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.connect-activity__icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.connect-activity__label {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.connect-activity p {
+  margin: 0;
+  color: var(--color-text);
+  line-height: var(--line-height-body);
+}
+
+@media (max-width: 480px) {
+  .connect-activity { padding: var(--space-4) var(--space-4); }
+}
+
