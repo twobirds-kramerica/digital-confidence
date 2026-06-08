@@ -9,24 +9,24 @@
   'use strict';
 
   var MODULE_META = {
-    '1':   { category: 'begin',       time: 'About 15 min', timeFr: 'Environ 15 min' },
-    '2':   { category: 'begin',       time: 'About 20 min', timeFr: 'Environ 20 min' },
-    '2.5': { category: 'begin',       time: 'About 15 min', timeFr: 'Environ 15 min' },
-    '3':   { category: 'safety',      time: 'About 15 min', timeFr: 'Environ 15 min' },
-    '4':   { category: 'safety',      time: 'About 15 min', timeFr: 'Environ 15 min' },
-    '5':   { category: 'safety',      time: 'About 15 min', timeFr: 'Environ 15 min' },
-    '6':   { category: 'daily',       time: 'About 20 min', timeFr: 'Environ 20 min' },
-    '7':   { category: 'daily',       time: 'About 15 min', timeFr: 'Environ 15 min' },
-    '8':   { category: 'daily',       time: 'About 20 min', timeFr: 'Environ 20 min' },
-    '9':   { category: 'daily',       time: 'About 20 min', timeFr: 'Environ 20 min' },
-    '10':  { category: 'daily',       time: 'About 15 min', timeFr: 'Environ 15 min' },
-    '11':  { category: 'daily',       time: 'About 15 min', timeFr: 'Environ 15 min' },
-    '12':  { category: 'daily',       time: 'About 20 min', timeFr: 'Environ 20 min' },
-    '13':  { category: 'daily',       time: 'About 20 min', timeFr: 'Environ 20 min' },
-    '14':  { category: 'daily',       time: 'About 20 min', timeFr: 'Environ 20 min' },
-    '15':  { category: 'daily',       time: 'About 20 min', timeFr: 'Environ 20 min' },
-    '16':  { category: 'independent', time: 'About 20 min', timeFr: 'Environ 20 min' },
-    '17':  { category: 'independent', time: 'About 20 min', timeFr: 'Environ 20 min' },
+    '1':   { category: 'begin',       time: '20 min', timeFr: '20 min', skill: '20 min to feel safe on any screen',         skillFr: '20 min pour naviguer sans panique' },
+    '2':   { category: 'begin',       time: '25 min', timeFr: '25 min', skill: '25 min to spot online scams',               skillFr: '25 min pour repérer les arnaques' },
+    '2.5': { category: 'begin',       time: '20 min', timeFr: '20 min', skill: '20 min to handle everyday digital tasks',   skillFr: '20 min pour les tâches numériques courantes' },
+    '3':   { category: 'safety',      time: '25 min', timeFr: '25 min', skill: '25 min to secure your passwords',           skillFr: '25 min pour sécuriser vos mots de passe' },
+    '4':   { category: 'safety',      time: '20 min', timeFr: '20 min', skill: '20 min to download apps safely',            skillFr: '20 min pour télécharger des applis en sécurité' },
+    '5':   { category: 'safety',      time: '25 min', timeFr: '25 min', skill: '25 min to recognise phishing messages',     skillFr: '25 min pour reconnaître les messages hameçons' },
+    '6':   { category: 'daily',       time: '30 min', timeFr: '30 min', skill: '30 min to bank safely online',              skillFr: '30 min pour faire ses opérations bancaires en ligne' },
+    '7':   { category: 'daily',       time: '20 min', timeFr: '20 min', skill: '20 min to share photos with family',        skillFr: '20 min pour partager des photos en famille' },
+    '8':   { category: 'daily',       time: '25 min', timeFr: '25 min', skill: '25 min to video call your family',          skillFr: '25 min pour appeler votre famille en vidéo' },
+    '9':   { category: 'daily',       time: '25 min', timeFr: '25 min', skill: '25 min to understand AI tools',             skillFr: "25 min pour comprendre les outils d'IA" },
+    '10':  { category: 'daily',       time: '20 min', timeFr: '20 min', skill: '20 min to order groceries online',          skillFr: '20 min pour commander des épiceries en ligne' },
+    '11':  { category: 'daily',       time: '25 min', timeFr: '25 min', skill: '25 min to book a ride safely',              skillFr: '25 min pour réserver un taxi en toute sécurité' },
+    '12':  { category: 'daily',       time: '20 min', timeFr: '20 min', skill: '20 min to find reliable tech help',         skillFr: "20 min pour trouver de l'aide technologique" },
+    '13':  { category: 'daily',       time: '25 min', timeFr: '25 min', skill: '25 min to use social media safely',         skillFr: '25 min pour utiliser les réseaux sociaux en sécurité' },
+    '14':  { category: 'daily',       time: '25 min', timeFr: '25 min', skill: '25 min to set up a smart speaker',          skillFr: '25 min pour configurer un assistant vocal' },
+    '15':  { category: 'daily',       time: '25 min', timeFr: '25 min', skill: '25 min to see your doctor online',          skillFr: '25 min pour consulter votre médecin en ligne' },
+    '16':  { category: 'independent', time: '25 min', timeFr: '25 min', skill: '25 min to stay safe while travelling',      skillFr: '25 min pour voyager avec votre téléphone' },
+    '17':  { category: 'independent', time: '30 min', timeFr: '30 min', skill: '30 min to use AI research tools',           skillFr: '30 min pour utiliser les outils de recherche IA' },
     '18':  { category: 'independent', time: 'About 20 min', timeFr: 'Environ 20 min' },
     '19':  { category: 'independent', time: 'About 20 min', timeFr: 'Environ 20 min' },
     '20':  { category: 'independent', time: 'About 15 min', timeFr: 'Environ 15 min' },
@@ -120,8 +120,11 @@
     if (!card.querySelector('.card-time')) {
       var timeEl = document.createElement('span');
       timeEl.className = 'card-time';
-      timeEl.setAttribute('aria-label', lang === 'fr' ? meta.timeFr : meta.time);
-      timeEl.innerHTML = '&#9201; ' + (lang === 'fr' ? meta.timeFr : meta.time);
+      var label = lang === 'fr'
+        ? (meta.skillFr || meta.timeFr)
+        : (meta.skill  || meta.time);
+      timeEl.setAttribute('aria-label', label);
+      timeEl.innerHTML = '&#9201; ' + label;
       content.appendChild(timeEl);
     }
 
