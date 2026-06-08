@@ -254,6 +254,78 @@
       margin-top: 4px;
     }
 
+    /* ── Premium Upsell Block ── */
+    .cert-upgrade-block {
+      background: var(--bg-card);
+      border: 2px solid #2A7B6F;
+      border-radius: 14px;
+      padding: 28px 32px 24px;
+      margin-bottom: 32px;
+      text-align: center;
+      position: relative;
+    }
+    .cert-upgrade-badge {
+      position: absolute;
+      top: -1px;
+      right: 20px;
+      background: #2A7B6F;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 12px;
+      border-radius: 0 0 8px 8px;
+    }
+    .cert-upgrade-icon {
+      font-size: 2.4rem;
+      margin-bottom: 8px;
+    }
+    .cert-upgrade-heading {
+      font-size: 1.25rem;
+      color: var(--text-primary);
+      margin: 0 0 10px;
+    }
+    .cert-upgrade-body {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      max-width: 420px;
+      margin: 0 auto 12px;
+      line-height: 1.55;
+    }
+    .cert-upgrade-price {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #2A7B6F;
+      margin: 0 0 16px;
+    }
+    .cert-upgrade-btn-link {
+      display: inline-block;
+      background: #2A7B6F;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.15s;
+      margin-bottom: 12px;
+    }
+    .cert-upgrade-btn-link:hover {
+      background: #1A5C50;
+      transform: translateY(-1px);
+      text-decoration: none;
+      color: #fff;
+    }
+    .cert-upgrade-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
     /* ── Print Rules ── */
     @media print {
       .accessibility-bar,
@@ -330,6 +402,22 @@
         <div class="cert-actions no-print">
           <a href="final-quiz.html" class="btn btn-secondary">&#8592; Back to Assessment</a>
           <button class="btn btn-primary" id="print-btn" onclick="window.print()">&#128438; Print or Save as PDF</button>
+        </div>
+
+        <!-- Premium upsell -->
+        <div class="cert-upgrade-block no-print" aria-label="Upgrade to premium certificate">
+          <div class="cert-upgrade-badge">Premium</div>
+          <div class="cert-upgrade-icon" aria-hidden="true">&#127942;</div>
+          <h2 class="cert-upgrade-heading">Get Your Official Certificate</h2>
+          <p class="cert-upgrade-body">
+            A formal, print-ready certificate to frame, share with family, or add to LinkedIn.
+            Includes your name, completion date, and a verification reference.
+          </p>
+          <p class="cert-upgrade-price">CA$9.99 &mdash; one-time</p>
+          <a id="cert-upgrade-btn" href="https://buy.stripe.com/STRIPE_LINK_PENDING" class="btn cert-upgrade-btn-link">
+            Get Your Premium Certificate &#8594;
+          </a>
+          <p class="cert-upgrade-note">Secure payment via Stripe. Your certificate opens immediately after.</p>
         </div>
 
         <!-- The Certificate -->
@@ -435,6 +523,19 @@
           localStorage.setItem('userName', n);
           document.getElementById('cert-name-display').textContent = n;
           document.getElementById('name-section').style.display = 'none';
+        });
+      }
+
+      /* Stripe upsell — guard against unconfigured placeholder */
+      var upgradeBtn = document.getElementById('cert-upgrade-btn');
+      if (upgradeBtn) {
+        upgradeBtn.addEventListener('click', function (e) {
+          var href = this.getAttribute('href') || '';
+          if (href.indexOf('STRIPE_LINK_PENDING') !== -1) {
+            e.preventDefault();
+            alert('Certificate purchase is coming soon. Check back shortly!');
+          }
+          /* Otherwise: let the link navigate directly to the Stripe Payment Link */
         });
       }
     });

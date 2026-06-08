@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var t=localStorage.getItem('dc-theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Payment confirmed. Your Digital Confidence Centre Premium Certificate of Completion is ready to print.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/post-payment.html">
+  <title>Payment Confirmed | Digital Confidence Centre</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/tokens-dark.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2A7B6F">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Digital Confidence">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <script src="js/analytics-consent.js" defer></script>
+  <style>
+    .pp-wrapper {
+      max-width: 680px;
+      margin: 60px auto;
+      padding: 0 20px 80px;
+      text-align: center;
+    }
+    .pp-icon {
+      font-size: 4.5rem;
+      display: block;
+      margin-bottom: 20px;
+    }
+    .pp-heading {
+      font-size: 1.9rem;
+      color: var(--text-primary);
+      margin: 0 0 12px;
+    }
+    .pp-subheading {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin: 0 0 36px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .pp-steps {
+      background: var(--bg-card);
+      border: 2px solid var(--border-color);
+      border-top: 4px solid #2A7B6F;
+      border-radius: 12px;
+      padding: 28px 32px;
+      text-align: left;
+      margin: 0 0 32px;
+    }
+    .pp-steps h2 {
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      margin: 0 0 20px;
+    }
+    .pp-step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+    .pp-step:last-child { margin-bottom: 0; }
+    .pp-step-num {
+      width: 32px;
+      height: 32px;
+      background: #2A7B6F;
+      color: #fff;
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .pp-step-text {
+      padding-top: 4px;
+      font-size: 1rem;
+      color: var(--text-primary);
+      line-height: 1.5;
+    }
+    .pp-cta {
+      margin-bottom: 24px;
+    }
+    .pp-cta .btn {
+      font-size: 1.1rem;
+      padding: 0.9rem 2rem;
+    }
+    .pp-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .pp-note a { color: var(--accent-primary); }
+
+    /* Cancelled state */
+    .pp-cancelled {
+      display: none;
+      background: var(--bg-card);
+      border: 2px solid var(--border-color);
+      border-top: 4px solid #F44336;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 32px;
+    }
+    .pp-cancelled h2 { color: var(--text-primary); margin: 0 0 12px; }
+    .pp-cancelled p  { color: var(--text-secondary); margin: 0 0 16px; }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">&#x1F313;</button>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">&#x2630;</button>
+    <span class="site-title">Payment Confirmed</span>
+    <span></span>
+  </div>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+      <div class="pp-wrapper">
+
+        <!-- Success state (default) -->
+        <div id="pp-success">
+          <span class="pp-icon" aria-hidden="true">&#127942;</span>
+          <h1 class="pp-heading">Payment Confirmed!</h1>
+          <p class="pp-subheading">
+            Thank you for supporting Digital Confidence Centre. Your premium certificate is ready.
+          </p>
+
+          <div class="pp-steps" aria-label="How to get your certificate">
+            <h2>Here is what to do next:</h2>
+            <div class="pp-step">
+              <div class="pp-step-num" aria-hidden="true">1</div>
+              <div class="pp-step-text">
+                Click the button below to open your premium certificate.
+              </div>
+            </div>
+            <div class="pp-step">
+              <div class="pp-step-num" aria-hidden="true">2</div>
+              <div class="pp-step-text">
+                Your name and date will be filled in automatically from your quiz session.
+                If not, you can type your name directly on the certificate page.
+              </div>
+            </div>
+            <div class="pp-step">
+              <div class="pp-step-num" aria-hidden="true">3</div>
+              <div class="pp-step-text">
+                Click "Print or Save as PDF." Choose "Save as PDF" to keep a copy,
+                or print it on letter-sized paper to frame or share.
+              </div>
+            </div>
+          </div>
+
+          <div class="pp-cta">
+            <a id="pp-cert-link" href="premium-certificate.html" class="btn btn-primary">
+              Open My Premium Certificate &#8594;
+            </a>
+          </div>
+
+          <p class="pp-note">
+            Questions or problems? Email us at
+            <a href="mailto:hello@digitalconfidencecentre.ca">hello@digitalconfidencecentre.ca</a>
+            and we will help you right away.
+            <br>
+            <a href="certificate.html">View your free certificate instead</a>
+          </p>
+        </div>
+
+        <!-- Cancelled state (shown when ?cancelled=true) -->
+        <div class="pp-cancelled" id="pp-cancelled" aria-live="polite">
+          <h2>No payment was taken</h2>
+          <p>You cancelled before completing your purchase. No charge was made to your card.</p>
+          <a href="certificate.html" class="btn btn-secondary">&#8592; Back to Your Free Certificate</a>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="js/app.js" defer></script>
+  <script src="js/accessibility.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var params = new URLSearchParams(window.location.search);
+
+      /* Cancelled flow */
+      if (params.get('cancelled') === 'true') {
+        document.getElementById('pp-success').style.display = 'none';
+        document.getElementById('pp-cancelled').style.display = 'block';
+        return;
+      }
+
+      /* Pass name + date to premium cert via URL param */
+      var name = localStorage.getItem('userName') || '';
+      var date = localStorage.getItem('finalQuizDate') || '';
+      var certUrl = 'premium-certificate.html';
+      var parts = [];
+      if (name) parts.push('name=' + encodeURIComponent(name));
+      if (date) parts.push('date=' + encodeURIComponent(date));
+      if (parts.length) certUrl += '?' + parts.join('&');
+      document.getElementById('pp-cert-link').href = certUrl;
+    });
+  </script>
+</body>
+</html>
