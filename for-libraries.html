@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Digital Confidence Centre — a free, bilingual AI literacy platform for libraries, settlement agencies, and community organisations. 31 self-paced modules. No installation. WCAG 2.1 AA.">
+  <meta property="og:title" content="Digital Confidence Centre — For Libraries & Community Organisations">
+  <meta property="og:description" content="AI literacy your community can actually use. 31 free bilingual modules for seniors and newcomers. No installation, no login, no per-seat fees.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <meta property="og:image" content="https://twobirds-kramerica.github.io/digital-confidence/images/senior-woman-ipad.jpg">
+  <title>Digital Confidence Centre — For Libraries & Community Organisations</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy:        #1A2744;
+      --navy-dark:   #101B35;
+      --blue:        #1D4ED8;
+      --blue-hover:  #1E40AF;
+      --slate-900:   #1E293B;
+      --slate-600:   #475569;
+      --slate-400:   #94A3B8;
+      --slate-200:   #E2E8F0;
+      --slate-100:   #F1F5F9;
+      --white:       #FFFFFF;
+      --green:       #16A34A;
+      --green-light: #DCFCE7;
+    }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      color: var(--slate-900);
+      background: var(--white);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    a { color: var(--blue); }
+    a:hover { color: var(--blue-hover); }
+
+    /* ---- Skip link ---- */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--navy);
+      color: var(--white);
+      padding: 8px 16px;
+      font-size: 14px;
+      z-index: 999;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* ---- Site bar ---- */
+    .site-bar {
+      background: var(--navy);
+      color: var(--white);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .site-bar-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 15px;
+    }
+    .site-bar-brand svg { width: 28px; height: 28px; flex-shrink: 0; }
+    .site-bar-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-top: 1px;
+    }
+    .site-bar-cta {
+      background: var(--blue);
+      color: var(--white);
+      text-decoration: none;
+      padding: 9px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+    .site-bar-cta:hover { background: var(--blue-hover); color: var(--white); }
+
+    /* ---- Hero ---- */
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      padding: 60px 24px 56px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 900;
+      line-height: 1.15;
+      max-width: 720px;
+      margin: 0 auto 20px;
+    }
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 20px);
+      color: rgba(255,255,255,0.80);
+      max-width: 560px;
+      margin: 0 auto 32px;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      text-decoration: none;
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+      transition: background 0.15s;
+    }
+    .btn-primary:hover { background: var(--blue-hover); color: var(--white); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      text-decoration: none;
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: 600;
+      border: 2px solid rgba(255,255,255,0.5);
+      display: inline-block;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); color: var(--white); }
+
+    /* ---- Content layout ---- */
+    .page { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 56px 0; border-bottom: 1px solid var(--slate-200); }
+    .section:last-of-type { border-bottom: none; }
+
+    h2 {
+      font-size: clamp(20px, 2.5vw, 26px);
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      font-size: 16px;
+      color: var(--slate-600);
+      margin-bottom: 32px;
+      max-width: 640px;
+    }
+    h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    p { margin-bottom: 14px; color: var(--slate-900); }
+
+    /* ---- Alert banner ---- */
+    .alert {
+      background: #FEF9C3;
+      border-left: 4px solid #CA8A04;
+      padding: 16px 20px;
+      margin-bottom: 32px;
+    }
+    .alert strong { color: #7C5700; }
+    .alert p { color: #5C4200; margin: 0; font-size: 15px; }
+
+    /* ---- Stats row ---- */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1px;
+      background: var(--slate-200);
+      border: 1px solid var(--slate-200);
+      margin: 32px 0;
+    }
+    .stat {
+      background: var(--white);
+      padding: 24px 16px;
+      text-align: center;
+    }
+    .stat-num {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--navy);
+      display: block;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--slate-600);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ---- Feature grid ---- */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1px;
+      background: var(--slate-200);
+      border: 1px solid var(--slate-200);
+    }
+    .feature {
+      background: var(--white);
+      padding: 24px;
+    }
+    .feature-icon {
+      font-size: 22px;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .feature h3 { font-size: 15px; margin-bottom: 6px; }
+    .feature p { font-size: 14px; color: var(--slate-600); margin: 0; }
+
+    /* ---- Module preview ---- */
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1px;
+      background: var(--slate-200);
+      border: 1px solid var(--slate-200);
+      margin-top: 24px;
+    }
+    .module-item {
+      background: var(--slate-100);
+      padding: 14px 16px;
+      font-size: 14px;
+      color: var(--slate-900);
+    }
+    .module-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--slate-400);
+      display: block;
+      margin-bottom: 3px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ---- Audience cards ---- */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .audience-card {
+      border: 1px solid var(--slate-200);
+      padding: 22px;
+      background: var(--slate-100);
+    }
+    .audience-card h3 { font-size: 15px; margin-bottom: 8px; }
+    .audience-card p { font-size: 13px; color: var(--slate-600); margin: 0; }
+
+    /* ---- Grant box ---- */
+    .grant-box {
+      background: var(--slate-100);
+      border-left: 4px solid var(--navy);
+      padding: 28px 28px 28px 24px;
+    }
+    .grant-box h3 { font-size: 18px; margin-bottom: 10px; }
+    .grant-box ul { padding-left: 20px; margin-top: 10px; }
+    .grant-box li { font-size: 15px; color: var(--slate-900); margin-bottom: 6px; }
+
+    /* ---- Pricing ---- */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1px;
+      background: var(--slate-200);
+      border: 1px solid var(--slate-200);
+      margin-top: 24px;
+    }
+    .price-card {
+      background: var(--white);
+      padding: 28px 24px;
+    }
+    .price-card.featured {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .price-tier {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--slate-400);
+      margin-bottom: 10px;
+      display: block;
+    }
+    .price-card.featured .price-tier { color: rgba(255,255,255,0.55); }
+    .price-amount {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .price-card.featured .price-amount { color: var(--white); }
+    .price-period {
+      font-size: 13px;
+      color: var(--slate-600);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .price-card.featured .price-period { color: rgba(255,255,255,0.65); }
+    .price-scope {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--navy);
+    }
+    .price-card.featured .price-scope { color: rgba(255,255,255,0.85); }
+    .price-features { list-style: none; padding: 0; border-top: 1px solid var(--slate-200); padding-top: 16px; }
+    .price-card.featured .price-features { border-color: rgba(255,255,255,0.2); }
+    .price-features li {
+      font-size: 14px;
+      color: var(--slate-900);
+      padding: 5px 0 5px 20px;
+      position: relative;
+    }
+    .price-card.featured .price-features li { color: rgba(255,255,255,0.9); }
+    .price-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 700;
+    }
+    .price-card.featured .price-features li::before { color: #4ADE80; }
+
+    /* ---- Founding partner banner ---- */
+    .founding-banner {
+      background: var(--navy);
+      color: var(--white);
+      padding: 32px 28px;
+      margin-top: 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .founding-badge {
+      background: #FCD34D;
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .founding-text { flex: 1; min-width: 200px; }
+    .founding-text p { color: rgba(255,255,255,0.85); margin: 0; font-size: 15px; }
+    .founding-text strong { color: var(--white); }
+
+    /* ---- FAQ ---- */
+    .faq-list { margin-top: 24px; }
+    .faq-item { border-bottom: 1px solid var(--slate-200); padding: 20px 0; }
+    .faq-item:first-child { border-top: 1px solid var(--slate-200); }
+    .faq-q {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .faq-a { font-size: 15px; color: var(--slate-600); margin: 0; }
+
+    /* ---- CTA section ---- */
+    .cta-section {
+      background: var(--navy);
+      color: var(--white);
+      padding: 56px 24px;
+      text-align: center;
+    }
+    .cta-section h2 { color: var(--white); font-size: clamp(22px, 3vw, 30px); margin-bottom: 12px; }
+    .cta-section p { color: rgba(255,255,255,0.75); font-size: 17px; max-width: 480px; margin: 0 auto 28px; }
+    .cta-contact { font-size: 14px; color: rgba(255,255,255,0.55); margin-top: 16px; }
+    .cta-contact a { color: rgba(255,255,255,0.75); }
+
+    /* ---- Footer ---- */
+    .footer {
+      border-top: 3px solid var(--navy);
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer p { font-size: 13px; color: var(--slate-400); margin: 0; }
+    .footer a { color: var(--slate-600); font-size: 13px; text-decoration: none; }
+    .footer a:hover { color: var(--navy); }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 600px) {
+      .site-bar { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .hero { padding: 40px 20px 36px; }
+      .page { padding: 0 16px; }
+      .section { padding: 40px 0; }
+      .founding-banner { flex-direction: column; }
+    }
+
+    @media print {
+      .site-bar, .hero-ctas, .cta-section, .footer { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Site bar -->
+  <header class="site-bar" role="banner">
+    <a href="index.html" class="site-bar-brand" aria-label="Digital Confidence Centre — home">
+      <svg viewBox="0 0 32 32" aria-hidden="true" fill="none">
+        <circle cx="16" cy="16" r="15" fill="#1D4ED8"/>
+        <path d="M9 16c0-3.87 3.13-7 7-7s7 3.13 7 7" stroke="white" stroke-width="2.5" stroke-linecap="square"/>
+        <circle cx="16" cy="22" r="3" fill="white"/>
+      </svg>
+      <div>
+        <div>Digital Confidence Centre</div>
+        <div class="site-bar-label">For Libraries &amp; Organisations</div>
+      </div>
+    </a>
+    <a href="https://cal.com/twobirds-4n5ajg/30min" class="site-bar-cta" target="_blank" rel="noopener noreferrer">
+      Book a 30-minute demo
+    </a>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-eyebrow">For libraries · settlement agencies · community organisations</div>
+    <h1 id="hero-heading">AI literacy your community<br>can actually use.</h1>
+    <p class="hero-sub">31 free, bilingual modules covering online safety, banking, AI basics, and digital independence. No installation. No login. No per-seat fees.</p>
+    <div class="hero-ctas">
+      <a href="https://cal.com/twobirds-4n5ajg/30min" class="btn-primary" target="_blank" rel="noopener noreferrer">Book a demo</a>
+      <a href="facilitator-guide.html" class="btn-outline" target="_blank" rel="noopener noreferrer">Download facilitator guide</a>
+    </div>
+  </section>
+
+  <main id="main">
+    <div class="page">
+
+      <!-- Problem -->
+      <section class="section" aria-labelledby="problem-heading">
+        <h2 id="problem-heading">The DLEP gap is real — and your patrons are asking for help</h2>
+        <div class="section-sub">The Digital Literacy Exchange Program ended in March 2025. Thousands of community members who relied on funded AI literacy sessions are still looking for somewhere to turn.</div>
+
+        <div class="alert" role="note">
+          <p><strong>The funding gap:</strong> DLEP supported local digital literacy delivery across Canada for years. Without a replacement, libraries and settlement agencies are fielding AI and technology questions they don't yet have curriculum for. Digital Confidence Centre fills that gap — free for learners, structured for facilitators, ready to deploy today.</p>
+        </div>
+
+        <div class="stats-row" role="list" aria-label="Platform statistics">
+          <div class="stat" role="listitem">
+            <span class="stat-num">31</span>
+            <span class="stat-label">Learning modules</span>
+          </div>
+          <div class="stat" role="listitem">
+            <span class="stat-num">2</span>
+            <span class="stat-label">Languages (EN / FR)</span>
+          </div>
+          <div class="stat" role="listitem">
+            <span class="stat-num">AA</span>
+            <span class="stat-label">WCAG 2.1 accessibility</span>
+          </div>
+          <div class="stat" role="listitem">
+            <span class="stat-num">~25</span>
+            <span class="stat-label">Minutes per module</span>
+          </div>
+          <div class="stat" role="listitem">
+            <span class="stat-num">$0</span>
+            <span class="stat-label">Patron cost</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="section" aria-labelledby="features-heading">
+        <h2 id="features-heading">Built for facilitated delivery</h2>
+        <div class="section-sub">Every design decision reduces facilitator prep time and works for the patrons least comfortable with technology.</div>
+
+        <div class="features-grid" role="list">
+          <div class="feature" role="listitem">
+            <span class="feature-icon" aria-hidden="true">🖥️</span>
+            <h3>No installation required</h3>
+            <p>Runs in any browser on any device. No app store, no accounts, no admin access needed.</p>
+          </div>
+          <div class="feature" role="listitem">
+            <span class="feature-icon" aria-hidden="true">🔐</span>
+            <h3>No patron login</h3>
+            <p>Learners access modules directly — no email, no password, no personal data collected.</p>
+          </div>
+          <div class="feature" role="listitem">
+            <span class="feature-icon" aria-hidden="true">🇫🇷</span>
+            <h3>Bilingual (EN / FR)</h3>
+            <p>Full French curriculum included. Toggle available on every page — no separate URL.</p>
+          </div>
+          <div class="feature" role="listitem">
+            <span class="feature-icon" aria-hidden="true">♿</span>
+            <h3>WCAG 2.1 AA compliant</h3>
+            <p>Designed for seniors: 18px+ base font, 44px touch targets, screen reader support, high-contrast mode.</p>
+          </div>
+          <div class="feature" role="listitem">
+            <span class="feature-icon" aria-hidden="true">📱</span>
+            <h3>Works on any device</h3>
+            <p>Tablet, phone, desktop. Tested on Android Chrome and iOS Safari. No download required.</p>
+          </div>
+          <div class="feature" role="listitem">
+            <span class="feature-icon" aria-hidden="true">🖨️</span>
+            <h3>Print centre included</h3>
+            <p>Large-print handouts and step-by-step guides for every module — ready for group sessions.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modules -->
+      <section class="section" aria-labelledby="modules-heading">
+        <h2 id="modules-heading">What patrons learn</h2>
+        <div class="section-sub">Topics designed around real patron questions — not technology jargon.</div>
+
+        <div class="module-grid" role="list" aria-label="Module list">
+          <div class="module-item" role="listitem"><span class="module-num">Module 1</span>Your First Smartphone</div>
+          <div class="module-item" role="listitem"><span class="module-num">Module 2</span>Online Safety Basics</div>
+          <div class="module-item" role="listitem"><span class="module-num">Module 3</span>Passwords &amp; Accounts</div>
+          <div class="module-item" role="listitem"><span class="module-num">Module 4</span>App Store Safety</div>
+          <div class="module-item" role="listitem"><span class="module-num">Module 5</span>Email &amp; Messages</div>
+          <div class="module-item" role="listitem"><span class="module-num">Module 6</span>Online Banking</div>
+          <div class="module-item" role="listitem"><span class="module-num">Module 7</span>Photos &amp; Memories</div>
+          <div class="module-item" role="listitem"><span class="module-num">Module 8</span>Staying Connected</div>
+          <div class="module-item" role="listitem"><span class="module-num">Module 9</span>Understanding AI</div>
+          <div class="module-item" role="listitem"><span class="module-num">Module 10</span>Grocery &amp; Delivery Apps</div>
+          <div class="module-item" role="listitem"><span class="module-num">Module 11</span>Ride-Sharing Apps</div>
+          <div class="module-item" role="listitem"><span class="module-num">Module 12</span>Getting Help Online</div>
+          <div class="module-item" role="listitem"><span class="module-num">Module 13</span>Social Media Safety</div>
+          <div class="module-item" role="listitem"><span class="module-num">Module 14</span>Smart Home Devices</div>
+          <div class="module-item" role="listitem"><span class="module-num">Module 15</span>Telehealth &amp; Video Calls</div>
+          <div class="module-item" role="listitem"><span class="module-num">Module 16</span>Travel Safety Online</div>
+          <div class="module-item" role="listitem"><span class="module-num">Module 17</span>AI Research Tools</div>
+          <div class="module-item" role="listitem"><span class="module-num">Module 18</span>Long-Distance Connection</div>
+          <div class="module-item" role="listitem"><span class="module-num">Module 19</span>Digital Legacy</div>
+          <div class="module-item" role="listitem"><span class="module-num">Module 20</span>Internet Plans Explained</div>
+          <div class="module-item" role="listitem"><span class="module-num">Module 21</span>Mobile Plans Explained</div>
+          <div class="module-item" role="listitem"><span class="module-num">Bonus</span>Visual AI — Show Me! Guide</div>
+          <div class="module-item" role="listitem"><span class="module-num">Bonus</span>AI Literacy for Adults</div>
+          <div class="module-item" role="listitem"><span class="module-num">Bonus</span>Scam Simulator (interactive)</div>
+        </div>
+      </section>
+
+      <!-- Who it's for -->
+      <section class="section" aria-labelledby="audience-heading">
+        <h2 id="audience-heading">Who we work with</h2>
+        <div class="section-sub">Any organisation providing digital support to seniors, newcomers, or low-digital-confidence adults.</div>
+
+        <div class="audience-grid">
+          <div class="audience-card">
+            <h3>Public Libraries</h3>
+            <p>Add structured AI literacy to your existing digital help desk or technology programs. No new infrastructure.</p>
+          </div>
+          <div class="audience-card">
+            <h3>Settlement Agencies</h3>
+            <p>Digital integration is the barrier for most newcomer clients. DCC gives them a safe, bilingual path forward.</p>
+          </div>
+          <div class="audience-card">
+            <h3>Long-Term Care</h3>
+            <p>Residents and family members learning to video-call, bank online, and stay connected independently.</p>
+          </div>
+          <div class="audience-card">
+            <h3>Community Colleges</h3>
+            <p>Supplement continuing education programs or staff development with a structured, free digital literacy track.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- NHSP Grant -->
+      <section class="section" aria-labelledby="nhsp-heading">
+        <h2 id="nhsp-heading">Federal grant eligible: New Horizons for Seniors Program</h2>
+        <div class="section-sub">DCC is designed to fit inside an NHSP project application as the AI literacy delivery component.</div>
+
+        <div class="grant-box" role="note" aria-label="NHSP grant information">
+          <h3>How DCC fits an NHSP application</h3>
+          <p>The New Horizons for Seniors Program (Employment and Social Development Canada) funds projects that promote the well-being and social participation of seniors. AI literacy and digital independence are a clear fit.</p>
+          <ul>
+            <li>DCC provides a completed, bilingual curriculum — no curriculum development cost in your budget</li>
+            <li>Community partnership model qualifies for project and community-based stream</li>
+            <li>Measurable outcome: number of participants completing modules</li>
+            <li>Community tier includes NHSP co-application support from Two Birds Innovation</li>
+          </ul>
+          <p style="margin-top: 14px; font-size: 14px; color: var(--slate-600);">
+            Community tier partners receive help scoping their NHSP application. <a href="https://cal.com/twobirds-4n5ajg/30min" target="_blank" rel="noopener noreferrer">Book a call</a> to discuss eligibility before the next intake opens.
+          </p>
+        </div>
+      </section>
+
+      <!-- Pricing -->
+      <section class="section" aria-labelledby="pricing-heading">
+        <h2 id="pricing-heading">Institutional pricing</h2>
+        <div class="section-sub">The platform is free for learners. Fees cover partner support, content updates, and custom branding for your organisation.</div>
+
+        <div class="pricing-grid" role="list" aria-label="Pricing tiers">
+
+          <div class="price-card" role="listitem">
+            <span class="price-tier">Starter</span>
+            <div class="price-amount">CA$500</div>
+            <span class="price-period">per year</span>
+            <p class="price-scope">Up to 3 branches</p>
+            <ul class="price-features">
+              <li>Full 31-module curriculum</li>
+              <li>Bi-annual check-in call</li>
+              <li>Usage stats report</li>
+              <li>Facilitator guide &amp; print handouts</li>
+            </ul>
+          </div>
+
+          <div class="price-card featured" role="listitem" aria-label="Standard tier (most popular)">
+            <span class="price-tier">Standard — Most Popular</span>
+            <div class="price-amount">CA$1,000</div>
+            <span class="price-period">per year</span>
+            <p class="price-scope">Unlimited branches</p>
+            <ul class="price-features">
+              <li>Full 31-module curriculum</li>
+              <li>Quarterly review call</li>
+              <li>Priority content updates</li>
+              <li>Staff onboarding webinar</li>
+              <li>Facilitator guide &amp; print handouts</li>
+            </ul>
+          </div>
+
+          <div class="price-card" role="listitem">
+            <span class="price-tier">Community</span>
+            <div class="price-amount">CA$2,000</div>
+            <span class="price-period">per year</span>
+            <p class="price-scope">Unlimited branches</p>
+            <ul class="price-features">
+              <li>Full 31-module curriculum</li>
+              <li>Custom branding (your logo)</li>
+              <li>NHSP co-application support</li>
+              <li>Staff training webinar</li>
+              <li>Quarterly review</li>
+              <li>Priority support</li>
+              <li>Facilitator guide &amp; print handouts</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Founding partner offer -->
+        <div class="founding-banner" role="note" aria-label="Founding partner offer">
+          <span class="founding-badge">3 spots available</span>
+          <div class="founding-text">
+            <h3 style="color: white; margin-bottom: 6px;">Founding Partner Rate</h3>
+            <p>The first three libraries or organisations to partner pay the <strong>Starter rate (CA$500/yr)</strong> regardless of which tier they choose — for all of Year 1. Founding Partners also receive direct input on the content roadmap. <a href="https://cal.com/twobirds-4n5ajg/30min" style="color: #93C5FD;" target="_blank" rel="noopener noreferrer">Book to claim your spot.</a></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Common questions</h2>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-q">Is there any cost for our patrons or participants?</div>
+            <p class="faq-a">No. The platform is free for every learner. Institutional fees cover partner support, custom branding, and content updates — not per-seat access.</p>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Do patrons need an account or login?</div>
+            <p class="faq-a">No. Any patron can access any module directly from the URL — no registration, no email, no personal data required.</p>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">What devices and browsers are supported?</div>
+            <p class="faq-a">Any modern browser on any device: tablet, phone, or desktop. The site is WCAG 2.1 AA accessible, mobile-responsive, and tested on Android Chrome and iOS Safari. No download or installation required.</p>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Can we add our organisation's branding?</div>
+            <p class="faq-a">Yes — Community tier partners receive custom branding: your logo, contact information, and optionally a landing page configured for your community. Starter and Standard tiers use DCC's standard design.</p>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">How do we use DCC in an NHSP application?</div>
+            <p class="faq-a">Community tier includes direct support scoping your NHSP project application. DCC provides the curriculum; you provide the community venue and facilitation. We can help draft the digital literacy component of your project description. Book a call to start that conversation.</p>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">What is Two Birds Innovation?</div>
+            <p class="faq-a">Two Birds Innovation is an independent AI strategy consultancy based in St. Thomas, Ontario. Digital Confidence Centre is our flagship community product — built by a former product executive with 20+ years in digital, specifically to address the digital literacy gap in Canadian communities.</p>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /.page -->
+
+    <!-- CTA -->
+    <section class="cta-section" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">Ready to bring AI literacy to your community?</h2>
+      <p>A 30-minute call is enough to see the platform, discuss your needs, and understand which tier fits. No commitment required.</p>
+      <a href="https://cal.com/twobirds-4n5ajg/30min" class="btn-primary" target="_blank" rel="noopener noreferrer">Book a 30-minute demo</a>
+      <p class="cta-contact">
+        Prefer email? <a href="mailto:aaron.patzalek@gmail.com">aaron.patzalek@gmail.com</a><br>
+        Aaron Patzalek — Two Birds Innovation — St. Thomas, Ontario
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Two Birds Innovation. Digital Confidence Centre. St. Thomas, Ontario, Canada.</p>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <a href="index.html">Learner site</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </footer>
+
+</body>
+</html>

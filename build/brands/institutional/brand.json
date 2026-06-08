@@ -1,0 +1,48 @@
+{
+  "id": "institutional",
+  "product_name": "Digital Confidence Centre",
+  "tagline": "AI literacy your community can actually use.",
+  "base_url": "https://twobirds-kramerica.github.io/digital-confidence",
+  "logo": {
+    "path": "favicon.svg",
+    "alt": "Digital Confidence Centre logo",
+    "width": 32,
+    "height": 32
+  },
+  "tokens_css": "build/brands/institutional/tokens-institutional.css",
+  "primary_colour": "#1A2744",
+  "accent_colour": "#1D4ED8",
+  "og_image_default": "https://twobirds-kramerica.github.io/digital-confidence/images/og-institutional.png",
+  "booking_url": "https://cal.com/twobirds-4n5ajg/30min",
+  "contact_email": "aaron.patzalek@gmail.com",
+  "nhsp_eligible": true,
+  "pricing_tiers": [
+    {
+      "name": "Starter",
+      "price_cad": 500,
+      "period": "year",
+      "locations": "Up to 3 branches",
+      "features": ["Full 31-module curriculum", "Bi-annual check-in call", "Usage stats report", "Facilitator guide"]
+    },
+    {
+      "name": "Standard",
+      "price_cad": 1000,
+      "period": "year",
+      "locations": "Unlimited branches",
+      "featured": true,
+      "features": ["Full 31-module curriculum", "Quarterly review call", "Priority content updates", "Staff onboarding webinar", "Facilitator guide"]
+    },
+    {
+      "name": "Community",
+      "price_cad": 2000,
+      "period": "year",
+      "locations": "Unlimited branches",
+      "features": ["Full 31-module curriculum", "Custom branding (your logo)", "NHSP co-application support", "Staff training webinar", "Quarterly review", "Facilitator guide", "Priority support"]
+    }
+  ],
+  "founding_partner": {
+    "spots": 3,
+    "price_cad": 500,
+    "note": "First 3 libraries pay Starter rate regardless of tier for Year 1."
+  }
+}

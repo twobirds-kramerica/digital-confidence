@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>DCC Facilitator Guide — Digital Confidence Centre</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      color: #1E293B;
+      background: #fff;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .page { max-width: 760px; margin: 0 auto; padding: 40px 32px; }
+
+    /* Header */
+    .guide-header {
+      border-bottom: 3px solid #1A2744;
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .guide-header h1 {
+      font-size: 22px;
+      font-weight: 900;
+      color: #1A2744;
+      line-height: 1.2;
+    }
+    .guide-header .edition {
+      font-size: 12px;
+      color: #64748B;
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .guide-logo {
+      font-size: 11px;
+      text-align: right;
+      color: #64748B;
+      line-height: 1.4;
+    }
+    .guide-logo strong { color: #1A2744; font-size: 13px; display: block; }
+
+    /* Sections */
+    .guide-section { margin-bottom: 32px; }
+    h2 {
+      font-size: 15px;
+      font-weight: 800;
+      color: #1A2744;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #E2E8F0;
+    }
+    h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1A2744;
+      margin-bottom: 6px;
+      margin-top: 14px;
+    }
+    p { margin-bottom: 10px; font-size: 14px; color: #334155; }
+    ul, ol { padding-left: 18px; margin-bottom: 10px; }
+    li { font-size: 14px; color: #334155; margin-bottom: 5px; }
+    strong { color: #1A2744; }
+
+    /* URL boxes */
+    .url-box {
+      background: #F1F5F9;
+      border-left: 3px solid #1A2744;
+      padding: 10px 14px;
+      font-family: 'Cascadia Code', Consolas, monospace;
+      font-size: 13px;
+      color: #1A2744;
+      margin: 10px 0;
+      word-break: break-all;
+    }
+
+    /* Session flow table */
+    .flow-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    .flow-table th {
+      background: #1A2744;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      text-align: left;
+      padding: 8px 12px;
+      letter-spacing: 0.04em;
+    }
+    .flow-table td {
+      border-bottom: 1px solid #E2E8F0;
+      padding: 8px 12px;
+      font-size: 13px;
+      color: #334155;
+      vertical-align: top;
+    }
+    .flow-table tr:last-child td { border-bottom: none; }
+    .time { color: #64748B; font-weight: 600; white-space: nowrap; }
+
+    /* Tip boxes */
+    .tip {
+      background: #EFF6FF;
+      border-left: 3px solid #1D4ED8;
+      padding: 10px 14px;
+      margin: 12px 0;
+    }
+    .tip p { font-size: 13px; color: #1E3A8A; margin: 0; }
+    .tip strong { color: #1E40AF; }
+
+    /* Module quick ref */
+    .module-ref {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: #E2E8F0;
+      border: 1px solid #E2E8F0;
+      margin-top: 10px;
+    }
+    .module-ref-item {
+      background: #fff;
+      padding: 8px 12px;
+    }
+    .module-ref-num {
+      font-size: 10px;
+      font-weight: 700;
+      color: #94A3B8;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .module-ref-title { font-size: 13px; color: #1E293B; }
+
+    /* Troubleshooting */
+    .trouble-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    .trouble-table th {
+      background: #F1F5F9;
+      color: #1A2744;
+      font-size: 12px;
+      font-weight: 700;
+      text-align: left;
+      padding: 8px 12px;
+      border-bottom: 2px solid #CBD5E1;
+    }
+    .trouble-table td {
+      border-bottom: 1px solid #E2E8F0;
+      padding: 8px 12px;
+      font-size: 13px;
+      color: #334155;
+      vertical-align: top;
+    }
+    .trouble-table tr:last-child td { border-bottom: none; }
+    .issue { font-weight: 600; color: #DC2626; }
+
+    /* Footer */
+    .guide-footer {
+      border-top: 2px solid #E2E8F0;
+      margin-top: 40px;
+      padding-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .guide-footer p { font-size: 11px; color: #94A3B8; margin: 0; }
+
+    /* Print */
+    @media print {
+      body { font-size: 12pt; }
+      .page { padding: 0; max-width: 100%; }
+      .no-print { display: none; }
+      h2 { page-break-after: avoid; }
+      .guide-section { page-break-inside: avoid; }
+      a { text-decoration: none; color: inherit; }
+    }
+
+    /* Screen nav */
+    .screen-only {
+      background: #1A2744;
+      color: white;
+      padding: 12px 24px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+    .screen-only a { color: #93C5FD; }
+    @media print { .screen-only { display: none; } }
+  </style>
+</head>
+<body>
+
+  <nav class="screen-only no-print" aria-label="Guide navigation">
+    <span>Digital Confidence Centre — Facilitator Guide</span>
+    <a href="for-libraries.html">← Partner info</a>
+    <a href="index.html">Learner site →</a>
+    <a href="javascript:window.print()" style="margin-left: auto;">Print this guide</a>
+  </nav>
+
+  <div class="page">
+
+    <header class="guide-header">
+      <div>
+        <h1>Facilitator Guide<br>Digital Confidence Centre</h1>
+        <div class="edition">Edition 1 · June 2026 · English</div>
+      </div>
+      <div class="guide-logo">
+        <strong>Digital Confidence Centre</strong>
+        Two Birds Innovation<br>
+        St. Thomas, Ontario, Canada<br>
+        aaron.patzalek@gmail.com
+      </div>
+    </header>
+
+    <!-- What is DCC -->
+    <div class="guide-section">
+      <h2>What is Digital Confidence Centre?</h2>
+      <p>Digital Confidence Centre (DCC) is a free, bilingual, browser-based AI literacy platform built for community delivery. It is designed for facilitators to guide groups of seniors, newcomers, and low-digital-confidence adults through structured learning at their own pace.</p>
+      <p>There is nothing to install and no login required. Learners open any module directly in a browser on any device.</p>
+      <div class="url-box">twobirds-kramerica.github.io/digital-confidence</div>
+      <div class="tip"><p><strong>Tip:</strong> Bookmark this URL on every device you use with learners. Add it as a shortcut to your library's public computers if possible.</p></div>
+    </div>
+
+    <!-- Before your session -->
+    <div class="guide-section">
+      <h2>Before your session — 10-minute checklist</h2>
+      <ol>
+        <li><strong>Open the platform</strong> on the room display or a shared device. Navigate to the module you plan to cover.</li>
+        <li><strong>Print handouts</strong> from the Print Centre: <span style="font-family: monospace; font-size: 13px;">…/print-centre.html</span>. Each module has a large-print summary.</li>
+        <li><strong>Check font size:</strong> Click the "A+" button in the top bar to increase text. Most senior learners prefer the Large or Extra-Large setting.</li>
+        <li><strong>Check dark mode:</strong> If the room is dim, enable dark mode using the moon icon in the top bar. It reduces glare on screens.</li>
+        <li><strong>Test audio</strong> if you plan to use screen readers or the text-to-speech option (built into most browsers — press Ctrl+A, then right-click → "Read aloud").</li>
+        <li><strong>Prepare one or two discussion questions</strong> from the module's "Think About It" section (appears after each tip box).</li>
+      </ol>
+    </div>
+
+    <!-- Suggested session flow -->
+    <div class="guide-section">
+      <h2>Suggested session flow (60 minutes)</h2>
+      <table class="flow-table" aria-label="Session flow">
+        <thead>
+          <tr><th>Time</th><th>Activity</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="time">0–5 min</td>
+            <td><strong>Welcome &amp; check-in</strong></td>
+            <td>Ask: "What technology question came up for you this week?" One answer each.</td>
+          </tr>
+          <tr>
+            <td class="time">5–10 min</td>
+            <td><strong>Module intro</strong></td>
+            <td>Read the module's opening summary aloud. Ask: "Has anyone encountered this before?"</td>
+          </tr>
+          <tr>
+            <td class="time">10–30 min</td>
+            <td><strong>Guided read-through</strong></td>
+            <td>Work through sections together. Pause at each tip box. Invite questions. Do not rush.</td>
+          </tr>
+          <tr>
+            <td class="time">30–40 min</td>
+            <td><strong>Practice activity</strong></td>
+            <td>Use the interactive elements or quiz if present. For hands-on groups, have learners try on their own device.</td>
+          </tr>
+          <tr>
+            <td class="time">40–50 min</td>
+            <td><strong>Discussion</strong></td>
+            <td>"What's one thing you'll try this week?" Round-robin. Reinforces memory and accountability.</td>
+          </tr>
+          <tr>
+            <td class="time">50–60 min</td>
+            <td><strong>Wrap-up &amp; preview</strong></td>
+            <td>Summarise the key takeaway. Introduce next session's topic. Hand out the print summary.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tip"><p><strong>For 90-minute sessions:</strong> Add a 20-minute hands-on practice block after the guided read-through. Pair learners who have experience with those who do not.</p></div>
+    </div>
+
+    <!-- Module quick reference -->
+    <div class="guide-section">
+      <h2>Module quick reference</h2>
+      <p>Modules are independent — you can run them in any order. Recommended starting points for new groups are modules 1, 2, and 9.</p>
+      <div class="module-ref">
+        <div class="module-ref-item"><div class="module-ref-num">Module 1</div><div class="module-ref-title">Your First Smartphone</div></div>
+        <div class="module-ref-item"><div class="module-ref-num">Module 2</div><div class="module-ref-title">Online Safety Basics</div></div>
+        <div class="module-ref-item"><div class="module-ref-num">Module 3</div><div class="module-ref-title">Passwords &amp; Accounts</div></div>
+        <div class="module-ref-item"><div class="module-ref-num">Module 4</div><div class="module-ref-title">App Store Safety</div></div>
+        <div class="module-ref-item"><div class="module-ref-num">Module 5</div><div class="module-ref-title">Email &amp; Messages</div></div>
+        <div class="module-ref-item"><div class="module-ref-num">Module 6</div><div class="module-ref-title">Online Banking</div></div>
+        <div class="module-ref-item"><div class="module-ref-num">Module 7</div><div class="module-ref-title">Photos &amp; Memories</div></div>
+        <div class="module-ref-item"><div class="module-ref-num">Module 8</div><div class="module-ref-title">Staying Connected</div></div>
+        <div class="module-ref-item"><div class="module-ref-num">Module 9</div><div class="module-ref-title">Understanding AI (start here)</div></div>
+        <div class="module-ref-item"><div class="module-ref-num">Module 10</div><div class="module-ref-title">Grocery &amp; Delivery Apps</div></div>
+        <div class="module-ref-item"><div class="module-ref-num">Module 11</div><div class="module-ref-title">Ride-Sharing Apps</div></div>
+        <div class="module-ref-item"><div class="module-ref-num">Module 12</div><div class="module-ref-title">Getting Help Online</div></div>
+        <div class="module-ref-item"><div class="module-ref-num">Module 13</div><div class="module-ref-title">Social Media Safety</div></div>
+        <div class="module-ref-item"><div class="module-ref-num">Module 14</div><div class="module-ref-title">Smart Home Devices</div></div>
+        <div class="module-ref-item"><div class="module-ref-num">Module 15</div><div class="module-ref-title">Telehealth &amp; Video Calls</div></div>
+        <div class="module-ref-item"><div class="module-ref-num">Module 16</div><div class="module-ref-title">Travel Safety Online</div></div>
+        <div class="module-ref-item"><div class="module-ref-num">Module 17</div><div class="module-ref-title">AI Research Tools</div></div>
+        <div class="module-ref-item"><div class="module-ref-num">Module 18</div><div class="module-ref-title">Long-Distance Connection</div></div>
+        <div class="module-ref-item"><div class="module-ref-num">Module 19</div><div class="module-ref-title">Digital Legacy</div></div>
+        <div class="module-ref-item"><div class="module-ref-num">Module 20</div><div class="module-ref-title">Internet Plans Explained</div></div>
+        <div class="module-ref-item"><div class="module-ref-num">Module 21</div><div class="module-ref-title">Mobile Plans Explained</div></div>
+        <div class="module-ref-item"><div class="module-ref-num">Bonus</div><div class="module-ref-title">Scam Simulator (interactive)</div></div>
+      </div>
+    </div>
+
+    <!-- Facilitator tips -->
+    <div class="guide-section">
+      <h2>Facilitator notes</h2>
+
+      <h3>Setting the pace</h3>
+      <p>The most common facilitator mistake is moving too quickly. Seniors in your group may process information more slowly — not because of ability, but because every concept is genuinely new. A session that covers half a module well is more valuable than one that covers a full module poorly.</p>
+
+      <h3>Handling "I'll never get this"</h3>
+      <p>Normalise confusion. Say: "That screen confused me too the first time — here's what I do." Personal anecdotes from the facilitator dramatically reduce learner anxiety. Do not say "It's easy" or "Don't worry" — both dismiss the difficulty.</p>
+
+      <h3>The one-thing rule</h3>
+      <p>End every session with: "What's the one thing you want to try before next time?" Write it on a sticky note or have learners say it aloud. Recall at the start of the next session. Behavioural change happens through repetition, not one-time exposure.</p>
+
+      <h3>For newcomer groups (settlement agencies)</h3>
+      <p>Language considerations: some learners may be stronger in French. Switch the interface by clicking the language toggle in the top bar — every module is fully bilingual. For mixed-language groups, run the English and French versions side by side on two screens if possible.</p>
+    </div>
+
+    <!-- Troubleshooting -->
+    <div class="guide-section">
+      <h2>Common issues &amp; fixes</h2>
+      <table class="trouble-table" aria-label="Troubleshooting guide">
+        <thead>
+          <tr><th>Issue</th><th>Likely cause</th><th>Fix</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="issue">Page won't load</span></td>
+            <td>No internet connection</td>
+            <td>Check Wi-Fi. The site requires an internet connection. Print handouts as offline backup.</td>
+          </tr>
+          <tr>
+            <td><span class="issue">Text too small</span></td>
+            <td>Default font size setting</td>
+            <td>Click the A+ button in the top bar (or use browser Ctrl/Cmd + to zoom).</td>
+          </tr>
+          <tr>
+            <td><span class="issue">Dark background (unintended)</span></td>
+            <td>System dark mode active</td>
+            <td>Click the sun/moon toggle in the top bar to switch to light mode.</td>
+          </tr>
+          <tr>
+            <td><span class="issue">Quiz not responding</span></td>
+            <td>JavaScript blocked</td>
+            <td>Reload the page. If still blocked, check browser security settings — JavaScript must be enabled.</td>
+          </tr>
+          <tr>
+            <td><span class="issue">French not showing correctly</span></td>
+            <td>Language not toggled</td>
+            <td>Look for the "Français" or language toggle button in the top navigation bar.</td>
+          </tr>
+          <tr>
+            <td><span class="issue">Screen reader not reading</span></td>
+            <td>Browser Read Aloud not activated</td>
+            <td>Select all text (Ctrl+A), right-click, choose "Read aloud" or "Speak". All modules are fully WCAG 2.1 AA labelled.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Contact -->
+    <div class="guide-section">
+      <h2>Support &amp; feedback</h2>
+      <p>Questions about a specific module, accessibility issue, or content concern? Contact Two Birds Innovation directly:</p>
+      <p><strong>Aaron Patzalek</strong> · <a href="mailto:aaron.patzalek@gmail.com">aaron.patzalek@gmail.com</a><br>
+      Book a check-in: <a href="https://cal.com/twobirds-4n5ajg/30min">cal.com/twobirds-4n5ajg/30min</a></p>
+      <p>For partners on Standard or Community tiers, quarterly check-in calls are included in your package — use them to share feedback and request content additions.</p>
+    </div>
+
+    <footer class="guide-footer">
+      <p>Digital Confidence Centre · Facilitator Guide · Edition 1 · June 2026</p>
+      <p>Two Birds Innovation · St. Thomas, Ontario · Free to reproduce for facilitator use</p>
+    </footer>
+
+  </div>
+</body>
+</html>
