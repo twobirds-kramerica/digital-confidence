@@ -103,7 +103,32 @@ function injectSettingsStyles() {
     '  transition:all 0.15s;',
     '}',
     '.dc-settings-reset-btn:hover{background:#C62828;color:#fff;}',
-    '[data-theme="dark"] .dc-settings-reset-btn{background:#1E2D3D;}'
+    '[data-theme="dark"] .dc-settings-reset-btn{background:#1E2D3D;}',
+    /* Reset description text */
+    '.dc-settings-reset-desc{font-size:14px;color:#555;margin:0 0 12px;}',
+    '[data-theme="dark"] .dc-settings-reset-desc{color:#90A4AE;}',
+    /* Reset inline confirmation panel */
+    '.dc-settings-reset-confirm{',
+    '  display:none;background:#FFF3F3;border:2px solid #C62828;',
+    '  border-radius:8px;padding:14px;margin-top:10px;',
+    '}',
+    '[data-theme="dark"] .dc-settings-reset-confirm{background:#2D1515;border-color:#EF5350;}',
+    '.dc-settings-reset-confirm-msg{font-size:15px;font-weight:600;color:#C62828;margin:0 0 12px;}',
+    '[data-theme="dark"] .dc-settings-reset-confirm-msg{color:#EF9A9A;}',
+    '.dc-settings-reset-confirm-btns{display:flex;gap:10px;flex-wrap:wrap;}',
+    '.dc-settings-reset-yes{',
+    '  flex:1;min-height:44px;padding:10px 16px;border-radius:8px;',
+    '  border:2px solid #C62828;background:#C62828;color:#fff;',
+    '  cursor:pointer;font-size:15px;font-weight:700;transition:all 0.15s;',
+    '}',
+    '.dc-settings-reset-yes:hover{background:#B71C1C;border-color:#B71C1C;}',
+    '.dc-settings-reset-cancel{',
+    '  flex:1;min-height:44px;padding:10px 16px;border-radius:8px;',
+    '  border:2px solid #607D8B;background:#fff;color:#37474F;',
+    '  cursor:pointer;font-size:15px;font-weight:600;transition:all 0.15s;',
+    '}',
+    '.dc-settings-reset-cancel:hover{background:#ECEFF1;border-color:#455A64;}',
+    '[data-theme="dark"] .dc-settings-reset-cancel{background:#263238;color:#CFD8DC;border-color:#546E7A;}'
   ].join('\n');
   document.head.appendChild(style);
 }
@@ -171,9 +196,19 @@ function injectSettingsModal() {
         /* Reset */
         '<div class="dc-settings-section">',
           '<p class="dc-settings-section-title">Reset</p>',
+          '<p class="dc-settings-reset-desc">',
+            'This will remove all your quiz results, your city, and your settings. You will start completely fresh.',
+          '</p>',
           '<button class="dc-settings-reset-btn" id="dc-settings-reset-btn">',
-            'Start Over \u2014 Reset All My Settings',
+            'Start Over: Reset Everything',
           '</button>',
+          '<div class="dc-settings-reset-confirm" id="dc-settings-reset-confirm">',
+            '<p class="dc-settings-reset-confirm-msg">Are you sure? This cannot be undone.</p>',
+            '<div class="dc-settings-reset-confirm-btns">',
+              '<button class="dc-settings-reset-yes" id="dc-settings-reset-yes">Yes, start over</button>',
+              '<button class="dc-settings-reset-cancel" id="dc-settings-reset-cancel">Cancel</button>',
+            '</div>',
+          '</div>',
         '</div>',
 
       '</div>',
@@ -245,14 +280,20 @@ function injectSettingsModal() {
     }
   });
 
-  /* Reset everything */
+  /* Reset everything \u2014 two-step inline confirmation */
   document.getElementById('dc-settings-reset-btn').addEventListener('click', function () {
-    var _sfr = (localStorage.getItem('dc-lang') || document.documentElement.getAttribute('data-lang') || 'en').startsWith('fr');
-    var confirmed = confirm(_sfr ? '\u00cates-vous s\u00fbr(e)\u00a0? Ceci r\u00e9initialisera votre ville, vos appareils, la taille du texte et toute votre progression. Vous recommencerez du d\u00e9but.' : 'Are you sure? This will reset your city, devices, text size, and all your progress. You will start fresh from the beginning.');
-    if (confirmed) {
-      localStorage.clear();
-      location.reload();
-    }
+    document.getElementById('dc-settings-reset-btn').style.display = 'none';
+    document.getElementById('dc-settings-reset-confirm').style.display = 'block';
+  });
+
+  document.getElementById('dc-settings-reset-cancel').addEventListener('click', function () {
+    document.getElementById('dc-settings-reset-confirm').style.display = 'none';
+    document.getElementById('dc-settings-reset-btn').style.display = '';
+  });
+
+  document.getElementById('dc-settings-reset-yes').addEventListener('click', function () {
+    localStorage.clear();
+    location.reload();
   });
 
   /* Export data */
@@ -334,6 +375,12 @@ function openSettingsModal() {
   updateSettingsThemeButton(localStorage.getItem('dc-theme') || 'light');
   updateSettingsCityDisplay();
   updateSettingsDevicesDisplay();
+
+  /* Reset confirmation UI to initial state */
+  var resetConfirm = document.getElementById('dc-settings-reset-confirm');
+  var resetBtn = document.getElementById('dc-settings-reset-btn');
+  if (resetConfirm) resetConfirm.style.display = 'none';
+  if (resetBtn) resetBtn.style.display = '';
 
   modal.style.display = 'flex';
   document.body.style.overflow = 'hidden';

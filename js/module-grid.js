@@ -1,79 +1,82 @@
 /* ============================================
-   Homepage Module Grid Enhancements
-   Categories, time estimates, Start Here badge, sort toggle
+   Homepage Module Grid — Categorised & Collapsible
+   Matches sidebar 5-section structure.
+   Begin Here: always open, featured cards.
+   Safety First / Daily Life / Staying Independent: collapsible, state persisted in localStorage.
    ============================================ */
 
 (function () {
   'use strict';
 
-  /* ── Module metadata ── */
   var MODULE_META = {
-    '1':   { category: 'start',    time: 'About 15 min', timeFr: 'Environ 15 min' },
-    '2':   { category: 'start',    time: 'About 20 min', timeFr: 'Environ 20 min' },
-    '2.5': { category: 'start',    time: 'About 15 min', timeFr: 'Environ 15 min' },
-    '3':   { category: 'safe',     time: 'About 15 min', timeFr: 'Environ 15 min' },
-    '4':   { category: 'safe',     time: 'About 15 min', timeFr: 'Environ 15 min' },
-    '5':   { category: 'safe',     time: 'About 15 min', timeFr: 'Environ 15 min' },
-    '6':   { category: 'connect',  time: 'About 20 min', timeFr: 'Environ 20 min' },
-    '7':   { category: 'connect',  time: 'About 15 min', timeFr: 'Environ 15 min' },
-    '8':   { category: 'connect',  time: 'About 20 min', timeFr: 'Environ 20 min' },
-    '9':   { category: 'manage',   time: 'About 20 min', timeFr: 'Environ 20 min' },
-    '10':  { category: 'manage',   time: 'About 15 min', timeFr: 'Environ 15 min' },
-    '11':  { category: 'manage',   time: 'About 15 min', timeFr: 'Environ 15 min' },
-    '12':  { category: 'further',  time: 'About 20 min', timeFr: 'Environ 20 min' },
-    '13':  { category: 'further',  time: 'About 20 min', timeFr: 'Environ 20 min' },
-    '14':  { category: 'further',  time: 'About 20 min', timeFr: 'Environ 20 min' },
-    '15':  { category: 'further',  time: 'About 20 min', timeFr: 'Environ 20 min' },
-    '16':  { category: 'horizons', time: 'About 20 min', timeFr: 'Environ 20 min' },
-    '17':  { category: 'horizons', time: 'About 20 min', timeFr: 'Environ 20 min' },
-    '18':  { category: 'horizons', time: 'About 20 min', timeFr: 'Environ 20 min' },
-    '19':  { category: 'horizons', time: 'About 20 min', timeFr: 'Environ 20 min' }
+    '1':   { category: 'begin',       time: 'About 15 min', timeFr: 'Environ 15 min' },
+    '2':   { category: 'begin',       time: 'About 20 min', timeFr: 'Environ 20 min' },
+    '2.5': { category: 'begin',       time: 'About 15 min', timeFr: 'Environ 15 min' },
+    '3':   { category: 'safety',      time: 'About 15 min', timeFr: 'Environ 15 min' },
+    '4':   { category: 'safety',      time: 'About 15 min', timeFr: 'Environ 15 min' },
+    '5':   { category: 'safety',      time: 'About 15 min', timeFr: 'Environ 15 min' },
+    '6':   { category: 'daily',       time: 'About 20 min', timeFr: 'Environ 20 min' },
+    '7':   { category: 'daily',       time: 'About 15 min', timeFr: 'Environ 15 min' },
+    '8':   { category: 'daily',       time: 'About 20 min', timeFr: 'Environ 20 min' },
+    '9':   { category: 'daily',       time: 'About 20 min', timeFr: 'Environ 20 min' },
+    '10':  { category: 'daily',       time: 'About 15 min', timeFr: 'Environ 15 min' },
+    '11':  { category: 'daily',       time: 'About 15 min', timeFr: 'Environ 15 min' },
+    '12':  { category: 'daily',       time: 'About 20 min', timeFr: 'Environ 20 min' },
+    '13':  { category: 'daily',       time: 'About 20 min', timeFr: 'Environ 20 min' },
+    '14':  { category: 'daily',       time: 'About 20 min', timeFr: 'Environ 20 min' },
+    '15':  { category: 'daily',       time: 'About 20 min', timeFr: 'Environ 20 min' },
+    '16':  { category: 'independent', time: 'About 20 min', timeFr: 'Environ 20 min' },
+    '17':  { category: 'independent', time: 'About 20 min', timeFr: 'Environ 20 min' },
+    '18':  { category: 'independent', time: 'About 20 min', timeFr: 'Environ 20 min' },
+    '19':  { category: 'independent', time: 'About 20 min', timeFr: 'Environ 20 min' },
+    '20':  { category: 'independent', time: 'About 15 min', timeFr: 'Environ 15 min' },
+    '21':  { category: 'independent', time: 'About 15 min', timeFr: 'Environ 15 min' },
+    '22':  { category: 'independent', time: 'About 15 min', timeFr: 'Environ 15 min' },
+    '23':  { category: 'independent', time: 'About 20 min', timeFr: 'Environ 20 min' },
+    '24':  { category: 'independent', time: 'About 20 min', timeFr: 'Environ 20 min' }
   };
 
   var CATEGORIES = [
     {
-      id: 'start',
-      en: '🚀 Getting Started',
-      fr: '🚀 Pour commencer',
-      desc_en: 'Begin here — these three modules build the foundation (1, 2, 2.5).',
-      desc_fr: 'Commencez ici — ces trois modules posent les bases (1, 2, 2.5).'
+      id: 'begin',
+      en: 'Begin Here',
+      fr: 'Commencez ici',
+      icon: '👉',
+      desc_en: 'Start with these three lessons. They build the foundation for everything that follows.',
+      desc_fr: 'Commencez par ces trois leçons. Elles posent les bases de tout ce qui suit.',
+      alwaysOpen: true,
+      featured: true
     },
     {
-      id: 'safe',
-      en: '🔐 Staying Safe',
-      fr: '🔐 Rester en sécurité',
-      desc_en: 'Protect yourself online with passwords, scam awareness, and safe apps (3, 4, 5).',
-      desc_fr: 'Protégez-vous en ligne avec des mots de passe et la sensibilisation aux arnaques (3, 4, 5).'
+      id: 'safety',
+      en: 'Safety First',
+      fr: 'La sécurité d\'abord',
+      icon: '🛡️',
+      desc_en: 'Passwords, app safety, and spotting scams — your digital self-defence toolkit.',
+      desc_fr: 'Mots de passe, sécurité des applis et arnaques — votre boîte à outils de défense numérique.',
+      alwaysOpen: false
     },
     {
-      id: 'connect',
-      en: '💬 Connecting with Others',
-      fr: '💬 Se connecter avec les autres',
-      desc_en: 'Banking, photos, and staying in touch with the people who matter (6, 7, 8).',
-      desc_fr: 'Banque, photos et rester en contact avec les personnes qui comptent (6, 7, 8).'
+      id: 'daily',
+      en: 'Daily Life',
+      fr: 'Vie quotidienne',
+      icon: '🌤️',
+      desc_en: 'Banking, staying connected, grocery delivery, and everyday digital tasks made easy.',
+      desc_fr: 'Banque, rester en contact, épicerie et tâches numériques quotidiennes simplifiées.',
+      alwaysOpen: false
     },
     {
-      id: 'manage',
-      en: '🛒 Managing Your Life Online',
-      fr: '🛒 Gérer votre vie en ligne',
-      desc_en: 'AI, grocery delivery, and ride-sharing — modern tools made approachable (9, 10, 11).',
-      desc_fr: 'IA, épicerie en ligne et covoiturage — des outils modernes rendus accessibles (9, 10, 11).'
-    },
-    {
-      id: 'further',
-      en: '🌟 Going Further',
-      fr: '🌟 Aller plus loin',
-      desc_en: 'Advanced topics: social media, smart home, and telehealth (12, 13, 14, 15).',
-      desc_fr: 'Sujets avancés : médias sociaux, maison intelligente et télémédecine (12, 13, 14, 15).'
-    },
-    {
-      id: 'horizons',
-      en: '🌍 Expanding Your Horizons',
-      fr: '🌍 Élargir vos horizons',
-      desc_en: 'Travel safety, AI research tools, staying connected, and your digital legacy (16, 17, 18, 19).',
-      desc_fr: 'Sécurité en voyage, outils de recherche IA, rester en contact et votre héritage numérique (16, 17, 18, 19).'
+      id: 'independent',
+      en: 'Staying Independent',
+      fr: 'Rester autonome',
+      icon: '🌟',
+      desc_en: 'Travel safety, managing your bills, and taking charge of your digital world.',
+      desc_fr: 'Sécurité en voyage, gérer vos factures et prendre en main votre monde numérique.',
+      alwaysOpen: false
     }
   ];
+
+  var LS_PREFIX = 'dc-cat-';
 
   function getLang() {
     try {
@@ -96,220 +99,287 @@
     } catch (e) { return false; }
   }
 
-  function countCompleted() {
-    var n = 0;
-    Object.keys(MODULE_META).forEach(function (m) {
-      if (isModuleComplete(m)) n++;
-    });
-    return n;
+  function getCatOpen(catId, defaultVal) {
+    try {
+      var stored = localStorage.getItem(LS_PREFIX + catId + '-open');
+      if (stored === null) return defaultVal;
+      return stored === 'true';
+    } catch (e) { return defaultVal; }
   }
 
-  /* ── "Start here" badge only shown for 0 completed (of all 21) ── */
-  var TOTAL_ALL = Object.keys(MODULE_META).length;
+  function setCatOpen(catId, isOpen) {
+    try { localStorage.setItem(LS_PREFIX + catId + '-open', isOpen ? 'true' : 'false'); } catch (e) {}
+  }
 
-  /* ── Add time estimate and completion badge to a card ── */
   function enhanceCard(card, moduleNum, lang) {
     var meta = MODULE_META[moduleNum];
     if (!meta) return;
-
     var content = card.querySelector('.card-content');
     if (!content) return;
 
-    /* Time estimate */
     if (!card.querySelector('.card-time')) {
       var timeEl = document.createElement('span');
       timeEl.className = 'card-time';
       timeEl.setAttribute('aria-label', lang === 'fr' ? meta.timeFr : meta.time);
-      timeEl.innerHTML = '⏱ ' + (lang === 'fr' ? meta.timeFr : meta.time);
+      timeEl.innerHTML = '&#9201; ' + (lang === 'fr' ? meta.timeFr : meta.time);
       content.appendChild(timeEl);
     }
 
-    /* Completion state */
     var progressEl = card.querySelector('.card-progress');
     if (progressEl && isModuleComplete(moduleNum)) {
       progressEl.textContent = '';
       card.classList.add('card-done');
-      var badge = document.createElement('span');
-      badge.className = 'card-complete-badge';
-      badge.textContent = lang === 'fr' ? '✅ Terminé' : '✅ Complete';
-      content.appendChild(badge);
+      if (!card.querySelector('.card-complete-badge')) {
+        var badge = document.createElement('span');
+        badge.className = 'card-complete-badge';
+        badge.textContent = lang === 'fr' ? '✅ Terminé' : '✅ Complete';
+        content.appendChild(badge);
+      }
     }
   }
 
-  /* ── Build sort toggle ── */
-  function buildSortToggle(grid, lang) {
-    return; /* E3: Sort/filter buttons removed — default order is fine for this audience */
-    var wrap = document.createElement('div');
-    wrap.className = 'mg-sort-wrap';
-    wrap.setAttribute('role', 'group');
-    wrap.setAttribute('aria-label', lang === 'fr' ? 'Trier les modules' : 'Sort modules');
+  function injectCategoryStyles() {
+    if (document.getElementById('mg-category-styles')) return;
+    var style = document.createElement('style');
+    style.id = 'mg-category-styles';
+    style.textContent = [
+      /* Section wrapper */
+      '.mg-section{margin:0 0 1.5rem;}',
 
-    var label = document.createElement('span');
-    label.className = 'mg-sort-label';
-    label.textContent = lang === 'fr' ? 'Afficher par : ' : 'View by: ';
-    wrap.appendChild(label);
+      /* Begin Here — always open, featured */
+      '.mg-section--begin .mg-section-header{',
+      '  display:flex;flex-direction:column;gap:0.25rem;',
+      '  padding:0 0 0.75rem;border-bottom:3px solid var(--color-primary,#2A7B6F);',
+      '  margin-bottom:1rem;',
+      '}',
+      '.mg-section--begin .mg-section-title{',
+      '  font-size:1.35rem;font-weight:700;color:var(--color-primary,#2A7B6F);margin:0;',
+      '  display:flex;align-items:center;gap:0.5rem;',
+      '}',
+      '.mg-section--begin .mg-section-badge{',
+      '  display:inline-block;background:var(--color-primary,#2A7B6F);color:#fff;',
+      '  font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;',
+      '  padding:3px 10px;border-radius:20px;',
+      '}',
+      '.mg-section--begin .mg-section-desc{',
+      '  font-size:0.95rem;color:var(--color-text-light,#595959);margin:0;',
+      '}',
+      '.mg-section--begin .module-grid .module-card{',
+      '  border-left:4px solid var(--color-primary,#2A7B6F);',
+      '}',
 
-    var options = [
-      { key: 'default', en: 'Default order', fr: 'Ordre par défaut' },
-      { key: 'easiest', en: 'Start with easiest', fr: 'Commencer par le plus facile' },
-      { key: 'progress', en: 'My progress', fr: 'Ma progression' }
-    ];
+      /* Collapsible sections */
+      '.mg-section details{border:none;}',
+      '.mg-section-summary{',
+      '  list-style:none;cursor:pointer;',
+      '  display:flex;align-items:center;gap:0.75rem;',
+      '  padding:0.85rem 1rem;',
+      '  background:var(--bg-surface,#f5f5f0);',
+      '  border:1.5px solid var(--border-color,#e0e0e0);',
+      '  border-radius:8px;',
+      '  min-height:52px;',
+      '  user-select:none;',
+      '  transition:background 0.15s;',
+      '}',
+      '.mg-section-summary::-webkit-details-marker{display:none;}',
+      '.mg-section-summary:hover{background:var(--bg-hover,#ede9e3);}',
+      '[data-theme="dark"] .mg-section-summary{',
+      '  background:#1E2D3D;border-color:#37474F;',
+      '}',
+      '[data-theme="dark"] .mg-section-summary:hover{background:#263238;}',
+      '.mg-section-summary-icon{font-size:1.2rem;flex-shrink:0;}',
+      '.mg-section-summary-text{flex:1;min-width:0;}',
+      '.mg-section-summary-title{',
+      '  font-size:1.05rem;font-weight:700;color:var(--color-heading,#1B3A4B);display:block;',
+      '}',
+      '[data-theme="dark"] .mg-section-summary-title{color:#E8EAF0;}',
+      '.mg-section-summary-desc{',
+      '  font-size:0.82rem;color:var(--color-text-light,#595959);display:block;margin-top:2px;',
+      '}',
+      '.mg-section-count{',
+      '  font-size:0.78rem;font-weight:600;color:var(--color-text-light,#595959);',
+      '  white-space:nowrap;',
+      '}',
+      '.mg-chevron{',
+      '  font-size:0.8rem;color:var(--color-text-light,#888);',
+      '  transition:transform 0.2s;flex-shrink:0;',
+      '}',
+      'details[open] .mg-chevron{transform:rotate(180deg);}',
+      '.mg-section-body{padding:1rem 0 0;}',
+      '.mg-section-desc-expanded{',
+      '  font-size:0.9rem;color:var(--color-text-light,#595959);',
+      '  margin:0 0 0.75rem;',
+      '}',
 
-    options.forEach(function (opt, i) {
-      var btn = document.createElement('button');
-      btn.className = 'mg-sort-btn' + (i === 0 ? ' active' : '');
-      btn.setAttribute('data-sort', opt.key);
-      btn.textContent = lang === 'fr' ? opt.fr : opt.en;
-      wrap.appendChild(btn);
-    });
-
-    grid.parentNode.insertBefore(wrap, grid);
-
-    wrap.addEventListener('click', function (e) {
-      var btn = e.target.closest('.mg-sort-btn');
-      if (!btn) return;
-      wrap.querySelectorAll('.mg-sort-btn').forEach(function (b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      applySort(btn.getAttribute('data-sort'));
-    });
+      /* Bonus section */
+      '.mg-section--bonus .mg-section-header{',
+      '  padding:0.5rem 0 0.75rem;',
+      '  border-bottom:1px solid var(--border-color,#e0e0e0);',
+      '  margin-bottom:1rem;',
+      '}',
+      '.mg-section--bonus .mg-section-title{',
+      '  font-size:1.05rem;font-weight:700;color:var(--color-text,#3D3229);',
+      '}',
+    ].join('\n');
+    document.head.appendChild(style);
   }
 
-  /* ── Sort logic ── */
-  function applySort(sortKey) {
-    var grid = document.querySelector('.module-grid.mg-enhanced');
-    if (!grid) return;
+  function buildBeginSection(cards, lang, completedCount) {
+    var cat = CATEGORIES[0];
+    var section = document.createElement('div');
+    section.className = 'mg-section mg-section--begin';
 
-    var categorySections = Array.from(grid.querySelectorAll('.mg-category-section'));
+    var header = document.createElement('div');
+    header.className = 'mg-section-header';
 
-    if (sortKey === 'default') {
-      categorySections.forEach(function (sec) { sec.style.display = ''; });
-      var cards = Array.from(grid.querySelectorAll('.module-card[data-module]'));
-      cards.forEach(function (card) {
-        var mNum = parseFloat(card.getAttribute('data-module'));
-        card.style.order = mNum * 10;
-      });
-    } else if (sortKey === 'easiest') {
-      /* Shorter modules first (15 min < 20 min), by module number within group */
-      var cards = Array.from(grid.querySelectorAll('.module-card[data-module]'));
-      cards.sort(function (a, b) {
-        var ma = MODULE_META[a.getAttribute('data-module')] || {};
-        var mb = MODULE_META[b.getAttribute('data-module')] || {};
-        var ta = ma.time || ''; var tb = mb.time || '';
-        var ta15 = ta.indexOf('15') !== -1 ? 0 : 1;
-        var tb15 = tb.indexOf('15') !== -1 ? 0 : 1;
-        if (ta15 !== tb15) return ta15 - tb15;
-        return parseFloat(a.getAttribute('data-module')) - parseFloat(b.getAttribute('data-module'));
-      });
-      categorySections.forEach(function (sec) { sec.style.display = 'none'; });
-      var tempGrid = grid.querySelector('.mg-flat-grid') || (function () {
-        var g = document.createElement('div');
-        g.className = 'module-grid mg-flat-grid';
-        grid.appendChild(g);
-        return g;
-      })();
-      cards.forEach(function (c) { tempGrid.appendChild(c); });
-      tempGrid.style.display = 'grid';
-    } else if (sortKey === 'progress') {
-      var cards = Array.from(grid.querySelectorAll('.module-card[data-module]'));
-      cards.sort(function (a, b) {
-        var da = isModuleComplete(a.getAttribute('data-module')) ? 1 : 0;
-        var db = isModuleComplete(b.getAttribute('data-module')) ? 1 : 0;
-        if (da !== db) return db - da; /* complete first */
-        return parseFloat(a.getAttribute('data-module')) - parseFloat(b.getAttribute('data-module'));
-      });
-      categorySections.forEach(function (sec) { sec.style.display = 'none'; });
-      var tempGrid = grid.querySelector('.mg-flat-grid') || (function () {
-        var g = document.createElement('div');
-        g.className = 'module-grid mg-flat-grid';
-        grid.appendChild(g);
-        return g;
-      })();
-      cards.forEach(function (c) { tempGrid.appendChild(c); });
-      tempGrid.style.display = 'grid';
+    var titleRow = document.createElement('p');
+    titleRow.className = 'mg-section-title';
+    titleRow.innerHTML =
+      '<span class="mg-section-badge" aria-label="Recommended starting point">' +
+        (lang === 'fr' ? 'Commencez ici' : 'Start here') +
+      '</span>&nbsp;' +
+      (lang === 'fr' ? cat.fr : cat.en);
+
+    var desc = document.createElement('p');
+    desc.className = 'mg-section-desc';
+    desc.textContent = lang === 'fr' ? cat.desc_fr : cat.desc_en;
+
+    header.appendChild(titleRow);
+    header.appendChild(desc);
+    section.appendChild(header);
+
+    /* "Start here" badge on Module 1 when no progress */
+    if (completedCount === 0 && cards.length > 0) {
+      var m1 = cards[0];
+      var content = m1.querySelector('.card-content');
+      if (content && !content.querySelector('.card-badge.badge-start-here')) {
+        var badge = document.createElement('span');
+        badge.className = 'card-badge badge-start-here';
+        badge.textContent = lang === 'fr' ? '👉 Commencez ici' : '👉 Start here';
+        content.insertBefore(badge, content.firstChild);
+      }
     }
+
+    var grid = document.createElement('div');
+    grid.className = 'module-grid';
+    cards.forEach(function (c) { grid.appendChild(c); });
+    section.appendChild(grid);
+
+    return section;
   }
 
-  /* ── Main enhancement ── */
+  function buildCollapsibleSection(cat, cards, lang, bonusCards) {
+    var section = document.createElement('div');
+    section.className = 'mg-section';
+
+    var details = document.createElement('details');
+    var catOpen = getCatOpen(cat.id, false);
+    if (catOpen) details.setAttribute('open', '');
+
+    var summary = document.createElement('summary');
+    summary.className = 'mg-section-summary';
+    summary.setAttribute('aria-label', (lang === 'fr' ? cat.fr : cat.en));
+
+    var count = cards.length + (bonusCards ? bonusCards.length : 0);
+    var countLabel = count === 1
+      ? (lang === 'fr' ? '1 module' : '1 module')
+      : (lang === 'fr' ? count + ' modules' : count + ' modules');
+
+    summary.innerHTML =
+      '<span class="mg-section-summary-icon" aria-hidden="true">' + cat.icon + '</span>' +
+      '<span class="mg-section-summary-text">' +
+        '<span class="mg-section-summary-title">' + (lang === 'fr' ? cat.fr : cat.en) + '</span>' +
+        '<span class="mg-section-summary-desc">' + (lang === 'fr' ? cat.desc_fr : cat.desc_en) + '</span>' +
+      '</span>' +
+      '<span class="mg-section-count">' + countLabel + '</span>' +
+      '<span class="mg-chevron" aria-hidden="true">&#9660;</span>';
+
+    details.appendChild(summary);
+
+    var body = document.createElement('div');
+    body.className = 'mg-section-body';
+
+    var grid = document.createElement('div');
+    grid.className = 'module-grid';
+    cards.forEach(function (c) { grid.appendChild(c); });
+
+    if (bonusCards && bonusCards.length > 0) {
+      bonusCards.forEach(function (c) { grid.appendChild(c); });
+    }
+
+    body.appendChild(grid);
+    details.appendChild(body);
+    section.appendChild(details);
+
+    details.addEventListener('toggle', function () {
+      setCatOpen(cat.id, details.open);
+    });
+
+    return section;
+  }
+
   function enhanceGrid() {
     var grid = document.querySelector('.module-grid');
     if (!grid || grid.classList.contains('mg-enhanced')) return;
 
+    injectCategoryStyles();
     var lang = getLang();
-    var completedCount = countCompleted();
+
+    /* Remove any existing .module-category-divider elements */
+    var dividers = grid.querySelectorAll('.module-category-divider');
+    dividers.forEach(function (d) { d.parentNode.removeChild(d); });
+
     var cards = Array.from(grid.querySelectorAll('.module-card[data-module]'));
-    if (cards.length === 0) return;
+    var bonusCards = Array.from(grid.querySelectorAll('.module-card:not([data-module])'));
+    if (cards.length === 0 && bonusCards.length === 0) return;
 
     grid.classList.add('mg-enhanced');
 
-    /* Group cards by category */
-    var groups = {};
-    CATEGORIES.forEach(function (cat) { groups[cat.id] = []; });
+    var completedCount = 0;
+    cards.forEach(function (card) {
+      var m = card.getAttribute('data-module');
+      if (isModuleComplete(m)) completedCount++;
+    });
 
+    /* Enhance all cards (time estimates, completion badges) */
+    cards.forEach(function (card) {
+      enhanceCard(card, card.getAttribute('data-module'), lang);
+    });
+
+    /* Group by category */
+    var groups = { begin: [], safety: [], daily: [], independent: [] };
     cards.forEach(function (card) {
       var m = card.getAttribute('data-module');
       var meta = MODULE_META[m];
-      var catId = meta ? meta.category : 'further';
+      var catId = meta ? meta.category : 'independent';
       if (groups[catId]) groups[catId].push(card);
-      enhanceCard(card, m, lang);
     });
 
-    /* "Start here" badge on module 1 */
-    if (completedCount === 0) {
-      var m1 = grid.querySelector('.module-card[data-module="1"]');
-      if (m1) {
-        var startBadge = document.createElement('span');
-        startBadge.className = 'card-badge badge-start-here';
-        startBadge.textContent = lang === 'fr' ? '👉 Commencez ici' : '👉 Start here';
-        var content = m1.querySelector('.card-content');
-        if (content) content.insertBefore(startBadge, content.firstChild);
-      }
+    /* Build new structure */
+    var fragment = document.createDocumentFragment();
+
+    /* Begin Here — always open */
+    if (groups.begin.length > 0) {
+      fragment.appendChild(buildBeginSection(groups.begin, lang, completedCount));
     }
 
-    /* Build category sections */
-    var fragment = document.createDocumentFragment();
-    CATEGORIES.forEach(function (cat) {
-      if (groups[cat.id].length === 0) return;
-      var section = document.createElement('div');
-      section.className = 'mg-category-section';
-      section.setAttribute('data-cat', cat.id);
+    /* Safety First */
+    if (groups.safety.length > 0) {
+      fragment.appendChild(buildCollapsibleSection(CATEGORIES[1], groups.safety, lang, null));
+    }
 
-      var header = document.createElement('div');
-      header.className = 'mg-category-header';
-      header.innerHTML =
-        '<h3 class="mg-category-title">' + (lang === 'fr' ? cat.fr : cat.en) + '</h3>' +
-        '<p class="mg-category-desc">' + (lang === 'fr' ? cat.desc_fr : cat.desc_en) + '</p>';
-      section.appendChild(header);
+    /* Daily Life — include visual-ai (bonus) cards */
+    if (groups.daily.length > 0 || bonusCards.length > 0) {
+      fragment.appendChild(buildCollapsibleSection(CATEGORIES[2], groups.daily, lang, bonusCards));
+    }
 
-      var subGrid = document.createElement('div');
-      subGrid.className = 'module-grid mg-sub-grid';
-      groups[cat.id].forEach(function (card) { subGrid.appendChild(card); });
-      section.appendChild(subGrid);
-
-      fragment.appendChild(section);
-    });
-
-    /* Keep bonus card (no data-module) at end */
-    var bonusCards = Array.from(grid.querySelectorAll('.module-card:not([data-module])'));
-    if (bonusCards.length > 0) {
-      var bonusSection = document.createElement('div');
-      bonusSection.className = 'mg-category-section';
-      var bonusHeader = document.createElement('div');
-      bonusHeader.className = 'mg-category-header';
-      bonusHeader.innerHTML =
-        '<h3 class="mg-category-title">' + (lang === 'fr' ? '✨ Bonus' : '✨ Bonus') + '</h3>';
-      bonusSection.appendChild(bonusHeader);
-      var bonusGrid = document.createElement('div');
-      bonusGrid.className = 'module-grid mg-sub-grid';
-      bonusCards.forEach(function (c) { bonusGrid.appendChild(c); });
-      bonusSection.appendChild(bonusGrid);
-      fragment.appendChild(bonusSection);
+    /* Staying Independent */
+    if (groups.independent.length > 0) {
+      fragment.appendChild(buildCollapsibleSection(CATEGORIES[3], groups.independent, lang, null));
     }
 
     grid.innerHTML = '';
     grid.appendChild(fragment);
-
-    /* Build sort toggle above the grid */
-    buildSortToggle(grid, lang);
   }
 
   document.addEventListener('DOMContentLoaded', function () {
