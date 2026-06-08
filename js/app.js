@@ -99,14 +99,19 @@ function initSidebar() {
   });
 }
 
-/* Highlight active nav link */
+/* Highlight active nav link and open its accordion group */
 function setActiveNavLink() {
   var currentPage = window.location.pathname.split('/').pop() || 'index.html';
   var links = document.querySelectorAll('.sidebar nav a');
   links.forEach(function (link) {
     var href = link.getAttribute('href');
-    if (href === currentPage) {
+    if (href === currentPage || href.replace(/^(\.\.\/)+/, '') === currentPage) {
       link.classList.add('active');
+      var group = link.closest('details.snav-group');
+      if (group) {
+        document.querySelectorAll('details.snav-group').forEach(function(g){ g.removeAttribute('open'); });
+        group.open = true;
+      }
     }
   });
 }

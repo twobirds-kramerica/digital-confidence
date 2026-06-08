@@ -361,6 +361,51 @@ strong {
   background: rgba(255, 255, 255, 0.3);
 }
 
+/* Grouped sidebar accordion (S-DCC-SIDEBAR-RESTRUCTURE) */
+.snav-group {
+  margin-bottom: 1px;
+}
+.snav-group > summary {
+  list-style: none;
+}
+.snav-group > summary::-webkit-details-marker {
+  display: none;
+}
+.snav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px 8px 14px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  user-select: none;
+  min-height: 36px;
+  transition: color 0.15s;
+}
+.snav-header:hover {
+  color: var(--text-secondary);
+}
+.snav-header::after {
+  content: '\203A';
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1;
+  opacity: 0.55;
+  transition: transform 0.2s ease-out;
+  flex-shrink: 0;
+}
+details.snav-group[open] > .snav-header::after {
+  transform: rotate(90deg);
+}
+.snav-group a {
+  padding-left: 20px;
+}
+
 /* Top Bar */
 .top-bar {
   display: none;
