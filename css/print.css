@@ -174,10 +174,10 @@
     text-shadow: none !important;
   }
 
-  /* Keep important borders visible */
-  .tip-block { border-left: 3pt solid #000 !important; padding-left: 8pt !important; }
+  /* Keep important borders visible in print */
+  .tip-block { border: 2pt solid #000 !important; }
   .warning-box { border: 2pt solid #000 !important; }
-  .story-block { border-left: 3pt solid #666 !important; }
+  .story-block { border: 2pt solid #666 !important; }
 
   /* ── Accessibility bar hidden ── */
   .a11y-btn,

@@ -144,8 +144,8 @@
 /* ── Story Setup (the scenario content) ── */
 .ss-story {
   background: var(--story-bg, #F8FAFC);
-  border-left: 4px solid #1565C0;
-  border-radius: 0 10px 10px 0;
+  border: 2px solid #1565C0;
+  border-radius: 10px;
   padding: 1rem 1.1rem;
   margin-bottom: 1.25rem;
   font-size: 0.95rem;
@@ -156,7 +156,7 @@
 [data-theme="dark"] .ss-story {
   background: #0f172a;
   color: #cbd5e1;
-  border-left-color: #3b82f6;
+  border-color: #3b82f6;
 }
 
 .ss-story p {
