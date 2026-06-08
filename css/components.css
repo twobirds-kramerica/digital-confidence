@@ -1071,3 +1071,50 @@ a:hover { color: var(--color-text-link-hover); text-decoration-thickness: 2px; }
   }
 }
 
+/* --- Coach Tip (emotional validation callout) ----------------------------- */
+/* Acknowledges feelings rather than giving instructions. Warm amber tone,
+   distinct from the instructional teal tip-block. Khan Academy pattern. */
+.coach-tip {
+  background: var(--color-accent-light);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+  margin: var(--space-6) 0;
+}
+
+.coach-tip__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.coach-tip__icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.coach-tip__label {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-accent);
+  margin: 0;
+}
+
+.coach-tip p {
+  margin: 0 0 var(--space-3);
+  color: var(--color-text);
+  line-height: var(--line-height-body);
+}
+
+.coach-tip p:last-child { margin-bottom: 0; }
+
+@media (max-width: 480px) {
+  .coach-tip { padding: var(--space-4) var(--space-4); }
+}
+
