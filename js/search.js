@@ -188,11 +188,15 @@
     style.id = 'dc-search-styles';
     style.textContent = [
       // Sidebar search
-      '.dc-search-label{font-size:0.72em;font-weight:700;color:#8AA0B8;text-transform:uppercase;letter-spacing:0.06em;padding:10px 16px 2px;display:block;}',
+      '.dc-search-label{font-size:0.72em;font-weight:700;color:var(--text-secondary,#7A6E62);text-transform:uppercase;letter-spacing:0.06em;padding:10px 16px 2px;display:block;}',
+      '[data-theme="dark"] .dc-search-label{color:#8AA0B8;}',
       '.dc-search-wrap{position:relative;padding:0 16px 6px;}',
-      '.dc-search-input{width:100%;padding:8px 32px 8px 10px;background:#0a1520;border:1px solid #243d59;border-radius:8px;color:#F0F4F8;font-size:0.9em;outline:none;text-overflow:ellipsis;}',
-      '.dc-search-input:focus{border-color:#00C9A7;}',
-      '.dc-search-icon{position:absolute;right:26px;top:50%;transform:translateY(-50%);color:#8AA0B8;pointer-events:none;font-style:normal;}',
+      '.dc-search-input{width:100%;padding:8px 32px 8px 10px;background:var(--bg-card,#fff);border:1px solid var(--border-color,#E8DDD0);border-radius:8px;color:var(--text-primary,#3D3229);font-size:0.9em;outline:none;text-overflow:ellipsis;}',
+      '.dc-search-input:focus{border-color:var(--accent-primary,#2A7B6F);outline:2px solid var(--accent-primary,#2A7B6F);outline-offset:1px;}',
+      '[data-theme="dark"] .dc-search-input{background:#0a1520;border-color:#243d59;color:#F0F4F8;}',
+      '[data-theme="dark"] .dc-search-input:focus{border-color:#00C9A7;outline-color:#00C9A7;}',
+      '.dc-search-icon{position:absolute;right:26px;top:50%;transform:translateY(-50%);color:var(--text-secondary,#7A6E62);pointer-events:none;font-style:normal;}',
+      '[data-theme="dark"] .dc-search-icon{color:#8AA0B8;}',
       '.dc-voice-btn{position:absolute;right:48px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:1em;padding:0;color:#8AA0B8;line-height:1;min-height:32px;min-width:28px;}',
       '.dc-voice-btn:hover{color:#00C9A7;}',
       // Dropdown
@@ -236,8 +240,10 @@
       '@media (max-width:1024px){.dc-topbar-search-btn{display:flex;}}',
       '.dc-topbar-search-overlay{display:none;position:fixed;top:0;left:0;width:100%;z-index:1000;background:var(--bg-secondary,#F8F9FA);border-bottom:2px solid #00C9A7;padding:8px 12px;align-items:center;gap:8px;height:var(--nav-height,64px);}',
       '.dc-topbar-search-overlay.open{display:flex;}',
-      '.dc-topbar-search-field{flex:1;padding:10px 14px;background:#0a1520;border:1px solid #243d59;border-radius:8px;color:#F0F4F8;font-size:1rem;outline:none;min-height:44px;}',
-      '.dc-topbar-search-field:focus{border-color:#00C9A7;}',
+      '.dc-topbar-search-field{flex:1;padding:10px 14px;background:var(--bg-card,#fff);border:1px solid var(--border-color,#E8DDD0);border-radius:8px;color:var(--text-primary,#3D3229);font-size:1rem;outline:none;min-height:44px;}',
+      '.dc-topbar-search-field:focus{border-color:var(--accent-primary,#2A7B6F);outline:2px solid var(--accent-primary,#2A7B6F);outline-offset:1px;}',
+      '[data-theme="dark"] .dc-topbar-search-field{background:#0a1520;border-color:#243d59;color:#F0F4F8;}',
+      '[data-theme="dark"] .dc-topbar-search-field:focus{border-color:#00C9A7;outline-color:#00C9A7;}',
       '.dc-topbar-search-close{background:none;border:none;font-size:1.3rem;color:var(--text-primary);cursor:pointer;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;}',
       '.dc-topbar-results{position:fixed;top:var(--nav-height,64px);left:0;right:0;max-height:65vh;overflow-y:auto;background:#1A2D44;border-bottom:1px solid #243d59;z-index:999;display:none;}',
       '.dc-topbar-results.open{display:block;}',
@@ -372,7 +378,7 @@
 
     var shortcutHint = document.createElement('p');
     shortcutHint.className = 'dc-shortcut-hint';
-    shortcutHint.innerHTML = t('Tip: Press <kbd>/</kbd> anywhere to search', 'Conseil&nbsp;: appuyez sur <kbd>/</kbd> pour rechercher');
+    shortcutHint.innerHTML = t('Tip: Press <kbd>/</kbd> to open search', 'Conseil&nbsp;: appuyez sur <kbd>/</kbd> pour ouvrir la recherche');
     sidebar.insertBefore(shortcutHint, wrap.nextSibling);
 
     var input    = wrap.querySelector('#dcSearchInput');
