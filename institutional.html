@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Use the Digital Confidence Centre in your New Horizons for Seniors Program (NHSP) grant application. Ready-to-use project language, budget templates, and co-application support.">
+  <meta property="og:title" content="Digital Confidence Centre — NHSP Grant Application Guide">
+  <meta property="og:description" content="Ready-to-use NHSP project language, budget templates, and co-application support for libraries and community organisations.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <title>DCC — New Horizons for Seniors Grant Application Guide</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy:        #1A2744;
+      --navy-dark:   #101B35;
+      --blue:        #1D4ED8;
+      --blue-hover:  #1E40AF;
+      --slate-900:   #1E293B;
+      --slate-600:   #475569;
+      --slate-400:   #94A3B8;
+      --slate-200:   #E2E8F0;
+      --slate-100:   #F1F5F9;
+      --white:       #FFFFFF;
+      --green:       #16A34A;
+      --green-light: #DCFCE7;
+      --amber:       #D97706;
+      --amber-light: #FEF3C7;
+    }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      color: var(--slate-900);
+      background: var(--white);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    a { color: var(--blue); }
+    a:hover { color: var(--blue-hover); }
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--navy);
+      color: var(--white);
+      padding: 8px 16px;
+      font-size: 14px;
+      z-index: 999;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* ---- Site bar ---- */
+    .site-bar {
+      background: var(--navy);
+      color: var(--white);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .site-bar-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 15px;
+    }
+    .site-bar-brand svg { width: 28px; height: 28px; flex-shrink: 0; }
+    .site-bar-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-top: 1px;
+    }
+    .site-bar-cta {
+      background: var(--blue);
+      color: var(--white);
+      text-decoration: none;
+      padding: 9px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s;
+      display: inline-block;
+    }
+    .site-bar-cta:hover { background: var(--blue-hover); color: var(--white); }
+
+    /* ---- Hero ---- */
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      padding: 56px 24px 52px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: clamp(26px, 4vw, 40px);
+      font-weight: 900;
+      line-height: 1.15;
+      max-width: 680px;
+      margin: 0 auto 18px;
+    }
+    .hero-sub {
+      font-size: clamp(15px, 2vw, 18px);
+      color: rgba(255,255,255,0.80);
+      max-width: 540px;
+      margin: 0 auto 28px;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      text-decoration: none;
+      padding: 13px 26px;
+      font-size: 15px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+      transition: background 0.15s;
+    }
+    .btn-primary:hover { background: var(--blue-hover); color: var(--white); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      text-decoration: none;
+      padding: 13px 26px;
+      font-size: 15px;
+      font-weight: 600;
+      border: 2px solid rgba(255,255,255,0.5);
+      display: inline-block;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); color: var(--white); }
+
+    /* ---- Page layout ---- */
+    .page { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 52px 0; border-bottom: 1px solid var(--slate-200); }
+    .section:last-of-type { border-bottom: none; }
+
+    h2 {
+      font-size: clamp(19px, 2.5vw, 24px);
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      font-size: 16px;
+      color: var(--slate-600);
+      margin-bottom: 28px;
+      max-width: 620px;
+    }
+    h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    p { margin-bottom: 14px; color: var(--slate-900); }
+    p:last-child { margin-bottom: 0; }
+
+    /* ---- Alert banner ---- */
+    .alert {
+      background: var(--amber-light);
+      border: 2px solid var(--amber);
+      padding: 16px 20px;
+      margin-bottom: 28px;
+    }
+    .alert strong { color: #92400E; }
+    .alert p { color: #78350F; margin: 0; font-size: 15px; }
+
+    /* ---- Eligibility table ---- */
+    .eligibility-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+      font-size: 15px;
+    }
+    .eligibility-table th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .eligibility-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--slate-200);
+      vertical-align: top;
+    }
+    .eligibility-table tr:last-child td { border-bottom: none; }
+    .eligibility-table tr:nth-child(even) td { background: var(--slate-100); }
+    .check { color: var(--green); font-weight: 700; }
+    .note { color: var(--slate-600); font-size: 13px; display: block; margin-top: 3px; }
+
+    /* ---- Copy block ---- */
+    .copy-block {
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      border-left: 4px solid var(--navy);
+      padding: 22px 24px;
+      margin-top: 20px;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+    .copy-block .copy-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--slate-600);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .copy-block p { color: var(--slate-900); margin-bottom: 12px; }
+    .copy-block ul, .copy-block ol { padding-left: 20px; margin-bottom: 12px; }
+    .copy-block li { margin-bottom: 6px; color: var(--slate-900); }
+    .copy-block .placeholder {
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      padding: 1px 5px;
+      font-style: italic;
+      color: #92400E;
+    }
+
+    /* ---- Outcomes grid ---- */
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--slate-200);
+      border: 1px solid var(--slate-200);
+      margin-top: 20px;
+    }
+    .outcome-card {
+      background: var(--white);
+      padding: 22px 20px;
+    }
+    .outcome-num {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--navy);
+      display: block;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .outcome-label {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .outcome-target {
+      font-size: 13px;
+      color: var(--slate-600);
+    }
+
+    /* ---- Budget table ---- */
+    .budget-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+      font-size: 15px;
+    }
+    .budget-table th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .budget-table th:last-child,
+    .budget-table td:last-child { text-align: right; }
+    .budget-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--slate-200);
+      vertical-align: top;
+    }
+    .budget-table tr:last-child td {
+      border-bottom: none;
+      font-weight: 700;
+      background: var(--slate-100);
+    }
+    .budget-note { font-size: 13px; color: var(--slate-600); margin-top: 12px; }
+
+    /* ---- Support box ---- */
+    .support-box {
+      background: var(--navy);
+      color: var(--white);
+      padding: 32px 28px;
+      margin-top: 28px;
+    }
+    .support-box h3 { color: var(--white); margin-bottom: 10px; font-size: 18px; }
+    .support-box p { color: rgba(255,255,255,0.85); margin-bottom: 14px; }
+    .support-box ul { padding-left: 20px; margin-bottom: 20px; }
+    .support-box li { color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 6px; }
+
+    /* ---- Partnership letters ---- */
+    .letter-list {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--slate-200);
+      border: 1px solid var(--slate-200);
+    }
+    .letter-item {
+      background: var(--white);
+      padding: 18px 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .letter-num {
+      background: var(--navy);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 800;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .letter-text h4 { font-size: 15px; text-transform: none; letter-spacing: 0; margin-bottom: 3px; }
+    .letter-text p { font-size: 13px; color: var(--slate-600); margin: 0; }
+
+    /* ---- Proof box ---- */
+    .proof-box {
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      padding: 20px 24px;
+      margin-top: 20px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .proof-flag { font-size: 22px; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+    .proof-text h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; text-transform: none; letter-spacing: 0; }
+    .proof-text p { font-size: 14px; color: var(--slate-600); margin: 0; }
+
+    /* ---- CTA section ---- */
+    .cta-section {
+      background: var(--slate-100);
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .cta-section h2 { font-size: clamp(20px, 2.5vw, 26px); margin-bottom: 12px; }
+    .cta-section p { color: var(--slate-600); max-width: 480px; margin: 0 auto 24px; }
+
+    /* ---- Footer ---- */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.55);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+    }
+    footer a { color: rgba(255,255,255,0.75); }
+    footer a:hover { color: var(--white); }
+    .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px; }
+
+    @media (max-width: 600px) {
+      .site-bar { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .hero { padding: 40px 20px 36px; }
+      .hero-ctas { flex-direction: column; align-items: center; }
+      .page { padding: 0 16px; }
+    }
+
+    @media print {
+      .site-bar, .site-bar-cta, .hero-ctas, .cta-section, footer { display: none; }
+      .hero { padding: 24px 0; background: none; color: var(--navy); }
+      .hero h1, .hero-sub { color: var(--navy); }
+      .hero-eyebrow { display: none; }
+      .copy-block { border-color: #999; }
+      .support-box { background: none; border: 2px solid var(--navy); color: var(--navy); }
+      .support-box h3, .support-box p, .support-box li { color: var(--navy); }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Site bar -->
+<div class="site-bar" role="banner">
+  <a href="https://twobirds-kramerica.github.io/digital-confidence/" class="site-bar-brand" aria-label="Digital Confidence Centre home">
+    <svg viewBox="0 0 28 28" fill="none" aria-hidden="true">
+      <circle cx="14" cy="14" r="13" fill="#1D4ED8"/>
+      <path d="M9 14.5L12.5 18L19 11" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div>
+      <div style="font-size:15px;font-weight:700;line-height:1.2">Digital Confidence Centre</div>
+      <div class="site-bar-label">Free digital literacy for seniors</div>
+    </div>
+  </a>
+  <a href="https://calendly.com/twobirdsinnovation/30min" class="site-bar-cta" target="_blank" rel="noopener noreferrer">Book a 30-minute call</a>
+</div>
+
+<!-- Hero -->
+<div class="hero" role="region" aria-labelledby="hero-heading">
+  <p class="hero-eyebrow">New Horizons for Seniors Program</p>
+  <h1 id="hero-heading">Use DCC in your NHSP grant application</h1>
+  <p class="hero-sub">Ready-to-use project language, budget templates, and direct co-application support for libraries and community organisations.</p>
+  <div class="hero-ctas">
+    <a href="https://calendly.com/twobirdsinnovation/30min" class="btn-primary" target="_blank" rel="noopener noreferrer">Book a call — co-application support</a>
+    <a href="for-libraries.html" class="btn-outline">View the main library offer</a>
+  </div>
+</div>
+
+<main id="main-content">
+<div class="page">
+
+  <!-- Eligibility -->
+  <section class="section" aria-labelledby="eligibility-heading">
+    <h2 id="eligibility-heading">NHSP eligibility quick check</h2>
+    <p class="section-sub">The New Horizons for Seniors Program (Employment and Social Development Canada) funds community-based projects up to CA$25,000. DCC fits the programme criteria directly.</p>
+
+    <div class="alert" role="note">
+      <p><strong>Deadline:</strong> NHSP typically runs two intakes per year — spring and fall. Verify the current intake dates at <a href="https://www.canada.ca/en/employment-social-development/services/new-horizons-seniors.html" target="_blank" rel="noopener noreferrer">canada.ca</a> before starting your application.</p>
+    </div>
+
+    <table class="eligibility-table" aria-label="NHSP eligibility criteria for DCC projects">
+      <thead>
+        <tr>
+          <th scope="col">Requirement</th>
+          <th scope="col">DCC Project Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Non-profit or eligible organization applying</td>
+          <td><span class="check">&#10003;</span> Libraries, senior centres, settlement agencies are all eligible applicants<span class="note">For-profit organizations may apply with restrictions — confirm eligibility with ESDC</span></td>
+        </tr>
+        <tr>
+          <td>Project benefits seniors (55+)</td>
+          <td><span class="check">&#10003;</span> DCC is designed specifically for adults 60+ with anxiety-first UX and large-format content</td>
+        </tr>
+        <tr>
+          <td>Project is new activity (not duplicating existing funded work)</td>
+          <td><span class="check">&#10003;</span> DCC replaces the DLEP programme that ended March 2025 — no equivalent currently funded in most communities</td>
+        </tr>
+        <tr>
+          <td>Minimum one senior volunteer or advisory role</td>
+          <td><span class="check">&#10003;</span> Include pilot participants as a senior advisory panel in your application</td>
+        </tr>
+        <tr>
+          <td>Project duration 12 months or less</td>
+          <td><span class="check">&#10003;</span> 6-week pilot + 12-month deployment fits within the limit</td>
+        </tr>
+        <tr>
+          <td>Measurable outcomes with pre/post evidence</td>
+          <td><span class="check">&#10003;</span> DCC module completion, quiz pass rates, and self-assessment surveys provide measurable data</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Project language -->
+  <section class="section" aria-labelledby="language-heading">
+    <h2 id="language-heading">Ready-to-use project description</h2>
+    <p class="section-sub">Copy and adapt the language below for Section 3 (Project Description) of your NHSP application. Replace the highlighted fields with your organisation's specifics.</p>
+
+    <div class="copy-block" aria-label="Project description template">
+      <span class="copy-label">Project description — adapt for your application</span>
+      <p>The <span class="placeholder">[ORGANISATION NAME]</span> is deploying the Digital Confidence Centre (DCC), a free bilingual digital literacy programme developed by Two Birds Innovation, to serve <span class="placeholder">[NUMBER]</span> seniors aged 55 and above across <span class="placeholder">[REGION]</span>, Ontario.</p>
+      <p>DCC addresses a critical gap created by the end of the federal Digital Literacy Exchange Program (DLEP) in March 2025. With essential services shifting to digital platforms, seniors who cannot navigate technology face real barriers to healthcare, banking, government benefits, and social connection.</p>
+      <p>The programme includes 31 self-paced modules covering:</p>
+      <ul>
+        <li>Smartphone and tablet basics, including how to undo mistakes</li>
+        <li>Recognising and avoiding digital fraud (email, phone, and online scams)</li>
+        <li>Online banking, telehealth access, and government benefit portals</li>
+        <li>Staying connected with family through video calling and social media</li>
+        <li>Safe use of AI tools and understanding AI-generated content</li>
+      </ul>
+      <p>All modules are accessible on any device, require no account creation, and collect no personal data. Bilingual (English/French) throughout. The curriculum meets WCAG 2.2 AA accessibility standards with adjustable font size, high contrast, and screen reader support.</p>
+      <p>In this project, <span class="placeholder">[ORGANISATION NAME]</span> will:</p>
+      <ol>
+        <li>Identify and recruit <span class="placeholder">[NUMBER]</span> senior participants through existing community relationships</li>
+        <li>Train <span class="placeholder">[NUMBER]</span> facilitators to support guided group sessions using the DCC facilitator guide</li>
+        <li>Run a 6-week cohort programme at <span class="placeholder">[VENUE(S)]</span>, one session per week</li>
+        <li>Collect pre- and post-participation confidence assessments to measure programme impact</li>
+        <li>Prepare a community impact report at project close</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Outcomes -->
+  <section class="section" aria-labelledby="outcomes-heading">
+    <h2 id="outcomes-heading">Measurable outcomes for your application</h2>
+    <p class="section-sub">NHSP reviewers look for specific, measurable targets. Use these as a starting point and adjust to your organisation's context.</p>
+
+    <div class="outcomes-grid" role="list">
+      <div class="outcome-card" role="listitem">
+        <span class="outcome-num">80%</span>
+        <span class="outcome-label">Confidence improvement</span>
+        <p class="outcome-target">80% of participants completing at least 3 modules report increased confidence using digital tools (measured by pre/post self-assessment)</p>
+      </div>
+      <div class="outcome-card" role="listitem">
+        <span class="outcome-num">75%</span>
+        <span class="outcome-label">Fraud identification</span>
+        <p class="outcome-target">75% of participants demonstrate ability to identify common fraud tactics (measured by Module 2 quiz with passing score)</p>
+      </div>
+      <div class="outcome-card" role="listitem">
+        <span class="outcome-num">60%</span>
+        <span class="outcome-label">Online service access</span>
+        <p class="outcome-target">60% of participants report successfully accessing at least one online service (banking, telehealth, or government) by programme end</p>
+      </div>
+      <div class="outcome-card" role="listitem">
+        <span class="outcome-num">50%</span>
+        <span class="outcome-label">Reduced isolation</span>
+        <p class="outcome-target">50% of participants report a new digital connection with family or friends they were not previously in contact with</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Budget -->
+  <section class="section" aria-labelledby="budget-heading">
+    <h2 id="budget-heading">Sample budget</h2>
+    <p class="section-sub">This is a sample 12-month budget for a library or senior centre with an existing facilitator. Adjust based on your organisation's staff capacity and existing resources.</p>
+
+    <table class="budget-table" aria-label="Sample NHSP project budget">
+      <thead>
+        <tr>
+          <th scope="col">Budget Item</th>
+          <th scope="col">Justification</th>
+          <th scope="col">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>DCC Community Tier licence</td>
+          <td>Annual site licence — dedicated patron portal, facilitator training, co-application support</td>
+          <td>CA$1,000</td>
+        </tr>
+        <tr>
+          <td>Staff coordination</td>
+          <td>Part-time programme coordinator, 5 hrs/week × 40 weeks</td>
+          <td>CA$4,000–$8,000</td>
+        </tr>
+        <tr>
+          <td>Volunteer facilitator training</td>
+          <td>2 half-day sessions, training materials, facilitator guide printing</td>
+          <td>CA$1,000</td>
+        </tr>
+        <tr>
+          <td>Venue and equipment</td>
+          <td>Room bookings, device access for participants without personal devices</td>
+          <td>CA$1,500</td>
+        </tr>
+        <tr>
+          <td>Outreach and recruitment</td>
+          <td>Posters, social media, notices in local press and partner organisations</td>
+          <td>CA$800</td>
+        </tr>
+        <tr>
+          <td>Evaluation and reporting</td>
+          <td>Survey tools, participant tracking, final community impact report</td>
+          <td>CA$700</td>
+        </tr>
+        <tr>
+          <td><strong>Total</strong></td>
+          <td></td>
+          <td><strong>CA$9,000–$13,000</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="budget-note">Note: NHSP community projects fund up to CA$25,000. This budget leaves room for in-kind contributions or additional cohort sessions without exceeding the limit. Two Birds Innovation can provide a formal licence invoice for grant reporting.</p>
+  </section>
+
+  <!-- Partnership letters -->
+  <section class="section" aria-labelledby="letters-heading">
+    <h2 id="letters-heading">Partnership letters you will need</h2>
+    <p class="section-sub">NHSP applications are stronger with letters of support from community partners. Collect these before your submission deadline.</p>
+
+    <div class="letter-list" role="list">
+      <div class="letter-item" role="listitem">
+        <div class="letter-num" aria-hidden="true">1</div>
+        <div class="letter-text">
+          <h4>Host organisation</h4>
+          <p>Confirms commitment to provide space, coordination support, and any in-kind contributions. This is your own letter.</p>
+        </div>
+      </div>
+      <div class="letter-item" role="listitem">
+        <div class="letter-num" aria-hidden="true">2</div>
+        <div class="letter-text">
+          <h4>Two Birds Innovation (curriculum provider)</h4>
+          <p>We provide a letter confirming the DCC licence terms, curriculum content, and support scope. Included at no cost for Community tier applicants. <a href="https://calendly.com/twobirdsinnovation/30min" target="_blank" rel="noopener noreferrer">Book a call</a> to request this letter.</p>
+        </div>
+      </div>
+      <div class="letter-item" role="listitem">
+        <div class="letter-num" aria-hidden="true">3</div>
+        <div class="letter-text">
+          <h4>Healthcare or social services partner</h4>
+          <p>A local doctor's office, Community Health Centre, or seniors' services organisation endorsing the programme's health and wellbeing outcomes adds weight to your application.</p>
+        </div>
+      </div>
+      <div class="letter-item" role="listitem">
+        <div class="letter-num" aria-hidden="true">4</div>
+        <div class="letter-text">
+          <h4>Municipal government (if applicable)</h4>
+          <p>If your community has an Age-Friendly Community initiative or a municipal seniors advisory committee, a letter from that body strengthens community-relevance scoring.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- International evidence -->
+  <section class="section" aria-labelledby="evidence-heading">
+    <h2 id="evidence-heading">International evidence base</h2>
+    <p class="section-sub">NHSP reviewers respond well to programmes with demonstrated precedent. DCC is modelled on an Australian programme with confirmed federal funding.</p>
+
+    <div class="proof-box" role="note" aria-label="Be Connected Australia programme reference">
+      <span class="proof-flag" aria-hidden="true">🇦🇺</span>
+      <div class="proof-text">
+        <h4>Be Connected — Australia's national digital literacy programme for seniors</h4>
+        <p>Funded by the Australian Department of Social Services and delivered through public libraries and community organisations, <a href="https://beconnected.esafety.gov.au/" target="_blank" rel="noopener noreferrer">Be Connected</a> has reached over 1.2 million Australians since 2018. DCC is structurally similar: free, bilingual, library-delivered, and designed for adults who did not grow up with digital technology. The Be Connected model demonstrates that this approach is fundable and scalable through community library networks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Co-application support -->
+  <section class="section" aria-labelledby="support-heading">
+    <h2 id="support-heading">Co-application support from Two Birds Innovation</h2>
+    <p class="section-sub">Community tier DCC partners receive direct support scoping and drafting their NHSP application. This is not a template service — it is a working session.</p>
+
+    <div class="support-box" aria-label="Co-application support details">
+      <h3>What co-application support includes</h3>
+      <ul>
+        <li>30-minute scoping call to confirm eligibility and project fit</li>
+        <li>Review of your draft project description and objectives</li>
+        <li>Formal letter of support from Two Birds Innovation for your submission</li>
+        <li>Budget line-item justification for the DCC licence</li>
+        <li>Module and outcome mapping to your community's specific needs</li>
+      </ul>
+      <a href="https://calendly.com/twobirdsinnovation/30min" class="btn-primary" target="_blank" rel="noopener noreferrer" style="margin-top:4px;display:inline-block;">Book a 30-minute call to start</a>
+    </div>
+  </section>
+
+</div><!-- /page -->
+</main>
+
+<!-- CTA section -->
+<section class="cta-section" aria-labelledby="final-cta-heading">
+  <h2 id="final-cta-heading">Ready to apply? Start with a 30-minute call.</h2>
+  <p>We can confirm your eligibility, review your draft, and provide the letter of support your application needs. No cost to Community tier partners.</p>
+  <div class="hero-ctas">
+    <a href="https://calendly.com/twobirdsinnovation/30min" class="btn-primary" target="_blank" rel="noopener noreferrer">Book a call</a>
+    <a href="for-libraries.html" class="btn-outline" style="background:transparent;color:var(--navy);border-color:var(--slate-400);">View the main library offer</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer role="contentinfo">
+  <div class="footer-links">
+    <a href="https://twobirds-kramerica.github.io/digital-confidence/">Digital Confidence Centre</a>
+    <a href="for-libraries.html">For Libraries</a>
+    <a href="facilitator-guide.html">Facilitator Guide</a>
+    <a href="https://www.canada.ca/en/employment-social-development/services/new-horizons-seniors.html" target="_blank" rel="noopener noreferrer">NHSP — canada.ca</a>
+  </div>
+  <p>Digital Confidence Centre is a product of Two Birds Innovation, St. Thomas, Ontario. All curriculum content is free for patrons and funded participants.</p>
+  <p style="margin-top:8px;"><a href="https://twobirds-kramerica.github.io/digital-confidence/privacy.html">Privacy</a> &middot; <a href="https://twobirds-kramerica.github.io/digital-confidence/accessibility.html">Accessibility</a></p>
+</footer>
+
+</body>
+</html>
