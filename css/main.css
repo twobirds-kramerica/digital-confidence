@@ -6499,3 +6499,187 @@ main, .module-content, article, .content-body, .main-content {
     scroll-behavior: auto !important;
   }
 }
+
+/* ============================================================================
+   S-DCC-CSS-TOKENS-PHASE-2 — Targeted dark mode component overrides
+   Fixes components with hard-coded light-mode hex and no [data-theme="dark"]
+   coverage. Values use Warm Hearth dark tokens from tokens-dark.css.
+   ============================================================================ */
+
+/* --- Consent banner: secondary/decline button --- */
+[data-theme="dark"] #dc-consent-banner .dc-consent-btn-no {
+  border-color: var(--color-border-strong);
+  color: var(--color-text-light);
+}
+[data-theme="dark"] #dc-consent-banner .dc-consent-btn-no:hover {
+  border-color: var(--color-border-strong);
+  color: var(--color-text);
+}
+[data-theme="dark"] .dc-consent-btn-ok:hover,
+[data-theme="dark"] .dc-consent-btn-ok:focus {
+  outline-color: var(--color-accent);
+}
+
+/* --- Cancel / secondary button --- */
+[data-theme="dark"] .dc-btn-cancel {
+  border-color: var(--color-border-strong);
+  color: var(--color-text);
+}
+[data-theme="dark"] .dc-btn-cancel:hover {
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+}
+
+/* --- Disabled submit button --- */
+[data-theme="dark"] .dc-btn-submit:disabled {
+  background: var(--color-disabled-bg);
+  color: var(--color-disabled-text);
+  cursor: not-allowed;
+}
+
+/* --- Action buttons using off-brand Material orange --- */
+[data-theme="dark"] .btn-feedback-submit {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+[data-theme="dark"] .btn-feedback-submit:hover {
+  background: var(--color-accent-hover);
+}
+[data-theme="dark"] .btn-personalize {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+[data-theme="dark"] .btn-personalize:hover {
+  background: var(--color-accent-hover);
+}
+[data-theme="dark"] .beta-feedback-trigger {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+[data-theme="dark"] .beta-feedback-trigger:hover {
+  background: var(--color-accent-hover);
+}
+
+/* --- Related card (light lavender/blue bg) --- */
+[data-theme="dark"] .related-card {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+[data-theme="dark"] .related-card:hover {
+  background: var(--color-surface-alt);
+}
+
+/* --- Guide / explainer header (light-blue gradient) --- */
+[data-theme="dark"] .guide-header {
+  background: var(--color-surface-primary);
+}
+[data-theme="dark"] .guide-header p {
+  color: var(--color-text-light);
+}
+
+/* --- Urgent scam step number (error red) --- */
+[data-theme="dark"] .dc-scam-step.dc-step-urgent .dc-step-num {
+  background: var(--color-error);
+  color: var(--color-text-inverse);
+}
+
+/* --- Badge: Start Here (dark navy / gold) --- */
+[data-theme="dark"] .badge-start-here {
+  background: var(--color-surface-primary);
+  color: var(--color-primary);
+}
+
+/* --- Badge: Completed module (green text) --- */
+[data-theme="dark"] .card-complete-badge {
+  color: var(--color-success);
+}
+
+/* --- Device prompt link (Material blue) --- */
+[data-theme="dark"] .device-prompt-text a {
+  color: var(--color-text-link);
+}
+[data-theme="dark"] .device-prompt-text a:hover {
+  color: var(--color-text-link-hover);
+}
+
+/* Honour system dark-mode preference for the same component fixes
+   (covers users who haven't toggled [data-theme] manually). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']):not(.theme-light) #dc-consent-banner .dc-consent-btn-no {
+    border-color: var(--color-border-strong);
+    color: var(--color-text-light);
+  }
+  :root:not([data-theme='light']):not(.theme-light) #dc-consent-banner .dc-consent-btn-no:hover {
+    border-color: var(--color-border-strong);
+    color: var(--color-text);
+  }
+  :root:not([data-theme='light']):not(.theme-light) .dc-consent-btn-ok:hover,
+  :root:not([data-theme='light']):not(.theme-light) .dc-consent-btn-ok:focus {
+    outline-color: var(--color-accent);
+  }
+  :root:not([data-theme='light']):not(.theme-light) .dc-btn-cancel {
+    border-color: var(--color-border-strong);
+    color: var(--color-text);
+  }
+  :root:not([data-theme='light']):not(.theme-light) .dc-btn-cancel:hover {
+    background: var(--color-surface-alt);
+    color: var(--color-text);
+  }
+  :root:not([data-theme='light']):not(.theme-light) .dc-btn-submit:disabled {
+    background: var(--color-disabled-bg);
+    color: var(--color-disabled-text);
+  }
+  :root:not([data-theme='light']):not(.theme-light) .btn-feedback-submit {
+    background: var(--color-accent);
+    color: var(--color-accent-contrast);
+  }
+  :root:not([data-theme='light']):not(.theme-light) .btn-feedback-submit:hover {
+    background: var(--color-accent-hover);
+  }
+  :root:not([data-theme='light']):not(.theme-light) .btn-personalize {
+    background: var(--color-accent);
+    color: var(--color-accent-contrast);
+  }
+  :root:not([data-theme='light']):not(.theme-light) .btn-personalize:hover {
+    background: var(--color-accent-hover);
+  }
+  :root:not([data-theme='light']):not(.theme-light) .beta-feedback-trigger {
+    background: var(--color-accent);
+    color: var(--color-accent-contrast);
+  }
+  :root:not([data-theme='light']):not(.theme-light) .beta-feedback-trigger:hover {
+    background: var(--color-accent-hover);
+  }
+  :root:not([data-theme='light']):not(.theme-light) .related-card {
+    background: var(--color-surface);
+    border-color: var(--color-border);
+    color: var(--color-text);
+  }
+  :root:not([data-theme='light']):not(.theme-light) .related-card:hover {
+    background: var(--color-surface-alt);
+  }
+  :root:not([data-theme='light']):not(.theme-light) .guide-header {
+    background: var(--color-surface-primary);
+  }
+  :root:not([data-theme='light']):not(.theme-light) .guide-header p {
+    color: var(--color-text-light);
+  }
+  :root:not([data-theme='light']):not(.theme-light) .dc-scam-step.dc-step-urgent .dc-step-num {
+    background: var(--color-error);
+    color: var(--color-text-inverse);
+  }
+  :root:not([data-theme='light']):not(.theme-light) .badge-start-here {
+    background: var(--color-surface-primary);
+    color: var(--color-primary);
+  }
+  :root:not([data-theme='light']):not(.theme-light) .card-complete-badge {
+    color: var(--color-success);
+  }
+  :root:not([data-theme='light']):not(.theme-light) .device-prompt-text a {
+    color: var(--color-text-link);
+  }
+  :root:not([data-theme='light']):not(.theme-light) .device-prompt-text a:hover {
+    color: var(--color-text-link-hover);
+  }
+}
