@@ -20,7 +20,7 @@ A free 6-week engagement with one library. Three patrons. One facilitator (usual
 **Body (template):**
 "Hi [Name], I built a free digital literacy curriculum for seniors that addresses the gap left by the federal Digital Literacy Exchange Program ending in March 2025. The library version includes a facilitator guide and works on any device with a browser. I am looking for one library to run a free 6-week pilot with three patrons. I will provide the setup and a debrief call at the end. Would you have 20 minutes to see what it looks like? [Calendly link]"
 
-**Page to share:** https://digitalconfidencecentre.ca/for-libraries.html
+**Page to share:** https://twobirds-kramerica.github.io/digital-confidence/for-libraries.html
 
 ### On the discovery call (30 min)
 1. Ask: "Who do you have in mind for the three patrons? Are they already library card holders?"
@@ -29,7 +29,7 @@ A free 6-week engagement with one library. Three patrons. One facilitator (usual
 4. Confirm: You will send the facilitator guide and a setup checklist within 48 hours.
 
 ### After the call
-- Email the facilitator guide: https://digitalconfidencecentre.ca/facilitator-guide.html
+- Email the facilitator guide: https://twobirds-kramerica.github.io/digital-confidence/facilitator-guide.html
 - Set a check-in call for end of Week 2
 
 ---
@@ -39,10 +39,10 @@ A free 6-week engagement with one library. Three patrons. One facilitator (usual
 ### What the facilitator needs to do
 1. Identify 3 patrons to invite (ideally: 1 complete beginner, 1 with basic smartphone, 1 who uses email already)
 2. Book 3 sessions (1.5 hours each, once per week for 6 weeks)
-3. Tell patrons the session URL: https://digitalconfidencecentre.ca (they start at Module 1)
+3. Tell patrons the session URL: https://twobirds-kramerica.github.io/digital-confidence/ (they start at Module 1)
 
 ### What Aaron provides
-- Facilitator guide link: https://digitalconfidencecentre.ca/facilitator-guide.html
+- Facilitator guide link: https://twobirds-kramerica.github.io/digital-confidence/facilitator-guide.html
 - Suggested session structure: Module 1-2 in Session 1, Module 3-4 in Session 2, etc.
 - Hotline: aaron.patzalek@gmail.com for any questions the facilitator has
 
@@ -142,9 +142,9 @@ Aaron Patzalek, Two Birds Innovation, St. Thomas, Ontario. aaron.patzalek@gmail.
 
 ## Files Referenced in This Runbook
 
-- Main site: https://digitalconfidencecentre.ca
-- Library landing page: https://digitalconfidencecentre.ca/for-libraries.html
-- Facilitator guide: https://digitalconfidencecentre.ca/facilitator-guide.html
-- Certificate: https://digitalconfidencecentre.ca/certificate.html
+- Main site: https://twobirds-kramerica.github.io/digital-confidence/
+- Library landing page: https://twobirds-kramerica.github.io/digital-confidence/for-libraries.html
+- Facilitator guide: https://twobirds-kramerica.github.io/digital-confidence/facilitator-guide.html
+- Certificate: https://twobirds-kramerica.github.io/digital-confidence/certificate.html
 - Aaron contact: aaron.patzalek@gmail.com
 - Booking: https://calendly.com/twobirdsinnovation/30min
