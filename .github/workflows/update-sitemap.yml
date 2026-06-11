@@ -25,27 +25,18 @@ jobs:
           if [ -z "$CHANGED" ]; then
             echo "No HTML files changed in last commit. Skipping sitemap update."
             exit 0
-          else
-            echo "Changed HTML files:"
-            echo "$CHANGED"
-
-            for FILE in $CHANGED; do
-              BASENAME=$(basename "$FILE")
-              if grep -q "$BASENAME" sitemap.xml; then
-                echo "Updating lastmod for: $BASENAME"
-                # Use Python for reliable XML-aware replacement
-                python3 -c "
-import re, sys
-with open('sitemap.xml', 'r') as f:
-    content = f.read()
-pattern = r'(<loc>[^<]*${BASENAME}</loc>\s*<lastmod>)[^<]*(</lastmod>)'
-content = re.sub(pattern.replace('\${BASENAME}', '${BASENAME}'), r'\g<1>${TODAY}\g<2>', content)
-with open('sitemap.xml', 'w') as f:
-    f.write(content)
-"
-              fi
-            done
           fi
+
+          echo "Changed HTML files:"
+          echo "$CHANGED"
+
+          for FILE in $CHANGED; do
+            BASENAME=$(basename "$FILE")
+            if grep -q "$BASENAME" sitemap.xml; then
+              echo "Updating lastmod for: $BASENAME"
+              python3 -c "import re; content=open('sitemap.xml').read(); content=re.sub(r'(<loc>[^<]*${BASENAME}</loc>\s*<lastmod>)[^<]*(</lastmod>)', r'\g<1>${TODAY}\g<2>', content); open('sitemap.xml','w').write(content)"
+            fi
+          done
 
           echo "Sitemap updated with date: ${TODAY}"
 
