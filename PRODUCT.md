@@ -49,6 +49,6 @@ Voice: plain language, short sentences, Canadian English. "You are in a safe pla
 - Reading glasses assumption: large x-height fonts, generous line height (1.6 minimum)
 - Dark mode: ALL components must maintain contrast ratios in system dark mode — this is not optional
 - Reduced motion: `prefers-reduced-motion` respected on all transitions
-- Read-aloud: every module page has a working read-aloud affordance (currently broken — to be fixed)
+- Read-aloud: every module page has a working read-aloud affordance (speech-config.js + read-aloud.js wired to all 32 modules; module-1-wizard.html is a noindex POC and is intentionally excluded)
 - No autoplay, no video that starts without user action
 - Screen reader compatible: semantic heading hierarchy, ARIA labels on interactive elements
