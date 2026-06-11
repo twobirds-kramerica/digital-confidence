@@ -23,8 +23,8 @@ jobs:
           CHANGED=$(git diff --name-only HEAD~1 HEAD 2>/dev/null | grep '\.html$' || true)
 
           if [ -z "$CHANGED" ]; then
-            echo "No HTML files changed in last commit. Updating all lastmod to today."
-            sed -i "s/<lastmod>[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}<\/lastmod>/<lastmod>${TODAY}<\/lastmod>/g" sitemap.xml
+            echo "No HTML files changed in last commit. Skipping sitemap update."
+            exit 0
           else
             echo "Changed HTML files:"
             echo "$CHANGED"
