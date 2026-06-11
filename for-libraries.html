@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
   <meta name="description" content="Digital Confidence Centre — a free, bilingual AI literacy platform for libraries, settlement agencies, and community organisations. 31 self-paced modules. No installation. WCAG 2.1 AA.">
   <meta property="og:title" content="Digital Confidence Centre — For Libraries & Community Organisations">
   <meta property="og:description" content="AI literacy your community can actually use. 31 free bilingual modules for seniors and newcomers. No installation, no login, no per-seat fees.">
@@ -460,6 +461,80 @@
 
     @media print {
       .site-bar, .hero-ctas, .cta-section, .footer { display: none; }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body { background: #0F172A; color: #CBD5E1; }
+
+      /* Headings that use var(--navy) as text colour on light bg */
+      h2 { color: #E2E8F0; }
+      h3 { color: #CBD5E1; }
+      p  { color: #CBD5E1; }
+      a  { color: #60A5FA; }
+      a:hover { color: #93C5FD; }
+
+      /* Secondary / muted text */
+      .section-sub  { color: #94A3B8; }
+      .faq-a        { color: #94A3B8; }
+      .feature p    { color: #94A3B8; }
+      .audience-card p { color: #94A3B8; }
+      .proof-text p { color: #94A3B8; }
+
+      /* Stat numbers use var(--navy) for colour */
+      .stat-num   { color: #93C5FD; }
+      .stat-label { color: #94A3B8; }
+
+      /* Module num */
+      .module-num { color: #64748B; }
+
+      /* Card / section backgrounds */
+      .stat         { background: #1E293B; }
+      .feature      { background: #1E293B; }
+      .module-item  { background: #162032; color: #CBD5E1; }
+      .audience-card { background: #162032; border-color: rgba(255,255,255,0.12); }
+      .grant-box    { background: #162032; border-top-color: #475569;
+                      border-color: rgba(255,255,255,0.12); }
+      .grant-box p  { color: #CBD5E1; }   /* override inline color: var(--slate-600) */
+      .grant-box li { color: #CBD5E1; }
+      .proof-box    { background: #1E293B; border-color: rgba(255,255,255,0.12); }
+      .proof-text h4 { color: #E2E8F0; }
+
+      /* Price cards */
+      .price-card         { background: #1E293B; }
+      .price-tier         { color: #64748B; }
+      .price-amount       { color: #E2E8F0; }
+      .price-period       { color: #94A3B8; }
+      .price-scope        { color: #CBD5E1; }
+      .price-features     { border-top-color: rgba(255,255,255,0.12); }
+      .price-features li  { color: #CBD5E1; }
+
+      /* Grid gaps (1px separator lines between grid cells) */
+      .stats-row, .features-grid, .module-grid, .pricing-grid {
+        background: rgba(255,255,255,0.08);
+      }
+
+      /* Dividers */
+      .section          { border-bottom-color: rgba(255,255,255,0.08); }
+      .faq-item         { border-bottom-color: rgba(255,255,255,0.08); }
+      .faq-item:first-child { border-top-color: rgba(255,255,255,0.08); }
+      .faq-q            { color: #E2E8F0; }
+
+      /* Alert: dark amber variant */
+      .alert          { background: #422006; border-color: #92400E; }
+      .alert strong   { color: #FDE68A; }
+      .alert p        { color: #FCD34D; }
+
+      /* Buttons: keep primary blue, adjust for dark bg readability */
+      .btn-primary        { background: #2563EB; }
+      .btn-primary:hover  { background: #1D4ED8; }
+      .site-bar-cta       { background: #2563EB; }
+      .site-bar-cta:hover { background: #1D4ED8; color: #FFFFFF; }
+
+      /* Footer */
+      .footer   { border-top-color: rgba(255,255,255,0.12); }
+      .footer p { color: #64748B; }
+      .footer a { color: #94A3B8; }
+      .footer a:hover { color: #E2E8F0; }
     }
   </style>
 </head>
