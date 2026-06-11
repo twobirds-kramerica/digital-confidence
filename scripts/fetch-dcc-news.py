@@ -53,12 +53,16 @@ def main() -> int:
         resp = requests.get(
             RSS_URL,
             timeout=TIMEOUT,
-            headers={"User-Agent": "Mozilla/5.0 (DCC-news-fetch/1.0)"},
+            headers={"User-Agent": "Mozilla/5.0 (compatible; DCC-news-fetch/1.0)"},
         )
         resp.raise_for_status()
         xml_bytes = resp.content
     except Exception as e:
-        print(f"FAIL: fetch error: {e}", file=sys.stderr)
+        print(f"WARN: fetch error: {e}", file=sys.stderr)
+        if OUT_PATH.exists():
+            print("Keeping existing news-feed.json (graceful degradation).")
+            return 0
+        print("FAIL: no existing news-feed.json to fall back to.", file=sys.stderr)
         return 1
 
     try:
