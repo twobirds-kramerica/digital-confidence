@@ -5,29 +5,31 @@
    JSON data files: cache-first with network update.
    ============================================================ */
 
-var CACHE_NAME = 'dcc-v3';
+var CACHE_NAME = 'dcc-v4';
 
-/* Core pages to pre-cache on install */
+/* Core pages to pre-cache on install.
+   Paths are relative to this script's location so they resolve correctly
+   on GitHub Pages project sites, where the site root is not the domain root. */
 var PRECACHE_URLS = [
-  '/',
-  '/index.html',
-  '/css/main.css',
-  '/css/accessibility.css',
-  '/css/mobile.css',
-  '/js/app.js',
-  '/js/accessibility.js',
-  '/js/lang-toggle.js',
-  '/offline.html',
+  './',
+  'index.html',
+  'css/main.css',
+  'css/accessibility.css',
+  'css/mobile.css',
+  'js/app.js',
+  'js/accessibility.js',
+  'js/lang-toggle.js',
+  'offline.html',
   /* JSON data files — cached so quizzes and summaries work offline */
-  '/data/module-quizzes.json',
-  '/data/module-summaries.json',
-  '/data/module-qas.json',
-  '/data/cheat-sheet-tips.json',
-  '/data/module-meta.json',
-  '/data/scam-of-month.json',
-  '/data/answers-index.json',
-  '/data/content-dates.json',
-  '/data/tips-index.json'
+  'data/module-quizzes.json',
+  'data/module-summaries.json',
+  'data/module-qas.json',
+  'data/cheat-sheet-tips.json',
+  'data/module-meta.json',
+  'data/scam-of-month.json',
+  'data/answers-index.json',
+  'data/content-dates.json',
+  'data/tips-index.json'
 ];
 
 /* ---- Install: pre-cache core assets ---- */
@@ -104,7 +106,7 @@ self.addEventListener('fetch', function (event) {
         return response;
       }).catch(function () {
         return caches.match(request).then(function (cached) {
-          return cached || caches.match('/offline.html');
+          return cached || caches.match('offline.html');
         });
       })
     );

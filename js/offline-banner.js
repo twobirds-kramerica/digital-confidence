@@ -6,10 +6,18 @@
 (function () {
   'use strict';
 
-  /* Register service worker */
+  /* Register service worker.
+     Resolve sw.js relative to this script so it works on GitHub Pages
+     project sites, where the site root is not the domain root. */
   if ('serviceWorker' in navigator) {
+    var swUrl = 'sw.js';
+    try {
+      swUrl = new URL('../sw.js', document.currentScript.src).href;
+    } catch (e) {
+      void e;
+    }
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('/sw.js').catch(function (err) {
+      navigator.serviceWorker.register(swUrl).catch(function (err) {
         /* Silent fail — offline support is an enhancement, not required */
         void err;
       });
