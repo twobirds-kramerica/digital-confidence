@@ -15,8 +15,8 @@
   color-scheme: light;
 
   /* --- Colour: surfaces ---------------------------------------------------- */
-  --color-bg:              #FFF8F0; /* warm cream page background */
-  --color-surface:         #FFFFFF; /* cards, modals */
+  --color-bg:              #FAFAF8; /* warm white page background (Theme B — less orange tint) */
+  --color-surface:         #F5F2ED; /* cards, modals — warm off-white (Theme B) */
   --color-surface-alt:     #FFF0E0; /* module tags, subtle fills */
   --color-surface-primary: #E8F5F0; /* primary-tinted fill */
 
@@ -34,8 +34,9 @@
   --color-accent-contrast: #FFFFFF;
 
   /* --- Colour: text -------------------------------------------------------- */
-  --color-text:            #3D3229; /* warm charcoal, AA on bg cream */
-  --color-text-light:      #7A6E62; /* meta, captions */
+  --color-text:            #1A1A2E; /* softer near-black (Theme B — less brownish, higher contrast) */
+  --color-text-light:      #5A5A6E; /* meta, captions — cooler warm slate */
+  --color-warm-amber:      #B87333; /* muted copper amber — badge/highlight only, never primary */
   --color-text-inverse:    #FFFFFF; /* on dark/teal/accent backgrounds */
   --color-text-link:       #2A7B6F;
   --color-text-link-hover: #226659;
@@ -71,7 +72,7 @@
 
   /* --- Typography: size scale (senior-friendly baseline) ------------------- */
   --font-size-user-scale:  1;        /* overridden by A-/A/A+ toggle */
-  --font-size-base:        18px;     /* body, overridable 16 / 20 / 24 */
+  --font-size-base:        19px;     /* body, senior-friendly (Theme B), overridable 16 / 20 / 24 */
   --font-size-sm:          16px;     /* absolute minimum allowed */
   --font-size-caption:     14px;     /* meta only, never for primary content */
 
@@ -88,7 +89,7 @@
   --font-weight-bold:      700;
 
   --line-height-tight:     1.25;
-  --line-height-body:      1.6;     /* readable body */
+  --line-height-body:      1.8;     /* most generous, senior-first (Theme B) */
   --line-height-loose:     1.8;     /* bilingual content with accents */
 
   --letter-spacing-wide:   0.02em;
@@ -114,9 +115,9 @@
   --radius-circle: 50%;
 
   /* --- Shadow scale (warm-toned; DOES NOT use pure black) ----------------- */
-  --shadow-sm:  0 1px 4px rgba(42, 123, 111, 0.06);
-  --shadow-md:  0 2px 12px rgba(42, 123, 111, 0.08);
-  --shadow-lg:  0 4px 24px rgba(42, 123, 111, 0.12);
+  --shadow-sm:  0 1px 4px rgba(26, 26, 46, 0.06);
+  --shadow-md:  0 2px 8px rgba(26, 26, 46, 0.08);   /* Theme B card elevation */
+  --shadow-lg:  0 4px 20px rgba(26, 26, 46, 0.12);
   --shadow-focus: 0 0 0 3px var(--color-accent);
 
   /* --- Motion (honour prefers-reduced-motion — see below) ----------------- */
