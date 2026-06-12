@@ -79,13 +79,15 @@
         console.warn('Could not save feedback:', e);
       }
 
-      /* ── To enable real submission, uncomment and configure:
-      fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      /* Real submission — same Formspree form the Ideas & Feedback modal
+         uses (feedback-github.js). localStorage above stays as backup.
+         TODO: switch to the clarity-proxy Worker /feedback endpoint once
+         it is deployed (workers/clarity-proxy in the clarity repo). */
+      fetch('https://formspree.io/f/xeerqryj', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(entry)
       }).catch(function(err){ console.warn('Feedback send failed:', err); });
-      ── */
     }
 
     function showSuccess() {
