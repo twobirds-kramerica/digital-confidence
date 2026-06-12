@@ -24,6 +24,7 @@ body.wizard {
   min-height: 100vh;
   min-height: 100dvh; /* dynamic viewport — avoids iOS safari overflow */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: var(--space-4);
@@ -100,6 +101,12 @@ body.wizard {
   flex-direction: column;
   gap: var(--space-4);
   overflow: auto; /* safety valve for very small viewports; should rarely engage */
+}
+
+/* Headings receive programmatic focus on step change (screen-reader announce);
+   they are not interactive, so no visible ring. */
+.wizard-body h1[tabindex='-1']:focus {
+  outline: none;
 }
 
 .wizard-body h1 {
@@ -296,6 +303,14 @@ body.wizard {
   line-height: var(--line-height-body);
 }
 
+.wizard-help-body a {
+  color: var(--color-text-link);
+}
+
+.wizard-help-body a:hover {
+  color: var(--color-text-link-hover);
+}
+
 /* Responsive — mobile first (<=599px) */
 @media (max-width: 599px) {
   body.wizard {
@@ -423,8 +438,43 @@ body.wizard {
 
 .wizard-action-box {
   background: var(--color-primary-light);
-  border-left: 4px solid var(--color-primary);
+  border: 1px solid var(--color-primary);
   border-radius: var(--radius-md);
   padding: var(--space-4);
   margin-top: var(--space-4);
+}
+
+/* Site footer — wizard pages don't load main.css, so style the shared
+   footer markup here. Stacks below the card via body flex-direction column. */
+body.wizard .site-footer {
+  width: 100%;
+  max-width: 640px;
+  margin-top: var(--space-6);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  text-align: center;
+}
+
+body.wizard .footer-links a {
+  color: var(--color-text-link);
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-2);
+  min-height: var(--tap-target-min);
+  box-sizing: border-box;
+}
+
+body.wizard .footer-links a:hover {
+  color: var(--color-text-link-hover);
+}
+
+body.wizard .footer-links a:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+  border-radius: var(--radius-sm);
+}
+
+body.wizard .footer-copy {
+  margin: var(--space-2) 0 0;
 }
