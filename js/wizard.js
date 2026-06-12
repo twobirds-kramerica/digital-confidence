@@ -1,13 +1,14 @@
 /* ============================================================================
-   DCC Wizard UX — S-032 proof-of-concept navigation
+   DCC Wizard UX — navigation controller
    ----------------------------------------------------------------------------
    One-script controller for *-wizard.html pages. Handles:
    - Step show/hide via data-step index
    - Back / Continue button state (disabled on boundaries, labels update)
-   - Progress text "Step X of N"
+   - Progress text "Step X of N" (screen-reader live region)
+   - Step dots (completed=filled, current=pulsing, future=hollow)
+   - localStorage: save step per module — return visitor resumes where left off
    - URL hash sync (#step-1 etc) for browser back/forward and deep-linking
    - Help <dialog>: showModal() focus-trap, Escape + close-btn + click-outside
-   - Keyboard: Escape always closes help; otherwise native form behaviour
 
    Pure vanilla JS. No dependencies. Works offline.
    ========================================================================== */
@@ -23,6 +24,7 @@
     if (steps.length === 0) return;
 
     var progressEl = card.querySelector('.wizard-progress');
+    var dotsContainer = card.querySelector('.wizard-dots');
     var backBtn = card.querySelector('[data-wizard-back]');
     var nextBtn = card.querySelector('[data-wizard-next]');
     var helpBtn = card.querySelector('.wizard-help-btn');
@@ -30,14 +32,59 @@
     var helpCloseBtn = helpDialog ? helpDialog.querySelector('.wizard-help-close') : null;
 
     var total = steps.length;
-    var current = readStepFromHash();
+    var moduleId = card.getAttribute('data-module-id') || 'module';
+    var lsKey = 'dcc-wizard-' + moduleId;
+
+    // Build step dots
+    var dots = [];
+    if (dotsContainer) {
+      for (var d = 0; d < total; d++) {
+        var dot = document.createElement('span');
+        dot.className = 'wizard-dot';
+        dot.setAttribute('role', 'presentation');
+        dotsContainer.appendChild(dot);
+        dots.push(dot);
+      }
+    }
 
     function readStepFromHash() {
       var m = /^#step-(\d+)$/.exec(window.location.hash || '');
-      if (!m) return 0;
+      if (!m) return -1;
       var n = parseInt(m[1], 10) - 1;
-      if (isNaN(n) || n < 0 || n >= total) return 0;
+      if (isNaN(n) || n < 0 || n >= total) return -1;
       return n;
+    }
+
+    function readStepFromStorage() {
+      try {
+        var val = localStorage.getItem(lsKey);
+        if (val === null) return -1;
+        var n = parseInt(val, 10);
+        if (isNaN(n) || n < 0 || n >= total) return -1;
+        return n;
+      } catch (e) {
+        return -1;
+      }
+    }
+
+    function saveStep(i) {
+      try { localStorage.setItem(lsKey, String(i)); } catch (e) { /* storage blocked */ }
+    }
+
+    // Hash wins over storage (explicit deep-link); storage wins over step 0 (resume)
+    var hashStep = readStepFromHash();
+    var current = hashStep >= 0 ? hashStep : Math.max(0, readStepFromStorage());
+
+    function renderDots() {
+      dots.forEach(function (dot, i) {
+        dot.removeAttribute('aria-current');
+        dot.removeAttribute('data-state');
+        if (i < current) {
+          dot.setAttribute('data-state', 'done');
+        } else if (i === current) {
+          dot.setAttribute('aria-current', 'step');
+        }
+      });
     }
 
     function render() {
@@ -54,6 +101,8 @@
       if (progressEl) {
         progressEl.textContent = 'Step ' + (current + 1) + ' of ' + total;
       }
+
+      renderDots();
 
       if (backBtn) {
         backBtn.disabled = (current === 0);
@@ -84,9 +133,9 @@
     function goTo(i) {
       if (i < 0 || i >= total) return;
       current = i;
+      saveStep(current);
       var newHash = '#step-' + (current + 1);
       if (window.location.hash !== newHash) {
-        // Use pushState to preserve browser back/forward
         try {
           window.history.pushState({ step: current }, '', newHash);
         } catch (e) {
@@ -113,7 +162,8 @@
     if (nextBtn) nextBtn.addEventListener('click', next);
 
     window.addEventListener('popstate', function () {
-      current = readStepFromHash();
+      var h = readStepFromHash();
+      current = h >= 0 ? h : current;
       render();
     });
 
