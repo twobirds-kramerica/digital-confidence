@@ -5,7 +5,10 @@
    based on the user's selected city.
    ============================================ */
 
-var DC_CITIES = {
+/* Named DC_CITY_TEXT (not DC_CITIES) — city-resources.js owns the global
+   DC_CITIES with a richer shape; sharing the name caused a collision where
+   library/seniorCentre objects were replaced by plain strings. */
+var DC_CITY_TEXT = {
   windsor: {
     name: 'Windsor',
     landmark: 'the Ambassador Bridge',
@@ -60,7 +63,7 @@ var DC_CITIES = {
 function localizeContent() {
   /* Use 'springfield' (generic Ontario fallback) if no city chosen yet */
   var cityKey = localStorage.getItem('dc-city') || 'springfield';
-  var info = DC_CITIES[cityKey] || DC_CITIES.springfield;
+  var info = DC_CITY_TEXT[cityKey] || DC_CITY_TEXT.springfield;
 
   var walker = document.createTreeWalker(
     document.body,

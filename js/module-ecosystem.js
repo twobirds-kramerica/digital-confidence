@@ -147,9 +147,11 @@
 
     injectStyles();
 
-    /* Fetch both data files in parallel */
-    var summaryUrl = '/data/module-summaries.json';
-    var qaUrl = '/data/module-qas.json';
+    /* Fetch both data files in parallel. Relative paths — all consumer
+       pages sit at the repo root, and domain-root paths 404 on GitHub
+       Pages project sites. */
+    var summaryUrl = 'data/module-summaries.json';
+    var qaUrl = 'data/module-qas.json';
 
     Promise.all([
       fetch(summaryUrl).then(function (r) { return r.json(); }).catch(function () { return {}; }),

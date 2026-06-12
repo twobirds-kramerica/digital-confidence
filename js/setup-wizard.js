@@ -242,7 +242,8 @@ function renderWizard() {
     html += '<h3>' + step.title + '</h3>';
     html += '<select class="wizard-select" id="wizard-city" aria-label="Select your city">';
     html += '<option value="">-- Choose your city --</option>';
-    var cityKeys = Object.keys(DC_CITIES);
+    /* DC_CITIES comes from city-resources.js; not every page loads it */
+    var cityKeys = (typeof DC_CITIES !== 'undefined') ? Object.keys(DC_CITIES) : [];
     cityKeys.forEach(function (key) {
       var selected = wizardSelections.city === key ? ' selected' : '';
       html += '<option value="' + key + '"' + selected + '>' + DC_CITIES[key].name + '</option>';
@@ -362,7 +363,7 @@ function renderWizard() {
         var lat = pos.coords.latitude;
         var lon = pos.coords.longitude;
         var suggested = suggestCity(lat, lon);
-        if (suggested && citySelect) {
+        if (suggested && citySelect && typeof DC_CITIES !== 'undefined') {
           citySelect.value = suggested;
           wizardSelections.city = suggested;
           geoBtn.textContent = 'Suggested: ' + DC_CITIES[suggested].name;
