@@ -95,7 +95,7 @@
     btn.textContent = isFr ? '📝 Tester mes connaissances (5 questions)' : '📝 Test my understanding (5 questions)';
 
     var sub = document.createElement('p');
-    sub.style.cssText = 'text-align:center;color:#777;font-size:0.88rem;margin-top:8px';
+    sub.style.cssText = 'text-align:center;color:var(--color-text-light,#50505F);font-size:1rem;margin-top:8px';
     sub.textContent = isFr
       ? 'Répondez à 4 questions sur 5 pour déverrouiller « Module terminé ».'
       : 'Answer 4 out of 5 correctly to unlock "Mark as complete".';

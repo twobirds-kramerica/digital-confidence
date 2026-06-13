@@ -741,7 +741,7 @@ details.snav-group[open] > .snav-header::after {
 
 .warning-block .warning-label {
   font-weight: 600;
-  color: var(--accent-warning);
+  color: var(--color-warning-deep, #7A5800); /* amber accent was 1.9:1 as text */
   display: block;
   margin-bottom: var(--spacing-xs);
 }
@@ -862,7 +862,7 @@ details.snav-group[open] > .snav-header::after {
 
 .warning-box .warning-box-label {
   font-weight: 600;
-  color: var(--accent-warning);
+  color: var(--color-warning-deep, #7A5800); /* amber accent was 1.9:1 as text */
   display: block;
   margin-bottom: var(--spacing-xs);
 }
@@ -1934,7 +1934,7 @@ details.snav-group[open] > .snav-header::after {
 }
 
 .city-footer-label {
-  font-size: 0.85rem;
+  font-size: 0.95rem; /* was 0.85rem (15.3px) — footer meta floor */
   color: var(--text-muted);
 }
 
@@ -5006,16 +5006,16 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   margin-bottom: 0.25rem;
 }
 .footer-tagline {
-  font-size: 0.85rem;
+  font-size: 1rem; /* was 0.85rem (15.3px) — below the 18px text floor */
   color: var(--text-muted);
   margin-bottom: 1rem;
 }
 .footer-support {
-  font-size: 0.9rem;
+  font-size: 1rem; /* was 0.9rem (16.2px) */
   margin: 0.75rem 0 0.5rem;
 }
 .footer-copy {
-  font-size: 0.8rem;
+  font-size: 0.95rem; /* was 0.8rem (14.4px) — legal line, smallest allowed */
   color: var(--text-muted);
   margin-top: 0.5rem;
 }
@@ -5913,9 +5913,9 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
 .related-card { display: flex; flex-direction: column; gap: 4px; padding: 16px; background: #f0f4ff; border: 1px solid #c7d2fe; border-radius: 10px; text-decoration: none; color: inherit; transition: background 0.2s; }
 .related-card:hover { background: #e0e7ff; }
-.related-num { font-size: 0.8em; color: #6366f1; font-weight: bold; text-transform: uppercase; }
+.related-num { font-size: 0.8em; color: #4338CA; font-weight: bold; text-transform: uppercase; } /* #6366f1 was 3.9:1 */
 .related-name { font-size: 1em; font-weight: bold; color: var(--color-primary); }
-.related-desc { font-size: 0.88em; color: #555; line-height: 1.4; }
+.related-desc { font-size: 1em; color: var(--color-text-light, #50505F); line-height: 1.4; } /* was 0.88em / #555 */
 
 /* Module Complete Action */
 .module-complete-action { text-align: center; margin: 24px 0 16px; position: relative; overflow: hidden; }
@@ -6098,7 +6098,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 }
 .qa-answer {
   padding: 0.1rem 0 1rem 0;
-  font-size: 0.92rem;
+  font-size: 1rem; /* 0.92rem rendered 16.6px — below the 18px text floor */
   line-height: 1.6;
   color: var(--color-text, #1a1a1a);
 }

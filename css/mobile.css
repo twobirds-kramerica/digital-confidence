@@ -340,7 +340,7 @@
   }
 
   .scam-example {
-    font-size: 0.85rem;
+    font-size: 1rem; /* was 0.85rem (15.3px) — 18px floor applies on mobile too */
     word-break: break-word;
   }
 

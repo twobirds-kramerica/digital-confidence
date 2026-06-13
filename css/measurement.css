@@ -164,8 +164,8 @@
 }
 
 .dcc-msr-conf-val {
-  font-size: 0.875rem;
-  color: var(--color-text-light, #7A6E62);
+  font-size: 1rem; /* 0.875rem rendered 15.8px — below the 18px text floor */
+  color: var(--color-text-light, #50505F);
   margin: 0.5rem 0 0;
 }
 
