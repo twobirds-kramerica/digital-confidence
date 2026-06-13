@@ -5,7 +5,7 @@
    JSON data files: cache-first with network update.
    ============================================================ */
 
-var CACHE_NAME = 'dcc-v4';
+var CACHE_NAME = 'dcc-v5';
 
 /* Core pages to pre-cache on install.
    Paths are relative to this script's location so they resolve correctly
@@ -111,16 +111,23 @@ self.addEventListener('fetch', function (event) {
       })
     );
   } else {
-    /* Cache-first for CSS, JS, images, fonts */
+    /* Stale-while-revalidate for CSS, JS, images, fonts.
+       Plain cache-first meant deployed asset changes NEVER reached
+       returning visitors (no cache busting on this site) — serve the
+       cached copy for speed, but always refresh the cache in the
+       background so the next page view gets the new version. */
     event.respondWith(
-      caches.match(request).then(function (cached) {
-        if (cached) return cached;
-        return fetch(request).then(function (response) {
-          var clone = response.clone();
-          caches.open(CACHE_NAME).then(function (cache) {
-            cache.put(request, clone);
+      caches.open(CACHE_NAME).then(function (cache) {
+        return cache.match(request).then(function (cached) {
+          var networkFetch = fetch(request).then(function (response) {
+            if (response && response.status === 200) {
+              cache.put(request, response.clone());
+            }
+            return response;
+          }).catch(function () {
+            return cached;
           });
-          return response;
+          return cached || networkFetch;
         });
       })
     );
