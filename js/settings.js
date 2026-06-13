@@ -156,7 +156,7 @@ function injectSettingsModal() {
         /* Colour Mode */
         '<div class="dc-settings-section">',
           '<p class="dc-settings-section-title">Colour Mode</p>',
-          '<button class="dc-settings-theme-btn" id="dc-settings-theme-btn"></button>',
+          '<button class="dc-settings-theme-btn" id="dc-settings-theme-btn" aria-label="Toggle colour mode">🌓 Switch to Dark Mode</button>',
         '</div>',
 
         /* Your City */

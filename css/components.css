@@ -1102,7 +1102,7 @@ a:hover { color: var(--color-text-link-hover); text-decoration-thickness: 2px; }
   font-size: var(--font-size-sm);
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--color-accent);
+  color: var(--color-accent-deep); /* accent itself is 2.6:1 on accent-light — fails AA */
   margin: 0;
 }
 

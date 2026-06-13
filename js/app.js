@@ -291,11 +291,19 @@ document.addEventListener('click', function (e) {
    B3: Back button — keep user in DCC site
    ============================================ */
 (function() {
+  /* Site root derived from this script's location (js/app.js) \u2014 works on
+     GitHub Pages project hosting and any future custom domain. */
+  var homeUrl = 'index.html';
+  try {
+    var appScript = document.querySelector('script[src*="app.js"]');
+    if (appScript) homeUrl = new URL('../index.html', appScript.src).href;
+  } catch (e) {}
+
   history.pushState({page: 'dcc'}, '', window.location.href);
   window.addEventListener('popstate', function() {
     var ref = document.referrer || '';
     if (!ref || !ref.includes('twobirds-kramerica')) {
-      window.location.href = '/digital-confidence/index.html';
+      window.location.href = homeUrl;
     }
   });
 
@@ -307,9 +315,9 @@ document.addEventListener('click', function (e) {
     if (isHome) return;
 
     var backLink = document.createElement('a');
-    backLink.href = '/digital-confidence/index.html';
+    backLink.href = homeUrl;
     backLink.className = 'dcc-back-home';
-    backLink.style.cssText = 'display:inline-block;padding:8px 12px;margin:8px 0 0 12px;font-size:14px;color:#2EC4B6;text-decoration:none;min-height:44px;line-height:28px;';
+    backLink.style.cssText = 'display:inline-block;padding:8px 12px;margin:8px 0 0 12px;font-size:16px;color:var(--color-text-link, #2A7B6F);text-decoration:underline;min-height:44px;line-height:28px;';
     var isFr = (localStorage.getItem('dc-lang') || 'en').startsWith('fr');
     backLink.textContent = isFr ? '\u2190 Accueil' : '\u2190 Home';
 

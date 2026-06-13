@@ -88,9 +88,10 @@
     max-width: 100vw;
   }
 
-  /* Base typography */
+  /* Base typography — 18px floor on mobile; 16px shrank text for the
+     audience that needs it largest (S-DCC-FULL-SCRUB). */
   body {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
     -webkit-text-size-adjust: 100%;
   }
@@ -218,7 +219,7 @@
 /* 375px phone — minimum viable mobile (iPhone SE, older Android) */
 @media (max-width: 375px) {
   body {
-    font-size: 16px;
+    font-size: 18px; /* 18px floor applies at every viewport */
     overflow-x: hidden;
   }
 

@@ -727,7 +727,7 @@ details.snav-group[open] > .snav-header::after {
 .confidence-check .check-text {
   font-weight: 400;
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 1rem; /* 0.95rem rendered 17.1px — below the 18px text floor */
   margin-top: var(--spacing-xs);
 }
 
@@ -912,7 +912,7 @@ details.snav-group[open] > .snav-header::after {
 .confidence-check-box .check-subtext {
   font-weight: 400;
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 1rem; /* 0.95rem rendered 17.1px — below the 18px text floor */
   margin-top: var(--spacing-xs);
 }
 
@@ -1391,7 +1391,7 @@ details.snav-group[open] > .snav-header::after {
   padding: var(--spacing-md);
   margin: var(--spacing-md) 0;
   font-family: "Courier New", monospace;
-  font-size: 0.95rem;
+  font-size: 1rem; /* 0.95rem rendered 17.1px — below the 18px text floor */
 }
 
 .scam-example .example-label {
@@ -2661,7 +2661,7 @@ details.snav-group[open] > .snav-header::after {
 .video-card p {
   color: var(--text-secondary);
   margin: 0 0 20px 0;
-  font-size: 0.9rem;
+  font-size: 1rem; /* 0.9rem rendered 16.2px — below the 18px text floor */
   line-height: 1.5;
 }
 .video-card-btn {
@@ -2695,7 +2695,7 @@ details.snav-group[open] > .snav-header::after {
 .video-safety-note p {
   margin: 0;
   color: #2E7D32;
-  font-size: 0.88rem;
+  font-size: 1rem; /* 0.88rem rendered 15.8px — below the 18px text floor */
   font-weight: 500;
 }
 [data-theme="dark"] .video-section {
@@ -2746,7 +2746,7 @@ details.snav-group[open] > .snav-header::after {
 .local-help-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
 .local-help-card-icon { font-size: 40px; margin-bottom: 10px; }
 .local-help-card h4, .local-help-card h3 { color: #E65100; margin: 0 0 6px 0; font-size: 1rem; }
-.local-help-card p  { color: #5D4037; margin: 0; font-size: 0.88rem; line-height: 1.6; }
+.local-help-card p  { color: #5D4037; margin: 0; font-size: 1rem; line-height: 1.6; } /* was 0.88rem (15.8px) */
 .local-help-card a  { color: #BF360C; }
 .local-help-card strong { color: #BF360C; font-weight: 700; }
 [data-theme="dark"] .local-help-section { background: linear-gradient(135deg, #3E2723 0%, #4E342E 100%); }
@@ -3053,11 +3053,11 @@ details.snav-group[open] > .snav-header::after {
 }
 .video-help-link p {
   margin: 0;
-  color: #E65100;
-  font-size: 15px;
+  color: #7A3B00; /* #E65100 was 3.7:1 on #FFF3E0 — this is 7.8:1 (AAA) */
+  font-size: 18px; /* was 15px — below the 18px text floor */
 }
 .video-help-link a {
-  color: #F57C00;
+  color: #7A3B00; /* #F57C00 was ~2.5:1 on #FFF3E0 */
   font-weight: 600;
   text-decoration: underline;
 }
@@ -3623,7 +3623,7 @@ details.snav-group[open] > .snav-header::after {
 }
 .example-description {
   color: #B0BEC5;
-  font-size: 16px;
+  font-size: 18px; /* was 16px — below the 18px text floor */
   line-height: 1.6;
   margin: 0;
 }
@@ -3637,7 +3637,7 @@ details.snav-group[open] > .snav-header::after {
   .visual-example-card { padding: 24px 16px; }
   .example-icon { font-size: 56px; }
   .example-title { font-size: 18px; }
-  .example-description { font-size: 14px; }
+  .example-description { font-size: 18px; } /* was 14px — 18px floor applies on mobile too */
 }
 
 /* ============================================================
@@ -4952,9 +4952,41 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 }
 [data-theme="dark"] .trust-item { background: #2a2a2a; }
 
+/* ── Module prev/next navigation (modules 18-27 markup) ──
+   These links had no rules at all — default-size text failed the
+   44px touch-target bar and WCAG 2.2 target-size. */
+.module-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+.module-navigation .nav-prev,
+.module-navigation .nav-next {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.65rem 1.2rem;
+  background: var(--color-primary, #2A7B6F);
+  color: var(--color-text-inverse, #fff);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.module-navigation .nav-prev:hover,
+.module-navigation .nav-next:hover,
+.module-navigation .nav-prev:focus,
+.module-navigation .nav-next:focus {
+  background: var(--color-primary-hover, #226659);
+  outline: 2px solid var(--color-accent, #E8842C);
+  outline-offset: 2px;
+}
+
 /* ── Module Intro Block (Phase 8) ── */
 .module-intro { margin-bottom: 2rem; }
-.module-time { font-size: 0.95rem; color: #666; margin-bottom: 1rem; }
+.module-time { font-size: 1rem; color: var(--color-text-light, #50505F); margin-bottom: 1rem; }
 [data-theme="dark"] .module-time { color: #aaa; }
 
 @media print {

@@ -109,8 +109,10 @@
 
     var btn = buildButton();
 
-    /* Insert button before h1 so it appears at the top of the content area */
-    main.insertBefore(btn, h1);
+    /* Insert button before h1 so it appears at the top of the content area.
+       Use the h1's real parent — on some modules the h1 is nested inside a
+       wrapper div, and main.insertBefore() throws NotFoundError there. */
+    h1.parentNode.insertBefore(btn, h1);
 
     /* Restore saved state */
     var saved;

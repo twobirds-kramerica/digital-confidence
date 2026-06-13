@@ -32,10 +32,11 @@
   --color-accent-active:   #B5631D;
   --color-accent-light:    #FFF0E0;
   --color-accent-contrast: #FFFFFF;
+  --color-accent-deep:     #8A450C; /* text-on-accent-light — 7:1+ on #FFF0E0 (AAA) */
 
   /* --- Colour: text -------------------------------------------------------- */
   --color-text:            #1A1A2E; /* softer near-black (Theme B — less brownish, higher contrast) */
-  --color-text-light:      #5A5A6E; /* meta, captions — cooler warm slate */
+  --color-text-light:      #50505F; /* meta, captions — darkened from #5A5A6E for AAA 7:1 on bg */
   --color-warm-amber:      #B87333; /* muted copper amber — badge/highlight only, never primary */
   --color-text-inverse:    #FFFFFF; /* on dark/teal/accent backgrounds */
   --color-text-link:       #2A7B6F;

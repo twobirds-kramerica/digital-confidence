@@ -41,7 +41,8 @@
 }
 
 .dcc-msr-badge-after {
-  background: var(--color-accent, #1F5F55);
+  /* accent (#E8842C) is 2.9:1 with white text — use deep accent (7:1+) */
+  background: var(--color-accent-deep, #8A450C);
 }
 
 .dcc-msr-title {
@@ -52,7 +53,7 @@
 }
 
 .dcc-msr-desc {
-  font-size: 0.95rem;
+  font-size: 1rem; /* 0.95rem rendered 17.1px — below the 18px text floor */
   color: var(--color-text-light, #7A6E62);
   margin: 0;
 }
@@ -90,7 +91,7 @@
   border: 1.5px solid var(--color-border, #e8e0d6);
   border-radius: 8px;
   cursor: pointer;
-  font-size: 0.95rem;
+  font-size: 1rem; /* 0.95rem rendered 17.1px — below the 18px text floor */
   line-height: 1.5;
   color: var(--color-text, #2c2c2c);
   transition: border-color 0.15s, background 0.15s;
