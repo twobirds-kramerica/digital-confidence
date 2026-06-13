@@ -210,7 +210,7 @@
       margin-top: 1rem;
       padding-top: 1rem;
       border-top: 1px solid #e0e7ef;
-      font-size: 0.92rem;
+      font-size: 1rem; /* 0.92rem rendered 16.6px — below the 18px text floor */
       line-height: 1.6;
     }
     [data-theme="dark"] .scenario-answer { border-color: #334155; }
@@ -247,7 +247,7 @@
       font-weight: 700;
       flex-shrink: 0;
     }
-    .check-text { font-size: 0.92rem; line-height: 1.5; }
+    .check-text { font-size: 1rem; line-height: 1.5; }
 
     .takeaways-grid {
       display: grid;
@@ -270,7 +270,7 @@
     }
     .takeaway-icon { font-size: 1.5rem; }
     .takeaway-card strong { color: var(--color-primary, #1565C0); font-size: 0.95rem; }
-    .takeaway-card p { font-size: 0.85rem; color: var(--color-text-muted, #555); margin: 0; line-height: 1.5; }
+    .takeaway-card p { font-size: 1rem; color: var(--color-text-light, #50505F); margin: 0; line-height: 1.5; }
     [data-theme="dark"] .takeaway-card p { color: #94a3b8; }
 
     @media (max-width: 600px) {

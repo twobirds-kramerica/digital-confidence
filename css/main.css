@@ -558,8 +558,8 @@ details.snav-group[open] > .snav-header::after {
 }
 
 .module-card .card-progress {
-  font-size: 0.85rem;
-  color: var(--accent-success);
+  font-size: 0.95rem;
+  color: var(--color-success-deep, #1B5E20); /* success green is 2.8:1 as text */
   font-weight: 600;
 }
 
@@ -720,7 +720,7 @@ details.snav-group[open] > .snav-header::after {
 
 .confidence-check p {
   font-weight: 600;
-  color: var(--accent-success);
+  color: var(--color-success-deep, #1B5E20); /* success green is 2.8:1 as text */
   margin-bottom: 0;
 }
 
@@ -905,7 +905,7 @@ details.snav-group[open] > .snav-header::after {
 
 .confidence-check-box p {
   font-weight: 600;
-  color: var(--accent-success);
+  color: var(--color-success-deep, #1B5E20); /* success green is 2.8:1 as text */
   margin-bottom: 0;
 }
 
@@ -938,7 +938,7 @@ details.snav-group[open] > .snav-header::after {
 }
 
 .success-state-box strong {
-  color: var(--accent-success);
+  color: var(--color-success-deep, #1B5E20); /* success green is 2.8:1 as text */
 }
 
 /* Feeling Stuck Box — help CTA */
@@ -1039,7 +1039,7 @@ details.snav-group[open] > .snav-header::after {
 }
 
 .exercise-block .success-state strong {
-  color: var(--accent-success);
+  color: var(--color-success-deep, #1B5E20); /* success green is 2.8:1 as text */
 }
 
 /* Progress Checkboxes */
@@ -1219,7 +1219,7 @@ details.snav-group[open] > .snav-header::after {
 }
 
 .resource-card .resource-meta {
-  font-size: 0.9rem;
+  font-size: 1rem; /* 0.9rem rendered 16.2px — below the 18px text floor */
   color: var(--text-muted);
 }
 
@@ -5015,7 +5015,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
   margin: 0.75rem 0 0.5rem;
 }
 .footer-copy {
-  font-size: 0.95rem; /* was 0.8rem (14.4px) — legal line, smallest allowed */
+  font-size: 1rem; /* was 0.8rem (14.4px) — 18px floor applies to the legal line too */
   color: var(--text-muted);
   margin-top: 0.5rem;
 }
