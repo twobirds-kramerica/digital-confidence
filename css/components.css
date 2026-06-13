@@ -262,10 +262,10 @@ a:hover { color: var(--color-text-link-hover); text-decoration-thickness: 2px; }
   padding: var(--space-3) var(--space-5);
   border-radius: var(--radius-md);
   border: 2px solid transparent;
-  /* accent #E8842C is 2.9:1 with white text — resting state uses the
-     darker accent-active (5.97:1) so the orange identity passes AA */
-  background: var(--color-accent-active);
-  color: var(--color-accent-contrast);
+  /* White text on accent #E8842C is 2.9:1 — dark text on the bright
+     accent is 6.2:1 (AA) and keeps the Warm Hearth orange identity */
+  background: var(--color-accent);
+  color: var(--color-text);
   font-family: var(--font-heading);
   font-weight: var(--font-weight-semibold);
   font-size: 1rem;
@@ -274,8 +274,8 @@ a:hover { color: var(--color-text-link-hover); text-decoration-thickness: 2px; }
   transition: background var(--motion-duration-2) var(--motion-ease),
               transform var(--motion-duration-1) var(--motion-ease);
 }
-.btn:hover:not(:disabled) { background: var(--color-accent-deep); }
-.btn:active:not(:disabled) { background: var(--color-accent-deep); transform: translateY(1px); }
+.btn:hover:not(:disabled) { background: var(--color-accent-hover); }
+.btn:active:not(:disabled) { background: var(--color-accent-hover); transform: translateY(1px); }
 .btn:disabled, .btn[aria-disabled="true"] {
   background: var(--color-disabled-bg);
   color: var(--color-disabled-text);

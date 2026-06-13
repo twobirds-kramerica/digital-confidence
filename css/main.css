@@ -1232,10 +1232,10 @@ details.snav-group[open] > .snav-header::after {
 .resource-card .efficacy-badge {
   display: inline-block;
   background: var(--bg-success);
-  color: var(--accent-success);
+  color: var(--color-success-deep, #1B5E20); /* success green was 2.4:1 on success bg */
   padding: 2px 10px;
   border-radius: 20px;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 600;
   margin-top: var(--spacing-xs);
 }
@@ -2745,7 +2745,7 @@ details.snav-group[open] > .snav-header::after {
 }
 .local-help-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
 .local-help-card-icon { font-size: 40px; margin-bottom: 10px; }
-.local-help-card h4, .local-help-card h3 { color: #E65100; margin: 0 0 6px 0; font-size: 1rem; }
+.local-help-card h4, .local-help-card h3 { color: #7A3B00; margin: 0 0 6px 0; font-size: 1rem; } /* #E65100 was 3.6:1 */
 .local-help-card p  { color: #5D4037; margin: 0; font-size: 1rem; line-height: 1.6; } /* was 0.88rem (15.8px) */
 .local-help-card a  { color: #BF360C; }
 .local-help-card strong { color: #BF360C; font-weight: 700; }
