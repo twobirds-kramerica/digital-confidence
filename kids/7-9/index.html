@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="../../css/tokens-dark.css">
   <link rel="stylesheet" href="../../css/fonts.css">
   <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../rewards.css">
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
   <style>
     :root {
@@ -338,6 +339,12 @@
 
     </div>
 
+    <section class="dcc-hub" id="rewards-hub" aria-label="My Rewards">
+      <noscript>
+        <p style="margin:0;color:var(--text-secondary);">Rewards and badges need JavaScript turned on. The activities themselves work without it.</p>
+      </noscript>
+    </section>
+
     <div class="age-nav" role="navigation" aria-label="Age groups">
       <a href="../4-6/index.html" class="done">✅ Ages 4–6 (complete)</a>
       <a href="index.html" class="current">→ Ages 7–9 (in progress)</a>
@@ -358,6 +365,15 @@
       Canadian content · Free to use · No data collected · Built in St. Thomas, Ontario
     </p>
   </footer>
+
+  <script src="../rewards.js"></script>
+  <script>
+    (function () {
+      if (window.DCCRewards) {
+        DCCRewards.renderHub(document.getElementById('rewards-hub'), '7-9');
+      }
+    })();
+  </script>
 
 </body>
 </html>

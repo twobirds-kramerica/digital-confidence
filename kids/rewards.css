@@ -1,0 +1,133 @@
+/* ==========================================================================
+   DCC Kids — Rewards & Incentive UI styles
+   Pairs with kids/rewards.js. Sovereign, offline-first reward layer.
+   Uses site tokens where available; falls back to literal values so the
+   file works standalone. Dark mode handled via [data-theme="dark"].
+   ========================================================================== */
+
+/* ---- Earn button (inside a module's reflection step) -------------------- */
+.dcc-earn {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  background: var(--kids-teal-bg, #E0F2F1);
+  border: 2px solid var(--kids-teal-light, #B2DFDB);
+  border-radius: 16px;
+}
+.dcc-earn-prompt { margin: 0 0 1rem; font-size: 1.1rem; line-height: 1.5; color: var(--text-secondary, #333); }
+.dcc-earn-btn {
+  display: inline-block; min-height: 52px;
+  padding: 0.85rem 1.6rem; font-size: 1.15rem; font-weight: 700;
+  color: #fff; background: var(--brand-teal, #00695C);
+  border: none; border-radius: 14px; cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.15s;
+}
+.dcc-earn-btn:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.18); transform: translateY(-1px); }
+.dcc-earn-btn:focus-visible { outline: 3px solid var(--brand-teal, #00695C); outline-offset: 3px; }
+.dcc-earn-done { display: flex; align-items: center; gap: 0.9rem; }
+.dcc-earn-icon { font-size: 2.2rem; line-height: 1; }
+.dcc-earn-text { display: flex; flex-direction: column; }
+.dcc-earn-text strong { font-size: 1.15rem; color: var(--brand-teal, #00695C); }
+.dcc-earn-text span { font-size: 0.95rem; color: var(--text-secondary, #555); }
+
+/* ---- Rewards hub (cohort index page) ----------------------------------- */
+.dcc-hub {
+  margin: 2.5rem 0;
+  padding: 1.75rem;
+  background: var(--surface, #fff);
+  border: 2px solid var(--kids-teal-light, #B2DFDB);
+  border-radius: 20px;
+}
+.dcc-hub-title { font-size: 1.5rem; margin: 0 0 0.35rem; color: var(--text-primary, #1A1A2E); }
+.dcc-hub-progress { margin: 0 0 1.5rem; font-size: 1.1rem; color: var(--text-secondary, #555); }
+
+.dcc-badge-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.9rem;
+}
+.dcc-badge-tile {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  gap: 0.35rem; padding: 1rem 0.6rem; border-radius: 16px;
+  border: 2px solid var(--border-color, #ddd);
+}
+.dcc-badge-tile.is-earned {
+  background: var(--kids-yellow-light, #FFF9C4);
+  border-color: #F9A825;
+}
+.dcc-badge-tile.is-locked { background: var(--surface-alt, #F5F5F5); opacity: 0.7; }
+.dcc-badge-icon { font-size: 2.4rem; line-height: 1; }
+.dcc-badge-name { font-size: 1rem; font-weight: 700; color: var(--text-primary, #1A1A2E); }
+.dcc-badge-cat { font-size: 0.78rem; color: var(--text-muted, #777); }
+
+/* ---- Milestone certificate area ---------------------------------------- */
+.dcc-milestone { margin-top: 1.75rem; padding-top: 1.25rem; border-top: 2px dashed var(--border-color, #ddd); }
+.dcc-milestone-yay { font-size: 1.2rem; font-weight: 700; color: var(--brand-teal, #00695C); margin: 0 0 1rem; }
+.dcc-milestone-locked { font-size: 1.05rem; color: var(--text-muted, #777); margin: 0; }
+.dcc-name-row { display: block; font-size: 1.05rem; margin-bottom: 1rem; color: var(--text-secondary, #555); }
+.dcc-name-input {
+  display: block; margin-top: 0.4rem; width: 100%; max-width: 320px;
+  min-height: 48px; padding: 0.6rem 0.8rem; font-size: 1.1rem;
+  border: 2px solid var(--border-color, #ccc); border-radius: 10px;
+  background: var(--surface, #fff); color: var(--text-primary, #1A1A2E);
+}
+.dcc-btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.dcc-action-btn {
+  min-height: 52px; padding: 0.8rem 1.4rem; font-size: 1.1rem; font-weight: 700;
+  color: #fff; background: var(--brand-teal, #00695C);
+  border: none; border-radius: 14px; cursor: pointer;
+}
+.dcc-action-btn:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.18); }
+.dcc-action-btn:focus-visible { outline: 3px solid var(--brand-teal, #00695C); outline-offset: 3px; }
+.dcc-action-secondary { background: var(--surface, #fff); color: var(--brand-teal, #00695C); border: 2px solid var(--brand-teal, #00695C); }
+.dcc-share-note { margin: 0.9rem 0 0; font-size: 0.92rem; color: var(--text-muted, #777); line-height: 1.5; }
+
+/* ---- For grown-ups: synopsis, adult toggle, reset ---------------------- */
+.dcc-grown { margin-top: 1.5rem; border-top: 2px solid var(--border-color, #ddd); padding-top: 1rem; }
+.dcc-grown-summary { font-size: 1.05rem; font-weight: 700; cursor: pointer; color: var(--text-primary, #1A1A2E); }
+.dcc-adult-row { display: flex; align-items: center; gap: 0.6rem; margin: 1rem 0; font-size: 1.05rem; color: var(--text-secondary, #555); }
+.dcc-adult-row input { width: 22px; height: 22px; }
+.dcc-synopsis { background: var(--surface-alt, #F5F5F5); border-radius: 12px; padding: 1rem 1.25rem; margin: 1rem 0; }
+.dcc-synopsis p { margin: 0 0 0.6rem; font-size: 1rem; line-height: 1.55; color: var(--text-secondary, #444); }
+.dcc-synopsis p:last-child { margin-bottom: 0; }
+.dcc-syn-h { font-weight: 600; }
+.dcc-reset-btn {
+  margin-top: 0.5rem; min-height: 44px; padding: 0.6rem 1.1rem;
+  font-size: 0.95rem; color: var(--text-muted, #777);
+  background: transparent; border: 2px solid var(--border-color, #ccc);
+  border-radius: 10px; cursor: pointer;
+}
+.dcc-reset-btn:hover { border-color: #C62828; color: #C62828; }
+
+/* ---- Certificate (on-screen + print + PNG reference) ------------------- */
+.dcc-cert {
+  max-width: 720px; margin: 1.5rem auto; padding: 2.5rem 2rem; text-align: center;
+  background: #FFFDF7; border: 8px solid #00695C; border-radius: 8px; color: #1A1A2E;
+}
+.dcc-cert-seal { font-size: 3.5rem; line-height: 1; }
+.dcc-cert-kicker { margin: 0.5rem 0 0; font-size: 1rem; font-weight: 700; letter-spacing: 0.1em; color: #00695C; }
+.dcc-cert-title { margin: 0.75rem 0; font-family: Georgia, 'Times New Roman', serif; font-size: 2rem; color: #1A1A2E; }
+.dcc-cert-presented { margin: 1rem 0 0.25rem; font-size: 1.1rem; color: #555; }
+.dcc-cert-name { margin: 0.25rem 0; font-family: Georgia, serif; font-size: 2.4rem; font-weight: 700; color: #00695C; }
+.dcc-cert-body { margin: 1rem auto; max-width: 520px; font-size: 1.1rem; line-height: 1.6; color: #333; }
+.dcc-cert-date { margin-top: 1.5rem; font-size: 1rem; color: #777; }
+
+#dcc-print-area { display: none; }
+
+@media print {
+  body > *:not(#dcc-print-area) { display: none !important; }
+  #dcc-print-area { display: block !important; }
+  #dcc-print-area .dcc-cert { border-color: #00695C; }
+}
+
+/* ---- Dark mode --------------------------------------------------------- */
+[data-theme="dark"] .dcc-badge-tile.is-earned { background: #3E3A1E; border-color: #F9A825; }
+[data-theme="dark"] .dcc-badge-tile.is-locked { background: rgba(255,255,255,0.04); }
+[data-theme="dark"] .dcc-earn { background: rgba(0,105,92,0.18); }
+[data-theme="dark"] .dcc-synopsis { background: rgba(255,255,255,0.05); }
+/* Certificate keeps its light "paper" look in dark mode by design — it is a
+   printable artifact, not a screen surface. */
+
+/* ---- Reduced motion ---------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .dcc-earn-btn, .dcc-action-btn { transition: none; }
+}
