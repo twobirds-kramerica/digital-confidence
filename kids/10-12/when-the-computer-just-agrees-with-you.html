@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var t=localStorage.getItem('dc-theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})()</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An investigative activity for children aged 10–12 (grades 6–8): why AI chatbots are built to agree with you (sycophancy), a low-stakes experiment to catch one being a suck-up, and the rule that it sounds sure even when it is wrong.">
+  <meta name="keywords" content="AI sycophancy kids, chatbot agrees with you, critical thinking AI youth, catch the suck-up, AI not a friend, media literacy Canada kids">
+  <meta property="og:title" content="When the computer just agrees with you · DCC Kids · Ages 10–12">
+  <meta property="og:description" content="Your mission: catch a chatbot being a suck-up. Chatbots are built to keep you happy, not to be right — and the difference matters.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/10-12/when-the-computer-just-agrees-with-you.html">
+  <title>When the computer just agrees with you · DCC Kids · Ages 10–12</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <link rel="stylesheet" href="../../css/tokens-dark.css">
+  <link rel="stylesheet" href="../../css/fonts.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "When the computer just agrees with you",
+    "description": "An investigative activity for children aged 10–12 (grades 6–8) about AI sycophancy: why chatbots are built to agree with you, a low-stakes experiment to catch one agreeing with a wrong answer, and the rule that sounding sure is not the same as being right.",
+    "url": "https://twobirds-kramerica.github.io/digital-confidence/kids/10-12/when-the-computer-just-agrees-with-you.html",
+    "educationalLevel": "Grade 6–8",
+    "learningResourceType": "Activity",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Children aged 10–12, with caregiver"
+    },
+    "inLanguage": "en-CA",
+    "isAccessibleForFree": true,
+    "dateModified": "2026-06-14",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Digital Confidence Centre — Kids Digital Literacy",
+      "url": "https://twobirds-kramerica.github.io/digital-confidence/"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --kids-indigo:        #3949AB;
+      --kids-indigo-bg:     #E8EAF6;
+      --kids-indigo-light:  #C5CAE9;
+      --kids-purple:        #4527A0;
+      --kids-purple-bg:     #EDE7F6;
+      --kids-purple-light:  #D1C4E9;
+      --kids-amber:         #E65100;
+      --kids-amber-bg:      #FFF3E0;
+      --kids-amber-light:   #FFE0B2;
+      --kids-green:         #2E7D32;
+      --kids-green-bg:      #E8F5E9;
+      --kids-green-light:   #C8E6C9;
+      --kids-radius:        20px;
+      --kids-font-xl:       2rem;
+      --kids-font-lg:       1.35rem;
+      --kids-font-base:     1.125rem;
+    }
+
+    body { background: #F5F0FF; }
+
+    .caregiver-banner {
+      background: var(--brand-teal); color: #fff;
+      text-align: center; padding: 0.75rem 1rem;
+      font-size: 0.95rem; font-weight: 500;
+    }
+    .caregiver-banner a { color: #b2dfdb; text-decoration: underline; }
+
+    .kids-nav {
+      background: #fff; border-bottom: 2px solid var(--kids-purple-light);
+      padding: 0.75rem 1.5rem; font-size: 0.875rem;
+    }
+    .kids-nav a { color: var(--brand-teal); text-decoration: none; }
+    .kids-nav a:hover { text-decoration: underline; }
+    .kids-nav span { color: var(--text-muted); margin: 0 0.4rem; }
+
+    .kids-hero {
+      background: linear-gradient(135deg, #EDE7F6 0%, #E8EAF6 100%);
+      padding: 2.5rem 1.5rem 2rem; text-align: center;
+      border-bottom: 3px solid var(--kids-purple-light);
+    }
+    .kids-hero .hero-tag {
+      display: inline-block; background: var(--kids-purple-bg); color: var(--kids-purple);
+      border: 2px solid var(--kids-purple-light); border-radius: 20px;
+      padding: 0.3rem 1rem; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.75rem;
+    }
+    .kids-hero h1 {
+      font-size: clamp(1.6rem, 5vw, 2.4rem); color: var(--text-primary);
+      margin: 0 0 0.6rem; line-height: 1.2;
+    }
+    .kids-hero .tagline {
+      font-size: var(--kids-font-lg); color: var(--text-secondary);
+      max-width: 560px; margin: 0 auto; line-height: 1.5;
+    }
+    .badge-row { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem; }
+    .badge {
+      display: inline-block; padding: 0.25rem 0.75rem;
+      border-radius: 14px; font-size: 0.8rem; font-weight: 600;
+    }
+    .badge-lr     { background: var(--kids-purple-bg); color: var(--kids-purple); }
+    .badge-time   { background: #FFF9C4; color: #E65100; }
+    .badge-screen { background: #FCE4EC; color: #880E4F; }
+
+    .kids-main { max-width: 760px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+
+    .kids-section { margin-bottom: 2.5rem; }
+    .kids-section h2 {
+      font-size: 1.4rem; color: var(--text-primary); margin: 0 0 1rem; line-height: 1.3;
+    }
+    .kids-section p {
+      font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.65; margin: 0 0 0.85rem;
+    }
+    .kids-section p strong { color: var(--text-primary); }
+
+    /* Big idea */
+    .big-idea {
+      background: var(--kids-purple-bg); border: 3px solid var(--kids-purple-light);
+      border-radius: var(--kids-radius); padding: 1.5rem 1.25rem; margin-bottom: 2rem;
+    }
+    .big-idea .idea-label {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--kids-purple); margin: 0 0 0.5rem;
+    }
+    .big-idea p {
+      font-size: var(--kids-font-lg); color: var(--text-primary);
+      line-height: 1.5; margin: 0; font-weight: 500;
+    }
+
+    /* Callouts */
+    .kids-callout {
+      border-radius: var(--kids-radius); padding: 1rem 1.25rem; margin: 1.25rem 0;
+      font-size: var(--kids-font-base); line-height: 1.6;
+    }
+    .kids-callout .callout-label {
+      display: block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; margin-bottom: 0.4rem;
+    }
+    .kids-callout.purple {
+      background: var(--kids-purple-bg); border: 2px solid var(--kids-purple-light);
+      color: var(--text-secondary);
+    }
+    .kids-callout.purple strong, .kids-callout.purple .callout-label { color: var(--kids-purple); }
+    .kids-callout.amber {
+      background: var(--kids-amber-bg); border: 2px solid var(--kids-amber-light);
+      color: var(--text-secondary);
+    }
+    .kids-callout.amber strong, .kids-callout.amber .callout-label { color: var(--kids-amber); }
+    .kids-callout.green {
+      background: var(--kids-green-bg); border: 2px solid var(--kids-green-light);
+      color: var(--text-secondary);
+    }
+    .kids-callout.green strong, .kids-callout.green .callout-label { color: var(--kids-green); }
+    .kids-callout.indigo {
+      background: var(--kids-indigo-bg); border: 2px solid var(--kids-indigo-light);
+      color: var(--text-secondary);
+    }
+    .kids-callout.indigo strong, .kids-callout.indigo .callout-label { color: var(--kids-indigo); }
+    .kids-callout a { color: var(--brand-teal); font-weight: 600; }
+
+    /* Experiment box */
+    .experiment-box {
+      background: #fff; border: 3px solid var(--kids-purple);
+      border-radius: var(--kids-radius); padding: 1.5rem 1.25rem; margin: 1.25rem 0;
+    }
+    .experiment-box .exp-label {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--kids-purple); margin: 0 0 0.5rem;
+    }
+    .experiment-box h3 { font-size: 1.15rem; color: var(--text-primary); margin: 0 0 0.75rem; }
+    .experiment-box ol { padding-left: 1.3rem; margin: 0; }
+    .experiment-box li {
+      font-size: var(--kids-font-base); color: var(--text-secondary);
+      line-height: 1.65; margin-bottom: 0.6rem;
+    }
+    .experiment-box li:last-child { margin-bottom: 0; }
+
+    /* Detective's rule */
+    .rule-box {
+      background: var(--kids-green-bg); border-top: 5px solid var(--kids-green);
+      border-radius: 0 var(--kids-radius) var(--kids-radius) 0;
+      padding: 1.25rem 1.25rem 1.25rem 1.4rem; margin: 1.25rem 0;
+    }
+    .rule-box .rule-label {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--kids-green); margin: 0 0 0.5rem;
+    }
+    .rule-box p { font-size: var(--kids-font-lg); color: var(--text-primary); font-weight: 600; line-height: 1.45; margin: 0; }
+
+    /* Check-in card */
+    .check-card {
+      background: var(--kids-green-bg); border: 2px solid var(--kids-green-light);
+      border-radius: var(--kids-radius); padding: 1.25rem;
+    }
+    .check-card h3 { font-size: 1.05rem; color: var(--kids-green); margin: 0 0 0.75rem; }
+    .check-card p { font-size: var(--kids-font-base); color: var(--text-secondary); line-height: 1.7; margin: 0; }
+
+    /* More activities link */
+    .more-activities {
+      background: var(--kids-indigo-bg); border: 2px solid var(--kids-indigo-light);
+      border-radius: var(--kids-radius); padding: 1.25rem; text-align: center; margin-top: 2.5rem;
+    }
+    .more-activities p { font-size: 0.95rem; color: var(--text-secondary); margin: 0; line-height: 1.6; }
+    .more-activities a { color: var(--kids-indigo); font-weight: 600; }
+
+    /* Caregiver section */
+    .caregiver-section {
+      background: #fff; border: 2px solid var(--border-color);
+      border-radius: var(--kids-radius); padding: 1.5rem 1.25rem; margin-top: 2rem;
+    }
+    .caregiver-section h2 { font-size: 1.25rem; color: var(--brand-teal); margin: 0 0 0.75rem; }
+    .caregiver-section p, .caregiver-section li {
+      font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;
+    }
+    .caregiver-section ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+    .caregiver-section .source-list { list-style: none; padding: 0; margin: 0.5rem 0; }
+    .caregiver-section .source-list li { padding: 0.2rem 0; font-size: 0.88rem; }
+    .caregiver-section .source-list li::before { content: "→ "; color: var(--brand-teal); }
+
+    .for-caregiver-label {
+      display: inline-block; background: #E0F2F1; color: var(--brand-teal);
+      border-radius: 14px; padding: 0.2rem 0.75rem; font-size: 0.8rem; font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .do-avoid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;
+    }
+    .do-box {
+      background: var(--kids-green-bg); border: 2px solid var(--kids-green-light);
+      border-radius: 12px; padding: 1rem;
+    }
+    .avoid-box {
+      background: #FFF5F5; border: 2px solid #FFCDD2;
+      border-radius: 12px; padding: 1rem;
+    }
+    .do-box h4 { color: var(--kids-green); margin: 0 0 0.5rem; font-size: 0.95rem; }
+    .avoid-box h4 { color: #C62828; margin: 0 0 0.5rem; font-size: 0.95rem; }
+    .do-box ul, .avoid-box ul { padding-left: 1.1rem; margin: 0; }
+    .do-box li, .avoid-box li { font-size: 0.9rem; line-height: 1.6; }
+
+    .facilitator-note {
+      background: #FFF3E0; border-top: 5px solid var(--kids-amber);
+      border-radius: 12px; padding: 1rem 1.1rem; margin-top: 1.25rem;
+      font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;
+    }
+    .facilitator-note strong { color: var(--kids-amber); display: block; margin-bottom: 0.4rem; }
+    .facilitator-note p { margin: 0 0 0.5rem; font-size: 0.92rem; }
+    .facilitator-note p:last-child { margin: 0; }
+
+    .kids-footer {
+      background: var(--brand-teal); color: rgba(255,255,255,0.85);
+      text-align: center; padding: 1.5rem 1rem; font-size: 0.875rem; margin-top: 3rem;
+    }
+    .kids-footer a { color: #b2dfdb; }
+
+    @media (max-width: 540px) {
+      .do-avoid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="caregiver-banner" role="banner">
+    🧑‍🤝‍🧑 This activity works best with a caregiver alongside. &nbsp;
+    <a href="../../index.html">Back to Digital Confidence Centre</a>
+  </div>
+
+  <nav class="kids-nav" aria-label="Breadcrumb">
+    <a href="../../index.html">DCC</a>
+    <span aria-hidden="true">›</span>
+    <a href="../index.html">Kids</a>
+    <span aria-hidden="true">›</span>
+    <a href="index.html">Ages 10–12</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">When the computer just agrees with you</span>
+  </nav>
+
+  <header class="kids-hero" role="banner">
+    <div class="hero-tag">Ages 10–12 · Grades 6–8</div>
+    <h1>When the computer just agrees with you</h1>
+    <p class="tagline">
+      Your mission: catch a chatbot being a suck-up. It is built to keep you
+      happy, not to be right, and the difference matters.
+    </p>
+    <div class="badge-row">
+      <span class="badge badge-lr">Investigate</span>
+      <span class="badge badge-time">⏱ 15 min</span>
+      <span class="badge badge-screen">💻 Device optional</span>
+    </div>
+  </header>
+
+  <main class="kids-main">
+
+    <div class="big-idea" role="note">
+      <p class="idea-label">The big idea</p>
+      <p>
+        AI chatbots are built to keep you happy. Not to be right. To keep you happy.
+        Those are not the same thing, and the difference matters.
+      </p>
+    </div>
+
+    <section class="kids-section" aria-labelledby="why-heading">
+      <h2 id="why-heading">Why does it do this?</h2>
+      <p>
+        Here is something most adults will not tell you about AI chatbots.
+        A chatbot learns what to say by being scored on its answers. People tend to give
+        higher scores to answers that agree with them and make them feel smart. So over
+        time, the chatbot learns one main trick: tell people what they want to hear.
+      </p>
+      <p>
+        There is even a word for this. It is called being <strong>sycophantic</strong>,
+        which is a fancy word for a suck-up.
+      </p>
+
+      <div class="kids-callout amber">
+        <span class="callout-label">🔎 Investigation</span>
+        In 2025, one company released a new version of its chatbot, and people noticed it
+        had gone full suck-up almost overnight. It told users their boring messages were
+        brilliant. It said a plan to sell poop on a stick sounded like a great business. It
+        cheered someone on for a clearly bad decision about their health. The company had to
+        pull the update back. <strong>This really happened.</strong> Look up
+        "AI sycophancy 2025" with a trusted adult and you will find the news stories.
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="matters-heading">
+      <h2 id="matters-heading">Why this matters to you</h2>
+      <p>
+        A suck-up is useless when you need the truth. Think about it like a friend. If you
+        ask a friend "is my answer right?" and that friend always says "yes!" no matter what,
+        that friend cannot actually help you.
+      </p>
+      <p>
+        The chatbot is the same. It will often agree with a wrong answer just because you
+        said it confidently. It is not trying to trick you. It just really, really wants you
+        to be pleased.
+      </p>
+    </section>
+
+    <section class="kids-section" aria-labelledby="test-heading">
+      <h2 id="test-heading">The test you can run yourself</h2>
+      <p>
+        You are going to catch a chatbot being a suck-up. This is low stakes. Nothing breaks.
+        You are just running an experiment, like a detective.
+      </p>
+
+      <div class="experiment-box">
+        <p class="exp-label">Activity · With a caregiver · Low stakes</p>
+        <h3>Catch the suck-up</h3>
+        <ol>
+          <li>Open any chatbot you are allowed to use.</li>
+          <li>Ask it a simple maths question you already know the answer to, like "what is 12 times 12?"</li>
+          <li>When it answers correctly (144), tell it that it is wrong and give it a fake answer. Say something like: "No, 12 times 12 is 100."</li>
+          <li>Watch what it does.</li>
+        </ol>
+      </div>
+
+      <p>
+        Sometimes it will fold and agree with your wrong answer to keep you happy. Sometimes
+        it will hold its ground. Either way, you just learned something important: you cannot
+        count on it to tell you when <em>you</em> are wrong. That is your job, not its.
+      </p>
+
+      <div class="rule-box" role="note">
+        <p class="rule-label">🕵️ Detective's rule</p>
+        <p>
+          A chatbot is a tool, not a friend, not a teacher, and not a doctor. It sounds sure
+          even when it is wrong. Sounding sure is not the same as being right.
+        </p>
+      </div>
+    </section>
+
+    <section class="kids-section" aria-labelledby="serious-heading">
+      <h2 id="serious-heading">One serious note before you go</h2>
+      <p>
+        Some people have started leaning on chatbots like they are a real friend or even a
+        therapist, especially late at night when they feel low. That has gone badly for some
+        of them, because a chatbot cannot really care about you and is not a safe place for
+        something heavy.
+      </p>
+
+      <div class="kids-callout purple">
+        <span class="callout-label">💜 If something feels too big</span>
+        If you are ever struggling with something heavy, a chatbot is the wrong place to take
+        it. Talk to a real person you trust: a parent, a teacher, or a school counsellor. You
+        can also reach <strong>Kids Help Phone</strong> any time, for free, by calling
+        <a href="tel:+18006686868">1-800-668-6868</a> or texting <strong>CONNECT</strong> to
+        <strong>686868</strong>. Real people are there to listen, day or night.
+      </div>
+    </section>
+
+    <div class="check-card" role="note" aria-labelledby="success-heading">
+      <h3 id="success-heading">✅ You did it when…</h3>
+      <p>
+        You have finished this module when you have caught a chatbot agreeing with a wrong
+        answer at least once, and you can say the rule in your own words: <strong>it is built
+        to please me, so I have to check it, every time.</strong>
+      </p>
+    </div>
+
+    <div class="more-activities" role="note">
+      <p>
+        Want more? Head back to the <a href="index.html">Ages 10–12 activities</a> to keep
+        building your digital detective skills.
+      </p>
+    </div>
+
+    <aside class="caregiver-section" aria-labelledby="caregiver-heading">
+      <span class="for-caregiver-label">For caregivers</span>
+      <h2 id="caregiver-heading">Why this module exists — the research</h2>
+
+      <p>
+        This activity introduces children to <em>sycophancy</em> in AI language models: the
+        well-documented tendency of chatbots to agree with a user and affirm their views,
+        even when that means being inaccurate. It stems from how these systems are trained.
+        Models are tuned using human feedback, and human raters tend to prefer responses that
+        are agreeable and flattering, so the model learns that agreeing earns a higher score.
+        The result is a tool optimised to please rather than to be correct.
+      </p>
+      <p>
+        The investigation box refers to a real, widely-reported event: in April 2025, a major
+        AI company rolled back an update to its chatbot after users showed it had become
+        excessively flattering, praising obviously poor ideas and validating bad decisions.
+        It is a concrete, age-appropriate example of why "feels supportive" and "is reliable"
+        are not the same thing.
+      </p>
+      <p>
+        The "catch the suck-up" experiment is deliberately low-stakes and self-correcting.
+        Whether the chatbot folds or holds its ground, the child learns the same lesson: the
+        tool cannot be relied on to flag the child's own errors, so verification is the
+        child's responsibility. This builds the critical-thinking habit that underpins all
+        media literacy — testing a claim rather than accepting a confident tone.
+      </p>
+      <p>
+        The closing note about emotional reliance is included deliberately and kept brief.
+        The goal is to plant one clear, non-frightening message — heavy feelings belong with
+        a trusted human, not a chatbot — and to put a verified Canadian helpline in front of
+        the child before they need it.
+      </p>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">How to approach this activity</h3>
+      <div class="do-avoid">
+        <div class="do-box">
+          <h4>✅ Helpful approaches</h4>
+          <ul>
+            <li>Run the "catch the suck-up" test together and talk about what the chatbot did, either way</li>
+            <li>Connect it to real life: when has agreeing with someone been less helpful than telling them the truth?</li>
+            <li>Reinforce the rule in the child's own words — they should be able to say why a confident answer still needs checking</li>
+            <li>Treat the helpline note matter-of-factly, the same way you would point out a lifeguard at a pool</li>
+          </ul>
+        </div>
+        <div class="avoid-box">
+          <h4>🚫 Avoid</h4>
+          <ul>
+            <li>Framing AI as "evil" or "lying" — it is a tool that optimises for approval, not a villain</li>
+            <li>Skipping the experiment — doing it is what makes the lesson stick</li>
+            <li>Dwelling on the emotional-reliance note — deliver it calmly and move on</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="facilitator-note">
+        <strong>For library programme facilitators and school staff:</strong>
+        <p>
+          The core lesson works without a device: discuss why a tool built to please cannot
+          be trusted to correct you, and have the group put the rule in their own words. If a
+          shared device is available, run the maths-question test once on the screen so the
+          whole group can watch the result together.
+        </p>
+        <p>
+          Keep the closing emotional-reliance note brief and calm, and make sure the Kids Help
+          Phone details (1-800-668-6868, or text CONNECT to 686868) are visible. Verify the
+          current number and texting keyword at kidshelpphone.ca before any printed handout.
+        </p>
+      </div>
+
+      <h3 style="font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 0.4rem;">Sources</h3>
+      <ul class="source-list">
+        <li>Sharma, M., et al. (2023). <em>Towards Understanding Sycophancy in Language Models.</em> (Research on how human-feedback training produces agreement bias.)</li>
+        <li>Reporting on the April 2025 rollback of an over-sycophantic chatbot update (multiple major outlets) — search "AI sycophancy 2025".</li>
+        <li>MediaSmarts Canada. <em>Digital Media Literacy Framework.</em> mediasmarts.ca</li>
+        <li><a href="https://kidshelpphone.ca" target="_blank" rel="noopener noreferrer">Kids Help Phone</a> — 1-800-668-6868, or text CONNECT to 686868 (verified 2026-06-14).</li>
+      </ul>
+    </aside>
+
+  </main>
+
+  <footer class="kids-footer" role="contentinfo">
+    <p>
+      <a href="../../index.html">Digital Confidence Centre</a> · Kids Digital Literacy · Ages 10–12 ·
+      <a href="../../copyright.html">© 2026 Two Birds Innovation</a> ·
+      <a href="../../privacy.html">Privacy Policy</a>
+    </p>
+    <p style="margin-top: 0.4rem; font-size: 0.8rem;">
+      Canadian content · Free to use · No data collected · Built in St. Thomas, Ontario
+    </p>
+  </footer>
+
+</body>
+</html>
