@@ -1,14 +1,32 @@
 /* ============================================================================
-   DCC Design Tokens — Warm Hearth theme (default)
+   DCC Design Tokens — Warm Hearth theme (default)   ·  v2 (2026-06-18)
    ----------------------------------------------------------------------------
    Voted winner (Option A, 65.5%). Kitchen-table warmth, trusted-neighbour
-   tone, zero intimidation. WCAG AA on every token pair.
+   tone, zero intimidation. Tuned for seniors 65+ on tablets/phones, often
+   in dark mode and at high zoom.
 
    All values are CSS custom properties on :root. Components never hard-code
    colours, font sizes, spacing, shadows, or radii — always reference tokens.
    Swap themes by loading tokens-dark.css, tokens-high-contrast.css, or
    tokens-alt.css instead of this file. Structure (bones) lives in
-   components.css; this file is skin only.
+   components.css; production refinements live in dcc-core.css; this file is
+   skin only.
+
+   --------------------------------------------------------------------------
+   VERIFIED WCAG 2.2 AA CONTRAST (computed 2026-06-18, light theme)
+   --------------------------------------------------------------------------
+     text       #1A1A2E on bg      #FAFAF8  → 16.32:1  (AAA)
+     text       #1A1A2E on surface #F5F2ED  → 15.28:1  (AAA)
+     text-light #50505F on bg      #FAFAF8  →  7.57:1  (AAA)
+     primary    #2A7B6F on white            →  5.05:1  (AA, AAA large)
+     white      on primary #2A7B6F          →  5.05:1  (AA)
+     accent-strong #A85410 / white          →  5.33:1  (AA)  ← use for buttons
+     accent     #E8842C / white             →  2.70:1  (FAILS as text) ← decorative only
+     accent-deep #8A450C on #FFF0E0          →  6.40:1  (AA+)
+     error      #B71C1C on white            →  6.57:1  (AA+)
+     warning-deep #7A5800 on #FFF8E1         →  6.13:1  (AA+)
+     success-deep #1B5E20 on #E8F5E9         →  7.00:1  (AAA)
+   Re-run /AGENTS.md → "Checking contrast" after changing any colour token.
    ========================================================================== */
 
 :root {
@@ -27,12 +45,13 @@
   --color-primary-light:   #E8F5F0;
   --color-primary-contrast:#FFFFFF;
 
-  --color-accent:          #E8842C; /* burnt orange — CTAs, focus */
-  --color-accent-hover:    #CF7324;
-  --color-accent-active:   #B5631D;
+  --color-accent:          #E8842C; /* burnt orange — DECORATIVE ONLY: progress fills, large icons, borders, hero flourishes. Do NOT use as a text/button background (white-on-#E8842C is only 2.7:1 — fails WCAG). */
+  --color-accent-strong:   #A85410; /* burnt orange, AA-safe — white text on this is 5.33:1. Use for ALL primary button/CTA backgrounds and the focus ring. */
+  --color-accent-hover:    #8F470D; /* darker accent-strong for hover (white text 6.9:1) */
+  --color-accent-active:   #7A3D0B; /* pressed */
   --color-accent-light:    #FFF0E0;
   --color-accent-contrast: #FFFFFF;
-  --color-accent-deep:     #8A450C; /* text-on-accent-light — 7:1+ on #FFF0E0 (AAA) */
+  --color-accent-deep:     #8A450C; /* text-on-accent-light — 6.4:1 on #FFF0E0 (AA+). Use for orange text on light fills. */
 
   /* --- Colour: text -------------------------------------------------------- */
   --color-text:            #1A1A2E; /* softer near-black (Theme B — less brownish, higher contrast) */
@@ -121,7 +140,7 @@
   --shadow-sm:  0 1px 4px rgba(26, 26, 46, 0.06);
   --shadow-md:  0 2px 8px rgba(26, 26, 46, 0.08);   /* Theme B card elevation */
   --shadow-lg:  0 4px 20px rgba(26, 26, 46, 0.12);
-  --shadow-focus: 0 0 0 3px var(--color-accent);
+  --shadow-focus: 0 0 0 3px var(--color-accent-strong); /* AA-safe focus ring (3:1+ vs light bg) */
 
   /* --- Motion (honour prefers-reduced-motion — see below) ----------------- */
   --motion-ease:       cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -143,11 +162,15 @@
   --z-tooltip: 300;
   --z-overlay: 400;
 
-  /* --- Focus ring --------------------------------------------------------- */
-  --focus-ring-color:   var(--color-accent);
+  /* --- Focus ring (WCAG 2.2 SC 2.4.13 — 3:1+ contrast vs adjacent) -------- */
+  --focus-ring-color:   var(--color-accent-strong); /* #A85410 — 5.33:1 vs white, passes non-text contrast */
   --focus-ring-width:   3px;
   --focus-ring-offset:  2px;
   --focus-ring:         var(--focus-ring-width) solid var(--focus-ring-color);
+
+  /* --- Lead paragraph + reading rhythm ------------------------------------ */
+  --font-size-lead:     clamp(20px, 1.4vw + 16px, 24px);
+  --line-height-lead:   1.6;
 
   /* --- Touch targets ------------------------------------------------------ */
   --tap-target-min:     44px;   /* WCAG 2.5.5 floor */

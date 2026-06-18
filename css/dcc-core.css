@@ -1,0 +1,298 @@
+/* ============================================================================
+   DCC Core — production refinement layer (v1, 2026-06-18)
+   ----------------------------------------------------------------------------
+   Senior-accessible UI rebuild. Token-driven only: every value references a
+   custom property from tokens.css. Loaded LAST so it can harmonise the
+   ad-hoc, off-token sections that made core pages look generic, without
+   touching page content, links, or JavaScript hooks.
+
+   Load order on a page:
+     main.css → tokens.css → tokens-dark.css → fonts.css → components.css
+     → accessibility.css → mobile.css → dcc-core.css   (this file, last)
+
+   Contents:
+     1. Focus + reduced motion safety net
+     2. Accessible primary CTA (fixes white-on-#E8842C 2.7:1 failure)
+     3. .dcc-callout — one component for every coloured info/alert box
+     4. .dcc-card top accents (replaces inline border-top hex)
+     5. Marketing primitives: hero, section, feature grid, steps, CTA band
+     6. Utilities
+   ========================================================================== */
+
+/* --- 1. Focus + motion safety net ---------------------------------------- */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+  border-radius: var(--radius-sm);
+}
+
+/* Keyboard users must never lose the focus ring behind the sticky header. */
+html { scroll-padding-top: calc(var(--nav-height) + var(--space-4)); }
+
+/* --- 2. Accessible primary CTA ------------------------------------------- */
+/* Legacy .btn-primary used white text on --color-accent (#E8842C = 2.7:1,
+   FAILS). Re-point primary CTAs to the AA-safe --color-accent-strong. */
+.dcc-btn,
+a.dcc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--tap-target);
+  padding: var(--space-3) var(--space-6);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h5);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color var(--motion-duration-2) var(--motion-ease),
+              border-color var(--motion-duration-2) var(--motion-ease);
+}
+.dcc-btn--primary,
+a.dcc-btn--primary {
+  background: var(--color-accent-strong);
+  color: var(--color-accent-contrast);
+}
+.dcc-btn--primary:hover,
+a.dcc-btn--primary:hover { background: var(--color-accent-hover); color: var(--color-accent-contrast); }
+.dcc-btn--primary:active { background: var(--color-accent-active); }
+
+.dcc-btn--secondary,
+a.dcc-btn--secondary {
+  background: var(--color-surface);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.dcc-btn--secondary:hover { background: var(--color-primary-light); }
+
+.dcc-btn--on-dark,
+a.dcc-btn--on-dark {
+  background: var(--color-text-inverse);
+  color: var(--color-primary);
+}
+.dcc-btn--on-dark:hover { background: var(--color-surface); }
+
+/* Harmonise existing primary CTAs on pages that load this file. */
+.btn-primary,
+a.btn-primary,
+.email-invite-btn {
+  background-color: var(--color-accent-strong) !important;
+  color: var(--color-accent-contrast) !important;
+}
+.btn-primary:hover,
+a.btn-primary:hover,
+.email-invite-btn:hover { background-color: var(--color-accent-hover) !important; }
+
+/* --- 3. .dcc-callout ----------------------------------------------------- */
+/* One accessible component for every coloured information / alert box.
+   Replaces ad-hoc inline styles like background:#fff3f3;border:3px solid …  */
+.dcc-callout {
+  margin: var(--space-8) 0;
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 6px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  color: var(--color-text);
+}
+.dcc-callout > :first-child { margin-top: 0; }
+.dcc-callout > :last-child { margin-bottom: 0; }
+.dcc-callout__title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-3);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+.dcc-callout p { line-height: var(--line-height-body); }
+
+.dcc-callout--brand   { background: var(--color-surface-primary); border-left-color: var(--color-primary); }
+.dcc-callout--info    { background: var(--color-info-light);      border-left-color: var(--color-info); }
+.dcc-callout--success { background: var(--color-success-light);   border-left-color: var(--color-success); }
+.dcc-callout--success .dcc-callout__title { color: var(--color-success-deep); }
+.dcc-callout--warning { background: var(--color-warning-light);   border-left-color: var(--color-warning); }
+.dcc-callout--warning .dcc-callout__title { color: var(--color-warning-deep); }
+.dcc-callout--danger  { background: var(--color-error-light);     border-left-color: var(--color-error); }
+.dcc-callout--danger  .dcc-callout__title { color: var(--color-error); }
+
+.dcc-callout__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+/* --- 4. Card top accents (replace inline border-top:#hex) ---------------- */
+.dcc-top--brand   { border-top: 4px solid var(--color-primary) !important; }
+.dcc-top--accent  { border-top: 4px solid var(--color-accent) !important; }
+.dcc-top--info    { border-top: 4px solid var(--color-info) !important; }
+.dcc-top--success { border-top: 4px solid var(--color-success-deep) !important; }
+.dcc-top--warning { border-top: 4px solid var(--color-warning-deep) !important; }
+
+/* --- 5. Marketing primitives (used by rebuilt for-libraries.html) -------- */
+.dcc-page { color: var(--color-text); background: var(--color-bg); }
+
+.dcc-shell {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+.dcc-section { padding-block: var(--space-16); }
+.dcc-section--tight { padding-block: var(--space-12); }
+.dcc-section--surface { background: var(--color-surface); }
+.dcc-section--brand {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+.dcc-section--brand h1,
+.dcc-section--brand h2,
+.dcc-section--brand h3,
+.dcc-section--brand p { color: var(--color-text-inverse); }
+
+.dcc-section__lead {
+  max-width: var(--content-max);
+  font-size: var(--font-size-lead);
+  line-height: var(--line-height-lead);
+}
+
+.dcc-eyebrow {
+  display: inline-block;
+  margin-bottom: var(--space-3);
+  padding: var(--space-1) var(--space-4);
+  background: var(--color-surface-alt);
+  color: var(--color-accent-deep);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+.dcc-section--brand .dcc-eyebrow {
+  background: rgba(255, 255, 255, 0.16);
+  color: var(--color-text-inverse);
+}
+
+/* Hero */
+.dcc-hero { padding-block: var(--space-16); background: var(--color-surface-primary); }
+.dcc-hero__grid {
+  display: grid;
+  gap: var(--space-12);
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .dcc-hero__grid { grid-template-columns: 1.1fr 0.9fr; }
+}
+.dcc-hero h1 {
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-tight);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-4);
+}
+.dcc-hero__sub {
+  font-size: var(--font-size-lead);
+  line-height: var(--line-height-lead);
+  max-width: 40ch;
+  margin: 0 0 var(--space-6);
+}
+.dcc-hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-4); }
+.dcc-hero__media img {
+  width: 100%;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Feature / value grid */
+.dcc-grid {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 600px)  { .dcc-grid--2 { grid-template-columns: repeat(2, 1fr); }
+                             .dcc-grid--3 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 920px)  { .dcc-grid--3 { grid-template-columns: repeat(3, 1fr); } }
+
+.dcc-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-6);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+}
+.dcc-section--surface .dcc-card { background: var(--color-bg); }
+.dcc-card__icon {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+.dcc-card h3 {
+  margin: 0;
+  font-size: var(--font-size-h3);
+  color: var(--color-primary);
+}
+.dcc-card p { margin: 0; line-height: var(--line-height-body); }
+
+/* Numbered steps */
+.dcc-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-6);
+  counter-reset: dcc-step;
+}
+.dcc-steps > li {
+  position: relative;
+  padding-left: calc(var(--space-12) + var(--space-2));
+  counter-increment: dcc-step;
+}
+.dcc-steps > li::before {
+  content: counter(dcc-step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-12);
+  height: var(--space-12);
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-circle);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+}
+.dcc-steps h3 { margin: 0 0 var(--space-2); font-size: var(--font-size-h4); color: var(--color-text); }
+.dcc-steps p { margin: 0; }
+
+/* CTA band */
+.dcc-cta-band { text-align: center; }
+.dcc-cta-band h2 { font-size: var(--font-size-h1); margin: 0 0 var(--space-4); }
+.dcc-cta-band p { max-width: 52ch; margin: 0 auto var(--space-6); font-size: var(--font-size-lead); }
+.dcc-cta-band .dcc-hero__actions { justify-content: center; }
+
+/* --- 6. Utilities -------------------------------------------------------- */
+.dcc-center { text-align: center; }
+.dcc-measure { max-width: var(--content-max); }
+.dcc-mt-0 { margin-top: 0; }
+.dcc-stack > * + * { margin-top: var(--space-4); }
+.dcc-sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}

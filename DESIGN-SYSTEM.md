@@ -54,7 +54,7 @@ All values live in `css/tokens.css`. Never hardcode a hex, px, or rem outside a 
 | `--color-success-light` | `#E8F5E9` | Success state backgrounds |
 | `--color-success-deep` | `#1B5E20` | Success text-on-light |
 
-**Do not use `--color-accent` (#E8842C) as text colour on white** — it is 3.1:1 against #FAFAF8 (AA large only). Use `--color-accent-deep` (`#8A450C`) for orange text.
+**Do not use `--color-accent` (#E8842C) as text colour on white** — white-on-#E8842C is only 2.7:1 (fails even large text). `--color-accent` is **decorative only** (progress fills, large icons, borders, hero flourishes). For orange **text** on light fills use `--color-accent-deep` (`#8A450C`). For **button/CTA backgrounds and the focus ring** use `--color-accent-strong` (`#A85410`, white text = 5.33:1, AA).
 
 ### Typography Tokens in Practice
 
@@ -421,6 +421,8 @@ Before pushing any new or revised module page:
 | `css/tokens-dark.css` | Dark mode token overrides |
 | `css/tokens-high-contrast.css` | High-contrast token overrides |
 | `css/components.css` | Component structure (bones) — no colour hardcodes |
+| `css/dcc-core.css` | Production refinement layer, loaded LAST. New cross-page UI (`.dcc-callout`, `.dcc-btn`, marketing primitives, `.dcc-top--*`) lives here — token-driven, prefixed `.dcc-` |
+| `AGENTS.md` | Governs every agent run: product, users, principles, stack, "done" checklist |
 | `css/fonts.css` | Self-hosted Merriweather + Source Sans 3 (SIL OFL licensed — `fonts/LICENSE-OFL.txt`) |
 | `styleguide/index.html` | Live component showcase (canonical visual reference) |
 | `styleguide/COMPETITIVE-AUDIT.md` | Five content-competitor platforms reviewed April 2026 |
