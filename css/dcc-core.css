@@ -287,7 +287,86 @@ a.btn-primary:hover,
 .dcc-cta-band p { max-width: 52ch; margin: 0 auto var(--space-6); font-size: var(--font-size-lead); }
 .dcc-cta-band .dcc-hero__actions { justify-content: center; }
 
-/* --- 6. Utilities -------------------------------------------------------- */
+/* --- 7. Module-page refinements (DCC v2 batch 1 migration) --------------- */
+/* These replace the repeated inline styles in module-1…module-10 with
+   token-driven, AA-safe classes. No content, links, or JS hooks change —
+   selectors that touch JS hooks (.font-size-btn, .dcc-quiz-container) only
+   restyle existing attributes, they never rename them. */
+
+/* Plain-HTML fallback shown when JavaScript is unavailable (<noscript>). */
+.dcc-noscript {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding: var(--space-5);
+  font-family: var(--font-body);
+}
+
+/* Accessibility-bar text-size buttons: the glyph scales up by step. Was an
+   inline font-size on each .font-size-btn (a JS hook). */
+.font-size-btn[data-size="small"]  { font-size: var(--font-size-caption); }
+.font-size-btn[data-size="medium"] { font-size: var(--font-size-sm); }
+.font-size-btn[data-size="large"]  { font-size: var(--font-size-h5); }
+.font-size-btn[data-size="xl"]     { font-size: var(--font-size-h3); }
+
+/* Print-this-module row. */
+.dcc-print-row { text-align: center; padding: var(--space-4) 0 var(--space-2); }
+
+/* In-flow newsletter slot spacing (populated by JS). */
+.dc-newsletter-slot { margin: var(--space-8) 0 var(--space-4); }
+
+/* Token-driven spacing utilities (replace inline margin-top px/rem). */
+.dcc-mt-2 { margin-top: var(--space-2); }
+.dcc-mt-3 { margin-top: var(--space-3); }
+.dcc-mt-8 { margin-top: var(--space-8); }
+
+/* Bulleted / numbered lists inside tip and example blocks. */
+.dcc-list {
+  margin-top: var(--space-2);
+  padding-left: var(--space-5);
+  line-height: var(--line-height-body);
+}
+
+/* Row of secondary action buttons (e.g. scam deep-dive links). The legacy
+   inline font-size (~13px) fell below the 16px senior minimum — lift to token. */
+.dcc-btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+.dcc-btn-row .btn { font-size: var(--font-size-sm); }
+
+/* Emphasised inline note — replaces hardcoded #1565C0 with the AA-safe brand
+   teal (4.83:1 on page background; the blue was off-token). */
+.dcc-note-strong { color: var(--color-primary); font-weight: var(--font-weight-semibold); }
+
+/* Comparison / reference data tables — replaces inline table styling and the
+   off-token #1565C0 header border. */
+.dcc-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-block: var(--space-4);
+  font-size: var(--font-size-sm);
+}
+.dcc-data-table th,
+.dcc-data-table td {
+  padding: var(--space-2) var(--space-3);
+  text-align: left;
+}
+.dcc-data-table thead tr { border-bottom: 2px solid var(--color-info); }
+.dcc-data-table tbody tr { border-bottom: 1px solid var(--color-border); }
+
+/* Filled-header variant (module-10): teal header, zebra body rows. */
+.dcc-data-table--filled thead tr {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-bottom: 0;
+}
+.dcc-data-table--filled th,
+.dcc-data-table--filled td { padding: var(--space-3); }
+.dcc-data-table--filled tbody tr:nth-child(even) { background: var(--color-surface-alt); }
+
+/* --- 8. Utilities -------------------------------------------------------- */
 .dcc-center { text-align: center; }
 .dcc-measure { max-width: var(--content-max); }
 .dcc-mt-0 { margin-top: 0; }
