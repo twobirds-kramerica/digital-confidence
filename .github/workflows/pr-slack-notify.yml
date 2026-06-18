@@ -1,0 +1,74 @@
+name: PR → Slack
+
+# Posts a Slack alert to #all-twobirdsinnovation when a PR is opened or
+# reopened. Requires SLACK_WEBHOOK_URL repo secret (Incoming Webhook URL
+# from api.slack.com). Gracefully skips if the secret is not yet set.
+#
+# Setup (one-time, ~8 min total across all repos):
+#   1. api.slack.com/apps → Create New App → From scratch
+#      Name: "GitHub PR Bot" · Workspace: TwoBirdsInnovation
+#   2. Add feature: Incoming Webhooks → Activate → Add New Webhook to Workspace
+#      Channel: #all-twobirdsinnovation → Allow
+#   3. Copy the Webhook URL (https://hooks.slack.com/services/...)
+#   4. Each repo: Settings → Secrets and variables → Actions → New secret
+#      Name: SLACK_WEBHOOK_URL · Value: <webhook URL from step 3>
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    name: Notify Slack
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - name: Post to Slack
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_BRANCH: ${{ github.event.pull_request.head.ref }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          REPO: ${{ github.repository }}
+        run: |
+          if [ -z "$SLACK_WEBHOOK_URL" ]; then
+            echo "::warning::SLACK_WEBHOOK_URL not set — skipping Slack alert."
+            echo "See setup instructions in this workflow file's header comment."
+            exit 0
+          fi
+          PAYLOAD=$(jq -n \
+            --arg title "$PR_TITLE" \
+            --arg url "$PR_URL" \
+            --arg branch "$PR_BRANCH" \
+            --arg author "$PR_AUTHOR" \
+            --arg repo "$REPO" \
+            '{
+              text: ("New PR in `" + $repo + "`: " + $title),
+              blocks: [
+                {
+                  type: "section",
+                  text: {
+                    type: "mrkdwn",
+                    text: ("*New PR opened* — <" + $url + "|" + $title + ">\n*Repo:* `" + $repo + "`  *Branch:* `" + $branch + "` → `master`\n*Author:* " + $author)
+                  }
+                },
+                {
+                  type: "actions",
+                  elements: [{
+                    type: "button",
+                    text: {type: "plain_text", text: "Review PR"},
+                    url: $url,
+                    style: "primary"
+                  }]
+                }
+              ]
+            }')
+          curl -s -X POST "$SLACK_WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD"
+          echo "Slack notification sent."
