@@ -22,6 +22,7 @@ html.theme-high-contrast {
   --color-primary-contrast:#FFFFFF;
 
   --color-accent:          #8A3A00; /* ultra-dark burnt orange, AAA */
+  --color-accent-strong:   #8A3A00;
   --color-accent-hover:    #6B2D00;
   --color-accent-active:   #4D2000;
   --color-accent-light:    #F2F2F2;
@@ -72,6 +73,7 @@ html.theme-high-contrast {
     --color-primary-contrast:#FFFFFF;
 
     --color-accent:          #8A3A00;
+    --color-accent-strong:   #8A3A00;
     --color-accent-light:    #F2F2F2;
 
     --color-text:            #000000;

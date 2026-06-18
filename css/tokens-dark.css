@@ -28,6 +28,7 @@ html.theme-dark {
   --color-primary-contrast:#1C1915;
 
   --color-accent:          #F5A563; /* lighter burnt orange for dark */
+  --color-accent-strong:   #F5A563; /* on dark, the light orange + dark text already passes AA */
   --color-accent-hover:    #F7B679;
   --color-accent-active:   #FAC790;
   --color-accent-light:    #3A2A1E;
@@ -107,6 +108,7 @@ html.theme-dark {
     --color-primary-contrast:#1C1915;
 
     --color-accent:          #F5A563;
+    --color-accent-strong:   #F5A563;
     --color-accent-hover:    #F7B679;
     --color-accent-active:   #FAC790;
     --color-accent-light:    #3A2A1E;
