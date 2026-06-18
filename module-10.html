@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="css/print.css">
   <link rel="stylesheet" href="css/quiz-check.css">
   <link rel="stylesheet" href="css/measurement.css">
+  <link rel="stylesheet" href="css/dcc-core.css">
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
   <meta property="og:url" content="https://twobirds-kramerica.github.io/digital-confidence/module-10.html">
@@ -224,10 +225,10 @@
 </head>
 <body>
   <noscript>
-    <div style="padding:20px;font-family:Georgia,serif;max-width:800px;margin:0 auto">
+    <div class="dcc-noscript">
       <h1>Digital Confidence Centre — Module 10: Grocery &amp; Food Delivery</h1>
 
-      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start" style="margin-bottom:1.5rem"></div>
+      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start"></div>
       <div class="module-intro">
         <p class="module-time">⏱ About 20–30 minutes — go at your own pace</p>
         <div class="confidence-check-box">
@@ -250,10 +251,10 @@
   <a href="#main" class="skip-link">Skip to main content</a>
 
   <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
-    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
-    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
-    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
-    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false">A</button>
     <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
   </div>
 
@@ -330,10 +331,10 @@
       <div class="sidebar-a11y-section">
         <p class="sidebar-a11y-title">Text Size</p>
         <div class="sidebar-font-row">
-          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
-          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false" style="font-size:1rem">A</button>
-          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
-          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false">A</button>
         </div>
         <p class="sidebar-a11y-title">Screen Colour</p>
         <div class="sidebar-theme-row">
@@ -547,29 +548,29 @@
 
       <h3>Other Food Delivery Apps</h3>
 
-      <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:0.9em;">
+      <table class="dcc-data-table dcc-data-table--filled">
         <thead>
-          <tr style="background:var(--accent-primary);color:white;">
-            <th style="padding:10px;text-align:left;">App</th>
-            <th style="padding:10px;text-align:left;">Delivery Fee</th>
-            <th style="padding:10px;text-align:left;">Best For</th>
+          <tr>
+            <th>App</th>
+            <th>Delivery Fee</th>
+            <th>Best For</th>
           </tr>
         </thead>
         <tbody>
-          <tr style="border-bottom:1px solid var(--border-color);">
-            <td style="padding:10px;"><strong>DoorDash</strong> (red & white logo)</td>
-            <td style="padding:10px;">$1.99–$5.99</td>
-            <td style="padding:10px;">Restaurant variety, DashPass members</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border-color);background:var(--bg-secondary);">
-            <td style="padding:10px;"><strong>Skip the Dishes</strong> 🇨🇦</td>
-            <td style="padding:10px;">$2.99–$6.99</td>
-            <td style="padding:10px;">Canadian chains (Tim Hortons, Swiss Chalet), smaller cities</td>
+          <tr>
+            <td><strong>DoorDash</strong> (red & white logo)</td>
+            <td>$1.99–$5.99</td>
+            <td>Restaurant variety, DashPass members</td>
           </tr>
           <tr>
-            <td style="padding:10px;"><strong>Instacart</strong> (green & orange)</td>
-            <td style="padding:10px;">$3.99–$7.99</td>
-            <td style="padding:10px;">Groceries, household items</td>
+            <td><strong>Skip the Dishes</strong> 🇨🇦</td>
+            <td>$2.99–$6.99</td>
+            <td>Canadian chains (Tim Hortons, Swiss Chalet), smaller cities</td>
+          </tr>
+          <tr>
+            <td><strong>Instacart</strong> (green & orange)</td>
+            <td>$3.99–$7.99</td>
+            <td>Groceries, household items</td>
           </tr>
         </tbody>
       </table>
@@ -767,7 +768,7 @@
       </div>
 
       
-  <div style="text-align:center;padding:1rem 0 0.5rem">
+  <div class="dcc-print-row">
     <button class="btn-print" onclick="window.print()" aria-label="Print this module">🖨️ Print This Module</button>
   </div>
       <section class="related-modules" aria-label="Related modules">
@@ -798,7 +799,7 @@
         <a href="module-11.html" class="btn btn-primary btn-next">Next: Ride-Sharing →</a>
       </div>
 
-            <div class="dc-newsletter-slot" style="margin:2rem 0 1rem"></div>
+            <div class="dc-newsletter-slot"></div>
       <footer class="site-footer">
         <div class="footer-inner">
           <p class="footer-brand">Digital Confidence Centre</p>
@@ -881,7 +882,7 @@
           </div>
         </div>
       </div>
-      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the module" style="margin:2rem 0"></div>
+      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the module"></div>
       <div class="sources-block">
         <h3 data-en="Sources &amp; References" data-fr="Sources et références">Sources &amp; References</h3>
         <ul>
