@@ -34,6 +34,7 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/accessibility.css">
   <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/dcc-core.css">
   <!-- Google Search Console — Aaron: replace with real verification code from GSC dashboard -->
   <!-- <meta name="google-site-verification" content="REPLACE_WITH_REAL_CODE" /> -->
   <!-- SEO: Author, Robots, Open Graph, Twitter Card -->
@@ -306,9 +307,9 @@
   </div>
 
   <!-- Location Bar -->
-  <div id="dcc-location-bar" style="background:#E6FAF8;border-bottom:1px solid #B2DFDB;padding:6px 16px;font-size:0.88rem;color:#1B3A4B;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;">
+  <div id="dcc-location-bar" style="background:var(--color-surface-primary);border-bottom:1px solid var(--color-border);padding:var(--space-2) var(--space-4);font-size:var(--font-size-sm);color:var(--color-text);display:flex;align-items:center;justify-content:center;gap:var(--space-2);flex-wrap:wrap;">
     <span class="location-label" data-en="Showing general Canadian resources" data-fr="Ressources canadiennes générales">Showing general Canadian resources</span>
-    <button onclick="changeLocation()" class="location-change" style="background:none;border:none;color:#2A7B6F;cursor:pointer;font-size:0.88rem;text-decoration:underline;padding:4px 8px;min-height:44px;font-family:inherit;" data-en="Set my location" data-fr="Définir ma position">Set my location</button>
+    <button onclick="changeLocation()" class="location-change" style="background:none;border:none;color:var(--color-text-link);cursor:pointer;font-size:var(--font-size-sm);text-decoration:underline;padding:var(--space-1) var(--space-2);min-height:var(--tap-target-min);font-family:inherit;" data-en="Set my location" data-fr="Définir ma position">Set my location</button>
   </div>
 
   <!-- Top Bar (Mobile) -->
@@ -654,8 +655,8 @@
           </div>
         </a>
 
-        <div class="module-category-divider" style="grid-column:1/-1;margin:1rem 0 0.25rem;padding-top:1.25rem;border-top:2px solid var(--border-color,#e0e0e0);">
-          <span style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#595959;">Expanding Your Horizons</span>
+        <div class="module-category-divider" style="grid-column:1/-1;margin:var(--space-4) 0 var(--space-1);padding-top:var(--space-5);border-top:2px solid var(--color-border);">
+          <span style="font-size:var(--font-size-sm);font-weight:var(--font-weight-bold);text-transform:uppercase;letter-spacing:var(--letter-spacing-wide);color:var(--color-text-light);">Expanding Your Horizons</span>
         </div>
 
         <a href="module-18-staying-connected.html" class="module-card" data-module="18">
@@ -743,7 +744,7 @@
         <h2 id="whats-new-heading" data-en="What's New" data-fr="Quoi de neuf">What's New</h2>
         <p data-en="Recent additions and updates to the Digital Confidence Centre." data-fr="Ajouts et mises à jour récents au Centre de confiance numérique.">Recent additions and updates to the Digital Confidence Centre.</p>
         <div id="whats-new-cards" class="module-grid" style="margin-top:1rem;">
-          <p id="whats-new-loading" style="color:#595959;font-size:0.95rem;" data-en="Loading updates..." data-fr="Chargement des mises à jour...">Loading updates...</p>
+          <p id="whats-new-loading" style="color:var(--color-text-light);" data-en="Loading updates..." data-fr="Chargement des mises à jour...">Loading updates...</p>
         </div>
       </section>
       <script>
@@ -767,10 +768,10 @@
                 card.innerHTML =
                   '<div class="card-icon" aria-hidden="true">' + item.icon + '</div>' +
                   '<div class="card-content">' +
-                    '<span style="font-size:0.78rem;color:#595959;display:block;margin-bottom:0.25rem;">' + date + '</span>' +
+                    '<span style="font-size:var(--font-size-caption);color:var(--color-text-light);display:block;margin-bottom:0.25rem;">' + date + '</span>' +
                     '<h3 style="margin:0 0 0.4rem;">' + title + '</h3>' +
                     '<p style="margin:0 0 0.5rem;">' + desc + '</p>' +
-                    '<a href="' + item.link + '" style="font-size:0.85rem;color:#2A7B6F;font-weight:600;">' + readLabel + '</a>' +
+                    '<a href="' + item.link + '" style="font-size:var(--font-size-sm);color:var(--color-text-link);font-weight:var(--font-weight-semibold);">' + readLabel + '</a>' +
                   '</div>';
                 container.appendChild(card);
               });
@@ -788,22 +789,21 @@
       <!-- ===== End This Week's Tip ===== -->
 
       <!-- ===== Scam Alert of the Month ===== -->
-      <section id="scam-of-the-month" aria-labelledby="sotm-heading" style="margin:2rem 0;padding:1.25rem 1.5rem;background:#fff3f3;border:3px solid #c0392b;border-radius:8px;">
-        <div id="sotm-loading" style="color:#595959;font-size:0.95rem;" data-en="Loading scam alert..." data-fr="Chargement de l'alerte...">Loading scam alert...</div>
+      <section id="scam-of-the-month" class="dcc-callout dcc-callout--danger" aria-labelledby="sotm-heading">
+        <div id="sotm-loading" data-en="Loading scam alert..." data-fr="Chargement de l'alerte...">Loading scam alert...</div>
         <div id="sotm-content" style="display:none;">
-          <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.5rem;">
-            <span style="font-size:1.4rem;" aria-hidden="true">🚨</span>
-            <h2 id="sotm-heading" style="margin:0;font-size:1.1rem;color:#b71c1c;" data-en="Scam Alert of the Month" data-fr="Arnaque du mois">Scam Alert of the Month</h2>
-            <span id="sotm-month" style="font-size:0.85rem;color:#595959;"></span>
-            <span id="sotm-severity" style="display:inline-block;background:#c0392b;color:#fff;font-size:0.75rem;font-weight:bold;padding:2px 9px;border-radius:4px;text-transform:uppercase;letter-spacing:0.05em;"></span>
-          </div>
-          <p id="sotm-title" style="font-weight:bold;font-size:1.05rem;margin:0.25rem 0 0.5rem;color:#1a1a1a;"></p>
-          <p id="sotm-summary" style="margin:0.25rem 0 0.75rem;line-height:1.6;"></p>
+          <h2 id="sotm-heading" class="dcc-callout__title" data-en="Scam Alert of the Month" data-fr="Arnaque du mois">
+            <span aria-hidden="true">🚨</span> Scam Alert of the Month
+            <span id="sotm-month" class="topic-tag"></span>
+            <span id="sotm-severity" class="topic-tag"></span>
+          </h2>
+          <p id="sotm-title" style="font-weight:var(--font-weight-bold)"></p>
+          <p id="sotm-summary"></p>
           <strong id="sotm-todo-label" data-en="What to do:" data-fr="Que faire :">What to do:</strong>
-          <ul id="sotm-todo-list" style="margin:0.5rem 0 0.75rem 1.25rem;padding:0;line-height:1.7;"></ul>
-          <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:0.75rem;">
-            <a id="sotm-link-alerts" href="scam-alerts/" style="display:inline-block;background:#c0392b;color:#fff;padding:0.5rem 1rem;border-radius:5px;text-decoration:none;font-size:0.9rem;font-weight:bold;" data-en="See All Scam Alerts →" data-fr="Voir toutes les alertes →">See All Scam Alerts →</a>
-            <a id="sotm-link-sim" href="scam-simulator.html" style="display:inline-block;background:#fff;color:#c0392b;border:2px solid #c0392b;padding:0.5rem 1rem;border-radius:5px;text-decoration:none;font-size:0.9rem;font-weight:bold;" data-en="Practise Spotting Scams →" data-fr="S'entraîner à repérer les arnaques →">Practise Spotting Scams →</a>
+          <ul id="sotm-todo-list"></ul>
+          <div class="dcc-callout__actions">
+            <a id="sotm-link-alerts" href="scam-alerts/" class="dcc-btn dcc-btn--primary" data-en="See All Scam Alerts →" data-fr="Voir toutes les alertes →">See All Scam Alerts →</a>
+            <a id="sotm-link-sim" href="scam-simulator.html" class="dcc-btn dcc-btn--secondary" data-en="Practise Spotting Scams →" data-fr="S'entraîner à repérer les arnaques →">Practise Spotting Scams →</a>
           </div>
         </div>
       </section>
@@ -873,18 +873,18 @@
       </div>
 
       <!-- My Progress -->
-      <div id="dcc-progress-widget" style="display:none;background:#fff;border:1.5px solid var(--color-primary,#2A7B6F);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:2rem">
-        <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap">
+      <div id="dcc-progress-widget" style="display:none;background:var(--color-bg);border:1.5px solid var(--color-primary);border-radius:var(--radius-lg);padding:var(--space-5) var(--space-6);margin-bottom:var(--space-8)">
+        <div style="display:flex;align-items:center;gap:var(--space-3);flex-wrap:wrap">
           <div style="flex:1;min-width:0">
-            <p style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--color-primary,#2A7B6F);margin-bottom:0.2rem">Your Progress</p>
-            <p style="font-size:1rem;font-weight:700;color:var(--color-text,#3D3229)" id="dcc-progress-text">0 of 29 modules with results</p>
-            <div style="height:6px;background:#e0f0ee;border-radius:3px;margin-top:0.5rem;overflow:hidden">
-              <div id="dcc-progress-bar" style="height:100%;background:var(--color-primary,#2A7B6F);border-radius:3px;transition:width 0.4s;width:0%"></div>
+            <p style="font-size:var(--font-size-sm);font-weight:var(--font-weight-bold);text-transform:uppercase;letter-spacing:var(--letter-spacing-wide);color:var(--color-primary);margin-bottom:0.2rem">Your Progress</p>
+            <p style="font-size:var(--font-size-base);font-weight:var(--font-weight-bold);color:var(--color-text)" id="dcc-progress-text">0 of 29 modules with results</p>
+            <div style="height:8px;background:var(--color-primary-light);border-radius:var(--radius-sm);margin-top:var(--space-2);overflow:hidden">
+              <div id="dcc-progress-bar" style="height:100%;background:var(--color-primary);border-radius:var(--radius-sm);transition:width 0.4s;width:0%"></div>
             </div>
           </div>
-          <a href="digital-literacy-101.html" class="btn-primary" style="display:inline-block;background:var(--color-primary,#2A7B6F);color:#fff;border-radius:50px;padding:0.55rem 1.25rem;font-size:0.85rem;font-weight:700;text-decoration:none;white-space:nowrap">Continue learning →</a>
+          <a href="digital-literacy-101.html" class="dcc-btn dcc-btn--primary" style="white-space:nowrap">Continue learning →</a>
         </div>
-        <p style="font-size:0.75rem;color:var(--color-text-light,#7A6E62);margin-top:0.6rem" id="dcc-progress-detail"></p>
+        <p style="font-size:var(--font-size-caption);color:var(--color-text-light);margin-top:var(--space-2)" id="dcc-progress-detail"></p>
       </div>
 
       <!-- Canadian Government Benefits -->
@@ -892,49 +892,49 @@
       <p>Many Canadian seniors are missing government benefits they have already earned. These free guides explain what you qualify for, how to check, and how to apply — in plain language, step by step.</p>
 
       <div class="module-grid">
-        <a href="resources/gis-guide.html" class="module-card" style="border-top:4px solid #c8960c">
+        <a href="resources/gis-guide.html" class="module-card dcc-top--warning">
           <div class="card-icon" aria-hidden="true">💰</div>
           <div class="card-content">
             <h3>Guaranteed Income Supplement</h3>
             <p>Up to $1,065/month extra for low-income seniors who receive OAS. Non-taxable. Many eligible seniors have never applied. Includes 11-month back payment rule.</p>
           </div>
         </a>
-        <a href="resources/dental-care-guide.html" class="module-card" style="border-top:4px solid #2e7d32">
+        <a href="resources/dental-care-guide.html" class="module-card dcc-top--success">
           <div class="card-icon" aria-hidden="true">🦷</div>
           <div class="card-content">
             <h3>Canada Dental Care Plan</h3>
             <p>Free or subsidised dental care for seniors without private insurance and income under $90,000. Millions of eligible Canadians have not yet enrolled.</p>
           </div>
         </a>
-        <a href="resources/cra-guide.html" class="module-card" style="border-top:4px solid #2A7B6F">
+        <a href="resources/cra-guide.html" class="module-card dcc-top--brand">
           <div class="card-icon" aria-hidden="true">🍁</div>
           <div class="card-content">
             <h3>CRA My Account</h3>
             <p>View your tax refund, set up direct deposit, check your RRSP room, and manage your tax file — without calling CRA or waiting on hold.</p>
           </div>
         </a>
-        <a href="resources/service-canada-guide.html" class="module-card" style="border-top:4px solid #1565C0">
+        <a href="resources/service-canada-guide.html" class="module-card dcc-top--info">
           <div class="card-icon" aria-hidden="true">🇨🇦</div>
           <div class="card-content">
             <h3>My Service Canada Account</h3>
             <p>Your CPP and OAS payment dates, direct deposit, and T4A tax slips — all online, no hold music required.</p>
           </div>
         </a>
-        <a href="resources/ontario-trillium-benefit.html" class="module-card" style="border-top:4px solid #2e7d32">
+        <a href="resources/ontario-trillium-benefit.html" class="module-card dcc-top--success">
           <div class="card-icon" aria-hidden="true">🌷</div>
           <div class="card-content">
             <h3>Ontario Trillium Benefit</h3>
             <p>Up to $1,421/year for eligible Ontario residents — applied for on Schedule ON-BEN of your tax return. Easy to miss, easy to claim retroactively.</p>
           </div>
         </a>
-        <a href="resources/cpp-start-date-guide.html" class="module-card" style="border-top:4px solid #1a2744">
+        <a href="resources/cpp-start-date-guide.html" class="module-card dcc-top--brand">
           <div class="card-icon" aria-hidden="true">📅</div>
           <div class="card-content">
             <h3>When to Start CPP</h3>
             <p>Waiting from 65 to 70 adds 42% to your CPP — permanently. Starting at 60 cuts it by 36%. The break-even age and the four factors that drive the decision.</p>
           </div>
         </a>
-        <a href="resources/serviceontario-guide.html" class="module-card" style="border-top:4px solid #1565C0">
+        <a href="resources/serviceontario-guide.html" class="module-card dcc-top--info">
           <div class="card-icon" aria-hidden="true">🏛️</div>
           <div class="card-content">
             <h3>ServiceOntario Online</h3>
@@ -942,9 +942,9 @@
           </div>
         </a>
       </div>
-      <p style="text-align:center;margin-top:1rem;font-size:0.9rem">
-        <a href="resources/index.html" style="color:var(--color-primary,#2A7B6F);font-weight:600">→ See all 27 Canadian benefits and financial guides</a>
-        <span style="color:var(--color-text-light,#7A6E62)"> — GIS, RDSP, CPP, OAS, ODB, GST/HST Credit, CPP Survivor's Pension, Allowance, and more</span>
+      <p class="dcc-center" style="margin-top:var(--space-4);font-size:var(--font-size-sm)">
+        <a href="resources/index.html" style="color:var(--color-text-link);font-weight:var(--font-weight-semibold)">→ See all 27 Canadian benefits and financial guides</a>
+        <span style="color:var(--color-text-light)"> — GIS, RDSP, CPP, OAS, ODB, GST/HST Credit, CPP Survivor's Pension, Allowance, and more</span>
       </p>
 
       <!-- AI Literacy Feature -->
@@ -952,7 +952,7 @@
       <p>AI tools are already on your phone, at your doctor's office, and in your email. This free module explains what they actually do, when they help, and how to stay safe — including the 3-Second Rule for avoiding scams.</p>
 
       <div class="module-grid">
-        <a href="module-ai-literacy.html" class="module-card" style="border-top:4px solid #3949ab">
+        <a href="module-ai-literacy.html" class="module-card dcc-top--brand">
           <div class="card-icon" aria-hidden="true">🤖</div>
           <div class="card-content">
             <h3>What Is AI, Really? — Adults 55+</h3>
@@ -1169,43 +1169,45 @@
       <!-- ===== End Testimonials ===== -->
 
       <!-- ===== In the News ===== -->
-      <section id="dcc-news-feed" aria-labelledby="dcc-news-heading" style="margin:2rem 0;padding:1.5rem 1.75rem;background:#f0f6ff;border:1px solid #c5d8f5;border-radius:8px;">
-        <h2 id="dcc-news-heading" style="font-size:1.15rem;color:#1a3c5e;margin:0 0 0.9rem;" data-en="AI &amp; Digital Safety in the News" data-fr="L&#x2019;IA et la s&#x00E9;curit&#x00E9; num&#x00E9;rique dans les nouvelles">AI &amp; Digital Safety in the News</h2>
-        <ul id="dcc-news-list" style="list-style:none;padding:0;margin:0 0 0.75rem;">
-          <li style="color:#666;font-style:italic;" data-en="Loading latest news&hellip;" data-fr="Chargement des nouvelles&hellip;">Loading latest news&hellip;</li>
+      <section id="dcc-news-feed" class="dcc-callout dcc-callout--info" aria-labelledby="dcc-news-heading">
+        <h2 id="dcc-news-heading" class="dcc-callout__title" data-en="AI &amp; Digital Safety in the News" data-fr="L&#x2019;IA et la s&#x00E9;curit&#x00E9; num&#x00E9;rique dans les nouvelles">AI &amp; Digital Safety in the News</h2>
+        <ul id="dcc-news-list" style="list-style:none;padding:0;margin:0 0 var(--space-3);">
+          <li data-en="Loading latest news&hellip;" data-fr="Chargement des nouvelles&hellip;">Loading latest news&hellip;</li>
         </ul>
-        <p style="font-size:0.8rem;color:#5a6a7e;margin:0;" data-en="Source: CBC Technology &bull; Updated daily" data-fr="Source&#xA0;: CBC Technologie &bull; Mis &#x00E0; jour quotidiennement">Source: CBC Technology &bull; Updated daily</p>
+        <p style="font-size:var(--font-size-caption);color:var(--color-text-light);margin:0;" data-en="Source: CBC Technology &bull; Updated daily" data-fr="Source&#xA0;: CBC Technologie &bull; Mis &#x00E0; jour quotidiennement">Source: CBC Technology &bull; Updated daily</p>
       </section>
       <style>
-        .dcc-news-item { padding: 0.5rem 0; border-bottom: 1px solid #dce8f8; }
-        .dcc-news-item:last-child { border-bottom: none; }
-        .dcc-news-link { font-size: 1rem; color: #1a3c5e; font-weight: 500; }
-        .dcc-news-link:hover { text-decoration: underline; }
-        .dcc-news-date { display: block; font-size: 0.8rem; color: #6b7c93; margin-top: 0.15rem; }
-        .dcc-news-empty { color: #555; font-style: italic; }
+        #dcc-news-feed .dcc-news-item { padding: var(--space-2) 0; border-bottom: 1px solid var(--color-border); }
+        #dcc-news-feed .dcc-news-item:last-child { border-bottom: none; }
+        #dcc-news-feed .dcc-news-link { font-size: var(--font-size-base); color: var(--color-text-link); font-weight: var(--font-weight-semibold); }
+        #dcc-news-feed .dcc-news-link:hover { text-decoration: underline; }
+        #dcc-news-feed .dcc-news-date { display: block; font-size: var(--font-size-caption); color: var(--color-text-light); margin-top: var(--space-1); }
+        #dcc-news-feed .dcc-news-empty { color: var(--color-text-light); }
       </style>
       <!-- ===== End In the News ===== -->
 
       <!-- ===== Share DCC ===== -->
-      <section class="share-dcc-section" style="background:#E8F5E9;padding:2.5rem 1.5rem;text-align:center;margin-top:2rem;">
-        <div style="max-width:640px;margin:0 auto;">
-          <h2 style="font-size:1.4rem;color:#1B5E20;margin-bottom:0.75rem;"
+      <section class="share-dcc-section dcc-callout dcc-callout--success dcc-center">
+        <div class="dcc-measure" style="margin:0 auto;">
+          <h2 class="dcc-callout__title" style="justify-content:center;"
               data-en="Know a senior who could benefit?"
               data-fr="Vous connaissez un aîné qui pourrait en bénéficier?">
             Know a senior who could benefit?
           </h2>
-          <p style="font-size:1.05rem;color:#2E7D32;margin-bottom:1.25rem;"
+          <p style="font-size:var(--font-size-lead);"
              data-en="The Digital Confidence Centre is completely free. Share it with a friend, neighbour, or family member who uses an iPad or smartphone."
              data-fr="Le Centre de confiance numérique est entièrement gratuit. Partagez-le avec un ami, un voisin ou un membre de la famille qui utilise un iPad ou un téléphone intelligent.">
             The Digital Confidence Centre is completely free. Share it with a friend, neighbour, or family member who uses an iPad or smartphone.
           </p>
-          <a href="mailto:?subject=A%20free%20digital%20learning%20programme%20for%20seniors&body=Hi%2C%0A%0AI%20wanted%20to%20share%20something%20I%20found%20that%20you%20might%20find%20really%20helpful.%0A%0AThe%20Digital%20Confidence%20Centre%20is%20a%20free%20online%20learning%20programme%20for%20Canadian%20seniors.%20It%20covers%20everything%20from%20staying%20safe%20from%20scams%20to%20using%20apps%20and%20video%20calls.%20No%20sign-up%20needed.%0A%0AYou%20can%20visit%20it%20here%3A%20https%3A%2F%2Fdigitalconfidencecentre.ca%0A%0AHope%20you%20find%20it%20useful!"
-             style="display:inline-block;background:#2E7D32;color:#fff;padding:0.75rem 1.75rem;border-radius:8px;font-size:1.05rem;font-weight:600;text-decoration:none;"
-             data-en="✉ Send this link by email"
-             data-fr="✉ Envoyer ce lien par courriel">
-            ✉ Send this link by email
-          </a>
-          <p style="margin-top:1rem;font-size:0.9rem;color:#388E3C;"
+          <div class="dcc-callout__actions" style="justify-content:center;">
+            <a href="mailto:?subject=A%20free%20digital%20learning%20programme%20for%20seniors&body=Hi%2C%0A%0AI%20wanted%20to%20share%20something%20I%20found%20that%20you%20might%20find%20really%20helpful.%0A%0AThe%20Digital%20Confidence%20Centre%20is%20a%20free%20online%20learning%20programme%20for%20Canadian%20seniors.%20It%20covers%20everything%20from%20staying%20safe%20from%20scams%20to%20using%20apps%20and%20video%20calls.%20No%20sign-up%20needed.%0A%0AYou%20can%20visit%20it%20here%3A%20https%3A%2F%2Fdigitalconfidencecentre.ca%0A%0AHope%20you%20find%20it%20useful!"
+               class="dcc-btn dcc-btn--primary"
+               data-en="✉ Send this link by email"
+               data-fr="✉ Envoyer ce lien par courriel">
+              ✉ Send this link by email
+            </a>
+          </div>
+          <p style="margin-top:var(--space-4);font-size:var(--font-size-sm);color:var(--color-text-light);"
              data-en="Or copy the address: digitalconfidencecentre.ca"
              data-fr="Ou copiez l'adresse : digitalconfidencecentre.ca">
             Or copy the address: digitalconfidencecentre.ca
