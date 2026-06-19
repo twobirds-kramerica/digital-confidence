@@ -372,23 +372,26 @@ document.addEventListener('click', function (e) {
   document.head.appendChild(style);
 
   document.addEventListener('DOMContentLoaded', function () {
-    /* setTimeout(0) defers until after all other DOMContentLoaded handlers
-       (breadcrumb-nav, focus-btn) have run, so the pill lands right above h1. */
-    setTimeout(function () {
-      var h1 = document.querySelector('#main h1');
-      if (!h1) return;
-      var pill = document.createElement('div');
-      pill.className = 'dcc-category-pill';
-      pill.setAttribute('aria-label', 'Category: ' + cat[0]);
-      var icon = document.createElement('span');
-      icon.setAttribute('aria-hidden', 'true');
-      icon.textContent = cat[1];
-      var label = document.createElement('span');
-      label.textContent = cat[0];
-      pill.appendChild(icon);
-      pill.appendChild(label);
-      h1.parentNode.insertBefore(pill, h1);
-    }, 0);
+    var h1 = document.querySelector('#main h1');
+    if (!h1) return;
+    var pill = document.createElement('div');
+    pill.className = 'dcc-category-pill';
+    pill.setAttribute('aria-label', 'Category: ' + cat[0]);
+    var icon = document.createElement('span');
+    icon.setAttribute('aria-hidden', 'true');
+    icon.textContent = cat[1];
+    var label = document.createElement('span');
+    label.textContent = cat[0];
+    pill.appendChild(icon);
+    pill.appendChild(label);
+    /* Insert now, then re-position after other setTimeout(0) handlers
+       (breadcrumb-nav, focus-btn) have also inserted before h1. */
+    h1.parentNode.insertBefore(pill, h1);
+    requestAnimationFrame(function () {
+      if (pill.nextElementSibling !== h1) {
+        h1.parentNode.insertBefore(pill, h1);
+      }
+    });
   });
 })();
 
