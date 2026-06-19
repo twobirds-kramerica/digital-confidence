@@ -32,6 +32,7 @@ window.DC_SEARCH_INDEX = [
   { type: 'Module', title: 'Show Me! Visual AI Guide (Bonus)', url: 'module-visual-ai.html', excerpt: 'Visual tour of AI tools with screenshots — what they look like, what to type, common mistakes to avoid' },
   { type: 'Module', title: 'Is It True, or Does It Just Sound True?', url: 'module-fact-check.html', excerpt: 'Fact-checking habit, three quiet questions, checking source and date, Canadian Anti-Fraud Centre' },
   { type: 'Module', title: 'Asking AI About Your Health or How You Feel', url: 'module-ai-health.html', excerpt: 'When AI can help with health questions, risks of AI health advice, 988, Health811, Talk Suicide Canada, 211' },
+  { type: 'Module', title: 'What Is AI, Really?', url: 'module-ai-literacy.html', excerpt: 'Plain-language AI literacy for Canadian adults 55+ — how AI works, the 3-Second Rule, deepfake voice cloning, when to trust AI responses' },
 
   // ── TIPS ─────────────────────────────────────────────────────────────────
   { type: 'Tip', title: '5 Things You Should Never Share Online', url: 'tips/five-things-never-share-online.html', excerpt: 'SIN, banking details, passwords, health card number, and your home address — keep these private' },
