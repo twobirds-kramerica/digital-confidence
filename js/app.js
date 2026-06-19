@@ -367,25 +367,28 @@ document.addEventListener('click', function (e) {
   var cat = CATS[page];
   if (!cat) return;
 
+  var style = document.createElement('style');
+  style.textContent = '.dcc-category-pill{display:inline-flex;align-items:center;gap:.35rem;font-size:.78rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;background:var(--color-surface-raised,#EEF2F7);color:var(--color-text-secondary,#4A5568);border:1px solid var(--color-border,#DDE3EB);margin-bottom:.65rem;letter-spacing:.03em;text-transform:uppercase;}[data-theme="dark"] .dcc-category-pill{background:rgba(255,255,255,.08);color:var(--color-text-secondary,#9CA3AF);border-color:rgba(255,255,255,.12);}';
+  document.head.appendChild(style);
+
   document.addEventListener('DOMContentLoaded', function () {
-    var h1 = document.querySelector('#main h1');
-    if (!h1) return;
-
-    var style = document.createElement('style');
-    style.textContent = '.dcc-category-pill{display:inline-flex;align-items:center;gap:.35rem;font-size:.78rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;background:var(--color-surface-raised,#EEF2F7);color:var(--color-text-secondary,#4A5568);border:1px solid var(--color-border,#DDE3EB);margin-bottom:.65rem;letter-spacing:.03em;text-transform:uppercase;}[data-theme="dark"] .dcc-category-pill{background:rgba(255,255,255,.08);color:var(--color-text-secondary,#9CA3AF);border-color:rgba(255,255,255,.12);}';
-    document.head.appendChild(style);
-
-    var pill = document.createElement('div');
-    pill.className = 'dcc-category-pill';
-    pill.setAttribute('aria-label', 'Category: ' + cat[0]);
-    var icon = document.createElement('span');
-    icon.setAttribute('aria-hidden', 'true');
-    icon.textContent = cat[1];
-    var label = document.createElement('span');
-    label.textContent = cat[0];
-    pill.appendChild(icon);
-    pill.appendChild(label);
-    h1.parentNode.insertBefore(pill, h1);
+    /* setTimeout(0) defers until after all other DOMContentLoaded handlers
+       (breadcrumb-nav, focus-btn) have run, so the pill lands right above h1. */
+    setTimeout(function () {
+      var h1 = document.querySelector('#main h1');
+      if (!h1) return;
+      var pill = document.createElement('div');
+      pill.className = 'dcc-category-pill';
+      pill.setAttribute('aria-label', 'Category: ' + cat[0]);
+      var icon = document.createElement('span');
+      icon.setAttribute('aria-hidden', 'true');
+      icon.textContent = cat[1];
+      var label = document.createElement('span');
+      label.textContent = cat[0];
+      pill.appendChild(icon);
+      pill.appendChild(label);
+      h1.parentNode.insertBefore(pill, h1);
+    }, 0);
   });
 })();
 
