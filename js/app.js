@@ -440,3 +440,33 @@ document.addEventListener('click', function (e) {
     document.head.appendChild(style);
   });
 })();
+
+/* ============================================
+   B6: Language toggle — EN | FR link in accessibility bar
+   ============================================ */
+(function () {
+  if ((document.documentElement.lang || '').startsWith('fr')) return;
+
+  var parts = window.location.pathname.split('/').filter(Boolean);
+  var depth = Math.max(0, parts.length - 2);
+  var prefix = '';
+  for (var i = 0; i < depth; i++) prefix += '../';
+  var frUrl = prefix + 'fr/index.html';
+
+  var bar = document.querySelector('.accessibility-bar');
+  if (!bar) return;
+
+  var style = document.createElement('style');
+  style.textContent = '.dcc-lang-toggle{display:inline-flex;align-items:center;font-size:.85rem;font-weight:600;padding:0 .55rem;height:2rem;border-radius:4px;background:transparent;color:var(--color-text-secondary,#4A5568);text-decoration:none;border:1px solid var(--color-border,#DDE3EB);margin-left:.4rem;white-space:nowrap;}'+
+    '.dcc-lang-toggle:hover{background:var(--color-surface-raised,#EEF2F7);}'+
+    '[data-theme="dark"] .dcc-lang-toggle{color:var(--color-text-secondary,#9CA3AF);border-color:rgba(255,255,255,.18);}';
+  document.head.appendChild(style);
+
+  var link = document.createElement('a');
+  link.href = frUrl;
+  link.className = 'dcc-lang-toggle';
+  link.setAttribute('lang', 'fr');
+  link.setAttribute('aria-label', 'Version française');
+  link.textContent = 'FR';
+  bar.appendChild(link);
+})();
