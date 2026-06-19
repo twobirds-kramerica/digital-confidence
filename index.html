@@ -299,6 +299,12 @@
       try { localStorage.setItem('dc-setup-complete', 'crawler-bypass'); } catch(e) {}
     }
   </script>
+  <!-- Language Bar (Direction B) -->
+  <div class="lang-bar" role="navigation" aria-label="Language selection">
+    <button class="lang-bar-btn active" id="lang-btn-en" onclick="setLang('en')" aria-current="true" lang="en">English</button>
+    <button class="lang-bar-btn" id="lang-btn-fr" onclick="setLang('fr')" lang="fr">Français</button>
+  </div>
+
   <!-- Accessibility Controls -->
   <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
     <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
@@ -314,6 +320,11 @@
     <button onclick="changeLocation()" class="location-change" style="background:none;border:none;color:var(--color-text-link);cursor:pointer;font-size:var(--font-size-sm);text-decoration:underline;padding:var(--space-1) var(--space-2);min-height:var(--tap-target-min);font-family:inherit;" data-en="Set my location" data-fr="Définir ma position">Set my location</button>
   </div>
 
+  <!-- Progress Strip (Direction B — persistent overall progress) -->
+  <div class="progress-strip" role="none" aria-hidden="true">
+    <div class="progress-strip-fill" id="progress-strip-fill"></div>
+  </div>
+
   <!-- Top Bar (Mobile) -->
   <div class="top-bar">
     <button class="menu-btn" aria-label="Open navigation menu">☰</button>
@@ -321,7 +332,7 @@
       <span class="site-title-full">Digital Confidence Centre</span>
       <span class="site-title-short">DCC</span>
     </a>
-    <span></span>
+    <span class="trust-badge" aria-label="Free forever">Free. Forever.</span>
   </div>
 
   <!-- Sidebar Overlay -->
@@ -479,6 +490,10 @@
       <!-- Module Cards -->
       <div class="module-grid">
 
+        <div class="mg-category-section" style="grid-column:1/-1;margin-bottom:0.5rem;">
+          <div class="mg-category-header"><span class="cat-pill cat-pill--safety">🛡️ Safety First</span></div>
+        </div>
+
         <a href="module-1.html" class="module-card" data-module="1">
           <div class="card-icon" aria-hidden="true">🏠</div>
           <div class="card-content">
@@ -486,6 +501,7 @@
             <p>Learn the one skill that changes everything: how to get back to safety no matter what happens on your screen. The Home button, force quitting apps, and why nothing you do is permanent.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-2.html" class="module-card" data-module="2">
@@ -495,6 +511,7 @@
             <p>Your deep-dive guide to spotting scams, phishing emails, and fraudulent phone calls. Includes real Canadian examples and the powerful 3-Second Rule.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-2-5.html" class="module-card" data-module="2.5">
@@ -505,6 +522,7 @@
             <p>Master the tasks you use every day — opening and sending attachments, finding your Downloads folder, printing, and organising your files so you can find them again.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-3.html" class="module-card" data-module="3">
@@ -514,6 +532,7 @@
             <p>Make your accounts secure without memorizing dozens of passwords. Learn about Face ID, password managers, and what "two-factor authentication" really means in plain language.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-4.html" class="module-card" data-module="4">
@@ -523,6 +542,7 @@
             <p>How to find, download, and verify apps safely. Learn to spot fake apps, understand permissions, and keep your device running smoothly.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-5.html" class="module-card" data-module="5">
@@ -532,7 +552,12 @@
             <p>Master safe communication. Spot scam emails, block unwanted callers, and send messages and photos to family with confidence.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
+
+        <div class="mg-category-section" style="grid-column:1/-1;margin-bottom:0.5rem;margin-top:1.5rem;">
+          <div class="mg-category-header"><span class="cat-pill cat-pill--daily">🌱 Daily Life</span></div>
+        </div>
 
         <a href="module-6.html" class="module-card" data-module="6">
           <div class="card-icon" aria-hidden="true">🏦</div>
@@ -541,6 +566,7 @@
             <p>Online banking does not have to be scary. Learn how to check your balance, pay bills, and make safe purchases — all from your iPad.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-7.html" class="module-card" data-module="7">
@@ -550,6 +576,7 @@
             <p>The fun stuff! Explore photo editing, drawing apps, and creative tools. Your iPad is not just for email — it is a canvas for your creativity.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-8.html" class="module-card" data-module="8">
@@ -559,6 +586,7 @@
             <p>Use your device to strengthen family bonds. Video calls, shared photo albums, group messages, and the Personal Relationship Manager project.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-9.html" class="module-card" data-module="9">
@@ -568,6 +596,7 @@
             <p>What is artificial intelligence, really? Learn to spot deepfakes, protect your privacy with AI tools, and try safe beginner-friendly AI features you may already have on your device.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-10.html" class="module-card" data-module="10">
@@ -577,6 +606,7 @@
             <p>Order groceries and restaurant meals from home using Instacart, Uber Eats, DoorDash, and Skip the Dishes. Safe payments, full cost shown before you confirm — no surprises.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-11.html" class="module-card" data-module="11">
@@ -586,6 +616,7 @@
             <p>Request a safe ride anywhere using Uber or Lyft. Learn how to verify your driver, share your trip with family in real-time, and travel with confidence — no cash needed.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-12.html" class="module-card" data-module="12">
@@ -596,6 +627,7 @@
             <p>Navigate customer service phone systems, understand your consumer rights in Canada, learn how to work with family helpers at your own pace, and stay safe when someone offers remote access to your device.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-13.html" class="module-card" data-module="13">
@@ -606,6 +638,7 @@
             <p>Connect safely with family and friends on Facebook and Instagram. Learn privacy settings, spot fake profiles, and use Facebook Marketplace safely.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-14.html" class="module-card" data-module="14">
@@ -616,6 +649,7 @@
             <p>Understand connected devices in your home — smart thermostats, video doorbells, and voice assistants. Includes Ontario energy rebates and privacy guidance.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-15.html" class="module-card" data-module="15">
@@ -626,7 +660,12 @@
             <p>Access healthcare online in Ontario — book appointments, view your records through MyChart, call the free 24/7 nurse line, and refill prescriptions from home.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
+
+        <div class="mg-category-section" style="grid-column:1/-1;margin-bottom:0.5rem;margin-top:1.5rem;">
+          <div class="mg-category-header"><span class="cat-pill cat-pill--independence">🏠 Staying Independent</span></div>
+        </div>
 
         <a href="module-16-travel-safety.html" class="module-card" data-module="16">
           <div class="card-icon" aria-hidden="true">✈️</div>
@@ -636,6 +675,7 @@
             <p>Travelling soon? Learn how to protect your devices and personal information — public Wi-Fi risks, airport safety, spotting travel scams, and what to do if something goes wrong abroad.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-17-ai-research.html" class="module-card" data-module="17">
@@ -646,6 +686,7 @@
             <p>AI tools like Siri, ChatGPT, and Google Gemini can answer your questions in plain language. Learn how to ask smart questions, check whether AI answers are accurate, and protect your privacy.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-fact-check.html" class="module-card" data-module="fact-check">
@@ -656,6 +697,7 @@
             <p>A confident tone is not the same as a correct answer. Learn one calm habit — three quiet questions — to check whether something online is true before you trust it or pass it on.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-ai-health.html" class="module-card" data-module="ai-health">
@@ -666,6 +708,7 @@
             <p>AI can be a starting point, never the final word, on your body or your mind. An honest look at when it helps, the real risks, and where to find real help in Canada.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <div class="module-category-divider" style="grid-column:1/-1;margin:var(--space-4) 0 var(--space-1);padding-top:var(--space-5);border-top:2px solid var(--color-border);">
@@ -680,6 +723,7 @@
             <p>Video calling, sharing photos, and staying close to the people you love — even from a distance. Learn the tools that keep you part of your family's everyday life.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-19-digital-legacy.html" class="module-card" data-module="19">
@@ -690,6 +734,7 @@
             <p>Take stock of your digital accounts, back up your photos, and make sure the right people can help you if you ever need it. A calm, practical guide to your digital world.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-20-internet-plan.html" class="module-card" data-module="20">
@@ -700,6 +745,7 @@
             <p>Learn what speed you actually need, how to read your bill, and how to negotiate a better price. Includes CRTC comparison tools and a word-for-word phone script.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-21-mobile-plan.html" class="module-card" data-module="21">
@@ -710,6 +756,7 @@
             <p>Find out if you are overpaying, learn the difference between prepaid and postpaid, and get a script to negotiate a better deal with your provider.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-22-tv-home-phone.html" class="module-card" data-module="22">
@@ -720,6 +767,7 @@
             <p>Discover how to unbundle your services, try a digital antenna for free local channels, and learn whether you still need a home phone.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-23-online-marketplace.html" class="module-card" data-module="23">
@@ -730,6 +778,7 @@
             <p>Learn how to spot scams, sell items safely, and use e-transfer without getting tricked. Includes a red-flag checklist you can print.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-24-communication.html" class="module-card" data-module="24">
@@ -740,6 +789,7 @@
             <p>Video calling, group chats, voice messages, and notification settings — everything you need to stay connected with the people who matter most.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-26-notifications.html" class="module-card" data-module="26">
@@ -749,6 +799,7 @@
             <p>Learn how to manage notifications on your iPad and iPhone. Silence the noise, keep what matters — a calmer, more focused digital life.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-27-inbox-spam.html" class="module-card" data-module="27">
@@ -758,6 +809,7 @@
             <p>Learn to manage your email inbox, deal with spam, unsubscribe safely, and build a simple daily routine. A practical guide for Canadian seniors.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-28-emotional-scams.html" class="module-card" data-module="28">
@@ -767,6 +819,7 @@
             <p>Recognise emotional pressure scams. Learn the 3-Second Rule, how the grandparent scam works step by step, and where to report to the Canadian Anti-Fraud Centre.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-visual-ai.html" class="module-card">
@@ -1341,7 +1394,10 @@
       if (!widget) return;
       widget.style.display = '';
       textEl.textContent = count + ' of ' + total + ' module' + (count !== 1 ? 's' : '') + ' started';
-      barEl.style.width = Math.round((count / total) * 100) + '%';
+      var pct = Math.round((count / total) * 100);
+      barEl.style.width = pct + '%';
+      var stripEl = document.getElementById('progress-strip-fill');
+      if (stripEl) stripEl.style.width = pct + '%';
       // Find last module touched
       var lastKey = keys.sort(function(a,b) {
         var ta = (results[a].after && results[a].after.timestamp) || (results[a].before && results[a].before.timestamp) || '';

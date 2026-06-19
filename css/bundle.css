@@ -149,38 +149,45 @@
   color-scheme: light;
 
   /* --- Colour: surfaces ---------------------------------------------------- */
-  --color-bg:              #FAFAF8; /* warm white page background (Theme B — less orange tint) */
-  --color-surface:         #F5F2ED; /* cards, modals — warm off-white (Theme B) */
-  --color-surface-alt:     #FFF0E0; /* module tags, subtle fills */
-  --color-surface-primary: #E8F5F0; /* primary-tinted fill */
+  --color-bg:              #F4F5F7; /* cool off-white page background (Direction B — Public Square) */
+  --color-surface:         #FFFFFF; /* cards, modals — clean white (Direction B) */
+  --color-surface-alt:     #E8EDF4; /* module tags, subtle fills */
+  --color-surface-primary: #E8EDF4; /* primary-tinted fill */
 
   /* --- Colour: brand ------------------------------------------------------- */
-  --color-primary:         #2A7B6F; /* warm teal — nav, primary headings */
-  --color-primary-hover:   #226659; /* 10% darker */
-  --color-primary-active:  #1B5147; /* pressed */
-  --color-primary-light:   #E8F5F0;
+  --color-primary:         #2E4A6B; /* slate — nav, primary headings (Direction B) */
+  --color-primary-hover:   #3D5F85; /* lighter slate hover */
+  --color-primary-active:  #263E5A; /* pressed */
+  --color-primary-light:   #E8EDF4;
   --color-primary-contrast:#FFFFFF;
 
-  --color-accent:          #E8842C; /* burnt orange — DECORATIVE ONLY: progress fills, large icons, borders, hero flourishes. Do NOT use as a text/button background (white-on-#E8842C is only 2.7:1 — fails WCAG). */
-  --color-accent-strong:   #A85410; /* burnt orange, AA-safe — white text on this is 5.33:1. Use for ALL primary button/CTA backgrounds and the focus ring. */
-  --color-accent-hover:    #8F470D; /* darker accent-strong for hover (white text 6.9:1) */
-  --color-accent-active:   #7A3D0B; /* pressed */
-  --color-accent-light:    #FFF0E0;
+  --color-accent:          #E09030; /* amber — DECORATIVE ONLY: progress fills, large icons, borders, hero flourishes. Do NOT use as a text/button background. */
+  --color-accent-strong:   #C05E00; /* amber, AA-safe — white text 4.6:1. Use for ALL primary button/CTA backgrounds and the focus ring. */
+  --color-accent-hover:    #A35000; /* darker amber for hover */
+  --color-accent-active:   #8A4300; /* pressed */
+  --color-accent-light:    #FFF3E0;
   --color-accent-contrast: #FFFFFF;
-  --color-accent-deep:     #8A450C; /* text-on-accent-light — 6.4:1 on #FFF0E0 (AA+). Use for orange text on light fills. */
+  --color-accent-deep:     #994A00; /* text-on-accent-light — AA+ on #FFF3E0. Use for amber text on light fills. */
 
   /* --- Colour: text -------------------------------------------------------- */
-  --color-text:            #1A1A2E; /* softer near-black (Theme B — less brownish, higher contrast) */
-  --color-text-light:      #50505F; /* meta, captions — darkened from #5A5A6E for AAA 7:1 on bg */
-  --color-warm-amber:      #B87333; /* muted copper amber — badge/highlight only, never primary */
-  --color-text-inverse:    #FFFFFF; /* on dark/teal/accent backgrounds */
-  --color-text-link:       #2A7B6F;
-  --color-text-link-hover: #226659;
+  --color-text:            #1A1A1A; /* near-black (Direction B) */
+  --color-text-light:      #444D58; /* meta, captions — AA on cool bg */
+  --color-warm-amber:      #C05E00; /* amber — badge/highlight only */
+  --color-text-inverse:    #FFFFFF; /* on dark/slate/accent backgrounds */
+  --color-text-link:       #2E4A6B;
+  --color-text-link-hover: #3D5F85;
 
   /* --- Colour: structure --------------------------------------------------- */
-  --color-border:          #E8DDD0;
-  --color-border-strong:   #C9B9A5;
-  --color-divider:         #E8DDD0;
+  --color-border:          #E0E4EA;
+  --color-border-strong:   #B0B8C4;
+  --color-divider:         #E0E4EA;
+
+  /* --- Colour: categories (Direction B) ------------------------------------ */
+  --cat-safety:            #C00020; /* Safety First — red, white text 5.7:1 */
+  --cat-start:             #005F9E; /* Get Started — blue, white text 5.8:1 */
+  --cat-daily:             #006B3A; /* Daily Life — green, white text 5.9:1 */
+  --cat-independence:      #6A3A8A; /* Staying Independent — purple, white text 5.5:1 */
+  --cat-resources:         #444D58; /* Resources — charcoal, white text 7:1 */
 
   /* --- Colour: state ------------------------------------------------------- */
   --color-success:         #4CAF50;
@@ -205,7 +212,7 @@
 
   /* --- Typography: families ------------------------------------------------ */
   --font-body:             'Merriweather', Georgia, 'Times New Roman', serif;
-  --font-heading:          'Source Sans 3', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --font-heading:          system-ui, -apple-system, 'Source Sans 3', 'Segoe UI', 'Helvetica Neue', sans-serif;
   --font-mono:             ui-monospace, 'Cascadia Code', Consolas, monospace;
 
   /* --- Typography: size scale (senior-friendly baseline) ------------------- */
@@ -246,9 +253,9 @@
 
   /* --- Radius scale ------------------------------------------------------- */
   --radius-sm:     4px;
-  --radius-md:     8px;   /* buttons */
-  --radius-lg:     12px;  /* cards */
-  --radius-xl:     16px;
+  --radius-md:     8px;   /* buttons, cards (Direction B) */
+  --radius-lg:     8px;   /* cards */
+  --radius-xl:     12px;
   --radius-pill:   20px;  /* tags, chips */
   --radius-circle: 50%;
 
@@ -8631,4 +8638,121 @@ body.bionic-reading b.dc-b {
   clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
+}
+
+/* ============================================
+   Direction B — Public Square (S-DESIGN-DCC-001)
+   ============================================ */
+
+/* Language bar */
+.lang-bar {
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0;
+  padding: 0 var(--space-4);
+}
+
+.lang-bar-btn {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: rgba(255,255,255,0.75);
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.04em;
+  padding: var(--space-2) var(--space-3);
+  min-height: 44px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.lang-bar-btn:hover {
+  color: #FFFFFF;
+}
+
+.lang-bar-btn.active {
+  border-bottom-color: var(--color-accent-strong);
+  color: #FFFFFF;
+}
+
+/* Trust badge in header area */
+.trust-badge {
+  background: var(--color-accent-strong);
+  color: var(--color-accent-contrast);
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+/* Progress strip */
+.progress-strip {
+  height: 6px;
+  background: var(--color-surface-alt);
+  overflow: hidden;
+}
+
+.progress-strip-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-hover));
+  border-radius: 0 3px 3px 0;
+  transition: width 0.6s ease;
+  width: 0%;
+}
+
+/* Module card — Direction B enhancements */
+.module-card {
+  position: relative;
+}
+
+.card-start-btn {
+  display: none;
+  position: absolute;
+  bottom: var(--space-3);
+  right: var(--space-3);
+  background: var(--color-accent-strong);
+  color: var(--color-accent-contrast);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  pointer-events: none;
+}
+
+.module-card:hover .card-start-btn,
+.module-card:focus-within .card-start-btn {
+  display: inline-block;
+}
+
+/* Category pill (section header label) */
+.cat-pill {
+  display: inline-block;
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.03em;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-3);
+}
+
+.cat-pill--safety      { background: var(--cat-safety); }
+.cat-pill--start       { background: var(--cat-start); }
+.cat-pill--daily       { background: var(--cat-daily); }
+.cat-pill--independence{ background: var(--cat-independence); }
+.cat-pill--resources   { background: var(--cat-resources); }
+
+/* Heading font-weight bump for Direction B */
+h1, h2, h3 {
+  font-weight: var(--font-weight-bold);
 }
