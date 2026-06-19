@@ -151,7 +151,7 @@
     if (!card) return;
 
     var html = '';
-    var stepIndicator = '<p style="font-size:0.75rem;color:#aaa;text-align:right;margin:0 0 8px">' +
+    var stepIndicator = '<p style="font-size:0.75rem;color:#767676;text-align:right;margin:0 0 8px">' +
       (state.step < 5 ? (isFr ? 'Étape ' : 'Step ') + state.step + ' / 4' : '') + '</p>';
 
     if (state.step === 1) {
