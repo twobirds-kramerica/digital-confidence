@@ -29,6 +29,7 @@ window.DC_SEARCH_INDEX = [
   { type: 'Module', title: 'Module 22: TV & Home Phone', url: 'module-22-tv-home-phone.html', excerpt: 'Streaming TV, cable, home phone options, bundles, comparing services in Canada' },
   { type: 'Module', title: 'Module 23: Online Marketplace', url: 'module-23-online-marketplace.html', excerpt: 'Facebook Marketplace, Kijiji, buying and selling safely online, avoiding marketplace scams' },
   { type: 'Module', title: 'Module 24: Communication Tools', url: 'module-24-communication.html', excerpt: 'Email, text, video calls, voice assistants — choosing the right tool for the right situation' },
+  { type: 'Module', title: 'Module 28: When a Message Uses Fear or Love to Rush You', url: 'module-28-emotional-scams.html', excerpt: 'Grandparent scam, CRA imposter, romance scam, 3-Second Rule, Canadian Anti-Fraud Centre 1-888-495-8501, emotional pressure fraud' },
   { type: 'Module', title: 'Show Me! Visual AI Guide (Bonus)', url: 'module-visual-ai.html', excerpt: 'Visual tour of AI tools with screenshots — what they look like, what to type, common mistakes to avoid' },
   { type: 'Module', title: 'Is It True, or Does It Just Sound True?', url: 'module-fact-check.html', excerpt: 'Fact-checking habit, three quiet questions, checking source and date, Canadian Anti-Fraud Centre' },
   { type: 'Module', title: 'Asking AI About Your Health or How You Feel', url: 'module-ai-health.html', excerpt: 'When AI can help with health questions, risks of AI health advice, 988, Health811, Talk Suicide Canada, 211' },
