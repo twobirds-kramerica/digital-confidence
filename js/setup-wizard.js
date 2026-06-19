@@ -114,6 +114,7 @@ function buildWizardDOM() {
   });
   var dots = document.createElement('div');
   dots.className = 'wizard-progress';
+  dots.setAttribute('role', 'group');
   dots.setAttribute('aria-label', 'Wizard progress');
   for (var i = 0; i < visibleSteps.length; i++) {
     var dot = document.createElement('div');
