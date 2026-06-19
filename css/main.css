@@ -4143,7 +4143,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 }
 
 .podcast-platform-badge.badge-spotify {
-  background: #1DB954;
+  background: #147a38;
   color: #ffffff;
 }
 
@@ -4168,7 +4168,7 @@ body.dyslexic-font, body.dyslexic-font * { font-family: 'OpenDyslexic', Arial, s
 }
 
 [data-theme="dark"] .podcast-platform-badge.badge-spotify {
-  background: #17A844;
+  background: #147a38;
 }
 
 [data-theme="dark"] .podcast-platform-badge.badge-youtube {
