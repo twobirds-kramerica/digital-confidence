@@ -6715,3 +6715,21 @@ main, .module-content, article, .content-body, .main-content {
     color: var(--color-text-link-hover);
   }
 }
+
+/* ── Module Category Label (IA Finding 8) ───────────────── */
+.module-category-label {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-sm);
+  background: var(--primary-light, var(--color-surface-primary));
+  color: var(--color-primary);
+}
+[data-theme="dark"] .module-category-label {
+  background: rgba(42,123,111,0.2);
+  color: var(--color-primary-light, #5DADE2);
+}
