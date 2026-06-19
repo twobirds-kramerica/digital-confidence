@@ -327,6 +327,69 @@ document.addEventListener('click', function (e) {
 })();
 
 /* ============================================
+   B5: Category pill — "you are here" label above h1
+   ============================================ */
+(function () {
+  var CATS = {
+    'module-1.html':                  ['Device Basics',    '📱'],
+    'module-2.html':                  ['Safety',           '🛡️'],
+    'module-2-5.html':                ['Everyday Skills',  '📂'],
+    'module-3.html':                  ['Safety',           '🔑'],
+    'module-4.html':                  ['Device Basics',    '📱'],
+    'module-5.html':                  ['Communication',    '✉️'],
+    'module-6.html':                  ['Finance',          '🏦'],
+    'module-7.html':                  ['Everyday Skills',  '📷'],
+    'module-8.html':                  ['Communication',    '👨‍👩‍👧'],
+    'module-9.html':                  ['Technology',       '🤖'],
+    'module-10.html':                 ['Everyday Skills',  '🛒'],
+    'module-11.html':                 ['Everyday Skills',  '🚗'],
+    'module-12.html':                 ['Support',          '🤝'],
+    'module-13.html':                 ['Communication',    '👥'],
+    'module-14.html':                 ['Technology',       '🏡'],
+    'module-15.html':                 ['Health',           '🏥'],
+    'module-16-travel-safety.html':   ['Safety',           '✈️'],
+    'module-17-ai-research.html':     ['Technology',       '🔍'],
+    'module-18-staying-connected.html': ['Communication',  '💞'],
+    'module-19-digital-legacy.html':  ['Everyday Skills',  '🗂️'],
+    'module-20-internet-plan.html':   ['Technology',       '📶'],
+    'module-21-mobile-plan.html':     ['Technology',       '📱'],
+    'module-22-tv-home-phone.html':   ['Technology',       '📺'],
+    'module-23-online-marketplace.html': ['Everyday Skills','🛒'],
+    'module-24-communication.html':   ['Communication',    '💬'],
+    'module-fact-check.html':         ['Safety',           '🔎'],
+    'module-ai-health.html':          ['Health & Safety',  '💗'],
+    'module-visual-ai.html':          ['Technology',       '📷'],
+    'digital-literacy-101.html':      ['Device Basics',    '📖'],
+    'family-setup.html':              ['Device Basics',    '👪']
+  };
+
+  var page = window.location.pathname.split('/').pop() || '';
+  var cat = CATS[page];
+  if (!cat) return;
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var h1 = document.querySelector('#main h1');
+    if (!h1) return;
+
+    var style = document.createElement('style');
+    style.textContent = '.dcc-category-pill{display:inline-flex;align-items:center;gap:.35rem;font-size:.78rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;background:var(--color-surface-raised,#EEF2F7);color:var(--color-text-secondary,#4A5568);border:1px solid var(--color-border,#DDE3EB);margin-bottom:.65rem;letter-spacing:.03em;text-transform:uppercase;}[data-theme="dark"] .dcc-category-pill{background:rgba(255,255,255,.08);color:var(--color-text-secondary,#9CA3AF);border-color:rgba(255,255,255,.12);}';
+    document.head.appendChild(style);
+
+    var pill = document.createElement('div');
+    pill.className = 'dcc-category-pill';
+    pill.setAttribute('aria-label', 'Category: ' + cat[0]);
+    var icon = document.createElement('span');
+    icon.setAttribute('aria-hidden', 'true');
+    icon.textContent = cat[1];
+    var label = document.createElement('span');
+    label.textContent = cat[0];
+    pill.appendChild(icon);
+    pill.appendChild(label);
+    h1.parentNode.insertBefore(pill, h1);
+  });
+})();
+
+/* ============================================
    B4: Help button — bottom-right circle
    ============================================ */
 (function() {
