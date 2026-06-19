@@ -20,6 +20,18 @@ window.DC_SEARCH_INDEX = [
   { type: 'Module', title: 'Module 13: Social Media Safety', url: 'module-13.html', excerpt: 'Facebook safety, privacy settings, romance scams, cloned profiles, blocking' },
   { type: 'Module', title: 'Module 14: Smart Home Safety', url: 'module-14.html', excerpt: 'Smart speakers, smart plugs, mesh Wi-Fi, voice assistants, home device security' },
   { type: 'Module', title: 'Module 15: Telehealth', url: 'module-15.html', excerpt: 'Virtual doctor appointments, OHIP, Ontario Telehealth, MyChart, video health visits' },
+  { type: 'Module', title: 'Module 16: Travel Safety', url: 'module-16-travel-safety.html', excerpt: 'Google Maps offline, hotel and airport WiFi safety, travel booking apps, keeping phone secure while away' },
+  { type: 'Module', title: 'Module 17: AI Research Tools', url: 'module-17-ai-research.html', excerpt: 'ChatGPT, Perplexity, writing good prompts, fact-checking AI answers, when to trust AI responses' },
+  { type: 'Module', title: 'Module 18: Staying Connected', url: 'module-18-staying-connected.html', excerpt: 'Staying in touch with family and friends, video calls, messaging apps, reducing isolation' },
+  { type: 'Module', title: 'Module 19: Your Digital Life', url: 'module-19-digital-legacy.html', excerpt: 'Digital accounts, passwords, what happens to your accounts, digital estate planning' },
+  { type: 'Module', title: 'Module 20: Internet Plans', url: 'module-20-internet-plan.html', excerpt: 'Home internet service, choosing a plan, Wi-Fi, comparing providers, saving money on internet' },
+  { type: 'Module', title: 'Module 21: Mobile Plans', url: 'module-21-mobile-plan.html', excerpt: 'Cell phone plans, data, minutes, choosing the right plan, Canadian carriers, seniors discounts' },
+  { type: 'Module', title: 'Module 22: TV & Home Phone', url: 'module-22-tv-home-phone.html', excerpt: 'Streaming TV, cable, home phone options, bundles, comparing services in Canada' },
+  { type: 'Module', title: 'Module 23: Online Marketplace', url: 'module-23-online-marketplace.html', excerpt: 'Facebook Marketplace, Kijiji, buying and selling safely online, avoiding marketplace scams' },
+  { type: 'Module', title: 'Module 24: Communication Tools', url: 'module-24-communication.html', excerpt: 'Email, text, video calls, voice assistants — choosing the right tool for the right situation' },
+  { type: 'Module', title: 'Show Me! Visual AI Guide (Bonus)', url: 'module-visual-ai.html', excerpt: 'Visual tour of AI tools with screenshots — what they look like, what to type, common mistakes to avoid' },
+  { type: 'Module', title: 'Is It True, or Does It Just Sound True?', url: 'module-fact-check.html', excerpt: 'Fact-checking habit, three quiet questions, checking source and date, Canadian Anti-Fraud Centre' },
+  { type: 'Module', title: 'Asking AI About Your Health or How You Feel', url: 'module-ai-health.html', excerpt: 'When AI can help with health questions, risks of AI health advice, 988, Health811, Talk Suicide Canada, 211' },
 
   // ── TIPS ─────────────────────────────────────────────────────────────────
   { type: 'Tip', title: '5 Things You Should Never Share Online', url: 'tips/five-things-never-share-online.html', excerpt: 'SIN, banking details, passwords, health card number, and your home address — keep these private' },
