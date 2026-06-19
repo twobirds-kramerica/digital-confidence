@@ -371,7 +371,9 @@ document.addEventListener('click', function (e) {
   style.textContent = '.dcc-category-pill{display:inline-flex;align-items:center;gap:.35rem;font-size:.78rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;background:var(--color-surface-raised,#EEF2F7);color:var(--color-text-secondary,#4A5568);border:1px solid var(--color-border,#DDE3EB);margin-bottom:.65rem;letter-spacing:.03em;text-transform:uppercase;}[data-theme="dark"] .dcc-category-pill{background:rgba(255,255,255,.08);color:var(--color-text-secondary,#9CA3AF);border-color:rgba(255,255,255,.12);}';
   document.head.appendChild(style);
 
-  document.addEventListener('DOMContentLoaded', function () {
+  /* Use load (not DOMContentLoaded) so breadcrumb-nav and focus-btn inserted
+     by accessibility.js and focus-mode.js are already in place before pill. */
+  window.addEventListener('load', function () {
     var h1 = document.querySelector('#main h1');
     if (!h1) return;
     var pill = document.createElement('div');
@@ -384,14 +386,7 @@ document.addEventListener('click', function (e) {
     label.textContent = cat[0];
     pill.appendChild(icon);
     pill.appendChild(label);
-    /* Insert now, then re-position after other setTimeout(0) handlers
-       (breadcrumb-nav, focus-btn) have also inserted before h1. */
     h1.parentNode.insertBefore(pill, h1);
-    requestAnimationFrame(function () {
-      if (pill.nextElementSibling !== h1) {
-        h1.parentNode.insertBefore(pill, h1);
-      }
-    });
   });
 })();
 
