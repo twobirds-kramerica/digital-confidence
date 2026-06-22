@@ -5,7 +5,7 @@
    JSON data files: cache-first with network update.
    ============================================================ */
 
-var CACHE_NAME = 'dcc-v9';
+var CACHE_NAME = 'dcc-v10';
 
 /* Core pages to pre-cache on install.
    Paths are relative to this script's location so they resolve correctly

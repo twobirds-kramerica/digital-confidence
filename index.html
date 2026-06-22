@@ -27,9 +27,10 @@
   <title>Digital Confidence Centre — Free Digital Learning for All Canadians</title>
   <link rel="preload" href="fonts/source-sans-3/source-sans-3-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/source-sans-3/source-sans-3-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="images/senior-woman-ipad.jpg" as="image" fetchpriority="high">
   <link rel="stylesheet" href="css/bundle.css">
-  <link rel="stylesheet" href="css/mobile.css">
-  <link rel="stylesheet" href="css/dcc-core.css">
+  <link rel="stylesheet" href="css/mobile.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="css/mobile.css"></noscript>
+  <link rel="stylesheet" href="css/dcc-core.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="css/dcc-core.css"></noscript>
   <!-- Google Search Console — Aaron: replace with real verification code from GSC dashboard -->
   <!-- <meta name="google-site-verification" content="REPLACE_WITH_REAL_CODE" /> -->
   <!-- SEO: Author, Robots, Open Graph, Twitter Card -->
@@ -436,7 +437,7 @@
           <p class="tagline">You are not behind. You are right on time.</p>
         </div>
         <div class="welcome-hero-image">
-          <img src="images/senior-woman-ipad.jpg?v=2" alt="A woman smiling while using an iPad — Digital Confidence Centre helps Canadians learn technology" width="260" height="200" loading="eager">
+          <img src="images/senior-woman-ipad.jpg?v=2" alt="A woman smiling while using an iPad — Digital Confidence Centre helps Canadians learn technology" width="260" height="200" loading="eager" fetchpriority="high">
         </div>
       </div>
 
