@@ -32,16 +32,16 @@ CATEGORY_MAP = {
     'module-fact-check.html':     'Daily Life',
     'module-ai-health.html':      'Daily Life',
     'module-ai-literacy.html':    'Daily Life',
-    # Staying Independent
-    'module-16-travel-safety.html':     'Staying Independent',
-    'module-17-ai-research.html':       'Staying Independent',
-    'module-18-staying-connected.html': 'Staying Independent',
-    'module-19-digital-legacy.html':    'Staying Independent',
-    'module-20-internet-plan.html':     'Staying Independent',
-    'module-21-mobile-plan.html':       'Staying Independent',
-    'module-22-tv-home-phone.html':     'Staying Independent',
-    'module-23-online-marketplace.html':'Staying Independent',
-    'module-24-communication.html':     'Staying Independent',
+    # Living Independently
+    'module-16-travel-safety.html':     'Living Independently',
+    'module-17-ai-research.html':       'Living Independently',
+    'module-18-staying-connected.html': 'Living Independently',
+    'module-19-digital-legacy.html':    'Living Independently',
+    'module-20-internet-plan.html':     'Living Independently',
+    'module-21-mobile-plan.html':       'Living Independently',
+    'module-22-tv-home-phone.html':     'Living Independently',
+    'module-23-online-marketplace.html':'Living Independently',
+    'module-24-communication.html':     'Living Independently',
 }
 
 # Match the first <h1> inside the main content block
