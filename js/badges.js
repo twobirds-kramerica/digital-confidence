@@ -219,12 +219,13 @@
   }
 
   if (isHomePage) {
-    injectCSS();
     document.addEventListener('DOMContentLoaded', function () {
-      var progressOverview = document.querySelector('.progress-overview');
-      if (progressOverview) {
-        buildBadgeShelf(progressOverview);
-      }
+      var build = function () {
+        injectCSS();
+        var progressOverview = document.querySelector('.progress-overview');
+        if (progressOverview) buildBadgeShelf(progressOverview);
+      };
+      'requestIdleCallback' in window ? requestIdleCallback(build, { timeout: 3000 }) : setTimeout(build, 200);
     });
   }
 }());
