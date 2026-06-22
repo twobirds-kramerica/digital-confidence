@@ -83,85 +83,6 @@
     window.addEventListener('scroll', check, { passive: true });
   }
 
-  /* ── Badge shelf CSS ─────────────────────────────────────────────────────── */
-  function injectCSS() {
-    var css = [
-      '.badge-shelf {',
-      '  margin: var(--space-6, 24px) 0;',
-      '}',
-      '.badge-shelf-title {',
-      '  font-family: var(--font-heading, sans-serif);',
-      '  font-size: var(--font-size-sm, 16px);',
-      '  font-weight: var(--font-weight-semibold, 600);',
-      '  color: var(--color-text-light, #7A6E62);',
-      '  text-transform: uppercase;',
-      '  letter-spacing: 0.05em;',
-      '  margin: 0 0 var(--space-3, 12px);',
-      '}',
-      '.badge-shelf-grid {',
-      '  display: flex;',
-      '  flex-wrap: wrap;',
-      '  gap: var(--space-3, 12px);',
-      '}',
-      '.badge-item {',
-      '  display: flex;',
-      '  flex-direction: column;',
-      '  align-items: center;',
-      '  gap: var(--space-1, 4px);',
-      '  padding: var(--space-4, 16px) var(--space-3, 12px);',
-      '  background: var(--color-surface, #fff);',
-      '  border: 2px solid var(--color-border, #E8DDD0);',
-      '  border-radius: var(--radius-lg, 12px);',
-      '  text-align: center;',
-      '  min-width: 100px;',
-      '  flex: 1;',
-      '  max-width: 140px;',
-      '  transition: border-color 0.2s;',
-      '}',
-      '.badge-item.badge-earned {',
-      '  border-color: var(--color-primary, #2A7B6F);',
-      '  background: var(--color-primary-light, #E8F5F0);',
-      '}',
-      '.badge-item.badge-locked {',
-      '  filter: grayscale(1);',
-      '}',
-      '.badge-icon {',
-      '  font-size: 2rem;',
-      '  line-height: 1;',
-      '  user-select: none;',
-      '}',
-      '.badge-name {',
-      '  font-family: var(--font-heading, sans-serif);',
-      '  font-weight: var(--font-weight-semibold, 600);',
-      '  font-size: 13px;',
-      '  color: var(--color-text, #3D3229);',
-      '}',
-      '.badge-desc {',
-      '  font-size: 11px;',
-      '  color: var(--color-text-light, #7A6E62);',
-      '  line-height: 1.3;',
-      '}',
-      '.badge-item.badge-locked .badge-name, .badge-item.badge-locked .badge-desc {',
-      '  color: #5e5e64;',
-      '}',
-      '[data-theme="dark"] .badge-item {',
-      '  background: var(--color-surface, #2A2520);',
-      '  border-color: var(--color-border, #3A322A);',
-      '}',
-      '[data-theme="dark"] .badge-item.badge-earned {',
-      '  background: var(--color-primary-light, #1F3C36);',
-      '}',
-      /* Responsive: 2 per row on very small screens */
-      '@media (max-width: 480px) {',
-      '  .badge-item { min-width: calc(50% - var(--space-3, 12px)); max-width: none; }',
-      '}',
-    ].join('\n');
-
-    var styleEl = document.createElement('style');
-    styleEl.textContent = css;
-    document.head.appendChild(styleEl);
-  }
-
   /* ── Build and inject the badge shelf into the home page ─────────────────── */
   function buildBadgeShelf(container) {
     var shelf = document.createElement('div');
@@ -221,7 +142,6 @@
   if (isHomePage) {
     document.addEventListener('DOMContentLoaded', function () {
       var build = function () {
-        injectCSS();
         var progressOverview = document.querySelector('.progress-overview');
         if (progressOverview) buildBadgeShelf(progressOverview);
       };

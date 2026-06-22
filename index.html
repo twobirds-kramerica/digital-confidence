@@ -1389,37 +1389,40 @@
   <script>
   // DCC Progress Widget — reads localStorage quiz results and shows personal progress
   document.addEventListener('DOMContentLoaded', function() {
-    try {
-      var results = JSON.parse(localStorage.getItem('dcc_quiz_results') || '{}');
-      var keys = Object.keys(results);
-      if (!keys.length) return;
-      var completed = keys.filter(function(k) { return results[k].after; });
-      var started = keys.filter(function(k) { return results[k].before; });
-      var total = 29;
-      var count = Math.max(completed.length, started.length);
-      if (!count) return;
-      var widget = document.getElementById('dcc-progress-widget');
-      var textEl = document.getElementById('dcc-progress-text');
-      var barEl = document.getElementById('dcc-progress-bar');
-      var detailEl = document.getElementById('dcc-progress-detail');
-      if (!widget) return;
-      widget.style.display = '';
-      textEl.textContent = count + ' of ' + total + ' module' + (count !== 1 ? 's' : '') + ' started';
-      var pct = Math.round((count / total) * 100);
-      barEl.style.width = pct + '%';
-      var stripEl = document.getElementById('progress-strip-fill');
-      if (stripEl) stripEl.style.width = pct + '%';
-      // Find last module touched
-      var lastKey = keys.sort(function(a,b) {
-        var ta = (results[a].after && results[a].after.timestamp) || (results[a].before && results[a].before.timestamp) || '';
-        var tb = (results[b].after && results[b].after.timestamp) || (results[b].before && results[b].before.timestamp) || '';
-        return ta < tb ? 1 : -1;
-      })[0];
-      if (lastKey && detailEl) {
-        var lastDate = ((results[lastKey].after || results[lastKey].before || {}).timestamp || '').slice(0,10);
-        detailEl.textContent = 'Last activity: ' + (lastDate || 'recently') + ' · Results saved in this browser.';
-      }
-    } catch(e) {}
+    var init = function() {
+      try {
+        var results = JSON.parse(localStorage.getItem('dcc_quiz_results') || '{}');
+        var keys = Object.keys(results);
+        if (!keys.length) return;
+        var completed = keys.filter(function(k) { return results[k].after; });
+        var started = keys.filter(function(k) { return results[k].before; });
+        var total = 29;
+        var count = Math.max(completed.length, started.length);
+        if (!count) return;
+        var widget = document.getElementById('dcc-progress-widget');
+        var textEl = document.getElementById('dcc-progress-text');
+        var barEl = document.getElementById('dcc-progress-bar');
+        var detailEl = document.getElementById('dcc-progress-detail');
+        if (!widget) return;
+        widget.style.display = '';
+        textEl.textContent = count + ' of ' + total + ' module' + (count !== 1 ? 's' : '') + ' started';
+        var pct = Math.round((count / total) * 100);
+        barEl.style.width = pct + '%';
+        var stripEl = document.getElementById('progress-strip-fill');
+        if (stripEl) stripEl.style.width = pct + '%';
+        // Find last module touched
+        var lastKey = keys.sort(function(a,b) {
+          var ta = (results[a].after && results[a].after.timestamp) || (results[a].before && results[a].before.timestamp) || '';
+          var tb = (results[b].after && results[b].after.timestamp) || (results[b].before && results[b].before.timestamp) || '';
+          return ta < tb ? 1 : -1;
+        })[0];
+        if (lastKey && detailEl) {
+          var lastDate = ((results[lastKey].after || results[lastKey].before || {}).timestamp || '').slice(0,10);
+          detailEl.textContent = 'Last activity: ' + (lastDate || 'recently') + ' · Results saved in this browser.';
+        }
+      } catch(e) {}
+    };
+    'requestIdleCallback' in window ? requestIdleCallback(init, { timeout: 3000 }) : setTimeout(init, 200);
   });
   </script>
 </body>
