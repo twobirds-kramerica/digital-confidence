@@ -130,18 +130,19 @@
   }
 
   /* ── Boot ───────────────────────────────────────────────────────────────── */
-  checkQuizBadges();
-
   var isModulePage = !!document.querySelector('.main-content') && !document.querySelector('.module-grid');
   var isHomePage   = !!document.querySelector('.module-grid');
 
   if (isModulePage) {
     watchFirstStep();
+    var idleCheck = function () { checkQuizBadges(); };
+    'requestIdleCallback' in window ? requestIdleCallback(idleCheck, { timeout: 3000 }) : setTimeout(idleCheck, 200);
   }
 
   if (isHomePage) {
     document.addEventListener('DOMContentLoaded', function () {
       var build = function () {
+        checkQuizBadges();
         var progressOverview = document.querySelector('.progress-overview');
         if (progressOverview) buildBadgeShelf(progressOverview);
       };

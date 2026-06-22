@@ -614,7 +614,10 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    injectStyles();
-    buildWidget();
+    function init() {
+      injectStyles();
+      buildWidget();
+    }
+    'requestIdleCallback' in window ? requestIdleCallback(init, { timeout: 3000 }) : setTimeout(init, 200);
   });
 })();

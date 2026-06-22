@@ -72,9 +72,12 @@ var DC_PAGE_MODULE = {
    INJECT FEEDBACK UI INTO EVERY PAGE
    ================================================================ */
 document.addEventListener('DOMContentLoaded', function () {
-  injectFeedbackStyles();
-  injectUnifiedFeedbackBtn();
-  injectFeedbackModal();
+  function init() {
+    injectFeedbackStyles();
+    injectUnifiedFeedbackBtn();
+    injectFeedbackModal();
+  }
+  'requestIdleCallback' in window ? requestIdleCallback(init, { timeout: 4000 }) : setTimeout(init, 200);
 });
 
 /* ---- Inject CSS overrides for this component ---- */

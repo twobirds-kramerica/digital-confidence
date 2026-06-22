@@ -636,26 +636,29 @@ document.addEventListener('DOMContentLoaded', function () {
     dcOpenWizard();
   }
   applyDeviceFiltering();
-  showDevicePromptIfNeeded();
-  personalizeStories();
-  if (window.location.pathname.indexOf('module-') !== -1 ||
-      window.location.href.indexOf('module-') !== -1) {
-    var _profile = null;
-    try { _profile = JSON.parse(localStorage.getItem('dc-device-profile') || 'null'); } catch (e) {}
-    var _hasDevices = _profile && [].concat(
-      _profile.phone || [], _profile.tablet || [], _profile.computer || []
-    ).some(function (v) { return v && v !== 'none'; });
-    if (!_hasDevices) { showDeviceIndicatorEmpty(); }
-    else { showFilteredBanner(_profile); }
-  }
 
-  var settingsLink = document.querySelector('.settings-link');
-  if (settingsLink) {
-    settingsLink.addEventListener('click', function (e) {
-      e.preventDefault();
-      dcOpenWizard();
-    });
+  function deferred() {
+    showDevicePromptIfNeeded();
+    personalizeStories();
+    if (window.location.pathname.indexOf('module-') !== -1 ||
+        window.location.href.indexOf('module-') !== -1) {
+      var _profile = null;
+      try { _profile = JSON.parse(localStorage.getItem('dc-device-profile') || 'null'); } catch (e) {}
+      var _hasDevices = _profile && [].concat(
+        _profile.phone || [], _profile.tablet || [], _profile.computer || []
+      ).some(function (v) { return v && v !== 'none'; });
+      if (!_hasDevices) { showDeviceIndicatorEmpty(); }
+      else { showFilteredBanner(_profile); }
+    }
+    var settingsLink = document.querySelector('.settings-link');
+    if (settingsLink) {
+      settingsLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        dcOpenWizard();
+      });
+    }
   }
+  'requestIdleCallback' in window ? requestIdleCallback(deferred, { timeout: 4000 }) : setTimeout(deferred, 200);
 });
 
 /* ---------- Personalization Banners ---------- */
