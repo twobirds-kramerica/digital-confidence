@@ -135,19 +135,22 @@
 
     overlay.appendChild(card);
     overlay.appendChild(skip);
+
+    /* Populate content before appending to DOM so the card is full-height
+       from first paint — prevents CLS from flex-recentering an empty card */
+    renderStep(card);
+
     document.body.appendChild(overlay);
 
     /* Trap focus */
     overlay.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') completeOnboarding();
     });
-
-    renderStep();
   }
 
   /* ── Render current step ───────────────────────────────────────────── */
-  function renderStep() {
-    var card = document.getElementById('dcc-ob-card');
+  function renderStep(cardEl) {
+    var card = cardEl || document.getElementById('dcc-ob-card');
     if (!card) return;
 
     var html = '';
