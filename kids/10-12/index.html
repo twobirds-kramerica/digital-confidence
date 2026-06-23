@@ -341,6 +341,12 @@
 
     </div>
 
+    <section class="dcc-hub" id="rewards-hub" aria-label="My Rewards">
+      <noscript>
+        <p style="margin:0;color:var(--text-secondary);">Rewards and badges need JavaScript turned on. The activities themselves work without it.</p>
+      </noscript>
+    </section>
+
     <div class="age-nav" role="navigation" aria-label="Age groups">
       <a href="../4-6/index.html" class="done">✅ Ages 4–6 (complete · 8 activities)</a>
       <a href="../7-9/index.html" class="done">✅ Ages 7–9 (complete · 8 activities)</a>
@@ -350,6 +356,15 @@
     </div>
 
   </main>
+
+  <script src="../rewards.js"></script>
+  <script>
+    (function () {
+      if (window.DCCRewards) {
+        DCCRewards.renderHub(document.getElementById('rewards-hub'), '10-12');
+      }
+    })();
+  </script>
 
   <footer class="kids-footer" role="contentinfo">
     <p>

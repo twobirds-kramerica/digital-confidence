@@ -57,8 +57,29 @@
       { id: 'pause-and-show-a-grown-up-when-an-app-asks',    title: 'Pause & Ask',     icon: '✋', cat: 'Tech Safety' },
       { id: 'creating-a-strong-password',                    title: 'Password Pro',    icon: '🔑', cat: 'Tech Safety' }
     ],
-    '4-6': [],
-    '10-12': []
+    '4-6': [
+      { id: 'big-feelings-are-real',              title: 'Big Feelings',   icon: '🌈', cat: 'Emotional Safety' },
+      { id: 'making-my-own-thing-first',          title: 'Original Maker', icon: '✨', cat: 'Creative Making' },
+      { id: 'making-something-together',          title: 'Team Builder',   icon: '🤝', cat: 'Creative Making' },
+      { id: 'my-device-has-eyes-ears-memory',     title: 'Device Wise',    icon: '🔍', cat: 'Tech Safety' },
+      { id: 'real-pretend-maybe-made-up',         title: 'Truth Finder',   icon: '⭐', cat: 'Critical Thinking' },
+      { id: 'secret-stuff-share-stuff',           title: 'Privacy Keeper', icon: '🔒', cat: 'Tech Safety' },
+      { id: 'true-things-story-things',           title: 'Story Checker',  icon: '📚', cat: 'Critical Thinking' },
+      { id: 'who-is-my-safe-grown-up',            title: 'Safe Adult',     icon: '🛡️', cat: 'Emotional Safety' }
+    ],
+    '10-12': [
+      { id: 'asking-good-questions-when-i-search-or-ask-ai',      title: 'Smart Asker',     icon: '🔎', cat: 'Critical Thinking' },
+      { id: 'creating-a-strong-password',                          title: 'Password Pro',    icon: '🔑', cat: 'Tech Safety' },
+      { id: 'following-a-story-back-to-where-it-started',         title: 'Source Seeker',   icon: '🗺️', cat: 'Critical Thinking' },
+      { id: 'is-this-an-ad-or-did-they-really-mean-it',           title: 'Ad Spotter',      icon: '👁️', cat: 'Media Literacy' },
+      { id: 'making-a-story-with-ai-as-my-helper-not-my-author',  title: 'AI Partner',      icon: '🤖', cat: 'Creative Making' },
+      { id: 'spotting-hidden-advertising',                         title: 'Ad Detective',    icon: '🎯', cat: 'Media Literacy' },
+      { id: 'spotting-please-dont-tell-your-parent',               title: 'Safe Guard',      icon: '🚨', cat: 'Tech Safety' },
+      { id: 'using-a-password-manager',                            title: 'Vault Keeper',    icon: '🏦', cat: 'Tech Safety' },
+      { id: 'when-i-remix-something-i-name-who-made-the-original', title: 'Credit Giver',   icon: '🎨', cat: 'Creative Making' },
+      { id: 'when-online-pressure-crosses-a-line',                 title: 'Boundary Setter', icon: '⚡', cat: 'Emotional Safety' },
+      { id: 'when-the-computer-just-agrees-with-you',              title: 'Echo Breaker',    icon: '💡', cat: 'Critical Thinking' }
+    ]
   };
 
   var COHORT_LABEL = { '7-9': 'Ages 7–9', '4-6': 'Ages 4–6', '10-12': 'Ages 10–12' };

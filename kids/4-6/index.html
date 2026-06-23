@@ -375,6 +375,12 @@
       <p><strong>Full 4–6 cohort complete.</strong> All 8 activities for this age group are ready. Ages 7–9 activities coming next.</p>
     </div>
 
+    <section class="dcc-hub" id="rewards-hub" aria-label="My Rewards">
+      <noscript>
+        <p style="margin:0;color:var(--text-secondary);">Rewards and badges need JavaScript turned on. The activities themselves work without it.</p>
+      </noscript>
+    </section>
+
     <div style="text-align: center;">
       <a href="../index.html" style="color: var(--brand-teal); font-size: 0.95rem; text-decoration: none;">
         ← All age groups
@@ -382,6 +388,15 @@
     </div>
 
   </main>
+
+  <script src="../rewards.js"></script>
+  <script>
+    (function () {
+      if (window.DCCRewards) {
+        DCCRewards.renderHub(document.getElementById('rewards-hub'), '4-6');
+      }
+    })();
+  </script>
 
   <footer class="kids-footer" role="contentinfo">
     <p>
