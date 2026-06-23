@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var t=localStorage.getItem('dc-theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ads &amp; Digital Literacy for Canadian Youth — four interactive scenarios on advertising business models, dark patterns, influencer marketing, and attention engineering. Scenario-based learning for ages 12–18.">
+  <meta name="keywords" content="ads literacy youth Canada, dark patterns teens, influencer marketing disclosure, infinite scroll attention, digital advertising 12-18, media literacy Canada">
+  <meta property="og:title" content="Who's Paying for Your Attention — Ads &amp; Dark Patterns for Canadian Youth (Ages 12–18)">
+  <meta property="og:description" content="Four real situations about how attention gets bought and sold online. What would you do? Interactive scenarios on advertising, false urgency, influencer disclosure, and infinite scroll.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/module-ads-youth.html">
+  <title>Who's Paying for Your Attention — Ads &amp; Digital Literacy · Digital Confidence Centre</title>
+  <link rel="stylesheet" href="css/bundle.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <link rel="stylesheet" href="css/quiz-check.css">
+  <link rel="stylesheet" href="css/measurement.css">
+  <meta name="author" content="Digital Confidence Centre">
+  <meta name="robots" content="index, follow">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2A7B6F">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <style>
+    /* Youth module colour overrides */
+    :root {
+      --youth-indigo:    #3949AB;
+      --youth-indigo-bg: #E8EAF6;
+      --youth-teal:      #00897B;
+      --youth-teal-bg:   #E0F2F1;
+      --youth-amber:     #F57C00;
+      --youth-amber-bg:  #FFF3E0;
+      --youth-green:     #2E7D32;
+      --youth-green-bg:  #E8F5E9;
+      --youth-red:       #C62828;
+      --youth-red-bg:    #FFEBEE;
+    }
+
+    .youth-hero {
+      background: linear-gradient(135deg, #1c1640 0%, #c05e00 100%);
+      color: #fff;
+      padding: 2.5rem 0 2rem;
+      text-align: center;
+      margin: -1.5rem -1.5rem 2rem;
+      border-radius: 0 0 16px 16px;
+    }
+    .youth-hero .eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 0.25rem 0.9rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .youth-hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+    .youth-hero p { font-size: 1rem; opacity: 0.85; max-width: 520px; margin: 0 auto; line-height: 1.55; }
+
+    /* Progress bar */
+    .scenario-progress {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .progress-pip {
+      width: 32px; height: 6px; border-radius: 3px;
+      background: var(--youth-amber-bg);
+      transition: background 0.25s;
+    }
+    .progress-pip.done { background: var(--youth-amber); }
+    .progress-pip.active { background: var(--youth-teal); }
+    .progress-label { font-size: 0.8rem; color: var(--color-text-light,#7A6E62); font-weight: 600; }
+
+    /* Scenario card */
+    .scenario-card {
+      background: var(--color-surface,#fff);
+      border: 2px solid var(--youth-amber-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      display: none;
+    }
+    .scenario-card.active { display: block; }
+
+    .scenario-header {
+      background: var(--youth-amber-bg);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .scenario-num {
+      background: var(--youth-amber);
+      color: #fff;
+      width: 2rem; height: 2rem;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: 800; flex-shrink: 0;
+    }
+    .scenario-tag { font-size: 0.78rem; font-weight: 700; color: var(--youth-amber); text-transform: uppercase; letter-spacing: 0.06em; }
+
+    .scenario-body { padding: 1.5rem; }
+    .scenario-title { font-size: 1.1rem; font-weight: 700; color: var(--color-text,#3D3229); margin-bottom: 0.75rem; }
+    .scenario-story {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 1.25rem;
+      padding: 1rem 1.25rem;
+      background: #fafaf8;
+      border-top: 4px solid var(--youth-amber);
+      border-radius: 10px;
+    }
+    .scenario-question { font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; }
+
+    /* Answer options */
+    .answer-options { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem; }
+    .answer-btn {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      border: 2px solid var(--color-divider,#e0e0e0);
+      border-radius: 10px;
+      background: var(--color-surface,#fff);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.9rem;
+      text-align: left;
+      color: var(--color-text,#3D3229);
+      transition: all 0.15s;
+      width: 100%;
+    }
+    .answer-btn:hover:not(:disabled) { border-color: var(--youth-amber); background: var(--youth-amber-bg); }
+    .answer-btn .ans-letter {
+      flex-shrink: 0; width: 1.5rem; height: 1.5rem;
+      background: var(--youth-amber-bg);
+      color: var(--youth-amber);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700;
+      margin-top: 1px;
+    }
+    .answer-btn.selected-correct {
+      border-color: var(--youth-green);
+      background: var(--youth-green-bg);
+    }
+    .answer-btn.selected-correct .ans-letter { background: var(--youth-green); color: #fff; }
+    .answer-btn.selected-wrong {
+      border-color: var(--youth-red);
+      background: var(--youth-red-bg);
+    }
+    .answer-btn.selected-wrong .ans-letter { background: var(--youth-red); color: #fff; }
+    .answer-btn.reveal-correct {
+      border-color: var(--youth-green);
+      background: var(--youth-green-bg);
+      opacity: 0.7;
+    }
+    .answer-btn:disabled { cursor: default; }
+
+    /* Debrief */
+    .scenario-debrief {
+      display: none;
+      margin-top: 1rem;
+      padding: 1rem 1.25rem;
+      border-radius: 10px;
+      border-top: 4px solid var(--youth-teal);
+      background: var(--youth-teal-bg);
+    }
+    .scenario-debrief.visible { display: block; }
+    .debrief-label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.07em; color: var(--youth-teal); margin-bottom: 0.4rem; }
+    .scenario-debrief p { font-size: 1rem; line-height: 1.6; color: #1a3a38; }
+
+    .btn-next-scenario {
+      display: none;
+      margin-top: 1rem;
+      background: var(--youth-amber);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 0.65rem 1.75rem;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-next-scenario:hover { background: #c05e00; }
+    .btn-next-scenario.visible { display: inline-flex; align-items: center; gap: 0.4rem; }
+
+    /* All-done block */
+    .scenarios-complete {
+      display: none;
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--youth-amber-bg);
+      border-radius: 16px;
+      margin-bottom: 2rem;
+    }
+    .scenarios-complete.visible { display: block; }
+    .sc-icon { font-size: 3rem; margin-bottom: 0.75rem; }
+    .sc-score { font-size: 1.5rem; font-weight: 800; color: var(--youth-amber); }
+    .sc-sub { font-size: 1rem; color: var(--color-text-light,#50505F); margin-top: 0.4rem; }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">Who's Paying for Your Attention — Youth</span>
+    <span></span>
+  </div>
+
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close menu">Close &#10005;</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Youth Digital Literacy</p>
+    </div>
+    <nav>
+      <a href="index.html"><span class="nav-icon" aria-hidden="true">🏠</span><span class="nav-label">Home</span></a>
+      <a href="digital-literacy-101.html"><span class="nav-icon" aria-hidden="true">📚</span><span class="nav-label">All Modules</span></a>
+      <a href="module-ai-literacy-youth.html"><span class="nav-icon" aria-hidden="true">🎯</span><span class="nav-label">AI in Real Life (Youth)</span></a>
+      <a href="module-ads-youth.html" aria-current="page"><span class="nav-icon" aria-hidden="true">💡</span><span class="nav-label">Who's Paying for Your Attention</span></a>
+      <a href="module-ai-literacy.html"><span class="nav-icon" aria-hidden="true">🤖</span><span class="nav-label">What Is AI? (Adults)</span></a>
+      <a href="kids/index.html"><span class="nav-icon" aria-hidden="true">🧒</span><span class="nav-label">DCC Kids (Ages 4–12)</span></a>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <div class="youth-hero">
+        <div class="eyebrow">Ages 12–18 · Ads &amp; Digital Literacy</div>
+        <h1>Who's Paying for Your Attention?</h1>
+        <p>Free apps. Countdown timers. Sponsored creators. The 45-minute scroll you did not plan. Four scenarios on how attention gets bought and sold online.</p>
+      </div>
+
+      <div class="confidence-check-box">
+        ✅ <strong>This is a safe space to explore.</strong><br>
+        Nothing on this page can harm your device, there is no grade, and you cannot break anything. Question everything — that is the whole point.
+      </div>
+
+      <div class="coach-tip">
+        <div class="coach-tip__header">
+          <span class="coach-tip__icon" aria-hidden="true">❤️</span>
+          <span class="coach-tip__label">From your coach</span>
+        </div>
+        <p>If you have ever opened an app for one second and lost 45 minutes — that was not a personal failure. It was an engineering decision made by a company that earns money every second you stay. Understanding how that works does not mean you have to quit social media. It means you get to decide how much of your attention is worth giving, and to whom.</p>
+      </div>
+
+      <!-- Before quiz -->
+      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start" style="margin-bottom:2rem"></div>
+
+      <!-- Scenario progress -->
+      <div class="scenario-progress" id="scenarioProgress" role="progressbar" aria-label="Scenario progress" aria-valuenow="0" aria-valuemax="4">
+        <div class="progress-pip active" id="pip-0"></div>
+        <div class="progress-pip" id="pip-1"></div>
+        <div class="progress-pip" id="pip-2"></div>
+        <div class="progress-pip" id="pip-3"></div>
+        <span class="progress-label" id="progressLabel">Scenario 1 of 4</span>
+      </div>
+
+      <!-- Scenario 1 -->
+      <div class="scenario-card active" id="scenario-0" role="region" aria-label="Scenario 1: The App That's Free">
+        <div class="scenario-header">
+          <div class="scenario-num">1</div>
+          <div>
+            <div class="scenario-tag">Digital Business Model</div>
+          </div>
+        </div>
+        <div class="scenario-body">
+          <div class="scenario-title">The App That's Free</div>
+          <div class="scenario-story">
+            TikTok costs nothing to download. Instagram costs nothing. YouTube costs nothing. Yet the companies behind them are worth hundreds of billions of dollars — TikTok's parent company ByteDance is valued at over $300 billion CAD. Nobody is paying. Where is the money coming from?
+          </div>
+          <p class="scenario-question">How do apps like TikTok make money if users never pay?</p>
+          <div class="answer-options" id="opts-0">
+            <button class="answer-btn" data-q="0" data-val="0"><span class="ans-letter">A</span> The apps are funded by government digital access programmes</button>
+            <button class="answer-btn" data-q="0" data-val="1"><span class="ans-letter">B</span> Advertisers pay to reach you. Your attention — the time you spend watching — is what's being sold.</button>
+            <button class="answer-btn" data-q="0" data-val="2"><span class="ans-letter">C</span> The founders are wealthy enough to run the platforms as a public service</button>
+            <button class="answer-btn" data-q="0" data-val="3"><span class="ans-letter">D</span> They earn money from premium features most users never buy</button>
+          </div>
+          <div class="scenario-debrief" id="debrief-0">
+            <div class="debrief-label">You are the product</div>
+            <p>Every second you scroll is revenue. Advertisers pay TikTok, Instagram, and YouTube to put their message in front of you — specifically you, based on your age, location, watch history, and hundreds of other signals the platform has collected. The app is free because you are not the customer. You are what's being sold. A business that earns money every second you stay has one engineering goal: keep you watching as long as possible.</p>
+          </div>
+          <button class="btn-next-scenario" id="next-0" onclick="nextScenario(1)">Next scenario →</button>
+        </div>
+      </div>
+
+      <!-- Scenario 2 -->
+      <div class="scenario-card" id="scenario-1" role="region" aria-label="Scenario 2: The Ticket That Expires in 10 Minutes">
+        <div class="scenario-header">
+          <div class="scenario-num">2</div>
+          <div>
+            <div class="scenario-tag">Dark Patterns</div>
+          </div>
+        </div>
+        <div class="scenario-body">
+          <div class="scenario-title">The Ticket That Expires in 10 Minutes</div>
+          <div class="scenario-story">
+            You find concert tickets online. The page shows: "⏰ Only 2 seats left at this price! Your cart expires in 09:47." A timer counts down. You feel a pull to buy now before you lose them. You haven't checked if the price is reasonable or if other sites have the same seats.
+          </div>
+          <p class="scenario-question">What is a countdown timer on a shopping site most likely doing?</p>
+          <div class="answer-options" id="opts-1">
+            <button class="answer-btn" data-q="1" data-val="0"><span class="ans-letter">A</span> Protecting your seat while you decide — a genuine customer service feature</button>
+            <button class="answer-btn" data-q="1" data-val="1"><span class="ans-letter">B</span> Showing you how long the sale has been running</button>
+            <button class="answer-btn" data-q="1" data-val="2"><span class="ans-letter">C</span> Creating false urgency — a design trick called a "dark pattern" that pushes you to decide before you're ready</button>
+            <button class="answer-btn" data-q="1" data-val="3"><span class="ans-letter">D</span> Protecting the site from scalper bots buying up inventory</button>
+          </div>
+          <div class="scenario-debrief" id="debrief-1">
+            <div class="debrief-label">False urgency is a feature, not a bug</div>
+            <p>Dark patterns are design choices built into websites and apps that work against the user on purpose. Countdown timers, "only 3 left" warnings, and hidden unsubscribe buttons are all in the same family. Studies show that a 10-minute countdown increases purchase rates by 30% or more — even when the timer resets the moment it hits zero. The rule: if you feel rushed to click, that is the signal to slow down. Real scarcity does not need a blinking clock. Open a second tab, compare prices, and decide on your own schedule.</p>
+          </div>
+          <button class="btn-next-scenario" id="next-1" onclick="nextScenario(2)">Next scenario →</button>
+        </div>
+      </div>
+
+      <!-- Scenario 3 -->
+      <div class="scenario-card" id="scenario-2" role="region" aria-label="Scenario 3: The Creator Who Swears By This">
+        <div class="scenario-header">
+          <div class="scenario-num">3</div>
+          <div>
+            <div class="scenario-tag">Influencer Marketing</div>
+          </div>
+        </div>
+        <div class="scenario-body">
+          <div class="scenario-title">The Creator Who "Swears By" This Supplement</div>
+          <div class="scenario-story">
+            A YouTuber with 1.2 million subscribers posts a video. "I've been trying this supplement for three months and I genuinely swear by it. My energy is completely different." Buried three lines into the description: "This video is sponsored by NutriMax." They seem sincere. They've mentioned personal health struggles in past videos. The supplement costs $89 CAD.
+          </div>
+          <p class="scenario-question">How should you read this recommendation compared to one from a friend?</p>
+          <div class="answer-options" id="opts-2">
+            <button class="answer-btn" data-q="2" data-val="0"><span class="ans-letter">A</span> The same way — creators only agree to sponsor products they actually use</button>
+            <button class="answer-btn" data-q="2" data-val="1"><span class="ans-letter">B</span> With more skepticism — they were paid to say this. That shifts the incentive from sharing to selling, even if they do genuinely like the product.</button>
+            <button class="answer-btn" data-q="2" data-val="2"><span class="ans-letter">C</span> As completely fake — sponsored content is always dishonest</button>
+            <button class="answer-btn" data-q="2" data-val="3"><span class="ans-letter">D</span> More trustfully — brands carefully screen their ambassadors for authenticity</button>
+          </div>
+          <div class="scenario-debrief" id="debrief-2">
+            <div class="debrief-label">Paid endorsements change the incentive</div>
+            <p>In Canada, paid endorsements must be disclosed under the Competition Act — which is why "Sponsored" appears in the description. The disclosure doesn't mean the creator is lying. They may genuinely use the product. But a creator who earns $10,000 for a sponsored video has a financial reason to be enthusiastic, separate from their actual experience. That is not dishonesty — it is a changed incentive. Apply the same healthy skepticism you would to any advertisement, regardless of how sincere the person seems. Before a $89 purchase: look for independent reviews, check Health Canada's natural health product database, and ask whether you would have wanted this product before you saw the video.</p>
+          </div>
+          <button class="btn-next-scenario" id="next-2" onclick="nextScenario(3)">Next scenario →</button>
+        </div>
+      </div>
+
+      <!-- Scenario 4 -->
+      <div class="scenario-card" id="scenario-3" role="region" aria-label="Scenario 4: The 45-Minute Scroll You Didn't Plan">
+        <div class="scenario-header">
+          <div class="scenario-num">4</div>
+          <div>
+            <div class="scenario-tag">Attention Engineering</div>
+          </div>
+        </div>
+        <div class="scenario-body">
+          <div class="scenario-title">The 45-Minute Scroll You Didn't Plan</div>
+          <div class="scenario-story">
+            You open Instagram to check one notification. Forty-five minutes later you are deep in content you never set out to find — videos, stories, reels, suggested posts from accounts you've never seen. You did not plan to stay. You do not feel particularly refreshed. You are not sure how it happened.
+          </div>
+          <p class="scenario-question">Why is it so difficult to stop scrolling on social media?</p>
+          <div class="answer-options" id="opts-3">
+            <button class="answer-btn" data-q="3" data-val="0"><span class="ans-letter">A</span> Social media is genuinely more interesting than anything else you could be doing</button>
+            <button class="answer-btn" data-q="3" data-val="1"><span class="ans-letter">B</span> You made a weak decision to keep scrolling — it is a self-discipline problem</button>
+            <button class="answer-btn" data-q="3" data-val="2"><span class="ans-letter">C</span> The apps are designed so well that stopping feels unnatural</button>
+            <button class="answer-btn" data-q="3" data-val="3"><span class="ans-letter">D</span> There is no natural stopping point because removing one was a deliberate design decision. The longer you scroll, the more ad revenue the platform earns.</button>
+          </div>
+          <div class="scenario-debrief" id="debrief-3">
+            <div class="debrief-label">The missing stop sign</div>
+            <p>The infinite scroll patent was filed explicitly to remove the natural pause of page turns — the moment where you would have decided whether to keep going. Variable reward — the mechanism also found in slot machines — keeps you scrolling because the next piece of content might be interesting, funny, or surprising. Both of these are deliberate engineering decisions, not side effects. The average Canadian teenager spends 4+ hours per day on social media. That is not 4 hours of free choice — most of it is engineered drift. Knowing this does not mean you have to quit. It means you can set your own stopping points instead of waiting for one that was never built.</p>
+          </div>
+          <button class="btn-next-scenario" id="next-3" onclick="completedScenarios()">See your results →</button>
+        </div>
+      </div>
+
+      <!-- All scenarios complete -->
+      <div class="scenarios-complete" id="scenariosComplete" role="status" aria-live="polite">
+        <div class="sc-icon">💡</div>
+        <div class="sc-score" id="scenarioScore">0 / 4 correct</div>
+        <div class="sc-sub" id="scenarioSub">Complete the after quiz below to see your full results.</div>
+      </div>
+
+      <!-- After quiz -->
+      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the scenarios" style="margin:2rem 0"></div>
+
+      <!-- Success state -->
+      <div class="tip-block" style="border-left-color:#c05e00;background:#FFF3E0" role="note">
+        <span class="tip-label" style="color:#c05e00">✅ Success State — What a completed module looks like</span>
+        <p>When you have finished:</p>
+        <ul style="margin:0.5rem 0 0;padding-left:1.25rem;line-height:2">
+          <li>The "Quick Check — Before You Start" section above shows <strong>Recorded</strong></li>
+          <li>All four scenario cards show a debrief — you have read all four</li>
+          <li>The "Quick Check — After" shows your score and delta</li>
+          <li>You can explain what a "dark pattern" is in one sentence without looking</li>
+        </ul>
+      </div>
+
+      <section class="related-modules" aria-label="Related modules">
+        <h3 class="related-title">Keep Going</h3>
+        <div class="related-grid">
+          <a href="module-ai-literacy-youth.html" class="related-card">
+            <span class="related-num">Youth</span>
+            <span class="related-name">AI in Real Life (Ages 12–18)</span>
+            <span class="related-desc">Deepfakes, voice cloning, academic integrity, and AI as an accessibility tool — four more scenarios for young Canadians.</span>
+          </a>
+          <a href="module-ai-literacy.html" class="related-card">
+            <span class="related-num">Adults 55+</span>
+            <span class="related-name">What Is AI, Really?</span>
+            <span class="related-desc">The adult version of AI literacy — good to share with a parent or grandparent who wants to understand AI tools and scams.</span>
+          </a>
+        </div>
+      </section>
+
+      <div class="module-nav-footer">
+        <a href="digital-literacy-101.html" class="module-nav-prev">← All Modules</a>
+        <a href="module-ai-literacy-youth.html" class="module-nav-next">AI in Real Life (Youth) →</a>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Digital Confidence Centre</p>
+      <p class="footer-tagline">A free digital learning programme for all Canadians</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a> |
+        <a href="digital-literacy-101.html">Modules</a> |
+        <a href="resources/index.html">Resources</a> |
+        <a href="kids/index.html">Kids</a> |
+        <a href="about.html">About</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Two Birds Innovation. Made with care in Ontario, Canada.</p>
+    </div>
+  </footer>
+
+  <script src="js/speech-config.js" defer></script>
+  <script src="js/read-aloud.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/lang-toggle.js" defer></script>
+  <script src="js/accessibility.js" defer></script>
+  <script src="js/focus-mode.js" defer></script>
+  <script src="js/small-wins.js" defer></script>
+  <script src="js/badges.js" defer></script>
+  <script src="js/settings.js" defer></script>
+  <script src="js/quiz-check.js" defer></script>
+  <script src="js/measurement.js" defer></script>
+  <script>
+  // Correct answers for the 4 interactive scenarios (0-indexed option)
+  var SCENARIO_CORRECT = [1, 2, 1, 3];
+  var scenarioAnswered  = [false, false, false, false];
+  var scenarioCorrect   = [false, false, false, false];
+
+  function answerScenario(q, val) {
+    if (scenarioAnswered[q]) return;
+    scenarioAnswered[q] = true;
+    var correct = val === SCENARIO_CORRECT[q];
+    scenarioCorrect[q] = correct;
+
+    // Style all options
+    var opts = document.querySelectorAll('[data-q="' + q + '"]');
+    opts.forEach(function(btn) {
+      btn.disabled = true;
+      var bval = parseInt(btn.dataset.val, 10);
+      if (bval === SCENARIO_CORRECT[q]) btn.classList.add(correct ? 'selected-correct' : 'reveal-correct');
+      if (!correct && bval === val) btn.classList.add('selected-wrong');
+    });
+
+    // Show debrief
+    var debrief = document.getElementById('debrief-' + q);
+    if (debrief) debrief.classList.add('visible');
+
+    // Show next button
+    var next = document.getElementById('next-' + q);
+    if (next) next.classList.add('visible');
+
+    // Update progress
+    updateProgress(q);
+  }
+
+  function nextScenario(idx) {
+    // Hide current, show next
+    var current = document.getElementById('scenario-' + (idx - 1));
+    var next = document.getElementById('scenario-' + idx);
+    if (current) current.classList.remove('active');
+    if (next) next.classList.add('active');
+    updateProgress(idx);
+    if (next) next.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function completedScenarios() {
+    var current = document.getElementById('scenario-3');
+    if (current) current.classList.remove('active');
+    var done = document.getElementById('scenariosComplete');
+    var scoreEl = document.getElementById('scenarioScore');
+    var subEl   = document.getElementById('scenarioSub');
+    var total = scenarioCorrect.filter(Boolean).length;
+    if (scoreEl) scoreEl.textContent = total + ' / 4 correct';
+    var msg = total === 4 ? 'Perfect — you got all four right.'
+            : total >= 3 ? 'Strong — one to review.'
+            : total >= 2 ? 'Good start — look back at the debriefs for the ones you missed.'
+            : 'Review the debriefs above, then take the after quiz.';
+    if (subEl) subEl.textContent = msg + ' Complete the after quiz below to see your full results.';
+    if (done) { done.classList.add('visible'); done.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+
+    // Save scenario accuracy to quiz storage so admin export can include it
+    if (window.DCC_QUIZ) {
+      var record = {};
+      scenarioCorrect.forEach(function(v, i) { record['scenario_' + (i+1)] = v ? 1 : 0; });
+      record.scenario_total = total;
+      try {
+        var all = JSON.parse(localStorage.getItem('dcc_quiz_results') || '{}');
+        all['module-ads-youth'] = Object.assign(all['module-ads-youth'] || {}, { scenarios: record });
+        localStorage.setItem('dcc_quiz_results', JSON.stringify(all));
+      } catch(e) {}
+    }
+  }
+
+  function updateProgress(current) {
+    for (var i = 0; i < 4; i++) {
+      var pip = document.getElementById('pip-' + i);
+      if (!pip) continue;
+      pip.classList.remove('done', 'active');
+      if (i < current) pip.classList.add('done');
+      else if (i === current) pip.classList.add('active');
+    }
+    var label = document.getElementById('progressLabel');
+    if (label) label.textContent = current < 4 ? 'Scenario ' + (current + 1) + ' of 4' : 'All scenarios done';
+  }
+
+  // Wire answer buttons
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.answer-btn[data-q]');
+    if (!btn) return;
+    var q = parseInt(btn.dataset.q, 10);
+    var val = parseInt(btn.dataset.val, 10);
+    answerScenario(q, val);
+  });
+
+  // Before/after quiz questions (youth-appropriate framing)
+  document.addEventListener('DOMContentLoaded', function() {
+    var QUESTIONS = [
+      {
+        text: 'Social media apps like TikTok and Instagram are free. How do they make money?',
+        text_after: 'After the scenarios — social media apps are free. How do they make money?',
+        options: [
+          'They are funded by government digital access programmes',
+          'Advertisers pay to reach users. Your attention is what is being sold.',
+          'They earn from premium subscriptions most users never buy',
+          'The founders are wealthy enough to run the platforms as a public service'
+        ],
+        correct: 1
+      },
+      {
+        text: 'A shopping site shows a countdown: "Only 3 left! Your cart expires in 09:47." What might this be?',
+        text_after: 'A countdown timer appears while you decide whether to buy concert tickets. What is it most likely doing?',
+        options: [
+          'Genuinely protecting your item while you decide — a customer service feature',
+          'Creating false urgency — a dark pattern designed to rush your decision before you are ready',
+          'A technical timeout required by the payment processor',
+          'A live counter showing real demand from other shoppers'
+        ],
+        correct: 1
+      },
+      {
+        text: 'A creator says they "genuinely love" a product. The description says "Sponsored." How should you read the recommendation?',
+        text_after: 'After the influencer scenario — a creator says they love a product, but it is sponsored. How should you read it?',
+        options: [
+          'The same as a friend\'s recommendation — creators only promote products they actually use',
+          'With more trust — brands carefully screen ambassadors for authenticity',
+          'With more skepticism — the incentive has shifted from sharing to selling, even if they like the product',
+          'As completely fake — sponsored content is always dishonest'
+        ],
+        correct: 2
+      },
+      {
+        text: 'You open Instagram for one notification and 45 minutes later you are still scrolling. The most accurate explanation is:',
+        text_after: 'You open TikTok for one video and lose 40 minutes. What explains it best?',
+        options: [
+          'You made a weak decision to keep scrolling — a self-discipline issue',
+          'Social media content is genuinely more interesting than anything else',
+          'Phone screens make it hard to track time passing',
+          'The app was built without natural stopping points — that was a deliberate engineering decision to maximise ad revenue'
+        ],
+        correct: 3
+      },
+      {
+        text: 'Which statement about ad targeting on social media is true?',
+        text_after: 'After the scenarios — which statement about ad targeting is true?',
+        options: [
+          'Ads rotate evenly between all users in your country',
+          'Platforms build a detailed profile of your behaviour to show ads you are most likely to engage with',
+          'Social media ads are no more targeted than TV commercials',
+          'You automatically control your ad preferences through your privacy settings'
+        ],
+        correct: 1
+      }
+    ];
+
+    if (window.DCC_QUIZ) {
+      DCC_QUIZ.init({
+        moduleId: 'module-ads-youth',
+        questions: QUESTIONS,
+        beforeContainerId: 'dcc-before-quiz',
+        afterContainerId:  'dcc-after-quiz'
+      });
+    }
+  });
+  </script>
+
+  <footer class="site-footer" role="contentinfo" aria-label="Site footer">
+    <div class="footer-inner">
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="index.html">Home</a> |
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms of Use</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Two Birds Innovation. Made with care in Ontario, Canada.</p>
+    </div>
+  </footer>
+</body>
+</html>
