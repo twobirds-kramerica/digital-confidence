@@ -11,6 +11,8 @@
   <meta property="og:type" content="website">
   <link rel="canonical" href="{{BASE_URL}}/{{MODULE_SLUG}}.html">
   <title>Module {{MODULE_NUMBER}}: {{MODULE_TITLE}} — {{PRODUCT_NAME}}</title>
+  <link rel="preload" href="fonts/merriweather/merriweather-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/merriweather/merriweather-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="{{TOKENS_CSS}}">
   <link rel="stylesheet" href="css/tokens-dark.css">
