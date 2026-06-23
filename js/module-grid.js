@@ -386,11 +386,8 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    if (!document.querySelector('.module-grid')) return;
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(enhanceGrid, { timeout: 2000 });
-    } else {
-      setTimeout(enhanceGrid, 200);
+    if (document.querySelector('.module-grid')) {
+      enhanceGrid();
     }
   });
 
