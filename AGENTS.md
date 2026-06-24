@@ -153,6 +153,26 @@ classes, AA contrast verified). Tick a module only when it loads
 - [x] `module-9.html` — Understanding AI
 - [x] `module-10.html` — Grocery & Food Delivery
 
-**Pending (future batches):** `module-11`–`module-27` and the named modules
-(`module-ai-literacy`, `module-fact-check`, `module-visual-ai`, etc.) have not
-yet been migrated.
+**Batch 3 (DCC v4) — final modules 21–27 + named adult modules:**
+
+- [x] `module-21-mobile-plan.html` — Understanding Your Mobile Plan
+- [x] `module-22-tv-home-phone.html` — TV, Home Phone & Bundles
+- [x] `module-23-online-marketplace.html` — Online Marketplaces
+- [x] `module-24-communication.html` — Communication Apps
+- [x] `module-25-outage-detection.html` — Spotting an Outage
+- [x] `module-26-notifications.html` — Notifications & Alerts
+- [x] `module-27-inbox-spam.html` — Inbox & Spam
+- [x] `module-ai-literacy.html` — What Is AI, Really?
+- [x] `module-ai-health.html` — AI & Your Health
+- [x] `module-fact-check.html` — Fact-Checking with AI
+- [x] `module-visual-ai.html` — Using Your Camera to Learn Anything
+- [x] `scam-simulator.html` — Scam Simulator (interactive)
+
+**Still pending (not in batch 3 scope):** `module-11`–`module-20` were not
+present on `main` when batch 3 ran (still off-token despite earlier batch
+notes — flagged for a follow-up batch). The youth-track modules
+(`module-ai-literacy-youth`, `module-ads-youth`, `module-gems-youth`) run a
+deliberate page-local `--youth-*` theme via an embedded `<style>` block and
+need their own design pass to avoid regressing that intentional look.
+`module-template.html` (scaffold) and the wizard pages remain on the legacy
+layer.
