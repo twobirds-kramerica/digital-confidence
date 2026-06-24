@@ -147,7 +147,7 @@
     style.id = 'mg-category-styles';
     style.textContent = [
       /* Section wrapper */
-      '.mg-section{margin:0 0 1.5rem;}',
+      '.mg-section{margin:0 0 1.5rem;grid-column:1/-1;}',
 
       /* Begin Here — always open, featured */
       '.mg-section--begin .mg-section-header{',
@@ -327,6 +327,54 @@
 
     injectCategoryStyles();
     var lang = getLang();
+
+    /* Pre-rendered structure detection — skip DOM restructure */
+    if (grid.querySelector('.mg-section')) {
+      grid.classList.add('mg-enhanced');
+      var allCards = Array.from(grid.querySelectorAll('.module-card[data-module]'));
+      var completedCount = 0;
+      allCards.forEach(function (card) {
+        if (isModuleComplete(card.getAttribute('data-module'))) completedCount++;
+      });
+      if (completedCount === 0 && allCards.length > 0) {
+        var m1 = grid.querySelector('.module-card[data-module="1"] .card-content');
+        if (m1 && !m1.querySelector('.badge-start-here')) {
+          var badge = document.createElement('span');
+          badge.className = 'card-badge badge-start-here';
+          badge.textContent = lang === 'fr' ? '👉 Commencez ici' : '👉 Start here';
+          m1.insertBefore(badge, m1.firstChild);
+        }
+      }
+      allCards.forEach(function (card) {
+        enhanceCard(card, card.getAttribute('data-module'), lang);
+      });
+      if (lang === 'fr') {
+        [
+          { id: 'safety', title: "La sécurité d'abord", desc: 'Mots de passe, sécurité des applis et arnaques — votre boîte à outils de défense numérique.' },
+          { id: 'daily', title: 'Vie quotidienne', desc: 'Banque, rester en contact, épicerie et tâches numériques quotidiennes simplifiées.' },
+          { id: 'independent', title: 'Rester autonome', desc: 'Sécurité en voyage, gérer vos factures et prendre en main votre monde numérique.' }
+        ].forEach(function (c) {
+          var det = grid.querySelector('details[data-cat="' + c.id + '"]');
+          if (!det) return;
+          var t = det.querySelector('.mg-section-summary-title');
+          var d = det.querySelector('.mg-section-summary-desc');
+          var s = det.querySelector('summary');
+          if (t) t.textContent = c.title;
+          if (d) d.textContent = c.desc;
+          if (s) s.setAttribute('aria-label', c.title);
+        });
+        var bt = grid.querySelector('.mg-section-title');
+        if (bt) bt.innerHTML = '<span class="mg-section-badge" aria-label="Recommended starting point">Commencez ici</span> Commencez ici';
+        var bd = grid.querySelector('.mg-section-desc');
+        if (bd) bd.textContent = 'Commencez par ces trois leçons. Elles posent les bases de tout ce qui suit.';
+      }
+      Array.from(grid.querySelectorAll('details[data-cat]')).forEach(function (details) {
+        var catId = details.getAttribute('data-cat');
+        if (getCatOpen(catId, false)) details.setAttribute('open', '');
+        details.addEventListener('toggle', function () { setCatOpen(catId, details.open); });
+      });
+      return;
+    }
 
     /* Remove any existing .module-category-divider elements */
     var dividers = grid.querySelectorAll('.module-category-divider');
