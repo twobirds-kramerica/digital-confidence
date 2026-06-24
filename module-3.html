@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/print.css" media="print">
   <link rel="stylesheet" href="css/quiz-check.css">
   <link rel="stylesheet" href="css/measurement.css">
+  <link rel="stylesheet" href="css/dcc-core.css">
   <!-- SEO: Author, Robots, Open Graph, Twitter Card -->
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
@@ -234,11 +235,11 @@
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
   <noscript>
-    <div style="padding:20px;font-family:Georgia,serif;max-width:800px;margin:0 auto">
+    <div class="dcc-noscript">
       <h1>Digital Confidence Centre</h1>
 
       <!-- Before quiz -->
-      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start" style="margin-bottom:1.5rem"></div>
+      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start"></div>
 
       <div class="module-intro">
         <p class="module-time">⏱ About 20–30 minutes — go at your own pace</p>
@@ -305,10 +306,10 @@
     }
   </script>
   <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
-    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
-    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
-    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
-    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false">A</button>
     <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
   </div>
 
@@ -388,10 +389,10 @@
       <div class="sidebar-a11y-section">
         <p class="sidebar-a11y-title">Text Size</p>
         <div class="sidebar-font-row">
-          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
-          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false" style="font-size:1rem">A</button>
-          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
-          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false">A</button>
         </div>
         <p class="sidebar-a11y-title">Screen Colour</p>
         <div class="sidebar-theme-row">
@@ -888,33 +889,33 @@
 
       <div class="tip-block">
         <span class="tip-label">Third-Party Password Manager Comparison</span>
-        <table style="width:100%;border-collapse:collapse;font-size:0.9em;margin-top:8px">
+        <table class="dcc-data-table">
           <thead>
-            <tr style="border-bottom:2px solid #1565C0;text-align:left">
-              <th style="padding:6px 8px">App</th>
-              <th style="padding:6px 8px">Cost</th>
-              <th style="padding:6px 8px">Best For</th>
-              <th style="padding:6px 8px">Ease of Use</th>
+            <tr>
+              <th>App</th>
+              <th>Cost</th>
+              <th>Best For</th>
+              <th>Ease of Use</th>
             </tr>
           </thead>
           <tbody>
-            <tr style="border-bottom:1px solid rgba(128,128,128,0.2)">
-              <td style="padding:6px 8px"><strong>Bitwarden</strong></td>
-              <td style="padding:6px 8px">Free (paid: $10/yr)</td>
-              <td style="padding:6px 8px">Best free option — open source, widely trusted</td>
-              <td style="padding:6px 8px">Moderate</td>
-            </tr>
-            <tr style="border-bottom:1px solid rgba(128,128,128,0.2)">
-              <td style="padding:6px 8px"><strong>1Password</strong></td>
-              <td style="padding:6px 8px">~$36/yr</td>
-              <td style="padding:6px 8px">Easiest to use, excellent for families, works on all devices</td>
-              <td style="padding:6px 8px">Very easy</td>
+            <tr>
+              <td><strong>Bitwarden</strong></td>
+              <td>Free (paid: $10/yr)</td>
+              <td>Best free option — open source, widely trusted</td>
+              <td>Moderate</td>
             </tr>
             <tr>
-              <td style="padding:6px 8px"><strong>LastPass</strong></td>
-              <td style="padding:6px 8px">Free (limited) / $36/yr</td>
-              <td style="padding:6px 8px">Long-standing service; had a security incident in 2022 — acceptable if you change your master password</td>
-              <td style="padding:6px 8px">Easy</td>
+              <td><strong>1Password</strong></td>
+              <td>~$36/yr</td>
+              <td>Easiest to use, excellent for families, works on all devices</td>
+              <td>Very easy</td>
+            </tr>
+            <tr>
+              <td><strong>LastPass</strong></td>
+              <td>Free (limited) / $36/yr</td>
+              <td>Long-standing service; had a security incident in 2022 — acceptable if you change your master password</td>
+              <td>Easy</td>
             </tr>
           </tbody>
         </table>
@@ -1118,7 +1119,7 @@
         <div class="example-icon">🏦</div>
         <div class="example-content">
           <h4 class="example-title">Online Banking Login — Step by Step</h4>
-          <ol style="margin:8px 0 0;padding-left:20px;line-height:2">
+          <ol class="dcc-list">
             <li>Visit your bank's website (type the address yourself — <em>never</em> click a link in an email)</li>
             <li>Enter your username and password as usual (the first lock)</li>
             <li>The bank sends a 6-digit code to your phone by text message</li>
@@ -1127,7 +1128,7 @@
             <li>Tick "Remember this device for 30 days" if the option appears</li>
             <li>You are in — and your account is protected!</li>
           </ol>
-          <p style="margin-top:12px;color:#1565C0;font-weight:600;">That is the double lock in action — simple, fast, and enormously effective.</p>
+          <p class="dcc-mt-3 dcc-note-strong">That is the double lock in action — simple, fast, and enormously effective.</p>
         </div>
       </div>
 
@@ -1348,7 +1349,7 @@
         <p class="tip-source">Source: Canadian Anti-Scam Coalition — <a href="https://standagainstscams.ca" target="_blank" rel="noopener noreferrer">standagainstscams.ca</a></p>
       </div>
 
-  <div style="text-align:center;padding:1rem 0 0.5rem">
+  <div class="dcc-print-row">
     <button class="btn-print" onclick="window.print()" aria-label="Print this module">🖨️ Print This Module</button>
   </div>
       <section class="related-modules" aria-label="Related modules">
@@ -1404,7 +1405,7 @@
       </div>
       <script src="js/email-capture.js" defer></script>
 
-            <div class="dc-newsletter-slot" style="margin:2rem 0 1rem"></div>
+            <div class="dc-newsletter-slot"></div>
       <footer class="site-footer">
         <div class="footer-inner">
           <p class="footer-brand">Digital Confidence Centre</p>
@@ -1488,7 +1489,7 @@
         </div>
       </div>
       <!-- After quiz -->
-      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the module" style="margin:2rem 0"></div>
+      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the module"></div>
 
       <div class="sources-block">
         <h3 data-en="Sources &amp; References" data-fr="Sources et références">Sources &amp; References</h3>

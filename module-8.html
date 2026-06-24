@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/print.css" media="print">
   <link rel="stylesheet" href="css/quiz-check.css">
   <link rel="stylesheet" href="css/measurement.css">
+  <link rel="stylesheet" href="css/dcc-core.css">
   <!-- SEO: Author, Robots, Open Graph, Twitter Card -->
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
@@ -225,10 +226,10 @@
 </head>
 <body>
   <noscript>
-    <div style="padding:20px;font-family:Georgia,serif;max-width:800px;margin:0 auto">
+    <div class="dcc-noscript">
       <h1>Digital Confidence Centre</h1>
 
-      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start" style="margin-bottom:1.5rem"></div>
+      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start"></div>
       <div class="module-intro">
         <p class="module-time">⏱ About 20–30 minutes — go at your own pace</p>
         <div class="confidence-check-box">
@@ -296,10 +297,10 @@
   <a href="#main" class="skip-link">Skip to main content</a>
 
   <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
-    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
-    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
-    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
-    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false">A</button>
     <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
   </div>
 
@@ -379,10 +380,10 @@
       <div class="sidebar-a11y-section">
         <p class="sidebar-a11y-title">Text Size</p>
         <div class="sidebar-font-row">
-          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
-          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false" style="font-size:1rem">A</button>
-          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
-          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+          <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false">A</button>
+          <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="false">A</button>
+          <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false">A</button>
+          <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false">A</button>
         </div>
         <p class="sidebar-a11y-title">Screen Colour</p>
         <div class="sidebar-theme-row">
@@ -875,44 +876,44 @@
       <!-- Comparison table -->
       <div class="tip-block">
         <span class="tip-label">Quick Comparison</span>
-        <table style="width:100%;border-collapse:collapse;font-size:0.9em;margin-top:8px">
+        <table class="dcc-data-table">
           <thead>
-            <tr style="border-bottom:2px solid #1565C0;text-align:left">
-              <th style="padding:6px 8px">App</th>
-              <th style="padding:6px 8px">Cost</th>
-              <th style="padding:6px 8px">Needs Internet?</th>
-              <th style="padding:6px 8px">Privacy</th>
-              <th style="padding:6px 8px">Best For</th>
+            <tr>
+              <th>App</th>
+              <th>Cost</th>
+              <th>Needs Internet?</th>
+              <th>Privacy</th>
+              <th>Best For</th>
             </tr>
           </thead>
           <tbody>
-            <tr style="border-bottom:1px solid rgba(128,128,128,0.2)">
-              <td style="padding:6px 8px"><strong>SMS</strong></td>
-              <td style="padding:6px 8px">Included in plan</td>
-              <td style="padding:6px 8px">No</td>
-              <td style="padding:6px 8px">Standard</td>
-              <td style="padding:6px 8px">Everyone, everywhere</td>
-            </tr>
-            <tr style="border-bottom:1px solid rgba(128,128,128,0.2)">
-              <td style="padding:6px 8px"><strong>WhatsApp</strong></td>
-              <td style="padding:6px 8px">Free</td>
-              <td style="padding:6px 8px">Yes</td>
-              <td style="padding:6px 8px">Good</td>
-              <td style="padding:6px 8px">Families, international</td>
-            </tr>
-            <tr style="border-bottom:1px solid rgba(128,128,128,0.2)">
-              <td style="padding:6px 8px"><strong>Signal</strong></td>
-              <td style="padding:6px 8px">Free</td>
-              <td style="padding:6px 8px">Yes</td>
-              <td style="padding:6px 8px">Maximum</td>
-              <td style="padding:6px 8px">Privacy-conscious users</td>
+            <tr>
+              <td><strong>SMS</strong></td>
+              <td>Included in plan</td>
+              <td>No</td>
+              <td>Standard</td>
+              <td>Everyone, everywhere</td>
             </tr>
             <tr>
-              <td style="padding:6px 8px"><strong>Messenger</strong></td>
-              <td style="padding:6px 8px">Free</td>
-              <td style="padding:6px 8px">Yes</td>
-              <td style="padding:6px 8px">Lower</td>
-              <td style="padding:6px 8px">Facebook users</td>
+              <td><strong>WhatsApp</strong></td>
+              <td>Free</td>
+              <td>Yes</td>
+              <td>Good</td>
+              <td>Families, international</td>
+            </tr>
+            <tr>
+              <td><strong>Signal</strong></td>
+              <td>Free</td>
+              <td>Yes</td>
+              <td>Maximum</td>
+              <td>Privacy-conscious users</td>
+            </tr>
+            <tr>
+              <td><strong>Messenger</strong></td>
+              <td>Free</td>
+              <td>Yes</td>
+              <td>Lower</td>
+              <td>Facebook users</td>
             </tr>
           </tbody>
         </table>
@@ -1061,7 +1062,7 @@
 
       <div class="tip-block">
         <span class="tip-label">Private Message Clues (Facebook Messenger)</span>
-        <ul style="margin-top:8px;padding-left:20px">
+        <ul class="dcc-list">
           <li>You opened the app by tapping a <strong>person's name or profile picture</strong></li>
           <li>The top of the screen shows <strong>the person's name and photo</strong></li>
           <li>There is a text box at the <strong>bottom</strong> of the screen where you type</li>
@@ -1072,7 +1073,7 @@
 
       <div class="warning-box">
         <span class="warning-box-label">Public Post Warning</span>
-        <ul style="margin-top:8px;padding-left:20px">
+        <ul class="dcc-list">
           <li>You are on the <strong>main Facebook screen</strong> (your News Feed)</li>
           <li>You see a box that says <strong>"What's on your mind, [Your Name]?"</strong></li>
           <li>There is a small <strong>globe icon</strong> 🌐 or the word "Public" or "Friends" near the post button</li>
@@ -1095,7 +1096,7 @@
       <div class="warning-box">
         <span class="warning-box-label">What Not to Post Publicly</span>
         <p>These things should always go in a <strong>private message</strong>, never a public post:</p>
-        <ul style="margin-top:8px;padding-left:20px">
+        <ul class="dcc-list">
           <li>Your home address, phone number, or email</li>
           <li>When your house will be empty ("We're heading to Florida for two weeks!")</li>
           <li>Photos of grandchildren's full names, school, or daily routines</li>
@@ -1438,7 +1439,7 @@
       </section>
 
       
-  <div style="text-align:center;padding:1rem 0 0.5rem">
+  <div class="dcc-print-row">
     <button class="btn-print" onclick="window.print()" aria-label="Print this module">🖨️ Print This Module</button>
   </div>
       <section class="related-modules" aria-label="Related modules">
@@ -1469,7 +1470,7 @@
         <a href="module-9.html" class="btn btn-primary btn-next">Next: Understanding AI →</a>
       </div>
 
-            <div class="dc-newsletter-slot" style="margin:2rem 0 1rem"></div>
+            <div class="dc-newsletter-slot"></div>
       <footer class="site-footer">
         <div class="footer-inner">
           <p class="footer-brand">Digital Confidence Centre</p>
@@ -1552,7 +1553,7 @@
           </div>
         </div>
       </div>
-      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the module" style="margin:2rem 0"></div>
+      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the module"></div>
 
       <div class="connect-activity">
         <div class="connect-activity__header">

@@ -132,3 +132,27 @@ A change is done when **all** of these hold:
 - [ ] JS hooks and IDs preserved; existing links and SEO intact.
 - [ ] EN/FR parity (or `(English only)` noted); Formspree submit path works.
 - [ ] Committed with a clear message; PR opened/updated.
+
+### Module design-system migration status
+
+Tracks which module pages have been moved onto the shared token/`dcc-core.css`
+layer (inline styles removed, hardcoded hex/px replaced with token-driven
+classes, AA contrast verified). Tick a module only when it loads
+`css/dcc-core.css` and carries no presentational inline styles.
+
+**Batch 1 (this PR) — first 10 modules:**
+
+- [x] `module-1.html` — Mastering the Escape Hatch
+- [x] `module-2.html` — The Security Shield
+- [x] `module-3.html` — Passwords & Biometrics
+- [x] `module-4.html` — App Store Safety
+- [x] `module-5.html` — Email & Messages
+- [x] `module-6.html` — Banking & Transactions
+- [x] `module-7.html` — Photos & Memories
+- [x] `module-8.html` — Stay Connected
+- [x] `module-9.html` — Understanding AI
+- [x] `module-10.html` — Grocery & Food Delivery
+
+**Pending (future batches):** `module-11`–`module-27` and the named modules
+(`module-ai-literacy`, `module-fact-check`, `module-visual-ai`, etc.) have not
+yet been migrated.
