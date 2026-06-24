@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <script>(function(){var t=localStorage.getItem('dc-theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ads &amp; Digital Literacy for Canadian Youth — four interactive scenarios on advertising business models, dark patterns, influencer marketing, and attention engineering. Scenario-based learning for ages 12–18.">
-  <meta name="keywords" content="ads literacy youth Canada, dark patterns teens, influencer marketing disclosure, infinite scroll attention, digital advertising 12-18, media literacy Canada">
-  <meta property="og:title" content="Who's Paying for Your Attention — Ads &amp; Dark Patterns for Canadian Youth (Ages 12–18)">
-  <meta property="og:description" content="Four real situations about how attention gets bought and sold online. What would you do? Interactive scenarios on advertising, false urgency, influencer disclosure, and infinite scroll.">
+  <meta name="description" content="Gems Are Real Money — interactive digital literacy for Canadian youth ages 12–18. Learn how in-game currency, loot boxes, and dark patterns turn screen time into spending.">
+  <meta name="keywords" content="in-game currency teens Canada, loot box dark pattern youth, V-Bucks real money, Robux real money, digital literacy 12-18 Canada, gaming spending teens">
+  <meta property="og:title" content="Gems Are Real Money — Youth Gaming &amp; Money Literacy · Digital Confidence Centre">
+  <meta property="og:description" content="V-Bucks, Robux, Gems — four real scenarios about in-game currency, loot boxes, and the dark patterns designed to make you spend without noticing.">
   <meta property="og:type" content="website">
-  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/module-ads-youth.html">
-  <title>Who's Paying for Your Attention — Ads &amp; Digital Literacy · Digital Confidence Centre</title>
-    <link rel="preload" href="fonts/merriweather/merriweather-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/module-gems-youth.html">
+  <title>Gems Are Real Money — Youth Gaming Literacy · Digital Confidence Centre</title>
+  <link rel="preload" href="fonts/merriweather/merriweather-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/merriweather/merriweather-700.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/bundle.css">
+  <link rel="stylesheet" href="css/bundle.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/print.css" media="print">
   <link rel="stylesheet" href="css/quiz-check.css">
@@ -27,12 +27,10 @@
   <style>
     /* Youth module colour overrides */
     :root {
-      --youth-indigo:    #3949AB;
-      --youth-indigo-bg: #E8EAF6;
+      --youth-amber:     #C05E00;
+      --youth-amber-bg:  #FFF3E0;
       --youth-teal:      #00897B;
       --youth-teal-bg:   #E0F2F1;
-      --youth-amber:     #F57C00;
-      --youth-amber-bg:  #FFF3E0;
       --youth-green:     #2E7D32;
       --youth-green-bg:  #E8F5E9;
       --youth-red:       #C62828;
@@ -40,7 +38,7 @@
     }
 
     .youth-hero {
-      background: linear-gradient(135deg, #1c1640 0%, #c05e00 100%);
+      background: linear-gradient(135deg, #1a1200 0%, #7a3a00 100%);
       color: #fff;
       padding: 2.5rem 0 2rem;
       text-align: center;
@@ -195,7 +193,7 @@
       cursor: pointer;
       transition: background 0.15s;
     }
-    .btn-next-scenario:hover { background: #c05e00; }
+    .btn-next-scenario:hover { background: #9a4800; }
     .btn-next-scenario.visible { display: inline-flex; align-items: center; gap: 0.4rem; }
 
     /* All-done block */
@@ -226,7 +224,7 @@
 
   <div class="top-bar">
     <button class="menu-btn" aria-label="Open navigation menu">☰</button>
-    <span class="site-title">Who's Paying for Your Attention — Youth</span>
+    <span class="site-title">Gems Are Real Money — Youth</span>
     <span></span>
   </div>
 
@@ -235,15 +233,14 @@
     <button class="sidebar-close" aria-label="Close menu">Close &#10005;</button>
     <div class="sidebar-header">
       <h2>Digital Confidence Centre</h2>
-      <p>Youth Digital Literacy</p>
+      <p>Youth Gaming Literacy</p>
     </div>
     <nav>
       <a href="index.html"><span class="nav-icon" aria-hidden="true">🏠</span><span class="nav-label">Home</span></a>
       <a href="digital-literacy-101.html"><span class="nav-icon" aria-hidden="true">📚</span><span class="nav-label">All Modules</span></a>
+      <a href="module-gems-youth.html" aria-current="page"><span class="nav-icon" aria-hidden="true">💎</span><span class="nav-label">Gems Are Real Money (Youth)</span></a>
       <a href="module-ai-literacy-youth.html"><span class="nav-icon" aria-hidden="true">🎯</span><span class="nav-label">AI in Real Life (Youth)</span></a>
-      <a href="module-gems-youth.html"><span class="nav-icon" aria-hidden="true">💎</span><span class="nav-label">Gems Are Real Money (Youth)</span></a>
-      <a href="module-ads-youth.html" aria-current="page"><span class="nav-icon" aria-hidden="true">💡</span><span class="nav-label">Who's Paying for Your Attention</span></a>
-      <a href="module-ai-literacy.html"><span class="nav-icon" aria-hidden="true">🤖</span><span class="nav-label">What Is AI? (Adults)</span></a>
+      <a href="module-ads-youth.html"><span class="nav-icon" aria-hidden="true">📣</span><span class="nav-label">Ads vs. Content (Youth)</span></a>
       <a href="kids/index.html"><span class="nav-icon" aria-hidden="true">🧒</span><span class="nav-label">DCC Kids (Ages 4–12)</span></a>
     </nav>
   </aside>
@@ -252,9 +249,9 @@
     <main class="main-content" id="main">
 
       <div class="youth-hero">
-        <div class="eyebrow">Ages 12–18 · Ads &amp; Digital Literacy</div>
-        <h1>Who's Paying for Your Attention?</h1>
-        <p>Free apps. Countdown timers. Sponsored creators. The 45-minute scroll you did not plan. Four scenarios on how attention gets bought and sold online.</p>
+        <div class="eyebrow">Ages 12–18 · Gaming &amp; Money</div>
+        <h1>Gems Are Real Money</h1>
+        <p>V-Bucks, Robux, Primogems — four real situations where in-game currency turns into real spending. What would you do?</p>
       </div>
 
       <div class="confidence-check-box">
@@ -267,7 +264,7 @@
           <span class="coach-tip__icon" aria-hidden="true">❤️</span>
           <span class="coach-tip__label">From your coach</span>
         </div>
-        <p>If you have ever opened an app for one second and lost 45 minutes — that was not a personal failure. It was an engineering decision made by a company that earns money every second you stay. Understanding how that works does not mean you have to quit social media. It means you get to decide how much of your attention is worth giving, and to whom.</p>
+        <p>Games are fun, and spending on games is not automatically wrong. But the design of in-game currencies is specifically intended to make you lose track of how much real money you are spending. Noticing the trick does not ruin the fun — it puts you in charge of it.</p>
       </div>
 
       <!-- Before quiz -->
@@ -283,120 +280,120 @@
       </div>
 
       <!-- Scenario 1 -->
-      <div class="scenario-card active" id="scenario-0" role="region" aria-label="Scenario 1: The App That's Free">
+      <div class="scenario-card active" id="scenario-0" role="region" aria-label="Scenario 1: The 97-Dollar Free Purchase">
         <div class="scenario-header">
           <div class="scenario-num">1</div>
           <div>
-            <div class="scenario-tag">Digital Business Model</div>
+            <div class="scenario-tag">In-Game Currency</div>
           </div>
         </div>
         <div class="scenario-body">
-          <div class="scenario-title">The App That's Free</div>
+          <div class="scenario-title">The $97 "Free" Purchase</div>
           <div class="scenario-story">
-            TikTok costs nothing to download. Instagram costs nothing. YouTube costs nothing. Yet the companies behind them are worth hundreds of billions of dollars — TikTok's parent company ByteDance is valued at over $300 billion CAD. Nobody is paying. Where is the money coming from?
+            A 14-year-old's parent got a notification from their bank: a $96.99 CAD charge from an online gaming store. The teen thought they were just adding "free V-Bucks" from a promotional bundle the game had offered. The game asked them to enter a password to confirm. They did. The charge showed up on the credit card the next day.
           </div>
-          <p class="scenario-question">How do apps like TikTok make money if users never pay?</p>
+          <p class="scenario-question">When a game asks you to enter a parent's password (or your own account password) to get in-game currency, what does that mean?</p>
           <div class="answer-options" id="opts-0">
-            <button class="answer-btn" data-q="0" data-val="0"><span class="ans-letter">A</span> The apps are funded by government digital access programmes</button>
-            <button class="answer-btn" data-q="0" data-val="1"><span class="ans-letter">B</span> Advertisers pay to reach you. Your attention — the time you spend watching — is what's being sold.</button>
-            <button class="answer-btn" data-q="0" data-val="2"><span class="ans-letter">C</span> The founders are wealthy enough to run the platforms as a public service</button>
-            <button class="answer-btn" data-q="0" data-val="3"><span class="ans-letter">D</span> They earn money from premium features most users never buy</button>
+            <button class="answer-btn" data-q="0" data-val="0"><span class="ans-letter">A</span> It is a security check — the game just wants to confirm your identity</button>
+            <button class="answer-btn" data-q="0" data-val="1"><span class="ans-letter">B</span> It means real money is being spent — stop and ask a parent before confirming</button>
+            <button class="answer-btn" data-q="0" data-val="2"><span class="ans-letter">C</span> It depends on whether the game is free-to-play or not</button>
+            <button class="answer-btn" data-q="0" data-val="3"><span class="ans-letter">D</span> It is fine as long as the bundle says it includes free currency</button>
           </div>
           <div class="scenario-debrief" id="debrief-0">
-            <div class="debrief-label">You are the product</div>
-            <p>Every second you scroll is revenue. Advertisers pay TikTok, Instagram, and YouTube to put their message in front of you — specifically you, based on your age, location, watch history, and hundreds of other signals the platform has collected. The app is free because you are not the customer. You are what's being sold. A business that earns money every second you stay has one engineering goal: keep you watching as long as possible.</p>
+            <div class="debrief-label">The password rule</div>
+            <p>Whenever a game or app store asks for a password to proceed — a parent's password, your account password, a fingerprint — that is the moment real money changes hands. In-game currencies (V-Bucks, Robux, Coins, Gems) are bought with real dollars. The word "free" in a bundle description means "included with this purchase," not "no money." The rule is simple: if a password is required, pause and ask before entering it.</p>
           </div>
-          <button class="btn-next-scenario" id="next-0" onclick="nextScenario(1)">Next scenario →</button>
+          <button class="btn-next-scenario" id="next-0" onclick="nextScenario(1)">Next scenario &#8594;</button>
         </div>
       </div>
 
       <!-- Scenario 2 -->
-      <div class="scenario-card" id="scenario-1" role="region" aria-label="Scenario 2: The Ticket That Expires in 10 Minutes">
+      <div class="scenario-card" id="scenario-1" role="region" aria-label="Scenario 2: The Loot Box Regret">
         <div class="scenario-header">
           <div class="scenario-num">2</div>
+          <div>
+            <div class="scenario-tag">Loot Boxes</div>
+          </div>
+        </div>
+        <div class="scenario-body">
+          <div class="scenario-title">The Loot Box Regret</div>
+          <div class="scenario-story">
+            A 15-year-old spent the equivalent of $120 CAD in Primogems on Genshin Impact trying to get a rare character. He pulled 90 times — the maximum before a guaranteed rare pull — and still did not get the one he wanted. A game store shows the item; Genshin Impact shows only a mystery box. In 2022, Genshin was fined $20 million USD and banned from selling loot boxes to players under 16 without a parent's consent.
+          </div>
+          <p class="scenario-question">What makes a loot box different from buying something directly in a store?</p>
+          <div class="answer-options" id="opts-1">
+            <button class="answer-btn" data-q="1" data-val="0"><span class="ans-letter">A</span> Nothing — it is just a different way to buy the same items</button>
+            <button class="answer-btn" data-q="1" data-val="1"><span class="ans-letter">B</span> Loot boxes are cheaper than direct purchases</button>
+            <button class="answer-btn" data-q="1" data-val="2"><span class="ans-letter">C</span> A loot box is a random draw — you pay real money without knowing what you will get, like a slot machine</button>
+            <button class="answer-btn" data-q="1" data-val="3"><span class="ans-letter">D</span> Loot boxes only use in-game currency earned through play, not real money</button>
+          </div>
+          <div class="scenario-debrief" id="debrief-1">
+            <div class="debrief-label">Loot boxes are randomised spending</div>
+            <p>A loot box is a randomised reward purchased with real money (or currency bought with real money). You know what you paid; you do not know what you get. Consumer protection regulators in Belgium, the Netherlands, and several Canadian provinces have classified this as a form of gambling. The FTC fined Epic Games $245 million USD in 2023 partly over Fortnite's in-game purchase design targeting minors. If a game offers a direct purchase option alongside a mystery box, the direct purchase is always the more transparent choice — you know exactly what you are getting before you spend.</p>
+          </div>
+          <button class="btn-next-scenario" id="next-1" onclick="nextScenario(2)">Next scenario &#8594;</button>
+        </div>
+      </div>
+
+      <!-- Scenario 3 -->
+      <div class="scenario-card" id="scenario-2" role="region" aria-label="Scenario 3: The Grind Wall">
+        <div class="scenario-header">
+          <div class="scenario-num">3</div>
           <div>
             <div class="scenario-tag">Dark Patterns</div>
           </div>
         </div>
         <div class="scenario-body">
-          <div class="scenario-title">The Ticket That Expires in 10 Minutes</div>
+          <div class="scenario-title">The Grind Wall</div>
           <div class="scenario-story">
-            You find concert tickets online. The page shows: "⏰ Only 2 seats left at this price! Your cart expires in 09:47." A timer counts down. You feel a pull to buy now before you lose them. You haven't checked if the price is reasonable or if other sites have the same seats.
+            A mobile game a 13-year-old loves suddenly becomes very slow to progress. The new character she wants would take 200 hours of play to unlock through normal gameplay — or $29.99 right now. Her friends already have it. The game shows a countdown: "Battle pass ends in 6 days." She starts to feel like paying is the only reasonable option.
           </div>
-          <p class="scenario-question">What is a countdown timer on a shopping site most likely doing?</p>
-          <div class="answer-options" id="opts-1">
-            <button class="answer-btn" data-q="1" data-val="0"><span class="ans-letter">A</span> Protecting your seat while you decide — a genuine customer service feature</button>
-            <button class="answer-btn" data-q="1" data-val="1"><span class="ans-letter">B</span> Showing you how long the sale has been running</button>
-            <button class="answer-btn" data-q="1" data-val="2"><span class="ans-letter">C</span> Creating false urgency — a design trick called a "dark pattern" that pushes you to decide before you're ready</button>
-            <button class="answer-btn" data-q="1" data-val="3"><span class="ans-letter">D</span> Protecting the site from scalper bots buying up inventory</button>
-          </div>
-          <div class="scenario-debrief" id="debrief-1">
-            <div class="debrief-label">False urgency is a feature, not a bug</div>
-            <p>Dark patterns are design choices built into websites and apps that work against the user on purpose. Countdown timers, "only 3 left" warnings, and hidden unsubscribe buttons are all in the same family. Studies show that a 10-minute countdown increases purchase rates by 30% or more — even when the timer resets the moment it hits zero. The rule: if you feel rushed to click, that is the signal to slow down. Real scarcity does not need a blinking clock. Open a second tab, compare prices, and decide on your own schedule.</p>
-          </div>
-          <button class="btn-next-scenario" id="next-1" onclick="nextScenario(2)">Next scenario →</button>
-        </div>
-      </div>
-
-      <!-- Scenario 3 -->
-      <div class="scenario-card" id="scenario-2" role="region" aria-label="Scenario 3: The Creator Who Swears By This">
-        <div class="scenario-header">
-          <div class="scenario-num">3</div>
-          <div>
-            <div class="scenario-tag">Influencer Marketing</div>
-          </div>
-        </div>
-        <div class="scenario-body">
-          <div class="scenario-title">The Creator Who "Swears By" This Supplement</div>
-          <div class="scenario-story">
-            A YouTuber with 1.2 million subscribers posts a video. "I've been trying this supplement for three months and I genuinely swear by it. My energy is completely different." Buried three lines into the description: "This video is sponsored by NutriMax." They seem sincere. They've mentioned personal health struggles in past videos. The supplement costs $89 CAD.
-          </div>
-          <p class="scenario-question">How should you read this recommendation compared to one from a friend?</p>
+          <p class="scenario-question">What is the name for game design that deliberately makes free progress slow and frustrating in order to push players toward spending?</p>
           <div class="answer-options" id="opts-2">
-            <button class="answer-btn" data-q="2" data-val="0"><span class="ans-letter">A</span> The same way — creators only agree to sponsor products they actually use</button>
-            <button class="answer-btn" data-q="2" data-val="1"><span class="ans-letter">B</span> With more skepticism — they were paid to say this. That shifts the incentive from sharing to selling, even if they do genuinely like the product.</button>
-            <button class="answer-btn" data-q="2" data-val="2"><span class="ans-letter">C</span> As completely fake — sponsored content is always dishonest</button>
-            <button class="answer-btn" data-q="2" data-val="3"><span class="ans-letter">D</span> More trustfully — brands carefully screen their ambassadors for authenticity</button>
+            <button class="answer-btn" data-q="2" data-val="0"><span class="ans-letter">A</span> A loyalty programme — it rewards players who stick with the game longest</button>
+            <button class="answer-btn" data-q="2" data-val="1"><span class="ans-letter">B</span> A dark pattern — it is deliberately designed to make the free path feel impossible so that paying feels like the only reasonable choice</button>
+            <button class="answer-btn" data-q="2" data-val="2"><span class="ans-letter">C</span> Difficulty balancing — all games get harder as you progress</button>
+            <button class="answer-btn" data-q="2" data-val="3"><span class="ans-letter">D</span> A subscription model — the 200-hour grind replaces a monthly fee</button>
           </div>
           <div class="scenario-debrief" id="debrief-2">
-            <div class="debrief-label">Paid endorsements change the incentive</div>
-            <p>In Canada, paid endorsements must be disclosed under the Competition Act — which is why "Sponsored" appears in the description. The disclosure doesn't mean the creator is lying. They may genuinely use the product. But a creator who earns $10,000 for a sponsored video has a financial reason to be enthusiastic, separate from their actual experience. That is not dishonesty — it is a changed incentive. Apply the same healthy skepticism you would to any advertisement, regardless of how sincere the person seems. Before a $89 purchase: look for independent reviews, check Health Canada's natural health product database, and ask whether you would have wanted this product before you saw the video.</p>
+            <div class="debrief-label">Grinding is a dark pattern</div>
+            <p>In 2022, the UK's Competition and Markets Authority formally named "grinding" — artificially slow free progress designed to pressure spending — as a dark pattern in gaming. It is intentional design, not a side effect. The designers know that 200 hours feels unreasonable and that $29.99 feels like relief. Recognising the technique does not mean you have to stop playing; it means you are deciding whether to spend on your terms rather than theirs. Asking "would I want this if it were not tied to a countdown or comparison with friends?" is a useful reset.</p>
           </div>
-          <button class="btn-next-scenario" id="next-2" onclick="nextScenario(3)">Next scenario →</button>
+          <button class="btn-next-scenario" id="next-2" onclick="nextScenario(3)">Next scenario &#8594;</button>
         </div>
       </div>
 
       <!-- Scenario 4 -->
-      <div class="scenario-card" id="scenario-3" role="region" aria-label="Scenario 4: The 45-Minute Scroll You Didn't Plan">
+      <div class="scenario-card" id="scenario-3" role="region" aria-label="Scenario 4: The 2-Hour Timer">
         <div class="scenario-header">
           <div class="scenario-num">4</div>
           <div>
-            <div class="scenario-tag">Attention Engineering</div>
+            <div class="scenario-tag">Artificial Scarcity</div>
           </div>
         </div>
         <div class="scenario-body">
-          <div class="scenario-title">The 45-Minute Scroll You Didn't Plan</div>
+          <div class="scenario-title">The 2-Hour Timer</div>
           <div class="scenario-story">
-            You open Instagram to check one notification. Forty-five minutes later you are deep in content you never set out to find — videos, stories, reels, suggested posts from accounts you've never seen. You did not plan to stay. You do not feel particularly refreshed. You are not sure how it happened.
+            A Fortnite player sees a skin they love in the Item Shop with a countdown: "2 hours, 14 minutes remaining." They do not have enough V-Bucks. To buy more, they need to spend $19.99. They have never seen this skin before. The timer feels urgent. They almost ask their parent for the card.
           </div>
-          <p class="scenario-question">Why is it so difficult to stop scrolling on social media?</p>
+          <p class="scenario-question">What should you do when a "limited time" countdown appears for an item you want?</p>
           <div class="answer-options" id="opts-3">
-            <button class="answer-btn" data-q="3" data-val="0"><span class="ans-letter">A</span> Social media is genuinely more interesting than anything else you could be doing</button>
-            <button class="answer-btn" data-q="3" data-val="1"><span class="ans-letter">B</span> You made a weak decision to keep scrolling — it is a self-discipline problem</button>
-            <button class="answer-btn" data-q="3" data-val="2"><span class="ans-letter">C</span> The apps are designed so well that stopping feels unnatural</button>
-            <button class="answer-btn" data-q="3" data-val="3"><span class="ans-letter">D</span> There is no natural stopping point because removing one was a deliberate design decision. The longer you scroll, the more ad revenue the platform earns.</button>
+            <button class="answer-btn" data-q="3" data-val="0"><span class="ans-letter">A</span> Buy it immediately — if the timer runs out you will never get it again</button>
+            <button class="answer-btn" data-q="3" data-val="1"><span class="ans-letter">B</span> Ask a friend to buy it and pay them back later</button>
+            <button class="answer-btn" data-q="3" data-val="2"><span class="ans-letter">C</span> Check whether the item has returned before — most "limited" Fortnite skins have appeared 10 or more times. The timer is designed to make you spend before you think.</button>
+            <button class="answer-btn" data-q="3" data-val="3"><span class="ans-letter">D</span> Save up V-Bucks now and hope the timer resets</button>
           </div>
           <div class="scenario-debrief" id="debrief-3">
-            <div class="debrief-label">The missing stop sign</div>
-            <p>The infinite scroll patent was filed explicitly to remove the natural pause of page turns — the moment where you would have decided whether to keep going. Variable reward — the mechanism also found in slot machines — keeps you scrolling because the next piece of content might be interesting, funny, or surprising. Both of these are deliberate engineering decisions, not side effects. The average Canadian teenager spends 4+ hours per day on social media. That is not 4 hours of free choice — most of it is engineered drift. Knowing this does not mean you have to quit. It means you can set your own stopping points instead of waiting for one that was never built.</p>
+            <div class="debrief-label">The artificial scarcity rule</div>
+            <p>Most "limited time" items in free-to-play games return regularly. Fortnite skin tracker sites show that the average shop skin has rotated back more than a dozen times. The countdown timer is artificial scarcity — a design technique that creates urgency where none actually exists. Before spending, a 60-second search for "[item name] Fortnite return date" or "[item name] Item Shop history" will almost always tell you when it last appeared. Real scarcity is rare. Urgency is manufactured. The goal is to get you to spend before you can check.</p>
           </div>
-          <button class="btn-next-scenario" id="next-3" onclick="completedScenarios()">See your results →</button>
+          <button class="btn-next-scenario" id="next-3" onclick="completedScenarios()">See your results &#8594;</button>
         </div>
       </div>
 
       <!-- All scenarios complete -->
       <div class="scenarios-complete" id="scenariosComplete" role="status" aria-live="polite">
-        <div class="sc-icon">💡</div>
+        <div class="sc-icon">💎</div>
         <div class="sc-score" id="scenarioScore">0 / 4 correct</div>
         <div class="sc-sub" id="scenarioSub">Complete the after quiz below to see your full results.</div>
       </div>
@@ -405,46 +402,44 @@
       <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the scenarios" style="margin:2rem 0"></div>
 
       <!-- Success state -->
-      <div class="tip-block" style="border-left-color:#c05e00;background:#FFF3E0" role="note">
-        <span class="tip-label" style="color:#c05e00">✅ Success State — What a completed module looks like</span>
+      <div class="tip-block" style="border-left-color:var(--youth-amber);background:var(--youth-amber-bg)" role="note">
+        <span class="tip-label" style="color:var(--youth-amber)">&#10003; Success State — What a completed module looks like</span>
         <p>When you have finished:</p>
         <ul style="margin:0.5rem 0 0;padding-left:1.25rem;line-height:2">
           <li>The "Quick Check — Before You Start" section above shows <strong>Recorded</strong></li>
           <li>All four scenario cards show a debrief — you have read all four</li>
           <li>The "Quick Check — After" shows your score and delta</li>
-          <li>You can explain what a "dark pattern" is in one sentence without looking</li>
+          <li>You can explain the password rule in one sentence without looking</li>
         </ul>
       </div>
 
       <section class="related-modules" aria-label="Related modules">
         <h3 class="related-title">Keep Going</h3>
         <div class="related-grid">
+          <a href="module-ads-youth.html" class="related-card">
+            <span class="related-num">Youth</span>
+            <span class="related-name">Ads vs. Content (Youth)</span>
+            <span class="related-desc">How to tell the difference between organic content and paid promotion — especially when influencers and games blur the line.</span>
+          </a>
           <a href="module-ai-literacy-youth.html" class="related-card">
             <span class="related-num">Youth</span>
-            <span class="related-name">AI in Real Life (Ages 12–18)</span>
-            <span class="related-desc">Deepfakes, voice cloning, academic integrity, and AI as an accessibility tool — four more scenarios for young Canadians.</span>
-          </a>
-          <a href="module-ai-literacy.html" class="related-card">
-            <span class="related-num">Adults 55+</span>
-            <span class="related-name">What Is AI, Really?</span>
-            <span class="related-desc">The adult version of AI literacy — good to share with a parent or grandparent who wants to understand AI tools and scams.</span>
+            <span class="related-name">AI in Real Life (Youth)</span>
+            <span class="related-desc">Deepfakes, voice cloning, and using AI as a tool without letting it do your thinking — four scenarios for ages 12–18.</span>
           </a>
         </div>
       </section>
 
       <div class="module-nav-footer">
-        <a href="digital-literacy-101.html" class="module-nav-prev">← All Modules</a>
-        <a href="module-ai-literacy-youth.html" class="module-nav-next">AI in Real Life (Youth) →</a>
+        <a href="digital-literacy-101.html" class="module-nav-prev">&#8592; All Modules</a>
+        <a href="module-ads-youth.html" class="module-nav-next">Ads vs. Content (Youth) &#8594;</a>
       </div>
 
     </main>
   </div>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo" aria-label="Site footer">
     <div class="footer-inner">
-      <p class="footer-brand">Digital Confidence Centre</p>
-      <p class="footer-tagline">A free digital learning programme for all Canadians</p>
-      <nav class="footer-links" aria-label="Footer navigation">
+      <nav class="footer-links" aria-label="Footer links">
         <a href="index.html">Home</a> |
         <a href="digital-literacy-101.html">Modules</a> |
         <a href="resources/index.html">Resources</a> |
@@ -468,7 +463,7 @@
   <script src="js/measurement.js" defer></script>
   <script>
   // Correct answers for the 4 interactive scenarios (0-indexed option)
-  var SCENARIO_CORRECT = [1, 2, 1, 3];
+  var SCENARIO_CORRECT = [1, 2, 1, 2];
   var scenarioAnswered  = [false, false, false, false];
   var scenarioCorrect   = [false, false, false, false];
 
@@ -478,7 +473,6 @@
     var correct = val === SCENARIO_CORRECT[q];
     scenarioCorrect[q] = correct;
 
-    // Style all options
     var opts = document.querySelectorAll('[data-q="' + q + '"]');
     opts.forEach(function(btn) {
       btn.disabled = true;
@@ -487,20 +481,16 @@
       if (!correct && bval === val) btn.classList.add('selected-wrong');
     });
 
-    // Show debrief
     var debrief = document.getElementById('debrief-' + q);
     if (debrief) debrief.classList.add('visible');
 
-    // Show next button
     var next = document.getElementById('next-' + q);
     if (next) next.classList.add('visible');
 
-    // Update progress
     updateProgress(q);
   }
 
   function nextScenario(idx) {
-    // Hide current, show next
     var current = document.getElementById('scenario-' + (idx - 1));
     var next = document.getElementById('scenario-' + idx);
     if (current) current.classList.remove('active');
@@ -517,21 +507,20 @@
     var subEl   = document.getElementById('scenarioSub');
     var total = scenarioCorrect.filter(Boolean).length;
     if (scoreEl) scoreEl.textContent = total + ' / 4 correct';
-    var msg = total === 4 ? 'Perfect — you got all four right.'
+    var msg = total === 4 ? 'Perfect — you spotted every dark pattern.'
             : total >= 3 ? 'Strong — one to review.'
             : total >= 2 ? 'Good start — look back at the debriefs for the ones you missed.'
             : 'Review the debriefs above, then take the after quiz.';
     if (subEl) subEl.textContent = msg + ' Complete the after quiz below to see your full results.';
     if (done) { done.classList.add('visible'); done.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
 
-    // Save scenario accuracy to quiz storage so admin export can include it
     if (window.DCC_QUIZ) {
       var record = {};
       scenarioCorrect.forEach(function(v, i) { record['scenario_' + (i+1)] = v ? 1 : 0; });
       record.scenario_total = total;
       try {
         var all = JSON.parse(localStorage.getItem('dcc_quiz_results') || '{}');
-        all['module-ads-youth'] = Object.assign(all['module-ads-youth'] || {}, { scenarios: record });
+        all['module-gems-youth'] = Object.assign(all['module-gems-youth'] || {}, { scenarios: record });
         localStorage.setItem('dcc_quiz_results', JSON.stringify(all));
       } catch(e) {}
     }
@@ -549,7 +538,6 @@
     if (label) label.textContent = current < 4 ? 'Scenario ' + (current + 1) + ' of 4' : 'All scenarios done';
   }
 
-  // Wire answer buttons
   document.addEventListener('click', function(e) {
     var btn = e.target.closest('.answer-btn[data-q]');
     if (!btn) return;
@@ -558,69 +546,43 @@
     answerScenario(q, val);
   });
 
-  // Before/after quiz questions (youth-appropriate framing)
   document.addEventListener('DOMContentLoaded', function() {
     var QUESTIONS = [
       {
-        text: 'Social media apps like TikTok and Instagram are free. How do they make money?',
-        text_after: 'After the scenarios — social media apps are free. How do they make money?',
-        options: [
-          'They are funded by government digital access programmes',
-          'Advertisers pay to reach users. Your attention is what is being sold.',
-          'They earn from premium subscriptions most users never buy',
-          'The founders are wealthy enough to run the platforms as a public service'
-        ],
+        text: 'V-Bucks, Robux, and Primogems are examples of:',
+        text_after: 'After the scenarios — V-Bucks, Robux, and Primogems are examples of:',
+        options: ['Free bonuses earned through gameplay', 'In-game currencies purchased with real money', 'Promotional codes given out by game companies', 'Points that cannot be converted back to real dollars'],
         correct: 1
       },
       {
-        text: 'A shopping site shows a countdown: "Only 3 left! Your cart expires in 09:47." What might this be?',
-        text_after: 'A countdown timer appears while you decide whether to buy concert tickets. What is it most likely doing?',
-        options: [
-          'Genuinely protecting your item while you decide — a customer service feature',
-          'Creating false urgency — a dark pattern designed to rush your decision before you are ready',
-          'A technical timeout required by the payment processor',
-          'A live counter showing real demand from other shoppers'
-        ],
-        correct: 1
-      },
-      {
-        text: 'A creator says they "genuinely love" a product. The description says "Sponsored." How should you read the recommendation?',
-        text_after: 'After the influencer scenario — a creator says they love a product, but it is sponsored. How should you read it?',
-        options: [
-          'The same as a friend\'s recommendation — creators only promote products they actually use',
-          'With more trust — brands carefully screen ambassadors for authenticity',
-          'With more skepticism — the incentive has shifted from sharing to selling, even if they like the product',
-          'As completely fake — sponsored content is always dishonest'
-        ],
+        text: 'When a game asks you to enter a password to get more in-game currency, you should:',
+        text_after: 'A game asks for your password to confirm a currency purchase. What should you do?',
+        options: ['Enter it quickly so the offer does not expire', 'Only enter it if you are on Wi-Fi', 'Stop and ask a parent — entering that password means real money is being spent', 'Enter it if the currency amount looks generous'],
         correct: 2
       },
       {
-        text: 'You open Instagram for one notification and 45 minutes later you are still scrolling. The most accurate explanation is:',
-        text_after: 'You open TikTok for one video and lose 40 minutes. What explains it best?',
-        options: [
-          'You made a weak decision to keep scrolling — a self-discipline issue',
-          'Social media content is genuinely more interesting than anything else',
-          'Phone screens make it hard to track time passing',
-          'The app was built without natural stopping points — that was a deliberate engineering decision to maximise ad revenue'
-        ],
-        correct: 3
+        text: 'A loot box is most similar to:',
+        text_after: 'After the scenarios — a loot box is most similar to:',
+        options: ['A store where you pick exactly what you want', 'A random draw — you pay without knowing what you get', 'A subscription that unlocks everything in the game', 'A free gift for loyal players'],
+        correct: 1
       },
       {
-        text: 'Which statement about ad targeting on social media is true?',
-        text_after: 'After the scenarios — which statement about ad targeting is true?',
-        options: [
-          'Ads rotate evenly between all users in your country',
-          'Platforms build a detailed profile of your behaviour to show ads you are most likely to engage with',
-          'Social media ads are no more targeted than TV commercials',
-          'You automatically control your ad preferences through your privacy settings'
-        ],
-        correct: 1
+        text: '"Grinding" in mobile games is a dark pattern because:',
+        text_after: 'Why is deliberate grinding named a dark pattern?',
+        options: ['It makes games too easy for experienced players', 'It rewards players who spend the most time online', 'Free progress is made artificially slow to pressure players into spending money', 'It bypasses parental controls'],
+        correct: 2
+      },
+      {
+        text: 'A 2-hour countdown for a "limited" skin appears in a game store. The best first step is:',
+        text_after: 'You see a 2-hour countdown for a "limited" skin. What should you do first?',
+        options: ['Buy it immediately before the timer runs out', 'Ask a friend to chip in so you can share the purchase', 'Check if the skin has returned before — most "limited" items come back regularly', 'Screenshot it and ask your parent to decide'],
+        correct: 2
       }
     ];
 
     if (window.DCC_QUIZ) {
       DCC_QUIZ.init({
-        moduleId: 'module-ads-youth',
+        moduleId: 'module-gems-youth',
         questions: QUESTIONS,
         beforeContainerId: 'dcc-before-quiz',
         afterContainerId:  'dcc-after-quiz'
@@ -629,15 +591,5 @@
   });
   </script>
 
-  <footer class="site-footer" role="contentinfo" aria-label="Site footer">
-    <div class="footer-inner">
-      <nav class="footer-links" aria-label="Footer links">
-        <a href="index.html">Home</a> |
-        <a href="privacy.html">Privacy Policy</a> |
-        <a href="terms.html">Terms of Use</a>
-      </nav>
-      <p class="footer-copy">&copy; 2026 Two Birds Innovation. Made with care in Ontario, Canada.</p>
-    </div>
-  </footer>
 </body>
 </html>
