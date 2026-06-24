@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DCC Direction B — Public Square</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:          #F4F5F7;
+    --surface:     #FFFFFF;
+    --slate:       #2E4A6B;
+    --slate-light: #3D5F85;
+    --amber:       #C05E00;
+    --amber-bg:    #FFF3E8;
+    --text:        #1A1A1A;
+    --text-mid:    #444D58;
+    --text-soft:   #6B7585;
+    --border:      #E0E4EA;
+    --border-dark: #C8CDD6;
+    --cat-safety:  #C00020;
+    --cat-safety-bg: #FFF0F2;
+    --cat-start:   #005F9E;
+    --cat-start-bg: #EFF6FF;
+    --cat-daily:   #006B3A;
+    --cat-daily-bg: #EDFAF3;
+  }
+
+  body {
+    background: var(--bg);
+    font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    font-size: 18px;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* ── Language bar ── */
+  .lang-bar {
+    background: var(--slate);
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+  }
+  .lang-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: #B0C4DE;
+    border-bottom: 3px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .lang-btn.active {
+    color: #FFFFFF;
+    border-bottom-color: var(--amber);
+    background: rgba(255,255,255,0.06);
+  }
+  .lang-btn:hover { color: #FFFFFF; }
+
+  /* ── Header ── */
+  header {
+    background: var(--slate);
+    padding: 2rem 2rem 2.25rem;
+  }
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: end;
+  }
+  .site-name {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin-bottom: 0.35rem;
+  }
+  .site-name-fr {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #8EB4D8;
+    margin-bottom: 1rem;
+  }
+  .hero-copy {
+    font-size: 1rem;
+    color: #B8CEEA;
+    max-width: 500px;
+    line-height: 1.6;
+  }
+  .trust-badge {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: #B8CEEA;
+    text-align: center;
+    white-space: nowrap;
+    align-self: center;
+  }
+  .trust-badge strong {
+    display: block;
+    color: #FFFFFF;
+    font-size: 1.05rem;
+    margin-bottom: 0.15rem;
+  }
+
+  /* ── Progress bar strip ── */
+  .progress-strip {
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--border-dark);
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: var(--text-soft);
+  }
+  .progress-strip .pbar-outer {
+    flex: 1;
+    max-width: 280px;
+    height: 8px;
+    background: #E0E4EA;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .progress-strip .pbar-inner {
+    height: 100%;
+    width: 12%;
+    background: linear-gradient(90deg, var(--slate), var(--slate-light));
+    border-radius: 4px;
+  }
+
+  /* ── Page body ── */
+  .page-body {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  /* ── Design note ── */
+  .design-note {
+    background: var(--amber-bg);
+    border: 1px dashed var(--amber);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    font-size: 0.85rem;
+    color: #5A2800;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+  .design-note strong { color: #3A1800; }
+
+  /* ── Category group ── */
+  .cat-group { margin-bottom: 2.5rem; }
+  .cat-strip {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .cat-pill {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+  }
+  .cat-pill.safety { background: var(--cat-safety-bg); color: var(--cat-safety); }
+  .cat-pill.start  { background: var(--cat-start-bg);  color: var(--cat-start); }
+  .cat-pill.daily  { background: var(--cat-daily-bg);  color: var(--cat-daily); }
+
+  .cat-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .cat-count {
+    margin-left: auto;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+  }
+
+  /* ── Cards ── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 0.875rem;
+  }
+  .module-card {
+    background: var(--surface);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    transition: box-shadow 0.15s, border-color 0.15s;
+    min-height: 44px;
+  }
+  .module-card:hover {
+    box-shadow: 0 2px 12px rgba(46,74,107,0.12);
+    border-color: var(--slate-light);
+  }
+  .card-icon {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .card-body { flex: 1; }
+  .card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--slate);
+    line-height: 1.35;
+    margin-bottom: 0.35rem;
+  }
+  .card-desc {
+    font-size: 0.875rem;
+    color: var(--text-mid);
+    line-height: 1.5;
+    margin-bottom: 0.6rem;
+  }
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .card-time {
+    font-size: 0.775rem;
+    color: var(--text-soft);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .card-time svg { opacity: 0.5; }
+  .card-start-btn {
+    font-size: 0.775rem;
+    font-weight: 600;
+    color: var(--slate);
+    background: none;
+    border: 1.5px solid var(--slate-light);
+    border-radius: 4px;
+    padding: 0.2rem 0.6rem;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.15s;
+  }
+  .module-card:hover .card-start-btn { opacity: 1; }
+
+  /* ── Bilingual section ── */
+  .section-hed {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+    margin-top: 2.5rem;
+  }
+  .section-sub {
+    font-size: 0.9rem;
+    color: var(--text-soft);
+    margin-bottom: 1.25rem;
+  }
+  .fr-mockup {
+    border: 1px solid var(--border-dark);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .fr-mockup .lang-bar {
+    background: var(--slate);
+    display: flex;
+    justify-content: flex-end;
+  }
+</style>
+</head>
+<body>
+
+<!-- Language bar -->
+<nav class="lang-bar" aria-label="Language / Langue">
+  <a href="#" class="lang-btn active" aria-current="true">English</a>
+  <a href="#" class="lang-btn">Français</a>
+</nav>
+
+<!-- Header -->
+<header>
+  <div class="header-inner">
+    <div>
+      <h1 class="site-name">Digital Confidence Centre</h1>
+      <p class="site-name-fr">Centre de confiance numérique</p>
+      <p class="hero-copy">Free digital learning for Canadians — at your own pace, in your own language. Nothing on this site can harm your device.</p>
+    </div>
+    <div class="trust-badge">
+      <strong>Free. Forever.</strong>
+      No login · No tracking<br>Works on any device
+    </div>
+  </div>
+</header>
+
+<!-- Progress strip -->
+<div class="progress-strip" aria-label="Your overall progress">
+  <span>Your progress</span>
+  <div class="pbar-outer" role="progressbar" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100" aria-label="12% complete">
+    <div class="pbar-inner"></div>
+  </div>
+  <span>3 of 24 modules completed</span>
+</div>
+
+<main class="page-body">
+
+  <div class="design-note">
+    <strong>Direction B — "Public Square"</strong><br>
+    Palette: slate #2E4A6B · off-white #F4F5F7 · amber #C05E00. Typography: system-ui sans-serif throughout, bold headings. Language: equal-weight tabs in the slate nav bar. Icon-led cards (48px emoji) — more open/visual. Progress bar persistent at top. Rationale: feels like a well-made public information board — civic without being institutional, open without being childlike. Bold sans-serif signals clarity and confidence rather than formality.
+  </div>
+
+  <!-- Safety First -->
+  <section class="cat-group" aria-labelledby="hd-safety">
+    <div class="cat-strip">
+      <span class="cat-pill safety">Safety First</span>
+      <span class="cat-title" id="hd-safety">Protect yourself online</span>
+      <span class="cat-count">6 modules</span>
+    </div>
+    <div class="card-grid">
+
+      <a href="#" class="module-card">
+        <span class="card-icon" aria-hidden="true">🛡️</span>
+        <div class="card-body">
+          <p class="card-title">Module 2: The Security Shield</p>
+          <p class="card-desc">Scam calls, CRA impersonators, gift-card demands — how to recognise them and what to do.</p>
+          <div class="card-footer">
+            <span class="card-time">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><polyline points="8,4.5 8,8 10.5,10"/></svg>
+              10 mins to learn scam spotting
+            </span>
+            <a href="#" class="card-start-btn">Start →</a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="module-card">
+        <span class="card-icon" aria-hidden="true">⚠️</span>
+        <div class="card-body">
+          <p class="card-title">Module 28: When a Message Uses Fear or Love</p>
+          <p class="card-desc">The grandparent scam, CRA imposters, and the 3-Second Rule that stops pressure calls.</p>
+          <div class="card-footer">
+            <span class="card-time">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><polyline points="8,4.5 8,8 10.5,10"/></svg>
+              15 mins to learn the 3-Second Rule
+            </span>
+            <a href="#" class="card-start-btn">Start →</a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="module-card">
+        <span class="card-icon" aria-hidden="true">👤</span>
+        <div class="card-body">
+          <p class="card-title">Module 13: Social Media Safety</p>
+          <p class="card-desc">Facebook privacy, romance scams, cloned profiles — staying safe where you connect.</p>
+          <div class="card-footer">
+            <span class="card-time">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><polyline points="8,4.5 8,8 10.5,10"/></svg>
+              12 mins to learn social safety
+            </span>
+            <a href="#" class="card-start-btn">Start →</a>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Get Started -->
+  <section class="cat-group" aria-labelledby="hd-start">
+    <div class="cat-strip">
+      <span class="cat-pill start">Get Started</span>
+      <span class="cat-title" id="hd-start">Begin here</span>
+      <span class="cat-count">5 modules</span>
+    </div>
+    <div class="card-grid">
+
+      <a href="#" class="module-card">
+        <span class="card-icon" aria-hidden="true">🏠</span>
+        <div class="card-body">
+          <p class="card-title">Module 1: Mastering the Escape Hatch</p>
+          <p class="card-desc">The Home button, force quit, restart — three moves that get you out of any situation.</p>
+          <div class="card-footer">
+            <span class="card-time">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><polyline points="8,4.5 8,8 10.5,10"/></svg>
+              8 mins to learn the escape hatch
+            </span>
+            <a href="#" class="card-start-btn">Start →</a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="module-card">
+        <span class="card-icon" aria-hidden="true">🔒</span>
+        <div class="card-body">
+          <p class="card-title">Module 3: Passwords &amp; Biometrics</p>
+          <p class="card-desc">Strong passwords, Face ID, Touch ID — protecting accounts without memorising 20 codes.</p>
+          <div class="card-footer">
+            <span class="card-time">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><polyline points="8,4.5 8,8 10.5,10"/></svg>
+              12 mins to learn password safety
+            </span>
+            <a href="#" class="card-start-btn">Start →</a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="module-card">
+        <span class="card-icon" aria-hidden="true">📧</span>
+        <div class="card-body">
+          <p class="card-title">Module 5: Email &amp; Messages</p>
+          <p class="card-desc">Reading, sending, spotting phishing — and why that "urgent" bank email is probably fake.</p>
+          <div class="card-footer">
+            <span class="card-time">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><polyline points="8,4.5 8,8 10.5,10"/></svg>
+              10 mins to learn email safety
+            </span>
+            <a href="#" class="card-start-btn">Start →</a>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Daily Life -->
+  <section class="cat-group" aria-labelledby="hd-daily">
+    <div class="cat-strip">
+      <span class="cat-pill daily">Daily Life</span>
+      <span class="cat-title" id="hd-daily">Technology for everyday tasks</span>
+      <span class="cat-count">8 modules</span>
+    </div>
+    <div class="card-grid">
+
+      <a href="#" class="module-card">
+        <span class="card-icon" aria-hidden="true">🏦</span>
+        <div class="card-body">
+          <p class="card-title">Module 6: Banking &amp; Transactions</p>
+          <p class="card-desc">Mobile banking, e-Transfer, safe online transactions — managing your money with confidence.</p>
+          <div class="card-footer">
+            <span class="card-time">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><polyline points="8,4.5 8,8 10.5,10"/></svg>
+              15 mins to learn mobile banking
+            </span>
+            <a href="#" class="card-start-btn">Start →</a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="module-card">
+        <span class="card-icon" aria-hidden="true">📹</span>
+        <div class="card-body">
+          <p class="card-title">Module 8: Stay Connected</p>
+          <p class="card-desc">FaceTime, video calls, group chats — seeing and talking to the people you love most.</p>
+          <div class="card-footer">
+            <span class="card-time">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><polyline points="8,4.5 8,8 10.5,10"/></svg>
+              10 mins to learn video calling
+            </span>
+            <a href="#" class="card-start-btn">Start →</a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="module-card">
+        <span class="card-icon" aria-hidden="true">🩺</span>
+        <div class="card-body">
+          <p class="card-title">Module 15: Telehealth</p>
+          <p class="card-desc">Virtual doctor appointments with OHIP — how to join, what to expect, what to have ready.</p>
+          <div class="card-footer">
+            <span class="card-time">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><polyline points="8,4.5 8,8 10.5,10"/></svg>
+              12 mins to learn telehealth
+            </span>
+            <a href="#" class="card-start-btn">Start →</a>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Bilingual treatment -->
+  <h2 class="section-hed">Bilingual treatment — how French works in Direction B</h2>
+  <p class="section-sub">Equal-weight tabs in the slate nav bar. Active language underlined in amber. Switching changes all page content. Site name shows both languages stacked in the header.</p>
+
+  <div class="fr-mockup">
+    <nav class="lang-bar" style="display:flex; justify-content:flex-end; background:var(--slate);">
+      <a href="#" class="lang-btn" style="color:#B0C4DE; font-weight:600; padding:0.6rem 1.25rem; text-decoration:none; font-size:0.9rem; border-bottom:3px solid transparent;">English</a>
+      <a href="#" class="lang-btn active" style="color:#FFFFFF; font-weight:600; padding:0.6rem 1.25rem; text-decoration:none; font-size:0.9rem; border-bottom:3px solid #C05E00; background:rgba(255,255,255,0.06);">Français</a>
+    </nav>
+    <div style="background:var(--slate); padding:1.75rem 2rem 2rem;">
+      <h1 style="font-size:1.75rem; font-weight:700; color:#FFFFFF; margin-bottom:0.3rem; letter-spacing:-0.01em;">Centre de confiance numérique</h1>
+      <p style="font-size:1rem; color:#8EB4D8; margin-bottom:0.9rem;">Digital Confidence Centre</p>
+      <p style="font-size:1rem; color:#B8CEEA; max-width:500px; line-height:1.6;">Apprentissage numérique gratuit pour les Canadiens — à votre rythme, dans votre langue. Rien sur ce site ne peut endommager votre appareil.</p>
+    </div>
+    <div style="background:#FFFFFF; border-bottom:1px solid var(--border-dark); padding:0.75rem 2rem; display:flex; align-items:center; gap:1rem; font-size:0.875rem; color:var(--text-soft);">
+      <span>Votre progression</span>
+      <div style="flex:1; max-width:280px; height:8px; background:#E0E4EA; border-radius:4px; overflow:hidden;">
+        <div style="width:12%; height:100%; background:linear-gradient(90deg,#2E4A6B,#3D5F85); border-radius:4px;"></div>
+      </div>
+      <span>3 modules sur 24 terminés</span>
+    </div>
+    <div style="padding:1.5rem; background:var(--bg);">
+      <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
+        <span style="font-size:0.75rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; padding:0.3rem 0.75rem; border-radius:20px; background:var(--cat-safety-bg); color:var(--cat-safety);">La sécurité d'abord</span>
+        <span style="font-size:1.1rem; font-weight:700; color:var(--text);">Protégez-vous en ligne</span>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:0.875rem;">
+        <div style="background:#FFF; border:1px solid var(--border); border-radius:8px; padding:1.25rem; display:flex; gap:1rem; align-items:flex-start;">
+          <span style="font-size:2rem; flex-shrink:0;">🛡️</span>
+          <div>
+            <p style="font-size:1rem; font-weight:700; color:var(--slate); line-height:1.35; margin-bottom:0.35rem;">Module 2 : Le bouclier de sécurité</p>
+            <p style="font-size:0.875rem; color:var(--text-mid); line-height:1.5;">Appels frauduleux, imposteurs de l'ARC — comment les reconnaître et quoi faire.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+</body>
+</html>

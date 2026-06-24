@@ -1,0 +1,19 @@
+{
+  "id": "module-ads-youth",
+  "number": "youth-3",
+  "slug": "module-ads-youth",
+  "title": "Who's Paying for Your Attention (Youth 12–18)",
+  "description": "Four interactive scenarios on advertising, dark patterns, influencer marketing, and attention engineering — for Canadian youth ages 12–18.",
+  "keywords": ["ads youth Canada", "dark patterns teens", "influencer marketing disclosure", "infinite scroll attention", "digital advertising literacy 12-18"],
+  "accessibility": {
+    "lang": "en-CA",
+    "wcag_level": "AA"
+  },
+  "sections": [
+    {
+      "type": "raw_html",
+      "content": "<!-- Hand-crafted youth module — see module-ads-youth.html. This JSON is for documentation only; the build generator does not produce inline scenario JS. -->"
+    }
+  ],
+  "quiz": []
+}

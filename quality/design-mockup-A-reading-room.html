@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DCC Direction A — The Reading Room</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream:       #FAF8F4;
+    --navy:        #1B2A45;
+    --navy-light:  #2C4169;
+    --gold:        #8B6914;
+    --gold-light:  #B8860B;
+    --text:        #1A1A1A;
+    --text-mid:    #4A4340;
+    --text-soft:   #6B6058;
+    --card-bg:     #FFFFFF;
+    --border:      #E4DDD4;
+    --border-nav:  #D0C8BC;
+    --cat-safety:  #8B1A1A;
+    --cat-start:   #1A5C8B;
+    --cat-daily:   #2A6B3A;
+    --cat-res:     #6B3A8B;
+  }
+
+  body {
+    background: var(--cream);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 18px;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* ── Language bar ── */
+  .lang-bar {
+    background: var(--navy);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0;
+    padding: 0.5rem 2rem;
+  }
+  .lang-bar a {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.9rem;
+    color: #C8D8F0;
+    text-decoration: none;
+    padding: 0.25rem 0.75rem;
+    letter-spacing: 0.02em;
+  }
+  .lang-bar a.active {
+    color: #FFFFFF;
+    font-weight: bold;
+    border-bottom: 2px solid #C4962A;
+  }
+  .lang-bar .sep {
+    color: #5070A0;
+    font-size: 0.85rem;
+  }
+
+  /* ── Header ── */
+  header {
+    background: var(--navy);
+    padding: 2.5rem 2rem 2rem;
+    border-bottom: 4px solid var(--gold-light);
+  }
+  .site-name {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.75rem;
+    font-weight: normal;
+    color: #FFFFFF;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.25rem;
+  }
+  .site-tagline {
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: #A8BDD8;
+    margin-bottom: 1.5rem;
+  }
+  .hero-copy {
+    max-width: 560px;
+    font-size: 1.05rem;
+    color: #C8D8F0;
+    line-height: 1.65;
+  }
+
+  /* ── Section heading ── */
+  .section-label {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.4rem;
+    color: var(--navy);
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+  }
+  .section-sub {
+    font-size: 0.95rem;
+    color: var(--text-soft);
+    margin-bottom: 1.5rem;
+  }
+  .section-rule {
+    border: none;
+    border-top: 1px solid var(--border-nav);
+    margin-bottom: 2rem;
+  }
+
+  /* ── Main layout ── */
+  .page-body {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+  }
+
+  /* ── Category group ── */
+  .cat-group { margin-bottom: 3rem; }
+  .cat-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .cat-name {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.15rem;
+    font-weight: normal;
+    color: var(--navy);
+    letter-spacing: 0.01em;
+  }
+  .cat-count {
+    font-size: 0.85rem;
+    color: var(--text-soft);
+  }
+
+  /* ── Module cards ── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+  .module-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 1.25rem 1.25rem 1rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    position: relative;
+  }
+  .module-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: transparent;
+    border-radius: 3px 0 0 3px;
+    transition: background 0.15s;
+  }
+  .module-card:hover { box-shadow: 0 2px 8px rgba(27,42,69,0.1); border-color: #B8B0A4; }
+  .module-card:hover::before { background: var(--gold-light); }
+
+  .card-cat {
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-soft);
+  }
+  .card-cat.safety { color: var(--cat-safety); }
+  .card-cat.start  { color: var(--cat-start); }
+  .card-cat.daily  { color: var(--cat-daily); }
+  .card-cat.res    { color: var(--cat-res); }
+
+  .card-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.05rem;
+    font-weight: normal;
+    color: var(--navy);
+    line-height: 1.4;
+  }
+  .card-desc {
+    font-size: 0.875rem;
+    color: var(--text-mid);
+    line-height: 1.5;
+    flex: 1;
+  }
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--text-soft);
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border);
+    margin-top: auto;
+  }
+  .card-meta svg { flex-shrink: 0; opacity: 0.6; }
+
+  /* ── Language mockup note ── */
+  .design-note {
+    background: #FFF8E8;
+    border: 1px dashed #C4962A;
+    border-radius: 4px;
+    padding: 1rem 1.25rem;
+    font-size: 0.85rem;
+    color: #5A4000;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+  .design-note strong { color: #3A2800; }
+
+  /* ── French state mockup ── */
+  .fr-strip {
+    background: var(--navy);
+    color: #A8BDD8;
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    padding: 0.4rem 2rem;
+    text-align: right;
+  }
+  .fr-strip strong { color: #FFFFFF; font-style: normal; }
+</style>
+</head>
+<body>
+
+<!-- Language bar -->
+<nav class="lang-bar" aria-label="Language selection">
+  <a href="#" class="active" aria-current="true">English</a>
+  <span class="sep">|</span>
+  <a href="#">Français</a>
+</nav>
+
+<!-- Header -->
+<header>
+  <div style="max-width:1100px; margin:0 auto; padding:0 0.5rem;">
+    <p class="site-name">Digital Confidence Centre</p>
+    <p class="site-tagline">Centre de confiance numérique</p>
+    <p class="hero-copy">Free digital learning for Canadians — at your own pace, in your own language. Nothing on this site can harm your device.</p>
+  </div>
+</header>
+
+<main class="page-body">
+
+  <!-- Design note for review -->
+  <div class="design-note">
+    <strong>Direction A — "The Reading Room"</strong><br>
+    Palette: navy #1B2A45 · cream #FAF8F4 · gold accent #8B6914. Typography: Georgia serif headings, system-ui body. Language: equal English / Français links in the navy bar — both always visible, serif weight, no dropdown. Rationale: serif headings evoke a library book or reference volume — dignified, trusted, not childlike, not government-grey.
+  </div>
+
+  <!-- Safety First -->
+  <section class="cat-group" aria-labelledby="cat-safety">
+    <div class="cat-header">
+      <h2 class="cat-name" id="cat-safety">Safety First</h2>
+      <span class="cat-count">6 modules</span>
+    </div>
+    <div class="card-grid">
+
+      <a href="#" class="module-card">
+        <span class="card-cat safety">Safety First</span>
+        <span class="card-title">Module 2: The Security Shield</span>
+        <span class="card-desc">Scam calls, CRA impersonators, gift-card demands — how to recognise them and what to do.</span>
+        <span class="card-meta">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><polyline points="8,4.5 8,8 10.5,10"/></svg>
+          10 mins to learn scam spotting
+        </span>
+      </a>
+
+      <a href="#" class="module-card">
+        <span class="card-cat safety">Safety First</span>
+        <span class="card-title">Module 28: When a Message Uses Fear or Love</span>
+        <span class="card-desc">The grandparent scam, CRA imposters, and the 3-Second Rule that stops emotional pressure calls.</span>
+        <span class="card-meta">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><polyline points="8,4.5 8,8 10.5,10"/></svg>
+          15 mins to learn the 3-Second Rule
+        </span>
+      </a>
+
+      <a href="#" class="module-card">
+        <span class="card-cat safety">Safety First</span>
+        <span class="card-title">Module 13: Social Media Safety</span>
+        <span class="card-desc">Facebook privacy settings, romance scams, cloned profiles — staying safe where you connect.</span>
+        <span class="card-meta">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><polyline points="8,4.5 8,8 10.5,10"/></svg>
+          12 mins to learn social safety
+        </span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Get Started -->
+  <section class="cat-group" aria-labelledby="cat-start">
+    <div class="cat-header">
+      <h2 class="cat-name" id="cat-start">Get Started</h2>
+      <span class="cat-count">5 modules</span>
+    </div>
+    <div class="card-grid">
+
+      <a href="#" class="module-card">
+        <span class="card-cat start">Get Started</span>
+        <span class="card-title">Module 1: Mastering the Escape Hatch</span>
+        <span class="card-desc">Home button, force quit, restart — the three moves that get you out of any situation on your device.</span>
+        <span class="card-meta">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><polyline points="8,4.5 8,8 10.5,10"/></svg>
+          8 mins to learn the escape hatch
+        </span>
+      </a>
+
+      <a href="#" class="module-card">
+        <span class="card-cat start">Get Started</span>
+        <span class="card-title">Module 3: Passwords &amp; Biometrics</span>
+        <span class="card-desc">Strong passwords, Face ID, Touch ID — how to protect your accounts without remembering 20 codes.</span>
+        <span class="card-meta">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><polyline points="8,4.5 8,8 10.5,10"/></svg>
+          12 mins to learn password safety
+        </span>
+      </a>
+
+      <a href="#" class="module-card">
+        <span class="card-cat start">Get Started</span>
+        <span class="card-title">Module 5: Email &amp; Messages</span>
+        <span class="card-desc">Reading, sending, spotting phishing — and why that "urgent" email from your bank probably isn't.</span>
+        <span class="card-meta">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><polyline points="8,4.5 8,8 10.5,10"/></svg>
+          10 mins to learn email safety
+        </span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Daily Life -->
+  <section class="cat-group" aria-labelledby="cat-daily">
+    <div class="cat-header">
+      <h2 class="cat-name" id="cat-daily">Daily Life</h2>
+      <span class="cat-count">8 modules</span>
+    </div>
+    <div class="card-grid">
+
+      <a href="#" class="module-card">
+        <span class="card-cat daily">Daily Life</span>
+        <span class="card-title">Module 6: Banking &amp; Transactions</span>
+        <span class="card-desc">Mobile banking, e-Transfer, safe online transactions — managing your money with confidence.</span>
+        <span class="card-meta">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><polyline points="8,4.5 8,8 10.5,10"/></svg>
+          15 mins to learn mobile banking
+        </span>
+      </a>
+
+      <a href="#" class="module-card">
+        <span class="card-cat daily">Daily Life</span>
+        <span class="card-title">Module 8: Stay Connected</span>
+        <span class="card-desc">FaceTime, video calls, group chats — seeing and talking to the people you love most.</span>
+        <span class="card-meta">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><polyline points="8,4.5 8,8 10.5,10"/></svg>
+          10 mins to learn video calling
+        </span>
+      </a>
+
+      <a href="#" class="module-card">
+        <span class="card-cat daily">Daily Life</span>
+        <span class="card-title">Module 15: Telehealth</span>
+        <span class="card-desc">Virtual doctor appointments with OHIP — how to join, what to expect, and what to have ready.</span>
+        <span class="card-meta">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><polyline points="8,4.5 8,8 10.5,10"/></svg>
+          12 mins to learn telehealth
+        </span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Bilingual EN/FR treatment note -->
+  <hr class="section-rule">
+  <h2 class="section-label">Bilingual treatment — how French works in Direction A</h2>
+  <p class="section-sub">The language selector lives in the navy bar — always visible, always equal weight. Switching to French changes all on-page content. The site name shows both languages stacked in the header as a constant signal.</p>
+
+  <!-- FR state mockup -->
+  <div style="border:1px solid var(--border); border-radius:4px; overflow:hidden; margin-top:1rem;">
+    <nav class="lang-bar" style="justify-content:flex-end;">
+      <a href="#" style="color:#A8BDD8; font-family:Georgia,serif; font-size:0.9rem; text-decoration:none; padding:0.25rem 0.75rem;">English</a>
+      <span style="color:#5070A0; font-size:0.85rem;">|</span>
+      <a href="#" style="color:#FFFFFF; font-weight:bold; font-family:Georgia,serif; font-size:0.9rem; text-decoration:none; padding:0.25rem 0.75rem; border-bottom:2px solid #C4962A;">Français</a>
+    </nav>
+    <div style="background:var(--navy); padding:1.75rem 2rem 1.5rem; border-bottom:4px solid #B8860B;">
+      <p style="font-family:Georgia,serif; font-size:1.75rem; color:#FFF; font-weight:normal; margin-bottom:0.2rem;">Centre de confiance numérique</p>
+      <p style="font-family:Georgia,serif; font-style:italic; font-size:1rem; color:#A8BDD8; margin-bottom:1rem;">Digital Confidence Centre</p>
+      <p style="font-size:1rem; color:#C8D8F0; max-width:520px;">Apprentissage numérique gratuit pour les Canadiens — à votre rythme, dans votre langue. Rien sur ce site ne peut endommager votre appareil.</p>
+    </div>
+    <div style="padding:1.25rem 1.5rem; background:var(--cream);">
+      <div style="display:flex; align-items:baseline; gap:0.75rem; padding-bottom:0.75rem; border-bottom:1px solid var(--border); margin-bottom:1rem;">
+        <span style="font-family:Georgia,serif; font-size:1.1rem; color:var(--navy);">La sécurité d'abord</span>
+        <span style="font-size:0.8rem; color:var(--text-soft);">6 modules</span>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem;">
+        <div style="background:#FFF; border:1px solid var(--border); padding:1.1rem; border-radius:3px;">
+          <span style="font-size:0.7rem; font-weight:bold; text-transform:uppercase; letter-spacing:0.08em; color:var(--cat-safety);">La sécurité d'abord</span>
+          <p style="font-family:Georgia,serif; font-size:1rem; color:var(--navy); margin:0.4rem 0 0.5rem; line-height:1.4;">Module 2 : Le bouclier de sécurité</p>
+          <p style="font-size:0.85rem; color:var(--text-mid); line-height:1.45;">Appels frauduleux, imposteurs de l'ARC, cartes-cadeaux — comment les reconnaître.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>

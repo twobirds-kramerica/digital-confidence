@@ -62,19 +62,13 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    var banner = createBanner();
-
-    if (!navigator.onLine) {
-      showBanner(banner);
-    }
-
-    window.addEventListener('offline', function () {
-      showBanner(banner);
-    });
-
-    window.addEventListener('online', function () {
-      hideBanner(banner);
-    });
+    var init = function () {
+      var banner = createBanner();
+      if (!navigator.onLine) { showBanner(banner); }
+      window.addEventListener('offline', function () { showBanner(banner); });
+      window.addEventListener('online', function () { hideBanner(banner); });
+    };
+    'requestIdleCallback' in window ? requestIdleCallback(init, { timeout: 3000 }) : setTimeout(init, 200);
   });
 
 })();

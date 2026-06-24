@@ -294,7 +294,17 @@
 
     /* Persist */
     try { localStorage.setItem('dc-lang', lang); } catch (e) {}
+
+    /* Sync Direction B lang-bar button active state */
+    document.querySelectorAll('.lang-bar-btn').forEach(function (btn) {
+      var isActive = btn.id === 'lang-btn-' + lang;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-current', isActive ? 'true' : 'false');
+    });
   }
+
+  /* Expose globally for lang-bar buttons */
+  window.setLang = applyLang;
 
   /* ---- Inject toggle button into accessibility bar ---- */
 

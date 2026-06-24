@@ -38,7 +38,7 @@ NAV_GROUPS = [
         ("module-15.html",         "\U0001f3e5", "15. Telehealth"),
         ("module-visual-ai.html",  "\U0001f4f7", "Show Me! (Bonus)"),
     ]),
-    ("Staying Independent", [
+    ("Living Independently", [
         ("module-16-travel-safety.html",     "✈️", "16. Travel Safety"),
         ("module-17-ai-research.html",       "\U0001f50d", "17. AI Research"),
         ("module-18-staying-connected.html", "\U0001f49e", "18. Staying Connected"),

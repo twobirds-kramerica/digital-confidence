@@ -11,11 +11,7 @@
   <meta property="og:locale" content="en_CA">
   <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/4-6/">
   <title>DCC Kids · Ages 4–6 · 3 Activities</title>
-  <link rel="stylesheet" href="../../css/main.css">
-  <link rel="stylesheet" href="../../css/tokens.css">
-  <link rel="stylesheet" href="../../css/tokens-dark.css">
-  <link rel="stylesheet" href="../../css/fonts.css">
-  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/bundle.css">
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
   <style>
     :root {
@@ -379,6 +375,12 @@
       <p><strong>Full 4–6 cohort complete.</strong> All 8 activities for this age group are ready. Ages 7–9 activities coming next.</p>
     </div>
 
+    <section class="dcc-hub" id="rewards-hub" aria-label="My Rewards">
+      <noscript>
+        <p style="margin:0;color:var(--text-secondary);">Rewards and badges need JavaScript turned on. The activities themselves work without it.</p>
+      </noscript>
+    </section>
+
     <div style="text-align: center;">
       <a href="../index.html" style="color: var(--brand-teal); font-size: 0.95rem; text-decoration: none;">
         ← All age groups
@@ -386,6 +388,15 @@
     </div>
 
   </main>
+
+  <script src="../rewards.js"></script>
+  <script>
+    (function () {
+      if (window.DCCRewards) {
+        DCCRewards.renderHub(document.getElementById('rewards-hub'), '4-6');
+      }
+    })();
+  </script>
 
   <footer class="kids-footer" role="contentinfo">
     <p>

@@ -327,6 +327,70 @@ document.addEventListener('click', function (e) {
 })();
 
 /* ============================================
+   B5: Category pill — "you are here" label above h1
+   ============================================ */
+(function () {
+  var CATS = {
+    'module-1.html':                  ['Device Basics',    '📱'],
+    'module-2.html':                  ['Safety',           '🛡️'],
+    'module-2-5.html':                ['Everyday Skills',  '📂'],
+    'module-3.html':                  ['Safety',           '🔑'],
+    'module-4.html':                  ['Device Basics',    '📱'],
+    'module-5.html':                  ['Communication',    '✉️'],
+    'module-6.html':                  ['Finance',          '🏦'],
+    'module-7.html':                  ['Everyday Skills',  '📷'],
+    'module-8.html':                  ['Communication',    '👨‍👩‍👧'],
+    'module-9.html':                  ['Technology',       '🤖'],
+    'module-10.html':                 ['Everyday Skills',  '🛒'],
+    'module-11.html':                 ['Everyday Skills',  '🚗'],
+    'module-12.html':                 ['Support',          '🤝'],
+    'module-13.html':                 ['Communication',    '👥'],
+    'module-14.html':                 ['Technology',       '🏡'],
+    'module-15.html':                 ['Health',           '🏥'],
+    'module-16-travel-safety.html':   ['Safety',           '✈️'],
+    'module-17-ai-research.html':     ['Technology',       '🔍'],
+    'module-18-staying-connected.html': ['Communication',  '💞'],
+    'module-19-digital-legacy.html':  ['Everyday Skills',  '🗂️'],
+    'module-20-internet-plan.html':   ['Technology',       '📶'],
+    'module-21-mobile-plan.html':     ['Technology',       '📱'],
+    'module-22-tv-home-phone.html':   ['Technology',       '📺'],
+    'module-23-online-marketplace.html': ['Everyday Skills','🛒'],
+    'module-24-communication.html':   ['Communication',    '💬'],
+    'module-fact-check.html':         ['Safety',           '🔎'],
+    'module-ai-health.html':          ['Health & Safety',  '💗'],
+    'module-visual-ai.html':          ['Technology',       '📷'],
+    'digital-literacy-101.html':      ['Device Basics',    '📖'],
+    'family-setup.html':              ['Device Basics',    '👪']
+  };
+
+  var page = window.location.pathname.split('/').pop() || '';
+  var cat = CATS[page];
+  if (!cat) return;
+
+  var style = document.createElement('style');
+  style.textContent = '.dcc-category-pill{display:inline-flex;align-items:center;gap:.35rem;font-size:.78rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;background:var(--color-surface-raised,#EEF2F7);color:var(--color-text-secondary,#4A5568);border:1px solid var(--color-border,#DDE3EB);margin-bottom:.65rem;letter-spacing:.03em;text-transform:uppercase;}[data-theme="dark"] .dcc-category-pill{background:rgba(255,255,255,.08);color:var(--color-text-secondary,#9CA3AF);border-color:rgba(255,255,255,.12);}';
+  document.head.appendChild(style);
+
+  /* Use load (not DOMContentLoaded) so breadcrumb-nav and focus-btn inserted
+     by accessibility.js and focus-mode.js are already in place before pill. */
+  window.addEventListener('load', function () {
+    var h1 = document.querySelector('#main h1');
+    if (!h1) return;
+    var pill = document.createElement('div');
+    pill.className = 'dcc-category-pill';
+    pill.setAttribute('aria-label', 'Category: ' + cat[0]);
+    var icon = document.createElement('span');
+    icon.setAttribute('aria-hidden', 'true');
+    icon.textContent = cat[1];
+    var label = document.createElement('span');
+    label.textContent = cat[0];
+    pill.appendChild(icon);
+    pill.appendChild(label);
+    h1.parentNode.insertBefore(pill, h1);
+  });
+})();
+
+/* ============================================
    B4: Help button — bottom-right circle
    ============================================ */
 (function() {
@@ -375,4 +439,106 @@ document.addEventListener('click', function (e) {
     style.textContent = '[data-theme="dark"] #dcc-help-sheet { background: #333; } [data-theme="dark"] #dcc-help-sheet p { color: #E8E8E8; } [data-theme="dark"] #dcc-help-sheet button { background: #444; color: #E8E8E8; }';
     document.head.appendChild(style);
   });
+})();
+
+/* ============================================
+   B7: Kids cross-links — "Also for young learners" callout on parallel adult modules
+   ============================================ */
+(function () {
+  var KIDS = {
+    'module-3.html': [
+      ['7–9',   'kids/7-9/creating-a-strong-password.html',    'Creating a Strong Password'],
+      ['10–12', 'kids/10-12/creating-a-strong-password.html',  'Creating a Strong Password'],
+      ['10–12', 'kids/10-12/using-a-password-manager.html',    'Using a Password Manager']
+    ],
+    'module-fact-check.html': [
+      ['7–9',   'kids/7-9/real-made-up-or-somewhere-in-between.html',           'Real, Made Up, or Somewhere In Between?'],
+      ['10–12', 'kids/10-12/following-a-story-back-to-where-it-started.html',   'Following a Story Back to Where It Started']
+    ],
+    'module-9.html': [
+      ['10–12', 'kids/10-12/asking-good-questions-when-i-search-or-ask-ai.html', 'Asking Good Questions When I Search or Ask AI'],
+      ['10–12', 'kids/10-12/when-the-computer-just-agrees-with-you.html',        'When the Computer Just Agrees with You']
+    ],
+    'module-17-ai-research.html': [
+      ['10–12', 'kids/10-12/asking-good-questions-when-i-search-or-ask-ai.html', 'Asking Good Questions When I Search or Ask AI'],
+      ['10–12', 'kids/10-12/when-the-computer-just-agrees-with-you.html',        'When the Computer Just Agrees with You']
+    ],
+    'module-2.html': [
+      ['4–6',  'kids/4-6/secret-stuff-share-stuff.html',                          'Secret Stuff, Share Stuff'],
+      ['4–6',  'kids/4-6/who-is-my-safe-grown-up.html',                           'Who Is My Safe Grown-Up?'],
+      ['7–9',  'kids/7-9/telling-a-grown-up-when-something-feels-weird.html',     'Telling a Grown-Up When Something Feels Weird']
+    ],
+    'module-13.html': [
+      ['7–9',  'kids/7-9/online-kindness-counts.html', 'Online Kindness Counts']
+    ]
+  };
+
+  var page = window.location.pathname.split('/').pop() || '';
+  var links = KIDS[page];
+  if (!links) return;
+
+  var parts = window.location.pathname.split('/').filter(Boolean);
+  var depth = Math.max(0, parts.length - 2);
+  var prefix = '';
+  for (var i = 0; i < depth; i++) prefix += '../';
+
+  var style = document.createElement('style');
+  style.textContent = '.dcc-kids-callout{background:var(--color-surface-raised,#EEF2F7);border-left:4px solid #2EC4B6;border-radius:0 8px 8px 0;padding:1rem 1.2rem;margin:2rem 0;}.dcc-kids-callout p{margin:0 0 .6rem;font-weight:600;color:var(--color-text-primary,#1B3A4B);}.dcc-kids-callout ul{margin:0;padding-left:1.2rem;}.dcc-kids-callout li{margin:.25rem 0;font-size:.95rem;}.dcc-kids-callout a{color:var(--color-text-link,#2A7B6F);}.dcc-kids-callout .dck-age{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--color-text-secondary,#4A5568);margin-right:.35rem;}[data-theme="dark"] .dcc-kids-callout{background:rgba(255,255,255,.06);border-left-color:#2EC4B6;}';
+  document.head.appendChild(style);
+
+  window.addEventListener('load', function () {
+    var main = document.querySelector('#main');
+    if (!main) return;
+
+    var box = document.createElement('div');
+    box.className = 'dcc-kids-callout';
+    var p = document.createElement('p');
+    p.textContent = '🧒 Also for young learners:';
+    var ul = document.createElement('ul');
+    links.forEach(function (item) {
+      var li = document.createElement('li');
+      var age = document.createElement('span');
+      age.className = 'dck-age';
+      age.textContent = 'Ages ' + item[0] + ':';
+      var a = document.createElement('a');
+      a.href = prefix + item[1];
+      a.textContent = item[2];
+      li.appendChild(age);
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+    box.appendChild(p);
+    box.appendChild(ul);
+    main.appendChild(box);
+  });
+})();
+
+/* ============================================
+   B6: Language toggle — EN | FR link in accessibility bar
+   ============================================ */
+(function () {
+  if ((document.documentElement.lang || '').startsWith('fr')) return;
+
+  var parts = window.location.pathname.split('/').filter(Boolean);
+  var depth = Math.max(0, parts.length - 2);
+  var prefix = '';
+  for (var i = 0; i < depth; i++) prefix += '../';
+  var frUrl = prefix + 'fr/index.html';
+
+  var bar = document.querySelector('.accessibility-bar');
+  if (!bar) return;
+
+  var style = document.createElement('style');
+  style.textContent = '.dcc-lang-toggle{display:inline-flex;align-items:center;font-size:.85rem;font-weight:600;padding:0 .55rem;height:2rem;border-radius:4px;background:transparent;color:var(--color-text-secondary,#4A5568);text-decoration:none;border:1px solid var(--color-border,#DDE3EB);margin-left:.4rem;white-space:nowrap;}'+
+    '.dcc-lang-toggle:hover{background:var(--color-surface-raised,#EEF2F7);}'+
+    '[data-theme="dark"] .dcc-lang-toggle{color:var(--color-text-secondary,#9CA3AF);border-color:rgba(255,255,255,.18);}';
+  document.head.appendChild(style);
+
+  var link = document.createElement('a');
+  link.href = frUrl;
+  link.className = 'dcc-lang-toggle';
+  link.setAttribute('lang', 'fr');
+  link.setAttribute('aria-label', 'Version française');
+  link.textContent = 'FR';
+  bar.appendChild(link);
 })();

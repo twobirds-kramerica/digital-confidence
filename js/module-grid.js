@@ -2,7 +2,7 @@
    Homepage Module Grid — Categorised & Collapsible
    Matches sidebar 5-section structure.
    Begin Here: always open, featured cards.
-   Safety First / Daily Life / Staying Independent: collapsible, state persisted in localStorage.
+   Safety First / Daily Life / Living Independently: collapsible, state persisted in localStorage.
    ============================================ */
 
 (function () {
@@ -67,7 +67,7 @@
     },
     {
       id: 'independent',
-      en: 'Staying Independent',
+      en: 'Living Independently',
       fr: 'Rester autonome',
       icon: '🌟',
       desc_en: 'Travel safety, managing your bills, and taking charge of your digital world.',
@@ -376,7 +376,7 @@
       fragment.appendChild(buildCollapsibleSection(CATEGORIES[2], groups.daily, lang, bonusCards));
     }
 
-    /* Staying Independent */
+    /* Living Independently */
     if (groups.independent.length > 0) {
       fragment.appendChild(buildCollapsibleSection(CATEGORIES[3], groups.independent, lang, null));
     }

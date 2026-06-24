@@ -27,14 +27,12 @@
   <title>Digital Confidence Centre — Free Digital Learning for All Canadians</title>
   <link rel="preload" href="fonts/source-sans-3/source-sans-3-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/source-sans-3/source-sans-3-600.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/tokens-dark.css">
-  <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/accessibility.css">
-  <link rel="stylesheet" href="css/mobile.css">
-  <link rel="stylesheet" href="css/dcc-core.css">
+  <link rel="preload" href="fonts/merriweather/merriweather-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/merriweather/merriweather-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="images/senior-woman-ipad-opt.jpg" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="css/bundle.css">
+  <link rel="stylesheet" href="css/mobile.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="css/mobile.css"></noscript>
+  <link rel="stylesheet" href="css/dcc-core.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="css/dcc-core.css"></noscript>
   <!-- Google Search Console — Aaron: replace with real verification code from GSC dashboard -->
   <!-- <meta name="google-site-verification" content="REPLACE_WITH_REAL_CODE" /> -->
   <!-- SEO: Author, Robots, Open Graph, Twitter Card -->
@@ -127,7 +125,7 @@
     "inLanguage": "en-CA",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://twobirds-kramerica.github.io/digital-confidence/search-guide.html?q={search_term_string}",
+      "target": "https://twobirds-kramerica.github.io/digital-confidence/search.html?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   }
@@ -272,18 +270,27 @@
         <a href="module-22-tv-home-phone.html">Module 22: TV &amp; Phone</a> |
         <a href="module-23-online-marketplace.html">Module 23: Marketplace</a> |
         <a href="module-24-communication.html">Module 24: Communication</a> |
+        <a href="module-25-outage-detection.html">Module 25: Outage Detection</a> |
+        <a href="module-26-notifications.html">Module 26: Managing Your Notifications</a> |
+        <a href="module-27-inbox-spam.html">Module 27: Inbox &amp; Spam</a> |
+        <a href="module-28-emotional-scams.html">Module 28: Emotional Scams</a> |
+        <a href="module-29-slow-down-before-you-buy.html">Module 29: Slow Down Before You Buy</a> |
         <a href="module-12.html">Module 12: Getting Help</a> |
         <a href="module-13.html">Module 13: Social Media</a> |
         <a href="module-14.html">Module 14: Smart Home</a> |
         <a href="module-15.html">Module 15: Telehealth</a> |
         <a href="module-visual-ai.html">Show Me! (Bonus)</a> |
+        <a href="module-ai-literacy.html">AI Literacy</a> |
         <a href="module-16-travel-safety.html">Module 16: Travel Safety</a> |
         <a href="module-17-ai-research.html">Module 17: AI Research</a> |
         <a href="module-2-5.html">Module 2.5: Everyday Tasks</a> |
+        <a href="module-fact-check.html">Is It True, or Does It Just Sound True?</a> |
+        <a href="module-ai-health.html">Asking AI About Your Health or How You Feel</a> |
         <a href="resources/living-alone.html">Living Alone Safely</a> |
         <a href="resources.html">Resources</a> |
         <a href="kids/">DCC Kids</a> |
         <a href="for-libraries.html">For Libraries &amp; Facilitators</a> |
+        <a href="fr/index.html">Version française</a> |
         <a href="print-centre.html">Print Centre</a> |
         <a href="recommended-tools.html">Recommended Tools</a> |
         <a href="scam-simulator.html">Scam Simulator</a> |
@@ -297,6 +304,12 @@
       try { localStorage.setItem('dc-setup-complete', 'crawler-bypass'); } catch(e) {}
     }
   </script>
+  <!-- Language Bar (Direction B) -->
+  <div class="lang-bar" role="navigation" aria-label="Language selection">
+    <button class="lang-bar-btn active" id="lang-btn-en" onclick="setLang('en')" aria-current="true" lang="en">English</button>
+    <button class="lang-bar-btn" id="lang-btn-fr" onclick="setLang('fr')" lang="fr">Français</button>
+  </div>
+
   <!-- Accessibility Controls -->
   <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
     <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
@@ -312,6 +325,11 @@
     <button onclick="changeLocation()" class="location-change" style="background:none;border:none;color:var(--color-text-link);cursor:pointer;font-size:var(--font-size-sm);text-decoration:underline;padding:var(--space-1) var(--space-2);min-height:var(--tap-target-min);font-family:inherit;" data-en="Set my location" data-fr="Définir ma position">Set my location</button>
   </div>
 
+  <!-- Progress Strip (Direction B — persistent overall progress) -->
+  <div class="progress-strip" role="none" aria-hidden="true">
+    <div class="progress-strip-fill" id="progress-strip-fill"></div>
+  </div>
+
   <!-- Top Bar (Mobile) -->
   <div class="top-bar">
     <button class="menu-btn" aria-label="Open navigation menu">☰</button>
@@ -319,7 +337,7 @@
       <span class="site-title-full">Digital Confidence Centre</span>
       <span class="site-title-short">DCC</span>
     </a>
-    <span></span>
+    <span class="trust-badge" aria-label="Free forever">Free. Forever.</span>
   </div>
 
   <!-- Sidebar Overlay -->
@@ -339,9 +357,10 @@
         <a href="family-setup.html"><span class="nav-icon" aria-hidden="true">👪</span><span class="nav-label">Set Up for a Loved One</span></a>
         <a href="kids/"><span class="nav-icon" aria-hidden="true">🧒</span><span class="nav-label">DCC Kids (Ages 4–15)</span></a>
         <a href="for-libraries.html"><span class="nav-icon" aria-hidden="true">🏫</span><span class="nav-label">For Libraries &amp; Facilitators</span></a>
+        <a href="fr/index.html"><span class="nav-icon" aria-hidden="true">🇫🇷</span><span class="nav-label">Version française</span></a>
       </details>
       <details class="snav-group">
-        <summary class="snav-header">All Lessons</summary>
+        <summary class="snav-header">Safety First</summary>
         <a href="module-1.html"><span class="nav-icon" aria-hidden="true">🪂</span><span class="nav-label">1. The Escape Hatch</span></a>
         <a href="module-2.html"><span class="nav-icon" aria-hidden="true">🛡️</span><span class="nav-label">2. Security Shield</span></a>
         <a href="module-2-5.html"><span class="nav-icon" aria-hidden="true">📂</span><span class="nav-label">2.5 Everyday Tasks</span></a>
@@ -349,6 +368,12 @@
         <a href="module-4.html"><span class="nav-icon" aria-hidden="true">📱</span><span class="nav-label">4. App Store Safety</span></a>
         <a href="module-5.html"><span class="nav-icon" aria-hidden="true">✉️</span><span class="nav-label">5. Email &amp; Messages</span></a>
         <a href="scam-simulator.html"><span class="nav-icon" aria-hidden="true">🎯</span><span class="nav-label">Scam Simulator</span></a>
+        <a href="module-28-emotional-scams.html"><span class="nav-icon" aria-hidden="true">⚠️</span><span class="nav-label">28. Emotional Scams</span></a>
+        <a href="module-29-slow-down-before-you-buy.html"><span class="nav-icon" aria-hidden="true">💳</span><span class="nav-label">29. Slow Down Before You Buy</span></a>
+        <a href="module-fact-check.html"><span class="nav-icon" aria-hidden="true">🔎</span><span class="nav-label">Is It True?</span></a>
+      </details>
+      <details class="snav-group">
+        <summary class="snav-header">Daily Life</summary>
         <a href="module-6.html"><span class="nav-icon" aria-hidden="true">🏦</span><span class="nav-label">6. Banking</span></a>
         <a href="module-7.html"><span class="nav-icon" aria-hidden="true">🎨</span><span class="nav-label">7. Photos &amp; Memories</span></a>
         <a href="module-8.html"><span class="nav-icon" aria-hidden="true">👨‍👩‍👧</span><span class="nav-label">8. Stay Connected</span></a>
@@ -360,6 +385,11 @@
         <a href="module-14.html"><span class="nav-icon" aria-hidden="true">🏡</span><span class="nav-label">14. Smart Home</span></a>
         <a href="module-15.html"><span class="nav-icon" aria-hidden="true">🏥</span><span class="nav-label">15. Telehealth</span></a>
         <a href="module-visual-ai.html"><span class="nav-icon" aria-hidden="true">📷</span><span class="nav-label">Show Me! (Bonus)</span></a>
+        <a href="module-ai-health.html"><span class="nav-icon" aria-hidden="true">💗</span><span class="nav-label">AI &amp; Your Health</span></a>
+        <a href="module-ai-literacy.html"><span class="nav-icon" aria-hidden="true">🧠</span><span class="nav-label">AI Literacy</span></a>
+      </details>
+      <details class="snav-group">
+        <summary class="snav-header">Living Independently</summary>
         <a href="module-16-travel-safety.html"><span class="nav-icon" aria-hidden="true">✈️</span><span class="nav-label">16. Travel Safety</span></a>
         <a href="module-17-ai-research.html"><span class="nav-icon" aria-hidden="true">🔍</span><span class="nav-label">17. AI Research</span></a>
         <a href="module-18-staying-connected.html"><span class="nav-icon" aria-hidden="true">💞</span><span class="nav-label">18. Staying Connected</span></a>
@@ -369,10 +399,14 @@
         <a href="module-22-tv-home-phone.html"><span class="nav-icon" aria-hidden="true">📺</span><span class="nav-label">22. TV &amp; Phone</span></a>
         <a href="module-23-online-marketplace.html"><span class="nav-icon" aria-hidden="true">🛒</span><span class="nav-label">23. Marketplace</span></a>
         <a href="module-24-communication.html"><span class="nav-icon" aria-hidden="true">💬</span><span class="nav-label">24. Communication</span></a>
+        <a href="module-26-notifications.html"><span class="nav-icon" aria-hidden="true">🔔</span><span class="nav-label">26. Notifications</span></a>
+        <a href="module-27-inbox-spam.html"><span class="nav-icon" aria-hidden="true">📬</span><span class="nav-label">27. Inbox &amp; Spam</span></a>
+        <a href="module-25-outage-detection.html"><span class="nav-icon" aria-hidden="true">📡</span><span class="nav-label">25. Outage Detection</span></a>
         <a href="resources/living-alone.html"><span class="nav-icon" aria-hidden="true">🏡</span><span class="nav-label">Living Alone Safely</span></a>
       </details>
       <details class="snav-group">
         <summary class="snav-header">Resources &amp; Help</summary>
+        <a href="search.html"><span class="nav-icon" aria-hidden="true">🔍</span><span class="nav-label">Search Lessons</span></a>
         <a href="answers/"><span class="nav-icon" aria-hidden="true">❓</span><span class="nav-label">Quick Answers</span></a>
         <a href="interactive/"><span class="nav-icon" aria-hidden="true">🎯</span><span class="nav-label">Interactive Tools</span></a>
         <a href="tips/index.html"><span class="nav-icon" aria-hidden="true">💡</span><span class="nav-label">Tips &amp; Updates</span></a>
@@ -412,7 +446,7 @@
           <p class="tagline">You are not behind. You are right on time.</p>
         </div>
         <div class="welcome-hero-image">
-          <img src="images/senior-woman-ipad.jpg?v=2" alt="A woman smiling while using an iPad — Digital Confidence Centre helps Canadians learn technology" width="260" height="200" loading="eager">
+          <img src="images/senior-woman-ipad-opt.jpg" alt="A woman smiling while using an iPad — Digital Confidence Centre helps Canadians learn technology" width="260" height="200" loading="eager" fetchpriority="high">
         </div>
       </div>
 
@@ -437,7 +471,7 @@
         <h2 style="border:none;margin:0;padding:0;font-size:1.2rem;">Your Progress</h2>
         <p class="progress-text" style="margin:8px 0;">Start a module below to begin tracking your progress.</p>
         <div class="progress-bar-container">
-          <div class="progress-bar-fill" style="width: 0%;" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress-bar-fill" style="width: 0%;" role="progressbar" aria-label="Your overall progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
       </div>
 
@@ -466,6 +500,10 @@
       <!-- Module Cards -->
       <div class="module-grid">
 
+        <div class="mg-category-section" style="grid-column:1/-1;margin-bottom:0.5rem;">
+          <div class="mg-category-header"><span class="cat-pill cat-pill--safety">🛡️ Safety First</span></div>
+        </div>
+
         <a href="module-1.html" class="module-card" data-module="1">
           <div class="card-icon" aria-hidden="true">🏠</div>
           <div class="card-content">
@@ -473,6 +511,7 @@
             <p>Learn the one skill that changes everything: how to get back to safety no matter what happens on your screen. The Home button, force quitting apps, and why nothing you do is permanent.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-2.html" class="module-card" data-module="2">
@@ -482,6 +521,7 @@
             <p>Your deep-dive guide to spotting scams, phishing emails, and fraudulent phone calls. Includes real Canadian examples and the powerful 3-Second Rule.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-2-5.html" class="module-card" data-module="2.5">
@@ -492,6 +532,7 @@
             <p>Master the tasks you use every day — opening and sending attachments, finding your Downloads folder, printing, and organising your files so you can find them again.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-3.html" class="module-card" data-module="3">
@@ -501,6 +542,7 @@
             <p>Make your accounts secure without memorizing dozens of passwords. Learn about Face ID, password managers, and what "two-factor authentication" really means in plain language.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-4.html" class="module-card" data-module="4">
@@ -510,6 +552,7 @@
             <p>How to find, download, and verify apps safely. Learn to spot fake apps, understand permissions, and keep your device running smoothly.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-5.html" class="module-card" data-module="5">
@@ -519,7 +562,12 @@
             <p>Master safe communication. Spot scam emails, block unwanted callers, and send messages and photos to family with confidence.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
+
+        <div class="mg-category-section" style="grid-column:1/-1;margin-bottom:0.5rem;margin-top:1.5rem;">
+          <div class="mg-category-header"><span class="cat-pill cat-pill--daily">🌱 Daily Life</span></div>
+        </div>
 
         <a href="module-6.html" class="module-card" data-module="6">
           <div class="card-icon" aria-hidden="true">🏦</div>
@@ -528,6 +576,7 @@
             <p>Online banking does not have to be scary. Learn how to check your balance, pay bills, and make safe purchases — all from your iPad.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-7.html" class="module-card" data-module="7">
@@ -537,6 +586,7 @@
             <p>The fun stuff! Explore photo editing, drawing apps, and creative tools. Your iPad is not just for email — it is a canvas for your creativity.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-8.html" class="module-card" data-module="8">
@@ -546,6 +596,7 @@
             <p>Use your device to strengthen family bonds. Video calls, shared photo albums, group messages, and the Personal Relationship Manager project.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-9.html" class="module-card" data-module="9">
@@ -555,6 +606,7 @@
             <p>What is artificial intelligence, really? Learn to spot deepfakes, protect your privacy with AI tools, and try safe beginner-friendly AI features you may already have on your device.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-10.html" class="module-card" data-module="10">
@@ -564,6 +616,7 @@
             <p>Order groceries and restaurant meals from home using Instacart, Uber Eats, DoorDash, and Skip the Dishes. Safe payments, full cost shown before you confirm — no surprises.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-11.html" class="module-card" data-module="11">
@@ -573,6 +626,7 @@
             <p>Request a safe ride anywhere using Uber or Lyft. Learn how to verify your driver, share your trip with family in real-time, and travel with confidence — no cash needed.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-12.html" class="module-card" data-module="12">
@@ -583,6 +637,7 @@
             <p>Navigate customer service phone systems, understand your consumer rights in Canada, learn how to work with family helpers at your own pace, and stay safe when someone offers remote access to your device.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-13.html" class="module-card" data-module="13">
@@ -593,6 +648,7 @@
             <p>Connect safely with family and friends on Facebook and Instagram. Learn privacy settings, spot fake profiles, and use Facebook Marketplace safely.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-14.html" class="module-card" data-module="14">
@@ -603,6 +659,7 @@
             <p>Understand connected devices in your home — smart thermostats, video doorbells, and voice assistants. Includes Ontario energy rebates and privacy guidance.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-15.html" class="module-card" data-module="15">
@@ -613,7 +670,12 @@
             <p>Access healthcare online in Ontario — book appointments, view your records through MyChart, call the free 24/7 nurse line, and refill prescriptions from home.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
+
+        <div class="mg-category-section" style="grid-column:1/-1;margin-bottom:0.5rem;margin-top:1.5rem;">
+          <div class="mg-category-header"><span class="cat-pill cat-pill--independence">🏠 Living Independently</span></div>
+        </div>
 
         <a href="module-16-travel-safety.html" class="module-card" data-module="16">
           <div class="card-icon" aria-hidden="true">✈️</div>
@@ -623,6 +685,7 @@
             <p>Travelling soon? Learn how to protect your devices and personal information — public Wi-Fi risks, airport safety, spotting travel scams, and what to do if something goes wrong abroad.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-17-ai-research.html" class="module-card" data-module="17">
@@ -633,6 +696,7 @@
             <p>AI tools like Siri, ChatGPT, and Google Gemini can answer your questions in plain language. Learn how to ask smart questions, check whether AI answers are accurate, and protect your privacy.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-fact-check.html" class="module-card" data-module="fact-check">
@@ -643,6 +707,7 @@
             <p>A confident tone is not the same as a correct answer. Learn one calm habit — three quiet questions — to check whether something online is true before you trust it or pass it on.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-ai-health.html" class="module-card" data-module="ai-health">
@@ -653,6 +718,7 @@
             <p>AI can be a starting point, never the final word, on your body or your mind. An honest look at when it helps, the real risks, and where to find real help in Canada.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <div class="module-category-divider" style="grid-column:1/-1;margin:var(--space-4) 0 var(--space-1);padding-top:var(--space-5);border-top:2px solid var(--color-border);">
@@ -667,6 +733,7 @@
             <p>Video calling, sharing photos, and staying close to the people you love — even from a distance. Learn the tools that keep you part of your family's everyday life.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-19-digital-legacy.html" class="module-card" data-module="19">
@@ -677,6 +744,7 @@
             <p>Take stock of your digital accounts, back up your photos, and make sure the right people can help you if you ever need it. A calm, practical guide to your digital world.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-20-internet-plan.html" class="module-card" data-module="20">
@@ -687,6 +755,7 @@
             <p>Learn what speed you actually need, how to read your bill, and how to negotiate a better price. Includes CRTC comparison tools and a word-for-word phone script.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-21-mobile-plan.html" class="module-card" data-module="21">
@@ -697,6 +766,7 @@
             <p>Find out if you are overpaying, learn the difference between prepaid and postpaid, and get a script to negotiate a better deal with your provider.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-22-tv-home-phone.html" class="module-card" data-module="22">
@@ -707,6 +777,7 @@
             <p>Discover how to unbundle your services, try a digital antenna for free local channels, and learn whether you still need a home phone.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-23-online-marketplace.html" class="module-card" data-module="23">
@@ -717,6 +788,7 @@
             <p>Learn how to spot scams, sell items safely, and use e-transfer without getting tricked. Includes a red-flag checklist you can print.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-24-communication.html" class="module-card" data-module="24">
@@ -727,6 +799,47 @@
             <p>Video calling, group chats, voice messages, and notification settings — everything you need to stay connected with the people who matter most.</p>
             <span class="card-progress"></span>
           </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
+        </a>
+
+        <a href="module-26-notifications.html" class="module-card" data-module="26">
+          <div class="card-icon" aria-hidden="true">🔔</div>
+          <div class="card-content">
+            <h3>Module 26: Managing Your Notifications</h3>
+            <p>Learn how to manage notifications on your iPad and iPhone. Silence the noise, keep what matters — a calmer, more focused digital life.</p>
+            <span class="card-progress"></span>
+          </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
+        </a>
+
+        <a href="module-27-inbox-spam.html" class="module-card" data-module="27">
+          <div class="card-icon" aria-hidden="true">📬</div>
+          <div class="card-content">
+            <h3>Module 27: Your Inbox — Managing Email and Spam</h3>
+            <p>Learn to manage your email inbox, deal with spam, unsubscribe safely, and build a simple daily routine. A practical guide for Canadian seniors.</p>
+            <span class="card-progress"></span>
+          </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
+        </a>
+
+        <a href="module-28-emotional-scams.html" class="module-card" data-module="28">
+          <div class="card-icon" aria-hidden="true">⚠️</div>
+          <div class="card-content">
+            <h3>Module 28: When a Message Uses Fear or Love to Rush You</h3>
+            <p>Recognise emotional pressure scams. Learn the 3-Second Rule, how the grandparent scam works step by step, and where to report to the Canadian Anti-Fraud Centre.</p>
+            <span class="card-progress"></span>
+          </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
+        </a>
+
+        <a href="module-29-slow-down-before-you-buy.html" class="module-card" data-module="29">
+          <div class="card-icon" aria-hidden="true">🛒</div>
+          <div class="card-content">
+            <h3>Module 29: Slow Down Before You Buy — Shopping Safely Online</h3>
+            <p>Stop overpaying online. Learn to spot sponsored results, sort by real price on Amazon, and use Patricia's 3-step price check before every purchase.</p>
+            <span class="card-progress"></span>
+          </div>
+          <span class="card-start-btn" aria-hidden="true">Start →</span>
         </a>
 
         <a href="module-visual-ai.html" class="module-card">
@@ -1179,7 +1292,7 @@
       <style>
         #dcc-news-feed .dcc-news-item { padding: var(--space-2) 0; border-bottom: 1px solid var(--color-border); }
         #dcc-news-feed .dcc-news-item:last-child { border-bottom: none; }
-        #dcc-news-feed .dcc-news-link { font-size: var(--font-size-base); color: var(--color-text-link); font-weight: var(--font-weight-semibold); }
+        #dcc-news-feed .dcc-news-link { font-size: var(--font-size-base); color: #226b5f; font-weight: var(--font-weight-semibold); }
         #dcc-news-feed .dcc-news-link:hover { text-decoration: underline; }
         #dcc-news-feed .dcc-news-date { display: block; font-size: var(--font-size-caption); color: var(--color-text-light); margin-top: var(--space-1); }
         #dcc-news-feed .dcc-news-empty { color: var(--color-text-light); }
@@ -1285,34 +1398,40 @@
   <script>
   // DCC Progress Widget — reads localStorage quiz results and shows personal progress
   document.addEventListener('DOMContentLoaded', function() {
-    try {
-      var results = JSON.parse(localStorage.getItem('dcc_quiz_results') || '{}');
-      var keys = Object.keys(results);
-      if (!keys.length) return;
-      var completed = keys.filter(function(k) { return results[k].after; });
-      var started = keys.filter(function(k) { return results[k].before; });
-      var total = 29;
-      var count = Math.max(completed.length, started.length);
-      if (!count) return;
-      var widget = document.getElementById('dcc-progress-widget');
-      var textEl = document.getElementById('dcc-progress-text');
-      var barEl = document.getElementById('dcc-progress-bar');
-      var detailEl = document.getElementById('dcc-progress-detail');
-      if (!widget) return;
-      widget.style.display = '';
-      textEl.textContent = count + ' of ' + total + ' module' + (count !== 1 ? 's' : '') + ' started';
-      barEl.style.width = Math.round((count / total) * 100) + '%';
-      // Find last module touched
-      var lastKey = keys.sort(function(a,b) {
-        var ta = (results[a].after && results[a].after.timestamp) || (results[a].before && results[a].before.timestamp) || '';
-        var tb = (results[b].after && results[b].after.timestamp) || (results[b].before && results[b].before.timestamp) || '';
-        return ta < tb ? 1 : -1;
-      })[0];
-      if (lastKey && detailEl) {
-        var lastDate = ((results[lastKey].after || results[lastKey].before || {}).timestamp || '').slice(0,10);
-        detailEl.textContent = 'Last activity: ' + (lastDate || 'recently') + ' · Results saved in this browser.';
-      }
-    } catch(e) {}
+    var init = function() {
+      try {
+        var results = JSON.parse(localStorage.getItem('dcc_quiz_results') || '{}');
+        var keys = Object.keys(results);
+        if (!keys.length) return;
+        var completed = keys.filter(function(k) { return results[k].after; });
+        var started = keys.filter(function(k) { return results[k].before; });
+        var total = 29;
+        var count = Math.max(completed.length, started.length);
+        if (!count) return;
+        var widget = document.getElementById('dcc-progress-widget');
+        var textEl = document.getElementById('dcc-progress-text');
+        var barEl = document.getElementById('dcc-progress-bar');
+        var detailEl = document.getElementById('dcc-progress-detail');
+        if (!widget) return;
+        widget.style.display = '';
+        textEl.textContent = count + ' of ' + total + ' module' + (count !== 1 ? 's' : '') + ' started';
+        var pct = Math.round((count / total) * 100);
+        barEl.style.width = pct + '%';
+        var stripEl = document.getElementById('progress-strip-fill');
+        if (stripEl) stripEl.style.width = pct + '%';
+        // Find last module touched
+        var lastKey = keys.sort(function(a,b) {
+          var ta = (results[a].after && results[a].after.timestamp) || (results[a].before && results[a].before.timestamp) || '';
+          var tb = (results[b].after && results[b].after.timestamp) || (results[b].before && results[b].before.timestamp) || '';
+          return ta < tb ? 1 : -1;
+        })[0];
+        if (lastKey && detailEl) {
+          var lastDate = ((results[lastKey].after || results[lastKey].before || {}).timestamp || '').slice(0,10);
+          detailEl.textContent = 'Last activity: ' + (lastDate || 'recently') + ' · Results saved in this browser.';
+        }
+      } catch(e) {}
+    };
+    'requestIdleCallback' in window ? requestIdleCallback(init, { timeout: 3000 }) : setTimeout(init, 200);
   });
   </script>
 </body>

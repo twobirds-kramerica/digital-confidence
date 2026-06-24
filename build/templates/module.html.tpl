@@ -11,6 +11,8 @@
   <meta property="og:type" content="website">
   <link rel="canonical" href="{{BASE_URL}}/{{MODULE_SLUG}}.html">
   <title>Module {{MODULE_NUMBER}}: {{MODULE_TITLE}} — {{PRODUCT_NAME}}</title>
+  <link rel="preload" href="fonts/merriweather/merriweather-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/merriweather/merriweather-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="{{TOKENS_CSS}}">
   <link rel="stylesheet" href="css/tokens-dark.css">
@@ -149,7 +151,7 @@
         <a href="module-visual-ai.html"><span class="nav-icon">📷</span><span class="nav-label">Show Me! (Bonus)</span></a>
       </details>
       <details class="snav-group">
-        <summary class="snav-header">Staying Independent</summary>
+        <summary class="snav-header">Living Independently</summary>
         <a href="module-16-travel-safety.html"><span class="nav-icon">✈️</span><span class="nav-label">16. Travel Safety</span></a>
         <a href="module-17-ai-research.html"><span class="nav-icon">🔍</span><span class="nav-label">17. AI Research</span></a>
         <a href="module-18-staying-connected.html"><span class="nav-icon">💞</span><span class="nav-label">18. Staying Connected</span></a>

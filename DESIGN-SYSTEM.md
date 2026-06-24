@@ -391,6 +391,10 @@ Before pushing any new or revised module page:
 - [ ] Error messages: "Error: [description]" above the input
 - [ ] Buttons use action verbs
 
+**Navigation sync**
+- [ ] Module added to main sidebar nav in `index.html` (JS-rendered nav, search data, and All Lessons group)
+- [ ] Module added to `<noscript>` nav in `index.html` (lines 250–295) so search engine crawlers and no-JS visitors can reach it
+
 ---
 
 ## 10. Anti-patterns — Never Do These
