@@ -233,7 +233,7 @@
       // Mark highlight
       '.dc-search-dropdown mark,.dc-topbar-results mark{background:#00C9A720;color:#00C9A7;border-radius:2px;padding:0 1px;}',
       // Shortcut hint
-      '.dc-shortcut-hint{display:none;font-size:0.68em;color:#5A6E84;padding:6px 14px 4px;border-bottom:1px solid #243d59;}',
+      '.dc-shortcut-hint{display:none;font-size:0.68em;color:#4E6278;padding:6px 14px 4px;border-bottom:1px solid #243d59;}',
       '@media (min-width:769px){.dc-shortcut-hint{display:block;}}',
       // Mobile top-bar search
       '.dc-topbar-search-btn{background:none;border:1px solid rgba(255,255,255,0.2);border-radius:8px;color:var(--text-primary);cursor:pointer;width:44px;height:44px;font-size:1.1rem;display:none;align-items:center;justify-content:center;flex-shrink:0;}',
