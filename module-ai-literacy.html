@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/print.css" media="print">
   <link rel="stylesheet" href="css/quiz-check.css">
   <link rel="stylesheet" href="css/measurement.css">
+  <link rel="stylesheet" href="css/dcc-core.css">
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
   <link rel="manifest" href="manifest.json">
@@ -33,10 +34,10 @@
   <a href="#main" class="skip-link">Skip to main content</a>
 
   <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
-    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
-    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
-    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
-    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false">A</button>
     <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
   </div>
 
@@ -106,22 +107,22 @@
     <main class="main-content" id="main">
 
       <nav aria-label="Breadcrumb">
-        <ol style="list-style:none;padding:0;margin:0 0 1.5rem;display:flex;gap:0.5rem;font-size:0.85rem;color:var(--color-text-light,#7A6E62)">
-          <li><a href="index.html" style="color:var(--color-primary,#2A7B6F)">Home</a></li>
+        <ol class="dcc-breadcrumb">
+          <li><a href="index.html">Home</a></li>
           <li aria-hidden="true">›</li>
-          <li><a href="digital-literacy-101.html" style="color:var(--color-primary,#2A7B6F)">Modules</a></li>
+          <li><a href="digital-literacy-101.html">Modules</a></li>
           <li aria-hidden="true">›</li>
           <li aria-current="page">What Is AI, Really?</li>
         </ol>
       </nav>
 
-      <div style="display:inline-flex;align-items:center;gap:0.4rem;background:#e8eaf6;color:#3949ab;border-radius:20px;padding:0.25rem 0.75rem;font-size:0.78rem;font-weight:700;margin-bottom:1rem;">
+      <div class="dcc-badge">
         🤖 AI Literacy — Adults 55+
       </div>
 
       <p class="module-category-label">Daily Life</p>
       <h1>What Is AI, Really?</h1>
-      <p class="module-time" style="color:var(--color-text-light,#7A6E62);margin-bottom:1.5rem">⏱ About 30–40 minutes — go at your own pace</p>
+      <p class="module-time">⏱ About 30–40 minutes — go at your own pace</p>
 
       <div class="confidence-check-box" role="note">
         ✅ <strong>You are in a safe place.</strong><br>
@@ -129,7 +130,7 @@
       </div>
 
       <!-- Before quiz -->
-      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start" style="margin:2rem 0"></div>
+      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start"></div>
 
       <!-- ── Section 1: What AI Actually Does ─────────────────── -->
       <div class="coach-tip">
@@ -155,7 +156,7 @@
 
       <h3>Where AI already appears in your life</h3>
 
-      <ul style="margin:0 0 1.5rem;padding-left:1.25rem;line-height:2.2">
+      <ul class="dcc-list">
         <li><strong>Your phone's autocomplete</strong> — predicting what word you are likely to type next</li>
         <li><strong>Spam filters</strong> — recognising patterns that usually appear in junk mail</li>
         <li><strong>Search engines</strong> — ranking pages by which ones most people clicked on for similar searches</li>
@@ -195,9 +196,9 @@
 
       <p>Margaret's story shows the single most useful response to anything unexpected from an AI — or any unexpected digital contact.</p>
 
-      <div class="tip-block" style="border-left-color:#3949ab;background:#e8eaf6">
-        <span class="tip-label" style="color:#3949ab">The 3-Second Rule</span>
-        <p style="font-size:1.1rem;font-weight:700;margin-bottom:0.5rem">Stop. &nbsp; Breathe. &nbsp; Verify.</p>
+      <div class="tip-block">
+        <span class="tip-label">The 3-Second Rule</span>
+        <p class="dcc-tip-emphasis">Stop. &nbsp; Breathe. &nbsp; Verify.</p>
         <p><strong>Stop:</strong> Before you click, send, share, or pay — pause. Do nothing yet.</p>
         <p><strong>Breathe:</strong> A real emergency will still be a real emergency in 60 seconds. Anyone who tells you there is no time to pause is using pressure as a tactic. That is a signal, not an urgency.</p>
         <p><strong>Verify:</strong> Call back on a number you already know. Check the source directly. Look it up on a trusted website. Do not use a link or number provided in the message that surprised you.</p>
@@ -205,7 +206,7 @@
 
       <h3>When to apply the 3-Second Rule</h3>
 
-      <ul style="margin:0 0 1.5rem;padding-left:1.25rem;line-height:2.2">
+      <ul class="dcc-list">
         <li>Any unexpected call, text, or email asking for money or personal information</li>
         <li>A voice that sounds like someone you know — even if it really sounds like them</li>
         <li>A photo or video that seems surprising or alarming</li>
@@ -305,22 +306,22 @@
       </div>
 
       <!-- After quiz -->
-      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the module" style="margin:2rem 0"></div>
+      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the module"></div>
 
       <!-- ── Success State ──────────────────────────────────────── -->
-      <div class="tip-block" style="border-left-color:#2d7a45;background:#e8f5ee" role="note" aria-label="Success state — what a completed module looks like">
-        <span class="tip-label" style="color:#2d7a45">✅ Success State — Your screen should look like this</span>
+      <div class="tip-block" role="note" aria-label="Success state — what a completed module looks like">
+        <span class="tip-label">✅ Success State — Your screen should look like this</span>
         <p>When you have finished this module:</p>
-        <ul style="margin:0.5rem 0 0;padding-left:1.25rem;line-height:2">
+        <ul class="dcc-list">
           <li>The "Quick Check — Before We Start" section above shows <strong>"Recorded"</strong></li>
           <li>The "Quick Check — What Did You Learn?" section shows your <strong>score and delta</strong></li>
           <li>You can describe what the 3-Second Rule is without looking</li>
           <li>You have added at least one "VERIFY" number to your phone contacts</li>
         </ul>
-        <p style="margin-top:0.75rem">If any of these are not yet done, scroll back and complete them — no rush. Go at your own pace.</p>
+        <p class="dcc-mt-3">If any of these are not yet done, scroll back and complete them — no rush. Go at your own pace.</p>
       </div>
 
-      <div style="text-align:center;padding:1rem 0 0.5rem">
+      <div class="dcc-print-row">
         <button class="btn-print" onclick="window.print()" aria-label="Print this module">🖨️ Print This Module</button>
       </div>
 
