@@ -366,7 +366,37 @@ a.btn-primary:hover,
 .dcc-data-table--filled td { padding: var(--space-3); }
 .dcc-data-table--filled tbody tr:nth-child(even) { background: var(--color-surface-alt); }
 
-/* --- 7b. Named-module refinements (DCC v4 batch 3 migration) ------------- */
+/* --- 7b. Module-page refinements (DCC v3 batch 2 migration) -------------- */
+/* These replace the repeated inline styles in module-11…module-20 with
+   token-driven, AA-safe classes. As in batch 1, no content, links, or JS
+   hooks change — selectors only restyle existing attributes. */
+
+/* Summary checklist (module-11): the inline styles gave each label a
+   flex-start, padded layout so multi-line items align under the checkbox.
+   Preserve that intent on top of the shared .checklist base, token-driven. */
+.dcc-checklist { margin-bottom: var(--space-6); }
+.dcc-checklist label {
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3);
+}
+.dcc-checklist label input[type="checkbox"] {
+  margin-top: var(--space-1);
+  flex-shrink: 0;
+}
+
+/* Centre-aligned data columns (module-11 availability table): first column
+   stays left, remaining columns centre. Higher specificity than the base
+   left-aligned .dcc-data-table cells so it wins without !important. */
+.dcc-data-table--center th:not(:first-child),
+.dcc-data-table--center td:not(:first-child) { text-align: center; }
+
+/* Small supplementary note text (module-14 privacy meter): replaces the
+   off-token #666 colour and sub-floor 0.82rem with the token colour and the
+   16px senior minimum. */
+.dcc-meta-note { font-size: var(--font-size-sm); color: var(--color-text-light); }
+
+/* --- 7c. Named-module refinements (DCC v4 batch 3 migration) ------------- */
 /* Modules 21–27 and the named AI modules (module-ai-literacy, module-visual-ai,
    module-fact-check, module-ai-health) plus scam-simulator are moved onto this
    layer. Same rules as batch 1/2: replace presentational inline styles and

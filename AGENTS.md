@@ -140,7 +140,7 @@ layer (inline styles removed, hardcoded hex/px replaced with token-driven
 classes, AA contrast verified). Tick a module only when it loads
 `css/dcc-core.css` and carries no presentational inline styles.
 
-**Batch 1 (this PR) — first 10 modules:**
+**Batch 1 — first 10 modules:**
 
 - [x] `module-1.html` — Mastering the Escape Hatch
 - [x] `module-2.html` — The Security Shield
@@ -152,6 +152,29 @@ classes, AA contrast verified). Tick a module only when it loads
 - [x] `module-8.html` — Stay Connected
 - [x] `module-9.html` — Understanding AI
 - [x] `module-10.html` — Grocery & Food Delivery
+
+**Batch 2 (this PR) — modules 11–20:**
+
+- [x] `module-11.html` — Ride-Sharing Apps
+- [x] `module-12.html` — Getting the Help You Deserve
+- [x] `module-13.html` — Understanding Social Media
+- [x] `module-14.html` — Smart Home Basics
+- [x] `module-15.html` — Telehealth & Medical Portals
+- [x] `module-16-travel-safety.html` — Staying Safe When You Travel
+- [x] `module-17-ai-research.html` — Using AI for Research
+- [x] `module-18-staying-connected.html` — Staying Connected When It Matters Most
+- [x] `module-19-digital-legacy.html` — Your Digital Life: Keeping It Safe and Organised
+- [x] `module-20-internet-plan.html` — Understanding Your Internet Plan
+
+> Note: as in batch 1, only presentational inline `style=` attributes were
+> removed. Page-embedded `<style>` blocks (still present on several of these
+> pages, e.g. module-12/14/15) were left intact and remain future work — they
+> already reference `var(--color-primary, …)` so the off-token hex values are
+> dead fallbacks, not live colours.
+
+**Pending (future batches):** `module-21`–`module-27` and the named modules
+(`module-ai-literacy`, `module-fact-check`, `module-visual-ai`, etc.) have not
+yet been migrated.
 
 **Batch 3 (DCC v4) — final modules 21–27 + named adult modules:**
 
