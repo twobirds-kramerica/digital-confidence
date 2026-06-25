@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/print.css" media="print">
   <link rel="stylesheet" href="css/quiz-check.css">
   <link rel="stylesheet" href="css/measurement.css">
+  <link rel="stylesheet" href="css/dcc-core.css">
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="Module 14: Smart Home Basics — Digital Confidence Centre">
@@ -351,9 +352,9 @@
 </head>
 <body>
   <noscript>
-    <div style="padding:20px;font-family:Georgia,serif;max-width:800px;margin:0 auto">
+    <div class="dcc-noscript">
       <h1>Digital Confidence Centre — Module 14: Smart Home Basics</h1>
-      <div class="dcc-quiz-container" id="dcc-before-quiz" style="margin-bottom:1.5rem"></div>
+      <div class="dcc-quiz-container" id="dcc-before-quiz"></div>
 
       <div class="module-intro">
         <p class="module-time">&#9203; About 25–35 minutes — go at your own pace</p>
@@ -752,27 +753,27 @@
         <div class="privacy-row">
           <span class="privacy-device">🌡️ Smart Thermostat</span>
           <span class="privacy-level privacy-medium">Moderate</span>
-          <span style="font-size:0.82rem;color:var(--color-text-muted,#666)">Learns when you are home or away; energy usage patterns</span>
+          <span class="dcc-meta-note">Learns when you are home or away; energy usage patterns</span>
         </div>
         <div class="privacy-row">
           <span class="privacy-device">🔔 Video Doorbell</span>
           <span class="privacy-level privacy-high">Higher</span>
-          <span style="font-size:0.82rem;color:var(--color-text-muted,#666)">Video recordings of visitors; motion events; facial recognition (some models)</span>
+          <span class="dcc-meta-note">Video recordings of visitors; motion events; facial recognition (some models)</span>
         </div>
         <div class="privacy-row">
           <span class="privacy-device">🔊 Voice Assistant</span>
           <span class="privacy-level privacy-high">Higher</span>
-          <span style="font-size:0.82rem;color:var(--color-text-muted,#666)">Voice commands recorded after wake word; questions asked; connected device states</span>
+          <span class="dcc-meta-note">Voice commands recorded after wake word; questions asked; connected device states</span>
         </div>
         <div class="privacy-row">
           <span class="privacy-device">💡 Smart Lighting</span>
           <span class="privacy-level privacy-low">Lower</span>
-          <span style="font-size:0.82rem;color:var(--color-text-muted,#666)">When lights are on or off; schedules set</span>
+          <span class="dcc-meta-note">When lights are on or off; schedules set</span>
         </div>
         <div class="privacy-row">
           <span class="privacy-device">🔌 Smart Plug</span>
           <span class="privacy-level privacy-low">Lower</span>
-          <span style="font-size:0.82rem;color:var(--color-text-muted,#666)">When device is on or off; energy usage (on some models)</span>
+          <span class="dcc-meta-note">When device is on or off; energy usage (on some models)</span>
         </div>
       </div>
 
@@ -902,7 +903,7 @@
       </div>
 
       
-  <div style="text-align:center;padding:1rem 0 0.5rem">
+  <div class="dcc-print-row">
     <button class="btn-print" onclick="window.print()" aria-label="Print this module">🖨️ Print This Module</button>
   </div>
       <section class="related-modules" aria-label="Related modules">
@@ -933,7 +934,7 @@
         <a href="module-15.html" class="btn btn-primary btn-next">Next: Telehealth &amp; Medical Portals →</a>
       </div>
 
-      <div class="dc-newsletter-slot" style="margin:2rem 0 1rem"></div>
+      <div class="dc-newsletter-slot"></div>
       <footer class="site-footer">
         <div class="footer-inner">
           <p class="footer-brand">Digital Confidence Centre</p>
@@ -964,7 +965,7 @@
 
       <div id="progress-announcer" aria-live="polite" aria-atomic="true" class="sr-only"></div>
 
-      <div class="dcc-quiz-container" id="dcc-after-quiz" style="margin:2rem 0"></div>
+      <div class="dcc-quiz-container" id="dcc-after-quiz"></div>
     </main>
   </div>
   <script src="js/speech-config.js" defer></script>

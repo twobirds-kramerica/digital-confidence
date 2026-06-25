@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/print.css" media="print">
   <link rel="stylesheet" href="css/quiz-check.css">
   <link rel="stylesheet" href="css/measurement.css">
+  <link rel="stylesheet" href="css/dcc-core.css">
   <meta name="author" content="Digital Confidence Centre">
   <meta name="robots" content="index, follow">
   <meta property="og:url" content="https://twobirds-kramerica.github.io/digital-confidence/module-11.html">
@@ -221,10 +222,10 @@
 </head>
 <body>
   <noscript>
-    <div style="padding:20px;font-family:Georgia,serif;max-width:800px;margin:0 auto">
+    <div class="dcc-noscript">
       <h1>Digital Confidence Centre — Module 11: Ride-Sharing</h1>
 
-      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start" style="margin-bottom:1.5rem"></div>
+      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start"></div>
       <div class="module-intro">
         <p class="module-time">⏱ About 20–30 minutes — go at your own pace</p>
         <div class="confidence-check-box">
@@ -465,12 +466,12 @@
 
       <p>Ride-sharing is designed with safety as a priority. Here is a complete summary of your safety checklist:</p>
 
-      <div class="checklist" style="margin-bottom:24px;">
-        <label style="display:flex;align-items:flex-start;gap:12px;padding:10px;"><input type="checkbox" style="margin-top:3px;flex-shrink:0;"> <span><strong>Always check the licence plate FIRST</strong> — before the car door, before anything else</span></label>
-        <label style="display:flex;align-items:flex-start;gap:12px;padding:10px;"><input type="checkbox" style="margin-top:3px;flex-shrink:0;"> <span><strong>Let the driver greet you by name</strong> — never say their name first</span></label>
-        <label style="display:flex;align-items:flex-start;gap:12px;padding:10px;"><input type="checkbox" style="margin-top:3px;flex-shrink:0;"> <span><strong>Never get in a car that does not match the app</strong> — cancel and request again</span></label>
-        <label style="display:flex;align-items:flex-start;gap:12px;padding:10px;"><input type="checkbox" style="margin-top:3px;flex-shrink:0;"> <span><strong>Share your trip</strong> with a family member before every ride</span></label>
-        <label style="display:flex;align-items:flex-start;gap:12px;padding:10px;"><input type="checkbox" style="margin-top:3px;flex-shrink:0;"> <span><strong>Trust your instincts</strong> — if something feels wrong, end the ride</span></label>
+      <div class="checklist dcc-checklist">
+        <label><input type="checkbox"> <span><strong>Always check the licence plate FIRST</strong> — before the car door, before anything else</span></label>
+        <label><input type="checkbox"> <span><strong>Let the driver greet you by name</strong> — never say their name first</span></label>
+        <label><input type="checkbox"> <span><strong>Never get in a car that does not match the app</strong> — cancel and request again</span></label>
+        <label><input type="checkbox"> <span><strong>Share your trip</strong> with a family member before every ride</span></label>
+        <label><input type="checkbox"> <span><strong>Trust your instincts</strong> — if something feels wrong, end the ride</span></label>
       </div>
 
       <div class="confidence-check">
@@ -480,39 +481,39 @@
 
       <h2>📍 Uber &amp; Lyft Availability in Your Area</h2>
 
-      <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:0.9em;">
+      <table class="dcc-data-table dcc-data-table--filled dcc-data-table--center">
         <thead>
-          <tr style="background:var(--accent-primary);color:white;">
-            <th style="padding:10px;text-align:left;">City</th>
-            <th style="padding:10px;text-align:center;">Uber</th>
-            <th style="padding:10px;text-align:center;">Lyft</th>
+          <tr>
+            <th>City</th>
+            <th>Uber</th>
+            <th>Lyft</th>
           </tr>
         </thead>
         <tbody>
-          <tr style="border-bottom:1px solid var(--border-color);">
-            <td style="padding:10px;">Windsor</td>
-            <td style="padding:10px;text-align:center;">✅ Active</td>
-            <td style="padding:10px;text-align:center;">✅ Active</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border-color);background:var(--bg-secondary);">
-            <td style="padding:10px;">London</td>
-            <td style="padding:10px;text-align:center;">✅ Active</td>
-            <td style="padding:10px;text-align:center;">✅ Active</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border-color);">
-            <td style="padding:10px;">Kitchener-Waterloo</td>
-            <td style="padding:10px;text-align:center;">✅ Active</td>
-            <td style="padding:10px;text-align:center;">✅ Active</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border-color);background:var(--bg-secondary);">
-            <td style="padding:10px;">St. Thomas</td>
-            <td style="padding:10px;text-align:center;">✅ Active</td>
-            <td style="padding:10px;text-align:center;">⚠️ Limited</td>
+          <tr>
+            <td>Windsor</td>
+            <td>✅ Active</td>
+            <td>✅ Active</td>
           </tr>
           <tr>
-            <td style="padding:10px;">Woodstock</td>
-            <td style="padding:10px;text-align:center;">✅ Active</td>
-            <td style="padding:10px;text-align:center;">⚠️ Limited</td>
+            <td>London</td>
+            <td>✅ Active</td>
+            <td>✅ Active</td>
+          </tr>
+          <tr>
+            <td>Kitchener-Waterloo</td>
+            <td>✅ Active</td>
+            <td>✅ Active</td>
+          </tr>
+          <tr>
+            <td>St. Thomas</td>
+            <td>✅ Active</td>
+            <td>⚠️ Limited</td>
+          </tr>
+          <tr>
+            <td>Woodstock</td>
+            <td>✅ Active</td>
+            <td>⚠️ Limited</td>
           </tr>
         </tbody>
       </table>
@@ -692,7 +693,7 @@
       </div>
 
       
-  <div style="text-align:center;padding:1rem 0 0.5rem">
+  <div class="dcc-print-row">
     <button class="btn-print" onclick="window.print()" aria-label="Print this module">🖨️ Print This Module</button>
   </div>
       <section class="related-modules" aria-label="Related modules">
@@ -723,7 +724,7 @@
         <a href="final-quiz.html" class="btn btn-primary btn-next">Take the Final Assessment →</a>
       </div>
 
-            <div class="dc-newsletter-slot" style="margin:2rem 0 1rem"></div>
+            <div class="dc-newsletter-slot"></div>
       <footer class="site-footer">
         <div class="footer-inner">
           <p class="footer-brand">Digital Confidence Centre</p>
@@ -806,7 +807,7 @@
           </div>
         </div>
       </div>
-      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the module" style="margin:2rem 0"></div>
+      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the module"></div>
       <div class="sources-block">
         <h3 data-en="Sources &amp; References" data-fr="Sources et références">Sources &amp; References</h3>
         <ul>
