@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var t=localStorage.getItem('dc-theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Pressure You Can Name — interactive digital literacy for Canadian youth ages 12–18. Recognize guilt trips, group pile-ons, streak mechanics, and conditional friendship — and choose your own response.">
+  <meta name="keywords" content="peer pressure teens Canada, social manipulation youth, guilt trip online, Snapchat streak pressure, digital literacy 12-18 Canada, online social coercion">
+  <meta property="og:title" content="The Pressure You Can Name — Youth Social Literacy · Digital Confidence Centre">
+  <meta property="og:description" content="Guilt trips, group pile-ons, streak mechanics, and 'if you were really my friend' — four real scenarios about social pressure. When you can name the tactic, you can choose your response.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/module-pressure-youth.html">
+  <title>The Pressure You Can Name — Youth Social Literacy · Digital Confidence Centre</title>
+  <link rel="preload" href="fonts/merriweather/merriweather-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/merriweather/merriweather-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/bundle.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <link rel="stylesheet" href="css/quiz-check.css">
+  <link rel="stylesheet" href="css/measurement.css">
+  <meta name="author" content="Digital Confidence Centre">
+  <meta name="robots" content="index, follow">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2A7B6F">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <style>
+    /* Youth module colour overrides — violet/social palette */
+    :root {
+      --youth-violet:     #5C3D8F;
+      --youth-violet-bg:  #EDE8F5;
+      --youth-teal:       #00897B;
+      --youth-teal-bg:    #E0F2F1;
+      --youth-green:      #2E7D32;
+      --youth-green-bg:   #E8F5E9;
+      --youth-red:        #C62828;
+      --youth-red-bg:     #FFEBEE;
+    }
+
+    .youth-hero {
+      background: linear-gradient(135deg, #1a0a30 0%, #3d1f7a 100%);
+      color: #fff;
+      padding: 2.5rem 0 2rem;
+      text-align: center;
+      margin: -1.5rem -1.5rem 2rem;
+      border-radius: 0 0 16px 16px;
+    }
+    .youth-hero .eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 0.25rem 0.9rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .youth-hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+    .youth-hero p { font-size: 1rem; opacity: 0.85; max-width: 520px; margin: 0 auto; line-height: 1.55; }
+
+    /* Progress bar */
+    .scenario-progress {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .progress-pip {
+      width: 32px; height: 6px; border-radius: 3px;
+      background: var(--youth-violet-bg);
+      transition: background 0.25s;
+    }
+    .progress-pip.done { background: var(--youth-violet); }
+    .progress-pip.active { background: var(--youth-teal); }
+    .progress-label { font-size: 0.8rem; color: var(--color-text-light,#7A6E62); font-weight: 600; }
+
+    /* Scenario card */
+    .scenario-card {
+      background: var(--color-surface,#fff);
+      border: 2px solid var(--youth-violet-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      display: none;
+    }
+    .scenario-card.active { display: block; }
+
+    .scenario-header {
+      background: var(--youth-violet-bg);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .scenario-num {
+      background: var(--youth-violet);
+      color: #fff;
+      width: 2rem; height: 2rem;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: 800; flex-shrink: 0;
+    }
+    .scenario-tag { font-size: 0.78rem; font-weight: 700; color: var(--youth-violet); text-transform: uppercase; letter-spacing: 0.06em; }
+
+    .scenario-body { padding: 1.5rem; }
+    .scenario-title { font-size: 1.1rem; font-weight: 700; color: var(--color-text,#3D3229); margin-bottom: 0.75rem; }
+    .scenario-story {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 1.25rem;
+      padding: 1rem 1.25rem;
+      background: #fafaf8;
+      border-top: 4px solid var(--youth-violet);
+      border-radius: 10px;
+    }
+    .scenario-question { font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; }
+
+    /* Answer options */
+    .answer-options { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem; }
+    .answer-btn {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      border: 2px solid var(--color-divider,#e0e0e0);
+      border-radius: 10px;
+      background: var(--color-surface,#fff);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.9rem;
+      text-align: left;
+      color: var(--color-text,#3D3229);
+      transition: all 0.15s;
+      width: 100%;
+    }
+    .answer-btn:hover:not(:disabled) { border-color: var(--youth-violet); background: var(--youth-violet-bg); }
+    .answer-btn .ans-letter {
+      flex-shrink: 0; width: 1.5rem; height: 1.5rem;
+      background: var(--youth-violet-bg);
+      color: var(--youth-violet);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700;
+      margin-top: 1px;
+    }
+    .answer-btn.selected-correct {
+      border-color: var(--youth-green);
+      background: var(--youth-green-bg);
+    }
+    .answer-btn.selected-correct .ans-letter { background: var(--youth-green); color: #fff; }
+    .answer-btn.selected-wrong {
+      border-color: var(--youth-red);
+      background: var(--youth-red-bg);
+    }
+    .answer-btn.selected-wrong .ans-letter { background: var(--youth-red); color: #fff; }
+    .answer-btn.reveal-correct {
+      border-color: var(--youth-green);
+      background: var(--youth-green-bg);
+      opacity: 0.7;
+    }
+    .answer-btn:disabled { cursor: default; }
+
+    /* Debrief */
+    .scenario-debrief {
+      display: none;
+      margin-top: 1rem;
+      padding: 1rem 1.25rem;
+      border-radius: 10px;
+      border-top: 4px solid var(--youth-teal);
+      background: var(--youth-teal-bg);
+    }
+    .scenario-debrief.visible { display: block; }
+    .debrief-label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.07em; color: var(--youth-teal); margin-bottom: 0.4rem; }
+    .scenario-debrief p { font-size: 1rem; line-height: 1.6; color: #1a3a38; }
+
+    .btn-next-scenario {
+      display: none;
+      margin-top: 1rem;
+      background: var(--youth-violet);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 0.65rem 1.75rem;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-next-scenario:hover { background: #3d2566; }
+    .btn-next-scenario.visible { display: inline-flex; align-items: center; gap: 0.4rem; }
+
+    /* All-done block */
+    .scenarios-complete {
+      display: none;
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--youth-violet-bg);
+      border-radius: 16px;
+      margin-bottom: 2rem;
+    }
+    .scenarios-complete.visible { display: block; }
+    .sc-icon { font-size: 3rem; margin-bottom: 0.75rem; }
+    .sc-score { font-size: 1.5rem; font-weight: 800; color: var(--youth-violet); }
+    .sc-sub { font-size: 1rem; color: var(--color-text-light,#50505F); margin-top: 0.4rem; }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div class="accessibility-bar" role="toolbar" aria-label="Accessibility controls">
+    <button class="a11y-btn font-size-btn" data-size="small" aria-label="Small text" aria-pressed="false" style="font-size:0.8rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="medium" aria-label="Medium text" aria-pressed="true" style="font-size:1rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="large" aria-label="Large text" aria-pressed="false" style="font-size:1.2rem">A</button>
+    <button class="a11y-btn font-size-btn" data-size="xl" aria-label="Extra large text" aria-pressed="false" style="font-size:1.4rem">A</button>
+    <button class="a11y-btn theme-toggle-btn" aria-label="Switch to dark mode">🌓</button>
+  </div>
+
+  <div class="top-bar">
+    <button class="menu-btn" aria-label="Open navigation menu">☰</button>
+    <span class="site-title">The Pressure You Can Name — Youth</span>
+    <span></span>
+  </div>
+
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="sidebar-close" aria-label="Close menu">Close &#10005;</button>
+    <div class="sidebar-header">
+      <h2>Digital Confidence Centre</h2>
+      <p>Youth Social Literacy</p>
+    </div>
+    <nav>
+      <a href="index.html"><span class="nav-icon" aria-hidden="true">🏠</span><span class="nav-label">Home</span></a>
+      <a href="digital-literacy-101.html"><span class="nav-icon" aria-hidden="true">📚</span><span class="nav-label">All Modules</span></a>
+      <a href="module-pressure-youth.html" aria-current="page"><span class="nav-icon" aria-hidden="true">🫷</span><span class="nav-label">The Pressure You Can Name (Youth)</span></a>
+      <a href="module-gems-youth.html"><span class="nav-icon" aria-hidden="true">💎</span><span class="nav-label">Gems Are Real Money (Youth)</span></a>
+      <a href="module-ai-literacy-youth.html"><span class="nav-icon" aria-hidden="true">🎯</span><span class="nav-label">AI in Real Life (Youth)</span></a>
+      <a href="module-ads-youth.html"><span class="nav-icon" aria-hidden="true">📣</span><span class="nav-label">Ads vs. Content (Youth)</span></a>
+      <a href="kids/index.html"><span class="nav-icon" aria-hidden="true">🧒</span><span class="nav-label">DCC Kids (Ages 4–12)</span></a>
+    </nav>
+  </aside>
+
+  <div class="page-wrapper">
+    <main class="main-content" id="main">
+
+      <div class="youth-hero">
+        <div class="eyebrow">Ages 12–18 · Social Pressure</div>
+        <h1>The Pressure You Can Name</h1>
+        <p>Guilt trips, group pile-ons, streak mechanics, and "if you were really my friend" — four real scenarios. When you can name the tactic, you can choose your own response.</p>
+      </div>
+
+      <div class="confidence-check-box">
+        ✅ <strong>This is a safe space to explore.</strong><br>
+        Nothing on this page can harm your device, there is no grade, and you cannot break anything. Question everything — that is the whole point.
+      </div>
+
+      <div class="coach-tip">
+        <div class="coach-tip__header">
+          <span class="coach-tip__icon" aria-hidden="true">❤️</span>
+          <span class="coach-tip__label">From your coach</span>
+        </div>
+        <p>Social pressure is designed to work fast. The moment you feel "everyone's doing it" or "if you really cared," that urgency is the tactic itself. Naming it — even just to yourself — buys the second you need to decide on your own terms. That is the whole skill.</p>
+      </div>
+
+      <!-- Before quiz -->
+      <div class="dcc-quiz-container" id="dcc-before-quiz" aria-label="Knowledge check — before you start" style="margin-bottom:2rem"></div>
+
+      <!-- Scenario progress -->
+      <div class="scenario-progress" id="scenarioProgress" role="progressbar" aria-label="Scenario progress" aria-valuenow="0" aria-valuemax="4">
+        <div class="progress-pip active" id="pip-0"></div>
+        <div class="progress-pip" id="pip-1"></div>
+        <div class="progress-pip" id="pip-2"></div>
+        <div class="progress-pip" id="pip-3"></div>
+        <span class="progress-label" id="progressLabel">Scenario 1 of 4</span>
+      </div>
+
+      <!-- Scenario 1 -->
+      <div class="scenario-card active" id="scenario-0" role="region" aria-label="Scenario 1: If You Were Really My Friend">
+        <div class="scenario-header">
+          <div class="scenario-num">1</div>
+          <div>
+            <div class="scenario-tag">Conditional Friendship</div>
+          </div>
+        </div>
+        <div class="scenario-body">
+          <div class="scenario-title">"If You Were Really My Friend..."</div>
+          <div class="scenario-story">
+            A 16-year-old has been close online friends with someone for about six months. One evening, the other person says: "If you really trusted me, you would share your live location with me." When she hesitates, they follow up: "Fine — I guess you never actually cared." She feels guilty. She also feels confused, because she does care.
+          </div>
+          <p class="scenario-question">When someone says "if you really cared about me, you would [do X]," what is most likely happening?</p>
+          <div class="answer-options" id="opts-0">
+            <button class="answer-btn" data-q="0" data-val="0"><span class="ans-letter">A</span> They are probably right — showing you care sometimes means doing what they ask</button>
+            <button class="answer-btn" data-q="0" data-val="1"><span class="ans-letter">B</span> This is a conditional threat — the relationship is being used as leverage to pressure a specific action</button>
+            <button class="answer-btn" data-q="0" data-val="2"><span class="ans-letter">C</span> It depends on how long you have known the person and how close you are</button>
+            <button class="answer-btn" data-q="0" data-val="3"><span class="ans-letter">D</span> The friendship has become unhealthy and should end immediately</button>
+          </div>
+          <div class="scenario-debrief" id="debrief-0">
+            <div class="debrief-label">Naming the conditional threat</div>
+            <p>Real care and real limits coexist. The phrase "if you really cared, you would" is a conditional threat — it ties the proof of your feelings to a specific action, making any limit you set look like a lack of care. This tactic works because it reframes "no" as evidence you don't care, rather than evidence that you have your own judgement. Noticing the structure — "comply or your care is questioned" — is the skill. Caring about someone and having your own limits are not in conflict. A friendship that requires you to overrule your own judgement to prove itself is asking for something real relationships do not ask for.</p>
+          </div>
+          <button class="btn-next-scenario" id="next-0" onclick="nextScenario(1)">Next scenario &#8594;</button>
+        </div>
+      </div>
+
+      <!-- Scenario 2 -->
+      <div class="scenario-card" id="scenario-1" role="region" aria-label="Scenario 2: The Group Pile-On">
+        <div class="scenario-header">
+          <div class="scenario-num">2</div>
+          <div>
+            <div class="scenario-tag">Social Coercion</div>
+          </div>
+        </div>
+        <div class="scenario-body">
+          <div class="scenario-title">The Group Pile-On</div>
+          <div class="scenario-story">
+            A 14-year-old is in a group chat where classmates are sharing screenshots from someone's private social account and laughing. Someone tags him: "Don't be the one who doesn't get it." Another person says "everyone's sharing it — it's just a joke." He is uncomfortable. He also does not want to be the person who says nothing or the person who says something wrong.
+          </div>
+          <p class="scenario-question">What is the most accurate description of what is happening in this group chat?</p>
+          <div class="answer-options" id="opts-1">
+            <button class="answer-btn" data-q="1" data-val="0"><span class="ans-letter">A</span> Normal humour — if most people are laughing, it is probably not serious</button>
+            <button class="answer-btn" data-q="1" data-val="1"><span class="ans-letter">B</span> He should forward it and then report the original content separately</button>
+            <button class="answer-btn" data-q="1" data-val="2"><span class="ans-letter">C</span> Peer pressure — social belonging is being used as leverage; "everyone else is doing it" is not a reason</button>
+            <button class="answer-btn" data-q="1" data-val="3"><span class="ans-letter">D</span> It only becomes a problem if the person whose content it is finds out</button>
+          </div>
+          <div class="scenario-debrief" id="debrief-1">
+            <div class="debrief-label">Peer pressure is not a reason</div>
+            <p>"Everyone else is doing it" describes what the group is doing. It does not tell you whether the thing is worth doing. Peer pressure works by making belonging conditional on participation — the implicit message is "comply or lose your place in the group." In Canadian schools, sharing someone's private content without consent can constitute cyberbullying under provincial codes of conduct and, depending on the content and age of the people involved, may cross into criminal territory under the Criminal Code of Canada. The clearest first move is to not forward the content. The group's judgement and your own judgement are two separate things — you can tell them apart when you slow down enough to notice the difference.</p>
+          </div>
+          <button class="btn-next-scenario" id="next-1" onclick="nextScenario(2)">Next scenario &#8594;</button>
+        </div>
+      </div>
+
+      <!-- Scenario 3 -->
+      <div class="scenario-card" id="scenario-2" role="region" aria-label="Scenario 3: The 200-Day Streak">
+        <div class="scenario-header">
+          <div class="scenario-num">3</div>
+          <div>
+            <div class="scenario-tag">Streak Mechanics</div>
+          </div>
+        </div>
+        <div class="scenario-body">
+          <div class="scenario-title">The 200-Day Streak</div>
+          <div class="scenario-story">
+            A 13-year-old and her best friend have a 214-day Snapchat streak. When she was sick for two days and could not send anything, her friend did not speak to her for a week. Now her friend texts: "Promise me you'll never let the streak break again. If you really want to stay best friends, you'll send something every single day no matter what." She feels like the app has become a daily test she could fail.
+          </div>
+          <p class="scenario-question">What is most accurately happening here?</p>
+          <div class="answer-options" id="opts-2">
+            <button class="answer-btn" data-q="2" data-val="0"><span class="ans-letter">A</span> App streaks are designed to keep you active — they measure platform engagement, not the quality of a friendship</button>
+            <button class="answer-btn" data-q="2" data-val="1"><span class="ans-letter">B</span> Her friend is right — a long streak shows real commitment</button>
+            <button class="answer-btn" data-q="2" data-val="2"><span class="ans-letter">C</span> She should ask Snapchat to restore the streak so the tension goes away</button>
+            <button class="answer-btn" data-q="2" data-val="3"><span class="ans-letter">D</span> This means the friendship matters more to one person than the other</button>
+          </div>
+          <div class="scenario-debrief" id="debrief-2">
+            <div class="debrief-label">Streak mechanics are app design, not friendship</div>
+            <p>Snapchat introduced streak mechanics specifically to drive daily active users — a metric that matters to the company's advertising business. The fire emoji and count are engagement tools. When those tools get attached to real friendship as proof of care, the app's commercial interest and your social life become tangled. Being sick for two days and missing a streak number is not evidence that a friendship matters less. A friendship that requires daily app activity to survive is partly a product of that design, not just of who the two of you are to each other. Recognising the streak for what it is — an app feature, not a relationship barometer — does not make the friendship less real; it just separates the two things.</p>
+          </div>
+          <button class="btn-next-scenario" id="next-2" onclick="nextScenario(3)">Next scenario &#8594;</button>
+        </div>
+      </div>
+
+      <!-- Scenario 4 -->
+      <div class="scenario-card" id="scenario-3" role="region" aria-label="Scenario 4: You Are the Only One Who Gets Me">
+        <div class="scenario-header">
+          <div class="scenario-num">4</div>
+          <div>
+            <div class="scenario-tag">Emotional Dependency</div>
+          </div>
+        </div>
+        <div class="scenario-body">
+          <div class="scenario-title">"You're the Only One Who Gets Me"</div>
+          <div class="scenario-story">
+            A 15-year-old has been messaging someone he met online for several months. The other person regularly sends long messages late at night describing how difficult their life is and says "you are the only person who really understands me." When he takes more than an hour to reply, they send "I guess I am too much for you too." He feels guilty. He starts checking his phone constantly. He has stopped spending as much time with his friends in person because he feels responsible.
+          </div>
+          <p class="scenario-question">What is this pattern called, and what is the healthy understanding of it?</p>
+          <div class="answer-options" id="opts-3">
+            <button class="answer-btn" data-q="3" data-val="0"><span class="ans-letter">A</span> A sign of deep trust — being the person someone relies on is part of a close friendship</button>
+            <button class="answer-btn" data-q="3" data-val="1"><span class="ans-letter">B</span> Loneliness — not a manipulation tactic, just someone who needs support</button>
+            <button class="answer-btn" data-q="3" data-val="2"><span class="ans-letter">C</span> Emotional enmeshment — using vulnerability as leverage to create guilt and a sense of personal responsibility for another person's wellbeing</button>
+            <button class="answer-btn" data-q="3" data-val="3"><span class="ans-letter">D</span> Normal online friendship — people share more openly in text than in person</button>
+          </div>
+          <div class="scenario-debrief" id="debrief-3">
+            <div class="debrief-label">Care without responsibility</div>
+            <p>Emotional enmeshment is a pattern where someone uses their own pain or vulnerability to bind another person to them through guilt. "You are the only one" places the entire weight of their emotional state on one person — who then feels that any limit they set causes real harm. The fact that someone is genuinely struggling does not make this pattern healthy or fair to either person. The sustainable response is: caring about someone and being responsible for their emotional state are two different things. A 15-year-old is not equipped to be another person's only support — and being placed in that role is a form of pressure, not a compliment. Kids Help Phone (1-800-668-6868, online at kidshelpphone.ca) exists for exactly this kind of situation — the person struggling can reach trained counsellors who are actually equipped to help.</p>
+          </div>
+          <button class="btn-next-scenario" id="next-3" onclick="completedScenarios()">See your results &#8594;</button>
+        </div>
+      </div>
+
+      <!-- All scenarios complete -->
+      <div class="scenarios-complete" id="scenariosComplete" role="status" aria-live="polite">
+        <div class="sc-icon">🫷</div>
+        <div class="sc-score" id="scenarioScore">0 / 4 correct</div>
+        <div class="sc-sub" id="scenarioSub">Complete the after quiz below to see your full results.</div>
+      </div>
+
+      <!-- After quiz -->
+      <div class="dcc-quiz-container" id="dcc-after-quiz" aria-label="Knowledge check — after the scenarios" style="margin:2rem 0"></div>
+
+      <!-- Success state -->
+      <div class="tip-block" style="border-left-color:var(--youth-violet);background:var(--youth-violet-bg)" role="note">
+        <span class="tip-label" style="color:var(--youth-violet)">&#10003; Success State — What a completed module looks like</span>
+        <p>When you have finished:</p>
+        <ul style="margin:0.5rem 0 0;padding-left:1.25rem;line-height:2">
+          <li>The "Quick Check — Before You Start" section above shows <strong>Recorded</strong></li>
+          <li>All four scenario cards show a debrief — you have worked through each one</li>
+          <li>The "Quick Check — After" shows your score and delta</li>
+          <li>You can name at least one pressure tactic the next time you notice it</li>
+        </ul>
+      </div>
+
+      <section class="related-modules" aria-label="Related modules">
+        <h3 class="related-title">Keep Going</h3>
+        <div class="related-grid">
+          <a href="module-gems-youth.html" class="related-card">
+            <span class="related-num">Youth</span>
+            <span class="related-name">Gems Are Real Money (Youth)</span>
+            <span class="related-desc">V-Bucks, Robux, loot boxes, and artificial scarcity — the dark patterns that turn screen time into spending without you noticing.</span>
+          </a>
+          <a href="module-ads-youth.html" class="related-card">
+            <span class="related-num">Youth</span>
+            <span class="related-name">Ads vs. Content (Youth)</span>
+            <span class="related-desc">How to tell the difference between organic content and paid promotion — especially when influencers and algorithms blur the line.</span>
+          </a>
+        </div>
+      </section>
+
+      <div class="module-nav-footer">
+        <a href="module-gems-youth.html" class="module-nav-prev">&#8592; Gems Are Real Money (Youth)</a>
+        <a href="digital-literacy-101.html" class="module-nav-next">All Modules &#8594;</a>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="site-footer" role="contentinfo" aria-label="Site footer">
+    <div class="footer-inner">
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="index.html">Home</a> |
+        <a href="digital-literacy-101.html">Modules</a> |
+        <a href="resources/index.html">Resources</a> |
+        <a href="kids/index.html">Kids</a> |
+        <a href="about.html">About</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Two Birds Innovation. Made with care in Ontario, Canada.</p>
+    </div>
+  </footer>
+
+  <script src="js/speech-config.js" defer></script>
+  <script src="js/read-aloud.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/lang-toggle.js" defer></script>
+  <script src="js/accessibility.js" defer></script>
+  <script src="js/focus-mode.js" defer></script>
+  <script src="js/small-wins.js" defer></script>
+  <script src="js/badges.js" defer></script>
+  <script src="js/settings.js" defer></script>
+  <script src="js/quiz-check.js" defer></script>
+  <script src="js/measurement.js" defer></script>
+  <script>
+  // Correct answers for the 4 interactive scenarios (0-indexed option)
+  // Scenario 1: B=1 (conditional threat), 2: C=2 (peer pressure), 3: A=0 (streak mechanics), 4: C=2 (enmeshment)
+  var SCENARIO_CORRECT = [1, 2, 0, 2];
+  var scenarioAnswered  = [false, false, false, false];
+  var scenarioCorrect   = [false, false, false, false];
+
+  function answerScenario(q, val) {
+    if (scenarioAnswered[q]) return;
+    scenarioAnswered[q] = true;
+    var correct = val === SCENARIO_CORRECT[q];
+    scenarioCorrect[q] = correct;
+
+    var opts = document.querySelectorAll('[data-q="' + q + '"]');
+    opts.forEach(function(btn) {
+      btn.disabled = true;
+      var bval = parseInt(btn.dataset.val, 10);
+      if (bval === SCENARIO_CORRECT[q]) btn.classList.add(correct ? 'selected-correct' : 'reveal-correct');
+      if (!correct && bval === val) btn.classList.add('selected-wrong');
+    });
+
+    var debrief = document.getElementById('debrief-' + q);
+    if (debrief) debrief.classList.add('visible');
+
+    var next = document.getElementById('next-' + q);
+    if (next) next.classList.add('visible');
+
+    updateProgress(q);
+  }
+
+  function nextScenario(idx) {
+    var current = document.getElementById('scenario-' + (idx - 1));
+    var next = document.getElementById('scenario-' + idx);
+    if (current) current.classList.remove('active');
+    if (next) next.classList.add('active');
+    updateProgress(idx);
+    if (next) next.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function completedScenarios() {
+    var current = document.getElementById('scenario-3');
+    if (current) current.classList.remove('active');
+    var done = document.getElementById('scenariosComplete');
+    var scoreEl = document.getElementById('scenarioScore');
+    var subEl   = document.getElementById('scenarioSub');
+    var total = scenarioCorrect.filter(Boolean).length;
+    if (scoreEl) scoreEl.textContent = total + ' / 4 correct';
+    var msg = total === 4 ? 'Perfect — you named every tactic.'
+            : total >= 3 ? 'Strong — one to review in the debriefs.'
+            : total >= 2 ? 'Good start — look back at the debriefs for the ones you missed.'
+            : 'Review the debriefs above, then take the after quiz.';
+    if (subEl) subEl.textContent = msg + ' Complete the after quiz below to see your full results.';
+    if (done) { done.classList.add('visible'); done.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+
+    if (window.DCC_QUIZ) {
+      var record = {};
+      scenarioCorrect.forEach(function(v, i) { record['scenario_' + (i+1)] = v ? 1 : 0; });
+      record.scenario_total = total;
+      try {
+        var all = JSON.parse(localStorage.getItem('dcc_quiz_results') || '{}');
+        all['module-pressure-youth'] = Object.assign(all['module-pressure-youth'] || {}, { scenarios: record });
+        localStorage.setItem('dcc_quiz_results', JSON.stringify(all));
+      } catch(e) {}
+    }
+  }
+
+  function updateProgress(current) {
+    for (var i = 0; i < 4; i++) {
+      var pip = document.getElementById('pip-' + i);
+      if (!pip) continue;
+      pip.classList.remove('done', 'active');
+      if (i < current) pip.classList.add('done');
+      else if (i === current) pip.classList.add('active');
+    }
+    var label = document.getElementById('progressLabel');
+    if (label) label.textContent = current < 4 ? 'Scenario ' + (current + 1) + ' of 4' : 'All scenarios done';
+  }
+
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.answer-btn[data-q]');
+    if (!btn) return;
+    var q = parseInt(btn.dataset.q, 10);
+    var val = parseInt(btn.dataset.val, 10);
+    answerScenario(q, val);
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var QUESTIONS = [
+      {
+        text: 'When someone says "if you really cared about me, you would [do X]," this is an example of:',
+        text_after: 'After the scenarios — "if you really cared, you would [do X]" is best described as:',
+        options: [
+          'Honest communication — telling someone what they need',
+          'A conditional threat that uses the relationship as leverage to pressure a specific action',
+          'A reasonable expectation in any close friendship',
+          'A cultural difference in how people express care'
+        ],
+        correct: 1
+      },
+      {
+        text: 'A group is pressuring you to do something by saying "everyone else is fine with it." What should you recognize?',
+        text_after: 'After the scenarios — "everyone else is doing it" is:',
+        options: [
+          'A good reason to reconsider — social consensus often reflects what is right',
+          'A sign the group does not really know you',
+          'Peer pressure — the fact that others are doing something is not a reason for you to do it',
+          'An invitation to discuss the issue openly with the group'
+        ],
+        correct: 2
+      },
+      {
+        text: 'A close friend says "if you break our streak I will be devastated." App streak mechanics:',
+        text_after: 'App streaks that create emotional obligation are:',
+        options: [
+          'A meaningful way to track how close a friendship is',
+          'Designed to keep you active on the app — not a measure of friendship quality',
+          'A fun tradition that only becomes a problem if both people stop enjoying them',
+          'A form of cyberbullying if used to create pressure'
+        ],
+        correct: 1
+      },
+      {
+        text: 'Someone says "you are the only one who understands me" and becomes angry when you take too long to reply. This pattern is:',
+        text_after: 'Using vulnerability ("you\'re the only one who gets me") to make someone feel guilty is:',
+        options: [
+          'Deep trust — a sign that someone truly values the relationship',
+          'Loneliness — not a manipulation tactic, just someone who needs support',
+          'Emotional enmeshment — using personal pain as leverage to create guilt and obligation',
+          'Normal for online friendships where people share more openly'
+        ],
+        correct: 2
+      },
+      {
+        text: 'When you can name a pressure tactic — "this is a conditional threat," "this is peer pressure" — the healthiest first step is:',
+        text_after: 'After the scenarios — naming a pressure tactic gives you:',
+        options: [
+          'Apologize and comply — it reduces conflict and shows you care',
+          'Cut off contact immediately to protect yourself',
+          'Match the person\'s emotional intensity so they understand how you feel',
+          'A second to decide on your own terms — the urgency the tactic creates is the tactic'
+        ],
+        correct: 3
+      }
+    ];
+
+    if (window.DCC_QUIZ) {
+      DCC_QUIZ.init({
+        moduleId: 'module-pressure-youth',
+        questions: QUESTIONS,
+        beforeContainerId: 'dcc-before-quiz',
+        afterContainerId:  'dcc-after-quiz'
+      });
+    }
+  });
+  </script>
+
+</body>
+</html>
