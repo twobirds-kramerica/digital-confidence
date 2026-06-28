@@ -34,7 +34,7 @@ function injectScamModal() {
     '<div id="dc-scam-modal" class="dc-scam-modal" role="dialog" aria-modal="true" aria-label="Scam help guide" style="display:none;">',
       '<div class="dc-scam-backdrop" id="dc-scam-backdrop"></div>',
       '<div class="dc-scam-content">',
-        '<button class="dc-scam-close" onclick="closeScamModal()" aria-label="Close scam guide">\u00d7 Close</button>',
+        '<button class="dc-scam-close" onclick="closeScamModal()" aria-label="Close scam guide">Close ✕</button>',
 
         '<h2 class="dc-scam-title">🚨 You\'re Safe Now — Here\'s What To Do</h2>',
 
