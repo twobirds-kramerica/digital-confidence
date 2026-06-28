@@ -47,6 +47,7 @@
       'font-size:0.9rem',
       'font-weight:700',
       'cursor:pointer',
+      'min-height:44px',
       'box-shadow:0 3px 10px rgba(0,0,0,0.25)',
       'font-family:inherit',
       'white-space:nowrap'

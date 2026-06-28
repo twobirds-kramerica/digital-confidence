@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var stopBtn = document.createElement('button');
   stopBtn.id = 'stop-reading-btn';
   stopBtn.textContent = isFr ? '\u23F9 Arrêter la lecture' : '\u23F9 Stop reading';
-  stopBtn.style.cssText = 'display:none;position:fixed;bottom:80px;right:16px;z-index:9998;background:#E74C3C;color:#fff;border:none;border-radius:24px;padding:10px 18px;font-size:14px;cursor:pointer;min-height:44px;box-shadow:0 2px 8px rgba(0,0,0,0.3);';
+  stopBtn.style.cssText = 'display:none;position:fixed;bottom:80px;right:88px;z-index:9998;background:#E74C3C;color:#fff;border:none;border-radius:24px;padding:10px 18px;font-size:14px;cursor:pointer;min-height:44px;box-shadow:0 2px 8px rgba(0,0,0,0.3);';
   document.body.appendChild(stopBtn);
   stopBtn.addEventListener('click', function() {
     window.speechSynthesis.cancel();

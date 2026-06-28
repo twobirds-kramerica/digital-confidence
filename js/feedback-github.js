@@ -171,7 +171,7 @@ function injectFeedbackModal() {
       '<div class="dc-modal-content" role="document">',
 
         /* Clean text close button (not red circle) */
-        '<button class="dc-modal-close" id="dc-modal-close" aria-label="Close feedback">\u00d7 Close</button>',
+        '<button class="dc-modal-close" id="dc-modal-close" aria-label="Close feedback">Close ✕</button>',
 
         '<div id="dc-modal-form-area">',
         '<h2 class="dc-modal-title" id="dc-modal-title">Ideas &amp; Feedback 💬</h2>',
