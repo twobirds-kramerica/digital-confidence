@@ -7,12 +7,13 @@
 (function () {
   'use strict';
 
-  /* ── Module keys (19 numbered modules — 21 counting 2.5 and 2) ── */
+  /* ── Module keys (29 numbered modules — 31 counting 2.5 and 2) ── */
   var MODULE_KEYS = [
     '1','2','2.5','3','4','5','6','7','8','9','10',
-    '11','12','13','14','15','16','17','18','19'
+    '11','12','13','14','15','16','17','18','19',
+    '20','21','22','23','24','25','26','27','28','29'
   ];
-  var TOTAL = MODULE_KEYS.length; /* 20 unique numbered entries */
+  var TOTAL = MODULE_KEYS.length; /* 31 unique numbered entries */
 
   /* ── Language ── */
   var isFr = (localStorage.getItem('dc-lang') || navigator.language || 'en')
