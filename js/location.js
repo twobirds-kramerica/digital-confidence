@@ -226,10 +226,8 @@ function initLocation() {
     loadResources(saved);
     updateLocationBar(saved);
   } else {
-    /* Delay picker by 2 seconds so user sees the page first */
-    setTimeout(function() {
-      showProvincePicker();
-    }, 2000);
+    /* First visit — default to Ontario silently; picker stays accessible via 'Set my location' */
+    selectProvince('ON');
   }
 }
 
