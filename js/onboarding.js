@@ -126,10 +126,14 @@
     var skip = document.createElement('button');
     skip.id = 'dcc-ob-skip';
     skip.textContent = t('skip');
+    /* Skip sits at the top-right of the overlay (viewport), not the bottom, so
+       it is visible without scrolling on small viewports (375px) — S-DCC-SKIP-VISIBLE.
+       Kept on the overlay (not the card, whose innerHTML renderStep rebuilds) and
+       lightened for contrast on the dark backdrop + given a 44px touch target. */
     skip.style.cssText = [
-      'position:absolute;bottom:16px;left:50%;transform:translateX(-50%)',
-      'background:none;border:none;color:#888;font-size:0.82rem',
-      'cursor:pointer;text-decoration:underline;padding:4px 8px'
+      'position:absolute;top:14px;right:14px',
+      'background:rgba(255,255,255,0.12);border:none;border-radius:8px;color:#f0f0f0;font-size:0.9rem',
+      'cursor:pointer;text-decoration:underline;padding:10px 14px;min-height:44px'
     ].join(';');
     skip.addEventListener('click', completeOnboarding);
 
