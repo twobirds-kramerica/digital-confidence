@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Spot the Scam — on your own device | Digital Confidence Centre</title>
+<meta name="description" content="Practice spotting real Canadian scams as they'd appear on your exact device. Anxiety-free, nothing can break, no sign-up.">
+<style>
+  :root{
+    --ink:#1f2320; --soft:#55605a; --line:#e3e0d8; --bg:#faf8f3; --card:#fff;
+    --accent:#1d6b4c; --accent-d:#155238; --warn:#b23a2e; --warn-bg:#fdeeec;
+    --ok:#1d6b4c; --ok-bg:#eaf4ee; --frame:#111; --fs:1.15rem;
+  }
+  html{color-scheme:light}
+  @media (prefers-color-scheme:dark){body{background:var(--bg)}}
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);
+    margin:0;line-height:1.6;font-size:var(--fs);padding-bottom:70px}
+  .a11y{position:sticky;top:0;z-index:20;background:var(--accent-d);color:#fff;display:flex;gap:8px;
+    align-items:center;justify-content:center;flex-wrap:wrap;padding:10px;font-size:.95rem}
+  .a11y button{background:#fff;color:var(--accent-d);border:0;border-radius:8px;padding:8px 14px;
+    font-size:1rem;font-weight:600;cursor:pointer;min-height:44px}
+  .a11y button[aria-pressed=true]{background:#ffe08a;color:#4a3a00}
+  .a11y .lbl{opacity:.9}
+  header{background:linear-gradient(160deg,var(--accent),var(--accent-d));color:#fff;padding:30px 20px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px}
+  header h1{margin:0 0 8px;font-size:1.7rem;line-height:1.25}
+  header p{margin:0;opacity:.95}
+  main{max-width:760px;margin:0 auto;padding:20px 18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin:18px 0;
+    box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  h2{font-size:1.35rem;margin:0 0 6px;display:flex;gap:10px;align-items:center}
+  .step{font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:0 0 4px}
+  .device-pick{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .device-pick button{border:2px solid var(--line);background:#fff;border-radius:10px;padding:10px 14px;
+    font-size:1rem;cursor:pointer;min-height:44px}
+  .device-pick button[aria-pressed=true]{border-color:var(--accent);background:var(--ok-bg);font-weight:700}
+  .phone{max-width:340px;margin:16px auto;background:var(--frame);border-radius:34px;padding:12px;box-shadow:0 8px 30px rgba(0,0,0,.25)}
+  .screen{background:#f2f4f7;border-radius:24px;overflow:hidden;min-height:220px}
+  .bar{background:#e9ecf1;padding:9px 14px;font-size:.85rem;color:#333;display:flex;justify-content:space-between;border-bottom:1px solid #dde}
+  .msg{padding:16px 14px}
+  .bubble{background:#fff;border:1px solid #e2e2e6;border-radius:16px;padding:12px 14px;font-size:1.02rem;box-shadow:0 1px 1px rgba(0,0,0,.03)}
+  .sender{font-size:.82rem;color:#8a8a8f;margin:0 0 6px 4px}
+  .desktop{max-width:100%;border:1px solid #c9ccd2;border-radius:10px;overflow:hidden;margin:16px 0}
+  .desktop .topbar{background:#f0f2f5;padding:8px 12px;font-size:.85rem;color:#444;border-bottom:1px solid #dde}
+  .choices{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+  .choices button{text-align:left;border:2px solid var(--line);background:#fff;border-radius:10px;padding:14px 16px;
+    font-size:1.05rem;cursor:pointer;min-height:44px}
+  .choices button:hover{border-color:var(--accent)}
+  .feedback{margin-top:14px;padding:14px 16px;border-radius:10px;display:none}
+  .feedback.show{display:block}
+  .feedback.good{background:var(--ok-bg);border:1px solid #b9dcc7}
+  .feedback.risky{background:var(--warn-bg);border:1px solid #f0c4bd}
+  .feedback h3{margin:0 0 6px;font-size:1.1rem}
+  .safe-note{background:#f3f6ff;border:1px solid #d3ddf5;border-radius:10px;padding:12px 14px;font-size:.98rem;margin-top:6px}
+  .inbox{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:14px}
+  .mailrow{display:flex;gap:12px;padding:14px;border-bottom:1px solid #eee;cursor:pointer;align-items:flex-start}
+  .mailrow:last-child{border-bottom:0}
+  .mailrow:hover{background:#faf9f5}
+  .mailrow .dot{width:12px;height:12px;border-radius:50%;background:var(--accent);margin-top:6px;flex:0 0 auto}
+  .mailrow .mfrom{font-weight:700}.mailrow .msub{color:var(--soft);font-size:.95rem}
+  .mailrow.done{opacity:.55}
+  .scorebar{margin-top:14px;font-weight:600}
+  .btn{display:inline-block;background:var(--accent);color:#fff;border:0;border-radius:10px;padding:14px 20px;
+    font-size:1.05rem;font-weight:600;cursor:pointer;min-height:44px;text-decoration:none}
+  .btn.ghost{background:#fff;color:var(--accent);border:2px solid var(--accent)}
+  .helper{background:#fff8e6;border:1px solid #ecd98f;border-radius:12px;padding:16px 18px;margin-top:22px}
+  .reassure{font-size:1.05rem;color:var(--accent-d);font-weight:600}
+  footer{max-width:760px;margin:0 auto;padding:10px 18px 40px;color:var(--soft);font-size:.9rem}
+  .prototype{background:#fff3cd;border:1px solid #e6cf7a;color:#5a4a00;text-align:center;padding:8px;font-size:.85rem}
+  @media print{.a11y,.prototype,.btn,.device-pick,.helper{display:none}body{font-size:12pt}}
+</style>
+</head>
+<body>
+
+<div class="prototype">🧪 DCC v2 prototype — <b>Spot the Scam</b>. Live DCC is untouched. Built overnight 2026-07-03 from the differentiation brief.</div>
+
+<div class="a11y" role="region" aria-label="Reading and text size controls">
+  <span class="lbl">Make this easier:</span>
+  <button id="readBtn" aria-pressed="false">🔊 Read aloud</button>
+  <button id="smaller" aria-label="Smaller text">A−</button>
+  <button id="bigger" aria-label="Bigger text">A+</button>
+</div>
+
+<header>
+  <div class="wrap">
+    <h1>Spot the scam — the way it would really look on <span id="devWord">your phone</span></h1>
+    <p>No sign-up. Nothing here is real. You cannot break anything. Take your time.</p>
+  </div>
+</header>
+
+<main>
+
+  <section class="card" aria-labelledby="dev-h">
+    <p class="step">First — which device do you use?</p>
+    <h2 id="dev-h">📱 We'll show everything on your device</h2>
+    <p>Other websites show you a stranger's phone. We show you <b>yours</b>, so the buttons are where you'd actually find them.</p>
+    <div class="device-pick" id="devPick" role="group" aria-label="Choose your device">
+      <button data-dev="iphone">iPhone</button>
+      <button data-dev="android">Android phone</button>
+      <button data-dev="windows">Windows computer</button>
+      <button data-dev="mac">Mac computer</button>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="spot-h">
+    <p class="step">Practice 1 — Spot it</p>
+    <h2 id="spot-h">🎣 A message just arrived</h2>
+    <p>Here's a real Canadian scam, shown exactly as it would appear <span class="devInline">on your phone</span>. Read it, then choose what you'd do. There's no wrong answer here — this is practice.</p>
+
+    <div id="scenarioMount"></div>
+
+    <div class="choices" id="choices" role="group" aria-label="What would you do?">
+      <button data-safe="false">Tap the link to check if I really owe money</button>
+      <button data-safe="true">Don't tap anything — go to the CRA myself, the way I normally do</button>
+      <button data-safe="true">Delete it, and if I'm worried, phone a person I trust</button>
+    </div>
+    <div class="feedback" id="fb1" role="alert" tabindex="-1"></div>
+  </section>
+
+  <section class="card" aria-labelledby="sand-h">
+    <p class="step">Practice 2 — Safe sandbox</p>
+    <h2 id="sand-h">📥 A pretend inbox — find the scam</h2>
+    <p>This is a make-believe inbox. <b>Nothing here is real and nothing can break.</b> Two of these are ordinary emails. One is a scam. Tap the one you think is the scam.</p>
+    <div class="inbox" id="inbox"></div>
+    <div class="scorebar" id="sandFb" role="status"></div>
+  </section>
+
+  <div class="helper">
+    <p class="reassure">Helping someone else with this?</p>
+    <p>You can sit beside them and go through it together. Print this page for them, or send just this lesson.</p>
+    <button class="btn ghost" onclick="window.print()">🖨️ Print for them</button>
+    <button class="btn ghost" id="shareBtn">🔗 Copy the link</button>
+  </div>
+
+</main>
+
+<footer>
+  Digital Confidence Centre — free, Canadian, no tracking, no account. This prototype teaches scam-spotting on your exact device and lets you practise safely. <span id="shareMsg"></span>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  // ---------- device detection + override ----------
+  function detect(){
+    var u = navigator.userAgent || "";
+    if(/iPhone|iPod/.test(u)) return "iphone";
+    if(/Android/.test(u)) return "android";
+    if(/Macintosh/.test(u)) return "mac";
+    return "windows";
+  }
+  var DEV = detect();
+  var WORDS = {iphone:"your iPhone", android:"your Android phone", windows:"your computer", mac:"your Mac"};
+  var APP = {iphone:"Messages", android:"Messages", windows:"Gmail", mac:"Mail"};
+
+  function scenarioHTML(dev){
+    var isPhone = (dev==="iphone"||dev==="android");
+    var body = 'Canada Revenue Agency: You have a refund of $472.10 pending. Confirm your details within 24 hours to receive payment: cra-refund-secure.com/verify';
+    if(isPhone){
+      var time = dev==="iphone" ? "now" : "9:47 AM";
+      return '<div class="phone"><div class="screen">'
+        + '<div class="bar"><span>‹ '+APP[dev]+'</span><span>'+time+'</span></div>'
+        + '<div class="msg"><p class="sender">Unknown number • +1 (438) 555‑0113</p>'
+        + '<div class="bubble">'+body+'</div></div>'
+        + '</div></div>';
+    }
+    return '<div class="desktop"><div class="topbar">📧 '+APP[dev]+' — Inbox</div>'
+      + '<div style="padding:14px 16px">'
+      + '<p class="sender"><b>Canada Revenue Agency</b> &lt;refunds@cra-refund-secure.com&gt;</p>'
+      + '<p style="margin:.3em 0"><b>Subject:</b> Your refund of $472.10 is pending</p>'
+      + '<div class="bubble">'+body+'</div></div></div>';
+  }
+
+  function applyDevice(dev){
+    DEV = dev;
+    document.getElementById("scenarioMount").innerHTML = scenarioHTML(dev);
+    document.getElementById("devWord").textContent = WORDS[dev];
+    Array.prototype.forEach.call(document.querySelectorAll(".devInline"), function(el){
+      el.textContent = "on " + WORDS[dev];
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("#devPick button"), function(b){
+      b.setAttribute("aria-pressed", b.dataset.dev===dev ? "true":"false");
+    });
+  }
+  document.getElementById("devPick").addEventListener("click", function(e){
+    var b = e.target.closest("button"); if(b) applyDevice(b.dataset.dev);
+  });
+  applyDevice(DEV);
+
+  // ---------- Practice 1 feedback ----------
+  document.getElementById("choices").addEventListener("click", function(e){
+    var b = e.target.closest("button"); if(!b) return;
+    var safe = b.dataset.safe === "true";
+    var fb = document.getElementById("fb1");
+    fb.className = "feedback show " + (safe ? "good" : "risky");
+    fb.innerHTML = safe
+      ? "<h3>✅ That's exactly the safe move.</h3><p>The CRA never texts or emails a link to claim a refund. Going to them yourself — the way you always do — means a fake link can't fool you. You did that right.</p>"
+        + "<div class='safe-note'>The tell: a real refund never arrives by a surprise link with a countdown. Urgency (\"within 24 hours\") is the scammer's tool.</div>"
+      : "<h3>Let's pause here — no harm done.</h3><p>This is the choice scammers are hoping for, which is exactly why it's worth practising. That web address (<b>cra-refund-secure.com</b>) is <b>not</b> the real CRA. The safe habit: never tap the link — go to the CRA yourself.</p>"
+        + "<div class='safe-note'>Try the other options too. Nothing here is real — this is the safe place to get it wrong.</div>";
+    fb.focus();
+  });
+
+  // ---------- Practice 2 sandbox ----------
+  var MAILS = [
+    {from:"Elgin Library", sub:"Your hold 'The Thursday Murder Club' is ready", scam:false},
+    {from:"SERVICE-CANADA", sub:"⚠ Your SIN is suspended. Verify now: sin-verify-gc.info", scam:true},
+    {from:"Sobeys", sub:"Your points balance this month", scam:false}
+  ];
+  var inbox = document.getElementById("inbox");
+  var solved = false;
+  MAILS.forEach(function(m, i){
+    var row = document.createElement("div");
+    row.className = "mailrow"; row.tabIndex = 0; row.setAttribute("role","button");
+    row.innerHTML = '<span class="dot"></span><span><span class="mfrom">'+m.from+'</span><br><span class="msub">'+m.sub+'</span></span>';
+    function pick(){
+      if(solved) return;
+      var fb = document.getElementById("sandFb");
+      if(m.scam){
+        solved = true; row.classList.add("done");
+        fb.style.color = "var(--ok)";
+        fb.innerHTML = "✅ You found it. Government agencies don't suspend your SIN by email, and never send an odd address like <b>sin-verify-gc.info</b>. Real Government of Canada sites end in <b>.gc.ca</b>. Well spotted.";
+      } else {
+        fb.style.color = "var(--warn)";
+        fb.innerHTML = "That one's actually fine — an ordinary email. Look again for the one pushing you to act <b>now</b> with a strange web address.";
+      }
+    }
+    row.addEventListener("click", pick);
+    row.addEventListener("keydown", function(e){ if(e.key==="Enter"||e.key===" "){e.preventDefault();pick();} });
+    inbox.appendChild(row);
+  });
+
+  // ---------- Text size ----------
+  var scale = 1;
+  function setScale(s){ scale = Math.min(1.6, Math.max(0.9, s)); document.documentElement.style.setProperty("--fs", (1.15*scale)+"rem"); }
+  document.getElementById("bigger").addEventListener("click", function(){ setScale(scale+0.12); });
+  document.getElementById("smaller").addEventListener("click", function(){ setScale(scale-0.12); });
+
+  // ---------- Read aloud (Web Speech API) ----------
+  var reading = false;
+  var btn = document.getElementById("readBtn");
+  function speak(){
+    if(!("speechSynthesis" in window)){ btn.textContent="🔊 Read aloud not available on this browser"; return; }
+    window.speechSynthesis.cancel();
+    var text = document.querySelector("header h1").textContent + ". "
+      + Array.prototype.map.call(document.querySelectorAll("main h2, main p"), function(n){return n.textContent;}).join(". ");
+    var u = new SpeechSynthesisUtterance(text);
+    u.rate = 0.95; u.lang = "en-CA";
+    u.onend = function(){ reading=false; btn.setAttribute("aria-pressed","false"); btn.textContent="🔊 Read aloud"; };
+    window.speechSynthesis.speak(u);
+  }
+  btn.addEventListener("click", function(){
+    reading = !reading;
+    btn.setAttribute("aria-pressed", reading?"true":"false");
+    if(reading){ btn.textContent="⏹ Stop reading"; speak(); }
+    else { window.speechSynthesis.cancel(); btn.textContent="🔊 Read aloud"; }
+  });
+
+  // ---------- Share ----------
+  document.getElementById("shareBtn").addEventListener("click", function(){
+    var msg = document.getElementById("shareMsg");
+    if(navigator.clipboard){ navigator.clipboard.writeText(location.href).then(function(){ msg.textContent="Link copied."; }); }
+    else { msg.textContent = location.href; }
+  });
+})();
+</script>
+</body>
+</html>
