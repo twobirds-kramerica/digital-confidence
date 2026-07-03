@@ -1,0 +1,17 @@
+name = "deck-actions"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+# --- SECRET (not stored in this file) ---
+# NOTION_API_KEY is a Notion internal-integration token (starts with "secret_" / "ntn_").
+# It is a SECRET, never a [vars] entry, and is never hardcoded in worker.js.
+# Set it once per Worker with:
+#   npx wrangler secret put NOTION_API_KEY
+# The Notion integration must be shared with (connected to) each database whose
+# pages the deck will write to, or the append/status PATCH returns 404/403.
+
+[vars]
+# Optional overrides for the action:"done" status write-back.
+# Defaults if omitted: property name "Status", value "Done".
+# STATUS_PROP = "Status"
+# STATUS_DONE = "Done"
