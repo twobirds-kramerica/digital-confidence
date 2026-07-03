@@ -1,0 +1,585 @@
+- generic [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - navigation "Language selection" [ref=e3]:
+    - button "English" [ref=e4] [cursor=pointer]
+    - button "Français" [ref=e5] [cursor=pointer]
+  - region "Your location" [ref=e6]:
+    - generic [ref=e7]: "Showing resources for: Ontario"
+    - button "Change" [ref=e8] [cursor=pointer]
+  - complementary "Main navigation" [ref=e10]:
+    - button "Close menu" [ref=e11] [cursor=pointer]: Close ✕
+    - heading "Digital Confidence Centre" [level=2] [ref=e13]
+    - navigation [ref=e14]:
+      - paragraph [ref=e15]: Search this site
+      - generic [ref=e16]:
+        - searchbox "Search this site" [ref=e17]
+        - button "Search" [ref=e18] [cursor=pointer]: 🔍
+      - paragraph [ref=e19]: "Tip: Press / to open search"
+      - group [ref=e20]:
+        - generic "Get Started ›" [ref=e21] [cursor=pointer]
+        - link "Home" [ref=e22] [cursor=pointer]:
+          - /url: index.html
+          - generic [ref=e23]: 🏠
+          - generic [ref=e24]: Home
+        - link "Foundations" [ref=e25] [cursor=pointer]:
+          - /url: digital-literacy-101.html
+          - generic [ref=e26]: 📖
+          - generic [ref=e27]: Foundations
+        - link "Set Up for a Loved One" [ref=e28] [cursor=pointer]:
+          - /url: family-setup.html
+          - generic [ref=e29]: 👪
+          - generic [ref=e30]: Set Up for a Loved One
+        - link "DCC Kids (Ages 4–15)" [ref=e31] [cursor=pointer]:
+          - /url: kids/
+          - generic [ref=e32]: 🧒
+          - generic [ref=e33]: DCC Kids (Ages 4–15)
+        - link "For Libraries & Facilitators" [ref=e34] [cursor=pointer]:
+          - /url: for-libraries.html
+          - generic [ref=e35]: 🏫
+          - generic [ref=e36]: For Libraries & Facilitators
+        - link "Version française" [ref=e37] [cursor=pointer]:
+          - /url: fr/index.html
+          - generic [ref=e38]: 🇫🇷
+          - generic [ref=e39]: Version française
+      - group [ref=e40]:
+        - generic "Safety First ›" [ref=e41] [cursor=pointer]
+      - group [ref=e42]:
+        - generic "Daily Life ›" [ref=e43] [cursor=pointer]
+      - group [ref=e44]:
+        - generic "Staying Independent ›" [ref=e45] [cursor=pointer]
+      - group [ref=e46]:
+        - generic "Resources & Help ›" [ref=e47] [cursor=pointer]
+      - generic [ref=e48]:
+        - paragraph [ref=e49]: Text Size
+        - generic [ref=e50]:
+          - button "Small text" [ref=e51] [cursor=pointer]: A
+          - button "Medium text" [pressed] [ref=e52] [cursor=pointer]: A
+          - button "Large text" [ref=e53] [cursor=pointer]: A
+          - button "Extra large text" [ref=e54] [cursor=pointer]: A
+        - paragraph [ref=e55]: Screen Colour
+        - button "Switch to dark mode" [ref=e57] [cursor=pointer]: 🌓
+      - link "Open settings" [ref=e59] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e60]: ⚙️
+        - generic [ref=e61]: My Settings
+  - main [ref=e63]:
+    - generic [ref=e64]:
+      - generic [ref=e65]:
+        - heading "Feel safe and confident on your phone or iPad. Free." [level=1] [ref=e66]
+        - paragraph [ref=e67]: 29 free lessons for Canadians who want to avoid scams, video call family, and use their device with ease. No account, no signup, no rush.
+        - paragraph [ref=e68]: You are not behind. You are right on time.
+      - img "A woman smiling while using an iPad — Digital Confidence Centre helps Canadians learn technology" [ref=e70]
+    - generic [ref=e71]:
+      - heading "Your Progress" [level=2] [ref=e72]
+      - paragraph [ref=e73]: 0 of 19 modules completed (0%)
+      - generic [ref=e74]:
+        - progressbar "Your overall progress"
+    - generic [ref=e75]:
+      - paragraph [ref=e76]: Your Achievements
+      - list [ref=e77]:
+        - listitem "First Step — not yet earned" [ref=e78]:
+          - generic [ref=e79]: 🌱
+          - generic [ref=e80]: First Step
+          - generic [ref=e81]: Not yet earned
+        - listitem "Quiz Hero — not yet earned" [ref=e82]:
+          - generic [ref=e83]: 🎯
+          - generic [ref=e84]: Quiz Hero
+          - generic [ref=e85]: Not yet earned
+        - listitem "Safety Champion — not yet earned" [ref=e86]:
+          - generic [ref=e87]: 🛡️
+          - generic [ref=e88]: Safety Champion
+          - generic [ref=e89]: Not yet earned
+        - listitem "Dedicated Learner — not yet earned" [ref=e90]:
+          - generic [ref=e91]: ⭐
+          - generic [ref=e92]: Dedicated Learner
+          - generic [ref=e93]: Not yet earned
+    - generic [ref=e94]:
+      - generic [ref=e95]: A note from your guide
+      - paragraph [ref=e96]: "This website was designed with one person in mind: someone who is smart, capable, and has a lifetime of wisdom — but who finds today's technology a bit overwhelming. That person might be you, and that is completely okay."
+      - paragraph [ref=e97]: Every lesson here moves at your pace. There are no tests you can fail. There is nothing you can break. And if you ever feel lost, you can always come back to this home page and start fresh.
+      - paragraph [ref=e98]: Think of this as your friendly neighbour sitting at your kitchen table with a cup of tea, walking you through things one step at a time.
+    - note [ref=e99]:
+      - generic [ref=e100]: 🏦
+      - generic [ref=e101]:
+        - strong [ref=e102]: Did you know?
+        - paragraph [ref=e103]:
+          - text: Your bank will
+          - strong [ref=e104]: never
+          - text: send someone to your door to pick up your card. Ever. If you get a call like this — hang up and call the number on the back of your card.
+        - link "Report a scam → Canadian Anti-Fraud Centre" [ref=e105] [cursor=pointer]:
+          - /url: resources/support-directory.html
+    - heading "Your Learning Modules" [level=2] [ref=e106]
+    - paragraph [ref=e107]: Work through these in order, or jump to whichever topic you need most. Each module is designed to be completed in one sitting, but you can always come back and review.
+    - generic [ref=e108]:
+      - generic [ref=e109]:
+        - generic [ref=e110]:
+          - paragraph [ref=e111]:
+            - generic "Recommended starting point" [ref=e112]: Start here
+            - text: Begin Here
+          - paragraph [ref=e113]: Start with these three lessons. They build the foundation for everything that follows.
+        - generic [ref=e114]:
+          - 'link "👉 Start here Module 1: Mastering the Escape Hatch Learn the one skill that changes everything: how to get back to safety no matter what happens on your screen. The Home button, force quitting apps, and why nothing you do is permanent. 20 min to feel safe on any screen ✅ Reviewed: 2026-03" [ref=e115] [cursor=pointer]':
+            - /url: module-1.html
+            - generic [ref=e116]: 🏠
+            - generic [ref=e117]:
+              - generic [ref=e118]: 👉 Start here
+              - 'heading "Module 1: Mastering the Escape Hatch" [level=3] [ref=e119]'
+              - paragraph [ref=e120]: "Learn the one skill that changes everything: how to get back to safety no matter what happens on your screen. The Home button, force quitting apps, and why nothing you do is permanent."
+              - generic "20 min to feel safe on any screen" [ref=e121]: ⏱ 20 min to feel safe on any screen
+              - generic [ref=e122]: "✅ Reviewed: 2026-03"
+          - 'link "Module 2: The Security Shield Your deep-dive guide to spotting scams, phishing emails, and fraudulent phone calls. Includes real Canadian examples and the powerful 3-Second Rule. 25 min to spot online scams ✅ Reviewed: 2026-03" [ref=e123] [cursor=pointer]':
+            - /url: module-2.html
+            - generic [ref=e124]: 🛡️
+            - generic [ref=e125]:
+              - 'heading "Module 2: The Security Shield" [level=3] [ref=e126]'
+              - paragraph [ref=e127]: Your deep-dive guide to spotting scams, phishing emails, and fraudulent phone calls. Includes real Canadian examples and the powerful 3-Second Rule.
+              - generic "25 min to spot online scams" [ref=e128]: ⏱ 25 min to spot online scams
+              - generic [ref=e129]: "✅ Reviewed: 2026-03"
+          - 'link "New Module 2.5: Everyday Digital Tasks Master the tasks you use every day — opening and sending attachments, finding your Downloads folder, printing, and organising your files so you can find them again. 20 min to handle everyday digital tasks ✅ Reviewed: 2026-03" [ref=e130] [cursor=pointer]':
+            - /url: module-2-5.html
+            - generic [ref=e131]: 📂
+            - generic [ref=e132]:
+              - generic [ref=e133]: New
+              - 'heading "Module 2.5: Everyday Digital Tasks" [level=3] [ref=e134]'
+              - paragraph [ref=e135]: Master the tasks you use every day — opening and sending attachments, finding your Downloads folder, printing, and organising your files so you can find them again.
+              - generic "20 min to handle everyday digital tasks" [ref=e136]: ⏱ 20 min to handle everyday digital tasks
+              - generic [ref=e137]: "✅ Reviewed: 2026-03"
+      - group [ref=e139]:
+        - generic "Safety First" [ref=e140] [cursor=pointer]:
+          - generic [ref=e141]: 🛡️
+          - generic [ref=e142]:
+            - generic [ref=e143]: Safety First
+            - generic [ref=e144]: Passwords, app safety, and spotting scams — your digital self-defence toolkit.
+          - generic [ref=e145]: 3 modules
+          - generic [ref=e146]: ▼
+      - group [ref=e148]:
+        - generic "Daily Life" [ref=e149] [cursor=pointer]:
+          - generic [ref=e150]: 🌤️
+          - generic [ref=e151]:
+            - generic [ref=e152]: Daily Life
+            - generic [ref=e153]: Banking, staying connected, grocery delivery, and everyday digital tasks made easy.
+          - generic [ref=e154]: 11 modules
+          - generic [ref=e155]: ▼
+      - group [ref=e157]:
+        - generic "Staying Independent" [ref=e158] [cursor=pointer]:
+          - generic [ref=e159]: 🌟
+          - generic [ref=e160]:
+            - generic [ref=e161]: Staying Independent
+            - generic [ref=e162]: Travel safety, managing your bills, and taking charge of your digital world.
+          - generic [ref=e163]: 15 modules
+          - generic [ref=e164]: ▼
+    - region "What's New" [ref=e165]:
+      - heading "What's New" [level=2] [ref=e166]
+      - paragraph [ref=e167]: Recent additions and updates to the Digital Confidence Centre.
+      - generic [ref=e168]:
+        - generic [ref=e169]:
+          - generic [ref=e170]: 💞
+          - generic [ref=e171]:
+            - generic [ref=e172]: March 2026
+            - heading "Module 18 added — Staying Connected When It Matters Most" [level=3] [ref=e173]
+            - paragraph [ref=e174]: Learn to video call family, share photos, send voice messages, and find community online. Technology for connection, not isolation.
+            - link "Learn more →" [ref=e175] [cursor=pointer]:
+              - /url: module-18-staying-connected.html
+        - generic [ref=e176]:
+          - generic [ref=e177]: 🗂️
+          - generic [ref=e178]:
+            - generic [ref=e179]: March 2026
+            - 'heading "Module 19 added — Your Digital Life: Keeping It Safe and Organised" [level=3] [ref=e180]'
+            - paragraph [ref=e181]: Take stock of your digital accounts, back up your photos, and make sure the right people can help you when you need it.
+            - link "Learn more →" [ref=e182] [cursor=pointer]:
+              - /url: module-19-digital-legacy.html
+        - generic [ref=e183]:
+          - generic [ref=e184]: 🤖
+          - generic [ref=e185]:
+            - generic [ref=e186]: March 2026
+            - heading "Module 17 added — AI Research Tools" [level=3] [ref=e187]
+            - paragraph [ref=e188]: Learn to use AI tools safely to answer questions and find information online.
+            - link "Learn more →" [ref=e189] [cursor=pointer]:
+              - /url: module-17-ai-research.html
+        - generic [ref=e190]:
+          - generic [ref=e191]: 🛡️
+          - generic [ref=e192]:
+            - generic [ref=e193]: March 2026
+            - heading "Scam simulator expanded to 50 scenarios" [level=3] [ref=e194]
+            - paragraph [ref=e195]: Test yourself against the latest Canadian scam tactics including QR code fraud and AI voice cloning.
+            - link "Learn more →" [ref=e196] [cursor=pointer]:
+              - /url: scam-simulator.html
+        - generic [ref=e197]:
+          - generic [ref=e198]: ❓
+          - generic [ref=e199]:
+            - generic [ref=e200]: March 2026
+            - 'heading "New: Quick Answers hub — 20 instant answers" [level=3] [ref=e201]'
+            - paragraph [ref=e202]: Get straight answers to common digital questions without searching through modules.
+            - link "Learn more →" [ref=e203] [cursor=pointer]:
+              - /url: answers/
+    - region "Scam Alert of the Month March 2026 High" [ref=e204]:
+      - generic [ref=e205]:
+        - heading "Scam Alert of the Month March 2026 High" [level=2] [ref=e206]:
+          - generic [ref=e207]: 🚨
+          - text: Scam Alert of the Month
+          - generic [ref=e208]: March 2026
+          - generic [ref=e209]: High
+        - paragraph [ref=e210]: AI Voice Clone — The Grandparent Scam Gets Smarter
+        - paragraph [ref=e211]: Scammers are now using artificial intelligence to clone the voices of grandchildren and call seniors pretending to be in trouble — injured in an accident, arrested, or stranded abroad — and urgently needing money.
+        - strong [ref=e212]: "What to do:"
+        - list [ref=e213]:
+          - listitem [ref=e214]: Hang up and call your grandchild directly on their usual number
+          - listitem [ref=e215]: Establish a family code word to verify genuine emergencies
+          - listitem [ref=e216]: Never send money by e-transfer, gift cards, or crypto to someone you have not spoken to in person
+          - listitem [ref=e217]: "Report to the Canadian Anti-Fraud Centre: 1-888-495-8501"
+        - generic [ref=e218]:
+          - link "See All Scam Alerts →" [ref=e219] [cursor=pointer]:
+            - /url: scam-alerts/
+          - link "Practise Spotting Scams →" [ref=e220] [cursor=pointer]:
+            - /url: scam-simulator.html
+    - generic "Site quality signals" [ref=e221]:
+      - generic [ref=e222]: ✅ WCAG AA Accessible
+      - generic [ref=e223]: ⚜ Bilingual EN/FR
+      - generic [ref=e224]: 🔓 No Registration Required
+      - generic [ref=e225]: 🍁 Canadian Content
+      - generic [ref=e226]: 📅 Founded March 2026
+    - generic [ref=e227]:
+      - generic [ref=e228]:
+        - text: 🔒
+        - strong [ref=e229]: Your information is safe
+        - text: We never ask for passwords, banking details, or personal information.
+      - generic [ref=e230]:
+        - text: 💰
+        - strong [ref=e231]: No registration required
+        - text: Every lesson is open to all. No credit card. No subscription. No catches.
+      - generic [ref=e232]:
+        - text: 🤝
+        - strong [ref=e233]: Go at your own pace
+        - text: No deadlines, no tests, no wrong answers. Come back anytime.
+    - generic [ref=e234]:
+      - text: 💡
+      - strong [ref=e235]: Need help getting started?
+      - text: Call
+      - strong [ref=e236]: Connected Canadians
+      - text: at
+      - link "1-855-808-0505" [ref=e237] [cursor=pointer]:
+        - /url: tel:+18558080505
+      - text: — free, friendly, one-on-one help from a trained volunteer. Funded by the Government of Canada.
+    - heading "Canadian Government Benefits — Are You Getting Everything You're Entitled To?" [level=2] [ref=e238]
+    - paragraph [ref=e239]: Many Canadian seniors are missing government benefits they have already earned. These free guides explain what you qualify for, how to check, and how to apply — in plain language, step by step.
+    - generic [ref=e240]:
+      - link "Guaranteed Income Supplement Up to $1,065/month extra for low-income seniors who receive OAS. Non-taxable. Many eligible seniors have never applied. Includes 11-month back payment rule." [ref=e241] [cursor=pointer]:
+        - /url: resources/gis-guide.html
+        - generic [ref=e242]: 💰
+        - generic [ref=e243]:
+          - heading "Guaranteed Income Supplement" [level=3] [ref=e244]
+          - paragraph [ref=e245]: Up to $1,065/month extra for low-income seniors who receive OAS. Non-taxable. Many eligible seniors have never applied. Includes 11-month back payment rule.
+      - link "Canada Dental Care Plan Free or subsidised dental care for seniors without private insurance and income under $90,000. Millions of eligible Canadians have not yet enrolled." [ref=e246] [cursor=pointer]:
+        - /url: resources/dental-care-guide.html
+        - generic [ref=e247]: 🦷
+        - generic [ref=e248]:
+          - heading "Canada Dental Care Plan" [level=3] [ref=e249]
+          - paragraph [ref=e250]: Free or subsidised dental care for seniors without private insurance and income under $90,000. Millions of eligible Canadians have not yet enrolled.
+      - link "CRA My Account View your tax refund, set up direct deposit, check your RRSP room, and manage your tax file — without calling CRA or waiting on hold." [ref=e251] [cursor=pointer]:
+        - /url: resources/cra-guide.html
+        - generic [ref=e252]: 🍁
+        - generic [ref=e253]:
+          - heading "CRA My Account" [level=3] [ref=e254]
+          - paragraph [ref=e255]: View your tax refund, set up direct deposit, check your RRSP room, and manage your tax file — without calling CRA or waiting on hold.
+      - link "My Service Canada Account Your CPP and OAS payment dates, direct deposit, and T4A tax slips — all online, no hold music required." [ref=e256] [cursor=pointer]:
+        - /url: resources/service-canada-guide.html
+        - generic [ref=e257]: 🇨🇦
+        - generic [ref=e258]:
+          - heading "My Service Canada Account" [level=3] [ref=e259]
+          - paragraph [ref=e260]: Your CPP and OAS payment dates, direct deposit, and T4A tax slips — all online, no hold music required.
+      - link "Ontario Trillium Benefit Up to $1,421/year for eligible Ontario residents — applied for on Schedule ON-BEN of your tax return. Easy to miss, easy to claim retroactively." [ref=e261] [cursor=pointer]:
+        - /url: resources/ontario-trillium-benefit.html
+        - generic [ref=e262]: 🌷
+        - generic [ref=e263]:
+          - heading "Ontario Trillium Benefit" [level=3] [ref=e264]
+          - paragraph [ref=e265]: Up to $1,421/year for eligible Ontario residents — applied for on Schedule ON-BEN of your tax return. Easy to miss, easy to claim retroactively.
+      - link "When to Start CPP Waiting from 65 to 70 adds 42% to your CPP — permanently. Starting at 60 cuts it by 36%. The break-even age and the four factors that drive the decision." [ref=e266] [cursor=pointer]:
+        - /url: resources/cpp-start-date-guide.html
+        - generic [ref=e267]: 📅
+        - generic [ref=e268]:
+          - heading "When to Start CPP" [level=3] [ref=e269]
+          - paragraph [ref=e270]: Waiting from 65 to 70 adds 42% to your CPP — permanently. Starting at 60 cuts it by 36%. The break-even age and the four factors that drive the decision.
+      - link "ServiceOntario Online Renew your Ontario health card and driver's licence from home in 15 minutes — no office visit, no lineup." [ref=e271] [cursor=pointer]:
+        - /url: resources/serviceontario-guide.html
+        - generic [ref=e272]: 🏛️
+        - generic [ref=e273]:
+          - heading "ServiceOntario Online" [level=3] [ref=e274]
+          - paragraph [ref=e275]: Renew your Ontario health card and driver's licence from home in 15 minutes — no office visit, no lineup.
+    - paragraph [ref=e276]:
+      - link "→ See all 27 Canadian benefits and financial guides" [ref=e277] [cursor=pointer]:
+        - /url: resources/index.html
+      - text: — GIS, RDSP, CPP, OAS, ODB, GST/HST Credit, CPP Survivor's Pension, Allowance, and more
+    - heading "New — Understanding AI" [level=2] [ref=e278]
+    - paragraph [ref=e279]: AI tools are already on your phone, at your doctor's office, and in your email. This free module explains what they actually do, when they help, and how to stay safe — including the 3-Second Rule for avoiding scams.
+    - link "What Is AI, Really? — Adults 55+ Plain-language guide to AI tools — what they do, three real stories of AI helping Canadians, the 3-Second Rule for staying safe, and how to spot an AI-generated voice or image. Includes a before and after knowledge check. ⏱ 30–40 minutes · No login · Works on any device" [ref=e281] [cursor=pointer]:
+      - /url: module-ai-literacy.html
+      - generic [ref=e282]: 🤖
+      - generic [ref=e283]:
+        - heading "What Is AI, Really? — Adults 55+" [level=3] [ref=e284]
+        - paragraph [ref=e285]: Plain-language guide to AI tools — what they do, three real stories of AI helping Canadians, the 3-Second Rule for staying safe, and how to spot an AI-generated voice or image. Includes a before and after knowledge check.
+        - paragraph [ref=e286]: ⏱ 30–40 minutes · No login · Works on any device
+    - heading "More Tools for You" [level=2] [ref=e287]
+    - generic [ref=e288]:
+      - link "Local Resources for Your Province Local tech help, phone numbers, community centres, and free programs in your area. Select your province for local resources." [ref=e289] [cursor=pointer]:
+        - /url: resources.html
+        - generic [ref=e290]: 📚
+        - generic [ref=e291]:
+          - heading "Local Resources for Your Province" [level=3] [ref=e292]
+          - paragraph [ref=e293]: Local tech help, phone numbers, community centres, and free programs in your area. Select your province for local resources.
+      - link "Scam Simulator Practice spotting scams in a safe environment. Interactive quizzes with real-world examples — no risk, all learning." [ref=e294] [cursor=pointer]:
+        - /url: scam-simulator.html
+        - generic [ref=e295]: 🎯
+        - generic [ref=e296]:
+          - heading "Scam Simulator" [level=3] [ref=e297]
+          - paragraph [ref=e298]: Practice spotting scams in a safe environment. Interactive quizzes with real-world examples — no risk, all learning.
+      - link "Setting This Up for Someone You Love? If you are a family member or caregiver helping a senior get started, this page walks you through a quick 10-minute setup so they can start learning right away." [ref=e299] [cursor=pointer]:
+        - /url: family-setup.html
+        - generic [ref=e300]: 👪
+        - generic [ref=e301]:
+          - heading "Setting This Up for Someone You Love?" [level=3] [ref=e302]
+          - paragraph [ref=e303]: If you are a family member or caregiver helping a senior get started, this page walks you through a quick 10-minute setup so they can start learning right away.
+      - link "DCC Kids — For Children Aged 4 to 15 Free, caregiver-led digital literacy activities for children and grandchildren. Offline activities backed by research — no screens required, no account needed." [ref=e304] [cursor=pointer]:
+        - /url: kids/
+        - generic [ref=e305]: 🧒
+        - generic [ref=e306]:
+          - heading "DCC Kids — For Children Aged 4 to 15" [level=3] [ref=e307]
+          - paragraph [ref=e308]: Free, caregiver-led digital literacy activities for children and grandchildren. Offline activities backed by research — no screens required, no account needed.
+    - heading "Helpful Podcasts" [level=2] [ref=e309]
+    - paragraph [ref=e310]: These shows are made for people like you. Listen on your iPad while having your morning coffee.
+    - generic [ref=e311]:
+      - generic [ref=e312]: 🎙️
+      - generic [ref=e313]:
+        - heading "Seniors Tech Talk" [level=3] [ref=e314]
+        - paragraph [ref=e315]: Weekly conversations about technology topics that matter to older adults, explained without jargon.
+        - generic [ref=e316]:
+          - link "🎙️ Apple Podcasts" [ref=e317] [cursor=pointer]:
+            - /url: https://podcasts.apple.com/search?term=seniors+tech+talk
+          - link "🎵 Spotify" [ref=e318] [cursor=pointer]:
+            - /url: https://open.spotify.com/search/seniors+tech+talk
+          - link "▶️ YouTube" [ref=e319] [cursor=pointer]:
+            - /url: https://www.youtube.com/results?search_query=seniors+tech+talk+podcast
+        - paragraph [ref=e320]: All platforms are free. Spotify and YouTube do not require an account to listen.
+        - group [ref=e321]:
+          - generic "▶ How to find this podcast on your device" [ref=e322] [cursor=pointer]
+    - generic [ref=e323]:
+      - generic [ref=e324]: 🎙️
+      - generic [ref=e325]:
+        - heading "Digital Savvy Seniors" [level=3] [ref=e326]
+        - paragraph [ref=e327]: Tips and tricks for getting the most out of your devices, from online safety to fun apps.
+        - generic [ref=e328]:
+          - link "🎙️ Apple Podcasts" [ref=e329] [cursor=pointer]:
+            - /url: https://podcasts.apple.com/search?term=digital+savvy+seniors
+          - link "🎵 Spotify" [ref=e330] [cursor=pointer]:
+            - /url: https://open.spotify.com/search/digital+savvy+seniors
+          - link "▶️ YouTube" [ref=e331] [cursor=pointer]:
+            - /url: https://www.youtube.com/results?search_query=digital+savvy+seniors+podcast
+        - paragraph [ref=e332]: All platforms are free. Spotify and YouTube do not require an account to listen.
+        - group [ref=e333]:
+          - generic "▶ How to find this podcast on your device" [ref=e334] [cursor=pointer]
+    - generic [ref=e335]:
+      - generic [ref=e336]: 🎙️
+      - generic [ref=e337]:
+        - heading "Tech Tips for Seniors" [level=3] [ref=e338]
+        - paragraph [ref=e339]: Short, focused episodes that tackle one topic at a time. Great for learning something new in ten minutes or less.
+        - generic [ref=e340]:
+          - link "🎙️ Apple Podcasts" [ref=e341] [cursor=pointer]:
+            - /url: https://podcasts.apple.com/search?term=tech+tips+for+seniors
+          - link "🎵 Spotify" [ref=e342] [cursor=pointer]:
+            - /url: https://open.spotify.com/search/tech+tips+for+seniors
+          - link "▶️ YouTube" [ref=e343] [cursor=pointer]:
+            - /url: https://www.youtube.com/results?search_query=tech+tips+for+seniors+podcast
+        - paragraph [ref=e344]: All platforms are free. Spotify and YouTube do not require an account to listen.
+        - group [ref=e345]:
+          - generic "▶ How to find this podcast on your device" [ref=e346] [cursor=pointer]
+    - generic [ref=e347]:
+      - generic [ref=e348]: 💛
+      - paragraph [ref=e349]: You have already taken the most important step — you are here, and you are learning.
+      - paragraph [ref=e350]: Pick any module above and begin at your own pace. There is no rush, and you cannot make a mistake.
+    - generic [ref=e352]:
+      - paragraph [ref=e353]: 📬 Stay in the Loop
+      - paragraph [ref=e354]: Would you like us to let you know when new lessons are added? We will never share your email, never send spam, and you can unsubscribe anytime with one click.
+      - generic [ref=e355]:
+        - generic [ref=e356]: Your email address
+        - textbox "Your email address" [ref=e357]:
+          - /placeholder: Your email address (optional)
+        - button "Yes, keep me posted" [ref=e358] [cursor=pointer]
+      - button "No thank you" [ref=e359] [cursor=pointer]
+    - region "What people are saying" [ref=e360]:
+      - heading "What people are saying" [level=2] [ref=e361]
+      - generic [ref=e362]:
+        - generic [ref=e363]:
+          - generic "Five stars" [ref=e364]: ★★★★★
+          - blockquote [ref=e365]: "\"I almost fell for a phone call pretending to be the CRA last spring. After going through the scam awareness module, I knew exactly what to do — I hung up and called my son. This programme may have saved me thousands of dollars.\""
+          - paragraph [ref=e366]: Margaret T., age 73
+          - paragraph [ref=e367]: London, Ontario
+        - generic [ref=e368]:
+          - generic "Five stars" [ref=e369]: ★★★★★
+          - blockquote [ref=e370]: "\"I was nervous about video calling but the instructions were so clear and patient. Now I FaceTime with my grandchildren every Sunday. It feels like they live next door instead of across the country.\""
+          - paragraph [ref=e371]: Robert K., retired teacher, age 68
+          - paragraph [ref=e372]: St. Thomas, Ontario
+        - generic [ref=e373]:
+          - generic "Five stars" [ref=e374]: ★★★★★
+          - blockquote [ref=e375]: "\"I set my mum up with this site and she worked through it herself, at her own pace. Three weeks later she sent me an e-Transfer for the first time. I couldn't believe it. She's 77 and more confident with her iPad than ever.\""
+          - paragraph [ref=e376]: David M., age 45
+          - paragraph [ref=e377]: Toronto, Ontario
+        - generic [ref=e378]:
+          - generic "Five stars" [ref=e379]: ★★★★★
+          - blockquote [ref=e380]: "\"We've started recommending Digital Confidence Centre to patrons who come in for our tech help sessions. It fills a real gap — something they can use at home between visits, in plain language, without talking down to them.\""
+          - paragraph [ref=e381]: Linda P., Digital Programmes Coordinator, age 52
+          - paragraph [ref=e382]: Southwestern Ontario
+      - paragraph [ref=e383]: Testimonials are illustrative. Real beta tester feedback coming soon.
+    - region "AI & Digital Safety in the News" [ref=e384]:
+      - heading "AI & Digital Safety in the News" [level=2] [ref=e385]
+      - list [ref=e386]:
+        - listitem [ref=e387]:
+          - link "Here's why you don’t need to worry about a 'super' El Niño — yet" [ref=e388] [cursor=pointer]:
+            - /url: https://www.cbc.ca/news/science/el-nino-worry-9.7198199?cmp=rss
+          - generic [ref=e389]: May 14, 2026
+        - listitem [ref=e390]:
+          - link "Canadian-developed technology helps new telescope probe mysteries of the cosmos" [ref=e391] [cursor=pointer]:
+            - /url: https://www.cbc.ca/news/canada/nova-scotia/space-nova-scotia-science-9.7199604?cmp=rss
+          - generic [ref=e392]: May 14, 2026
+        - listitem [ref=e393]:
+          - link "Artemis II crew gets hero's welcome at Canadian Space Agency in Quebec" [ref=e394] [cursor=pointer]:
+            - /url: https://www.cbc.ca/news/canada/montreal/artemis-ii-crew-canadian-space-agency-headquarters-quebec-9.7199752?cmp=rss
+          - generic [ref=e395]: May 14, 2026
+        - listitem [ref=e396]:
+          - link "There are many questions about why a coyote swam to Alcatraz. One theory? It was looking for love" [ref=e397] [cursor=pointer]:
+            - /url: https://www.cbc.ca/radio/asithappens/coyote-alcatraz-long-swim-9.7198440?cmp=rss
+          - generic [ref=e398]: May 13, 2026
+        - listitem [ref=e399]:
+          - link "Biocontrol facility takes aim at invasive insect threatening forest" [ref=e400] [cursor=pointer]:
+            - /url: https://www.cbc.ca/player/play/9.7198661?cmp=rss
+          - generic [ref=e401]: May 14, 2026
+      - paragraph [ref=e402]: "Source: CBC Technology • Updated daily"
+    - generic [ref=e404]:
+      - heading "Know a senior who could benefit?" [level=2] [ref=e405]
+      - paragraph [ref=e406]: The Digital Confidence Centre is completely free. Share it with a friend, neighbour, or family member who uses an iPad or smartphone.
+      - link "✉ Send this link by email" [ref=e408] [cursor=pointer]:
+        - /url: mailto:?subject=A%20free%20digital%20learning%20programme%20for%20seniors&body=Hi%2C%0A%0AI%20wanted%20to%20share%20something%20I%20found%20that%20you%20might%20find%20really%20helpful.%0A%0AThe%20Digital%20Confidence%20Centre%20is%20a%20free%20online%20learning%20programme%20for%20Canadian%20seniors.%20It%20covers%20everything%20from%20staying%20safe%20from%20scams%20to%20using%20apps%20and%20video%20calls.%20No%20sign-up%20needed.%0A%0AYou%20can%20visit%20it%20here%3A%20https%3A%2F%2Fdigitalconfidencecentre.ca%0A%0AHope%20you%20find%20it%20useful!
+      - paragraph [ref=e409]: "Or copy the address: digitalconfidencecentre.ca"
+    - generic [ref=e411]:
+      - paragraph [ref=e412]: Digital Confidence Centre
+      - paragraph [ref=e413]: A free digital learning programme for all Canadians
+      - navigation "Footer navigation" [ref=e414]:
+        - link "Home" [ref=e415] [cursor=pointer]:
+          - /url: index.html
+        - text: "|"
+        - link "Modules" [ref=e416] [cursor=pointer]:
+          - /url: digital-literacy-101.html
+        - text: "|"
+        - link "Resources" [ref=e417] [cursor=pointer]:
+          - /url: resources.html
+        - text: "|"
+        - link "Newsletter" [ref=e418] [cursor=pointer]:
+          - /url: tips/index.html
+        - text: "|"
+        - link "Print Centre" [ref=e419] [cursor=pointer]:
+          - /url: print-centre.html
+        - text: "|"
+        - link "Recommended Tools" [ref=e420] [cursor=pointer]:
+          - /url: recommended-tools.html
+        - text: "|"
+        - link "FAQ" [ref=e421] [cursor=pointer]:
+          - /url: faq.html
+        - text: "|"
+        - link "Glossary" [ref=e422] [cursor=pointer]:
+          - /url: glossary.html
+        - text: "|"
+        - link "What's Coming" [ref=e423] [cursor=pointer]:
+          - /url: whats-coming.html
+        - text: "|"
+        - link "For Families" [ref=e424] [cursor=pointer]:
+          - /url: family-setup.html
+        - text: "|"
+        - link "DCC Kids" [ref=e425] [cursor=pointer]:
+          - /url: kids/
+        - text: "|"
+        - link "DCC Family" [ref=e426] [cursor=pointer]:
+          - /url: family.html
+        - text: "|"
+        - link "About" [ref=e427] [cursor=pointer]:
+          - /url: about.html
+        - text: "|"
+        - link "Accessibility" [ref=e428] [cursor=pointer]:
+          - /url: accessibility.html
+        - text: "|"
+        - link "Accessibility Settings" [ref=e429] [cursor=pointer]:
+          - /url: accessibility/settings.html
+        - text: "|"
+        - link "Site Map" [ref=e430] [cursor=pointer]:
+          - /url: sitemap-page.html
+        - text: "|"
+        - link "Privacy Policy" [ref=e431] [cursor=pointer]:
+          - /url: privacy.html
+        - text: "|"
+        - link "Ideas & Feedback" [ref=e432] [cursor=pointer]:
+          - /url: "#"
+        - text: "|"
+        - link "Join Our Beta" [ref=e433] [cursor=pointer]:
+          - /url: beta/beta-landing.html
+        - text: "|"
+        - link "For Organisations" [ref=e434] [cursor=pointer]:
+          - /url: b2b/index.html
+        - text: "|"
+        - link "Scam Alerts" [ref=e435] [cursor=pointer]:
+          - /url: scam-alerts/
+        - text: "|"
+        - link "Get Help" [ref=e436] [cursor=pointer]:
+          - /url: resources/support-directory.html
+      - paragraph [ref=e437]: Questions about this site? Leave us a voice message or written note using the Feedback button.
+      - paragraph [ref=e438]: "© 2026 Two Birds Innovation. Made with care in Ontario, Canada. • Last updated: March 2026 • DCC v2.0 — March 2026"
+      - paragraph [ref=e439]:
+        - text: "Showing resources for:"
+        - strong [ref=e440]: Windsor
+        - text: ·
+        - link "Change" [ref=e441] [cursor=pointer]:
+          - /url: "#"
+  - dialog "Getting started" [ref=e443]:
+    - generic [ref=e444]:
+      - paragraph [ref=e445]: Step 1 / 4
+      - heading "Welcome to Digital Confidence Centre" [level=1] [ref=e446]
+      - paragraph [ref=e447]: This free site helps you feel safe and confident with your phone, tablet, and computer.
+      - paragraph [ref=e448]: What brings you here today?
+      - button "I want to feel safer online" [ref=e449] [cursor=pointer]:
+        - generic [ref=e450]: 🛡️
+        - generic [ref=e451]: I want to feel safer online
+      - button "I want to connect with family" [ref=e452] [cursor=pointer]:
+        - generic [ref=e453]: 👨‍👩‍👧
+        - generic [ref=e454]: I want to connect with family
+      - button "Someone set this up for me" [ref=e455] [cursor=pointer]:
+        - generic [ref=e456]: 📱
+        - generic [ref=e457]: Someone set this up for me
+    - button "Skip setup — browse now" [ref=e458] [cursor=pointer]
+  - button "Open help menu" [ref=e460] [cursor=pointer]: "? Help"
+  - dialog "Analytics consent" [ref=e461]:
+    - generic [ref=e462]:
+      - paragraph [ref=e463]:
+        - text: We use analytics to understand how people use this site and improve it. No personal information is collected.
+        - link "Learn more" [ref=e464] [cursor=pointer]:
+          - /url: privacy.html
+      - generic [ref=e465]:
+        - button "OK, got it" [ref=e466] [cursor=pointer]
+        - button "No thanks" [ref=e467] [cursor=pointer]
+  - status [ref=e468]
+  - dialog "Setup wizard" [ref=e469]:
+    - generic [ref=e470]:
+      - group "Wizard progress" [ref=e471]
+      - generic [ref=e477]:
+        - heading "Let Us Personalise Your Experience" [level=2] [ref=e478]
+        - paragraph [ref=e479]: We would like to show you local resources — such as libraries, senior centres, and Apple Stores — that are closest to you. Your choice is stored only on this device and is never sent anywhere.
+        - heading "Where do you live?" [level=3] [ref=e480]
+        - combobox "Select your city" [active] [ref=e481] [cursor=pointer]:
+          - option "-- Choose your city --" [selected]
+          - option "Windsor"
+          - option "London"
+          - option "St. Thomas"
+          - option "Woodstock"
+          - option "Kitchener"
+        - button "Use my location to suggest a city" [ref=e482] [cursor=pointer]
+      - button "Continue" [ref=e484] [cursor=pointer]: Next
+  - button "Share ideas or feedback" [ref=e485] [cursor=pointer]:
+    - generic [ref=e486]: 💬
+    - generic [ref=e487]: Ideas & Feedback
+    - generic [ref=e488]: Feedback
