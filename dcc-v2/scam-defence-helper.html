@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow"><!-- v2 preview — remove before launch -->
+  <script>
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Help a friend spot a scam — Digital Confidence Centre</title>
+  <meta name="description" content="Practise spotting real Canadian scams by helping Margaret, a pretend friend. Nothing is real, nothing can break, no account needed.">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/core.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- Focus-mode header: slimmer, but help controls in the SAME position as home (SC 3.2.6) -->
+<header class="site-header focus-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span aria-hidden="true">🏠</span> Home</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <div class="header-tools">
+      <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="focus-main">
+
+  <nav class="breadcrumbs" aria-label="You are here">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#lessons">Online safety</a></li>
+      <li><span aria-current="page">Helping someone spot a scam</span></li>
+    </ol>
+  </nav>
+
+  <p class="reassurance"><span aria-hidden="true">✅</span> Nothing on this page can harm your device.</p>
+
+  <h1>Help Margaret spot the scam</h1>
+  <p class="lead">Margaret is a pretend friend — she isn't real, and neither are her messages. She's just received a text and isn't sure about it. Sit beside her and help her decide. Helping someone else is the fastest way to build your own confidence.</p>
+
+  <section class="small-wins" aria-label="Your progress on this lesson">
+    <p class="sw-label"><span>Your small wins on this lesson</span> <span data-sw-count="helper-scam">0 of 3</span></p>
+    <div class="sw-track" role="progressbar" aria-label="Lesson progress" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" id="sw-bar">
+      <div class="sw-fill" data-sw-fill="helper-scam"></div>
+    </div>
+    <p style="margin: var(--space-2) 0 0; font-size: var(--font-size-sm);">Saved on this device only — no account, and it's fine to stop and come back later.</p>
+  </section>
+
+  <!-- Device — optional, auto-detected, never a gate (locked brief §3) -->
+  <section class="focus-step-card" aria-labelledby="dev-h">
+    <p class="step-kicker">Before we start — optional</p>
+    <h2 id="dev-h"><span aria-hidden="true">📱</span> Margaret uses the same kind of device as you</h2>
+    <p>We've taken a quiet guess at your device, so her screen looks like yours and the buttons are where you'd expect. You can change it — or not. Either way is fine.</p>
+    <div class="device-pick" id="devPick" role="group" aria-label="Choose a device, if you like">
+      <button type="button" data-dev="iphone">iPhone</button>
+      <button type="button" data-dev="android">Android phone</button>
+      <button type="button" data-dev="windows">Windows computer</button>
+      <button type="button" data-dev="mac">Mac computer</button>
+      <button type="button" data-dev="unknown">I don't know — I just have a phone</button>
+    </div>
+  </section>
+
+  <!-- Practice 1 — advise Margaret -->
+  <section class="focus-step-card" aria-labelledby="p1-h">
+    <p class="step-kicker">Practice 1 of 3 — What should she do?</p>
+    <h2 id="p1-h"><span aria-hidden="true">💬</span> Margaret shows you her phone</h2>
+    <p>"This just arrived," she says. "It looks like it's from the tax people. Should I tap it?" Here is exactly what she's looking at:</p>
+
+    <div class="sim-frame">
+      <p class="sim-tag"><span aria-hidden="true">🎭</span> Practice screen — this is pretend, not a real message</p>
+      <div id="scenarioMount"></div>
+    </div>
+
+    <p><strong>What would you tell Margaret?</strong> There's no wrong answer here — this is practice, and you can try all three.</p>
+    <div class="choices" id="choices" role="group" aria-label="Your advice to Margaret">
+      <button type="button" data-safe="false">"Tap the link, just to check if you really have a refund."</button>
+      <button type="button" data-safe="true">"Don't tap anything. If it's real, the CRA will have it in your online account — go there yourself, the way you normally would."</button>
+      <button type="button" data-safe="true">"Delete it. And if you're still worried, phone someone you trust — or the CRA's real number."</button>
+    </div>
+    <div class="feedback" id="fb1" role="alert" tabindex="-1"></div>
+  </section>
+
+  <!-- Practice 2 — sandbox inbox -->
+  <section class="focus-step-card" aria-labelledby="p2-h">
+    <p class="step-kicker">Practice 2 of 3 — Find it for her</p>
+    <h2 id="p2-h"><span aria-hidden="true">📥</span> Margaret's inbox — one of these is a scam</h2>
+    <p>Margaret opens her email and asks, "Are any of these ones bad?" This inbox is make-believe. <strong>Nothing here is real and nothing can break.</strong> Two are ordinary emails. One is a scam. Tap the one you'd warn her about.</p>
+    <div class="sim-frame">
+      <p class="sim-tag"><span aria-hidden="true">🎭</span> Practice screen — a pretend inbox</p>
+      <div class="inbox" id="inbox"></div>
+    </div>
+    <div class="feedback" id="fb2" role="status" tabindex="-1"></div>
+  </section>
+
+  <!-- Practice 3 — say it kindly -->
+  <section class="focus-step-card" aria-labelledby="p3-h">
+    <p class="step-kicker">Practice 3 of 3 — Say it kindly</p>
+    <h2 id="p3-h"><span aria-hidden="true">🤝</span> Margaret feels embarrassed she almost tapped it</h2>
+    <p>She says, "I feel so foolish." How would you reassure her? Pick the one that sounds most like you — they're all good answers.</p>
+    <div class="choices" id="choices3" role="group" aria-label="Your reassurance to Margaret">
+      <button type="button">"You're not foolish. These messages are designed by professionals to fool everyone — you did the right thing by pausing and asking."</button>
+      <button type="button">"I nearly tapped it too. The trick that saves us both: never use their link — always go to the website ourselves."</button>
+      <button type="button">"Asking someone is exactly what the experts recommend. You handled this well."</button>
+    </div>
+    <div class="feedback" id="fb3" role="status" tabindex="-1"></div>
+  </section>
+
+  <!-- Effort-based confidence badge — adult, no cartoon rewards -->
+  <section class="confidence-badge" id="badge" aria-live="polite">
+    <span class="badge-mark" aria-hidden="true">✓</span>
+    <p><strong>Confidence earned: Scam Helper.</strong> You just talked a friend through a scam — which means you can spot one yourself. That instinct to pause and check is the whole skill. It's yours now.</p>
+  </section>
+
+  <div class="tip-block">
+    <span class="block-label"><span aria-hidden="true">💡</span> Take it into real life</span>
+    <p style="margin:0;">The next time family visits, show them this practice — or send the link to a grandchild and try it together. Teaching someone is the best way to keep the skill sharp.</p>
+  </div>
+
+  <div class="helper-note">
+    <span class="block-label"><span aria-hidden="true">🖨</span> Helping a real person with this?</span>
+    <p>Sit beside them and go through it together, print this page for the kitchen table, or send them just this lesson.</p>
+    <button class="btn btn-secondary" type="button" onclick="window.print()">Print this lesson</button>
+    <button class="btn btn-secondary" type="button" id="shareBtn">Copy the link</button>
+    <span id="shareMsg" role="status" style="font-family: var(--font-heading); font-size: var(--font-size-sm); margin-left: var(--space-2);"></span>
+  </div>
+
+  <nav class="focus-nav" aria-label="Lesson navigation">
+    <a class="btn btn-secondary" href="index.html">← Back to all lessons</a>
+    <a class="btn btn-primary" href="index.html#lessons">Choose your next lesson →</a>
+  </nav>
+
+  <p class="scope-note" style="color: var(--color-text-light); font-size: var(--font-size-sm); margin-top: var(--space-8);">Note: plain-language safety tips, not legal advice. If you suspect a real scam, contact your bank directly, or call the Canadian Anti-Fraud Centre at 1-888-495-8501.</p>
+
+</main>
+
+<script src="js/dcc.js"></script>
+<script>
+(function () {
+  "use strict";
+  var TOTAL = 3, KEY = "helper-scam";
+
+  /* ---------- device: quiet auto-detect, always overridable ---------------- */
+  function detect() {
+    var u = navigator.userAgent || "";
+    if (/iPhone|iPod/.test(u)) return "iphone";
+    if (/Android/.test(u)) return "android";
+    if (/Macintosh/.test(u)) return "mac";
+    if (/Windows/.test(u)) return "windows";
+    return "unknown";
+  }
+  var APP = { iphone: "Messages", android: "Messages", windows: "Gmail", mac: "Mail", unknown: "Messages" };
+
+  function scenarioHTML(dev) {
+    var isPhone = (dev === "iphone" || dev === "android" || dev === "unknown");
+    var body = "Canada Revenue Agency: You have a refund of $472.10 pending. Confirm your details within 24 hours to receive payment: cra-refund-secure.com/verify";
+    if (isPhone) {
+      var time = dev === "iphone" ? "now" : "9:47 AM";
+      return '<div class="phone"><div class="screen">'
+        + '<div class="bar"><span>‹ ' + APP[dev] + '</span><span>' + time + '</span></div>'
+        + '<div class="msg"><p class="sender">Unknown number • +1 (438) 555-0113</p>'
+        + '<div class="bubble">' + body + '</div></div>'
+        + '</div></div>';
+    }
+    return '<div class="desktop"><div class="topbar">📧 ' + APP[dev] + ' — Inbox</div>'
+      + '<div class="mailbody">'
+      + '<p class="sender"><b>Canada Revenue Agency</b> &lt;refunds@cra-refund-secure.com&gt;</p>'
+      + '<p style="margin:.3em 0"><b>Subject:</b> Your refund of $472.10 is pending</p>'
+      + '<div class="bubble">' + body + '</div></div></div>';
+  }
+
+  function applyDevice(dev) {
+    document.getElementById("scenarioMount").innerHTML = scenarioHTML(dev);
+    Array.prototype.forEach.call(document.querySelectorAll("#devPick button"), function (b) {
+      b.setAttribute("aria-pressed", b.dataset.dev === dev ? "true" : "false");
+    });
+  }
+  document.getElementById("devPick").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (b) applyDevice(b.dataset.dev);
+  });
+  applyDevice(detect());
+
+  /* ---------- progress helpers --------------------------------------------- */
+  function win(step) {
+    var n = window.DCC.winStep(KEY, step, TOTAL);
+    var bar = document.getElementById("sw-bar");
+    if (bar) bar.setAttribute("aria-valuenow", n);
+    if (n >= TOTAL) document.getElementById("badge").classList.add("earned");
+  }
+  // Restore on load (return visits)
+  (function () {
+    var n = window.DCC.smallWins(KEY, TOTAL);
+    var bar = document.getElementById("sw-bar");
+    if (bar) bar.setAttribute("aria-valuenow", n);
+    if (n >= TOTAL) document.getElementById("badge").classList.add("earned");
+  })();
+
+  /* ---------- Practice 1 — advise Margaret --------------------------------- */
+  document.getElementById("choices").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    var safe = b.dataset.safe === "true";
+    var fb = document.getElementById("fb1");
+    fb.className = "feedback show " + (safe ? "good" : "risky");
+    fb.innerHTML = safe
+      ? "<h3>✅ That's exactly what Margaret needed to hear.</h3><p>The CRA never texts or emails a link to claim a refund. By telling her to go to the CRA herself — the way she normally would — you've made the fake link useless. You just protected her.</p><p>The tell: a real refund never arrives as a surprise link with a countdown. Urgency (\"within 24 hours\") is the scammer's tool.</p>"
+      : "<h3>Let's pause — no harm done, this is practice.</h3><p>Tapping the link is what the scammers are hoping Margaret will do. That web address (<strong>cra-refund-secure.com</strong>) is not the real CRA. The advice that keeps her safe: never use the link in the message — go to the CRA yourself.</p><p>Try the other answers too. Nothing here is real — this is the safe place to get it wrong.</p>";
+    fb.focus();
+    win("advise"); // effort-based: attempting counts
+  });
+
+  /* ---------- Practice 2 — pretend inbox ----------------------------------- */
+  var MAILS = [
+    { from: "Elgin Library", sub: "Your hold 'The Thursday Murder Club' is ready", scam: false },
+    { from: "SERVICE-CANADA", sub: "⚠ Your SIN is suspended. Verify now: sin-verify-gc.info", scam: true },
+    { from: "Sobeys", sub: "Your points balance this month", scam: false }
+  ];
+  var inbox = document.getElementById("inbox");
+  var solved = false;
+  MAILS.forEach(function (m) {
+    var row = document.createElement("button");
+    row.type = "button";
+    row.className = "mailrow";
+    row.innerHTML = '<span><span class="mfrom">' + m.from + '</span><br><span class="msub">' + m.sub + '</span></span>';
+    row.addEventListener("click", function () {
+      if (solved) return;
+      var fb = document.getElementById("fb2");
+      if (m.scam) {
+        solved = true;
+        row.classList.add("done");
+        fb.className = "feedback show good";
+        fb.innerHTML = "<h3>✅ You found it — and Margaret deletes it.</h3><p>Government agencies don't suspend your SIN by email, and never use an odd address like <strong>sin-verify-gc.info</strong>. Real Government of Canada sites end in <strong>.gc.ca</strong>. Well spotted.</p>";
+        win("inbox");
+      } else {
+        fb.className = "feedback show risky";
+        fb.innerHTML = "<p style='margin:0'>That one's actually fine — an ordinary email. Look again for the one pushing Margaret to act <strong>now</strong>, with a strange web address.</p>";
+      }
+      fb.focus();
+    });
+    inbox.appendChild(row);
+  });
+
+  /* ---------- Practice 3 — say it kindly ------------------------------------ */
+  document.getElementById("choices3").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    Array.prototype.forEach.call(document.querySelectorAll("#choices3 button"), function (x) {
+      x.setAttribute("aria-pressed", x === b ? "true" : "false");
+    });
+    var fb = document.getElementById("fb3");
+    fb.className = "feedback show good";
+    fb.innerHTML = "<h3>✅ That's a kind, true thing to say.</h3><p>Notice what you just did: you knew the safe habit, and you passed it on without making anyone feel small. That's exactly how this knowledge spreads — neighbour to neighbour.</p>";
+    fb.focus();
+    win("reassure");
+  });
+
+  /* ---------- share ---------------------------------------------------------- */
+  document.getElementById("shareBtn").addEventListener("click", function () {
+    var msg = document.getElementById("shareMsg");
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(location.href).then(function () { msg.textContent = "Link copied."; });
+    } else {
+      msg.textContent = location.href;
+    }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow"><!-- v2 preview — remove before launch -->
+  <script>
+    // Theme + text size before first paint (no flash). Local only — no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Digital Confidence Centre — Free digital learning for Canadian seniors</title>
+  <meta name="description" content="Free, plain-language lessons that help Canadian seniors use technology safely and confidently. No account needed. A community initiative by Two Birds Innovation.">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/core.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <div class="header-tools">
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="container">
+      <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
+      <h1 id="hero-h">Feel confident with your phone, tablet, or computer — one small step at a time</h1>
+      <p class="lead">Plain-language lessons for Canadian seniors. Go at your own pace, stop whenever you like, and come back any time. You never need an account, and nothing here costs money.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="scam-defence-helper.html">Try a 5-minute lesson (no account needed)</a>
+        <a class="btn btn-secondary" href="#lessons">See all the lessons</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- Who pays — "free" framed by funding, never "forever" (locked brief §3) -->
+    <aside class="who-pays" aria-label="Why this is free">
+      <p><span class="who-pays-title">Why is this free?</span>
+      The Digital Confidence Centre is a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. There are no fees, no ads, and no sales calls. We never sell your personal information.</p>
+    </aside>
+
+    <!-- Small Wins — appears only once you have some (no-login progress) -->
+    <section class="small-wins" id="home-wins" hidden aria-label="Your progress">
+      <p class="sw-label"><span>Your small wins so far</span> <span id="home-wins-count"></span></p>
+      <p style="margin:0; font-size: var(--font-size-sm);">Saved on this device only. No account, ever.</p>
+    </section>
+
+    <!--
+      AARON DECISION NEEDED — GUIDE PERSONA ("Tech Concierge")
+      The named, photographed human guide is scaffolded below with a [NAME]
+      placeholder and an emoji photo placeholder. Aaron picks the final name,
+      persona, and photograph. Do not ship with the placeholder.
+    -->
+    <section class="guide-block" aria-labelledby="guide-h">
+      <div class="guide-photo" aria-hidden="true">👋</div>
+      <blockquote>
+        <h2 id="guide-h" style="font-size: var(--font-size-h3); margin-bottom: var(--space-2);">A real person is behind every lesson</h2>
+        <p style="margin:0;">"Hello — I'm here to walk you through things the way a good neighbour would. No jargon, no rushing, and no such thing as a silly question."</p>
+        <span class="guide-name">Your guide, [NAME] — placeholder, final persona to be chosen</span>
+      </blockquote>
+    </section>
+
+    <h2 id="lessons">Choose a topic</h2>
+    <p>Every card tells you how long it takes. Most people start with the first one.</p>
+
+    <ul class="card-grid">
+      <li class="topic-card card-flagship">
+        <span class="flagship-tag">Start here — our most popular practice</span>
+        <span class="card-icon" aria-hidden="true">🤝</span>
+        <h3><a href="scam-defence-helper.html">Help a friend spot a scam</a></h3>
+        <p>Margaret just got a suspicious text. Sit beside her and help her decide what to do. Practising as the helper is the fastest way to build your own confidence.</p>
+        <span class="ttc"><span aria-hidden="true">⏱</span> 5 minutes to your first win</span>
+      </li>
+      <li class="topic-card">
+        <span class="card-icon" aria-hidden="true">🪂</span>
+        <h3><a href="../module-1.html">The Escape Hatch</a></h3>
+        <p>The one skill that fixes most tech trouble: how to safely back out of anything on your device.</p>
+        <span class="ttc"><span aria-hidden="true">⏱</span> 10 minutes to feel in control</span>
+      </li>
+      <li class="topic-card">
+        <span class="card-icon" aria-hidden="true">🔑</span>
+        <h3><a href="../module-3.html">Passwords, made manageable</a></h3>
+        <p>Strong passwords you can actually remember — and what to do if you forget one.</p>
+        <span class="ttc"><span aria-hidden="true">⏱</span> 12 minutes to safer accounts</span>
+      </li>
+      <li class="topic-card">
+        <span class="card-icon" aria-hidden="true">👨‍👩‍👧</span>
+        <h3><a href="../module-8.html">Video calls with family</a></h3>
+        <p>See your grandchildren's faces, not just hear their voices. Step by step, on your device.</p>
+        <span class="ttc"><span aria-hidden="true">⏱</span> 8 minutes to learn video calls</span>
+      </li>
+      <li class="topic-card">
+        <span class="card-icon" aria-hidden="true">🏦</span>
+        <h3><a href="../module-6.html">Online banking, safely</a></h3>
+        <p>Check your balance and pay bills from your kitchen table — with the safety habits that protect your money.</p>
+        <span class="ttc"><span aria-hidden="true">⏱</span> 15 minutes to banking confidence</span>
+      </li>
+      <li class="topic-card">
+        <span class="card-icon" aria-hidden="true">✉️</span>
+        <h3><a href="../module-27-inbox-spam.html">Tame your inbox</a></h3>
+        <p>Sort the real mail from the junk, and stop spam from crowding out your family's messages.</p>
+        <span class="ttc"><span aria-hidden="true">⏱</span> 10 minutes to a calmer inbox</span>
+      </li>
+      <li class="topic-card">
+        <span class="card-icon" aria-hidden="true">🤖</span>
+        <h3><a href="../module-9.html">Understanding AI</a></h3>
+        <p>What AI actually is, what it is good for, and how to tell when a photo or message was made by a machine.</p>
+        <span class="ttc"><span aria-hidden="true">⏱</span> 12 minutes to see through the hype</span>
+      </li>
+      <li class="topic-card">
+        <span class="card-icon" aria-hidden="true">🏥</span>
+        <h3><a href="../module-15.html">Telehealth appointments</a></h3>
+        <p>Talk to your doctor from home. What to expect, how to join the call, and what to have ready.</p>
+        <span class="ttc"><span aria-hidden="true">⏱</span> 10 minutes to your first virtual visit</span>
+      </li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label"><span aria-hidden="true">💡</span> Helpful tip</span>
+      <p style="margin:0;">You do not need to tell us what device you have. If a lesson needs to know, it will ask at that moment — and "I don't know, I just have a phone" is always a fine answer.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Digital Confidence Centre — free to use, a community initiative by Two Birds Innovation to help Canadian seniors stay safe online. No account. No tracking. No sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly, or call the Canadian Anti-Fraud Centre at 1-888-495-8501.</p>
+    <ul class="footer-links">
+      <li><a href="../privacy.html">Privacy</a></li>
+      <li><a href="../about.html">About us</a></li>
+      <li><a href="../resources/support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- Layered consent — one line + Accept / Reject + Preferences reveal (locked brief §3) -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="../privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/dcc.js"></script>
+<script>
+  // Show the Small Wins strip only when this browser has some.
+  (function () {
+    var n = window.DCC.winCount("helper-scam");
+    if (n > 0) {
+      document.getElementById("home-wins").hidden = false;
+      document.getElementById("home-wins-count").textContent =
+        n + (n === 1 ? " win" : " wins") + " in scam-spotting practice";
+    }
+  })();
+</script>
+</body>
+</html>
