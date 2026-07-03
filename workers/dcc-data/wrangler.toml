@@ -1,0 +1,9 @@
+name = "dcc-data"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+# D1 binding — database_id filled in after `wrangler d1 create dcc-data`
+[[d1_databases]]
+binding = "DB"
+database_name = "dcc-data"
+database_id = "b3db5f6a-ccb3-4790-9d70-571d7f4e39d6"
