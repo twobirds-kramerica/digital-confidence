@@ -139,7 +139,7 @@
      spans while it is being read, then its original HTML is restored. ---- */
   var readBtn = document.querySelector("[data-read-aloud]");
   if (readBtn) {
-    var RATES = { slow: 0.72, normal: 0.9, fast: 1.12 };
+    var RATES = { slow: 0.6, normal: 0.85, fast: 1.25 };
     var rateKey = "normal";
     try { rateKey = localStorage.getItem("dccv2-read-rate") || "normal"; } catch (e) {}
     if (!RATES[rateKey]) rateKey = "normal";
@@ -244,6 +244,11 @@
       activeHTML = activeEl.innerHTML;
       var text = activeEl.textContent;
       activeSpans = wrapWords(activeEl);
+
+      /* Keep the block being read in view — smooth and block-level (never per
+         word), so it works hands-free or on a big screen for a group. Skip the
+         very first block so we do not yank the page away from the top. */
+      try { if (i > 0) activeEl.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) {}
 
       var u = new SpeechSynthesisUtterance(text);
       u.lang = "en-CA";
