@@ -46,6 +46,21 @@
 ## 11. Note: the "alpha" prototype felt more comfortable than the new home
 - The earlier `v2-lab/scam-defence.html` felt more comfortable to Aaron than the new dcc-v2 home (though much of the feedback overlaps). Likely simpler / less busy. Worth diagnosing what made the alpha feel calmer and carrying it into the home.
 
+## 12. Images / illustration (currently none — feels like a bare task)
+- Add warm, non-intimidating visuals so it doesn't feel like text-only work.
+- Constraint: DCC is static + sovereign + **no CDN** → self-hosted only. **Recommend warm hand-drawn-style inline SVG illustrations** (a person thinking, a calm reassuring scene, simple friendly line-art): sovereign, theme-aware (light/dark), scalable, and they don't date or need licensing. **Not** stock photos (licensing + stock-y feel). Real "Tech Concierge" photos can come later once the guide persona is chosen.
+- Tone: friendly, calm, human warmth — not clip-arty, not childish.
+
+## 13. Real-world context / "so what" narrative (light, durable, calm)
+- Anchor **why the lesson matters** ("what's in it for me / why are you telling me this") with a short "did you know" line — make the user feel worldly and rounded, not scared or distracted.
+- **Use VERIFIED, durable figures from the Canadian Anti-Fraud Centre, framed so they DON'T date fast** (lead with the durable *trend*, not the exact annual dollar):
+  - Seniors (60+) are ~23% of the population but absorb ~**40% of fraud losses** — hit hardest.
+  - **Fewer than 1 in 10 scams are ever reported.**
+  - (Optional, softened) "In a recent year, Canadians lost over $700 million to fraud."
+  - Cite the **Canadian Anti-Fraud Centre**; optional "learn more" link (to their *website*, not phone).
+- Tone: **calm + empowering, never fear-mongering** — "this is common, here's how to stay ahead," not "be afraid." Be considerate of recently-widowed users new to handling this alone.
+- Placement: top or bottom, 1–2 lines max. Do not overdo. "Later" is fine, but capture now.
+
 ---
 ## Plan
-Run a **Fable revision pass** against these 11 points (holistic, not piecemeal — #1 touches several places). Front end stays the priority. Then wire the backend Aaron approved-in-principle (aggregate-no-PII analytics + feedback DB + the account/save from #3).
+Run a **Fable revision pass** against these 13 points (holistic, not piecemeal — #1 touches several places). Front end stays the priority. Then wire the backend Aaron approved-in-principle (aggregate-no-PII analytics + feedback DB + the account/save from #3).
