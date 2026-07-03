@@ -1,0 +1,88 @@
+/* ============================================================================
+   DCC v2 Print Stylesheet — Fable revision pass (2026-07-03, note #9)
+   A printed lesson should look like a clean handout for the kitchen table:
+   black on white, no interface chrome, no buttons, readable serif.
+   Loaded with media="print" on both pages.
+   ========================================================================== */
+
+/* Interface chrome and interactive-only elements — gone on paper */
+.site-header,
+.skip-link,
+.breadcrumbs,
+.consent-bar,
+.focus-nav,
+.hero-actions,
+.save-prompt,
+.helper-note button,
+.choices button:hover,
+#shareMsg {
+  display: none !important;
+}
+
+/* Print in ink-safe colours regardless of theme (incl. saved dark mode) */
+* {
+  background: #FFFFFF !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+html, body {
+  font-size: 12pt;
+  line-height: 1.6;
+}
+
+main { max-width: 100%; padding: 0; }
+
+h1, h2, h3, h4 { color: #000000 !important; page-break-after: avoid; }
+h1 { font-size: 20pt; }
+h2 { font-size: 15pt; }
+
+p, li { color: #000000 !important; }
+a { color: #000000 !important; text-decoration: underline; }
+/* Show the destination of external links so a printed page stays useful */
+a[rel="external"]::after { content: " (" attr(href) ")"; font-size: 10pt; }
+
+/* Cards and blocks become simple outlined sections */
+.focus-step-card,
+.small-wins,
+.tip-block,
+.helper-note,
+.did-you-know,
+.cafc-block,
+.confidence-badge,
+.feedback.show,
+.who-pays,
+.guide-block,
+.topic-card {
+  background: #FFFFFF !important;
+  color: #000000 !important;
+  border: 1px solid #444444 !important;
+  box-shadow: none !important;
+  page-break-inside: avoid;
+}
+
+.reassurance, .ttc, .flagship-tag, .secure-badge, .step-kicker {
+  background: none !important;
+  color: #000000 !important;
+  border: 0 !important;
+  padding: 0;
+}
+
+/* Practice choices print as a plain list of options */
+.choices button {
+  border: 1px solid #444444 !important;
+  background: #FFFFFF !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+}
+
+/* Simulated screens keep their frame so "this is the scam" reads on paper */
+.sim-frame { border: 2px solid #444444 !important; }
+.phone { background: #FFFFFF !important; border: 2px solid #000000; box-shadow: none !important; }
+.phone .screen, .phone .bubble, .desktop, .desktop .bubble { background: #FFFFFF !important; color: #000000 !important; }
+.phone .bar, .desktop .topbar { background: #FFFFFF !important; color: #000000 !important; }
+
+/* Progress bar is meaningless on paper */
+.sw-track { display: none !important; }
+
+.site-footer { border-top: 1px solid #444444; font-size: 10pt; }

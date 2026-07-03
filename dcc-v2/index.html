@@ -18,6 +18,7 @@
   <meta name="description" content="Free, plain-language lessons that help Canadian seniors use technology safely and confidently. No account needed. A community initiative by Two Birds Innovation.">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/core.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
 </head>
 <body>
 
@@ -42,13 +43,42 @@
 <main id="main">
 
   <section class="hero" aria-labelledby="hero-h">
-    <div class="container">
-      <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
-      <h1 id="hero-h">Feel confident with your phone, tablet, or computer — one small step at a time</h1>
-      <p class="lead">Plain-language lessons for Canadian seniors. Go at your own pace, stop whenever you like, and come back any time. You never need an account, and nothing here costs money.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="scam-defence-helper.html">Try a 5-minute lesson (no account needed)</a>
-        <a class="btn btn-secondary" href="#lessons">See all the lessons</a>
+    <div class="container hero-flex">
+      <div class="hero-copy">
+        <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
+        <h1 id="hero-h">Feel confident with your phone, tablet, or computer — one small step at a time</h1>
+        <p class="lead">Plain-language lessons for Canadian seniors. Go at your own pace, stop whenever you like, and come back any time.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="scam-defence-helper.html">Try a 5-minute lesson (no account needed)</a>
+          <a class="btn btn-secondary" href="#lessons">See all the lessons</a>
+        </div>
+      </div>
+      <!-- Warm hand-drawn-style illustration — inline SVG, self-hosted, theme-aware -->
+      <div class="illus illus-hero" aria-hidden="true">
+        <svg viewBox="0 0 240 200" width="240" height="200" role="presentation" focusable="false">
+          <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <!-- head with glasses -->
+            <path d="M104 46 c-2 -15 9 -26 23 -26 c14 0 25 11 23 25 c-1 11 -9 20 -20 22 c-12 2 -24 -8 -26 -21 z"/>
+            <circle cx="118" cy="46" r="6"/>
+            <circle cx="136" cy="46" r="6"/>
+            <path d="M124 46 h6"/>
+            <path d="M118 60 q7 5 14 1"/>
+            <!-- shoulders / cardigan -->
+            <path d="M84 138 c2 -30 16 -44 42 -44 c26 0 40 14 42 44"/>
+            <!-- tablet held comfortably -->
+            <rect x="96" y="110" width="62" height="44" rx="6"/>
+            <path d="M104 124 h34 M104 134 h44"/>
+            <!-- warm mug with steam, on the side table -->
+            <path d="M42 140 h26 v18 c0 6 -5 10 -13 10 c-8 0 -13 -4 -13 -10 z"/>
+            <path d="M68 144 q10 2 0 10"/>
+            <!-- gentle plant -->
+            <path d="M196 168 c0 -14 -4 -26 -12 -34 M196 168 c0 -12 6 -24 14 -30 M196 168 c0 -8 0 -16 0 -22"/>
+            <path d="M186 168 h20 l-3 14 h-14 z"/>
+          </g>
+          <g class="illus-accent" fill="none" stroke-width="3" stroke-linecap="round">
+            <path d="M50 128 q3 -6 0 -10 M58 128 q3 -6 0 -10"/>
+          </g>
+        </svg>
       </div>
     </div>
   </section>
@@ -58,13 +88,13 @@
     <!-- Who pays — "free" framed by funding, never "forever" (locked brief §3) -->
     <aside class="who-pays" aria-label="Why this is free">
       <p><span class="who-pays-title">Why is this free?</span>
-      The Digital Confidence Centre is a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. There are no fees, no ads, and no sales calls. We never sell your personal information.</p>
+      This is a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No fees, no ads, no sales calls.</p>
     </aside>
 
     <!-- Small Wins — appears only once you have some (no-login progress) -->
     <section class="small-wins" id="home-wins" hidden aria-label="Your progress">
       <p class="sw-label"><span>Your small wins so far</span> <span id="home-wins-count"></span></p>
-      <p style="margin:0; font-size: var(--font-size-sm);">Saved on this device only. No account, ever.</p>
+      <p style="margin:0; font-size: var(--font-size-sm);">Saved on this device — no account needed.</p>
     </section>
 
     <!--
@@ -76,7 +106,7 @@
     <section class="guide-block" aria-labelledby="guide-h">
       <div class="guide-photo" aria-hidden="true">👋</div>
       <blockquote>
-        <h2 id="guide-h" style="font-size: var(--font-size-h3); margin-bottom: var(--space-2);">A real person is behind every lesson</h2>
+        <h2 id="guide-h" style="font-size: var(--font-size-h3); margin-bottom: var(--space-2);">There's a person behind every lesson</h2>
         <p style="margin:0;">"Hello — I'm here to walk you through things the way a good neighbour would. No jargon, no rushing, and no such thing as a silly question."</p>
         <span class="guide-name">Your guide, [NAME] — placeholder, final persona to be chosen</span>
       </blockquote>
@@ -89,8 +119,8 @@
       <li class="topic-card card-flagship">
         <span class="flagship-tag">Start here — our most popular practice</span>
         <span class="card-icon" aria-hidden="true">🤝</span>
-        <h3><a href="scam-defence-helper.html">Help a friend spot a scam</a></h3>
-        <p>Margaret just got a suspicious text. Sit beside her and help her decide what to do. Practising as the helper is the fastest way to build your own confidence.</p>
+        <h3><a href="scam-defence-helper.html">Practice: Spot the Scam</a></h3>
+        <p>Pretend your friend Margaret shows you a text she just got. What would you tell her to do? It's all pretend — and helping a friend is the fastest way to build your own confidence.</p>
         <span class="ttc"><span aria-hidden="true">⏱</span> 5 minutes to your first win</span>
       </li>
       <li class="topic-card">
@@ -137,10 +167,10 @@
       </li>
     </ul>
 
-    <div class="tip-block">
-      <span class="block-label"><span aria-hidden="true">💡</span> Helpful tip</span>
-      <p style="margin:0;">You do not need to tell us what device you have. If a lesson needs to know, it will ask at that moment — and "I don't know, I just have a phone" is always a fine answer.</p>
-    </div>
+    <!-- Anti-Fraud Centre — its own airspace, clearly NOT this site's support line -->
+    <aside class="cafc-block" aria-label="Where to turn with a serious concern">
+      <p><strong>If you ever have a serious concern about fraud in real life</strong>, the Canadian Anti-Fraud Centre — a Government of Canada service, separate from this website — can help. Visit <a href="https://antifraudcentre-centreantifraude.ca" rel="external">antifraudcentre-centreantifraude.ca</a> or call 1-888-495-8501.</p>
+    </aside>
 
   </div>
 </main>
@@ -148,7 +178,7 @@
 <footer class="site-footer">
   <div class="container">
     <p>Digital Confidence Centre — free to use, a community initiative by Two Birds Innovation to help Canadian seniors stay safe online. No account. No tracking. No sales calls.</p>
-    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly, or call the Canadian Anti-Fraud Centre at 1-888-495-8501.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
     <ul class="footer-links">
       <li><a href="../privacy.html">Privacy</a></li>
       <li><a href="../about.html">About us</a></li>

@@ -128,16 +128,150 @@
   window.DCC.winCount = function (key) { return winsFor(key).length; };
 
   /* ---------- Read aloud (Web Speech API) ---------------------------------
-     Same approach as the scam-defence prototype: en-CA, gentle rate,
-     reads the page's headings and paragraphs inside <main>. ------------- */
+     Revision pass 2026-07-03 (note #8):
+     · Voice tuned for hard-of-hearing listeners — en-CA preferred, slightly
+       lower pitch (consonant clarity), slower-than-default base rate.
+     · Speed control: Slower / Normal / Faster buttons ([data-read-rate]),
+       remembered locally.
+     · Read-along indicator: LIGHT BOLDING of the current word only —
+       no highlight colour, no auto-scroll, no motion.
+     Reads block-by-block through <main>; each block's words are wrapped in
+     spans while it is being read, then its original HTML is restored. ---- */
   var readBtn = document.querySelector("[data-read-aloud]");
   if (readBtn) {
-    var reading = false;
+    var RATES = { slow: 0.72, normal: 0.9, fast: 1.12 };
+    var rateKey = "normal";
+    try { rateKey = localStorage.getItem("dccv2-read-rate") || "normal"; } catch (e) {}
+    if (!RATES[rateKey]) rateKey = "normal";
+
+    function reflectRate() {
+      document.querySelectorAll("[data-read-rate]").forEach(function (b) {
+        b.setAttribute("aria-pressed", b.getAttribute("data-read-rate") === rateKey ? "true" : "false");
+      });
+    }
+    document.querySelectorAll("[data-read-rate]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        rateKey = b.getAttribute("data-read-rate");
+        try { localStorage.setItem("dccv2-read-rate", rateKey); } catch (e) {}
+        reflectRate();
+        if (reading) { // apply the new speed right away, from the current block
+          var i = queueIndex;
+          stopReading();
+          startReading(i);
+        }
+      });
+    });
+    reflectRate();
+
+    /* Voice choice — best-clarity heuristic for hard-of-hearing listeners:
+       Canadian English first, then any English; prefer higher-quality
+       natural/neural voices where the browser exposes them. */
+    var chosenVoice = null;
+    function pickVoice() {
+      if (!("speechSynthesis" in window)) return;
+      var voices = window.speechSynthesis.getVoices() || [];
+      if (!voices.length) return;
+      function score(v) {
+        var s = 0, lang = (v.lang || "").toLowerCase(), name = (v.name || "");
+        if (lang === "en-ca") s += 40;
+        else if (lang.indexOf("en") === 0) s += 20;
+        if (/natural|neural|online/i.test(name)) s += 10;
+        if (v.localService) s += 3; // works offline, no network stutter
+        return s;
+      }
+      voices.sort(function (a, b) { return score(b) - score(a); });
+      if (score(voices[0]) > 0) chosenVoice = voices[0];
+    }
+    if ("speechSynthesis" in window) {
+      pickVoice();
+      window.speechSynthesis.onvoiceschanged = pickVoice;
+    }
+
+    /* Wrap every word of a block in a span, preserving inner markup.
+       Returns the spans in reading order (matches textContent order). */
+    function wrapWords(el) {
+      var spans = [], offset = 0;
+      function walk(node) {
+        if (node.nodeType === 3) {
+          var text = node.nodeValue;
+          var frag = document.createDocumentFragment();
+          var re = /\S+/g, m, last = 0;
+          while ((m = re.exec(text)) !== null) {
+            if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+            var sp = document.createElement("span");
+            sp.className = "ra-word";
+            sp.textContent = m[0];
+            sp.dataset.raOffset = offset + m.index;
+            spans.push(sp);
+            frag.appendChild(sp);
+            last = m.index + m[0].length;
+          }
+          if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+          offset += text.length;
+          node.parentNode.replaceChild(frag, node);
+        } else if (node.nodeType === 1) {
+          Array.prototype.slice.call(node.childNodes).forEach(walk);
+        }
+      }
+      Array.prototype.slice.call(el.childNodes).forEach(walk);
+      return spans;
+    }
+
+    var reading = false, queue = [], queueIndex = 0;
+    var activeEl = null, activeHTML = "", activeSpans = [];
+
+    function restoreActive() {
+      if (activeEl) { activeEl.innerHTML = activeHTML; activeEl = null; activeSpans = []; }
+    }
     function stopReading() {
       reading = false;
       window.speechSynthesis && window.speechSynthesis.cancel();
+      restoreActive();
       readBtn.setAttribute("aria-pressed", "false");
       readBtn.textContent = "🔊 Read aloud";
+    }
+    function buildQueue() {
+      var nodes = document.querySelectorAll("main h1, main h2, main h3, main p, main .choices button, main .mailrow");
+      return Array.prototype.filter.call(nodes, function (n) {
+        return n.textContent.trim() && !n.closest("[hidden]") && n.offsetParent !== null;
+      });
+    }
+    function speakBlock(i) {
+      if (!reading || i >= queue.length) { stopReading(); return; }
+      queueIndex = i;
+      restoreActive();
+      activeEl = queue[i];
+      activeHTML = activeEl.innerHTML;
+      var text = activeEl.textContent;
+      activeSpans = wrapWords(activeEl);
+
+      var u = new SpeechSynthesisUtterance(text);
+      u.lang = "en-CA";
+      if (chosenVoice) u.voice = chosenVoice;
+      u.rate = RATES[rateKey];
+      u.pitch = 0.85; // slightly lower pitch — clearer for age-related hearing loss
+      u.onboundary = function (ev) {
+        if (ev.name && ev.name !== "word") return;
+        var current = null;
+        for (var k = 0; k < activeSpans.length; k++) {
+          if (Number(activeSpans[k].dataset.raOffset) <= ev.charIndex) current = activeSpans[k];
+          else break;
+        }
+        activeSpans.forEach(function (sp) { sp.classList.remove("current"); });
+        if (current) current.classList.add("current");
+      };
+      u.onend = function () {
+        if (reading) speakBlock(i + 1);
+      };
+      window.speechSynthesis.speak(u);
+    }
+    function startReading(fromIndex) {
+      reading = true;
+      readBtn.setAttribute("aria-pressed", "true");
+      readBtn.textContent = "⏹ Stop reading";
+      queue = buildQueue();
+      window.speechSynthesis.cancel();
+      speakBlock(Math.min(fromIndex || 0, Math.max(queue.length - 1, 0)));
     }
     readBtn.addEventListener("click", function () {
       if (!("speechSynthesis" in window)) {
@@ -145,18 +279,7 @@
         return;
       }
       if (reading) { stopReading(); return; }
-      reading = true;
-      readBtn.setAttribute("aria-pressed", "true");
-      readBtn.textContent = "⏹ Stop reading";
-      var nodes = document.querySelectorAll("main h1, main h2, main h3, main p, main button, main .mfrom, main .msub");
-      var text = Array.prototype.map.call(nodes, function (n) { return n.textContent.trim(); })
-        .filter(Boolean).join(". ");
-      var u = new SpeechSynthesisUtterance(text);
-      u.rate = 0.95;
-      u.lang = "en-CA";
-      u.onend = stopReading;
-      window.speechSynthesis.cancel();
-      window.speechSynthesis.speak(u);
+      startReading(0);
     });
   }
 })();

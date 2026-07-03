@@ -429,18 +429,71 @@ a:hover { color: var(--color-text-link-hover); }
 .mailrow .mfrom { font-weight: var(--font-weight-bold); font-family: var(--font-heading); }
 .mailrow .msub { color: var(--color-text-light); font-size: calc(var(--font-size-base) - 2px); }
 
-/* Device pick */
-.device-pick { display: flex; gap: var(--space-2); flex-wrap: wrap; margin-top: var(--space-3); }
-.device-pick button {
-  border: 2px solid var(--color-border); background: var(--color-surface);
-  color: var(--color-text); border-radius: var(--radius-md);
-  padding: var(--space-3) var(--space-4); font-size: var(--font-size-base);
-  font-family: var(--font-heading); cursor: pointer; min-height: var(--tap-target-min);
+/* ============================================================================
+   ILLUSTRATIONS — warm hand-drawn-style inline SVG, theme-aware via
+   currentColor (strokes take Trust Blue in light, light blue in dark).
+   ========================================================================== */
+.illus { color: var(--color-primary); }
+.illus svg { max-width: 100%; height: auto; }
+.illus .illus-accent, .illus-accent { stroke: var(--color-accent); }
+.hero-flex { display: flex; align-items: center; gap: var(--space-8); flex-wrap: wrap; }
+.hero-copy { flex: 1 1 480px; }
+.illus-hero { flex: 0 1 240px; margin-inline: auto; }
+.illus-lesson { text-align: center; margin: var(--space-4) 0; }
+
+/* --- Read-aloud group: button + Slower/Normal/Faster speed control ---------- */
+.read-group { display: inline-flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; }
+.rate-group {
+  display: inline-flex; align-items: center; gap: var(--space-1);
+  border: 1px solid var(--color-border); border-radius: var(--radius-md);
+  padding: var(--space-1);
 }
-.device-pick button[aria-pressed="true"] {
-  border-color: var(--color-primary); background: var(--color-surface-primary);
-  font-weight: var(--font-weight-bold);
+.rate-btn { font-size: var(--font-size-caption); padding: 0 var(--space-2); }
+/* Read-along indicator — light bolding of the current word only.
+   No highlight, no background, no motion. */
+.ra-word.current { font-weight: var(--font-weight-bold); }
+
+/* --- Soft save prompt (value-first, appears after activity — never a wall) -- */
+.save-prompt {
+  background: var(--color-surface); border: 2px solid var(--color-primary);
+  border-radius: var(--radius-lg); padding: var(--space-6);
+  margin: var(--space-6) 0;
 }
+.save-prompt h2 { font-size: var(--font-size-h3); }
+.save-prompt label {
+  display: block; font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold); margin-bottom: var(--space-2);
+}
+.save-row { display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center; }
+.save-row input[type="email"] {
+  flex: 1 1 240px; min-height: var(--tap-target);
+  border: 2px solid var(--color-border-strong); border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-body); font-size: var(--font-size-base);
+  background: var(--color-surface); color: var(--color-text);
+}
+.save-done { color: var(--color-success-deep); font-family: var(--font-heading); font-weight: var(--font-weight-semibold); }
+
+/* --- "Did you know" — calm, one or two lines, never fear-mongering ---------- */
+.did-you-know {
+  background: var(--color-surface-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  margin: var(--space-6) 0;
+}
+.did-you-know p { margin: 0; font-size: calc(var(--font-size-base) - 1px); }
+.did-you-know .dyk-label { font-family: var(--font-heading); font-weight: var(--font-weight-bold); color: var(--color-primary); }
+.did-you-know .dyk-source { font-size: var(--font-size-sm); color: var(--color-text-light); }
+
+/* --- Anti-Fraud Centre — its own airspace, visually separate from lessons --- */
+.cafc-block {
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-6);
+  margin: var(--space-12) 0 var(--space-6);
+  background: var(--color-surface);
+}
+.cafc-block p { margin: 0; font-size: calc(var(--font-size-base) - 1px); }
 
 /* ============================================================================
    CONSENT — layered bar: one line + Accept / Reject / Preferences.
