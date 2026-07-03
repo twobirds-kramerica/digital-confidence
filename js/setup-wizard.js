@@ -263,26 +263,14 @@ function renderWizard() {
       renderWizard();
       return;
     }
-    html += '<h2>A Quick Note About Your Privacy</h2>';
-    html += '<p style="margin-bottom:16px;">We want to be completely open with you about how this site works.</p>';
-    html += '<div class="tip-box" style="margin-bottom:16px;text-align:left;">';
-    html += '<strong>What we collect (with your permission):</strong><br>';
-    html += '&#x2022; Your city &#8212; so we can show you local resources<br>';
-    html += '&#x2022; Your device types &#8212; so we show you the right instructions<br>';
-    html += '&#x2022; How you use the site &#8212; which lessons you visit and complete<br>';
-    html += '&#x2022; Any feedback you choose to share with us</div>';
-    html += '<div class="tip-box" style="margin-bottom:16px;text-align:left;">';
-    html += '<strong>Why we collect it:</strong><br>';
-    html += 'This helps us improve the programme for other seniors across Ontario. We may share anonymised, grouped insights (never your personal details) with organisations that support seniors &#8212; like libraries, community centres, and government programmes.</div>';
-    html += '<div style="background:#FFF3E0;border-left:4px solid #FF9800;padding:12px 16px;border-radius:6px;margin-bottom:20px;font-size:0.95rem;">';
-    html += '<strong>What we never do:</strong><br>';
-    html += '&#x2022; We never sell your personal information<br>';
-    html += '&#x2022; We never share your name or contact details<br>';
-    html += '&#x2022; You can reset everything at any time using the Settings button</div>';
+    html += '<h2>A quick note about your privacy</h2>';
+    html += '<p style="margin-bottom:16px;">We keep a little information on your device to make the site work and improve it for other seniors. <strong>We never sell it, and we never share your name or contact details.</strong> You can reset everything anytime in Settings.</p>';
+    html += '<div style="background:#FFF3E0;border-left:4px solid #FF9800;padding:12px 16px;border-radius:6px;margin-bottom:20px;font-size:0.95rem;color:#3a2f10;">';
+    html += 'We may share <strong>anonymous, grouped</strong> insights (never your personal details) with organisations that support seniors, such as libraries and community programmes.</div>';
     html += '<p><strong>Your choice:</strong></p>';
     html += '<div style="display:flex;flex-direction:column;gap:12px;margin-top:12px;">';
     html += '<button class="btn btn-primary" id="privacy-accept-btn">Yes, I\'m happy with this</button>';
-    html += '<button class="btn btn-secondary" id="privacy-decline-btn">No thank you &#8212; continue without data collection</button>';
+    html += '<button class="btn btn-secondary" id="privacy-decline-btn">No thank you, continue without data collection</button>';
     html += '</div>';
 
   /* ── Email capture step ── */
