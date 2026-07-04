@@ -15,7 +15,7 @@ except ImportError:
     print("ERROR: install requests: pip install requests", file=sys.stderr)
     sys.exit(2)
 
-RSS_URL = "https://www.cbc.ca/cmlink/rss-technology"
+RSS_URL = "https://news.google.com/rss/search?q=scam+OR+fraud+OR+phishing+OR+%22online+safety%22+OR+%22identity+theft%22+OR+%22romance+scam%22+when:14d&hl=en-CA&gl=CA&ceid=CA:en"
 OUT_PATH = Path(__file__).resolve().parent.parent / "data" / "news-feed.json"
 MAX_ITEMS = 5
 TIMEOUT   = 15
@@ -60,7 +60,16 @@ def main() -> int:
     except Exception as e:
         print(f"WARN: fetch error: {e}", file=sys.stderr)
         if OUT_PATH.exists():
-            print("Keeping existing news-feed.json (graceful degradation).")
+            try:
+                old = json.loads(OUT_PATH.read_text(encoding="utf-8"))
+                ts = datetime.strptime(old.get("fetched_at", ""), "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+                age_days = (datetime.now(timezone.utc) - ts).days
+            except Exception:
+                age_days = 999
+            if age_days > 10:
+                print(f"FAIL: fetch failed AND feed is {age_days} days stale — surfacing this instead of silently succeeding (was the root of the May 16 freeze).", file=sys.stderr)
+                return 1
+            print(f"Keeping existing news-feed.json ({age_days}d old, graceful degradation).")
             return 0
         print("FAIL: no existing news-feed.json to fall back to.", file=sys.stderr)
         return 1
@@ -78,7 +87,7 @@ def main() -> int:
 
     payload = {
         "fetched_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "source": "CBC Technology RSS",
+        "source": "Google News - digital safety (Canada)",
         "source_url": RSS_URL,
         "items": [
             {
