@@ -32,3 +32,5 @@ tests/playwright/test-results/
 tests/playwright/playwright-report/
 tests/playwright/blob-report/
 tests/playwright/.last-run.json
+.playwright-cli/
+**/.wrangler/
