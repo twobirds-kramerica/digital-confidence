@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<!--
+  DCC LANDING V2 - SAFE LAB PROTOTYPE (2026-07-06)
+  This file is a design lab only. It is NOT deployed and does NOT replace the live index.html.
+  Links point one level up (../module-1.html etc.) so the prototype can be browsed inside the repo.
+  Self-contained: no CDN, no external fonts, no analytics, no service worker.
+-->
+<html lang="en-CA" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var t=null;try{t=localStorage.getItem('dcc-lab-theme');}catch(e){}if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Digital Confidence Centre - Landing v2 Lab</title>
+  <meta name="description" content="Design lab prototype for the Digital Confidence Centre landing page. Not the live site.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8' fill='%232A7B6F'/%3E%3C/svg%3E">
+  <style>
+    /* ============ Warm-hearth tokens (from css/tokens.css + tokens-dark.css) ============ */
+    :root, html[data-theme="light"] {
+      color-scheme: light;
+      --color-bg: #FAFAF8;
+      --color-surface: #FFFFFF;
+      --color-surface-primary: #E8F5F0;
+      --color-surface-warm: #FBF3E7;
+      --color-primary: #2A7B6F;
+      --color-primary-deep: #1F5D54;
+      --color-accent: #E8842C;      /* decorative only, never text on it */
+      --color-text: #1A1A2E;
+      --color-text-soft: #44445A;
+      --color-border: #D8D4CC;
+      --color-link: #1F5D54;
+      --color-focus: #B25400;
+      --shadow-card: 0 2px 8px rgba(26, 26, 46, 0.08);
+    }
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --color-bg: #1C1915;
+      --color-surface: #262220;
+      --color-surface-primary: #1F3C36;
+      --color-surface-warm: #2B241C;
+      --color-primary: #6FC0B2;
+      --color-primary-deep: #8AD2C5;
+      --color-accent: #F5A563;
+      --color-text: #F2E9DC;
+      --color-text-soft: #CFC5B6;
+      --color-border: #4A443C;
+      --color-link: #8AD2C5;
+      --color-focus: #F5A563;
+      --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    /* ============ Base ============ */
+    * { box-sizing: border-box; }
+    html { font-size: 18px; }
+    html[data-font-size="large"] { font-size: 20px; }
+    html[data-font-size="xl"] { font-size: 23px; }
+    body {
+      margin: 0;
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+    }
+    h1, h2, h3, .serif { font-family: Georgia, "Times New Roman", serif; line-height: 1.35; }
+    h1 { font-size: 1.9rem; margin: 0 0 0.6rem; }
+    h2 { font-size: 1.45rem; margin: 0 0 0.5rem; color: var(--color-primary-deep); }
+    h3 { font-size: 1.15rem; margin: 0 0 0.35rem; }
+    p { margin: 0 0 1rem; }
+    a { color: var(--color-link); }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--color-focus);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    img { max-width: 100%; height: auto; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 1rem; }
+    section { margin: 2rem 0; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+
+    /* ============ Skip link ============ */
+    .skip-link {
+      position: absolute; left: -9999px; top: 0;
+      background: var(--color-primary-deep); color: #FFFFFF;
+      padding: 0.75rem 1.25rem; z-index: 100; font-weight: 600;
+    }
+    html[data-theme="dark"] .skip-link { background: var(--color-surface-primary); color: var(--color-text); }
+    .skip-link:focus { left: 0; }
+
+    /* ============ Top utility bar ============ */
+    .util-bar {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 0.5rem; padding: 0.5rem 1rem;
+      background: var(--color-surface); border-bottom: 1px solid var(--color-border);
+    }
+    .util-group { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
+    .util-label { font-size: 0.85rem; color: var(--color-text-soft); margin-inline-end: 0.15rem; }
+    .util-btn {
+      min-width: 44px; min-height: 44px;
+      padding: 0.3rem 0.7rem;
+      background: var(--color-surface); color: var(--color-text);
+      border: 2px solid var(--color-border); border-radius: 8px;
+      font-family: inherit; font-size: 1rem; cursor: pointer;
+    }
+    .util-btn[aria-pressed="true"] {
+      background: var(--color-surface-primary);
+      border-color: var(--color-primary);
+      font-weight: 700;
+    }
+    .fs-large { font-size: 1.15rem; }
+    .fs-xl { font-size: 1.3rem; }
+
+    /* ============ Header ============ */
+    header.site-head {
+      background: var(--color-surface); border-bottom: 1px solid var(--color-border);
+      padding: 0.9rem 0;
+    }
+    .site-head .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.6rem; }
+    .brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--color-text); }
+    .brand-mark {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--color-surface-primary);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; border: 2px solid var(--color-primary);
+      flex-shrink: 0;
+    }
+    .brand-name { font-family: Georgia, serif; font-size: 1.15rem; font-weight: 700; }
+    .free-badge {
+      background: var(--color-surface-primary); color: var(--color-primary-deep);
+      border: 1px solid var(--color-primary);
+      border-radius: 999px; padding: 0.35rem 0.9rem;
+      font-size: 0.9rem; font-weight: 700; white-space: nowrap;
+    }
+    html[data-theme="dark"] .free-badge { color: var(--color-primary); }
+
+    /* ============ Reassurance strip ============ */
+    .reassure {
+      background: var(--color-surface-primary);
+      border-block: 1px solid var(--color-border);
+      padding: 0.7rem 0; text-align: center;
+      font-size: 1rem;
+    }
+    .reassure strong { color: var(--color-primary-deep); }
+    html[data-theme="dark"] .reassure strong { color: var(--color-primary); }
+
+    /* ============ Hero ============ */
+    .hero { padding-top: 2.2rem; }
+    .hero .tagline {
+      font-family: Georgia, serif; font-style: italic;
+      color: var(--color-primary-deep); font-size: 1.15rem;
+    }
+    html[data-theme="dark"] .hero .tagline { color: var(--color-primary); }
+    .hero-sub { font-size: 1.1rem; max-width: 46ch; }
+    .hero-cta {
+      display: inline-block; margin-top: 0.4rem;
+      background: var(--color-primary-deep); color: #FFFFFF;
+      text-decoration: none; font-weight: 700; font-size: 1.15rem;
+      padding: 1rem 1.8rem; border-radius: 12px;
+      min-height: 56px;
+      border-bottom: 4px solid rgba(0,0,0,0.25);
+    }
+    html[data-theme="dark"] .hero-cta { background: var(--color-primary); color: #10201C; }
+    .hero-cta:hover { filter: brightness(1.08); }
+    .hero-quiet {
+      display: block; margin-top: 0.9rem; font-size: 0.95rem; color: var(--color-text-soft);
+    }
+    .trust-row {
+      list-style: none; padding: 0; margin: 1.4rem 0 0;
+      display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem;
+    }
+    .trust-row li { display: flex; align-items: center; gap: 0.45rem; font-weight: 600; }
+    .trust-row .tick {
+      color: var(--color-primary-deep); font-size: 1.2rem;
+    }
+    html[data-theme="dark"] .trust-row .tick { color: var(--color-primary); }
+
+    /* ============ Start-here path ============ */
+    .path-card {
+      display: flex; gap: 1rem; align-items: flex-start;
+      background: var(--color-surface); border: 1px solid var(--color-border);
+      border-radius: 14px; padding: 1.2rem; margin-bottom: 0.9rem;
+      box-shadow: var(--shadow-card);
+      text-decoration: none; color: var(--color-text);
+      position: relative;
+    }
+    .path-card:hover { border-color: var(--color-primary); }
+    .path-num {
+      flex-shrink: 0;
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--color-surface-primary); color: var(--color-primary-deep);
+      border: 3px solid var(--color-accent);
+      display: flex; align-items: center; justify-content: center;
+      font-family: Georgia, serif; font-size: 1.5rem; font-weight: 700;
+    }
+    html[data-theme="dark"] .path-num { color: var(--color-primary); }
+    .path-card h3 { color: var(--color-text); }
+    .path-card p { margin-bottom: 0.4rem; color: var(--color-text-soft); }
+    .path-go { font-weight: 700; color: var(--color-link); text-decoration: underline; }
+    .path-note { font-size: 0.95rem; color: var(--color-text-soft); }
+
+    /* ============ Guide note ============ */
+    .guide-note {
+      background: var(--color-surface-warm);
+      border-inline-start: 5px solid var(--color-accent);
+      border-radius: 0 12px 12px 0;
+      padding: 1.3rem 1.4rem;
+    }
+    .guide-note .label {
+      display: block; font-size: 0.85rem; text-transform: uppercase;
+      letter-spacing: 0.06em; font-weight: 700; color: var(--color-text-soft);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ============ Topic (module entry) grid ============ */
+    .topic-grid {
+      display: grid; gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 620px) { .topic-grid { grid-template-columns: 1fr 1fr; } }
+    .topic-card {
+      display: block;
+      background: var(--color-surface); border: 1px solid var(--color-border);
+      border-radius: 14px; padding: 1.2rem;
+      text-decoration: none; color: var(--color-text);
+      box-shadow: var(--shadow-card);
+    }
+    .topic-card:hover { border-color: var(--color-primary); }
+    .topic-icon { font-size: 1.8rem; display: block; margin-bottom: 0.4rem; }
+    .topic-card p { color: var(--color-text-soft); margin-bottom: 0.5rem; }
+    .topic-count {
+      display: inline-block; font-size: 0.85rem; font-weight: 700;
+      background: var(--color-surface-primary); color: var(--color-primary-deep);
+      border-radius: 999px; padding: 0.2rem 0.75rem;
+    }
+    html[data-theme="dark"] .topic-count { color: var(--color-primary); }
+
+    /* ============ Why free ============ */
+    .why-free {
+      background: var(--color-surface-primary);
+      border-radius: 14px; padding: 1.4rem;
+    }
+    .why-free ul { padding-inline-start: 1.3rem; margin: 0.6rem 0 0; }
+    .why-free li { margin-bottom: 0.5rem; }
+
+    /* ============ Help strip ============ */
+    .help-strip {
+      background: var(--color-surface-warm);
+      border: 1px solid var(--color-border);
+      border-radius: 14px; padding: 1.3rem 1.4rem;
+    }
+
+    /* ============ Footer ============ */
+    footer {
+      border-top: 1px solid var(--color-border);
+      padding: 1.6rem 0 2.4rem; margin-top: 2.5rem;
+      background: var(--color-surface);
+    }
+    footer nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; margin-bottom: 1rem; }
+    footer a { min-height: 44px; display: inline-flex; align-items: center; }
+    .lab-banner {
+      background: var(--color-surface-warm); border: 2px dashed var(--color-accent);
+      border-radius: 10px; padding: 0.6rem 1rem; margin: 0.8rem 0;
+      font-size: 0.9rem; color: var(--color-text-soft); text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link" data-en="Skip to main content" data-fr="Passer au contenu principal">Skip to main content</a>
+
+  <!-- Utility bar: language, text size, screen colour -->
+  <div class="util-bar" role="toolbar" aria-label="Language and display settings">
+    <div class="util-group" role="group" aria-label="Language">
+      <button class="util-btn" id="lang-en" aria-pressed="true" lang="en" type="button">English</button>
+      <button class="util-btn" id="lang-fr" aria-pressed="false" lang="fr" type="button">Français</button>
+    </div>
+    <div class="util-group" role="group" aria-label="Text size">
+      <span class="util-label" data-en="Text size" data-fr="Taille du texte">Text size</span>
+      <button class="util-btn fs-btn" data-size="medium" aria-pressed="true" aria-label="Standard text" type="button">A</button>
+      <button class="util-btn fs-btn fs-large" data-size="large" aria-pressed="false" aria-label="Large text" type="button">A+</button>
+      <button class="util-btn fs-btn fs-xl" data-size="xl" aria-pressed="false" aria-label="Extra large text" type="button">A++</button>
+    </div>
+    <div class="util-group">
+      <button class="util-btn" id="theme-btn" aria-pressed="false" type="button" data-en-light="Dark colours" data-fr-light="Couleurs sombres" data-en-dark="Light colours" data-fr-dark="Couleurs claires">Dark colours</button>
+    </div>
+  </div>
+
+  <header class="site-head">
+    <div class="wrap">
+      <a href="../index.html" class="brand" aria-label="Digital Confidence Centre home">
+        <span class="brand-mark" aria-hidden="true">🏠</span>
+        <span class="brand-name" data-en="Digital Confidence Centre" data-fr="Centre de confiance numérique">Digital Confidence Centre</span>
+      </a>
+      <span class="free-badge" data-en="Free. No account. Ever." data-fr="Gratuit. Sans compte. Toujours.">Free. No account. Ever.</span>
+    </div>
+  </header>
+
+  <!-- Reassurance strip: the first message is calm, not instructional -->
+  <div class="reassure" role="note">
+    <span data-en="You are in a safe place. Nothing on this page can harm your device, and nothing here costs money." data-fr="Vous êtes en lieu sûr. Rien sur cette page ne peut endommager votre appareil, et rien ici ne coûte de l'argent.">You are in a safe place. Nothing on this page can harm your device, and nothing here costs money.</span>
+  </div>
+
+  <main id="main">
+    <div class="wrap">
+
+      <!-- HERO -->
+      <section class="hero" aria-labelledby="hero-h">
+        <p class="tagline" data-en="You are not behind. You are right on time." data-fr="Vous n'êtes pas en retard. Vous arrivez juste à temps.">You are not behind. You are right on time.</p>
+        <h1 id="hero-h" data-en="Learn to use your phone or tablet with confidence, at your own pace." data-fr="Apprenez à utiliser votre téléphone ou votre tablette en toute confiance, à votre rythme.">Learn to use your phone or tablet with confidence, at your own pace.</h1>
+        <p class="hero-sub" data-en="Free lessons for Canadians on avoiding scams, banking safely, video calling family, and understanding AI. Written in plain language, one step at a time." data-fr="Des leçons gratuites pour les Canadiens : éviter les fraudes, faire ses opérations bancaires en sécurité, faire des appels vidéo en famille et comprendre l'IA. En langage clair, une étape à la fois.">Free lessons for Canadians on avoiding scams, banking safely, video calling family, and understanding AI. Written in plain language, one step at a time.</p>
+        <a href="../module-1.html" class="hero-cta" data-en="Start your first lesson" data-fr="Commencer votre première leçon">Start your first lesson</a>
+        <span class="hero-quiet" data-en="It takes about 20 minutes. You can stop at any time and nothing will be lost." data-fr="Cela prend environ 20 minutes. Vous pouvez arrêter à tout moment et rien ne sera perdu.">It takes about 20 minutes. You can stop at any time and nothing will be lost.</span>
+        <ul class="trust-row">
+          <li><span class="tick" aria-hidden="true">✓</span><span data-en="Completely free" data-fr="Entièrement gratuit">Completely free</span></li>
+          <li><span class="tick" aria-hidden="true">✓</span><span data-en="No account or signup" data-fr="Aucun compte ni inscription">No account or signup</span></li>
+          <li><span class="tick" aria-hidden="true">✓</span><span data-en="Nothing you can break" data-fr="Rien que vous puissiez casser">Nothing you can break</span></li>
+          <li><span class="tick" aria-hidden="true">✓</span><span data-en="Made in Canada" data-fr="Conçu au Canada">Made in Canada</span></li>
+        </ul>
+      </section>
+
+      <!-- START HERE PATH -->
+      <section aria-labelledby="path-h">
+        <h2 id="path-h" data-en="Not sure where to begin? Start here." data-fr="Vous ne savez pas par où commencer? Commencez ici.">Not sure where to begin? Start here.</h2>
+        <p data-en="These three lessons build the foundation for everything else. Take them in order, one sitting each." data-fr="Ces trois leçons posent les bases de tout le reste. Suivez-les dans l'ordre, une à la fois.">These three lessons build the foundation for everything else. Take them in order, one sitting each.</p>
+
+        <a href="../module-1.html" class="path-card">
+          <span class="path-num" aria-hidden="true">1</span>
+          <span>
+            <h3 data-en="The Escape Hatch" data-fr="La sortie de secours">The Escape Hatch</h3>
+            <p data-en="The one skill that changes everything: how to get back to safety no matter what happens on your screen." data-fr="La compétence qui change tout : comment revenir en lieu sûr, peu importe ce qui se passe à l'écran.">The one skill that changes everything: how to get back to safety no matter what happens on your screen.</p>
+            <span class="path-go" data-en="Start lesson 1" data-fr="Commencer la leçon 1">Start lesson 1</span>
+          </span>
+        </a>
+
+        <a href="../module-2.html" class="path-card">
+          <span class="path-num" aria-hidden="true">2</span>
+          <span>
+            <h3 data-en="The Security Shield" data-fr="Le bouclier de sécurité">The Security Shield</h3>
+            <p data-en="How to spot scam calls, emails, and texts, with real Canadian examples and the 3-Second Rule." data-fr="Comment repérer les appels, courriels et textos frauduleux, avec de vrais exemples canadiens et la règle des 3 secondes.">How to spot scam calls, emails, and texts, with real Canadian examples and the 3-Second Rule.</p>
+            <span class="path-go" data-en="Start lesson 2" data-fr="Commencer la leçon 2">Start lesson 2</span>
+          </span>
+        </a>
+
+        <a href="../module-2-5.html" class="path-card">
+          <span class="path-num" aria-hidden="true">3</span>
+          <span>
+            <h3 data-en="Everyday Digital Tasks" data-fr="Tâches numériques quotidiennes">Everyday Digital Tasks</h3>
+            <p data-en="Attachments, downloads, printing, and keeping your files where you can find them again." data-fr="Pièces jointes, téléchargements, impression, et comment garder vos fichiers là où vous pouvez les retrouver.">Attachments, downloads, printing, and keeping your files where you can find them again.</p>
+            <span class="path-go" data-en="Start lesson 3" data-fr="Commencer la leçon 3">Start lesson 3</span>
+          </span>
+        </a>
+
+        <p class="path-note" data-en="Already comfortable with the basics? Choose any topic below instead. There is no wrong door." data-fr="Déjà à l'aise avec les bases? Choisissez plutôt un sujet ci-dessous. Il n'y a pas de mauvaise porte.">Already comfortable with the basics? Choose any topic below instead. There is no wrong door.</p>
+      </section>
+
+      <!-- GUIDE NOTE -->
+      <section aria-labelledby="guide-h">
+        <div class="guide-note">
+          <span class="label" id="guide-h" data-en="A note from your guide" data-fr="Un mot de votre guide">A note from your guide</span>
+          <p data-en="This website was designed with one person in mind: someone who is smart, capable, and has a lifetime of wisdom, but who finds today's technology a bit overwhelming. That might be you, and that is completely okay." data-fr="Ce site a été conçu pour une personne : quelqu'un d'intelligent, de capable, avec toute une vie de sagesse, mais qui trouve la technologie d'aujourd'hui un peu accablante. C'est peut-être vous, et c'est tout à fait correct.">This website was designed with one person in mind: someone who is smart, capable, and has a lifetime of wisdom, but who finds today's technology a bit overwhelming. That might be you, and that is completely okay.</p>
+          <p data-en="Every lesson moves at your pace. There are no tests you can fail and nothing you can break. If you ever feel lost, come back to this page and start fresh. Think of this as a friendly neighbour at your kitchen table, walking you through things one step at a time." data-fr="Chaque leçon avance à votre rythme. Il n'y a aucun examen à échouer et rien à casser. Si vous vous sentez perdu, revenez à cette page et recommencez. Voyez ceci comme un voisin bienveillant à votre table de cuisine, qui vous guide une étape à la fois." style="margin-bottom:0;">Every lesson moves at your pace. There are no tests you can fail and nothing you can break. If you ever feel lost, come back to this page and start fresh. Think of this as a friendly neighbour at your kitchen table, walking you through things one step at a time.</p>
+        </div>
+      </section>
+
+      <!-- TOPIC ENTRY -->
+      <section aria-labelledby="topics-h">
+        <h2 id="topics-h" data-en="Choose a topic" data-fr="Choisissez un sujet">Choose a topic</h2>
+        <p data-en="All 29 lessons are grouped into four topics. Pick whichever matters most to you today." data-fr="Les 29 leçons sont regroupées en quatre sujets. Choisissez celui qui compte le plus pour vous aujourd'hui.">All 29 lessons are grouped into four topics. Pick whichever matters most to you today.</p>
+        <div class="topic-grid">
+          <a href="../module-2.html" class="topic-card">
+            <span class="topic-icon" aria-hidden="true">🛡️</span>
+            <h3 data-en="Safety First" data-fr="La sécurité d'abord">Safety First</h3>
+            <p data-en="Scams, passwords, safe apps, and email. Your digital self-defence toolkit." data-fr="Fraudes, mots de passe, applications sûres et courriel. Votre trousse d'autodéfense numérique.">Scams, passwords, safe apps, and email. Your digital self-defence toolkit.</p>
+            <span class="topic-count" data-en="8 lessons" data-fr="8 leçons">8 lessons</span>
+          </a>
+          <a href="../module-6.html" class="topic-card">
+            <span class="topic-icon" aria-hidden="true">🌤️</span>
+            <h3 data-en="Daily Life" data-fr="La vie quotidienne">Daily Life</h3>
+            <p data-en="Banking, video calls with family, photos, groceries, and understanding AI." data-fr="Opérations bancaires, appels vidéo en famille, photos, épicerie et comprendre l'IA.">Banking, video calls with family, photos, groceries, and understanding AI.</p>
+            <span class="topic-count" data-en="13 lessons" data-fr="13 leçons">13 lessons</span>
+          </a>
+          <a href="../module-16-travel-safety.html" class="topic-card">
+            <span class="topic-icon" aria-hidden="true">🌳</span>
+            <h3 data-en="Staying Independent" data-fr="Rester autonome">Staying Independent</h3>
+            <p data-en="Travel, phone and internet plans, notifications, and organizing your digital life." data-fr="Voyages, forfaits téléphoniques et Internet, notifications et organisation de votre vie numérique.">Travel, phone and internet plans, notifications, and organizing your digital life.</p>
+            <span class="topic-count" data-en="8 lessons" data-fr="8 leçons">8 lessons</span>
+          </a>
+          <a href="../resources.html" class="topic-card">
+            <span class="topic-icon" aria-hidden="true">📚</span>
+            <h3 data-en="Resources and Help" data-fr="Ressources et aide">Resources and Help</h3>
+            <p data-en="Printable guides, quick answers, the scam simulator, and where to get help in your province." data-fr="Guides imprimables, réponses rapides, le simulateur de fraude et où trouver de l'aide dans votre province.">Printable guides, quick answers, the scam simulator, and where to get help in your province.</p>
+            <span class="topic-count" data-en="Browse all" data-fr="Tout parcourir">Browse all</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- WHY FREE / TRUST -->
+      <section aria-labelledby="free-h">
+        <div class="why-free">
+          <h2 id="free-h" data-en="Why is this free?" data-fr="Pourquoi est-ce gratuit?">Why is this free?</h2>
+          <p data-en="The Digital Confidence Centre is offered as a community service by Two Birds Innovation. There is no catch, and here is our promise to you:" data-fr="Le Centre de confiance numérique est offert comme service communautaire par Two Birds Innovation. Il n'y a aucun piège, et voici notre promesse :">The Digital Confidence Centre is offered as a community service by Two Birds Innovation. There is no catch, and here is our promise to you:</p>
+          <ul>
+            <li data-en="No account and no signup. You will never be asked for your email or password." data-fr="Aucun compte, aucune inscription. On ne vous demandera jamais votre courriel ni votre mot de passe.">No account and no signup. You will never be asked for your email or password.</li>
+            <li data-en="No cost, no subscription, and nothing to unlock. Every lesson is open to everyone." data-fr="Aucun coût, aucun abonnement, rien à déverrouiller. Chaque leçon est ouverte à tous.">No cost, no subscription, and nothing to unlock. Every lesson is open to everyone.</li>
+            <li data-en="No selling. We will never try to sell you anything or share your information." data-fr="Aucune vente. Nous ne tenterons jamais de vous vendre quoi que ce soit ni de partager vos renseignements.">No selling. We will never try to sell you anything or share your information.</li>
+            <li data-en="Available in English and French, on any device, anywhere in Canada." data-fr="Offert en français et en anglais, sur tout appareil, partout au Canada.">Available in English and French, on any device, anywhere in Canada.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- FOR FAMILY AND LIBRARIES -->
+      <section aria-labelledby="family-h">
+        <div class="help-strip">
+          <h2 id="family-h" data-en="Helping someone else learn?" data-fr="Vous aidez quelqu'un à apprendre?">Helping someone else learn?</h2>
+          <p data-en="If you are setting up a device for a parent, or running a group session at a library, we have pages made just for you." data-fr="Si vous configurez un appareil pour un parent ou animez une séance de groupe à la bibliothèque, nous avons des pages conçues pour vous.">If you are setting up a device for a parent, or running a group session at a library, we have pages made just for you.</p>
+          <p style="margin-bottom:0;">
+            <a href="../family-setup.html" data-en="Set up for a loved one" data-fr="Configurer pour un proche">Set up for a loved one</a> &nbsp;·&nbsp;
+            <a href="../for-libraries.html" data-en="For libraries and facilitators" data-fr="Pour les bibliothèques et les animateurs">For libraries and facilitators</a> &nbsp;·&nbsp;
+            <a href="../kids/" data-en="DCC Kids (ages 4 to 15)" data-fr="CCN Enfants (4 à 15 ans)">DCC Kids (ages 4 to 15)</a>
+          </p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <nav aria-label="Footer">
+        <a href="../index.html" data-en="Home" data-fr="Accueil">Home</a>
+        <a href="../digital-literacy-101.html" data-en="Foundations" data-fr="Fondations">Foundations</a>
+        <a href="../print-centre.html" data-en="Print Centre" data-fr="Centre d'impression">Print Centre</a>
+        <a href="../faq.html" data-en="Frequently asked questions" data-fr="Foire aux questions">Frequently asked questions</a>
+        <a href="../glossary.html" data-en="Glossary" data-fr="Glossaire">Glossary</a>
+        <a href="../resources/support-directory.html" data-en="Get help" data-fr="Obtenir de l'aide">Get help</a>
+      </nav>
+      <p style="margin-bottom:0.3rem;" data-en="If you think you have been scammed, call the Canadian Anti-Fraud Centre at 1-888-495-8501." data-fr="Si vous croyez avoir été victime d'une fraude, appelez le Centre antifraude du Canada au 1-888-495-8501.">If you think you have been scammed, call the Canadian Anti-Fraud Centre at 1-888-495-8501.</p>
+      <p style="margin-bottom:0;color:var(--color-text-soft);font-size:0.9rem;" data-en="Digital Confidence Centre, a community service by Two Birds Innovation." data-fr="Centre de confiance numérique, un service communautaire de Two Birds Innovation.">Digital Confidence Centre, a community service by Two Birds Innovation.</p>
+      <div class="lab-banner">LANDING V2 LAB PROTOTYPE. Not the live site. Not deployed.</div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /* ---------- Theme toggle ---------- */
+      var themeBtn = document.getElementById('theme-btn');
+      function themeLabel() {
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        var lang = document.documentElement.getAttribute('lang') === 'fr-CA' ? 'fr' : 'en';
+        themeBtn.textContent = themeBtn.getAttribute('data-' + lang + '-' + (dark ? 'dark' : 'light'));
+        themeBtn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      }
+      themeBtn.addEventListener('click', function () {
+        var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        try { localStorage.setItem('dcc-lab-theme', next); } catch (e) {}
+        themeLabel();
+      });
+
+      /* ---------- Text size ---------- */
+      var fsBtns = document.querySelectorAll('.fs-btn');
+      function setSize(size) {
+        document.documentElement.setAttribute('data-font-size', size);
+        fsBtns.forEach(function (b) {
+          b.setAttribute('aria-pressed', b.getAttribute('data-size') === size ? 'true' : 'false');
+        });
+        try { localStorage.setItem('dcc-lab-font', size); } catch (e) {}
+      }
+      fsBtns.forEach(function (b) {
+        b.addEventListener('click', function () { setSize(b.getAttribute('data-size')); });
+      });
+      var savedSize = null;
+      try { savedSize = localStorage.getItem('dcc-lab-font'); } catch (e) {}
+      if (savedSize) { setSize(savedSize); }
+
+      /* ---------- Language toggle (EN / FR-CA) ---------- */
+      var langEn = document.getElementById('lang-en');
+      var langFr = document.getElementById('lang-fr');
+      function setLang(lang) {
+        document.documentElement.setAttribute('lang', lang === 'fr' ? 'fr-CA' : 'en-CA');
+        document.querySelectorAll('[data-en]').forEach(function (el) {
+          var txt = el.getAttribute('data-' + lang);
+          if (txt) { el.textContent = txt; }
+        });
+        langEn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+        langFr.setAttribute('aria-pressed', lang === 'fr' ? 'true' : 'false');
+        try { localStorage.setItem('dcc-lab-lang', lang); } catch (e) {}
+        themeLabel();
+      }
+      langEn.addEventListener('click', function () { setLang('en'); });
+      langFr.addEventListener('click', function () { setLang('fr'); });
+      var savedLang = null;
+      try { savedLang = localStorage.getItem('dcc-lab-lang'); } catch (e) {}
+      if (savedLang === 'fr') { setLang('fr'); } else { themeLabel(); }
+    })();
+  </script>
+</body>
+</html>
