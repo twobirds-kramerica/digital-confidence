@@ -1,0 +1,170 @@
+{
+  "id": "module-19-digital-legacy",
+  "slug": "module-19-digital-legacy",
+  "page_title": "Your Digital Life - Digital Confidence Centre",
+  "title": "Your Digital Life: Keeping It Safe and Organised",
+  "description": "Organise your digital accounts, back up your photos, set up a trusted contact and Apple Legacy Contact, and plan your digital estate. Free, plain-language lesson for Canadian seniors. No account needed.",
+  "category": "Digital life",
+  "category_icon": "🗂️",
+  "lesson_time": "About 35 minutes, at your own pace",
+  "lead": "How to take calm, organised control of your digital life: know what accounts you have, protect your photos, set up a trusted contact, and leave the memories that matter for the people you love.",
+  "nav_current": "../index.html#getting-things-done",
+  "breadcrumb_group_label": "Getting things done",
+  "breadcrumb_group_anchor": "../index.html#getting-things-done",
+  "coach": "Thinking about what happens to your accounts and photos after you are gone is heavy, and choosing to face it is an act of generosity toward the people you love. There is no deadline and no test here. Even one small step, like writing down where things are, is a gift your family will one day be grateful for.",
+  "sections": [
+    { "type": "heading", "level": 2, "text": "Your digital footprint" },
+    { "type": "paragraph", "text": "Your <strong>digital footprint</strong> is simply everything about you that exists online. Your email account. Your social media profiles. Your online banking. The photos you have shared. The subscriptions you have signed up for." },
+    { "type": "paragraph", "text": "Most people are surprised by how large their footprint is, and by how manageable it becomes once you look at it clearly." },
+    { "type": "heading", "level": 3, "text": "Your digital inventory: start here" },
+    { "type": "paragraph", "text": "Take a few minutes to write down every online account you have. Include:" },
+    { "type": "list", "items": [
+      "Email accounts (Gmail, Outlook, Rogers, and so on)",
+      "Social media (Facebook, Instagram, and others)",
+      "Online shopping (Amazon and similar stores)",
+      "Banking and financial accounts",
+      "Streaming services (Netflix and similar)",
+      "Any apps that required you to create an account"
+    ] },
+    { "type": "tip", "label": "Keep the list somewhere safe", "text": "Keep this list somewhere safe: not on your phone, but perhaps in a notebook at home." },
+    { "type": "helper", "label": "Confidence check", "text": "You do not need to do this all at once. One account at a time is perfectly fine." },
+
+    { "type": "heading", "level": 2, "text": "Managing your accounts" },
+    { "type": "paragraph", "text": "Not every account you have ever created is worth keeping. Simplifying your digital life means deciding which accounts serve you, and safely closing the ones that do not." },
+    { "type": "heading", "level": 3, "text": "Keep these accounts" },
+    { "type": "list", "items": [
+      "<strong>Your primary email address:</strong> everything important is connected here",
+      "<strong>Online banking:</strong> essential and secure",
+      "<strong>Any account you use regularly</strong> (at least monthly)",
+      "<strong>Apple ID:</strong> needed for your iPhone and iPad"
+    ] },
+    { "type": "heading", "level": 3, "text": "Consider closing these" },
+    { "type": "list", "items": [
+      "Old email addresses you no longer check",
+      "Shopping accounts at stores you have not visited in years",
+      "Social media accounts you never use",
+      "Subscriptions you forgot you signed up for"
+    ] },
+    { "type": "paragraph", "text": "To close an account: look for <strong>Settings</strong> or <strong>Account</strong> on the website, then look for <strong>Delete account</strong> or <strong>Close account</strong>. If you cannot find it, search online for \"[service name] how to close account\"." },
+    { "type": "helper", "label": "Confidence check", "text": "Is there one account you have been meaning to close? This is the week to do it." },
+
+    { "type": "heading", "level": 2, "text": "Your digital photos: protecting your memories" },
+    { "type": "paragraph", "text": "Photos are often the most irreplaceable thing on a device. A backed-up photo can never truly be lost. An unbacked photo can disappear if your phone is lost, damaged, or stolen." },
+    { "type": "heading", "level": 3, "text": "iCloud Photos: the simplest backup" },
+    { "type": "paragraph", "text": "iCloud Photos automatically backs up every photo you take to the cloud. When turned on, your photos are safe even if your phone is lost or broken." },
+    { "type": "walkthrough", "title": "Turning on iCloud Photos", "steps": [
+      "Open <strong>Settings</strong> on your iPhone or iPad.",
+      "Tap <strong>[Your Name]</strong> at the top of the screen.",
+      "Tap <strong>iCloud</strong>, then tap <strong>Photos</strong>.",
+      "Toggle on <strong>iCloud Photos</strong>."
+    ] },
+    { "type": "tip", "label": "About iCloud storage", "text": "Free iCloud storage is 5GB, and it fills up quickly. Consider upgrading to iCloud+ (50GB for $1.29/month) if you take many photos." },
+    { "type": "walkthrough", "title": "Organising your photos into albums", "steps": [
+      "Open <strong>Photos</strong> and tap <strong>Albums</strong> at the bottom.",
+      "Tap the <strong>+</strong> button at the top left.",
+      "Choose <strong>New Album</strong> and give it a name (for example, \"Christmas 2025\").",
+      "Select photos to add to the album."
+    ] },
+    { "type": "helper", "label": "Confidence check", "text": "Are your photos backed up right now? Check: Settings, then [Your Name], then iCloud, then Photos." },
+
+    { "type": "heading", "level": 2, "text": "Passwords and trusted access" },
+    { "type": "paragraph", "text": "A practical question many seniors do not think about until it is urgent: if something happened to you, could someone you trust access your important accounts?" },
+    { "type": "heading", "level": 3, "text": "Your digital key list" },
+    { "type": "paragraph", "text": "Consider creating a physical, handwritten list of your most important accounts and how to access them. Store it in the same place as your will or other important documents, not on your phone. Include: your email address, your Apple ID (your iCloud login), your online banking login, and any other critical accounts." },
+    { "type": "warning", "label": "Do not write out full passwords", "text": "Do NOT include your full passwords on a list that could be found by others. Instead, use a hint that only family would understand." },
+    { "type": "heading", "level": 3, "text": "Apple Legacy Contact" },
+    { "type": "paragraph", "text": "Apple has a feature called <strong>Legacy Contact</strong> that lets you designate someone who can access your Apple account after you pass away. This person can download your photos, messages, and files." },
+    { "type": "walkthrough", "title": "Setting up an Apple Legacy Contact", "steps": [
+      "Open <strong>Settings</strong> and tap <strong>[Your Name]</strong>.",
+      "Tap <strong>Password &amp; Security</strong>.",
+      "Tap <strong>Legacy Contact</strong>, then tap <strong>Add Legacy Contact</strong> and follow the steps."
+    ] },
+    { "type": "helper", "label": "Confidence check", "text": "Does at least one trusted person know how to access your most important accounts if they needed to?" },
+
+    { "type": "heading", "level": 2, "text": "Digital estate planning: the basics" },
+    { "type": "paragraph", "text": "This section is calm, practical, and empowering, not morbid. It is simply about making thoughtful decisions so your digital life is taken care of." },
+    { "type": "heading", "level": 3, "text": "What happens to your accounts" },
+    { "type": "list", "items": [
+      "<strong>Apple:</strong> your Legacy Contact can request access. Without one, accounts become inaccessible.",
+      "<strong>Facebook:</strong> family can request a \"Memorialised\" account (preserved as a tribute) or deletion.",
+      "<strong>Google/Gmail:</strong> Google has an Inactive Account Manager. You can decide what happens to your account after a period of inactivity.",
+      "<strong>Email:</strong> your family can request access from providers with a death certificate. It helps if they know which email provider you use."
+    ] },
+    { "type": "tip", "label": "Tell someone", "text": "The simplest digital estate plan is also the most effective: tell a trusted family member where your digital key list is kept, and what your Apple ID email address is. You do not need a lawyer for this. You just need one conversation." },
+    { "type": "helper", "label": "Confidence check", "text": "Has someone in your family had this conversation with you? If not, consider starting it." },
+
+    { "type": "heading", "level": 2, "text": "Cleaning up your digital life" },
+    { "type": "paragraph", "text": "Just like a tidy home feels better to live in, a tidy digital life is less stressful and more secure. Here are three simple housekeeping tasks." },
+    { "type": "heading", "level": 3, "text": "Unsubscribing from email lists" },
+    { "type": "paragraph", "text": "If you get emails from stores, charities, or websites that you no longer want, scroll to the very bottom of any email and look for an <strong>Unsubscribe</strong> link. Tap it and follow the instructions. This is completely safe to do, and you will stop receiving emails from that sender." },
+    { "type": "heading", "level": 3, "text": "Deleting old emails" },
+    { "type": "paragraph", "text": "Most people have hundreds or thousands of emails they no longer need. You can safely delete old emails; they are not important records unless they contain legal or financial information you need. In Gmail or Apple Mail, select multiple emails at once by checking the boxes next to them, then tap Delete." },
+    { "type": "heading", "level": 3, "text": "Deleting apps you do not use" },
+    { "type": "paragraph", "text": "Apps you downloaded and never used are taking up space on your device. Press and hold any app icon until it wiggles, then tap the <strong>X</strong> or minus sign to delete it. If you accidentally delete an app you need, you can always re-download it from the App Store for free." },
+    { "type": "helper", "label": "Confidence check", "text": "Can you identify 3 apps on your device right now that you have never used? Consider deleting them today." },
+
+    { "type": "heading", "level": 2, "text": "Your digital legacy: leaving something behind" },
+    { "type": "paragraph", "text": "This is the warmest part of this lesson. Your digital life contains things that matter: photos, messages, maybe videos of your voice. These are gifts you can leave for family." },
+    { "type": "heading", "level": 3, "text": "A photo album for your family" },
+    { "type": "paragraph", "text": "Consider creating a dedicated iCloud Shared Album called \"Family Memories\" and inviting your children or grandchildren. Add photos regularly. This becomes a living family archive that everyone can access." },
+    { "type": "heading", "level": 3, "text": "A video message" },
+    { "type": "paragraph", "text": "One of the most meaningful things you can do with your phone is record a short video message to your family. Not for any urgent reason, but simply to say what you love about them, what you hope for them, and what you want them to remember. Open the <strong>Camera</strong> app. Switch to <strong>Video</strong>. Press the red button. Speak from the heart. Save it in your photo library and tell a trusted family member it is there." },
+    { "type": "heading", "level": 3, "text": "A note to leave" },
+    { "type": "paragraph", "text": "The Notes app on your iPhone lets you write a note that can be shared with family. Some people write a brief note that tells family where important information is kept: where the will is, who to call, what their wishes are. Simple, practical, and incredibly kind." },
+    { "type": "the_move", "label": "Try it this week", "text": "Is there one thing, a photo, a message, a note, that you could create this week for someone you love? Start with that one thing." },
+
+    { "type": "heading", "level": 2, "text": "Quick answers" },
+    { "type": "heading", "level": 3, "text": "What happens to my email account when I die?" },
+    { "type": "paragraph", "text": "Most email providers eventually delete inactive accounts after 12 to 24 months. Gmail allows you to set up an Inactive Account Manager to pass your data to a trusted contact. Apple's Legacy Contact feature lets you designate someone who can access your iCloud account after your death. It is worth setting this up now." },
+    { "type": "heading", "level": 3, "text": "Do I need a lawyer to plan my digital estate?" },
+    { "type": "paragraph", "text": "No. The most important first step is simply writing down your accounts and having a conversation with a trusted family member. A lawyer can help include digital assets in a formal will, but the conversation and a written list are the most valuable actions and cost nothing." },
+    { "type": "heading", "level": 3, "text": "What should I do with old photos on my phone?" },
+    { "type": "paragraph", "text": "The single most important action is to turn on iCloud Photos backup so all your photos are automatically saved to the cloud. You can then share your favourite albums with family using Shared Albums in the Photos app. Printing a small selection as a physical photo album is a wonderful gift that does not depend on technology." },
+
+    { "type": "quiz", "heading": "Quick check: test your knowledge", "intro": "Tap the answer you think is correct. There is no score kept and nothing to sign in to.", "questions": [
+      { "q": "1. A digital legacy refers to:",
+        "options": ["Money stored in online bank accounts only", "All the online accounts, passwords, and digital assets you leave behind when you pass away", "Photos printed and stored on a computer", "Your email address and phone number"],
+        "correct": 1,
+        "right": "Correct. Your digital legacy is everything digital you leave behind: accounts, passwords, photos, messages, and files. Planning for it is a gift to your family.",
+        "wrong": "A digital legacy is all the online accounts, passwords, and digital assets you leave behind when you pass away, not just money or photos." },
+      { "q": "2. Storing your account passwords securely for a trusted family member means:",
+        "options": ["Sharing them on a sticky note on your computer", "Keeping them in a secure written document in a known safe place, or a password manager", "Emailing them to family so they always have access", "Storing them in a text message to yourself"],
+        "correct": 1,
+        "right": "Exactly. A secure written document stored with your will, or a password manager, keeps access safe without exposing your passwords to anyone who walks by.",
+        "wrong": "The safe approach is a secure written document in a known safe place (like where your will is kept) or a password manager. Sticky notes, emails, and texts can all be seen or stolen." },
+      { "q": "3. Apple Legacy Contact is a feature that allows you to:",
+        "options": ["Transfer your phone plan to a family member after you pass", "Designate someone to access your Apple account data after your death", "Share your Apple ID with family while you are alive", "Back up your photos to a relative's iCloud"],
+        "correct": 1,
+        "right": "Right. A Legacy Contact is someone you designate who can access your Apple account data, including photos and messages, after your death. Set it up in Settings, then Password &amp; Security.",
+        "wrong": "Apple Legacy Contact lets you designate someone who can access your Apple account data after your death. Without one, your account becomes inaccessible." },
+      { "q": "4. What should you include in a digital instructions document for family?",
+        "options": ["Your banking PIN numbers and CRA password", "A list of your accounts with usernames and guidance on which to close or keep", "Every password you have ever used", "Only your social media accounts"],
+        "correct": 1,
+        "right": "Correct. List your accounts and usernames with guidance on what to do with each. Never write out full passwords or PINs; use hints only family would understand.",
+        "wrong": "The document should list your accounts with usernames and guidance on which to close or keep. Do not write out full passwords or PINs anywhere they could be found." },
+      { "q": "5. Why is it important to review your digital accounts periodically?",
+        "options": ["To ensure you are not being charged for services you no longer use", "To increase your credit score", "To qualify for senior discounts online", "To avoid your phone running out of storage"],
+        "correct": 0,
+        "right": "Exactly. A periodic review catches forgotten subscriptions and services that are quietly charging you, and keeps your digital life tidy and secure.",
+        "wrong": "The main reason is to make sure you are not being charged for services you no longer use, like forgotten subscriptions. It also keeps your digital life simpler and safer." }
+    ] },
+
+    { "type": "checklist", "heading": "Your progress", "intro": "Tick each item as you feel confident with it. This is saved on this device only, with no account needed.", "id": "module-19-digital-legacy", "items": [
+      "I have started a written inventory of my online accounts",
+      "I have closed (or picked) one old account I no longer need",
+      "My photos are backed up with iCloud Photos",
+      "I have a handwritten digital key list stored with my important documents",
+      "I have set up an Apple Legacy Contact",
+      "A trusted family member knows where my digital key list is kept",
+      "I have unsubscribed from at least one email list I no longer want"
+    ] }
+  ],
+  "success_state": "<strong>Well done.</strong> You have taken stock of your digital footprint, protected your photos, set up trusted access, and started your digital estate plan. One conversation and one written list, and your digital life is organised and in your control.",
+  "related": {
+    "heading": "Where to next",
+    "cards": [
+      { "num": "Module 3", "name": "Passwords", "desc": "Your digital key list works best alongside strong, memorable passwords. Learn the passphrase method.", "href": "module-3.html", "external": false },
+      { "num": "Module 7", "name": "Photos and Memories", "desc": "Now that your photos are backed up, learn to take, edit, and share your favourite memories.", "href": "module-7.html", "external": false }
+    ]
+  }
+}
