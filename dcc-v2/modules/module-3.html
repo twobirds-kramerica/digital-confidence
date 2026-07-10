@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow"><!-- v2 preview - remove before launch -->
+  <script>
+    // Theme + text size before first paint (no flash). Local only, no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Passwords and Biometrics - Digital Confidence Centre</title>
+  <meta name="description" content="Create strong passwords, set up Face ID or fingerprint unlock, and use two-factor authentication. Free, plain-language lesson for Canadian seniors. No account needed.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- SHARED SHELL: header (generated from module-v2.html.tpl; identical on every page). -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Read this page aloud">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
+        <div class="rate-group" role="group" aria-label="Reading speed">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Slower</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normal</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Faster</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="../index.html">All lessons</a>
+    <a href="../index.html#protect-money" aria-current="page">Protect your money</a>
+    <a href="../index.html#everyday-confidence">Everyday confidence</a>
+    <a href="../index.html#staying-connected">Staying connected</a>
+    <a href="../index.html#getting-things-done">Getting things done</a>
+    <a href="../for-families.html">For families</a>
+    <a href="../../resources/support-directory.html">Get help</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="../index.html">All lessons</a></li>
+      <li><a href="../index.html#protect-money">Protect your money</a></li>
+      <li><span aria-current="page">Passwords and Biometrics</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <a class="lesson-back" href="../index.html">← Back to all lessons</a>
+
+    <p class="lesson-category"><span aria-hidden="true">🔑</span> Passwords and security</p>
+    <h1>Passwords and Biometrics</h1>
+    <p class="lesson-time"><span aria-hidden="true">⏱</span> About 25 minutes, at your own pace</p>
+
+    <!-- Brenda: the first thing a nervous reader sees removes a fear. -->
+    <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
+
+    <p class="lead">How to keep your accounts secure without memorizing dozens of passwords. We will cover Face ID, password managers, and what those security terms actually mean in plain language.</p>
+
+    <h2>Helen's story</h2>
+    <p>Helen, 69, had one password for everything: her late husband's name followed by their anniversary year. She used it for her email, her bank, her iPad, Amazon, Facebook, everything. "It's easy to remember," she told her daughter.</p>
+    <p>Then one day, Helen noticed strange purchases on her Amazon account, three expensive Bluetooth speakers she had never ordered. Someone had figured out her password (it turns out her husband's name and their anniversary were both on her Facebook profile) and used it to get into her Amazon account. Because Helen used the same password everywhere, the thief also tried it on her email, and got in.</p>
+    <p>Helen spent two stressful weeks changing passwords, calling her bank, and locking down her accounts. But the experience taught her something she now shares with every friend: "One password for everything is like one key for your house, your car, and your safety deposit box. If someone copies that key, they get into everything."</p>
+    <p>Today, Helen uses Face ID and a password manager. She says managing her passwords is now easier than it was before, and far, far safer.</p>
+
+    <div class="coach-block">
+      <span class="coach-mark" aria-hidden="true">💬</span>
+      <div class="coach-body">
+        <span class="coach-label">From your coach</span>
+        <p>If reading a page of security terms makes your head spin a little, that is perfectly normal. Passwords and security terms were invented by engineers for other engineers. They were never designed to be easy for regular people to understand or remember. The confusion you feel is a flaw in the system, not in you. We are about to make the whole thing much simpler.</p>
+      </div>
+    </div>
+
+    <h2>Security terms in plain language</h2>
+
+    <p>Before we go further, let us define some words you might hear. Think of this as your personal dictionary:</p>
+
+    <ul>
+      <li><strong>Password:</strong> A secret word or phrase that proves you are who you say you are. Like a key to a lock.</li>
+      <li><strong>Biometrics:</strong> Using your body to prove your identity: your face, your fingerprint, or even your voice. "Bio" means life, and "metrics" means measurement. So biometrics means "measuring something about you."</li>
+      <li><strong>Face ID:</strong> Apple's system that uses the front camera on your iPad or iPhone to recognise your face. It is like a security guard who knows what you look like and opens the door when they see you.</li>
+      <li><strong>Touch ID:</strong> Apple's fingerprint reader, found on older iPads and iPhones. You press your finger on the Home button and it recognises your unique fingerprint.</li>
+      <li><strong>Face Unlock / Fingerprint Unlock:</strong> Android's version of the same idea. Many Android phones and tablets can recognise your face or your fingerprint to unlock your device and confirm your identity.</li>
+      <li><strong>Password Manager:</strong> A secure digital vault that remembers all your passwords for you. You only need to remember one master password. The vault remembers the rest.</li>
+      <li><strong>Two-Factor Authentication (also called 2FA or "two-step verification"):</strong> An extra security step when you log in. After typing your password, you also need a second proof, usually a code sent to your phone. It is like a door that needs both a key and a secret knock.</li>
+      <li><strong>Apple ID:</strong> Your personal account with Apple. It is the email address and password you use to download apps, use iCloud, and access Apple services. Think of it as your membership card for everything Apple.</li>
+      <li><strong>Google Account:</strong> Your personal account with Google. It is the email address (usually Gmail) and password you use to download apps from the Play Store, back up your data, and access Google services. Think of it as your membership card for everything on your Android device.</li>
+    </ul>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Those terms are not so scary when they are explained properly, are they? You are building your tech vocabulary, and most people never learn what these words actually mean. You are already ahead.</p>
+    </div>
+
+    <h2>Biometrics: your face or fingerprint is your password</h2>
+
+    <p>Modern devices can recognise you by your face or fingerprint. This is one of the most convenient and secure ways to protect your device.</p>
+
+    <p><strong>How Face ID works:</strong> When you set up Face ID on a newer iPad or iPhone, your device takes a detailed map of your face using special sensors. It does not take a regular photograph. It creates a mathematical model of the shape of your face, stored only on your device (it is never sent to Apple or anyone else). When you pick up your device and look at the screen, it checks: "Is this the same face?" If yes, it unlocks.</p>
+
+    <div class="walkthrough">
+      <h4>Setting up Face ID on iPad or iPhone</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Find the <strong>Settings</strong> app on your Home screen. It looks like grey mechanical gears. Tap it to open it.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Scroll down and tap <strong>"Face ID &amp; Passcode"</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Enter your current passcode (the number you type to unlock your device).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Tap <strong>"Set Up Face ID"</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Hold your device at arm's length and position your face in the circle on the screen. Slowly move your head in a circle, as if you are tracing the outline of a large clock with your nose.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p>You will need to do this twice. Follow the on-screen instructions.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">7</span>
+        <span class="step-text"><p>When it says "Face ID is now set up", you are done. Your face is now your password.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Good to know</span>
+      <p>Face ID works with glasses on or off, and it adapts as your appearance changes gradually over time. It does not work with a face covering, so you may need your passcode when wearing a mask. Face ID will also not let someone unlock your device while you are sleeping. Your eyes need to be open and looking at the screen.</p>
+    </div>
+
+    <p>Most Android phones and tablets come with a fingerprint reader, and many newer models also offer face unlock. The fingerprint reader is usually found on the back of the device, on the side (built into the power button), or under the screen itself.</p>
+
+    <div class="walkthrough">
+      <h4>Setting up fingerprint unlock on Android</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open the <strong>Settings</strong> app (the gear icon on your Home screen or in the App Drawer).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Scroll down and tap <strong>"Security"</strong> or <strong>"Biometrics and Security"</strong> (the exact name varies slightly between Samsung, Google Pixel, and other brands).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Tap <strong>"Fingerprint"</strong> or <strong>"Fingerprints"</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Enter your current PIN, pattern, or password. If you do not have one set up yet, the device will ask you to create one first.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Tap <strong>"Add fingerprint"</strong> and place your finger on the fingerprint sensor.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p>Gently tap and lift your finger on the sensor repeatedly. The screen shows how much of your fingerprint has been captured. Move your finger slightly each time to cover all the edges.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">7</span>
+        <span class="step-text"><p>When the device says your fingerprint has been added, you are done. Your finger is now your password.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Good to know</span>
+      <p>Android fingerprint unlock is very reliable and works even if your hands are slightly damp. Face unlock on Android is convenient, but on most devices it is slightly less secure than fingerprint. Some models can be unlocked with a good photograph. For best security, use fingerprint as your primary method and face unlock as a backup. You can have both set up at the same time.</p>
+    </div>
+
+    <p>Windows computers have a built-in sign-in system called <strong>Windows Hello</strong>. It lets you sign in with a PIN, your face (on computers with the right camera), or a fingerprint (on computers with a fingerprint reader). A Windows Hello PIN is especially useful. It is different from your Microsoft account password, and it only works on that specific computer.</p>
+
+    <div class="walkthrough">
+      <h4>Setting up a Windows Hello PIN</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Click the <strong>Start button</strong> (Windows logo, bottom left) and then click the <strong>Settings gear icon</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Click <strong>"Accounts"</strong> from the list on the left side.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Click <strong>"Sign-in options"</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Under <strong>"Windows Hello PIN"</strong>, click <strong>"Add"</strong> or <strong>"Set up"</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Confirm your Microsoft account password, then choose a PIN of at least 4 digits. Write it down and keep it in a safe place.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p>Once set up, you type this shorter PIN to sign in instead of your long password. Much easier to remember.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Good to know</span>
+      <p>Your Windows Hello PIN is tied to your specific computer. It cannot be used anywhere else. This means even if someone finds your PIN written down, they cannot use it to access your account from another device. It is safe to write your PIN on paper and store it securely.</p>
+    </div>
+
+    <h2>Creating strong passwords</h2>
+
+    <p>For accounts where you still need a typed password, here is how to make a good one.</p>
+
+    <div class="warning-block">
+      <span class="block-label">Weak passwords, do not use these</span>
+      <p>123456, password, your name, your pet's name, your birthday, your anniversary, your address, "qwerty", or any single word found in the dictionary.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Watch out</span>
+      <p>Using the same password for multiple accounts is like using the same key for your house, your car, and your safety deposit box. If a thief copies that one key, they get into everything.</p>
+    </div>
+
+    <p>A strong password is like a strong lock: it has multiple parts that work together. The best way to create one is the <strong>passphrase method</strong>.</p>
+
+    <div class="tip-block">
+      <span class="block-label">The passphrase method</span>
+      <p>Instead of a single word, use a short phrase of random words. For example: <strong>Purple-Teacup-Bridge-44</strong>. This is much harder for a computer to guess than "MyName1954" but much easier for you to remember. You can picture a purple teacup sitting on a bridge with the number 44 on it. The sillier the image, the easier it is to remember. More examples: <strong>Garden-Rabbit-Snow-17</strong> or <strong>Kitchen-River-Maple-82</strong>.</p>
+    </div>
+
+    <ul>
+      <li><strong>Never use the same password twice.</strong> Each account should have its own unique password.</li>
+      <li><strong>Never share your passwords</strong> with anyone, not even someone who says they are from Apple or your bank.</li>
+      <li><strong>Make them long.</strong> A 16-character passphrase is far stronger than an 8-character password with random symbols.</li>
+    </ul>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You do not need to be a computer expert to have strong passwords. A silly phrase you can picture in your mind is all you need.</p>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Tip</span>
+      <p>Write your master password on paper and keep it in a locked drawer or a safe, never on a sticky note attached to your device. A paper backup in a secure location is perfectly fine.</p>
+    </div>
+
+    <h2>Password managers: your digital vault</h2>
+
+    <p>"But how am I supposed to remember a different password for every account?" Great question. The answer is: you are not. A password manager does it for you. Your device already comes with one built in: <strong>iCloud Keychain</strong> on iPad and iPhone, <strong>Google Password Manager</strong> on Android, and a password manager inside <strong>Microsoft Edge</strong> on Windows. Here is what they do:</p>
+
+    <ul>
+      <li>When you create a new account on a website, your device offers to <strong>save the password</strong> for you.</li>
+      <li>When you return to that website, your device <strong>fills in the password automatically</strong>. You do not need to type it.</li>
+      <li>It can <strong>suggest strong passwords</strong> when you are creating a new account.</li>
+      <li>It <strong>warns you</strong> if one of your saved passwords has been found in a data breach.</li>
+      <li>All of this is protected by your Face ID, fingerprint, PIN, or passcode. No one else can see your passwords.</li>
+    </ul>
+
+    <div class="walkthrough">
+      <h4>Making sure iCloud Keychain is turned on (iPad or iPhone)</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open <strong>Settings</strong> (the grey gears icon).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap your <strong>name</strong> at the very top of the Settings screen (it shows your name and "Apple ID, iCloud, Media &amp; Purchases").</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Tap <strong>"iCloud"</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Tap <strong>"Passwords and Keychain"</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Make sure the switch next to <strong>"Sync this iPad"</strong> (or "Sync this iPhone") is turned on (green). If it is already green, you are all set.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p>To view your saved passwords later: open Settings, scroll down and tap <strong>"Passwords"</strong>, then confirm with Face ID or your passcode.</p></span>
+      </div>
+    </div>
+
+    <div class="walkthrough">
+      <h4>Making sure Google Password Manager is turned on (Android)</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open the <strong>Chrome</strong> app (the colourful circle icon).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap the <strong>three dots</strong> in the top-right corner of the screen.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Tap <strong>"Settings"</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Tap <strong>"Password Manager"</strong> (or <strong>"Passwords"</strong> on some versions).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Make sure <strong>"Offer to save passwords"</strong> is turned on (the switch should be blue). If it is already on, you are all set.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p>To view your saved passwords later: open Settings, tap <strong>"Passwords and accounts"</strong> (or "Google" then "Password Manager"), and confirm with your fingerprint, face unlock, or PIN.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Helpful hint</span>
+      <p>You can also visit <strong>passwords.google.com</strong> in any web browser to see all your Google-saved passwords. You will need to sign in with your Google account. This is handy if you want to review your passwords on a computer as well.</p>
+    </div>
+
+    <div class="walkthrough">
+      <h4>Turning on password saving in Microsoft Edge (Windows)</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open <strong>Microsoft Edge</strong> (the blue wave icon on your taskbar or Start menu).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Click the <strong>three dots (...)</strong> in the top-right corner of the browser.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Click <strong>"Settings"</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>On the left side, click <strong>"Passwords"</strong> (or search "Passwords" in the search bar at the top of Settings).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Make sure <strong>"Offer to save passwords"</strong> is turned on. If it is already on, you are all set.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p>To view a saved password later, return to Settings, click Passwords, and click the <strong>eye icon</strong> next to any entry (you may be asked to confirm with your Windows Hello PIN).</p></span>
+      </div>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You now understand password managers, the single most powerful tool for keeping your accounts safe. You do not need to memorise dozens of passwords. The vault does it for you.</p>
+    </div>
+
+    <h3>What about third-party password managers?</h3>
+
+    <p>Your device's built-in password manager (iCloud Keychain, Google Password Manager, or Microsoft Edge) is free, already set up, and works perfectly for most people. However, some people prefer a separate app, especially if they use multiple types of devices (for example, an iPhone and a Windows computer). The three most trusted options:</p>
+
+    <ul>
+      <li><strong>Bitwarden</strong> (free; paid plan about $10 per year): the best free option, open source and widely trusted. Moderate ease of use.</li>
+      <li><strong>1Password</strong> (about $36 per year): the easiest to use, excellent for families, works on all devices.</li>
+      <li><strong>LastPass</strong> (free with limits, or about $36 per year): a long-standing service that had a security incident in 2022. Acceptable if you change your master password. Easy to use.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">Our recommendation</span>
+      <p><strong>For most seniors: use your built-in password manager. It is free, already there, and works beautifully.</strong> If a family member suggests a third-party app and offers to help you set it up, Bitwarden (free) or 1Password (paid, easiest) are excellent choices. You do not need to rush into this. Start with what is already on your device.</p>
+    </div>
+
+    <div class="walkthrough">
+      <h4>Setting up 1Password, the easiest third-party option</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Download the app.</strong> Open the App Store (iPhone or iPad) or the Google Play Store (Android) and search for "1Password". It is free to install, with a 14-day free trial.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p><strong>Create your account.</strong> Open 1Password and tap "Create Account". Enter your email address, then open the confirmation email and tap the link to confirm.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p><strong>Create your Master Password.</strong> Choose ONE strong password you will remember. Three or four random words strung together work well: "Sunset-Garden-Bicycle-Maple" is long and easy to picture, but very hard to guess.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p><strong>Write your Master Password on paper.</strong> Write it clearly and keep it in a safe place at home: a drawer, a lockbox, or with your important documents. This is the one time paper is better than digital.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p><strong>Add your first password.</strong> Open a website you use often. When you see the login page, 1Password will offer to save your username and password. Tap "Save Login".</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p><strong>Next time you log in,</strong> 1Password will offer to fill in your username and password automatically. Just tap "Fill". No typing needed.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">7</span>
+        <span class="step-text"><p><strong>Let it create new passwords.</strong> Next time you sign up for a new account, tap "Generate Password" in 1Password. It creates a strong random password and saves it. You never need to see or remember it.</p></span>
+      </div>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Protect your master password</span>
+      <p>Your Master Password is the key that unlocks every other password. Never save it digitally: not in a text file, not in an email draft, not in Notes on your phone. Write it on paper, store it at home, and do not share it with anyone except a trusted family member kept for emergencies. If you forget your Master Password, 1Password cannot recover it. That is what makes it secure. The paper backup is your lifeline. Keep it safe.</p>
+    </div>
+
+    <h2>Two-factor authentication: the double lock</h2>
+
+    <p>Imagine your front door had two locks: a regular lock and a deadbolt. Even if someone copied your key, they still could not get in without also having the deadbolt key. That is what two-factor authentication does for your online accounts. When you turn on two-factor authentication (let us call it "the double lock"), logging in works like this:</p>
+
+    <ul>
+      <li>You type your password as usual (the first lock).</li>
+      <li>The website sends a <strong>short code</strong> (usually 6 numbers) to your phone or iPad (the second lock).</li>
+      <li>You type that code into the website.</li>
+      <li>Now the website knows it is really you, because even if someone stole your password, they would also need your phone to get the code.</li>
+    </ul>
+
+    <p>Your Apple ID already uses two-factor authentication by default. When you sign in on a new device, Apple sends a code to your other devices. This is normal and it is protecting you.</p>
+
+    <div class="three-second-rule">
+      <h3>The 3-second rule for codes</h3>
+      <ol class="tsr-steps">
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">✋</span><span class="tsr-name">Stop</span> Did you request this code?</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🫁</span><span class="tsr-name">Breathe</span> If you did not try to log in, someone else might be trying.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🔍</span><span class="tsr-name">Verify</span> Never share a verification code with anyone who calls or texts you. Change your password if you did not request it.</li>
+      </ol>
+    </div>
+
+    <h3>The four types of two-factor authentication</h3>
+
+    <p>There are a few different ways to set up your "second lock". Here they are from easiest to most advanced. You only need to pick one:</p>
+
+    <ul>
+      <li><strong>1. Text message code (SMS), easiest for beginners.</strong> When you log in, the website sends a 6-digit code to your phone as a text message. You type the code to complete the login. Takes about 10 extra seconds. No special app required, just your mobile phone number.</li>
+      <li><strong>2. Email code.</strong> Similar to SMS, but the code is sent to your email address instead of your phone. Good backup option if you prefer not to give out your phone number.</li>
+      <li><strong>3. Authenticator app, more advanced.</strong> Apps like <strong>Google Authenticator</strong> or <strong>Microsoft Authenticator</strong> generate codes every 30 seconds, even without an internet connection. More secure than SMS because codes are not sent over the phone network. Requires one-time setup per account.</li>
+      <li><strong>4. Face ID or fingerprint plus password.</strong> Using your face or fingerprint combined with your password. If you already use Face ID on your iPhone, you are doing this for your Apple account. Apple enables it by default.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">Which accounts most need the double lock?</span>
+      <p><strong>Banking:</strong> most Canadian banks already require it; you may be using it without realising. <strong>Email (Gmail, Outlook):</strong> very important, because your email can be used to reset all your other passwords. <strong>Government services:</strong> CRA My Account, Service Canada. <strong>Facebook and Instagram:</strong> optional but recommended. <strong>Amazon:</strong> optional, especially important if you have a saved credit card. <strong>Start with your email and your bank.</strong> These two accounts are the most important to protect, and once they are secured, the rest follows naturally.</p>
+    </div>
+
+    <div class="walkthrough">
+      <h4>Turn on the double lock for your Gmail account</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open the <strong>Gmail app</strong> (red and white envelope icon) and make sure you are signed in. On a computer, go to <strong>myaccount.google.com</strong> in your browser instead.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap your <strong>profile photo</strong> (your initial or photo, top right corner), then tap <strong>Manage your Google Account</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Tap the <strong>Security</strong> tab.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Scroll down to <strong>How you sign in to Google</strong> and tap <strong>2-Step Verification</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Tap <strong>Get started</strong> and follow the steps. Google will ask you to enter your phone number so it can send you a code by text message.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p>Enter the code Google sends you to confirm it works, then tap <strong>Turn on</strong>.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">What to expect after turning on 2FA</span>
+      <p>The next time you sign in to Gmail on a new device or after logging out, Google will send a 6-digit code to your phone. Just type in the code and you are in. On your own phone or iPad, you usually stay signed in and will not be asked for a code every time. Most services remember your own device for 30 days or longer.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">The one rule you must remember</span>
+      <p>Never give your 2FA code to anyone. A legitimate company will never call you and ask for your 6-digit code. If someone calls asking for your code, whether they say they are from Google, your bank, or the government, hang up immediately. That code is the key to your account, and giving it away hands them complete access.</p>
+    </div>
+
+    <h3>Answering your questions about the double lock</h3>
+
+    <ul>
+      <li><strong>What if I lose my phone?</strong> When you set up 2FA, most services show you a set of backup codes: a list of one-time emergency codes. Print these or write them on paper and store them with your important documents. If you lose your phone, use a backup code to get in, then update your settings. You can also contact the company's customer support line. They have a process for verifying your identity and restoring access.</li>
+      <li><strong>Will I need a code every single time I log in?</strong> No. Most services remember your own device for 30 days or longer. You mainly get a code when you log in on a new device or after a long time away from the site.</li>
+      <li><strong>Is it really worth the extra step?</strong> Yes, absolutely. Two-factor authentication stops over 99% of automated account hacking attempts. That 10 extra seconds once a month is a small price for knowing your bank account, email, and photos are protected.</li>
+      <li><strong>Do I have to use it?</strong> Most websites make it optional, but some banks and government sites are starting to require it. Even where it is optional, enabling it for your bank and email is strongly recommended. Think of it like wearing a seatbelt: not every drive ends in an accident, but it is the right habit that protects you when it matters.</li>
+    </ul>
+
+    <div class="walkthrough">
+      <h4>A real example: logging in to your bank with the double lock</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Visit your bank's website (type the address yourself, <em>never</em> click a link in an email).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Enter your username and password as usual (the first lock).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>The bank sends a 6-digit code to your phone by text message.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Open your text messages. The code arrives within seconds.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Type the 6-digit code into the bank website.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p>Tick "Remember this device for 30 days" if the option appears.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">7</span>
+        <span class="step-text"><p>You are in, and your account is protected. That is the double lock in action: simple, fast, and enormously effective.</p></span>
+      </div>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You now understand the three layers of security: a strong password, a password manager, and the double lock. You are more secure than most people online.</p>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Tip</span>
+      <p>If you receive a verification code you did not request, do not panic, but do change the password for that account as soon as possible. It means someone is trying to log in as you.</p>
+    </div>
+
+    <h2>Scams every Canadian should know</h2>
+
+    <div class="warning-block">
+      <span class="block-label">Card pickup scam (courier fraud)</span>
+      <p>A scammer calls pretending to be your bank and says your card has been compromised. They offer to send a courier to pick it up. <strong>Your bank will NEVER send someone to collect your card.</strong> If this happens, hang up and call the number printed on the back of your card.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Call forwarding scam</span>
+      <p>A caller pretends to be your phone company or the government and walks you through "fixing" your phone. Without realising it, you may activate call forwarding, sending all your calls to the scammer instead. <strong>If anyone asks you to dial *72 or *21 followed by a phone number, hang up immediately.</strong> These are call forwarding codes.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Smishing (text message scams)</span>
+      <p>A smishing text looks like it is from your bank, Canada Post, or the Canada Revenue Agency. It asks you to click a link or call a number to "verify your account" or "claim a package". Real banks and government agencies do not send urgent links by text. If you receive an unexpected text asking you to act right away, do not tap the link. Call the organisation directly using the number on their official website or the back of your card.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">WhatsApp account takeover</span>
+      <p>A scammer enters your phone number on WhatsApp, which sends a 6-digit verification code to your phone as a text. The scammer then contacts you, often pretending to be a friend whose account was already stolen, and says: "I accidentally sent a code to your number, could you share it with me?" <strong>Do not share this code with anyone.</strong> WhatsApp will never ask you for a code through a message. Once a scammer has your code, they can take over your account.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Messenger "family emergency" scam</span>
+      <p>A Facebook Messenger message claims to be from a grandchild, niece, or nephew in trouble, perhaps stranded in another city without their wallet. They ask for money by e-transfer or gift card. Scammers often use accounts they have already taken over to make the message look convincing. <strong>Before sending anything, phone the family member at their regular number.</strong> A real emergency call takes 30 seconds and costs nothing.</p>
+    </div>
+
+    <p>Source: Canadian Anti-Scam Coalition, <a href="https://standagainstscams.ca" target="_blank" rel="noopener noreferrer">standagainstscams.ca</a>.</p>
+
+    <h2>Quick check: test your knowledge</h2>
+    <p>Tap the answer you think is correct. There is no score kept and nothing to sign in to.</p>
+    <div class="lesson-quiz">
+      <div class="quiz-q" data-correct="b">
+        <h3>1. Which is the strongest password?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">MyName1954!</button>
+          <button class="quiz-opt" type="button" data-answer="b">Purple-Teacup-Bridge-44</button>
+          <button class="quiz-opt" type="button" data-answer="c">password123</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Well done. A passphrase with random words is much harder to guess than a name with a year or a common word."
+          data-wrong="The strongest option is Purple-Teacup-Bridge-44. A passphrase of random words is hard for computers to crack but easy for you to remember."></div>
+      </div>
+      <div class="quiz-q" data-correct="a">
+        <h3>2. What does a password manager do?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Securely stores all your passwords so you only need to remember one</button>
+          <button class="quiz-opt" type="button" data-answer="b">Sends your passwords to Apple for safekeeping</button>
+          <button class="quiz-opt" type="button" data-answer="c">Makes all your accounts use the same password</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. A password manager is your secure digital vault. You remember one password, it remembers the rest."
+          data-wrong="A password manager securely stores all your passwords on your device so you only need to remember one master password (or use Face ID)."></div>
+      </div>
+      <div class="quiz-q" data-correct="c">
+        <h3>3. You receive a text message with a verification code that you did not request. What should you do?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Ignore it, codes expire and it is nothing to worry about</button>
+          <button class="quiz-opt" type="button" data-answer="b">Reply to the text with "STOP"</button>
+          <button class="quiz-opt" type="button" data-answer="c">Do not share the code with anyone, and consider changing your password for that account</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Correct. An unexpected code could mean someone is trying to access your account. Never share it, and change your password to be safe."
+          data-wrong="An unexpected verification code could mean someone has your password and is trying to log in. Never share the code, and change your password for that account."></div>
+      </div>
+    </div>
+
+    <h2>Your progress</h2>
+    <p>Tick each item as you feel confident with it. This is saved on this device only, with no account needed.</p>
+    <ul class="checklist" data-checklist="module-3">
+      <li class="check-item"><input type="checkbox" id="module-3-1"><label for="module-3-1">I understand what Face ID, passwords, and two-factor authentication mean</label></li>
+      <li class="check-item"><input type="checkbox" id="module-3-2"><label for="module-3-2">Face ID is set up on my device</label></li>
+      <li class="check-item"><input type="checkbox" id="module-3-3"><label for="module-3-3">I know how to create a strong passphrase</label></li>
+      <li class="check-item"><input type="checkbox" id="module-3-4"><label for="module-3-4">I know where my saved passwords are stored</label></li>
+      <li class="check-item"><input type="checkbox" id="module-3-5"><label for="module-3-5">I have changed at least one weak password</label></li>
+      <li class="check-item"><input type="checkbox" id="module-3-6"><label for="module-3-6">I understand why I should never share verification codes</label></li>
+    </ul>
+
+    <!-- Denise: forward the lesson in isolation. Copy-link only, no share API. -->
+    <section class="send-lesson" aria-labelledby="send-h">
+      <h2 id="send-h">Send this lesson to someone</h2>
+      <p>Helping a parent or friend? This page works on its own, with no account and nothing to install. Copy the link and text it to them.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="button" data-copy-link>Copy the link to this lesson</button>
+        <span class="send-done" data-copy-done hidden>Copied. Paste it into a text or email.</span>
+      </div>
+      <input class="visually-hidden" type="text" data-copy-field hidden readonly aria-label="Link to this lesson">
+    </section>
+
+    <div class="success-state">
+      <p><strong>Well done.</strong> Your accounts are now protected by strong, unique passwords, a password manager, and biometrics. That is a fortress of security, and you built it yourself.</p>
+    </div>
+
+    <nav class="related-modules" aria-label="Continue learning">
+      <h2>Where to next</h2>
+      <div class="related-grid">
+        <a class="related-card" href="module-2.html">
+          <span class="related-num">Module 2</span>
+          <span class="related-name">The Security Shield</span>
+          <span class="related-desc">Passwords work best alongside the broader security habits that keep scammers away from your devices.</span>
+        </a>
+        <a class="related-card" href="module-5.html">
+          <span class="related-num">Module 5</span>
+          <span class="related-name">Email and Messages</span>
+          <span class="related-desc">Criminals often try to steal passwords through fake emails. Learn to spot them before it is too late.</span>
+        </a>
+        <a class="related-card" href="module-6.html">
+          <span class="related-num">Module 6</span>
+          <span class="related-name">Banking and Transactions</span>
+          <span class="related-desc">Strong passwords are your first line of defence for protecting your bank account online.</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<!-- SHARED SHELL: footer (identical on every page). -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">For families</a></li>
+      <li><a href="../../privacy.html">Privacy</a></li>
+      <li><a href="../../about.html">About us</a></li>
+      <li><a href="../../resources/support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- SHARED SHELL: layered consent bar (identical on every page). -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="../../privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/module.js"></script>
+</body>
+</html>

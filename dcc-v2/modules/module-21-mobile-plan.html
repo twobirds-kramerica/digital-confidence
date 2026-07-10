@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow"><!-- v2 preview - remove before launch -->
+  <script>
+    // Theme + text size before first paint (no flash). Local only, no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Understanding Your Mobile Plan - Digital Confidence Centre</title>
+  <meta name="description" content="Figure out what you actually use your phone for, understand mobile data and your bill, compare prepaid and postpaid plans, and negotiate a better deal. Free, plain-language lesson for Canadian seniors. No account needed.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- SHARED SHELL: header (generated from module-v2.html.tpl; identical on every page). -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Read this page aloud">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
+        <div class="rate-group" role="group" aria-label="Reading speed">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Slower</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normal</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Faster</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="../index.html">All lessons</a>
+    <a href="../index.html#protect-money" aria-current="page">Protect your money</a>
+    <a href="../index.html#everyday-confidence">Everyday confidence</a>
+    <a href="../index.html#staying-connected">Staying connected</a>
+    <a href="../index.html#getting-things-done">Getting things done</a>
+    <a href="../for-families.html">For families</a>
+    <a href="../../resources/support-directory.html">Get help</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="../index.html">All lessons</a></li>
+      <li><a href="../index.html#protect-money">Protect your money</a></li>
+      <li><span aria-current="page">Understanding Your Mobile Plan</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <a class="lesson-back" href="../index.html">← Back to all lessons</a>
+
+    <p class="lesson-category"><span aria-hidden="true">📱</span> Mobile plans</p>
+    <h1>Understanding Your Mobile Plan</h1>
+    <p class="lesson-time"><span aria-hidden="true">⏱</span> About 30 minutes, at your own pace</p>
+
+    <!-- Brenda: the first thing a nervous reader sees removes a fear. -->
+    <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
+
+    <p class="lead">Why long-term customers often overpay, how to match a plan to what you actually use, and a simple, polite phone script that can save you $20 to $40 a month.</p>
+
+    <h2>Harold's $40 mistake</h2>
+    <p>Harold is 82 years old. He has had the same mobile plan for six years. He pays $85 a month for 2 GB of data plus unlimited talk and text. But when his granddaughter checked his usage, she discovered he only uses about 500 MB of data each month, a quarter of what he pays for.</p>
+    <p>Harold was overpaying by about $40 every month. That is $480 a year, enough for a weekend trip to see his great-grandchildren.</p>
+    <p>Here is the thing most people do not realise: your mobile provider will almost never call you to suggest a cheaper plan. Even if a better plan exists, they have no reason to tell you. You are already paying more. That extra money goes straight to their bottom line.</p>
+
+    <div class="coach-block">
+      <span class="coach-mark" aria-hidden="true">💬</span>
+      <div class="coach-body">
+        <span class="coach-label">From your coach</span>
+        <p>Phone plans change names, prices, and rules constantly. Even people who work in technology struggle to compare them. If choosing a plan feels overwhelming, that is the market being complicated, not you being slow. A few plain questions, which this lesson gives you, cut through almost all of it.</p>
+      </div>
+    </div>
+
+    <h2>There has never been a better time to check</h2>
+
+    <p>The good news? Canadian cellular prices declined 16.7% between 2023 and 2024. Plans for light users now start at $30 to $45 a month. Prepaid plans for calls and texts only can be as low as $15 to $25 a month. There has never been a better time to review your plan.</p>
+
+    <div class="tip-block">
+      <span class="block-label">Why this matters</span>
+      <p>You would not keep paying for a newspaper subscription you do not read. Your mobile plan is the same idea. You deserve a plan that matches what you actually use, not what someone sold you years ago.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Do you know how much you pay each month for your mobile plan? If not, that is perfectly okay. We will figure it out together in the bill section below.</p>
+    </div>
+
+    <h2>What do you actually use your phone for?</h2>
+
+    <p>Before you can pick the right plan, you need to understand how you actually use your phone. Most people overestimate their usage. Here is a simple way to think about it.</p>
+
+    <h3>Which type of phone user are you?</h3>
+
+    <ul>
+      <li><strong>Level 1, Calls only:</strong> you mainly make and receive phone calls. You rarely send texts and do not use the internet on your phone. You need a basic talk plan or prepaid plan ($15 to $25/month).</li>
+      <li><strong>Level 2, Calls + texts:</strong> you call and text regularly: family, friends, maybe your doctor's office. You do not browse the internet much on your phone. A talk and text plan is enough ($25 to $35/month).</li>
+      <li><strong>Level 3, Calls + texts + photos:</strong> you call, text, and occasionally send photos to family. You might look up a recipe or check the weather. A light data plan with 1 to 2 GB is right for you ($30 to $45/month).</li>
+      <li><strong>Level 4, Full usage:</strong> you use your phone for email, social media, video calls, maps, streaming, and more. You need a data plan with 4 GB or more ($45 to $65/month).</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">How to check your actual usage</span>
+      <p>On your iPhone, go to <strong>Settings, then Cellular</strong>. Scroll down to see how much data each app has used. This gives you a clear picture of your real usage. You can also check your monthly usage by logging into your provider's app or website, or by calling them and asking.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Which level sounds most like you? There is no wrong answer. Knowing your level is the first step to the right plan.</p>
+    </div>
+
+    <h2>Understanding mobile data</h2>
+
+    <p><strong>Mobile data</strong> is the internet connection your phone uses when you are not connected to Wi-Fi. Everything you do online, checking email, looking at photos, watching videos, uses data. But not all activities use the same amount.</p>
+
+    <h3>The jar metaphor: what 1 GB looks like</h3>
+
+    <p>Think of your monthly data as a jar of water. Different activities drink from that jar at very different speeds:</p>
+
+    <ul>
+      <li><strong>Email (text only) = drops from an eyedropper.</strong> You could send and receive thousands of emails on 1 GB. Barely makes a dent.</li>
+      <li><strong>Sending photos = cups of water.</strong> Each photo you send by text or email uses a small cup from your jar. A few photos a day is still very manageable.</li>
+      <li><strong>Browsing the web = glasses of water.</strong> Looking up recipes, checking the news, or searching for information uses a moderate amount. An hour of browsing uses roughly 60 MB.</li>
+      <li><strong>Video calls (FaceTime) = pitchers of water.</strong> A 30-minute FaceTime call uses about 400 MB, almost half of 1 GB.</li>
+      <li><strong>Streaming video (YouTube, Netflix) = buckets of water.</strong> One hour of video can use 1 to 3 GB, your entire monthly jar in a single sitting.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">Wi-Fi does not use your data</span>
+      <p>When you are connected to Wi-Fi, at home, at the library, at a coffee shop, your phone uses that Wi-Fi connection instead of your mobile data. Anything you do on Wi-Fi is free and does not count towards your plan. If you spend most of your time at home on Wi-Fi, you may need very little mobile data.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Now you know: email uses drops, photos use cups, and video uses buckets. That one idea can save you real money.</p>
+    </div>
+
+    <h2>Reading your mobile bill</h2>
+
+    <p>Mobile bills are designed to be confusing. They are often four or five pages long, full of line items that blur together. But once you know what to look for, it becomes much simpler. Every bill breaks down into just four main parts.</p>
+
+    <h3>The four parts of every mobile bill</h3>
+
+    <ul>
+      <li><strong>1. Your plan cost:</strong> the monthly charge for your talk, text, and data plan. It is the core of your bill. Example: $45/month for unlimited talk + text + 2 GB data.</li>
+      <li><strong>2. Device payment:</strong> if you got your phone through your provider on a monthly payment plan, this shows up as a separate line. Example: $15/month for 24 months. Once paid off, this line should disappear. If it does not, call and ask.</li>
+      <li><strong>3. Extras and add-ons:</strong> additional charges for things like voicemail, call display, insurance, or international calling. Many people pay for extras they do not use or did not knowingly add. Review this section carefully.</li>
+      <li><strong>4. Taxes:</strong> HST (13% in Ontario) is added on top of everything. You cannot avoid this, but knowing it is there helps you understand the total.</li>
+    </ul>
+
+    <div class="walkthrough">
+      <h4>What to look for right now</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Pull out your most recent mobile bill (paper or online).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Find your <strong>plan cost</strong> (before taxes).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Find any <strong>device payment</strong> (it may say $0 if your phone is paid off).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Find any <strong>extras or add-ons</strong> you are being charged for.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Write these three numbers down. You will use them when you call your provider.</p></span>
+      </div>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You now know the four parts of your bill. That puts you ahead of most people. Knowledge is power, especially when it saves you money.</p>
+    </div>
+
+    <h2>Prepaid vs postpaid: what is the difference?</h2>
+
+    <p>There are two main types of mobile plans in Canada, and understanding the difference can save you a lot of money and stress.</p>
+
+    <h3>Prepaid: pay first, use after</h3>
+
+    <p>With a prepaid plan, you pay at the beginning of the month (or buy a set amount of credit). You get a fixed amount of calls, texts, and data. When it runs out, it stops. <strong>No surprise charges.</strong></p>
+
+    <ul>
+      <li>Best for: light users who want a predictable, low monthly cost</li>
+      <li>Typical cost: $15 to $35/month</li>
+      <li>No credit check required</li>
+      <li>No contract; stop any time</li>
+    </ul>
+
+    <h3>Postpaid: use first, pay after</h3>
+
+    <p>With a postpaid plan, you use your phone all month and get a bill at the end. This is the most common type of plan in Canada. The risk? If you go over your data limit, you may see <strong>extra charges</strong> on your bill.</p>
+
+    <ul>
+      <li>Best for: people who use more data and want a consistent service</li>
+      <li>Typical cost: $40 to $85/month</li>
+      <li>May include a phone on a payment plan</li>
+      <li>Overage charges are possible if you exceed your data</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">Which one is right for you?</span>
+      <p>If you are a Level 1 or Level 2 user (calls only, or calls and texts), prepaid is almost always the better deal. You pay less, and there are no surprises. If you are a Level 3 or Level 4 user, postpaid may make more sense, but shop around. The price differences between providers can be $20 or more for the same service.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Prepaid = pay first, no surprises. Postpaid = pay after, possible overages. That is the whole idea in two sentences.</p>
+    </div>
+
+    <h2>How to compare plans</h2>
+
+    <p>Comparing mobile plans used to mean visiting multiple stores and talking to salespeople who each told you their plan was the best. Today, there are free online tools that do the comparing for you, honestly and without trying to sell you anything.</p>
+
+    <div class="walkthrough">
+      <h4>Using PlanHub.ca to compare every Canadian provider</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Go to <strong>PlanHub.ca</strong> on your iPad or phone.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Select <strong>Mobile Plans</strong> at the top.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Enter your province (Ontario) and choose how much data you need.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>It will show you every available plan, sorted by price, cheapest first.</p></span>
+      </div>
+    </div>
+
+    <p>PlanHub is a tool, not a store. It does not sell you anything. It just shows you what is available. <strong>WhistleOut Canada</strong> (whistleout.ca) works similarly: it lets you filter by price, data amount, and provider, and it also shows special promotions that may not be advertised in stores. Both tools are free, Canadian, and designed to help you make an informed choice.</p>
+
+    <div class="tip-block">
+      <span class="block-label">Ask a family member for help</span>
+      <p>If using a comparison website feels unfamiliar, ask a family member or trusted friend to sit with you for 10 minutes and look at plans together. You make the decision; they just help navigate the website.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You do not need to be a tech expert to compare plans. PlanHub.ca and WhistleOut do the hard work for you.</p>
+    </div>
+
+    <h2>The negotiation call</h2>
+
+    <p>This is the most empowering part of this lesson. You are going to learn a simple, polite phone script that can save you $20 to $40 a month. You do not need to be confrontational. You do not need to threaten to leave. You just need to ask the right question.</p>
+
+    <h3>Your plan review script</h3>
+
+    <p>Call the number on the back of your bill. When you reach a representative, say: <strong>"Hello. I have been a customer for [X] years. I'd like to do a plan review. I have looked at my usage and I use less than [X] GB per month. What is the best plan you have for someone who uses less than [X] GB per month?"</strong></p>
+
+    <p>That is it. Polite, clear, and informed. The key phrases are <strong>"plan review"</strong> and <strong>"best plan for someone who uses less than"</strong>. These signal to the representative that you know your usage and are looking for a better deal.</p>
+
+    <h3>Tips for a successful call</h3>
+
+    <ul>
+      <li>Call on a Tuesday or Wednesday morning; wait times are shorter</li>
+      <li>Have your most recent bill in front of you</li>
+      <li>Know your average monthly data usage (check Settings, then Cellular on your iPhone)</li>
+      <li>If the first representative cannot help, politely ask for the <strong>"retention"</strong> or <strong>"loyalty"</strong> department; they have access to better deals</li>
+      <li>Write down what they offer. Say "Thank you, I will think about it" if you are not sure. You do not have to decide on the spot.</li>
+    </ul>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You have every right to ask for a better plan. You are a loyal customer. A polite phone call is all it takes.</p>
+    </div>
+
+    <h2>Avoiding the upgrade trap</h2>
+
+    <p>Every year or two, your provider may contact you and suggest it is time to upgrade your phone. They may say things like "Your phone is getting old" or "We have a great new deal on the latest model." This is a sales tactic, not advice.</p>
+
+    <h3>Your phone probably works fine</h3>
+
+    <p>Modern smartphones, especially iPhones, are built to last 4 to 6 years or more. If your phone still makes calls, sends texts, takes photos, and runs your apps, there is no reason to replace it. The only reasons to consider a new phone are: the battery no longer holds a charge all day (a battery replacement is much cheaper than a new phone), the phone no longer receives software updates (check <strong>Settings, then General, then Software Update</strong>), or the screen is cracked and repairs cost more than a replacement.</p>
+
+    <h3>Unlocked vs locked phones</h3>
+
+    <p>A <strong>locked phone</strong> is tied to one provider. It only works with the provider that sold it to you. If you want to switch providers, you may need to get it unlocked first (in Canada, providers must unlock your phone for free upon request). An <strong>unlocked phone</strong> works with any provider. You can buy one outright from Apple or an electronics store and then choose any plan from any provider. This gives you the most freedom and often saves money in the long run.</p>
+
+    <div class="warning-block">
+      <span class="block-label">The real cost of a "free" phone upgrade</span>
+      <p>When a provider offers you a "free" or "$0 down" phone, the cost is hidden in your monthly bill. A phone that costs $0 upfront may add $20 to $35/month to your bill for 24 months. That is $480 to $840 in total. A "free" phone is never truly free.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Your current phone likely has 2 to 3 more good years in it. Do not let anyone pressure you into an upgrade you do not need.</p>
+    </div>
+
+    <h2>Quick answers</h2>
+
+    <h3>Will I lose my phone number if I switch providers?</h3>
+
+    <p>No. In Canada, you have the legal right to keep your phone number when you switch providers. This is called "number portability." Your new provider will handle the transfer for you; just ask them when you sign up.</p>
+
+    <h3>Is it safe to switch to a smaller provider like Public Mobile or Lucky Mobile?</h3>
+
+    <p>Yes. In Canada, smaller providers (sometimes called flanker brands) actually use the exact same cell towers as the big providers. Public Mobile and Lucky Mobile use the same network towers. You get the same coverage at a lower price.</p>
+
+    <h3>What happens if I use more data than my plan includes?</h3>
+
+    <p>On a prepaid plan, your data simply stops working until the next month, with no extra charges. On a postpaid plan, most Canadian providers now offer "data overage protection" that slows your speed instead of charging extra. Check with your provider to confirm this is turned on for your account.</p>
+
+    <div class="the-move">
+      <span class="move-label">Try it today</span>
+      <p>Check your real data usage: open Settings, then Cellular, and see what you actually use. If it is far below what you pay for, you have everything you need for a plan review call.</p>
+    </div>
+
+    <h2>Quick check: test your knowledge</h2>
+    <p>Tap the answer you think is correct. There is no score kept and nothing to sign in to.</p>
+    <div class="lesson-quiz">
+      <div class="quiz-q" data-correct="b">
+        <h3>1. Long-term customers often pay more for mobile plans because:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">They use more data</button>
+          <button class="quiz-opt" type="button" data-answer="b">Carriers save promotional pricing for new customers and do not automatically lower existing bills</button>
+          <button class="quiz-opt" type="button" data-answer="c">Their phones are older</button>
+          <button class="quiz-opt" type="button" data-answer="d">They have better coverage</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Correct. Providers have no reason to volunteer a cheaper plan to an existing customer. That is exactly how Harold ended up overpaying $40 a month for six years."
+          data-wrong="The real reason is that carriers save their best pricing for new customers and never automatically lower an existing bill. You have to ask, like Harold&#x27;s plan review."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>2. Roaming charges occur when:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">You use your phone at home during peak hours</button>
+          <button class="quiz-opt" type="button" data-answer="b">You use your phone outside your carrier's coverage area, especially internationally</button>
+          <button class="quiz-opt" type="button" data-answer="c">You use too much data in one month</button>
+          <button class="quiz-opt" type="button" data-answer="d">You call numbers in other provinces</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. Roaming means your phone is using another network outside your carrier&#x27;s coverage area, most often when travelling internationally, and that costs extra."
+          data-wrong="Roaming charges happen when you use your phone outside your carrier&#x27;s coverage area, especially internationally. Calls within Canada on your own network are not roaming."></div>
+      </div>
+      <div class="quiz-q" data-correct="a">
+        <h3>3. To avoid unexpected roaming charges when travelling internationally, you should:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Turn off data roaming in settings or get a travel add-on before you leave</button>
+          <button class="quiz-opt" type="button" data-answer="b">Only make calls, not use data</button>
+          <button class="quiz-opt" type="button" data-answer="c">Switch to a new carrier when you land</button>
+          <button class="quiz-opt" type="button" data-answer="d">Only use your phone on Wi-Fi and disable calls</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. Turning off data roaming in your settings, or buying a travel add-on before you leave, prevents surprise charges from the moment you land."
+          data-wrong="The reliable protection is to turn off data roaming in your settings or arrange a travel add-on before you leave. Calls can roam too, so limiting data alone is not enough."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>4. Budget mobile carriers often offer lower prices because:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Their coverage is always worse than the big three</button>
+          <button class="quiz-opt" type="button" data-answer="b">They operate on the same networks as major carriers but with less overhead and marketing</button>
+          <button class="quiz-opt" type="button" data-answer="c">They do not comply with CRTC regulations</button>
+          <button class="quiz-opt" type="button" data-answer="d">They limit calls to local numbers only</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Correct. Flanker brands like Public Mobile and Lucky Mobile use the exact same towers as the big providers. Same coverage, lower price."
+          data-wrong="Budget carriers run on the same networks as the major carriers; they just spend less on overhead and marketing. Coverage is the same, and they follow the same CRTC rules."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>5. Number porting means:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Getting a new phone number when you switch carriers</button>
+          <button class="quiz-opt" type="button" data-answer="b">Keeping your existing phone number when switching to a new carrier</button>
+          <button class="quiz-opt" type="button" data-answer="c">Transferring contacts to a new phone</button>
+          <button class="quiz-opt" type="button" data-answer="d">Forwarding calls from one number to another</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. In Canada you have the legal right to keep your phone number when you switch providers. Your new provider handles the transfer."
+          data-wrong="Number porting is keeping your existing phone number when you switch to a new carrier. It is your legal right in Canada, and the new provider does the work."></div>
+      </div>
+    </div>
+
+    <h2>Your progress</h2>
+    <p>Tick each item as you feel confident with it. This is saved on this device only, with no account needed.</p>
+    <ul class="checklist" data-checklist="module-21-mobile-plan">
+      <li class="check-item"><input type="checkbox" id="module-21-mobile-plan-1"><label for="module-21-mobile-plan-1">I know which usage level I am (calls only, calls + texts, light data, or full usage)</label></li>
+      <li class="check-item"><input type="checkbox" id="module-21-mobile-plan-2"><label for="module-21-mobile-plan-2">I have checked my real data usage in Settings, then Cellular</label></li>
+      <li class="check-item"><input type="checkbox" id="module-21-mobile-plan-3"><label for="module-21-mobile-plan-3">I can find the four parts of my mobile bill: plan, device payment, extras, taxes</label></li>
+      <li class="check-item"><input type="checkbox" id="module-21-mobile-plan-4"><label for="module-21-mobile-plan-4">I understand the difference between prepaid and postpaid plans</label></li>
+      <li class="check-item"><input type="checkbox" id="module-21-mobile-plan-5"><label for="module-21-mobile-plan-5">I have compared plans on PlanHub.ca or WhistleOut Canada</label></li>
+      <li class="check-item"><input type="checkbox" id="module-21-mobile-plan-6"><label for="module-21-mobile-plan-6">I know the plan review script for calling my provider</label></li>
+      <li class="check-item"><input type="checkbox" id="module-21-mobile-plan-7"><label for="module-21-mobile-plan-7">I know a "free" phone upgrade is never truly free</label></li>
+    </ul>
+
+    <!-- Denise: forward the lesson in isolation. Copy-link only, no share API. -->
+    <section class="send-lesson" aria-labelledby="send-h">
+      <h2 id="send-h">Send this lesson to someone</h2>
+      <p>Helping a parent or friend? This page works on its own, with no account and nothing to install. Copy the link and text it to them.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="button" data-copy-link>Copy the link to this lesson</button>
+        <span class="send-done" data-copy-done hidden>Copied. Paste it into a text or email.</span>
+      </div>
+      <input class="visually-hidden" type="text" data-copy-field hidden readonly aria-label="Link to this lesson">
+    </section>
+
+    <div class="success-state">
+      <p><strong>Well done.</strong> You know what you actually use your phone for, how to read your bill, and how to ask for a plan review in one polite call. That is how Harold's $40 mistake stops happening to you.</p>
+    </div>
+
+    <nav class="related-modules" aria-label="Continue learning">
+      <h2>Where to next</h2>
+      <div class="related-grid">
+        <a class="related-card" href="module-20-internet-plan.html">
+          <span class="related-num">Module 20</span>
+          <span class="related-name">Understanding Your Internet Plan</span>
+          <span class="related-desc">Apply the same money-saving skills to your home internet: data caps, hidden fees, and the negotiation call.</span>
+        </a>
+        <a class="related-card" href="module-22-tv-home-phone.html">
+          <span class="related-num">Module 22</span>
+          <span class="related-name">TV and Home Phone</span>
+          <span class="related-desc">The third bill in the bundle. Learn what you actually watch and use, and how to unbundle the rest.</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<!-- SHARED SHELL: footer (identical on every page). -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">For families</a></li>
+      <li><a href="../../privacy.html">Privacy</a></li>
+      <li><a href="../../about.html">About us</a></li>
+      <li><a href="../../resources/support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- SHARED SHELL: layered consent bar (identical on every page). -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="../../privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/module.js"></script>
+</body>
+</html>

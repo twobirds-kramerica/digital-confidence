@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow"><!-- v2 preview - remove before launch -->
+  <script>
+    // Theme + text size before first paint (no flash). Local only, no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Staying Connected - Digital Confidence Centre</title>
+  <meta name="description" content="Video calls, shared photo albums, group messages, and the difference between a private message and a public post. Free, plain-language lesson for Canadian seniors. No account needed.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- SHARED SHELL: header (generated from module-v2.html.tpl; identical on every page). -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Read this page aloud">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
+        <div class="rate-group" role="group" aria-label="Reading speed">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Slower</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normal</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Faster</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="../index.html">All lessons</a>
+    <a href="../index.html#protect-money">Protect your money</a>
+    <a href="../index.html#everyday-confidence" aria-current="page">Everyday confidence</a>
+    <a href="../index.html#staying-connected">Staying connected</a>
+    <a href="../index.html#getting-things-done">Getting things done</a>
+    <a href="../for-families.html">For families</a>
+    <a href="../../resources/support-directory.html">Get help</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="../index.html">All lessons</a></li>
+      <li><a href="../index.html#everyday-confidence">Everyday confidence</a></li>
+      <li><span aria-current="page">Staying Connected</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <a class="lesson-back" href="../index.html">← Back to all lessons</a>
+
+    <p class="lesson-category"><span aria-hidden="true">👨‍👩‍👧</span> Communication</p>
+    <h1>Staying Connected</h1>
+    <p class="lesson-time"><span aria-hidden="true">⏱</span> About 25 minutes, at your own pace</p>
+
+    <!-- Brenda: the first thing a nervous reader sees removes a fear. -->
+    <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
+
+    <p class="lead">How to use video calls, shared photo albums, and group messages to stay close to the people you love, and how to keep a private note private.</p>
+
+    <h2>Gloria's story</h2>
+    <p>Gloria, 75, has three children and seven grandchildren. Two of her children live nearby, but her youngest daughter moved to Calgary for work. Before Gloria learned to use FaceTime, she saw her Calgary grandchildren twice a year, at Christmas and during summer vacation.</p>
+    <p>"Now I see them every Sunday morning," Gloria says, her eyes lighting up. "We have 'Grandma Gloria's Sunday Breakfast Club.' I make my coffee, they make their pancakes, and we eat breakfast together over FaceTime. My littlest granddaughter, who is four, shows me her drawings. My grandson tells me about his hockey games. It is the highlight of my week."</p>
+    <p>Gloria also shares photos with her whole family through a shared album, sends birthday messages through group texts, and keeps a digital notebook of important dates and memories. "Technology did not replace being there in person," she says. "But it gave me so much more time with my family than I would have had otherwise."</p>
+
+    <div class="coach-block">
+      <span class="coach-mark" aria-hidden="true">💬</span>
+      <div class="coach-body">
+        <span class="coach-label">From your coach</span>
+        <p>If you have ever frozen when a video call rang, or worried your face looked wrong on camera, you are far from alone. Almost everyone feels awkward on video at first, including people who grew up with it. The person calling you wants to see you, not judge you. That is the whole point.</p>
+      </div>
+    </div>
+
+    <h2>Video calls: seeing family face to face</h2>
+
+    <p>On an iPad or iPhone, <strong>FaceTime</strong> is Apple's video calling app and it comes already installed. On Android, <strong>Google Meet</strong> is the easiest option, free and pre-installed on most devices. Either way, think of it as a telephone call where you can see each other, like looking through a window into each other's homes.</p>
+
+    <div class="walkthrough">
+      <h4>Making a FaceTime video call (iPad or iPhone)</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Find the <strong>FaceTime</strong> app on your Home screen. It looks like a green icon with a white video camera symbol inside.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap it to open FaceTime, then tap the <strong>New FaceTime</strong> button (you may see a "+" symbol or the words "New FaceTime" at the top).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Type the <strong>name, phone number, or email address</strong> of the person you want to call. If they are in your Contacts, their name will appear as you type.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Tap the green <strong>video button</strong> (camera icon) to start a video call, or the green <strong>phone button</strong> for a voice-only call.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Your front camera will turn on, and you will see yourself in a small window. When the other person answers, their face will fill most of the screen.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p>To end the call, tap the <strong>red button</strong> at the bottom of the screen.</p></span>
+      </div>
+    </div>
+
+    <div class="walkthrough">
+      <h4>Making a video call with Google Meet (Android)</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Find the <strong>Google Meet</strong> app on your Home screen. It looks like a colourful camera icon. If you do not see it, download it free from the Play Store.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap it to open Google Meet.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Tap <strong>New call</strong> and then <strong>Create a new meeting</strong>, or select a contact from your recent calls.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>To invite someone, tap <strong>Share invite</strong> to send them a link by text message or email. They tap the link to join your call.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Your front camera will turn on and you will see yourself. When the other person joins, their face fills most of the screen.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p>To end the call, tap the <strong>red phone button</strong> at the bottom of the screen.</p></span>
+      </div>
+    </div>
+
+    <ul>
+      <li><strong>Prop up your device.</strong> Lean it against something sturdy so you do not have to hold it the whole time. A cookbook stand or a stack of books works well.</li>
+      <li><strong>Good lighting.</strong> Sit facing a window so the light is on your face, not behind you. If the light is behind you, the other person will see a dark silhouette.</li>
+      <li><strong>Speak naturally.</strong> You do not need to shout. The microphone works well at normal speaking volume.</li>
+      <li><strong>The small picture is you.</strong> The small rectangle in the corner shows what your camera sees. The large image is the other person.</li>
+    </ul>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Video calls are like having your loved ones visit your kitchen table any time you want. Gloria turned Sunday mornings into family time with just this one skill.</p>
+    </div>
+
+    <h2>Group video calls: the whole family at once</h2>
+
+    <p>You can have a video call with multiple family members at the same time. This is perfect for family meetings, birthday celebrations, or holiday gatherings when not everyone can be in the same room. In FaceTime, tap <strong>New FaceTime</strong> and add multiple people by typing each person's name, one at a time, then tap the green video button. In Google Meet, create a new meeting and send the invite link to each family member; Google Meet supports up to 100 people on a call. Whoever is speaking is shown larger automatically.</p>
+
+    <h2>Shared photo albums: a family scrapbook</h2>
+
+    <p>A shared photo album is like a family scrapbook that everyone can add to. You create it once, invite family members, and then anyone can add photos. When your granddaughter takes a picture of her art project, it appears in your shared album automatically.</p>
+
+    <div class="walkthrough">
+      <h4>Creating a shared album (Apple Photos)</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open the <strong>Photos</strong> app and tap the <strong>Albums</strong> tab at the bottom.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap the <strong>"+"</strong> button in the top-left and choose <strong>New Shared Album</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Give it a name like <strong>"The [Your Last Name] Family"</strong> and tap Next.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Add family members by typing their names or email addresses. They will receive an invitation to join.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Tap <strong>Create</strong>. Now you and your family members can all add photos to this album.</p></span>
+      </div>
+    </div>
+
+    <div class="walkthrough">
+      <h4>Creating a shared album (Google Photos)</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open the <strong>Google Photos</strong> app (colourful pinwheel icon). If you do not have it, download it free from the Play Store.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap the <strong>Library</strong> tab at the bottom of the screen, then tap <strong>New album</strong> or the <strong>"+"</strong> button.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Give it a name like <strong>"The [Your Last Name] Family"</strong> and add some photos to get started.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Tap the <strong>Share</strong> button (person with a "+" icon) and type the email addresses of your family members. They will receive an invitation.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Once they accept, anyone in the group can add photos. New photos from family members will appear automatically.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Make it a living scrapbook</span>
+      <p>When inviting family to a shared photo album, ask them to add photos too. The album becomes a living family scrapbook that everyone contributes to.</p>
+    </div>
+
+    <h2>Group messages: the family chat</h2>
+
+    <p>A group message is like a family group chat: everyone sees every message, and you can all respond. Great for planning dinners, sharing news, or sending a quick "thinking of you."</p>
+
+    <div class="walkthrough">
+      <h4>Creating a family group message</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open the <strong>Messages</strong> app (green speech bubble on Apple, blue speech bubble on Android).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap the <strong>new message</strong> button (a pencil icon, or "Start chat" on Android).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Add <strong>multiple family members</strong> by typing their names one at a time, or on Android tap <strong>Create group</strong> and select them from your contacts.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Give the group a name like <strong>"The Family"</strong>. On Apple, tap the people icons at the top of the conversation and choose "Change Name and Photo".</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Type your message and send. Everyone in the group will see it, and any replies appear for the whole group.</p></span>
+      </div>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Watch out</span>
+      <p>Only add people you know and trust to group messages and shared albums. If you receive a group message invitation from someone you do not recognise, do not join it. It could be spam.</p>
+    </div>
+
+    <h2>Why texting has become the new normal</h2>
+
+    <h3>Harold's story</h3>
+
+    <p>Harold, 78, spent 45 years as a plumber and values direct communication. For years, his habit was to call his adult children whenever something came to mind: a question about Sunday dinner, a reminder about a doctor's appointment, a thought about the weather. His children and grandchildren loved him deeply, but Harold noticed they sometimes did not pick up. He felt hurt. Were they ignoring him?</p>
+
+    <p>His daughter Patricia explained it gently one evening: "Dad, when my phone rings unexpectedly, I panic. I think something is wrong. If you send a quick text first, I know it is just a chat and I can call back when the kids are settled." Harold tried it. Within a week, his callbacks went from 50 percent to nearly 100 percent. "I was calling the right people," he said. "I was just ringing the wrong doorbell."</p>
+
+    <p>For most of our lives, calling someone on the phone was the obvious choice. That has changed significantly in the last decade, and not because people care less. The shift happened for practical reasons:</p>
+
+    <ul>
+      <li><strong>People are busier and less predictable.</strong> Your grandchildren may be in class, at work, or wrangling a toddler when the phone rings. A text waits patiently until they have a moment.</li>
+      <li><strong>Texts can be answered at any volume.</strong> In a meeting, at a movie, or putting a baby to sleep, a ringing phone is disruptive. A text is silent.</li>
+      <li><strong>Texts leave no voicemail anxiety.</strong> Many younger people find voicemail stressful and often will not listen to it for days. A text appears instantly and is read immediately.</li>
+      <li><strong>Texts create a record.</strong> You can refer back to what was agreed: the dinner time, the address, the date.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">This is not about you</span>
+      <p>If your children or grandchildren do not always pick up, please do not take it personally. It is almost never about you. The world changed how it communicates. Learning to text helps you meet them where they are, and you will likely hear from them more, not less.</p>
+    </div>
+
+    <h3>The new courtesy: text before you call</h3>
+
+    <p>In today's world, calling someone without warning is a bit like dropping by their house unannounced. It might be fine, or it might catch them at a terrible moment. A brief text first is now considered a polite courtesy, the way knocking before entering was always good manners. Before calling, send: "Do you have a few minutes to chat?" or "Free to talk?" Your family sees it, replies when ready, and the actual phone call is relaxed and unhurried.</p>
+
+    <p><strong>When you can skip the pre-text entirely:</strong> emergencies (call immediately, no text needed), very close family who have told you it is always fine to call, scheduled calls like a standing Sunday call, and calling a landline (pre-texting is mainly for mobile phones).</p>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Sending a quick text before calling is a small habit that makes a big difference. Your family will love that you understand how they communicate.</p>
+    </div>
+
+    <h2>Choosing the right messaging app</h2>
+
+    <div class="tip-block">
+      <span class="block-label">The short answer</span>
+      <p>Start with regular text messages (SMS). They work on every phone without any setup. When your family uses WhatsApp and invites you to join, that is a great second step. You do not need to use all of them.</p>
+    </div>
+
+    <ul>
+      <li><strong>Regular text messages (SMS):</strong> the built-in Messages app on your phone. Works on every mobile phone everywhere in the world with no setup and no internet needed. Usually included in your phone plan; international texts may cost extra. Privacy is standard: your carrier can see the messages.</li>
+      <li><strong>WhatsApp:</strong> the world's most popular messaging app, used by over 2 billion people and very common in Canadian families. Free over Wi-Fi or data, uses your phone number as your identity, and great for families with members overseas. Messages are end-to-end encrypted, meaning only the sender and receiver can read them.</li>
+      <li><strong>Signal:</strong> a free, non-profit messaging app widely considered the gold standard for privacy. Fully encrypted, no ads, no data collection. Less common than WhatsApp, but the best choice if privacy is your top concern.</li>
+      <li><strong>Facebook Messenger:</strong> a messaging app connected to your Facebook account. Free and convenient if you and your family already use Facebook, but privacy is lower: Facebook collects and uses your conversation data for advertising.</li>
+    </ul>
+
+    <div class="walkthrough">
+      <h4>Setting up WhatsApp</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open the <strong>App Store</strong> (Apple) or <strong>Play Store</strong> (Android), search for <strong>"WhatsApp"</strong>, and find <strong>WhatsApp Messenger</strong> (green icon with a white telephone). Tap <strong>Get</strong> or <strong>Install</strong>. It is free.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Once installed, tap <strong>Open</strong>, then tap <strong>Agree and Continue</strong> on the first screen.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Enter your <strong>Canadian phone number</strong> and tap <strong>Next</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>WhatsApp will send a <strong>6-digit verification code</strong> by text message. It often fills this in automatically, so you may not need to do anything.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Type your <strong>first name</strong> and tap <strong>Next</strong>. WhatsApp finds family and friends who also use it from your existing Contacts automatically.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p>You are ready. Tap any contact name to start a conversation. It looks just like regular texting: type your message and tap the green send arrow.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">On a Windows computer</span>
+      <p>WhatsApp is primarily a phone app. To use it on your Windows computer, go to web.whatsapp.com in your browser and scan a QR code with your phone to link them. The phone app is much easier for most people.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">WhatsApp safety reminder</span>
+      <p>WhatsApp is safe to download. It is made by Meta (the same company as Facebook) and used by over 2 billion people worldwide. However, scammers do sometimes use it. The rules are the same as with any message: never send money, never share banking information, and never click suspicious links, even from people who seem to be family members (accounts can be hacked). When in doubt, call the person directly to confirm.</p>
+    </div>
+
+    <h2>Public vs. private: who can see what you share?</h2>
+
+    <h3>Jean's story</h3>
+
+    <p>Jean, 72, loves birds. Every morning she sits by her kitchen window with her coffee and watches the cardinals at her feeder. One March morning, a pair of brilliant red cardinals came together for the first time that season. Jean was thrilled. She wanted to tell her daughter Susan about it.</p>
+
+    <p>Jean opened Facebook, typed "Susan! Both cardinals are here this morning! The male is so bright today. Wish you could see this!" and hit the big blue Post button.</p>
+
+    <p>That evening, her phone rang. It was her neighbour Doris, her book club friends Patricia and Margo, and three people she barely knew from church, all wanting to chat about cardinals. Jean was mortified. She had not sent Susan a private message. She had posted it publicly on her Facebook timeline, where all 47 of her Facebook friends (and anyone they shared it with) could see it. "I thought I was sending Susan a note," Jean said. "I didn't realise I was putting it on a bulletin board."</p>
+
+    <p>There are two completely different things you can do with a message, and they look surprisingly similar on the screen. A <strong>private message</strong> is like putting a letter in a sealed envelope addressed to one person: only the recipient reads it. Examples: an SMS text, a WhatsApp message, a Facebook Messenger chat. A <strong>public post</strong> is like pinning a note to a bulletin board in a busy shopping centre: even if you wrote it to one person, everyone else can see it too. Examples: a Facebook timeline post ("What's on your mind?"), an Instagram photo, a Facebook Group post.</p>
+
+    <ul>
+      <li><strong>Private message clues:</strong> you opened the conversation by tapping a person's name or photo, their name shows at the top of the screen, and the button says <strong>"Send"</strong>, not "Post".</li>
+      <li><strong>Public post warnings:</strong> you are on the main Facebook screen, you see a box that says "What's on your mind, [Your Name]?", there is a small globe icon or the word "Public" or "Friends" near the button, and the button says <strong>"Post"</strong>, not "Send".</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">The Globe Rule</span>
+      <p>Before you tap Post or Send, look for a <strong>globe icon</strong> 🌐. If you can see one, you are about to post publicly. <strong>Stop.</strong> If you intended to send a private message, close this window and go to Messenger (the speech bubble icon) or your regular text messages instead. No globe icon? You are in a private conversation and safe to send. Over time, telling private from public becomes natural. For now, the Globe Rule is your safety net.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">What not to post publicly</span>
+      <p>These things should always go in a <strong>private message</strong>, never a public post: your home address, phone number, or email; when your house will be empty ("We're heading to Florida for two weeks!"); photos with grandchildren's full names, school, or daily routines; financial details or health information; and anything you would not want a stranger at the bus stop to read.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You now understand the difference between a private message and a public post. Jean now sends Susan a text message when the cardinals arrive, and her bird watching stays between them. Before tapping "Post," look for the globe. That one habit prevents most social media surprises.</p>
+    </div>
+
+    <h2>The Personal Relationship Manager</h2>
+
+    <p>This is a special project idea that brings everything together. A Personal Relationship Manager is your private notebook for keeping track of the people you care about, built in the free <strong>Notes</strong> app on your device. For each important person, include: their birthday (and the birthdays of their children), important dates like anniversaries, recent conversations (what did they tell you last time? what were they excited about?), interests and preferences, gift ideas they mentioned during the year, and health notes such as upcoming appointments, if they have shared this with you.</p>
+
+    <div class="walkthrough">
+      <h4>Setting up your Personal Relationship Manager in Notes</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open the <strong>Notes</strong> app (yellow icon with a notepad).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Create a new <strong>folder</strong> called "My People" by tapping the folder icon.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Inside the folder, create a separate <strong>note for each person</strong>, named with their name.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Fill in the details listed above. Add to it after every phone call or visit.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Before you call someone, open their note and glance at your recent entries. This helps you ask thoughtful questions like "How was your dentist appointment last Tuesday?"</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Why this matters</span>
+      <p>Remembering small details about the people you love makes them feel valued and seen. Your Personal Relationship Manager helps you be the kind of friend, parent, and grandparent who never forgets what matters.</p>
+    </div>
+
+    <h2>Using the Calendar for important dates</h2>
+
+    <div class="walkthrough">
+      <h4>Adding a birthday to your Calendar</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open the <strong>Calendar</strong> app and tap the <strong>"+"</strong> button to add a new event.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Type a title like <strong>"Sarah's Birthday."</strong></p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Set the date and turn on <strong>All-Day</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Under <strong>Repeat</strong>, choose <strong>Every Year</strong>. Now you will never forget.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Under <strong>Alert</strong>, choose <strong>1 week before</strong> so you have time to prepare a card or gift.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p>Tap <strong>Add</strong> to save.</p></span>
+      </div>
+    </div>
+
+    <div class="the-move">
+      <span class="move-label">Try it today</span>
+      <p>Call one person you have been meaning to reach. Even a short call, "just wanted to see your face," means more than you know.</p>
+    </div>
+
+    <h2>A final note</h2>
+
+    <p>Technology changes, but the skills you have learned here, patience, careful observation, the 3-Second Rule, and the confidence to try new things, will serve you no matter what comes next. You are not "bad with technology." You are a capable, intelligent person who now has the knowledge to use these tools with confidence and joy.</p>
+
+    <p>Keep exploring. Keep learning. Keep connecting with the people you love. And remember: you can always come back to these lessons any time you need a refresher. This is your resource, and it will be here whenever you need it.</p>
+
+    <h2>Quick check: test your knowledge</h2>
+    <p>Tap the answer you think is correct. There is no score kept and nothing to sign in to.</p>
+    <div class="lesson-quiz">
+      <div class="quiz-q" data-correct="c">
+        <h3>1. To make a FaceTime or video call, both people need:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">A special video calling subscription</button>
+          <button class="quiz-opt" type="button" data-answer="b">The same type of phone</button>
+          <button class="quiz-opt" type="button" data-answer="c">A working internet connection (Wi-Fi or mobile data)</button>
+          <button class="quiz-opt" type="button" data-answer="d">A camera that they purchased separately</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. Video calls run over the internet, so all each person needs is a working Wi-Fi or mobile data connection. The camera is already built in."
+          data-wrong="All you both need is a working internet connection, Wi-Fi or mobile data. Video calling apps are free and the camera is built into your device."></div>
+      </div>
+      <div class="quiz-q" data-correct="c">
+        <h3>2. A stranger sends you a FaceTime request. What should you do?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Accept it, it might be important</button>
+          <button class="quiz-opt" type="button" data-answer="b">Accept only if they leave a voicemail first</button>
+          <button class="quiz-opt" type="button" data-answer="c">Decline it, only accept calls from people you know</button>
+          <button class="quiz-opt" type="button" data-answer="d">Block your phone immediately</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. Only accept video calls from people you know. Declining a stranger&#x27;s request is always the safe move, and nothing bad happens when you do."
+          data-wrong="The safe move is to decline it. Only accept video calls from people you know, the same rule as group message invitations from strangers."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>3. WhatsApp messages are "end-to-end encrypted." This means:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Only WhatsApp employees can read your messages</button>
+          <button class="quiz-opt" type="button" data-answer="b">Only you and the person you are messaging can read the messages</button>
+          <button class="quiz-opt" type="button" data-answer="c">Your messages are deleted after 24 hours</button>
+          <button class="quiz-opt" type="button" data-answer="d">Your phone company can see your messages</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Correct. End-to-end encryption scrambles the message so that only you and the person you are messaging can read it, not even WhatsApp itself."
+          data-wrong="End-to-end encryption means only you and the person you are messaging can read the messages. They are scrambled for everyone else, including WhatsApp."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>4. You want to video call your grandchild who uses an Android phone. FaceTime will not work. A good alternative is:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Regular phone call only, video requires matching phones</button>
+          <button class="quiz-opt" type="button" data-answer="b">WhatsApp or Google Meet, both work across iPhone and Android</button>
+          <button class="quiz-opt" type="button" data-answer="c">Zoom but only on a computer, not a phone</button>
+          <button class="quiz-opt" type="button" data-answer="d">You need to buy them an iPhone first</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. WhatsApp and Google Meet both work across iPhone and Android, free over your internet connection. Different phones are no barrier."
+          data-wrong="WhatsApp and Google Meet both work across iPhone and Android, so you can video call your grandchild no matter which phone they use."></div>
+      </div>
+      <div class="quiz-q" data-correct="c">
+        <h3>5. During a video call, your screen shows a small picture of you in the corner. This is called:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">A selfie preview</button>
+          <button class="quiz-opt" type="button" data-answer="b">Your profile picture</button>
+          <button class="quiz-opt" type="button" data-answer="c">A picture-in-picture or self-view</button>
+          <button class="quiz-opt" type="button" data-answer="d">A camera malfunction</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Yes. The small rectangle is your self-view: it shows what your camera is sending. The large image is the other person."
+          data-wrong="That small picture is your self-view (picture-in-picture). It shows what your camera sees so you can check your lighting. The large image is the other person."></div>
+      </div>
+    </div>
+
+    <h2>Your progress</h2>
+    <p>Tick each item as you feel confident with it. This is saved on this device only, with no account needed.</p>
+    <ul class="checklist" data-checklist="module-8">
+      <li class="check-item"><input type="checkbox" id="module-8-1"><label for="module-8-1">I can make a video call to a family member or friend</label></li>
+      <li class="check-item"><input type="checkbox" id="module-8-2"><label for="module-8-2">I know to send a quick "free to talk?" text before calling</label></li>
+      <li class="check-item"><input type="checkbox" id="module-8-3"><label for="module-8-3">I can set up WhatsApp and send my first message</label></li>
+      <li class="check-item"><input type="checkbox" id="module-8-4"><label for="module-8-4">I can create a shared photo album and invite family to it</label></li>
+      <li class="check-item"><input type="checkbox" id="module-8-5"><label for="module-8-5">I know the Globe Rule: check for the globe icon before tapping Post</label></li>
+      <li class="check-item"><input type="checkbox" id="module-8-6"><label for="module-8-6">I have started my Personal Relationship Manager and added one birthday to my Calendar</label></li>
+    </ul>
+
+    <!-- Denise: forward the lesson in isolation. Copy-link only, no share API. -->
+    <section class="send-lesson" aria-labelledby="send-h">
+      <h2 id="send-h">Send this lesson to someone</h2>
+      <p>Helping a parent or friend? This page works on its own, with no account and nothing to install. Copy the link and text it to them.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="button" data-copy-link>Copy the link to this lesson</button>
+        <span class="send-done" data-copy-done hidden>Copied. Paste it into a text or email.</span>
+      </div>
+      <input class="visually-hidden" type="text" data-copy-field hidden readonly aria-label="Link to this lesson">
+    </section>
+
+    <div class="success-state">
+      <p><strong>Well done.</strong> You have made a video call, shared photos with family, and started your Personal Relationship Manager. Your device is now a bridge to the people you love.</p>
+    </div>
+
+    <nav class="related-modules" aria-label="Continue learning">
+      <h2>Where to next</h2>
+      <div class="related-grid">
+        <a class="related-card" href="module-7.html">
+          <span class="related-num">Module 7</span>
+          <span class="related-name">Photos and Memories</span>
+          <span class="related-desc">Photos make video calls more meaningful. Learn to take, edit, and share your favourite memories.</span>
+        </a>
+        <a class="related-card" href="module-9.html">
+          <span class="related-num">Module 9</span>
+          <span class="related-name">Understanding AI</span>
+          <span class="related-desc">AI assistants can make staying connected even easier. Learn what they can and cannot do for you.</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<!-- SHARED SHELL: footer (identical on every page). -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">For families</a></li>
+      <li><a href="../../privacy.html">Privacy</a></li>
+      <li><a href="../../about.html">About us</a></li>
+      <li><a href="../../resources/support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- SHARED SHELL: layered consent bar (identical on every page). -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="../../privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/module.js"></script>
+</body>
+</html>

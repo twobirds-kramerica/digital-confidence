@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow"><!-- v2 preview - remove before launch -->
+  <script>
+    // Theme + text size before first paint (no flash). Local only, no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>When Things Stop Working - Digital Confidence Centre</title>
+  <meta name="description" content="What internet outages mean, how to tell if it is your device or your whole area, the 3-step fix that solves most problems, and when to call your provider. Free, plain-language lesson for Canadian seniors. No account needed.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- SHARED SHELL: header (generated from module-v2.html.tpl; identical on every page). -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Read this page aloud">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
+        <div class="rate-group" role="group" aria-label="Reading speed">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Slower</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normal</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Faster</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="../index.html">All lessons</a>
+    <a href="../index.html#protect-money">Protect your money</a>
+    <a href="../index.html#everyday-confidence" aria-current="page">Everyday confidence</a>
+    <a href="../index.html#staying-connected">Staying connected</a>
+    <a href="../index.html#getting-things-done">Getting things done</a>
+    <a href="../for-families.html">For families</a>
+    <a href="../../resources/support-directory.html">Get help</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="../index.html">All lessons</a></li>
+      <li><a href="../index.html#everyday-confidence">Everyday confidence</a></li>
+      <li><span aria-current="page">When Things Stop Working</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <a class="lesson-back" href="../index.html">← Back to all lessons</a>
+
+    <p class="lesson-category"><span aria-hidden="true">🛠️</span> Troubleshooting</p>
+    <h1>When Things Stop Working</h1>
+    <p class="lesson-time"><span aria-hidden="true">⏱</span> About 25 minutes, at your own pace</p>
+
+    <!-- Brenda: the first thing a nervous reader sees removes a fear. -->
+    <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
+
+    <p class="lead">How to tell what is going on when the internet goes down, what you can fix yourself, and when to call for help.</p>
+
+    <h2>The dinosaur on the screen</h2>
+    <p>A neighbour once called Aaron to say "I have a dinosaur on my screen and I don't know what to do." That dinosaur meant one thing: no internet connection. The neighbour thought her iPad was broken. It was not. The internet was down for the whole neighbourhood.</p>
+    <p>Internet outages happen to everyone. They are not your fault, and they do not mean your device is broken. This module will teach you how to tell what is going on, what you can fix yourself, and when to call for help.</p>
+
+    <div class="coach-block">
+      <span class="coach-mark" aria-hidden="true">💬</span>
+      <div class="coach-body">
+        <span class="coach-label">From your coach</span>
+        <p>When the internet goes down, it is easy to assume you broke something. Here is the truth this lesson proves: most outages are the provider's problem, not yours, and there are quick ways to confirm that before you touch a single cable. Knowing it is not your fault is half the fix.</p>
+      </div>
+    </div>
+
+    <h2>The dinosaur screen</h2>
+
+    <p>If you use Google Chrome on your iPad and the internet goes down, you will see a small cartoon dinosaur on a blank screen. This is Chrome's way of telling you it cannot connect to the internet. You have not broken anything; the dinosaur just means there is no internet connection right now.</p>
+
+    <p>If you use Safari (the browser that comes with your iPad), you will see a message like "Safari Can't Find the Server" or "You Are Not Connected to the Internet." Again, this is not your fault. It is just your device telling you it cannot reach the internet.</p>
+
+    <ul>
+      <li><strong>Google Chrome:</strong> a grey screen with a small pixelated dinosaur and the words "No internet" or "Unable to connect".</li>
+      <li><strong>Safari:</strong> a white screen that says "Safari Can't Find the Server" or "A server with the specified hostname could not be found".</li>
+      <li><strong>Apps:</strong> apps may show spinning circles that never stop, error messages, or simply refuse to load new content.</li>
+    </ul>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>If you see any of these screens, take a breath. You have not broken anything. Your device is working perfectly; it simply cannot reach the internet right now.</p>
+    </div>
+
+    <h2>Is it just you?</h2>
+
+    <p>When your internet stops working, the first thing to figure out is whether the problem is with your device, your home network, or everyone in your area. This matters because the fix is different depending on the answer.</p>
+
+    <div class="walkthrough">
+      <h4>How to figure out what is going on</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Try another device.</strong> If you have a phone and an iPad, try the internet on both. If only one device has a problem, the issue is with that device, not your internet.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p><strong>Try another website.</strong> Sometimes one website is down but the internet itself is fine. Try going to google.ca. If Google loads, your internet is working and the original website is the problem.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p><strong>Ask a neighbour.</strong> If your neighbour's internet is also down, the outage is in your area and there is nothing you can fix yourself. You simply need to wait.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p><strong>Check downdetector.ca.</strong> This free website tracks outages for major Canadian providers like Bell, Rogers, Telus, and Cogeco. If you still have mobile data on your phone, visit downdetector.ca to see if your provider is experiencing problems.</p></span>
+      </div>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You do not need to memorise all of these steps. The simplest check is this: if another device also cannot connect, the problem is probably not your device.</p>
+    </div>
+
+    <h2>Reading your signal strength</h2>
+
+    <p>Your iPad and iPhone show you how strong your internet connection is, if you know where to look. Understanding your signal strength helps you figure out whether your internet is truly down or whether you have simply moved too far from your router. Look at the top-right corner of your screen for the small fan-shaped Wi-Fi icon.</p>
+
+    <ul>
+      <li><strong>All bars filled in:</strong> strong signal. Your internet should work well.</li>
+      <li><strong>Two or three bars:</strong> fair signal. Things may be a bit slower, but should still work.</li>
+      <li><strong>One bar:</strong> weak signal. You are far from your router or something is blocking the signal. Try moving closer to your modem.</li>
+      <li><strong>No Wi-Fi icon at all:</strong> your device is not connected to Wi-Fi. This could mean your Wi-Fi is turned off, or the router is not working.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">What "No Service" means on your iPhone</span>
+      <p>If your iPhone shows "No Service" in the top-left corner, it means your phone has lost its connection to the cellular network, the network your phone uses when you are away from home. This is separate from your home Wi-Fi. You can still use Wi-Fi at home even if your phone says "No Service."</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>The Wi-Fi icon in the top-right corner of your screen is your friend. Full bars means everything is fine. No icon means your device is not connected to Wi-Fi.</p>
+    </div>
+
+    <h2>Basic troubleshooting: the 3-step fix</h2>
+
+    <p>Here is the good news: there is a simple 3-step fix that solves about 80% of internet problems. Technicians use these same steps. You can do them yourself.</p>
+
+    <div class="walkthrough">
+      <h4>The 3-step fix</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Turn off Wi-Fi and turn it back on.</strong> On your iPad or iPhone, open <strong>Settings</strong>, tap <strong>Wi-Fi</strong>, flip the switch off. Wait 10 seconds. Flip it back on. Your device will reconnect to your home network. This often solves the problem by itself.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p><strong>Restart your modem and router.</strong> Your modem is the box from your internet provider (often black, with blinking lights). Your router might be the same box or a separate one. <strong>Unplug the power cord</strong> from the back of the modem. <strong>Wait 30 seconds.</strong> Plug it back in. Wait 2 to 3 minutes for the lights to come back on and settle. This is the single most effective fix for internet problems.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p><strong>Restart your device.</strong> If the first two steps did not work, restart your iPad or iPhone. Hold the power button until the "slide to power off" slider appears. Slide it. Wait 30 seconds. Press and hold the power button again to turn it back on.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Why "turning it off and on again" works</span>
+      <p>It is not a joke; it genuinely works. Your modem and router are small computers. Like any computer, they can get confused or overloaded after running for a long time. Restarting them clears out temporary problems and gives them a fresh start. Even professional technicians do this as their first step.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You now know the same 3-step fix that technicians use. Turn off Wi-Fi, restart the modem, restart your device. That is it. You can do this.</p>
+    </div>
+
+    <h2>When to call your provider</h2>
+
+    <p>If you have tried the 3-step fix and your internet is still not working, it may be time to call your internet provider. But how long should you wait?</p>
+
+    <ul>
+      <li><strong>If your neighbours are also affected:</strong> this is an area outage. Give it 1 to 2 hours. Your provider already knows about it and is working on it.</li>
+      <li><strong>If only your home is affected:</strong> call sooner. If you have tried the 3-step fix and nothing has changed after 15 to 20 minutes, go ahead and call.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">What to say when you call</span>
+      <p>Here is a simple script you can use: "My internet is not working. I have restarted my modem and my device. Can you check if there is an outage in my area?" If they create a support ticket, ask for the reference number and write it down. This protects you if you need to follow up later.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You do not need to feel nervous about calling. You have already done the troubleshooting. You can tell them exactly what you tried. That puts you ahead of most callers.</p>
+    </div>
+
+    <h2>Speed tests</h2>
+
+    <p>Sometimes your internet is not completely down; it is just slow. Pages take forever to load. Videos keep stopping and starting. If this sounds familiar, a speed test can tell you exactly how fast your internet is running.</p>
+
+    <div class="walkthrough">
+      <h4>How to run a speed test</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Open Safari</strong> on your iPad.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Go to <strong>speedtest.net</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Tap the large <strong>"Go"</strong> button in the centre of the screen.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Wait about 30 seconds; the test will run automatically.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Look at the <strong>"Download"</strong> number. This is your internet speed in Mbps.</p></span>
+      </div>
+    </div>
+
+    <ul>
+      <li><strong>Download speed:</strong> the most important number. It tells you how fast information comes to your device. If your plan says you should get 25 Mbps and you are only getting 5 Mbps, something is wrong.</li>
+      <li><strong>Upload speed:</strong> how fast you can send information (like photos or emails). It is usually much lower than your download speed. That is normal.</li>
+      <li><strong>Ping:</strong> you can ignore this number. It measures response time and is only important for online gaming.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">What to do if your speed is too low</span>
+      <p>If you are paying for 25 Mbps and only getting 5 Mbps, call your provider and say: "I ran a speed test at speedtest.net and I am only getting 5 Mbps. My plan says I should get 25 Mbps. Can you look into this?" They are required to deliver the speed you are paying for.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>A speed test is free, takes 30 seconds, and gives you real evidence to use when talking to your provider. You do not need to understand every number; just compare your download speed to what your plan promises.</p>
+    </div>
+
+    <h2>Mobile hotspot: a temporary backup</h2>
+
+    <p>If your home internet is down and you need to get online urgently, for example to check an important email or join a video call, your iPhone can share its cellular data with your iPad. This feature is called Personal Hotspot.</p>
+
+    <div class="walkthrough">
+      <h4>How to turn on Personal Hotspot on iPhone</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>On your iPhone, open <strong>Settings</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap <strong>Personal Hotspot</strong> (or <strong>Cellular</strong>, then <strong>Personal Hotspot</strong>).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Turn on <strong>"Allow Others to Join"</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>On your iPad, go to <strong>Settings</strong>, then <strong>Wi-Fi</strong>, and look for your iPhone's name in the list. Tap it to connect.</p></span>
+      </div>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Important notes</span>
+      <p>Personal Hotspot uses your phone's cellular data; if you have a limited data plan on your phone, this will count against it. It is a temporary solution, not a replacement for home internet. Avoid streaming video while using your phone as a hotspot, as it uses data quickly.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You do not need to set this up right now. Just know that it exists. If your home internet ever goes down and you need to get online urgently, your iPhone can help.</p>
+    </div>
+
+    <h2>Keeping calm</h2>
+
+    <p>Internet outages can feel stressful, especially if you rely on your device to stay connected with family or access important services. But here is the most important thing to remember: outages are temporary.</p>
+
+    <ul>
+      <li><strong>Your data is safe.</strong> An internet outage does not erase anything on your device. Your photos, messages, contacts, and apps are all still there.</li>
+      <li><strong>Nothing is lost.</strong> Emails that were sent to you during the outage will arrive as soon as your internet comes back. You will not miss anything permanently.</li>
+      <li><strong>The internet will come back.</strong> Every outage ends. Most last less than a few hours. Major outages are rare and providers work around the clock to fix them.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">In the meantime</span>
+      <p>While you wait for your internet to come back: read a book or magazine, call a friend or family member on the phone (regular phone calls do not need internet), make a cup of tea or coffee and take a break, play a game on your iPad that works offline, or look through your photos; your photo library is on your device and works without internet.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You are more prepared than you think. You know how to check if it is just you, how to restart your modem, and when to call. The internet always comes back. You will be just fine.</p>
+    </div>
+
+    <h2>Quick answers</h2>
+
+    <ul>
+      <li><strong>Will I lose my photos and emails if the internet goes down?</strong> No. Your photos, contacts, messages, and apps are stored on your device. An internet outage does not erase or affect anything on your iPad or iPhone. Emails sent to you during the outage will arrive automatically when your internet comes back.</li>
+      <li><strong>How long do internet outages usually last?</strong> Most outages last less than a few hours. Major outages affecting large areas are rare. Your provider is usually aware of the problem and working to fix it. You can check downdetector.ca using your phone's mobile data to see if others are reporting the same issue.</li>
+      <li><strong>Can I still make phone calls if the internet is down?</strong> Yes. Regular phone calls on your iPhone use the cellular network, not your home internet. You can call family, friends, or your internet provider even when your home Wi-Fi is down. However, FaceTime and other video calls require an internet connection.</li>
+    </ul>
+
+    <div class="the-move">
+      <span class="move-label">The move is</span>
+      <p>Next time the internet stops working: check another device, then turn Wi-Fi off and on, restart the modem, and restart your device. If it is still down after 15 to 20 minutes and your neighbours are fine, call your provider with the simple script from this lesson.</p>
+    </div>
+
+    <h2>Quick check: test your knowledge</h2>
+    <p>Tap the answer you think is correct. There is no score kept and nothing to sign in to.</p>
+    <div class="lesson-quiz">
+      <div class="quiz-q" data-correct="b">
+        <h3>1. When your internet stops working, the first thing to check is:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Call your internet provider immediately</button>
+          <button class="quiz-opt" type="button" data-answer="b">Whether the problem is with your device, router, or the provider, by checking other devices</button>
+          <button class="quiz-opt" type="button" data-answer="c">Unplug your router and leave it off for an hour</button>
+          <button class="quiz-opt" type="button" data-answer="d">Replace your router</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. First figure out where the problem is: try another device, try another website, ask a neighbour. The fix depends on the answer."
+          data-wrong="The first step is to figure out whether the problem is your device, your home network, or your whole area. Try another device or website before calling anyone or replacing anything."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>2. Downdetector is a website that:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Provides government internet repair services</button>
+          <button class="quiz-opt" type="button" data-answer="b">Shows real-time reports of outages for major internet and service providers</button>
+          <button class="quiz-opt" type="button" data-answer="c">Monitors your personal internet speed</button>
+          <button class="quiz-opt" type="button" data-answer="d">Sells replacement routers</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. downdetector.ca tracks outage reports for major Canadian providers like Bell, Rogers, Telus, and Cogeco, so you can see if others have the same problem."
+          data-wrong="Downdetector shows real-time outage reports for major providers. Check downdetector.ca on your phone&#x27;s mobile data to see if your provider is having problems in your area."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>3. Restarting your router typically involves:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Pressing a factory reset button</button>
+          <button class="quiz-opt" type="button" data-answer="b">Unplugging it, waiting 30 seconds, and plugging it back in</button>
+          <button class="quiz-opt" type="button" data-answer="c">Calling your provider to do it remotely</button>
+          <button class="quiz-opt" type="button" data-answer="d">Updating its software manually</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Yes. Unplug the power cord, wait 30 seconds, plug it back in, and give it 2 to 3 minutes for the lights to settle. This is the single most effective fix. Do not press the factory reset button."
+          data-wrong="The restart is simple: unplug the power cord, wait 30 seconds, plug it back in, and wait 2 to 3 minutes. Avoid the factory reset button, which erases the router&#x27;s settings."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>4. If your internet is slow during evenings but fine in the morning, this likely indicates:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Your router is overheating</button>
+          <button class="quiz-opt" type="button" data-answer="b">Network congestion from many users on your street or building using the internet at the same time</button>
+          <button class="quiz-opt" type="button" data-answer="c">Your plan has a daily data limit</button>
+          <button class="quiz-opt" type="button" data-answer="d">Your device needs to be replaced</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Correct. Evenings are peak hours: many households on your street are online at once, which slows things down. Your equipment is fine."
+          data-wrong="Slow evenings with fine mornings usually mean network congestion: many users in your area are online at the same time during peak hours. It is not your device or router."></div>
+      </div>
+      <div class="quiz-q" data-correct="a">
+        <h3>5. Before calling your internet provider, the fixes to try are:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Restart the router, restart your device, check the cables, and check the provider's status page</button>
+          <button class="quiz-opt" type="button" data-answer="b">Restart your phone twice, wait an hour, and call a neighbour to check theirs</button>
+          <button class="quiz-opt" type="button" data-answer="c">Only restart the router; everything else requires a technician</button>
+          <button class="quiz-opt" type="button" data-answer="d">Change your Wi-Fi password, update your device, and restart the router</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. Restart the router, restart your device, make sure the cables are plugged in snugly, and check for a reported outage. Then you can tell the provider exactly what you tried."
+          data-wrong="The pre-call routine is: restart the router, restart your device, check the cables, and check whether an outage is already reported. None of it needs a technician."></div>
+      </div>
+    </div>
+
+    <h2>Your progress</h2>
+    <p>Tick each item as you feel confident with it. This is saved on this device only, with no account needed.</p>
+    <ul class="checklist" data-checklist="module-25-outage-detection">
+      <li class="check-item"><input type="checkbox" id="module-25-outage-detection-1"><label for="module-25-outage-detection-1">I know the dinosaur screen and "Can't Find the Server" messages mean the internet is down, not that my device is broken</label></li>
+      <li class="check-item"><input type="checkbox" id="module-25-outage-detection-2"><label for="module-25-outage-detection-2">I can check whether the problem is my device, my home, or my whole area</label></li>
+      <li class="check-item"><input type="checkbox" id="module-25-outage-detection-3"><label for="module-25-outage-detection-3">I can do the 3-step fix: toggle Wi-Fi, restart the modem, restart my device</label></li>
+      <li class="check-item"><input type="checkbox" id="module-25-outage-detection-4"><label for="module-25-outage-detection-4">I know when to call my provider and exactly what to say</label></li>
+      <li class="check-item"><input type="checkbox" id="module-25-outage-detection-5"><label for="module-25-outage-detection-5">I can run a speed test at speedtest.net and compare it to my plan</label></li>
+      <li class="check-item"><input type="checkbox" id="module-25-outage-detection-6"><label for="module-25-outage-detection-6">I know my data is safe during an outage and the internet always comes back</label></li>
+    </ul>
+
+    <!-- Denise: forward the lesson in isolation. Copy-link only, no share API. -->
+    <section class="send-lesson" aria-labelledby="send-h">
+      <h2 id="send-h">Send this lesson to someone</h2>
+      <p>Helping a parent or friend? This page works on its own, with no account and nothing to install. Copy the link and text it to them.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="button" data-copy-link>Copy the link to this lesson</button>
+        <span class="send-done" data-copy-done hidden>Copied. Paste it into a text or email.</span>
+      </div>
+      <input class="visually-hidden" type="text" data-copy-field hidden readonly aria-label="Link to this lesson">
+    </section>
+
+    <div class="success-state">
+      <p><strong>Well done.</strong> You now know what outage screens mean, how to tell if it is just you, the 3-step fix technicians use, when to call your provider, and how to run a speed test. Outages are temporary, and you are ready for the next one.</p>
+    </div>
+
+    <nav class="related-modules" aria-label="Continue learning">
+      <h2>Where to next</h2>
+      <div class="related-grid">
+        <a class="related-card" href="module-12.html">
+          <span class="related-num">Module 12</span>
+          <span class="related-name">Getting the Help You Deserve</span>
+          <span class="related-desc">If your provider will not fix the problem, learn how to escalate and get real help without frustration.</span>
+        </a>
+        <a class="related-card" href="module-26-notifications.html">
+          <span class="related-num">Module 26</span>
+          <span class="related-name">Managing Your Notifications</span>
+          <span class="related-desc">Take back control of your device's beeps and buzzes so the alerts that matter stand out.</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<!-- SHARED SHELL: footer (identical on every page). -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">For families</a></li>
+      <li><a href="../../privacy.html">Privacy</a></li>
+      <li><a href="../../about.html">About us</a></li>
+      <li><a href="../../resources/support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- SHARED SHELL: layered consent bar (identical on every page). -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="../../privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/module.js"></script>
+</body>
+</html>
