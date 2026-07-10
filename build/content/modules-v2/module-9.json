@@ -1,0 +1,150 @@
+{
+  "id": "module-9",
+  "slug": "module-9",
+  "page_title": "Understanding AI - Digital Confidence Centre",
+  "title": "Understanding AI",
+  "description": "What artificial intelligence really is, how to spot AI-powered scams and deepfakes, how to protect your privacy, and safe AI tools to try. Free, plain-language lesson for Canadian seniors. No account needed.",
+  "category": "Understanding AI",
+  "category_icon": "🤖",
+  "lesson_time": "About 20 minutes, at your own pace",
+  "lead": "What artificial intelligence really is, how to spot AI-powered scams and deepfakes, how to protect your privacy, and a few safe AI tools that can make your life easier.",
+  "nav_current": "../index.html#everyday-confidence",
+  "breadcrumb_group_label": "Everyday confidence",
+  "breadcrumb_group_anchor": "../index.html#everyday-confidence",
+  "story": {
+    "label": "Margaret's AI encounter",
+    "paragraphs": [
+      "Margaret, 72, was scrolling through Facebook when she spotted a photo of her friend Helen at what looked like a glamorous tropical resort. \"Helen never mentioned going on a trip!\" she thought. When Margaret called to congratulate her, Helen laughed. She had never been to a resort in her life. The photo had been created by an AI app that someone had used to make a fun fantasy image.",
+      "But that got Margaret wondering: if AI could make a photo that convincing, what else could it do? Could someone make a fake photo of her? Could they make a fake video? How could she tell what was real?",
+      "Margaret decided to learn about AI before she had to deal with it in a stressful situation. By the end of her research, she was not scared. She was actually excited. She had tried using AI to help plan her garden and found it surprisingly helpful.",
+      "That is the goal of this lesson: to give you the same calm, informed understanding that Margaret found."
+    ]
+  },
+  "coach": "AI can feel like something that arrived overnight and left everyone else in on the secret. The truth: most people, including many young people, are still figuring it out. Being curious but cautious is exactly the right instinct, and it puts you ahead of anyone who taps buttons without asking questions.",
+  "sections": [
+    { "type": "heading", "level": 2, "text": "What is AI? (In plain language)" },
+    { "type": "tip", "label": "The simple version", "text": "Think of AI as a <strong>very smart autocomplete</strong>, like your phone's keyboard suggestions, but one that has learned from reading millions of books, websites, and conversations. When you ask it a question, it predicts the most helpful response based on everything it has learned." },
+    { "type": "paragraph", "text": "You have already been using AI for years without knowing it:" },
+    { "type": "list", "items": [
+      "<strong>Siri and Google Assistant:</strong> voice assistants on your phone that understand spoken questions",
+      "<strong>Autocorrect:</strong> suggests the right spelling as you type",
+      "<strong>Photo sorting:</strong> your Photos app can group pictures by faces automatically",
+      "<strong>Spam filters:</strong> your email moves junk mail to a Spam folder without you asking",
+      "<strong>Netflix and YouTube recommendations:</strong> suggest videos and shows you might like"
+    ] },
+    { "type": "paragraph", "text": "<strong>What AI is NOT:</strong> science fiction robots, a sentient being with feelings or plans, something that \"knows\" you personally, or something magical. It is a tool, like a very sophisticated calculator or dictionary." },
+    { "type": "helper", "label": "Confidence check", "text": "You have already been using AI successfully for years. This is just learning the name for something familiar." },
+
+    { "type": "heading", "level": 2, "text": "Should I be scared of AI?" },
+    { "type": "paragraph", "text": "Short answer: <strong>no</strong>. But being informed and careful is always smart with any technology." },
+    { "type": "tip", "label": "Good analogy", "text": "AI is a tool, like a car. A car can be used to take you safely to the grocery store, or, in the wrong hands, it can cause harm. The car itself is not good or evil. The same is true of AI." },
+    { "type": "paragraph", "text": "The real concern with AI is not the technology itself. It is <strong>people who misuse it</strong>. Just as scammers use phones and email to trick people, some scammers now use AI to make their tricks more convincing. The good news: the same common sense that protects you from regular scams protects you from AI-powered scams too." },
+
+    { "type": "heading", "level": 2, "text": "What to watch out for" },
+    { "type": "heading", "level": 3, "text": "Deepfake videos and audio" },
+    { "type": "paragraph", "text": "AI can create realistic fake videos of real people saying things they never actually said. These are called <strong>deepfakes</strong>." },
+    { "type": "warning", "label": "Watch out", "text": "Deepfakes are often used for political misinformation, celebrity scams pretending a famous person recommends an investment, and, most dangerously, impersonating family members to ask for money." },
+    { "type": "paragraph", "text": "<strong>How to spot a deepfake video:</strong>" },
+    { "type": "list", "items": [
+      "Unnatural or limited blinking. Real people blink naturally and often.",
+      "Lip sync slightly off. The mouth does not quite match the words.",
+      "Weird lighting on the face compared to the background.",
+      "Slightly blurry edges around the face or hairline.",
+      "The person seems stiff or robotic compared to how they normally move."
+    ] },
+    { "type": "three_second_rule", "heading": "The 3-second rule for shocking content", "steps": [
+      { "icon": "✋", "name": "Stop", "text": "Pause before reacting or sharing." },
+      { "icon": "🫁", "name": "Breathe", "text": "Emotional content is designed to skip your judgment." },
+      { "icon": "🔍", "name": "Verify", "text": "Check a reputable news source before believing it." }
+    ] },
+    { "type": "heading", "level": 3, "text": "AI-generated scam emails" },
+    { "type": "paragraph", "text": "Scammers now use AI to write more convincing phishing emails. The grammar is better, the tone sounds more human, and the spelling is correct. But the red flags remain the same: urgency (\"Act immediately or your account will be closed\"), requests for money, gift cards, or personal information, an unknown or suspicious sender address, and links that do not match the company they claim to be from. AI makes scam emails look better, but it cannot change their fundamental tactics." },
+    { "type": "heading", "level": 3, "text": "Fake AI-generated photos" },
+    { "type": "paragraph", "text": "AI can create realistic photos of events that never happened: politicians \"saying\" things they never said, fake product reviews with AI-generated happy customers, and news stories that are entirely fabricated." },
+    { "type": "tip", "label": "Quick check", "text": "If a photo seems shocking or unbelievable, ask: <strong>\"Does this appear on any reputable news sites like CBC, CTV, or the Toronto Star?\"</strong> If only unknown websites are sharing it, be very skeptical." },
+    { "type": "heading", "level": 3, "text": "Voice cloning: the grandparent scam 2.0" },
+    { "type": "paragraph", "text": "This is the most important AI scam for seniors to know about. Scammers can now clone a loved one's voice using just a few seconds of audio from social media." },
+    { "type": "scam_example", "label": "Example of a voice cloning scam (this type of call is NOT real)", "text": "\"Grandma? It's me, Tyler. I'm in trouble. I got in a car accident and I need bail money right away. Please don't tell Mom and Dad. Can you send $2,000 through an e-transfer?\"" },
+    { "type": "paragraph", "text": "The voice sounds exactly like your grandchild. Your heart races. But here is how to protect yourself:" },
+    { "type": "tip", "label": "Your family safe word", "text": "Create a secret code word with your family right now. If anyone calls claiming to be a family member in trouble, ask for the code word. A real family member will know it. A scammer will not. Also: <strong>hang up and call the person back</strong> on their known phone number. If your grandchild truly needs help, they will answer, or a parent will confirm the story." },
+
+    { "type": "heading", "level": 2, "text": "Privacy concerns with AI tools" },
+    { "type": "warning", "label": "Protect your privacy", "text": "When using AI chat tools like ChatGPT, <strong>never share</strong> your Social Insurance Number, banking information, passwords, home address, medical details, or any other personal information. Your conversations may be saved and used to improve the AI system." },
+    { "type": "paragraph", "text": "<strong>Safe to share with AI:</strong> general questions, recipe ideas, how-to instructions, help writing a thank-you note, questions about history or science. Think of it like asking a knowledgeable stranger at a library: helpful for general questions, but no personal details." },
+    { "type": "paragraph", "text": "Free AI services often keep your questions and answers, and photos you upload might be stored on their servers. When in doubt, look for \"privacy mode\" or \"incognito\" settings in AI tools, or choose Canadian-based services that follow PIPEDA privacy law." },
+    { "type": "tip", "label": "Good news", "text": "Your device's built-in AI features, like photo enhancement and Face ID, process everything <strong>on your device only</strong>. Apple does not see your photos or your face. That data never leaves your device." },
+
+    { "type": "heading", "level": 2, "text": "Beginner-friendly AI tools to try" },
+    { "type": "paragraph", "text": "Here are three safe, easy AI tools you can try today. Start with just one. There is no rush." },
+    { "type": "walkthrough", "title": "1. Photo enhancement (built in, safe)", "steps": [
+      "On an iPad or iPhone, open the <strong>Photos</strong> app and tap any photo. Try an old family photo or a dim one taken indoors. On Android, open the <strong>Google Photos</strong> app instead.",
+      "Tap <strong>Edit</strong> (the pencil icon on Android, top right on Apple).",
+      "On Apple, tap the <strong>magic wand icon</strong> ✨, the Auto Enhance button. On Android, tap <strong>Suggestions</strong> and pick the improvement you like.",
+      "Watch the photo improve instantly. On Apple you can tap the wand again to compare.",
+      "Tap <strong>Done</strong> or <strong>Save copy</strong> to keep the improved version. Your original is never lost."
+    ] },
+    { "type": "walkthrough", "title": "2. Google Lens (identify objects, read text)", "steps": [
+      "On Android, Google Lens is already built in: open the <strong>Google app</strong> or your Camera app and look for the Lens icon (a colourful viewfinder). On iPhone or iPad, download the free <strong>Google</strong> app from the App Store and tap the same icon next to the search bar. On a computer, go to lens.google.com.",
+      "<strong>Try it on a plant:</strong> point at any plant in your home or garden. Google tells you what type of plant it is.",
+      "<strong>Try it on text:</strong> point at a label, sign, or a printed menu in another language. Google translates it instantly.",
+      "<strong>Try it on food:</strong> point at a dish you do not recognise and Google identifies it. It is free and requires no account login."
+    ] },
+    { "type": "heading", "level": 3, "text": "3. ChatGPT for everyday help (free version)" },
+    { "type": "paragraph", "text": "ChatGPT is an AI you can have a conversation with. Think of it as a very patient, knowledgeable helper. To access it: visit <strong>chat.openai.com</strong>. A free account is needed (use your email address to sign up), and no payment information is required for the free version." },
+    { "type": "tip", "label": "Before you start", "text": "Remember: never share personal information. Use it for general questions only." },
+    { "type": "paragraph", "text": "<strong>Ideas for what to ask:</strong>" },
+    { "type": "list", "items": [
+      "\"Give me a recipe idea using chicken, potatoes, and carrots\"",
+      "\"Help me write a thank-you note to my neighbour who brought me soup\"",
+      "\"Explain what a TFSA is in simple language\"",
+      "\"What are five easy exercises for seniors with knee pain?\"",
+      "\"What should I look for when buying a new toaster?\""
+    ] },
+    { "type": "the_move", "label": "Your challenge this week", "text": "Choose just ONE of the three tools above and try it for five minutes with something low-stakes: enhance a family photo, identify a plant, or ask for a recipe idea. Exciting? Surprising? A bit confusing? All of those reactions are completely normal, and there is no wrong way to explore." },
+
+    { "type": "quiz", "heading": "Quick check: test your knowledge", "intro": "Tap the answer you think is correct. There is no score kept and nothing to sign in to.", "questions": [
+      { "q": "1. What does \"AI\" stand for?",
+        "options": ["Automated Internet", "Artificial Intelligence", "Advanced Integration", "Automatic Interface"],
+        "correct": 1,
+        "right": "Correct. AI stands for Artificial Intelligence: computer tools that predict helpful responses based on patterns they have learned.",
+        "wrong": "AI stands for Artificial Intelligence. It is a tool that predicts helpful responses based on patterns learned from millions of examples." },
+      { "q": "2. An AI voice assistant like Siri or Google Assistant understands you by:",
+        "options": ["Reading your mind", "Recognising patterns in your speech and matching them to known commands", "Connecting to a real person who listens", "Guessing based on your location"],
+        "correct": 1,
+        "right": "Exactly. Voice assistants recognise patterns in your speech and match them to known commands. No person is listening on the other end.",
+        "wrong": "Voice assistants work by recognising patterns in your speech and matching them to known commands. It is pattern-matching, not mind-reading or a hidden person." },
+      { "q": "3. A deepfake is:",
+        "options": ["A very convincing lie told in person", "An AI-generated image or video that makes someone appear to say or do something they never did", "A type of online scam involving fake websites", "A hacked version of a real video"],
+        "correct": 1,
+        "right": "Right. A deepfake uses AI to make someone appear to say or do something they never did. Watch for odd blinking, off lip sync, and blurry edges around the face.",
+        "wrong": "A deepfake is an AI-generated image or video that makes someone appear to say or do something they never did. If a video seems impossible, verify it against a reputable news source." },
+      { "q": "4. You receive a call where the voice sounds exactly like your grandchild saying they are in trouble and need money. The safest response is:",
+        "options": ["Send the money immediately", "Ask the caller security questions", "Hang up and call your grandchild on their real number to verify", "Call the police first"],
+        "correct": 2,
+        "right": "Perfect. AI can clone voices, so always hang up and call back on a known number. Your family safe word helps too.",
+        "wrong": "Voice cloning means a call can sound exactly like a loved one but be fake. Hang up and call your grandchild directly on their real number, and use your family safe word." },
+      { "q": "5. Which of these is something AI tools CAN genuinely help with?",
+        "options": ["Making decisions that require your personal values and judgement", "Translating text, summarising long documents, or answering general knowledge questions", "Replacing your doctor's medical advice for serious conditions", "Keeping your personal information 100% private"],
+        "correct": 1,
+        "right": "Yes. AI is genuinely useful for translating, summarising, and general knowledge questions. It is not a substitute for your judgement or your doctor.",
+        "wrong": "AI is genuinely helpful for translating text, summarising documents, and general questions. It cannot replace your doctor, your judgement, or guarantee your privacy." }
+    ] },
+
+    { "type": "checklist", "heading": "Your progress", "intro": "Tick each item as you feel confident with it. This is saved on this device only, with no account needed.", "id": "module-9", "items": [
+      "I understand that AI is a tool, not a robot or magic",
+      "I can name two signs that a video might be a deepfake",
+      "I know not to share personal information with AI chatbots",
+      "I have discussed a family safe word with a loved one",
+      "I tried at least one safe AI tool (photo enhancement, Google Lens, or ChatGPT)",
+      "I know to hang up and call back when a call seems suspicious"
+    ] }
+  ],
+  "success_state": "<strong>Well done.</strong> You now know more about AI than most people. You understand what to watch for, and you know it is just a tool, not magic, not scary. Your device is still safe, and you are in control.",
+  "related": {
+    "heading": "Where to next",
+    "cards": [
+      { "num": "Module 2", "name": "The Security Shield", "desc": "AI can be used to create convincing scams. Your Security Shield habits are more important than ever.", "href": "module-2.html", "external": false },
+      { "num": "Module 5", "name": "Email and Messages", "desc": "AI-generated phishing emails are harder to spot. Use your email safety skills to stay alert.", "href": "module-5.html", "external": false }
+    ]
+  }
+}
