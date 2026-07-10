@@ -1,0 +1,19 @@
+{
+  "id": "trust-blue",
+  "schema": "v2",
+  "template": "module-v2.html.tpl",
+  "content_dir": "modules-v2",
+  "product_name": "Digital Confidence Centre",
+  "tagline": "Learn at your own pace, in your own home.",
+  "base_url": "https://twobirds-kramerica.github.io/digital-confidence/dcc-v2",
+  "tokens_css": "../css/tokens.css",
+  "core_css": "../css/core.css",
+  "primary_colour": "#2A5C8A",
+  "primary_nav": [
+    { "href": "../index.html",                 "label": "All lessons" },
+    { "href": "../index.html#protect-money",   "label": "Protect your money" },
+    { "href": "../index.html#everyday-confidence", "label": "Everyday confidence" },
+    { "href": "../for-families.html",          "label": "For families" },
+    { "href": "../../resources/support-directory.html", "label": "Get help" }
+  ]
+}

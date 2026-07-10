@@ -1,0 +1,86 @@
+{
+  "id": "module-1",
+  "slug": "module-1",
+  "page_title": "The Escape Hatch - Digital Confidence Centre",
+  "title": "The Escape Hatch",
+  "description": "The single most important skill on any device: how to get back to safety no matter what happens on your screen. Free, plain-language lesson for Canadian seniors. No account needed.",
+  "category": "Device basics",
+  "category_icon": "📱",
+  "lesson_time": "About 10 minutes, at your own pace",
+  "lead": "The single most important skill in using any device: how to get back to safety, no matter what happens on your screen.",
+  "nav_current": "../index.html#everyday-confidence",
+  "breadcrumb_group_label": "Everyday confidence",
+  "breadcrumb_group_anchor": "../index.html#everyday-confidence",
+  "story": {
+    "label": "Margaret's story",
+    "paragraphs": [
+      "Margaret, 74, was browsing recipes on her iPad one Tuesday morning. She tapped a link that promised the \"Best Butter Tart Recipe in Ontario,\" and suddenly her screen filled with flashing colours and a loud voice saying her iPad had a virus. Her heart raced. She could not find a way to close it, and she thought her iPad was broken, or worse, that someone was stealing her banking information right that second.",
+      "Here is the good news: Margaret's iPad was perfectly fine the entire time. That scary message was a fake, a common trick designed to frighten people. If Margaret had known the one skill we are about to learn, she could have closed that fake warning in about two seconds and gone right back to her butter tart recipe."
+    ]
+  },
+  "coach": "If you have ever frozen when a strange message appeared, you are not doing anything wrong. That reaction is exactly what those messages are built to cause. By the end of this page you will have a calm, reliable way out of any of them, and you will never have to hide your device in a drawer again.",
+  "sections": [
+    { "type": "heading", "level": 2, "text": "The golden rule: nothing is permanent" },
+    { "type": "tip", "label": "The most comforting truth about your device", "text": "You cannot break your iPad or phone by tapping the wrong thing. You cannot accidentally delete the internet. You cannot ruin your device by opening the wrong app. Almost everything you do can be undone, closed, or fixed." },
+    { "type": "paragraph", "text": "Think of your device like a library. When you open an app, it is like picking a book off the shelf. When you close it, you are putting the book back. The book is still there. You have not changed anything permanent." },
+
+    { "type": "heading", "level": 2, "text": "Escape hatch number 1: the Home button (or Home gesture)" },
+    { "type": "paragraph", "text": "Your device has one primary escape route. On an iPhone or iPad it is the Home button or the swipe-up gesture:" },
+    { "type": "walkthrough", "title": "If your iPad has a round button below the screen", "steps": [
+      "Look at the very bottom edge, below the screen. You will see a round, slightly indented circle. That is your <strong>Home button</strong>.",
+      "Press it once with your thumb or finger. Not hard, a gentle, firm press.",
+      "Whatever was on your screen disappears. You are back at your Home screen, the one with all your app pictures on it."
+    ] },
+    { "type": "walkthrough", "title": "If your iPad has no round button (newer models)", "steps": [
+      "Look at the very bottom edge of the screen. You will see a thin, dark horizontal line.",
+      "Place your finger on that line and <strong>swipe upward</strong>, sliding from the bottom toward the middle.",
+      "You are back at your Home screen. Safe and sound."
+    ] },
+    { "type": "helper", "label": "Confidence check", "text": "You are doing wonderfully. The Home button is your best friend on this device. You cannot break anything by pressing it, so press it as often as you like." },
+
+    { "type": "heading", "level": 2, "text": "Those scary pop-up messages" },
+    { "type": "paragraph", "text": "Let us talk about the situation that frightened Margaret. You are using your device, and suddenly a message fills your screen:" },
+    { "type": "scam_example", "label": "Example of a fake warning (this is NOT real)", "text": "WARNING! Your iPad has been infected with 3 viruses! Your personal data is at risk! Call Apple Support immediately at 1-888-555-0199. Do NOT close this window!" },
+    { "type": "paragraph", "text": "This message is <strong>fake</strong>, every single time. Real warnings from your device appear as small, calm notifications, never as flashing, full-screen alarms. Any message that tells you to call a phone number is a scam. Any message that says \"Do NOT close this window\" is trying to stop you from using your escape hatch. Close it." },
+    { "type": "three_second_rule", "heading": "The 3-second rule", "steps": [
+      { "icon": "✋", "name": "Stop", "text": "Take your fingers off the screen." },
+      { "icon": "🫁", "name": "Breathe", "text": "One slow, deep breath." },
+      { "icon": "🔍", "name": "Verify", "text": "Is this real, or is someone trying to scare me?" }
+    ] },
+    { "type": "the_move", "label": "The move is", "text": "When a scary message appears, press the Home button (or swipe up from the bottom). The message is gone and your device is fine. Never call a number shown in a pop-up, and never enter a password to \"fix\" it. Real problems are never fixed by calling a number on your screen." },
+
+    { "type": "quiz", "heading": "Quick check: test your knowledge", "intro": "Tap the answer you think is correct. There is no score kept and nothing to sign in to.", "questions": [
+      { "q": "1. You see a scary pop-up saying your iPad has a virus. What should you do?",
+        "options": ["Call the phone number shown on the screen", "Press the Home button to close it and ignore the message", "Turn off your iPad and never use it again"],
+        "correct": 1,
+        "right": "Well done. The Home button is your escape hatch. Those scary messages are always fake.",
+        "wrong": "Not quite. The safest thing is to press the Home button. Those pop-up warnings are always fake, never call the number they show." },
+      { "q": "2. What happens to an app when you press the Home button?",
+        "options": ["It goes to the background but is not deleted", "It is permanently deleted from your iPad", "It sends your personal information to strangers"],
+        "correct": 0,
+        "right": "Exactly right. Pressing Home is like putting a book back on the shelf. It is still there when you want it.",
+        "wrong": "Actually, pressing Home does not delete anything. The app goes to the background, like putting a book back on the shelf." },
+      { "q": "3. Your screen is frozen and nothing responds to tapping. What is the best first step?",
+        "options": ["Throw the iPad away and buy a new one", "Call your grandchild in a panic", "Try force-quitting the app, and if that does not work, restart the device"],
+        "correct": 2,
+        "right": "Perfect. Force-quit first, restart second. Calm and methodical, you have got this.",
+        "wrong": "The best approach is to force-quit the app first, and if that does not work, restart the device. Like turning a light switch off and on." }
+    ] },
+
+    { "type": "checklist", "heading": "Your progress", "intro": "Tick each item as you feel confident with it. This is saved on this device only, with no account needed.", "id": "module-1", "items": [
+      "I know where my Home button is (or how to swipe up)",
+      "I can get back to my Home screen from any app",
+      "I understand that scary pop-up messages are fake",
+      "I know to press Home instead of calling a number on the screen"
+    ] }
+  ],
+  "success_state": "<strong>Well done.</strong> You now have the most important skill in technology: knowing how to get back to safety. Everything from here builds on this foundation.",
+  "related": {
+    "heading": "Where to next",
+    "note": "You are viewing the new design. The next lessons open in the original site for now, which is unchanged. They will move to the new design as it is rolled out.",
+    "cards": [
+      { "num": "Foundations", "name": "Digital Literacy 101", "desc": "The plain-language basics, if you would like to start one step further back.", "href": "../../digital-literacy-101.html", "external": true },
+      { "num": "Module 2", "name": "The Security Shield", "desc": "Once you can escape any situation, learn to protect yourself from the threats behind it.", "href": "../../module-2.html", "external": true }
+    ]
+  }
+}
