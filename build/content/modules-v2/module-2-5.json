@@ -1,0 +1,207 @@
+{
+  "id": "module-2-5",
+  "slug": "module-2-5",
+  "page_title": "Common Digital Tasks - Digital Confidence Centre",
+  "title": "Common Digital Tasks",
+  "description": "Eight practical skills for everyday digital life: send e-Transfers safely, book medical appointments online, get directions, video call family, and keep your photos backed up. Free, plain-language lesson for Canadian seniors. No account needed.",
+  "category": "Everyday tasks",
+  "category_icon": "📂",
+  "lesson_time": "About 40 minutes, at your own pace",
+  "lead": "Eight practical skills for everyday digital life, from sending money safely and booking doctor appointments online, to video calling family and keeping your photos backed up. Each section walks you through the steps, one at a time.",
+  "nav_current": "../index.html#getting-things-done",
+  "breadcrumb_group_label": "Getting things done",
+  "breadcrumb_group_anchor": "../index.html#getting-things-done",
+  "story": {
+    "label": "Dorothy's story",
+    "paragraphs": [
+      "Dorothy, 76, lives in St. Thomas. For years she relied on her son to book appointments, transfer money, and get directions. Then her son moved to Calgary. \"I had to learn,\" she says, \"or I'd be stuck.\"",
+      "With a bit of patient practice, Dorothy now sends e-Transfers to her grandchildren, books her own physio appointments online, and video calls her son every Sunday. \"My iPad does more than I ever thought possible,\" she says. \"I just needed someone to show me the steps.\"",
+      "This module is that patient guide. Eight real-life tasks, one step at a time."
+    ]
+  },
+  "coach": "Everyday tasks like renaming a file or finding a download feel small, but they are the moments where most people quietly give up. If you have ever stared at a screen thinking everyone else just knows this, they do not. Nobody is born knowing where the Downloads folder is. Every step you practise here is one less moment of frustration later.",
+  "sections": [
+    { "type": "heading", "level": 2, "text": "Section 1: How to send an e-Transfer safely" },
+    { "type": "paragraph", "text": "An Interac e-Transfer lets you send money from your bank account directly to another person, using only their email address or phone number. It is one of the most common ways Canadians pay each other for things like rent, splitting a bill, or sending a birthday gift to a grandchild. Most Canadian banks support it, and it works right from their app on your iPad or iPhone. The steps are similar no matter which bank you use." },
+    { "type": "walkthrough", "title": "How to send an e-Transfer (most banks)", "steps": [
+      "Open your bank's app on your iPad or iPhone and sign in.",
+      "Look for a section called <strong>Interac e-Transfer</strong>, <strong>Send Money</strong>, or <strong>Pay &amp; Transfer</strong>. It is usually on the main menu or dashboard.",
+      "Tap <strong>Send</strong>.",
+      "Choose or add a <strong>recipient</strong>. Enter their email address or phone number exactly as they have given it to you.",
+      "Type the <strong>amount</strong> you want to send.",
+      "Add a <strong>message</strong> if you like (optional), such as \"Happy birthday!\" or \"For groceries.\"",
+      "Create a <strong>security question</strong> and answer, something only the recipient will know. Tell them the answer separately (by phone, not in the e-Transfer message).",
+      "Review the details carefully, then tap <strong>Send</strong>. You will receive a confirmation that the transfer was sent."
+    ] },
+    { "type": "three_second_rule", "heading": "The 3-second rule for e-Transfers", "steps": [
+      { "icon": "✋", "name": "Stop", "text": "Double-check the email or phone number before you tap Send. e-Transfers sent to the wrong address are very difficult to recover." },
+      { "icon": "🫁", "name": "Breathe", "text": "Is this person someone you actually know? Did they ask you to send money through a message you were not expecting? If yes, stop and verify by calling them first." },
+      { "icon": "🔍", "name": "Verify", "text": "Real banks and Canada Revenue will never ask you to pay using e-Transfer." }
+    ] },
+    { "type": "tip", "label": "Good to know", "text": "Once a recipient has accepted your e-Transfer, it cannot be cancelled. Before sending, always verify the email address or phone number is correct. If you accidentally send to the wrong address and they have not yet accepted, your bank may be able to cancel it. Call them right away." },
+
+    { "type": "heading", "level": 2, "text": "Section 2: How to book a medical appointment online" },
+    { "type": "paragraph", "text": "Many doctors, clinics, and specialists in Ontario now allow you to book appointments through their website or a patient portal. It is faster than waiting on hold, and you can do it any time of day from your iPad or iPhone. The most common patient portal in Ontario is <strong>MyChart</strong> (used by many hospitals and clinics). Your doctor may also use their own booking system. These steps cover the general process. The buttons may look slightly different on each site." },
+    { "type": "walkthrough", "title": "How to book an appointment online (general steps)", "steps": [
+      "Ask your doctor's office for their online booking website address or the name of their patient portal. Write it down.",
+      "Open <strong>Safari</strong> on your iPad or iPhone and type in the website address.",
+      "If this is your first visit, look for a <strong>Register</strong> or <strong>Create Account</strong> button. You will usually need your health card number and email address.",
+      "Once registered, sign in with your email and password.",
+      "Look for a button that says <strong>Book Appointment</strong>, <strong>Request a Visit</strong>, or <strong>Schedule</strong>.",
+      "Choose the <strong>type of appointment</strong> (for example, \"Annual physical\", \"Follow-up\", \"In-person\", or \"Virtual visit\").",
+      "Select a <strong>date and time</strong> from the available calendar. Tap the time slot you want.",
+      "Confirm your details and tap <strong>Book</strong> or <strong>Confirm Appointment</strong>. You should receive a confirmation email."
+    ] },
+    { "type": "warning", "label": "The 3-second rule for health websites", "text": "Before entering your health card number or personal information, make sure the website address starts with <strong>https://</strong> and shows a padlock icon in the address bar. This means the connection is secure. Never enter health information on a website you found through a random link in an email." },
+    { "type": "tip", "label": "Practical tip", "text": "After booking, take a screenshot of the confirmation page. On iPad or iPhone, press the <strong>Side button</strong> and <strong>Volume Up</strong> at the same time. The screenshot saves to your Photos app. That way you have a record of the date and time even if the confirmation email is hard to find later." },
+
+    { "type": "heading", "level": 2, "text": "Section 3: How to use a maps app to get directions" },
+    { "type": "paragraph", "text": "A maps app gives you free turn-by-turn directions to anywhere in Canada. It knows current traffic, road closures, and even bus routes. Think of it as a patient navigator sitting beside you: it recalculates if you take a wrong turn, and it never gets frustrated. The Maps app is already on most iPhones and iPads. You can also use Google Maps. Both work the same way for basic directions." },
+    { "type": "walkthrough", "title": "How to get directions in Apple Maps", "steps": [
+      "Find the <strong>Maps</strong> app on your Home screen. It looks like a road map with a red pin.",
+      "Tap the <strong>search bar</strong> at the bottom of the screen and type your destination, for example, \"St. Thomas Elgin General Hospital\".",
+      "Tap the correct result from the list. A map appears showing the location.",
+      "Tap the <strong>Directions</strong> button (the blue button at the bottom or the car/walking icon).",
+      "Choose your travel mode: 🚗 <strong>Drive</strong>, 🚶 <strong>Walk</strong>, or 🚌 <strong>Transit</strong>.",
+      "Tap <strong>Go</strong>. The app will speak each turn aloud so you can keep your eyes on the road.",
+      "To stop navigation, tap anywhere on the screen, then tap <strong>End</strong> or <strong>Cancel Route</strong>."
+    ] },
+    { "type": "tip", "label": "Practical tip", "text": "You can search for a destination before you leave home, so you know how long the trip will take and what route to expect. Just tap <strong>Leave Now</strong> or enter a departure time to see estimated arrival times. This is especially helpful for medical appointments where being on time matters." },
+
+    { "type": "heading", "level": 2, "text": "Section 4: How to download and use an app safely" },
+    { "type": "paragraph", "text": "Your iPad and iPhone have access to millions of apps through the <strong>App Store</strong>, and the vast majority are completely safe and free to download. Apps can help you with everything from reading the news to calling family to tracking your medications. Downloading an app from the App Store is safe because Apple reviews every app before it is listed. Still, a few simple habits will keep you protected." },
+    { "type": "walkthrough", "title": "How to download an app from the App Store", "steps": [
+      "Find the <strong>App Store</strong> app on your Home screen. It is a blue square with a white letter \"A\" made of pencils.",
+      "Tap the <strong>Search</strong> icon (magnifying glass) at the bottom right.",
+      "Type the name of the app you want, for example, \"Zoom\" or \"CBC News\".",
+      "Look at the results. Check the app name, developer name, and star rating. Trusted apps have thousands of reviews and a recognisable developer name.",
+      "Tap the app to see its full listing. Read the first few reviews to make sure others have had a good experience.",
+      "Tap <strong>Get</strong> (for free apps) or the price button (for paid apps). You may be asked to confirm with Face ID or your Apple ID password.",
+      "Wait for the download to finish. The app appears on your Home screen.",
+      "When you open the app for the first time, it may ask for permissions (location, camera, notifications). Only tap <strong>Allow</strong> for permissions that make sense for what the app does."
+    ] },
+    { "type": "three_second_rule", "heading": "The 3-second rule for app downloads", "steps": [
+      { "icon": "✋", "name": "Stop", "text": "Did someone send you a link to download an app from outside the App Store? That is a red flag. Only download apps through the App Store, never from a website link." },
+      { "icon": "🫁", "name": "Breathe", "text": "Does the app ask for more permissions than it needs? A recipe app has no reason to access your contacts." },
+      { "icon": "🔍", "name": "Verify", "text": "Check the reviews and the developer name. A real app from a known company will show a clear publisher name like \"Apple Inc.\" or \"CBC/Radio-Canada\"." }
+    ] },
+    { "type": "tip", "label": "Practical tip", "text": "If an app you downloaded turns out to be one you do not want, deleting it is easy. Press and hold on the app icon on your Home screen until a small menu appears, then tap <strong>Remove App</strong>, then <strong>Delete App</strong>. The app and all its data are removed from your device." },
+
+    { "type": "heading", "level": 2, "text": "Section 5: How to video call on an iPad or iPhone" },
+    { "type": "paragraph", "text": "Video calling lets you see the face of the person you are talking to, whether they are in the next town or across the country. FaceTime is built into every iPhone and iPad, and it is free as long as you are connected to Wi-Fi. If your family member uses an Android phone, you can video call them using <strong>Zoom</strong>, <strong>WhatsApp</strong>, or <strong>Google Meet</strong> instead. All are free and work on iPad." },
+    { "type": "walkthrough", "title": "How to make a FaceTime video call", "steps": [
+      "Find the <strong>FaceTime</strong> app on your Home screen. It looks like a green square with a white video camera.",
+      "Tap the <strong>+</strong> (plus) button in the top right corner.",
+      "Type the name, phone number, or email address of the person you want to call. Their name will appear if they are in your Contacts.",
+      "Tap <strong>Video</strong> to start a video call, or <strong>Audio</strong> for voice only.",
+      "Your call connects. You will see your own face in a small box at the corner. You can tap and drag this box to move it out of the way.",
+      "During the call, tap the screen to see the controls. You can mute yourself (microphone button), turn off your camera (camera button), or end the call (red phone button)."
+    ] },
+    { "type": "tip", "label": "Practical tip", "text": "For the best video call experience, prop your iPad up on a stand or lean it against something so it is at eye level. Good lighting makes a big difference. Sit facing a window if possible, so the light falls on your face rather than behind you. If the call is choppy or freezing, move closer to your Wi-Fi router." },
+
+    { "type": "heading", "level": 2, "text": "Section 6: How to back up your photos to iCloud" },
+    { "type": "paragraph", "text": "Your photos are precious: birthdays, grandchildren, holidays, and everyday moments that cannot be replaced. iCloud backup means a copy of all your photos is saved automatically to Apple's secure storage. If your iPad is ever lost, stolen, or broken, your photos are safe and can be restored to a new device. Apple gives you 5 GB of free iCloud storage. Most people find this fills up quickly with photos, so consider the 50 GB plan for $1.29 per month. It is worth it for peace of mind." },
+    { "type": "walkthrough", "title": "How to turn on iCloud Photos", "steps": [
+      "Open the <strong>Settings</strong> app (the grey gear icon on your Home screen).",
+      "Tap your <strong>name</strong> at the very top of Settings (this opens your Apple ID settings).",
+      "Tap <strong>iCloud</strong>.",
+      "Tap <strong>Photos</strong>.",
+      "Make sure <strong>Sync this iPhone</strong> (or \"Sync this iPad\") is turned on. The toggle should be green.",
+      "Choose <strong>Optimise iPhone Storage</strong>. This keeps smaller versions on your device and the full-quality originals in iCloud, saving space on your device.",
+      "Your photos now back up automatically whenever your iPad is connected to Wi-Fi. You do not need to do anything further. It happens in the background."
+    ] },
+    { "type": "tip", "label": "Practical tip", "text": "To check that your backup is working, go to <strong>Settings</strong>, tap your name, then <strong>iCloud</strong>, then <strong>iCloud Backup</strong>, and look for the date and time of the last successful backup. If it says \"Last successful backup: Today\", you are all set. If it has not backed up in several days, make sure your iPad is plugged in and connected to Wi-Fi." },
+
+    { "type": "heading", "level": 2, "text": "Section 7: How to check your data usage" },
+    { "type": "paragraph", "text": "Your iPhone or iPad uses <strong>data</strong> to connect to the internet when you are away from home Wi-Fi, such as when you are out shopping, at a clinic, or visiting a friend. Your phone plan includes a set amount of data each month, and going over that limit can result in extra charges from your carrier. Checking your data usage takes about 30 seconds and can save you from a surprise on your phone bill." },
+    { "type": "walkthrough", "title": "How to check data usage on iPhone or iPad", "steps": [
+      "Open the <strong>Settings</strong> app.",
+      "Tap <strong>Cellular</strong> (on iPhone) or <strong>Mobile Data</strong> (on some iPad models with a data plan).",
+      "At the top you will see <strong>Current Period</strong>. This shows how much data you have used since you last reset the counter.",
+      "Scroll down to see a list of apps and how much data each one has used. This helps you spot which apps are using the most.",
+      "To reset this counter at the start of each billing cycle, scroll to the very bottom and tap <strong>Reset Statistics</strong>."
+    ] },
+    { "type": "tip", "label": "Practical tip", "text": "Streaming video (like YouTube or Netflix) uses large amounts of data very quickly. Whenever possible, do your video watching at home on Wi-Fi rather than on cellular data. To check if your device is on Wi-Fi, look for the Wi-Fi icon (curved lines) in the top right corner of your screen. If you see it, you are on Wi-Fi and not using your data plan." },
+
+    { "type": "heading", "level": 2, "text": "Section 8: How to update your apps and software" },
+    { "type": "paragraph", "text": "Keeping your apps and device software up to date is one of the most important things you can do for your security. Updates fix problems that hackers might exploit, add useful new features, and keep your device running smoothly. Think of it like getting a booster shot: it keeps your device healthy. Updating is free and safe. It does not delete your photos, messages, or settings." },
+    { "type": "walkthrough", "title": "How to update your apps", "steps": [
+      "Open the <strong>App Store</strong> app.",
+      "Tap your <strong>profile picture or initials</strong> in the top right corner.",
+      "Scroll down to see <strong>Pending Updates</strong>. This shows all the apps with available updates.",
+      "Tap <strong>Update All</strong> to update every app at once, or tap <strong>Update</strong> next to individual apps.",
+      "Wait for the updates to download and install. This usually takes 1 to 3 minutes depending on your Wi-Fi speed."
+    ] },
+    { "type": "walkthrough", "title": "How to update iOS (the iPad or iPhone operating system)", "steps": [
+      "Open <strong>Settings</strong>.",
+      "Tap <strong>General</strong>.",
+      "Tap <strong>Software Update</strong>.",
+      "If an update is available, tap <strong>Download and Install</strong>.",
+      "Your device may need to restart. This is normal. It will come back on by itself in a few minutes."
+    ] },
+    { "type": "tip", "label": "Practical tip", "text": "You can turn on <strong>Automatic Updates</strong> so your iPad installs updates on its own overnight while it charges. Go to <strong>Settings</strong>, then <strong>App Store</strong>, then <strong>App Updates</strong> and turn on the toggle. For iOS updates, go to <strong>Settings</strong>, then <strong>General</strong>, then <strong>Software Update</strong>, then <strong>Automatic Updates</strong> and turn on all options. Once set, you never have to think about it again." },
+
+    { "type": "quiz", "heading": "Quick check: test your knowledge", "intro": "One question for each skill you practised. Tap the answer you think is correct. There is no score kept and nothing to sign in to.", "questions": [
+      { "q": "1. Which of the following is the safest way to share the e-Transfer security answer with the recipient?",
+        "options": ["Include it in the e-Transfer message", "Send it in a separate email right after", "Call them and tell them the answer by phone", "Use a simple answer like \"yes\" so it is easy to guess"],
+        "correct": 2,
+        "right": "Exactly. Always share the security answer by phone. This is what keeps the transfer safe even if the email is intercepted.",
+        "wrong": "The safest way is to call them and tell them the answer by phone. That keeps the transfer safe even if the email is intercepted." },
+      { "q": "2. You want to book a doctor appointment online. What should you verify before entering your health card number on the website?",
+        "options": ["That the website has a nice design", "That the address starts with https:// and shows a padlock", "That the website was the first result in Google", "That the website loads quickly"],
+        "correct": 1,
+        "right": "Right. The padlock and https:// mean your information is encrypted and being sent securely.",
+        "wrong": "Check that the address starts with https:// and shows a padlock. That means your information is encrypted and being sent securely." },
+      { "q": "3. You are using a maps app for driving directions and you miss a turn. What happens?",
+        "options": ["The app stops working and you have to start over", "The app automatically recalculates a new route from your current location", "You have to pull over and search for a new route", "An error message appears and you must call someone for help"],
+        "correct": 1,
+        "right": "Correct. Navigation apps automatically recalculate the route if you take a wrong turn. No need to panic or pull over.",
+        "wrong": "Navigation apps automatically recalculate the route if you take a wrong turn, so there is no need to panic or pull over." },
+      { "q": "4. You want to download a weather app. Your friend texts you a link to download it from a website. What should you do?",
+        "options": ["Tap the link, your friend recommended it so it must be safe", "Go to the App Store and search for the weather app yourself instead", "Tap the link but close the app immediately if it looks wrong", "Ask your friend to install it for you by borrowing your iPad"],
+        "correct": 1,
+        "right": "Perfect. Always download apps directly from the App Store, not from links in text messages or emails. The App Store is Apple's safe, verified source.",
+        "wrong": "Always download apps directly from the App Store, not from links in text messages or emails. Search for the app yourself in the App Store instead." },
+      { "q": "5. You are on a FaceTime call and the video and audio are cutting in and out. What is the most likely cause?",
+        "options": ["Your iPad has a broken screen", "FaceTime is not available in Canada", "Your Wi-Fi connection is slow or weak", "The other person's iPad is broken"],
+        "correct": 2,
+        "right": "That is right. Choppy audio and video are almost always caused by a slow or weak Wi-Fi signal. Try moving closer to your router.",
+        "wrong": "Choppy audio and video are almost always caused by a slow or weak Wi-Fi signal. Try moving closer to your router." },
+      { "q": "6. You accidentally drop your iPad and the screen shatters. You set up iCloud Photos last month. What happens to your photos?",
+        "options": ["All your photos are lost forever", "Your photos are safe in iCloud and can be restored to a new iPad", "Your photos are saved in your email", "Apple will send your photos back on a USB stick"],
+        "correct": 1,
+        "right": "Exactly. When iCloud Photos is turned on, all your photos are automatically backed up. A new iPad signed into the same Apple ID will restore them completely.",
+        "wrong": "When iCloud Photos is turned on, your photos are automatically backed up to iCloud. A new iPad signed into the same Apple ID will restore them completely." },
+      { "q": "7. You want to watch a long video on your iPhone. Which of the following will use your cellular data plan?",
+        "options": ["Watching it at home connected to your home Wi-Fi", "Watching it at a coffee shop on their free Wi-Fi", "Watching it while walking in a park with no Wi-Fi nearby", "Watching it at the library on their Wi-Fi"],
+        "correct": 2,
+        "right": "Correct. When there is no Wi-Fi available, your device switches to your cellular data plan. Videos use a lot of data, so save streaming for when you are connected to Wi-Fi.",
+        "wrong": "When there is no Wi-Fi available (like walking in a park), your device switches to your cellular data plan. Videos use a lot of data, so save streaming for Wi-Fi." },
+      { "q": "8. A pop-up appears on your iPhone saying \"iOS 18.3 is now available. Would you like to update?\" This arrived through Settings. What should you do?",
+        "options": ["Ignore it, updates can cause problems", "Call Apple first to verify the update is real", "Tap Download and Install, this is a legitimate system update", "Delete the message and wait for someone to tell you it is safe"],
+        "correct": 2,
+        "right": "Right. Software update prompts that appear inside your Settings app are always legitimate, and these updates are important for your security. It is updates that arrive through pop-ups in websites or text messages that you should ignore.",
+        "wrong": "Software update prompts that appear inside your Settings app are always legitimate and important for your security. It is update prompts in websites or text messages that you should ignore." }
+    ] },
+
+    { "type": "checklist", "heading": "Your progress", "intro": "Tick each item as you feel confident with it. This is saved on this device only, with no account needed.", "id": "module-2-5", "items": [
+      "I can send an Interac e-Transfer safely, including the security question",
+      "I know how to find my doctor's online booking portal and book an appointment",
+      "I can use Apple Maps or Google Maps to get turn-by-turn directions",
+      "I know how to safely download an app from the App Store",
+      "I can start a FaceTime video call on my iPad or iPhone",
+      "I have iCloud Photos turned on and my photos are being backed up",
+      "I know how to check my cellular data usage in Settings",
+      "I can update my apps and iOS software to keep my device secure"
+    ] }
+  ],
+  "success_state": "<strong>Well done.</strong> You can now send money, book appointments, get directions, download apps, video call family, back up your photos, watch your data usage, and keep your device up to date. Eight real-life skills, all yours.",
+  "related": {
+    "heading": "Where to next",
+    "cards": [
+      { "num": "Module 3", "name": "Passwords and Biometrics", "desc": "Secure the accounts you use for everyday tasks with strong passwords and fingerprint login.", "href": "module-3.html", "external": false },
+      { "num": "Module 6", "name": "Banking and Transactions", "desc": "Put your everyday digital skills to work for safe, confident online banking and purchases.", "href": "module-6.html", "external": false },
+      { "num": "Module 7", "name": "Photos and Memories", "desc": "Use the camera and photo sharing skills you have practised to preserve and share your memories.", "href": "module-7.html", "external": false }
+    ]
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "id": "module-3",
+  "slug": "module-3",
+  "page_title": "Passwords and Biometrics - Digital Confidence Centre",
+  "title": "Passwords and Biometrics",
+  "description": "Create strong passwords, set up Face ID or fingerprint unlock, and use two-factor authentication. Free, plain-language lesson for Canadian seniors. No account needed.",
+  "category": "Passwords and security",
+  "category_icon": "🔑",
+  "lesson_time": "About 25 minutes, at your own pace",
+  "lead": "How to keep your accounts secure without memorizing dozens of passwords. We will cover Face ID, password managers, and what those security terms actually mean in plain language.",
+  "nav_current": "../index.html#protect-money",
+  "breadcrumb_group_label": "Protect your money",
+  "breadcrumb_group_anchor": "../index.html#protect-money",
+  "story": {
+    "label": "Helen's story",
+    "paragraphs": [
+      "Helen, 69, had one password for everything: her late husband's name followed by their anniversary year. She used it for her email, her bank, her iPad, Amazon, Facebook, everything. \"It's easy to remember,\" she told her daughter.",
+      "Then one day, Helen noticed strange purchases on her Amazon account, three expensive Bluetooth speakers she had never ordered. Someone had figured out her password (it turns out her husband's name and their anniversary were both on her Facebook profile) and used it to get into her Amazon account. Because Helen used the same password everywhere, the thief also tried it on her email, and got in.",
+      "Helen spent two stressful weeks changing passwords, calling her bank, and locking down her accounts. But the experience taught her something she now shares with every friend: \"One password for everything is like one key for your house, your car, and your safety deposit box. If someone copies that key, they get into everything.\"",
+      "Today, Helen uses Face ID and a password manager. She says managing her passwords is now easier than it was before, and far, far safer."
+    ]
+  },
+  "coach": "If reading a page of security terms makes your head spin a little, that is perfectly normal. Passwords and security terms were invented by engineers for other engineers. They were never designed to be easy for regular people to understand or remember. The confusion you feel is a flaw in the system, not in you. We are about to make the whole thing much simpler.",
+  "sections": [
+    { "type": "heading", "level": 2, "text": "Security terms in plain language" },
+    { "type": "paragraph", "text": "Before we go further, let us define some words you might hear. Think of this as your personal dictionary:" },
+    { "type": "list", "items": [
+      "<strong>Password:</strong> A secret word or phrase that proves you are who you say you are. Like a key to a lock.",
+      "<strong>Biometrics:</strong> Using your body to prove your identity: your face, your fingerprint, or even your voice. \"Bio\" means life, and \"metrics\" means measurement. So biometrics means \"measuring something about you.\"",
+      "<strong>Face ID:</strong> Apple's system that uses the front camera on your iPad or iPhone to recognise your face. It is like a security guard who knows what you look like and opens the door when they see you.",
+      "<strong>Touch ID:</strong> Apple's fingerprint reader, found on older iPads and iPhones. You press your finger on the Home button and it recognises your unique fingerprint.",
+      "<strong>Face Unlock / Fingerprint Unlock:</strong> Android's version of the same idea. Many Android phones and tablets can recognise your face or your fingerprint to unlock your device and confirm your identity.",
+      "<strong>Password Manager:</strong> A secure digital vault that remembers all your passwords for you. You only need to remember one master password. The vault remembers the rest.",
+      "<strong>Two-Factor Authentication (also called 2FA or \"two-step verification\"):</strong> An extra security step when you log in. After typing your password, you also need a second proof, usually a code sent to your phone. It is like a door that needs both a key and a secret knock.",
+      "<strong>Apple ID:</strong> Your personal account with Apple. It is the email address and password you use to download apps, use iCloud, and access Apple services. Think of it as your membership card for everything Apple.",
+      "<strong>Google Account:</strong> Your personal account with Google. It is the email address (usually Gmail) and password you use to download apps from the Play Store, back up your data, and access Google services. Think of it as your membership card for everything on your Android device."
+    ] },
+    { "type": "helper", "label": "Confidence check", "text": "Those terms are not so scary when they are explained properly, are they? You are building your tech vocabulary, and most people never learn what these words actually mean. You are already ahead." },
+
+    { "type": "heading", "level": 2, "text": "Biometrics: your face or fingerprint is your password" },
+    { "type": "paragraph", "text": "Modern devices can recognise you by your face or fingerprint. This is one of the most convenient and secure ways to protect your device." },
+    { "type": "paragraph", "text": "<strong>How Face ID works:</strong> When you set up Face ID on a newer iPad or iPhone, your device takes a detailed map of your face using special sensors. It does not take a regular photograph. It creates a mathematical model of the shape of your face, stored only on your device (it is never sent to Apple or anyone else). When you pick up your device and look at the screen, it checks: \"Is this the same face?\" If yes, it unlocks." },
+    { "type": "walkthrough", "title": "Setting up Face ID on iPad or iPhone", "steps": [
+      "Find the <strong>Settings</strong> app on your Home screen. It looks like grey mechanical gears. Tap it to open it.",
+      "Scroll down and tap <strong>\"Face ID &amp; Passcode\"</strong>.",
+      "Enter your current passcode (the number you type to unlock your device).",
+      "Tap <strong>\"Set Up Face ID\"</strong>.",
+      "Hold your device at arm's length and position your face in the circle on the screen. Slowly move your head in a circle, as if you are tracing the outline of a large clock with your nose.",
+      "You will need to do this twice. Follow the on-screen instructions.",
+      "When it says \"Face ID is now set up\", you are done. Your face is now your password."
+    ] },
+    { "type": "tip", "label": "Good to know", "text": "Face ID works with glasses on or off, and it adapts as your appearance changes gradually over time. It does not work with a face covering, so you may need your passcode when wearing a mask. Face ID will also not let someone unlock your device while you are sleeping. Your eyes need to be open and looking at the screen." },
+    { "type": "paragraph", "text": "Most Android phones and tablets come with a fingerprint reader, and many newer models also offer face unlock. The fingerprint reader is usually found on the back of the device, on the side (built into the power button), or under the screen itself." },
+    { "type": "walkthrough", "title": "Setting up fingerprint unlock on Android", "steps": [
+      "Open the <strong>Settings</strong> app (the gear icon on your Home screen or in the App Drawer).",
+      "Scroll down and tap <strong>\"Security\"</strong> or <strong>\"Biometrics and Security\"</strong> (the exact name varies slightly between Samsung, Google Pixel, and other brands).",
+      "Tap <strong>\"Fingerprint\"</strong> or <strong>\"Fingerprints\"</strong>.",
+      "Enter your current PIN, pattern, or password. If you do not have one set up yet, the device will ask you to create one first.",
+      "Tap <strong>\"Add fingerprint\"</strong> and place your finger on the fingerprint sensor.",
+      "Gently tap and lift your finger on the sensor repeatedly. The screen shows how much of your fingerprint has been captured. Move your finger slightly each time to cover all the edges.",
+      "When the device says your fingerprint has been added, you are done. Your finger is now your password."
+    ] },
+    { "type": "tip", "label": "Good to know", "text": "Android fingerprint unlock is very reliable and works even if your hands are slightly damp. Face unlock on Android is convenient, but on most devices it is slightly less secure than fingerprint. Some models can be unlocked with a good photograph. For best security, use fingerprint as your primary method and face unlock as a backup. You can have both set up at the same time." },
+    { "type": "paragraph", "text": "Windows computers have a built-in sign-in system called <strong>Windows Hello</strong>. It lets you sign in with a PIN, your face (on computers with the right camera), or a fingerprint (on computers with a fingerprint reader). A Windows Hello PIN is especially useful. It is different from your Microsoft account password, and it only works on that specific computer." },
+    { "type": "walkthrough", "title": "Setting up a Windows Hello PIN", "steps": [
+      "Click the <strong>Start button</strong> (Windows logo, bottom left) and then click the <strong>Settings gear icon</strong>.",
+      "Click <strong>\"Accounts\"</strong> from the list on the left side.",
+      "Click <strong>\"Sign-in options\"</strong>.",
+      "Under <strong>\"Windows Hello PIN\"</strong>, click <strong>\"Add\"</strong> or <strong>\"Set up\"</strong>.",
+      "Confirm your Microsoft account password, then choose a PIN of at least 4 digits. Write it down and keep it in a safe place.",
+      "Once set up, you type this shorter PIN to sign in instead of your long password. Much easier to remember."
+    ] },
+    { "type": "tip", "label": "Good to know", "text": "Your Windows Hello PIN is tied to your specific computer. It cannot be used anywhere else. This means even if someone finds your PIN written down, they cannot use it to access your account from another device. It is safe to write your PIN on paper and store it securely." },
+
+    { "type": "heading", "level": 2, "text": "Creating strong passwords" },
+    { "type": "paragraph", "text": "For accounts where you still need a typed password, here is how to make a good one." },
+    { "type": "warning", "label": "Weak passwords, do not use these", "text": "123456, password, your name, your pet's name, your birthday, your anniversary, your address, \"qwerty\", or any single word found in the dictionary." },
+    { "type": "warning", "label": "Watch out", "text": "Using the same password for multiple accounts is like using the same key for your house, your car, and your safety deposit box. If a thief copies that one key, they get into everything." },
+    { "type": "paragraph", "text": "A strong password is like a strong lock: it has multiple parts that work together. The best way to create one is the <strong>passphrase method</strong>." },
+    { "type": "tip", "label": "The passphrase method", "text": "Instead of a single word, use a short phrase of random words. For example: <strong>Purple-Teacup-Bridge-44</strong>. This is much harder for a computer to guess than \"MyName1954\" but much easier for you to remember. You can picture a purple teacup sitting on a bridge with the number 44 on it. The sillier the image, the easier it is to remember. More examples: <strong>Garden-Rabbit-Snow-17</strong> or <strong>Kitchen-River-Maple-82</strong>." },
+    { "type": "list", "items": [
+      "<strong>Never use the same password twice.</strong> Each account should have its own unique password.",
+      "<strong>Never share your passwords</strong> with anyone, not even someone who says they are from Apple or your bank.",
+      "<strong>Make them long.</strong> A 16-character passphrase is far stronger than an 8-character password with random symbols."
+    ] },
+    { "type": "helper", "label": "Confidence check", "text": "You do not need to be a computer expert to have strong passwords. A silly phrase you can picture in your mind is all you need." },
+    { "type": "tip", "label": "Tip", "text": "Write your master password on paper and keep it in a locked drawer or a safe, never on a sticky note attached to your device. A paper backup in a secure location is perfectly fine." },
+
+    { "type": "heading", "level": 2, "text": "Password managers: your digital vault" },
+    { "type": "paragraph", "text": "\"But how am I supposed to remember a different password for every account?\" Great question. The answer is: you are not. A password manager does it for you. Your device already comes with one built in: <strong>iCloud Keychain</strong> on iPad and iPhone, <strong>Google Password Manager</strong> on Android, and a password manager inside <strong>Microsoft Edge</strong> on Windows. Here is what they do:" },
+    { "type": "list", "items": [
+      "When you create a new account on a website, your device offers to <strong>save the password</strong> for you.",
+      "When you return to that website, your device <strong>fills in the password automatically</strong>. You do not need to type it.",
+      "It can <strong>suggest strong passwords</strong> when you are creating a new account.",
+      "It <strong>warns you</strong> if one of your saved passwords has been found in a data breach.",
+      "All of this is protected by your Face ID, fingerprint, PIN, or passcode. No one else can see your passwords."
+    ] },
+    { "type": "walkthrough", "title": "Making sure iCloud Keychain is turned on (iPad or iPhone)", "steps": [
+      "Open <strong>Settings</strong> (the grey gears icon).",
+      "Tap your <strong>name</strong> at the very top of the Settings screen (it shows your name and \"Apple ID, iCloud, Media &amp; Purchases\").",
+      "Tap <strong>\"iCloud\"</strong>.",
+      "Tap <strong>\"Passwords and Keychain\"</strong>.",
+      "Make sure the switch next to <strong>\"Sync this iPad\"</strong> (or \"Sync this iPhone\") is turned on (green). If it is already green, you are all set.",
+      "To view your saved passwords later: open Settings, scroll down and tap <strong>\"Passwords\"</strong>, then confirm with Face ID or your passcode."
+    ] },
+    { "type": "walkthrough", "title": "Making sure Google Password Manager is turned on (Android)", "steps": [
+      "Open the <strong>Chrome</strong> app (the colourful circle icon).",
+      "Tap the <strong>three dots</strong> in the top-right corner of the screen.",
+      "Tap <strong>\"Settings\"</strong>.",
+      "Tap <strong>\"Password Manager\"</strong> (or <strong>\"Passwords\"</strong> on some versions).",
+      "Make sure <strong>\"Offer to save passwords\"</strong> is turned on (the switch should be blue). If it is already on, you are all set.",
+      "To view your saved passwords later: open Settings, tap <strong>\"Passwords and accounts\"</strong> (or \"Google\" then \"Password Manager\"), and confirm with your fingerprint, face unlock, or PIN."
+    ] },
+    { "type": "tip", "label": "Helpful hint", "text": "You can also visit <strong>passwords.google.com</strong> in any web browser to see all your Google-saved passwords. You will need to sign in with your Google account. This is handy if you want to review your passwords on a computer as well." },
+    { "type": "walkthrough", "title": "Turning on password saving in Microsoft Edge (Windows)", "steps": [
+      "Open <strong>Microsoft Edge</strong> (the blue wave icon on your taskbar or Start menu).",
+      "Click the <strong>three dots (...)</strong> in the top-right corner of the browser.",
+      "Click <strong>\"Settings\"</strong>.",
+      "On the left side, click <strong>\"Passwords\"</strong> (or search \"Passwords\" in the search bar at the top of Settings).",
+      "Make sure <strong>\"Offer to save passwords\"</strong> is turned on. If it is already on, you are all set.",
+      "To view a saved password later, return to Settings, click Passwords, and click the <strong>eye icon</strong> next to any entry (you may be asked to confirm with your Windows Hello PIN)."
+    ] },
+    { "type": "helper", "label": "Confidence check", "text": "You now understand password managers, the single most powerful tool for keeping your accounts safe. You do not need to memorise dozens of passwords. The vault does it for you." },
+    { "type": "heading", "level": 3, "text": "What about third-party password managers?" },
+    { "type": "paragraph", "text": "Your device's built-in password manager (iCloud Keychain, Google Password Manager, or Microsoft Edge) is free, already set up, and works perfectly for most people. However, some people prefer a separate app, especially if they use multiple types of devices (for example, an iPhone and a Windows computer). The three most trusted options:" },
+    { "type": "list", "items": [
+      "<strong>Bitwarden</strong> (free; paid plan about $10 per year): the best free option, open source and widely trusted. Moderate ease of use.",
+      "<strong>1Password</strong> (about $36 per year): the easiest to use, excellent for families, works on all devices.",
+      "<strong>LastPass</strong> (free with limits, or about $36 per year): a long-standing service that had a security incident in 2022. Acceptable if you change your master password. Easy to use."
+    ] },
+    { "type": "tip", "label": "Our recommendation", "text": "<strong>For most seniors: use your built-in password manager. It is free, already there, and works beautifully.</strong> If a family member suggests a third-party app and offers to help you set it up, Bitwarden (free) or 1Password (paid, easiest) are excellent choices. You do not need to rush into this. Start with what is already on your device." },
+    { "type": "walkthrough", "title": "Setting up 1Password, the easiest third-party option", "steps": [
+      "<strong>Download the app.</strong> Open the App Store (iPhone or iPad) or the Google Play Store (Android) and search for \"1Password\". It is free to install, with a 14-day free trial.",
+      "<strong>Create your account.</strong> Open 1Password and tap \"Create Account\". Enter your email address, then open the confirmation email and tap the link to confirm.",
+      "<strong>Create your Master Password.</strong> Choose ONE strong password you will remember. Three or four random words strung together work well: \"Sunset-Garden-Bicycle-Maple\" is long and easy to picture, but very hard to guess.",
+      "<strong>Write your Master Password on paper.</strong> Write it clearly and keep it in a safe place at home: a drawer, a lockbox, or with your important documents. This is the one time paper is better than digital.",
+      "<strong>Add your first password.</strong> Open a website you use often. When you see the login page, 1Password will offer to save your username and password. Tap \"Save Login\".",
+      "<strong>Next time you log in,</strong> 1Password will offer to fill in your username and password automatically. Just tap \"Fill\". No typing needed.",
+      "<strong>Let it create new passwords.</strong> Next time you sign up for a new account, tap \"Generate Password\" in 1Password. It creates a strong random password and saves it. You never need to see or remember it."
+    ] },
+    { "type": "warning", "label": "Protect your master password", "text": "Your Master Password is the key that unlocks every other password. Never save it digitally: not in a text file, not in an email draft, not in Notes on your phone. Write it on paper, store it at home, and do not share it with anyone except a trusted family member kept for emergencies. If you forget your Master Password, 1Password cannot recover it. That is what makes it secure. The paper backup is your lifeline. Keep it safe." },
+
+    { "type": "heading", "level": 2, "text": "Two-factor authentication: the double lock" },
+    { "type": "paragraph", "text": "Imagine your front door had two locks: a regular lock and a deadbolt. Even if someone copied your key, they still could not get in without also having the deadbolt key. That is what two-factor authentication does for your online accounts. When you turn on two-factor authentication (let us call it \"the double lock\"), logging in works like this:" },
+    { "type": "list", "items": [
+      "You type your password as usual (the first lock).",
+      "The website sends a <strong>short code</strong> (usually 6 numbers) to your phone or iPad (the second lock).",
+      "You type that code into the website.",
+      "Now the website knows it is really you, because even if someone stole your password, they would also need your phone to get the code."
+    ] },
+    { "type": "paragraph", "text": "Your Apple ID already uses two-factor authentication by default. When you sign in on a new device, Apple sends a code to your other devices. This is normal and it is protecting you." },
+    { "type": "three_second_rule", "heading": "The 3-second rule for codes", "steps": [
+      { "icon": "✋", "name": "Stop", "text": "Did you request this code?" },
+      { "icon": "🫁", "name": "Breathe", "text": "If you did not try to log in, someone else might be trying." },
+      { "icon": "🔍", "name": "Verify", "text": "Never share a verification code with anyone who calls or texts you. Change your password if you did not request it." }
+    ] },
+    { "type": "heading", "level": 3, "text": "The four types of two-factor authentication" },
+    { "type": "paragraph", "text": "There are a few different ways to set up your \"second lock\". Here they are from easiest to most advanced. You only need to pick one:" },
+    { "type": "list", "items": [
+      "<strong>1. Text message code (SMS), easiest for beginners.</strong> When you log in, the website sends a 6-digit code to your phone as a text message. You type the code to complete the login. Takes about 10 extra seconds. No special app required, just your mobile phone number.",
+      "<strong>2. Email code.</strong> Similar to SMS, but the code is sent to your email address instead of your phone. Good backup option if you prefer not to give out your phone number.",
+      "<strong>3. Authenticator app, more advanced.</strong> Apps like <strong>Google Authenticator</strong> or <strong>Microsoft Authenticator</strong> generate codes every 30 seconds, even without an internet connection. More secure than SMS because codes are not sent over the phone network. Requires one-time setup per account.",
+      "<strong>4. Face ID or fingerprint plus password.</strong> Using your face or fingerprint combined with your password. If you already use Face ID on your iPhone, you are doing this for your Apple account. Apple enables it by default."
+    ] },
+    { "type": "tip", "label": "Which accounts most need the double lock?", "text": "<strong>Banking:</strong> most Canadian banks already require it; you may be using it without realising. <strong>Email (Gmail, Outlook):</strong> very important, because your email can be used to reset all your other passwords. <strong>Government services:</strong> CRA My Account, Service Canada. <strong>Facebook and Instagram:</strong> optional but recommended. <strong>Amazon:</strong> optional, especially important if you have a saved credit card. <strong>Start with your email and your bank.</strong> These two accounts are the most important to protect, and once they are secured, the rest follows naturally." },
+    { "type": "walkthrough", "title": "Turn on the double lock for your Gmail account", "steps": [
+      "Open the <strong>Gmail app</strong> (red and white envelope icon) and make sure you are signed in. On a computer, go to <strong>myaccount.google.com</strong> in your browser instead.",
+      "Tap your <strong>profile photo</strong> (your initial or photo, top right corner), then tap <strong>Manage your Google Account</strong>.",
+      "Tap the <strong>Security</strong> tab.",
+      "Scroll down to <strong>How you sign in to Google</strong> and tap <strong>2-Step Verification</strong>.",
+      "Tap <strong>Get started</strong> and follow the steps. Google will ask you to enter your phone number so it can send you a code by text message.",
+      "Enter the code Google sends you to confirm it works, then tap <strong>Turn on</strong>."
+    ] },
+    { "type": "tip", "label": "What to expect after turning on 2FA", "text": "The next time you sign in to Gmail on a new device or after logging out, Google will send a 6-digit code to your phone. Just type in the code and you are in. On your own phone or iPad, you usually stay signed in and will not be asked for a code every time. Most services remember your own device for 30 days or longer." },
+    { "type": "warning", "label": "The one rule you must remember", "text": "Never give your 2FA code to anyone. A legitimate company will never call you and ask for your 6-digit code. If someone calls asking for your code, whether they say they are from Google, your bank, or the government, hang up immediately. That code is the key to your account, and giving it away hands them complete access." },
+    { "type": "heading", "level": 3, "text": "Answering your questions about the double lock" },
+    { "type": "list", "items": [
+      "<strong>What if I lose my phone?</strong> When you set up 2FA, most services show you a set of backup codes: a list of one-time emergency codes. Print these or write them on paper and store them with your important documents. If you lose your phone, use a backup code to get in, then update your settings. You can also contact the company's customer support line. They have a process for verifying your identity and restoring access.",
+      "<strong>Will I need a code every single time I log in?</strong> No. Most services remember your own device for 30 days or longer. You mainly get a code when you log in on a new device or after a long time away from the site.",
+      "<strong>Is it really worth the extra step?</strong> Yes, absolutely. Two-factor authentication stops over 99% of automated account hacking attempts. That 10 extra seconds once a month is a small price for knowing your bank account, email, and photos are protected.",
+      "<strong>Do I have to use it?</strong> Most websites make it optional, but some banks and government sites are starting to require it. Even where it is optional, enabling it for your bank and email is strongly recommended. Think of it like wearing a seatbelt: not every drive ends in an accident, but it is the right habit that protects you when it matters."
+    ] },
+    { "type": "walkthrough", "title": "A real example: logging in to your bank with the double lock", "steps": [
+      "Visit your bank's website (type the address yourself, <em>never</em> click a link in an email).",
+      "Enter your username and password as usual (the first lock).",
+      "The bank sends a 6-digit code to your phone by text message.",
+      "Open your text messages. The code arrives within seconds.",
+      "Type the 6-digit code into the bank website.",
+      "Tick \"Remember this device for 30 days\" if the option appears.",
+      "You are in, and your account is protected. That is the double lock in action: simple, fast, and enormously effective."
+    ] },
+    { "type": "helper", "label": "Confidence check", "text": "You now understand the three layers of security: a strong password, a password manager, and the double lock. You are more secure than most people online." },
+    { "type": "tip", "label": "Tip", "text": "If you receive a verification code you did not request, do not panic, but do change the password for that account as soon as possible. It means someone is trying to log in as you." },
+
+    { "type": "heading", "level": 2, "text": "Scams every Canadian should know" },
+    { "type": "warning", "label": "Card pickup scam (courier fraud)", "text": "A scammer calls pretending to be your bank and says your card has been compromised. They offer to send a courier to pick it up. <strong>Your bank will NEVER send someone to collect your card.</strong> If this happens, hang up and call the number printed on the back of your card." },
+    { "type": "warning", "label": "Call forwarding scam", "text": "A caller pretends to be your phone company or the government and walks you through \"fixing\" your phone. Without realising it, you may activate call forwarding, sending all your calls to the scammer instead. <strong>If anyone asks you to dial *72 or *21 followed by a phone number, hang up immediately.</strong> These are call forwarding codes." },
+    { "type": "warning", "label": "Smishing (text message scams)", "text": "A smishing text looks like it is from your bank, Canada Post, or the Canada Revenue Agency. It asks you to click a link or call a number to \"verify your account\" or \"claim a package\". Real banks and government agencies do not send urgent links by text. If you receive an unexpected text asking you to act right away, do not tap the link. Call the organisation directly using the number on their official website or the back of your card." },
+    { "type": "warning", "label": "WhatsApp account takeover", "text": "A scammer enters your phone number on WhatsApp, which sends a 6-digit verification code to your phone as a text. The scammer then contacts you, often pretending to be a friend whose account was already stolen, and says: \"I accidentally sent a code to your number, could you share it with me?\" <strong>Do not share this code with anyone.</strong> WhatsApp will never ask you for a code through a message. Once a scammer has your code, they can take over your account." },
+    { "type": "warning", "label": "Messenger \"family emergency\" scam", "text": "A Facebook Messenger message claims to be from a grandchild, niece, or nephew in trouble, perhaps stranded in another city without their wallet. They ask for money by e-transfer or gift card. Scammers often use accounts they have already taken over to make the message look convincing. <strong>Before sending anything, phone the family member at their regular number.</strong> A real emergency call takes 30 seconds and costs nothing." },
+    { "type": "paragraph", "text": "Source: Canadian Anti-Scam Coalition, <a href=\"https://standagainstscams.ca\" target=\"_blank\" rel=\"noopener noreferrer\">standagainstscams.ca</a>." },
+
+    { "type": "quiz", "heading": "Quick check: test your knowledge", "intro": "Tap the answer you think is correct. There is no score kept and nothing to sign in to.", "questions": [
+      { "q": "1. Which is the strongest password?",
+        "options": ["MyName1954!", "Purple-Teacup-Bridge-44", "password123"],
+        "correct": 1,
+        "right": "Well done. A passphrase with random words is much harder to guess than a name with a year or a common word.",
+        "wrong": "The strongest option is Purple-Teacup-Bridge-44. A passphrase of random words is hard for computers to crack but easy for you to remember." },
+      { "q": "2. What does a password manager do?",
+        "options": ["Securely stores all your passwords so you only need to remember one", "Sends your passwords to Apple for safekeeping", "Makes all your accounts use the same password"],
+        "correct": 0,
+        "right": "Exactly. A password manager is your secure digital vault. You remember one password, it remembers the rest.",
+        "wrong": "A password manager securely stores all your passwords on your device so you only need to remember one master password (or use Face ID)." },
+      { "q": "3. You receive a text message with a verification code that you did not request. What should you do?",
+        "options": ["Ignore it, codes expire and it is nothing to worry about", "Reply to the text with \"STOP\"", "Do not share the code with anyone, and consider changing your password for that account"],
+        "correct": 2,
+        "right": "Correct. An unexpected code could mean someone is trying to access your account. Never share it, and change your password to be safe.",
+        "wrong": "An unexpected verification code could mean someone has your password and is trying to log in. Never share the code, and change your password for that account." }
+    ] },
+
+    { "type": "checklist", "heading": "Your progress", "intro": "Tick each item as you feel confident with it. This is saved on this device only, with no account needed.", "id": "module-3", "items": [
+      "I understand what Face ID, passwords, and two-factor authentication mean",
+      "Face ID is set up on my device",
+      "I know how to create a strong passphrase",
+      "I know where my saved passwords are stored",
+      "I have changed at least one weak password",
+      "I understand why I should never share verification codes"
+    ] }
+  ],
+  "success_state": "<strong>Well done.</strong> Your accounts are now protected by strong, unique passwords, a password manager, and biometrics. That is a fortress of security, and you built it yourself.",
+  "related": {
+    "heading": "Where to next",
+    "cards": [
+      { "num": "Module 2", "name": "The Security Shield", "desc": "Passwords work best alongside the broader security habits that keep scammers away from your devices.", "href": "module-2.html", "external": false },
+      { "num": "Module 5", "name": "Email and Messages", "desc": "Criminals often try to steal passwords through fake emails. Learn to spot them before it is too late.", "href": "module-5.html", "external": false },
+      { "num": "Module 6", "name": "Banking and Transactions", "desc": "Strong passwords are your first line of defence for protecting your bank account online.", "href": "module-6.html", "external": false }
+    ]
+  }
+}

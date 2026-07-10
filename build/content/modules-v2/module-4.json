@@ -1,0 +1,140 @@
+{
+  "id": "module-4",
+  "slug": "module-4",
+  "page_title": "App Store Safety - Digital Confidence Centre",
+  "title": "App Store Safety",
+  "description": "How to find, download, and verify apps safely. Spot fake apps, understand permissions, and avoid hidden subscription costs. Free, plain-language lesson for Canadian seniors. No account needed.",
+  "category": "App safety",
+  "category_icon": "📱",
+  "lesson_time": "About 15 minutes, at your own pace",
+  "lead": "How to find, download, and verify apps safely. You will learn to spot fake apps, understand what permissions mean, and keep your device running smoothly.",
+  "nav_current": "../index.html#protect-money",
+  "breadcrumb_group_label": "Protect your money",
+  "breadcrumb_group_anchor": "../index.html#protect-money",
+  "story": {
+    "label": "Frank's story",
+    "paragraphs": [
+      "Frank, 76, wanted to download a weather app for his iPad. His friend had recommended one, so Frank opened what he thought was the App Store and searched for \"weather\". He found an app that looked right, tapped \"Get\", and was immediately asked for his credit card number. Frank entered it, thinking this was normal.",
+      "Two weeks later, Frank noticed a $49.99 charge on his credit card from a company he had never heard of. It turned out he had downloaded a fake weather app that signed him up for a weekly subscription. The \"App Store\" he had used was actually a website pretending to be the App Store.",
+      "Frank's mistake was understandable. The fake store looked very real. But there are clear ways to make sure you are using the real App Store, downloading real apps, and never getting tricked by hidden fees. That is what this module is all about."
+    ]
+  },
+  "coach": "Many people worry that one wrong tap in an app store will cost them money or fill their device with junk. That caution is healthy, and the truth is reassuring: nothing installs without your clear confirmation, and anything you install can be removed. You are allowed to browse, look, and change your mind.",
+  "sections": [
+    { "type": "tip", "label": "Tip", "text": "The safest way to open the App Store is to tap its icon directly on your Home screen, never from a link in an email, text message, or website." },
+
+    { "type": "heading", "level": 2, "text": "The real app store: how to find it" },
+    { "type": "paragraph", "text": "The official store is the only safe place to download apps: the <strong>App Store</strong> on an iPad or iPhone (run by Apple), the <strong>Google Play Store</strong> on Android (run by Google), and the <strong>Microsoft Store</strong> on Windows. Every app in these stores has been reviewed for safety. Here is how to find the real one:" },
+    { "type": "list", "items": [
+      "<strong>On an iPad or iPhone:</strong> look on your Home screen for a <strong>blue icon with a white letter \"A\" made of lines</strong> (like sticks arranged in an A shape). Tap it once to open the App Store.",
+      "<strong>On Android:</strong> look for a <strong>colourful triangle icon</strong> (it looks like a sideways play button in blue, green, red, and yellow) on your Home screen or app drawer. It may be labelled simply \"Play Store\".",
+      "<strong>On Windows:</strong> click the <strong>blue shopping bag icon</strong> in your taskbar at the bottom of the screen, or search \"Microsoft Store\" in the Start menu."
+    ] },
+    { "type": "warning", "label": "Important", "text": "Never download apps from a website, a link in an email, or a link in a text message. Only use the official app store on your device. If someone sends you a link to download an app, ignore it. Find the app yourself in the real App Store or Play Store." },
+    { "type": "helper", "label": "Confidence check", "text": "The App Store is your safe shopping centre for apps. If you stick to the App Store, you are already ahead of the game." },
+
+    { "type": "heading", "level": 2, "text": "How to search for and download an app" },
+    { "type": "walkthrough", "title": "Downloading an app step by step", "steps": [
+      "Open the <strong>App Store</strong> (blue icon with white \"A\") or the <strong>Google Play Store</strong> (colourful triangle icon).",
+      "Tap the <strong>Search</strong> tab at the bottom (the magnifying glass) on an iPad or iPhone, or the search bar at the top on Android.",
+      "Type the name of the app you want. For example, type \"The Weather Network\".",
+      "A list of results will appear. <strong>Before you download anything, check the app carefully</strong> (see how to spot a real app below).",
+      "When you find the right app, tap the blue <strong>\"Get\"</strong> button on Apple, or the green <strong>\"Install\"</strong> button on Android (or the price button for paid apps).",
+      "Confirm with <strong>Face ID</strong>, your <strong>fingerprint</strong>, your passcode, or your account password.",
+      "The app will download and appear on your Home screen. You can tap it to open it."
+    ] },
+
+    { "type": "heading", "level": 2, "text": "How to spot a real app vs. a fake app" },
+    { "type": "paragraph", "text": "When you search the store, you might see several apps with similar names. Here is how to pick the real one:" },
+    { "type": "list", "items": [
+      "<strong>Check the developer name.</strong> The developer's name appears below the app name in small text. For example, the real \"RBC Mobile\" app is made by \"Royal Bank of Canada\". If the developer name looks unfamiliar or is misspelled, be cautious.",
+      "<strong>Look at the number of ratings.</strong> Popular, legitimate apps have thousands or millions of ratings. A fake copycat might have very few, perhaps dozens or even none.",
+      "<strong>Read the star rating.</strong> Most real apps from established companies have ratings of 3.5 stars or above (out of 5). Very low ratings (below 2 stars) are a warning sign.",
+      "<strong>Check the screenshots.</strong> Scroll down to see pictures of what the app looks like. Do they look professional? Do they match what you would expect?",
+      "<strong>Look for the \"In-App Purchases\" label.</strong> If an app says \"In-App Purchases\" below the \"Get\" button, the app is free to download but may ask you to pay for extra features inside the app. This is not always bad, but be aware of it."
+    ] },
+    { "type": "three_second_rule", "heading": "The 3-second rule for apps", "steps": [
+      { "icon": "✋", "name": "Stop", "text": "Before tapping \"Get\", pause and check the details." },
+      { "icon": "🫁", "name": "Breathe", "text": "There is no rush. The app will still be there in five minutes." },
+      { "icon": "🔍", "name": "Verify", "text": "Check the developer, ratings, and reviews. Does everything look right?" }
+    ] },
+    { "type": "warning", "label": "Watch out", "text": "If an app has very few ratings, a developer name you do not recognise, or screenshots that look sloppy, do not download it. A legitimate app from a major company will always have thousands of ratings." },
+
+    { "type": "heading", "level": 2, "text": "Understanding app permissions" },
+    { "type": "paragraph", "text": "When you first open a new app, it might ask for permission to access parts of your device. These requests appear as small pop-up boxes. Here is what the common ones mean:" },
+    { "type": "list", "items": [
+      "<strong>\"Would like to send you notifications\":</strong> the app wants to send you alerts and reminders, even when you are not using it. Tap <strong>\"Allow\"</strong> if you want reminders (like a weather alert) or <strong>\"Don't Allow\"</strong> if you do not want to be bothered.",
+      "<strong>\"Would like to access your location\":</strong> the app wants to know where you are. A weather or maps app needs this to work properly. A game or flashlight app does not. Choose \"While Using the App\" for apps that genuinely need your location, and \"Don't Allow\" for apps that do not.",
+      "<strong>\"Would like to access your photos\":</strong> the app wants to see pictures stored on your device. A photo editing app needs this; a calculator app does not.",
+      "<strong>\"Would like to access your contacts\":</strong> the app wants to see your address book. Only allow this for communication apps like FaceTime or Messages.",
+      "<strong>\"Would like to track your activity\":</strong> the app wants to follow what you do on other apps and websites to show you targeted advertisements. Almost always, tap <strong>\"Ask App Not to Track\"</strong>."
+    ] },
+    { "type": "tip", "label": "The simple rule", "text": "If you are not sure, choose <strong>\"Don't Allow\"</strong>. You can always change your mind later in Settings. Saying \"no\" never breaks an app. At worst, one feature might not work, and the app will tell you." },
+    { "type": "helper", "label": "Confidence check", "text": "You are now an informed app shopper. You know how to find real apps and protect your privacy when using them." },
+
+    { "type": "heading", "level": 2, "text": "Subscriptions and hidden costs" },
+    { "type": "paragraph", "text": "Some apps are free to download but charge a monthly or yearly fee to keep using them. This is called a <strong>subscription</strong>. It is like a magazine subscription: you pay regularly to keep getting it. Subscriptions are not necessarily bad, but you should always know what you are signing up for. Here is how to check:" },
+    { "type": "walkthrough", "title": "Checking your subscriptions", "steps": [
+      "Open <strong>Settings</strong> (the grey gears icon).",
+      "Tap your <strong>name</strong> at the top.",
+      "Tap <strong>\"Subscriptions\"</strong>.",
+      "You will see a list of all active subscriptions. If you see something you do not recognise or no longer want, tap it and choose <strong>\"Cancel Subscription\"</strong>."
+    ] },
+    { "type": "warning", "label": "Watch out", "text": "Some apps offer a \"free trial\" that automatically converts to a paid subscription after 3 or 7 days. If you try a free trial, set a reminder on your phone to cancel before the trial ends, or cancel immediately after signing up. You will still get the full trial period, but it will not charge you afterward." },
+    { "type": "helper", "label": "Confidence check", "text": "You are becoming a savvy app shopper. You know how to check permissions and watch for hidden costs. These skills protect you every time you use your device." },
+
+    { "type": "heading", "level": 2, "text": "Deleting apps you do not want" },
+    { "type": "walkthrough", "title": "Removing an app from your device", "steps": [
+      "Find the app icon on your Home screen.",
+      "<strong>Press and hold</strong> the icon for about two seconds. The icons will start to wiggle, or a small menu will appear.",
+      "Tap the small <strong>\"X\"</strong> or <strong>minus sign</strong> on the app you want to remove, or tap <strong>\"Remove App\"</strong> from the menu.",
+      "Tap <strong>\"Delete App\"</strong> to confirm. If you change your mind, you can always download it again from the App Store.",
+      "Press the Home button (or tap \"Done\") to stop the wiggling."
+    ] },
+    { "type": "warning", "label": "Important", "text": "Deleting an app does not cancel a subscription. If you are paying for an app monthly, you need to cancel the subscription separately (in Settings, under Subscriptions) before deleting the app." },
+
+    { "type": "heading", "level": 2, "text": "Practical exercise: App Store explorer" },
+    { "type": "walkthrough", "title": "Try it yourself", "steps": [
+      "Open the App Store and search for <strong>\"The Weather Network\"</strong>. Check the developer name, star rating, and number of reviews. Do not download it. This is practice.",
+      "Go to Settings, tap your name, then Subscriptions, and check if you have any active subscriptions you did not know about.",
+      "If you have any apps on your Home screen that you do not recognise or no longer use, practise deleting one."
+    ] },
+    { "type": "helper", "label": "Success looks like this", "text": "You can confidently search for an app, verify it is legitimate by checking the developer and ratings, and you know where to find and cancel subscriptions." },
+
+    { "type": "quiz", "heading": "Quick check: test your knowledge", "intro": "Tap the answer you think is correct. There is no score kept and nothing to sign in to.", "questions": [
+      { "q": "1. Where is the only safe place to download apps for your iPad?",
+        "options": ["From a link someone texted you", "The App Store app on your iPad", "Any website that shows apps"],
+        "correct": 1,
+        "right": "Exactly right. The App Store on your iPad is the only safe place. Never download apps from links in emails or texts.",
+        "wrong": "The only safe place is the App Store app on your iPad (the blue icon with the white A). Never download from links in emails or texts." },
+      { "q": "2. An app asks permission to \"Track Your Activity across other companies' apps and websites\". What should you do?",
+        "options": ["Tap \"Ask App Not to Track\"", "Tap \"Allow\" so the app works properly", "Delete the app immediately"],
+        "correct": 0,
+        "right": "Good choice. Tracking is about targeted advertisements, not app functionality. You can almost always say no.",
+        "wrong": "The best choice is \"Ask App Not to Track\". This permission is about targeted ads, not about making the app work. The app will function fine without it." },
+      { "q": "3. You deleted an app, but you are still being charged $9.99 per month. Why?",
+        "options": ["Your iPad is broken", "Someone hacked your account", "Deleting an app does not cancel its subscription, you need to cancel separately in Settings"],
+        "correct": 2,
+        "right": "That is right. Deleting an app and cancelling a subscription are two separate steps. Go to Settings, tap your name, then Subscriptions to cancel.",
+        "wrong": "Deleting an app does not cancel its subscription. You need to go to Settings, tap your name, then Subscriptions to cancel the payment." }
+    ] },
+
+    { "type": "checklist", "heading": "Your progress", "intro": "Tick each item as you feel confident with it. This is saved on this device only, with no account needed.", "id": "module-4", "items": [
+      "I can find and open the real App Store or Play Store on my device",
+      "I know never to download apps from links in emails or texts",
+      "I can check the developer name, ratings, and reviews before downloading",
+      "I know what app permissions mean and when to say \"Don't Allow\"",
+      "I know where to find and cancel subscriptions in Settings",
+      "I can delete an app I no longer want"
+    ] }
+  ],
+  "success_state": "<strong>Well done.</strong> You are now a smart app shopper who knows how to stay safe in the App Store: finding real apps, checking permissions, and watching for hidden costs.",
+  "related": {
+    "heading": "Where to next",
+    "cards": [
+      { "num": "Module 1", "name": "The Escape Hatch", "desc": "If an app installation goes wrong or something unexpected appears, knowing how to escape keeps you safe.", "href": "module-1.html", "external": false },
+      { "num": "Module 2", "name": "The Security Shield", "desc": "Understand what makes an app trustworthy or risky, essential context for safe App Store browsing.", "href": "module-2.html", "external": false },
+      { "num": "Module 9", "name": "Understanding AI", "desc": "AI-powered apps are everywhere in the App Store. Learn what they are and how to use them wisely.", "href": "../../module-9.html", "external": true }
+    ]
+  }
+}
