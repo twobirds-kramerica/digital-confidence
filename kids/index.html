@@ -2,9 +2,9 @@
 <html lang="en-CA">
 <head>
   <meta charset="UTF-8">
-  <script>(function(){var t=localStorage.getItem('dc-theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme','light');})();</script>
+  <script>(function(){var t=localStorage.getItem('dc-theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DCC Kids — free, caregiver-led digital literacy activities for children aged 4–15. No screens required. Built for Canadian families and libraries.">
+  <meta name="description" content="DCC Kids: free, caregiver-led digital literacy activities for children aged 4–15. No screens required. Built for Canadian families and libraries.">
   <meta property="og:title" content="DCC Kids · Digital Literacy for Children · Digital Confidence Centre">
   <meta property="og:description" content="Free, caregiver-led digital literacy activities for children aged 4–15. Offline activities, backed by research. Choose your child's age group.">
   <meta property="og:type" content="website">
@@ -12,55 +12,54 @@
   <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/kids/">
   <title>DCC Kids · Digital Literacy for Children · Ages 4–15</title>
   <link rel="stylesheet" href="../css/bundle.css">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="css/tokens-kids.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <style>
+    /* Kids hub layout tokens (colour tokens live in css/tokens-kids.css) */
     :root {
-      --kids-green:       #2E7D32;
-      --kids-green-bg:    #E8F5E9;
-      --kids-green-light: #C8E6C9;
-      --kids-radius:      20px;
       --kids-font-xl:     2rem;
       --kids-font-lg:     1.35rem;
       --kids-font-base:   1.125rem;
     }
 
-    body { background: #F5F9FF; }
+    body { background: var(--kids-bg); color: var(--kids-text); }
 
     .caregiver-banner {
-      background: var(--brand-teal);
-      color: #fff;
+      background: var(--kids-primary);
+      color: var(--kids-primary-contrast);
       text-align: center;
       padding: 0.75rem 1rem;
       font-size: 0.95rem;
-      font-weight: 500;
+      font-weight: 600;
     }
-    .caregiver-banner a { color: #b2dfdb; text-decoration: underline; }
+    .caregiver-banner a { color: var(--kids-footer-link); text-decoration: underline; }
 
     .kids-nav {
-      background: #fff;
-      border-bottom: 2px solid var(--kids-green-light);
+      background: var(--kids-surface);
+      border-bottom: 2px solid var(--kids-border);
       padding: 0.75rem 1.5rem;
       font-size: 0.875rem;
     }
-    .kids-nav a { color: var(--brand-teal); text-decoration: none; }
+    .kids-nav a { color: var(--kids-primary); text-decoration: none; font-weight: 600; }
     .kids-nav a:hover { text-decoration: underline; }
-    .kids-nav span { color: var(--text-muted); margin: 0 0.4rem; }
+    .kids-nav span { color: var(--kids-text-light); margin: 0 0.4rem; }
 
     .kids-hero {
-      background: linear-gradient(135deg, #E3F2FD 0%, #E8F5E9 60%, #FFF9C4 100%);
+      background: var(--kids-hero-gradient);
       padding: 3rem 1.5rem 2.5rem;
       text-align: center;
-      border-bottom: 3px solid var(--kids-green-light);
+      border-bottom: 3px solid var(--kids-hero-border);
     }
     .kids-hero h1 {
       font-size: clamp(2rem, 6vw, 3rem);
-      color: var(--text-primary);
+      color: var(--kids-text);
       margin: 0 0 0.75rem;
       line-height: 1.15;
+      letter-spacing: -0.01em;
     }
     .kids-hero .tagline {
       font-size: var(--kids-font-lg);
-      color: var(--text-secondary);
+      color: var(--kids-text-light);
       max-width: 600px;
       margin: 0 auto 1.25rem;
       line-height: 1.5;
@@ -72,13 +71,13 @@
       flex-wrap: wrap;
     }
     .hero-badge {
-      background: #fff;
-      border: 2px solid var(--kids-green-light);
+      background: var(--kids-surface);
+      border: 2px solid var(--kids-border);
       border-radius: 20px;
       padding: 0.35rem 1rem;
       font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--kids-green);
+      font-weight: 700;
+      color: var(--kids-primary);
     }
 
     .kids-main {
@@ -89,12 +88,12 @@
 
     .section-heading {
       font-size: var(--kids-font-xl);
-      color: var(--text-primary);
+      color: var(--kids-text);
       margin: 0 0 0.5rem;
     }
     .section-sub {
       font-size: var(--kids-font-base);
-      color: var(--text-secondary);
+      color: var(--kids-text-light);
       margin: 0 0 1.75rem;
     }
 
@@ -107,13 +106,13 @@
     }
 
     .age-card {
-      background: #fff;
-      border: 2px solid var(--border-color);
+      background: var(--kids-surface);
+      border: 2px solid var(--kids-border);
       border-radius: var(--kids-radius);
       padding: 1.75rem 1.25rem;
       text-align: center;
       text-decoration: none;
-      color: var(--text-primary);
+      color: var(--kids-text);
       transition: box-shadow 0.15s, border-color 0.15s, transform 0.1s;
       display: flex;
       flex-direction: column;
@@ -121,11 +120,11 @@
       gap: 0.5rem;
     }
     .age-card.active {
-      border-color: var(--brand-teal);
-      background: #F0FAFA;
+      border-color: var(--kids-primary);
+      background: var(--kids-primary-light);
     }
     .age-card.active:hover {
-      box-shadow: 0 6px 20px rgba(0,128,128,0.15);
+      box-shadow: var(--shadow-lg);
       transform: translateY(-2px);
     }
     .age-card.coming-soon {
@@ -136,20 +135,24 @@
     .age-card .age-label {
       font-size: 1.4rem;
       font-weight: 700;
-      color: var(--brand-teal);
+      color: var(--kids-primary);
       line-height: 1.2;
     }
-    .age-card.coming-soon .age-label { color: var(--text-muted); }
+    .age-card.coming-soon .age-label { color: var(--kids-text-light); }
     .age-card .age-desc {
       font-size: 0.88rem;
-      color: var(--text-secondary);
+      color: var(--kids-text-light);
       line-height: 1.4;
     }
+    /* Per-cohort accent stripe on the icon, keyed to the developmental framework */
+    .age-card.cohort-46  .age-label { color: var(--kids-green-deep); }
+    .age-card.cohort-79  .age-label { color: var(--kids-primary); }
+    .age-card.cohort-1012 .age-label { color: var(--kids-violet); }
     .age-card .activity-count {
       display: inline-block;
-      background: var(--kids-green-bg);
-      color: var(--kids-green);
-      border: 1.5px solid var(--kids-green-light);
+      background: var(--kids-green-light);
+      color: var(--kids-green-deep);
+      border: 1.5px solid var(--kids-green);
       border-radius: 12px;
       padding: 0.2rem 0.7rem;
       font-size: 0.78rem;
@@ -158,9 +161,9 @@
     }
     .age-card .coming-tag {
       display: inline-block;
-      background: #F5F5F5;
-      color: var(--text-muted);
-      border: 1.5px solid #E0E0E0;
+      background: var(--kids-surface-alt);
+      color: var(--kids-text-light);
+      border: 1.5px solid var(--kids-border);
       border-radius: 12px;
       padding: 0.2rem 0.7rem;
       font-size: 0.78rem;
@@ -170,18 +173,18 @@
 
     /* How it works */
     .how-section {
-      background: #fff;
-      border: 2px solid var(--border-color);
+      background: var(--kids-surface);
+      border: 2px solid var(--kids-border);
       border-radius: var(--kids-radius);
       padding: 1.75rem 1.5rem;
       margin-bottom: 2.5rem;
     }
     .how-section h2 {
       font-size: 1.25rem;
-      color: var(--brand-teal);
+      color: var(--kids-primary);
       margin: 0 0 1rem;
       padding-bottom: 0.5rem;
-      border-bottom: 2px solid var(--kids-green-light);
+      border-bottom: 2px solid var(--kids-border);
     }
     .how-grid {
       display: grid;
@@ -198,18 +201,19 @@
       flex-shrink: 0;
       margin-top: 0.1rem;
     }
-    .how-item .how-text { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
-    .how-item .how-text strong { color: var(--text-primary); }
+    .how-item .how-text { font-size: 0.9rem; color: var(--kids-text-light); line-height: 1.5; }
+    .how-item .how-text strong { color: var(--kids-text); }
 
     .kids-footer {
-      background: var(--brand-teal);
-      color: rgba(255,255,255,0.85);
+      background: var(--kids-footer-bg);
+      color: var(--kids-footer-text);
       text-align: center;
       padding: 1.5rem 1rem;
       font-size: 0.875rem;
       margin-top: 3rem;
     }
-    .kids-footer a { color: #b2dfdb; }
+    /* footer link/text colours are asserted at high specificity in
+       css/tokens-kids.css so the adult dark-theme paragraph rule cannot win */
 
     @media (max-width: 480px) {
       .age-grid { grid-template-columns: repeat(2, 1fr); }
@@ -220,7 +224,7 @@
   <a href="#main" class="skip-link">Skip to main content</a>
 
   <div class="caregiver-banner" role="banner">
-    🧑‍🤝‍🧑 These activities are for <strong>caregivers and children to do together</strong> — no screens needed. &nbsp;
+    🧑‍🤝‍🧑 These activities are for <strong>caregivers and children to do together</strong>. No screens needed. &nbsp;
     <a href="../index.html">Back to Digital Confidence Centre</a>
   </div>
 
@@ -251,21 +255,21 @@
 
     <div class="age-grid" role="list">
 
-      <a href="4-6/" class="age-card active" role="listitem" aria-label="Ages 4–6, 8 activities available">
+      <a href="4-6/" class="age-card active cohort-46" role="listitem" aria-label="Ages 4–6, 8 activities available">
         <span class="age-icon">🌱</span>
         <span class="age-label">Ages 4–6</span>
         <span class="age-desc">PreK to Grade 1. Building the first vocabulary for a digital world.</span>
         <span class="activity-count">8 activities · complete</span>
       </a>
 
-      <a href="7-9/" class="age-card active" role="listitem" aria-label="Ages 7–9, 8 activities, cohort complete">
+      <a href="7-9/" class="age-card active cohort-79" role="listitem" aria-label="Ages 7–9, 8 activities, cohort complete">
         <span class="age-icon">📚</span>
         <span class="age-label">Ages 7–9</span>
         <span class="age-desc">Grades 2–4. Sorting information and building online confidence.</span>
         <span class="activity-count">8 activities · complete</span>
       </a>
 
-      <a href="10-12/" class="age-card active" role="listitem" aria-label="Ages 10–12, 11 activities, cohort complete">
+      <a href="10-12/" class="age-card active cohort-1012" role="listitem" aria-label="Ages 10–12, 11 activities, cohort complete">
         <span class="age-icon">🔍</span>
         <span class="age-label">Ages 10–12</span>
         <span class="age-desc">Grades 5–7. Critical thinking for a world of ads, algorithms, and AI.</span>
@@ -302,7 +306,7 @@
         </div>
         <div class="how-item">
           <span class="how-icon">🏅</span>
-          <div class="how-text"><strong>Badges and certificates — coming soon.</strong> We are designing age-appropriate rewards with child-development advisors, so they encourage learning rather than screen time. They will appear here when ready.</div>
+          <div class="how-text"><strong>Badges and certificates, coming soon.</strong> We are designing age-appropriate rewards with child-development advisors, so they encourage learning rather than screen time. They will appear here when ready.</div>
         </div>
       </div>
     </div>
