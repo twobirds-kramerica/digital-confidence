@@ -1,0 +1,215 @@
+{
+  "id": "module-15",
+  "slug": "module-15",
+  "page_title": "Telehealth and Medical Portals - Digital Confidence Centre",
+  "title": "Telehealth and Medical Portals",
+  "description": "Book medical appointments online, access your health records, meet your doctor by video, refill prescriptions through pharmacy apps, and reach Ontario's free 24/7 nurse line. Free, plain-language lesson for Canadian seniors. No account needed.",
+  "category": "Health care",
+  "category_icon": "🩺",
+  "lesson_time": "About 30 minutes, at your own pace",
+  "lead": "How to book appointments online, see your health records, meet your doctor by video, and manage prescriptions, all from the comfort of home.",
+  "nav_current": "../index.html#getting-things-done",
+  "breadcrumb_group_label": "Getting things done",
+  "breadcrumb_group_anchor": "../index.html#getting-things-done",
+  "story": {
+    "label": "Helen's story",
+    "paragraphs": [
+      "Helen, 78, from Chatham, Ontario. After her hip replacement, getting to her family doctor's office was exhausting and painful. When her doctor's clinic offered telephone appointments during the pandemic, Helen discovered something wonderful: most of her check-ins did not require being there in person.",
+      "She now does her quarterly blood pressure review by phone, books her lab work online, and refills her prescriptions through the Shoppers Drug Mart app. The only trips she makes are for tests or issues that truly require hands-on examination.",
+      "This lesson covers everything Helen uses, and more."
+    ]
+  },
+  "coach": "Seeing a doctor through a screen can feel like it should not count as real medical care. Many people feel that way at first, and then discover that no waiting room, no winter driving, and no parking fees make some appointments genuinely better. Your health questions deserve answers, whichever way you ask them.",
+  "sections": [
+    { "type": "heading", "level": 2, "text": "What is telehealth?" },
+    { "type": "paragraph", "text": "<strong>Telehealth</strong> simply means receiving medical care from a distance, over the phone or by video, instead of travelling to a clinic in person. It is not a replacement for all medical visits, but it is a genuinely useful option for many everyday health needs. There are three main types:" },
+    { "type": "list", "items": [
+      "<strong>Phone consultation.</strong> You and your doctor talk over the phone. No camera needed. Works on any phone, including a landline.",
+      "<strong>Video consultation.</strong> You and your doctor can see each other, like a video call with family. Needs a smartphone, tablet, or computer with a camera.",
+      "<strong>Secure messaging.</strong> Send non-urgent questions to your care team through a patient portal. They respond in writing, usually within one to two business days."
+    ] },
+    { "type": "paragraph", "text": "<strong>Does OHIP cover it?</strong> Most telehealth visits with your own Ontario-registered family doctor are covered by OHIP at no cost to you, just like an in-person appointment. Virtual urgent care services (such as Maple or Dialogue) may charge fees unless you have employer benefits or insurance that covers them." },
+    { "type": "heading", "level": 3, "text": "When telehealth works well" },
+    { "type": "list", "items": [
+      "Follow-up appointments after a procedure or treatment",
+      "Medication reviews and prescription renewals",
+      "Mental health check-ins with a therapist or psychiatrist",
+      "Discussing lab results or test reports",
+      "Non-emergency questions, such as rashes that are healing, mild colds, or sleep concerns"
+    ] },
+    { "type": "heading", "level": 3, "text": "When in-person is better" },
+    { "type": "list", "items": [
+      "New symptoms that require a physical examination",
+      "Urgent or emergency situations. Always call 911 for emergencies.",
+      "Procedures, injections, or physical tests",
+      "Hearing or vision checks that require equipment"
+    ] },
+    { "type": "tip", "label": "Privacy protection", "text": "Doctors offering telehealth in Ontario must use platforms that comply with <strong>PHIPA</strong>, the Personal Health Information Protection Act. This is Ontario's law that protects your private health information. If you are unsure whether your doctor's telehealth platform is PHIPA-compliant, it is completely reasonable to ask them directly." },
+
+    { "type": "heading", "level": 2, "text": "Accessing your medical records online" },
+    { "type": "paragraph", "text": "Many Ontario hospitals now offer a <strong>patient portal</strong>, a secure website where you can see your own health information without having to phone the hospital. The most widely used portal in Ontario is called <strong>MyChart</strong>. It is used by hospitals such as London Health Sciences Centre, Unity Health Toronto, Humber River Hospital, and many others. Once you register, you can log in from any device and see:" },
+    { "type": "list", "items": [
+      "<strong>Lab results</strong>, such as blood work and urine tests, often available before your doctor calls",
+      "<strong>Imaging reports</strong>, including X-ray, ultrasound, and CT scan findings",
+      "<strong>Your medications list</strong>, showing what has been prescribed and by whom",
+      "<strong>Immunisation records</strong> on file at that hospital",
+      "<strong>Upcoming appointments</strong> with specialists or your care team"
+    ] },
+    { "type": "walkthrough", "title": "Registering for MyChart", "steps": [
+      "Visit your hospital's website and look for a <strong>MyChart</strong> or <strong>Patient Portal</strong> link, usually found under \"Patients &amp; Visitors\".",
+      "You can also ask at the hospital admissions desk in person. Staff will give you an activation code to create your account.",
+      "You will need a valid email address and your Ontario health card number to complete registration.",
+      "Once registered, bookmark the login page on your device so you can find it easily next time."
+    ] },
+    { "type": "warning", "label": "Important note about lab results", "text": "Lab results in MyChart are often available before your doctor has had a chance to review them. Seeing an \"out of range\" or \"high\" flag on a result can be alarming, but those flags are printed for all ages and situations, not just yours. Your doctor knows your individual baseline and medical history. If something looks abnormal, wait for your doctor's call or send a message through the portal before worrying." },
+
+    { "type": "heading", "level": 2, "text": "Booking appointments online" },
+    { "type": "paragraph", "text": "You no longer have to call and wait on hold to book many medical appointments." },
+    { "type": "list", "items": [
+      "<strong>Family doctor appointments.</strong> Many Ontario practices now offer online booking through platforms such as OceanMD, Jane App, or their own clinic website. Look for a \"Book Online\" or \"Request an Appointment\" button on your doctor's website. If you are not sure whether your clinic offers this, call and ask.",
+      "<strong>LifeLabs.</strong> Canada's largest lab network. Book at <strong>lifelabs.com/book-appointment</strong>: choose your nearest location, service, date, and time.",
+      "<strong>Dynacare.</strong> Visit <strong>dynacare.ca</strong> and select \"Book Now\". Many Ontario locations also accept walk-ins.",
+      "<strong>Vaccinations.</strong> For flu shots, COVID-19 boosters, and other publicly funded vaccines, visit <strong>ontario.ca/bookvaccine</strong> and choose your nearest pharmacy, public health unit, or community clinic."
+    ] },
+    { "type": "tip", "label": "Specialist referrals", "text": "Appointments with specialists (such as a cardiologist or orthopaedic surgeon) are usually arranged by your family doctor, not booked directly by you. After your doctor makes the referral, you will receive a phone call or letter from the specialist's office with your appointment details. You do not need to book this yourself." },
+
+    { "type": "heading", "level": 2, "text": "Video doctor visits" },
+    { "type": "paragraph", "text": "If your own family doctor offers video appointments, they will walk you through how to connect. It may be through a simple link sent by email or text. You can also access on-demand video doctors through services that are available 24 hours a day:" },
+    { "type": "list", "items": [
+      "<strong>Maple (getmaple.ca).</strong> Available 24 hours a day, seven days a week. See a doctor within minutes for non-emergency issues. Fees apply unless covered by your benefits plan or insurance. App available for iPhone and Android.",
+      "<strong>TELUS Health Virtual Care.</strong> Similar to Maple. Some employer benefits plans include TELUS Health at no extra cost. Check with your insurer or benefits administrator."
+    ] },
+    { "type": "walkthrough", "title": "Preparing for a video appointment", "steps": [
+      "<strong>Test your camera and microphone beforehand.</strong> On an iPhone or iPad: Settings, then Privacy &amp; Security, then Camera and Microphone. Make sure the app you are using has permission.",
+      "<strong>Choose a private, well-lit space.</strong> Sit near a window or lamp so the doctor can see your face clearly. A quiet room reduces distractions for both of you.",
+      "<strong>Have your health card, medication list, and symptom notes ready.</strong> Write down what you want to discuss so you do not forget in the moment.",
+      "<strong>Close other apps</strong> on your device before the call. This helps ensure smooth video quality and prevents interruptions from notifications.",
+      "<strong>During the call, speak clearly and show visible symptoms</strong> (such as a rash or swollen area) by holding your device closer to the affected area. The doctor will guide you."
+    ] },
+    { "type": "tip", "label": "Prescriptions after a video visit", "text": "Both Maple and TELUS Health Virtual Care can send prescriptions electronically, directly to any Ontario pharmacy you choose, including mail-order pharmacies that deliver to your door. You do not need a paper prescription." },
+
+    { "type": "heading", "level": 2, "text": "Ontario Telehealth: the free 24/7 nurse line" },
+    { "type": "helper", "label": "Save this number", "text": "Ontario Telehealth Nurse Line: <strong>1-866-797-0000</strong>. Free. Available 24 hours a day, 7 days a week, 365 days a year. Covered by your Ontario health card, at no cost to you." },
+    { "type": "paragraph", "text": "When you call this number, you will be connected to a <strong>registered nurse</strong> who can discuss your symptoms, answer health questions, and help you decide whether you need to go to the emergency room, visit a walk-in clinic, or simply rest and monitor your symptoms at home. Call when:" },
+    { "type": "list", "items": [
+      "You have a health question and cannot reach your family doctor",
+      "You are not sure whether your symptoms need emergency care",
+      "It is evening, a weekend, or a holiday and your clinic is closed",
+      "You want a nurse's opinion before deciding what to do next",
+      "You want to know more about a medication or possible side effect"
+    ] },
+    { "type": "tip", "label": "Language support", "text": "Ontario Telehealth is available in multiple languages through an interpreter service. Simply let the operator know your preferred language when you call and they will arrange interpretation." },
+    { "type": "tip", "label": "HealthLine Ontario", "text": "If you prefer using a website, <strong>ontario.ca/healthline</strong> offers a symptom checker and a directory of local health services across Ontario, including walk-in clinics, mental health supports, and community health centres near you." },
+
+    { "type": "heading", "level": 2, "text": "E-prescriptions and refill requests" },
+    { "type": "paragraph", "text": "When your doctor writes an e-prescription (short for electronic prescription), they send it digitally, directly to your chosen pharmacy. There is no paper to pick up, carry, or potentially lose. You will usually receive a text message or email confirming that your prescription is ready." },
+    { "type": "list", "items": [
+      "<strong>Shoppers Drug Mart / Loblaws Pharmacy.</strong> Download the <strong>PC Health</strong> app, or call 1-800-SHOPPERS to refill. Many locations offer automatic refills, where the pharmacist contacts you when your prescription is due.",
+      "<strong>Rexall.</strong> Download the <strong>Rexall</strong> app (iPhone or Android) and tap \"Refill Prescription\". Enter the Rx number printed on your medication label, or call your local Rexall directly.",
+      "<strong>Automatic refills.</strong> Ask your pharmacist to set up automatic refills on your regular medications. They will prepare them on schedule and call or text you when they are ready for pickup."
+    ] },
+    { "type": "paragraph", "text": "If you take several medications at different times of day, ask your pharmacist about a <strong>blister pack</strong>, sometimes called a Dosette. Your medications are sorted into individual compartments by day and time, making it much easier to track what you have taken. Automated pill dispensers (such as MedMinder) are also available and can send reminders to your phone." },
+    { "type": "paragraph", "text": "<strong>Ontario Drug Benefit (ODB).</strong> If you are 65 or older with a valid Ontario health card, you are eligible for the Ontario Drug Benefit programme. It covers many listed prescription drugs for a small co-payment of $6.11 per prescription (2026 rate). For questions about ODB coverage, call ServiceOntario at <strong>1-800-268-1154</strong>." },
+    { "type": "tip", "label": "Bring your medications to every appointment", "text": "Whether your appointment is in person or by video, keep an up-to-date written list of all your current medications, including dosages and the doctor who prescribed each one. This helps avoid accidental duplicate prescriptions and keeps all your healthcare providers informed." },
+
+    { "type": "heading", "level": 2, "text": "MyHealth Ontario" },
+    { "type": "paragraph", "text": "<strong>MyHealth Ontario</strong> (myhealth.ontario.ca) is the Ontario government's official health portal. It is free, secure, and works on any device. You can use it to:" },
+    { "type": "list", "items": [
+      "<strong>Access your COVID-19 vaccination record and QR code</strong>, useful proof of vaccination if requested by travel destinations, employers, or venues",
+      "<strong>View certain lab results</strong> from connected healthcare providers in Ontario",
+      "<strong>Download your immunisation history</strong>, a permanent record of the vaccines on file with the province",
+      "<strong>Store your proof of vaccination in your Wallet app</strong>, so you can tap and show instead of searching for a PDF"
+    ] },
+    { "type": "walkthrough", "title": "Creating your MyHealth Ontario account", "steps": [
+      "Go to <strong>myhealth.ontario.ca</strong> in your device's internet browser.",
+      "Tap <strong>Sign in</strong> and then <strong>Create account</strong>. First-time users verify their identity with their Ontario health card number and date of birth.",
+      "Once logged in, you can view and download your vaccination records, and save your QR code directly to your phone's Wallet app for easy access."
+    ] },
+    { "type": "tip", "label": "Not all labs are connected yet", "text": "Not every Ontario lab or clinic uploads results to MyHealth Ontario. Ask your family doctor which labs in your area are connected to the portal if you are not seeing your expected results." },
+
+    { "type": "heading", "level": 2, "text": "TELUS Health Virtual Pharmacy" },
+    { "type": "paragraph", "text": "TELUS Health offers a <strong>mail-order pharmacy service</strong> that delivers medications directly to your door anywhere in Ontario. This can be especially convenient if you have mobility challenges, live in a rural area, or simply prefer the ease of home delivery. The service offers:" },
+    { "type": "list", "items": [
+      "Prescription fills delivered to your home, at no delivery charge",
+      "Medication counselling by phone with a registered pharmacist",
+      "Automatic refills with advance notification before each fill",
+      "Simple management of multiple medications in one place"
+    ] },
+    { "type": "paragraph", "text": "To sign up, visit <strong>telus.com/virtual-care</strong> and create an account using your health card and your existing prescriptions. Your current pharmacy can transfer your prescriptions electronically. Most Ontario private insurance plans accept TELUS Health, and the Ontario Drug Benefit programme is accepted as well." },
+    { "type": "helper", "label": "A word on comfort", "text": "If you enjoy the relationship with your neighbourhood pharmacist, the friendly face who knows your name and your medications, there is no obligation to switch to a mail-order service. The virtual pharmacy is an option, not a requirement. Some people find it a relief; others prefer the in-person experience. Both are perfectly valid choices." },
+
+    { "type": "heading", "level": 2, "text": "Privacy and security for health portals" },
+    { "type": "paragraph", "text": "Your health information is among the most sensitive personal information you have. <strong>PHIPA</strong>, Ontario's Personal Health Information Protection Act, gives you specific rights over it. You have the right to:" },
+    { "type": "list", "items": [
+      "See your own health records held by any provider in Ontario",
+      "Request corrections to any errors in your records",
+      "Know who has accessed your health information",
+      "Withdraw consent for non-essential sharing of your information"
+    ] },
+    { "type": "walkthrough", "title": "Practical security steps", "steps": [
+      "<strong>Use a strong, unique password</strong> for each health portal. Never reuse the same password as your email or banking app.",
+      "<strong>Enable two-factor authentication</strong> wherever it is offered. On MyChart, Maple, or MyHealth Ontario, this means a code is sent to your phone each time you log in, an extra layer of protection even if someone learns your password.",
+      "<strong>Use the portal's secure messaging system</strong> for health questions, not regular email. Patient portal messages are encrypted and private. Standard email (Gmail, Yahoo, Hotmail) is not a secure way to share health information.",
+      "<strong>Be alert to suspicious emails.</strong> Ontario hospitals and provincial health systems will never ask for your health card number or personal details in an unsolicited email. If you receive such a message, do not reply and do not click any links."
+    ] },
+    { "type": "warning", "label": "If you believe your health privacy has been breached", "text": "Contact the <strong>Information and Privacy Commissioner of Ontario (IPC)</strong>: website <strong>ipc.on.ca</strong>, phone <strong>1-800-387-0073</strong>. The IPC is an independent office that oversees privacy rights in Ontario. Filing a complaint is free, and you do not need a lawyer." },
+
+    { "type": "heading", "level": 2, "text": "Try it yourself" },
+    { "type": "paragraph", "text": "The best way to feel comfortable with these tools is to try them. Here are four simple exercises to get started:" },
+    { "type": "list", "items": [
+      "<strong>Create a MyHealth Ontario account.</strong> Go to myhealth.ontario.ca, create a free account with your health card number and date of birth, then find your COVID-19 vaccination record and try saving the QR code to your phone's Wallet app.",
+      "<strong>Find your doctor's online booking page.</strong> Search your family doctor's clinic name online and see if their website has a \"Book Online\" or \"Request an Appointment\" option. Even if you do not book anything, you will know it is there for next time.",
+      "<strong>Download your pharmacy's app.</strong> If you use Shoppers Drug Mart, search for \"PC Health\" in the App Store or Google Play. If you use Rexall, search for \"Rexall\". Create an account and locate the \"Refill Prescription\" option, just so you know where it is.",
+      "<strong>Save the Ontario Telehealth number right now.</strong> Open the Contacts app on your phone and add a new contact named \"Ontario Telehealth Nurse\" with the number 1-866-797-0000. Having it saved means you will not need to search for it when you are feeling unwell."
+    ] },
+
+    { "type": "quiz", "heading": "Quick check: test your knowledge", "intro": "Tap the answer you think is correct. There is no score kept and nothing to sign in to.", "questions": [
+      { "q": "1. Telehealth allows you to:",
+        "options": ["Only refill prescriptions online", "See or speak with a healthcare provider by video or phone without travelling to a clinic", "Only communicate with your own family doctor", "Book in-person appointments faster"],
+        "correct": 1,
+        "right": "Exactly. Telehealth means receiving medical care from a distance, by phone or video, and it works with your own doctor as well as on-demand services.",
+        "wrong": "Telehealth means seeing or speaking with a healthcare provider by video or phone without travelling to a clinic. It covers much more than refills, and more providers than just your own doctor." },
+      { "q": "2. When is the Ontario Telehealth nurse line open?",
+        "options": ["Monday to Friday, 9 am to 5 pm", "24 hours a day, 7 days a week", "On weekends only", "Only during cold and flu season"],
+        "correct": 1,
+        "right": "Right. 1-866-797-0000 is answered by a registered nurse 24 hours a day, 7 days a week, 365 days a year, free with your Ontario health card.",
+        "wrong": "The nurse line is open 24 hours a day, 7 days a week, 365 days a year. That is what makes it so useful on evenings, weekends, and holidays." },
+      { "q": "3. Before a video appointment with your doctor, you should:",
+        "options": ["Call ahead to confirm your credit card is on file", "Test your camera and microphone, find a quiet space, and have your medications nearby", "Download a new app every time for security", "Ask a neighbour to sit with you"],
+        "correct": 1,
+        "right": "Perfect. A quick camera and microphone test, a quiet well-lit spot, and your health card and medication list ready make the appointment go smoothly.",
+        "wrong": "The best preparation is to test your camera and microphone, choose a quiet and well-lit space, and have your health card and medication list nearby." },
+      { "q": "4. A text from an unknown number says your doctor wants an immediate telehealth call. What should you do?",
+        "options": ["Join the call, doctors sometimes use new numbers", "Call your doctor's office on their known number to verify before joining", "Block the number immediately", "Forward the text to family to decide"],
+        "correct": 1,
+        "right": "Yes. Verify first. Call your doctor's office using the number you already know, and only join the call once they confirm it is real.",
+        "wrong": "The safe move is to call your doctor's office on their known number to verify before joining anything. A real clinic will be glad you checked." },
+      { "q": "5. Who does the Ontario Telehealth service cover?",
+        "options": ["All of Canada equally", "Ontario residents only", "Ontario and Quebec", "Ontario, British Columbia, and Alberta"],
+        "correct": 1,
+        "right": "Correct. The 1-866-797-0000 nurse line is an Ontario service, covered by your Ontario health card.",
+        "wrong": "The nurse line serves Ontario residents only. It is covered by your Ontario health card." }
+    ] },
+
+    { "type": "checklist", "heading": "Your progress", "intro": "Tick each item as you feel confident with it. This is saved on this device only, with no account needed.", "id": "module-15", "items": [
+      "I know which medical issues suit telehealth and which need an in-person visit",
+      "I know how to register for or access my hospital's patient portal (MyChart)",
+      "I can book a LifeLabs or Dynacare appointment online",
+      "I know how video doctor visits work and how to prepare for one",
+      "I have saved the Ontario Telehealth number (1-866-797-0000) in my contacts",
+      "I know how to request a prescription refill through a pharmacy app",
+      "I can access my vaccination record through MyHealth Ontario",
+      "I understand how the Ontario Drug Benefit programme helps cover my prescriptions",
+      "I know how to protect my privacy when using health apps and portals"
+    ] }
+  ],
+  "success_state": "<strong>Well done.</strong> You now know how to access your health records online, book lab and doctor appointments without waiting on hold, connect with a doctor by video, reach a free nurse any time of day or night, manage your prescriptions through an app, and protect your health information. Healthcare has come to your home, and you know how to use it.",
+  "related": {
+    "heading": "Where to next",
+    "note": "You are viewing the new design. Lessons marked as opening the original site are unchanged there, and will move to the new design as it is rolled out.",
+    "cards": [
+      { "num": "Module 6", "name": "Banking and Transactions", "desc": "Paying for prescriptions or health services online uses the same safe payment habits from the Banking lesson.", "href": "module-6.html", "external": false },
+      { "num": "Module 3", "name": "Passwords", "desc": "Your health portal contains sensitive personal information. Protect it with a strong, unique password.", "href": "../../module-3.html", "external": true }
+    ]
+  }
+}
