@@ -1,0 +1,141 @@
+{
+  "id": "module-6",
+  "slug": "module-6",
+  "page_title": "Banking and Transactions - Digital Confidence Centre",
+  "title": "Banking and Transactions",
+  "description": "How to check your balance, pay bills, and shop safely online, all from your device. Free, plain-language lesson for Canadian seniors. No account needed.",
+  "category": "Banking",
+  "category_icon": "🏦",
+  "lesson_time": "About 15 minutes, at your own pace",
+  "lead": "How to check your balance, pay bills, and make safe purchases online, all from your own device.",
+  "nav_current": "../index.html#protect-money",
+  "breadcrumb_group_label": "Protect your money",
+  "breadcrumb_group_anchor": "../index.html#protect-money",
+  "story": {
+    "label": "Jean's story",
+    "paragraphs": [
+      "Jean, 73, had been driving to her local bank branch every Friday to check her account balance. Rain, snow, construction, it did not matter. She trusted the bank teller and she trusted the printed receipt.",
+      "Then the pandemic changed everything. The branch limited hours, the lineups were long, and Jean's daughter suggested she try mobile banking. \"I was terrified,\" Jean recalls. \"What if someone stole my money through the phone? What if I pressed the wrong button and accidentally sent my savings somewhere?\"",
+      "Jean's daughter sat with her and walked her through the RBC app. They checked her balance together. They looked at recent transactions. Jean realised that everything she could see at the bank counter, she could see on her iPad, without leaving her kitchen.",
+      "\"I still go to the branch sometimes,\" Jean says with a smile. \"But now it is because I want to, not because I have to. And I check my balance every morning with my coffee.\""
+    ]
+  },
+  "coach": "Online banking is the topic where almost everyone feels the most fear, and that fear makes sense, because it is your money. But consider this: banks have spent decades and billions of dollars protecting these systems, and you have legal protections if something ever goes wrong. Being careful is wise. Being afraid is optional.",
+  "sections": [
+    { "type": "heading", "level": 2, "text": "Why online banking is safer than you think" },
+    { "type": "paragraph", "text": "This might surprise you, but online banking through your bank's official app is extremely secure. Here is why:" },
+    { "type": "list", "items": [
+      "<strong>Bank apps use encryption.</strong> Encryption scrambles your information so that even if someone intercepted it, they would see only nonsense. It is like writing a letter in a secret code that only you and the bank know.",
+      "<strong>Your bank monitors for unusual activity.</strong> If someone tries to log in from an unfamiliar location or make an unusual purchase, your bank's security systems flag it immediately.",
+      "<strong>Face ID adds another layer.</strong> If you set up Face ID or a fingerprint, no one can open your banking app without you.",
+      "<strong>Canadian banks carry deposit insurance.</strong> The Canada Deposit Insurance Corporation (CDIC) protects your deposits up to $100,000. Even in the unlikely event something went wrong, your money is protected."
+    ] },
+    { "type": "helper", "label": "Reassuring fact", "text": "Banks spend billions of dollars on security every year. The security systems protecting your online banking are the same ones protecting the bank itself. When you use the official app, you are behind the same walls as the bank's own vault." },
+    { "type": "helper", "label": "Confidence check", "text": "Online banking is not a risk, it is a well-guarded service. You deserve the convenience of checking your accounts from home." },
+    { "type": "warning", "label": "Watch out", "text": "Your bank will never phone, email, or text you to ask for your password, PIN, or security questions. If someone contacts you claiming to be from your bank and asks for this information, hang up or delete the message immediately. Then call your bank directly using the number on the back of your bank card." },
+
+    { "type": "heading", "level": 2, "text": "Getting your bank's real app" },
+    { "type": "paragraph", "text": "The most important step is downloading the <strong>real</strong> app from the <strong>real</strong> App Store or Google Play Store." },
+    { "type": "walkthrough", "title": "Downloading your bank's app", "steps": [
+      "Open the <strong>App Store</strong> (blue icon with a white \"A\") or the <strong>Google Play Store</strong> (colourful triangle icon).",
+      "Tap <strong>Search</strong> and type your bank's name. For example: \"RBC Mobile\", \"TD Canada Trust\", or \"BMO\".",
+      "<strong>Verify the developer.</strong> The real RBC app is made by \"Royal Bank of Canada\". The real TD app is made by \"TD Bank Group\". Look for the official name.",
+      "Check the ratings. Official bank apps have millions of downloads and high ratings.",
+      "Tap <strong>Get</strong> or <strong>Install</strong> and confirm with Face ID, your fingerprint, or your screen lock."
+    ] },
+    { "type": "tip", "label": "On a Windows computer", "text": "You do not need to install an app. Open Edge or Chrome, type your bank's web address directly into the address bar (for example rbc.com or td.com), then save it as a bookmark by pressing Ctrl and D. From then on, always open your banking website from that bookmark, never from a link in an email or text." },
+    { "type": "warning", "label": "Critical safety rule", "text": "Never log into your bank through a link in an email, a text message, or a website someone sent you. Always open the banking app directly from your Home screen, or type the bank's web address yourself. This is the single most important habit to protect yourself from banking scams." },
+    { "type": "warning", "label": "Watch out", "text": "Be careful when searching for your bank's app. Scammers sometimes create fake banking apps with similar names. Always check the developer name. It should match your bank's official name, for example \"Royal Bank of Canada\" for RBC." },
+
+    { "type": "heading", "level": 2, "text": "Checking your balance" },
+    { "type": "walkthrough", "title": "Viewing your account balance", "steps": [
+      "Open your <strong>banking app</strong> from the Home screen, or on a computer open your bank's bookmark and click <strong>Sign In</strong>.",
+      "Sign in with your username and password, or use <strong>Face ID</strong> or your <strong>fingerprint</strong> if you have set it up.",
+      "Your account balances will appear on the main screen. You will see your chequing account, savings account, and any credit cards.",
+      "Tap on any account to see <strong>recent transactions</strong>, a list of money going in and out.",
+      "When you are done, <strong>sign out</strong> (look for a \"Sign Out\" or \"Log Out\" button, usually in the menu) and close the app."
+    ] },
+    { "type": "tip", "label": "Good habit: always sign out", "text": "Always sign out when you finish your online banking session, especially on a shared or family computer. Simply closing the window is not enough. Signing out makes sure no one else can reach your account if they open the browser later." },
+    { "type": "three_second_rule", "heading": "The 3-second rule for banking", "steps": [
+      { "icon": "✋", "name": "Stop", "text": "Never rush a financial transaction. There is no deadline." },
+      { "icon": "🫁", "name": "Breathe", "text": "Double-check amounts and recipients before confirming." },
+      { "icon": "🔍", "name": "Verify", "text": "Does this look right? Is this the correct amount and the right person?" }
+    ] },
+
+    { "type": "heading", "level": 2, "text": "Paying bills online" },
+    { "type": "paragraph", "text": "Most Canadian banks let you pay bills such as hydro, internet, phone, and property tax directly through the app. The process varies by bank, but here is the general approach." },
+    { "type": "walkthrough", "title": "Paying a bill", "steps": [
+      "Sign into your banking app.",
+      "Look for <strong>Pay Bills</strong> or <strong>Bill Payment</strong> in the menu.",
+      "Select the company you want to pay. If it is your first time, you may need to add the company and enter your account number from your paper bill.",
+      "Enter the <strong>amount</strong> you want to pay.",
+      "Choose which account to pay from, usually your chequing account.",
+      "<strong>Review everything carefully</strong> before tapping Confirm or Pay."
+    ] },
+    { "type": "tip", "label": "Helpful hint", "text": "If you are nervous about paying a bill online for the first time, start with a small amount, like paying $10 toward your phone bill. Watch for the payment to appear on your next statement. Once you see it worked, you will feel confident paying the full amount." },
+
+    { "type": "heading", "level": 2, "text": "Safe online shopping" },
+    { "type": "paragraph", "text": "Buying things online can be safe and convenient if you follow a few simple guidelines." },
+    { "type": "list", "items": [
+      "<strong>Stick to well-known stores.</strong> Amazon.ca, Walmart.ca, Canadian Tire, and other large retailers have strong security.",
+      "<strong>Look for the padlock icon.</strong> In your browser's address bar, you should see a small padlock before the web address. This means the connection is secure and encrypted.",
+      "<strong>Use Apple Pay or Google Wallet when you can.</strong> These do not share your actual credit card number with the store. They use a special one-time code instead, which is safer than typing your card number.",
+      "<strong>Use a credit card, not your debit card.</strong> Credit cards have stronger fraud protection. If something goes wrong, your bank can reverse the charge.",
+      "<strong>Be cautious with unfamiliar websites.</strong> If you find a deal on a website you have never heard of, search for reviews of that store first.",
+      "<strong>Save your receipts.</strong> Your email will receive a receipt after each purchase. Keep these for your records."
+    ] },
+    { "type": "walkthrough", "title": "Setting up Apple Pay or Google Wallet", "steps": [
+      "On an iPhone or iPad, open <strong>Settings</strong> and tap <strong>Wallet &amp; Apple Pay</strong>. On Android, open the <strong>Google Wallet</strong> app.",
+      "Tap <strong>Add Card</strong> or <strong>Add to Wallet</strong>.",
+      "Hold your credit card in front of the camera so it reads the numbers automatically, or type them in by hand.",
+      "Your bank will verify the card. This may take a moment, or you may need to confirm by text message.",
+      "Once verified, you can pay wherever you see the Apple Pay or Google Pay symbol, both online and in stores."
+    ] },
+    { "type": "tip", "label": "How to tell if a website is safe", "text": "Before entering any payment information, look at the web address at the top of the browser. It should start with https, where the \"s\" stands for secure, and you should see the padlock icon. If the padlock is missing or there is a warning message, close the website immediately and do not enter any information." },
+    { "type": "warning", "label": "Red flags when shopping online", "text": "Never buy from a website that asks you to pay by wire transfer or gift cards, has prices that seem too good to be true (a $1,200 iPad for $99), has no contact information or physical address, or has a web address that looks misspelled or strange." },
+
+    { "type": "quiz", "heading": "Quick check: test your knowledge", "intro": "Tap the answer you think is correct. There is no score kept and nothing to sign in to.", "questions": [
+      { "q": "1. What is the safest way to check your bank balance?",
+        "options": ["Search for your bank on Google and click the top result", "Type your bank's web address directly into the address bar, or open your official app", "Open the link your bank sent you by email", "Use a banking app someone installed on your phone for you"],
+        "correct": 1,
+        "right": "Exactly. Type the address yourself or use your saved bookmark or official app. That way you always reach the real bank, never a fake copy.",
+        "wrong": "The safest way is to type your bank's web address directly, or open your official app. Never reach your bank through a link someone sent you." },
+      { "q": "2. You receive an e-Transfer from someone you do not know. What should you do?",
+        "options": ["Accept it, unexpected money is not a scam", "Decline it, accepting unknown e-Transfers can link your account to a scam", "Accept it and then report it to police", "Forward it to a family member to decide"],
+        "correct": 1,
+        "right": "Right. Decline e-Transfers from people you do not know. Accepting an unexpected one can link your account to a scam.",
+        "wrong": "The safe move is to decline it. An unexpected e-Transfer from a stranger can be part of a scam." },
+      { "q": "3. Which of these should you NEVER share with anyone who contacts you?",
+        "options": ["Your postal code", "Your banking password or PIN", "Your province of residence", "Your first name"],
+        "correct": 1,
+        "right": "Correct. Your banking password or PIN is never shared with anyone, and your bank will never ask you for it.",
+        "wrong": "The answer is your banking password or PIN. Your bank will never ask for it, and no caller should either." },
+      { "q": "4. Your bank calls and asks you to confirm your account number to verify your identity. What do you do?",
+        "options": ["Provide it, they are your bank and need to verify you", "Hang up and call the number on the back of your bank card", "Give only the last 4 digits", "Ask them to email you instead"],
+        "correct": 1,
+        "right": "Perfect. Hang up and call the number on the back of your card. That way you know you are really speaking with your bank.",
+        "wrong": "Hang up and call the number on the back of your bank card. A real bank is happy for you to call them back to be sure." },
+      { "q": "5. What does the padlock icon in your browser's address bar tell you?",
+        "options": ["The website is owned by the government", "Your connection to the site is encrypted, so your data is harder to intercept", "The site has been checked for scams", "You are signed in safely"],
+        "correct": 1,
+        "right": "Yes. The padlock means your connection is encrypted, so the information you send is scrambled and much harder for anyone to intercept.",
+        "wrong": "The padlock tells you your connection is encrypted, so the information you send is scrambled. It does not by itself prove the site is honest, so still check the address." }
+    ] },
+
+    { "type": "checklist", "heading": "Your progress", "intro": "Tick each item as you feel confident with it. This is saved on this device only, with no account needed.", "id": "module-6", "items": [
+      "I can download my bank's official app and check the developer name",
+      "I know to reach my bank only through the app or a typed address, never a link",
+      "I can sign in, check my balance, and sign out again",
+      "I can pay a bill online and review it before confirming",
+      "I know the safety signs to look for when shopping online"
+    ] }
+  ],
+  "success_state": "<strong>Well done.</strong> You can now log into your banking app, check your balance, review transactions, pay bills, and shop online, all without anxiety. You know the safety rules that keep your money protected.",
+  "related": {
+    "heading": "Where to next",
+    "cards": [
+      { "num": "Module 5", "name": "Email and Messages", "desc": "Many banking scams begin with a fake email or text. Learn to spot them before any money moves.", "href": "module-5.html", "external": false },
+      { "num": "Module 7", "name": "Photos and Memories", "desc": "Now for the joyful side of your device: taking, editing, and sharing photos with the people you love.", "href": "module-7.html", "external": false }
+    ]
+  }
+}

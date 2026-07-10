@@ -1,0 +1,242 @@
+{
+  "id": "module-14",
+  "slug": "module-14",
+  "page_title": "Smart Home Basics - Digital Confidence Centre",
+  "title": "Smart Home Basics",
+  "description": "Understand smart home devices at your own pace: thermostats, video doorbells, voice assistants, smart lighting, and smart plugs, plus how to protect your privacy and decide what is right for your home. A free lesson for Canadian seniors, no account needed.",
+  "category": "Smart home",
+  "category_icon": "🏠",
+  "lesson_time": "About 30 minutes, at your own pace",
+  "lead": "What smart home devices are, which ones are genuinely useful, and how to decide what is right, or not right, for your home.",
+  "nav_current": "../index.html#everyday-confidence",
+  "breadcrumb_group_label": "Everyday confidence",
+  "breadcrumb_group_anchor": "../index.html#everyday-confidence",
+  "story": {
+    "label": "Robert's story",
+    "paragraphs": [
+      "Robert, 77, lives on his own in Woodstock, Ontario. His family had one persistent worry every winter: his old furnace, and whether Robert would remember to turn the heat down at night, or notice if it stopped working while he slept.",
+      "His son-in-law suggested a Nest smart thermostat. Robert was sceptical. \"My thermostat works fine,\" he said. But he agreed to try it for a month. Within three weeks, his heating bill dropped by $40. He could check the temperature in his house from his phone while visiting his sister in London. And the app quietly alerted his son-in-law when the temperature dropped unexpectedly at 2am one February night, which turned out to be a faulty furnace igniter, caught before any pipes froze.",
+      "\"I was not looking for a smart home,\" Robert says now. \"But I found one device that actually makes a difference for me. The rest I leave well alone.\" That is the right approach. This module shows you what is available, what is genuinely useful, and how to make your own informed decision."
+    ]
+  },
+  "coach": "A house that listens to your voice can feel wonderful or unsettling, sometimes both in the same afternoon. Both reactions are sensible. Smart home devices only do what they are set up to do, and this lesson shows you exactly what that is, so the technology in your home answers to you and not the other way around.",
+  "sections": [
+    { "type": "heading", "level": 2, "text": "What are smart home devices?" },
+    { "type": "paragraph", "text": "A smart home device is any household device that connects to your home Wi-Fi and can be controlled from a phone, tablet, or your voice. That is the whole definition. There is nothing magical about the word \"smart\". It simply means it uses the internet to do things a regular device cannot." },
+    { "type": "list", "items": [
+      "<strong>Smart thermostat:</strong> controls heating and cooling. Learns your schedule and saves energy automatically.",
+      "<strong>Video doorbell:</strong> shows you who is at your door on your phone, even when you are not home.",
+      "<strong>Voice assistant:</strong> a speaker you talk to. Sets reminders, plays music, answers questions, makes calls.",
+      "<strong>Smart lighting:</strong> control lights from your phone or voice. Set schedules, dim levels, or sunrise alarms.",
+      "<strong>Smart plug:</strong> plug it into any wall outlet. Makes any device, a lamp, coffee maker, or fan, controllable by phone."
+    ] },
+    { "type": "heading", "level": 3, "text": "The one thing they all need" },
+    { "type": "paragraph", "text": "Every smart home device needs your home Wi-Fi password to set up. If you do not have reliable home Wi-Fi, smart devices will not work well. That is the first and most important question to ask yourself." },
+    { "type": "tip", "label": "An important truth", "text": "Smart home devices are <strong>completely optional</strong>. Your home works perfectly fine without any of them. These are tools that <em>might</em> make certain things easier or safer. Whether that tradeoff is worth it depends entirely on your situation, and you are the only one who can decide that." },
+    { "type": "heading", "level": 3, "text": "When it makes sense, and when it does not" },
+    { "type": "list", "items": [
+      "<strong>Good candidate:</strong> you have reliable home Wi-Fi, you are comfortable using a phone app, and there is something specific you would like to make easier (like remembering to turn down the heat).",
+      "<strong>Good candidate:</strong> accessibility, such as controlling lights without getting up, making calls hands-free, or having family check in remotely if you want that.",
+      "<strong>Not the right fit yet:</strong> your Wi-Fi is unreliable or you do not have it at home.",
+      "<strong>Not the right fit:</strong> you are not comfortable with apps and do not have someone to help you get set up.",
+      "<strong>Start small:</strong> one smart plug costs $15 to $20 and can be fully disconnected in seconds. It is the safest way to try the technology without commitment."
+    ] },
+
+    { "type": "heading", "level": 2, "text": "Smart thermostats (Nest, Ecobee)" },
+    { "type": "paragraph", "text": "A smart thermostat replaces your existing wall thermostat. It does the same job, controlling your heating and air conditioning, but adds useful features: it learns your schedule, adjusts itself automatically, and lets you control the temperature from your phone anywhere in the world." },
+    { "type": "heading", "level": 3, "text": "How you control it" },
+    { "type": "list", "items": [
+      "<strong>The wall unit:</strong> has a small screen, just like a regular thermostat. You can use it exactly the same way. No phone required for basic use.",
+      "<strong>The phone app:</strong> lets you adjust the temperature from anywhere, check if you left the heat on, or set \"Away\" mode before a trip.",
+      "<strong>Voice:</strong> if you have a voice assistant (Alexa or Google Home), you can say \"Alexa, set the temperature to 21 degrees\"."
+    ] },
+    { "type": "tip", "label": "Ontario energy rebates", "text": "<strong>Enbridge Gas Home Efficiency Rebate programme:</strong> eligible customers may receive up to <strong>$250</strong> rebate when upgrading to a qualifying smart thermostat. Visit enbridgegas.com/rebates or call Enbridge to confirm current eligibility. <strong>Hydro One</strong> offers rebates on smart thermostats, especially for heat pump systems; visit hydroone.com and search \"smart thermostat rebate\". Rebate programmes change annually, so always confirm eligibility before purchasing, and bring your receipt, as most rebates are applied after installation." },
+    { "type": "heading", "level": 3, "text": "Privacy: what does a smart thermostat know?" },
+    { "type": "paragraph", "text": "Smart thermostat companies do collect data, specifically whether you are home or away (based on temperature patterns and motion sensors), and your heating and cooling habits. This data is used to make energy-saving recommendations and improve the product. It is not sold to advertisers in personally identifiable form, but the data does leave your home." },
+    { "type": "tip", "label": "Winter safety tip: away mode", "text": "When you leave home for more than a day, set your thermostat to \"Away\" mode (typically 15 to 17 degrees Celsius). This lowers your heating bill while ensuring your pipes cannot freeze. <strong>Never set your home below 15 degrees Celsius in an Ontario winter</strong>, as frozen pipes are an expensive repair. Smart thermostats handle this automatically once you configure it." },
+    { "type": "heading", "level": 3, "text": "Installation" },
+    { "type": "list", "items": [
+      "<strong>Do it yourself:</strong> most smart thermostats replace a standard thermostat using just a screwdriver. Each comes with clear instructions and a video tutorial walkthrough. Takes about 30 minutes.",
+      "<strong>Professional installation:</strong> an electrician will typically charge $75 to $150 for the job. Well worth it if you prefer not to do it yourself.",
+      "<strong>Where to buy:</strong> Canadian Tire, Home Depot, and Best Buy all carry Nest and Ecobee thermostats. Staff can advise which model suits your heating system."
+    ] },
+
+    { "type": "heading", "level": 2, "text": "Video doorbells (Ring, Nest, Arlo)" },
+    { "type": "paragraph", "text": "A video doorbell replaces or supplements your existing doorbell. When someone rings it, or even just walks up to your door, it sends a notification to your phone with a live video feed. You can see and speak to whoever is there, whether you are in the next room or on the other side of the country." },
+    { "type": "heading", "level": 3, "text": "Why seniors find this useful" },
+    { "type": "list", "items": [
+      "See delivery drivers and confirm your parcel has arrived, without getting up.",
+      "Verify who is at the door before opening it, especially for unexpected visitors.",
+      "Deter \"porch pirates\", as package theft drops significantly when a visible camera is present.",
+      "Let family check in remotely: \"Mum, I can see you are home, did you get the groceries I ordered?\""
+    ] },
+    { "type": "walkthrough", "title": "How it works", "steps": [
+      "The doorbell detects motion or is pressed, then sends a notification to your phone.",
+      "You tap the notification and see a live video of your doorstep.",
+      "Optional: speak through the app. Your voice comes out of the doorbell's speaker, and you hear the visitor through your phone.",
+      "Video is saved to a cloud account (usually requires a monthly subscription for saved recordings)."
+    ] },
+    { "type": "warning", "label": "Privacy consideration: your neighbours", "text": "Video doorbells capture more than just your front step. They can record neighbours' driveways, the public sidewalk, or parts of adjacent properties. In Ontario, there is no explicit law against recording public areas from your own property, <strong>but you must not record into someone's home, yard, or private space</strong>. Point your camera only at your own entryway. If a neighbour raises a concern, take it seriously." },
+    { "type": "heading", "level": 3, "text": "Subscription costs (Canadian)" },
+    { "type": "list", "items": [
+      "<strong>Ring Basic plan:</strong> approximately $4.99 per month (Canadian) for video history. Without a subscription, you can see the live view but recordings are not saved.",
+      "<strong>Google Nest Doorbell:</strong> works with the Google Home app; some video history is included free, and extended history requires a Google One subscription.",
+      "<strong>Arlo Essential:</strong> the free tier includes limited cloud storage; the Arlo Secure plan is approximately $4.99 per month (Canadian) for more history."
+    ] },
+    { "type": "heading", "level": 3, "text": "Installation" },
+    { "type": "list", "items": [
+      "<strong>Wired models:</strong> replace your existing doorbell wiring. Most are friendly to do yourself if you are comfortable with simple electrical work.",
+      "<strong>Battery-powered models:</strong> no wiring required. Mount with screws, and charge the battery every few months.",
+      "<strong>Geek Squad (Best Buy):</strong> offers in-home doorbell installation. Visit bestbuy.ca for Ontario locations and current pricing."
+    ] },
+
+    { "type": "heading", "level": 2, "text": "Voice assistants (Alexa, Google Home, Siri)" },
+    { "type": "paragraph", "text": "A voice assistant is a small speaker or device that you talk to using natural language. You ask it a question, give it a command, or ask it to do something, and it responds. No typing. No tapping menus. Just your voice." },
+    { "type": "heading", "level": 3, "text": "What seniors use them for" },
+    { "type": "list", "items": [
+      "<strong>Medication reminders:</strong> \"Alexa, set a reminder to take my blood pressure medication every morning at 8am.\" Alexa says \"Reminder!\" aloud at 8am every day.",
+      "<strong>Hands-free calling:</strong> \"Hey Google, call Margaret.\" It dials Margaret's number without you needing to find your phone.",
+      "<strong>Weather check:</strong> \"Siri, what is the weather today in St. Thomas?\" It answers immediately, without opening an app.",
+      "<strong>Radio and music:</strong> \"Alexa, play CBC Radio One.\" It streams live radio through the speaker. Great while cooking or getting ready in the morning.",
+      "<strong>Light control (if smart bulbs installed):</strong> \"Hey Google, turn off the kitchen light.\" It works without getting up, especially helpful at night."
+    ] },
+    { "type": "heading", "level": 3, "text": "The three main platforms" },
+    { "type": "list", "items": [
+      "<strong>Amazon Alexa (Echo devices):</strong> the widest selection of devices at different price points. Works well as a standalone device or alongside other smart home equipment. Sold at Canadian Tire, Best Buy, and Costco.",
+      "<strong>Google Home (Nest Audio, Nest Mini):</strong> excellent at answering general questions and integrating with Google Calendar, Gmail, and Google Maps. Sold at Best Buy and Walmart.",
+      "<strong>Apple HomePod and Siri:</strong> the best choice if you already use an iPhone or iPad heavily. Works seamlessly with Apple devices but is less compatible with non-Apple smart home products."
+    ] },
+    { "type": "warning", "label": "The always-listening question", "text": "Yes, voice assistants are always listening for their wake word (\"Alexa\", \"Hey Google\", or \"Hey Siri\"). The companies state that recordings only begin <em>after</em> the wake word is detected, and that audio is processed on their servers to generate a response. False activations do occur occasionally. To mute: every device has a physical mute button on top or the side. When muted, the microphone is physically disconnected, and a red light or indicator confirms this. Use the mute button during private conversations, medical appointments on the phone, or any time you prefer not to be heard. If privacy is a significant concern for you, a voice assistant may not be the right fit, and that is a completely reasonable conclusion." },
+
+    { "type": "heading", "level": 2, "text": "Smart lighting (Philips Hue, LIFX)" },
+    { "type": "paragraph", "text": "Smart lighting means light bulbs, and sometimes light switches, that you can control with your phone or voice, rather than only by the wall switch. The bulbs screw into your regular light sockets. No rewiring required." },
+    { "type": "heading", "level": 3, "text": "Why this can be genuinely useful" },
+    { "type": "list", "items": [
+      "<strong>Accessibility:</strong> no more getting up in the dark to flip a switch. Control any light from your phone or voice while staying in your chair or bed.",
+      "<strong>Morning routine:</strong> set lights to gradually brighten in the bedroom starting at 6:30am, a gentler wake-up than an alarm.",
+      "<strong>Schedules:</strong> \"Living room lights on at 6pm, off at 10pm.\" Set it once and it runs automatically every day.",
+      "<strong>Away mode:</strong> while on holiday, randomise lights to turn on and off at varied times, simulating occupancy to deter break-ins."
+    ] },
+    { "type": "heading", "level": 3, "text": "Cost (Canadian)" },
+    { "type": "list", "items": [
+      "Individual smart bulbs: approximately $20 to $50 each (Canadian Tire, IKEA, Best Buy).",
+      "Starter kits (hub plus 3 bulbs): approximately $80 to $150.",
+      "IKEA TRADFRI: a budget-friendly option available in London, Hamilton, and Toronto IKEA stores."
+    ] },
+    { "type": "tip", "label": "Start with just one", "text": "Before committing to smart lighting throughout your home, buy a single smart plug or one smart bulb and live with it for two weeks. You will quickly know whether the convenience is worth it for you, and whether the app feels manageable. One bulb is a very low-risk experiment." },
+
+    { "type": "heading", "level": 2, "text": "Smart plugs, the best place to start" },
+    { "type": "paragraph", "text": "If you want to try smart home technology for the first time, start here. A smart plug is a small device you plug into your existing wall outlet. Anything you then plug into the smart plug becomes \"smart\", controllable by your phone or voice." },
+    { "type": "paragraph", "text": "There is no installation. No wiring. No electrician. You plug it in, download a free app, and you are done." },
+    { "type": "heading", "level": 3, "text": "What you can do with one" },
+    { "type": "list", "items": [
+      "<strong>Coffee maker:</strong> set it to turn on at 7am every morning. Wake up to fresh coffee already brewed, without touching any buttons.",
+      "<strong>Floor lamp:</strong> set it to turn on at sunset and off at 10:30pm. The lamp follows the season automatically, with no adjusting the schedule as daylight hours change.",
+      "<strong>Holiday lights:</strong> on at 5pm, off at 11pm, every night from December 1st through January 2nd. Set it once and forget it.",
+      "<strong>Fan:</strong> automatically turns off at midnight so you do not have to get up to switch it off after falling asleep in your chair.",
+      "<strong>Heating pad or electric blanket:</strong> set a timer so it warms your bed before you go to sleep, then shuts off automatically after 30 minutes."
+    ] },
+    { "type": "heading", "level": 3, "text": "Cost and where to buy (Canadian)" },
+    { "type": "list", "items": [
+      "Approximately $15 to $35 per plug at Canadian Tire, Best Buy, and Walmart.",
+      "<strong>Amazon Smart Plug:</strong> works directly with Alexa voice commands.",
+      "<strong>Google Nest Plug:</strong> works directly with Google Home voice commands.",
+      "<strong>TP-Link Kasa Smart Plug:</strong> works with both Alexa and Google Home; good reviews for reliability; widely available at Canadian Tire."
+    ] },
+    { "type": "walkthrough", "title": "Step-by-step setup", "steps": [
+      "Plug the smart plug into any wall outlet in your home.",
+      "On your phone, go to the App Store (iPhone or iPad) or Google Play Store (Android) and download the brand's app (for example \"Kasa Smart\" for TP-Link, or \"Amazon Alexa\" for Amazon plugs).",
+      "Open the app and tap \"Add a device\" or the + button. It will search for your new plug automatically.",
+      "When prompted, enter your home Wi-Fi password. The plug connects to your network.",
+      "Give the plug a name, for example \"Coffee Maker\" or \"Bedroom Lamp\". Use a name that is easy to remember and say aloud.",
+      "Tap \"Schedule\" to set times for the plug to turn on and off automatically. Save the schedule.",
+      "Test it: tap the on and off button in the app. Watch the plug's indicator light change. You are done."
+    ] },
+    { "type": "helper", "label": "You can undo this at any time", "text": "If you decide a smart plug is not for you, unplug it and go back to using the outlet normally. Nothing permanent changes in your home." },
+
+    { "type": "heading", "level": 2, "text": "Safety and privacy" },
+    { "type": "paragraph", "text": "Smart home devices are only as secure as your home Wi-Fi. If someone could access your Wi-Fi network, they could potentially control your devices. This section explains how to keep things safe, without needing to become a technology expert." },
+    { "type": "heading", "level": 3, "text": "Securing your Wi-Fi" },
+    { "type": "list", "items": [
+      "<strong>Use a strong Wi-Fi password:</strong> not your address, birthday, or the word \"password\". A strong password uses a mix of letters, numbers, and symbols (at least 12 characters). Your internet provider set a default password; write it down and keep it somewhere safe.",
+      "<strong>Change the default router password:</strong> your router (the box that provides your Wi-Fi) has its own admin password, separate from your Wi-Fi password. Check the bottom of your router for the default, and change it to something unique if you can. Your internet provider's help line can walk you through this.",
+      "<strong>WPA2 or WPA3 encryption:</strong> your Wi-Fi should be set to WPA2 or WPA3 security (not the older WEP). Most routers made after 2015 default to WPA2 or better. Check with your internet provider if you are unsure."
+    ] },
+    { "type": "heading", "level": 3, "text": "Guest networks, a smart layer of protection" },
+    { "type": "paragraph", "text": "Most modern routers can create a separate \"guest Wi-Fi\" network. The idea is to put your smart home devices on the guest network, and keep your main devices (laptop, phone, iPad) on the primary network. This way, if a smart device is ever compromised, it cannot reach your important personal devices." },
+    { "type": "paragraph", "text": "Ask your internet provider or a family member to help set up a guest network. It is usually one setting in the router's administration panel." },
+    { "type": "heading", "level": 3, "text": "What data do smart home devices collect?" },
+    { "type": "list", "items": [
+      "<strong>Smart thermostat (moderate):</strong> learns when you are home or away, and your energy usage patterns.",
+      "<strong>Video doorbell (higher):</strong> video recordings of visitors, motion events, and facial recognition on some models.",
+      "<strong>Voice assistant (higher):</strong> voice commands recorded after the wake word, questions asked, and connected device states.",
+      "<strong>Smart lighting (lower):</strong> when lights are on or off, and the schedules you set.",
+      "<strong>Smart plug (lower):</strong> when the device is on or off, and energy usage on some models."
+    ] },
+    { "type": "tip", "label": "Your decision framework", "text": "Before adding any smart device, ask yourself: <strong>\"What data am I comfortable sharing in exchange for this convenience?\"</strong> A smart plug that tells a company when your coffee maker turns on feels very different from a voice assistant that records everything you say near it. Both tradeoffs are real. Neither is automatically wrong. It is your choice to make." },
+    { "type": "heading", "level": 3, "text": "When and how to deactivate a smart device" },
+    { "type": "paragraph", "text": "Unlike traditional appliances, smart home devices can be completely deactivated at any time:" },
+    { "type": "list", "items": [
+      "To stop a <strong>smart plug</strong> from collecting data: unplug it. Done.",
+      "To stop a <strong>voice assistant</strong> from listening: press the physical mute button (the mic turns off and a red light comes on), or unplug the device entirely.",
+      "To delete your <strong>voice history</strong> from Amazon Alexa: open the Alexa app, then More, then Settings, then Alexa Privacy, then Review Voice History, then Delete All Recordings.",
+      "To delete your <strong>voice history</strong> from Google Home: open the Google Home app, then Account, then My Activity, filter by Google Assistant, then Delete."
+    ] },
+
+    { "type": "heading", "level": 2, "text": "Practice scenario: should you buy a smart thermostat?" },
+    { "type": "paragraph", "text": "Ask yourself these four questions:" },
+    { "type": "list", "items": [
+      "Do you have reliable home Wi-Fi? If not, a smart thermostat is not recommended yet; contact your internet provider first.",
+      "Do you have a rough idea of your current monthly heating bill? If not, check your Enbridge or Hydro One bill for 2 to 3 months first, so you can measure any savings.",
+      "Are you comfortable using a simple phone app, like the Weather app? If not, consider having a family member set it up and manage the app for you, or wait until you feel more comfortable with apps.",
+      "Do you have someone who can help install it (or $75 to $150 for an electrician)? If not, check whether your furnace installer or heating company includes installation, as some do."
+    ] },
+    { "type": "helper", "label": "Good to know", "text": "If you answered yes to all four, you are a strong candidate. Check Enbridge and Hydro One rebates first, as you may get $100 to $250 back on the purchase." },
+
+    { "type": "quiz", "heading": "Quick check: test your knowledge", "intro": "Tap the answer you think is correct. There is no score kept and nothing to sign in to.", "questions": [
+      { "q": "1. What does a smart speaker's wake word actually mean?",
+        "options": ["It is always recording and sending everything", "It only sends data when the wake word is detected", "It only works when connected to your TV"],
+        "correct": 1,
+        "right": "Right. Recordings only begin after the wake word is detected, and you can mute the microphone any time.",
+        "wrong": "Not quite. The device listens for its wake word and only sends data once that word is detected. You can also mute it with the physical button." },
+      { "q": "2. You get an email saying your smart home device was hacked, with a link to fix it. What should you do?",
+        "options": ["Click the link immediately", "Delete the email and check only through the official app", "Unplug and dispose of the device"],
+        "correct": 1,
+        "right": "Exactly. Never click a link in an alarming email. Check the status yourself in the device's official app.",
+        "wrong": "The safe move is to delete the email and check the device only through its official app, never a link in a message." },
+      { "q": "3. What is a good reason to use a smart doorbell camera?",
+        "options": ["It automatically locks your door", "You can see who is at your door from your phone, even when away", "It calls 911 automatically"],
+        "correct": 1,
+        "right": "Perfect. A video doorbell lets you see and speak to whoever is at your door from your phone.",
+        "wrong": "The real benefit is seeing who is at your door from your phone, even when you are away. It does not lock doors or call 911." },
+      { "q": "4. Where is the best place to find instructions for a smart home device?",
+        "options": ["Any website that comes up in a search", "The official manufacturer app or website", "Facebook groups for tech advice"],
+        "correct": 1,
+        "right": "Right. The manufacturer's own app or website is the trustworthy source for setup and help.",
+        "wrong": "Stick to the official manufacturer app or website. Random search results and social media groups can be wrong or unsafe." },
+      { "q": "5. What is the easiest way to temporarily mute a smart speaker?",
+        "options": ["Unplug it from the wall", "Press the physical mute button on the device", "Cover it with a cloth"],
+        "correct": 1,
+        "right": "Exactly. The physical mute button disconnects the microphone, and a red light confirms it.",
+        "wrong": "The easiest way is the physical mute button on the device. It disconnects the microphone, shown by a red light." }
+    ] },
+
+    { "type": "checklist", "heading": "Your progress", "intro": "Tick each item as you feel confident with it. This is saved on this device only, with no account needed.", "id": "module-14", "items": [
+      "I understand what makes a device \"smart\" and what it needs to work (Wi-Fi and an app)",
+      "I know about Ontario energy rebates for smart thermostats (Enbridge, Hydro One)",
+      "I understand how video doorbells work and the privacy considerations for neighbours",
+      "I know how to mute my voice assistant's microphone using the physical button",
+      "I understand how smart plugs work and could set one up using the step-by-step guide",
+      "I know how to secure my Wi-Fi network for smart home devices (guest network, strong password)",
+      "I can use the decision framework to decide which smart home devices are right, or not right, for my home"
+    ] }
+  ],
+  "success_state": "<strong>Well done.</strong> You now have a solid understanding of smart home technology, not from a salesperson's perspective, but from your own. You know which devices collect which data, how Ontario rebates work, how to secure your Wi-Fi, and most importantly, how to decide what is genuinely worth it for you. Smart home technology is entirely optional, but now you can make that decision from knowledge, not uncertainty.",
+  "related": {
+    "heading": "Where to next",
+    "cards": [
+      { "num": "Module 13", "name": "Understanding Social Media", "desc": "The everyday skills for staying in touch online, sharing safely, and spotting what is not real.", "href": "module-13.html", "external": false },
+      { "num": "Module 15", "name": "Telehealth and Medical Portals", "desc": "Book appointments, meet your doctor by video, and manage prescriptions from home.", "href": "module-15.html", "external": false }
+    ]
+  }
+}
