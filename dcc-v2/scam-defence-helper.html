@@ -28,7 +28,10 @@
   <div class="container">
     <a class="brand" href="index.html"><span aria-hidden="true">🏠</span> Home</a>
     <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
-    <div class="header-tools">
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
       <div class="read-group" role="group" aria-label="Read this page aloud">
         <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
         <div class="rate-group" role="group" aria-label="Reading speed">

@@ -57,6 +57,19 @@
     labelTheme();
   }
 
+  /* ---------- Display-settings expander -----------------------------------
+     The text-size / dark-mode / read-aloud controls collapse behind a gear
+     toggle so they stay one tap away without dominating the sticky header. */
+  var settingsToggle = document.querySelector("[data-settings-toggle]");
+  var displaySettings = document.getElementById("display-settings");
+  if (settingsToggle && displaySettings) {
+    settingsToggle.addEventListener("click", function () {
+      var open = displaySettings.hidden;
+      displaySettings.hidden = !open;
+      settingsToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  }
+
   /* ---------- Layered consent ---------------------------------------------
      One plain line + Accept / Reject / Preferences reveal.
      Stored locally; nothing is sent anywhere. Functional is always on

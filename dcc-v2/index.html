@@ -28,7 +28,10 @@
   <div class="container">
     <a class="brand" href="index.html">Digital Confidence Centre</a>
     <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
-    <div class="header-tools">
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
       <div class="text-size-group" role="group" aria-label="Text size">
         <span class="group-label" aria-hidden="true">Text size</span>
         <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
@@ -103,21 +106,6 @@
     <section class="small-wins" id="home-wins" hidden aria-label="Your progress">
       <p class="sw-label"><span>Your small wins so far</span> <span id="home-wins-count"></span></p>
       <p style="margin:0; font-size: var(--font-size-sm);">Saved on this device — no account needed.</p>
-    </section>
-
-    <!--
-      AARON DECISION NEEDED — GUIDE PERSONA ("Tech Concierge")
-      The named, photographed human guide is scaffolded below with a [NAME]
-      placeholder and an emoji photo placeholder. Aaron picks the final name,
-      persona, and photograph. Do not ship with the placeholder.
-    -->
-    <section class="guide-block" aria-labelledby="guide-h">
-      <div class="guide-photo" aria-hidden="true">👋</div>
-      <blockquote>
-        <h2 id="guide-h" style="font-size: var(--font-size-h3); margin-bottom: var(--space-2);">There's a person behind every lesson</h2>
-        <p style="margin:0;">"Hello — I'm here to walk you through things the way a good neighbour would. No jargon, no rushing, and no such thing as a silly question."</p>
-        <span class="guide-name">Your guide, [NAME] — placeholder, final persona to be chosen</span>
-      </blockquote>
     </section>
 
     <h2 id="lessons">Choose a topic</h2>
