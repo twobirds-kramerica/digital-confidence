@@ -300,4 +300,25 @@
       startReading(0);
     });
   }
+
+  /* ---------- External-link framing ----------------------------------------
+     Every off-site link opens in a new tab and says so, in words, so nobody
+     is silently taken away from the site mid-lesson. Runs on every page so
+     generated module content is covered without hand-editing 29 files. */
+  var extLinks = document.querySelectorAll('a[href^="http"]');
+  for (var li = 0; li < extLinks.length; li++) {
+    var extA = extLinks[li];
+    if (extA.hostname === window.location.hostname) continue;
+    extA.setAttribute("target", "_blank");
+    var relParts = (extA.getAttribute("rel") || "").split(/\s+/).filter(Boolean);
+    if (relParts.indexOf("noopener") === -1) relParts.push("noopener");
+    if (relParts.indexOf("noreferrer") === -1) relParts.push("noreferrer");
+    extA.setAttribute("rel", relParts.join(" "));
+    if (!extA.querySelector(".ext-note")) {
+      var extNote = document.createElement("span");
+      extNote.className = "ext-note";
+      extNote.textContent = " (opens in a new tab)";
+      extA.appendChild(extNote);
+    }
+  }
 })();

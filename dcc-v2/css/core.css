@@ -547,13 +547,14 @@ body.consent-open { padding-bottom: 240px; }
 .site-footer {
   border-top: 1px solid var(--color-border);
   background: var(--color-surface);
-  padding: var(--space-8) 0 var(--space-12);
-  margin-top: var(--space-16);
+  padding: var(--space-6) 0 var(--space-8);
+  margin-top: var(--space-12);
   font-size: var(--font-size-sm);
+  text-align: center;
 }
-.site-footer p { color: var(--color-text); }
-.site-footer .scope-note { color: var(--color-text-light); }
-.footer-links { display: flex; gap: var(--space-5); flex-wrap: wrap; padding: 0; list-style: none; margin: var(--space-4) 0 0; }
+.site-footer p { color: var(--color-text); max-width: 64ch; margin-left: auto; margin-right: auto; }
+.site-footer .scope-note { color: var(--color-text); }
+.footer-links { display: flex; gap: var(--space-5); flex-wrap: wrap; justify-content: center; padding: 0; list-style: none; margin: var(--space-4) 0 0; }
 .footer-links a { min-height: var(--tap-target-min); display: inline-flex; align-items: center; }
 
 /* ============================================================================
@@ -678,6 +679,8 @@ body.consent-open { padding-bottom: 240px; }
   display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5);
   padding: 0; list-style: none; margin: 0 0 var(--space-4);
 }
+/* Footer is centred as a block; the shared trust row centres with it. */
+.site-footer .trust-row { justify-content: center; }
 .trust-row li {
   display: inline-flex; align-items: center; gap: var(--space-2);
   font-family: var(--font-heading); font-weight: var(--font-weight-semibold);
