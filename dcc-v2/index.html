@@ -16,6 +16,7 @@
   </script>
   <title>Digital Confidence Centre — Free digital learning for Canadian seniors</title>
   <meta name="description" content="Free, plain-language lessons that help Canadian seniors use technology safely and confidently. No account needed. A community initiative by Two Birds Innovation.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/core.css">
   <link rel="stylesheet" href="css/print.css" media="print">
@@ -50,6 +51,16 @@
     </div>
   </div>
 </header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="index.html" aria-current="page">All lessons</a>
+    <a href="index.html#protect-money">Protect your money</a>
+    <a href="index.html#everyday-confidence">Everyday confidence</a>
+    <a href="for-families.html">For families</a>
+    <a href="../resources/support-directory.html">Get help</a>
+  </div>
+</nav>
 
 <main id="main">
 
@@ -109,63 +120,85 @@
     </section>
 
     <h2 id="lessons">Choose a topic</h2>
-    <p>Every card tells you how long it takes. Most people start with the first one.</p>
+    <p>Every card tells you how long it takes. Most people start with the practice below.</p>
 
     <ul class="card-grid">
       <li class="topic-card card-flagship">
-        <span class="flagship-tag">Start here — our most popular practice</span>
+        <span class="flagship-tag">Start here, our most popular practice</span>
         <span class="card-icon" aria-hidden="true">🤝</span>
         <h3><a href="scam-defence-helper.html">Practice: Spot the Scam</a></h3>
-        <p>Pretend your friend Margaret shows you a text she just got. What would you tell her to do? It's all pretend — and helping a friend is the fastest way to build your own confidence.</p>
+        <p>Pretend your friend Margaret shows you a text she just got. What would you tell her to do? It is all pretend, and helping a friend is the fastest way to build your own confidence.</p>
         <span class="ttc"><span aria-hidden="true">⏱</span> 5 minutes to your first win</span>
-      </li>
-      <li class="topic-card">
-        <span class="card-icon" aria-hidden="true">🪂</span>
-        <h3><a href="../module-1.html">The Escape Hatch</a></h3>
-        <p>The one skill that fixes most tech trouble: how to safely back out of anything on your device.</p>
-        <span class="ttc"><span aria-hidden="true">⏱</span> 10 minutes to feel in control</span>
-      </li>
-      <li class="topic-card">
-        <span class="card-icon" aria-hidden="true">🔑</span>
-        <h3><a href="../module-3.html">Passwords, made manageable</a></h3>
-        <p>Strong passwords you can actually remember — and what to do if you forget one.</p>
-        <span class="ttc"><span aria-hidden="true">⏱</span> 12 minutes to safer accounts</span>
-      </li>
-      <li class="topic-card">
-        <span class="card-icon" aria-hidden="true">👨‍👩‍👧</span>
-        <h3><a href="../module-8.html">Video calls with family</a></h3>
-        <p>See your grandchildren's faces, not just hear their voices. Step by step, on your device.</p>
-        <span class="ttc"><span aria-hidden="true">⏱</span> 8 minutes to learn video calls</span>
-      </li>
-      <li class="topic-card">
-        <span class="card-icon" aria-hidden="true">🏦</span>
-        <h3><a href="../module-6.html">Online banking, safely</a></h3>
-        <p>Check your balance and pay bills from your kitchen table — with the safety habits that protect your money.</p>
-        <span class="ttc"><span aria-hidden="true">⏱</span> 15 minutes to banking confidence</span>
-      </li>
-      <li class="topic-card">
-        <span class="card-icon" aria-hidden="true">✉️</span>
-        <h3><a href="../module-27-inbox-spam.html">Tame your inbox</a></h3>
-        <p>Sort the real mail from the junk, and stop spam from crowding out your family's messages.</p>
-        <span class="ttc"><span aria-hidden="true">⏱</span> 10 minutes to a calmer inbox</span>
-      </li>
-      <li class="topic-card">
-        <span class="card-icon" aria-hidden="true">🤖</span>
-        <h3><a href="../module-9.html">Understanding AI</a></h3>
-        <p>What AI actually is, what it is good for, and how to tell when a photo or message was made by a machine.</p>
-        <span class="ttc"><span aria-hidden="true">⏱</span> 12 minutes to see through the hype</span>
-      </li>
-      <li class="topic-card">
-        <span class="card-icon" aria-hidden="true">🏥</span>
-        <h3><a href="../module-15.html">Telehealth appointments</a></h3>
-        <p>Talk to your doctor from home. What to expect, how to join the call, and what to have ready.</p>
-        <span class="ttc"><span aria-hidden="true">⏱</span> 10 minutes to your first virtual visit</span>
       </li>
     </ul>
 
+    <!-- Gord's IA: money-safety lessons grouped under a plain-language name,
+         never module numbers. -->
+    <section class="lesson-group" aria-labelledby="protect-money">
+      <h2 id="protect-money">Protect your money</h2>
+      <p class="group-lead">Keep more of what is yours: spot the scams, stop the silent charges, and stay in control of your own accounts.</p>
+      <ul class="card-grid">
+        <li class="topic-card">
+          <span class="card-icon" aria-hidden="true">🏦</span>
+          <h3><a href="../module-6.html">Online banking, safely</a></h3>
+          <p>Check your balance and pay bills from your kitchen table, with the safety habits that protect your money.</p>
+          <span class="ttc"><span aria-hidden="true">⏱</span> 15 minutes to banking confidence</span>
+        </li>
+        <li class="topic-card">
+          <span class="card-icon" aria-hidden="true">🔑</span>
+          <h3><a href="../module-3.html">Passwords, made manageable</a></h3>
+          <p>Strong passwords you can actually remember, and what to do if you forget one.</p>
+          <span class="ttc"><span aria-hidden="true">⏱</span> 12 minutes to safer accounts</span>
+        </li>
+        <li class="topic-card">
+          <span class="card-icon" aria-hidden="true">✉️</span>
+          <h3><a href="../module-27-inbox-spam.html">Tame your inbox</a></h3>
+          <p>Sort the real mail from the junk, and stop spam from crowding out your family's messages.</p>
+          <span class="ttc"><span aria-hidden="true">⏱</span> 10 minutes to a calmer inbox</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="lesson-group" aria-labelledby="everyday-confidence">
+      <h2 id="everyday-confidence">Everyday confidence</h2>
+      <p class="group-lead">The skills that make the whole device feel calmer: getting back to safety, seeing family, and knowing what is real.</p>
+      <ul class="card-grid">
+        <li class="topic-card">
+          <span class="card-icon" aria-hidden="true">🪂</span>
+          <h3><a href="modules/module-1.html">The Escape Hatch</a></h3>
+          <p>The one skill that fixes most tech trouble: how to safely back out of anything on your device.</p>
+          <span class="ttc"><span aria-hidden="true">⏱</span> 10 minutes to feel in control</span>
+        </li>
+        <li class="topic-card">
+          <span class="card-icon" aria-hidden="true">👨‍👩‍👧</span>
+          <h3><a href="../module-8.html">Video calls with family</a></h3>
+          <p>See your grandchildren's faces, not just hear their voices. Step by step, on your device.</p>
+          <span class="ttc"><span aria-hidden="true">⏱</span> 8 minutes to learn video calls</span>
+        </li>
+        <li class="topic-card">
+          <span class="card-icon" aria-hidden="true">🤖</span>
+          <h3><a href="../module-9.html">Understanding AI</a></h3>
+          <p>What AI actually is, what it is good for, and how to tell when a photo or message was made by a machine.</p>
+          <span class="ttc"><span aria-hidden="true">⏱</span> 12 minutes to see through the hype</span>
+        </li>
+        <li class="topic-card">
+          <span class="card-icon" aria-hidden="true">🏥</span>
+          <h3><a href="../module-15.html">Telehealth appointments</a></h3>
+          <p>Talk to your doctor from home. What to expect, how to join the call, and what to have ready.</p>
+          <span class="ttc"><span aria-hidden="true">⏱</span> 10 minutes to your first virtual visit</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Denise's entry point: a family member's 30-second safety screen. -->
+    <aside class="who-pays" aria-label="Helping a parent or older relative">
+      <p><span class="who-pays-title">Helping a parent get confident online?</span>
+      Everything here is built so they can do it themselves, and so you can stop being the tech-support line. <a href="for-families.html">See the page for families</a> to check it is safe and send them their first lesson.</p>
+    </aside>
+
     <!-- Anti-Fraud Centre — its own airspace, clearly NOT this site's support line -->
     <aside class="cafc-block" aria-label="Where to turn with a serious concern">
-      <p><strong>If you ever have a serious concern about fraud in real life</strong>, the Canadian Anti-Fraud Centre — a Government of Canada service, separate from this website — can help. Visit <a href="https://antifraudcentre-centreantifraude.ca" rel="external">antifraudcentre-centreantifraude.ca</a> or call 1-888-495-8501.</p>
+      <p><strong>If you ever have a serious concern about fraud in real life</strong>, the Canadian Anti-Fraud Centre, a Government of Canada service separate from this website, can help. Visit <a href="https://antifraudcentre-centreantifraude.ca" target="_blank" rel="external noopener noreferrer">antifraudcentre-centreantifraude.ca <span class="ext-note">(opens in a new tab)</span></a> or call 1-888-495-8501.</p>
     </aside>
 
   </div>
@@ -173,9 +206,16 @@
 
 <footer class="site-footer">
   <div class="container">
-    <p>Digital Confidence Centre — free to use, a community initiative by Two Birds Innovation to help Canadian seniors stay safe online. No account. No tracking. No sales calls.</p>
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.</p>
     <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
     <ul class="footer-links">
+      <li><a href="for-families.html">For families</a></li>
       <li><a href="../privacy.html">Privacy</a></li>
       <li><a href="../about.html">About us</a></li>
       <li><a href="../resources/support-directory.html">Get help</a></li>

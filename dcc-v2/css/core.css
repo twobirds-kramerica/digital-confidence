@@ -556,10 +556,256 @@ body.consent-open { padding-bottom: 240px; }
 .footer-links { display: flex; gap: var(--space-5); flex-wrap: wrap; padding: 0; list-style: none; margin: var(--space-4) 0 0; }
 .footer-links a { min-height: var(--tap-target-min); display: inline-flex; align-items: center; }
 
+/* ============================================================================
+   PRIMARY NAV (Sprint V2-2 shell) - grouped by plain-language destination,
+   never by module number (Gord's "Protect your money" IA requirement).
+   Deliberately NOT sticky: the sticky header alone stays slim so the
+   accessibility controls never dominate the top of the screen (Brenda /
+   Aaron's sticky-nav complaint). Wraps to a simple column on small screens.
+   ========================================================================== */
+.primary-nav {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+.primary-nav .container {
+  display: flex; flex-wrap: wrap; gap: var(--space-1);
+  padding-top: var(--space-1); padding-bottom: var(--space-1);
+}
+.primary-nav a {
+  display: inline-flex; align-items: center;
+  min-height: var(--tap-target-min); padding: var(--space-2) var(--space-4);
+  font-family: var(--font-heading); font-weight: var(--font-weight-semibold);
+  font-size: 17px; color: var(--color-text-link); text-decoration: none;
+  border-radius: var(--radius-sm);
+}
+.primary-nav a:hover { background: var(--color-surface-alt); }
+.primary-nav a[aria-current="page"] {
+  color: var(--color-text); background: var(--color-surface-alt);
+}
+
+/* --- Lesson-group headings on the index (named sections nav points at) ----- */
+.lesson-group { margin: var(--space-12) 0 var(--space-6); }
+.lesson-group > h2 { margin-bottom: var(--space-2); scroll-margin-top: 96px; }
+.lesson-group > .group-lead { margin-bottom: var(--space-2); color: var(--color-text); }
+
+/* ============================================================================
+   LESSON HEADER (module page) - the anxiety-first opening block.
+   Reassurance line + time-boxed promise + category label + a persistent
+   "Back to all lessons" escape hatch, in that reading order (Brenda).
+   ========================================================================== */
+.lesson-back {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  min-height: var(--tap-target-min); margin: var(--space-4) 0 0;
+  font-family: var(--font-heading); font-weight: var(--font-weight-semibold);
+  color: var(--color-text-link); text-decoration: none;
+}
+.lesson-back:hover { text-decoration: underline; }
+.lesson-category {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  font-family: var(--font-heading); font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm); letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--color-text-light); margin: var(--space-6) 0 var(--space-2);
+}
+.lesson-time {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  background: var(--color-accent-light); color: var(--color-accent-deep);
+  font-family: var(--font-heading); font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  padding: var(--space-1) var(--space-3); border-radius: var(--radius-pill);
+  margin: 0 0 var(--space-4);
+}
+
+/* ============================================================================
+   FROM YOUR COACH - the per-module empathy block (kept as a signature of the
+   live product; a shell slot so every generated page can carry its own).
+   ========================================================================== */
+.coach-block {
+  display: flex; gap: var(--space-5); align-items: flex-start; flex-wrap: wrap;
+  background: var(--color-surface-primary);
+  border-left: 5px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-6); margin: var(--space-8) 0;
+}
+.coach-block .coach-mark {
+  flex: 0 0 auto; width: 52px; height: 52px; border-radius: 50%;
+  background: var(--color-surface); border: 2px solid var(--color-primary);
+  display: inline-flex; align-items: center; justify-content: center; font-size: 26px;
+}
+.coach-block .coach-body { flex: 1 1 320px; }
+.coach-block .coach-label {
+  display: block; font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold); color: var(--color-primary);
+  margin-bottom: var(--space-1);
+}
+.coach-block p { margin: 0; }
+
+/* ============================================================================
+   THE MOVE IS - every scam / money / safety lesson ends on one concrete,
+   verified action, never a vague caution (Gord: accuracy is the brand).
+   ========================================================================== */
+.the-move {
+  background: var(--color-success-light); color: var(--color-success-deep);
+  border: 1px solid var(--color-success-deep); border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6); margin: var(--space-8) 0;
+}
+.the-move .move-label {
+  display: block; font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold); font-size: var(--font-size-h4);
+  margin-bottom: var(--space-2); color: inherit;
+}
+.the-move p { margin: 0 0 var(--space-2); color: inherit; }
+.the-move p:last-child { margin-bottom: 0; }
+
+/* ============================================================================
+   SEND THIS LESSON - Denise's forward affordance. Copy-link only, no share
+   API, no account. The lesson arrives self-contained in a text message.
+   ========================================================================== */
+.send-lesson {
+  background: var(--color-surface); border: 2px solid var(--color-primary);
+  border-radius: var(--radius-lg); padding: var(--space-5) var(--space-6);
+  margin: var(--space-8) 0;
+}
+.send-lesson h2 { font-size: var(--font-size-h3); margin-bottom: var(--space-2); }
+.send-lesson p { margin: 0 0 var(--space-4); }
+.send-row { display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center; }
+.send-done { color: var(--color-success-deep); font-family: var(--font-heading); font-weight: var(--font-weight-semibold); }
+
+/* ============================================================================
+   TRUST ROW - Denise's 30-second safety screen. The guarantees are visible
+   within one screen on every page (in the shared footer).
+   ========================================================================== */
+.trust-row {
+  display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5);
+  padding: 0; list-style: none; margin: 0 0 var(--space-4);
+}
+.trust-row li {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  font-family: var(--font-heading); font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+.trust-row li span[aria-hidden] { color: var(--color-success); }
+
+/* --- External-link framing - every off-site link says so, in words -------- */
+.ext-note {
+  font-family: var(--font-heading); font-size: var(--font-size-sm);
+  color: var(--color-text-light); white-space: nowrap;
+}
+
+/* ============================================================================
+   LESSON CONTENT BLOCKS (sample module page) - walkthrough steps, quiz,
+   checklist, scam example, 3-second rule, related lessons. Token-driven so
+   they carry straight into the V2-3 generator template.
+   ========================================================================== */
+.walkthrough {
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg); padding: var(--space-5) var(--space-6);
+  margin: var(--space-6) 0;
+}
+.walkthrough h4 { margin: 0 0 var(--space-4); }
+.wt-step { display: flex; gap: var(--space-4); align-items: flex-start; margin-bottom: var(--space-4); }
+.wt-step:last-child { margin-bottom: 0; }
+.wt-step .step-num {
+  flex: 0 0 auto; width: 40px; height: 40px; border-radius: 50%;
+  background: var(--color-btn-primary-bg); color: var(--color-btn-primary-text);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--font-heading); font-weight: var(--font-weight-bold); font-size: 19px;
+}
+.wt-step .step-text { flex: 1 1 auto; }
+.wt-step .step-text p:last-child { margin-bottom: 0; }
+
+/* Fake-warning depiction - deliberately quoted, clearly labelled "not real" */
+.scam-example {
+  border: 2px dashed var(--color-error); border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5); margin: var(--space-5) 0;
+  background: var(--color-error-light);
+}
+.scam-example .example-label {
+  display: block; font-family: var(--font-heading); font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm); color: var(--color-error); margin-bottom: var(--space-2);
+}
+.scam-example p { margin: 0; }
+
+/* 3-Second Rule - calm, three steps, no alarm */
+.three-second-rule {
+  background: var(--color-surface-primary); border-radius: var(--radius-lg);
+  padding: var(--space-6); margin: var(--space-6) 0;
+}
+.three-second-rule h3 { margin-top: 0; }
+.tsr-steps { display: flex; flex-wrap: wrap; gap: var(--space-5); margin: 0; padding: 0; list-style: none; }
+.tsr-step { flex: 1 1 160px; }
+.tsr-step .tsr-icon { font-size: 30px; }
+.tsr-step .tsr-name { display: block; font-family: var(--font-heading); font-weight: var(--font-weight-bold); color: var(--color-primary); }
+
+/* Quiz - one structured quiz per lesson (raw_html duplicate stripped, per
+   SCOPE drift item 5). Options are buttons; feedback reveals on choose. */
+.lesson-quiz { margin: var(--space-6) 0; }
+.quiz-q {
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg); padding: var(--space-5) var(--space-6);
+  margin-bottom: var(--space-5);
+}
+.quiz-q h3 { margin-top: 0; }
+.quiz-opts { display: flex; flex-direction: column; gap: var(--space-3); }
+.quiz-opt {
+  text-align: left; background: var(--color-surface); color: var(--color-text);
+  border: 2px solid var(--color-border); border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5); min-height: var(--tap-target);
+  font-family: var(--font-body); font-size: var(--font-size-base); line-height: 1.5; cursor: pointer;
+}
+.quiz-opt:hover { border-color: var(--color-primary); }
+.quiz-opt.chosen-right { border-color: var(--color-success-deep); background: var(--color-success-light); color: var(--color-success-deep); }
+.quiz-opt.chosen-wrong { border-color: var(--color-error); background: var(--color-error-light); color: var(--color-error); }
+.quiz-opt:disabled { cursor: default; }
+.quiz-fb {
+  display: none; margin-top: var(--space-4); border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+}
+.quiz-fb.show { display: block; }
+.quiz-fb.good { background: var(--color-success-light); color: var(--color-success-deep); border: 1px solid var(--color-success-deep); }
+.quiz-fb.try { background: var(--color-warning-light); color: var(--color-warning-deep); border: 1px solid var(--color-warning-deep); }
+.quiz-fb p { margin: 0; color: inherit; }
+
+/* Progress checklist - no-login, saves to the same Small Wins store */
+.checklist { margin: var(--space-4) 0; padding: 0; list-style: none; }
+.check-item {
+  display: flex; gap: var(--space-3); align-items: flex-start;
+  padding: var(--space-3) 0; border-bottom: 1px solid var(--color-divider);
+}
+.check-item:last-child { border-bottom: 0; }
+.check-item input[type="checkbox"] { width: 28px; height: 28px; margin-top: 2px; flex: 0 0 auto; accent-color: var(--color-btn-primary-bg); }
+.check-item label { font-family: var(--font-body); }
+
+.success-state {
+  background: var(--color-success-light); color: var(--color-success-deep);
+  border: 1px solid var(--color-success-deep); border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5); margin: var(--space-5) 0;
+}
+.success-state p { margin: 0; color: inherit; }
+
+/* Related + within-course navigation */
+.related-modules { margin: var(--space-12) 0 0; }
+.related-grid { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.related-card {
+  display: block; background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg); padding: var(--space-5); text-decoration: none; color: var(--color-text);
+}
+.related-card:hover { border-color: var(--color-border-strong); box-shadow: var(--shadow-sm); }
+.related-card .related-num { display: block; font-family: var(--font-heading); font-size: var(--font-size-sm); color: var(--color-text-light); }
+.related-card .related-name { display: block; font-family: var(--font-heading); font-weight: var(--font-weight-bold); color: var(--color-primary); margin: var(--space-1) 0; }
+.related-card .related-desc { display: block; font-size: calc(var(--font-size-base) - 2px); }
+
+.lesson-nav {
+  display: flex; gap: var(--space-4); justify-content: space-between;
+  flex-wrap: wrap; margin: var(--space-8) 0 0;
+}
+.lesson-nav a { flex: 1 1 240px; }
+
 /* --- Small screens ---------------------------------------------------------- */
 @media (max-width: 560px) {
   .header-tools { margin-left: 0; width: 100%; justify-content: flex-start; }
   .hero { padding: var(--space-8) 0; }
   .focus-nav .btn { flex: 1 1 100%; }
   body.consent-open { padding-bottom: 320px; }
+  .primary-nav .container { flex-direction: column; gap: 0; }
+  .primary-nav a { width: 100%; }
 }
