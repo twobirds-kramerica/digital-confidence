@@ -1,0 +1,164 @@
+{
+  "id": "module-25-outage-detection",
+  "slug": "module-25-outage-detection",
+  "page_title": "When Things Stop Working - Digital Confidence Centre",
+  "title": "When Things Stop Working",
+  "description": "What internet outages mean, how to tell if it is your device or your whole area, the 3-step fix that solves most problems, and when to call your provider. Free, plain-language lesson for Canadian seniors. No account needed.",
+  "category": "Troubleshooting",
+  "category_icon": "🛠️",
+  "lesson_time": "About 25 minutes, at your own pace",
+  "lead": "How to tell what is going on when the internet goes down, what you can fix yourself, and when to call for help.",
+  "nav_current": "../index.html#everyday-confidence",
+  "breadcrumb_group_label": "Everyday confidence",
+  "breadcrumb_group_anchor": "../index.html#everyday-confidence",
+  "story": {
+    "label": "The dinosaur on the screen",
+    "paragraphs": [
+      "A neighbour once called Aaron to say \"I have a dinosaur on my screen and I don't know what to do.\" That dinosaur meant one thing: no internet connection. The neighbour thought her iPad was broken. It was not. The internet was down for the whole neighbourhood.",
+      "Internet outages happen to everyone. They are not your fault, and they do not mean your device is broken. This module will teach you how to tell what is going on, what you can fix yourself, and when to call for help."
+    ]
+  },
+  "coach": "When the internet goes down, it is easy to assume you broke something. Here is the truth this lesson proves: most outages are the provider's problem, not yours, and there are quick ways to confirm that before you touch a single cable. Knowing it is not your fault is half the fix.",
+  "sections": [
+    { "type": "heading", "level": 2, "text": "The dinosaur screen" },
+    { "type": "paragraph", "text": "If you use Google Chrome on your iPad and the internet goes down, you will see a small cartoon dinosaur on a blank screen. This is Chrome's way of telling you it cannot connect to the internet. You have not broken anything; the dinosaur just means there is no internet connection right now." },
+    { "type": "paragraph", "text": "If you use Safari (the browser that comes with your iPad), you will see a message like \"Safari Can't Find the Server\" or \"You Are Not Connected to the Internet.\" Again, this is not your fault. It is just your device telling you it cannot reach the internet." },
+    { "type": "list", "items": [
+      "<strong>Google Chrome:</strong> a grey screen with a small pixelated dinosaur and the words \"No internet\" or \"Unable to connect\".",
+      "<strong>Safari:</strong> a white screen that says \"Safari Can't Find the Server\" or \"A server with the specified hostname could not be found\".",
+      "<strong>Apps:</strong> apps may show spinning circles that never stop, error messages, or simply refuse to load new content."
+    ] },
+    { "type": "helper", "label": "Confidence check", "text": "If you see any of these screens, take a breath. You have not broken anything. Your device is working perfectly; it simply cannot reach the internet right now." },
+
+    { "type": "heading", "level": 2, "text": "Is it just you?" },
+    { "type": "paragraph", "text": "When your internet stops working, the first thing to figure out is whether the problem is with your device, your home network, or everyone in your area. This matters because the fix is different depending on the answer." },
+    { "type": "walkthrough", "title": "How to figure out what is going on", "steps": [
+      "<strong>Try another device.</strong> If you have a phone and an iPad, try the internet on both. If only one device has a problem, the issue is with that device, not your internet.",
+      "<strong>Try another website.</strong> Sometimes one website is down but the internet itself is fine. Try going to google.ca. If Google loads, your internet is working and the original website is the problem.",
+      "<strong>Ask a neighbour.</strong> If your neighbour's internet is also down, the outage is in your area and there is nothing you can fix yourself. You simply need to wait.",
+      "<strong>Check downdetector.ca.</strong> This free website tracks outages for major Canadian providers like Bell, Rogers, Telus, and Cogeco. If you still have mobile data on your phone, visit downdetector.ca to see if your provider is experiencing problems."
+    ] },
+    { "type": "helper", "label": "Confidence check", "text": "You do not need to memorise all of these steps. The simplest check is this: if another device also cannot connect, the problem is probably not your device." },
+
+    { "type": "heading", "level": 2, "text": "Reading your signal strength" },
+    { "type": "paragraph", "text": "Your iPad and iPhone show you how strong your internet connection is, if you know where to look. Understanding your signal strength helps you figure out whether your internet is truly down or whether you have simply moved too far from your router. Look at the top-right corner of your screen for the small fan-shaped Wi-Fi icon." },
+    { "type": "list", "items": [
+      "<strong>All bars filled in:</strong> strong signal. Your internet should work well.",
+      "<strong>Two or three bars:</strong> fair signal. Things may be a bit slower, but should still work.",
+      "<strong>One bar:</strong> weak signal. You are far from your router or something is blocking the signal. Try moving closer to your modem.",
+      "<strong>No Wi-Fi icon at all:</strong> your device is not connected to Wi-Fi. This could mean your Wi-Fi is turned off, or the router is not working."
+    ] },
+    { "type": "tip", "label": "What \"No Service\" means on your iPhone", "text": "If your iPhone shows \"No Service\" in the top-left corner, it means your phone has lost its connection to the cellular network, the network your phone uses when you are away from home. This is separate from your home Wi-Fi. You can still use Wi-Fi at home even if your phone says \"No Service.\"" },
+    { "type": "helper", "label": "Confidence check", "text": "The Wi-Fi icon in the top-right corner of your screen is your friend. Full bars means everything is fine. No icon means your device is not connected to Wi-Fi." },
+
+    { "type": "heading", "level": 2, "text": "Basic troubleshooting: the 3-step fix" },
+    { "type": "paragraph", "text": "Here is the good news: there is a simple 3-step fix that solves about 80% of internet problems. Technicians use these same steps. You can do them yourself." },
+    { "type": "walkthrough", "title": "The 3-step fix", "steps": [
+      "<strong>Turn off Wi-Fi and turn it back on.</strong> On your iPad or iPhone, open <strong>Settings</strong>, tap <strong>Wi-Fi</strong>, flip the switch off. Wait 10 seconds. Flip it back on. Your device will reconnect to your home network. This often solves the problem by itself.",
+      "<strong>Restart your modem and router.</strong> Your modem is the box from your internet provider (often black, with blinking lights). Your router might be the same box or a separate one. <strong>Unplug the power cord</strong> from the back of the modem. <strong>Wait 30 seconds.</strong> Plug it back in. Wait 2 to 3 minutes for the lights to come back on and settle. This is the single most effective fix for internet problems.",
+      "<strong>Restart your device.</strong> If the first two steps did not work, restart your iPad or iPhone. Hold the power button until the \"slide to power off\" slider appears. Slide it. Wait 30 seconds. Press and hold the power button again to turn it back on."
+    ] },
+    { "type": "tip", "label": "Why \"turning it off and on again\" works", "text": "It is not a joke; it genuinely works. Your modem and router are small computers. Like any computer, they can get confused or overloaded after running for a long time. Restarting them clears out temporary problems and gives them a fresh start. Even professional technicians do this as their first step." },
+    { "type": "helper", "label": "Confidence check", "text": "You now know the same 3-step fix that technicians use. Turn off Wi-Fi, restart the modem, restart your device. That is it. You can do this." },
+
+    { "type": "heading", "level": 2, "text": "When to call your provider" },
+    { "type": "paragraph", "text": "If you have tried the 3-step fix and your internet is still not working, it may be time to call your internet provider. But how long should you wait?" },
+    { "type": "list", "items": [
+      "<strong>If your neighbours are also affected:</strong> this is an area outage. Give it 1 to 2 hours. Your provider already knows about it and is working on it.",
+      "<strong>If only your home is affected:</strong> call sooner. If you have tried the 3-step fix and nothing has changed after 15 to 20 minutes, go ahead and call."
+    ] },
+    { "type": "tip", "label": "What to say when you call", "text": "Here is a simple script you can use: \"My internet is not working. I have restarted my modem and my device. Can you check if there is an outage in my area?\" If they create a support ticket, ask for the reference number and write it down. This protects you if you need to follow up later." },
+    { "type": "helper", "label": "Confidence check", "text": "You do not need to feel nervous about calling. You have already done the troubleshooting. You can tell them exactly what you tried. That puts you ahead of most callers." },
+
+    { "type": "heading", "level": 2, "text": "Speed tests" },
+    { "type": "paragraph", "text": "Sometimes your internet is not completely down; it is just slow. Pages take forever to load. Videos keep stopping and starting. If this sounds familiar, a speed test can tell you exactly how fast your internet is running." },
+    { "type": "walkthrough", "title": "How to run a speed test", "steps": [
+      "<strong>Open Safari</strong> on your iPad.",
+      "Go to <strong>speedtest.net</strong>.",
+      "Tap the large <strong>\"Go\"</strong> button in the centre of the screen.",
+      "Wait about 30 seconds; the test will run automatically.",
+      "Look at the <strong>\"Download\"</strong> number. This is your internet speed in Mbps."
+    ] },
+    { "type": "list", "items": [
+      "<strong>Download speed:</strong> the most important number. It tells you how fast information comes to your device. If your plan says you should get 25 Mbps and you are only getting 5 Mbps, something is wrong.",
+      "<strong>Upload speed:</strong> how fast you can send information (like photos or emails). It is usually much lower than your download speed. That is normal.",
+      "<strong>Ping:</strong> you can ignore this number. It measures response time and is only important for online gaming."
+    ] },
+    { "type": "tip", "label": "What to do if your speed is too low", "text": "If you are paying for 25 Mbps and only getting 5 Mbps, call your provider and say: \"I ran a speed test at speedtest.net and I am only getting 5 Mbps. My plan says I should get 25 Mbps. Can you look into this?\" They are required to deliver the speed you are paying for." },
+    { "type": "helper", "label": "Confidence check", "text": "A speed test is free, takes 30 seconds, and gives you real evidence to use when talking to your provider. You do not need to understand every number; just compare your download speed to what your plan promises." },
+
+    { "type": "heading", "level": 2, "text": "Mobile hotspot: a temporary backup" },
+    { "type": "paragraph", "text": "If your home internet is down and you need to get online urgently, for example to check an important email or join a video call, your iPhone can share its cellular data with your iPad. This feature is called Personal Hotspot." },
+    { "type": "walkthrough", "title": "How to turn on Personal Hotspot on iPhone", "steps": [
+      "On your iPhone, open <strong>Settings</strong>.",
+      "Tap <strong>Personal Hotspot</strong> (or <strong>Cellular</strong>, then <strong>Personal Hotspot</strong>).",
+      "Turn on <strong>\"Allow Others to Join\"</strong>.",
+      "On your iPad, go to <strong>Settings</strong>, then <strong>Wi-Fi</strong>, and look for your iPhone's name in the list. Tap it to connect."
+    ] },
+    { "type": "warning", "label": "Important notes", "text": "Personal Hotspot uses your phone's cellular data; if you have a limited data plan on your phone, this will count against it. It is a temporary solution, not a replacement for home internet. Avoid streaming video while using your phone as a hotspot, as it uses data quickly." },
+    { "type": "helper", "label": "Confidence check", "text": "You do not need to set this up right now. Just know that it exists. If your home internet ever goes down and you need to get online urgently, your iPhone can help." },
+
+    { "type": "heading", "level": 2, "text": "Keeping calm" },
+    { "type": "paragraph", "text": "Internet outages can feel stressful, especially if you rely on your device to stay connected with family or access important services. But here is the most important thing to remember: outages are temporary." },
+    { "type": "list", "items": [
+      "<strong>Your data is safe.</strong> An internet outage does not erase anything on your device. Your photos, messages, contacts, and apps are all still there.",
+      "<strong>Nothing is lost.</strong> Emails that were sent to you during the outage will arrive as soon as your internet comes back. You will not miss anything permanently.",
+      "<strong>The internet will come back.</strong> Every outage ends. Most last less than a few hours. Major outages are rare and providers work around the clock to fix them."
+    ] },
+    { "type": "tip", "label": "In the meantime", "text": "While you wait for your internet to come back: read a book or magazine, call a friend or family member on the phone (regular phone calls do not need internet), make a cup of tea or coffee and take a break, play a game on your iPad that works offline, or look through your photos; your photo library is on your device and works without internet." },
+    { "type": "helper", "label": "Confidence check", "text": "You are more prepared than you think. You know how to check if it is just you, how to restart your modem, and when to call. The internet always comes back. You will be just fine." },
+
+    { "type": "heading", "level": 2, "text": "Quick answers" },
+    { "type": "list", "items": [
+      "<strong>Will I lose my photos and emails if the internet goes down?</strong> No. Your photos, contacts, messages, and apps are stored on your device. An internet outage does not erase or affect anything on your iPad or iPhone. Emails sent to you during the outage will arrive automatically when your internet comes back.",
+      "<strong>How long do internet outages usually last?</strong> Most outages last less than a few hours. Major outages affecting large areas are rare. Your provider is usually aware of the problem and working to fix it. You can check downdetector.ca using your phone's mobile data to see if others are reporting the same issue.",
+      "<strong>Can I still make phone calls if the internet is down?</strong> Yes. Regular phone calls on your iPhone use the cellular network, not your home internet. You can call family, friends, or your internet provider even when your home Wi-Fi is down. However, FaceTime and other video calls require an internet connection."
+    ] },
+    { "type": "the_move", "label": "The move is", "text": "Next time the internet stops working: check another device, then turn Wi-Fi off and on, restart the modem, and restart your device. If it is still down after 15 to 20 minutes and your neighbours are fine, call your provider with the simple script from this lesson." },
+
+    { "type": "quiz", "heading": "Quick check: test your knowledge", "intro": "Tap the answer you think is correct. There is no score kept and nothing to sign in to.", "questions": [
+      { "q": "1. When your internet stops working, the first thing to check is:",
+        "options": ["Call your internet provider immediately", "Whether the problem is with your device, router, or the provider, by checking other devices", "Unplug your router and leave it off for an hour", "Replace your router"],
+        "correct": 1,
+        "right": "Exactly. First figure out where the problem is: try another device, try another website, ask a neighbour. The fix depends on the answer.",
+        "wrong": "The first step is to figure out whether the problem is your device, your home network, or your whole area. Try another device or website before calling anyone or replacing anything." },
+      { "q": "2. Downdetector is a website that:",
+        "options": ["Provides government internet repair services", "Shows real-time reports of outages for major internet and service providers", "Monitors your personal internet speed", "Sells replacement routers"],
+        "correct": 1,
+        "right": "Right. downdetector.ca tracks outage reports for major Canadian providers like Bell, Rogers, Telus, and Cogeco, so you can see if others have the same problem.",
+        "wrong": "Downdetector shows real-time outage reports for major providers. Check downdetector.ca on your phone's mobile data to see if your provider is having problems in your area." },
+      { "q": "3. Restarting your router typically involves:",
+        "options": ["Pressing a factory reset button", "Unplugging it, waiting 30 seconds, and plugging it back in", "Calling your provider to do it remotely", "Updating its software manually"],
+        "correct": 1,
+        "right": "Yes. Unplug the power cord, wait 30 seconds, plug it back in, and give it 2 to 3 minutes for the lights to settle. This is the single most effective fix. Do not press the factory reset button.",
+        "wrong": "The restart is simple: unplug the power cord, wait 30 seconds, plug it back in, and wait 2 to 3 minutes. Avoid the factory reset button, which erases the router's settings." },
+      { "q": "4. If your internet is slow during evenings but fine in the morning, this likely indicates:",
+        "options": ["Your router is overheating", "Network congestion from many users on your street or building using the internet at the same time", "Your plan has a daily data limit", "Your device needs to be replaced"],
+        "correct": 1,
+        "right": "Correct. Evenings are peak hours: many households on your street are online at once, which slows things down. Your equipment is fine.",
+        "wrong": "Slow evenings with fine mornings usually mean network congestion: many users in your area are online at the same time during peak hours. It is not your device or router." },
+      { "q": "5. Before calling your internet provider, the fixes to try are:",
+        "options": ["Restart the router, restart your device, check the cables, and check the provider's status page", "Restart your phone twice, wait an hour, and call a neighbour to check theirs", "Only restart the router; everything else requires a technician", "Change your Wi-Fi password, update your device, and restart the router"],
+        "correct": 0,
+        "right": "Exactly. Restart the router, restart your device, make sure the cables are plugged in snugly, and check for a reported outage. Then you can tell the provider exactly what you tried.",
+        "wrong": "The pre-call routine is: restart the router, restart your device, check the cables, and check whether an outage is already reported. None of it needs a technician." }
+    ] },
+
+    { "type": "checklist", "heading": "Your progress", "intro": "Tick each item as you feel confident with it. This is saved on this device only, with no account needed.", "id": "module-25-outage-detection", "items": [
+      "I know the dinosaur screen and \"Can't Find the Server\" messages mean the internet is down, not that my device is broken",
+      "I can check whether the problem is my device, my home, or my whole area",
+      "I can do the 3-step fix: toggle Wi-Fi, restart the modem, restart my device",
+      "I know when to call my provider and exactly what to say",
+      "I can run a speed test at speedtest.net and compare it to my plan",
+      "I know my data is safe during an outage and the internet always comes back"
+    ] }
+  ],
+  "success_state": "<strong>Well done.</strong> You now know what outage screens mean, how to tell if it is just you, the 3-step fix technicians use, when to call your provider, and how to run a speed test. Outages are temporary, and you are ready for the next one.",
+  "related": {
+    "heading": "Where to next",
+    "cards": [
+      { "num": "Module 12", "name": "Getting the Help You Deserve", "desc": "If your provider will not fix the problem, learn how to escalate and get real help without frustration.", "href": "module-12.html", "external": false },
+      { "num": "Module 26", "name": "Managing Your Notifications", "desc": "Take back control of your device's beeps and buzzes so the alerts that matter stand out.", "href": "module-26-notifications.html", "external": false }
+    ]
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "id": "module-26-notifications",
+  "slug": "module-26-notifications",
+  "page_title": "Managing Your Notifications - Digital Confidence Centre",
+  "title": "Managing Your Notifications",
+  "description": "Silence the noise, keep the notifications that matter, and take back control of your iPad with Do Not Disturb, quiet hours, priority people, and per-app controls. Free, plain-language lesson for Canadian seniors. No account needed.",
+  "category": "Notifications",
+  "category_icon": "🔔",
+  "lesson_time": "About 25 minutes, at your own pace",
+  "lead": "How to silence the noise, keep the notifications that matter, and take back control of your device.",
+  "nav_current": "../index.html#everyday-confidence",
+  "breadcrumb_group_label": "Everyday confidence",
+  "breadcrumb_group_anchor": "../index.html#everyday-confidence",
+  "story": {
+    "label": "Helen's story",
+    "paragraphs": [
+      "Helen, 77, wakes up every morning to 47 notifications on her iPad. Most are from apps she does not remember installing. One is from her daughter. She cannot find it in the noise. Last week she missed a medication reminder because it was buried under weather alerts and game notifications. She wants to throw the iPad in the lake.",
+      "If this sounds familiar, you are not alone. Modern devices are designed to interrupt you as often as possible, because every notification is a chance for an app to pull you back in. This module will help you silence the noise, keep the notifications that matter, and take back control of your iPad."
+    ]
+  },
+  "coach": "If your phone buzzes so often that you have started to dread picking it up, that is not a sign you cannot handle technology. It is a sign the notifications are badly set up, which is the device's fault, not yours. You are allowed to silence anything. Your attention belongs to you, and this lesson helps you take it back.",
+  "sections": [
+    { "type": "heading", "level": 2, "text": "Helen's 47 notifications" },
+    { "type": "paragraph", "text": "Every time you see a red badge on an app, hear a chime, or feel a buzz, that is a notification. It is the app's way of saying \"look at me!\" And every app on your iPad wants to send them to you. Here is why there are so many: when you first install an app, it asks \"Allow Notifications?\" Most people tap \"Allow\" because it seems like the right thing to do. But that single tap gives the app permission to interrupt you whenever it wants, day or night, for any reason." },
+    { "type": "tip", "label": "Why every app wants your attention", "text": "Apps are designed to keep you coming back. Every notification is engineered to make you open the app, even if you have no reason to. Weather apps send alerts about temperatures you can feel by stepping outside. Games tell you your \"energy has recharged.\" Shopping apps notify you about sales you never asked about. This is not your fault. You are not doing anything wrong. The apps are designed to interrupt you, and you have every right to tell them to stop." },
+    { "type": "paragraph", "text": "When you have dozens of notifications, the important ones get buried. Helen missed a medication reminder because it was lost in a sea of weather alerts and game notifications. That is not a minor inconvenience; it is a real problem with real consequences. The goal of this module is simple: keep the notifications that help you (medication reminders, messages from family, calendar appointments) and silence everything else." },
+    { "type": "helper", "label": "Confidence check", "text": "If your iPad buzzes and chimes more than you would like, that is completely normal. You did not cause it, and you are about to fix it." },
+
+    { "type": "heading", "level": 2, "text": "Do Not Disturb" },
+    { "type": "paragraph", "text": "Do Not Disturb is the single most powerful tool on your iPad for taking back control. When you turn it on, it silences all notifications: no sounds, no vibrations, no banners popping up on your screen. Your iPad becomes quiet. The notifications still arrive; they are just waiting silently in your Notification Centre for when you choose to look at them. Nothing is lost. You are simply choosing when to be interrupted, instead of letting your iPad decide for you." },
+    { "type": "walkthrough", "title": "Turning on Do Not Disturb", "steps": [
+      "<strong>Open the Settings app</strong> on your iPad or iPhone (the grey gear icon).",
+      "<strong>Tap Focus.</strong> This is where Apple organises all your quiet modes.",
+      "<strong>Tap Do Not Disturb.</strong>",
+      "<strong>Toggle it on.</strong> A crescent moon icon will appear at the top of your screen. Your iPad is now quiet. When you are ready to see your notifications, swipe down from the top of the screen to view them all at once."
+    ] },
+    { "type": "tip", "label": "Quick way: Control Centre", "text": "You can also turn Do Not Disturb on and off quickly without going into Settings. Swipe down from the top-right corner of your iPad screen to open Control Centre. Tap the crescent moon icon to toggle Do Not Disturb. Tap it again to turn it off." },
+    { "type": "helper", "label": "Confidence check", "text": "Do Not Disturb does not delete or block your notifications. It simply silences them until you are ready. You are in control." },
+
+    { "type": "heading", "level": 2, "text": "Setting quiet hours" },
+    { "type": "paragraph", "text": "Turning Do Not Disturb on and off manually works fine, but it is even better to have it happen automatically. You can schedule Do Not Disturb so your iPad goes quiet every evening and wakes up every morning, without you having to remember to do anything." },
+    { "type": "walkthrough", "title": "Scheduling quiet hours", "steps": [
+      "<strong>Open Settings, then Focus, then Do Not Disturb.</strong>",
+      "<strong>Scroll down to Set a Schedule.</strong>",
+      "<strong>Tap Add Schedule</strong> and choose <strong>Time</strong>.",
+      "<strong>Set \"From\" to 9:00 PM</strong> and <strong>\"To\" to 8:00 AM</strong> (or whatever suits your routine).",
+      "<strong>Make sure all seven days are selected.</strong> Now your iPad will automatically go quiet at 9 PM and return to normal at 8 AM, every single day. No buzzing during dinner. No chiming while you sleep."
+    ] },
+    { "type": "tip", "label": "Scheduled vs manual", "text": "\"Scheduled\" means Do Not Disturb turns on and off automatically at the times you set. \"Manual\" means you turn it on and off yourself using the toggle or Control Centre. You can use both: the schedule runs every day, and you can still turn Do Not Disturb on or off manually at any time. We recommend 9:00 PM to 8:00 AM as a starting point, but there is no wrong answer. Some people prefer 10 PM to 7 AM. Choose what works for your life." },
+    { "type": "helper", "label": "Confidence check", "text": "Once you set your quiet hours, they run automatically every day. You do not have to think about it again. And if you want to change the times later, you can; it takes less than a minute." },
+
+    { "type": "heading", "level": 2, "text": "Priority exceptions: letting the right people through" },
+    { "type": "paragraph", "text": "The most common worry about Do Not Disturb is: \"What if my daughter calls and I miss it?\" or \"What if my doctor's office sends me an important message?\" This is a valid concern, and Apple has built a solution directly into Do Not Disturb. You can add specific people to an \"Allowed\" list. When Do Not Disturb is on, notifications from everyone else are silenced, but calls and messages from your allowed contacts come through normally, with full sound and vibration." },
+    { "type": "walkthrough", "title": "Adding priority people", "steps": [
+      "<strong>Open Settings, then Focus, then Do Not Disturb.</strong>",
+      "<strong>Under \"Allowed Notifications\", tap People.</strong>",
+      "<strong>Tap Add People.</strong>",
+      "<strong>Search for and select the contacts</strong> you want to allow: your children, your doctor, your closest friends.",
+      "<strong>Tap Done.</strong> Now, even when Do Not Disturb is active, calls and messages from these people will come through loud and clear."
+    ] },
+    { "type": "tip", "label": "Who should be on your priority list?", "text": "We recommend starting with your children or grandchildren, your doctor or specialist, your pharmacist, and one or two close friends. Keep the list short. The whole point is to reduce interruptions; if you add everyone you know, you are back to square one." },
+    { "type": "helper", "label": "Confidence check", "text": "Do Not Disturb with priority exceptions gives you the best of both worlds: peace and quiet, with a safety net for the people who matter most." },
+
+    { "type": "heading", "level": 2, "text": "Emergency bypass: you will not miss a true emergency" },
+    { "type": "paragraph", "text": "Even if you do not set up any priority exceptions, your iPad and iPhone have a built-in safety feature: repeated calls from the same person within a few minutes break through Do Not Disturb. Apple built this in because they understand that repeated calls usually mean an emergency." },
+    { "type": "list", "items": [
+      "This feature is called \"Repeated Calls\" and it is turned on by default. You do not need to do anything to activate it.",
+      "If the same person calls you twice within three minutes, the second call rings through.",
+      "This works regardless of whether the caller is on your priority list.",
+      "You can verify this is on: Settings, then Focus, then Do Not Disturb, then People, then scroll down to \"Allow Repeated Calls\"."
+    ] },
+    { "type": "walkthrough", "title": "Setting Emergency Bypass for specific contacts", "steps": [
+      "<strong>Open the Contacts app</strong> and find the person (for example, your daughter).",
+      "<strong>Tap Edit</strong> in the top-right corner.",
+      "<strong>Tap Ringtone</strong> or <strong>Text Tone</strong>.",
+      "<strong>Toggle on Emergency Bypass</strong> at the top.",
+      "<strong>Tap Done.</strong> Now this person's calls and messages will always ring through, even during Do Not Disturb, even during your scheduled quiet hours."
+    ] },
+    { "type": "helper", "label": "Confidence check", "text": "You will never miss a true emergency. The repeated-calls safety net is always active, and you can add Emergency Bypass to your most important contacts for extra peace of mind." },
+
+    { "type": "heading", "level": 2, "text": "Per-app notification control" },
+    { "type": "paragraph", "text": "Do Not Disturb silences everything at once, which is great for evenings and nights. But during the day, you may want to silence specific apps permanently while keeping others active. This is where per-app notification control comes in." },
+    { "type": "walkthrough", "title": "Turning off notifications for a specific app", "steps": [
+      "<strong>Open Settings, then Notifications.</strong>",
+      "<strong>You will see a list of every app</strong> on your iPad.",
+      "<strong>Tap the app</strong> you want to silence (for example, a game or weather app).",
+      "<strong>Toggle off \"Allow Notifications\"</strong> at the top. That app will never interrupt you again: no sounds, no badges, no banners. The app still works normally; it just cannot bother you anymore."
+    ] },
+    { "type": "list", "items": [
+      "<strong>Games:</strong> they constantly nag you to come back and play. You do not need a notification to play a game; you will open it when you feel like it.",
+      "<strong>Weather apps:</strong> you can check the weather when you want to. You do not need an alert every time the temperature changes.",
+      "<strong>Shopping apps:</strong> sales notifications are designed to make you spend money. Turn them off.",
+      "<strong>News apps:</strong> unless you specifically want breaking news alerts, these create anxiety without benefit.",
+      "<strong>Social media:</strong> Facebook, Instagram, and other social apps send notifications to pull you back in. You can check them on your own schedule."
+    ] },
+    { "type": "tip", "label": "Apps to keep notifications on", "text": "Keep notifications on for <strong>Messages and FaceTime</strong> (so you do not miss calls and texts from family), <strong>Calendar</strong> (for appointment reminders), <strong>health or medication reminder apps</strong> (these could be critical), and the <strong>Phone</strong> (so you never miss a call)." },
+    { "type": "helper", "label": "Confidence check", "text": "You can always turn notifications back on for any app. Nothing is permanent. Start by turning off one or two of the worst offenders and see how much quieter your iPad becomes." },
+
+    { "type": "heading", "level": 2, "text": "The daily notification check" },
+    { "type": "paragraph", "text": "Many people pick up their iPad every time it buzzes or chimes. This means the device is in charge of your time, not you. A healthier approach is to check your notifications on your schedule, not the iPad's schedule." },
+    { "type": "list", "items": [
+      "<strong>Morning:</strong> after breakfast, sit down with your iPad and review everything that came in overnight. Reply to messages, check your calendar for the day, and clear everything else.",
+      "<strong>After lunch:</strong> a quick check to see if anything important arrived during the morning. Reply if needed, then put the iPad down.",
+      "<strong>Before bed:</strong> one final check before your quiet hours begin. Clear any remaining notifications so you start the next morning fresh."
+    ] },
+    { "type": "tip", "label": "How to clear all notifications at once", "text": "Swipe down from the top of your screen to see your Notification Centre. If you have a group of notifications, tap the X button next to the group name to clear them all at once. You do not have to swipe away each one individually." },
+    { "type": "paragraph", "text": "This is perhaps the most important idea in this entire module: your iPad is a tool that works for you. It does not get to decide when you pay attention. You decide. Checking notifications two or three times a day is not ignoring your device; it is using it wisely." },
+    { "type": "helper", "label": "Confidence check", "text": "Try the three-check routine for one week. Most people find they feel calmer, more in control, and do not miss anything important." },
+
+    { "type": "heading", "level": 2, "text": "When notifications are helpful" },
+    { "type": "paragraph", "text": "This module has focused on silencing the noise, but it is important to remember that not all notifications are bad. Some are genuinely helpful and worth keeping. The goal is not to turn off everything; it is to keep the good ones and silence the rest." },
+    { "type": "list", "items": [
+      "<strong>Medication reminders.</strong> If you use the Health app, a medication tracker, or the built-in Reminders app to remind you to take your medication, keep these notifications on. Helen missed her medication reminder because it was buried; after this module, her medication reminders are among the only notifications that come through. Problem solved.",
+      "<strong>Calendar appointments.</strong> Calendar notifications remind you about doctor's appointments, family visits, and community events. A notification 30 minutes before an appointment gives you time to prepare without constantly checking your calendar.",
+      "<strong>Messages from family.</strong> Messages and FaceTime calls from your family are the notifications that matter most. By silencing the noise from games, weather, and shopping apps, these important messages will stand out clearly, exactly as they should."
+    ] },
+    { "type": "tip", "label": "The goal: signal, not noise", "text": "Think of it this way: before this module, Helen had 47 notifications every morning and could not find her daughter's message. After this module, she might have 3 to 5 notifications, and every single one is something that matters. That is the difference between noise and signal." },
+    { "type": "helper", "label": "Confidence check", "text": "You now know how to keep the helpful notifications and silence everything else. Your iPad will work for you, not against you." },
+
+    { "type": "heading", "level": 2, "text": "Quick answers" },
+    { "type": "list", "items": [
+      "<strong>Will I miss important calls if I turn on Do Not Disturb?</strong> No. You can add important people to your priority list so their calls and messages always come through. Additionally, if someone calls you twice within three minutes, the call rings through automatically. You are protected.",
+      "<strong>Can I undo everything I change in this module?</strong> Yes. Every setting in this module can be reversed. If you turn off notifications for an app and later decide you want them back, just go to Settings, then Notifications, tap the app, and toggle Allow Notifications back on. Nothing is permanent.",
+      "<strong>What is the difference between Do Not Disturb and Aeroplane Mode?</strong> Do Not Disturb silences notifications but keeps your internet and phone connections active. You can still receive messages and calls; they are just silent. Aeroplane Mode completely disconnects you from the internet and phone network. Use Do Not Disturb for daily quiet time. Use Aeroplane Mode only when you need to disconnect entirely (like during a flight)."
+    ] },
+    { "type": "the_move", "label": "The move is", "text": "Set your quiet hours tonight (9 PM to 8 AM is a good start), add your two or three most important people to the Allowed list, and turn off notifications for one noisy app. That alone will transform your mornings." },
+
+    { "type": "quiz", "heading": "Quick check: test your knowledge", "intro": "Tap the answer you think is correct. There is no score kept and nothing to sign in to.", "questions": [
+      { "q": "1. Turning off non-essential app notifications helps because:",
+        "options": ["It speeds up your internet", "It reduces interruptions and helps you focus on what actually matters to you", "It prevents apps from updating automatically", "It reduces your monthly data usage"],
+        "correct": 1,
+        "right": "Exactly. Fewer interruptions means the messages that matter, from family, your doctor, and your calendar, stand out instead of being buried.",
+        "wrong": "The benefit is fewer interruptions. With the noise silenced, the notifications that actually matter to you stand out clearly." },
+      { "q": "2. Do Not Disturb mode on your phone:",
+        "options": ["Blocks all calls permanently", "Silences notifications and calls during set hours while allowing emergency calls through", "Deletes incoming messages during the quiet period", "Reduces your battery drain"],
+        "correct": 1,
+        "right": "Right. Do Not Disturb silences things during the hours you choose, and repeated calls (twice within three minutes) still ring through, so true emergencies reach you.",
+        "wrong": "Do Not Disturb silences notifications and calls during your quiet hours while still letting emergency calls through. Nothing is blocked permanently or deleted." },
+      { "q": "3. A badge notification is:",
+        "options": ["A pop-up that takes over your screen", "The small red number that appears on an app icon showing unread items", "A sound alert that plays when you receive a message", "A vibration pattern unique to each app"],
+        "correct": 1,
+        "right": "Yes. The badge is the small red number on an app icon that counts unread items. It is one of the three ways apps ask for your attention, along with sounds and banners.",
+        "wrong": "A badge is the small red number on an app icon showing how many unread items are waiting. Sounds and pop-up banners are separate kinds of notification." },
+      { "q": "4. To reduce notification overwhelm, the most effective approach is:",
+        "options": ["Turn off all notifications for every app", "Review each app's notification settings and keep only the ones that are genuinely useful to you", "Delete social media apps entirely", "Only use your phone two hours per day"],
+        "correct": 1,
+        "right": "Correct. The goal is signal, not noise: keep the helpful notifications (family, calendar, medication) and silence the rest, app by app.",
+        "wrong": "The best approach is to review each app and keep only the notifications that genuinely help you, like family messages, calendar reminders, and medication alerts. Turning off everything would silence those too." },
+      { "q": "5. Quiet Hours or Scheduled Summary on iPhones and Androids lets you:",
+        "options": ["Never receive notifications from specific people", "Batch notifications to deliver at a time you choose, reducing interruptions throughout the day", "Automatically reply to messages during quiet periods", "Forward notifications to a family member"],
+        "correct": 1,
+        "right": "Exactly. A schedule batches the noise so it arrives when you choose, instead of interrupting you all day. Your notifications wait quietly until you are ready.",
+        "wrong": "These features batch your notifications to arrive at times you choose, which reduces interruptions through the day. Nothing is lost; it just waits for you." }
+    ] },
+
+    { "type": "checklist", "heading": "Your progress", "intro": "Tick each item as you feel confident with it. This is saved on this device only, with no account needed.", "id": "module-26-notifications", "items": [
+      "I know notifications are designed to interrupt me, and I am allowed to silence them",
+      "I can turn Do Not Disturb on and off, from Settings or Control Centre",
+      "I have set scheduled quiet hours that run automatically every day",
+      "I have added my most important people to the Allowed list",
+      "I know about Repeated Calls and Emergency Bypass, so I will never miss a true emergency",
+      "I can turn off notifications for a specific app in Settings",
+      "I check notifications two or three times a day, on my schedule, not the iPad's"
+    ] }
+  ],
+  "success_state": "<strong>Well done.</strong> You have gone from 47 notifications of noise to a handful of signal. Do Not Disturb, quiet hours, priority people, and per-app controls are all set up in your favour. Your attention belongs to you again.",
+  "related": {
+    "heading": "Where to next",
+    "cards": [
+      { "num": "Module 24", "name": "Staying in Touch", "desc": "Now that family calls stand out, learn every way to reach the people you love: texts, video calls, and voice messages.", "href": "module-24-communication.html", "external": false },
+      { "num": "Module 27", "name": "Tame Your Inbox", "desc": "The same take-back-control approach, applied to email: a 5-minute daily routine that keeps the important messages visible.", "href": "module-27-inbox-spam.html", "external": false }
+    ]
+  }
+}
