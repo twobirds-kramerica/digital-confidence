@@ -20,80 +20,194 @@
   },
   "coach": "Your inbox number does not measure anything about you. A big number just means messages have been arriving for years and no one showed you what to do with them. You do not need to catch up on old email. You only need a small daily habit, and this page will give you one.",
   "sections": [
-    { "type": "heading", "level": 2, "text": "Your inbox is a river, not a filing cabinet" },
-    { "type": "paragraph", "text": "Messages flow through your inbox. Some are important, like messages from your family, your bank, or your doctor. Most are not, like newsletters you signed up for years ago and automatic notifications. The goal is not to read every message. The goal is to find the important ones and let the rest flow by." },
-    { "type": "tip", "label": "You do not need to read them all", "text": "If you have thousands of unread emails, do not try to go through them. That would take weeks and accomplish nothing. Focus only on emails from the last 7 days. Everything older is almost certainly no longer urgent, and you can always search for an old email if you need it later." },
-
-    { "type": "heading", "level": 2, "text": "Archive versus delete" },
-    { "type": "paragraph", "text": "There are two ways to clear an email from your inbox, and understanding the difference changes how the whole thing feels." },
-    { "type": "tip", "label": "Archive, the just-in-case button", "text": "When you archive an email, it leaves your inbox but is not deleted. It moves to a folder called \"All Mail\" or \"Archive\", where you can search for it any time. Use archive for receipts, confirmations, and messages you have already read. When in doubt, archive." },
-    { "type": "tip", "label": "Delete, the gone-for-good button", "text": "When you delete an email, it goes to the Trash folder, waits about 30 days, and is then removed for good. Use delete for obvious spam, promotions you will never need, and anything from a sender you do not recognise." },
-
-    { "type": "heading", "level": 2, "text": "How to unsubscribe safely" },
-    { "type": "paragraph", "text": "Robert was told that clicking \"unsubscribe\" is how scammers get you. That is partly true and partly a myth. The whole answer comes down to one question." },
-    { "type": "tip", "label": "The simple rule", "text": "Did you ever give this company your email address? If yes, the unsubscribe link at the bottom of their email is safe and legal to use (Canadian law requires it to work). If no, do not click anything in the message." },
-    { "type": "warning", "label": "Watch out", "text": "Do not click unsubscribe on emails you never signed up for, like lottery wins or package notices for things you never ordered. Clicking anything can confirm to the spammer that your address is active. Just delete these and mark them as spam." },
-
-    { "type": "heading", "level": 2, "text": "Mark spam to train your filter" },
-    { "type": "paragraph", "text": "Every time you mark an email as spam, you teach your email app to recognise similar messages. The more you report, the smarter your filter gets. After about two weeks, most people see a large drop in the junk that reaches their inbox." },
-    { "type": "walkthrough", "title": "Report an email as spam", "steps": [
-      "Open the spam email.",
-      "In Apple Mail, tap the flag or arrow icon, then <strong>Move to Junk</strong>.",
-      "In Gmail, tap the three dots in the top corner, then <strong>Report spam</strong>.",
-      "The message moves to your junk folder and your filter learns from it."
-    ] },
-    { "type": "tip", "label": "The two-week challenge", "text": "For the next two weeks, mark every spam email as junk rather than just deleting it. This is what trains the filter. After two weeks, your email will be noticeably better at catching spam before it ever reaches you." },
-
-    { "type": "heading", "level": 2, "text": "Spam in texts and messaging apps" },
-    { "type": "paragraph", "text": "Unwanted messages now arrive through WhatsApp, Facebook Messenger, and regular texts too. Blocking and reporting them is quick once you know where to tap." },
-    { "type": "list", "items": [
-      "<strong>WhatsApp or Messenger:</strong> open the conversation, tap the person's name at the top, scroll down, and tap <strong>Block</strong>. They are not told, and they can no longer reach you.",
-      "<strong>Spam texts in Canada:</strong> forward the message to <strong>7726</strong> (it spells SPAM). This works with Bell, Rogers, Telus, and others. Your carrier will investigate and may block the sender."
-    ] },
-
-    { "type": "heading", "level": 2, "text": "Your 5-minute daily routine" },
-    { "type": "paragraph", "text": "The solution is not a big cleanup, it is a small daily habit. Five minutes each morning, with your coffee or tea, is all you need." },
-    { "type": "walkthrough", "title": "Every morning, four quick steps", "steps": [
-      "<strong>Delete obvious spam</strong> (30 seconds). Do not open it, just delete or mark it as junk.",
-      "<strong>Read messages from family and your bank</strong> (2 minutes). Look for names you recognise, and reply to those.",
-      "<strong>Archive everything else</strong> (1 minute). It leaves your inbox but stays searchable if you ever need it.",
-      "<strong>Done.</strong> Do not try to read everything or reach an empty inbox. Keep the important messages visible and let the rest go."
-    ] },
-    { "type": "the_move", "label": "The move is", "text": "Stop trying to catch up on old email. Start fresh tomorrow morning: delete the spam, read the important messages, archive the rest. Five minutes. That is your new system." },
-
-    { "type": "quiz", "heading": "Quick check: test your knowledge", "intro": "Tap the answer you think is correct. There is no score kept and nothing to sign in to.", "questions": [
-      { "q": "1. What is the difference between archive and delete?",
-        "options": ["They are exactly the same", "Archive keeps the email but hides it from your inbox; delete sends it to the trash to be removed", "Archive removes the email permanently"],
-        "correct": 1,
-        "right": "Right. Archive tucks the email away where you can still search for it. Delete moves it to the trash to be removed later.",
-        "wrong": "Not quite. Archive keeps the email and hides it from your inbox, while delete moves it to the trash to be removed." },
-      { "q": "2. You get an email from a company you have never heard of, promising lottery winnings. Should you click unsubscribe?",
-        "options": ["Yes, unsubscribe to stop the emails", "No, just delete it and mark it as spam", "Reply and ask them to stop"],
-        "correct": 1,
-        "right": "Exactly. You never signed up, so do not click anything. Delete it and mark it as spam.",
-        "wrong": "The safe move is to delete it and mark it as spam. Clicking anything in a message you never signed up for can bring more spam." },
-      { "q": "3. What is the goal of the 5-minute daily routine?",
-        "options": ["To read every email you have ever received", "To reach an empty inbox by tonight", "To keep the important messages visible and let the rest go"],
-        "correct": 2,
-        "right": "Perfect. The routine is about staying in control, not about reading everything or reaching an empty inbox.",
-        "wrong": "The goal is simply to keep the important messages visible and let the rest go. You never need to read everything." }
-    ] },
-
-    { "type": "checklist", "heading": "Your progress", "intro": "Tick each item as you feel confident with it. This is saved on this device only, with no account needed.", "id": "module-27", "items": [
-      "I understand that a full inbox is normal",
-      "I know when to archive and when to delete",
-      "I know the one question to ask before I unsubscribe",
-      "I can mark an email as spam to train my filter",
-      "I have a simple 5-minute morning routine"
-    ] }
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Your inbox is a river, not a filing cabinet"
+    },
+    {
+      "type": "paragraph",
+      "text": "Messages flow through your inbox. Some are important, like messages from your family, your bank, or your doctor. Most are not, like newsletters you signed up for years ago and automatic notifications. The goal is not to read every message. The goal is to find the important ones and let the rest flow by."
+    },
+    {
+      "type": "tip",
+      "label": "You do not need to read them all",
+      "text": "If you have thousands of unread emails, do not try to go through them. That would take weeks and accomplish nothing. Focus only on emails from the last 7 days. Everything older is almost certainly no longer urgent, and you can always search for an old email if you need it later."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Archive versus delete"
+    },
+    {
+      "type": "paragraph",
+      "text": "There are two ways to clear an email from your inbox, and understanding the difference changes how the whole thing feels."
+    },
+    {
+      "type": "tip",
+      "label": "Archive, the just-in-case button",
+      "text": "When you archive an email, it leaves your inbox but is not deleted. It moves to a folder called \"All Mail\" or \"Archive\", where you can search for it any time. Use archive for receipts, confirmations, and messages you have already read. When in doubt, archive."
+    },
+    {
+      "type": "tip",
+      "label": "Delete, the gone-for-good button",
+      "text": "When you delete an email, it goes to the Trash folder, waits about 30 days, and is then removed for good. Use delete for obvious spam, promotions you will never need, and anything from a sender you do not recognise."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "How to unsubscribe safely"
+    },
+    {
+      "type": "paragraph",
+      "text": "Robert was told that clicking \"unsubscribe\" is how scammers get you. That is partly true and partly a myth. The whole answer comes down to one question."
+    },
+    {
+      "type": "tip",
+      "label": "The simple rule",
+      "text": "Did you ever give this company your email address? If yes, the unsubscribe link at the bottom of their email is safe and legal to use (Canadian law requires it to work). If no, do not click anything in the message."
+    },
+    {
+      "type": "warning",
+      "label": "Watch out",
+      "text": "Do not click unsubscribe on emails you never signed up for, like lottery wins or package notices for things you never ordered. Clicking anything can confirm to the spammer that your address is active. Just delete these and mark them as spam."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Mark spam to train your filter"
+    },
+    {
+      "type": "paragraph",
+      "text": "Every time you mark an email as spam, you teach your email app to recognise similar messages. The more you report, the smarter your filter gets. After about two weeks, most people see a large drop in the junk that reaches their inbox."
+    },
+    {
+      "type": "walkthrough",
+      "title": "Report an email as spam",
+      "steps": [
+        "Open the spam email.",
+        "In Apple Mail, tap the flag or arrow icon, then <strong>Move to Junk</strong>.",
+        "In Gmail, tap the three dots in the top corner, then <strong>Report spam</strong>.",
+        "The message moves to your junk folder and your filter learns from it."
+      ]
+    },
+    {
+      "type": "tip",
+      "label": "The two-week challenge",
+      "text": "For the next two weeks, mark every spam email as junk rather than just deleting it. This is what trains the filter. After two weeks, your email will be noticeably better at catching spam before it ever reaches you."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Spam in texts and messaging apps"
+    },
+    {
+      "type": "paragraph",
+      "text": "Unwanted messages now arrive through WhatsApp, Facebook Messenger, and regular texts too. Blocking and reporting them is quick once you know where to tap."
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>WhatsApp or Messenger:</strong> open the conversation, tap the person's name at the top, scroll down, and tap <strong>Block</strong>. They are not told, and they can no longer reach you.",
+        "<strong>Spam texts in Canada:</strong> forward the message to <strong>7726</strong> (it spells SPAM). This works with Bell, Rogers, Telus, and others. Your carrier will investigate and may block the sender."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Your 5-minute daily routine"
+    },
+    {
+      "type": "paragraph",
+      "text": "The solution is not a big cleanup, it is a small daily habit. Five minutes each morning, with your coffee or tea, is all you need."
+    },
+    {
+      "type": "walkthrough",
+      "title": "Every morning, four quick steps",
+      "steps": [
+        "<strong>Delete obvious spam</strong> (30 seconds). Do not open it, just delete or mark it as junk.",
+        "<strong>Read messages from family and your bank</strong> (2 minutes). Look for names you recognise, and reply to those.",
+        "<strong>Archive everything else</strong> (1 minute). It leaves your inbox but stays searchable if you ever need it.",
+        "<strong>Done.</strong> Do not try to read everything or reach an empty inbox. Keep the important messages visible and let the rest go."
+      ]
+    },
+    {
+      "type": "the_move",
+      "label": "The move is",
+      "text": "Stop trying to catch up on old email. Start fresh tomorrow morning: delete the spam, read the important messages, archive the rest. Five minutes. That is your new system."
+    },
+    {
+      "type": "quiz",
+      "heading": "Quick check: test your knowledge",
+      "intro": "Tap the answer you think is correct. There is no score kept and nothing to sign in to.",
+      "questions": [
+        {
+          "q": "1. What is the difference between archive and delete?",
+          "options": [
+            "They are exactly the same",
+            "Archive keeps the email but hides it from your inbox; delete sends it to the trash to be removed",
+            "Archive removes the email permanently"
+          ],
+          "correct": 1,
+          "right": "Right. Archive tucks the email away where you can still search for it. Delete moves it to the trash to be removed later.",
+          "wrong": "Not quite. Archive keeps the email and hides it from your inbox, while delete moves it to the trash to be removed."
+        },
+        {
+          "q": "2. You get an email from a company you have never heard of, promising lottery winnings. Should you click unsubscribe?",
+          "options": [
+            "Yes, unsubscribe to stop the emails",
+            "No, just delete it and mark it as spam",
+            "Reply and ask them to stop"
+          ],
+          "correct": 1,
+          "right": "Exactly. You never signed up, so do not click anything. Delete it and mark it as spam.",
+          "wrong": "The safe move is to delete it and mark it as spam. Clicking anything in a message you never signed up for can bring more spam."
+        },
+        {
+          "q": "3. What is the goal of the 5-minute daily routine?",
+          "options": [
+            "To read every email you have ever received",
+            "To reach an empty inbox by tonight",
+            "To keep the important messages visible and let the rest go"
+          ],
+          "correct": 2,
+          "right": "Perfect. The routine is about staying in control, not about reading everything or reaching an empty inbox.",
+          "wrong": "The goal is simply to keep the important messages visible and let the rest go. You never need to read everything."
+        }
+      ]
+    },
+    {
+      "type": "checklist",
+      "heading": "Your progress",
+      "intro": "Tick each item as you feel confident with it. This is saved on this device only, with no account needed.",
+      "id": "module-27",
+      "items": [
+        "I understand that a full inbox is normal",
+        "I know when to archive and when to delete",
+        "I know the one question to ask before I unsubscribe",
+        "I can mark an email as spam to train my filter",
+        "I have a simple 5-minute morning routine"
+      ]
+    }
   ],
   "success_state": "<strong>Well done.</strong> You now have a simple system for your inbox: find the important messages, let the rest flow by, and spend just five minutes a day. That is all it takes to feel in control.",
   "related": {
     "heading": "Where to next",
-    "note": "You are viewing the new design. Module 5 is also in the new design; the others open in the original site for now, which is unchanged.",
     "cards": [
-      { "num": "Module 5", "name": "Email and Messages", "desc": "The everyday skills behind a calm inbox: sending mail, spotting scams, and sharing photos safely.", "href": "module-5.html", "external": false },
-      { "num": "Module 6", "name": "Banking and Transactions", "desc": "Many scams start in your inbox. Learn the habits that keep your money safe when you bank online.", "href": "../../module-6.html", "external": true }
+      {
+        "num": "Module 5",
+        "name": "Email and Messages",
+        "desc": "The everyday skills behind a calm inbox: sending mail, spotting scams, and sharing photos safely.",
+        "href": "module-5.html",
+        "external": false
+      },
+      {
+        "num": "Module 6",
+        "name": "Banking and Transactions",
+        "desc": "Many scams start in your inbox. Learn the habits that keep your money safe when you bank online.",
+        "href": "module-6.html",
+        "external": false
+      }
     ]
   }
 }

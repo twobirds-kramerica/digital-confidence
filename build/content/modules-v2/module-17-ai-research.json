@@ -20,153 +20,346 @@
   },
   "coach": "Asking an AI assistant a question for the first time can feel strange, like talking to someone who might be making things up. That instinct is exactly right, and it is the most important skill in this lesson. Curious people who double-check answers get the best of AI without being fooled by it. You are already thinking like a researcher.",
   "sections": [
-    { "type": "heading", "level": 2, "text": "What is AI research?" },
-    { "type": "paragraph", "text": "Artificial intelligence (AI) tools are programmes that can answer questions, explain things, and have a back-and-forth conversation with you, like texting a very knowledgeable friend who never gets impatient. They are not magic, they are not alive, and they do not always get things right. But used wisely, they can be genuinely helpful." },
-    { "type": "heading", "level": 3, "text": "The main AI tools you may encounter" },
-    { "type": "list", "items": [
-      "<strong>Siri</strong>: built into every iPhone and iPad. Tap the small circle at the bottom of the screen or say \"Hey Siri.\" Best for quick questions, setting reminders, making calls, and playing music.",
-      "<strong>ChatGPT</strong>: a free tool at chat.openai.com. Best for detailed explanations, writing help, recipes, and longer conversations.",
-      "<strong>Google Gemini</strong>: built into Google Search and available at gemini.google.com. Best if you already use Google and want AI answers alongside regular search results.",
-      "<strong>Alexa</strong>: Amazon's voice assistant, found on Amazon Echo smart speakers. Best for home control (lights, timers, weather) and quick spoken questions."
-    ] },
-    { "type": "three_second_rule", "heading": "The 3-second rule for AI answers", "steps": [
-      { "icon": "✋", "name": "Stop", "text": "Before acting on anything an AI tells you, pause for 3 seconds." },
-      { "icon": "🫁", "name": "Breathe", "text": "Ask yourself: does this seem sensible?" },
-      { "icon": "🔍", "name": "Verify", "text": "Should I check this somewhere else? One quick check can save a lot of trouble." }
-    ] },
-
-    { "type": "heading", "level": 2, "text": "Asking AI good questions" },
-    { "type": "paragraph", "text": "The better your question, the better the answer. You do not need special knowledge; just write the way you would speak to another person. Some examples of good questions:" },
-    { "type": "list", "items": [
-      "\"What is a simple recipe for lentil soup that takes less than an hour?\"",
-      "\"Can you explain what a blood pressure reading of 140/90 means in plain language?\"",
-      "\"What are good questions to ask my pharmacist about drug interactions?\"",
-      "\"What is the history of Woodstock, Ontario?\"",
-      "\"Help me write a birthday message for my granddaughter who is turning 16.\""
-    ] },
-    { "type": "heading", "level": 3, "text": "Tips for getting better answers" },
-    { "type": "list", "items": [
-      "Add \"in simple terms\" or \"for someone who is not a doctor\" to health questions.",
-      "If the answer is too long, type: \"Can you give me a shorter version?\"",
-      "If the answer is confusing, type: \"Can you explain that with an example?\"",
-      "You can ask follow-up questions in the same conversation. The AI remembers what you asked before.",
-      "Specify your location when it matters: add \"in Ontario\" or \"in Canada\" for local information."
-    ] },
-    { "type": "helper", "label": "Confidence check", "text": "There are no wrong questions. If the first answer is not helpful, just rephrase it, like asking a librarian for clarification. AI does not judge, and it never gets tired of explaining things." },
-
-    { "type": "heading", "level": 2, "text": "Checking what AI tells you" },
-    { "type": "paragraph", "text": "AI tools can make mistakes. They sometimes give outdated information, invent facts (this is called \"hallucination\"), or misunderstand your question. That does not mean they are useless; it means you should treat their answers the way you would treat advice from a friend: helpful, but worth a second opinion." },
-    { "type": "heading", "level": 3, "text": "Where to double-check important information" },
-    { "type": "list", "items": [
-      "<strong>Health questions:</strong> canada.ca/health, Mayo Clinic (mayoclinic.org), or your pharmacist",
-      "<strong>Government benefits:</strong> canada.ca or Service Canada (1-800-277-9914)",
-      "<strong>Local news and events:</strong> your local newspaper's website",
-      "<strong>Legal or financial questions:</strong> always consult a professional. AI is not a replacement for a lawyer or financial adviser."
-    ] },
-    { "type": "heading", "level": 3, "text": "Warning signs that an AI answer may be wrong" },
-    { "type": "list", "items": [
-      "The answer gives a very specific phone number, address, or dollar amount. Always verify these independently.",
-      "The answer sounds too alarming or too reassuring about a health symptom.",
-      "The AI seems very certain about something it could not possibly know (like what will happen in the future).",
-      "The answer says \"as of my last update\" or \"my training data\". This means it may not have current information."
-    ] },
-    { "type": "tip", "label": "A simple checking habit", "text": "For anything important, search the same question on Google. If the top two or three results from different websites agree with what the AI said, you can be more confident. If they disagree, trust the established websites over the AI." },
-
-    { "type": "heading", "level": 2, "text": "Health information and AI" },
-    { "type": "paragraph", "text": "Many people use AI to research health topics, and that is completely understandable. AI can explain medical words in plain language, help you think of questions for your doctor, and give you a general sense of what a condition or medication involves. But there are clear limits." },
-    { "type": "heading", "level": 3, "text": "Good uses of AI for health" },
-    { "type": "list", "items": [
-      "Ask AI to explain a medical term your doctor used that you did not fully understand.",
-      "Use AI to prepare a list of questions before a doctor's appointment.",
-      "Ask about general side effects of a medication (then verify with your pharmacist).",
-      "Get a plain-language summary of a health condition after your diagnosis."
-    ] },
-    { "type": "heading", "level": 3, "text": "When AI is not enough: call a professional" },
-    { "type": "list", "items": [
-      "You have a new or worsening symptom. Call Telehealth Ontario free: <strong>1-866-797-0000</strong>.",
-      "You are considering stopping or changing a medication.",
-      "You have chest pain, trouble breathing, sudden confusion, or severe pain. Call <strong>911</strong>.",
-      "You want to know if a treatment or supplement is right for your specific situation."
-    ] },
-    { "type": "helper", "label": "Confidence check", "text": "AI does not know your medical history, your other medications, your age, or your specific circumstances. Your pharmacist at a Canadian drugstore can answer most medication questions for free. Walk in or call anytime." },
-
-    { "type": "heading", "level": 2, "text": "Protecting your privacy with AI" },
-    { "type": "paragraph", "text": "When you type something into an AI tool, that information is sent to a company's computer servers. The company may store your conversation for months or years and may use it to improve their AI. This is normal, but it means you should be thoughtful about what you share." },
-    { "type": "heading", "level": 3, "text": "Never share these things with AI" },
-    { "type": "list", "items": [
-      "Your full name combined with your address, phone number, or birthdate",
-      "Your Social Insurance Number (SIN) or health card number (OHIP)",
-      "Banking details, credit card numbers, or online banking passwords",
-      "Your daily routine or when your home is empty",
-      "Passwords or PIN numbers of any kind"
-    ] },
-    { "type": "paragraph", "text": "<strong>Safe ways to ask personal questions:</strong> instead of typing \"I take 10mg of metformin and my doctor is Dr. Smith at St. Thomas hospital,\" type: \"What are the general side effects of metformin?\" You get the same useful answer without sharing personal details." },
-    { "type": "tip", "label": "The golden rule for AI privacy", "text": "Before typing anything into an AI tool, ask yourself: \"Would I be comfortable if this message was posted on a community bulletin board?\" If the answer is no, leave that detail out." },
-
-    { "type": "heading", "level": 2, "text": "Helpful AI tools for everyday life" },
-    { "type": "paragraph", "text": "Once you are comfortable with the basics, AI can be a genuinely handy helper for all sorts of everyday tasks. Here are some ideas to try:" },
-    { "type": "list", "items": [
-      "\"Write a birthday card message for my brother who loves fishing and is turning 70.\"",
-      "\"Translate this sentence into French: How do I get to the pharmacy?\"",
-      "\"What are good indoor plants for a sunny Ontario apartment that are hard to kill?\"",
-      "\"Suggest some easy chair exercises for someone with knee pain.\"",
-      "\"Help me write an email to my landlord asking about a repair that has not been fixed.\"",
-      "\"What is the difference between RRSP and TFSA in Canada?\" (then verify with your bank or a financial adviser)",
-      "\"What are good day trips from London, Ontario for a senior who loves history?\""
-    ] },
-    { "type": "heading", "level": 3, "text": "Using Siri on your iPad every day" },
-    { "type": "list", "items": [
-      "\"Hey Siri, set a timer for 20 minutes.\"",
-      "\"Hey Siri, call my daughter.\"",
-      "\"Hey Siri, what is the weather in St. Thomas today?\"",
-      "\"Hey Siri, remind me at 3pm to take my medication.\"",
-      "\"Hey Siri, how do I get to the Elgin County Library?\""
-    ] },
-    { "type": "the_move", "label": "The move is", "text": "Ask freely, in plain everyday language. Then, before acting on anything important, double-check it against a trusted source, and never type personal details you would not post on a community bulletin board." },
-
-    { "type": "quiz", "heading": "Quick check: test your knowledge", "intro": "Tap the answer you think is correct. There is no score kept and nothing to sign in to.", "questions": [
-      { "q": "1. How often can AI tools give wrong or made-up answers?",
-        "options": ["Almost never, AI is very accurate", "Sometimes, they can make mistakes", "Only when you ask tricky questions", "I am not sure"],
-        "correct": 1,
-        "right": "Right. AI tools sometimes give outdated information or invent facts (called \"hallucination\"). That is why the checking habit matters.",
-        "wrong": "AI tools can make mistakes at any time, even on simple questions. They sometimes give outdated information or invent facts, so important answers deserve a second check." },
-      { "q": "2. Which of these should you avoid sharing with an AI tool?",
-        "options": ["Your city or province", "Your full name, SIN, or banking details", "A question about a news story", "The name of a book you enjoyed"],
-        "correct": 1,
-        "right": "Exactly. Never share your full name with address or birthdate, your SIN or health card number, banking details, or passwords. General questions are fine.",
-        "wrong": "The things to keep private are your full name, SIN, health card number, banking details, and passwords. Your city, news questions, and book titles are fine to share." },
-      { "q": "3. If an AI gives you health or medical advice, what is the safest next step?",
-        "options": ["Follow it, AI knows a lot about health", "Ask the AI for more detail", "Confirm with your doctor or pharmacist", "Share it with a family member first"],
-        "correct": 2,
-        "right": "Perfect. AI does not know your medical history or your other medications. Your doctor or pharmacist does, and pharmacists answer most medication questions for free.",
-        "wrong": "The safest step is to confirm with your doctor or pharmacist. AI does not know your medical history, your medications, or your specific circumstances." },
-      { "q": "4. What is a good way to check whether an AI answer is accurate?",
-        "options": ["Ask the same AI the question again", "Trust it if it sounds confident", "Look it up on a trusted website (Government of Canada, Mayo Clinic, etc.)", "Ask a friend if they agree"],
-        "correct": 2,
-        "right": "Yes. Search the same question and compare against established websites. If they agree with the AI, you can be more confident. If they disagree, trust the established sites.",
-        "wrong": "The reliable check is to look it up on a trusted website such as canada.ca or the Mayo Clinic. Sounding confident is not the same as being correct." },
-      { "q": "5. The 3-second rule says: before sharing information online, you should:",
-        "options": ["Read the information twice before sharing", "Stop, breathe, and verify before sharing", "Check your privacy settings first", "Ask the AI if it is safe to share"],
-        "correct": 1,
-        "right": "Right. Stop, breathe, and verify. Three seconds of pause is often all it takes to catch a mistake before it happens.",
-        "wrong": "The 3-second rule is: stop, breathe, and verify before sharing. A short pause is your best protection." }
-    ] },
-
-    { "type": "checklist", "heading": "Your progress", "intro": "Tick each item as you feel confident with it. This is saved on this device only, with no account needed.", "id": "module-17-ai-research", "items": [
-      "I know what AI tools are and which ones I might use (Siri, ChatGPT, Google Gemini, Alexa)",
-      "I can ask good questions and get clearer, shorter answers when I need them",
-      "I know how to check whether an AI answer is trustworthy",
-      "I know what personal information to keep out of AI conversations",
-      "I know when AI is not enough and it is time to call a professional"
-    ] }
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "What is AI research?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Artificial intelligence (AI) tools are programmes that can answer questions, explain things, and have a back-and-forth conversation with you, like texting a very knowledgeable friend who never gets impatient. They are not magic, they are not alive, and they do not always get things right. But used wisely, they can be genuinely helpful."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "The main AI tools you may encounter"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Siri</strong>: built into every iPhone and iPad. Tap the small circle at the bottom of the screen or say \"Hey Siri.\" Best for quick questions, setting reminders, making calls, and playing music.",
+        "<strong>ChatGPT</strong>: a free tool at chat.openai.com. Best for detailed explanations, writing help, recipes, and longer conversations.",
+        "<strong>Google Gemini</strong>: built into Google Search and available at gemini.google.com. Best if you already use Google and want AI answers alongside regular search results.",
+        "<strong>Alexa</strong>: Amazon's voice assistant, found on Amazon Echo smart speakers. Best for home control (lights, timers, weather) and quick spoken questions."
+      ]
+    },
+    {
+      "type": "three_second_rule",
+      "heading": "The 3-second rule for AI answers",
+      "steps": [
+        {
+          "icon": "✋",
+          "name": "Stop",
+          "text": "Before acting on anything an AI tells you, pause for 3 seconds."
+        },
+        {
+          "icon": "🫁",
+          "name": "Breathe",
+          "text": "Ask yourself: does this seem sensible?"
+        },
+        {
+          "icon": "🔍",
+          "name": "Verify",
+          "text": "Should I check this somewhere else? One quick check can save a lot of trouble."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Asking AI good questions"
+    },
+    {
+      "type": "paragraph",
+      "text": "The better your question, the better the answer. You do not need special knowledge; just write the way you would speak to another person. Some examples of good questions:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "\"What is a simple recipe for lentil soup that takes less than an hour?\"",
+        "\"Can you explain what a blood pressure reading of 140/90 means in plain language?\"",
+        "\"What are good questions to ask my pharmacist about drug interactions?\"",
+        "\"What is the history of Woodstock, Ontario?\"",
+        "\"Help me write a birthday message for my granddaughter who is turning 16.\""
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Tips for getting better answers"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Add \"in simple terms\" or \"for someone who is not a doctor\" to health questions.",
+        "If the answer is too long, type: \"Can you give me a shorter version?\"",
+        "If the answer is confusing, type: \"Can you explain that with an example?\"",
+        "You can ask follow-up questions in the same conversation. The AI remembers what you asked before.",
+        "Specify your location when it matters: add \"in Ontario\" or \"in Canada\" for local information."
+      ]
+    },
+    {
+      "type": "helper",
+      "label": "Confidence check",
+      "text": "There are no wrong questions. If the first answer is not helpful, just rephrase it, like asking a librarian for clarification. AI does not judge, and it never gets tired of explaining things."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Checking what AI tells you"
+    },
+    {
+      "type": "paragraph",
+      "text": "AI tools can make mistakes. They sometimes give outdated information, invent facts (this is called \"hallucination\"), or misunderstand your question. That does not mean they are useless; it means you should treat their answers the way you would treat advice from a friend: helpful, but worth a second opinion."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Where to double-check important information"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Health questions:</strong> canada.ca/health, Mayo Clinic (mayoclinic.org), or your pharmacist",
+        "<strong>Government benefits:</strong> canada.ca or Service Canada (1-800-277-9914)",
+        "<strong>Local news and events:</strong> your local newspaper's website",
+        "<strong>Legal or financial questions:</strong> always consult a professional. AI is not a replacement for a lawyer or financial adviser."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Warning signs that an AI answer may be wrong"
+    },
+    {
+      "type": "list",
+      "items": [
+        "The answer gives a very specific phone number, address, or dollar amount. Always verify these independently.",
+        "The answer sounds too alarming or too reassuring about a health symptom.",
+        "The AI seems very certain about something it could not possibly know (like what will happen in the future).",
+        "The answer says \"as of my last update\" or \"my training data\". This means it may not have current information."
+      ]
+    },
+    {
+      "type": "tip",
+      "label": "A simple checking habit",
+      "text": "For anything important, search the same question on Google. If the top two or three results from different websites agree with what the AI said, you can be more confident. If they disagree, trust the established websites over the AI."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Health information and AI"
+    },
+    {
+      "type": "paragraph",
+      "text": "Many people use AI to research health topics, and that is completely understandable. AI can explain medical words in plain language, help you think of questions for your doctor, and give you a general sense of what a condition or medication involves. But there are clear limits."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Good uses of AI for health"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Ask AI to explain a medical term your doctor used that you did not fully understand.",
+        "Use AI to prepare a list of questions before a doctor's appointment.",
+        "Ask about general side effects of a medication (then verify with your pharmacist).",
+        "Get a plain-language summary of a health condition after your diagnosis."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "When AI is not enough: call a professional"
+    },
+    {
+      "type": "list",
+      "items": [
+        "You have a new or worsening symptom. Call Telehealth Ontario free: <strong>1-866-797-0000</strong>.",
+        "You are considering stopping or changing a medication.",
+        "You have chest pain, trouble breathing, sudden confusion, or severe pain. Call <strong>911</strong>.",
+        "You want to know if a treatment or supplement is right for your specific situation."
+      ]
+    },
+    {
+      "type": "helper",
+      "label": "Confidence check",
+      "text": "AI does not know your medical history, your other medications, your age, or your specific circumstances. Your pharmacist at a Canadian drugstore can answer most medication questions for free. Walk in or call anytime."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Protecting your privacy with AI"
+    },
+    {
+      "type": "paragraph",
+      "text": "When you type something into an AI tool, that information is sent to a company's computer servers. The company may store your conversation for months or years and may use it to improve their AI. This is normal, but it means you should be thoughtful about what you share."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Never share these things with AI"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Your full name combined with your address, phone number, or birthdate",
+        "Your Social Insurance Number (SIN) or health card number (OHIP)",
+        "Banking details, credit card numbers, or online banking passwords",
+        "Your daily routine or when your home is empty",
+        "Passwords or PIN numbers of any kind"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "<strong>Safe ways to ask personal questions:</strong> instead of typing \"I take 10mg of metformin and my doctor is Dr. Smith at St. Thomas hospital,\" type: \"What are the general side effects of metformin?\" You get the same useful answer without sharing personal details."
+    },
+    {
+      "type": "tip",
+      "label": "The golden rule for AI privacy",
+      "text": "Before typing anything into an AI tool, ask yourself: \"Would I be comfortable if this message was posted on a community bulletin board?\" If the answer is no, leave that detail out."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Helpful AI tools for everyday life"
+    },
+    {
+      "type": "paragraph",
+      "text": "Once you are comfortable with the basics, AI can be a genuinely handy helper for all sorts of everyday tasks. Here are some ideas to try:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "\"Write a birthday card message for my brother who loves fishing and is turning 70.\"",
+        "\"Translate this sentence into French: How do I get to the pharmacy?\"",
+        "\"What are good indoor plants for a sunny Ontario apartment that are hard to kill?\"",
+        "\"Suggest some easy chair exercises for someone with knee pain.\"",
+        "\"Help me write an email to my landlord asking about a repair that has not been fixed.\"",
+        "\"What is the difference between RRSP and TFSA in Canada?\" (then verify with your bank or a financial adviser)",
+        "\"What are good day trips from London, Ontario for a senior who loves history?\""
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Using Siri on your iPad every day"
+    },
+    {
+      "type": "list",
+      "items": [
+        "\"Hey Siri, set a timer for 20 minutes.\"",
+        "\"Hey Siri, call my daughter.\"",
+        "\"Hey Siri, what is the weather in St. Thomas today?\"",
+        "\"Hey Siri, remind me at 3pm to take my medication.\"",
+        "\"Hey Siri, how do I get to the Elgin County Library?\""
+      ]
+    },
+    {
+      "type": "the_move",
+      "label": "The move is",
+      "text": "Ask freely, in plain everyday language. Then, before acting on anything important, double-check it against a trusted source, and never type personal details you would not post on a community bulletin board."
+    },
+    {
+      "type": "quiz",
+      "heading": "Quick check: test your knowledge",
+      "intro": "Tap the answer you think is correct. There is no score kept and nothing to sign in to.",
+      "questions": [
+        {
+          "q": "1. How often can AI tools give wrong or made-up answers?",
+          "options": [
+            "Almost never, AI is very accurate",
+            "Sometimes, they can make mistakes",
+            "Only when you ask tricky questions",
+            "I am not sure"
+          ],
+          "correct": 1,
+          "right": "Right. AI tools sometimes give outdated information or invent facts (called \"hallucination\"). That is why the checking habit matters.",
+          "wrong": "AI tools can make mistakes at any time, even on simple questions. They sometimes give outdated information or invent facts, so important answers deserve a second check."
+        },
+        {
+          "q": "2. Which of these should you avoid sharing with an AI tool?",
+          "options": [
+            "Your city or province",
+            "Your full name, SIN, or banking details",
+            "A question about a news story",
+            "The name of a book you enjoyed"
+          ],
+          "correct": 1,
+          "right": "Exactly. Never share your full name with address or birthdate, your SIN or health card number, banking details, or passwords. General questions are fine.",
+          "wrong": "The things to keep private are your full name, SIN, health card number, banking details, and passwords. Your city, news questions, and book titles are fine to share."
+        },
+        {
+          "q": "3. If an AI gives you health or medical advice, what is the safest next step?",
+          "options": [
+            "Follow it, AI knows a lot about health",
+            "Ask the AI for more detail",
+            "Confirm with your doctor or pharmacist",
+            "Share it with a family member first"
+          ],
+          "correct": 2,
+          "right": "Perfect. AI does not know your medical history or your other medications. Your doctor or pharmacist does, and pharmacists answer most medication questions for free.",
+          "wrong": "The safest step is to confirm with your doctor or pharmacist. AI does not know your medical history, your medications, or your specific circumstances."
+        },
+        {
+          "q": "4. What is a good way to check whether an AI answer is accurate?",
+          "options": [
+            "Ask the same AI the question again",
+            "Trust it if it sounds confident",
+            "Look it up on a trusted website (Government of Canada, Mayo Clinic, etc.)",
+            "Ask a friend if they agree"
+          ],
+          "correct": 2,
+          "right": "Yes. Search the same question and compare against established websites. If they agree with the AI, you can be more confident. If they disagree, trust the established sites.",
+          "wrong": "The reliable check is to look it up on a trusted website such as canada.ca or the Mayo Clinic. Sounding confident is not the same as being correct."
+        },
+        {
+          "q": "5. The 3-second rule says: before sharing information online, you should:",
+          "options": [
+            "Read the information twice before sharing",
+            "Stop, breathe, and verify before sharing",
+            "Check your privacy settings first",
+            "Ask the AI if it is safe to share"
+          ],
+          "correct": 1,
+          "right": "Right. Stop, breathe, and verify. Three seconds of pause is often all it takes to catch a mistake before it happens.",
+          "wrong": "The 3-second rule is: stop, breathe, and verify before sharing. A short pause is your best protection."
+        }
+      ]
+    },
+    {
+      "type": "checklist",
+      "heading": "Your progress",
+      "intro": "Tick each item as you feel confident with it. This is saved on this device only, with no account needed.",
+      "id": "module-17-ai-research",
+      "items": [
+        "I know what AI tools are and which ones I might use (Siri, ChatGPT, Google Gemini, Alexa)",
+        "I can ask good questions and get clearer, shorter answers when I need them",
+        "I know how to check whether an AI answer is trustworthy",
+        "I know what personal information to keep out of AI conversations",
+        "I know when AI is not enough and it is time to call a professional"
+      ]
+    }
   ],
   "success_state": "<strong>Well done.</strong> You now know what AI tools are and which ones you might use, how to ask good questions and get clearer answers, how to check whether AI answers are trustworthy, what personal information to keep private, and dozens of practical ways AI can help you in daily life. You have earned this.",
   "related": {
     "heading": "Where to next",
-    "note": "You are viewing the new design. Lessons marked as opening the original site are unchanged there, and will move to the new design as it is rolled out.",
     "cards": [
-      { "num": "Module 9", "name": "Understanding AI", "desc": "A gentle introduction to what artificial intelligence is and how it already shows up in your daily life.", "href": "../../module-9.html", "external": true },
-      { "num": "Module 15", "name": "Telehealth and Medical Portals", "desc": "AI can help you prepare questions for the doctor. This lesson shows you how to see that doctor without leaving home.", "href": "module-15.html", "external": false }
+      {
+        "num": "Module 9",
+        "name": "Understanding AI",
+        "desc": "A gentle introduction to what artificial intelligence is and how it already shows up in your daily life.",
+        "href": "module-9.html",
+        "external": false
+      },
+      {
+        "num": "Module 15",
+        "name": "Telehealth and Medical Portals",
+        "desc": "AI can help you prepare questions for the doctor. This lesson shows you how to see that doctor without leaving home.",
+        "href": "module-15.html",
+        "external": false
+      }
     ]
   }
 }

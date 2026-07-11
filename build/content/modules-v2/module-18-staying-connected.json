@@ -20,133 +20,326 @@
   },
   "coach": "If distance from the people you love is the reason you are learning this technology, you are doing something brave: learning a new skill for the sake of a relationship. Fumbled calls and missed messages are part of everyone's learning curve. The people on the other end care that you showed up, not that you did it perfectly.",
   "sections": [
-    { "type": "heading", "level": 2, "text": "Why staying connected matters" },
-    { "type": "paragraph", "text": "Loneliness is not a character flaw. It is a health issue, as serious as smoking or high blood pressure. Research consistently shows that social isolation increases the risk of cognitive decline, depression, and physical illness in older adults." },
-    { "type": "paragraph", "text": "But here is the encouraging truth: technology, used well, genuinely helps. Video calling, sharing photos, online groups, and even simple messaging can reduce isolation and bring real joy. This lesson will show you how." },
-    { "type": "helper", "label": "Confidence check", "text": "Think of one person you have not spoken to in too long. By the end of this lesson, you will know exactly how to reach them." },
-
-    { "type": "heading", "level": 2, "text": "Video calling your family" },
-    { "type": "paragraph", "text": "Video calling lets you see the face of someone you love, no matter how far away they are. Here are the three most common apps." },
-    { "type": "walkthrough", "title": "FaceTime (Apple devices only)", "steps": [
-      "Find the green <strong>FaceTime</strong> app on your iPad or iPhone. If you and the person you are calling both have Apple devices, this is the easiest choice.",
-      "Tap the <strong>+</strong> button (top right corner).",
-      "Type the name of the person you want to call, or choose from your contacts.",
-      "Tap the <strong>video camera icon</strong> to start the call."
-    ] },
-    { "type": "tip", "label": "If the call will not connect", "text": "If the call does not connect within a few seconds, your Wi-Fi may be slow. Move closer to your router and try again." },
-    { "type": "walkthrough", "title": "Zoom (works on any device)", "steps": [
-      "Download the <strong>Zoom</strong> app from the App Store. Zoom works on iPhones, iPads, Android phones, and computers, and is great for family group calls with 3 or more people.",
-      "When family sends you a Zoom link (it looks like zoom.us/j/12345...), tap it.",
-      "Tap <strong>Open in Zoom</strong> or <strong>Join Meeting</strong>.",
-      "Allow access to your camera and microphone when asked."
-    ] },
-    { "type": "walkthrough", "title": "WhatsApp video (free, works everywhere)", "steps": [
-      "Open <strong>WhatsApp</strong> and find the contact you want to call. WhatsApp is free and works between iPhones and Android phones, useful when family members have different devices.",
-      "Tap the <strong>video camera icon</strong> at the top right.",
-      "The call connects and you can see each other immediately."
-    ] },
-    { "type": "helper", "label": "Confidence check", "text": "Do you know which app the people you want to call prefer? Ask a family member which one they use most, then try it this week." },
-
-    { "type": "heading", "level": 2, "text": "Sharing photos and memories" },
-    { "type": "paragraph", "text": "One of the most meaningful things technology lets you do is share moments with people you love: a sunset from your backyard, your grandchild's drawing, a meal you are proud of." },
-    { "type": "walkthrough", "title": "Creating an iCloud Shared Album", "steps": [
-      "Open the <strong>Photos</strong> app. A Shared Album is like a private photo album that you and your family can all add to.",
-      "Tap the <strong>Albums</strong> tab at the bottom.",
-      "Scroll down to <strong>Shared Albums</strong> and tap the <strong>+</strong> button to create a new one.",
-      "Give it a name (for example, \"Family Photos 2026\") and invite family by email or phone number.",
-      "Family members will get a notification and can add their own photos to the album too."
-    ] },
-    { "type": "walkthrough", "title": "Sending a photo in a message", "steps": [
-      "Open <strong>Messages</strong> and start a conversation.",
-      "Tap the <strong>photo icon</strong> (it looks like a mountain) to the left of the text box.",
-      "Choose a photo from your library and tap <strong>Send</strong>."
-    ] },
-    { "type": "helper", "label": "Confidence check", "text": "Is there a photo on your phone right now that would make someone smile? Send it today." },
-
-    { "type": "heading", "level": 2, "text": "Messaging made easy" },
-    { "type": "paragraph", "text": "You do not have to type a full message every time. There are many ways to communicate that are quick, personal, and easy." },
-    { "type": "paragraph", "text": "<strong>Voice messages: your new best friend.</strong> Instead of typing, you can hold a button and speak your message. The other person hears your voice, which is often much more meaningful than words on a screen. In iMessage: hold the microphone icon next to the text box, speak, release, and tap Send. In WhatsApp: hold the microphone icon on the right, speak, and release to send." },
-    { "type": "paragraph", "text": "<strong>Reacting to messages.</strong> You do not always need to reply with words. In iMessage, press and hold on any message and choose a reaction (heart, thumbs up, thumbs down, haha, !!, ?). A quick heart reaction says \"I saw this, I love you\" without typing a single letter." },
-    { "type": "helper", "label": "Confidence check", "text": "Have you tried sending a voice message? It takes less than 10 seconds and sounds much more personal than a text." },
-
-    { "type": "heading", "level": 2, "text": "Online communities for seniors" },
-    { "type": "paragraph", "text": "There are online communities built specifically for people at your stage of life: people who share your interests, your experiences, and your questions about technology." },
-    { "type": "list", "items": [
-      "<strong>Facebook groups</strong> exist for almost every interest: gardening, knitting, local history, birdwatching, genealogy, your hometown, your faith community. These are private groups where you share with people who share your passions. To find one, tap the <strong>Groups</strong> icon in Facebook, then tap <strong>Discover</strong> and search for your interest.",
-      "<strong>Zoom meetups and classes.</strong> Many libraries, community centres, and seniors organisations now offer regular Zoom meetups: book clubs, exercise classes, language groups, current events discussions. These are free or very low cost. Check with your local library or seniors centre for current offerings."
-    ] },
-    { "type": "helper", "label": "Confidence check", "text": "Is there a hobby or interest you would enjoy sharing with others? Search for a Facebook group this week." },
-
-    { "type": "heading", "level": 2, "text": "Keeping in touch across long distances" },
-    { "type": "paragraph", "text": "When family is far away, in another province, another country, or just a different time zone, staying connected takes a little more intention. Here are the habits that work." },
-    { "type": "tip", "label": "Schedule your calls", "text": "The single most effective thing you can do is schedule a regular video call. Sunday afternoons. Wednesday mornings. Whatever works. Put it in your calendar and protect it like any other appointment. Even 15 minutes of video with a grandchild once a week creates a relationship that phone calls alone cannot." },
-    { "type": "paragraph", "text": "<strong>Time zones: a quick cheat sheet.</strong> Vancouver (BC) is 3 hours behind Eastern time. The UK is 5 hours ahead (in summer). Australia is about 14 to 16 hours ahead. To check the current time anywhere, just ask Siri: \"Hey Siri, what time is it in Vancouver right now?\"" },
-    { "type": "helper", "label": "Confidence check", "text": "Is there one regular call you could schedule this week? Even 20 minutes?" },
-
-    { "type": "heading", "level": 2, "text": "When technology helps in difficult times" },
-    { "type": "paragraph", "text": "Grief and loss are part of a long life. When someone we love dies, or when friends and family move away, technology can be one way, not the only way, of staying connected to what matters." },
-    { "type": "list", "items": [
-      "<strong>Staying connected to family after loss.</strong> When families are scattered by grief, video calls become more important, not less. They let you grieve together even when you cannot be together physically. Sharing photos of a loved one in a shared album can also be a gentle way to celebrate a life together; everyone adds their favourite memory.",
-      "<strong>Online grief support groups.</strong> There are compassionate, moderated online communities for people navigating grief. The Canadian Mental Health Association and many hospice organisations offer free online support groups via Zoom. Your family doctor or local hospice can refer you to the right group."
-    ] },
-    { "type": "helper", "label": "A gentle note", "text": "This section is gentle for a reason. There is no action required here, just awareness that technology can be one more resource when you need it." },
-
-    { "type": "heading", "level": 2, "text": "Your support network online" },
-    { "type": "paragraph", "text": "A support network is simply the list of people who are there for you: family, friends, neighbours, faith communities. Technology can help you keep that network strong and accessible." },
-    { "type": "paragraph", "text": "<strong>Your trusted contact list.</strong> On your iPhone or iPad, keep a short list of trusted contacts easy to find: at least two family members, a close friend or neighbour, your family doctor's office, and your pharmacy. Add these to your Favourites in the Phone app: open Phone, tap Favourites, then tap + to add a contact." },
-    { "type": "walkthrough", "title": "Setting up emergency contacts on iPhone", "steps": [
-      "Your iPhone has a <strong>Medical ID</strong> feature that lets first responders see your emergency contacts even if your phone is locked.",
-      "Open the <strong>Health</strong> app and tap your photo (top right).",
-      "Tap <strong>Medical ID</strong>, then <strong>Edit</strong>.",
-      "Add your <strong>Emergency Contacts</strong> and save."
-    ] },
-    { "type": "helper", "label": "Confidence check", "text": "Do the most important people in your life know how to reach you in an emergency? Does your phone have them saved as Favourites?" },
-    { "type": "the_move", "label": "The move is", "text": "Pick the app your family already uses, schedule one regular call, and protect it like any other appointment. Connection is a habit, and habits are built one small call at a time." },
-
-    { "type": "quiz", "heading": "Quick check: test your knowledge", "intro": "Tap the answer you think is correct. There is no score kept and nothing to sign in to.", "questions": [
-      { "q": "1. To stay connected with family who live far away, a good free option is:",
-        "options": ["Sending physical letters", "Video calling via FaceTime, WhatsApp, or Google Meet", "Calling on your landline only", "Using fax"],
-        "correct": 1,
-        "right": "Right. Video calling is free over Wi-Fi, works across any distance, and lets you see the faces of the people you love.",
-        "wrong": "The best free option is video calling through apps like FaceTime, WhatsApp, or Google Meet. They work over Wi-Fi at no extra charge, however far away your family is." },
-      { "q": "2. Scheduled weekly calls with family help because:",
-        "options": ["They reduce your phone bill", "They provide predictable social connection, which reduces isolation", "They are required by some community programs", "They help you remember how to use your phone"],
-        "correct": 1,
-        "right": "Exactly. A regular, scheduled call becomes a habit rather than something that falls through the cracks, and predictable connection genuinely reduces isolation.",
-        "wrong": "The real benefit is predictable social connection, which reduces isolation. A call at the same time every week becomes a habit instead of something that falls through the cracks." },
-      { "q": "3. Connected Canadians provides:",
-        "options": ["Discounted phone plans for seniors", "Free volunteer technology help for Canadian seniors", "Government-funded internet access", "Hardware donations for low-income seniors"],
-        "correct": 1,
-        "right": "Correct. Connected Canadians offers free volunteer technology help for seniors. You can call them at 1-855-808-0505.",
-        "wrong": "Connected Canadians provides free volunteer technology help for Canadian seniors, reachable at 1-855-808-0505." },
-      { "q": "4. A family member in a different time zone wants to video call. You should:",
-        "options": ["Refuse calls outside business hours", "Agree on a regular scheduled time that works for both time zones", "Only call when you feel like it, with no schedule", "Ask them to move closer"],
-        "correct": 1,
-        "right": "Yes. Agree on a time that works on both ends and make it a standing appointment. Siri can always tell you the current time in their city.",
-        "wrong": "The habit that works is agreeing on a regular scheduled time that suits both time zones. You can ask Siri what time it is in their city before you call." },
-      { "q": "5. Online grief support groups can help because:",
-        "options": ["They replace professional counselling entirely", "They connect you with others who understand your experience, without leaving home", "They are only for people who recently lost someone", "They require a paid subscription to access"],
-        "correct": 1,
-        "right": "Right. Moderated online groups, like those run by the Canadian Mental Health Association and hospice organisations, connect you with people who understand, free of charge and from home.",
-        "wrong": "Their value is connecting you with others who understand your experience, without leaving home. Many, including those from the Canadian Mental Health Association and hospice organisations, are free." }
-    ] },
-
-    { "type": "checklist", "heading": "Your progress", "intro": "Tick each item as you feel confident with it. This is saved on this device only, with no account needed.", "id": "module-18-staying-connected", "items": [
-      "I can make a video call on FaceTime, Zoom, or WhatsApp",
-      "I can share a photo in a message or a shared family album",
-      "I have tried sending a voice message or a message reaction",
-      "I know how to find online communities and Zoom meetups for my interests",
-      "I have scheduled a regular call with someone I love",
-      "My trusted contacts are saved in Favourites and my Medical ID is set up"
-    ] }
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Why staying connected matters"
+    },
+    {
+      "type": "paragraph",
+      "text": "Loneliness is not a character flaw. It is a health issue, as serious as smoking or high blood pressure. Research consistently shows that social isolation increases the risk of cognitive decline, depression, and physical illness in older adults."
+    },
+    {
+      "type": "paragraph",
+      "text": "But here is the encouraging truth: technology, used well, genuinely helps. Video calling, sharing photos, online groups, and even simple messaging can reduce isolation and bring real joy. This lesson will show you how."
+    },
+    {
+      "type": "helper",
+      "label": "Confidence check",
+      "text": "Think of one person you have not spoken to in too long. By the end of this lesson, you will know exactly how to reach them."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Video calling your family"
+    },
+    {
+      "type": "paragraph",
+      "text": "Video calling lets you see the face of someone you love, no matter how far away they are. Here are the three most common apps."
+    },
+    {
+      "type": "walkthrough",
+      "title": "FaceTime (Apple devices only)",
+      "steps": [
+        "Find the green <strong>FaceTime</strong> app on your iPad or iPhone. If you and the person you are calling both have Apple devices, this is the easiest choice.",
+        "Tap the <strong>+</strong> button (top right corner).",
+        "Type the name of the person you want to call, or choose from your contacts.",
+        "Tap the <strong>video camera icon</strong> to start the call."
+      ]
+    },
+    {
+      "type": "tip",
+      "label": "If the call will not connect",
+      "text": "If the call does not connect within a few seconds, your Wi-Fi may be slow. Move closer to your router and try again."
+    },
+    {
+      "type": "walkthrough",
+      "title": "Zoom (works on any device)",
+      "steps": [
+        "Download the <strong>Zoom</strong> app from the App Store. Zoom works on iPhones, iPads, Android phones, and computers, and is great for family group calls with 3 or more people.",
+        "When family sends you a Zoom link (it looks like zoom.us/j/12345...), tap it.",
+        "Tap <strong>Open in Zoom</strong> or <strong>Join Meeting</strong>.",
+        "Allow access to your camera and microphone when asked."
+      ]
+    },
+    {
+      "type": "walkthrough",
+      "title": "WhatsApp video (free, works everywhere)",
+      "steps": [
+        "Open <strong>WhatsApp</strong> and find the contact you want to call. WhatsApp is free and works between iPhones and Android phones, useful when family members have different devices.",
+        "Tap the <strong>video camera icon</strong> at the top right.",
+        "The call connects and you can see each other immediately."
+      ]
+    },
+    {
+      "type": "helper",
+      "label": "Confidence check",
+      "text": "Do you know which app the people you want to call prefer? Ask a family member which one they use most, then try it this week."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Sharing photos and memories"
+    },
+    {
+      "type": "paragraph",
+      "text": "One of the most meaningful things technology lets you do is share moments with people you love: a sunset from your backyard, your grandchild's drawing, a meal you are proud of."
+    },
+    {
+      "type": "walkthrough",
+      "title": "Creating an iCloud Shared Album",
+      "steps": [
+        "Open the <strong>Photos</strong> app. A Shared Album is like a private photo album that you and your family can all add to.",
+        "Tap the <strong>Albums</strong> tab at the bottom.",
+        "Scroll down to <strong>Shared Albums</strong> and tap the <strong>+</strong> button to create a new one.",
+        "Give it a name (for example, \"Family Photos 2026\") and invite family by email or phone number.",
+        "Family members will get a notification and can add their own photos to the album too."
+      ]
+    },
+    {
+      "type": "walkthrough",
+      "title": "Sending a photo in a message",
+      "steps": [
+        "Open <strong>Messages</strong> and start a conversation.",
+        "Tap the <strong>photo icon</strong> (it looks like a mountain) to the left of the text box.",
+        "Choose a photo from your library and tap <strong>Send</strong>."
+      ]
+    },
+    {
+      "type": "helper",
+      "label": "Confidence check",
+      "text": "Is there a photo on your phone right now that would make someone smile? Send it today."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Messaging made easy"
+    },
+    {
+      "type": "paragraph",
+      "text": "You do not have to type a full message every time. There are many ways to communicate that are quick, personal, and easy."
+    },
+    {
+      "type": "paragraph",
+      "text": "<strong>Voice messages: your new best friend.</strong> Instead of typing, you can hold a button and speak your message. The other person hears your voice, which is often much more meaningful than words on a screen. In iMessage: hold the microphone icon next to the text box, speak, release, and tap Send. In WhatsApp: hold the microphone icon on the right, speak, and release to send."
+    },
+    {
+      "type": "paragraph",
+      "text": "<strong>Reacting to messages.</strong> You do not always need to reply with words. In iMessage, press and hold on any message and choose a reaction (heart, thumbs up, thumbs down, haha, !!, ?). A quick heart reaction says \"I saw this, I love you\" without typing a single letter."
+    },
+    {
+      "type": "helper",
+      "label": "Confidence check",
+      "text": "Have you tried sending a voice message? It takes less than 10 seconds and sounds much more personal than a text."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Online communities for seniors"
+    },
+    {
+      "type": "paragraph",
+      "text": "There are online communities built specifically for people at your stage of life: people who share your interests, your experiences, and your questions about technology."
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Facebook groups</strong> exist for almost every interest: gardening, knitting, local history, birdwatching, genealogy, your hometown, your faith community. These are private groups where you share with people who share your passions. To find one, tap the <strong>Groups</strong> icon in Facebook, then tap <strong>Discover</strong> and search for your interest.",
+        "<strong>Zoom meetups and classes.</strong> Many libraries, community centres, and seniors organisations now offer regular Zoom meetups: book clubs, exercise classes, language groups, current events discussions. These are free or very low cost. Check with your local library or seniors centre for current offerings."
+      ]
+    },
+    {
+      "type": "helper",
+      "label": "Confidence check",
+      "text": "Is there a hobby or interest you would enjoy sharing with others? Search for a Facebook group this week."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Keeping in touch across long distances"
+    },
+    {
+      "type": "paragraph",
+      "text": "When family is far away, in another province, another country, or just a different time zone, staying connected takes a little more intention. Here are the habits that work."
+    },
+    {
+      "type": "tip",
+      "label": "Schedule your calls",
+      "text": "The single most effective thing you can do is schedule a regular video call. Sunday afternoons. Wednesday mornings. Whatever works. Put it in your calendar and protect it like any other appointment. Even 15 minutes of video with a grandchild once a week creates a relationship that phone calls alone cannot."
+    },
+    {
+      "type": "paragraph",
+      "text": "<strong>Time zones: a quick cheat sheet.</strong> Vancouver (BC) is 3 hours behind Eastern time. The UK is 5 hours ahead (in summer). Australia is about 14 to 16 hours ahead. To check the current time anywhere, just ask Siri: \"Hey Siri, what time is it in Vancouver right now?\""
+    },
+    {
+      "type": "helper",
+      "label": "Confidence check",
+      "text": "Is there one regular call you could schedule this week? Even 20 minutes?"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "When technology helps in difficult times"
+    },
+    {
+      "type": "paragraph",
+      "text": "Grief and loss are part of a long life. When someone we love dies, or when friends and family move away, technology can be one way, not the only way, of staying connected to what matters."
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Staying connected to family after loss.</strong> When families are scattered by grief, video calls become more important, not less. They let you grieve together even when you cannot be together physically. Sharing photos of a loved one in a shared album can also be a gentle way to celebrate a life together; everyone adds their favourite memory.",
+        "<strong>Online grief support groups.</strong> There are compassionate, moderated online communities for people navigating grief. The Canadian Mental Health Association and many hospice organisations offer free online support groups via Zoom. Your family doctor or local hospice can refer you to the right group."
+      ]
+    },
+    {
+      "type": "helper",
+      "label": "A gentle note",
+      "text": "This section is gentle for a reason. There is no action required here, just awareness that technology can be one more resource when you need it."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Your support network online"
+    },
+    {
+      "type": "paragraph",
+      "text": "A support network is simply the list of people who are there for you: family, friends, neighbours, faith communities. Technology can help you keep that network strong and accessible."
+    },
+    {
+      "type": "paragraph",
+      "text": "<strong>Your trusted contact list.</strong> On your iPhone or iPad, keep a short list of trusted contacts easy to find: at least two family members, a close friend or neighbour, your family doctor's office, and your pharmacy. Add these to your Favourites in the Phone app: open Phone, tap Favourites, then tap + to add a contact."
+    },
+    {
+      "type": "walkthrough",
+      "title": "Setting up emergency contacts on iPhone",
+      "steps": [
+        "Your iPhone has a <strong>Medical ID</strong> feature that lets first responders see your emergency contacts even if your phone is locked.",
+        "Open the <strong>Health</strong> app and tap your photo (top right).",
+        "Tap <strong>Medical ID</strong>, then <strong>Edit</strong>.",
+        "Add your <strong>Emergency Contacts</strong> and save."
+      ]
+    },
+    {
+      "type": "helper",
+      "label": "Confidence check",
+      "text": "Do the most important people in your life know how to reach you in an emergency? Does your phone have them saved as Favourites?"
+    },
+    {
+      "type": "the_move",
+      "label": "The move is",
+      "text": "Pick the app your family already uses, schedule one regular call, and protect it like any other appointment. Connection is a habit, and habits are built one small call at a time."
+    },
+    {
+      "type": "quiz",
+      "heading": "Quick check: test your knowledge",
+      "intro": "Tap the answer you think is correct. There is no score kept and nothing to sign in to.",
+      "questions": [
+        {
+          "q": "1. To stay connected with family who live far away, a good free option is:",
+          "options": [
+            "Sending physical letters",
+            "Video calling via FaceTime, WhatsApp, or Google Meet",
+            "Calling on your landline only",
+            "Using fax"
+          ],
+          "correct": 1,
+          "right": "Right. Video calling is free over Wi-Fi, works across any distance, and lets you see the faces of the people you love.",
+          "wrong": "The best free option is video calling through apps like FaceTime, WhatsApp, or Google Meet. They work over Wi-Fi at no extra charge, however far away your family is."
+        },
+        {
+          "q": "2. Scheduled weekly calls with family help because:",
+          "options": [
+            "They reduce your phone bill",
+            "They provide predictable social connection, which reduces isolation",
+            "They are required by some community programs",
+            "They help you remember how to use your phone"
+          ],
+          "correct": 1,
+          "right": "Exactly. A regular, scheduled call becomes a habit rather than something that falls through the cracks, and predictable connection genuinely reduces isolation.",
+          "wrong": "The real benefit is predictable social connection, which reduces isolation. A call at the same time every week becomes a habit instead of something that falls through the cracks."
+        },
+        {
+          "q": "3. Connected Canadians provides:",
+          "options": [
+            "Discounted phone plans for seniors",
+            "Free volunteer technology help for Canadian seniors",
+            "Government-funded internet access",
+            "Hardware donations for low-income seniors"
+          ],
+          "correct": 1,
+          "right": "Correct. Connected Canadians offers free volunteer technology help for seniors. You can call them at 1-855-808-0505.",
+          "wrong": "Connected Canadians provides free volunteer technology help for Canadian seniors, reachable at 1-855-808-0505."
+        },
+        {
+          "q": "4. A family member in a different time zone wants to video call. You should:",
+          "options": [
+            "Refuse calls outside business hours",
+            "Agree on a regular scheduled time that works for both time zones",
+            "Only call when you feel like it, with no schedule",
+            "Ask them to move closer"
+          ],
+          "correct": 1,
+          "right": "Yes. Agree on a time that works on both ends and make it a standing appointment. Siri can always tell you the current time in their city.",
+          "wrong": "The habit that works is agreeing on a regular scheduled time that suits both time zones. You can ask Siri what time it is in their city before you call."
+        },
+        {
+          "q": "5. Online grief support groups can help because:",
+          "options": [
+            "They replace professional counselling entirely",
+            "They connect you with others who understand your experience, without leaving home",
+            "They are only for people who recently lost someone",
+            "They require a paid subscription to access"
+          ],
+          "correct": 1,
+          "right": "Right. Moderated online groups, like those run by the Canadian Mental Health Association and hospice organisations, connect you with people who understand, free of charge and from home.",
+          "wrong": "Their value is connecting you with others who understand your experience, without leaving home. Many, including those from the Canadian Mental Health Association and hospice organisations, are free."
+        }
+      ]
+    },
+    {
+      "type": "checklist",
+      "heading": "Your progress",
+      "intro": "Tick each item as you feel confident with it. This is saved on this device only, with no account needed.",
+      "id": "module-18-staying-connected",
+      "items": [
+        "I can make a video call on FaceTime, Zoom, or WhatsApp",
+        "I can share a photo in a message or a shared family album",
+        "I have tried sending a voice message or a message reaction",
+        "I know how to find online communities and Zoom meetups for my interests",
+        "I have scheduled a regular call with someone I love",
+        "My trusted contacts are saved in Favourites and my Medical ID is set up"
+      ]
+    }
   ],
   "success_state": "<strong>Well done.</strong> You now know that loneliness is a real health issue and technology is one genuine answer to it. You can video call on FaceTime, Zoom, and WhatsApp, share photos and family albums, send voice messages, find communities for your interests, schedule calls across time zones, and keep your trusted contacts one tap away.",
   "related": {
     "heading": "Where to next",
-    "note": "You are viewing the new design. Lessons marked as opening the original site are unchanged there, and will move to the new design as it is rolled out.",
     "cards": [
-      { "num": "Module 5", "name": "Email and Messages", "desc": "Sending emails and texts safely, spotting scam messages, and sharing photos with the people you love.", "href": "module-5.html", "external": false },
-      { "num": "Module 7", "name": "Photos and Memories", "desc": "Taking, editing, and organising the photos you will share in your new family albums.", "href": "../../module-7.html", "external": true }
+      {
+        "num": "Module 5",
+        "name": "Email and Messages",
+        "desc": "Sending emails and texts safely, spotting scam messages, and sharing photos with the people you love.",
+        "href": "module-5.html",
+        "external": false
+      },
+      {
+        "num": "Module 7",
+        "name": "Photos and Memories",
+        "desc": "Taking, editing, and organising the photos you will share in your new family albums.",
+        "href": "module-7.html",
+        "external": false
+      }
     ]
   }
 }

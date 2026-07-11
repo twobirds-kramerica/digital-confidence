@@ -20,101 +20,229 @@
   },
   "coach": "Email can feel like a place where one wrong tap ruins everything. It is not. Reading an email cannot harm your device, and deleting the wrong one is almost always undoable. The only real skill is learning to pause before you tap a link, and by the end of this page that pause will feel natural.",
   "sections": [
-    { "type": "heading", "level": 2, "text": "Your digital mailbox" },
-    { "type": "paragraph", "text": "Your device comes with an email app: <strong>Mail</strong> on an iPad or iPhone, <strong>Gmail</strong> on most Android devices. Whichever you use, it works like a set of mailboxes at the post office:" },
-    { "type": "list", "items": [
-      "<strong>Inbox:</strong> where new mail arrives.",
-      "<strong>Sent:</strong> copies of emails you have sent, so you can look back at them.",
-      "<strong>Drafts:</strong> emails you started writing but have not sent yet.",
-      "<strong>Junk or Spam:</strong> mail your device thinks is junk. Check it now and then, as a real message can land here by mistake.",
-      "<strong>Trash or Bin:</strong> emails you have deleted. They wait here for a while before being removed for good, so you can recover one if you delete it by accident."
-    ] },
-    { "type": "tip", "label": "If your inbox feels full", "text": "You do not need to read every single email. Focus on messages from people you know. You can always delete the rest, just like tossing junk mail from your letterbox into the recycling." },
-
-    { "type": "heading", "level": 2, "text": "Sending an email" },
-    { "type": "walkthrough", "title": "Writing and sending an email", "steps": [
-      "Open your email app (Mail on Apple, Gmail on Android).",
-      "Look for a <strong>pencil</strong> or <strong>compose</strong> button, usually in a corner. Tap it to start a new email.",
-      "In the <strong>To</strong> field, type the email address of the person you are writing to.",
-      "Tap the <strong>Subject</strong> field and type a short description, for example \"Sunday dinner plans\".",
-      "Tap the large blank area and type your message.",
-      "When you are done, tap the <strong>send</strong> button (an upward arrow or a paper plane)."
-    ] },
-    { "type": "helper", "label": "Confidence check", "text": "You can write and send an email. That is a powerful skill for staying connected with the people you love. Before sending, take one moment to check the address in the To field, so your message reaches the right person." },
-
-    { "type": "heading", "level": 2, "text": "Spotting scam emails" },
-    { "type": "paragraph", "text": "A scam email is designed to look real and to make you act quickly. Here is a simple check to run on any message from someone you do not recognise." },
-    { "type": "walkthrough", "title": "The email safety check", "steps": [
-      "<strong>Check the sender.</strong> Tap the sender's name to see the full address. Does it look right? (\"rbc.com\" is real; \"rbc-alerts-canada.com\" is fake.)",
-      "<strong>Look for urgency.</strong> \"Act now!\" or \"Your account will be closed!\" Real companies give you time.",
-      "<strong>Check the greeting.</strong> \"Dear Customer\" is a red flag. Your bank knows your name.",
-      "<strong>Do not tap the links.</strong> If you must check, press and hold a link to preview where it really goes.",
-      "<strong>When in doubt, delete it.</strong> If a real company needs you, they will contact you another way."
-    ] },
-    { "type": "warning", "label": "Watch out", "text": "Never tap a link in an email that asks you to \"verify your account\" or \"confirm your identity\". Legitimate companies do not ask you to do this by email. If you are unsure, open your browser and go to the company's website directly." },
-    { "type": "three_second_rule", "heading": "The 3-second rule for emails", "steps": [
-      { "icon": "✋", "name": "Stop", "text": "Do not tap any links in an unexpected email." },
-      { "icon": "🫁", "name": "Breathe", "text": "No real company will close your account because you took a few minutes to think." },
-      { "icon": "🔍", "name": "Verify", "text": "Go to the company's website yourself, or call the number on your bank card." }
-    ] },
-
-    { "type": "heading", "level": 2, "text": "Opening a PDF? Watch for fake \"install this\" prompts" },
-    { "type": "paragraph", "text": "A PDF is just a document, like a letter or a form, saved so it looks the same on every device. Most web browsers today open a PDF right in a new tab, with nothing to download or install. If a website suddenly tells you that you need to install a special \"viewer\" or \"player\" before you can see a document, that is a warning sign, not a normal step." },
-    { "type": "tip", "label": "Tip", "text": "Adobe Acrobat Reader is a real, well-known program for opening PDFs, and it is safe to install if you get it directly from adobe.com. But you almost never need it. Your browser (Safari, Chrome, or Edge) already opens PDFs on its own, with no extra software required." },
-    { "type": "warning", "label": "Watch out", "text": "If a pop-up says you must install something before you can view a document, do not click it. Close the tab instead. If you were trying to reach a real organisation, like your bank or the government, open your browser and go to their website directly." },
-
-    { "type": "heading", "level": 2, "text": "Blocking unwanted callers and texters" },
-    { "type": "paragraph", "text": "Getting calls from unknown numbers or annoying text messages? You can block them, and you can always unblock them later if you change your mind." },
-    { "type": "walkthrough", "title": "Blocking a phone number", "steps": [
-      "Open the <strong>Phone</strong> app and tap <strong>Recents</strong> to see your call history.",
-      "Find the number you want to block.",
-      "On an iPhone, tap the small \"i\" next to it; on Android, press and hold the number.",
-      "Choose <strong>Block this caller</strong> or <strong>Block number</strong>.",
-      "Confirm. That number can no longer call or text you."
-    ] },
-
-    { "type": "heading", "level": 2, "text": "Sharing photos with family" },
-    { "type": "walkthrough", "title": "Sending a photo by text message", "steps": [
-      "Open the <strong>Messages</strong> app and open a conversation with the person you want to send the photo to.",
-      "Look for the <strong>+</strong> button or the <strong>camera</strong> or <strong>photo</strong> icon near where you type.",
-      "Tap <strong>Photos</strong> and choose the picture you want to send.",
-      "Tap the <strong>send</strong> arrow. Your photo is on its way."
-    ] },
-    { "type": "the_move", "label": "The move is", "text": "Read freely, because reading an email cannot harm you. Before you tap any link or install anything, pause and ask whether you expected this message. When in doubt, delete it and go to the company's website yourself." },
-
-    { "type": "quiz", "heading": "Quick check: test your knowledge", "intro": "Tap the answer you think is correct. There is no score kept and nothing to sign in to.", "questions": [
-      { "q": "1. What is spam email?",
-        "options": ["A type of canned meat", "Unwanted email, usually trying to sell something or scam you", "Email from the government"],
-        "correct": 1,
-        "right": "Right. Spam is unwanted email sent in bulk, from harmless advertising to dangerous scams. Your app filters most of it into a junk folder.",
-        "wrong": "Not quite. Spam is unwanted email sent in bulk, ranging from advertising to scams. Most of it lands in your junk folder automatically." },
-      { "q": "2. An email asks you to click a link to \"verify your account\". The safest response is:",
-        "options": ["Click the link, it is probably your bank", "Do not click, go to your account through the official website or app yourself", "Reply to ask if it is real"],
-        "correct": 1,
-        "right": "Exactly. Always reach your bank through its official app or website, never through a link in an email.",
-        "wrong": "The safest step is to go to your bank's official app or website yourself. Scammers build convincing fake login pages behind those links." },
-      { "q": "3. You get a text from an unknown number with a link. You should:",
-        "options": ["Tap the link to find out what it is", "Delete the message and do not tap any links from unknown senders", "Reply to ask who sent it"],
-        "correct": 1,
-        "right": "Perfect. Never tap links from unknown senders. Delete the message and move on.",
-        "wrong": "The safe move is to delete it. Never tap links from senders you do not know, even if the message looks urgent." }
-    ] },
-
-    { "type": "checklist", "heading": "Your progress", "intro": "Tick each item as you feel confident with it. This is saved on this device only, with no account needed.", "id": "module-5", "items": [
-      "I can find my inbox, sent, and junk folders",
-      "I can write and send an email",
-      "I can run the email safety check on a message I do not recognise",
-      "I know not to install a \"viewer\" just to open a document",
-      "I can block an unwanted caller"
-    ] }
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Your digital mailbox"
+    },
+    {
+      "type": "paragraph",
+      "text": "Your device comes with an email app: <strong>Mail</strong> on an iPad or iPhone, <strong>Gmail</strong> on most Android devices. Whichever you use, it works like a set of mailboxes at the post office:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Inbox:</strong> where new mail arrives.",
+        "<strong>Sent:</strong> copies of emails you have sent, so you can look back at them.",
+        "<strong>Drafts:</strong> emails you started writing but have not sent yet.",
+        "<strong>Junk or Spam:</strong> mail your device thinks is junk. Check it now and then, as a real message can land here by mistake.",
+        "<strong>Trash or Bin:</strong> emails you have deleted. They wait here for a while before being removed for good, so you can recover one if you delete it by accident."
+      ]
+    },
+    {
+      "type": "tip",
+      "label": "If your inbox feels full",
+      "text": "You do not need to read every single email. Focus on messages from people you know. You can always delete the rest, just like tossing junk mail from your letterbox into the recycling."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Sending an email"
+    },
+    {
+      "type": "walkthrough",
+      "title": "Writing and sending an email",
+      "steps": [
+        "Open your email app (Mail on Apple, Gmail on Android).",
+        "Look for a <strong>pencil</strong> or <strong>compose</strong> button, usually in a corner. Tap it to start a new email.",
+        "In the <strong>To</strong> field, type the email address of the person you are writing to.",
+        "Tap the <strong>Subject</strong> field and type a short description, for example \"Sunday dinner plans\".",
+        "Tap the large blank area and type your message.",
+        "When you are done, tap the <strong>send</strong> button (an upward arrow or a paper plane)."
+      ]
+    },
+    {
+      "type": "helper",
+      "label": "Confidence check",
+      "text": "You can write and send an email. That is a powerful skill for staying connected with the people you love. Before sending, take one moment to check the address in the To field, so your message reaches the right person."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Spotting scam emails"
+    },
+    {
+      "type": "paragraph",
+      "text": "A scam email is designed to look real and to make you act quickly. Here is a simple check to run on any message from someone you do not recognise."
+    },
+    {
+      "type": "walkthrough",
+      "title": "The email safety check",
+      "steps": [
+        "<strong>Check the sender.</strong> Tap the sender's name to see the full address. Does it look right? (\"rbc.com\" is real; \"rbc-alerts-canada.com\" is fake.)",
+        "<strong>Look for urgency.</strong> \"Act now!\" or \"Your account will be closed!\" Real companies give you time.",
+        "<strong>Check the greeting.</strong> \"Dear Customer\" is a red flag. Your bank knows your name.",
+        "<strong>Do not tap the links.</strong> If you must check, press and hold a link to preview where it really goes.",
+        "<strong>When in doubt, delete it.</strong> If a real company needs you, they will contact you another way."
+      ]
+    },
+    {
+      "type": "warning",
+      "label": "Watch out",
+      "text": "Never tap a link in an email that asks you to \"verify your account\" or \"confirm your identity\". Legitimate companies do not ask you to do this by email. If you are unsure, open your browser and go to the company's website directly."
+    },
+    {
+      "type": "three_second_rule",
+      "heading": "The 3-second rule for emails",
+      "steps": [
+        {
+          "icon": "✋",
+          "name": "Stop",
+          "text": "Do not tap any links in an unexpected email."
+        },
+        {
+          "icon": "🫁",
+          "name": "Breathe",
+          "text": "No real company will close your account because you took a few minutes to think."
+        },
+        {
+          "icon": "🔍",
+          "name": "Verify",
+          "text": "Go to the company's website yourself, or call the number on your bank card."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Opening a PDF? Watch for fake \"install this\" prompts"
+    },
+    {
+      "type": "paragraph",
+      "text": "A PDF is just a document, like a letter or a form, saved so it looks the same on every device. Most web browsers today open a PDF right in a new tab, with nothing to download or install. If a website suddenly tells you that you need to install a special \"viewer\" or \"player\" before you can see a document, that is a warning sign, not a normal step."
+    },
+    {
+      "type": "tip",
+      "label": "Tip",
+      "text": "Adobe Acrobat Reader is a real, well-known program for opening PDFs, and it is safe to install if you get it directly from adobe.com. But you almost never need it. Your browser (Safari, Chrome, or Edge) already opens PDFs on its own, with no extra software required."
+    },
+    {
+      "type": "warning",
+      "label": "Watch out",
+      "text": "If a pop-up says you must install something before you can view a document, do not click it. Close the tab instead. If you were trying to reach a real organisation, like your bank or the government, open your browser and go to their website directly."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Blocking unwanted callers and texters"
+    },
+    {
+      "type": "paragraph",
+      "text": "Getting calls from unknown numbers or annoying text messages? You can block them, and you can always unblock them later if you change your mind."
+    },
+    {
+      "type": "walkthrough",
+      "title": "Blocking a phone number",
+      "steps": [
+        "Open the <strong>Phone</strong> app and tap <strong>Recents</strong> to see your call history.",
+        "Find the number you want to block.",
+        "On an iPhone, tap the small \"i\" next to it; on Android, press and hold the number.",
+        "Choose <strong>Block this caller</strong> or <strong>Block number</strong>.",
+        "Confirm. That number can no longer call or text you."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Sharing photos with family"
+    },
+    {
+      "type": "walkthrough",
+      "title": "Sending a photo by text message",
+      "steps": [
+        "Open the <strong>Messages</strong> app and open a conversation with the person you want to send the photo to.",
+        "Look for the <strong>+</strong> button or the <strong>camera</strong> or <strong>photo</strong> icon near where you type.",
+        "Tap <strong>Photos</strong> and choose the picture you want to send.",
+        "Tap the <strong>send</strong> arrow. Your photo is on its way."
+      ]
+    },
+    {
+      "type": "the_move",
+      "label": "The move is",
+      "text": "Read freely, because reading an email cannot harm you. Before you tap any link or install anything, pause and ask whether you expected this message. When in doubt, delete it and go to the company's website yourself."
+    },
+    {
+      "type": "quiz",
+      "heading": "Quick check: test your knowledge",
+      "intro": "Tap the answer you think is correct. There is no score kept and nothing to sign in to.",
+      "questions": [
+        {
+          "q": "1. What is spam email?",
+          "options": [
+            "A type of canned meat",
+            "Unwanted email, usually trying to sell something or scam you",
+            "Email from the government"
+          ],
+          "correct": 1,
+          "right": "Right. Spam is unwanted email sent in bulk, from harmless advertising to dangerous scams. Your app filters most of it into a junk folder.",
+          "wrong": "Not quite. Spam is unwanted email sent in bulk, ranging from advertising to scams. Most of it lands in your junk folder automatically."
+        },
+        {
+          "q": "2. An email asks you to click a link to \"verify your account\". The safest response is:",
+          "options": [
+            "Click the link, it is probably your bank",
+            "Do not click, go to your account through the official website or app yourself",
+            "Reply to ask if it is real"
+          ],
+          "correct": 1,
+          "right": "Exactly. Always reach your bank through its official app or website, never through a link in an email.",
+          "wrong": "The safest step is to go to your bank's official app or website yourself. Scammers build convincing fake login pages behind those links."
+        },
+        {
+          "q": "3. You get a text from an unknown number with a link. You should:",
+          "options": [
+            "Tap the link to find out what it is",
+            "Delete the message and do not tap any links from unknown senders",
+            "Reply to ask who sent it"
+          ],
+          "correct": 1,
+          "right": "Perfect. Never tap links from unknown senders. Delete the message and move on.",
+          "wrong": "The safe move is to delete it. Never tap links from senders you do not know, even if the message looks urgent."
+        }
+      ]
+    },
+    {
+      "type": "checklist",
+      "heading": "Your progress",
+      "intro": "Tick each item as you feel confident with it. This is saved on this device only, with no account needed.",
+      "id": "module-5",
+      "items": [
+        "I can find my inbox, sent, and junk folders",
+        "I can write and send an email",
+        "I can run the email safety check on a message I do not recognise",
+        "I know not to install a \"viewer\" just to open a document",
+        "I can block an unwanted caller"
+      ]
+    }
   ],
   "success_state": "<strong>Well done.</strong> You can now send and receive messages, spot the signs of a scam, and share photos with family. Your inbox is working for you, not against you.",
   "related": {
     "heading": "Where to next",
-    "note": "You are viewing the new design. The next lessons open in the original site for now, which is unchanged. They will move to the new design as it is rolled out.",
     "cards": [
-      { "num": "Module 2", "name": "The Security Shield", "desc": "Email scams are one of the most common threats. The Security Shield gives you the framework to stop them.", "href": "../../module-2.html", "external": true },
-      { "num": "Module 6", "name": "Banking and Transactions", "desc": "Many banking scams begin with a fake email or text. Learn to spot them before any money moves.", "href": "../../module-6.html", "external": true }
+      {
+        "num": "Module 2",
+        "name": "The Security Shield",
+        "desc": "Email scams are one of the most common threats. The Security Shield gives you the framework to stop them.",
+        "href": "module-2.html",
+        "external": false
+      },
+      {
+        "num": "Module 6",
+        "name": "Banking and Transactions",
+        "desc": "Many banking scams begin with a fake email or text. Learn to spot them before any money moves.",
+        "href": "module-6.html",
+        "external": false
+      }
     ]
   }
 }

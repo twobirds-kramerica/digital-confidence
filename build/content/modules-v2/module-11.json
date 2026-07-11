@@ -22,132 +22,279 @@
   },
   "coach": "Getting into a car you booked on a phone takes real trust, and feeling unsure the first time is completely reasonable. Thousands of Canadian seniors use these services safely every day, and every safety feature in this lesson (the driver photo, the licence plate, the shared trip) exists because riders asked for it.",
   "sections": [
-    { "type": "tip", "label": "What is ride-sharing?", "text": "Ride-sharing apps connect you with local, screened drivers through your smartphone. You request a ride, a nearby driver accepts, and picks you up. Payment is automatic, no cash needed. You see the driver's name, photo, car details, and licence plate before they arrive, and you know the price upfront." },
-
-    { "type": "heading", "level": 2, "text": "Uber, a complete beginner's guide" },
-    { "type": "walkthrough", "title": "Step 1: Download and set up", "steps": [
-      "<strong>On iPhone or iPad:</strong> open the <strong>App Store</strong> (blue icon with a white \"A\"). Tap Search, type <strong>\"Uber\"</strong>, and tap <strong>GET</strong>. The Uber icon is black with white text.",
-      "<strong>On Android:</strong> open the <strong>Google Play Store</strong> (colourful triangle). Search <strong>\"Uber\"</strong> and tap <strong>Install</strong>.",
-      "Tap <strong>Create Account.</strong> Enter your phone number, you will receive a verification code by text message. Enter the code to verify your identity.",
-      "Enter your name and email address. Then add your payment method, a credit or debit card. This is stored securely and encrypted.",
-      "Allow location access when prompted. This lets Uber show you nearby drivers and know where to pick you up. You can always type a manual pickup address instead."
-    ] },
-
-    { "type": "walkthrough", "title": "Step 2: Requesting your ride", "steps": [
-      "Open the Uber app. Tap the search bar at the top that says <strong>\"Where to?\"</strong> Type your destination, the address, or a well-known place like \"Windsor Regional Hospital\" or \"Devonshire Mall.\"",
-      "<strong>Choose your ride type.</strong> You will see options like UberX (standard car, most affordable), Uber Comfort (newer, more spacious car), and sometimes Uber XL (larger vehicle). UberX is fine for most trips.",
-      "<strong>Review the price.</strong> Uber shows you the upfront cost before you confirm. No surprises, this is the amount that will be charged to your card.",
-      "Confirm your pickup location is correct, then tap <strong>\"Request UberX\"</strong> (or whichever type you chose).",
-      "Wait 10 to 60 seconds for a driver to accept. You will then see the driver's name, photo, star rating, car model, colour, and <strong>licence plate number.</strong>"
-    ] },
-    { "type": "helper", "label": "What you see after a driver accepts", "text": "The app shows you: the driver's first name and photo, their star rating (for example 4.87 stars from 1,847 trips), the car model and colour (for example \"Silver Toyota Camry\"), and the <strong>licence plate number</strong>. Always check the plate before getting in." },
-
-    { "type": "heading", "level": 3, "text": "Step 3: Meeting your driver, the most important part" },
-    { "type": "warning", "label": "Safety first, always", "text": "Before getting into any vehicle, do these three things in order: check the licence plate FIRST, check the car make and colour, and let the driver greet you by YOUR name." },
-    { "type": "walkthrough", "title": "The three checks before you get in", "steps": [
-      "<strong>Check the licence plate FIRST.</strong> Look at the plate on the car approaching you and compare it to the plate shown in the app. They must match exactly.",
-      "<strong>Check the car make and colour.</strong> The app tells you \"Silver Toyota Camry\", make sure the car in front of you matches.",
-      "<strong>Let the driver greet you by YOUR name.</strong> A legitimate Uber driver knows who they are picking up. Wait for them to say \"Are you Robert?\", you should NEVER be the first to say the driver's name. This prevents strangers from impersonating your driver."
-    ] },
-    { "type": "tip", "label": "The Golden Rule of Ride-Sharing Safety", "text": "<strong>If something does not match, if the plate is different, if the driver seems unsure of your name, or if anything feels wrong, do NOT get in the car.</strong> Cancel the trip in the app and request a new one. Your safety is worth a brief delay." },
-
-    { "type": "heading", "level": 3, "text": "Step 4: During the ride" },
-    { "type": "list", "items": [
-      "<strong>Sit in the back seat,</strong> this is the standard practice and most comfortable.",
-      "<strong>Wear your seatbelt,</strong> always.",
-      "<strong>Share your trip:</strong> in the app, tap the shield icon, then \"Share Status\", then select a contact. Your chosen family member or friend can now watch your ride in real time on their phone.",
-      "<strong>Emergency button:</strong> if you ever feel unsafe, the app has a 911 button that sends your location and driver details to emergency services.",
-      "<strong>Trust your instincts:</strong> if you feel uncomfortable at any point, you can ask to be let out at the next safe public place (like a gas station or pharmacy)."
-    ] },
-
-    { "type": "walkthrough", "title": "Step 5: Arrival and payment", "steps": [
-      "When you arrive, payment processes <strong>automatically</strong> through the app. You do not need cash or a card, nothing changes hands at all.",
-      "You will be asked to rate your driver from 1 to 5 stars. A tip is optional, suggested 15 to 20% for great service. You can also skip the tip.",
-      "A receipt is automatically emailed to you. You can also view all past trips in the app under \"Your Trips.\""
-    ] },
-
-    { "type": "heading", "level": 2, "text": "Lyft, very similar to Uber" },
-    { "type": "paragraph", "text": "Lyft works almost identically to Uber. The setup, requesting, and safety procedures are the same. A few differences to note:" },
-    { "type": "list", "items": [
-      "<strong>Logo:</strong> pink with a stylised \"L\", sometimes called the \"pink mustache brand.\"",
-      "<strong>Pricing:</strong> sometimes slightly cheaper than Uber, sometimes slightly more, it is worth checking both apps if you have time.",
-      "<strong>Availability:</strong> in Ontario, Lyft is active in Windsor, London, and Kitchener-Waterloo. Uber tends to have wider coverage in smaller cities like St. Thomas and Woodstock.",
-      "<strong>Safety features:</strong> the same, GPS tracking, driver photo and plate verification, 911 emergency button, and trip sharing."
-    ] },
-    { "type": "tip", "label": "Which App Should I Use?", "text": "Both are safe and reliable. If you are in a larger city, try both and see which has shorter wait times and better prices that day. If you are in a smaller community, start with Uber as it tends to have more drivers in rural Ontario areas." },
-
-    { "type": "heading", "level": 2, "text": "Safety deep-dive" },
-    { "type": "three_second_rule", "heading": "The 3-second rule", "steps": [
-      { "icon": "✋", "name": "Stop", "text": "Do not tap anything yet." },
-      { "icon": "🫁", "name": "Breathe", "text": "Take one slow breath." },
-      { "icon": "🔍", "name": "Verify", "text": "Did I expect this message? Does the sender look right? When in doubt, close it and call someone you trust." }
-    ] },
-    { "type": "paragraph", "text": "Ride-sharing is designed with safety as a priority. Here is a complete summary of your safety checklist:" },
-    { "type": "list", "items": [
-      "<strong>Always check the licence plate FIRST,</strong> before the car door, before anything else.",
-      "<strong>Let the driver greet you by name,</strong> never say their name first.",
-      "<strong>Never get in a car that does not match the app,</strong> cancel and request again.",
-      "<strong>Share your trip</strong> with a family member before every ride.",
-      "<strong>Trust your instincts,</strong> if something feels wrong, end the ride."
-    ] },
-    { "type": "helper", "label": "Confidence check", "text": "These safety habits take about 30 seconds total and make every ride safer. With time, they become completely automatic." },
-
-    { "type": "heading", "level": 2, "text": "Uber and Lyft availability in your area" },
-    { "type": "list", "items": [
-      "<strong>Windsor:</strong> Uber active, Lyft active.",
-      "<strong>London:</strong> Uber active, Lyft active.",
-      "<strong>Kitchener-Waterloo:</strong> Uber active, Lyft active.",
-      "<strong>St. Thomas:</strong> Uber active, Lyft limited.",
-      "<strong>Woodstock:</strong> Uber active, Lyft limited."
-    ] },
-    { "type": "tip", "label": "Need a hand?", "text": "Cyber-Seniors offers free tech help by phone at 1-844-217-3057. Trained senior volunteers help other seniors, in plain language, at your pace." },
-
-    { "type": "heading", "level": 2, "text": "Try it today: set up without requesting" },
-    { "type": "paragraph", "text": "Set up the Uber app and get comfortable with how it works, without actually requesting a ride yet." },
-    { "type": "walkthrough", "title": "Your practice this week", "steps": [
-      "Download Uber from the App Store or Google Play Store.",
-      "Create your account (phone number, email, name).",
-      "Add a payment method, a credit or debit card.",
-      "Open the app and type in a local destination: your doctor's office, a friend's address, or the nearest mall.",
-      "Look at the ride options and the price shown. Notice how clearly the cost is displayed.",
-      "<strong>Do NOT tap \"Request\" yet,</strong> just explore the app and see how it feels.",
-      "Optional: ask a family member to try a short test trip with you as a \"passenger practice run.\""
-    ] },
-    { "type": "helper", "label": "Success looks like this", "text": "You have the app installed, an account set up, and you understand how to request a ride and what information you would see about your driver." },
-
-    { "type": "quiz", "heading": "Quick check: test your knowledge", "intro": "Tap the answer you think is correct. There is no score kept and nothing to sign in to.", "questions": [
-      { "q": "1. You are waiting for your Uber. A car pulls up and the driver says \"Are you going to the hospital?\" What should you do FIRST?",
-        "options": ["Get in right away, they know where you are going", "Check the licence plate on the car against the plate shown in your app before doing anything else", "Tell the driver your name so they know it is you"],
-        "correct": 1,
-        "right": "Exactly right. Always check the licence plate FIRST. That is the single most important safety step in ride-sharing.",
-        "wrong": "The very first thing to do is check the licence plate. Compare it to the plate shown in your app. Only get in if they match exactly." },
-      { "q": "2. How does Uber payment work at the end of a ride?",
-        "options": ["You pay cash to the driver", "You hand your credit card to the driver to swipe", "Payment is automatic through the app, nothing changes hands at all"],
-        "correct": 2,
-        "right": "Perfect. Payment is fully automatic through the app. No cash, no card exchange. You receive an email receipt automatically.",
-        "wrong": "Uber payment is completely automatic, it charges the card saved in your app. You do not exchange cash or a card with the driver. An email receipt arrives automatically." },
-      { "q": "3. What does the \"Share Trip\" feature in Uber do?",
-        "options": ["Lets a chosen family member or friend see your real-time ride location on their phone", "Posts your trip to social media automatically", "Makes your driver drive faster"],
-        "correct": 0,
-        "right": "Correct. Share Trip lets a trusted person watch your ride in real time. Your daughter, son, or friend can see exactly where you are at every moment.",
-        "wrong": "Share Trip lets you send your real-time ride progress to a family member or friend. They can watch where you are on a map throughout the entire trip." }
-    ] },
-
-    { "type": "checklist", "heading": "Your progress", "intro": "Tick each item as you feel confident with it. This is saved on this device only, with no account needed.", "id": "module-11", "items": [
-      "I understand what ride-sharing apps are and how they work",
-      "I know how to download and set up the Uber app",
-      "I know to check the licence plate FIRST before getting into any ride-share vehicle",
-      "I understand how to use \"Share Trip\" to let a family member track my ride",
-      "I know that payment is automatic, no cash needed",
-      "I set up the Uber app and explored how a ride request looks"
-    ] }
+    {
+      "type": "tip",
+      "label": "What is ride-sharing?",
+      "text": "Ride-sharing apps connect you with local, screened drivers through your smartphone. You request a ride, a nearby driver accepts, and picks you up. Payment is automatic, no cash needed. You see the driver's name, photo, car details, and licence plate before they arrive, and you know the price upfront."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Uber, a complete beginner's guide"
+    },
+    {
+      "type": "walkthrough",
+      "title": "Step 1: Download and set up",
+      "steps": [
+        "<strong>On iPhone or iPad:</strong> open the <strong>App Store</strong> (blue icon with a white \"A\"). Tap Search, type <strong>\"Uber\"</strong>, and tap <strong>GET</strong>. The Uber icon is black with white text.",
+        "<strong>On Android:</strong> open the <strong>Google Play Store</strong> (colourful triangle). Search <strong>\"Uber\"</strong> and tap <strong>Install</strong>.",
+        "Tap <strong>Create Account.</strong> Enter your phone number, you will receive a verification code by text message. Enter the code to verify your identity.",
+        "Enter your name and email address. Then add your payment method, a credit or debit card. This is stored securely and encrypted.",
+        "Allow location access when prompted. This lets Uber show you nearby drivers and know where to pick you up. You can always type a manual pickup address instead."
+      ]
+    },
+    {
+      "type": "walkthrough",
+      "title": "Step 2: Requesting your ride",
+      "steps": [
+        "Open the Uber app. Tap the search bar at the top that says <strong>\"Where to?\"</strong> Type your destination, the address, or a well-known place like \"Windsor Regional Hospital\" or \"Devonshire Mall.\"",
+        "<strong>Choose your ride type.</strong> You will see options like UberX (standard car, most affordable), Uber Comfort (newer, more spacious car), and sometimes Uber XL (larger vehicle). UberX is fine for most trips.",
+        "<strong>Review the price.</strong> Uber shows you the upfront cost before you confirm. No surprises, this is the amount that will be charged to your card.",
+        "Confirm your pickup location is correct, then tap <strong>\"Request UberX\"</strong> (or whichever type you chose).",
+        "Wait 10 to 60 seconds for a driver to accept. You will then see the driver's name, photo, star rating, car model, colour, and <strong>licence plate number.</strong>"
+      ]
+    },
+    {
+      "type": "helper",
+      "label": "What you see after a driver accepts",
+      "text": "The app shows you: the driver's first name and photo, their star rating (for example 4.87 stars from 1,847 trips), the car model and colour (for example \"Silver Toyota Camry\"), and the <strong>licence plate number</strong>. Always check the plate before getting in."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Step 3: Meeting your driver, the most important part"
+    },
+    {
+      "type": "warning",
+      "label": "Safety first, always",
+      "text": "Before getting into any vehicle, do these three things in order: check the licence plate FIRST, check the car make and colour, and let the driver greet you by YOUR name."
+    },
+    {
+      "type": "walkthrough",
+      "title": "The three checks before you get in",
+      "steps": [
+        "<strong>Check the licence plate FIRST.</strong> Look at the plate on the car approaching you and compare it to the plate shown in the app. They must match exactly.",
+        "<strong>Check the car make and colour.</strong> The app tells you \"Silver Toyota Camry\", make sure the car in front of you matches.",
+        "<strong>Let the driver greet you by YOUR name.</strong> A legitimate Uber driver knows who they are picking up. Wait for them to say \"Are you Robert?\", you should NEVER be the first to say the driver's name. This prevents strangers from impersonating your driver."
+      ]
+    },
+    {
+      "type": "tip",
+      "label": "The Golden Rule of Ride-Sharing Safety",
+      "text": "<strong>If something does not match, if the plate is different, if the driver seems unsure of your name, or if anything feels wrong, do NOT get in the car.</strong> Cancel the trip in the app and request a new one. Your safety is worth a brief delay."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Step 4: During the ride"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Sit in the back seat,</strong> this is the standard practice and most comfortable.",
+        "<strong>Wear your seatbelt,</strong> always.",
+        "<strong>Share your trip:</strong> in the app, tap the shield icon, then \"Share Status\", then select a contact. Your chosen family member or friend can now watch your ride in real time on their phone.",
+        "<strong>Emergency button:</strong> if you ever feel unsafe, the app has a 911 button that sends your location and driver details to emergency services.",
+        "<strong>Trust your instincts:</strong> if you feel uncomfortable at any point, you can ask to be let out at the next safe public place (like a gas station or pharmacy)."
+      ]
+    },
+    {
+      "type": "walkthrough",
+      "title": "Step 5: Arrival and payment",
+      "steps": [
+        "When you arrive, payment processes <strong>automatically</strong> through the app. You do not need cash or a card, nothing changes hands at all.",
+        "You will be asked to rate your driver from 1 to 5 stars. A tip is optional, suggested 15 to 20% for great service. You can also skip the tip.",
+        "A receipt is automatically emailed to you. You can also view all past trips in the app under \"Your Trips.\""
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Lyft, very similar to Uber"
+    },
+    {
+      "type": "paragraph",
+      "text": "Lyft works almost identically to Uber. The setup, requesting, and safety procedures are the same. A few differences to note:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Logo:</strong> pink with a stylised \"L\", sometimes called the \"pink mustache brand.\"",
+        "<strong>Pricing:</strong> sometimes slightly cheaper than Uber, sometimes slightly more, it is worth checking both apps if you have time.",
+        "<strong>Availability:</strong> in Ontario, Lyft is active in Windsor, London, and Kitchener-Waterloo. Uber tends to have wider coverage in smaller cities like St. Thomas and Woodstock.",
+        "<strong>Safety features:</strong> the same, GPS tracking, driver photo and plate verification, 911 emergency button, and trip sharing."
+      ]
+    },
+    {
+      "type": "tip",
+      "label": "Which App Should I Use?",
+      "text": "Both are safe and reliable. If you are in a larger city, try both and see which has shorter wait times and better prices that day. If you are in a smaller community, start with Uber as it tends to have more drivers in rural Ontario areas."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Safety deep-dive"
+    },
+    {
+      "type": "three_second_rule",
+      "heading": "The 3-second rule",
+      "steps": [
+        {
+          "icon": "✋",
+          "name": "Stop",
+          "text": "Do not tap anything yet."
+        },
+        {
+          "icon": "🫁",
+          "name": "Breathe",
+          "text": "Take one slow breath."
+        },
+        {
+          "icon": "🔍",
+          "name": "Verify",
+          "text": "Did I expect this message? Does the sender look right? When in doubt, close it and call someone you trust."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Ride-sharing is designed with safety as a priority. Here is a complete summary of your safety checklist:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Always check the licence plate FIRST,</strong> before the car door, before anything else.",
+        "<strong>Let the driver greet you by name,</strong> never say their name first.",
+        "<strong>Never get in a car that does not match the app,</strong> cancel and request again.",
+        "<strong>Share your trip</strong> with a family member before every ride.",
+        "<strong>Trust your instincts,</strong> if something feels wrong, end the ride."
+      ]
+    },
+    {
+      "type": "helper",
+      "label": "Confidence check",
+      "text": "These safety habits take about 30 seconds total and make every ride safer. With time, they become completely automatic."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Uber and Lyft availability in your area"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Windsor:</strong> Uber active, Lyft active.",
+        "<strong>London:</strong> Uber active, Lyft active.",
+        "<strong>Kitchener-Waterloo:</strong> Uber active, Lyft active.",
+        "<strong>St. Thomas:</strong> Uber active, Lyft limited.",
+        "<strong>Woodstock:</strong> Uber active, Lyft limited."
+      ]
+    },
+    {
+      "type": "tip",
+      "label": "Need a hand?",
+      "text": "Cyber-Seniors offers free tech help by phone at 1-844-217-3057. Trained senior volunteers help other seniors, in plain language, at your pace."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Try it today: set up without requesting"
+    },
+    {
+      "type": "paragraph",
+      "text": "Set up the Uber app and get comfortable with how it works, without actually requesting a ride yet."
+    },
+    {
+      "type": "walkthrough",
+      "title": "Your practice this week",
+      "steps": [
+        "Download Uber from the App Store or Google Play Store.",
+        "Create your account (phone number, email, name).",
+        "Add a payment method, a credit or debit card.",
+        "Open the app and type in a local destination: your doctor's office, a friend's address, or the nearest mall.",
+        "Look at the ride options and the price shown. Notice how clearly the cost is displayed.",
+        "<strong>Do NOT tap \"Request\" yet,</strong> just explore the app and see how it feels.",
+        "Optional: ask a family member to try a short test trip with you as a \"passenger practice run.\""
+      ]
+    },
+    {
+      "type": "helper",
+      "label": "Success looks like this",
+      "text": "You have the app installed, an account set up, and you understand how to request a ride and what information you would see about your driver."
+    },
+    {
+      "type": "quiz",
+      "heading": "Quick check: test your knowledge",
+      "intro": "Tap the answer you think is correct. There is no score kept and nothing to sign in to.",
+      "questions": [
+        {
+          "q": "1. You are waiting for your Uber. A car pulls up and the driver says \"Are you going to the hospital?\" What should you do FIRST?",
+          "options": [
+            "Get in right away, they know where you are going",
+            "Check the licence plate on the car against the plate shown in your app before doing anything else",
+            "Tell the driver your name so they know it is you"
+          ],
+          "correct": 1,
+          "right": "Exactly right. Always check the licence plate FIRST. That is the single most important safety step in ride-sharing.",
+          "wrong": "The very first thing to do is check the licence plate. Compare it to the plate shown in your app. Only get in if they match exactly."
+        },
+        {
+          "q": "2. How does Uber payment work at the end of a ride?",
+          "options": [
+            "You pay cash to the driver",
+            "You hand your credit card to the driver to swipe",
+            "Payment is automatic through the app, nothing changes hands at all"
+          ],
+          "correct": 2,
+          "right": "Perfect. Payment is fully automatic through the app. No cash, no card exchange. You receive an email receipt automatically.",
+          "wrong": "Uber payment is completely automatic, it charges the card saved in your app. You do not exchange cash or a card with the driver. An email receipt arrives automatically."
+        },
+        {
+          "q": "3. What does the \"Share Trip\" feature in Uber do?",
+          "options": [
+            "Lets a chosen family member or friend see your real-time ride location on their phone",
+            "Posts your trip to social media automatically",
+            "Makes your driver drive faster"
+          ],
+          "correct": 0,
+          "right": "Correct. Share Trip lets a trusted person watch your ride in real time. Your daughter, son, or friend can see exactly where you are at every moment.",
+          "wrong": "Share Trip lets you send your real-time ride progress to a family member or friend. They can watch where you are on a map throughout the entire trip."
+        }
+      ]
+    },
+    {
+      "type": "checklist",
+      "heading": "Your progress",
+      "intro": "Tick each item as you feel confident with it. This is saved on this device only, with no account needed.",
+      "id": "module-11",
+      "items": [
+        "I understand what ride-sharing apps are and how they work",
+        "I know how to download and set up the Uber app",
+        "I know to check the licence plate FIRST before getting into any ride-share vehicle",
+        "I understand how to use \"Share Trip\" to let a family member track my ride",
+        "I know that payment is automatic, no cash needed",
+        "I set up the Uber app and explored how a ride request looks"
+      ]
+    }
   ],
   "success_state": "<strong>You have completed all 11 modules of the Digital Confidence Centre.</strong> That is an extraordinary achievement. You now have a safe, affordable way to get around, whenever you need it, wherever you need to go. You are now one of the most digitally prepared people in your community. Be very proud of yourself.",
   "related": {
     "heading": "Where to next",
     "cards": [
-      { "num": "Module 10", "name": "Grocery and Food Delivery Apps", "desc": "The same safe-payment habits, now for getting your groceries and meals delivered to your door.", "href": "module-10.html", "external": false },
-      { "num": "Module 6", "name": "Banking and Transactions", "desc": "Paying for a ride uses the same in-app payment skills you will practise in the Banking module.", "href": "../../module-6.html", "external": true }
+      {
+        "num": "Module 10",
+        "name": "Grocery and Food Delivery Apps",
+        "desc": "The same safe-payment habits, now for getting your groceries and meals delivered to your door.",
+        "href": "module-10.html",
+        "external": false
+      },
+      {
+        "num": "Module 6",
+        "name": "Banking and Transactions",
+        "desc": "Paying for a ride uses the same in-app payment skills you will practise in the Banking module.",
+        "href": "module-6.html",
+        "external": false
+      }
     ]
   }
 }
