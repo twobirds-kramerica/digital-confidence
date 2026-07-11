@@ -843,9 +843,9 @@ var DC_QUIZ = (function () {
       'Module 11: Ride-Sharing Apps'
     ];
     var mUrls = [
-      'module-1.html', 'module-2.html', 'module-3.html', 'module-4.html',
-      'module-5.html', 'module-6.html', 'module-7.html', 'module-8.html',
-      'module-9.html', 'module-10.html', 'module-11.html'
+      'modules/module-1.html', 'modules/module-2.html', 'modules/module-3.html', 'modules/module-4.html',
+      'modules/module-5.html', 'modules/module-6.html', 'modules/module-7.html', 'modules/module-8.html',
+      'modules/module-9.html', 'modules/module-10.html', 'modules/module-11.html'
     ];
 
     for (var i = 1; i <= total; i++) {
@@ -880,7 +880,7 @@ var DC_QUIZ = (function () {
           '&#128161; <strong>It looks like you have not started the modules yet.</strong><br>' +
           'The Digital Confidence Centre works best when you go through the modules first ' +
           '&#8212; they prepare you for this assessment. ' +
-          '<a href="module-1.html">Start with Module 1 &#8594;</a>' +
+          '<a href="modules/module-1.html">Start with Module 1 &#8594;</a>' +
         '</div>';
     } else {
       var incLinks = incomplete.map(function (m) {

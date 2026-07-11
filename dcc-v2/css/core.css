@@ -691,7 +691,7 @@ body.consent-open { padding-bottom: 240px; }
 /* --- External-link framing - every off-site link says so, in words -------- */
 .ext-note {
   font-family: var(--font-heading); font-size: var(--font-size-sm);
-  color: var(--color-text-light); white-space: nowrap;
+  color: var(--color-text-light);
 }
 
 /* ============================================================================

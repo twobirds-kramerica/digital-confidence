@@ -255,6 +255,24 @@
   width: 100%; max-width: 420px; min-height: var(--tap-target); box-sizing: border-box;
 }
 
+/* dcc.js injects an ext-note inside every external link; when the link is a
+   button, the note must inherit the button's text colour (contrast on blue). */
+.btn .ext-note, .quiz-btn .ext-note { color: inherit; }
+
+/* Readiness panel blocks emitted by the ported runner */
+.tip-box {
+  background: var(--color-surface-primary); border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5); margin: var(--space-4) 0;
+}
+.warning-box {
+  background: var(--color-warning-light); color: var(--color-warning-deep);
+  border-left: 6px solid var(--color-warning-deep); border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-4) var(--space-5); margin: var(--space-4) 0;
+}
+.warning-box a { color: inherit; }
+.module-checklist { list-style: none; padding: 0; margin: var(--space-3) 0; }
+.module-checklist li { padding: var(--space-1) 0; }
+
 /* --- Certificate --------------------------------------------------------------- */
 .cert-actions { display: flex; gap: var(--space-3); flex-wrap: wrap; margin: var(--space-5) 0; }
 .certificate {
