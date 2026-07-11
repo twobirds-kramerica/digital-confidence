@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /classic/
 Disallow: /admin/
 Disallow: /_b2b/
 Disallow: /_grants/
@@ -42,4 +43,3 @@ User-agent: Meta-ExternalAgent
 Allow: /
 
 Sitemap: https://twobirds-kramerica.github.io/digital-confidence/sitemap.xml
-Sitemap: https://twobirds-kramerica.github.io/digital-confidence/sitemap-news.xml

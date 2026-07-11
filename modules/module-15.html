@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Theme + text size before first paint (no flash). Local only, no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Telehealth and Medical Portals - Digital Confidence Centre</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-15.html">
+  <meta name="description" content="Book medical appointments online, access your health records, meet your doctor by video, refill prescriptions through pharmacy apps, and reach Ontario&#x27;s free 24/7 nurse line. Free, plain-language lesson for Canadian seniors. No account needed.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- SHARED SHELL: header (generated from module-v2.html.tpl; identical on every page). -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Read this page aloud">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
+        <div class="rate-group" role="group" aria-label="Reading speed">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Slower</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normal</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Faster</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="../index.html">All lessons</a>
+    <a href="../index.html#protect-money">Protect your money</a>
+    <a href="../index.html#everyday-confidence">Everyday confidence</a>
+    <a href="../index.html#staying-connected">Staying connected</a>
+    <a href="../index.html#getting-things-done" aria-current="page">Getting things done</a>
+    <a href="../for-families.html">For families</a>
+    <a href="../support-directory.html">Get help</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="../index.html">All lessons</a></li>
+      <li><a href="../index.html#getting-things-done">Getting things done</a></li>
+      <li><span aria-current="page">Telehealth and Medical Portals</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <a class="lesson-back" href="../index.html">← Back to all lessons</a>
+
+    <p class="lesson-category"><span aria-hidden="true">🩺</span> Health care</p>
+    <h1>Telehealth and Medical Portals</h1>
+    <p class="lesson-time"><span aria-hidden="true">⏱</span> About 30 minutes, at your own pace</p>
+
+    <!-- Brenda: the first thing a nervous reader sees removes a fear. -->
+    <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
+
+    <p class="lead">How to book appointments online, see your health records, meet your doctor by video, and manage prescriptions, all from the comfort of home.</p>
+
+    <h2>Helen's story</h2>
+    <p>Helen, 78, from Chatham, Ontario. After her hip replacement, getting to her family doctor's office was exhausting and painful. When her doctor's clinic offered telephone appointments during the pandemic, Helen discovered something wonderful: most of her check-ins did not require being there in person.</p>
+    <p>She now does her quarterly blood pressure review by phone, books her lab work online, and refills her prescriptions through the Shoppers Drug Mart app. The only trips she makes are for tests or issues that truly require hands-on examination.</p>
+    <p>This lesson covers everything Helen uses, and more.</p>
+
+    <div class="coach-block">
+      <span class="coach-mark" aria-hidden="true">💬</span>
+      <div class="coach-body">
+        <span class="coach-label">From your coach</span>
+        <p>Seeing a doctor through a screen can feel like it should not count as real medical care. Many people feel that way at first, and then discover that no waiting room, no winter driving, and no parking fees make some appointments genuinely better. Your health questions deserve answers, whichever way you ask them.</p>
+      </div>
+    </div>
+
+    <h2>What is telehealth?</h2>
+
+    <p><strong>Telehealth</strong> simply means receiving medical care from a distance, over the phone or by video, instead of travelling to a clinic in person. It is not a replacement for all medical visits, but it is a genuinely useful option for many everyday health needs. There are three main types:</p>
+
+    <ul>
+      <li><strong>Phone consultation.</strong> You and your doctor talk over the phone. No camera needed. Works on any phone, including a landline.</li>
+      <li><strong>Video consultation.</strong> You and your doctor can see each other, like a video call with family. Needs a smartphone, tablet, or computer with a camera.</li>
+      <li><strong>Secure messaging.</strong> Send non-urgent questions to your care team through a patient portal. They respond in writing, usually within one to two business days.</li>
+    </ul>
+
+    <p><strong>Does OHIP cover it?</strong> Most telehealth visits with your own Ontario-registered family doctor are covered by OHIP at no cost to you, just like an in-person appointment. Virtual urgent care services (such as Maple or Dialogue) may charge fees unless you have employer benefits or insurance that covers them.</p>
+
+    <h3>When telehealth works well</h3>
+
+    <ul>
+      <li>Follow-up appointments after a procedure or treatment</li>
+      <li>Medication reviews and prescription renewals</li>
+      <li>Mental health check-ins with a therapist or psychiatrist</li>
+      <li>Discussing lab results or test reports</li>
+      <li>Non-emergency questions, such as rashes that are healing, mild colds, or sleep concerns</li>
+    </ul>
+
+    <h3>When in-person is better</h3>
+
+    <ul>
+      <li>New symptoms that require a physical examination</li>
+      <li>Urgent or emergency situations. Always call 911 for emergencies.</li>
+      <li>Procedures, injections, or physical tests</li>
+      <li>Hearing or vision checks that require equipment</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">Privacy protection</span>
+      <p>Doctors offering telehealth in Ontario must use platforms that comply with <strong>PHIPA</strong>, the Personal Health Information Protection Act. This is Ontario's law that protects your private health information. If you are unsure whether your doctor's telehealth platform is PHIPA-compliant, it is completely reasonable to ask them directly.</p>
+    </div>
+
+    <h2>Accessing your medical records online</h2>
+
+    <p>Many Ontario hospitals now offer a <strong>patient portal</strong>, a secure website where you can see your own health information without having to phone the hospital. The most widely used portal in Ontario is called <strong>MyChart</strong>. It is used by hospitals such as London Health Sciences Centre, Unity Health Toronto, Humber River Hospital, and many others. Once you register, you can log in from any device and see:</p>
+
+    <ul>
+      <li><strong>Lab results</strong>, such as blood work and urine tests, often available before your doctor calls</li>
+      <li><strong>Imaging reports</strong>, including X-ray, ultrasound, and CT scan findings</li>
+      <li><strong>Your medications list</strong>, showing what has been prescribed and by whom</li>
+      <li><strong>Immunisation records</strong> on file at that hospital</li>
+      <li><strong>Upcoming appointments</strong> with specialists or your care team</li>
+    </ul>
+
+    <div class="walkthrough">
+      <h4>Registering for MyChart</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Visit your hospital's website and look for a <strong>MyChart</strong> or <strong>Patient Portal</strong> link, usually found under "Patients &amp; Visitors".</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>You can also ask at the hospital admissions desk in person. Staff will give you an activation code to create your account.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>You will need a valid email address and your Ontario health card number to complete registration.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Once registered, bookmark the login page on your device so you can find it easily next time.</p></span>
+      </div>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Important note about lab results</span>
+      <p>Lab results in MyChart are often available before your doctor has had a chance to review them. Seeing an "out of range" or "high" flag on a result can be alarming, but those flags are printed for all ages and situations, not just yours. Your doctor knows your individual baseline and medical history. If something looks abnormal, wait for your doctor's call or send a message through the portal before worrying.</p>
+    </div>
+
+    <h2>Booking appointments online</h2>
+
+    <p>You no longer have to call and wait on hold to book many medical appointments.</p>
+
+    <ul>
+      <li><strong>Family doctor appointments.</strong> Many Ontario practices now offer online booking through platforms such as OceanMD, Jane App, or their own clinic website. Look for a "Book Online" or "Request an Appointment" button on your doctor's website. If you are not sure whether your clinic offers this, call and ask.</li>
+      <li><strong>LifeLabs.</strong> Canada's largest lab network. Book at <strong>lifelabs.com/book-appointment</strong>: choose your nearest location, service, date, and time.</li>
+      <li><strong>Dynacare.</strong> Visit <strong>dynacare.ca</strong> and select "Book Now". Many Ontario locations also accept walk-ins.</li>
+      <li><strong>Vaccinations.</strong> For flu shots, COVID-19 boosters, and other publicly funded vaccines, visit <strong>ontario.ca/bookvaccine</strong> and choose your nearest pharmacy, public health unit, or community clinic.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">Specialist referrals</span>
+      <p>Appointments with specialists (such as a cardiologist or orthopaedic surgeon) are usually arranged by your family doctor, not booked directly by you. After your doctor makes the referral, you will receive a phone call or letter from the specialist's office with your appointment details. You do not need to book this yourself.</p>
+    </div>
+
+    <h2>Video doctor visits</h2>
+
+    <p>If your own family doctor offers video appointments, they will walk you through how to connect. It may be through a simple link sent by email or text. You can also access on-demand video doctors through services that are available 24 hours a day:</p>
+
+    <ul>
+      <li><strong>Maple (getmaple.ca).</strong> Available 24 hours a day, seven days a week. See a doctor within minutes for non-emergency issues. Fees apply unless covered by your benefits plan or insurance. App available for iPhone and Android.</li>
+      <li><strong>TELUS Health Virtual Care.</strong> Similar to Maple. Some employer benefits plans include TELUS Health at no extra cost. Check with your insurer or benefits administrator.</li>
+    </ul>
+
+    <div class="walkthrough">
+      <h4>Preparing for a video appointment</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Test your camera and microphone beforehand.</strong> On an iPhone or iPad: Settings, then Privacy &amp; Security, then Camera and Microphone. Make sure the app you are using has permission.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p><strong>Choose a private, well-lit space.</strong> Sit near a window or lamp so the doctor can see your face clearly. A quiet room reduces distractions for both of you.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p><strong>Have your health card, medication list, and symptom notes ready.</strong> Write down what you want to discuss so you do not forget in the moment.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p><strong>Close other apps</strong> on your device before the call. This helps ensure smooth video quality and prevents interruptions from notifications.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p><strong>During the call, speak clearly and show visible symptoms</strong> (such as a rash or swollen area) by holding your device closer to the affected area. The doctor will guide you.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Prescriptions after a video visit</span>
+      <p>Both Maple and TELUS Health Virtual Care can send prescriptions electronically, directly to any Ontario pharmacy you choose, including mail-order pharmacies that deliver to your door. You do not need a paper prescription.</p>
+    </div>
+
+    <h2>Ontario Telehealth: the free 24/7 nurse line</h2>
+
+    <div class="helper-note">
+      <span class="block-label">Save this number</span>
+      <p>Ontario Telehealth Nurse Line: <strong>1-866-797-0000</strong>. Free. Available 24 hours a day, 7 days a week, 365 days a year. Covered by your Ontario health card, at no cost to you.</p>
+    </div>
+
+    <p>When you call this number, you will be connected to a <strong>registered nurse</strong> who can discuss your symptoms, answer health questions, and help you decide whether you need to go to the emergency room, visit a walk-in clinic, or simply rest and monitor your symptoms at home. Call when:</p>
+
+    <ul>
+      <li>You have a health question and cannot reach your family doctor</li>
+      <li>You are not sure whether your symptoms need emergency care</li>
+      <li>It is evening, a weekend, or a holiday and your clinic is closed</li>
+      <li>You want a nurse's opinion before deciding what to do next</li>
+      <li>You want to know more about a medication or possible side effect</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">Language support</span>
+      <p>Ontario Telehealth is available in multiple languages through an interpreter service. Simply let the operator know your preferred language when you call and they will arrange interpretation.</p>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">HealthLine Ontario</span>
+      <p>If you prefer using a website, <strong>ontario.ca/healthline</strong> offers a symptom checker and a directory of local health services across Ontario, including walk-in clinics, mental health supports, and community health centres near you.</p>
+    </div>
+
+    <h2>E-prescriptions and refill requests</h2>
+
+    <p>When your doctor writes an e-prescription (short for electronic prescription), they send it digitally, directly to your chosen pharmacy. There is no paper to pick up, carry, or potentially lose. You will usually receive a text message or email confirming that your prescription is ready.</p>
+
+    <ul>
+      <li><strong>Shoppers Drug Mart / Loblaws Pharmacy.</strong> Download the <strong>PC Health</strong> app, or call 1-800-SHOPPERS to refill. Many locations offer automatic refills, where the pharmacist contacts you when your prescription is due.</li>
+      <li><strong>Rexall.</strong> Download the <strong>Rexall</strong> app (iPhone or Android) and tap "Refill Prescription". Enter the Rx number printed on your medication label, or call your local Rexall directly.</li>
+      <li><strong>Automatic refills.</strong> Ask your pharmacist to set up automatic refills on your regular medications. They will prepare them on schedule and call or text you when they are ready for pickup.</li>
+    </ul>
+
+    <p>If you take several medications at different times of day, ask your pharmacist about a <strong>blister pack</strong>, sometimes called a Dosette. Your medications are sorted into individual compartments by day and time, making it much easier to track what you have taken. Automated pill dispensers (such as MedMinder) are also available and can send reminders to your phone.</p>
+
+    <p><strong>Ontario Drug Benefit (ODB).</strong> If you are 65 or older with a valid Ontario health card, you are eligible for the Ontario Drug Benefit programme. It covers many listed prescription drugs for a small co-payment of $6.11 per prescription (2026 rate). For questions about ODB coverage, call ServiceOntario at <strong>1-800-268-1154</strong>.</p>
+
+    <div class="tip-block">
+      <span class="block-label">Bring your medications to every appointment</span>
+      <p>Whether your appointment is in person or by video, keep an up-to-date written list of all your current medications, including dosages and the doctor who prescribed each one. This helps avoid accidental duplicate prescriptions and keeps all your healthcare providers informed.</p>
+    </div>
+
+    <h2>MyHealth Ontario</h2>
+
+    <p><strong>MyHealth Ontario</strong> (myhealth.ontario.ca) is the Ontario government's official health portal. It is free, secure, and works on any device. You can use it to:</p>
+
+    <ul>
+      <li><strong>Access your COVID-19 vaccination record and QR code</strong>, useful proof of vaccination if requested by travel destinations, employers, or venues</li>
+      <li><strong>View certain lab results</strong> from connected healthcare providers in Ontario</li>
+      <li><strong>Download your immunisation history</strong>, a permanent record of the vaccines on file with the province</li>
+      <li><strong>Store your proof of vaccination in your Wallet app</strong>, so you can tap and show instead of searching for a PDF</li>
+    </ul>
+
+    <div class="walkthrough">
+      <h4>Creating your MyHealth Ontario account</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Go to <strong>myhealth.ontario.ca</strong> in your device's internet browser.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap <strong>Sign in</strong> and then <strong>Create account</strong>. First-time users verify their identity with their Ontario health card number and date of birth.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Once logged in, you can view and download your vaccination records, and save your QR code directly to your phone's Wallet app for easy access.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Not all labs are connected yet</span>
+      <p>Not every Ontario lab or clinic uploads results to MyHealth Ontario. Ask your family doctor which labs in your area are connected to the portal if you are not seeing your expected results.</p>
+    </div>
+
+    <h2>TELUS Health Virtual Pharmacy</h2>
+
+    <p>TELUS Health offers a <strong>mail-order pharmacy service</strong> that delivers medications directly to your door anywhere in Ontario. This can be especially convenient if you have mobility challenges, live in a rural area, or simply prefer the ease of home delivery. The service offers:</p>
+
+    <ul>
+      <li>Prescription fills delivered to your home, at no delivery charge</li>
+      <li>Medication counselling by phone with a registered pharmacist</li>
+      <li>Automatic refills with advance notification before each fill</li>
+      <li>Simple management of multiple medications in one place</li>
+    </ul>
+
+    <p>To sign up, visit <strong>telus.com/virtual-care</strong> and create an account using your health card and your existing prescriptions. Your current pharmacy can transfer your prescriptions electronically. Most Ontario private insurance plans accept TELUS Health, and the Ontario Drug Benefit programme is accepted as well.</p>
+
+    <div class="helper-note">
+      <span class="block-label">A word on comfort</span>
+      <p>If you enjoy the relationship with your neighbourhood pharmacist, the friendly face who knows your name and your medications, there is no obligation to switch to a mail-order service. The virtual pharmacy is an option, not a requirement. Some people find it a relief; others prefer the in-person experience. Both are perfectly valid choices.</p>
+    </div>
+
+    <h2>Privacy and security for health portals</h2>
+
+    <p>Your health information is among the most sensitive personal information you have. <strong>PHIPA</strong>, Ontario's Personal Health Information Protection Act, gives you specific rights over it. You have the right to:</p>
+
+    <ul>
+      <li>See your own health records held by any provider in Ontario</li>
+      <li>Request corrections to any errors in your records</li>
+      <li>Know who has accessed your health information</li>
+      <li>Withdraw consent for non-essential sharing of your information</li>
+    </ul>
+
+    <div class="walkthrough">
+      <h4>Practical security steps</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Use a strong, unique password</strong> for each health portal. Never reuse the same password as your email or banking app.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p><strong>Enable two-factor authentication</strong> wherever it is offered. On MyChart, Maple, or MyHealth Ontario, this means a code is sent to your phone each time you log in, an extra layer of protection even if someone learns your password.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p><strong>Use the portal's secure messaging system</strong> for health questions, not regular email. Patient portal messages are encrypted and private. Standard email (Gmail, Yahoo, Hotmail) is not a secure way to share health information.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p><strong>Be alert to suspicious emails.</strong> Ontario hospitals and provincial health systems will never ask for your health card number or personal details in an unsolicited email. If you receive such a message, do not reply and do not click any links.</p></span>
+      </div>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">If you believe your health privacy has been breached</span>
+      <p>Contact the <strong>Information and Privacy Commissioner of Ontario (IPC)</strong>: website <strong>ipc.on.ca</strong>, phone <strong>1-800-387-0073</strong>. The IPC is an independent office that oversees privacy rights in Ontario. Filing a complaint is free, and you do not need a lawyer.</p>
+    </div>
+
+    <h2>Try it yourself</h2>
+
+    <p>The best way to feel comfortable with these tools is to try them. Here are four simple exercises to get started:</p>
+
+    <ul>
+      <li><strong>Create a MyHealth Ontario account.</strong> Go to myhealth.ontario.ca, create a free account with your health card number and date of birth, then find your COVID-19 vaccination record and try saving the QR code to your phone's Wallet app.</li>
+      <li><strong>Find your doctor's online booking page.</strong> Search your family doctor's clinic name online and see if their website has a "Book Online" or "Request an Appointment" option. Even if you do not book anything, you will know it is there for next time.</li>
+      <li><strong>Download your pharmacy's app.</strong> If you use Shoppers Drug Mart, search for "PC Health" in the App Store or Google Play. If you use Rexall, search for "Rexall". Create an account and locate the "Refill Prescription" option, just so you know where it is.</li>
+      <li><strong>Save the Ontario Telehealth number right now.</strong> Open the Contacts app on your phone and add a new contact named "Ontario Telehealth Nurse" with the number 1-866-797-0000. Having it saved means you will not need to search for it when you are feeling unwell.</li>
+    </ul>
+
+    <h2>Quick check: test your knowledge</h2>
+    <p>Tap the answer you think is correct. There is no score kept and nothing to sign in to.</p>
+    <div class="lesson-quiz">
+      <div class="quiz-q" data-correct="b">
+        <h3>1. Telehealth allows you to:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Only refill prescriptions online</button>
+          <button class="quiz-opt" type="button" data-answer="b">See or speak with a healthcare provider by video or phone without travelling to a clinic</button>
+          <button class="quiz-opt" type="button" data-answer="c">Only communicate with your own family doctor</button>
+          <button class="quiz-opt" type="button" data-answer="d">Book in-person appointments faster</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. Telehealth means receiving medical care from a distance, by phone or video, and it works with your own doctor as well as on-demand services."
+          data-wrong="Telehealth means seeing or speaking with a healthcare provider by video or phone without travelling to a clinic. It covers much more than refills, and more providers than just your own doctor."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>2. When is the Ontario Telehealth nurse line open?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Monday to Friday, 9 am to 5 pm</button>
+          <button class="quiz-opt" type="button" data-answer="b">24 hours a day, 7 days a week</button>
+          <button class="quiz-opt" type="button" data-answer="c">On weekends only</button>
+          <button class="quiz-opt" type="button" data-answer="d">Only during cold and flu season</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. 1-866-797-0000 is answered by a registered nurse 24 hours a day, 7 days a week, 365 days a year, free with your Ontario health card."
+          data-wrong="The nurse line is open 24 hours a day, 7 days a week, 365 days a year. That is what makes it so useful on evenings, weekends, and holidays."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>3. Before a video appointment with your doctor, you should:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Call ahead to confirm your credit card is on file</button>
+          <button class="quiz-opt" type="button" data-answer="b">Test your camera and microphone, find a quiet space, and have your medications nearby</button>
+          <button class="quiz-opt" type="button" data-answer="c">Download a new app every time for security</button>
+          <button class="quiz-opt" type="button" data-answer="d">Ask a neighbour to sit with you</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Perfect. A quick camera and microphone test, a quiet well-lit spot, and your health card and medication list ready make the appointment go smoothly."
+          data-wrong="The best preparation is to test your camera and microphone, choose a quiet and well-lit space, and have your health card and medication list nearby."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>4. A text from an unknown number says your doctor wants an immediate telehealth call. What should you do?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Join the call, doctors sometimes use new numbers</button>
+          <button class="quiz-opt" type="button" data-answer="b">Call your doctor's office on their known number to verify before joining</button>
+          <button class="quiz-opt" type="button" data-answer="c">Block the number immediately</button>
+          <button class="quiz-opt" type="button" data-answer="d">Forward the text to family to decide</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Yes. Verify first. Call your doctor&#x27;s office using the number you already know, and only join the call once they confirm it is real."
+          data-wrong="The safe move is to call your doctor&#x27;s office on their known number to verify before joining anything. A real clinic will be glad you checked."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>5. Who does the Ontario Telehealth service cover?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">All of Canada equally</button>
+          <button class="quiz-opt" type="button" data-answer="b">Ontario residents only</button>
+          <button class="quiz-opt" type="button" data-answer="c">Ontario and Quebec</button>
+          <button class="quiz-opt" type="button" data-answer="d">Ontario, British Columbia, and Alberta</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Correct. The 1-866-797-0000 nurse line is an Ontario service, covered by your Ontario health card."
+          data-wrong="The nurse line serves Ontario residents only. It is covered by your Ontario health card."></div>
+      </div>
+    </div>
+
+    <h2>Your progress</h2>
+    <p>Tick each item as you feel confident with it. This is saved on this device only, with no account needed.</p>
+    <ul class="checklist" data-checklist="module-15">
+      <li class="check-item"><input type="checkbox" id="module-15-1"><label for="module-15-1">I know which medical issues suit telehealth and which need an in-person visit</label></li>
+      <li class="check-item"><input type="checkbox" id="module-15-2"><label for="module-15-2">I know how to register for or access my hospital's patient portal (MyChart)</label></li>
+      <li class="check-item"><input type="checkbox" id="module-15-3"><label for="module-15-3">I can book a LifeLabs or Dynacare appointment online</label></li>
+      <li class="check-item"><input type="checkbox" id="module-15-4"><label for="module-15-4">I know how video doctor visits work and how to prepare for one</label></li>
+      <li class="check-item"><input type="checkbox" id="module-15-5"><label for="module-15-5">I have saved the Ontario Telehealth number (1-866-797-0000) in my contacts</label></li>
+      <li class="check-item"><input type="checkbox" id="module-15-6"><label for="module-15-6">I know how to request a prescription refill through a pharmacy app</label></li>
+      <li class="check-item"><input type="checkbox" id="module-15-7"><label for="module-15-7">I can access my vaccination record through MyHealth Ontario</label></li>
+      <li class="check-item"><input type="checkbox" id="module-15-8"><label for="module-15-8">I understand how the Ontario Drug Benefit programme helps cover my prescriptions</label></li>
+      <li class="check-item"><input type="checkbox" id="module-15-9"><label for="module-15-9">I know how to protect my privacy when using health apps and portals</label></li>
+    </ul>
+
+    <!-- Denise: forward the lesson in isolation. Copy-link only, no share API. -->
+    <section class="send-lesson" aria-labelledby="send-h">
+      <h2 id="send-h">Send this lesson to someone</h2>
+      <p>Helping a parent or friend? This page works on its own, with no account and nothing to install. Copy the link and text it to them.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="button" data-copy-link>Copy the link to this lesson</button>
+        <span class="send-done" data-copy-done hidden>Copied. Paste it into a text or email.</span>
+      </div>
+      <input class="visually-hidden" type="text" data-copy-field hidden readonly aria-label="Link to this lesson">
+    </section>
+
+    <div class="success-state">
+      <p><strong>Well done.</strong> You now know how to access your health records online, book lab and doctor appointments without waiting on hold, connect with a doctor by video, reach a free nurse any time of day or night, manage your prescriptions through an app, and protect your health information. Healthcare has come to your home, and you know how to use it.</p>
+    </div>
+
+    <nav class="related-modules" aria-label="Continue learning">
+      <h2>Where to next</h2>
+      <div class="related-grid">
+        <a class="related-card" href="module-6.html">
+          <span class="related-num">Module 6</span>
+          <span class="related-name">Banking and Transactions</span>
+          <span class="related-desc">Paying for prescriptions or health services online uses the same safe payment habits from the Banking lesson.</span>
+        </a>
+        <a class="related-card" href="module-3.html">
+          <span class="related-num">Module 3</span>
+          <span class="related-name">Passwords</span>
+          <span class="related-desc">Your health portal contains sensitive personal information. Protect it with a strong, unique password.</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<!-- SHARED SHELL: footer (identical on every page). -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">For families</a></li>
+      <li><a href="../about.html">About us</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="../glossary.html">Glossary</a></li>
+      <li><a href="../privacy.html">Privacy</a></li>
+      <li><a href="../terms.html">Terms</a></li>
+      <li><a href="../disclaimer.html">Disclaimer</a></li>
+      <li><a href="../support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- SHARED SHELL: layered consent bar (identical on every page). -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="../privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/module.js"></script>
+</body>
+</html>

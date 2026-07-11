@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Theme + text size before first paint (no flash). Local only, no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>App Store Safety - Digital Confidence Centre</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-4.html">
+  <meta name="description" content="How to find, download, and verify apps safely. Spot fake apps, understand permissions, and avoid hidden subscription costs. Free, plain-language lesson for Canadian seniors. No account needed.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- SHARED SHELL: header (generated from module-v2.html.tpl; identical on every page). -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Read this page aloud">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
+        <div class="rate-group" role="group" aria-label="Reading speed">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Slower</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normal</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Faster</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="../index.html">All lessons</a>
+    <a href="../index.html#protect-money" aria-current="page">Protect your money</a>
+    <a href="../index.html#everyday-confidence">Everyday confidence</a>
+    <a href="../index.html#staying-connected">Staying connected</a>
+    <a href="../index.html#getting-things-done">Getting things done</a>
+    <a href="../for-families.html">For families</a>
+    <a href="../support-directory.html">Get help</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="../index.html">All lessons</a></li>
+      <li><a href="../index.html#protect-money">Protect your money</a></li>
+      <li><span aria-current="page">App Store Safety</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <a class="lesson-back" href="../index.html">← Back to all lessons</a>
+
+    <p class="lesson-category"><span aria-hidden="true">📱</span> App safety</p>
+    <h1>App Store Safety</h1>
+    <p class="lesson-time"><span aria-hidden="true">⏱</span> About 15 minutes, at your own pace</p>
+
+    <!-- Brenda: the first thing a nervous reader sees removes a fear. -->
+    <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
+
+    <p class="lead">How to find, download, and verify apps safely. You will learn to spot fake apps, understand what permissions mean, and keep your device running smoothly.</p>
+
+    <h2>Frank's story</h2>
+    <p>Frank, 76, wanted to download a weather app for his iPad. His friend had recommended one, so Frank opened what he thought was the App Store and searched for "weather". He found an app that looked right, tapped "Get", and was immediately asked for his credit card number. Frank entered it, thinking this was normal.</p>
+    <p>Two weeks later, Frank noticed a $49.99 charge on his credit card from a company he had never heard of. It turned out he had downloaded a fake weather app that signed him up for a weekly subscription. The "App Store" he had used was actually a website pretending to be the App Store.</p>
+    <p>Frank's mistake was understandable. The fake store looked very real. But there are clear ways to make sure you are using the real App Store, downloading real apps, and never getting tricked by hidden fees. That is what this module is all about.</p>
+
+    <div class="coach-block">
+      <span class="coach-mark" aria-hidden="true">💬</span>
+      <div class="coach-body">
+        <span class="coach-label">From your coach</span>
+        <p>Many people worry that one wrong tap in an app store will cost them money or fill their device with junk. That caution is healthy, and the truth is reassuring: nothing installs without your clear confirmation, and anything you install can be removed. You are allowed to browse, look, and change your mind.</p>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Tip</span>
+      <p>The safest way to open the App Store is to tap its icon directly on your Home screen, never from a link in an email, text message, or website.</p>
+    </div>
+
+    <h2>The real app store: how to find it</h2>
+
+    <p>The official store is the only safe place to download apps: the <strong>App Store</strong> on an iPad or iPhone (run by Apple), the <strong>Google Play Store</strong> on Android (run by Google), and the <strong>Microsoft Store</strong> on Windows. Every app in these stores has been reviewed for safety. Here is how to find the real one:</p>
+
+    <ul>
+      <li><strong>On an iPad or iPhone:</strong> look on your Home screen for a <strong>blue icon with a white letter "A" made of lines</strong> (like sticks arranged in an A shape). Tap it once to open the App Store.</li>
+      <li><strong>On Android:</strong> look for a <strong>colourful triangle icon</strong> (it looks like a sideways play button in blue, green, red, and yellow) on your Home screen or app drawer. It may be labelled simply "Play Store".</li>
+      <li><strong>On Windows:</strong> click the <strong>blue shopping bag icon</strong> in your taskbar at the bottom of the screen, or search "Microsoft Store" in the Start menu.</li>
+    </ul>
+
+    <div class="warning-block">
+      <span class="block-label">Important</span>
+      <p>Never download apps from a website, a link in an email, or a link in a text message. Only use the official app store on your device. If someone sends you a link to download an app, ignore it. Find the app yourself in the real App Store or Play Store.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>The App Store is your safe shopping centre for apps. If you stick to the App Store, you are already ahead of the game.</p>
+    </div>
+
+    <h2>How to search for and download an app</h2>
+
+    <div class="walkthrough">
+      <h4>Downloading an app step by step</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open the <strong>App Store</strong> (blue icon with white "A") or the <strong>Google Play Store</strong> (colourful triangle icon).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap the <strong>Search</strong> tab at the bottom (the magnifying glass) on an iPad or iPhone, or the search bar at the top on Android.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Type the name of the app you want. For example, type "The Weather Network".</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>A list of results will appear. <strong>Before you download anything, check the app carefully</strong> (see how to spot a real app below).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>When you find the right app, tap the blue <strong>"Get"</strong> button on Apple, or the green <strong>"Install"</strong> button on Android (or the price button for paid apps).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p>Confirm with <strong>Face ID</strong>, your <strong>fingerprint</strong>, your passcode, or your account password.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">7</span>
+        <span class="step-text"><p>The app will download and appear on your Home screen. You can tap it to open it.</p></span>
+      </div>
+    </div>
+
+    <h2>How to spot a real app vs. a fake app</h2>
+
+    <p>When you search the store, you might see several apps with similar names. Here is how to pick the real one:</p>
+
+    <ul>
+      <li><strong>Check the developer name.</strong> The developer's name appears below the app name in small text. For example, the real "RBC Mobile" app is made by "Royal Bank of Canada". If the developer name looks unfamiliar or is misspelled, be cautious.</li>
+      <li><strong>Look at the number of ratings.</strong> Popular, legitimate apps have thousands or millions of ratings. A fake copycat might have very few, perhaps dozens or even none.</li>
+      <li><strong>Read the star rating.</strong> Most real apps from established companies have ratings of 3.5 stars or above (out of 5). Very low ratings (below 2 stars) are a warning sign.</li>
+      <li><strong>Check the screenshots.</strong> Scroll down to see pictures of what the app looks like. Do they look professional? Do they match what you would expect?</li>
+      <li><strong>Look for the "In-App Purchases" label.</strong> If an app says "In-App Purchases" below the "Get" button, the app is free to download but may ask you to pay for extra features inside the app. This is not always bad, but be aware of it.</li>
+    </ul>
+
+    <div class="three-second-rule">
+      <h3>The 3-second rule for apps</h3>
+      <ol class="tsr-steps">
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">✋</span><span class="tsr-name">Stop</span> Before tapping "Get", pause and check the details.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🫁</span><span class="tsr-name">Breathe</span> There is no rush. The app will still be there in five minutes.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🔍</span><span class="tsr-name">Verify</span> Check the developer, ratings, and reviews. Does everything look right?</li>
+      </ol>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Watch out</span>
+      <p>If an app has very few ratings, a developer name you do not recognise, or screenshots that look sloppy, do not download it. A legitimate app from a major company will always have thousands of ratings.</p>
+    </div>
+
+    <h2>Understanding app permissions</h2>
+
+    <p>When you first open a new app, it might ask for permission to access parts of your device. These requests appear as small pop-up boxes. Here is what the common ones mean:</p>
+
+    <ul>
+      <li><strong>"Would like to send you notifications":</strong> the app wants to send you alerts and reminders, even when you are not using it. Tap <strong>"Allow"</strong> if you want reminders (like a weather alert) or <strong>"Don't Allow"</strong> if you do not want to be bothered.</li>
+      <li><strong>"Would like to access your location":</strong> the app wants to know where you are. A weather or maps app needs this to work properly. A game or flashlight app does not. Choose "While Using the App" for apps that genuinely need your location, and "Don't Allow" for apps that do not.</li>
+      <li><strong>"Would like to access your photos":</strong> the app wants to see pictures stored on your device. A photo editing app needs this; a calculator app does not.</li>
+      <li><strong>"Would like to access your contacts":</strong> the app wants to see your address book. Only allow this for communication apps like FaceTime or Messages.</li>
+      <li><strong>"Would like to track your activity":</strong> the app wants to follow what you do on other apps and websites to show you targeted advertisements. Almost always, tap <strong>"Ask App Not to Track"</strong>.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">The simple rule</span>
+      <p>If you are not sure, choose <strong>"Don't Allow"</strong>. You can always change your mind later in Settings. Saying "no" never breaks an app. At worst, one feature might not work, and the app will tell you.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You are now an informed app shopper. You know how to find real apps and protect your privacy when using them.</p>
+    </div>
+
+    <h2>Subscriptions and hidden costs</h2>
+
+    <p>Some apps are free to download but charge a monthly or yearly fee to keep using them. This is called a <strong>subscription</strong>. It is like a magazine subscription: you pay regularly to keep getting it. Subscriptions are not necessarily bad, but you should always know what you are signing up for. Here is how to check:</p>
+
+    <div class="walkthrough">
+      <h4>Checking your subscriptions</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open <strong>Settings</strong> (the grey gears icon).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap your <strong>name</strong> at the top.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Tap <strong>"Subscriptions"</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>You will see a list of all active subscriptions. If you see something you do not recognise or no longer want, tap it and choose <strong>"Cancel Subscription"</strong>.</p></span>
+      </div>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Watch out</span>
+      <p>Some apps offer a "free trial" that automatically converts to a paid subscription after 3 or 7 days. If you try a free trial, set a reminder on your phone to cancel before the trial ends, or cancel immediately after signing up. You will still get the full trial period, but it will not charge you afterward.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You are becoming a savvy app shopper. You know how to check permissions and watch for hidden costs. These skills protect you every time you use your device.</p>
+    </div>
+
+    <h2>Deleting apps you do not want</h2>
+
+    <div class="walkthrough">
+      <h4>Removing an app from your device</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Find the app icon on your Home screen.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p><strong>Press and hold</strong> the icon for about two seconds. The icons will start to wiggle, or a small menu will appear.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Tap the small <strong>"X"</strong> or <strong>minus sign</strong> on the app you want to remove, or tap <strong>"Remove App"</strong> from the menu.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Tap <strong>"Delete App"</strong> to confirm. If you change your mind, you can always download it again from the App Store.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Press the Home button (or tap "Done") to stop the wiggling.</p></span>
+      </div>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Important</span>
+      <p>Deleting an app does not cancel a subscription. If you are paying for an app monthly, you need to cancel the subscription separately (in Settings, under Subscriptions) before deleting the app.</p>
+    </div>
+
+    <h2>Practical exercise: App Store explorer</h2>
+
+    <div class="walkthrough">
+      <h4>Try it yourself</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open the App Store and search for <strong>"The Weather Network"</strong>. Check the developer name, star rating, and number of reviews. Do not download it. This is practice.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Go to Settings, tap your name, then Subscriptions, and check if you have any active subscriptions you did not know about.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>If you have any apps on your Home screen that you do not recognise or no longer use, practise deleting one.</p></span>
+      </div>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Success looks like this</span>
+      <p>You can confidently search for an app, verify it is legitimate by checking the developer and ratings, and you know where to find and cancel subscriptions.</p>
+    </div>
+
+    <h2>Quick check: test your knowledge</h2>
+    <p>Tap the answer you think is correct. There is no score kept and nothing to sign in to.</p>
+    <div class="lesson-quiz">
+      <div class="quiz-q" data-correct="b">
+        <h3>1. Where is the only safe place to download apps for your iPad?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">From a link someone texted you</button>
+          <button class="quiz-opt" type="button" data-answer="b">The App Store app on your iPad</button>
+          <button class="quiz-opt" type="button" data-answer="c">Any website that shows apps</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly right. The App Store on your iPad is the only safe place. Never download apps from links in emails or texts."
+          data-wrong="The only safe place is the App Store app on your iPad (the blue icon with the white A). Never download from links in emails or texts."></div>
+      </div>
+      <div class="quiz-q" data-correct="a">
+        <h3>2. An app asks permission to "Track Your Activity across other companies' apps and websites". What should you do?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Tap "Ask App Not to Track"</button>
+          <button class="quiz-opt" type="button" data-answer="b">Tap "Allow" so the app works properly</button>
+          <button class="quiz-opt" type="button" data-answer="c">Delete the app immediately</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Good choice. Tracking is about targeted advertisements, not app functionality. You can almost always say no."
+          data-wrong="The best choice is &quot;Ask App Not to Track&quot;. This permission is about targeted ads, not about making the app work. The app will function fine without it."></div>
+      </div>
+      <div class="quiz-q" data-correct="c">
+        <h3>3. You deleted an app, but you are still being charged $9.99 per month. Why?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Your iPad is broken</button>
+          <button class="quiz-opt" type="button" data-answer="b">Someone hacked your account</button>
+          <button class="quiz-opt" type="button" data-answer="c">Deleting an app does not cancel its subscription, you need to cancel separately in Settings</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="That is right. Deleting an app and cancelling a subscription are two separate steps. Go to Settings, tap your name, then Subscriptions to cancel."
+          data-wrong="Deleting an app does not cancel its subscription. You need to go to Settings, tap your name, then Subscriptions to cancel the payment."></div>
+      </div>
+    </div>
+
+    <h2>Your progress</h2>
+    <p>Tick each item as you feel confident with it. This is saved on this device only, with no account needed.</p>
+    <ul class="checklist" data-checklist="module-4">
+      <li class="check-item"><input type="checkbox" id="module-4-1"><label for="module-4-1">I can find and open the real App Store or Play Store on my device</label></li>
+      <li class="check-item"><input type="checkbox" id="module-4-2"><label for="module-4-2">I know never to download apps from links in emails or texts</label></li>
+      <li class="check-item"><input type="checkbox" id="module-4-3"><label for="module-4-3">I can check the developer name, ratings, and reviews before downloading</label></li>
+      <li class="check-item"><input type="checkbox" id="module-4-4"><label for="module-4-4">I know what app permissions mean and when to say "Don't Allow"</label></li>
+      <li class="check-item"><input type="checkbox" id="module-4-5"><label for="module-4-5">I know where to find and cancel subscriptions in Settings</label></li>
+      <li class="check-item"><input type="checkbox" id="module-4-6"><label for="module-4-6">I can delete an app I no longer want</label></li>
+    </ul>
+
+    <!-- Denise: forward the lesson in isolation. Copy-link only, no share API. -->
+    <section class="send-lesson" aria-labelledby="send-h">
+      <h2 id="send-h">Send this lesson to someone</h2>
+      <p>Helping a parent or friend? This page works on its own, with no account and nothing to install. Copy the link and text it to them.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="button" data-copy-link>Copy the link to this lesson</button>
+        <span class="send-done" data-copy-done hidden>Copied. Paste it into a text or email.</span>
+      </div>
+      <input class="visually-hidden" type="text" data-copy-field hidden readonly aria-label="Link to this lesson">
+    </section>
+
+    <div class="success-state">
+      <p><strong>Well done.</strong> You are now a smart app shopper who knows how to stay safe in the App Store: finding real apps, checking permissions, and watching for hidden costs.</p>
+    </div>
+
+    <nav class="related-modules" aria-label="Continue learning">
+      <h2>Where to next</h2>
+      <div class="related-grid">
+        <a class="related-card" href="module-1.html">
+          <span class="related-num">Module 1</span>
+          <span class="related-name">The Escape Hatch</span>
+          <span class="related-desc">If an app installation goes wrong or something unexpected appears, knowing how to escape keeps you safe.</span>
+        </a>
+        <a class="related-card" href="module-2.html">
+          <span class="related-num">Module 2</span>
+          <span class="related-name">The Security Shield</span>
+          <span class="related-desc">Understand what makes an app trustworthy or risky, essential context for safe App Store browsing.</span>
+        </a>
+        <a class="related-card" href="module-9.html">
+          <span class="related-num">Module 9</span>
+          <span class="related-name">Understanding AI</span>
+          <span class="related-desc">AI-powered apps are everywhere in the App Store. Learn what they are and how to use them wisely.</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<!-- SHARED SHELL: footer (identical on every page). -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">For families</a></li>
+      <li><a href="../about.html">About us</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="../glossary.html">Glossary</a></li>
+      <li><a href="../privacy.html">Privacy</a></li>
+      <li><a href="../terms.html">Terms</a></li>
+      <li><a href="../disclaimer.html">Disclaimer</a></li>
+      <li><a href="../support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- SHARED SHELL: layered consent bar (identical on every page). -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="../privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/module.js"></script>
+</body>
+</html>

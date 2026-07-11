@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Theme + text size before first paint (no flash). Local only, no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>The Security Shield - Digital Confidence Centre</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-2.html">
+  <meta name="description" content="Learn to recognise and stop the most common scams targeting Canadians: CRA phone fraud, phishing emails, tech support scams, and more, using the calm 3-Second Rule. A free, plain-language lesson for Canadian seniors. No account needed.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- SHARED SHELL: header (generated from module-v2.html.tpl; identical on every page). -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Read this page aloud">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
+        <div class="rate-group" role="group" aria-label="Reading speed">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Slower</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normal</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Faster</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="../index.html">All lessons</a>
+    <a href="../index.html#protect-money" aria-current="page">Protect your money</a>
+    <a href="../index.html#everyday-confidence">Everyday confidence</a>
+    <a href="../index.html#staying-connected">Staying connected</a>
+    <a href="../index.html#getting-things-done">Getting things done</a>
+    <a href="../for-families.html">For families</a>
+    <a href="../support-directory.html">Get help</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="../index.html">All lessons</a></li>
+      <li><a href="../index.html#protect-money">Protect your money</a></li>
+      <li><span aria-current="page">The Security Shield</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <a class="lesson-back" href="../index.html">← Back to all lessons</a>
+
+    <p class="lesson-category"><span aria-hidden="true">🛡️</span> Scam protection</p>
+    <h1>The Security Shield</h1>
+    <p class="lesson-time"><span aria-hidden="true">⏱</span> About 25 minutes, at your own pace</p>
+
+    <!-- Brenda: the first thing a nervous reader sees removes a fear. -->
+    <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
+
+    <p class="lead">How to recognise and protect yourself from the most common scams targeting Canadians, so you feel empowered, not frightened, when it comes to online safety.</p>
+
+    <h2>Dorothy's story</h2>
+    <p>Dorothy, 72, lives in Ontario. One morning, she received a phone call from someone who said they were from the Canada Revenue Agency (the CRA, that is the government office that handles taxes). The caller said Dorothy owed $4,200 in unpaid taxes and that the police would come to her home within two hours unless she paid immediately using iTunes gift cards.</p>
+    <p>Dorothy's heart was pounding. She had always paid her taxes on time. But the caller was so convincing. He knew her full name, he sounded official, and he even gave her a badge number. Dorothy drove to her local pharmacy and bought $500 in iTunes cards before she called her daughter, who told her to hang up immediately.</p>
+    <p>Dorothy lost that $500. But she learned something powerful that day: scammers are professional liars. They practise sounding real. They use fear and urgency as weapons. And once you know their tricks, you can spot them from a mile away.</p>
+    <p>This module is Dorothy's gift to you: everything she wishes she had known before that phone call.</p>
+
+    <div class="coach-block">
+      <span class="coach-mark" aria-hidden="true">💬</span>
+      <div class="coach-body">
+        <span class="coach-label">From your coach</span>
+        <p>If you have ever felt embarrassed about nearly falling for a scam, please let that feeling go. Scammers spend months studying psychology, voice techniques, and pressure tactics. They test their scripts on hundreds of people and keep refining what works. Feeling unsure for even a moment when someone creates urgency is not weakness. It is proof that your instincts are working.</p>
+      </div>
+    </div>
+
+    <h2>The truth about scams in Canada</h2>
+
+    <p>Before we look at specific scams, here are some facts that might surprise you.</p>
+
+    <ul>
+      <li>The Canadian Anti-Fraud Centre reported that Canadians lost over <strong>$530 million</strong> to fraud in a recent year. The real number is likely much higher because many people feel too embarrassed to report it.</li>
+      <li>Scammers do not target people who are foolish. They target people who are <strong>trusting, polite, and law-abiding</strong>. Those are good qualities. Scammers exploit them.</li>
+      <li>Being scammed is <strong>not your fault</strong>. These are professional criminals who do this for a living.</li>
+      <li>The best defence is not technical skill. It is <strong>knowing what to look for</strong>. That is exactly what we are about to learn.</li>
+    </ul>
+
+    <div class="three-second-rule">
+      <h3>The 3-Second Rule</h3>
+      <ol class="tsr-steps">
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">✋</span><span class="tsr-name">Stop</span> Do not tap, click, or respond.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🫁</span><span class="tsr-name">Breathe</span> One slow, deep breath. Urgency is the scammer's weapon.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🔍</span><span class="tsr-name">Verify</span> Contact the real organisation directly using a number from their official website or your bank card.</li>
+      </ol>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Learning about scams is not scary, it is empowering. You are building armour right now. Take your time with this module. There is a lot of information, but every piece makes you stronger.</p>
+    </div>
+
+    <h2>Scam 1: The CRA phone scam</h2>
+
+    <p>This is the most common scam targeting Canadians. Here is how it works.</p>
+
+    <div class="scam-example">
+      <span class="example-label">What the scam call sounds like (this is NOT real)</span>
+      <p>This is Officer James Wilson, badge number 4471, calling from the Canada Revenue Agency. Our records indicate you have an outstanding tax debt of $4,200. A warrant for your arrest has been issued. To avoid immediate arrest, you must make a payment today. We accept payment through iTunes gift cards, Bitcoin, or wire transfer. Press 1 to speak with a payment agent.</p>
+    </div>
+
+    <h3>Red flags to watch for</h3>
+
+    <ul>
+      <li><strong>The CRA will never call and threaten arrest.</strong> If you owed taxes, they would send you a letter in the mail first, multiple letters, in fact.</li>
+      <li><strong>No government agency accepts iTunes gift cards as payment.</strong> This is the biggest giveaway. Gift cards are untraceable, that is exactly why scammers want them.</li>
+      <li><strong>They create false urgency.</strong> "You must pay today" or "the police are on their way." Real government agencies give you time to respond.</li>
+      <li><strong>They get angry or threatening when you ask questions.</strong> A real CRA agent would be patient and professional.</li>
+      <li><strong>They ask you to stay on the phone.</strong> They do not want you calling someone else to check if this is real.</li>
+    </ul>
+
+    <p><strong>Applying the 3-Second Rule.</strong> <strong>Stop:</strong> Hang up the phone. You do not need to be polite to a criminal. <strong>Breathe:</strong> Remember that the CRA sends letters, not threatening phone calls. <strong>Verify:</strong> If you are worried, call the CRA directly at <strong>1-800-959-8281</strong> (this is their real number, you can find it on canada.ca).</p>
+
+    <div class="warning-block">
+      <span class="block-label">Watch out</span>
+      <p>No real government agency will ever ask you to pay using gift cards, Bitcoin, or wire transfers. If someone asks for payment this way, it is always a scam, no exceptions.</p>
+    </div>
+
+    <p><strong>If you already responded.</strong> If you gave them gift card numbers, contact the gift card company immediately, they may be able to freeze the funds. Report the scam to the Canadian Anti-Fraud Centre at <strong>1-888-495-8501</strong>. Do not feel embarrassed; you are helping protect others by reporting.</p>
+
+    <div class="tip-block">
+      <span class="block-label">Tip</span>
+      <p>Save the real CRA phone number (1-800-959-8281) in your phone's contacts list right now. That way, if you ever receive a suspicious call about taxes, you can ring the real CRA directly to check.</p>
+    </div>
+
+    <h2>Scam 2: The grandparent scam</h2>
+
+    <p>This scam is particularly cruel because it targets your love for your family.</p>
+
+    <div class="scam-example">
+      <span class="example-label">What the scam call sounds like (this is NOT real)</span>
+      <p>Grandma? It's me... [sobbing]... I'm in trouble. I was in a car accident in Montreal and I got arrested. Please don't tell Mom and Dad. My lawyer says I need $3,000 for bail. Can you send money through Western Union? Please, Grandma, I'm so scared.</p>
+    </div>
+
+    <h3>Red flags to watch for</h3>
+
+    <ul>
+      <li><strong>They never say their name first.</strong> They wait for you to say "Is that you, Michael?" and then they say "Yes, it's Michael!" Now they know your grandchild's name.</li>
+      <li><strong>They beg you not to tell other family members.</strong> They need to isolate you so no one can verify the story.</li>
+      <li><strong>The "lawyer" calls back.</strong> A second person calls pretending to be a lawyer, confirming the fake story. This makes it feel more real.</li>
+      <li><strong>They need money urgently through untraceable methods.</strong> Wire transfers, gift cards, or cryptocurrency.</li>
+      <li><strong>Their voice sounds "off."</strong> They often explain this by saying they have a cold, or that the phone connection is bad.</li>
+    </ul>
+
+    <p><strong>Applying the 3-Second Rule.</strong> <strong>Stop:</strong> Do not send money. <strong>Breathe:</strong> Fear for a loved one is the most powerful emotion scammers can use. Take a moment. <strong>Verify:</strong> Hang up and call your grandchild directly at the phone number you already have. Call their parents. If your real grandchild answers and says "What are you talking about, Grandma?" you have just avoided a scam.</p>
+
+    <div class="tip-block">
+      <span class="block-label">Family safety tip</span>
+      <p>Consider creating a <strong>family code word</strong>, a secret word that only your family knows. If someone calls claiming to be a relative in trouble, ask for the code word. A scammer will not know it.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Watch out</span>
+      <p>Scammers can now use artificial intelligence to clone voices. Even if a caller sounds exactly like your grandchild, always hang up and call your family member directly at the number you already have saved.</p>
+    </div>
+
+    <h2>Scam 3: Fake bank emails (phishing)</h2>
+
+    <p><strong>Phishing</strong> (pronounced "fishing") is when a scammer sends you a fake email or text message pretending to be from a company you trust, like your bank. They are "fishing" for your personal information, hoping you will take the bait.</p>
+
+    <div class="scam-example">
+      <span class="example-label">Example fake email from "RBC" (this is NOT real)</span>
+      <p>From: security-alert@rbc-banking-secure.com. Subject: URGENT: Unusual Activity on Your RBC Account. Dear Valued Customer, We have detected unusual activity on your RBC Royal Bank account. Your account has been temporarily locked for your protection. To restore access, please verify your identity by clicking the link below: [Verify My Account Now]. If you do not verify within 24 hours, your account will be permanently closed. RBC Royal Bank Security Team.</p>
+    </div>
+
+    <h3>Red flags to watch for</h3>
+
+    <ul>
+      <li><strong>The email address is wrong.</strong> Look carefully: "rbc-banking-secure.com" is NOT a real RBC address. The real one would end in "@rbc.com", nothing else.</li>
+      <li><strong>It says "Dear Valued Customer" instead of your actual name.</strong> Your real bank knows your name.</li>
+      <li><strong>"URGENT" and deadline pressure.</strong> "You have 24 hours" is designed to make you panic and act without thinking.</li>
+      <li><strong>They want you to click a link.</strong> That link leads to a fake website that looks like your bank but is controlled by the scammer. If you type your password there, you are handing it to a thief.</li>
+      <li><strong>Threatening language.</strong> "Your account will be permanently closed", your bank would not close your account over one missed email.</li>
+    </ul>
+
+    <p><strong>Applying the 3-Second Rule.</strong> <strong>Stop:</strong> Do not click any links in the email. <strong>Breathe:</strong> Your bank account is fine. Real security issues are handled by phone, not email links. <strong>Verify:</strong> Open a brand-new web browser window (do not use any links from the email) and go to your bank's real website by typing the address yourself. Or call the number on the back of your bank card.</p>
+
+    <div class="scam-example">
+      <span class="example-label">Example fake email from "TD Bank" (this is NOT real)</span>
+      <p>From: td-easyweb-security@td-bank-alert.net. Subject: Action Required: Your TD EasyWeb Access Has Been Suspended. We noticed a login attempt from an unrecognised device. For your safety, we have suspended your TD EasyWeb access. Click below to confirm your identity and restore your account: [Restore TD EasyWeb Access]. Failure to act within 12 hours will result in account suspension. TD Canada Trust Digital Security.</p>
+    </div>
+
+    <p>Notice the same pattern: a fake email address ("td-bank-alert.net" is not a real TD address), urgency ("12 hours"), and a link that wants your login information. The real TD website address is <strong>td.com</strong>, anything else is fake. Your bank website shows its exact name in the address bar (td.com). A fake site adds extra words: td-secure-login.com or td-bank-verify.net. These are not your bank.</p>
+
+    <h2>Scam 4: Romance scams</h2>
+
+    <p>Romance scams often begin on social media or dating apps. Someone sends you a kind message, you start chatting, and over weeks or months they build a relationship with you. Then the requests for money begin.</p>
+
+    <div class="scam-example">
+      <span class="example-label">How it typically unfolds (this is NOT real)</span>
+      <p>Week 1: "Hello, I noticed your lovely profile photo. My name is Robert, I'm an engineer working in Alberta." Week 3: Daily messages, phone calls, deep personal conversations. He is kind, attentive, everything you could want. Week 6: "I'm stuck overseas on a job. I need $2,000 for a plane ticket home. I'll pay you back as soon as I arrive. You're the only person I can trust."</p>
+    </div>
+
+    <h3>Red flags to watch for</h3>
+
+    <ul>
+      <li><strong>They cannot video call.</strong> Their camera is always "broken" or the connection is always "bad." They use photos stolen from other people's social media.</li>
+      <li><strong>The relationship moves very fast.</strong> They say "I love you" within days or weeks.</li>
+      <li><strong>They have a dramatic reason they cannot meet in person.</strong> They are overseas, in the military, working on an oil rig, or some other story.</li>
+      <li><strong>They eventually ask for money.</strong> It starts small and grows. A medical emergency, travel costs, business problems.</li>
+      <li><strong>They ask you to keep the relationship private.</strong> They do not want your family or friends to ask questions.</li>
+    </ul>
+
+    <p><strong>Applying the 3-Second Rule.</strong> <strong>Stop:</strong> Never send money to someone you have not met in person. <strong>Breathe:</strong> This is emotionally difficult. It is okay to feel hurt or confused. <strong>Verify:</strong> Do a reverse image search of their profile photo (your family member or a tech helper can show you how), or ask them for a video call. If they always have an excuse, that is your answer.</p>
+
+    <h2>Scam 5: Tech support scams</h2>
+
+    <p>This scam usually starts with a phone call or a pop-up on your screen. The caller claims to be from Apple, Google, Microsoft, or another well-known company.</p>
+
+    <div class="scam-example">
+      <span class="example-label">What the scam sounds like (this is NOT real)</span>
+      <p>Hello, this is John from Apple Support. We have detected a security breach on your iPad. Hackers have accessed your device and we need to fix it immediately. I will need you to give me remote access to your iPad so I can remove the threat. There is also a $299 security service fee.</p>
+    </div>
+
+    <h3>Red flags to watch for</h3>
+
+    <ul>
+      <li><strong>Apple, Microsoft, and Google will never call you about a problem you did not report.</strong> If you did not contact them first, the call is fake.</li>
+      <li><strong>They ask for remote access to your device.</strong> Never let a stranger control your device or computer.</li>
+      <li><strong>They charge a fee to "fix" a problem that does not exist.</strong></li>
+      <li><strong>They found you, you did not find them.</strong> Real tech support waits for you to contact them.</li>
+    </ul>
+
+    <p><strong>Applying the 3-Second Rule.</strong> <strong>Stop:</strong> Hang up. <strong>Breathe:</strong> Apple, Google, and Microsoft did not call you. Your device is fine. <strong>Verify:</strong> If you are worried about your device, visit your nearest Apple Store or call Apple directly at <strong>1-800-275-2273</strong>. For an Android device, use the maker's support website (such as support.google.com or samsung.com/ca/support). For Windows, use support.microsoft.com or a local, trusted repair shop, never the person who called you.</p>
+
+    <h2>Scam 6: Fake package delivery texts</h2>
+
+    <div class="scam-example">
+      <span class="example-label">Example scam text message (this is NOT real)</span>
+      <p>Canada Post: Your package could not be delivered. A shipping fee of $2.65 is required. Pay now to reschedule delivery: http://canadapost-redelivery-fee.com/pay</p>
+    </div>
+
+    <h3>Red flags to watch for</h3>
+
+    <ul>
+      <li><strong>Canada Post does not text you about delivery fees.</strong> If there is a fee, they leave a notice card in your mailbox.</li>
+      <li><strong>The link looks almost right but is not.</strong> "canadapost-redelivery-fee.com" is not a real Canada Post website. The real one is <strong>canadapost-postescanada.ca</strong>.</li>
+      <li><strong>The amount is small on purpose.</strong> They hope you will think "$2.65 is no big deal" and enter your credit card number without thinking. Then they have your card number.</li>
+    </ul>
+
+    <p><strong>Applying the 3-Second Rule.</strong> <strong>Stop:</strong> Do not tap the link. <strong>Breathe:</strong> If you are expecting a package, check the real Canada Post website directly. <strong>Verify:</strong> Go to <strong>canadapost-postescanada.ca</strong> and use the tracking number from your order confirmation email.</p>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You have now learned about six major scam types. Each scam follows the same basic formula: create fear or urgency, then ask for money or personal information. Once you see the formula, you see through the disguise.</p>
+    </div>
+
+    <h2>Scam 7: "Microsoft" computer warnings</h2>
+
+    <p>While browsing the web, a full-screen warning suddenly appears. This full-screen alarm is always fake. Real warnings from your device are small, calm notifications, not flashing alarms with a phone number to call.</p>
+
+    <div class="scam-example">
+      <span class="example-label">Example fake Microsoft warning (this is NOT real)</span>
+      <p>MICROSOFT SECURITY ALERT! Error # DW6BD36. Your computer has been locked! Suspicious Activity Detected. Your browsing and personal data (including banking passwords) are being stolen. Call Microsoft Certified Technicians immediately: 1-877-555-0142. DO NOT SHUT DOWN YOUR COMPUTER.</p>
+    </div>
+
+    <h3>Red flags to watch for</h3>
+
+    <ul>
+      <li><strong>Microsoft does not send warnings through your web browser.</strong> This is a webpage, not a real system alert.</li>
+      <li><strong>Error codes that look official but mean nothing.</strong> "Error # DW6BD36" is made up to sound technical.</li>
+      <li><strong>It tells you NOT to close the window.</strong> The opposite of what you should do. Close it immediately using your Escape Hatch from Module 1.</li>
+      <li><strong>A phone number.</strong> Real warnings from your operating system never include a phone number to call.</li>
+    </ul>
+
+    <p><strong>Applying the 3-Second Rule.</strong> <strong>Stop:</strong> Take your fingers off the screen. <strong>Breathe:</strong> This is a fake website, not a real warning. Your device was never in danger. <strong>Verify:</strong> On an iPad or iPhone, press the Home button or swipe up to close the browser. On Android, press the Home button, then close the browser tab. On Windows, close the browser window with the X button or press Alt and F4. When you reopen your browser, the warning will be gone.</p>
+
+    <h2>Your master scam-spotting checklist</h2>
+
+    <p>You can use these questions to evaluate any suspicious message, email, phone call, or website. If the answer to any of these is "yes," it is very likely a scam.</p>
+
+    <ul>
+      <li>Does it create <strong>urgency</strong>? ("Act now!" "You have 24 hours!")</li>
+      <li>Does it create <strong>fear</strong>? ("Your account is locked!" "The police are coming!")</li>
+      <li>Does it ask for <strong>unusual payment methods</strong>? (Gift cards, wire transfers, cryptocurrency)</li>
+      <li>Does it ask you to <strong>click a link</strong> to fix a problem?</li>
+      <li>Did <strong>they contact you first</strong>, rather than you contacting them?</li>
+      <li>Does it ask you to <strong>keep it secret</strong> from family?</li>
+      <li>Does the email address or website look <strong>almost right but not quite</strong>?</li>
+      <li>Is the greeting <strong>generic</strong> ("Dear Customer") rather than using your name?</li>
+    </ul>
+
+    <h2>Protecting your device: antivirus and real tech support</h2>
+
+    <p>After learning about all these scams, you may be wondering what you should actually do to protect your device. The good news is that every modern device already includes strong, built-in protection.</p>
+
+    <ul>
+      <li><strong>iPhone and iPad:</strong> these do not get traditional computer viruses, and you do not need to buy antivirus software. Keep your software updated, only download apps from the official App Store, and use a strong password or Face ID.</li>
+      <li><strong>Android:</strong> your device already has built-in security called Google Play Protect, which scans apps automatically. Keep your software updated and only download apps from the official Google Play Store. Malwarebytes Free is a well-respected free option if you want extra peace of mind.</li>
+      <li><strong>Windows:</strong> your computer already includes Windows Defender (also called Microsoft Defender), which performs as well as most paid antivirus products. You do not need to buy Norton, McAfee, or similar. To check it, open the Start menu, type "Windows Security", and look for green checkmarks.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">Where to get real tech support</span>
+      <p>For an iPad or iPhone, book the free Genius Bar service at your nearest Apple Store (apple.com/ca/retail). For Android and Windows, Best Buy Geek Squad and Staples Tech Services offer paid in-person help. Many local libraries and senior centres also offer free tech clinics. You find them, they never find you.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Avoid these tech support traps</span>
+      <p><strong>Anyone who calls you</strong> offering to fix your computer is a scam. <strong>Pop-up ads</strong> saying you have a virus and need to call a number are a scam. <strong>Ads for "PC Cleaner" or "Speed Up Your Computer" software</strong> are almost always unnecessary at best, harmful at worst. <strong>Door-to-door "computer repair" visitors</strong> should be verified through official channels only.</p>
+    </div>
+
+    <h2>Where to report scams in Canada</h2>
+
+    <ul>
+      <li><strong>Canadian Anti-Fraud Centre:</strong> the national reporting centre for fraud and scams. Phone 1-888-495-8501. Website antifraudcentre-centreantifraude.ca.</li>
+      <li><strong>GetCyberSafe.gc.ca:</strong> the Government of Canada's official website for cyber security information, written in plain language with practical tips.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">Feeling stuck?</span>
+      <p>You do not have to figure this out alone. <strong>Connected Canadians</strong> (1-855-808-0505) and <strong>Cyber-Seniors</strong> (1-844-217-3057) are free, Canadian services staffed by real, patient people who specialise in helping older adults with technology at your own pace.</p>
+    </div>
+
+    <h2>Quick check: test your knowledge</h2>
+    <p>Tap the answer you think is correct. There is no score kept and nothing to sign in to.</p>
+    <div class="lesson-quiz">
+      <div class="quiz-q" data-correct="c">
+        <h3>1. You receive a call from someone claiming to be from the CRA, saying you owe taxes and must pay with iTunes gift cards. What should you do?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Buy the gift cards, you do not want to be arrested</button>
+          <button class="quiz-opt" type="button" data-answer="b">Give them your Social Insurance Number to verify your identity</button>
+          <button class="quiz-opt" type="button" data-answer="c">Hang up immediately, the CRA never requests payment by gift cards</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly right. The CRA never calls demanding immediate payment by gift cards. Hang up and call the CRA directly at 1-800-959-8281 if you are concerned."
+          data-wrong="The correct answer is to hang up. The CRA will never demand payment by gift cards, and they will never threaten immediate arrest over the phone."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>2. An email from "RBC" says your account is locked and you need to click a link to verify. The sender's email address is security@rbc-alert-canada.com. What do you notice?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">This looks legitimate, it mentions RBC and Canada</button>
+          <button class="quiz-opt" type="button" data-answer="b">The email address is fake, a real RBC email would come from @rbc.com</button>
+          <button class="quiz-opt" type="button" data-answer="c">You should click the link to be safe</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Well done. You spotted the fake email address. Real RBC emails come from @rbc.com, anything else is a scam."
+          data-wrong="Look at the email address carefully. &quot;rbc-alert-canada.com&quot; is not a real RBC address. The real one ends in @rbc.com. Never click links in suspicious emails."></div>
+      </div>
+      <div class="quiz-q" data-correct="a">
+        <h3>3. Your grandchild calls crying, saying they are in jail and need bail money. They beg you not to tell their parents. What is the best response?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Hang up and call your grandchild directly at their real phone number</button>
+          <button class="quiz-opt" type="button" data-answer="b">Send the money right away, your grandchild is in danger</button>
+          <button class="quiz-opt" type="button" data-answer="c">Ask the caller for more details about where they are</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Perfect. Always verify by calling your grandchild directly. If they answer normally, you have caught a scammer."
+          data-wrong="The safest thing is to hang up and call your grandchild at the number you already have. If it is really them, they will answer. If it is a scam, you will know immediately."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>4. What is the 3-Second Rule?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Count to three before opening any email</button>
+          <button class="quiz-opt" type="button" data-answer="b">Stop, Breathe, and Verify before responding to anything suspicious</button>
+          <button class="quiz-opt" type="button" data-answer="c">Wait three seconds before answering the phone</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="That is it. Stop, Breathe, Verify. Three simple steps that protect you from almost every scam."
+          data-wrong="The 3-Second Rule is: Stop (take your fingers off the screen), Breathe (one deep breath), and Verify (check if the message is real by contacting the organisation directly)."></div>
+      </div>
+    </div>
+
+    <h2>Your progress</h2>
+    <p>Tick each item as you feel confident with it. This is saved on this device only, with no account needed.</p>
+    <ul class="checklist" data-checklist="module-2">
+      <li class="check-item"><input type="checkbox" id="module-2-1"><label for="module-2-1">I understand the 3-Second Rule (Stop, Breathe, Verify)</label></li>
+      <li class="check-item"><input type="checkbox" id="module-2-2"><label for="module-2-2">I can spot a CRA phone scam</label></li>
+      <li class="check-item"><input type="checkbox" id="module-2-3"><label for="module-2-3">I know how the grandparent scam works</label></li>
+      <li class="check-item"><input type="checkbox" id="module-2-4"><label for="module-2-4">I can identify a phishing email from a fake bank</label></li>
+      <li class="check-item"><input type="checkbox" id="module-2-5"><label for="module-2-5">I know the red flags of romance scams</label></li>
+      <li class="check-item"><input type="checkbox" id="module-2-6"><label for="module-2-6">I can recognise tech support scams and fake warnings</label></li>
+    </ul>
+
+    <h2>Go deeper: scam deep dives</h2>
+
+    <p>If you would like to learn exactly how the most common scams targeting Canadian seniors work, including the exact scripts criminals use and how to stop them, these deep-dive pages open in the original site.</p>
+
+    <ul>
+      <li><a href="../classic/resources/scam-deep-dives/courier-fraud.html" target="_blank" rel="noopener noreferrer">Courier Fraud</a> <span class="ext-note">(opens the original site in a new tab)</span></li>
+      <li><a href="../classic/resources/scam-deep-dives/call-forwarding-scam.html" target="_blank" rel="noopener noreferrer">Call Forwarding Scam</a> <span class="ext-note">(opens the original site in a new tab)</span></li>
+      <li><a href="../classic/resources/scam-deep-dives/cra-phone-scam.html" target="_blank" rel="noopener noreferrer">CRA Phone Scam</a> <span class="ext-note">(opens the original site in a new tab)</span></li>
+      <li><a href="../classic/resources/scam-deep-dives/grandparent-scam.html" target="_blank" rel="noopener noreferrer">Grandparent Scam</a> <span class="ext-note">(opens the original site in a new tab)</span></li>
+      <li><a href="../classic/resources/scam-deep-dives/romance-scam-seniors.html" target="_blank" rel="noopener noreferrer">Romance Scams</a> <span class="ext-note">(opens the original site in a new tab)</span></li>
+    </ul>
+
+    <h2>Also available for kids</h2>
+
+    <p>Running a family digital literacy session? DCC Kids has age-appropriate versions of this topic. These lessons open in the original site.</p>
+
+    <ul>
+      <li><a href="../classic/kids/10-12/spotting-please-dont-tell-your-parent.html" target="_blank" rel="noopener noreferrer">Ages 10 to 12: Spotting a "please don't tell your parent" message</a> <span class="ext-note">(opens the original site in a new tab)</span></li>
+      <li><a href="../classic/kids/7-9/telling-a-grown-up-when-something-feels-weird.html" target="_blank" rel="noopener noreferrer">Ages 7 to 9: Telling a grown-up when something online feels weird</a> <span class="ext-note">(opens the original site in a new tab)</span></li>
+      <li><a href="../classic/kids/4-6/secret-stuff-share-stuff.html" target="_blank" rel="noopener noreferrer">Ages 4 to 6: Secret stuff and share stuff</a> <span class="ext-note">(opens the original site in a new tab)</span></li>
+    </ul>
+
+    <!-- Denise: forward the lesson in isolation. Copy-link only, no share API. -->
+    <section class="send-lesson" aria-labelledby="send-h">
+      <h2 id="send-h">Send this lesson to someone</h2>
+      <p>Helping a parent or friend? This page works on its own, with no account and nothing to install. Copy the link and text it to them.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="button" data-copy-link>Copy the link to this lesson</button>
+        <span class="send-done" data-copy-done hidden>Copied. Paste it into a text or email.</span>
+      </div>
+      <input class="visually-hidden" type="text" data-copy-field hidden readonly aria-label="Link to this lesson">
+    </section>
+
+    <div class="success-state">
+      <p><strong>Well done.</strong> You now have a powerful security shield. The scammers do not stand a chance against someone who knows their tricks. Share what you have learned with a friend, you could protect them too.</p>
+    </div>
+
+    <nav class="related-modules" aria-label="Continue learning">
+      <h2>Where to next</h2>
+      <div class="related-grid">
+        <a class="related-card" href="module-1.html">
+          <span class="related-num">Module 1</span>
+          <span class="related-name">The Escape Hatch</span>
+          <span class="related-desc">If a scam screen ever locks you in, this is your way out, the one skill to learn before everything else.</span>
+        </a>
+        <a class="related-card" href="module-3.html">
+          <span class="related-num">Module 3</span>
+          <span class="related-name">Passwords and Biometrics</span>
+          <span class="related-desc">Strengthen your shield further with strong passwords and biometric login so accounts stay yours alone.</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<!-- SHARED SHELL: footer (identical on every page). -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">For families</a></li>
+      <li><a href="../about.html">About us</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="../glossary.html">Glossary</a></li>
+      <li><a href="../privacy.html">Privacy</a></li>
+      <li><a href="../terms.html">Terms</a></li>
+      <li><a href="../disclaimer.html">Disclaimer</a></li>
+      <li><a href="../support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- SHARED SHELL: layered consent bar (identical on every page). -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="../privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/module.js"></script>
+</body>
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Theme + text size before first paint (no flash). Local only, no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Staying Safe When You Travel - Digital Confidence Centre</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-16-travel-safety.html">
+  <meta name="description" content="Prepare your devices before a trip, use public Wi-Fi safely, avoid travel scams and juice jacking, and know exactly who to call if something goes wrong at home or abroad. Free, plain-language lesson for Canadian seniors. No account needed.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- SHARED SHELL: header (generated from module-v2.html.tpl; identical on every page). -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Read this page aloud">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
+        <div class="rate-group" role="group" aria-label="Reading speed">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Slower</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normal</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Faster</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="../index.html">All lessons</a>
+    <a href="../index.html#protect-money">Protect your money</a>
+    <a href="../index.html#everyday-confidence">Everyday confidence</a>
+    <a href="../index.html#staying-connected">Staying connected</a>
+    <a href="../index.html#getting-things-done" aria-current="page">Getting things done</a>
+    <a href="../for-families.html">For families</a>
+    <a href="../support-directory.html">Get help</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="../index.html">All lessons</a></li>
+      <li><a href="../index.html#getting-things-done">Getting things done</a></li>
+      <li><span aria-current="page">Staying Safe When You Travel</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <a class="lesson-back" href="../index.html">← Back to all lessons</a>
+
+    <p class="lesson-category"><span aria-hidden="true">✈️</span> Travel</p>
+    <h1>Staying Safe When You Travel</h1>
+    <p class="lesson-time"><span aria-hidden="true">⏱</span> About 30 minutes, at your own pace</p>
+
+    <!-- Brenda: the first thing a nervous reader sees removes a fear. -->
+    <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
+
+    <p class="lead">How to prepare your devices before a trip, use public Wi-Fi safely, avoid travel scams, and know exactly who to call if something goes wrong.</p>
+
+    <h2>Margaret's story</h2>
+    <p>Margaret, 74, from St. Thomas, Ontario. After retiring, Margaret and her husband began taking one big trip per year: Florida in the winter, and Portugal last spring. "The world is different now," she says. "Everything is on the phone. Boarding passes, hotel check-in, maps, even my bank. I love it, but I learned the hard way that I needed to be careful with Wi-Fi in hotels."</p>
+    <p>This lesson is for Margaret, and for every traveller who wants to enjoy their trip without worrying about what might be happening to their accounts back home.</p>
+
+    <div class="coach-block">
+      <span class="coach-mark" aria-hidden="true">💬</span>
+      <div class="coach-body">
+        <span class="coach-label">From your coach</span>
+        <p>Travelling already involves a hundred small worries, and adding public Wi-Fi and charging cables to the list can feel like too much. Take a breath: the precautions in this lesson are habits, not burdens. Once learned, they run quietly in the background, like locking your front door, and let you enjoy the trip.</p>
+      </div>
+    </div>
+
+    <h2>Before you go: setting up your device</h2>
+
+    <p>A little preparation before you leave home makes a huge difference. The best time to set up your device's safety features is when you are relaxed at home, not rushing at an airport gate.</p>
+
+    <div class="walkthrough">
+      <h4>Your pre-travel checklist</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Back up your phone or iPad to iCloud (Settings, then your name, then iCloud, then iCloud Backup, then <strong>Back Up Now</strong>).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Update your iOS to the latest version (Settings, then General, then <strong>Software Update</strong>).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Enable Find My iPhone (Settings, then your name, then Find My, then <strong>Find My iPhone</strong>, set to On).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Write down your 5 most important phone numbers on paper and keep it in your luggage, not just on your phone.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Photograph your passport and keep the photo in iCloud. Do not email it to yourself.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p>Let your bank know you are travelling (call the number on the back of your card) to prevent your card being blocked.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">7</span>
+        <span class="step-text"><p>Charge all devices fully the night before departure.</p></span>
+      </div>
+    </div>
+
+    <div class="three-second-rule">
+      <h3>The 3-second rule before you leave</h3>
+      <ol class="tsr-steps">
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">✋</span><span class="tsr-name">Stop</span> Before you walk out the door, pause.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🫁</span><span class="tsr-name">Breathe</span> Check your backup. Check your Find My setting.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🔍</span><span class="tsr-name">Verify</span> Those 3 seconds could save you enormous stress if your device is lost or stolen on your trip.</li>
+      </ol>
+    </div>
+
+    <h2>Safe use of public Wi-Fi</h2>
+
+    <p>Public Wi-Fi is available almost everywhere: hotels, airports, caf&eacute;s, cruise ships, and tourist attractions. It is convenient. It is also the number one place where travellers get their financial information stolen.</p>
+
+    <div class="warning-block">
+      <span class="block-label">The banking rule</span>
+      <p>Never do online banking on hotel Wi-Fi, caf&eacute; Wi-Fi, airport Wi-Fi, or any public Wi-Fi. For banking and anything sensitive, switch to mobile data (your phone's cellular signal) or wait until you are home.</p>
+    </div>
+
+    <h3>What is safe to do on public Wi-Fi</h3>
+
+    <ul>
+      <li>Reading news websites and general browsing</li>
+      <li>Watching videos on Netflix, YouTube, or CBC Gem</li>
+      <li>Video calls with family (FaceTime, Zoom, WhatsApp)</li>
+      <li>Checking maps and directions</li>
+      <li>Reading emails (but not clicking suspicious links)</li>
+    </ul>
+
+    <h3>What is NOT safe on public Wi-Fi</h3>
+
+    <ul>
+      <li>Online banking or checking your bank balance</li>
+      <li>Making purchases or entering credit card numbers</li>
+      <li>Logging into important accounts (email, Apple ID, government sites)</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">How to switch to mobile data</span>
+      <p>Swipe up from the bottom of your screen (or swipe down from the top right on newer iPhones) to open Control Centre. Tap the Wi-Fi icon to turn it off. Your phone will automatically use your cellular data instead. Remember to turn Wi-Fi back on when you return to a trusted network.</p>
+    </div>
+
+    <h2>Hotel safety</h2>
+
+    <p>Hotels are generally safe and professional, but a few simple habits can protect your privacy and your belongings during your stay.</p>
+
+    <h3>At check-in</h3>
+
+    <ul>
+      <li>Ask the front desk to write down your room number rather than saying it aloud. Someone nearby could overhear.</li>
+      <li>Do not announce your full name, room number, or check-out date to others in the lobby.</li>
+      <li>Keep your room key card away from your phone. The magnetic strip can be demagnetised.</li>
+    </ul>
+
+    <h3>In your room</h3>
+
+    <ul>
+      <li>Use the door's security chain or latch when you are inside your room.</li>
+      <li>Store your passport and extra cash in the in-room safe, not in a suitcase or bedside drawer.</li>
+      <li>Remember: hotel Wi-Fi is not secure for banking.</li>
+    </ul>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Can you name the two things you should store in the hotel safe? (Passport and extra cash.) And the one thing you should never do on hotel Wi-Fi? (Online banking.) Perfect.</p>
+    </div>
+
+    <h2>Flying safely</h2>
+
+    <p>Those convenient USB charging ports at airport gates, in hotel lobbies, and at shopping malls look harmless, but they can be compromised. This is called <strong>juice jacking</strong>: a USB port that has been secretly modified to steal data from your device, or to install software without your knowledge.</p>
+
+    <div class="warning-block">
+      <span class="block-label">The charging rule</span>
+      <p>Always carry your own wall charger and plug into a regular electrical outlet. If you must use a USB port in an emergency, bring a USB data blocker (a small, cheap adapter that passes power but blocks data, available online for under $15 CAD). Never plug in to a USB cable that is already attached to a wall.</p>
+    </div>
+
+    <h3>At airport security</h3>
+
+    <ul>
+      <li>Place your phone and tablet inside your carry-on bag before putting it on the security belt. Loose devices are easy for strangers to grab.</li>
+      <li>Never leave your belongings unattended at the security tray. Walk through as soon as they are on the belt.</li>
+      <li>Enable Airplane Mode for the flight (Settings, then Airplane Mode). When you land, Wi-Fi will ask to join networks; be selective.</li>
+    </ul>
+
+    <h2>Car travel safety</h2>
+
+    <h3>Using GPS apps safely</h3>
+
+    <ul>
+      <li>Download offline maps before you go. In Apple Maps or Google Maps, tap the three lines, then Offline Maps, then Select Your Own Map. Your GPS then works even without mobile data or cell coverage.</li>
+      <li>Mount your phone safely in a dashboard holder. Do not hold it while driving.</li>
+      <li>Set your destination before you start driving, not while you are already moving.</li>
+    </ul>
+
+    <h3>If you get lost</h3>
+
+    <ul>
+      <li>Pull over safely before looking at your phone. Never try to navigate while driving.</li>
+      <li>Use Siri: say "Hey Siri, directions to [name of place]" for hands-free, safe navigation.</li>
+      <li>Store your destination address as a contact before leaving so you can ask Siri to navigate to it easily.</li>
+    </ul>
+
+    <h3>Emergency contacts for the road</h3>
+
+    <ul>
+      <li>Within Canada: <strong>911</strong> for any emergency</li>
+      <li>In the United States: 911 works the same as in Canada</li>
+      <li>CAA (Canadian Automobile Association) roadside assistance: <strong>1-800-268-3750</strong></li>
+    </ul>
+
+    <h2>Keeping in touch with family while away</h2>
+
+    <p>Staying in regular contact with family at home is one of the most important safety habits a traveller can have, not just for emergencies, but for peace of mind on both sides.</p>
+
+    <h3>Set a daily check-in time</h3>
+
+    <ul>
+      <li>Agree on a specific time each day to send a short message or make a quick call, even just "All good, heading to dinner!"</li>
+      <li>If the family member at home does not hear from you by that time, they know to follow up.</li>
+      <li>Use WhatsApp or iMessage. Both work over Wi-Fi internationally with no extra charge.</li>
+    </ul>
+
+    <h3>Sharing your location</h3>
+
+    <ul>
+      <li>In the iPhone Messages app, you can share your real-time location with a family member for a set period (1 hour, until end of day, or indefinitely). Tap the person's name at the top of a conversation, then <strong>Share My Location</strong>.</li>
+      <li>The Find My app also lets trusted family members see your location. Ask a family member to help set this up before you go.</li>
+    </ul>
+
+    <h2>Spotting travel scams</h2>
+
+    <p>Travel scammers target tourists, and seniors in particular. They are often polished, friendly, and plausible, which is exactly what makes them dangerous. Knowing the patterns in advance is your best protection.</p>
+
+    <div class="warning-block">
+      <span class="block-label">Fake booking sites</span>
+      <p>You search for a hotel or flight online and find a site that looks like a real travel agency but is actually fake. You pay, receive a confirmation, but when you arrive there is no reservation. Book only through well-known, reputable sites: Booking.com, Expedia, Airbnb, or directly with the hotel or airline.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Too-good-to-be-true deals</span>
+      <p>If you receive an email, text, or social media message offering an incredible travel deal (a free cruise, a 5-star hotel for $30 a night, deeply discounted flights), it is almost certainly a scam designed to steal your credit card information. Legitimate travel deals do exist, but they come from reputable sources, not unsolicited messages.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Unofficial taxis and guides</span>
+      <p>People at airports and tourist sites may approach you offering cheap taxi rides or unofficial tours. These can lead to overcharging, detours to shops that pay commissions, or worse. Use official, metered taxis or rideshare apps like Uber where available. Ask your hotel to arrange taxis for you; they use trusted companies.</p>
+    </div>
+
+    <div class="three-second-rule">
+      <h3>The 3-second rule for travel offers</h3>
+      <ol class="tsr-steps">
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">✋</span><span class="tsr-name">Stop</span> An unsolicited travel offer sounds incredibly good? Do nothing for 3 seconds.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🫁</span><span class="tsr-name">Breathe</span> Ask yourself: did I sign up for this? Did I initiate this contact?</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🔍</span><span class="tsr-name">Verify</span> If the answer is no, it is almost certainly a scam.</li>
+      </ol>
+    </div>
+
+    <h2>If something goes wrong</h2>
+
+    <p>Most trips go perfectly. But knowing what to do in advance, before you need it, means you will handle any problem calmly and effectively.</p>
+
+    <h3>If your phone is stolen or lost</h3>
+
+    <ul>
+      <li>From any internet-connected device (another phone, a hotel computer), go to <strong>icloud.com/find</strong> and log in with your Apple ID to locate, lock, or remotely erase your phone.</li>
+      <li>Call your bank immediately to freeze any cards registered in Apple Pay or stored on the device.</li>
+      <li>Report the theft to local police and obtain a police report number for your travel insurance claim.</li>
+    </ul>
+
+    <h3>If you have been defrauded while travelling</h3>
+
+    <ul>
+      <li>Report immediately to your bank. They can often stop or reverse transactions if you act quickly.</li>
+      <li>When back in Canada, report to the Canadian Anti-Fraud Centre: <strong>1-888-495-8501</strong>.</li>
+      <li>Keep all receipts, screenshots, and evidence. You will need them for insurance and police reports.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">Emergency assistance from abroad</span>
+      <p>If you are in serious trouble abroad (arrest, serious illness, lost passport), contact the Canadian consulate or embassy in that country. The 24-hour Emergency Watch and Response Centre in Ottawa can connect you: <strong>+1-613-996-8885</strong> (collect calls accepted). Website: travel.gc.ca.</p>
+    </div>
+
+    <h3>Write these numbers down before you travel</h3>
+
+    <ul>
+      <li>Your bank's international customer service number (on the back of your card)</li>
+      <li>Your travel insurance company's emergency line</li>
+      <li>Canadian Emergency Watch Centre: +1-613-996-8885</li>
+      <li>A trusted family member or friend at home</li>
+      <li>Canadian Anti-Fraud Centre (for fraud reporting when home): 1-888-495-8501</li>
+    </ul>
+
+    <div class="the-move">
+      <span class="move-label">The move is</span>
+      <p>Prepare at home, when you are calm: back up, update, turn on Find My, and tell your bank. On the road, keep banking off public Wi-Fi, charge from a wall outlet, and treat any unsolicited deal as a scam until proven otherwise.</p>
+    </div>
+
+    <h2>Quick check: test your knowledge</h2>
+    <p>Tap the answer you think is correct. There is no score kept and nothing to sign in to.</p>
+    <div class="lesson-quiz">
+      <div class="quiz-q" data-correct="b">
+        <h3>1. When using hotel or airport Wi-Fi, you should avoid:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Checking the weather</button>
+          <button class="quiz-opt" type="button" data-answer="b">Online banking or entering passwords</button>
+          <button class="quiz-opt" type="button" data-answer="c">Reading news websites</button>
+          <button class="quiz-opt" type="button" data-answer="d">Watching videos</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. Public Wi-Fi is the number one place travellers get their financial information stolen. Save banking for mobile data or home."
+          data-wrong="The thing to avoid is online banking or entering passwords. General browsing, weather, news, and videos are fine on public Wi-Fi."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>2. Offline maps are useful when travelling because:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">They are always more accurate than online maps</button>
+          <button class="quiz-opt" type="button" data-answer="b">They work without internet access, so no roaming charges</button>
+          <button class="quiz-opt" type="button" data-answer="c">They update faster than Google Maps</button>
+          <button class="quiz-opt" type="button" data-answer="d">They are required by Canadian law when driving abroad</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. Download the map before you go and your GPS works even without mobile data or cell coverage."
+          data-wrong="The advantage is that offline maps work without internet access, so your GPS keeps working with no data or roaming charges."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>3. If your phone is stolen abroad, the first step is:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Post about it on social media</button>
+          <button class="quiz-opt" type="button" data-answer="b">Contact your bank and carrier to lock the device and protect your accounts</button>
+          <button class="quiz-opt" type="button" data-answer="c">Wait until you get home to report it</button>
+          <button class="quiz-opt" type="button" data-answer="d">Buy a new phone at a local store</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Yes. Protect your money and accounts first: freeze your cards, and use icloud.com/find to locate, lock, or erase the phone. Then report to local police for the insurance paperwork."
+          data-wrong="Act right away: contact your bank to freeze your cards and lock the device through icloud.com/find. Waiting gives a thief time to do damage."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>4. Travel insurance that covers your electronics is:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Always included with your credit card automatically</button>
+          <button class="quiz-opt" type="button" data-answer="b">Worth checking before you travel, as coverage varies</button>
+          <button class="quiz-opt" type="button" data-answer="c">Never worth purchasing, it will not pay out</button>
+          <button class="quiz-opt" type="button" data-answer="d">Only needed for international travel, not within Canada</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Correct. Coverage varies between policies and cards, so check before you go, and keep receipts and police report numbers for any claim."
+          data-wrong="Coverage varies between policies and credit cards, so it is worth checking before you travel. Never assume it is automatic."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>5. A digital boarding pass on your phone is:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Not accepted at most Canadian airports</button>
+          <button class="quiz-opt" type="button" data-answer="b">Accepted at most airports and backed up by your email confirmation</button>
+          <button class="quiz-opt" type="button" data-answer="c">Less secure than a paper pass</button>
+          <button class="quiz-opt" type="button" data-answer="d">Only valid if your phone battery is above 50 percent</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. Digital boarding passes are widely accepted, and your email confirmation is always there as a backup."
+          data-wrong="Digital boarding passes are accepted at most airports, and your email confirmation serves as a backup if anything goes wrong with your phone."></div>
+      </div>
+    </div>
+
+    <h2>Your progress</h2>
+    <p>Tick each item as you feel confident with it. This is saved on this device only, with no account needed.</p>
+    <ul class="checklist" data-checklist="module-16-travel-safety">
+      <li class="check-item"><input type="checkbox" id="module-16-travel-safety-1"><label for="module-16-travel-safety-1">I know how to prepare my device before any trip (backup, update, Find My, tell my bank)</label></li>
+      <li class="check-item"><input type="checkbox" id="module-16-travel-safety-2"><label for="module-16-travel-safety-2">I know why hotel and airport Wi-Fi is risky for banking, and how to switch to mobile data</label></li>
+      <li class="check-item"><input type="checkbox" id="module-16-travel-safety-3"><label for="module-16-travel-safety-3">I know what juice jacking is and how to avoid it</label></li>
+      <li class="check-item"><input type="checkbox" id="module-16-travel-safety-4"><label for="module-16-travel-safety-4">I can spot the common travel scams: fake booking sites, unbelievable deals, unofficial taxis</label></li>
+      <li class="check-item"><input type="checkbox" id="module-16-travel-safety-5"><label for="module-16-travel-safety-5">I have written down the emergency numbers to call if something goes wrong</label></li>
+    </ul>
+
+    <!-- Denise: forward the lesson in isolation. Copy-link only, no share API. -->
+    <section class="send-lesson" aria-labelledby="send-h">
+      <h2 id="send-h">Send this lesson to someone</h2>
+      <p>Helping a parent or friend? This page works on its own, with no account and nothing to install. Copy the link and text it to them.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="button" data-copy-link>Copy the link to this lesson</button>
+        <span class="send-done" data-copy-done hidden>Copied. Paste it into a text or email.</span>
+      </div>
+      <input class="visually-hidden" type="text" data-copy-field hidden readonly aria-label="Link to this lesson">
+    </section>
+
+    <div class="success-state">
+      <p><strong>Well done.</strong> You now know how to prepare your device before any trip, why hotel Wi-Fi is risky for banking, what juice jacking is and how to avoid it, how to spot travel scams, and exactly who to call if something goes wrong. That is a lot, and you have got it.</p>
+    </div>
+
+    <nav class="related-modules" aria-label="Continue learning">
+      <h2>Where to next</h2>
+      <div class="related-grid">
+        <a class="related-card" href="module-2.html">
+          <span class="related-num">Module 2</span>
+          <span class="related-name">The Security Shield</span>
+          <span class="related-desc">Travel scams use the same pressure tactics as every other scam. The Security Shield gives you the framework to stop them.</span>
+        </a>
+        <a class="related-card" href="module-6.html">
+          <span class="related-num">Module 6</span>
+          <span class="related-name">Banking and Transactions</span>
+          <span class="related-desc">The safe banking habits from this lesson protect you at home too: official apps only, never through a link.</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<!-- SHARED SHELL: footer (identical on every page). -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">For families</a></li>
+      <li><a href="../about.html">About us</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="../glossary.html">Glossary</a></li>
+      <li><a href="../privacy.html">Privacy</a></li>
+      <li><a href="../terms.html">Terms</a></li>
+      <li><a href="../disclaimer.html">Disclaimer</a></li>
+      <li><a href="../support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- SHARED SHELL: layered consent bar (identical on every page). -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="../privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/module.js"></script>
+</body>
+</html>

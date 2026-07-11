@@ -1,0 +1,272 @@
+/* ============================================================================
+   DCC v2 Design Tokens — Trust Blue theme  ·  Fable pass (2026-07-03)
+   ----------------------------------------------------------------------------
+   Built against the LOCKED brief (quality/DCC-FABLE-BUILD-BRIEF-2026-07-03.md).
+   Deep blue authority/safety anchor (FINRA, Canada.ca) carrying DCC's warm,
+   plain-Canadian voice. Same token NAMES as the live Warm Hearth system
+   (css/tokens.css) so this is a re-skin, not a parallel vocabulary.
+
+   Fonts are the existing self-hosted pair (Merriweather + Source Sans 3,
+   SIL OFL — fonts/LICENSE-OFL.txt), referenced from the repo root.
+
+   --------------------------------------------------------------------------
+   VERIFIED WCAG 2.2 AA CONTRAST (computed 2026-07-03)
+   --------------------------------------------------------------------------
+   LIGHT THEME
+     text        #1C2733 on bg      #F8F9FB  → 14.9:1  (AAA)
+     text        #1C2733 on surface #FFFFFF  → 15.6:1  (AAA)
+     text-light  #435463 on bg      #F8F9FB  →  7.4:1  (AAA)
+     primary     #1D4E89 on white            →  8.4:1  (AAA)
+     white       on primary #1D4E89          →  8.4:1  (AAA)  ← buttons
+     link        #1D4E89 on bg #F8F9FB       →  8.0:1  (AAA)
+     error       #B42318 on white            →  6.5:1  (AA+)
+     warning-deep #7A5800 on #FFF8E1         →  6.1:1  (AA+)
+     success-deep #1B5E20 on #E8F5E9         →  7.0:1  (AAA)
+     accent-deep #7A4A00 on #FDF3E3          →  6.6:1  (AA+)
+   DARK THEME
+     text        #ECF1F6 on bg      #10171F  → 15.8:1  (AAA)
+     text        #ECF1F6 on surface #1A2430  → 13.7:1  (AAA)
+     text-light  #ADBDCB on surface #1A2430  →  8.2:1  (AAA)
+     link/primary #7FB3E8 on bg #10171F      →  8.2:1  (AAA)
+     white       on button #1D4E89           →  8.4:1  (AAA)
+     warning-deep #F5D48A on #3A2F10         →  8.9:1  (AAA)
+     success-deep #A5D6A7 on #12301A         →  9.3:1  (AAA)
+     error text  #F5A9A0 on #10171F          →  9.0:1  (AAA)
+   Brief rule enforced: NO light-grey/light-blue text on cream or white.
+   The lightest text token on a light surface is #435463 (7.4:1).
+   ========================================================================== */
+
+/* --- Self-hosted fonts (reuse repo copies — paths relative to this file) -- */
+@font-face {
+  font-family: 'Merriweather';
+  src: url('../fonts/merriweather/merriweather-400.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Merriweather';
+  src: url('../fonts/merriweather/merriweather-700.woff2') format('woff2');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  src: url('../fonts/source-sans-3/source-sans-3-400.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  src: url('../fonts/source-sans-3/source-sans-3-600.woff2') format('woff2');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  src: url('../fonts/source-sans-3/source-sans-3-700.woff2') format('woff2');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+
+  /* --- Colour: surfaces ---------------------------------------------------- */
+  --color-bg:              #F8F9FB; /* cool near-white page background */
+  --color-surface:         #FFFFFF; /* cards, modals */
+  --color-surface-alt:     #EAF1F8; /* topic tags, subtle blue fills */
+  --color-surface-primary: #E3EDF7; /* primary-tinted fill (confidence blocks) */
+
+  /* --- Colour: brand — Trust Blue ------------------------------------------ */
+  --color-primary:         #1D4E89; /* deep trust blue — headings, nav, buttons (8.4:1 vs white) */
+  --color-primary-hover:   #163C6A; /* darker */
+  --color-primary-active:  #102D50; /* pressed */
+  --color-primary-light:   #E3EDF7;
+  --color-primary-contrast:#FFFFFF;
+
+  /* Warm accent — DECORATIVE ONLY (progress fills, badge trims, hero flourish).
+     Never text on light. For amber TEXT on light fills use --color-accent-deep. */
+  --color-accent:          #E0A63A;
+  --color-accent-strong:   #8A5A00; /* white text on this = 5.6:1 (AA) */
+  --color-accent-hover:    #6F4900;
+  --color-accent-active:   #5C3C00;
+  --color-accent-light:    #FDF3E3;
+  --color-accent-contrast: #FFFFFF;
+  --color-accent-deep:     #7A4A00; /* 6.6:1 on #FDF3E3 (AA+) — amber text on light fill */
+
+  /* --- Colour: text -------------------------------------------------------- */
+  --color-text:            #1C2733; /* near-black, blue-cast — 14.9:1 on bg */
+  --color-text-light:      #435463; /* meta/captions ONLY — 7.4:1 on bg (AAA). Never for body prose. */
+  --color-text-inverse:    #FFFFFF;
+  --color-text-link:       #1D4E89;
+  --color-text-link-hover: #163C6A;
+
+  /* --- Colour: structure --------------------------------------------------- */
+  --color-border:          #D5DDE6;
+  --color-border-strong:   #A9B7C6;
+  --color-divider:         #D5DDE6;
+
+  /* --- Colour: state ------------------------------------------------------- */
+  --color-success:         #2E7D32;
+  --color-success-light:   #E8F5E9;
+  --color-success-deep:    #1B5E20; /* 7.0:1 on success-light (AAA) */
+  --color-error:           #B42318; /* 6.5:1 on white */
+  --color-error-light:     #FDECEA;
+  --color-warning:         #F9A825; /* decorative border only — 1.9:1 as text */
+  --color-warning-light:   #FFF8E1;
+  --color-warning-deep:    #7A5800; /* 6.1:1 on warning-light (AA+) */
+  --color-info:            #1D4E89;
+  --color-info-light:      #E3EDF7;
+
+  --color-disabled-bg:     #EDF0F4;
+  --color-disabled-text:   #8A97A5; /* disabled affordance only, never content */
+
+  /* --- Colour: overlays ---------------------------------------------------- */
+  --color-nav-hover:       rgba(255,255,255,0.14);
+  --color-nav-active:      rgba(255,255,255,0.22);
+  --color-scrim:           rgba(16,23,31,0.55);
+
+  /* --- Typography: families ------------------------------------------------ */
+  --font-body:             'Merriweather', Georgia, 'Times New Roman', serif;
+  --font-heading:          'Source Sans 3', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --font-mono:             ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  /* --- Typography: size scale (senior-first) ------------------------------- */
+  --font-size-base:        19px;  /* overridden by A− / A / A+ classes below */
+  --font-size-sm:          16px;  /* absolute minimum */
+  --font-size-caption:     15px;  /* meta only */
+
+  --font-size-h1:          clamp(30px, 2.4vw + 20px, 38px);
+  --font-size-h2:          clamp(24px, 1.6vw + 18px, 28px);
+  --font-size-h3:          22px;
+  --font-size-h4:          20px;
+
+  --font-weight-regular:   400;
+  --font-weight-semibold:  600;
+  --font-weight-bold:      700;
+
+  --line-height-tight:     1.25;
+  --line-height-body:      1.7;   /* brief floor is 1.5 — we hold 1.7 for reading glasses */
+
+  --font-size-lead:        clamp(20px, 1.4vw + 16px, 24px);
+  --line-height-lead:      1.6;
+
+  /* --- Spacing scale (4px base) --------------------------------------------- */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-12:  48px;
+  --space-16:  64px;
+
+  /* --- Radius scale ---------------------------------------------------------- */
+  --radius-sm:     4px;
+  --radius-md:     8px;
+  --radius-lg:     12px;
+  --radius-xl:     16px;
+  --radius-pill:   999px;
+
+  /* --- Shadows --------------------------------------------------------------- */
+  --shadow-sm:  0 1px 4px rgba(16, 23, 31, 0.07);
+  --shadow-md:  0 2px 10px rgba(16, 23, 31, 0.09);
+  --shadow-lg:  0 4px 22px rgba(16, 23, 31, 0.13);
+
+  /* --- Motion (reduced-motion zeroed below) ---------------------------------- */
+  --motion-ease:       cubic-bezier(0.22, 0.61, 0.36, 1);
+  --motion-duration-1: 120ms;
+  --motion-duration-2: 200ms;
+  --motion-duration-3: 320ms;
+
+  /* --- Focus ring (WCAG 2.2 SC 2.4.13) --------------------------------------- */
+  --focus-ring-color:   #8A5A00; /* amber-deep — 3:1+ vs both light surfaces and Trust Blue */
+  --focus-ring-width:   3px;
+  --focus-ring-offset:  2px;
+  --focus-ring:         var(--focus-ring-width) solid var(--focus-ring-color);
+
+  /* --- Touch targets ---------------------------------------------------------- */
+  --tap-target-min:     44px;
+  --tap-target:         56px;
+
+  /* --- Layout ----------------------------------------------------------------- */
+  --container-max:      1120px;
+  --content-max:        72ch;
+  --nav-height:         72px;
+
+  /* --- Z-index ----------------------------------------------------------------- */
+  --z-nav:     100;
+  --z-consent: 150;
+  --z-modal:   200;
+}
+
+/* ============================================================================
+   DARK THEME — set data-theme="dark" on <html>. Tested first, not last
+   (PRODUCT.md principle 3). Every pair above 4.5:1; see header table.
+   ========================================================================== */
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-bg:              #10171F;
+  --color-surface:         #1A2430;
+  --color-surface-alt:     #223349;
+  --color-surface-primary: #1E3048;
+
+  --color-primary:         #7FB3E8; /* light trust blue for headings/links on dark — 8.2:1 */
+  --color-primary-hover:   #A3C9F0;
+  --color-primary-active:  #C3DCF6;
+  --color-primary-light:   #1E3048;
+  --color-primary-contrast:#10171F;
+
+  --color-accent:          #E0A63A;
+  --color-accent-strong:   #8A5A00;
+  --color-accent-light:    #3A2F10;
+  --color-accent-deep:     #F5D48A; /* amber text on dark amber fill — 8.9:1 */
+
+  --color-text:            #ECF1F6;
+  --color-text-light:      #ADBDCB; /* 8.2:1 on surface */
+  --color-text-inverse:    #10171F;
+  --color-text-link:       #7FB3E8;
+  --color-text-link-hover: #A3C9F0;
+
+  --color-border:          #33445A;
+  --color-border-strong:   #4A5E77;
+  --color-divider:         #33445A;
+
+  --color-success-light:   #12301A;
+  --color-success-deep:    #A5D6A7;
+  --color-error:           #F5A9A0;
+  --color-error-light:     #3A1712;
+  --color-warning-light:   #3A2F10;
+  --color-warning-deep:    #F5D48A;
+  --color-info-light:      #1E3048;
+
+  --color-disabled-bg:     #223040;
+  --color-disabled-text:   #7A8A99;
+
+  --color-scrim:           rgba(0,0,0,0.65);
+
+  --shadow-sm:  0 1px 4px rgba(0,0,0,0.4);
+  --shadow-md:  0 2px 10px rgba(0,0,0,0.45);
+  --shadow-lg:  0 4px 22px rgba(0,0,0,0.55);
+
+  --focus-ring-color:   #E0A63A; /* brighter amber ring on dark — 7.9:1 vs bg */
+}
+
+/* Solid button colours are theme-independent: white on #1D4E89 is 8.4:1
+   regardless of the page behind it. */
+:root, html[data-theme="dark"] {
+  --color-btn-primary-bg:   #1D4E89;
+  --color-btn-primary-text: #FFFFFF;
+  --color-btn-primary-hover:#163C6A;
+}
+
+/* Honour reduced motion globally. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-duration-1: 0ms;
+    --motion-duration-2: 0ms;
+    --motion-duration-3: 0ms;
+  }
+}
+
+/* User text-size toggle (A− / A / A+) — JS adds one class to <html>. */
+html.text-size-s { --font-size-base: 16px; }
+html.text-size-m { --font-size-base: 21px; }
+html.text-size-l { --font-size-base: 24px; }

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Theme + text size before first paint (no flash). Local only, no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Staying Connected When It Matters Most - Digital Confidence Centre</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-18-staying-connected.html">
+  <meta name="description" content="Video call family on FaceTime, Zoom, and WhatsApp, share photos and memories, send voice messages, find online communities, and build your support network. Free, plain-language lesson for Canadian seniors. No account needed.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- SHARED SHELL: header (generated from module-v2.html.tpl; identical on every page). -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Read this page aloud">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
+        <div class="rate-group" role="group" aria-label="Reading speed">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Slower</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normal</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Faster</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="../index.html">All lessons</a>
+    <a href="../index.html#protect-money">Protect your money</a>
+    <a href="../index.html#everyday-confidence" aria-current="page">Everyday confidence</a>
+    <a href="../index.html#staying-connected">Staying connected</a>
+    <a href="../index.html#getting-things-done">Getting things done</a>
+    <a href="../for-families.html">For families</a>
+    <a href="../support-directory.html">Get help</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="../index.html">All lessons</a></li>
+      <li><a href="../index.html#everyday-confidence">Everyday confidence</a></li>
+      <li><span aria-current="page">Staying Connected When It Matters Most</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <a class="lesson-back" href="../index.html">← Back to all lessons</a>
+
+    <p class="lesson-category"><span aria-hidden="true">📞</span> Communication</p>
+    <h1>Staying Connected When It Matters Most</h1>
+    <p class="lesson-time"><span aria-hidden="true">⏱</span> About 25 minutes, at your own pace</p>
+
+    <!-- Brenda: the first thing a nervous reader sees removes a fear. -->
+    <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
+
+    <p class="lead">How to video call the people you love, share photos and memories, and keep your support network close, whatever the distance.</p>
+
+    <h2>Meet Brenda</h2>
+    <p>Brenda is 74 and lives in St. Thomas, Ontario. Her daughter moved to Vancouver three years ago. Her walking group stopped meeting during the pandemic and never quite restarted. She loves her home, her cat, and her garden, but she admits that some days go by without a real conversation.</p>
+    <p>Sound familiar? This lesson is for Brenda, and for everyone like her.</p>
+
+    <div class="coach-block">
+      <span class="coach-mark" aria-hidden="true">💬</span>
+      <div class="coach-body">
+        <span class="coach-label">From your coach</span>
+        <p>If distance from the people you love is the reason you are learning this technology, you are doing something brave: learning a new skill for the sake of a relationship. Fumbled calls and missed messages are part of everyone's learning curve. The people on the other end care that you showed up, not that you did it perfectly.</p>
+      </div>
+    </div>
+
+    <h2>Why staying connected matters</h2>
+
+    <p>Loneliness is not a character flaw. It is a health issue, as serious as smoking or high blood pressure. Research consistently shows that social isolation increases the risk of cognitive decline, depression, and physical illness in older adults.</p>
+
+    <p>But here is the encouraging truth: technology, used well, genuinely helps. Video calling, sharing photos, online groups, and even simple messaging can reduce isolation and bring real joy. This lesson will show you how.</p>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Think of one person you have not spoken to in too long. By the end of this lesson, you will know exactly how to reach them.</p>
+    </div>
+
+    <h2>Video calling your family</h2>
+
+    <p>Video calling lets you see the face of someone you love, no matter how far away they are. Here are the three most common apps.</p>
+
+    <div class="walkthrough">
+      <h4>FaceTime (Apple devices only)</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Find the green <strong>FaceTime</strong> app on your iPad or iPhone. If you and the person you are calling both have Apple devices, this is the easiest choice.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap the <strong>+</strong> button (top right corner).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Type the name of the person you want to call, or choose from your contacts.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Tap the <strong>video camera icon</strong> to start the call.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">If the call will not connect</span>
+      <p>If the call does not connect within a few seconds, your Wi-Fi may be slow. Move closer to your router and try again.</p>
+    </div>
+
+    <div class="walkthrough">
+      <h4>Zoom (works on any device)</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Download the <strong>Zoom</strong> app from the App Store. Zoom works on iPhones, iPads, Android phones, and computers, and is great for family group calls with 3 or more people.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>When family sends you a Zoom link (it looks like zoom.us/j/12345...), tap it.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Tap <strong>Open in Zoom</strong> or <strong>Join Meeting</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Allow access to your camera and microphone when asked.</p></span>
+      </div>
+    </div>
+
+    <div class="walkthrough">
+      <h4>WhatsApp video (free, works everywhere)</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open <strong>WhatsApp</strong> and find the contact you want to call. WhatsApp is free and works between iPhones and Android phones, useful when family members have different devices.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap the <strong>video camera icon</strong> at the top right.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>The call connects and you can see each other immediately.</p></span>
+      </div>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Do you know which app the people you want to call prefer? Ask a family member which one they use most, then try it this week.</p>
+    </div>
+
+    <h2>Sharing photos and memories</h2>
+
+    <p>One of the most meaningful things technology lets you do is share moments with people you love: a sunset from your backyard, your grandchild's drawing, a meal you are proud of.</p>
+
+    <div class="walkthrough">
+      <h4>Creating an iCloud Shared Album</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open the <strong>Photos</strong> app. A Shared Album is like a private photo album that you and your family can all add to.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap the <strong>Albums</strong> tab at the bottom.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Scroll down to <strong>Shared Albums</strong> and tap the <strong>+</strong> button to create a new one.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Give it a name (for example, "Family Photos 2026") and invite family by email or phone number.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Family members will get a notification and can add their own photos to the album too.</p></span>
+      </div>
+    </div>
+
+    <div class="walkthrough">
+      <h4>Sending a photo in a message</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open <strong>Messages</strong> and start a conversation.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap the <strong>photo icon</strong> (it looks like a mountain) to the left of the text box.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Choose a photo from your library and tap <strong>Send</strong>.</p></span>
+      </div>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Is there a photo on your phone right now that would make someone smile? Send it today.</p>
+    </div>
+
+    <h2>Messaging made easy</h2>
+
+    <p>You do not have to type a full message every time. There are many ways to communicate that are quick, personal, and easy.</p>
+
+    <p><strong>Voice messages: your new best friend.</strong> Instead of typing, you can hold a button and speak your message. The other person hears your voice, which is often much more meaningful than words on a screen. In iMessage: hold the microphone icon next to the text box, speak, release, and tap Send. In WhatsApp: hold the microphone icon on the right, speak, and release to send.</p>
+
+    <p><strong>Reacting to messages.</strong> You do not always need to reply with words. In iMessage, press and hold on any message and choose a reaction (heart, thumbs up, thumbs down, haha, !!, ?). A quick heart reaction says "I saw this, I love you" without typing a single letter.</p>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Have you tried sending a voice message? It takes less than 10 seconds and sounds much more personal than a text.</p>
+    </div>
+
+    <h2>Online communities for seniors</h2>
+
+    <p>There are online communities built specifically for people at your stage of life: people who share your interests, your experiences, and your questions about technology.</p>
+
+    <ul>
+      <li><strong>Facebook groups</strong> exist for almost every interest: gardening, knitting, local history, birdwatching, genealogy, your hometown, your faith community. These are private groups where you share with people who share your passions. To find one, tap the <strong>Groups</strong> icon in Facebook, then tap <strong>Discover</strong> and search for your interest.</li>
+      <li><strong>Zoom meetups and classes.</strong> Many libraries, community centres, and seniors organisations now offer regular Zoom meetups: book clubs, exercise classes, language groups, current events discussions. These are free or very low cost. Check with your local library or seniors centre for current offerings.</li>
+    </ul>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Is there a hobby or interest you would enjoy sharing with others? Search for a Facebook group this week.</p>
+    </div>
+
+    <h2>Keeping in touch across long distances</h2>
+
+    <p>When family is far away, in another province, another country, or just a different time zone, staying connected takes a little more intention. Here are the habits that work.</p>
+
+    <div class="tip-block">
+      <span class="block-label">Schedule your calls</span>
+      <p>The single most effective thing you can do is schedule a regular video call. Sunday afternoons. Wednesday mornings. Whatever works. Put it in your calendar and protect it like any other appointment. Even 15 minutes of video with a grandchild once a week creates a relationship that phone calls alone cannot.</p>
+    </div>
+
+    <p><strong>Time zones: a quick cheat sheet.</strong> Vancouver (BC) is 3 hours behind Eastern time. The UK is 5 hours ahead (in summer). Australia is about 14 to 16 hours ahead. To check the current time anywhere, just ask Siri: "Hey Siri, what time is it in Vancouver right now?"</p>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Is there one regular call you could schedule this week? Even 20 minutes?</p>
+    </div>
+
+    <h2>When technology helps in difficult times</h2>
+
+    <p>Grief and loss are part of a long life. When someone we love dies, or when friends and family move away, technology can be one way, not the only way, of staying connected to what matters.</p>
+
+    <ul>
+      <li><strong>Staying connected to family after loss.</strong> When families are scattered by grief, video calls become more important, not less. They let you grieve together even when you cannot be together physically. Sharing photos of a loved one in a shared album can also be a gentle way to celebrate a life together; everyone adds their favourite memory.</li>
+      <li><strong>Online grief support groups.</strong> There are compassionate, moderated online communities for people navigating grief. The Canadian Mental Health Association and many hospice organisations offer free online support groups via Zoom. Your family doctor or local hospice can refer you to the right group.</li>
+    </ul>
+
+    <div class="helper-note">
+      <span class="block-label">A gentle note</span>
+      <p>This section is gentle for a reason. There is no action required here, just awareness that technology can be one more resource when you need it.</p>
+    </div>
+
+    <h2>Your support network online</h2>
+
+    <p>A support network is simply the list of people who are there for you: family, friends, neighbours, faith communities. Technology can help you keep that network strong and accessible.</p>
+
+    <p><strong>Your trusted contact list.</strong> On your iPhone or iPad, keep a short list of trusted contacts easy to find: at least two family members, a close friend or neighbour, your family doctor's office, and your pharmacy. Add these to your Favourites in the Phone app: open Phone, tap Favourites, then tap + to add a contact.</p>
+
+    <div class="walkthrough">
+      <h4>Setting up emergency contacts on iPhone</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Your iPhone has a <strong>Medical ID</strong> feature that lets first responders see your emergency contacts even if your phone is locked.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Open the <strong>Health</strong> app and tap your photo (top right).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Tap <strong>Medical ID</strong>, then <strong>Edit</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Add your <strong>Emergency Contacts</strong> and save.</p></span>
+      </div>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Do the most important people in your life know how to reach you in an emergency? Does your phone have them saved as Favourites?</p>
+    </div>
+
+    <div class="the-move">
+      <span class="move-label">The move is</span>
+      <p>Pick the app your family already uses, schedule one regular call, and protect it like any other appointment. Connection is a habit, and habits are built one small call at a time.</p>
+    </div>
+
+    <h2>Quick check: test your knowledge</h2>
+    <p>Tap the answer you think is correct. There is no score kept and nothing to sign in to.</p>
+    <div class="lesson-quiz">
+      <div class="quiz-q" data-correct="b">
+        <h3>1. To stay connected with family who live far away, a good free option is:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Sending physical letters</button>
+          <button class="quiz-opt" type="button" data-answer="b">Video calling via FaceTime, WhatsApp, or Google Meet</button>
+          <button class="quiz-opt" type="button" data-answer="c">Calling on your landline only</button>
+          <button class="quiz-opt" type="button" data-answer="d">Using fax</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. Video calling is free over Wi-Fi, works across any distance, and lets you see the faces of the people you love."
+          data-wrong="The best free option is video calling through apps like FaceTime, WhatsApp, or Google Meet. They work over Wi-Fi at no extra charge, however far away your family is."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>2. Scheduled weekly calls with family help because:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">They reduce your phone bill</button>
+          <button class="quiz-opt" type="button" data-answer="b">They provide predictable social connection, which reduces isolation</button>
+          <button class="quiz-opt" type="button" data-answer="c">They are required by some community programs</button>
+          <button class="quiz-opt" type="button" data-answer="d">They help you remember how to use your phone</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. A regular, scheduled call becomes a habit rather than something that falls through the cracks, and predictable connection genuinely reduces isolation."
+          data-wrong="The real benefit is predictable social connection, which reduces isolation. A call at the same time every week becomes a habit instead of something that falls through the cracks."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>3. Connected Canadians provides:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Discounted phone plans for seniors</button>
+          <button class="quiz-opt" type="button" data-answer="b">Free volunteer technology help for Canadian seniors</button>
+          <button class="quiz-opt" type="button" data-answer="c">Government-funded internet access</button>
+          <button class="quiz-opt" type="button" data-answer="d">Hardware donations for low-income seniors</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Correct. Connected Canadians offers free volunteer technology help for seniors. You can call them at 1-855-808-0505."
+          data-wrong="Connected Canadians provides free volunteer technology help for Canadian seniors, reachable at 1-855-808-0505."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>4. A family member in a different time zone wants to video call. You should:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Refuse calls outside business hours</button>
+          <button class="quiz-opt" type="button" data-answer="b">Agree on a regular scheduled time that works for both time zones</button>
+          <button class="quiz-opt" type="button" data-answer="c">Only call when you feel like it, with no schedule</button>
+          <button class="quiz-opt" type="button" data-answer="d">Ask them to move closer</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Yes. Agree on a time that works on both ends and make it a standing appointment. Siri can always tell you the current time in their city."
+          data-wrong="The habit that works is agreeing on a regular scheduled time that suits both time zones. You can ask Siri what time it is in their city before you call."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>5. Online grief support groups can help because:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">They replace professional counselling entirely</button>
+          <button class="quiz-opt" type="button" data-answer="b">They connect you with others who understand your experience, without leaving home</button>
+          <button class="quiz-opt" type="button" data-answer="c">They are only for people who recently lost someone</button>
+          <button class="quiz-opt" type="button" data-answer="d">They require a paid subscription to access</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. Moderated online groups, like those run by the Canadian Mental Health Association and hospice organisations, connect you with people who understand, free of charge and from home."
+          data-wrong="Their value is connecting you with others who understand your experience, without leaving home. Many, including those from the Canadian Mental Health Association and hospice organisations, are free."></div>
+      </div>
+    </div>
+
+    <h2>Your progress</h2>
+    <p>Tick each item as you feel confident with it. This is saved on this device only, with no account needed.</p>
+    <ul class="checklist" data-checklist="module-18-staying-connected">
+      <li class="check-item"><input type="checkbox" id="module-18-staying-connected-1"><label for="module-18-staying-connected-1">I can make a video call on FaceTime, Zoom, or WhatsApp</label></li>
+      <li class="check-item"><input type="checkbox" id="module-18-staying-connected-2"><label for="module-18-staying-connected-2">I can share a photo in a message or a shared family album</label></li>
+      <li class="check-item"><input type="checkbox" id="module-18-staying-connected-3"><label for="module-18-staying-connected-3">I have tried sending a voice message or a message reaction</label></li>
+      <li class="check-item"><input type="checkbox" id="module-18-staying-connected-4"><label for="module-18-staying-connected-4">I know how to find online communities and Zoom meetups for my interests</label></li>
+      <li class="check-item"><input type="checkbox" id="module-18-staying-connected-5"><label for="module-18-staying-connected-5">I have scheduled a regular call with someone I love</label></li>
+      <li class="check-item"><input type="checkbox" id="module-18-staying-connected-6"><label for="module-18-staying-connected-6">My trusted contacts are saved in Favourites and my Medical ID is set up</label></li>
+    </ul>
+
+    <!-- Denise: forward the lesson in isolation. Copy-link only, no share API. -->
+    <section class="send-lesson" aria-labelledby="send-h">
+      <h2 id="send-h">Send this lesson to someone</h2>
+      <p>Helping a parent or friend? This page works on its own, with no account and nothing to install. Copy the link and text it to them.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="button" data-copy-link>Copy the link to this lesson</button>
+        <span class="send-done" data-copy-done hidden>Copied. Paste it into a text or email.</span>
+      </div>
+      <input class="visually-hidden" type="text" data-copy-field hidden readonly aria-label="Link to this lesson">
+    </section>
+
+    <div class="success-state">
+      <p><strong>Well done.</strong> You now know that loneliness is a real health issue and technology is one genuine answer to it. You can video call on FaceTime, Zoom, and WhatsApp, share photos and family albums, send voice messages, find communities for your interests, schedule calls across time zones, and keep your trusted contacts one tap away.</p>
+    </div>
+
+    <nav class="related-modules" aria-label="Continue learning">
+      <h2>Where to next</h2>
+      <div class="related-grid">
+        <a class="related-card" href="module-5.html">
+          <span class="related-num">Module 5</span>
+          <span class="related-name">Email and Messages</span>
+          <span class="related-desc">Sending emails and texts safely, spotting scam messages, and sharing photos with the people you love.</span>
+        </a>
+        <a class="related-card" href="module-7.html">
+          <span class="related-num">Module 7</span>
+          <span class="related-name">Photos and Memories</span>
+          <span class="related-desc">Taking, editing, and organising the photos you will share in your new family albums.</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<!-- SHARED SHELL: footer (identical on every page). -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">For families</a></li>
+      <li><a href="../about.html">About us</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="../glossary.html">Glossary</a></li>
+      <li><a href="../privacy.html">Privacy</a></li>
+      <li><a href="../terms.html">Terms</a></li>
+      <li><a href="../disclaimer.html">Disclaimer</a></li>
+      <li><a href="../support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- SHARED SHELL: layered consent bar (identical on every page). -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="../privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/module.js"></script>
+</body>
+</html>

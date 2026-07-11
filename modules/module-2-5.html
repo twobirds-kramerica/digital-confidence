@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Theme + text size before first paint (no flash). Local only, no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Common Digital Tasks - Digital Confidence Centre</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-2-5.html">
+  <meta name="description" content="Eight practical skills for everyday digital life: send e-Transfers safely, book medical appointments online, get directions, video call family, and keep your photos backed up. Free, plain-language lesson for Canadian seniors. No account needed.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- SHARED SHELL: header (generated from module-v2.html.tpl; identical on every page). -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Read this page aloud">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
+        <div class="rate-group" role="group" aria-label="Reading speed">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Slower</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normal</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Faster</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="../index.html">All lessons</a>
+    <a href="../index.html#protect-money">Protect your money</a>
+    <a href="../index.html#everyday-confidence">Everyday confidence</a>
+    <a href="../index.html#staying-connected">Staying connected</a>
+    <a href="../index.html#getting-things-done" aria-current="page">Getting things done</a>
+    <a href="../for-families.html">For families</a>
+    <a href="../support-directory.html">Get help</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="../index.html">All lessons</a></li>
+      <li><a href="../index.html#getting-things-done">Getting things done</a></li>
+      <li><span aria-current="page">Common Digital Tasks</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <a class="lesson-back" href="../index.html">← Back to all lessons</a>
+
+    <p class="lesson-category"><span aria-hidden="true">📂</span> Everyday tasks</p>
+    <h1>Common Digital Tasks</h1>
+    <p class="lesson-time"><span aria-hidden="true">⏱</span> About 40 minutes, at your own pace</p>
+
+    <!-- Brenda: the first thing a nervous reader sees removes a fear. -->
+    <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
+
+    <p class="lead">Eight practical skills for everyday digital life, from sending money safely and booking doctor appointments online, to video calling family and keeping your photos backed up. Each section walks you through the steps, one at a time.</p>
+
+    <h2>Dorothy's story</h2>
+    <p>Dorothy, 76, lives in St. Thomas. For years she relied on her son to book appointments, transfer money, and get directions. Then her son moved to Calgary. "I had to learn," she says, "or I'd be stuck."</p>
+    <p>With a bit of patient practice, Dorothy now sends e-Transfers to her grandchildren, books her own physio appointments online, and video calls her son every Sunday. "My iPad does more than I ever thought possible," she says. "I just needed someone to show me the steps."</p>
+    <p>This module is that patient guide. Eight real-life tasks, one step at a time.</p>
+
+    <div class="coach-block">
+      <span class="coach-mark" aria-hidden="true">💬</span>
+      <div class="coach-body">
+        <span class="coach-label">From your coach</span>
+        <p>Everyday tasks like renaming a file or finding a download feel small, but they are the moments where most people quietly give up. If you have ever stared at a screen thinking everyone else just knows this, they do not. Nobody is born knowing where the Downloads folder is. Every step you practise here is one less moment of frustration later.</p>
+      </div>
+    </div>
+
+    <h2>Section 1: How to send an e-Transfer safely</h2>
+
+    <p>An Interac e-Transfer lets you send money from your bank account directly to another person, using only their email address or phone number. It is one of the most common ways Canadians pay each other for things like rent, splitting a bill, or sending a birthday gift to a grandchild. Most Canadian banks support it, and it works right from their app on your iPad or iPhone. The steps are similar no matter which bank you use.</p>
+
+    <div class="walkthrough">
+      <h4>How to send an e-Transfer (most banks)</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open your bank's app on your iPad or iPhone and sign in.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Look for a section called <strong>Interac e-Transfer</strong>, <strong>Send Money</strong>, or <strong>Pay &amp; Transfer</strong>. It is usually on the main menu or dashboard.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Tap <strong>Send</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Choose or add a <strong>recipient</strong>. Enter their email address or phone number exactly as they have given it to you.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Type the <strong>amount</strong> you want to send.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p>Add a <strong>message</strong> if you like (optional), such as "Happy birthday!" or "For groceries."</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">7</span>
+        <span class="step-text"><p>Create a <strong>security question</strong> and answer, something only the recipient will know. Tell them the answer separately (by phone, not in the e-Transfer message).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">8</span>
+        <span class="step-text"><p>Review the details carefully, then tap <strong>Send</strong>. You will receive a confirmation that the transfer was sent.</p></span>
+      </div>
+    </div>
+
+    <div class="three-second-rule">
+      <h3>The 3-second rule for e-Transfers</h3>
+      <ol class="tsr-steps">
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">✋</span><span class="tsr-name">Stop</span> Double-check the email or phone number before you tap Send. e-Transfers sent to the wrong address are very difficult to recover.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🫁</span><span class="tsr-name">Breathe</span> Is this person someone you actually know? Did they ask you to send money through a message you were not expecting? If yes, stop and verify by calling them first.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🔍</span><span class="tsr-name">Verify</span> Real banks and Canada Revenue will never ask you to pay using e-Transfer.</li>
+      </ol>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Good to know</span>
+      <p>Once a recipient has accepted your e-Transfer, it cannot be cancelled. Before sending, always verify the email address or phone number is correct. If you accidentally send to the wrong address and they have not yet accepted, your bank may be able to cancel it. Call them right away.</p>
+    </div>
+
+    <h2>Section 2: How to book a medical appointment online</h2>
+
+    <p>Many doctors, clinics, and specialists in Ontario now allow you to book appointments through their website or a patient portal. It is faster than waiting on hold, and you can do it any time of day from your iPad or iPhone. The most common patient portal in Ontario is <strong>MyChart</strong> (used by many hospitals and clinics). Your doctor may also use their own booking system. These steps cover the general process. The buttons may look slightly different on each site.</p>
+
+    <div class="walkthrough">
+      <h4>How to book an appointment online (general steps)</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Ask your doctor's office for their online booking website address or the name of their patient portal. Write it down.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Open <strong>Safari</strong> on your iPad or iPhone and type in the website address.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>If this is your first visit, look for a <strong>Register</strong> or <strong>Create Account</strong> button. You will usually need your health card number and email address.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Once registered, sign in with your email and password.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Look for a button that says <strong>Book Appointment</strong>, <strong>Request a Visit</strong>, or <strong>Schedule</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p>Choose the <strong>type of appointment</strong> (for example, "Annual physical", "Follow-up", "In-person", or "Virtual visit").</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">7</span>
+        <span class="step-text"><p>Select a <strong>date and time</strong> from the available calendar. Tap the time slot you want.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">8</span>
+        <span class="step-text"><p>Confirm your details and tap <strong>Book</strong> or <strong>Confirm Appointment</strong>. You should receive a confirmation email.</p></span>
+      </div>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">The 3-second rule for health websites</span>
+      <p>Before entering your health card number or personal information, make sure the website address starts with <strong>https://</strong> and shows a padlock icon in the address bar. This means the connection is secure. Never enter health information on a website you found through a random link in an email.</p>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Practical tip</span>
+      <p>After booking, take a screenshot of the confirmation page. On iPad or iPhone, press the <strong>Side button</strong> and <strong>Volume Up</strong> at the same time. The screenshot saves to your Photos app. That way you have a record of the date and time even if the confirmation email is hard to find later.</p>
+    </div>
+
+    <h2>Section 3: How to use a maps app to get directions</h2>
+
+    <p>A maps app gives you free turn-by-turn directions to anywhere in Canada. It knows current traffic, road closures, and even bus routes. Think of it as a patient navigator sitting beside you: it recalculates if you take a wrong turn, and it never gets frustrated. The Maps app is already on most iPhones and iPads. You can also use Google Maps. Both work the same way for basic directions.</p>
+
+    <div class="walkthrough">
+      <h4>How to get directions in Apple Maps</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Find the <strong>Maps</strong> app on your Home screen. It looks like a road map with a red pin.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap the <strong>search bar</strong> at the bottom of the screen and type your destination, for example, "St. Thomas Elgin General Hospital".</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Tap the correct result from the list. A map appears showing the location.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Tap the <strong>Directions</strong> button (the blue button at the bottom or the car/walking icon).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Choose your travel mode: 🚗 <strong>Drive</strong>, 🚶 <strong>Walk</strong>, or 🚌 <strong>Transit</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p>Tap <strong>Go</strong>. The app will speak each turn aloud so you can keep your eyes on the road.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">7</span>
+        <span class="step-text"><p>To stop navigation, tap anywhere on the screen, then tap <strong>End</strong> or <strong>Cancel Route</strong>.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Practical tip</span>
+      <p>You can search for a destination before you leave home, so you know how long the trip will take and what route to expect. Just tap <strong>Leave Now</strong> or enter a departure time to see estimated arrival times. This is especially helpful for medical appointments where being on time matters.</p>
+    </div>
+
+    <h2>Section 4: How to download and use an app safely</h2>
+
+    <p>Your iPad and iPhone have access to millions of apps through the <strong>App Store</strong>, and the vast majority are completely safe and free to download. Apps can help you with everything from reading the news to calling family to tracking your medications. Downloading an app from the App Store is safe because Apple reviews every app before it is listed. Still, a few simple habits will keep you protected.</p>
+
+    <div class="walkthrough">
+      <h4>How to download an app from the App Store</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Find the <strong>App Store</strong> app on your Home screen. It is a blue square with a white letter "A" made of pencils.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap the <strong>Search</strong> icon (magnifying glass) at the bottom right.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Type the name of the app you want, for example, "Zoom" or "CBC News".</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Look at the results. Check the app name, developer name, and star rating. Trusted apps have thousands of reviews and a recognisable developer name.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Tap the app to see its full listing. Read the first few reviews to make sure others have had a good experience.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p>Tap <strong>Get</strong> (for free apps) or the price button (for paid apps). You may be asked to confirm with Face ID or your Apple ID password.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">7</span>
+        <span class="step-text"><p>Wait for the download to finish. The app appears on your Home screen.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">8</span>
+        <span class="step-text"><p>When you open the app for the first time, it may ask for permissions (location, camera, notifications). Only tap <strong>Allow</strong> for permissions that make sense for what the app does.</p></span>
+      </div>
+    </div>
+
+    <div class="three-second-rule">
+      <h3>The 3-second rule for app downloads</h3>
+      <ol class="tsr-steps">
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">✋</span><span class="tsr-name">Stop</span> Did someone send you a link to download an app from outside the App Store? That is a red flag. Only download apps through the App Store, never from a website link.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🫁</span><span class="tsr-name">Breathe</span> Does the app ask for more permissions than it needs? A recipe app has no reason to access your contacts.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🔍</span><span class="tsr-name">Verify</span> Check the reviews and the developer name. A real app from a known company will show a clear publisher name like "Apple Inc." or "CBC/Radio-Canada".</li>
+      </ol>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Practical tip</span>
+      <p>If an app you downloaded turns out to be one you do not want, deleting it is easy. Press and hold on the app icon on your Home screen until a small menu appears, then tap <strong>Remove App</strong>, then <strong>Delete App</strong>. The app and all its data are removed from your device.</p>
+    </div>
+
+    <h2>Section 5: How to video call on an iPad or iPhone</h2>
+
+    <p>Video calling lets you see the face of the person you are talking to, whether they are in the next town or across the country. FaceTime is built into every iPhone and iPad, and it is free as long as you are connected to Wi-Fi. If your family member uses an Android phone, you can video call them using <strong>Zoom</strong>, <strong>WhatsApp</strong>, or <strong>Google Meet</strong> instead. All are free and work on iPad.</p>
+
+    <div class="walkthrough">
+      <h4>How to make a FaceTime video call</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Find the <strong>FaceTime</strong> app on your Home screen. It looks like a green square with a white video camera.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap the <strong>+</strong> (plus) button in the top right corner.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Type the name, phone number, or email address of the person you want to call. Their name will appear if they are in your Contacts.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Tap <strong>Video</strong> to start a video call, or <strong>Audio</strong> for voice only.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Your call connects. You will see your own face in a small box at the corner. You can tap and drag this box to move it out of the way.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p>During the call, tap the screen to see the controls. You can mute yourself (microphone button), turn off your camera (camera button), or end the call (red phone button).</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Practical tip</span>
+      <p>For the best video call experience, prop your iPad up on a stand or lean it against something so it is at eye level. Good lighting makes a big difference. Sit facing a window if possible, so the light falls on your face rather than behind you. If the call is choppy or freezing, move closer to your Wi-Fi router.</p>
+    </div>
+
+    <h2>Section 6: How to back up your photos to iCloud</h2>
+
+    <p>Your photos are precious: birthdays, grandchildren, holidays, and everyday moments that cannot be replaced. iCloud backup means a copy of all your photos is saved automatically to Apple's secure storage. If your iPad is ever lost, stolen, or broken, your photos are safe and can be restored to a new device. Apple gives you 5 GB of free iCloud storage. Most people find this fills up quickly with photos, so consider the 50 GB plan for $1.29 per month. It is worth it for peace of mind.</p>
+
+    <div class="walkthrough">
+      <h4>How to turn on iCloud Photos</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open the <strong>Settings</strong> app (the grey gear icon on your Home screen).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap your <strong>name</strong> at the very top of Settings (this opens your Apple ID settings).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Tap <strong>iCloud</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Tap <strong>Photos</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Make sure <strong>Sync this iPhone</strong> (or "Sync this iPad") is turned on. The toggle should be green.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p>Choose <strong>Optimise iPhone Storage</strong>. This keeps smaller versions on your device and the full-quality originals in iCloud, saving space on your device.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">7</span>
+        <span class="step-text"><p>Your photos now back up automatically whenever your iPad is connected to Wi-Fi. You do not need to do anything further. It happens in the background.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Practical tip</span>
+      <p>To check that your backup is working, go to <strong>Settings</strong>, tap your name, then <strong>iCloud</strong>, then <strong>iCloud Backup</strong>, and look for the date and time of the last successful backup. If it says "Last successful backup: Today", you are all set. If it has not backed up in several days, make sure your iPad is plugged in and connected to Wi-Fi.</p>
+    </div>
+
+    <h2>Section 7: How to check your data usage</h2>
+
+    <p>Your iPhone or iPad uses <strong>data</strong> to connect to the internet when you are away from home Wi-Fi, such as when you are out shopping, at a clinic, or visiting a friend. Your phone plan includes a set amount of data each month, and going over that limit can result in extra charges from your carrier. Checking your data usage takes about 30 seconds and can save you from a surprise on your phone bill.</p>
+
+    <div class="walkthrough">
+      <h4>How to check data usage on iPhone or iPad</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open the <strong>Settings</strong> app.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap <strong>Cellular</strong> (on iPhone) or <strong>Mobile Data</strong> (on some iPad models with a data plan).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>At the top you will see <strong>Current Period</strong>. This shows how much data you have used since you last reset the counter.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Scroll down to see a list of apps and how much data each one has used. This helps you spot which apps are using the most.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>To reset this counter at the start of each billing cycle, scroll to the very bottom and tap <strong>Reset Statistics</strong>.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Practical tip</span>
+      <p>Streaming video (like YouTube or Netflix) uses large amounts of data very quickly. Whenever possible, do your video watching at home on Wi-Fi rather than on cellular data. To check if your device is on Wi-Fi, look for the Wi-Fi icon (curved lines) in the top right corner of your screen. If you see it, you are on Wi-Fi and not using your data plan.</p>
+    </div>
+
+    <h2>Section 8: How to update your apps and software</h2>
+
+    <p>Keeping your apps and device software up to date is one of the most important things you can do for your security. Updates fix problems that hackers might exploit, add useful new features, and keep your device running smoothly. Think of it like getting a booster shot: it keeps your device healthy. Updating is free and safe. It does not delete your photos, messages, or settings.</p>
+
+    <div class="walkthrough">
+      <h4>How to update your apps</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open the <strong>App Store</strong> app.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap your <strong>profile picture or initials</strong> in the top right corner.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Scroll down to see <strong>Pending Updates</strong>. This shows all the apps with available updates.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Tap <strong>Update All</strong> to update every app at once, or tap <strong>Update</strong> next to individual apps.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Wait for the updates to download and install. This usually takes 1 to 3 minutes depending on your Wi-Fi speed.</p></span>
+      </div>
+    </div>
+
+    <div class="walkthrough">
+      <h4>How to update iOS (the iPad or iPhone operating system)</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open <strong>Settings</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap <strong>General</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Tap <strong>Software Update</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>If an update is available, tap <strong>Download and Install</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Your device may need to restart. This is normal. It will come back on by itself in a few minutes.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Practical tip</span>
+      <p>You can turn on <strong>Automatic Updates</strong> so your iPad installs updates on its own overnight while it charges. Go to <strong>Settings</strong>, then <strong>App Store</strong>, then <strong>App Updates</strong> and turn on the toggle. For iOS updates, go to <strong>Settings</strong>, then <strong>General</strong>, then <strong>Software Update</strong>, then <strong>Automatic Updates</strong> and turn on all options. Once set, you never have to think about it again.</p>
+    </div>
+
+    <h2>Quick check: test your knowledge</h2>
+    <p>One question for each skill you practised. Tap the answer you think is correct. There is no score kept and nothing to sign in to.</p>
+    <div class="lesson-quiz">
+      <div class="quiz-q" data-correct="c">
+        <h3>1. Which of the following is the safest way to share the e-Transfer security answer with the recipient?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Include it in the e-Transfer message</button>
+          <button class="quiz-opt" type="button" data-answer="b">Send it in a separate email right after</button>
+          <button class="quiz-opt" type="button" data-answer="c">Call them and tell them the answer by phone</button>
+          <button class="quiz-opt" type="button" data-answer="d">Use a simple answer like "yes" so it is easy to guess</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. Always share the security answer by phone. This is what keeps the transfer safe even if the email is intercepted."
+          data-wrong="The safest way is to call them and tell them the answer by phone. That keeps the transfer safe even if the email is intercepted."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>2. You want to book a doctor appointment online. What should you verify before entering your health card number on the website?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">That the website has a nice design</button>
+          <button class="quiz-opt" type="button" data-answer="b">That the address starts with https:// and shows a padlock</button>
+          <button class="quiz-opt" type="button" data-answer="c">That the website was the first result in Google</button>
+          <button class="quiz-opt" type="button" data-answer="d">That the website loads quickly</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. The padlock and https:// mean your information is encrypted and being sent securely."
+          data-wrong="Check that the address starts with https:// and shows a padlock. That means your information is encrypted and being sent securely."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>3. You are using a maps app for driving directions and you miss a turn. What happens?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">The app stops working and you have to start over</button>
+          <button class="quiz-opt" type="button" data-answer="b">The app automatically recalculates a new route from your current location</button>
+          <button class="quiz-opt" type="button" data-answer="c">You have to pull over and search for a new route</button>
+          <button class="quiz-opt" type="button" data-answer="d">An error message appears and you must call someone for help</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Correct. Navigation apps automatically recalculate the route if you take a wrong turn. No need to panic or pull over."
+          data-wrong="Navigation apps automatically recalculate the route if you take a wrong turn, so there is no need to panic or pull over."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>4. You want to download a weather app. Your friend texts you a link to download it from a website. What should you do?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Tap the link, your friend recommended it so it must be safe</button>
+          <button class="quiz-opt" type="button" data-answer="b">Go to the App Store and search for the weather app yourself instead</button>
+          <button class="quiz-opt" type="button" data-answer="c">Tap the link but close the app immediately if it looks wrong</button>
+          <button class="quiz-opt" type="button" data-answer="d">Ask your friend to install it for you by borrowing your iPad</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Perfect. Always download apps directly from the App Store, not from links in text messages or emails. The App Store is Apple&#x27;s safe, verified source."
+          data-wrong="Always download apps directly from the App Store, not from links in text messages or emails. Search for the app yourself in the App Store instead."></div>
+      </div>
+      <div class="quiz-q" data-correct="c">
+        <h3>5. You are on a FaceTime call and the video and audio are cutting in and out. What is the most likely cause?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Your iPad has a broken screen</button>
+          <button class="quiz-opt" type="button" data-answer="b">FaceTime is not available in Canada</button>
+          <button class="quiz-opt" type="button" data-answer="c">Your Wi-Fi connection is slow or weak</button>
+          <button class="quiz-opt" type="button" data-answer="d">The other person's iPad is broken</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="That is right. Choppy audio and video are almost always caused by a slow or weak Wi-Fi signal. Try moving closer to your router."
+          data-wrong="Choppy audio and video are almost always caused by a slow or weak Wi-Fi signal. Try moving closer to your router."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>6. You accidentally drop your iPad and the screen shatters. You set up iCloud Photos last month. What happens to your photos?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">All your photos are lost forever</button>
+          <button class="quiz-opt" type="button" data-answer="b">Your photos are safe in iCloud and can be restored to a new iPad</button>
+          <button class="quiz-opt" type="button" data-answer="c">Your photos are saved in your email</button>
+          <button class="quiz-opt" type="button" data-answer="d">Apple will send your photos back on a USB stick</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. When iCloud Photos is turned on, all your photos are automatically backed up. A new iPad signed into the same Apple ID will restore them completely."
+          data-wrong="When iCloud Photos is turned on, your photos are automatically backed up to iCloud. A new iPad signed into the same Apple ID will restore them completely."></div>
+      </div>
+      <div class="quiz-q" data-correct="c">
+        <h3>7. You want to watch a long video on your iPhone. Which of the following will use your cellular data plan?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Watching it at home connected to your home Wi-Fi</button>
+          <button class="quiz-opt" type="button" data-answer="b">Watching it at a coffee shop on their free Wi-Fi</button>
+          <button class="quiz-opt" type="button" data-answer="c">Watching it while walking in a park with no Wi-Fi nearby</button>
+          <button class="quiz-opt" type="button" data-answer="d">Watching it at the library on their Wi-Fi</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Correct. When there is no Wi-Fi available, your device switches to your cellular data plan. Videos use a lot of data, so save streaming for when you are connected to Wi-Fi."
+          data-wrong="When there is no Wi-Fi available (like walking in a park), your device switches to your cellular data plan. Videos use a lot of data, so save streaming for Wi-Fi."></div>
+      </div>
+      <div class="quiz-q" data-correct="c">
+        <h3>8. A pop-up appears on your iPhone saying "iOS 18.3 is now available. Would you like to update?" This arrived through Settings. What should you do?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Ignore it, updates can cause problems</button>
+          <button class="quiz-opt" type="button" data-answer="b">Call Apple first to verify the update is real</button>
+          <button class="quiz-opt" type="button" data-answer="c">Tap Download and Install, this is a legitimate system update</button>
+          <button class="quiz-opt" type="button" data-answer="d">Delete the message and wait for someone to tell you it is safe</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. Software update prompts that appear inside your Settings app are always legitimate, and these updates are important for your security. It is updates that arrive through pop-ups in websites or text messages that you should ignore."
+          data-wrong="Software update prompts that appear inside your Settings app are always legitimate and important for your security. It is update prompts in websites or text messages that you should ignore."></div>
+      </div>
+    </div>
+
+    <h2>Your progress</h2>
+    <p>Tick each item as you feel confident with it. This is saved on this device only, with no account needed.</p>
+    <ul class="checklist" data-checklist="module-2-5">
+      <li class="check-item"><input type="checkbox" id="module-2-5-1"><label for="module-2-5-1">I can send an Interac e-Transfer safely, including the security question</label></li>
+      <li class="check-item"><input type="checkbox" id="module-2-5-2"><label for="module-2-5-2">I know how to find my doctor's online booking portal and book an appointment</label></li>
+      <li class="check-item"><input type="checkbox" id="module-2-5-3"><label for="module-2-5-3">I can use Apple Maps or Google Maps to get turn-by-turn directions</label></li>
+      <li class="check-item"><input type="checkbox" id="module-2-5-4"><label for="module-2-5-4">I know how to safely download an app from the App Store</label></li>
+      <li class="check-item"><input type="checkbox" id="module-2-5-5"><label for="module-2-5-5">I can start a FaceTime video call on my iPad or iPhone</label></li>
+      <li class="check-item"><input type="checkbox" id="module-2-5-6"><label for="module-2-5-6">I have iCloud Photos turned on and my photos are being backed up</label></li>
+      <li class="check-item"><input type="checkbox" id="module-2-5-7"><label for="module-2-5-7">I know how to check my cellular data usage in Settings</label></li>
+      <li class="check-item"><input type="checkbox" id="module-2-5-8"><label for="module-2-5-8">I can update my apps and iOS software to keep my device secure</label></li>
+    </ul>
+
+    <!-- Denise: forward the lesson in isolation. Copy-link only, no share API. -->
+    <section class="send-lesson" aria-labelledby="send-h">
+      <h2 id="send-h">Send this lesson to someone</h2>
+      <p>Helping a parent or friend? This page works on its own, with no account and nothing to install. Copy the link and text it to them.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="button" data-copy-link>Copy the link to this lesson</button>
+        <span class="send-done" data-copy-done hidden>Copied. Paste it into a text or email.</span>
+      </div>
+      <input class="visually-hidden" type="text" data-copy-field hidden readonly aria-label="Link to this lesson">
+    </section>
+
+    <div class="success-state">
+      <p><strong>Well done.</strong> You can now send money, book appointments, get directions, download apps, video call family, back up your photos, watch your data usage, and keep your device up to date. Eight real-life skills, all yours.</p>
+    </div>
+
+    <nav class="related-modules" aria-label="Continue learning">
+      <h2>Where to next</h2>
+      <div class="related-grid">
+        <a class="related-card" href="module-3.html">
+          <span class="related-num">Module 3</span>
+          <span class="related-name">Passwords and Biometrics</span>
+          <span class="related-desc">Secure the accounts you use for everyday tasks with strong passwords and fingerprint login.</span>
+        </a>
+        <a class="related-card" href="module-6.html">
+          <span class="related-num">Module 6</span>
+          <span class="related-name">Banking and Transactions</span>
+          <span class="related-desc">Put your everyday digital skills to work for safe, confident online banking and purchases.</span>
+        </a>
+        <a class="related-card" href="module-7.html">
+          <span class="related-num">Module 7</span>
+          <span class="related-name">Photos and Memories</span>
+          <span class="related-desc">Use the camera and photo sharing skills you have practised to preserve and share your memories.</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<!-- SHARED SHELL: footer (identical on every page). -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">For families</a></li>
+      <li><a href="../about.html">About us</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="../glossary.html">Glossary</a></li>
+      <li><a href="../privacy.html">Privacy</a></li>
+      <li><a href="../terms.html">Terms</a></li>
+      <li><a href="../disclaimer.html">Disclaimer</a></li>
+      <li><a href="../support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- SHARED SHELL: layered consent bar (identical on every page). -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="../privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/module.js"></script>
+</body>
+</html>

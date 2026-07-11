@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Theme + text size before first paint (no flash). Local only, no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>TV and Home Phone - Digital Confidence Centre</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-22-tv-home-phone.html">
+  <meta name="description" content="Decide whether you still need cable TV and a home phone, discover digital antennas and streaming, read your bundle bill, unbundle with confidence, and avoid subscription traps. Free, plain-language lesson for Canadian seniors. No account needed.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- SHARED SHELL: header (generated from module-v2.html.tpl; identical on every page). -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Read this page aloud">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
+        <div class="rate-group" role="group" aria-label="Reading speed">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Slower</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normal</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Faster</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="../index.html">All lessons</a>
+    <a href="../index.html#protect-money" aria-current="page">Protect your money</a>
+    <a href="../index.html#everyday-confidence">Everyday confidence</a>
+    <a href="../index.html#staying-connected">Staying connected</a>
+    <a href="../index.html#getting-things-done">Getting things done</a>
+    <a href="../for-families.html">For families</a>
+    <a href="../support-directory.html">Get help</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="../index.html">All lessons</a></li>
+      <li><a href="../index.html#protect-money">Protect your money</a></li>
+      <li><span aria-current="page">TV and Home Phone: Cut the Costs, Keep What Matters</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <a class="lesson-back" href="../index.html">← Back to all lessons</a>
+
+    <p class="lesson-category"><span aria-hidden="true">📺</span> TV and home phone</p>
+    <h1>TV and Home Phone: Cut the Costs, Keep What Matters</h1>
+    <p class="lesson-time"><span aria-hidden="true">⏱</span> About 30 minutes, at your own pace</p>
+
+    <!-- Brenda: the first thing a nervous reader sees removes a fear. -->
+    <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
+
+    <p class="lead">What a bundle really costs, free and low-cost alternatives to cable, whether you still need a home phone, how to unbundle step by step, and the two subscription traps that quietly drain Canadian wallets.</p>
+
+    <h2>Margaret's bundle</h2>
+    <p>Margaret is 76 years old. She pays $220 every month for a bundle from her provider: internet, 300-channel cable TV, and a home phone line. She has been paying this for years.</p>
+    <p>Here is the thing: Margaret watches four channels. She uses her home phone about once a week. Her granddaughter showed her that the same shows are available free on her iPad, using an antenna and a streaming app. Margaret was upset that nobody had told her sooner.</p>
+    <p>Margaret's story is incredibly common. Bundles are designed to keep you paying for services you do not use. This lesson will help you see exactly what you are paying for, and decide what you actually need.</p>
+
+    <div class="coach-block">
+      <span class="coach-mark" aria-hidden="true">💬</span>
+      <div class="coach-body">
+        <span class="coach-label">From your coach</span>
+        <p>If your TV setup has ever defeated you, three remotes, four inputs, and a screen that says NO SIGNAL, you have plenty of company. These systems are genuinely badly designed. Every fix in this lesson is reversible, so press the buttons with confidence: the worst outcome is pressing another button.</p>
+      </div>
+    </div>
+
+    <h2>What is a bundle?</h2>
+
+    <p>A <strong>bundle</strong> is when your provider sells you multiple services together as one package, usually internet, cable TV, and a home phone. Providers call these "triple-play" bundles. Bundles sound like a deal, but they often include services you do not need. If you only use one or two of the three services, you may be paying $60 to $100 per month for things you never touch.</p>
+
+    <h3>What each part typically costs</h3>
+
+    <ul>
+      <li>Internet on its own: $50 to $80/month</li>
+      <li>Cable TV package: $60 to $120/month</li>
+      <li>Home phone line: $25 to $45/month</li>
+    </ul>
+
+    <p>When bundled, your provider may advertise a "discount", but the total is often still $180 to $220/month. If you only need internet and one streaming service, you could pay as little as $60 to $95/month.</p>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Do you know what you pay each month for your TV, internet, and phone? If not, find your latest bill. We will look at it together in the bill section below.</p>
+    </div>
+
+    <h2>Do you still need cable TV?</h2>
+
+    <p>This is a question only you can answer, and there is no wrong answer. But here is a useful rule of thumb: if you regularly watch fewer than 10 channels, you are probably paying for hundreds of channels you never use. Many Canadians over 70 watch the same few channels: CBC, CTV, Global, maybe a news channel, and one or two specialty channels. All of those are available without cable.</p>
+
+    <div class="tip-block">
+      <span class="block-label">Try this: write down what you actually watch</span>
+      <p>For one week, write down every channel you watch. At the end of the week, count them. If the number is under 10, cable TV may not be worth the cost.</p>
+    </div>
+
+    <h3>Three alternatives to cable TV</h3>
+
+    <ul>
+      <li><strong>Digital antenna:</strong> plugs into your TV and picks up local channels (CBC, CTV, Global, CityTV) completely free. Costs $25 to $40 once. No monthly fee. More details below.</li>
+      <li><strong>One streaming service:</strong> services like CBC Gem (free), Netflix, or others cost $0 to $15/month and let you watch shows, movies, and news on your iPad or TV.</li>
+      <li><strong>Library streaming:</strong> your Ontario public library card gives you free access to streaming services like Kanopy and Hoopla. Ask your local library for details.</li>
+    </ul>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You do not have to cancel cable today. The first step is simply knowing what you watch. Once you know that, you can make a calm, informed decision.</p>
+    </div>
+
+    <h2>Do you still need a home phone?</h2>
+
+    <p>Home phones were once the centre of every household. But if you already have a mobile phone, you may be paying $25 to $45 per month for a phone that barely rings. Before you decide, there are a few important things to check.</p>
+
+    <div class="warning-block">
+      <span class="block-label">Check your medical alert system first</span>
+      <p>Some medical alert devices (like Lifeline or similar services) require a traditional home phone line. Before cancelling your home phone, call your medical alert provider and ask: "Does my device work with a mobile phone or VoIP (internet phone)?" Many newer systems do, but check first.</p>
+    </div>
+
+    <h3>Questions to ask yourself</h3>
+
+    <ul>
+      <li>Do I have a mobile phone that works reliably at home?</li>
+      <li>When was the last time someone called my home phone, and could they have called my mobile instead?</li>
+      <li>Does my home alarm system or medical alert depend on the home phone line?</li>
+      <li>Am I comfortable giving out my mobile number to everyone who currently calls my home phone?</li>
+    </ul>
+
+    <p>If you answered yes to the first two questions and no to the third, you are likely ready to cancel your home phone.</p>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>There is no rush. If your home phone gives you peace of mind, keep it. This is about knowing you have the choice, not about being pressured.</p>
+    </div>
+
+    <h2>Streaming for beginners</h2>
+
+    <p><strong>Streaming</strong> is simply watching TV shows and movies through the internet instead of through a cable wire. Think of it like a library of shows that you can browse and watch whenever you want, on your iPad, iPhone, or TV. You do not need to understand how it works technically. You just need an internet connection and an app.</p>
+
+    <div class="walkthrough">
+      <h4>How streaming works, step by step</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>You download a streaming app from the App Store (like <strong>CBC Gem</strong> or <strong>Netflix</strong>).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>You open the app and browse the shows and movies available.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>You tap on something you want to watch and it starts playing, like pressing play on a DVD.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>You can pause, rewind, or stop at any time. The show will remember where you left off.</p></span>
+      </div>
+    </div>
+
+    <h3>One service is enough</h3>
+
+    <p>You do not need five streaming services. One is plenty. Here is how to pick:</p>
+
+    <ul>
+      <li>Want Canadian news and shows? Start with <strong>CBC Gem</strong>: it is completely free.</li>
+      <li>Want movies and popular series? One paid service (like Netflix at $7 to $17/month) gives you thousands of options.</li>
+      <li>Want free movies and documentaries? Ask your local library about <strong>Kanopy</strong>: it is free with your library card.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">Watching on your TV, not just your iPad</span>
+      <p>If your TV was made in the last 10 years, it may already be a "smart TV" with streaming apps built in. Look for apps like CBC Gem or Netflix on your TV's home screen. If your TV is not a smart TV, you can add a small streaming device (like an Apple TV or Roku) for about $50 to $80. A family member can help you set it up.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>If you can open an app on your iPad, you can stream a TV show. It really is that simple.</p>
+    </div>
+
+    <h2>The digital antenna</h2>
+
+    <p>A <strong>digital antenna</strong> is one of the best-kept secrets in Canadian television. It is a small device, about the size of a piece of paper, that plugs into your TV and picks up free local channels over the air. This is not the old-fashioned "rabbit ears" antenna. Modern digital antennas are flat, can be placed on a wall or window, and produce a picture that is often sharper than cable.</p>
+
+    <h3>What you get for free</h3>
+
+    <p>With a digital antenna in most parts of Ontario, you can receive:</p>
+
+    <ul>
+      <li><strong>CBC:</strong> news, shows, hockey</li>
+      <li><strong>CTV:</strong> news, dramas, entertainment</li>
+      <li><strong>Global:</strong> news, reality shows</li>
+      <li><strong>CityTV:</strong> movies, news, entertainment</li>
+      <li><strong>TVO:</strong> educational programming (in some areas)</li>
+    </ul>
+
+    <p>These channels are broadcast free over the airwaves. You just need an antenna to pick them up. There is no monthly fee. Ever.</p>
+
+    <div class="walkthrough">
+      <h4>How to set up a digital antenna</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Buy a digital antenna at any electronics store or online. They cost $25 to $40.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Plug the antenna's cable into the back of your TV. It goes into the round <strong>"coaxial"</strong> port (the same port your cable used to use).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>On your TV, go to <strong>Settings, then Channels, then Scan for channels</strong> (or "Auto-tune"). Your TV will search for available channels.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Place the antenna near a window or on a wall facing the nearest broadcast tower. Higher is better.</p></span>
+      </div>
+    </div>
+
+    <p>A family member or a helpful neighbour can assist with setup if you are unsure. It takes about 10 minutes.</p>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>A digital antenna is a one-time purchase with no monthly fees. If the channels you watch are available over the air, this could save you $60 to $120 every single month.</p>
+    </div>
+
+    <h2>Reading your bundle bill</h2>
+
+    <p>Your monthly bill from your provider can look confusing. But once you know what to look for, it tells a very clear story, and often that story is: you are paying for things you do not use.</p>
+
+    <h3>What to look for on your bill</h3>
+
+    <ul>
+      <li><strong>Internet service:</strong> the one you almost certainly need. Note the monthly cost.</li>
+      <li><strong>TV/Cable service:</strong> your cable TV. Note the monthly cost. This is often the most expensive line.</li>
+      <li><strong>Home phone service:</strong> note the monthly cost.</li>
+      <li><strong>Equipment rental:</strong> many providers charge $5 to $15/month to rent you a modem, cable box, or phone adapter.</li>
+      <li><strong>Extra fees and taxes:</strong> HST, 911 fees, broadcast improvement fees, and others.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">The key question</span>
+      <p>Look at the TV/Cable line on your bill. Write down the amount. Now ask yourself: "Am I getting this much value from the channels I watch?" If you watch 4 channels and your cable costs $90/month, you are paying about $22 per channel per month, for channels that are available free with an antenna or a streaming app.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Understanding your bill is empowering. You do not need to change anything yet. Just knowing the numbers puts you in control.</p>
+    </div>
+
+    <h2>How to unbundle</h2>
+
+    <p>If you have decided that you want to drop cable TV, your home phone, or both, here is exactly how to do it. This is a phone call, and you are in charge.</p>
+
+    <div class="walkthrough">
+      <h4>Before you call</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Have your latest bill in front of you.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Write down exactly what you want to keep (usually just internet) and what you want to remove (cable TV, home phone, or both).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Know your current monthly total so you can compare any new offer they give you.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Check whether you are on a contract or month-to-month. If you are month-to-month, there are no cancellation fees.</p></span>
+      </div>
+    </div>
+
+    <div class="walkthrough">
+      <h4>The call, step by step</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Call your provider's customer service number (it is on your bill).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Say: <strong>"I would like to remove my cable TV service (and/or home phone) and keep my internet only."</strong></p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>They will likely transfer you to a "retention" department. This person's job is to convince you to stay. Be polite but firm.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>If they offer you a lower price, ask: <strong>"What is the price for internet only, with no TV and no phone?"</strong> Compare that number to your current bill.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Confirm the change and ask for a confirmation number and email.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Expected savings</span>
+      <p>If you currently pay $200 to $220/month for a triple-play bundle and switch to internet only, you can expect to pay about $50 to $80/month, a savings of $120 to $150 per month, or $1,440 to $1,800 per year. Even if you add one streaming service at $15/month, your total is still far less than the bundle.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You have the right to change your services at any time. The retention department may try to talk you out of it, but the decision is yours. You are the customer.</p>
+    </div>
+
+    <h2>Your rights</h2>
+
+    <p>In Canada, your TV and phone services are regulated, and you have clear rights as a consumer. Knowing these rights gives you confidence when speaking to your provider.</p>
+
+    <h3>The CCTS: your consumer watchdog</h3>
+
+    <p>The <strong>Commission for Complaints for Telecom-television Services (CCTS)</strong> is a free, independent organisation that handles complaints about phone and TV providers in Canada. If your provider charges you a fee you were not told about, refuses to let you cancel, or does not honour a promised price, you can file a complaint with the CCTS at no cost. Website: <strong>www.ccts-cprst.ca</strong>. Phone: <strong>1-888-221-1687</strong>.</p>
+
+    <h3>Your key rights</h3>
+
+    <ul>
+      <li><strong>Right to cancel:</strong> you can cancel any service at any time. If you are on a month-to-month plan, there are no cancellation fees.</li>
+      <li><strong>No surprise fees:</strong> your provider must clearly explain all charges before you agree to a service. If a fee was not disclosed, you can dispute it.</li>
+      <li><strong>Month-to-month freedom:</strong> if your original contract has expired (most do after 1 to 2 years), you are automatically on month-to-month. You can change or cancel at any time with no penalty.</li>
+      <li><strong>Written confirmation:</strong> you have the right to receive written confirmation of any changes to your service, by email or in your next bill.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">What to say if they push back</span>
+      <p>If a retention agent pressures you or makes you feel uncomfortable, you can say: "I appreciate the offer, but I have made my decision. Please process the change I requested." If they still will not process your request, say: "I would like to file a complaint with the CCTS." This usually resolves the issue immediately.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You are a paying customer with clear legal rights. No provider can force you to keep a service you do not want. The CCTS is there if you need them, free of charge.</p>
+    </div>
+
+    <h2>Subscription traps: two to know</h2>
+
+    <p>Telecom and streaming companies use two common tactics that cost Canadians hundreds of dollars every year. They are not illegal; they are just designed so that most people forget and pay. Once you know how they work, they are easy to avoid.</p>
+
+    <h3>Trap 1: the free trial that becomes a charge</h3>
+
+    <p>Streaming services often offer a "free trial": 7 days, 14 days, or 30 days of access at no cost. The catch is that your credit card is charged automatically the moment the trial ends, even if you never planned to keep the service.</p>
+
+    <p><strong>The subscribe-and-cancel method:</strong> sign up for the free trial, then immediately go into the app's account settings and cancel your subscription. You keep full access until the trial period ends, and you will not be charged anything. This is not a workaround. It is how free trials are designed to work. Cancelling right away means you use the trial as intended, without the risk of forgetting and being billed.</p>
+
+    <div class="walkthrough">
+      <h4>Where to find the cancel option</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open the app.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap your <strong>profile picture or initials</strong> in the top corner.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Tap <strong>Account</strong> or <strong>Settings</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Look for <strong>"Cancel subscription"</strong> or <strong>"Manage subscription"</strong>. It takes about one minute.</p></span>
+      </div>
+    </div>
+
+    <h3>Trap 2: the promotional rate that quietly expires</h3>
+
+    <p>When you sign up for internet, cable, or a phone plan, providers often offer an introductory price, for example, "$65/month for the first 12 months." What may not be emphasised: in month 13, your bill quietly jumps to $85 or $95/month. This is standard practice across all major Canadian telecoms. What to do:</p>
+
+    <div class="walkthrough">
+      <h4>Beating the promotional-rate expiry</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>When you sign up, ask: <strong>"What is the regular price after the promotional period, and when exactly does it end?"</strong> Write the date down.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Put that date somewhere visible: your paper calendar, your fridge, or a notebook.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Set a reminder one month before the end date. That gives you time to call and negotiate, or to look at other options.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>When you call, say: <strong>"My promotional rate is expiring on [date]. What can you offer me to keep my rate?"</strong> Providers extend or match promotional rates for customers who ask, but they will not call you first.</p></span>
+      </div>
+    </div>
+
+    <h3>The Paper Calendar Method</h3>
+
+    <p>Both traps have the same solution: write it down and set a reminder. You do not need a smartphone. A paper calendar works just as well.</p>
+
+    <ul>
+      <li><strong>For a free trial:</strong> write "Cancel or keep [Service Name]" on the day before the trial ends.</li>
+      <li><strong>For a new plan:</strong> write "Call [Provider] about rate renewal" one month before your promotional period ends.</li>
+    </ul>
+
+    <p>One phone call at the right time can save you $240 or more per year.</p>
+
+    <div class="warning-block">
+      <span class="block-label">Watch for these phrases on your bill</span>
+      <p>If you see "Promotional rate," "Introductory pricing," or "Limited-time offer" on any bill or agreement, the price will go up. Write down when it ends and set your reminder now. If you receive an email or letter saying "Your rate is changing", this is your provider notifying you of the increase, as required by law. Do not ignore it. Call the retention line and ask them to match your old rate or offer a new promotion.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>These tactics are not personalised to you. They are built into the business model of every major telecom and streaming company. Knowing about them puts you one step ahead.</p>
+    </div>
+
+    <div class="the-move">
+      <span class="move-label">Try it today</span>
+      <p>For one week, write down every channel you actually watch. That single list tells you whether your cable bill is earning its keep, and it is all you need before the unbundling call.</p>
+    </div>
+
+    <h2>Quick check: test your knowledge</h2>
+    <p>Tap the answer you think is correct. There is no score kept and nothing to sign in to.</p>
+    <div class="lesson-quiz">
+      <div class="quiz-q" data-correct="b">
+        <h3>1. The CRTC "skinny basic" cable package in Canada must include:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">All major US networks and sports channels</button>
+          <button class="quiz-opt" type="button" data-answer="b">A minimum set of Canadian channels at a regulated maximum price</button>
+          <button class="quiz-opt" type="button" data-answer="c">Only local channels</button>
+          <button class="quiz-opt" type="button" data-answer="d">Unlimited internet bundled with TV</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Correct. Skinny basic is a regulated entry-level package: a minimum set of Canadian channels at a capped price. Every cable provider must offer it if you ask."
+          data-wrong="Skinny basic is a regulated minimum set of Canadian channels at a capped maximum price. It does not include US sports packages or bundled internet."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>2. If you want to cancel a bundled TV, internet, and phone package, you should:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Just stop paying and they will cancel it automatically</button>
+          <button class="quiz-opt" type="button" data-answer="b">Call the retention line, ask for the cancellation department, and get confirmation in writing</button>
+          <button class="quiz-opt" type="button" data-answer="c">Only cancel TV, keep internet and phone</button>
+          <button class="quiz-opt" type="button" data-answer="d">Wait until the contract ends even if you are unhappy</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. Call, state clearly what you want removed, be polite but firm with the retention department, and always get a confirmation number and email."
+          data-wrong="The right way is to call the retention line, ask for the change you want, and get written confirmation. Never just stop paying; that damages your credit and does not cancel anything."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>3. Free streaming services like CBC Gem and CTV are:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Only available with a cable subscription</button>
+          <button class="quiz-opt" type="button" data-answer="b">Available free online with no subscription required</button>
+          <button class="quiz-opt" type="button" data-answer="c">Only for people under 65</button>
+          <button class="quiz-opt" type="button" data-answer="d">Blocked outside Ontario</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. CBC Gem is completely free: download the app, and Canadian news and shows are yours with no cable subscription at all."
+          data-wrong="These services are free online with no cable subscription required. CBC Gem, for example, is a free app anyone in Canada can use."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>4. The "bundle trap" refers to:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Paying for faster internet than you need</button>
+          <button class="quiz-opt" type="button" data-answer="b">Being locked into a high combined bill for multiple services that would cost less separately</button>
+          <button class="quiz-opt" type="button" data-answer="c">Getting too many streaming services</button>
+          <button class="quiz-opt" type="button" data-answer="d">Having a long TV antenna cable</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Correct. That is Margaret&#x27;s story: $220 a month for 300 channels and a phone that barely rings, when internet plus one streaming app would cost a fraction of that."
+          data-wrong="The bundle trap is being locked into a high combined bill for services you barely use, like paying for 300 channels when you watch four."></div>
+      </div>
+      <div class="quiz-q" data-correct="c">
+        <h3>5. Your internet and TV promotional rate will usually increase after:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">5 years</button>
+          <button class="quiz-opt" type="button" data-answer="b">6 months</button>
+          <button class="quiz-opt" type="button" data-answer="c">12 to 24 months, depending on your contract</button>
+          <button class="quiz-opt" type="button" data-answer="d">Never, they are permanent rates</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. Promotional rates typically expire after 12 to 24 months, and the price jumps quietly. Write the end date on your paper calendar and call one month before."
+          data-wrong="Promotional rates usually expire after 12 to 24 months, depending on your contract. That is why the Paper Calendar Method matters: set a reminder before the jump."></div>
+      </div>
+    </div>
+
+    <h2>Your progress</h2>
+    <p>Tick each item as you feel confident with it. This is saved on this device only, with no account needed.</p>
+    <ul class="checklist" data-checklist="module-22-tv-home-phone">
+      <li class="check-item"><input type="checkbox" id="module-22-tv-home-phone-1"><label for="module-22-tv-home-phone-1">I have tracked which channels I actually watch for a week</label></li>
+      <li class="check-item"><input type="checkbox" id="module-22-tv-home-phone-2"><label for="module-22-tv-home-phone-2">I have checked whether my medical alert or alarm system needs the home phone line</label></li>
+      <li class="check-item"><input type="checkbox" id="module-22-tv-home-phone-3"><label for="module-22-tv-home-phone-3">I know how a digital antenna gives me CBC, CTV, Global, and CityTV for free</label></li>
+      <li class="check-item"><input type="checkbox" id="module-22-tv-home-phone-4"><label for="module-22-tv-home-phone-4">I have found the TV, phone, and equipment rental lines on my bundle bill</label></li>
+      <li class="check-item"><input type="checkbox" id="module-22-tv-home-phone-5"><label for="module-22-tv-home-phone-5">I know the step-by-step unbundling call, including asking for internet-only pricing</label></li>
+      <li class="check-item"><input type="checkbox" id="module-22-tv-home-phone-6"><label for="module-22-tv-home-phone-6">I know my rights and how to reach the CCTS (www.ccts-cprst.ca or 1-888-221-1687)</label></li>
+      <li class="check-item"><input type="checkbox" id="module-22-tv-home-phone-7"><label for="module-22-tv-home-phone-7">I know the subscribe-and-cancel method for free trials</label></li>
+      <li class="check-item"><input type="checkbox" id="module-22-tv-home-phone-8"><label for="module-22-tv-home-phone-8">I have written my promotional rate end date on my calendar</label></li>
+    </ul>
+
+    <!-- Denise: forward the lesson in isolation. Copy-link only, no share API. -->
+    <section class="send-lesson" aria-labelledby="send-h">
+      <h2 id="send-h">Send this lesson to someone</h2>
+      <p>Helping a parent or friend? This page works on its own, with no account and nothing to install. Copy the link and text it to them.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="button" data-copy-link>Copy the link to this lesson</button>
+        <span class="send-done" data-copy-done hidden>Copied. Paste it into a text or email.</span>
+      </div>
+      <input class="visually-hidden" type="text" data-copy-field hidden readonly aria-label="Link to this lesson">
+    </section>
+
+    <div class="success-state">
+      <p><strong>Well done.</strong> You know what your bundle really costs, what you actually watch and use, and how to unbundle in one confident phone call. And with the subscribe-and-cancel method and the Paper Calendar Method, the free-trial and promotional-rate traps cannot catch you.</p>
+    </div>
+
+    <nav class="related-modules" aria-label="Continue learning">
+      <h2>Where to next</h2>
+      <div class="related-grid">
+        <a class="related-card" href="module-20-internet-plan.html">
+          <span class="related-num">Module 20</span>
+          <span class="related-name">Understanding Your Internet Plan</span>
+          <span class="related-desc">Internet is the one service you keep. Make sure you are not overpaying for it either.</span>
+        </a>
+        <a class="related-card" href="module-21-mobile-plan.html">
+          <span class="related-num">Module 21</span>
+          <span class="related-name">Understanding Your Mobile Plan</span>
+          <span class="related-desc">If you drop the home phone, your mobile plan matters more. Match it to what you actually use.</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<!-- SHARED SHELL: footer (identical on every page). -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">For families</a></li>
+      <li><a href="../about.html">About us</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="../glossary.html">Glossary</a></li>
+      <li><a href="../privacy.html">Privacy</a></li>
+      <li><a href="../terms.html">Terms</a></li>
+      <li><a href="../disclaimer.html">Disclaimer</a></li>
+      <li><a href="../support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- SHARED SHELL: layered consent bar (identical on every page). -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="../privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/module.js"></script>
+</body>
+</html>

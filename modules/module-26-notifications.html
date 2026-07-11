@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Theme + text size before first paint (no flash). Local only, no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Managing Your Notifications - Digital Confidence Centre</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-26-notifications.html">
+  <meta name="description" content="Silence the noise, keep the notifications that matter, and take back control of your iPad with Do Not Disturb, quiet hours, priority people, and per-app controls. Free, plain-language lesson for Canadian seniors. No account needed.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- SHARED SHELL: header (generated from module-v2.html.tpl; identical on every page). -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Read this page aloud">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
+        <div class="rate-group" role="group" aria-label="Reading speed">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Slower</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normal</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Faster</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="../index.html">All lessons</a>
+    <a href="../index.html#protect-money">Protect your money</a>
+    <a href="../index.html#everyday-confidence" aria-current="page">Everyday confidence</a>
+    <a href="../index.html#staying-connected">Staying connected</a>
+    <a href="../index.html#getting-things-done">Getting things done</a>
+    <a href="../for-families.html">For families</a>
+    <a href="../support-directory.html">Get help</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="../index.html">All lessons</a></li>
+      <li><a href="../index.html#everyday-confidence">Everyday confidence</a></li>
+      <li><span aria-current="page">Managing Your Notifications</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <a class="lesson-back" href="../index.html">← Back to all lessons</a>
+
+    <p class="lesson-category"><span aria-hidden="true">🔔</span> Notifications</p>
+    <h1>Managing Your Notifications</h1>
+    <p class="lesson-time"><span aria-hidden="true">⏱</span> About 25 minutes, at your own pace</p>
+
+    <!-- Brenda: the first thing a nervous reader sees removes a fear. -->
+    <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
+
+    <p class="lead">How to silence the noise, keep the notifications that matter, and take back control of your device.</p>
+
+    <h2>Helen's story</h2>
+    <p>Helen, 77, wakes up every morning to 47 notifications on her iPad. Most are from apps she does not remember installing. One is from her daughter. She cannot find it in the noise. Last week she missed a medication reminder because it was buried under weather alerts and game notifications. She wants to throw the iPad in the lake.</p>
+    <p>If this sounds familiar, you are not alone. Modern devices are designed to interrupt you as often as possible, because every notification is a chance for an app to pull you back in. This module will help you silence the noise, keep the notifications that matter, and take back control of your iPad.</p>
+
+    <div class="coach-block">
+      <span class="coach-mark" aria-hidden="true">💬</span>
+      <div class="coach-body">
+        <span class="coach-label">From your coach</span>
+        <p>If your phone buzzes so often that you have started to dread picking it up, that is not a sign you cannot handle technology. It is a sign the notifications are badly set up, which is the device's fault, not yours. You are allowed to silence anything. Your attention belongs to you, and this lesson helps you take it back.</p>
+      </div>
+    </div>
+
+    <h2>Helen's 47 notifications</h2>
+
+    <p>Every time you see a red badge on an app, hear a chime, or feel a buzz, that is a notification. It is the app's way of saying "look at me!" And every app on your iPad wants to send them to you. Here is why there are so many: when you first install an app, it asks "Allow Notifications?" Most people tap "Allow" because it seems like the right thing to do. But that single tap gives the app permission to interrupt you whenever it wants, day or night, for any reason.</p>
+
+    <div class="tip-block">
+      <span class="block-label">Why every app wants your attention</span>
+      <p>Apps are designed to keep you coming back. Every notification is engineered to make you open the app, even if you have no reason to. Weather apps send alerts about temperatures you can feel by stepping outside. Games tell you your "energy has recharged." Shopping apps notify you about sales you never asked about. This is not your fault. You are not doing anything wrong. The apps are designed to interrupt you, and you have every right to tell them to stop.</p>
+    </div>
+
+    <p>When you have dozens of notifications, the important ones get buried. Helen missed a medication reminder because it was lost in a sea of weather alerts and game notifications. That is not a minor inconvenience; it is a real problem with real consequences. The goal of this module is simple: keep the notifications that help you (medication reminders, messages from family, calendar appointments) and silence everything else.</p>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>If your iPad buzzes and chimes more than you would like, that is completely normal. You did not cause it, and you are about to fix it.</p>
+    </div>
+
+    <h2>Do Not Disturb</h2>
+
+    <p>Do Not Disturb is the single most powerful tool on your iPad for taking back control. When you turn it on, it silences all notifications: no sounds, no vibrations, no banners popping up on your screen. Your iPad becomes quiet. The notifications still arrive; they are just waiting silently in your Notification Centre for when you choose to look at them. Nothing is lost. You are simply choosing when to be interrupted, instead of letting your iPad decide for you.</p>
+
+    <div class="walkthrough">
+      <h4>Turning on Do Not Disturb</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Open the Settings app</strong> on your iPad or iPhone (the grey gear icon).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p><strong>Tap Focus.</strong> This is where Apple organises all your quiet modes.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p><strong>Tap Do Not Disturb.</strong></p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p><strong>Toggle it on.</strong> A crescent moon icon will appear at the top of your screen. Your iPad is now quiet. When you are ready to see your notifications, swipe down from the top of the screen to view them all at once.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Quick way: Control Centre</span>
+      <p>You can also turn Do Not Disturb on and off quickly without going into Settings. Swipe down from the top-right corner of your iPad screen to open Control Centre. Tap the crescent moon icon to toggle Do Not Disturb. Tap it again to turn it off.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Do Not Disturb does not delete or block your notifications. It simply silences them until you are ready. You are in control.</p>
+    </div>
+
+    <h2>Setting quiet hours</h2>
+
+    <p>Turning Do Not Disturb on and off manually works fine, but it is even better to have it happen automatically. You can schedule Do Not Disturb so your iPad goes quiet every evening and wakes up every morning, without you having to remember to do anything.</p>
+
+    <div class="walkthrough">
+      <h4>Scheduling quiet hours</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Open Settings, then Focus, then Do Not Disturb.</strong></p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p><strong>Scroll down to Set a Schedule.</strong></p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p><strong>Tap Add Schedule</strong> and choose <strong>Time</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p><strong>Set "From" to 9:00 PM</strong> and <strong>"To" to 8:00 AM</strong> (or whatever suits your routine).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p><strong>Make sure all seven days are selected.</strong> Now your iPad will automatically go quiet at 9 PM and return to normal at 8 AM, every single day. No buzzing during dinner. No chiming while you sleep.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Scheduled vs manual</span>
+      <p>"Scheduled" means Do Not Disturb turns on and off automatically at the times you set. "Manual" means you turn it on and off yourself using the toggle or Control Centre. You can use both: the schedule runs every day, and you can still turn Do Not Disturb on or off manually at any time. We recommend 9:00 PM to 8:00 AM as a starting point, but there is no wrong answer. Some people prefer 10 PM to 7 AM. Choose what works for your life.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Once you set your quiet hours, they run automatically every day. You do not have to think about it again. And if you want to change the times later, you can; it takes less than a minute.</p>
+    </div>
+
+    <h2>Priority exceptions: letting the right people through</h2>
+
+    <p>The most common worry about Do Not Disturb is: "What if my daughter calls and I miss it?" or "What if my doctor's office sends me an important message?" This is a valid concern, and Apple has built a solution directly into Do Not Disturb. You can add specific people to an "Allowed" list. When Do Not Disturb is on, notifications from everyone else are silenced, but calls and messages from your allowed contacts come through normally, with full sound and vibration.</p>
+
+    <div class="walkthrough">
+      <h4>Adding priority people</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Open Settings, then Focus, then Do Not Disturb.</strong></p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p><strong>Under "Allowed Notifications", tap People.</strong></p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p><strong>Tap Add People.</strong></p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p><strong>Search for and select the contacts</strong> you want to allow: your children, your doctor, your closest friends.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p><strong>Tap Done.</strong> Now, even when Do Not Disturb is active, calls and messages from these people will come through loud and clear.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Who should be on your priority list?</span>
+      <p>We recommend starting with your children or grandchildren, your doctor or specialist, your pharmacist, and one or two close friends. Keep the list short. The whole point is to reduce interruptions; if you add everyone you know, you are back to square one.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Do Not Disturb with priority exceptions gives you the best of both worlds: peace and quiet, with a safety net for the people who matter most.</p>
+    </div>
+
+    <h2>Emergency bypass: you will not miss a true emergency</h2>
+
+    <p>Even if you do not set up any priority exceptions, your iPad and iPhone have a built-in safety feature: repeated calls from the same person within a few minutes break through Do Not Disturb. Apple built this in because they understand that repeated calls usually mean an emergency.</p>
+
+    <ul>
+      <li>This feature is called "Repeated Calls" and it is turned on by default. You do not need to do anything to activate it.</li>
+      <li>If the same person calls you twice within three minutes, the second call rings through.</li>
+      <li>This works regardless of whether the caller is on your priority list.</li>
+      <li>You can verify this is on: Settings, then Focus, then Do Not Disturb, then People, then scroll down to "Allow Repeated Calls".</li>
+    </ul>
+
+    <div class="walkthrough">
+      <h4>Setting Emergency Bypass for specific contacts</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Open the Contacts app</strong> and find the person (for example, your daughter).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p><strong>Tap Edit</strong> in the top-right corner.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p><strong>Tap Ringtone</strong> or <strong>Text Tone</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p><strong>Toggle on Emergency Bypass</strong> at the top.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p><strong>Tap Done.</strong> Now this person's calls and messages will always ring through, even during Do Not Disturb, even during your scheduled quiet hours.</p></span>
+      </div>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You will never miss a true emergency. The repeated-calls safety net is always active, and you can add Emergency Bypass to your most important contacts for extra peace of mind.</p>
+    </div>
+
+    <h2>Per-app notification control</h2>
+
+    <p>Do Not Disturb silences everything at once, which is great for evenings and nights. But during the day, you may want to silence specific apps permanently while keeping others active. This is where per-app notification control comes in.</p>
+
+    <div class="walkthrough">
+      <h4>Turning off notifications for a specific app</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Open Settings, then Notifications.</strong></p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p><strong>You will see a list of every app</strong> on your iPad.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p><strong>Tap the app</strong> you want to silence (for example, a game or weather app).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p><strong>Toggle off "Allow Notifications"</strong> at the top. That app will never interrupt you again: no sounds, no badges, no banners. The app still works normally; it just cannot bother you anymore.</p></span>
+      </div>
+    </div>
+
+    <ul>
+      <li><strong>Games:</strong> they constantly nag you to come back and play. You do not need a notification to play a game; you will open it when you feel like it.</li>
+      <li><strong>Weather apps:</strong> you can check the weather when you want to. You do not need an alert every time the temperature changes.</li>
+      <li><strong>Shopping apps:</strong> sales notifications are designed to make you spend money. Turn them off.</li>
+      <li><strong>News apps:</strong> unless you specifically want breaking news alerts, these create anxiety without benefit.</li>
+      <li><strong>Social media:</strong> Facebook, Instagram, and other social apps send notifications to pull you back in. You can check them on your own schedule.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">Apps to keep notifications on</span>
+      <p>Keep notifications on for <strong>Messages and FaceTime</strong> (so you do not miss calls and texts from family), <strong>Calendar</strong> (for appointment reminders), <strong>health or medication reminder apps</strong> (these could be critical), and the <strong>Phone</strong> (so you never miss a call).</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You can always turn notifications back on for any app. Nothing is permanent. Start by turning off one or two of the worst offenders and see how much quieter your iPad becomes.</p>
+    </div>
+
+    <h2>The daily notification check</h2>
+
+    <p>Many people pick up their iPad every time it buzzes or chimes. This means the device is in charge of your time, not you. A healthier approach is to check your notifications on your schedule, not the iPad's schedule.</p>
+
+    <ul>
+      <li><strong>Morning:</strong> after breakfast, sit down with your iPad and review everything that came in overnight. Reply to messages, check your calendar for the day, and clear everything else.</li>
+      <li><strong>After lunch:</strong> a quick check to see if anything important arrived during the morning. Reply if needed, then put the iPad down.</li>
+      <li><strong>Before bed:</strong> one final check before your quiet hours begin. Clear any remaining notifications so you start the next morning fresh.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">How to clear all notifications at once</span>
+      <p>Swipe down from the top of your screen to see your Notification Centre. If you have a group of notifications, tap the X button next to the group name to clear them all at once. You do not have to swipe away each one individually.</p>
+    </div>
+
+    <p>This is perhaps the most important idea in this entire module: your iPad is a tool that works for you. It does not get to decide when you pay attention. You decide. Checking notifications two or three times a day is not ignoring your device; it is using it wisely.</p>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Try the three-check routine for one week. Most people find they feel calmer, more in control, and do not miss anything important.</p>
+    </div>
+
+    <h2>When notifications are helpful</h2>
+
+    <p>This module has focused on silencing the noise, but it is important to remember that not all notifications are bad. Some are genuinely helpful and worth keeping. The goal is not to turn off everything; it is to keep the good ones and silence the rest.</p>
+
+    <ul>
+      <li><strong>Medication reminders.</strong> If you use the Health app, a medication tracker, or the built-in Reminders app to remind you to take your medication, keep these notifications on. Helen missed her medication reminder because it was buried; after this module, her medication reminders are among the only notifications that come through. Problem solved.</li>
+      <li><strong>Calendar appointments.</strong> Calendar notifications remind you about doctor's appointments, family visits, and community events. A notification 30 minutes before an appointment gives you time to prepare without constantly checking your calendar.</li>
+      <li><strong>Messages from family.</strong> Messages and FaceTime calls from your family are the notifications that matter most. By silencing the noise from games, weather, and shopping apps, these important messages will stand out clearly, exactly as they should.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">The goal: signal, not noise</span>
+      <p>Think of it this way: before this module, Helen had 47 notifications every morning and could not find her daughter's message. After this module, she might have 3 to 5 notifications, and every single one is something that matters. That is the difference between noise and signal.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You now know how to keep the helpful notifications and silence everything else. Your iPad will work for you, not against you.</p>
+    </div>
+
+    <h2>Quick answers</h2>
+
+    <ul>
+      <li><strong>Will I miss important calls if I turn on Do Not Disturb?</strong> No. You can add important people to your priority list so their calls and messages always come through. Additionally, if someone calls you twice within three minutes, the call rings through automatically. You are protected.</li>
+      <li><strong>Can I undo everything I change in this module?</strong> Yes. Every setting in this module can be reversed. If you turn off notifications for an app and later decide you want them back, just go to Settings, then Notifications, tap the app, and toggle Allow Notifications back on. Nothing is permanent.</li>
+      <li><strong>What is the difference between Do Not Disturb and Aeroplane Mode?</strong> Do Not Disturb silences notifications but keeps your internet and phone connections active. You can still receive messages and calls; they are just silent. Aeroplane Mode completely disconnects you from the internet and phone network. Use Do Not Disturb for daily quiet time. Use Aeroplane Mode only when you need to disconnect entirely (like during a flight).</li>
+    </ul>
+
+    <div class="the-move">
+      <span class="move-label">The move is</span>
+      <p>Set your quiet hours tonight (9 PM to 8 AM is a good start), add your two or three most important people to the Allowed list, and turn off notifications for one noisy app. That alone will transform your mornings.</p>
+    </div>
+
+    <h2>Quick check: test your knowledge</h2>
+    <p>Tap the answer you think is correct. There is no score kept and nothing to sign in to.</p>
+    <div class="lesson-quiz">
+      <div class="quiz-q" data-correct="b">
+        <h3>1. Turning off non-essential app notifications helps because:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">It speeds up your internet</button>
+          <button class="quiz-opt" type="button" data-answer="b">It reduces interruptions and helps you focus on what actually matters to you</button>
+          <button class="quiz-opt" type="button" data-answer="c">It prevents apps from updating automatically</button>
+          <button class="quiz-opt" type="button" data-answer="d">It reduces your monthly data usage</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. Fewer interruptions means the messages that matter, from family, your doctor, and your calendar, stand out instead of being buried."
+          data-wrong="The benefit is fewer interruptions. With the noise silenced, the notifications that actually matter to you stand out clearly."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>2. Do Not Disturb mode on your phone:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Blocks all calls permanently</button>
+          <button class="quiz-opt" type="button" data-answer="b">Silences notifications and calls during set hours while allowing emergency calls through</button>
+          <button class="quiz-opt" type="button" data-answer="c">Deletes incoming messages during the quiet period</button>
+          <button class="quiz-opt" type="button" data-answer="d">Reduces your battery drain</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. Do Not Disturb silences things during the hours you choose, and repeated calls (twice within three minutes) still ring through, so true emergencies reach you."
+          data-wrong="Do Not Disturb silences notifications and calls during your quiet hours while still letting emergency calls through. Nothing is blocked permanently or deleted."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>3. A badge notification is:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">A pop-up that takes over your screen</button>
+          <button class="quiz-opt" type="button" data-answer="b">The small red number that appears on an app icon showing unread items</button>
+          <button class="quiz-opt" type="button" data-answer="c">A sound alert that plays when you receive a message</button>
+          <button class="quiz-opt" type="button" data-answer="d">A vibration pattern unique to each app</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Yes. The badge is the small red number on an app icon that counts unread items. It is one of the three ways apps ask for your attention, along with sounds and banners."
+          data-wrong="A badge is the small red number on an app icon showing how many unread items are waiting. Sounds and pop-up banners are separate kinds of notification."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>4. To reduce notification overwhelm, the most effective approach is:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Turn off all notifications for every app</button>
+          <button class="quiz-opt" type="button" data-answer="b">Review each app's notification settings and keep only the ones that are genuinely useful to you</button>
+          <button class="quiz-opt" type="button" data-answer="c">Delete social media apps entirely</button>
+          <button class="quiz-opt" type="button" data-answer="d">Only use your phone two hours per day</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Correct. The goal is signal, not noise: keep the helpful notifications (family, calendar, medication) and silence the rest, app by app."
+          data-wrong="The best approach is to review each app and keep only the notifications that genuinely help you, like family messages, calendar reminders, and medication alerts. Turning off everything would silence those too."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>5. Quiet Hours or Scheduled Summary on iPhones and Androids lets you:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Never receive notifications from specific people</button>
+          <button class="quiz-opt" type="button" data-answer="b">Batch notifications to deliver at a time you choose, reducing interruptions throughout the day</button>
+          <button class="quiz-opt" type="button" data-answer="c">Automatically reply to messages during quiet periods</button>
+          <button class="quiz-opt" type="button" data-answer="d">Forward notifications to a family member</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. A schedule batches the noise so it arrives when you choose, instead of interrupting you all day. Your notifications wait quietly until you are ready."
+          data-wrong="These features batch your notifications to arrive at times you choose, which reduces interruptions through the day. Nothing is lost; it just waits for you."></div>
+      </div>
+    </div>
+
+    <h2>Your progress</h2>
+    <p>Tick each item as you feel confident with it. This is saved on this device only, with no account needed.</p>
+    <ul class="checklist" data-checklist="module-26-notifications">
+      <li class="check-item"><input type="checkbox" id="module-26-notifications-1"><label for="module-26-notifications-1">I know notifications are designed to interrupt me, and I am allowed to silence them</label></li>
+      <li class="check-item"><input type="checkbox" id="module-26-notifications-2"><label for="module-26-notifications-2">I can turn Do Not Disturb on and off, from Settings or Control Centre</label></li>
+      <li class="check-item"><input type="checkbox" id="module-26-notifications-3"><label for="module-26-notifications-3">I have set scheduled quiet hours that run automatically every day</label></li>
+      <li class="check-item"><input type="checkbox" id="module-26-notifications-4"><label for="module-26-notifications-4">I have added my most important people to the Allowed list</label></li>
+      <li class="check-item"><input type="checkbox" id="module-26-notifications-5"><label for="module-26-notifications-5">I know about Repeated Calls and Emergency Bypass, so I will never miss a true emergency</label></li>
+      <li class="check-item"><input type="checkbox" id="module-26-notifications-6"><label for="module-26-notifications-6">I can turn off notifications for a specific app in Settings</label></li>
+      <li class="check-item"><input type="checkbox" id="module-26-notifications-7"><label for="module-26-notifications-7">I check notifications two or three times a day, on my schedule, not the iPad's</label></li>
+    </ul>
+
+    <!-- Denise: forward the lesson in isolation. Copy-link only, no share API. -->
+    <section class="send-lesson" aria-labelledby="send-h">
+      <h2 id="send-h">Send this lesson to someone</h2>
+      <p>Helping a parent or friend? This page works on its own, with no account and nothing to install. Copy the link and text it to them.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="button" data-copy-link>Copy the link to this lesson</button>
+        <span class="send-done" data-copy-done hidden>Copied. Paste it into a text or email.</span>
+      </div>
+      <input class="visually-hidden" type="text" data-copy-field hidden readonly aria-label="Link to this lesson">
+    </section>
+
+    <div class="success-state">
+      <p><strong>Well done.</strong> You have gone from 47 notifications of noise to a handful of signal. Do Not Disturb, quiet hours, priority people, and per-app controls are all set up in your favour. Your attention belongs to you again.</p>
+    </div>
+
+    <nav class="related-modules" aria-label="Continue learning">
+      <h2>Where to next</h2>
+      <div class="related-grid">
+        <a class="related-card" href="module-24-communication.html">
+          <span class="related-num">Module 24</span>
+          <span class="related-name">Staying in Touch</span>
+          <span class="related-desc">Now that family calls stand out, learn every way to reach the people you love: texts, video calls, and voice messages.</span>
+        </a>
+        <a class="related-card" href="module-27-inbox-spam.html">
+          <span class="related-num">Module 27</span>
+          <span class="related-name">Tame Your Inbox</span>
+          <span class="related-desc">The same take-back-control approach, applied to email: a 5-minute daily routine that keeps the important messages visible.</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<!-- SHARED SHELL: footer (identical on every page). -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">For families</a></li>
+      <li><a href="../about.html">About us</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="../glossary.html">Glossary</a></li>
+      <li><a href="../privacy.html">Privacy</a></li>
+      <li><a href="../terms.html">Terms</a></li>
+      <li><a href="../disclaimer.html">Disclaimer</a></li>
+      <li><a href="../support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- SHARED SHELL: layered consent bar (identical on every page). -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="../privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/module.js"></script>
+</body>
+</html>

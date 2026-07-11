@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Theme + text size before first paint (no flash). Local only, no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Staying in Touch - Digital Confidence Centre</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-24-communication.html">
+  <meta name="description" content="Learn to use text messaging, video calling, group chats, voice messages, and notifications so you never miss a call from family again. A warm, practical guide for Canadian seniors. No account needed.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- SHARED SHELL: header (generated from module-v2.html.tpl; identical on every page). -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Read this page aloud">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
+        <div class="rate-group" role="group" aria-label="Reading speed">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Slower</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normal</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Faster</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="../index.html">All lessons</a>
+    <a href="../index.html#protect-money">Protect your money</a>
+    <a href="../index.html#everyday-confidence" aria-current="page">Everyday confidence</a>
+    <a href="../index.html#staying-connected">Staying connected</a>
+    <a href="../index.html#getting-things-done">Getting things done</a>
+    <a href="../for-families.html">For families</a>
+    <a href="../support-directory.html">Get help</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="../index.html">All lessons</a></li>
+      <li><a href="../index.html#everyday-confidence">Everyday confidence</a></li>
+      <li><span aria-current="page">Staying in Touch</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <a class="lesson-back" href="../index.html">← Back to all lessons</a>
+
+    <p class="lesson-category"><span aria-hidden="true">💬</span> Communication</p>
+    <h1>Staying in Touch</h1>
+    <p class="lesson-time"><span aria-hidden="true">⏱</span> About 30 minutes, at your own pace</p>
+
+    <!-- Brenda: the first thing a nervous reader sees removes a fear. -->
+    <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
+
+    <p class="lead">How to send a text, join a group chat, make and answer video calls, send voice messages, and set your notifications so you never miss a call from someone you love.</p>
+
+    <h2>Dorothy's story</h2>
+    <p>Dorothy, 80, moved to a retirement home in London, Ontario after her husband passed. Her three children live in Toronto, Calgary, and Halifax. They set up a "family group chat" but Dorothy has never opened the app. She is afraid of pressing the wrong button. She misses hearing their voices but does not want to "bother" them with phone calls. Her granddaughter video-calls every Sunday but Dorothy often misses it because she does not hear the notification. She feels more isolated than ever, not because tools do not exist, but because nobody taught her how to use them.</p>
+    <p>If Dorothy's story sounds familiar, this module is for you. By the end, you will know how to send a text, join a group chat, make and answer video calls, send voice messages, and set your notifications so you never miss a call from someone you love.</p>
+
+    <div class="coach-block">
+      <span class="coach-mark" aria-hidden="true">💬</span>
+      <div class="coach-body">
+        <span class="coach-label">From your coach</span>
+        <p>Texts, emails, voice notes, video calls: there are more ways to reach people than ever, and somehow that makes reaching out feel more complicated. If you ever hesitate over which one to use, there is no wrong answer. The people who care about you are glad to hear from you in any format.</p>
+      </div>
+    </div>
+
+    <h2>Dorothy's missed calls</h2>
+
+    <p>Before we talk about any technology, let us talk about what is really happening. Dorothy is not struggling with an app. She is struggling with loneliness. Her grandchildren are growing up in photos she has never seen. Her children share news in a group chat she has never opened. Her granddaughter calls every Sunday, but Dorothy sits in silence because she did not hear the ring.</p>
+
+    <p>This is not a technology problem. It is a connection problem. And it has a solution. The tools Dorothy needs are already on her iPad. Nobody needs to buy anything or download anything complicated. She just needs someone to show her, clearly and patiently, how each one works. That is exactly what this module does.</p>
+
+    <div class="tip-block">
+      <span class="block-label">You are not bothering anyone</span>
+      <p>Many seniors feel they are "bothering" family when they call. Here is the truth: your children and grandchildren want to hear from you. A short text saying "thinking of you" can make someone's entire day. A quick video call, even just a wave and "I love you", means the world. You are never a bother. You are a gift.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>This module is about connection, not technology. If you have ever wished you could see your grandchild's face or hear your daughter's voice more often, you are in the right place.</p>
+    </div>
+
+    <h2>The three ways to stay in touch</h2>
+
+    <p>There are three main ways to communicate with family and friends using your iPad or iPhone. Each one is useful in different situations, and all three are already built into your device.</p>
+
+    <ul>
+      <li><strong>Voice calls, the familiar one.</strong> A voice call is exactly like a regular phone call. You hear the other person's voice and they hear yours. If you have been using a telephone for decades, this is nothing new. On your iPad, you can make voice calls through FaceTime (without the video) or through apps like the Phone app on iPhone.</li>
+      <li><strong>Text messaging, the quick one.</strong> A text message is a short written message, like passing a note that arrives instantly. You can send a few words, a photo, or even a voice message. Texts are perfect for quick thoughts like "Good morning!" or "Happy birthday!" that do not need a full phone call. And with voice-to-text, you do not even need to type.</li>
+      <li><strong>Video calls, the closest to being there.</strong> A video call lets you see the other person's face while you talk. You can watch your grandchild show you a drawing. You can see your daughter's new kitchen. You can wave goodnight. It is the closest thing to being in the same room, and it is free. On your iPad, FaceTime is already installed and ready to use.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">The warmth scale</span>
+      <p>Think of these three methods on a warmth scale, from least personal to most personal. A <strong>text message</strong> is quick and easy, like sending a postcard. A <strong>voice call</strong> is warm and familiar, like sitting on the porch together. A <strong>video call</strong> is the closest to being there, like sitting across the kitchen table. All three are valuable. Use whichever one feels right for the moment.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You do not need to master all three at once. Start with the one that feels most comfortable, even if that is just a simple text, and build from there.</p>
+    </div>
+
+    <h2>Text messaging basics</h2>
+
+    <p>Sending a text message is one of the simplest things you can do on your iPad. The Messages app, the green icon with a white speech bubble, is already installed. Here is how to use it, step by step.</p>
+
+    <div class="walkthrough">
+      <h4>How to send a text message</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Tap the Messages app</strong> (green icon with white speech bubble) on your home screen.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p><strong>Tap the pencil-and-paper icon</strong> in the top corner to start a new message.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>In the <strong>"To:"</strong> field, type the person's name. If they are in your contacts, their name will appear. Tap it.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p><strong>Tap the message field</strong> at the bottom of the screen and type your message.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Tap the <strong>blue arrow button</strong> to send. That is it. Your message arrives instantly.</p></span>
+      </div>
+    </div>
+
+    <div class="walkthrough">
+      <h4>Voice-to-text: never type again</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Tap the message field</strong> so the keyboard appears.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Look for the <strong>small microphone icon</strong> on the keyboard (usually near the space bar).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p><strong>Tap the microphone icon.</strong> It will light up or pulse to show it is listening.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p><strong>Speak your message</strong> clearly and at a normal pace. Say "period" for a full stop and "comma" for a comma.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>When you are finished, <strong>tap the microphone icon again</strong> to stop listening.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p><strong>Review your message</strong> and tap the blue arrow to send.</p></span>
+      </div>
+    </div>
+
+    <div class="walkthrough">
+      <h4>How to send a photo in a text</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open a conversation in Messages.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap the <strong>+ button</strong> (or the camera icon) next to the message field.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Tap <strong>"Photos"</strong> to choose a photo from your library.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Tap the photo you want to send. It will appear in the message field.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Tap the <strong>blue arrow</strong> to send.</p></span>
+      </div>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Try sending a text to a family member right now, even just "Hello, I'm learning to text!" Voice-to-text means you never need to struggle with the keyboard. Just tap the microphone and talk.</p>
+    </div>
+
+    <h2>Group chats explained</h2>
+
+    <p>A group chat is simply a text conversation with more than two people. When Dorothy's children created a "family group chat", they made a single conversation where everyone in the family can read and reply to the same messages. Think of it like a family bulletin board: anyone can pin a note, and everyone can see it.</p>
+
+    <div class="walkthrough">
+      <h4>How to read a group chat</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Open the Messages app.</strong></p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Look for a conversation with <strong>multiple names at the top</strong> (for example, "Sarah, Michael, Lisa"). This is the group chat.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p><strong>Tap on it</strong> to open. You will see messages from different people; each person's name appears above their message.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p><strong>Scroll up</strong> to read older messages. Scroll down to see the newest ones.</p></span>
+      </div>
+    </div>
+
+    <p>Replying works exactly the same as sending a regular text. Tap the message field at the bottom, type (or use voice-to-text), and tap send. Your message will be seen by everyone in the group. You do not need to reply to every message. It is perfectly fine to just read along and reply when you have something to say. Nobody expects you to respond to everything.</p>
+
+    <div class="walkthrough">
+      <h4>How to mute a group chat (without leaving)</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Open the group chat.</strong></p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p><strong>Tap the group name</strong> or the people icons at the top of the screen.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Scroll down and turn on <strong>"Hide Alerts"</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>To unmute, follow the same steps and turn off "Hide Alerts". You have not left the group; you have just turned down the volume.</p></span>
+      </div>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>A group chat is just a shared conversation. You can read, reply, or stay quiet; it is all fine. And if it gets too noisy, muting is easy and private. Nobody will know.</p>
+    </div>
+
+    <h2>Video calling step by step</h2>
+
+    <p>Video calling is the closest thing to sitting in the same room as someone you love. On your iPad, FaceTime is already installed; it is the green icon with a white video camera. You do not need to download anything or create an account. If you have an Apple ID (which you do if you have an iPad), FaceTime is ready to go.</p>
+
+    <div class="walkthrough">
+      <h4>How to make a video call</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Tap the FaceTime app</strong> (green icon with white video camera).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap <strong>"New FaceTime"</strong> at the top of the screen.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Type the person's name, email, or phone number in the <strong>"To:"</strong> field.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Tap the green <strong>"FaceTime" button</strong> (the video camera icon) to start the call.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Wait for the other person to answer. You will see their face on your screen.</p></span>
+      </div>
+    </div>
+
+    <p>When someone calls you on FaceTime, you will see a notification on your screen with their name and two buttons: the <strong>green button</strong> answers the call, and the <strong>red button</strong> declines it. If you miss the call, do not worry. You can call them back by opening FaceTime and tapping their name in the recent calls list.</p>
+
+    <ul>
+      <li><strong>Volume:</strong> use the volume buttons on the side of your iPad to make the sound louder or quieter.</li>
+      <li><strong>Flip camera:</strong> tap the camera flip icon (two arrows in a circle) to switch between the front camera (showing your face) and the back camera (showing what is in front of you).</li>
+      <li><strong>Mute:</strong> tap the microphone icon to mute yourself if you need a moment (tap again to unmute).</li>
+      <li><strong>End call:</strong> tap the red circle button to hang up.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">Calls do not need to be long</span>
+      <p>It is okay to just wave and say "I love you". A two-minute video call where you see your granddaughter's smile is worth more than an hour on the phone. There is no minimum length for a FaceTime call. Even thirty seconds of connection is meaningful.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>FaceTime is already on your iPad. You do not need to set anything up. Try calling a family member today, even if it is just to wave and say hello.</p>
+    </div>
+
+    <h2>Making notifications work for you</h2>
+
+    <p>Dorothy misses her granddaughter's Sunday call because she does not hear the notification. This is one of the most common problems, and one of the easiest to fix. Let us make sure your iPad rings loud and clear when family calls.</p>
+
+    <div class="walkthrough">
+      <h4>Step 1: turn up the volume</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Open Settings</strong> (the grey gear icon).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap <strong>"Sounds"</strong> (or "Sounds &amp; Haptics").</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Drag the <strong>"Ringer and Alerts"</strong> slider to the right, all the way if you have difficulty hearing.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Make sure <strong>"Change with Buttons"</strong> is turned on. This lets you use the side buttons to adjust volume quickly.</p></span>
+      </div>
+    </div>
+
+    <div class="walkthrough">
+      <h4>Step 2: set a distinctive ringtone for family</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Open the Contacts app.</strong></p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p><strong>Find the family member's name</strong> and tap it.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Tap <strong>"Edit"</strong> in the top right corner.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Tap <strong>"Ringtone"</strong> and choose a distinctive tone, something loud and different from your default.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Tap <strong>"Done"</strong> to save. Now, when your granddaughter calls on Sunday, you will hear a unique ring that tells you, without even looking, that it is family.</p></span>
+      </div>
+    </div>
+
+    <div class="walkthrough">
+      <h4>Step 3: make sure FaceTime and Messages notifications are on</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Open Settings.</strong></p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap <strong>"Notifications"</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Scroll down and tap <strong>"FaceTime"</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Make sure <strong>"Allow Notifications"</strong> is turned on (the toggle should be green).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Go back and do the same for <strong>"Messages"</strong>.</p></span>
+      </div>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>A few simple changes to your settings can make the difference between missing a call and catching it. You deserve to hear from your family. Let us make sure your iPad helps you do that.</p>
+    </div>
+
+    <h2>Voice messages</h2>
+
+    <p>Voice messages are one of the best features for anyone who finds typing difficult. Instead of typing a message, you record a short audio clip, like leaving a voicemail, but inside a text conversation. The other person can listen to it whenever they are ready. It is personal, it is warm, and it takes just seconds.</p>
+
+    <div class="walkthrough">
+      <h4>How to send a voice message</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Open a conversation</strong> in the Messages app.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Find the <strong>audio message button</strong>. It looks like a small sound wave icon next to the message field (or tap the + button and look for "Audio").</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p><strong>Press and hold</strong> the button, then speak your message.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p><strong>Release the button</strong> when you are finished speaking.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Tap the <strong>blue arrow</strong> to send, or tap the X to cancel and try again.</p></span>
+      </div>
+    </div>
+
+    <p>When someone sends you a voice message, you will see a small audio clip in the conversation with a play button. Tap the play button to listen. You can hold your iPad up to your ear (like a phone) or listen through the speakers. If you missed part of it, just tap play again.</p>
+
+    <ul>
+      <li><strong>No typing required.</strong> Just hold, talk, and release.</li>
+      <li><strong>More personal than text.</strong> The other person hears your actual voice.</li>
+      <li><strong>No scheduling needed.</strong> Unlike a phone call, the other person listens when it suits them.</li>
+      <li><strong>Great for arthritis or vision difficulties.</strong> No small keys to press.</li>
+    </ul>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Voice messages are as easy as leaving a voicemail. Hold the button, speak, release, send. That is it. Try sending one to a family member today; they will love hearing your voice.</p>
+    </div>
+
+    <h2>Staying safe</h2>
+
+    <p>Communication tools are wonderful for staying connected with family, but they can also be used by people you do not know. Here are simple rules to keep you safe.</p>
+
+    <div class="warning-block">
+      <span class="block-label">Do not answer video calls from unknown numbers</span>
+      <p>If you get a FaceTime call from a number or name you do not recognise, do not answer it. If it is someone important, they will leave a message or call back. Scammers sometimes use video calls to pressure people into quick decisions. You are never obligated to answer any call.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Do not accept messages from strangers</span>
+      <p>If you receive a text from someone you do not know, do not tap any links in the message. Do not reply. If the message seems suspicious, for example claiming you won a prize or that your account has been compromised, delete it. Your iPad may ask if you want to "Report Junk"; tap that option if it appears.</p>
+    </div>
+
+    <div class="walkthrough">
+      <h4>How to block someone</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Open the Messages or FaceTime app.</strong></p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p><strong>Find the conversation or call</strong> from the person you want to block.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p><strong>Tap the person's name or number</strong> at the top of the screen.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Scroll down and tap <strong>"Block this Caller"</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Confirm by tapping <strong>"Block Contact"</strong>. They will not be able to call, text, or FaceTime you.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">How to report spam</span>
+      <p>If you receive a suspicious message from someone not in your contacts, your iPad may show a "Report Junk" link below the message. Tap it. This reports the sender to Apple and helps protect other people from the same scam. You can also send spam phone calls straight to voicemail: go to Settings, then Phone, then turn on "Silence Unknown Callers".</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>The key rule is simple: if you do not recognise the person, do not answer and do not tap any links. Your family's calls will always come through clearly because you have set them up with distinctive ringtones. Everyone else can wait.</p>
+    </div>
+
+    <h2>Quick answers</h2>
+
+    <ul>
+      <li><strong>Do FaceTime calls cost money?</strong> No. FaceTime calls are free. They use your internet connection (Wi-Fi), not your phone plan. As long as you are connected to Wi-Fi, you can make as many FaceTime calls as you like at no extra cost.</li>
+      <li><strong>Can I FaceTime someone who does not have an iPad or iPhone?</strong> FaceTime works best between Apple devices. If your family member uses an Android phone or a Windows computer, you can still video call them: ask them to download a free app like Google Meet or Zoom, or you can send them a FaceTime link that works in their web browser. Ask a family member to help you set this up if needed.</li>
+      <li><strong>What if I accidentally press the wrong button during a call?</strong> Nothing bad will happen. If you accidentally mute yourself, the other person will just say "I can't hear you"; tap the microphone button again to unmute. If you accidentally hang up, just call them back. There is no button on your iPad that will break anything or cost you money. It is completely safe to explore.</li>
+    </ul>
+
+    <div class="the-move">
+      <span class="move-label">Try it today</span>
+      <p>Send one text or make one short FaceTime call to a family member today, even if it is just to wave and say hello. Thirty seconds of connection is meaningful.</p>
+    </div>
+
+    <h2>Quick check: test your knowledge</h2>
+    <p>Tap the answer you think is correct. There is no score kept and nothing to sign in to.</p>
+    <div class="lesson-quiz">
+      <div class="quiz-q" data-correct="b">
+        <h3>1. WhatsApp differs from regular SMS texting because:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">It only works on iPhones</button>
+          <button class="quiz-opt" type="button" data-answer="b">It sends messages over the internet and works across iPhone and Android without SMS charges</button>
+          <button class="quiz-opt" type="button" data-answer="c">It costs extra per message</button>
+          <button class="quiz-opt" type="button" data-answer="d">It requires a landline connection</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. WhatsApp sends messages over your internet connection, so it works across iPhone and Android with no per-message texting charges."
+          data-wrong="WhatsApp sends messages over the internet, so it works on both iPhone and Android without SMS charges. It is free over Wi-Fi."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>2. Voice notes on messaging apps are useful because:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">They are cheaper than regular calls</button>
+          <button class="quiz-opt" type="button" data-answer="b">They let you send a spoken message without needing to type, which is easier for many seniors</button>
+          <button class="quiz-opt" type="button" data-answer="c">They are stored forever in the cloud</button>
+          <button class="quiz-opt" type="button" data-answer="d">They use less battery than text messages</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. A voice note is a spoken message: hold the button, talk, release, send. No typing needed, which is a real help for arthritis or vision difficulties."
+          data-wrong="The benefit is that voice notes let you send a spoken message without typing. Hold the button, speak, release, and send."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>3. Group chats become overwhelming when:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">More than two people are in the group</button>
+          <button class="quiz-opt" type="button" data-answer="b">Many people send frequent messages and you receive constant notifications</button>
+          <button class="quiz-opt" type="button" data-answer="c">You use them on a phone rather than a computer</button>
+          <button class="quiz-opt" type="button" data-answer="d">You have not checked them for a day</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Yes. It is the volume of messages and constant notifications that gets noisy, and the fix is easy: mute the chat with &quot;Hide Alerts&quot; without leaving it."
+          data-wrong="Group chats get overwhelming when many people send frequent messages and the notifications never stop. The fix is to mute the chat with &quot;Hide Alerts&quot;; you stay in the group, just without the noise."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>4. The Do Not Disturb feature on a smartphone:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Turns off all phone functions including emergencies</button>
+          <button class="quiz-opt" type="button" data-answer="b">Silences notifications and calls during set quiet hours while allowing emergency calls through</button>
+          <button class="quiz-opt" type="button" data-answer="c">Deletes incoming messages automatically</button>
+          <button class="quiz-opt" type="button" data-answer="d">Reduces your data usage</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Correct. Do Not Disturb silences notifications during the hours you choose, and repeated or emergency calls can still get through."
+          data-wrong="Do Not Disturb silences notifications and calls during set quiet hours while still letting emergency calls through. Nothing is deleted or turned off."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>5. Good digital communication etiquette includes:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Replying to every message within 5 minutes or being considered rude</button>
+          <button class="quiz-opt" type="button" data-answer="b">Responding when you are ready and letting others know if you will be slow to reply</button>
+          <button class="quiz-opt" type="button" data-answer="c">Never using emoji in messages to family</button>
+          <button class="quiz-opt" type="button" data-answer="d">Only messaging during business hours</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. Nobody expects an instant reply. Respond when you are ready; it is perfectly fine to read along and reply when you have something to say."
+          data-wrong="The polite standard is simply to respond when you are ready, and let people know if you will be slow to reply. There is no five-minute rule, and emoji are welcome."></div>
+      </div>
+    </div>
+
+    <h2>Your progress</h2>
+    <p>Tick each item as you feel confident with it. This is saved on this device only, with no account needed.</p>
+    <ul class="checklist" data-checklist="module-24-communication">
+      <li class="check-item"><input type="checkbox" id="module-24-communication-1"><label for="module-24-communication-1">I can send a text message, using voice-to-text if typing is hard</label></li>
+      <li class="check-item"><input type="checkbox" id="module-24-communication-2"><label for="module-24-communication-2">I can read and reply in a group chat, and mute it with "Hide Alerts" if it gets noisy</label></li>
+      <li class="check-item"><input type="checkbox" id="module-24-communication-3"><label for="module-24-communication-3">I can make and answer a FaceTime video call</label></li>
+      <li class="check-item"><input type="checkbox" id="module-24-communication-4"><label for="module-24-communication-4">I have set a distinctive ringtone for a family member and checked my notification volume</label></li>
+      <li class="check-item"><input type="checkbox" id="module-24-communication-5"><label for="module-24-communication-5">I can send a voice message: hold, talk, release, send</label></li>
+      <li class="check-item"><input type="checkbox" id="module-24-communication-6"><label for="module-24-communication-6">I know not to answer calls or tap links from people I do not recognise, and how to block and report them</label></li>
+    </ul>
+
+    <!-- Denise: forward the lesson in isolation. Copy-link only, no share API. -->
+    <section class="send-lesson" aria-labelledby="send-h">
+      <h2 id="send-h">Send this lesson to someone</h2>
+      <p>Helping a parent or friend? This page works on its own, with no account and nothing to install. Copy the link and text it to them.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="button" data-copy-link>Copy the link to this lesson</button>
+        <span class="send-done" data-copy-done hidden>Copied. Paste it into a text or email.</span>
+      </div>
+      <input class="visually-hidden" type="text" data-copy-field hidden readonly aria-label="Link to this lesson">
+    </section>
+
+    <div class="success-state">
+      <p><strong>Well done.</strong> You can now text, video call, use group chats, send voice messages, and set your iPad so family calls always ring through. The tools were already on your device; now they are yours.</p>
+    </div>
+
+    <nav class="related-modules" aria-label="Continue learning">
+      <h2>Where to next</h2>
+      <div class="related-grid">
+        <a class="related-card" href="module-8.html">
+          <span class="related-num">Module 8</span>
+          <span class="related-name">Staying Connected</span>
+          <span class="related-desc">Shared photo albums, family group messages, and the difference between a private message and a public post.</span>
+        </a>
+        <a class="related-card" href="module-26-notifications.html">
+          <span class="related-num">Module 26</span>
+          <span class="related-name">Managing Your Notifications</span>
+          <span class="related-desc">Silence the noise from apps that do not matter so the calls and messages from family stand out.</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<!-- SHARED SHELL: footer (identical on every page). -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">For families</a></li>
+      <li><a href="../about.html">About us</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="../glossary.html">Glossary</a></li>
+      <li><a href="../privacy.html">Privacy</a></li>
+      <li><a href="../terms.html">Terms</a></li>
+      <li><a href="../disclaimer.html">Disclaimer</a></li>
+      <li><a href="../support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- SHARED SHELL: layered consent bar (identical on every page). -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="../privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/module.js"></script>
+</body>
+</html>

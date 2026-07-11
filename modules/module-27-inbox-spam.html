@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Theme + text size before first paint (no flash). Local only, no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Tame Your Inbox - Digital Confidence Centre</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-27-inbox-spam.html">
+  <meta name="description" content="A simple daily routine for managing email and spam: archive versus delete, how to unsubscribe safely, and how to train your filter. Free lesson for Canadian seniors.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- SHARED SHELL: header (generated from module-v2.html.tpl; identical on every page). -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Read this page aloud">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
+        <div class="rate-group" role="group" aria-label="Reading speed">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Slower</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normal</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Faster</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="../index.html">All lessons</a>
+    <a href="../index.html#protect-money" aria-current="page">Protect your money</a>
+    <a href="../index.html#everyday-confidence">Everyday confidence</a>
+    <a href="../index.html#staying-connected">Staying connected</a>
+    <a href="../index.html#getting-things-done">Getting things done</a>
+    <a href="../for-families.html">For families</a>
+    <a href="../support-directory.html">Get help</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="../index.html">All lessons</a></li>
+      <li><a href="../index.html#protect-money">Protect your money</a></li>
+      <li><span aria-current="page">Tame Your Inbox</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <a class="lesson-back" href="../index.html">← Back to all lessons</a>
+
+    <p class="lesson-category"><span aria-hidden="true">✉️</span> Email and messages</p>
+    <h1>Tame Your Inbox</h1>
+    <p class="lesson-time"><span aria-hidden="true">⏱</span> About 10 minutes, at your own pace</p>
+
+    <!-- Brenda: the first thing a nervous reader sees removes a fear. -->
+    <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
+
+    <p class="lead">A simple 5-minute daily routine that keeps the important emails visible and lets the spam flow by.</p>
+
+    <h2>Robert's story</h2>
+    <p>Robert, 81, has 14,327 unread emails. He has not deleted an email in four years because "what if I need it?" His inbox is so full that when his bank sent a genuine security alert, he did not see it for three days.</p>
+    <p>If this sounds familiar, you are not alone. Most people have thousands of unread emails, and no one has ever shown them a simple system for staying on top of it. This lesson will change that.</p>
+
+    <div class="coach-block">
+      <span class="coach-mark" aria-hidden="true">💬</span>
+      <div class="coach-body">
+        <span class="coach-label">From your coach</span>
+        <p>Your inbox number does not measure anything about you. A big number just means messages have been arriving for years and no one showed you what to do with them. You do not need to catch up on old email. You only need a small daily habit, and this page will give you one.</p>
+      </div>
+    </div>
+
+    <h2>Your inbox is a river, not a filing cabinet</h2>
+
+    <p>Messages flow through your inbox. Some are important, like messages from your family, your bank, or your doctor. Most are not, like newsletters you signed up for years ago and automatic notifications. The goal is not to read every message. The goal is to find the important ones and let the rest flow by.</p>
+
+    <div class="tip-block">
+      <span class="block-label">You do not need to read them all</span>
+      <p>If you have thousands of unread emails, do not try to go through them. That would take weeks and accomplish nothing. Focus only on emails from the last 7 days. Everything older is almost certainly no longer urgent, and you can always search for an old email if you need it later.</p>
+    </div>
+
+    <h2>Archive versus delete</h2>
+
+    <p>There are two ways to clear an email from your inbox, and understanding the difference changes how the whole thing feels.</p>
+
+    <div class="tip-block">
+      <span class="block-label">Archive, the just-in-case button</span>
+      <p>When you archive an email, it leaves your inbox but is not deleted. It moves to a folder called "All Mail" or "Archive", where you can search for it any time. Use archive for receipts, confirmations, and messages you have already read. When in doubt, archive.</p>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Delete, the gone-for-good button</span>
+      <p>When you delete an email, it goes to the Trash folder, waits about 30 days, and is then removed for good. Use delete for obvious spam, promotions you will never need, and anything from a sender you do not recognise.</p>
+    </div>
+
+    <h2>How to unsubscribe safely</h2>
+
+    <p>Robert was told that clicking "unsubscribe" is how scammers get you. That is partly true and partly a myth. The whole answer comes down to one question.</p>
+
+    <div class="tip-block">
+      <span class="block-label">The simple rule</span>
+      <p>Did you ever give this company your email address? If yes, the unsubscribe link at the bottom of their email is safe and legal to use (Canadian law requires it to work). If no, do not click anything in the message.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Watch out</span>
+      <p>Do not click unsubscribe on emails you never signed up for, like lottery wins or package notices for things you never ordered. Clicking anything can confirm to the spammer that your address is active. Just delete these and mark them as spam.</p>
+    </div>
+
+    <h2>Mark spam to train your filter</h2>
+
+    <p>Every time you mark an email as spam, you teach your email app to recognise similar messages. The more you report, the smarter your filter gets. After about two weeks, most people see a large drop in the junk that reaches their inbox.</p>
+
+    <div class="walkthrough">
+      <h4>Report an email as spam</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open the spam email.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>In Apple Mail, tap the flag or arrow icon, then <strong>Move to Junk</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>In Gmail, tap the three dots in the top corner, then <strong>Report spam</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>The message moves to your junk folder and your filter learns from it.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">The two-week challenge</span>
+      <p>For the next two weeks, mark every spam email as junk rather than just deleting it. This is what trains the filter. After two weeks, your email will be noticeably better at catching spam before it ever reaches you.</p>
+    </div>
+
+    <h2>Spam in texts and messaging apps</h2>
+
+    <p>Unwanted messages now arrive through WhatsApp, Facebook Messenger, and regular texts too. Blocking and reporting them is quick once you know where to tap.</p>
+
+    <ul>
+      <li><strong>WhatsApp or Messenger:</strong> open the conversation, tap the person's name at the top, scroll down, and tap <strong>Block</strong>. They are not told, and they can no longer reach you.</li>
+      <li><strong>Spam texts in Canada:</strong> forward the message to <strong>7726</strong> (it spells SPAM). This works with Bell, Rogers, Telus, and others. Your carrier will investigate and may block the sender.</li>
+    </ul>
+
+    <h2>Your 5-minute daily routine</h2>
+
+    <p>The solution is not a big cleanup, it is a small daily habit. Five minutes each morning, with your coffee or tea, is all you need.</p>
+
+    <div class="walkthrough">
+      <h4>Every morning, four quick steps</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Delete obvious spam</strong> (30 seconds). Do not open it, just delete or mark it as junk.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p><strong>Read messages from family and your bank</strong> (2 minutes). Look for names you recognise, and reply to those.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p><strong>Archive everything else</strong> (1 minute). It leaves your inbox but stays searchable if you ever need it.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p><strong>Done.</strong> Do not try to read everything or reach an empty inbox. Keep the important messages visible and let the rest go.</p></span>
+      </div>
+    </div>
+
+    <div class="the-move">
+      <span class="move-label">The move is</span>
+      <p>Stop trying to catch up on old email. Start fresh tomorrow morning: delete the spam, read the important messages, archive the rest. Five minutes. That is your new system.</p>
+    </div>
+
+    <h2>Quick check: test your knowledge</h2>
+    <p>Tap the answer you think is correct. There is no score kept and nothing to sign in to.</p>
+    <div class="lesson-quiz">
+      <div class="quiz-q" data-correct="b">
+        <h3>1. What is the difference between archive and delete?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">They are exactly the same</button>
+          <button class="quiz-opt" type="button" data-answer="b">Archive keeps the email but hides it from your inbox; delete sends it to the trash to be removed</button>
+          <button class="quiz-opt" type="button" data-answer="c">Archive removes the email permanently</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. Archive tucks the email away where you can still search for it. Delete moves it to the trash to be removed later."
+          data-wrong="Not quite. Archive keeps the email and hides it from your inbox, while delete moves it to the trash to be removed."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>2. You get an email from a company you have never heard of, promising lottery winnings. Should you click unsubscribe?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Yes, unsubscribe to stop the emails</button>
+          <button class="quiz-opt" type="button" data-answer="b">No, just delete it and mark it as spam</button>
+          <button class="quiz-opt" type="button" data-answer="c">Reply and ask them to stop</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. You never signed up, so do not click anything. Delete it and mark it as spam."
+          data-wrong="The safe move is to delete it and mark it as spam. Clicking anything in a message you never signed up for can bring more spam."></div>
+      </div>
+      <div class="quiz-q" data-correct="c">
+        <h3>3. What is the goal of the 5-minute daily routine?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">To read every email you have ever received</button>
+          <button class="quiz-opt" type="button" data-answer="b">To reach an empty inbox by tonight</button>
+          <button class="quiz-opt" type="button" data-answer="c">To keep the important messages visible and let the rest go</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Perfect. The routine is about staying in control, not about reading everything or reaching an empty inbox."
+          data-wrong="The goal is simply to keep the important messages visible and let the rest go. You never need to read everything."></div>
+      </div>
+    </div>
+
+    <h2>Your progress</h2>
+    <p>Tick each item as you feel confident with it. This is saved on this device only, with no account needed.</p>
+    <ul class="checklist" data-checklist="module-27">
+      <li class="check-item"><input type="checkbox" id="module-27-1"><label for="module-27-1">I understand that a full inbox is normal</label></li>
+      <li class="check-item"><input type="checkbox" id="module-27-2"><label for="module-27-2">I know when to archive and when to delete</label></li>
+      <li class="check-item"><input type="checkbox" id="module-27-3"><label for="module-27-3">I know the one question to ask before I unsubscribe</label></li>
+      <li class="check-item"><input type="checkbox" id="module-27-4"><label for="module-27-4">I can mark an email as spam to train my filter</label></li>
+      <li class="check-item"><input type="checkbox" id="module-27-5"><label for="module-27-5">I have a simple 5-minute morning routine</label></li>
+    </ul>
+
+    <!-- Denise: forward the lesson in isolation. Copy-link only, no share API. -->
+    <section class="send-lesson" aria-labelledby="send-h">
+      <h2 id="send-h">Send this lesson to someone</h2>
+      <p>Helping a parent or friend? This page works on its own, with no account and nothing to install. Copy the link and text it to them.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="button" data-copy-link>Copy the link to this lesson</button>
+        <span class="send-done" data-copy-done hidden>Copied. Paste it into a text or email.</span>
+      </div>
+      <input class="visually-hidden" type="text" data-copy-field hidden readonly aria-label="Link to this lesson">
+    </section>
+
+    <div class="success-state">
+      <p><strong>Well done.</strong> You now have a simple system for your inbox: find the important messages, let the rest flow by, and spend just five minutes a day. That is all it takes to feel in control.</p>
+    </div>
+
+    <nav class="related-modules" aria-label="Continue learning">
+      <h2>Where to next</h2>
+      <div class="related-grid">
+        <a class="related-card" href="module-5.html">
+          <span class="related-num">Module 5</span>
+          <span class="related-name">Email and Messages</span>
+          <span class="related-desc">The everyday skills behind a calm inbox: sending mail, spotting scams, and sharing photos safely.</span>
+        </a>
+        <a class="related-card" href="module-6.html">
+          <span class="related-num">Module 6</span>
+          <span class="related-name">Banking and Transactions</span>
+          <span class="related-desc">Many scams start in your inbox. Learn the habits that keep your money safe when you bank online.</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<!-- SHARED SHELL: footer (identical on every page). -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">For families</a></li>
+      <li><a href="../about.html">About us</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="../glossary.html">Glossary</a></li>
+      <li><a href="../privacy.html">Privacy</a></li>
+      <li><a href="../terms.html">Terms</a></li>
+      <li><a href="../disclaimer.html">Disclaimer</a></li>
+      <li><a href="../support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- SHARED SHELL: layered consent bar (identical on every page). -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="../privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/module.js"></script>
+</body>
+</html>

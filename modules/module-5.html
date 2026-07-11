@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Theme + text size before first paint (no flash). Local only, no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Email and Messages - Digital Confidence Centre</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-5.html">
+  <meta name="description" content="Send emails and texts safely, spot scam messages, share photos with family, and block unwanted callers. Free, plain-language lesson for Canadian seniors. No account needed.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- SHARED SHELL: header (generated from module-v2.html.tpl; identical on every page). -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Read this page aloud">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
+        <div class="rate-group" role="group" aria-label="Reading speed">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Slower</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normal</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Faster</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="../index.html">All lessons</a>
+    <a href="../index.html#protect-money">Protect your money</a>
+    <a href="../index.html#everyday-confidence" aria-current="page">Everyday confidence</a>
+    <a href="../index.html#staying-connected">Staying connected</a>
+    <a href="../index.html#getting-things-done">Getting things done</a>
+    <a href="../for-families.html">For families</a>
+    <a href="../support-directory.html">Get help</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="../index.html">All lessons</a></li>
+      <li><a href="../index.html#everyday-confidence">Everyday confidence</a></li>
+      <li><span aria-current="page">Email and Messages</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <a class="lesson-back" href="../index.html">← Back to all lessons</a>
+
+    <p class="lesson-category"><span aria-hidden="true">✉️</span> Communication</p>
+    <h1>Email and Messages</h1>
+    <p class="lesson-time"><span aria-hidden="true">⏱</span> About 12 minutes, at your own pace</p>
+
+    <!-- Brenda: the first thing a nervous reader sees removes a fear. -->
+    <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
+
+    <p class="lead">How to send emails and texts safely, spot scam messages, and share photos with the people you love.</p>
+
+    <h2>Rose's story</h2>
+    <p>Rose, 71, loves getting emails from her grandchildren: photos of the kids, funny stories about school, weekend plans. But she also receives about 30 unwanted emails a day, and for a long time she was afraid to open any of them in case one carried a virus.</p>
+    <p>Once Rose learned what to look for, everything changed. Now she sorts through her inbox every morning, keeps the messages she wants, and deletes the rest, without a moment of worry. Most of those scary emails, she says, are just like junk mail in your real mailbox: annoying, but harmless as long as you throw them away.</p>
+
+    <div class="coach-block">
+      <span class="coach-mark" aria-hidden="true">💬</span>
+      <div class="coach-body">
+        <span class="coach-label">From your coach</span>
+        <p>Email can feel like a place where one wrong tap ruins everything. It is not. Reading an email cannot harm your device, and deleting the wrong one is almost always undoable. The only real skill is learning to pause before you tap a link, and by the end of this page that pause will feel natural.</p>
+      </div>
+    </div>
+
+    <h2>Your digital mailbox</h2>
+
+    <p>Your device comes with an email app: <strong>Mail</strong> on an iPad or iPhone, <strong>Gmail</strong> on most Android devices. Whichever you use, it works like a set of mailboxes at the post office:</p>
+
+    <ul>
+      <li><strong>Inbox:</strong> where new mail arrives.</li>
+      <li><strong>Sent:</strong> copies of emails you have sent, so you can look back at them.</li>
+      <li><strong>Drafts:</strong> emails you started writing but have not sent yet.</li>
+      <li><strong>Junk or Spam:</strong> mail your device thinks is junk. Check it now and then, as a real message can land here by mistake.</li>
+      <li><strong>Trash or Bin:</strong> emails you have deleted. They wait here for a while before being removed for good, so you can recover one if you delete it by accident.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">If your inbox feels full</span>
+      <p>You do not need to read every single email. Focus on messages from people you know. You can always delete the rest, just like tossing junk mail from your letterbox into the recycling.</p>
+    </div>
+
+    <h2>Sending an email</h2>
+
+    <div class="walkthrough">
+      <h4>Writing and sending an email</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open your email app (Mail on Apple, Gmail on Android).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Look for a <strong>pencil</strong> or <strong>compose</strong> button, usually in a corner. Tap it to start a new email.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>In the <strong>To</strong> field, type the email address of the person you are writing to.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Tap the <strong>Subject</strong> field and type a short description, for example "Sunday dinner plans".</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Tap the large blank area and type your message.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p>When you are done, tap the <strong>send</strong> button (an upward arrow or a paper plane).</p></span>
+      </div>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You can write and send an email. That is a powerful skill for staying connected with the people you love. Before sending, take one moment to check the address in the To field, so your message reaches the right person.</p>
+    </div>
+
+    <h2>Spotting scam emails</h2>
+
+    <p>A scam email is designed to look real and to make you act quickly. Here is a simple check to run on any message from someone you do not recognise.</p>
+
+    <div class="walkthrough">
+      <h4>The email safety check</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Check the sender.</strong> Tap the sender's name to see the full address. Does it look right? ("rbc.com" is real; "rbc-alerts-canada.com" is fake.)</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p><strong>Look for urgency.</strong> "Act now!" or "Your account will be closed!" Real companies give you time.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p><strong>Check the greeting.</strong> "Dear Customer" is a red flag. Your bank knows your name.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p><strong>Do not tap the links.</strong> If you must check, press and hold a link to preview where it really goes.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p><strong>When in doubt, delete it.</strong> If a real company needs you, they will contact you another way.</p></span>
+      </div>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Watch out</span>
+      <p>Never tap a link in an email that asks you to "verify your account" or "confirm your identity". Legitimate companies do not ask you to do this by email. If you are unsure, open your browser and go to the company's website directly.</p>
+    </div>
+
+    <div class="three-second-rule">
+      <h3>The 3-second rule for emails</h3>
+      <ol class="tsr-steps">
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">✋</span><span class="tsr-name">Stop</span> Do not tap any links in an unexpected email.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🫁</span><span class="tsr-name">Breathe</span> No real company will close your account because you took a few minutes to think.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🔍</span><span class="tsr-name">Verify</span> Go to the company's website yourself, or call the number on your bank card.</li>
+      </ol>
+    </div>
+
+    <h2>Opening a PDF? Watch for fake "install this" prompts</h2>
+
+    <p>A PDF is just a document, like a letter or a form, saved so it looks the same on every device. Most web browsers today open a PDF right in a new tab, with nothing to download or install. If a website suddenly tells you that you need to install a special "viewer" or "player" before you can see a document, that is a warning sign, not a normal step.</p>
+
+    <div class="tip-block">
+      <span class="block-label">Tip</span>
+      <p>Adobe Acrobat Reader is a real, well-known program for opening PDFs, and it is safe to install if you get it directly from adobe.com. But you almost never need it. Your browser (Safari, Chrome, or Edge) already opens PDFs on its own, with no extra software required.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Watch out</span>
+      <p>If a pop-up says you must install something before you can view a document, do not click it. Close the tab instead. If you were trying to reach a real organisation, like your bank or the government, open your browser and go to their website directly.</p>
+    </div>
+
+    <h2>Blocking unwanted callers and texters</h2>
+
+    <p>Getting calls from unknown numbers or annoying text messages? You can block them, and you can always unblock them later if you change your mind.</p>
+
+    <div class="walkthrough">
+      <h4>Blocking a phone number</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open the <strong>Phone</strong> app and tap <strong>Recents</strong> to see your call history.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Find the number you want to block.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>On an iPhone, tap the small "i" next to it; on Android, press and hold the number.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Choose <strong>Block this caller</strong> or <strong>Block number</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Confirm. That number can no longer call or text you.</p></span>
+      </div>
+    </div>
+
+    <h2>Sharing photos with family</h2>
+
+    <div class="walkthrough">
+      <h4>Sending a photo by text message</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open the <strong>Messages</strong> app and open a conversation with the person you want to send the photo to.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Look for the <strong>+</strong> button or the <strong>camera</strong> or <strong>photo</strong> icon near where you type.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Tap <strong>Photos</strong> and choose the picture you want to send.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Tap the <strong>send</strong> arrow. Your photo is on its way.</p></span>
+      </div>
+    </div>
+
+    <div class="the-move">
+      <span class="move-label">The move is</span>
+      <p>Read freely, because reading an email cannot harm you. Before you tap any link or install anything, pause and ask whether you expected this message. When in doubt, delete it and go to the company's website yourself.</p>
+    </div>
+
+    <h2>Quick check: test your knowledge</h2>
+    <p>Tap the answer you think is correct. There is no score kept and nothing to sign in to.</p>
+    <div class="lesson-quiz">
+      <div class="quiz-q" data-correct="b">
+        <h3>1. What is spam email?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">A type of canned meat</button>
+          <button class="quiz-opt" type="button" data-answer="b">Unwanted email, usually trying to sell something or scam you</button>
+          <button class="quiz-opt" type="button" data-answer="c">Email from the government</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. Spam is unwanted email sent in bulk, from harmless advertising to dangerous scams. Your app filters most of it into a junk folder."
+          data-wrong="Not quite. Spam is unwanted email sent in bulk, ranging from advertising to scams. Most of it lands in your junk folder automatically."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>2. An email asks you to click a link to "verify your account". The safest response is:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Click the link, it is probably your bank</button>
+          <button class="quiz-opt" type="button" data-answer="b">Do not click, go to your account through the official website or app yourself</button>
+          <button class="quiz-opt" type="button" data-answer="c">Reply to ask if it is real</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. Always reach your bank through its official app or website, never through a link in an email."
+          data-wrong="The safest step is to go to your bank&#x27;s official app or website yourself. Scammers build convincing fake login pages behind those links."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>3. You get a text from an unknown number with a link. You should:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Tap the link to find out what it is</button>
+          <button class="quiz-opt" type="button" data-answer="b">Delete the message and do not tap any links from unknown senders</button>
+          <button class="quiz-opt" type="button" data-answer="c">Reply to ask who sent it</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Perfect. Never tap links from unknown senders. Delete the message and move on."
+          data-wrong="The safe move is to delete it. Never tap links from senders you do not know, even if the message looks urgent."></div>
+      </div>
+    </div>
+
+    <h2>Your progress</h2>
+    <p>Tick each item as you feel confident with it. This is saved on this device only, with no account needed.</p>
+    <ul class="checklist" data-checklist="module-5">
+      <li class="check-item"><input type="checkbox" id="module-5-1"><label for="module-5-1">I can find my inbox, sent, and junk folders</label></li>
+      <li class="check-item"><input type="checkbox" id="module-5-2"><label for="module-5-2">I can write and send an email</label></li>
+      <li class="check-item"><input type="checkbox" id="module-5-3"><label for="module-5-3">I can run the email safety check on a message I do not recognise</label></li>
+      <li class="check-item"><input type="checkbox" id="module-5-4"><label for="module-5-4">I know not to install a "viewer" just to open a document</label></li>
+      <li class="check-item"><input type="checkbox" id="module-5-5"><label for="module-5-5">I can block an unwanted caller</label></li>
+    </ul>
+
+    <!-- Denise: forward the lesson in isolation. Copy-link only, no share API. -->
+    <section class="send-lesson" aria-labelledby="send-h">
+      <h2 id="send-h">Send this lesson to someone</h2>
+      <p>Helping a parent or friend? This page works on its own, with no account and nothing to install. Copy the link and text it to them.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="button" data-copy-link>Copy the link to this lesson</button>
+        <span class="send-done" data-copy-done hidden>Copied. Paste it into a text or email.</span>
+      </div>
+      <input class="visually-hidden" type="text" data-copy-field hidden readonly aria-label="Link to this lesson">
+    </section>
+
+    <div class="success-state">
+      <p><strong>Well done.</strong> You can now send and receive messages, spot the signs of a scam, and share photos with family. Your inbox is working for you, not against you.</p>
+    </div>
+
+    <nav class="related-modules" aria-label="Continue learning">
+      <h2>Where to next</h2>
+      <div class="related-grid">
+        <a class="related-card" href="module-2.html">
+          <span class="related-num">Module 2</span>
+          <span class="related-name">The Security Shield</span>
+          <span class="related-desc">Email scams are one of the most common threats. The Security Shield gives you the framework to stop them.</span>
+        </a>
+        <a class="related-card" href="module-6.html">
+          <span class="related-num">Module 6</span>
+          <span class="related-name">Banking and Transactions</span>
+          <span class="related-desc">Many banking scams begin with a fake email or text. Learn to spot them before any money moves.</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<!-- SHARED SHELL: footer (identical on every page). -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">For families</a></li>
+      <li><a href="../about.html">About us</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="../glossary.html">Glossary</a></li>
+      <li><a href="../privacy.html">Privacy</a></li>
+      <li><a href="../terms.html">Terms</a></li>
+      <li><a href="../disclaimer.html">Disclaimer</a></li>
+      <li><a href="../support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- SHARED SHELL: layered consent bar (identical on every page). -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="../privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/module.js"></script>
+</body>
+</html>

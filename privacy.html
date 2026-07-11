@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Privacy Policy - Digital Confidence Centre</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/privacy.html">
+  <meta name="description" content="How the Digital Confidence Centre handles information: no accounts, no tracking profiles, nothing sold. Written in plain language, under Canadian law.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/core.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Read this page aloud">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
+        <div class="rate-group" role="group" aria-label="Reading speed">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Slower</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normal</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Faster</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="index.html">All lessons</a>
+    <a href="index.html#protect-money">Protect your money</a>
+    <a href="index.html#everyday-confidence">Everyday confidence</a>
+    <a href="for-families.html">For families</a>
+    <a href="support-directory.html">Get help</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li><span aria-current="page">Privacy Policy</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <h1>Privacy Policy</h1>
+    <p class="last-updated">Effective date: 1 July 2026 &bull; Last updated: July 2026</p>
+
+    <div class="draft-note" role="note">
+      <p><strong>DRAFT: pending professional legal review.</strong><br>
+      This is a draft policy and is not legal advice. It is published so you can see how it reads and works. A licensed Ontario lawyer should review it before anyone relies on it.</p>
+    </div>
+
+    <p>This Privacy Policy explains how Two Birds Innovation ("Two Birds", "we", "us", "our"), based in St. Thomas, Ontario, Canada, handles information in connection with our websites and free digital products, including the Digital Confidence Centre (a free digital-literacy and scam-safety web tool), our job-search tool, and other static web tools we publish (together, the "Products").</p>
+    <p>We built these Products to be <strong>minimal-data by design</strong>. In plain terms: we try to collect as little information as possible, and most of our Products collect no personal information about you at all. This policy is written to be consistent with Canada's federal Personal Information Protection and Electronic Documents Act (PIPEDA) and applicable Ontario law.</p>
+
+    <div class="story-block">
+      <span class="story-label">Plain Language Summary</span>
+      <p>The Digital Confidence Centre has no accounts and no login. We do not sell, rent, or trade your information, ever. We do not run third-party ad networks. Where we measure how the site is used, we use privacy-respecting analytics that only run if you agree. Some optional features (a feedback form, or an optional email sign-up) collect a little information, and only if you choose to use them. Anything a tool saves in your own browser stays on your device.</p>
+    </div>
+
+    <section class="legal-section">
+      <h2>1. Summary (the short version)</h2>
+      <ul>
+        <li>The Digital Confidence Centre has <strong>no accounts and no login</strong>, and does not require you to give us personal information to use it.</li>
+        <li>We do <strong>not</strong> sell, rent, or trade your information to anyone. Ever.</li>
+        <li>We do <strong>not</strong> use your information for targeted advertising, and we do <strong>not</strong> run third-party ad networks on our Products.</li>
+        <li>Where we measure how our Products are used, we use consent-gated analytics (Google Analytics 4 and Microsoft Clarity) that only run after you agree. See Section 4.</li>
+        <li>Some Products offer an <strong>optional</strong> email sign-up or feedback form. These are opt-in only, and you can unsubscribe or ask us to delete your data at any time. See Section 5.</li>
+        <li>Data that stays <strong>on your own device</strong> (such as browser local storage used to remember your progress, your city, or your preferences) is not sent to us.</li>
+      </ul>
+    </section>
+
+    <section class="legal-section">
+      <h2>2. What we do NOT collect</h2>
+      <p>Across the Digital Confidence Centre and our other static web tools, we do <strong>not</strong>:</p>
+      <ul>
+        <li>create user accounts, profiles, or logins;</li>
+        <li>require your name, address, phone number, date of birth, or government identifiers;</li>
+        <li>collect payment or financial information (our free Products are free, there is nothing to pay);</li>
+        <li>require you to sign in with Google, Facebook, or any other identity provider;</li>
+        <li>sell, rent, license, or trade any information about you;</li>
+        <li>use your information to target ads to you, or allow third parties to do so on our Products;</li>
+        <li>build advertising or tracking profiles about you.</li>
+      </ul>
+      <p>Where a specific Product does collect something (for example, an optional email address you choose to provide, see Section 5), that collection is described in this policy, and you are told about it at the point where you provide it.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>3. Information we may handle, and why</h2>
+      <p>We keep the categories of information we handle deliberately small:</p>
+      <ul>
+        <li><strong>Consent-gated usage data</strong> (non-identifying counts and trends, such as which pages are visited and which device types are used) via privacy-respecting analytics that only run after you agree. We handle it to understand which tools are useful and to improve them.</li>
+        <li><strong>Technical/server data</strong> (standard information your browser and our hosting provider exchange to serve a page, such as an IP address at the network layer, timestamp, and requested file). We do not use this to identify individuals; it is handled by our hosting and content-delivery providers to deliver the site, keep it available, and protect it from abuse.</li>
+        <li><strong>Optional email address</strong>, only if you choose to submit it through an opt-in form, so we can send you the specific thing you asked for. Basis: express opt-in consent (see Section 5).</li>
+        <li><strong>On-device data (local storage)</strong>: your progress, answers, city, and preferences that a tool saves in your own browser. This stays on your device and is not transmitted to us.</li>
+      </ul>
+      <p>We do <strong>not</strong> combine these categories to identify you, and we do <strong>not</strong> attempt to re-identify aggregate analytics data.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>4. Analytics (consent-gated, no personal profiles)</h2>
+      <p>To understand whether our free Products are actually helping people, we use privacy-respecting analytics that only load <strong>after you agree</strong> through the consent banner:</p>
+      <ul>
+        <li><strong>Google Analytics 4</strong>: aggregate page views, general device types, and usage trends. It does not load unless you grant analytics consent, and you can decline.</li>
+        <li><strong>Microsoft Clarity</strong>: aggregate usage insights such as general interaction patterns. It also only loads after you grant analytics consent.</li>
+      </ul>
+      <p>These tools are configured to measure trends in the aggregate, not to build a profile of you as an individual. We do not use them to sell data or to serve targeted ads. If and when we add, remove, or change an analytics tool, we will update this section.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>5. Optional email capture and feedback (opt-in only)</h2>
+      <p>Some Products include an <strong>optional</strong> form where you can choose to give us your email address (for example, to receive programme updates), or a feedback form where you can send us a comment or suggestion. If you use one of these forms:</p>
+      <ul>
+        <li>Giving your email or feedback is <strong>entirely optional</strong>. The Product still works without it.</li>
+        <li>We use what you submit <strong>only</strong> for the specific purpose stated on the form.</li>
+        <li>We do <strong>not</strong> sell or share it, and we do <strong>not</strong> add you to unrelated mailing lists.</li>
+        <li>You can <strong>unsubscribe or ask us to delete it at any time</strong>, using the unsubscribe option in any message or by contacting us (Section 12).</li>
+        <li>Emails and feedback you submit are processed by our form provider, Formspree, which may store data outside Canada.</li>
+      </ul>
+      <p>If a Product does not show a form, then that Product does not collect your email or feedback.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>6. Consent</h2>
+      <p>Under PIPEDA, we rely on consent appropriate to the sensitivity of the information:</p>
+      <ul>
+        <li><strong>Express (opt-in) consent</strong> for anything you actively submit, such as an optional email address or feedback (Section 5), and for the consent-gated analytics in Section 4.</li>
+        <li><strong>Implied consent</strong> for the standard technical data needed to serve a web page, where the purpose is one a reasonable person would consider appropriate.</li>
+      </ul>
+      <p>You can withdraw consent at any time (subject to legal or contractual limits), for example by declining or clearing analytics consent, unsubscribing, asking us to delete an optional email, or clearing your browser's local storage. To withdraw consent, contact us (Section 12). Withdrawing consent will not affect the lawfulness of anything done before you withdrew it.</p>
+      <p>We do <strong>not</strong> require you to consent to the collection, use, or disclosure of information beyond what is needed to provide a Product, as a condition of using that Product.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>7. How we use information</h2>
+      <p>We use the limited information described above only to:</p>
+      <ul>
+        <li>deliver, host, and secure the Products;</li>
+        <li>understand, in the aggregate, how the Products are used, so we can improve them;</li>
+        <li>respond to you and provide anything you specifically requested (for example, via an optional email or feedback form);</li>
+        <li>comply with legal obligations.</li>
+      </ul>
+      <p>We do <strong>not</strong> use information for automated decision-making that produces legal or similarly significant effects about you.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>8. Disclosure and service providers</h2>
+      <p>We do <strong>not sell</strong> your information and we do <strong>not</strong> disclose it for anyone else's independent marketing. We rely on a small number of reputable service providers ("processors") to operate the Products:</p>
+      <ul>
+        <li><strong>Hosting / static site delivery:</strong> GitHub Pages serves the website files.</li>
+        <li><strong>Analytics:</strong> Google Analytics 4 and Microsoft Clarity (consent-gated, see Section 4).</li>
+        <li><strong>Email / form handling (only where an optional form exists):</strong> Formspree (see Section 5).</li>
+      </ul>
+      <p>Each provider only handles the information needed to perform its function, and is expected to protect it with safeguards comparable to those in this policy. We may also disclose information if required by law (for example, in response to a valid legal request), or to protect the rights, safety, or property of Two Birds, our users, or the public.</p>
+      <h3>Storage outside Canada</h3>
+      <p>Some providers may store or process data outside Canada (for example, in the United States). When data is handled outside Canada, it may be subject to the laws of that country, including lawful access by foreign courts, law enforcement, or government agencies. We choose providers we consider reputable and, where practical, prefer configurations that keep data in Canada.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>9. Cookies and local storage</h2>
+      <ul>
+        <li>Our static Products aim to be cookie-light. Analytics cookies are only set after you grant analytics consent.</li>
+        <li>Some tools use browser local storage on your own device to remember your progress, answers, city, or preferences. This stays on your device and is not transmitted to us. You can clear it any time through your browser settings.</li>
+      </ul>
+      <p>You can control or block cookies through your browser settings. Blocking cookies will not stop our core static tools from working, though it may affect features that rely on remembering your on-device preferences.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>10. Data retention</h2>
+      <ul>
+        <li><strong>Analytics</strong> are retained only in non-identifying, aggregate form, for as long as it is useful to understand usage trends, in line with the retention period of the analytics tool in use.</li>
+        <li><strong>Standard server logs</strong> are retained by our hosting provider for a limited period for security and operations, then discarded, according to that provider's practices.</li>
+        <li><strong>Optional email addresses and feedback</strong> are retained only until you unsubscribe or ask us to delete them, or until they are no longer needed for the purpose you gave them for, whichever comes first.</li>
+        <li><strong>On-device local storage</strong> is retained on your device until you clear it.</li>
+      </ul>
+      <p>We do not keep personal information longer than necessary for the purpose it was collected for, or as required by law.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>11. Security</h2>
+      <p>We take reasonable steps to protect information appropriate to its sensitivity, including serving Products over encrypted connections (HTTPS), minimizing what we collect in the first place, relying on reputable hosting and form providers with their own security safeguards, and limiting who can access any optional email data we do hold.</p>
+      <p>No method of transmission or storage is completely secure, and we cannot guarantee absolute security. If we ever become aware of a privacy breach that creates a real risk of significant harm, we will respond in accordance with our obligations under PIPEDA, which may include notifying affected individuals and the Office of the Privacy Commissioner of Canada.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>12. Your rights: access, correction, and questions</h2>
+      <p>Subject to legal limits, you have the right to ask what personal information we hold about you (in most cases, for our static tools, the answer is "none"), to access it, to correct it if it is inaccurate, to withdraw consent or ask us to delete an optional email you provided, and to ask how your information has been used or disclosed.</p>
+      <p>To make a request, contact our privacy contact:</p>
+      <p><strong>Aaron Patzalek, Two Birds Innovation</strong><br>
+      Email: <a href="mailto:aaron.patzalek@gmail.com">aaron.patzalek@gmail.com</a><br>
+      St. Thomas, Ontario, Canada</p>
+      <p>We will respond within the timeframe required by PIPEDA (generally 30 days), and will let you know if we need more time or cannot fulfill a request (with reasons). If you are not satisfied with our response, you may contact the Office of the Privacy Commissioner of Canada (<a href="https://www.priv.gc.ca" target="_blank" rel="noopener noreferrer">www.priv.gc.ca</a>).</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>13. Younger users</h2>
+      <p>The Digital Confidence Centre is designed to be safe for a wide audience, including seniors and youth.</p>
+      <ul>
+        <li>For youth users of the Digital Confidence Centre and our other free tools: we do not require personal information, do not create accounts, and do not run targeted advertising. There is nothing to sign up for and nothing that profiles a young person.</li>
+        <li>We do not knowingly collect personal information from children. If a Product offers an optional email form, it is not directed at children, and we ask that anyone under the age of majority in Ontario not submit personal information without a parent or guardian's involvement.</li>
+        <li>If you believe a child has provided us personal information and you would like it removed, contact us (Section 12) and we will delete it.</li>
+      </ul>
+    </section>
+
+    <section class="legal-section">
+      <h2>14. Which laws apply</h2>
+      <ul>
+        <li>Two Birds Innovation is based in St. Thomas, Ontario, Canada, and operates under Canadian federal and Ontario provincial law.</li>
+        <li>Our handling of personal information in the course of commercial activity is governed primarily by Canada's PIPEDA.</li>
+        <li>Depending on the activity, other laws may apply, such as Canada's Anti-Spam Legislation (CASL) for any commercial electronic messages (for example, an optional email you opt into).</li>
+        <li>If you access our Products from outside Canada, you understand your information will be handled as described in this policy and under Canadian law.</li>
+      </ul>
+    </section>
+
+    <section class="legal-section">
+      <h2>15. Changes to this policy</h2>
+      <p>We may update this Privacy Policy from time to time (for example, if we change an analytics tool or add an optional feature). When we do, we will change the "Last updated" date at the top. Material changes will be highlighted on the affected Product where practical. Your continued use of a Product after an update means you accept the revised policy.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>16. Contact</h2>
+      <p><strong>Two Birds Innovation</strong><br>
+      Attn: Aaron Patzalek, Privacy Contact<br>
+      Email: <a href="mailto:aaron.patzalek@gmail.com">aaron.patzalek@gmail.com</a><br>
+      St. Thomas, Ontario, Canada</p>
+      <p>Questions, access requests, corrections, or complaints about privacy can all be sent to the address above. We take them seriously and will respond promptly.</p>
+    </section>
+
+    <p>See also our <a href="terms.html">Terms of Service</a> and <a href="disclaimer.html">Disclaimer</a>.</p>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
+    <ul class="footer-links">
+      <li><a href="for-families.html">For families</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="disclaimer.html">Disclaimer</a></li>
+      <li><a href="support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/dcc.js"></script>
+</body>
+</html>
