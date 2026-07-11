@@ -7,6 +7,8 @@
 (function () {
   "use strict";
 
+  var IS_FR = (document.documentElement.getAttribute("lang") || "en").toLowerCase().indexOf("fr") === 0;
+
   /* ---------- Quiz: reveal feedback on the chosen answer ------------------- */
   document.querySelectorAll(".quiz-q").forEach(function (q) {
     var correct = q.getAttribute("data-correct");
@@ -19,8 +21,8 @@
         btn.classList.add(right ? "chosen-right" : "chosen-wrong");
         if (fb) {
           fb.textContent = right
-            ? (fb.getAttribute("data-right") || "That is right.")
-            : (fb.getAttribute("data-wrong") || "Not quite. Have another read above.");
+            ? (fb.getAttribute("data-right") || (IS_FR ? "C’est exact." : "That is right."))
+            : (fb.getAttribute("data-wrong") || (IS_FR ? "Pas tout à fait. Relisez la section ci-dessus." : "Not quite. Have another read above."));
           fb.classList.add("show", right ? "good" : "try");
         }
       });
@@ -55,7 +57,7 @@
       var url = window.location.href;
       function shown() {
         if (doneMsg) { doneMsg.hidden = false; }
-        copyBtn.textContent = "Link copied";
+        copyBtn.textContent = IS_FR ? "Lien copié" : "Link copied";
       }
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(url).then(shown, fallback);

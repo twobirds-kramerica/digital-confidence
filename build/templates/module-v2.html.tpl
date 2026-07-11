@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-CA" data-theme="light">
+<html lang="{{LANG}}" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
     })();
   </script>
   <title>{{PAGE_TITLE}}</title>
-  <link rel="canonical" href="{{CANONICAL_URL}}">
+  <link rel="canonical" href="{{CANONICAL_URL}}">{{HREFLANG_LINKS}}
   <meta name="description" content="{{META_DESCRIPTION}}">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/tokens.css">
@@ -30,6 +30,7 @@
   <div class="container">
     <a class="brand" href="../index.html">Digital Confidence Centre</a>
     <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <a class="lang-link" href="{{LANG_SWITCH_HREF}}" lang="{{LANG_SWITCH_CODE}}" hreflang="{{LANG_SWITCH_CODE}}">{{LANG_SWITCH_LABEL}}</a>
     <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
       <span aria-hidden="true">⚙</span> Display settings
     </button>

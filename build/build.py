@@ -280,6 +280,96 @@ def build_analytics_block(brand: dict) -> str:
 
 V2_INDENT = "    "
 
+# ---------------------------------------------------------------------------
+# Bilingual support (EN/FR). A module JSON may carry a top-level "fr" object
+# mirroring the translatable fields; when present, a sibling page
+# modules/{slug}-fr.html is generated. The shared shell is localised by exact
+# string replacement on the template (asserted, so template drift fails loudly
+# instead of silently shipping English shell text on French pages).
+# ---------------------------------------------------------------------------
+
+FR_SHELL_REPLACEMENTS = [
+    ("Skip to main content", "Aller au contenu principal"),
+    ("🔒</span> Secure connection", "🔒</span> Connexion sécurisée"),
+    ("⚙</span> Display settings", "⚙</span> Affichage"),
+    ('aria-label="Text size"', 'aria-label="Taille du texte"'),
+    (">Text size</span>", ">Taille du texte</span>"),
+    ('aria-label="Smaller text"', 'aria-label="Texte plus petit"'),
+    ('aria-label="Standard text"', 'aria-label="Texte standard"'),
+    ('aria-label="Larger text"', 'aria-label="Texte plus grand"'),
+    ('aria-label="Read this page aloud"', 'aria-label="Écouter cette page"'),
+    (">🔊 Read aloud<", ">🔊 Lecture à voix haute<"),
+    ('aria-label="Reading speed"', 'aria-label="Vitesse de lecture"'),
+    (">Slower<", ">Plus lent<"),
+    ('"normal" aria-pressed="true">Normal<', '"normal" aria-pressed="true">Normale<'),
+    (">Faster<", ">Plus rapide<"),
+    (">🌙 Dark mode<", ">🌙 Mode sombre<"),
+    ('aria-label="Lesson sections"', 'aria-label="Sections des leçons"'),
+    ('aria-label="Breadcrumb"', 'aria-label="Fil d’Ariane"'),
+    ("← Back to all lessons", "← Retour à toutes les leçons"),
+    ("✅</span> You are in a safe place. Nothing on this page can harm your device.",
+     "✅</span> Vous êtes en lieu sûr. Rien sur cette page ne peut endommager votre appareil."),
+    (">Send this lesson to someone<", ">Envoyer cette leçon à quelqu’un<"),
+    ("Helping a parent or friend? This page works on its own, with no account and nothing to install. Copy the link and text it to them.",
+     "Vous aidez un parent ou un ami? Cette page fonctionne toute seule, sans compte et sans rien à installer. Copiez le lien et envoyez-le-lui par texto."),
+    (">Copy the link to this lesson<", ">Copier le lien de cette leçon<"),
+    (">Copied. Paste it into a text or email.<", ">Copié. Collez-le dans un texto ou un courriel.<"),
+    ('aria-label="Link to this lesson"', 'aria-label="Lien vers cette leçon"'),
+    ('aria-label="Our promises"', 'aria-label="Nos engagements"'),
+    ("✓</span> No account", "✓</span> Aucun compte"),
+    ("✓</span> No tracking", "✓</span> Aucun pistage"),
+    ("✓</span> Nothing to buy", "✓</span> Rien à acheter"),
+    ("✓</span> Canadian", "✓</span> Canadien"),
+    ("Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.",
+     "Le Digital Confidence Centre est offert gratuitement. C’est une initiative communautaire de Two Birds Innovation, une entreprise ontarienne, pour aider les aînés du Canada à rester en sécurité et en contact en ligne. Aucun compte, aucun pistage, aucun appel de vente."),
+    ("Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.",
+     "Remarque : ce site offre des conseils de sécurité en langage clair, et non des conseils juridiques. Si vous soupçonnez une fraude, communiquez directement avec votre banque."),
+    ("""      <li><a href="../for-families.html">For families</a></li>
+      <li><a href="../about.html">About us</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="../glossary.html">Glossary</a></li>
+      <li><a href="../privacy.html">Privacy</a></li>
+      <li><a href="../terms.html">Terms</a></li>
+      <li><a href="../disclaimer.html">Disclaimer</a></li>
+      <li><a href="../support-directory.html">Get help</a></li>""",
+     """      <li><a href="../for-families.html">Pour les familles (en anglais seulement)</a></li>
+      <li><a href="../fr/about.html">À propos de nous</a></li>
+      <li><a href="../faq.html">FAQ (en anglais seulement)</a></li>
+      <li><a href="../glossary.html">Glossaire (en anglais seulement)</a></li>
+      <li><a href="../fr/privacy.html">Confidentialité</a></li>
+      <li><a href="../fr/terms.html">Conditions d’utilisation</a></li>
+      <li><a href="../disclaimer.html">Avis de non-responsabilité (en anglais seulement)</a></li>
+      <li><a href="../support-directory.html">Obtenir de l’aide (en anglais seulement)</a></li>"""),
+    ('aria-label="Privacy choices"', 'aria-label="Choix de confidentialité"'),
+    ('We use a small browser memory to keep the site working and remember your text size. <a href="../privacy.html">Read more</a>.',
+     'Nous utilisons une petite mémoire du navigateur pour faire fonctionner le site et retenir votre taille de texte. <a href="../fr/privacy.html">En savoir plus</a>.'),
+    (">Accept<", ">Accepter<"),
+    (">Reject<", ">Refuser<"),
+    (">Preferences<", ">Préférences<"),
+    (">Functional (always on)<", ">Fonctionnel (toujours actif)<"),
+    ("<p>Keeps the site working and remembers your text size.</p>",
+     "<p>Fait fonctionner le site et retient votre taille de texte.</p>"),
+    ("<p>Helps us see which lessons help most. It doesn't identify you.</p>",
+     "<p>Nous aide à voir quelles leçons aident le plus. Cela ne vous identifie pas.</p>"),
+    (">Marketing (optional)<", ">Marketing (facultatif)<"),
+    ("<p>Helps us reach more seniors. We never sell your personal information.</p>",
+     "<p>Nous aide à joindre plus d’aînés. Nous ne vendons jamais vos renseignements personnels.</p>"),
+    (">Save my choices<", ">Enregistrer mes choix<"),
+]
+
+
+def localise_template_fr(template: str) -> str:
+    """Return the FR shell template. Assert every replacement matches so a
+    template edit can never silently ship an English shell on French pages."""
+    out = template
+    for en, fr in FR_SHELL_REPLACEMENTS:
+        if en not in out:
+            raise ValueError(f"FR shell replacement source not found in template: {en[:70]!r}")
+        out = out.replace(en, fr)
+    # Shell-level home links (brand link, back link) go to the French homepage.
+    out = out.replace('href="../index.html"', 'href="../fr/index.html"')
+    return out
+
 
 def _p(text: str) -> str:
     return f"{V2_INDENT}<p>{text}</p>"
@@ -512,29 +602,39 @@ def v2_related(related: dict | None) -> str:
     )
 
 
-def v2_primary_nav(brand: dict, current_href: str) -> str:
+def v2_primary_nav(brand: dict, current_href: str, lang: str = "en") -> str:
     lines = []
-    for link in brand.get("primary_nav", []):
+    nav_key = "primary_nav_fr" if lang == "fr" else "primary_nav"
+    for link in brand.get(nav_key, brand.get("primary_nav", [])):
         href = escape(link.get("href", "#"))
         current = ' aria-current="page"' if link.get("href") == current_href else ""
         lines.append(f'{V2_INDENT}<a href="{href}"{current}>{link.get("label", "")}</a>')
     return "\n".join(lines)
 
 
-def v2_breadcrumb(module: dict) -> str:
-    group_label = module.get("breadcrumb_group_label", "All lessons")
-    group_anchor = module.get("breadcrumb_group_anchor", "../index.html")
+def v2_breadcrumb(module: dict, lang: str = "en") -> str:
+    home_href = "../fr/index.html" if lang == "fr" else "../index.html"
+    home_label = "Toutes les leçons" if lang == "fr" else "All lessons"
+    group_label = module.get("breadcrumb_group_label", home_label)
+    group_anchor = module.get("breadcrumb_group_anchor", home_href)
     title = module.get("title", "")
     return (
         f'{V2_INDENT}<ol>\n'
-        f'{V2_INDENT}  <li><a href="../index.html">All lessons</a></li>\n'
+        f'{V2_INDENT}  <li><a href="{home_href}">{home_label}</a></li>\n'
         f'{V2_INDENT}  <li><a href="{escape(group_anchor)}">{group_label}</a></li>\n'
         f'{V2_INDENT}  <li><span aria-current="page">{title}</span></li>\n'
         f'{V2_INDENT}</ol>'
     )
 
 
-def render_module_v2(module: dict, brand: dict, template: str) -> str:
+def render_module_v2(module: dict, brand: dict, template: str,
+                     lang: str = "en", has_fr: bool = False) -> str:
+    if lang == "fr":
+        # Merge the translated fields over the English ones; anything the
+        # translation does not cover falls back to English content.
+        module = {**module, **module.get("fr", {})}
+        template = localise_template_fr(template)
+
     body_parts = []
     story_html = v2_story(module.get("story"))
     if story_html:
@@ -547,12 +647,40 @@ def render_module_v2(module: dict, brand: dict, template: str) -> str:
     body_html = "\n\n".join(body_parts)
 
     base_url = brand.get("base_url", "").rstrip("/")
+    slug = module.get("slug", "")
+    en_url = f"{base_url}/modules/{slug}.html"
+    fr_url = f"{base_url}/modules/{slug}-fr.html"
+
+    hreflang_links = ""
+    if has_fr:
+        hreflang_links = (
+            f'\n  <link rel="alternate" hreflang="en-CA" href="{en_url}">'
+            f'\n  <link rel="alternate" hreflang="fr-CA" href="{fr_url}">'
+            f'\n  <link rel="alternate" hreflang="x-default" href="{en_url}">'
+        )
+
+    if lang == "fr":
+        lang_switch_href = f"{slug}.html"
+        lang_switch_label = "English"
+        lang_switch_code = "en-CA"
+    else:
+        # AGENTS.md: when French is unavailable, expose the link — never hide
+        # it. Untranslated lessons send the reader to the French homepage.
+        lang_switch_href = f"{slug}-fr.html" if has_fr else "../fr/index.html"
+        lang_switch_label = "Français"
+        lang_switch_code = "fr-CA"
+
     variables = {
+        "LANG":                "fr-CA" if lang == "fr" else "en-CA",
+        "HREFLANG_LINKS":      hreflang_links,
+        "LANG_SWITCH_HREF":    lang_switch_href,
+        "LANG_SWITCH_LABEL":   lang_switch_label,
+        "LANG_SWITCH_CODE":    lang_switch_code,
         "PAGE_TITLE":          escape(module.get("page_title", module.get("title", "")), True),
-        "CANONICAL_URL":       f"{base_url}/modules/{module.get('slug', '')}.html",
+        "CANONICAL_URL":       fr_url if lang == "fr" else en_url,
         "META_DESCRIPTION":    escape(module.get("description", ""), True),
-        "PRIMARY_NAV_HTML":    v2_primary_nav(brand, module.get("nav_current", "")),
-        "BREADCRUMB_HTML":     v2_breadcrumb(module),
+        "PRIMARY_NAV_HTML":    v2_primary_nav(brand, module.get("nav_current", ""), lang),
+        "BREADCRUMB_HTML":     v2_breadcrumb(module, lang),
         "CATEGORY_ICON":       module.get("category_icon", ""),
         "CATEGORY":            module.get("category", ""),
         "MODULE_TITLE":        module.get("title", ""),
@@ -665,13 +793,19 @@ def main() -> int:
         try:
             module = json.loads(mf.read_text(encoding="utf-8"))
             slug = module.get("slug", mf.stem)
+            has_fr = bool(module.get("fr"))
             if schema == "v2":
-                content = render_module_v2(module, brand, template)
+                content = render_module_v2(module, brand, template, "en", has_fr)
             else:
                 content = render_module(module, brand, template)
             write_output(output_path, f"{slug}.html", content)
             print(f"  [OK] {slug}.html")
             rendered += 1
+            if schema == "v2" and has_fr:
+                content_fr = render_module_v2(module, brand, template, "fr", has_fr)
+                write_output(output_path, f"{slug}-fr.html", content_fr)
+                print(f"  [OK] {slug}-fr.html")
+                rendered += 1
         except Exception as e:
             print(f"  [ERR] {mf.name}: {e}", file=sys.stderr)
             errors += 1

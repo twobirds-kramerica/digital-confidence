@@ -9,6 +9,9 @@
 
   var doc = document.documentElement;
 
+  /* ---------- Locale — French pages set <html lang="fr-CA"> ---------------- */
+  var IS_FR = (doc.getAttribute("lang") || "en").toLowerCase().indexOf("fr") === 0;
+
   /* ---------- Text size (A− A A+) — class already set inline in <head> ---- */
   var SIZES = ["s", "m", "l"];
   function currentSize() {
@@ -44,7 +47,9 @@
   function labelTheme() {
     if (!themeBtn) return;
     var dark = doc.getAttribute("data-theme") === "dark";
-    themeBtn.textContent = dark ? "☀ Light mode" : "🌙 Dark mode";
+    themeBtn.textContent = dark
+      ? (IS_FR ? "☀ Mode clair" : "☀ Light mode")
+      : (IS_FR ? "🌙 Mode sombre" : "🌙 Dark mode");
     themeBtn.setAttribute("aria-pressed", dark ? "true" : "false");
   }
   if (themeBtn) {
@@ -125,7 +130,7 @@
     var fill = document.querySelector('[data-sw-fill="' + key + '"]');
     var count = document.querySelector('[data-sw-count="' + key + '"]');
     if (fill) fill.style.width = Math.min(100, Math.round(wins.length / total * 100)) + "%";
-    if (count) count.textContent = wins.length + " of " + total;
+    if (count) count.textContent = wins.length + (IS_FR ? " sur " : " of ") + total;
     return wins.length;
   }
   window.DCC = window.DCC || {};
@@ -186,8 +191,10 @@
       if (!voices.length) return;
       function score(v) {
         var s = 0, lang = (v.lang || "").toLowerCase(), name = (v.name || "");
-        if (lang === "en-ca") s += 40;
-        else if (lang.indexOf("en") === 0) s += 20;
+        var wantExact = IS_FR ? "fr-ca" : "en-ca";
+        var wantPrefix = IS_FR ? "fr" : "en";
+        if (lang === wantExact) s += 40;
+        else if (lang.indexOf(wantPrefix) === 0) s += 20;
         if (/natural|neural|online/i.test(name)) s += 10;
         if (v.localService) s += 3; // works offline, no network stutter
         return s;
@@ -241,7 +248,7 @@
       window.speechSynthesis && window.speechSynthesis.cancel();
       restoreActive();
       readBtn.setAttribute("aria-pressed", "false");
-      readBtn.textContent = "🔊 Read aloud";
+      readBtn.textContent = IS_FR ? "🔊 Lecture à voix haute" : "🔊 Read aloud";
     }
     function buildQueue() {
       var nodes = document.querySelectorAll("main h1, main h2, main h3, main p, main .choices button, main .mailrow");
@@ -264,7 +271,7 @@
       try { if (i > 0) activeEl.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) {}
 
       var u = new SpeechSynthesisUtterance(text);
-      u.lang = "en-CA";
+      u.lang = IS_FR ? "fr-CA" : "en-CA";
       if (chosenVoice) u.voice = chosenVoice;
       u.rate = RATES[rateKey];
       u.pitch = 0.85; // slightly lower pitch — clearer for age-related hearing loss
@@ -286,14 +293,16 @@
     function startReading(fromIndex) {
       reading = true;
       readBtn.setAttribute("aria-pressed", "true");
-      readBtn.textContent = "⏹ Stop reading";
+      readBtn.textContent = IS_FR ? "⏹ Arrêter la lecture" : "⏹ Stop reading";
       queue = buildQueue();
       window.speechSynthesis.cancel();
       speakBlock(Math.min(fromIndex || 0, Math.max(queue.length - 1, 0)));
     }
     readBtn.addEventListener("click", function () {
       if (!("speechSynthesis" in window)) {
-        readBtn.textContent = "Read aloud is not available in this browser";
+        readBtn.textContent = IS_FR
+          ? "La lecture à voix haute n’est pas offerte dans ce navigateur"
+          : "Read aloud is not available in this browser";
         return;
       }
       if (reading) { stopReading(); return; }
@@ -317,7 +326,7 @@
     if (!extA.querySelector(".ext-note")) {
       var extNote = document.createElement("span");
       extNote.className = "ext-note";
-      extNote.textContent = " (opens in a new tab)";
+      extNote.textContent = IS_FR ? " (s’ouvre dans un nouvel onglet)" : " (opens in a new tab)";
       extA.appendChild(extNote);
     }
   }

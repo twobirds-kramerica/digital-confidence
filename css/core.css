@@ -103,6 +103,17 @@ a:hover { color: var(--color-text-link-hover); }
   border: 1px solid var(--color-border);
 }
 
+/* Language link — always visible in the header (AGENTS.md localisation rule:
+   expose the other language, never hide it). */
+.lang-link {
+  display: inline-flex; align-items: center;
+  min-height: var(--tap-target-min);
+  padding: 0 var(--space-2);
+  font-family: var(--font-heading); font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm); color: var(--color-primary);
+}
+.lang-link:hover { color: var(--color-primary-hover); }
+
 /* Settings-gear expander — keeps the accessibility controls one tap away
    without letting them dominate the sticky header (esp. on mobile). */
 .settings-toggle {
