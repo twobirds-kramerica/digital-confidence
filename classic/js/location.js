@@ -146,6 +146,8 @@ function loadResources(provinceCode) {
   /* If on GitHub Pages root, no prefix needed */
   if (window.location.pathname.indexOf('/digital-confidence/') !== -1) {
     var base = window.location.pathname.split('/digital-confidence/')[0] + '/digital-confidence/';
+    /* 2026-07-11 cutover: original site now lives under /classic/ */
+    if (window.location.pathname.indexOf('/digital-confidence/classic/') !== -1) base += 'classic/';
     path = base + 'data/provinces/' + code + '.json';
     prefix = ''; /* Use absolute path */
   }
