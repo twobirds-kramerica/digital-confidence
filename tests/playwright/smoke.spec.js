@@ -11,11 +11,11 @@ const { test, expect } = require('@playwright/test');
 
 const PAGES = [
   { name: 'home',          path: '/' },
-  { name: 'module-1',      path: '/module-1.html' },
+  { name: 'module-1',      path: '/modules/module-1.html' },
   { name: 'final-quiz',    path: '/final-quiz.html' },
-  { name: 'accessibility', path: '/accessibility.html' },
+  { name: 'support-dir',   path: '/support-directory.html' },
   { name: 'faq',           path: '/faq.html' },
-  { name: 'styleguide',    path: '/styleguide/index.html' },
+  { name: 'classic-home',  path: '/classic/index.html' },
 ];
 
 const MIN_BODY_TEXT_LEN = 80; // heuristic: pages below this are probably broken

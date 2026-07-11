@@ -34,9 +34,9 @@ const { test, expect } = require('@playwright/test');
 // Leaving out for now is the honest call.
 const PAGES = [
   { name: 'home',          path: '/' },
-  { name: 'module-1',      path: '/module-1.html' },
+  { name: 'module-1',      path: '/modules/module-1.html' },
   { name: 'final-quiz',    path: '/final-quiz.html' },
-  { name: 'accessibility', path: '/accessibility.html' },
+  { name: 'support-dir',   path: '/support-directory.html' },
   { name: 'faq',           path: '/faq.html' },
 ];
 
