@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Theme + text size before first paint (no flash). Local only, no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Show Me! Your Camera as a Learning Tool - Digital Confidence Centre</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-visual-ai.html">
+  <meta name="description" content="Point your camera at anything, a plant, a broken part, a confusing message, and have your device explain it. A free, plain-language lesson on Visual Look Up (iPhone/iPad) and Google Lens (Android) for Canadian seniors. No account needed.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- SHARED SHELL: header (generated from module-v2.html.tpl; identical on every page). -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Read this page aloud">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
+        <div class="rate-group" role="group" aria-label="Reading speed">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Slower</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normal</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Faster</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="../index.html">All lessons</a>
+    <a href="../index.html#protect-money">Protect your money</a>
+    <a href="../index.html#everyday-confidence" aria-current="page">Everyday confidence</a>
+    <a href="../index.html#staying-connected">Staying connected</a>
+    <a href="../index.html#getting-things-done">Getting things done</a>
+    <a href="../for-families.html">For families</a>
+    <a href="../support-directory.html">Get help</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="../index.html">All lessons</a></li>
+      <li><a href="../index.html#everyday-confidence">Everyday confidence</a></li>
+      <li><span aria-current="page">Show Me! Your Camera as a Learning Tool</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <a class="lesson-back" href="../index.html">← Back to all lessons</a>
+
+    <p class="lesson-category"><span aria-hidden="true">📷</span> Artificial intelligence</p>
+    <h1>Show Me! Your Camera as a Learning Tool</h1>
+    <p class="lesson-time"><span aria-hidden="true">⏱</span> About 20 minutes, at your own pace</p>
+
+    <!-- Brenda: the first thing a nervous reader sees removes a fear. -->
+    <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
+
+    <p class="lead">Your camera can now do much more than take photos: it can identify things for you. Point it at a flower, a battery, or a confusing message on your screen, and let your device explain what you are looking at. No typing, no spelling, no searching.</p>
+
+    <h2>A bonus lesson, completely optional and genuinely fun</h2>
+    <p>There are no right or wrong answers here, and nothing you do in this lesson can harm your device or cost you money. Millions of people already use this feature every day: to settle arguments about plant names, to find replacement parts for things that need fixing, to identify a bird that landed in the garden.</p>
+    <p>It is not a new app you have to download. It is already built into your device, waiting to be used. Once you know it exists, you will wonder how you ever got along without it.</p>
+
+    <div class="coach-block">
+      <span class="coach-mark" aria-hidden="true">💬</span>
+      <div class="coach-body">
+        <span class="coach-label">From your coach</span>
+        <p>Pointing your camera at something and getting an answer can feel a little like magic, and a little suspicious. Both reactions are fair. This is a bonus lesson, which means there is nothing to finish and nothing to get wrong. Point the camera at anything. The worst that happens is a silly answer you can laugh at.</p>
+      </div>
+    </div>
+
+    <h2>The big idea: your camera can answer questions</h2>
+
+    <p>You have probably used your camera to capture people, places, and special moments. But point it at a flower in the garden, and your phone can tell you what kind of flower it is. Point it at the battery compartment of your TV remote, and it can find you the right replacement. See a strange message on your screen and not sure if it is safe? Take a picture of it and show it to someone who can help.</p>
+
+    <div class="tip-block">
+      <span class="block-label">This feature has different names on different devices</span>
+      <p>On an iPhone or iPad it is called <strong>Visual Look Up</strong>. On Android phones it is called <strong>Google Lens</strong>. Both do similar things, and both are completely free.</p>
+    </div>
+
+    <h2>Exercise 1: What is that plant?</h2>
+
+    <p>Find something green nearby: a houseplant on the windowsill, a flower in a pot, a weed you have been meaning to identify, or a leaf from a walk. Any plant will work, and there is no wrong plant to photograph. This is just practice, and it is genuinely fun.</p>
+
+    <div class="walkthrough">
+      <h4>On iPhone or iPad, using Visual Look Up</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open the <strong>Camera</strong> app and point it at the plant. Hold your device steady about 30 centimetres (a foot) away, so you can see it clearly on your screen.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Take a photo by pressing the large round white button at the bottom of the screen.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Open the <strong>Photos</strong> app (the multicoloured flower icon) and tap the photo you just took. It will be the most recent one, at the bottom right.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Look for a small <strong>sparkle or star icon (✨)</strong> at the bottom of the screen. It appears automatically when your device recognises something in the photo. Tap it.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Read what your device found: the name of the plant and some information about it.</p></span>
+      </div>
+    </div>
+
+    <div class="walkthrough">
+      <h4>On Android, using Google Lens</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Open the <strong>Google</strong> app (the colourful G icon on your home screen).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Tap the small <strong>camera icon</strong> inside the search bar. This opens Google Lens.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Point your camera at the plant and hold steady, about 30 centimetres away. Centre the plant inside the circle or frame on the screen.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Wait a moment. Google Lens identifies the plant automatically; you do not even need to press a button.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Read what it found. The plant's name and information appear at the bottom of your screen.</p></span>
+      </div>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Success looks like this</span>
+      <p>Your screen shows the name of the plant, some information, and possibly links to learn more. You just identified a plant with your camera, without typing a single word.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">If the results show a link to buy something</span>
+      <p>Use the 3-second rule before tapping: stop, breathe, verify. Do you actually want to visit that website? Just browsing is always free, and nothing is purchased unless you deliberately choose to buy and confirm.</p>
+    </div>
+
+    <h2>Exercise 2: Lost a button? Need a part? Show your camera.</h2>
+
+    <p>Here is one of the most practical uses of this feature: finding replacements for everyday items around the home. A battery for the TV remote, a part for a kitchen appliance, a specific light bulb. Instead of describing it at the hardware store, or guessing the right words to type into a search, photograph it and let your camera do the work.</p>
+
+    <div class="walkthrough">
+      <h4>Try it with any small object nearby</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Find something that might one day need replacing: a battery, a small household item, even a tea bag or spice you are running low on. This is just practice; you will not order anything.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p><strong>iPhone or iPad:</strong> take a photo of the object, open it in Photos, and tap the sparkle icon (✨). <strong>Android:</strong> open the Google app, tap the camera icon, and point at the object.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Read the results. You may see the product's name, similar items, and sometimes where to buy one.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Notice that you are just looking. Nothing is added to a cart and nothing is purchased unless you choose to tap through and confirm a purchase yourself.</p></span>
+      </div>
+    </div>
+
+    <h2>Exercise 3: Not sure what you are looking at? Photograph it.</h2>
+
+    <p>This is the most powerful part of the whole lesson. When something appears on your screen, or in real life, that looks strange, unfamiliar, or worrying, the answer is simple: <strong>photograph it</strong>. Then show the picture to someone you trust and ask. You do not have to figure it out alone, and you do not have to describe it from memory. A picture says everything.</p>
+
+    <h3>How to take a screenshot (a photo of your screen)</h3>
+
+    <p>A screenshot captures exactly what is on your screen at that moment: the message, the pop-up, the warning, the website. It is saved to your Photos or Gallery app like any other picture.</p>
+
+    <ul>
+      <li><strong>On iPhone or iPad:</strong> press the <strong>Side button</strong> (right edge) and the <strong>Volume Up button</strong> (left edge) at the same time. The screen flashes briefly, and the screenshot is saved to Photos.</li>
+      <li><strong>On Android:</strong> press the <strong>Power button</strong> and the <strong>Volume Down button</strong> at the same time. The screen flashes, and the screenshot is saved to Photos or Gallery.</li>
+    </ul>
+
+    <h3>What to do with your screenshot</h3>
+
+    <ul>
+      <li><strong>Show it to a family member</strong>: send it by text message or show them in person. They can tell you whether it looks legitimate.</li>
+      <li><strong>Call Connected Canadians at 1-877-304-5813</strong>: a trained volunteer can look at your screenshot with you and help you understand what it means.</li>
+      <li><strong>Call Cyber-Seniors at 1-844-217-3057</strong>: senior volunteers who speak plain language and understand exactly what you are going through.</li>
+    </ul>
+
+    <div class="warning-block">
+      <span class="block-label">Important</span>
+      <p>Never tap "OK", "Allow", or "Download" on a message you do not recognise, even if it looks urgent. Take a screenshot first. Ask someone you trust. Then decide.</p>
+    </div>
+
+    <div class="three-second-rule">
+      <h3>The 3-second rule applies here too</h3>
+      <ol class="tsr-steps">
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">✋</span><span class="tsr-name">Stop</span> Take your fingers off the screen.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🫁</span><span class="tsr-name">Breathe</span> One slow, calm breath.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🔍</span><span class="tsr-name">Verify</span> Screenshot it and ask someone you trust before doing anything.</li>
+      </ol>
+    </div>
+
+    <h2>You are not alone</h2>
+
+    <ul>
+      <li><strong>Connected Canadians</strong>: free one-on-one tech help from a trained volunteer, by phone or video call. <strong>1-877-304-5813</strong></li>
+      <li><strong>Cyber-Seniors</strong>: free tech training by phone from trained senior volunteers, in plain language, at your pace. <strong>1-844-217-3057</strong></li>
+      <li><strong>Your local library</strong>: many libraries offer free tech workshops and one-on-one help sessions.</li>
+      <li><strong>Your seniors' centre</strong>: community centres often host technology classes and support groups.</li>
+    </ul>
+
+    <div class="the-move">
+      <span class="move-label">The move is</span>
+      <p>When you wonder "what is that?", point your camera at it instead of struggling for the right words. And when something on your screen worries you, screenshot it and show a person you trust before you tap anything.</p>
+    </div>
+
+    <h2>Quick check: test your knowledge</h2>
+    <p>Tap the answer you think is correct. There is no score kept and nothing to sign in to.</p>
+    <div class="lesson-quiz">
+      <div class="quiz-q" data-correct="b">
+        <h3>1. What do Visual Look Up (iPhone/iPad) and Google Lens (Android) let you do?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Take better-quality photos</button>
+          <button class="quiz-opt" type="button" data-answer="b">Identify things by pointing your camera at them</button>
+          <button class="quiz-opt" type="button" data-answer="c">Order products automatically</button>
+          <button class="quiz-opt" type="button" data-answer="d">Edit your pictures</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. Both features identify what the camera sees, a plant, a product, a part, and show you information about it. No typing needed."
+          data-wrong="These features identify what your camera is looking at and show you information about it. They are built in, free, and never buy anything on their own."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>2. On an iPhone or iPad, what tells you Visual Look Up has recognised something in your photo?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">The photo turns green</button>
+          <button class="quiz-opt" type="button" data-answer="b">A sparkle or star icon (✨) appears at the bottom of the screen</button>
+          <button class="quiz-opt" type="button" data-answer="c">Your device makes a sound</button>
+          <button class="quiz-opt" type="button" data-answer="d">A pop-up asks for payment</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. Open the photo in the Photos app and look for the small sparkle icon at the bottom. Tap it to see what your device found."
+          data-wrong="The signal is the small sparkle or star icon (✨) at the bottom of the screen when you view the photo in the Photos app. Tap it to see what was recognised."></div>
+      </div>
+      <div class="quiz-q" data-correct="c">
+        <h3>3. If shopping results with prices appear while you are just identifying an object, what happens?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">The item is added to a cart automatically</button>
+          <button class="quiz-opt" type="button" data-answer="b">You are charged a small fee for searching</button>
+          <button class="quiz-opt" type="button" data-answer="c">Nothing: browsing is free, and nothing is bought unless you deliberately confirm a purchase</button>
+          <button class="quiz-opt" type="button" data-answer="d">Your card details are shared with the store</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. Looking is always free and safe. A purchase only happens if you deliberately tap through to a store and confirm it yourself."
+          data-wrong="Browsing results is completely free and safe. Nothing is added to a cart or purchased unless you deliberately tap through to a store and confirm a purchase yourself."></div>
+      </div>
+      <div class="quiz-q" data-correct="d">
+        <h3>4. A worrying pop-up appears on your screen. What is the safest first move?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Tap OK to make it go away</button>
+          <button class="quiz-opt" type="button" data-answer="b">Tap Download if it says your device needs protecting</button>
+          <button class="quiz-opt" type="button" data-answer="c">Turn the device off immediately</button>
+          <button class="quiz-opt" type="button" data-answer="d">Take a screenshot, then ask someone you trust before tapping anything</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Perfect. Screenshot first, ask a person you trust, then decide. Never tap OK, Allow, or Download on something you do not recognise, no matter how urgent it looks."
+          data-wrong="The safe move is: screenshot it, show someone you trust (family, or Connected Canadians at 1-877-304-5813), and only then decide. Never tap OK, Allow, or Download on something you do not recognise."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>5. How do you take a screenshot on most phones and tablets?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Shake the device gently</button>
+          <button class="quiz-opt" type="button" data-answer="b">Press two buttons at the same time (Side/Power plus a Volume button)</button>
+          <button class="quiz-opt" type="button" data-answer="c">Tap the screen three times</button>
+          <button class="quiz-opt" type="button" data-answer="d">Say "screenshot" out loud</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. iPhone/iPad: Side button + Volume Up. Android: Power + Volume Down. The screen flashes and the picture is saved with your photos."
+          data-wrong="It is two buttons pressed together: Side button + Volume Up on iPhone/iPad, Power + Volume Down on Android. The screen flashes and the screenshot is saved with your photos."></div>
+      </div>
+    </div>
+
+    <h2>Your progress</h2>
+    <p>Tick each item as you feel confident with it. This is saved on this device only, with no account needed.</p>
+    <ul class="checklist" data-checklist="module-visual-ai">
+      <li class="check-item"><input type="checkbox" id="module-visual-ai-1"><label for="module-visual-ai-1">I know my camera can identify things, and what the feature is called on my device</label></li>
+      <li class="check-item"><input type="checkbox" id="module-visual-ai-2"><label for="module-visual-ai-2">I have identified at least one object or plant with my camera</label></li>
+      <li class="check-item"><input type="checkbox" id="module-visual-ai-3"><label for="module-visual-ai-3">I know how to take a screenshot on my device</label></li>
+      <li class="check-item"><input type="checkbox" id="module-visual-ai-4"><label for="module-visual-ai-4">I know to screenshot a worrying message and ask a trusted person before tapping anything</label></li>
+      <li class="check-item"><input type="checkbox" id="module-visual-ai-5"><label for="module-visual-ai-5">I know two free Canadian phone services that can help me: Connected Canadians and Cyber-Seniors</label></li>
+    </ul>
+
+    <!-- Denise: forward the lesson in isolation. Copy-link only, no share API. -->
+    <section class="send-lesson" aria-labelledby="send-h">
+      <h2 id="send-h">Send this lesson to someone</h2>
+      <p>Helping a parent or friend? This page works on its own, with no account and nothing to install. Copy the link and text it to them.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="button" data-copy-link>Copy the link to this lesson</button>
+        <span class="send-done" data-copy-done hidden>Copied. Paste it into a text or email.</span>
+      </div>
+      <input class="visually-hidden" type="text" data-copy-field hidden readonly aria-label="Link to this lesson">
+    </section>
+
+    <div class="success-state">
+      <p><strong>Well done.</strong> Your camera is no longer just for photos: it is a learning tool, a safety tool, and a window to information. You now have a move for any moment of uncertainty: capture what you see, and get help from a person you trust. That is a real skill, and it will serve you every day.</p>
+    </div>
+
+    <nav class="related-modules" aria-label="Continue learning">
+      <h2>Where to next</h2>
+      <div class="related-grid">
+        <a class="related-card" href="module-ai-literacy.html">
+          <span class="related-num">Special lesson</span>
+          <span class="related-name">What Is AI, Really?</span>
+          <span class="related-desc">The clear-eyed guide to what AI actually does, where it helps, and how to spot when it is used against you.</span>
+        </a>
+        <a class="related-card" href="module-7.html">
+          <span class="related-num">Module 7</span>
+          <span class="related-name">Photos and Memories</span>
+          <span class="related-desc">Get comfortable with your camera and photo library: taking, finding, and sharing your pictures.</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<!-- SHARED SHELL: footer (identical on every page). -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">For families</a></li>
+      <li><a href="../about.html">About us</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="../glossary.html">Glossary</a></li>
+      <li><a href="../privacy.html">Privacy</a></li>
+      <li><a href="../terms.html">Terms</a></li>
+      <li><a href="../disclaimer.html">Disclaimer</a></li>
+      <li><a href="../support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- SHARED SHELL: layered consent bar (identical on every page). -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="../privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/module.js"></script>
+</body>
+</html>
