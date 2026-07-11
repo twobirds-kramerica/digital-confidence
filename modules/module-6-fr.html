@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Theme + text size before first paint (no flash). Local only, no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Services bancaires et transactions - Centre de confiance numérique</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-6-fr.html">
+  <link rel="alternate" hreflang="en-CA" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-6.html">
+  <link rel="alternate" hreflang="fr-CA" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-6-fr.html">
+  <link rel="alternate" hreflang="x-default" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-6.html">
+  <meta name="description" content="Comment vérifier votre solde, payer vos factures et magasiner en ligne en toute sécurité, depuis votre appareil. Leçon gratuite, en langage clair, pour les aînés du Canada. Aucun compte requis.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Aller au contenu principal</a>
+
+<!-- SHARED SHELL: header (generated from module-v2.html.tpl; identical on every page). -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../fr/index.html">Centre de confiance numérique</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Connexion sécurisée</span>
+    <a class="lang-link" href="module-6.html" lang="en-CA" hreflang="en-CA">English</a>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Affichage
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Taille du texte">
+        <span class="group-label" aria-hidden="true">Taille du texte</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Texte plus petit">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Texte standard">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Texte plus grand">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Écouter cette page">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Lecture à voix haute</button>
+        <div class="rate-group" role="group" aria-label="Vitesse de lecture">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Plus lent</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normale</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Plus rapide</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Mode sombre</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Sections des leçons">
+  <div class="container">
+    <a href="../fr/index.html">Toutes les leçons</a>
+    <a href="../fr/index.html#protect-money" aria-current="page">Protégez votre argent</a>
+    <a href="../fr/index.html#everyday-confidence">Confiance au quotidien</a>
+    <a href="../for-families.html">Pour les familles (en anglais seulement)</a>
+    <a href="../support-directory.html">Obtenir de l’aide (en anglais seulement)</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Fil d’Ariane">
+  <div class="container">
+    <ol>
+      <li><a href="../fr/index.html">Toutes les leçons</a></li>
+      <li><a href="../fr/index.html#protect-money">Protégez votre argent</a></li>
+      <li><span aria-current="page">Services bancaires et transactions</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <a class="lesson-back" href="../fr/index.html">← Retour à toutes les leçons</a>
+
+    <p class="lesson-category"><span aria-hidden="true">🏦</span> Services bancaires</p>
+    <h1>Services bancaires et transactions</h1>
+    <p class="lesson-time"><span aria-hidden="true">⏱</span> Environ 15 minutes, à votre rythme</p>
+
+    <!-- Brenda: the first thing a nervous reader sees removes a fear. -->
+    <p class="reassurance"><span aria-hidden="true">✅</span> Vous êtes en lieu sûr. Rien sur cette page ne peut endommager votre appareil.</p>
+
+    <p class="lead">Comment vérifier votre solde, payer vos factures et faire des achats sûrs en ligne, depuis votre propre appareil.</p>
+
+    <h2>L’histoire de Jean</h2>
+    <p>Jean, 73 ans, se rendait en voiture à sa succursale bancaire tous les vendredis pour vérifier le solde de son compte. Pluie, neige, travaux : rien ne l’arrêtait. Elle faisait confiance à la caissière et elle faisait confiance au reçu imprimé.</p>
+    <p>Puis la pandémie a tout changé. La succursale a réduit ses heures, les files étaient longues, et la fille de Jean lui a proposé d’essayer les services bancaires mobiles. « J’étais terrifiée, se rappelle Jean. Et si quelqu’un volait mon argent par le téléphone? Et si j’appuyais sur le mauvais bouton et que j’envoyais mes économies quelque part par accident? »</p>
+    <p>La fille de Jean s’est assise avec elle et lui a fait découvrir l’application RBC, étape par étape. Elles ont vérifié son solde ensemble. Elles ont regardé les transactions récentes. Jean a réalisé que tout ce qu’elle pouvait voir au comptoir de la banque, elle pouvait le voir sur son iPad, sans quitter sa cuisine.</p>
+    <p>« Je vais encore à la succursale parfois, dit Jean avec un sourire. Mais maintenant, c’est parce que je le veux, pas parce que je le dois. Et je vérifie mon solde chaque matin avec mon café. »</p>
+
+    <div class="coach-block">
+      <span class="coach-mark" aria-hidden="true">💬</span>
+      <div class="coach-body">
+        <span class="coach-label">From your coach</span>
+        <p>Les services bancaires en ligne, c’est le sujet où presque tout le monde ressent le plus de peur, et cette peur se comprend : c’est votre argent. Mais pensez-y : les banques ont consacré des décennies et des milliards de dollars à protéger ces systèmes, et vous avez des protections légales si jamais quelque chose tournait mal. Être prudent, c’est sage. Avoir peur, c’est facultatif.</p>
+      </div>
+    </div>
+
+    <h2>Pourquoi les services bancaires en ligne sont plus sûrs que vous le pensez</h2>
+
+    <p>Cela pourrait vous surprendre, mais les services bancaires en ligne par l’application officielle de votre banque sont extrêmement sécuritaires. Voici pourquoi :</p>
+
+    <ul>
+      <li><strong>Les applications bancaires utilisent le chiffrement.</strong> Le chiffrement brouille vos renseignements de sorte que même si quelqu’un les interceptait, il ne verrait que du charabia. C’est comme écrire une lettre dans un code secret que seuls vous et la banque connaissez.</li>
+      <li><strong>Votre banque surveille les activités inhabituelles.</strong> Si quelqu’un tente de se connecter depuis un endroit inconnu ou de faire un achat inhabituel, les systèmes de sécurité de votre banque le signalent immédiatement.</li>
+      <li><strong>Face ID ajoute une couche de plus.</strong> Si vous configurez Face ID ou une empreinte digitale, personne ne peut ouvrir votre application bancaire sans vous.</li>
+      <li><strong>Les banques canadiennes ont une assurance-dépôts.</strong> La Société d’assurance-dépôts du Canada (SADC) protège vos dépôts jusqu’à 100 000 $. Même dans le cas improbable où quelque chose tournerait mal, votre argent est protégé.</li>
+    </ul>
+
+    <div class="helper-note">
+      <span class="block-label">Fait rassurant</span>
+      <p>Les banques dépensent des milliards de dollars en sécurité chaque année. Les systèmes qui protègent vos services bancaires en ligne sont les mêmes qui protègent la banque elle-même. Quand vous utilisez l’application officielle, vous êtes derrière les mêmes murs que la voûte de la banque.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Petit rappel de confiance</span>
+      <p>Les services bancaires en ligne ne sont pas un risque : c’est un service bien gardé. Vous méritez le confort de consulter vos comptes depuis la maison.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Attention</span>
+      <p>Votre banque ne vous téléphonera jamais, ne vous écrira jamais par courriel ni par texto pour vous demander votre mot de passe, votre NIP ou vos questions de sécurité. Si quelqu’un vous contacte en se disant de votre banque et demande ces renseignements, raccrochez ou supprimez le message immédiatement. Puis appelez votre banque directement au numéro inscrit au dos de votre carte bancaire.</p>
+    </div>
+
+    <h2>Obtenir la vraie application de votre banque</h2>
+
+    <p>L’étape la plus importante est de télécharger la <strong>vraie</strong> application depuis le <strong>vrai</strong> App Store ou la boutique Google Play.</p>
+
+    <div class="walkthrough">
+      <h4>Télécharger l’application de votre banque</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Ouvrez l’<strong>App Store</strong> (icône bleue avec un « A » blanc) ou la <strong>boutique Google Play</strong> (icône en triangle coloré).</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Touchez <strong>Rechercher</strong> et tapez le nom de votre banque. Par exemple : « RBC Mobile », « TD Canada Trust » ou « BMO ».</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p><strong>Vérifiez le développeur.</strong> La vraie application RBC est faite par « Royal Bank of Canada ». La vraie application TD est faite par « TD Bank Group ». Cherchez le nom officiel.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Vérifiez les évaluations. Les applications bancaires officielles comptent des millions de téléchargements et de bonnes notes.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Touchez <strong>Obtenir</strong> ou <strong>Installer</strong> et confirmez avec Face ID, votre empreinte digitale ou le verrouillage de votre écran.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Sur un ordinateur Windows</span>
+      <p>Vous n’avez pas besoin d’installer une application. Ouvrez Edge ou Chrome, tapez l’adresse Web de votre banque directement dans la barre d’adresse (par exemple rbc.com ou td.com), puis enregistrez-la comme favori en appuyant sur Ctrl et D. Par la suite, ouvrez toujours le site de votre banque depuis ce favori, jamais depuis un lien reçu par courriel ou par texto.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Règle de sécurité essentielle</span>
+      <p>Ne vous connectez jamais à votre banque par un lien reçu dans un courriel, un texto ou un site Web que quelqu’un vous a envoyé. Ouvrez toujours l’application bancaire directement depuis votre écran d’accueil, ou tapez vous-même l’adresse Web de la banque. C’est l’habitude la plus importante pour vous protéger des fraudes bancaires.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Attention</span>
+      <p>Soyez prudent quand vous cherchez l’application de votre banque. Des fraudeurs créent parfois de fausses applications bancaires aux noms semblables. Vérifiez toujours le nom du développeur. Il doit correspondre au nom officiel de votre banque, par exemple « Royal Bank of Canada » pour RBC.</p>
+    </div>
+
+    <h2>Vérifier votre solde</h2>
+
+    <div class="walkthrough">
+      <h4>Consulter le solde de votre compte</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Ouvrez votre <strong>application bancaire</strong> depuis l’écran d’accueil ou, sur un ordinateur, ouvrez le favori de votre banque et cliquez sur <strong>Ouvrir une session</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Connectez-vous avec votre nom d’utilisateur et votre mot de passe, ou utilisez <strong>Face ID</strong> ou votre <strong>empreinte digitale</strong> si vous l’avez configurée.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Les soldes de vos comptes apparaîtront sur l’écran principal. Vous verrez votre compte-chèques, votre compte d’épargne et vos cartes de crédit.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Touchez n’importe quel compte pour voir les <strong>transactions récentes</strong>, une liste de l’argent qui entre et qui sort.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Quand vous avez terminé, <strong>fermez la session</strong> (cherchez un bouton « Fermer la session » ou « Quitter », habituellement dans le menu) et fermez l’application.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Bonne habitude : fermez toujours la session</span>
+      <p>Fermez toujours la session à la fin de vos opérations bancaires en ligne, surtout sur un ordinateur partagé ou familial. Fermer simplement la fenêtre ne suffit pas. Fermer la session garantit que personne d’autre ne peut atteindre votre compte en ouvrant le navigateur plus tard.</p>
+    </div>
+
+    <div class="three-second-rule">
+      <h3>La règle des 3 secondes pour les opérations bancaires</h3>
+      <ol class="tsr-steps">
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">✋</span><span class="tsr-name">Arrêtez</span> Ne précipitez jamais une transaction financière. Il n’y a pas de date limite.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🫁</span><span class="tsr-name">Respirez</span> Revérifiez les montants et les destinataires avant de confirmer.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🔍</span><span class="tsr-name">Vérifiez</span> Est-ce que tout semble correct? Est-ce le bon montant et la bonne personne?</li>
+      </ol>
+    </div>
+
+    <h2>Payer ses factures en ligne</h2>
+
+    <p>La plupart des banques canadiennes vous permettent de payer vos factures — électricité, Internet, téléphone, taxes foncières — directement dans l’application. La démarche varie selon la banque, mais voici l’approche générale.</p>
+
+    <div class="walkthrough">
+      <h4>Payer une facture</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Connectez-vous à votre application bancaire.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Cherchez <strong>Payer des factures</strong> ou <strong>Paiement de factures</strong> dans le menu.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Choisissez l’entreprise que vous voulez payer. Si c’est la première fois, vous devrez peut-être ajouter l’entreprise et entrer votre numéro de compte inscrit sur votre facture papier.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Entrez le <strong>montant</strong> que vous voulez payer.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Choisissez le compte d’où provient le paiement, habituellement votre compte-chèques.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">6</span>
+        <span class="step-text"><p><strong>Vérifiez tout attentivement</strong> avant de toucher Confirmer ou Payer.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Petit conseil utile</span>
+      <p>Si payer une facture en ligne pour la première fois vous rend nerveux, commencez par un petit montant, comme 10 $ sur votre facture de téléphone. Surveillez le paiement sur votre prochain relevé. Une fois que vous verrez que ça a fonctionné, vous vous sentirez en confiance pour payer le montant complet.</p>
+    </div>
+
+    <h2>Magasiner en ligne en toute sécurité</h2>
+
+    <p>Acheter en ligne peut être sûr et pratique si vous suivez quelques consignes simples.</p>
+
+    <ul>
+      <li><strong>Tenez-vous-en aux magasins bien connus.</strong> Amazon.ca, Walmart.ca, Canadian Tire et les autres grands détaillants ont une sécurité solide.</li>
+      <li><strong>Cherchez l’icône de cadenas.</strong> Dans la barre d’adresse de votre navigateur, vous devriez voir un petit cadenas devant l’adresse Web. Cela signifie que la connexion est sécurisée et chiffrée.</li>
+      <li><strong>Utilisez Apple Pay ou Google Wallet quand c’est possible.</strong> Ces services ne communiquent pas votre vrai numéro de carte de crédit au magasin. Ils utilisent plutôt un code spécial à usage unique, ce qui est plus sûr que de taper votre numéro de carte.</li>
+      <li><strong>Utilisez une carte de crédit, pas votre carte de débit.</strong> Les cartes de crédit offrent une meilleure protection contre la fraude. Si quelque chose tourne mal, votre banque peut annuler la transaction.</li>
+      <li><strong>Méfiez-vous des sites inconnus.</strong> Si vous trouvez une aubaine sur un site dont vous n’avez jamais entendu parler, cherchez d’abord des avis sur ce magasin.</li>
+      <li><strong>Gardez vos reçus.</strong> Vous recevrez un reçu par courriel après chaque achat. Conservez-les pour vos dossiers.</li>
+    </ul>
+
+    <div class="walkthrough">
+      <h4>Configurer Apple Pay ou Google Wallet</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Sur un iPhone ou un iPad, ouvrez <strong>Réglages</strong> et touchez <strong>Cartes et Apple Pay</strong>. Sur Android, ouvrez l’application <strong>Google Wallet</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Touchez <strong>Ajouter une carte</strong> ou <strong>Ajouter au portefeuille</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Tenez votre carte de crédit devant la caméra pour qu’elle lise les numéros automatiquement, ou tapez-les à la main.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Votre banque vérifiera la carte. Cela peut prendre un moment, ou vous devrez peut-être confirmer par texto.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>Une fois la carte vérifiée, vous pouvez payer partout où vous voyez le symbole Apple Pay ou Google Pay, en ligne comme en magasin.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Comment savoir si un site Web est sûr</span>
+      <p>Avant d’entrer tout renseignement de paiement, regardez l’adresse Web en haut du navigateur. Elle devrait commencer par https, où le « s » signifie sécurisé, et vous devriez voir l’icône de cadenas. Si le cadenas est absent ou qu’un message d’avertissement apparaît, fermez le site immédiatement et n’entrez aucun renseignement.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Signaux d’alarme en magasinant en ligne</span>
+      <p>N’achetez jamais sur un site qui vous demande de payer par virement télégraphique ou par cartes-cadeaux, qui affiche des prix trop beaux pour être vrais (un iPad de 1 200 $ à 99 $), qui n’a aucune coordonnée ni adresse physique, ou dont l’adresse Web semble mal orthographiée ou étrange.</p>
+    </div>
+
+    <h2>Petite vérification : testez vos connaissances</h2>
+    <p>Touchez la réponse qui vous semble la bonne. Aucun pointage n’est conservé et il n’y a rien à quoi se connecter.</p>
+    <div class="lesson-quiz">
+      <div class="quiz-q" data-correct="b">
+        <h3>1. Quelle est la façon la plus sûre de vérifier votre solde bancaire?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Chercher votre banque sur Google et cliquer sur le premier résultat</button>
+          <button class="quiz-opt" type="button" data-answer="b">Taper l’adresse Web de votre banque directement dans la barre d’adresse, ou ouvrir votre application officielle</button>
+          <button class="quiz-opt" type="button" data-answer="c">Ouvrir le lien que votre banque vous a envoyé par courriel</button>
+          <button class="quiz-opt" type="button" data-answer="d">Utiliser une application bancaire que quelqu’un a installée sur votre téléphone pour vous</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactement. Tapez l’adresse vous-même ou utilisez votre favori enregistré ou l’application officielle. Ainsi, vous atteignez toujours la vraie banque, jamais une fausse copie."
+          data-wrong="La façon la plus sûre est de taper vous-même l’adresse Web de votre banque, ou d’ouvrir votre application officielle. N’atteignez jamais votre banque par un lien que quelqu’un vous a envoyé."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>2. Vous recevez un virement Interac d’une personne que vous ne connaissez pas. Que devriez-vous faire?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">L’accepter : de l’argent inattendu, ce n’est pas une fraude</button>
+          <button class="quiz-opt" type="button" data-answer="b">Le refuser : accepter des virements inconnus peut lier votre compte à une fraude</button>
+          <button class="quiz-opt" type="button" data-answer="c">L’accepter, puis le signaler à la police</button>
+          <button class="quiz-opt" type="button" data-answer="d">Le transférer à un membre de la famille pour qu’il décide</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="C’est ça. Refusez les virements de personnes que vous ne connaissez pas. Accepter un virement inattendu peut lier votre compte à une fraude."
+          data-wrong="Le geste sûr est de le refuser. Un virement inattendu d’un inconnu peut faire partie d’une fraude."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>3. Lequel de ces renseignements ne devriez-vous JAMAIS donner à quelqu’un qui vous contacte?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Votre code postal</button>
+          <button class="quiz-opt" type="button" data-answer="b">Votre mot de passe bancaire ou votre NIP</button>
+          <button class="quiz-opt" type="button" data-answer="c">Votre province de résidence</button>
+          <button class="quiz-opt" type="button" data-answer="d">Votre prénom</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exact. Votre mot de passe bancaire ou votre NIP ne se partage avec personne, et votre banque ne vous le demandera jamais."
+          data-wrong="La réponse est votre mot de passe bancaire ou votre NIP. Votre banque ne vous le demandera jamais, et aucun interlocuteur ne devrait le faire non plus."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>4. Votre banque vous appelle et vous demande de confirmer votre numéro de compte pour vérifier votre identité. Que faites-vous?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Le donner : c’est votre banque et elle doit vous identifier</button>
+          <button class="quiz-opt" type="button" data-answer="b">Raccrocher et appeler le numéro au dos de votre carte bancaire</button>
+          <button class="quiz-opt" type="button" data-answer="c">Donner seulement les 4 derniers chiffres</button>
+          <button class="quiz-opt" type="button" data-answer="d">Demander qu’on vous écrive plutôt par courriel</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Parfait. Raccrochez et appelez le numéro au dos de votre carte. Ainsi, vous savez que vous parlez vraiment à votre banque."
+          data-wrong="Raccrochez et appelez le numéro au dos de votre carte bancaire. Une vraie banque est heureuse que vous rappeliez pour en être sûr."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>5. Que vous indique l’icône de cadenas dans la barre d’adresse de votre navigateur?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Le site Web appartient au gouvernement</button>
+          <button class="quiz-opt" type="button" data-answer="b">Votre connexion au site est chiffrée, donc vos données sont plus difficiles à intercepter</button>
+          <button class="quiz-opt" type="button" data-answer="c">Le site a été vérifié contre les fraudes</button>
+          <button class="quiz-opt" type="button" data-answer="d">Vous êtes connecté en toute sécurité</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Oui. Le cadenas signifie que votre connexion est chiffrée : l’information que vous envoyez est brouillée et beaucoup plus difficile à intercepter."
+          data-wrong="Le cadenas vous indique que votre connexion est chiffrée, donc l’information que vous envoyez est brouillée. À lui seul, il ne prouve pas que le site est honnête, alors vérifiez quand même l’adresse."></div>
+      </div>
+    </div>
+
+    <h2>Votre progression</h2>
+    <p>Cochez chaque élément quand vous vous sentez à l’aise. C’est enregistré sur cet appareil seulement, aucun compte requis.</p>
+    <ul class="checklist" data-checklist="module-6">
+      <li class="check-item"><input type="checkbox" id="module-6-1"><label for="module-6-1">Je peux télécharger l’application officielle de ma banque et vérifier le nom du développeur</label></li>
+      <li class="check-item"><input type="checkbox" id="module-6-2"><label for="module-6-2">Je sais qu’il faut joindre ma banque seulement par l’application ou une adresse tapée, jamais par un lien</label></li>
+      <li class="check-item"><input type="checkbox" id="module-6-3"><label for="module-6-3">Je peux ouvrir une session, vérifier mon solde et fermer la session</label></li>
+      <li class="check-item"><input type="checkbox" id="module-6-4"><label for="module-6-4">Je peux payer une facture en ligne et la vérifier avant de confirmer</label></li>
+      <li class="check-item"><input type="checkbox" id="module-6-5"><label for="module-6-5">Je connais les signes de sécurité à chercher quand je magasine en ligne</label></li>
+    </ul>
+
+    <!-- Denise: forward the lesson in isolation. Copy-link only, no share API. -->
+    <section class="send-lesson" aria-labelledby="send-h">
+      <h2 id="send-h">Envoyer cette leçon à quelqu’un</h2>
+      <p>Vous aidez un parent ou un ami? Cette page fonctionne toute seule, sans compte et sans rien à installer. Copiez le lien et envoyez-le-lui par texto.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="button" data-copy-link>Copier le lien de cette leçon</button>
+        <span class="send-done" data-copy-done hidden>Copié. Collez-le dans un texto ou un courriel.</span>
+      </div>
+      <input class="visually-hidden" type="text" data-copy-field hidden readonly aria-label="Lien vers cette leçon">
+    </section>
+
+    <div class="success-state">
+      <p><strong>Bravo.</strong> Vous pouvez maintenant ouvrir votre application bancaire, vérifier votre solde, consulter vos transactions, payer des factures et magasiner en ligne, tout cela sans anxiété. Vous connaissez les règles de sécurité qui protègent votre argent.</p>
+    </div>
+
+    <nav class="related-modules" aria-label="Continue learning">
+      <h2>Et maintenant, où aller?</h2>
+      <div class="related-grid">
+        <a class="related-card" href="module-5.html">
+          <span class="related-num">Module 5</span>
+          <span class="related-name">Courriels et messages (en anglais seulement)</span>
+          <span class="related-desc">Bien des fraudes bancaires commencent par un faux courriel ou un faux texto. Apprenez à les repérer avant que l’argent bouge.</span>
+        </a>
+        <a class="related-card" href="module-27-inbox-spam-fr.html">
+          <span class="related-num">Module 27</span>
+          <span class="related-name">Maîtrisez votre boîte de réception</span>
+          <span class="related-desc">Séparez le vrai courrier du courrier indésirable, et empêchez les pourriels d’enterrer les messages de votre famille.</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<!-- SHARED SHELL: footer (identical on every page). -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Nos engagements">
+      <li><span aria-hidden="true">✓</span> Aucun compte</li>
+      <li><span aria-hidden="true">✓</span> Aucun pistage</li>
+      <li><span aria-hidden="true">✓</span> Rien à acheter</li>
+      <li><span aria-hidden="true">✓</span> Canadien</li>
+    </ul>
+    <p>Le Centre de confiance numérique est offert gratuitement. C’est une initiative communautaire de Two Birds Innovation, une entreprise ontarienne, pour aider les aînés du Canada à rester en sécurité et en contact en ligne. Aucun compte, aucun pistage, aucun appel de vente.</p>
+    <p class="scope-note">Remarque : ce site offre des conseils de sécurité en langage clair, et non des conseils juridiques. Si vous soupçonnez une fraude, communiquez directement avec votre banque.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">Pour les familles (en anglais seulement)</a></li>
+      <li><a href="../fr/about.html">À propos de nous</a></li>
+      <li><a href="../faq.html">FAQ (en anglais seulement)</a></li>
+      <li><a href="../glossary.html">Glossaire (en anglais seulement)</a></li>
+      <li><a href="../fr/privacy.html">Confidentialité</a></li>
+      <li><a href="../fr/terms.html">Conditions d’utilisation</a></li>
+      <li><a href="../disclaimer.html">Avis de non-responsabilité (en anglais seulement)</a></li>
+      <li><a href="../support-directory.html">Obtenir de l’aide (en anglais seulement)</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- SHARED SHELL: layered consent bar (identical on every page). -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Choix de confidentialité">
+  <div class="container">
+    <p>Nous utilisons une petite mémoire du navigateur pour faire fonctionner le site et retenir votre taille de texte. <a href="../fr/privacy.html">En savoir plus</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accepter</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Refuser</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Préférences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Fonctionnel (toujours actif)</span>
+        <p>Fait fonctionner le site et retient votre taille de texte.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Nous aide à voir quelles leçons aident le plus. Cela ne vous identifie pas.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (facultatif)</span>
+        <p>Nous aide à joindre plus d’aînés. Nous ne vendons jamais vos renseignements personnels.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Enregistrer mes choix</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/module.js"></script>
+</body>
+</html>

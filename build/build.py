@@ -290,6 +290,7 @@ V2_INDENT = "    "
 
 FR_SHELL_REPLACEMENTS = [
     ("Skip to main content", "Aller au contenu principal"),
+    (">Digital Confidence Centre</a>", ">Centre de confiance numérique</a>"),
     ("🔒</span> Secure connection", "🔒</span> Connexion sécurisée"),
     ("⚙</span> Display settings", "⚙</span> Affichage"),
     ('aria-label="Text size"', 'aria-label="Taille du texte"'),
@@ -321,7 +322,7 @@ FR_SHELL_REPLACEMENTS = [
     ("✓</span> Nothing to buy", "✓</span> Rien à acheter"),
     ("✓</span> Canadian", "✓</span> Canadien"),
     ("Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.",
-     "Le Digital Confidence Centre est offert gratuitement. C’est une initiative communautaire de Two Birds Innovation, une entreprise ontarienne, pour aider les aînés du Canada à rester en sécurité et en contact en ligne. Aucun compte, aucun pistage, aucun appel de vente."),
+     "Le Centre de confiance numérique est offert gratuitement. C’est une initiative communautaire de Two Birds Innovation, une entreprise ontarienne, pour aider les aînés du Canada à rester en sécurité et en contact en ligne. Aucun compte, aucun pistage, aucun appel de vente."),
     ("Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.",
      "Remarque : ce site offre des conseils de sécurité en langage clair, et non des conseils juridiques. Si vous soupçonnez une fraude, communiquez directement avec votre banque."),
     ("""      <li><a href="../for-families.html">For families</a></li>

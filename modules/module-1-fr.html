@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fr-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Theme + text size before first paint (no flash). Local only, no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>La sortie de secours - Centre de confiance numérique</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-1-fr.html">
+  <link rel="alternate" hreflang="en-CA" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-1.html">
+  <link rel="alternate" hreflang="fr-CA" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-1-fr.html">
+  <link rel="alternate" hreflang="x-default" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-1.html">
+  <meta name="description" content="L’habileté la plus importante sur n’importe quel appareil : comment revenir en lieu sûr, quoi qu’il arrive à l’écran. Leçon gratuite, en langage clair, pour les aînés du Canada. Aucun compte requis.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Aller au contenu principal</a>
+
+<!-- SHARED SHELL: header (generated from module-v2.html.tpl; identical on every page). -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../fr/index.html">Centre de confiance numérique</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Connexion sécurisée</span>
+    <a class="lang-link" href="module-1.html" lang="en-CA" hreflang="en-CA">English</a>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Affichage
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Taille du texte">
+        <span class="group-label" aria-hidden="true">Taille du texte</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Texte plus petit">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Texte standard">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Texte plus grand">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Écouter cette page">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Lecture à voix haute</button>
+        <div class="rate-group" role="group" aria-label="Vitesse de lecture">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Plus lent</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normale</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Plus rapide</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Mode sombre</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Sections des leçons">
+  <div class="container">
+    <a href="../fr/index.html">Toutes les leçons</a>
+    <a href="../fr/index.html#protect-money">Protégez votre argent</a>
+    <a href="../fr/index.html#everyday-confidence" aria-current="page">Confiance au quotidien</a>
+    <a href="../for-families.html">Pour les familles (en anglais seulement)</a>
+    <a href="../support-directory.html">Obtenir de l’aide (en anglais seulement)</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Fil d’Ariane">
+  <div class="container">
+    <ol>
+      <li><a href="../fr/index.html">Toutes les leçons</a></li>
+      <li><a href="../fr/index.html#everyday-confidence">Confiance au quotidien</a></li>
+      <li><span aria-current="page">La sortie de secours</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <a class="lesson-back" href="../fr/index.html">← Retour à toutes les leçons</a>
+
+    <p class="lesson-category"><span aria-hidden="true">📱</span> Notions de base de l’appareil</p>
+    <h1>La sortie de secours</h1>
+    <p class="lesson-time"><span aria-hidden="true">⏱</span> Environ 10 minutes, à votre rythme</p>
+
+    <!-- Brenda: the first thing a nervous reader sees removes a fear. -->
+    <p class="reassurance"><span aria-hidden="true">✅</span> Vous êtes en lieu sûr. Rien sur cette page ne peut endommager votre appareil.</p>
+
+    <p class="lead">L’habileté la plus importante pour utiliser n’importe quel appareil : comment revenir en lieu sûr, quoi qu’il arrive à l’écran.</p>
+
+    <h2>L’histoire de Margaret</h2>
+    <p>Margaret, 74 ans, parcourait des recettes sur son iPad un mardi matin. Elle a touché un lien qui promettait « la meilleure recette de tartelettes au beurre de l’Ontario », et soudain son écran s’est rempli de couleurs clignotantes, avec une voix forte annonçant que son iPad avait un virus. Son cœur s’est emballé. Elle ne trouvait aucun moyen de fermer ce message, et elle a cru que son iPad était brisé — ou pire, que quelqu’un était en train de voler ses renseignements bancaires à l’instant même.</p>
+    <p>Voici la bonne nouvelle : l’iPad de Margaret allait parfaitement bien, du début à la fin. Ce message effrayant était un faux, un truc courant conçu pour faire peur aux gens. Si Margaret avait connu la seule habileté que nous allons apprendre, elle aurait pu fermer ce faux avertissement en deux secondes environ et retourner tout droit à sa recette de tartelettes au beurre.</p>
+
+    <div class="coach-block">
+      <span class="coach-mark" aria-hidden="true">💬</span>
+      <div class="coach-body">
+        <span class="coach-label">From your coach</span>
+        <p>Si vous avez déjà figé devant un message étrange, vous ne faites rien de mal. Cette réaction est exactement ce que ces messages cherchent à provoquer. À la fin de cette page, vous aurez une façon calme et fiable de vous sortir de n’importe lequel d’entre eux, et vous n’aurez plus jamais à cacher votre appareil dans un tiroir.</p>
+      </div>
+    </div>
+
+    <h2>La règle d’or : rien n’est permanent</h2>
+
+    <div class="tip-block">
+      <span class="block-label">La vérité la plus rassurante au sujet de votre appareil</span>
+      <p>Vous ne pouvez pas briser votre iPad ou votre téléphone en touchant le mauvais bouton. Vous ne pouvez pas supprimer Internet par accident. Vous ne pouvez pas abîmer votre appareil en ouvrant la mauvaise application. Presque tout ce que vous faites peut être annulé, fermé ou réparé.</p>
+    </div>
+
+    <p>Pensez à votre appareil comme à une bibliothèque. Quand vous ouvrez une application, c’est comme prendre un livre sur l’étagère. Quand vous la fermez, vous remettez le livre à sa place. Le livre est toujours là. Vous n’avez rien changé de permanent.</p>
+
+    <h2>Sortie de secours numéro 1 : le bouton d’accueil (ou le geste d’accueil)</h2>
+
+    <p>Votre appareil a une voie de sortie principale. Sur un iPhone ou un iPad, c’est le bouton d’accueil ou le geste de balayage vers le haut :</p>
+
+    <div class="walkthrough">
+      <h4>Si votre iPad a un bouton rond sous l’écran</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Regardez tout en bas, sous l’écran. Vous verrez un cercle rond, légèrement enfoncé. C’est votre <strong>bouton d’accueil</strong>.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Appuyez dessus une fois avec le pouce ou un doigt. Pas fort : une pression douce et ferme.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Tout ce qui était à l’écran disparaît. Vous êtes de retour à votre écran d’accueil, celui avec toutes les images de vos applications.</p></span>
+      </div>
+    </div>
+
+    <div class="walkthrough">
+      <h4>Si votre iPad n’a pas de bouton rond (modèles plus récents)</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Regardez tout en bas de l’écran. Vous verrez une fine ligne horizontale foncée.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Posez votre doigt sur cette ligne et <strong>balayez vers le haut</strong>, en glissant du bas vers le milieu.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Vous êtes de retour à votre écran d’accueil. Sain et sauf.</p></span>
+      </div>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Petit rappel de confiance</span>
+      <p>Vous vous débrouillez à merveille. Le bouton d’accueil est votre meilleur ami sur cet appareil. Vous ne pouvez rien briser en l’appuyant, alors appuyez dessus aussi souvent que vous le voulez.</p>
+    </div>
+
+    <h2>Ces messages surgissants qui font peur</h2>
+
+    <p>Parlons de la situation qui a effrayé Margaret. Vous utilisez votre appareil, et soudain un message remplit votre écran :</p>
+
+    <div class="scam-example">
+      <span class="example-label">Exemple de faux avertissement (ce n’est PAS réel)</span>
+      <p>ATTENTION! Votre iPad est infecté par 3 virus! Vos données personnelles sont en danger! Appelez le soutien Apple immédiatement au 1-888-555-0199. NE fermez PAS cette fenêtre!</p>
+    </div>
+
+    <p>Ce message est <strong>faux</strong>, chaque fois, sans exception. Les vrais avertissements de votre appareil apparaissent comme de petites notifications calmes, jamais comme des alarmes clignotantes plein écran. Tout message qui vous demande d’appeler un numéro de téléphone est une fraude. Tout message qui dit « NE fermez PAS cette fenêtre » essaie de vous empêcher d’utiliser votre sortie de secours. Fermez-le.</p>
+
+    <div class="three-second-rule">
+      <h3>La règle des 3 secondes</h3>
+      <ol class="tsr-steps">
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">✋</span><span class="tsr-name">Arrêtez</span> Retirez vos doigts de l’écran.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🫁</span><span class="tsr-name">Respirez</span> Une respiration lente et profonde.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🔍</span><span class="tsr-name">Vérifiez</span> Est-ce réel, ou quelqu’un essaie-t-il de me faire peur?</li>
+      </ol>
+    </div>
+
+    <div class="the-move">
+      <span class="move-label">Le geste à poser</span>
+      <p>Quand un message effrayant apparaît, appuyez sur le bouton d’accueil (ou balayez vers le haut depuis le bas de l’écran). Le message disparaît et votre appareil va très bien. N’appelez jamais un numéro affiché dans une fenêtre surgissante, et n’entrez jamais un mot de passe pour « régler » le problème. Les vrais problèmes ne se règlent jamais en appelant un numéro affiché à l’écran.</p>
+    </div>
+
+    <h2>Petite vérification : testez vos connaissances</h2>
+    <p>Touchez la réponse qui vous semble la bonne. Aucun pointage n’est conservé et il n’y a rien à quoi se connecter.</p>
+    <div class="lesson-quiz">
+      <div class="quiz-q" data-correct="b">
+        <h3>1. Un message effrayant apparaît et dit que votre iPad a un virus. Que devriez-vous faire?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Appeler le numéro de téléphone affiché à l’écran</button>
+          <button class="quiz-opt" type="button" data-answer="b">Appuyer sur le bouton d’accueil pour le fermer et ignorer le message</button>
+          <button class="quiz-opt" type="button" data-answer="c">Éteindre votre iPad et ne plus jamais l’utiliser</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Bravo. Le bouton d’accueil est votre sortie de secours. Ces messages effrayants sont toujours faux."
+          data-wrong="Pas tout à fait. Le plus sûr est d’appuyer sur le bouton d’accueil. Ces faux avertissements sont toujours des attrapes : n’appelez jamais le numéro affiché."></div>
+      </div>
+      <div class="quiz-q" data-correct="a">
+        <h3>2. Qu’arrive-t-il à une application quand vous appuyez sur le bouton d’accueil?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Elle passe en arrière-plan, mais n’est pas supprimée</button>
+          <button class="quiz-opt" type="button" data-answer="b">Elle est supprimée définitivement de votre iPad</button>
+          <button class="quiz-opt" type="button" data-answer="c">Elle envoie vos renseignements personnels à des inconnus</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactement. Appuyer sur le bouton d’accueil, c’est comme remettre un livre sur l’étagère. Il est toujours là quand vous en avez besoin."
+          data-wrong="En fait, appuyer sur le bouton d’accueil ne supprime rien. L’application passe en arrière-plan, comme un livre qu’on remet sur l’étagère."></div>
+      </div>
+      <div class="quiz-q" data-correct="c">
+        <h3>3. Votre écran est figé et rien ne répond quand vous touchez. Quelle est la meilleure première étape?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Jeter l’iPad et en acheter un neuf</button>
+          <button class="quiz-opt" type="button" data-answer="b">Appeler votre petit-enfant en panique</button>
+          <button class="quiz-opt" type="button" data-answer="c">Essayer de forcer la fermeture de l’application, et si cela ne fonctionne pas, redémarrer l’appareil</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Parfait. Forcer la fermeture d’abord, redémarrer ensuite. Calme et méthodique : vous l’avez."
+          data-wrong="La meilleure approche est de forcer la fermeture de l’application d’abord, et si cela ne fonctionne pas, de redémarrer l’appareil. Comme éteindre puis rallumer un interrupteur."></div>
+      </div>
+    </div>
+
+    <h2>Votre progression</h2>
+    <p>Cochez chaque élément quand vous vous sentez à l’aise. C’est enregistré sur cet appareil seulement, aucun compte requis.</p>
+    <ul class="checklist" data-checklist="module-1">
+      <li class="check-item"><input type="checkbox" id="module-1-1"><label for="module-1-1">Je sais où est mon bouton d’accueil (ou comment balayer vers le haut)</label></li>
+      <li class="check-item"><input type="checkbox" id="module-1-2"><label for="module-1-2">Je peux revenir à mon écran d’accueil depuis n’importe quelle application</label></li>
+      <li class="check-item"><input type="checkbox" id="module-1-3"><label for="module-1-3">Je comprends que les messages surgissants effrayants sont faux</label></li>
+      <li class="check-item"><input type="checkbox" id="module-1-4"><label for="module-1-4">Je sais qu’il faut appuyer sur le bouton d’accueil au lieu d’appeler un numéro affiché à l’écran</label></li>
+    </ul>
+
+    <!-- Denise: forward the lesson in isolation. Copy-link only, no share API. -->
+    <section class="send-lesson" aria-labelledby="send-h">
+      <h2 id="send-h">Envoyer cette leçon à quelqu’un</h2>
+      <p>Vous aidez un parent ou un ami? Cette page fonctionne toute seule, sans compte et sans rien à installer. Copiez le lien et envoyez-le-lui par texto.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="button" data-copy-link>Copier le lien de cette leçon</button>
+        <span class="send-done" data-copy-done hidden>Copié. Collez-le dans un texto ou un courriel.</span>
+      </div>
+      <input class="visually-hidden" type="text" data-copy-field hidden readonly aria-label="Lien vers cette leçon">
+    </section>
+
+    <div class="success-state">
+      <p><strong>Bravo.</strong> Vous possédez maintenant l’habileté la plus importante en technologie : savoir revenir en lieu sûr. Tout le reste se construit sur cette base.</p>
+    </div>
+
+    <nav class="related-modules" aria-label="Continue learning">
+      <h2>Et maintenant, où aller?</h2>
+      <div class="related-grid">
+        <a class="related-card" href="../digital-literacy-101.html">
+          <span class="related-num">Notions de base</span>
+          <span class="related-name">Littératie numérique 101 (en anglais seulement)</span>
+          <span class="related-desc">Les notions de base en langage clair, si vous aimeriez commencer un pas plus tôt.</span>
+        </a>
+        <a class="related-card" href="module-2.html">
+          <span class="related-num">Module 2</span>
+          <span class="related-name">Le bouclier de sécurité (en anglais seulement)</span>
+          <span class="related-desc">Une fois que vous savez vous sortir de toute situation, apprenez à vous protéger des menaces qui se cachent derrière.</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<!-- SHARED SHELL: footer (identical on every page). -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Nos engagements">
+      <li><span aria-hidden="true">✓</span> Aucun compte</li>
+      <li><span aria-hidden="true">✓</span> Aucun pistage</li>
+      <li><span aria-hidden="true">✓</span> Rien à acheter</li>
+      <li><span aria-hidden="true">✓</span> Canadien</li>
+    </ul>
+    <p>Le Centre de confiance numérique est offert gratuitement. C’est une initiative communautaire de Two Birds Innovation, une entreprise ontarienne, pour aider les aînés du Canada à rester en sécurité et en contact en ligne. Aucun compte, aucun pistage, aucun appel de vente.</p>
+    <p class="scope-note">Remarque : ce site offre des conseils de sécurité en langage clair, et non des conseils juridiques. Si vous soupçonnez une fraude, communiquez directement avec votre banque.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">Pour les familles (en anglais seulement)</a></li>
+      <li><a href="../fr/about.html">À propos de nous</a></li>
+      <li><a href="../faq.html">FAQ (en anglais seulement)</a></li>
+      <li><a href="../glossary.html">Glossaire (en anglais seulement)</a></li>
+      <li><a href="../fr/privacy.html">Confidentialité</a></li>
+      <li><a href="../fr/terms.html">Conditions d’utilisation</a></li>
+      <li><a href="../disclaimer.html">Avis de non-responsabilité (en anglais seulement)</a></li>
+      <li><a href="../support-directory.html">Obtenir de l’aide (en anglais seulement)</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- SHARED SHELL: layered consent bar (identical on every page). -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Choix de confidentialité">
+  <div class="container">
+    <p>Nous utilisons une petite mémoire du navigateur pour faire fonctionner le site et retenir votre taille de texte. <a href="../fr/privacy.html">En savoir plus</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accepter</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Refuser</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Préférences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Fonctionnel (toujours actif)</span>
+        <p>Fait fonctionner le site et retient votre taille de texte.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Nous aide à voir quelles leçons aident le plus. Cela ne vous identifie pas.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (facultatif)</span>
+        <p>Nous aide à joindre plus d’aînés. Nous ne vendons jamais vos renseignements personnels.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Enregistrer mes choix</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/module.js"></script>
+</body>
+</html>

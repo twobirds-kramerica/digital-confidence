@@ -209,5 +209,215 @@
         "external": false
       }
     ]
+  },
+  "fr": {
+    "page_title": "Maîtrisez votre boîte de réception - Centre de confiance numérique",
+    "title": "Maîtrisez votre boîte de réception",
+    "description": "Une routine quotidienne toute simple pour gérer les courriels et les pourriels : archiver ou supprimer, se désabonner en toute sécurité et entraîner son filtre. Leçon gratuite pour les aînés du Canada.",
+    "category": "Courriels et messages",
+    "lesson_time": "Environ 10 minutes, à votre rythme",
+    "lead": "Une routine quotidienne de 5 minutes qui garde les courriels importants en vue et laisse passer les pourriels.",
+    "nav_current": "../fr/index.html#protect-money",
+    "breadcrumb_group_label": "Protégez votre argent",
+    "breadcrumb_group_anchor": "../fr/index.html#protect-money",
+    "story": {
+      "label": "L’histoire de Robert",
+      "paragraphs": [
+        "Robert, 81 ans, a 14 327 courriels non lus. Il n’a pas supprimé un seul courriel en quatre ans parce que « et si j’en avais besoin? ». Sa boîte de réception est si pleine que lorsque sa banque a envoyé une véritable alerte de sécurité, il ne l’a pas vue pendant trois jours.",
+        "Si cela vous rappelle quelque chose, vous n’êtes pas seul. La plupart des gens ont des milliers de courriels non lus, et personne ne leur a jamais montré un système simple pour garder le dessus. Cette leçon va changer cela."
+      ]
+    },
+    "coach": "Le nombre affiché sur votre boîte de réception ne mesure rien à votre sujet. Un gros chiffre veut simplement dire que des messages arrivent depuis des années et que personne ne vous a montré quoi en faire. Vous n’avez pas besoin de rattraper vos vieux courriels. Il vous faut seulement une petite habitude quotidienne, et cette page va vous en donner une.",
+    "sections": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Votre boîte de réception est une rivière, pas un classeur"
+      },
+      {
+        "type": "paragraph",
+        "text": "Les messages passent dans votre boîte de réception. Certains sont importants, comme ceux de votre famille, de votre banque ou de votre médecin. La plupart ne le sont pas, comme les infolettres auxquelles vous vous êtes abonné il y a des années et les avis automatiques. Le but n’est pas de lire chaque message. Le but est de trouver les messages importants et de laisser passer le reste."
+      },
+      {
+        "type": "tip",
+        "label": "Vous n’avez pas à tout lire",
+        "text": "Si vous avez des milliers de courriels non lus, n’essayez pas de les parcourir. Cela prendrait des semaines et n’apporterait rien. Concentrez-vous seulement sur les courriels des 7 derniers jours. Tout ce qui est plus vieux n’est presque certainement plus urgent, et vous pourrez toujours rechercher un vieux courriel si vous en avez besoin plus tard."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Archiver ou supprimer"
+      },
+      {
+        "type": "paragraph",
+        "text": "Il y a deux façons de retirer un courriel de votre boîte de réception, et comprendre la différence change toute l’expérience."
+      },
+      {
+        "type": "tip",
+        "label": "Archiver, le bouton « au cas où »",
+        "text": "Quand vous archivez un courriel, il quitte votre boîte de réception mais n’est pas supprimé. Il se déplace vers un dossier appelé « Tous les messages » ou « Archive », où vous pouvez le retrouver en tout temps par la recherche. Archivez les reçus, les confirmations et les messages déjà lus. Dans le doute, archivez."
+      },
+      {
+        "type": "tip",
+        "label": "Supprimer, le bouton « parti pour de bon »",
+        "text": "Quand vous supprimez un courriel, il va dans la corbeille, y attend environ 30 jours, puis est retiré pour de bon. Supprimez les pourriels évidents, les promotions dont vous n’aurez jamais besoin et tout message d’un expéditeur que vous ne reconnaissez pas."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Comment se désabonner en toute sécurité"
+      },
+      {
+        "type": "paragraph",
+        "text": "On a dit à Robert que cliquer sur « se désabonner », c’est comme ça que les fraudeurs vous attrapent. C’est en partie vrai et en partie un mythe. Toute la réponse tient en une seule question."
+      },
+      {
+        "type": "tip",
+        "label": "La règle simple",
+        "text": "Avez-vous déjà donné votre adresse courriel à cette entreprise? Si oui, le lien de désabonnement au bas de son courriel est sûr et légal (la loi canadienne exige qu’il fonctionne). Si non, ne cliquez sur rien dans le message."
+      },
+      {
+        "type": "warning",
+        "label": "Attention",
+        "text": "Ne cliquez pas sur « se désabonner » dans des courriels auxquels vous ne vous êtes jamais abonné, comme des gains de loterie ou des avis de colis pour des choses jamais commandées. Cliquer sur quoi que ce soit peut confirmer au polluposteur que votre adresse est active. Supprimez-les simplement et marquez-les comme pourriels."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Marquez les pourriels pour entraîner votre filtre"
+      },
+      {
+        "type": "paragraph",
+        "text": "Chaque fois que vous marquez un courriel comme pourriel, vous apprenez à votre application de courriel à reconnaître les messages semblables. Plus vous en signalez, plus votre filtre devient intelligent. Après environ deux semaines, la plupart des gens voient une grande baisse du courrier indésirable qui atteint leur boîte de réception."
+      },
+      {
+        "type": "walkthrough",
+        "title": "Signaler un courriel comme pourriel",
+        "steps": [
+          "Ouvrez le courriel indésirable.",
+          "Dans Mail d’Apple, touchez l’icône de drapeau ou de flèche, puis <strong>Déplacer vers Indésirables</strong>.",
+          "Dans Gmail, touchez les trois points dans le coin supérieur, puis <strong>Signaler comme pourriel</strong>.",
+          "Le message se déplace vers votre dossier d’indésirables et votre filtre en tire une leçon."
+        ]
+      },
+      {
+        "type": "tip",
+        "label": "Le défi des deux semaines",
+        "text": "Pendant les deux prochaines semaines, marquez chaque pourriel comme indésirable au lieu de simplement le supprimer. C’est ce qui entraîne le filtre. Après deux semaines, votre messagerie sera nettement meilleure pour attraper les pourriels avant qu’ils vous atteignent."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Les messages indésirables dans les textos et les applications de messagerie"
+      },
+      {
+        "type": "paragraph",
+        "text": "Les messages non désirés arrivent maintenant aussi par WhatsApp, Facebook Messenger et les textos ordinaires. Les bloquer et les signaler est rapide une fois qu’on sait où toucher."
+      },
+      {
+        "type": "list",
+        "items": [
+          "<strong>WhatsApp ou Messenger :</strong> ouvrez la conversation, touchez le nom de la personne en haut, faites défiler vers le bas et touchez <strong>Bloquer</strong>. La personne n’en est pas avisée et ne peut plus vous joindre.",
+          "<strong>Textos indésirables au Canada :</strong> transférez le message au <strong>7726</strong> (qui épelle SPAM). Cela fonctionne avec Bell, Rogers, Telus et d’autres. Votre fournisseur enquêtera et pourrait bloquer l’expéditeur."
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Votre routine quotidienne de 5 minutes"
+      },
+      {
+        "type": "paragraph",
+        "text": "La solution n’est pas un grand ménage : c’est une petite habitude quotidienne. Cinq minutes chaque matin, avec votre café ou votre thé, c’est tout ce qu’il faut."
+      },
+      {
+        "type": "walkthrough",
+        "title": "Chaque matin, quatre étapes rapides",
+        "steps": [
+          "<strong>Supprimez les pourriels évidents</strong> (30 secondes). Ne les ouvrez pas : supprimez-les ou marquez-les comme indésirables.",
+          "<strong>Lisez les messages de votre famille et de votre banque</strong> (2 minutes). Cherchez les noms que vous reconnaissez et répondez à ceux-là.",
+          "<strong>Archivez tout le reste</strong> (1 minute). Cela quitte votre boîte de réception mais reste retrouvable si vous en avez besoin un jour.",
+          "<strong>C’est terminé.</strong> N’essayez pas de tout lire ni d’atteindre une boîte vide. Gardez les messages importants en vue et laissez aller le reste."
+        ]
+      },
+      {
+        "type": "the_move",
+        "label": "Le geste à poser",
+        "text": "Cessez d’essayer de rattraper vos vieux courriels. Prenez un nouveau départ demain matin : supprimez les pourriels, lisez les messages importants, archivez le reste. Cinq minutes. C’est votre nouveau système."
+      },
+      {
+        "type": "quiz",
+        "heading": "Petite vérification : testez vos connaissances",
+        "intro": "Touchez la réponse qui vous semble la bonne. Aucun pointage n’est conservé et il n’y a rien à quoi se connecter.",
+        "questions": [
+          {
+            "q": "1. Quelle est la différence entre archiver et supprimer?",
+            "options": [
+              "C’est exactement la même chose",
+              "Archiver conserve le courriel mais le retire de la boîte de réception; supprimer l’envoie à la corbeille pour qu’il soit retiré",
+              "Archiver retire le courriel définitivement"
+            ],
+            "correct": 1,
+            "right": "C’est ça. Archiver range le courriel à l’écart, où vous pouvez encore le retrouver par la recherche. Supprimer l’envoie à la corbeille pour qu’il soit retiré plus tard.",
+            "wrong": "Pas tout à fait. Archiver conserve le courriel en le retirant de votre boîte de réception, tandis que supprimer l’envoie à la corbeille pour qu’il soit retiré."
+          },
+          {
+            "q": "2. Vous recevez un courriel d’une entreprise inconnue qui vous promet des gains de loterie. Devriez-vous cliquer sur « se désabonner »?",
+            "options": [
+              "Oui, se désabonner pour arrêter les courriels",
+              "Non : supprimez-le simplement et marquez-le comme pourriel",
+              "Répondre et leur demander d’arrêter"
+            ],
+            "correct": 1,
+            "right": "Exactement. Vous ne vous êtes jamais abonné, alors ne cliquez sur rien. Supprimez-le et marquez-le comme pourriel.",
+            "wrong": "Le geste sûr est de le supprimer et de le marquer comme pourriel. Cliquer sur quoi que ce soit dans un message auquel vous ne vous êtes jamais abonné peut attirer encore plus de pourriels."
+          },
+          {
+            "q": "3. Quel est le but de la routine quotidienne de 5 minutes?",
+            "options": [
+              "Lire chaque courriel que vous avez reçu dans votre vie",
+              "Atteindre une boîte de réception vide d’ici ce soir",
+              "Garder les messages importants en vue et laisser aller le reste"
+            ],
+            "correct": 2,
+            "right": "Parfait. La routine sert à garder le contrôle, pas à tout lire ni à atteindre une boîte vide.",
+            "wrong": "Le but est simplement de garder les messages importants en vue et de laisser aller le reste. Vous n’avez jamais besoin de tout lire."
+          }
+        ]
+      },
+      {
+        "type": "checklist",
+        "heading": "Votre progression",
+        "intro": "Cochez chaque élément quand vous vous sentez à l’aise. C’est enregistré sur cet appareil seulement, aucun compte requis.",
+        "id": "module-27",
+        "items": [
+          "Je comprends qu’une boîte de réception pleine, c’est normal",
+          "Je sais quand archiver et quand supprimer",
+          "Je connais la seule question à me poser avant de me désabonner",
+          "Je peux marquer un courriel comme pourriel pour entraîner mon filtre",
+          "J’ai une routine matinale simple de 5 minutes"
+        ]
+      }
+    ],
+    "success_state": "<strong>Bravo.</strong> Vous avez maintenant un système simple pour votre boîte de réception : trouver les messages importants, laisser passer le reste et n’y consacrer que cinq minutes par jour. C’est tout ce qu’il faut pour se sentir en contrôle.",
+    "related": {
+      "heading": "Et maintenant, où aller?",
+      "cards": [
+        {
+          "num": "Module 5",
+          "name": "Courriels et messages (en anglais seulement)",
+          "desc": "Les habiletés de tous les jours derrière une boîte de réception calme : envoyer du courrier, repérer les fraudes et partager des photos en toute sécurité.",
+          "href": "module-5.html",
+          "external": false
+        },
+        {
+          "num": "Module 6",
+          "name": "Services bancaires et transactions",
+          "desc": "Bien des fraudes commencent dans votre boîte de réception. Apprenez les habitudes qui protègent votre argent quand vous faites vos opérations bancaires en ligne.",
+          "href": "module-6-fr.html",
+          "external": false
+        }
+      ]
+    }
   }
 }

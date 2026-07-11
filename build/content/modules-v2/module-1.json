@@ -182,5 +182,188 @@
         "external": false
       }
     ]
+  },
+  "fr": {
+    "page_title": "La sortie de secours - Centre de confiance numérique",
+    "title": "La sortie de secours",
+    "description": "L’habileté la plus importante sur n’importe quel appareil : comment revenir en lieu sûr, quoi qu’il arrive à l’écran. Leçon gratuite, en langage clair, pour les aînés du Canada. Aucun compte requis.",
+    "category": "Notions de base de l’appareil",
+    "lesson_time": "Environ 10 minutes, à votre rythme",
+    "lead": "L’habileté la plus importante pour utiliser n’importe quel appareil : comment revenir en lieu sûr, quoi qu’il arrive à l’écran.",
+    "nav_current": "../fr/index.html#everyday-confidence",
+    "breadcrumb_group_label": "Confiance au quotidien",
+    "breadcrumb_group_anchor": "../fr/index.html#everyday-confidence",
+    "story": {
+      "label": "L’histoire de Margaret",
+      "paragraphs": [
+        "Margaret, 74 ans, parcourait des recettes sur son iPad un mardi matin. Elle a touché un lien qui promettait « la meilleure recette de tartelettes au beurre de l’Ontario », et soudain son écran s’est rempli de couleurs clignotantes, avec une voix forte annonçant que son iPad avait un virus. Son cœur s’est emballé. Elle ne trouvait aucun moyen de fermer ce message, et elle a cru que son iPad était brisé — ou pire, que quelqu’un était en train de voler ses renseignements bancaires à l’instant même.",
+        "Voici la bonne nouvelle : l’iPad de Margaret allait parfaitement bien, du début à la fin. Ce message effrayant était un faux, un truc courant conçu pour faire peur aux gens. Si Margaret avait connu la seule habileté que nous allons apprendre, elle aurait pu fermer ce faux avertissement en deux secondes environ et retourner tout droit à sa recette de tartelettes au beurre."
+      ]
+    },
+    "coach": "Si vous avez déjà figé devant un message étrange, vous ne faites rien de mal. Cette réaction est exactement ce que ces messages cherchent à provoquer. À la fin de cette page, vous aurez une façon calme et fiable de vous sortir de n’importe lequel d’entre eux, et vous n’aurez plus jamais à cacher votre appareil dans un tiroir.",
+    "sections": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "La règle d’or : rien n’est permanent"
+      },
+      {
+        "type": "tip",
+        "label": "La vérité la plus rassurante au sujet de votre appareil",
+        "text": "Vous ne pouvez pas briser votre iPad ou votre téléphone en touchant le mauvais bouton. Vous ne pouvez pas supprimer Internet par accident. Vous ne pouvez pas abîmer votre appareil en ouvrant la mauvaise application. Presque tout ce que vous faites peut être annulé, fermé ou réparé."
+      },
+      {
+        "type": "paragraph",
+        "text": "Pensez à votre appareil comme à une bibliothèque. Quand vous ouvrez une application, c’est comme prendre un livre sur l’étagère. Quand vous la fermez, vous remettez le livre à sa place. Le livre est toujours là. Vous n’avez rien changé de permanent."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Sortie de secours numéro 1 : le bouton d’accueil (ou le geste d’accueil)"
+      },
+      {
+        "type": "paragraph",
+        "text": "Votre appareil a une voie de sortie principale. Sur un iPhone ou un iPad, c’est le bouton d’accueil ou le geste de balayage vers le haut :"
+      },
+      {
+        "type": "walkthrough",
+        "title": "Si votre iPad a un bouton rond sous l’écran",
+        "steps": [
+          "Regardez tout en bas, sous l’écran. Vous verrez un cercle rond, légèrement enfoncé. C’est votre <strong>bouton d’accueil</strong>.",
+          "Appuyez dessus une fois avec le pouce ou un doigt. Pas fort : une pression douce et ferme.",
+          "Tout ce qui était à l’écran disparaît. Vous êtes de retour à votre écran d’accueil, celui avec toutes les images de vos applications."
+        ]
+      },
+      {
+        "type": "walkthrough",
+        "title": "Si votre iPad n’a pas de bouton rond (modèles plus récents)",
+        "steps": [
+          "Regardez tout en bas de l’écran. Vous verrez une fine ligne horizontale foncée.",
+          "Posez votre doigt sur cette ligne et <strong>balayez vers le haut</strong>, en glissant du bas vers le milieu.",
+          "Vous êtes de retour à votre écran d’accueil. Sain et sauf."
+        ]
+      },
+      {
+        "type": "helper",
+        "label": "Petit rappel de confiance",
+        "text": "Vous vous débrouillez à merveille. Le bouton d’accueil est votre meilleur ami sur cet appareil. Vous ne pouvez rien briser en l’appuyant, alors appuyez dessus aussi souvent que vous le voulez."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Ces messages surgissants qui font peur"
+      },
+      {
+        "type": "paragraph",
+        "text": "Parlons de la situation qui a effrayé Margaret. Vous utilisez votre appareil, et soudain un message remplit votre écran :"
+      },
+      {
+        "type": "scam_example",
+        "label": "Exemple de faux avertissement (ce n’est PAS réel)",
+        "text": "ATTENTION! Votre iPad est infecté par 3 virus! Vos données personnelles sont en danger! Appelez le soutien Apple immédiatement au 1-888-555-0199. NE fermez PAS cette fenêtre!"
+      },
+      {
+        "type": "paragraph",
+        "text": "Ce message est <strong>faux</strong>, chaque fois, sans exception. Les vrais avertissements de votre appareil apparaissent comme de petites notifications calmes, jamais comme des alarmes clignotantes plein écran. Tout message qui vous demande d’appeler un numéro de téléphone est une fraude. Tout message qui dit « NE fermez PAS cette fenêtre » essaie de vous empêcher d’utiliser votre sortie de secours. Fermez-le."
+      },
+      {
+        "type": "three_second_rule",
+        "heading": "La règle des 3 secondes",
+        "steps": [
+          {
+            "icon": "✋",
+            "name": "Arrêtez",
+            "text": "Retirez vos doigts de l’écran."
+          },
+          {
+            "icon": "🫁",
+            "name": "Respirez",
+            "text": "Une respiration lente et profonde."
+          },
+          {
+            "icon": "🔍",
+            "name": "Vérifiez",
+            "text": "Est-ce réel, ou quelqu’un essaie-t-il de me faire peur?"
+          }
+        ]
+      },
+      {
+        "type": "the_move",
+        "label": "Le geste à poser",
+        "text": "Quand un message effrayant apparaît, appuyez sur le bouton d’accueil (ou balayez vers le haut depuis le bas de l’écran). Le message disparaît et votre appareil va très bien. N’appelez jamais un numéro affiché dans une fenêtre surgissante, et n’entrez jamais un mot de passe pour « régler » le problème. Les vrais problèmes ne se règlent jamais en appelant un numéro affiché à l’écran."
+      },
+      {
+        "type": "quiz",
+        "heading": "Petite vérification : testez vos connaissances",
+        "intro": "Touchez la réponse qui vous semble la bonne. Aucun pointage n’est conservé et il n’y a rien à quoi se connecter.",
+        "questions": [
+          {
+            "q": "1. Un message effrayant apparaît et dit que votre iPad a un virus. Que devriez-vous faire?",
+            "options": [
+              "Appeler le numéro de téléphone affiché à l’écran",
+              "Appuyer sur le bouton d’accueil pour le fermer et ignorer le message",
+              "Éteindre votre iPad et ne plus jamais l’utiliser"
+            ],
+            "correct": 1,
+            "right": "Bravo. Le bouton d’accueil est votre sortie de secours. Ces messages effrayants sont toujours faux.",
+            "wrong": "Pas tout à fait. Le plus sûr est d’appuyer sur le bouton d’accueil. Ces faux avertissements sont toujours des attrapes : n’appelez jamais le numéro affiché."
+          },
+          {
+            "q": "2. Qu’arrive-t-il à une application quand vous appuyez sur le bouton d’accueil?",
+            "options": [
+              "Elle passe en arrière-plan, mais n’est pas supprimée",
+              "Elle est supprimée définitivement de votre iPad",
+              "Elle envoie vos renseignements personnels à des inconnus"
+            ],
+            "correct": 0,
+            "right": "Exactement. Appuyer sur le bouton d’accueil, c’est comme remettre un livre sur l’étagère. Il est toujours là quand vous en avez besoin.",
+            "wrong": "En fait, appuyer sur le bouton d’accueil ne supprime rien. L’application passe en arrière-plan, comme un livre qu’on remet sur l’étagère."
+          },
+          {
+            "q": "3. Votre écran est figé et rien ne répond quand vous touchez. Quelle est la meilleure première étape?",
+            "options": [
+              "Jeter l’iPad et en acheter un neuf",
+              "Appeler votre petit-enfant en panique",
+              "Essayer de forcer la fermeture de l’application, et si cela ne fonctionne pas, redémarrer l’appareil"
+            ],
+            "correct": 2,
+            "right": "Parfait. Forcer la fermeture d’abord, redémarrer ensuite. Calme et méthodique : vous l’avez.",
+            "wrong": "La meilleure approche est de forcer la fermeture de l’application d’abord, et si cela ne fonctionne pas, de redémarrer l’appareil. Comme éteindre puis rallumer un interrupteur."
+          }
+        ]
+      },
+      {
+        "type": "checklist",
+        "heading": "Votre progression",
+        "intro": "Cochez chaque élément quand vous vous sentez à l’aise. C’est enregistré sur cet appareil seulement, aucun compte requis.",
+        "id": "module-1",
+        "items": [
+          "Je sais où est mon bouton d’accueil (ou comment balayer vers le haut)",
+          "Je peux revenir à mon écran d’accueil depuis n’importe quelle application",
+          "Je comprends que les messages surgissants effrayants sont faux",
+          "Je sais qu’il faut appuyer sur le bouton d’accueil au lieu d’appeler un numéro affiché à l’écran"
+        ]
+      }
+    ],
+    "success_state": "<strong>Bravo.</strong> Vous possédez maintenant l’habileté la plus importante en technologie : savoir revenir en lieu sûr. Tout le reste se construit sur cette base.",
+    "related": {
+      "heading": "Et maintenant, où aller?",
+      "cards": [
+        {
+          "num": "Notions de base",
+          "name": "Littératie numérique 101 (en anglais seulement)",
+          "desc": "Les notions de base en langage clair, si vous aimeriez commencer un pas plus tôt.",
+          "href": "../digital-literacy-101.html",
+          "external": false
+        },
+        {
+          "num": "Module 2",
+          "name": "Le bouclier de sécurité (en anglais seulement)",
+          "desc": "Une fois que vous savez vous sortir de toute situation, apprenez à vous protéger des menaces qui se cachent derrière.",
+          "href": "module-2.html",
+          "external": false
+        }
+      ]
+    }
   }
 }

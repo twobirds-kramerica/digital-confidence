@@ -137,5 +137,143 @@
       { "num": "Module 5", "name": "Email and Messages", "desc": "Many banking scams begin with a fake email or text. Learn to spot them before any money moves.", "href": "module-5.html", "external": false },
       { "num": "Module 7", "name": "Photos and Memories", "desc": "Now for the joyful side of your device: taking, editing, and sharing photos with the people you love.", "href": "module-7.html", "external": false }
     ]
+  },
+  "fr": {
+    "page_title": "Services bancaires et transactions - Centre de confiance numérique",
+    "title": "Services bancaires et transactions",
+    "description": "Comment vérifier votre solde, payer vos factures et magasiner en ligne en toute sécurité, depuis votre appareil. Leçon gratuite, en langage clair, pour les aînés du Canada. Aucun compte requis.",
+    "category": "Services bancaires",
+    "lesson_time": "Environ 15 minutes, à votre rythme",
+    "lead": "Comment vérifier votre solde, payer vos factures et faire des achats sûrs en ligne, depuis votre propre appareil.",
+    "nav_current": "../fr/index.html#protect-money",
+    "breadcrumb_group_label": "Protégez votre argent",
+    "breadcrumb_group_anchor": "../fr/index.html#protect-money",
+    "story": {
+      "label": "L’histoire de Jean",
+      "paragraphs": [
+        "Jean, 73 ans, se rendait en voiture à sa succursale bancaire tous les vendredis pour vérifier le solde de son compte. Pluie, neige, travaux : rien ne l’arrêtait. Elle faisait confiance à la caissière et elle faisait confiance au reçu imprimé.",
+        "Puis la pandémie a tout changé. La succursale a réduit ses heures, les files étaient longues, et la fille de Jean lui a proposé d’essayer les services bancaires mobiles. « J’étais terrifiée, se rappelle Jean. Et si quelqu’un volait mon argent par le téléphone? Et si j’appuyais sur le mauvais bouton et que j’envoyais mes économies quelque part par accident? »",
+        "La fille de Jean s’est assise avec elle et lui a fait découvrir l’application RBC, étape par étape. Elles ont vérifié son solde ensemble. Elles ont regardé les transactions récentes. Jean a réalisé que tout ce qu’elle pouvait voir au comptoir de la banque, elle pouvait le voir sur son iPad, sans quitter sa cuisine.",
+        "« Je vais encore à la succursale parfois, dit Jean avec un sourire. Mais maintenant, c’est parce que je le veux, pas parce que je le dois. Et je vérifie mon solde chaque matin avec mon café. »"
+      ]
+    },
+    "coach": "Les services bancaires en ligne, c’est le sujet où presque tout le monde ressent le plus de peur, et cette peur se comprend : c’est votre argent. Mais pensez-y : les banques ont consacré des décennies et des milliards de dollars à protéger ces systèmes, et vous avez des protections légales si jamais quelque chose tournait mal. Être prudent, c’est sage. Avoir peur, c’est facultatif.",
+    "sections": [
+      { "type": "heading", "level": 2, "text": "Pourquoi les services bancaires en ligne sont plus sûrs que vous le pensez" },
+      { "type": "paragraph", "text": "Cela pourrait vous surprendre, mais les services bancaires en ligne par l’application officielle de votre banque sont extrêmement sécuritaires. Voici pourquoi :" },
+      { "type": "list", "items": [
+        "<strong>Les applications bancaires utilisent le chiffrement.</strong> Le chiffrement brouille vos renseignements de sorte que même si quelqu’un les interceptait, il ne verrait que du charabia. C’est comme écrire une lettre dans un code secret que seuls vous et la banque connaissez.",
+        "<strong>Votre banque surveille les activités inhabituelles.</strong> Si quelqu’un tente de se connecter depuis un endroit inconnu ou de faire un achat inhabituel, les systèmes de sécurité de votre banque le signalent immédiatement.",
+        "<strong>Face ID ajoute une couche de plus.</strong> Si vous configurez Face ID ou une empreinte digitale, personne ne peut ouvrir votre application bancaire sans vous.",
+        "<strong>Les banques canadiennes ont une assurance-dépôts.</strong> La Société d’assurance-dépôts du Canada (SADC) protège vos dépôts jusqu’à 100 000 $. Même dans le cas improbable où quelque chose tournerait mal, votre argent est protégé."
+      ] },
+      { "type": "helper", "label": "Fait rassurant", "text": "Les banques dépensent des milliards de dollars en sécurité chaque année. Les systèmes qui protègent vos services bancaires en ligne sont les mêmes qui protègent la banque elle-même. Quand vous utilisez l’application officielle, vous êtes derrière les mêmes murs que la voûte de la banque." },
+      { "type": "helper", "label": "Petit rappel de confiance", "text": "Les services bancaires en ligne ne sont pas un risque : c’est un service bien gardé. Vous méritez le confort de consulter vos comptes depuis la maison." },
+      { "type": "warning", "label": "Attention", "text": "Votre banque ne vous téléphonera jamais, ne vous écrira jamais par courriel ni par texto pour vous demander votre mot de passe, votre NIP ou vos questions de sécurité. Si quelqu’un vous contacte en se disant de votre banque et demande ces renseignements, raccrochez ou supprimez le message immédiatement. Puis appelez votre banque directement au numéro inscrit au dos de votre carte bancaire." },
+
+      { "type": "heading", "level": 2, "text": "Obtenir la vraie application de votre banque" },
+      { "type": "paragraph", "text": "L’étape la plus importante est de télécharger la <strong>vraie</strong> application depuis le <strong>vrai</strong> App Store ou la boutique Google Play." },
+      { "type": "walkthrough", "title": "Télécharger l’application de votre banque", "steps": [
+        "Ouvrez l’<strong>App Store</strong> (icône bleue avec un « A » blanc) ou la <strong>boutique Google Play</strong> (icône en triangle coloré).",
+        "Touchez <strong>Rechercher</strong> et tapez le nom de votre banque. Par exemple : « RBC Mobile », « TD Canada Trust » ou « BMO ».",
+        "<strong>Vérifiez le développeur.</strong> La vraie application RBC est faite par « Royal Bank of Canada ». La vraie application TD est faite par « TD Bank Group ». Cherchez le nom officiel.",
+        "Vérifiez les évaluations. Les applications bancaires officielles comptent des millions de téléchargements et de bonnes notes.",
+        "Touchez <strong>Obtenir</strong> ou <strong>Installer</strong> et confirmez avec Face ID, votre empreinte digitale ou le verrouillage de votre écran."
+      ] },
+      { "type": "tip", "label": "Sur un ordinateur Windows", "text": "Vous n’avez pas besoin d’installer une application. Ouvrez Edge ou Chrome, tapez l’adresse Web de votre banque directement dans la barre d’adresse (par exemple rbc.com ou td.com), puis enregistrez-la comme favori en appuyant sur Ctrl et D. Par la suite, ouvrez toujours le site de votre banque depuis ce favori, jamais depuis un lien reçu par courriel ou par texto." },
+      { "type": "warning", "label": "Règle de sécurité essentielle", "text": "Ne vous connectez jamais à votre banque par un lien reçu dans un courriel, un texto ou un site Web que quelqu’un vous a envoyé. Ouvrez toujours l’application bancaire directement depuis votre écran d’accueil, ou tapez vous-même l’adresse Web de la banque. C’est l’habitude la plus importante pour vous protéger des fraudes bancaires." },
+      { "type": "warning", "label": "Attention", "text": "Soyez prudent quand vous cherchez l’application de votre banque. Des fraudeurs créent parfois de fausses applications bancaires aux noms semblables. Vérifiez toujours le nom du développeur. Il doit correspondre au nom officiel de votre banque, par exemple « Royal Bank of Canada » pour RBC." },
+
+      { "type": "heading", "level": 2, "text": "Vérifier votre solde" },
+      { "type": "walkthrough", "title": "Consulter le solde de votre compte", "steps": [
+        "Ouvrez votre <strong>application bancaire</strong> depuis l’écran d’accueil ou, sur un ordinateur, ouvrez le favori de votre banque et cliquez sur <strong>Ouvrir une session</strong>.",
+        "Connectez-vous avec votre nom d’utilisateur et votre mot de passe, ou utilisez <strong>Face ID</strong> ou votre <strong>empreinte digitale</strong> si vous l’avez configurée.",
+        "Les soldes de vos comptes apparaîtront sur l’écran principal. Vous verrez votre compte-chèques, votre compte d’épargne et vos cartes de crédit.",
+        "Touchez n’importe quel compte pour voir les <strong>transactions récentes</strong>, une liste de l’argent qui entre et qui sort.",
+        "Quand vous avez terminé, <strong>fermez la session</strong> (cherchez un bouton « Fermer la session » ou « Quitter », habituellement dans le menu) et fermez l’application."
+      ] },
+      { "type": "tip", "label": "Bonne habitude : fermez toujours la session", "text": "Fermez toujours la session à la fin de vos opérations bancaires en ligne, surtout sur un ordinateur partagé ou familial. Fermer simplement la fenêtre ne suffit pas. Fermer la session garantit que personne d’autre ne peut atteindre votre compte en ouvrant le navigateur plus tard." },
+      { "type": "three_second_rule", "heading": "La règle des 3 secondes pour les opérations bancaires", "steps": [
+        { "icon": "✋", "name": "Arrêtez", "text": "Ne précipitez jamais une transaction financière. Il n’y a pas de date limite." },
+        { "icon": "🫁", "name": "Respirez", "text": "Revérifiez les montants et les destinataires avant de confirmer." },
+        { "icon": "🔍", "name": "Vérifiez", "text": "Est-ce que tout semble correct? Est-ce le bon montant et la bonne personne?" }
+      ] },
+
+      { "type": "heading", "level": 2, "text": "Payer ses factures en ligne" },
+      { "type": "paragraph", "text": "La plupart des banques canadiennes vous permettent de payer vos factures — électricité, Internet, téléphone, taxes foncières — directement dans l’application. La démarche varie selon la banque, mais voici l’approche générale." },
+      { "type": "walkthrough", "title": "Payer une facture", "steps": [
+        "Connectez-vous à votre application bancaire.",
+        "Cherchez <strong>Payer des factures</strong> ou <strong>Paiement de factures</strong> dans le menu.",
+        "Choisissez l’entreprise que vous voulez payer. Si c’est la première fois, vous devrez peut-être ajouter l’entreprise et entrer votre numéro de compte inscrit sur votre facture papier.",
+        "Entrez le <strong>montant</strong> que vous voulez payer.",
+        "Choisissez le compte d’où provient le paiement, habituellement votre compte-chèques.",
+        "<strong>Vérifiez tout attentivement</strong> avant de toucher Confirmer ou Payer."
+      ] },
+      { "type": "tip", "label": "Petit conseil utile", "text": "Si payer une facture en ligne pour la première fois vous rend nerveux, commencez par un petit montant, comme 10 $ sur votre facture de téléphone. Surveillez le paiement sur votre prochain relevé. Une fois que vous verrez que ça a fonctionné, vous vous sentirez en confiance pour payer le montant complet." },
+
+      { "type": "heading", "level": 2, "text": "Magasiner en ligne en toute sécurité" },
+      { "type": "paragraph", "text": "Acheter en ligne peut être sûr et pratique si vous suivez quelques consignes simples." },
+      { "type": "list", "items": [
+        "<strong>Tenez-vous-en aux magasins bien connus.</strong> Amazon.ca, Walmart.ca, Canadian Tire et les autres grands détaillants ont une sécurité solide.",
+        "<strong>Cherchez l’icône de cadenas.</strong> Dans la barre d’adresse de votre navigateur, vous devriez voir un petit cadenas devant l’adresse Web. Cela signifie que la connexion est sécurisée et chiffrée.",
+        "<strong>Utilisez Apple Pay ou Google Wallet quand c’est possible.</strong> Ces services ne communiquent pas votre vrai numéro de carte de crédit au magasin. Ils utilisent plutôt un code spécial à usage unique, ce qui est plus sûr que de taper votre numéro de carte.",
+        "<strong>Utilisez une carte de crédit, pas votre carte de débit.</strong> Les cartes de crédit offrent une meilleure protection contre la fraude. Si quelque chose tourne mal, votre banque peut annuler la transaction.",
+        "<strong>Méfiez-vous des sites inconnus.</strong> Si vous trouvez une aubaine sur un site dont vous n’avez jamais entendu parler, cherchez d’abord des avis sur ce magasin.",
+        "<strong>Gardez vos reçus.</strong> Vous recevrez un reçu par courriel après chaque achat. Conservez-les pour vos dossiers."
+      ] },
+      { "type": "walkthrough", "title": "Configurer Apple Pay ou Google Wallet", "steps": [
+        "Sur un iPhone ou un iPad, ouvrez <strong>Réglages</strong> et touchez <strong>Cartes et Apple Pay</strong>. Sur Android, ouvrez l’application <strong>Google Wallet</strong>.",
+        "Touchez <strong>Ajouter une carte</strong> ou <strong>Ajouter au portefeuille</strong>.",
+        "Tenez votre carte de crédit devant la caméra pour qu’elle lise les numéros automatiquement, ou tapez-les à la main.",
+        "Votre banque vérifiera la carte. Cela peut prendre un moment, ou vous devrez peut-être confirmer par texto.",
+        "Une fois la carte vérifiée, vous pouvez payer partout où vous voyez le symbole Apple Pay ou Google Pay, en ligne comme en magasin."
+      ] },
+      { "type": "tip", "label": "Comment savoir si un site Web est sûr", "text": "Avant d’entrer tout renseignement de paiement, regardez l’adresse Web en haut du navigateur. Elle devrait commencer par https, où le « s » signifie sécurisé, et vous devriez voir l’icône de cadenas. Si le cadenas est absent ou qu’un message d’avertissement apparaît, fermez le site immédiatement et n’entrez aucun renseignement." },
+      { "type": "warning", "label": "Signaux d’alarme en magasinant en ligne", "text": "N’achetez jamais sur un site qui vous demande de payer par virement télégraphique ou par cartes-cadeaux, qui affiche des prix trop beaux pour être vrais (un iPad de 1 200 $ à 99 $), qui n’a aucune coordonnée ni adresse physique, ou dont l’adresse Web semble mal orthographiée ou étrange." },
+
+      { "type": "quiz", "heading": "Petite vérification : testez vos connaissances", "intro": "Touchez la réponse qui vous semble la bonne. Aucun pointage n’est conservé et il n’y a rien à quoi se connecter.", "questions": [
+        { "q": "1. Quelle est la façon la plus sûre de vérifier votre solde bancaire?",
+          "options": ["Chercher votre banque sur Google et cliquer sur le premier résultat", "Taper l’adresse Web de votre banque directement dans la barre d’adresse, ou ouvrir votre application officielle", "Ouvrir le lien que votre banque vous a envoyé par courriel", "Utiliser une application bancaire que quelqu’un a installée sur votre téléphone pour vous"],
+          "correct": 1,
+          "right": "Exactement. Tapez l’adresse vous-même ou utilisez votre favori enregistré ou l’application officielle. Ainsi, vous atteignez toujours la vraie banque, jamais une fausse copie.",
+          "wrong": "La façon la plus sûre est de taper vous-même l’adresse Web de votre banque, ou d’ouvrir votre application officielle. N’atteignez jamais votre banque par un lien que quelqu’un vous a envoyé." },
+        { "q": "2. Vous recevez un virement Interac d’une personne que vous ne connaissez pas. Que devriez-vous faire?",
+          "options": ["L’accepter : de l’argent inattendu, ce n’est pas une fraude", "Le refuser : accepter des virements inconnus peut lier votre compte à une fraude", "L’accepter, puis le signaler à la police", "Le transférer à un membre de la famille pour qu’il décide"],
+          "correct": 1,
+          "right": "C’est ça. Refusez les virements de personnes que vous ne connaissez pas. Accepter un virement inattendu peut lier votre compte à une fraude.",
+          "wrong": "Le geste sûr est de le refuser. Un virement inattendu d’un inconnu peut faire partie d’une fraude." },
+        { "q": "3. Lequel de ces renseignements ne devriez-vous JAMAIS donner à quelqu’un qui vous contacte?",
+          "options": ["Votre code postal", "Votre mot de passe bancaire ou votre NIP", "Votre province de résidence", "Votre prénom"],
+          "correct": 1,
+          "right": "Exact. Votre mot de passe bancaire ou votre NIP ne se partage avec personne, et votre banque ne vous le demandera jamais.",
+          "wrong": "La réponse est votre mot de passe bancaire ou votre NIP. Votre banque ne vous le demandera jamais, et aucun interlocuteur ne devrait le faire non plus." },
+        { "q": "4. Votre banque vous appelle et vous demande de confirmer votre numéro de compte pour vérifier votre identité. Que faites-vous?",
+          "options": ["Le donner : c’est votre banque et elle doit vous identifier", "Raccrocher et appeler le numéro au dos de votre carte bancaire", "Donner seulement les 4 derniers chiffres", "Demander qu’on vous écrive plutôt par courriel"],
+          "correct": 1,
+          "right": "Parfait. Raccrochez et appelez le numéro au dos de votre carte. Ainsi, vous savez que vous parlez vraiment à votre banque.",
+          "wrong": "Raccrochez et appelez le numéro au dos de votre carte bancaire. Une vraie banque est heureuse que vous rappeliez pour en être sûr." },
+        { "q": "5. Que vous indique l’icône de cadenas dans la barre d’adresse de votre navigateur?",
+          "options": ["Le site Web appartient au gouvernement", "Votre connexion au site est chiffrée, donc vos données sont plus difficiles à intercepter", "Le site a été vérifié contre les fraudes", "Vous êtes connecté en toute sécurité"],
+          "correct": 1,
+          "right": "Oui. Le cadenas signifie que votre connexion est chiffrée : l’information que vous envoyez est brouillée et beaucoup plus difficile à intercepter.",
+          "wrong": "Le cadenas vous indique que votre connexion est chiffrée, donc l’information que vous envoyez est brouillée. À lui seul, il ne prouve pas que le site est honnête, alors vérifiez quand même l’adresse." }
+      ] },
+
+      { "type": "checklist", "heading": "Votre progression", "intro": "Cochez chaque élément quand vous vous sentez à l’aise. C’est enregistré sur cet appareil seulement, aucun compte requis.", "id": "module-6", "items": [
+        "Je peux télécharger l’application officielle de ma banque et vérifier le nom du développeur",
+        "Je sais qu’il faut joindre ma banque seulement par l’application ou une adresse tapée, jamais par un lien",
+        "Je peux ouvrir une session, vérifier mon solde et fermer la session",
+        "Je peux payer une facture en ligne et la vérifier avant de confirmer",
+        "Je connais les signes de sécurité à chercher quand je magasine en ligne"
+      ] }
+    ],
+    "success_state": "<strong>Bravo.</strong> Vous pouvez maintenant ouvrir votre application bancaire, vérifier votre solde, consulter vos transactions, payer des factures et magasiner en ligne, tout cela sans anxiété. Vous connaissez les règles de sécurité qui protègent votre argent.",
+    "related": {
+      "heading": "Et maintenant, où aller?",
+      "cards": [
+        { "num": "Module 5", "name": "Courriels et messages (en anglais seulement)", "desc": "Bien des fraudes bancaires commencent par un faux courriel ou un faux texto. Apprenez à les repérer avant que l’argent bouge.", "href": "module-5.html", "external": false },
+        { "num": "Module 27", "name": "Maîtrisez votre boîte de réception", "desc": "Séparez le vrai courrier du courrier indésirable, et empêchez les pourriels d’enterrer les messages de votre famille.", "href": "module-27-inbox-spam-fr.html", "external": false }
+      ]
+    }
   }
 }
