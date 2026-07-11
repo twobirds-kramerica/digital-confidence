@@ -179,3 +179,14 @@ Last night's recommendation is **confirmed with three additions**:
 Sequencing note for Sprint V2-4: generation is blocked until (at minimum) drift items 2.1 and 2.2 items 2, 3, 5 are resolved and module-28 is ported. The per-module 2.3 ports can land module by module, but a module must not be generated into `dcc-v2\` until its row in 2.3 is cleared, or v2 ships content that is behind the old site (plan risk 2).
 
 Next sprint: V2-2 (shared v2 shell). Gated on the DESIGN GATE (PRODUCT.md anti-references, /impeccable audit) and an Aaron review. Not started by this sprint.
+
+---
+
+## 5. Sprint V2-6 plumbing decisions (2026-07-11)
+
+Recorded per the rebuild plan's instruction that these are explicit decisions, not silent defaults.
+
+1. **Service worker / caching.** The root `sw.js` scope already covers `dcc-v2\` (network-first for HTML, stale-while-revalidate for assets), so v2 pages are always fresh when online and offline-capable after first visit. Decision: do NOT precache the ~42 v2 pages on install (v2 is still a noindex preview; precaching would inflate every visitor's install for a surface most have not opened). `CACHE_NAME` bumped `dcc-v20 -> dcc-v21` to force-propagate this sprint's shared-asset changes (`dcc-v2\css\core.css`, v2 JS). Revisit precache at V2-7 cutover.
+2. **SEO / canonical / sitemap.** Every v2 page carries `<meta name="robots" content="noindex,nofollow">` (preview banner comment marks it). While that holds there is no duplicate-content exposure, so: no v2 entries in `sitemap.xml`, no canonical tags added. The canonical policy (v2 self-canonical vs canonical-to-old) is decided at the V2-7 cutover decision, filed to Aaron's Notion backlog. Removing the noindex is part of that same decision, never done unilaterally.
+3. **Progress continuity (plan risk 11).** Where progress has real stakes, v2 reads/writes the ORIGINAL keys: final assessment (`finalQuizScore`, `finalQuizDate`, `userName`, `dc-quiz-m*-passed`, and the `dc-progress-m*` readiness check) and the certificate. A learner mid-course keeps their quiz unlock, score, and certificate on v2. The v2 lesson "small wins" mechanic uses its own `dccv2-wins-*` keys by design (different structure from the old per-checklist `dc-progress-m*-i` booleans); no migration is attempted. Accepted divergence: old-site checklist ticks do not pre-fill v2 small-wins bars. If Aaron wants a one-way import, that is a small follow-up sprint.
+4. **Nightly verification.** `dcc-v2` entry added to `hal-stack\verification\verify-specs.json` (two-birds-portfolio repo) with custom checks asserting lesson cards resolve into `dcc-v2\modules\` and the footer has no `../` old-site escapes — the two regressions this rebuild exists to prevent.
