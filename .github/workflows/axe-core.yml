@@ -64,11 +64,12 @@ jobs:
           PAGES=(
             "index.html"
             "about.html"
-            "accessibility.html"
-            "module-1.html"
+            "support-directory.html"
+            "modules/module-1.html"
             "final-quiz.html"
             "faq.html"
-            "styleguide/index.html"
+            "classic/index.html"
+            "classic/module-1.html"
             "404.html"
           )
 

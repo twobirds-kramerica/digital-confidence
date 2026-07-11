@@ -16,7 +16,7 @@ except ImportError:
     sys.exit(2)
 
 RSS_URL = "https://news.google.com/rss/search?q=scam+OR+fraud+OR+phishing+OR+%22online+safety%22+OR+%22identity+theft%22+OR+%22romance+scam%22+when:14d&hl=en-CA&gl=CA&ceid=CA:en"
-OUT_PATH = Path(__file__).resolve().parent.parent / "data" / "news-feed.json"
+OUT_PATH = Path(__file__).resolve().parent.parent / "classic" / "data" / "news-feed.json"  # 2026-07-11 cutover: original site at /classic/
 MAX_ITEMS = 5
 TIMEOUT   = 15
 
