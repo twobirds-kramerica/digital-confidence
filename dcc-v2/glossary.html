@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow"><!-- v2 preview - remove before launch -->
+  <script>
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Tech Glossary - Digital Confidence Centre</title>
+  <meta name="description" content="Plain-English definitions for the technology words you will hear most often. No jargon, just clear explanations.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/core.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Read this page aloud">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
+        <div class="rate-group" role="group" aria-label="Reading speed">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Slower</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normal</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Faster</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="index.html">All lessons</a>
+    <a href="index.html#protect-money">Protect your money</a>
+    <a href="index.html#everyday-confidence">Everyday confidence</a>
+    <a href="for-families.html">For families</a>
+    <a href="support-directory.html">Get help</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li><span aria-current="page">Glossary</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <h1>Tech Glossary</h1>
+      <p class="faq-intro">Plain-English definitions for the technology words you'll hear most often. No jargon — just clear explanations.</p>
+
+      <!-- Search bar -->
+      <div class="page-search-wrap">
+        <input type="search" id="gloss-search" class="page-search-input" placeholder="Search terms... (e.g. Wi-Fi, password, cloud)" aria-label="Search glossary terms">
+        <span class="page-search-count" id="gloss-count" aria-live="polite"></span>
+      </div>
+      <div id="gloss-no-results" class="page-no-results" hidden>No matching terms found. Try a shorter word.</div>
+
+      <!-- A-Z nav -->
+      <nav class="gloss-alpha-nav" aria-label="Jump to letter">
+        <a href="#gloss-A">A</a>
+        <a href="#gloss-B">B</a>
+        <a href="#gloss-C">C</a>
+        <a href="#gloss-D">D</a>
+        <a href="#gloss-E">E</a>
+        <a href="#gloss-F">F</a>
+        <a href="#gloss-G">G</a>
+        <a href="#gloss-H">H</a>
+        <a href="#gloss-I">I</a>
+        <a href="#gloss-J">J</a>
+        <a href="#gloss-K">K</a>
+        <a href="#gloss-L">L</a>
+        <a href="#gloss-M">M</a>
+        <a href="#gloss-N">N</a>
+        <a href="#gloss-P">P</a>
+        <a href="#gloss-Q">Q</a>
+        <a href="#gloss-R">R</a>
+        <a href="#gloss-S">S</a>
+        <a href="#gloss-T">T</a>
+        <a href="#gloss-U">U</a>
+        <a href="#gloss-V">V</a>
+        <a href="#gloss-W">W</a>
+        <a href="#gloss-Y">Y</a>
+        <a href="#gloss-Z">Z</a>
+      </nav>
+
+      <!-- ═══ A ═══ -->
+      <div class="gloss-section" id="gloss-A">
+        <div class="gloss-letter">A</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="app" data-cat="basic">
+            <div class="gloss-term">App</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">Short for "application" — a programme you tap to open on your phone or tablet. Weather, banking, maps, and games are all apps. Think of them like small tools, each built for one particular job.</p>
+          </div>
+
+          <div class="gloss-card" data-term="app store" data-cat="services">
+            <div class="gloss-term">App Store</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Apple's official shop for downloading apps onto your iPhone or iPad. Every app in the App Store has been reviewed by Apple for safety. Always download from here — not from random websites.</p>
+          </div>
+
+          <div class="gloss-card" data-term="attachment" data-cat="basic">
+            <div class="gloss-term">Attachment</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">A file (like a photo, document, or PDF) that is sent along with an email — like a letter with an enclosed photo. Be cautious about opening attachments from people you don't recognise, as some can contain harmful programmes.</p>
+          </div>
+
+          <div class="gloss-card" data-term="antivirus" data-cat="security">
+            <div class="gloss-term">Antivirus</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">Software that watches over your device and looks for harmful programmes (viruses) trying to sneak in. iPhones and iPads have strong built-in protection, so a separate antivirus app is usually not necessary on Apple devices.</p>
+          </div>
+
+          <div class="gloss-card" data-term="algorithm" data-cat="intermediate">
+            <div class="gloss-term">Algorithm</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">A set of instructions a computer follows to make a decision — like a recipe. Social media sites use algorithms to decide which posts to show you first, based on what you've liked or watched before.</p>
+          </div>
+
+          <div class="gloss-card" data-term="authentication" data-cat="security">
+            <div class="gloss-term">Authentication</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">The process of proving who you are to a website or app — usually by entering a password, using your fingerprint, or entering a code sent to your phone. It's the digital equivalent of showing your ID at a bank.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ B ═══ -->
+      <div class="gloss-section" id="gloss-B">
+        <div class="gloss-letter">B</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="backup" data-cat="basic">
+            <div class="gloss-term">Backup</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">A copy of your photos, contacts, and other important information saved somewhere safe — like iCloud or an external drive. If your device is lost or broken, a backup lets you get everything back.</p>
+          </div>
+
+          <div class="gloss-card" data-term="bandwidth" data-cat="intermediate">
+            <div class="gloss-term">Bandwidth</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">How much information your internet connection can carry at once — like the width of a pipe. A wider pipe (higher bandwidth) means faster internet and smoother video calls. If your video call keeps freezing, limited bandwidth may be the reason.</p>
+          </div>
+
+          <div class="gloss-card" data-term="bluetooth" data-cat="basic">
+            <div class="gloss-term">Bluetooth</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">A wireless connection that lets two nearby devices talk to each other — like your phone and wireless headphones, or a hearing aid. It only works over short distances (roughly 10 metres) and does not use your internet data.</p>
+          </div>
+
+          <div class="gloss-card" data-term="browser" data-cat="basic">
+            <div class="gloss-term">Browser</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">The app you use to visit websites — like Safari (Apple's built-in browser) or Google Chrome. You type a web address into the browser and it fetches and displays the page for you.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ C ═══ -->
+      <div class="gloss-section" id="gloss-C">
+        <div class="gloss-letter">C</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="cache" data-cat="intermediate">
+            <div class="gloss-term">Cache</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">A temporary store of website information your device saves so pages load faster on your next visit — like bookmarking a recipe so you don't have to search again. Clearing your cache (deleting this saved data) can fix pages that look broken or won't load properly.</p>
+          </div>
+
+          <div class="gloss-card" data-term="chatbot" data-cat="intermediate">
+            <div class="gloss-term">Chatbot</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">A computer programme that holds a text conversation with you. Some chatbots are simple (following a script), others use AI and can answer almost any question.</p>
+          </div>
+
+          <div class="gloss-card" data-term="cloud storage" data-cat="services">
+            <div class="gloss-term">Cloud Storage</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Saving your files (photos, documents) on remote computers owned by Apple, Google, or Microsoft rather than only on your own device. Your files stay safe even if your phone breaks.</p>
+          </div>
+
+          <div class="gloss-card" data-term="cloud" data-cat="basic">
+            <div class="gloss-term">Cloud</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">Storage space on a company's computers, accessible over the internet. When your photos "back up to the cloud," they are saved on Apple's secure computers — not just on your device. This means they are safe even if your iPad breaks.</p>
+          </div>
+
+          <div class="gloss-card" data-term="contactless payment" data-cat="services">
+            <div class="gloss-term">Contactless Payment</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Paying by holding your card or phone near a payment terminal without inserting or swiping. Secure and convenient for purchases under $250 in Canada.</p>
+          </div>
+
+          <div class="gloss-card" data-term="cookie" data-cat="intermediate">
+            <div class="gloss-term">Cookie</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">A tiny text file a website saves on your device to remember you — like a stamp on your hand at a fair. It might remember your language preference or keep you logged in. Cookies are generally harmless, but websites must now ask your permission to use them.</p>
+          </div>
+
+          <div class="gloss-card" data-term="credential stuffing" data-cat="security">
+            <div class="gloss-term">Credential Stuffing</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">When criminals take username and password combinations stolen in one data breach and try them on many other websites. This is why using the same password on multiple sites is dangerous.</p>
+          </div>
+
+          <div class="gloss-card" data-term="cursor" data-cat="basic">
+            <div class="gloss-term">Cursor</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">The small arrow or blinking line on a computer screen that shows where you are pointing or typing. On a touchscreen, your finger acts as the cursor. On a laptop or desktop, the cursor is controlled by your mouse or trackpad.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ D ═══ -->
+      <div class="gloss-section" id="gloss-D">
+        <div class="gloss-letter">D</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="deepfake" data-cat="security">
+            <div class="gloss-term">Deepfake</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">A video or audio recording made with AI that makes it look or sound like someone said or did something they never actually did. Scammers use deepfakes to impersonate politicians, celebrities, or even your family members.</p>
+          </div>
+
+          <div class="gloss-card" data-term="desktop" data-cat="basic">
+            <div class="gloss-term">Desktop</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">Either the main screen of a computer (the background where icons sit), or a type of computer that stays on a desk rather than being portable. On a phone or tablet, the equivalent is your Home Screen.</p>
+          </div>
+
+          <div class="gloss-card" data-term="download" data-cat="basic">
+            <div class="gloss-term">Download</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">Copying something from the internet onto your device — like saving a photo, installing an app, or receiving an email attachment. The opposite is uploading (sending something from your device to the internet).</p>
+          </div>
+
+          <div class="gloss-card" data-term="data breach" data-cat="security">
+            <div class="gloss-term">Data Breach</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">When a company's private information — including customers' names, passwords, or credit card numbers — is stolen by hackers. If you hear that a company you use has had a data breach, change your password for that service right away.</p>
+          </div>
+
+          <div class="gloss-card" data-term="dns" data-cat="intermediate">
+            <div class="gloss-term">DNS</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">Stands for Domain Name System — the internet's phone book. When you type "google.com," DNS translates that friendly name into a number your device uses to find the right computer. You rarely need to think about DNS; it works automatically in the background.</p>
+          </div>
+
+          <div class="gloss-card" data-term="domain name" data-cat="intermediate">
+            <div class="gloss-term">Domain Name</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">The readable address of a website — the part after "www." For example, in "www.rbc.com," the domain name is "rbc.com." Always check the domain name carefully before entering passwords or banking information to make sure it's the real website.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ E ═══ -->
+      <div class="gloss-section" id="gloss-E">
+        <div class="gloss-letter">E</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="e-transfer interac" data-cat="services">
+            <div class="gloss-term">e-Transfer (Interac)</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">A way to send money directly from your bank account to another person's email address or phone number. It is secure and instant. You cannot cancel an e-Transfer once the recipient has accepted it.</p>
+          </div>
+
+          <div class="gloss-card" data-term="email" data-cat="basic">
+            <div class="gloss-term">Email</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">Electronic mail — messages sent over the internet from one person to another. Like a letter, but instant and free. You need an email address (like yourname@gmail.com) to send and receive emails.</p>
+          </div>
+
+          <div class="gloss-card" data-term="emoji" data-cat="basic">
+            <div class="gloss-term">Emoji</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">Small pictures used in messages and posts to express feelings or ideas — like a smiley face 😊, a heart ❤️, or a thumbs up 👍. They started as a way to add tone to text, since written messages can't show facial expressions.</p>
+          </div>
+
+          <div class="gloss-card" data-term="encryption" data-cat="security">
+            <div class="gloss-term">Encryption</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">A way of scrambling information so only the intended recipient can read it — like sending a letter in a locked box. When a website shows a padlock icon in the address bar, your connection is encrypted and strangers cannot read what you type.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ F ═══ -->
+      <div class="gloss-section" id="gloss-F">
+        <div class="gloss-letter">F</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="facebook" data-cat="services">
+            <div class="gloss-term">Facebook</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">A popular social media website and app where you can share updates, photos, and messages with friends and family. You create a profile and connect with people you know. Be mindful of your privacy settings — you control who can see what you post.</p>
+          </div>
+
+          <div class="gloss-card" data-term="facetime" data-cat="services">
+            <div class="gloss-term">FaceTime</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Apple's free video calling app, built into every iPhone and iPad. You can see and hear the person you're calling in real time — like a video phone. It works over Wi-Fi or mobile data, and calls between Apple devices are completely free.</p>
+          </div>
+
+          <div class="gloss-card" data-term="firewall" data-cat="security">
+            <div class="gloss-term">Firewall</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">A protective barrier — either built into your device or your home router — that blocks suspicious internet traffic from getting in. Think of it as a security guard at the front door of your device. Most devices come with a firewall already turned on.</p>
+          </div>
+
+          <div class="gloss-card" data-term="folder" data-cat="basic">
+            <div class="gloss-term">Folder</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">A container used to organise files or apps — just like a physical folder in a filing cabinet. On your iPad, you can group apps into folders by pressing and holding an app icon until it wiggles, then dragging it on top of another.</p>
+          </div>
+
+          <div class="gloss-card" data-term="firmware" data-cat="intermediate">
+            <div class="gloss-term">Firmware</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">The built-in software inside devices like routers, smart TVs, and thermostats. Firmware updates fix security holes and add new features. Your router may need a firmware update occasionally.</p>
+          </div>
+
+          <div class="gloss-card" data-term="font" data-cat="basic">
+            <div class="gloss-term">Font</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">The style and shape of printed or on-screen letters. Just as a handwritten note looks different from a typed letter, different fonts have different personalities — some are formal, some are casual. You can often change the font size on websites and in your device settings.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ G ═══ -->
+      <div class="gloss-section" id="gloss-G">
+        <div class="gloss-letter">G</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="generative ai" data-cat="intermediate">
+            <div class="gloss-term">Generative AI</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">AI that can create new content — writing, images, music, and videos — rather than just answering questions. ChatGPT, DALL-E, and Gemini are examples.</p>
+          </div>
+
+          <div class="gloss-card" data-term="gmail" data-cat="services">
+            <div class="gloss-term">Gmail</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Google's free email service. If your email address ends in "@gmail.com," you are using Gmail. You can access it through the Gmail app or by visiting gmail.com in your browser. It includes 15 gigabytes of free storage.</p>
+          </div>
+
+          <div class="gloss-card" data-term="google" data-cat="services">
+            <div class="gloss-term">Google</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">The world's most popular search engine — a tool that helps you find information on the internet. Just type what you are looking for and Google shows you a list of matching websites. Google also makes many other services, including Gmail, Google Maps, and YouTube.</p>
+          </div>
+
+          <div class="gloss-card" data-term="google maps" data-cat="services">
+            <div class="gloss-term">Google Maps</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">A free app that shows you maps, gives turn-by-turn directions, and helps you find nearby businesses, restaurants, and services. You can search for an address and it will guide you there by walking, driving, or transit — with spoken instructions.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ H ═══ -->
+      <div class="gloss-section" id="gloss-H">
+        <div class="gloss-letter">H</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="hallucination ai" data-cat="intermediate">
+            <div class="gloss-term">Hallucination (AI)</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">When an AI assistant confidently gives you information that is completely made up or wrong. AI can "hallucinate" facts, names, and even URLs. Always check important information from another source.</p>
+          </div>
+
+          <div class="gloss-card" data-term="home screen" data-cat="basic">
+            <div class="gloss-term">Home Screen</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">The main screen you see when you turn on your phone or tablet — the one with all your app icons displayed. No matter how lost you feel in an app, pressing the Home button (or swiping up from the bottom) always brings you back here safely.</p>
+          </div>
+
+          <div class="gloss-card" data-term="https" data-cat="security">
+            <div class="gloss-term">HTTPS</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">The "s" in HTTPS stands for "secure." When a web address starts with "https://" (and shows a padlock icon), your connection is encrypted — meaning no one can eavesdrop on what you type. Always look for https before entering passwords or credit card numbers.</p>
+          </div>
+
+          <div class="gloss-card" data-term="html" data-cat="intermediate">
+            <div class="gloss-term">HTML</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">The coding language used to build the structure of web pages — it tells your browser what headings, paragraphs, images, and links to display. You don't need to know HTML to use the internet; it works silently in the background of every website you visit.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ I ═══ -->
+      <div class="gloss-section" id="gloss-I">
+        <div class="gloss-letter">I</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="icon" data-cat="basic">
+            <div class="gloss-term">Icon</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">A small picture that represents an app, file, or action — like the camera symbol for photos, or the envelope for email. Tapping an icon opens or activates it. Icons are designed to give you a visual hint about what they do.</p>
+          </div>
+
+          <div class="gloss-card" data-term="incognito mode" data-cat="intermediate">
+            <div class="gloss-term">Incognito Mode</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">A private browsing mode in your web browser that does not save your browsing history or cookies on your device. It does NOT make you anonymous online — your internet provider can still see your activity.</p>
+          </div>
+
+          <div class="gloss-card" data-term="internet" data-cat="basic">
+            <div class="gloss-term">Internet</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">A worldwide network connecting billions of computers and devices so they can share information. When you browse a website, send an email, or video call a grandchild, you are using the internet. Your home router connects your devices to it.</p>
+          </div>
+
+          <div class="gloss-card" data-term="instagram" data-cat="services">
+            <div class="gloss-term">Instagram</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">A social media app focused on sharing photos and short videos. Many people follow friends, family, or their favourite businesses there. Like Facebook, be thoughtful about your privacy settings and what personal information you share publicly.</p>
+          </div>
+
+          <div class="gloss-card" data-term="iot internet of things" data-cat="intermediate">
+            <div class="gloss-term">IoT (Internet of Things)</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">The name for everyday objects that are connected to the internet — smart TVs, smart thermostats, robot vacuums, and even some fridges. Stands for "Internet of Things."</p>
+          </div>
+
+          <div class="gloss-card" data-term="ip address" data-cat="intermediate">
+            <div class="gloss-term">IP Address</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">A unique number assigned to your device on the internet — like a postal address for your computer. Websites use it to send information back to you. Your IP address can reveal your general location (your city), but not your exact home address.</p>
+          </div>
+
+          <div class="gloss-card" data-term="identity theft" data-cat="security">
+            <div class="gloss-term">Identity Theft</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">When a criminal uses your personal information — like your name, date of birth, or social insurance number — to pretend to be you, often to open credit accounts or commit fraud. Protect yourself by never sharing personal details with unknown callers or websites.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ J ═══ -->
+      <div class="gloss-section" id="gloss-J">
+        <div class="gloss-letter">J</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="javascript" data-cat="intermediate">
+            <div class="gloss-term">JavaScript</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">A programming language that makes websites interactive — it powers things like search boxes that give instant results, buttons that open pop-up windows, and maps you can drag around. You don't need to know anything about it; it runs automatically in your browser.</p>
+          </div>
+
+          <div class="gloss-card" data-term="juice jacking" data-cat="security">
+            <div class="gloss-term">Juice Jacking</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">A scam where a public USB charging port has been tampered with to steal data from your phone while it charges. Use your own charger and outlet, or carry a portable battery.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ K ═══ -->
+      <div class="gloss-section" id="gloss-K">
+        <div class="gloss-letter">K</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="keyboard" data-cat="basic">
+            <div class="gloss-term">Keyboard</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">The set of letter and number keys used for typing. On a phone or tablet, the keyboard pops up on-screen when you tap a text box. You can also connect a physical wireless keyboard to your iPad using Bluetooth if you prefer typing on real keys.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ L ═══ -->
+      <div class="gloss-section" id="gloss-L">
+        <div class="gloss-letter">L</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="large language model" data-cat="intermediate">
+            <div class="gloss-term">Large Language Model</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">A type of artificial intelligence that has learned from reading billions of web pages and books. It can answer questions and have conversations that sound surprisingly human. Examples: ChatGPT, Siri.</p>
+          </div>
+
+          <div class="gloss-card" data-term="login" data-cat="basic">
+            <div class="gloss-term">Login</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">The process of entering your username and password to access an account — like unlocking a door with a key. "Log in" and "sign in" mean the same thing. When you're done, "log out" to keep your account secure, especially on a shared device.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ M ═══ -->
+      <div class="gloss-section" id="gloss-M">
+        <div class="gloss-letter">M</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="mobile data" data-cat="basic">
+            <div class="gloss-term">Mobile Data</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">Internet access provided by your phone company through their network — the same signal that carries phone calls. You pay for a set amount each month (your "data plan"). Use Wi-Fi whenever possible to preserve your monthly allowance.</p>
+          </div>
+
+          <div class="gloss-card" data-term="machine learning" data-cat="intermediate">
+            <div class="gloss-term">Machine Learning</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">A way of teaching computers by showing them millions of examples rather than writing specific rules. Like teaching a child to recognise a dog by showing them many dogs.</p>
+          </div>
+
+          <div class="gloss-card" data-term="malware" data-cat="security">
+            <div class="gloss-term">Malware</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">Short for "malicious software" — any programme designed to harm your device or steal your information. This includes viruses, spyware, and ransomware. Avoid downloading apps from unknown sources and never click suspicious links to stay protected.</p>
+          </div>
+
+          <div class="gloss-card" data-term="mesh network" data-cat="intermediate">
+            <div class="gloss-term">Mesh Network</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">A Wi-Fi system that uses multiple small devices placed around your home rather than one single router. This gives you strong, consistent Wi-Fi in every room with no dead spots.</p>
+          </div>
+
+          <div class="gloss-card" data-term="metadata" data-cat="intermediate">
+            <div class="gloss-term">Metadata</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">Hidden information attached to a file that describes it — like the label on a tin can. A photo's metadata might include the date it was taken, your location, and the type of camera used. This information can be shared without you realising it when you send photos online.</p>
+          </div>
+
+          <div class="gloss-card" data-term="messenger" data-cat="services">
+            <div class="gloss-term">Messenger</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Facebook's separate messaging app for sending private text messages, photos, and making voice or video calls with your Facebook friends. It's free to use and works over Wi-Fi or mobile data. Download it from the App Store if you want to message Facebook contacts.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ N ═══ -->
+      <div class="gloss-section" id="gloss-N">
+        <div class="gloss-letter">N</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="netflix" data-cat="services">
+            <div class="gloss-term">Netflix</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">A subscription streaming service where you pay a monthly fee to watch as many movies and TV shows as you like. You can watch on your iPad, TV, or computer. Netflix does not have commercials and lets you pause and resume at any time.</p>
+          </div>
+
+          <div class="gloss-card" data-term="notifications" data-cat="basic">
+            <div class="gloss-term">Notifications</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">Pop-up alerts or banners that appear on your screen to tell you about something — a new message, a news story, or a reminder. You can control which apps are allowed to send you notifications in your device's Settings under "Notifications."</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ P ═══ -->
+      <div class="gloss-section" id="gloss-P">
+        <div class="gloss-letter">P</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="password" data-cat="basic">
+            <div class="gloss-term">Password</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">A secret word or combination of letters, numbers, and symbols used to prove your identity and access an account — like a key to a door. A good password is long, unique to each account, and not a word someone could easily guess (like your pet's name or birthday).</p>
+          </div>
+
+          <div class="gloss-card" data-term="password manager" data-cat="security">
+            <div class="gloss-term">Password Manager</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">An app or built-in tool (like Apple's iCloud Keychain) that securely stores all your passwords in one place, protected by one master password or your fingerprint. You only need to remember one password, and the manager fills in the rest for you automatically.</p>
+          </div>
+
+          <div class="gloss-card" data-term="pre-authorised payment" data-cat="services">
+            <div class="gloss-term">Pre-Authorised Payment</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">When you give a company ongoing permission to automatically withdraw a set amount from your bank account on a regular schedule — like a monthly utility bill or streaming service subscription.</p>
+          </div>
+
+          <div class="gloss-card" data-term="phishing" data-cat="security">
+            <div class="gloss-term">Phishing</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">A scam where criminals send fake emails, texts, or calls pretending to be a trusted company (your bank, Canada Revenue Agency, or Apple) to trick you into giving them your password or personal details. When in doubt, contact the real company directly using a number you find yourself.</p>
+          </div>
+
+          <div class="gloss-card" data-term="pixel" data-cat="intermediate">
+            <div class="gloss-term">Pixel</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">The tiniest dot of colour on a screen — images are made up of millions of these tiny squares. More pixels means a sharper, more detailed image. Camera quality is often described in "megapixels" — millions of pixels.</p>
+          </div>
+
+          <div class="gloss-card" data-term="prompt" data-cat="intermediate">
+            <div class="gloss-term">Prompt</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">The question or instruction you type to an AI assistant. The more clearly you describe what you want, the better the answer you receive.</p>
+          </div>
+
+          <div class="gloss-card" data-term="plugin" data-cat="intermediate">
+            <div class="gloss-term">Plugin</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">A small add-on that gives a browser or app an extra feature — like a spell-checker or ad-blocker you install in Safari. Only install plugins from trusted sources, as badly-made ones can slow down your browser or cause problems.</p>
+          </div>
+
+          <div class="gloss-card" data-term="pop-up" data-cat="basic">
+            <div class="gloss-term">Pop-Up</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">A window that suddenly appears on top of whatever you are doing — sometimes a helpful message, but often an advertisement or a scam warning designed to frighten you into clicking. If a pop-up says your device has a virus, ignore it — close the window and carry on.</p>
+          </div>
+
+          <div class="gloss-card" data-term="profile" data-cat="basic">
+            <div class="gloss-term">Profile</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">Your personal page or account on a service — like your Facebook profile with your photo and name, or your Apple ID account. Your profile usually includes information you've chosen to share, and you control who can see it through privacy settings.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ Q ═══ -->
+      <div class="gloss-section" id="gloss-Q">
+        <div class="gloss-letter">Q</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="qr code" data-cat="basic">
+            <div class="gloss-term">QR Code</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">A square pattern of black dots you can scan with your phone camera to open a website or download an app. Many restaurants and businesses use them on signs. Just point your camera at it — a link will appear that you tap to open. Avoid scanning QR codes on random stickers in public places.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ R ═══ -->
+      <div class="gloss-section" id="gloss-R">
+        <div class="gloss-letter">R</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="ram" data-cat="intermediate">
+            <div class="gloss-term">RAM</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">Short for Random Access Memory — the short-term workspace your device uses to run apps right now. Think of it like a desk: the bigger the desk (more RAM), the more things you can have out at once without things getting slow. RAM is different from storage, which is where your photos and files are saved.</p>
+          </div>
+
+          <div class="gloss-card" data-term="ransomware" data-cat="security">
+            <div class="gloss-term">Ransomware</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">A harmful programme that locks you out of your files or device and demands money (a "ransom") to let you back in. It usually arrives through a suspicious email attachment. Never pay the ransom — contact a trusted IT professional or report it to the Canadian Anti-Fraud Centre at 1-888-495-4416.</p>
+          </div>
+
+          <div class="gloss-card" data-term="router" data-cat="intermediate">
+            <div class="gloss-term">Router</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">The device that connects your home to the internet and shares that connection with all your devices. Usually provided by your internet service provider. Your Wi-Fi password is printed on a sticker on the bottom of most routers.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ S ═══ -->
+      <div class="gloss-section" id="gloss-S">
+        <div class="gloss-letter">S</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="screenshot" data-cat="basic">
+            <div class="gloss-term">Screenshot</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">A photo of exactly what is currently showing on your screen — useful for saving a confirmation number, sharing something funny, or getting help. On most iPads, press the top button and the volume-up button at the same time. The screenshot saves automatically to your Photos.</p>
+          </div>
+
+          <div class="gloss-card" data-term="settings" data-cat="basic">
+            <div class="gloss-term">Settings</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">The control panel of your device — where you adjust everything from screen brightness and text size to privacy and notifications. Look for the gear-wheel icon on your Home Screen. Most changes take effect immediately and can always be changed back.</p>
+          </div>
+
+          <div class="gloss-card" data-term="shortcut" data-cat="basic">
+            <div class="gloss-term">Shortcut</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">A quicker way to do something — like double-tapping the Home button to see your recent apps, or holding the power button to call emergency services. Shortcuts save time once you learn them, but everything they do can also be done the long way through menus.</p>
+          </div>
+
+          <div class="gloss-card" data-term="spam" data-cat="security">
+            <div class="gloss-term">Spam</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">Unwanted email — usually advertising, but sometimes scams or phishing attempts. Most email services automatically filter spam into a separate Junk folder. Never click links in spam emails, and mark them as junk so your email learns to block similar messages in future.</p>
+          </div>
+
+          <div class="gloss-card" data-term="spoofing" data-cat="security">
+            <div class="gloss-term">Spoofing</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">When a scammer disguises their phone number or email address to make it look like it's coming from someone you trust — your bank, the government, or even a family member. If a call or message seems unusual even from a familiar contact, hang up and call them back on a number you know is real.</p>
+          </div>
+
+          <div class="gloss-card" data-term="scam" data-cat="security">
+            <div class="gloss-term">Scam</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">A dishonest trick designed to steal your money or personal information. Common scams include fake Canada Revenue Agency calls demanding immediate payment, romance scams, and tech support calls claiming your device has a virus. The golden rule: if someone contacts you unexpectedly and asks for money or personal details, stop and verify through official channels.</p>
+          </div>
+
+          <div class="gloss-card" data-term="server" data-cat="intermediate">
+            <div class="gloss-term">Server</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">A powerful computer that stores information and sends it to other computers on request. When you visit a website, a server delivers the page to your device. "The server is down" means that computer is temporarily unavailable — the website will usually be back shortly.</p>
+          </div>
+
+          <div class="gloss-card" data-term="ssl" data-cat="security">
+            <div class="gloss-term">SSL</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">Stands for Secure Sockets Layer — the technology that encrypts your connection to a website. You can tell SSL is active when you see "https://" and a padlock icon in your browser's address bar. It means the information you send (like passwords) is scrambled and private.</p>
+          </div>
+
+          <div class="gloss-card" data-term="sim swap" data-cat="security">
+            <div class="gloss-term">SIM Swap</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">A scam where a criminal convinces your phone company to transfer your phone number to a SIM card they control. Once they have your number, they can receive your two-factor authentication codes and take over your accounts.</p>
+          </div>
+
+          <div class="gloss-card" data-term="siri" data-cat="services">
+            <div class="gloss-term">Siri</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Apple's built-in voice assistant. Say "Hey Siri" (or press the side button) and ask it anything — "Set a reminder," "Call my daughter," "What's the weather?" It can open apps, answer questions, and send messages, all hands-free. Especially helpful if you find typing difficult.</p>
+          </div>
+
+          <div class="gloss-card" data-term="smart plug" data-cat="intermediate">
+            <div class="gloss-term">Smart Plug</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">A regular electrical outlet with Wi-Fi built in. You can turn any ordinary lamp or appliance on or off using an app on your phone, or set a schedule.</p>
+          </div>
+
+          <div class="gloss-card" data-term="smart thermostat" data-cat="intermediate">
+            <div class="gloss-term">Smart Thermostat</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">A thermostat that you can control from your phone and that can learn your schedule to heat or cool your home automatically. Can save money on energy bills.</p>
+          </div>
+
+          <div class="gloss-card" data-term="smishing" data-cat="security">
+            <div class="gloss-term">Smishing</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">A scam text message designed to trick you into clicking a link or calling a fake number. "Smishing" combines "SMS" (text message) and "phishing."</p>
+          </div>
+
+          <div class="gloss-card" data-term="social engineering" data-cat="security">
+            <div class="gloss-term">Social Engineering</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">Tricks that scammers use to manipulate people psychologically rather than technically. Creating fear, urgency, or excitement to make you act without thinking.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ T ═══ -->
+      <div class="gloss-section" id="gloss-T">
+        <div class="gloss-letter">T</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="tfsa" data-cat="services">
+            <div class="gloss-term">TFSA</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">A Tax-Free Savings Account is a special bank account where your money grows without any tax on the earnings. Available to Canadian residents 18 and over.</p>
+          </div>
+
+          <div class="gloss-card" data-term="touchscreen" data-cat="basic">
+            <div class="gloss-term">Touchscreen</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">A screen that responds to the touch of your finger — so instead of using a mouse, you tap, swipe, and pinch directly on the glass. All iPhones and iPads have touchscreens. You can't break it by tapping — touch as firmly as you need to.</p>
+          </div>
+
+          <div class="gloss-card" data-term="two-factor authentication" data-cat="security">
+            <div class="gloss-term">Two-Factor Authentication</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">An extra security step when logging in — after your password, you receive a short code by text or email to confirm it's really you. Like a second lock on the door. Even if a thief steals your password, they still can't get in without your phone. Turn it on for email, banking, and social media accounts.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ U ═══ -->
+      <div class="gloss-section" id="gloss-U">
+        <div class="gloss-letter">U</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="upload" data-cat="basic">
+            <div class="gloss-term">Upload</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">Sending a file from your device to the internet — like posting a photo on Facebook, or sending an email with an attachment. The opposite of download (receiving something). Uploading uses your internet data the same way downloading does.</p>
+          </div>
+
+          <div class="gloss-card" data-term="url" data-cat="intermediate">
+            <div class="gloss-term">URL</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">The full web address of a page — for example, "https://www.rbc.com/banking." URL stands for Uniform Resource Locator, but you don't need to remember that. What matters: always check the URL carefully before entering sensitive information, to make sure you're on the real website and not a fake copy.</p>
+          </div>
+
+          <div class="gloss-card" data-term="username" data-cat="basic">
+            <div class="gloss-term">Username</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">The name you use to identify yourself when logging into a website or app — often your email address, but sometimes a nickname you chose when signing up. It's different from your password: your username says who you are, while your password proves it.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ V ═══ -->
+      <div class="gloss-section" id="gloss-V">
+        <div class="gloss-letter">V</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="vishing" data-cat="security">
+            <div class="gloss-term">Vishing</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">A phone call scam where someone pretends to be from a real organisation (like your bank or the CRA) to trick you into giving personal information. Comes from "voice phishing."</p>
+          </div>
+
+          <div class="gloss-card" data-term="voice assistant" data-cat="services">
+            <div class="gloss-term">Voice Assistant</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Software that responds to spoken commands. Amazon's Alexa, Apple's Siri, and Google's Assistant are voice assistants. You can ask them to set timers, play music, answer questions, and control smart home devices.</p>
+          </div>
+
+          <div class="gloss-card" data-term="vpn" data-cat="security">
+            <div class="gloss-term">VPN</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">Stands for Virtual Private Network — a tool that creates a secure, private tunnel for your internet traffic, hiding it from others on the same Wi-Fi network. Useful when using public Wi-Fi (at a café or library). Not essential at home, but adds an extra layer of privacy when out and about.</p>
+          </div>
+
+          <div class="gloss-card" data-term="virus" data-cat="security">
+            <div class="gloss-term">Virus</div>
+            <span class="gloss-category-tag tag-security">Security</span>
+            <p class="gloss-def">A harmful programme that can copy itself and spread to other devices, often causing damage or stealing information — named after biological viruses because they spread in a similar way. iPhones and iPads are very resistant to viruses when you only download apps from the official App Store.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ W ═══ -->
+      <div class="gloss-section" id="gloss-W">
+        <div class="gloss-letter">W</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="whatsapp" data-cat="services">
+            <div class="gloss-term">WhatsApp</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">A free messaging app that lets you send texts, photos, and voice messages, and make voice or video calls — all over Wi-Fi or mobile data, anywhere in the world. Very popular for keeping in touch with family overseas without long-distance charges. Messages are encrypted for privacy.</p>
+          </div>
+
+          <div class="gloss-card" data-term="wi-fi" data-cat="basic">
+            <div class="gloss-term">Wi-Fi</div>
+            <span class="gloss-category-tag tag-basic">Basic</span>
+            <p class="gloss-def">A wireless internet connection that comes from a router — the small box your internet provider installed at home. When you connect to Wi-Fi, your device can access the internet without using your phone plan's data. Always connect to your home Wi-Fi first before browsing or watching videos.</p>
+          </div>
+
+          <div class="gloss-card" data-term="widget" data-cat="intermediate">
+            <div class="gloss-term">Widget</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">A small interactive panel you can add to your Home Screen to show useful information at a glance — like today's weather, your calendar, or the time — without opening the full app. On an iPad, press and hold the Home Screen to enter "jiggle mode" and tap the "+" button to add widgets.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ Y ═══ -->
+      <div class="gloss-section" id="gloss-Y">
+        <div class="gloss-letter">Y</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="youtube" data-cat="services">
+            <div class="gloss-term">YouTube</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">A free website and app (owned by Google) where anyone can watch or upload videos. You can find instructional videos, documentaries, music, recipes, exercise classes, and much more. The basic version is free with occasional ads; YouTube Premium removes ads for a monthly fee.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ Z ═══ -->
+      <div class="gloss-section" id="gloss-Z">
+        <div class="gloss-letter">Z</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="zoom" data-cat="services">
+            <div class="gloss-term">Zoom</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">A free video calling app widely used for meetings, family gatherings, and classes. You can join a Zoom meeting by tapping a link someone sends you — you don't need an account to join someone else's meeting. The free plan allows unlimited one-on-one calls and group calls up to 40 minutes.</p>
+          </div>
+
+          <div class="gloss-card" data-term="zoom pinch to zoom" data-cat="intermediate">
+            <div class="gloss-term">Zoom (Pinch to Zoom)</div>
+            <span class="gloss-category-tag tag-intermediate">Intermediate</span>
+            <p class="gloss-def">A touchscreen gesture for making things larger on your screen. Place two fingers together on the screen and spread them apart to zoom in (make bigger), or bring them together to zoom out (make smaller). Works in photos, maps, web pages, and most apps. You can always zoom back out to restore the normal view.</p>
+          </div>
+
+        </div>
+      </div>
+
+    <div class="the-move">
+      <span class="move-label">The move is</span>
+      <p>Didn't find the word you were looking for? Call <strong>Connected Canadians</strong> free at <a href="tel:+18442962622">1-844-296-2622</a> — real people are happy to explain any technology term in plain English. More helpers are listed on our <a href="support-directory.html">Get help</a> page.</p>
+    </div>
+
+    <div class="lesson-nav">
+      <a class="btn btn-secondary" href="index.html">← Back to all lessons</a>
+      <a class="btn btn-primary" href="faq.html">FAQ →</a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
+    <ul class="footer-links">
+      <li><a href="for-families.html">For families</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="disclaimer.html">Disclaimer</a></li>
+      <li><a href="support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/dcc.js"></script>
+<script src="js/pages.js"></script>
+</body>
+</html>
