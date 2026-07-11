@@ -312,6 +312,7 @@ document.addEventListener('click', function (e) {
   document.addEventListener('DOMContentLoaded', function() {
     var isHome = window.location.pathname.endsWith('/index.html') ||
                  window.location.pathname.endsWith('/digital-confidence/') ||
+                 window.location.pathname.endsWith('/digital-confidence/classic/') ||
                  window.location.pathname === '/';
     if (isHome) return;
 
@@ -429,7 +430,9 @@ document.addEventListener('click', function (e) {
   if (!links) return;
 
   var parts = window.location.pathname.split('/').filter(Boolean);
-  var depth = Math.max(0, parts.length - 2);
+  /* 2026-07-11 cutover: original site now lives under /classic/ — depth is relative to that root */
+  var kidsClassicIdx = parts.indexOf('classic');
+  var depth = kidsClassicIdx !== -1 ? Math.max(0, parts.length - kidsClassicIdx - 2) : Math.max(0, parts.length - 2);
   var prefix = '';
   for (var i = 0; i < depth; i++) prefix += '../';
 
@@ -471,7 +474,9 @@ document.addEventListener('click', function (e) {
   if ((document.documentElement.lang || '').startsWith('fr')) return;
 
   var parts = window.location.pathname.split('/').filter(Boolean);
-  var depth = Math.max(0, parts.length - 2);
+  /* 2026-07-11 cutover: original site now lives under /classic/ — depth is relative to that root */
+  var classicIdx = parts.indexOf('classic');
+  var depth = classicIdx !== -1 ? Math.max(0, parts.length - classicIdx - 2) : Math.max(0, parts.length - 2);
   var prefix = '';
   for (var i = 0; i < depth; i++) prefix += '../';
   var frUrl = prefix + 'fr/index.html';
