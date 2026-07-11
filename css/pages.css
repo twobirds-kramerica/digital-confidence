@@ -110,8 +110,8 @@
   padding: 2px 12px; font-family: var(--font-heading); font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
 }
-.contact-row { margin: var(--space-2) 0; }
-.contact-row a { min-height: var(--tap-target-min); display: inline-flex; align-items: center; }
+.contact-row { margin: var(--space-2) 0; overflow-wrap: anywhere; }
+.contact-row a { min-height: var(--tap-target-min); display: inline-flex; align-items: center; overflow-wrap: anywhere; word-break: break-word; }
 .efficacy-note { display: block; color: var(--color-text-light); margin: var(--space-3) 0; }
 .card-actions { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-4); }
 
