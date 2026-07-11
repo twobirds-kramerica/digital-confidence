@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Theme + text size before first paint (no flash). Local only, no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Is It True, or Does It Just Sound True? - Digital Confidence Centre</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-fact-check.html">
+  <meta name="description" content="One calm habit for checking whether an answer you find online, from a search result or an AI answer tool, is actually true before you trust it or pass it on. Three quiet questions, a safe practice run, and where to turn about money or scams. Free lesson, no account needed.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- SHARED SHELL: header (generated from module-v2.html.tpl; identical on every page). -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Read this page aloud">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
+        <div class="rate-group" role="group" aria-label="Reading speed">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Slower</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normal</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Faster</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="../index.html">All lessons</a>
+    <a href="../index.html#protect-money">Protect your money</a>
+    <a href="../index.html#everyday-confidence" aria-current="page">Everyday confidence</a>
+    <a href="../index.html#staying-connected">Staying connected</a>
+    <a href="../index.html#getting-things-done">Getting things done</a>
+    <a href="../for-families.html">For families</a>
+    <a href="../support-directory.html">Get help</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="../index.html">All lessons</a></li>
+      <li><a href="../index.html#everyday-confidence">Everyday confidence</a></li>
+      <li><span aria-current="page">Is It True, or Does It Just Sound True?</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <a class="lesson-back" href="../index.html">← Back to all lessons</a>
+
+    <p class="lesson-category"><span aria-hidden="true">🔍</span> Knowing what is real</p>
+    <h1>Is It True, or Does It Just Sound True?</h1>
+    <p class="lesson-time"><span aria-hidden="true">⏱</span> About 15 minutes, at your own pace</p>
+
+    <!-- Brenda: the first thing a nervous reader sees removes a fear. -->
+    <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
+
+    <p class="lead">When you search for something online, or an AI answer tool writes you a reply, the answer comes back looking very sure of itself. Neat sentences. A confident tone. Here is the gentle truth: a confident tone is not the same as a correct answer. This lesson teaches one calm habit: three quiet questions to ask before you trust.</p>
+
+    <h2>A familiar story</h2>
+    <p>A reader told us about a small moment in her own family. Someone looked up a money question, read the very first result, and passed it along to everyone as settled fact. It turned out the first result was old, and the rule had since changed.</p>
+    <p>No harm was done in the end, but it stuck with her. The lesson was not "I am bad at this." The lesson was simply that the first answer is a starting point, not the finish line.</p>
+
+    <div class="coach-block">
+      <span class="coach-mark" aria-hidden="true">💬</span>
+      <div class="coach-body">
+        <span class="coach-label">From your coach</span>
+        <p>I want you to hear this plainly: being fooled by a confident answer is not a personal failing. These tools are designed to sound certain, and they catch careful, intelligent people every day. The skill is not knowing everything. The skill is the small, calm pause before you trust. If you can slow down for one minute, you are already doing the hard part.</p>
+      </div>
+    </div>
+
+    <h2>The three quiet questions</h2>
+
+    <p>You do not need to become an expert or memorise anything complicated. Before you trust an answer that matters, you ask yourself three short questions.</p>
+
+    <ul>
+      <li><strong>1. Who is telling me this?</strong> Is there a name, a company, or a website behind the answer, or is it just text floating on the screen?</li>
+      <li><strong>2. How old is it?</strong> Look for a date. Money rules, health advice, and prices change. An answer from years ago can be wrong now.</li>
+      <li><strong>3. Does a second place agree?</strong> Open one more website and see if it says the same thing. One source is a rumour. Two that agree is a start.</li>
+    </ul>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You are doing great, and your device is safe. Asking these questions cannot break anything. You are simply slowing down, and slowing down is exactly the skill.</p>
+    </div>
+
+    <h2>Where to find the date and the source</h2>
+
+    <p>When you read an answer, look near the top or the very bottom of the article for a small line of grey text. That line often holds the date it was written and the name of who wrote it. If you cannot find either one, that is your signal to be careful, not to trust it more.</p>
+
+    <h2>Try it once (nothing is bought, nothing is changed)</h2>
+
+    <p>This is safe. You will not spend money or change any setting. You are only practising the habit of checking.</p>
+
+    <div class="walkthrough">
+      <h4>A two-minute practice run</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p>Think of a simple question you are curious about, like how much a first-class stamp costs in Canada right now.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p>Search for it, or ask your answer tool.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p>Read the first answer, then stop. Do not act on it.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p>Open one more website and look for the same answer. Notice whether they agree.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">5</span>
+        <span class="step-text"><p>While you are there, find the date on one of them.</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">Success looks like this</span>
+      <p>You have finished when you have looked at two sources for the same question and found the date on at least one of them. The screen does not need to look like anything special. The win is that you checked before you trusted.</p>
+    </div>
+
+    <h2>One gentle point about answer tools</h2>
+
+    <p>AI answer tools want to be agreeable. If you tell one of them you believe something, it will often agree with you, even when you are mistaken, because agreeing keeps you happy. So treat its reply the way you would treat a chatty stranger's opinion: pleasant, possibly helpful, and worth checking before you rely on it.</p>
+
+    <h2>If the question is about money or a scam</h2>
+
+    <div class="three-second-rule">
+      <h3>The 3-second rule</h3>
+      <ol class="tsr-steps">
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">✋</span><span class="tsr-name">Stop</span> If anything is asking you to send money or share a bank detail, do not act on the answer from a website or a tool.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🫁</span><span class="tsr-name">Breathe</span> One slow, calm breath. Nothing genuine is lost by pausing.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🔍</span><span class="tsr-name">Verify</span> Check with a real person or a trusted service first.</li>
+      </ol>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">A Canadian service you can trust</span>
+      <p>The <strong>Canadian Anti-Fraud Centre</strong>: if you think something might be a scam, call toll-free <strong>1-888-495-8501</strong>, or report online at antifraudcentre-centreantifraude.ca. It is run together by the RCMP, the Ontario Provincial Police, and the Competition Bureau. They estimate that fewer than 5 percent of fraud victims ever report, so when you call, you are helping protect other people too.</p>
+    </div>
+
+    <div class="the-move">
+      <span class="move-label">The move is</span>
+      <p>Before you trust or pass along an answer that matters, ask the three quiet questions: who is telling me this, how old is it, and does a second place agree? For anything about money, stop, breathe, and verify with a real person first.</p>
+    </div>
+
+    <h2>Quick check: test your knowledge</h2>
+    <p>Tap the answer you think is correct. There is no score kept and nothing to sign in to.</p>
+    <div class="lesson-quiz">
+      <div class="quiz-q" data-correct="b">
+        <h3>1. If an answer sounds confident and well-written, does that mean it is correct?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Yes, tools only sound sure when they are right</button>
+          <button class="quiz-opt" type="button" data-answer="b">No: a confident tone is not the same as a correct answer</button>
+          <button class="quiz-opt" type="button" data-answer="c">Only AI answers can be wrong, search results are safe</button>
+          <button class="quiz-opt" type="button" data-answer="d">Only old websites can be wrong</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. These tools are built to sound helpful, and they sound just as helpful when they are wrong as when they are right. Confidence is a style, not a proof."
+          data-wrong="A confident, tidy tone is not proof of anything. Search results and AI answer tools can sound just as sure when they are wrong as when they are right. Check before you trust."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>2. What are the three quiet questions?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Is it free? Is it fast? Is it popular?</button>
+          <button class="quiz-opt" type="button" data-answer="b">Who is telling me this? How old is it? Does a second place agree?</button>
+          <button class="quiz-opt" type="button" data-answer="c">Is it Canadian? Is it long? Is it polite?</button>
+          <button class="quiz-opt" type="button" data-answer="d">Who wrote it? Who shared it? Who paid for it?</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. Who is behind the answer, how old it is, and whether a second source agrees. One source is a rumour. Two that agree is a start."
+          data-wrong="The three quiet questions are: who is telling me this (is there a name or website behind it), how old is it (find the date), and does a second place agree (open one more website and compare)."></div>
+      </div>
+      <div class="quiz-q" data-correct="a">
+        <h3>3. Why do AI answer tools sometimes agree with you even when you are mistaken?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">They are built to be agreeable, because agreeing keeps you happy</button>
+          <button class="quiz-opt" type="button" data-answer="b">They always know the truth</button>
+          <button class="quiz-opt" type="button" data-answer="c">They are programmed to be rude</button>
+          <button class="quiz-opt" type="button" data-answer="d">They only agree with experts</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. If you tell one you believe something, it will often go along with you. Treat its reply like a chatty stranger&#x27;s opinion: pleasant, possibly helpful, worth checking."
+          data-wrong="Answer tools are built to be agreeable, so they often go along with what you already believe, even when you are mistaken. That is why a second, independent source matters."></div>
+      </div>
+      <div class="quiz-q" data-correct="c">
+        <h3>4. You read an answer with no author name and no date anywhere. What does that mean?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">It must be brand new, so it is reliable</button>
+          <button class="quiz-opt" type="button" data-answer="b">Nothing, most answers have no date</button>
+          <button class="quiz-opt" type="button" data-answer="c">That is a signal to be careful, not to trust it more</button>
+          <button class="quiz-opt" type="button" data-answer="d">It means the answer is official</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. A missing source and a missing date are your cue for caution. Look for an answer that says who wrote it and when."
+          data-wrong="No name and no date is a caution signal. Trustworthy articles usually say who wrote them and when, often in small grey text near the top or bottom of the page."></div>
+      </div>
+      <div class="quiz-q" data-correct="c">
+        <h3>5. An online answer tells you to send money to fix a problem. What do you do?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Send it if the website looks professional</button>
+          <button class="quiz-opt" type="button" data-answer="b">Ask the same tool to confirm</button>
+          <button class="quiz-opt" type="button" data-answer="c">Stop, breathe, and verify with a real person or trusted service first</button>
+          <button class="quiz-opt" type="button" data-answer="d">Send half the amount to be safe</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. Never act on money instructions from a website or a tool. Check with a real person first, and if you suspect a scam, call the Canadian Anti-Fraud Centre at 1-888-495-8501."
+          data-wrong="For anything involving money or bank details: stop, breathe, verify. Talk to a real person you trust first, and if you suspect a scam, call the Canadian Anti-Fraud Centre toll-free at 1-888-495-8501."></div>
+      </div>
+    </div>
+
+    <h2>Your progress</h2>
+    <p>Tick each item as you feel confident with it. This is saved on this device only, with no account needed.</p>
+    <ul class="checklist" data-checklist="module-fact-check">
+      <li class="check-item"><input type="checkbox" id="module-fact-check-1"><label for="module-fact-check-1">I know a confident tone is not the same as a correct answer</label></li>
+      <li class="check-item"><input type="checkbox" id="module-fact-check-2"><label for="module-fact-check-2">I can say the three quiet questions: who is telling me this, how old is it, does a second place agree</label></li>
+      <li class="check-item"><input type="checkbox" id="module-fact-check-3"><label for="module-fact-check-3">I know where to look for the date and the author on a page</label></li>
+      <li class="check-item"><input type="checkbox" id="module-fact-check-4"><label for="module-fact-check-4">I have practised checking one question against two sources</label></li>
+      <li class="check-item"><input type="checkbox" id="module-fact-check-5"><label for="module-fact-check-5">I know to stop, breathe, and verify before acting on anything about money</label></li>
+    </ul>
+
+    <!-- Denise: forward the lesson in isolation. Copy-link only, no share API. -->
+    <section class="send-lesson" aria-labelledby="send-h">
+      <h2 id="send-h">Send this lesson to someone</h2>
+      <p>Helping a parent or friend? This page works on its own, with no account and nothing to install. Copy the link and text it to them.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="button" data-copy-link>Copy the link to this lesson</button>
+        <span class="send-done" data-copy-done hidden>Copied. Paste it into a text or email.</span>
+      </div>
+      <input class="visually-hidden" type="text" data-copy-field hidden readonly aria-label="Link to this lesson">
+    </section>
+
+    <div class="success-state">
+      <p><strong>Well done.</strong> You now have the whole habit: a confident tone is not proof, you ask who, how old, and whether a second source agrees, you check before you trust, and for anything about money you stop, breathe, and verify. That is real digital confidence, and you have earned it.</p>
+    </div>
+
+    <nav class="related-modules" aria-label="Continue learning">
+      <h2>Where to next</h2>
+      <div class="related-grid">
+        <a class="related-card" href="module-ai-literacy.html">
+          <span class="related-num">Special lesson</span>
+          <span class="related-name">What Is AI, Really?</span>
+          <span class="related-desc">What AI actually does, where it genuinely helps, and the four shapes AI scams take right now.</span>
+        </a>
+        <a class="related-card" href="module-17-ai-research.html">
+          <span class="related-num">Module 17</span>
+          <span class="related-name">Using AI for Research</span>
+          <span class="related-desc">Asking AI tools better questions, and knowing how to double-check what they tell you.</span>
+        </a>
+        <a class="related-card" href="module-2.html">
+          <span class="related-num">Module 2</span>
+          <span class="related-name">Spotting Scams</span>
+          <span class="related-desc">The complete guide to recognising scam calls, texts, and emails, and what to do about them.</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<!-- SHARED SHELL: footer (identical on every page). -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">For families</a></li>
+      <li><a href="../about.html">About us</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="../glossary.html">Glossary</a></li>
+      <li><a href="../privacy.html">Privacy</a></li>
+      <li><a href="../terms.html">Terms</a></li>
+      <li><a href="../disclaimer.html">Disclaimer</a></li>
+      <li><a href="../support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- SHARED SHELL: layered consent bar (identical on every page). -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="../privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/module.js"></script>
+</body>
+</html>
