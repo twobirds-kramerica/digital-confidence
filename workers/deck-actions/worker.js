@@ -10,6 +10,15 @@
 
    NOTION_API_KEY is a SECRET read from env — never hardcoded here.
    Set it with:  npx wrangler secret put NOTION_API_KEY
+
+   DECK_ACTIONS_SECRET is a SECRET shared-token gate — CORS alone is a
+   browser convention, not a server-side control, so any non-browser caller
+   who discovers this worker's URL could otherwise write to Notion with no
+   auth at all. Every request must send the same token as an
+   "X-Deck-Token" header, or it is rejected with 401 before touching Notion.
+   Set it with:  npx wrangler secret put DECK_ACTIONS_SECRET
+   The Command Deck client code (dashboard.html) must send the identical
+   value in the X-Deck-Token header on every /action POST.
 */
 
 const ALLOWED_ORIGINS = [
@@ -56,6 +65,11 @@ export default {
       return json({ ok: false, error: "not found" }, 404, origin);
     if (!env.NOTION_API_KEY)
       return json({ ok: false, error: "worker not configured (NOTION_API_KEY missing)" }, 500, origin);
+    if (!env.DECK_ACTIONS_SECRET)
+      return json({ ok: false, error: "worker not configured (DECK_ACTIONS_SECRET missing)" }, 500, origin);
+    const token = request.headers.get("X-Deck-Token") || "";
+    if (token !== env.DECK_ACTIONS_SECRET)
+      return json({ ok: false, error: "unauthorized" }, 401, origin);
 
     let b;
     try { b = await request.json(); }
