@@ -22,11 +22,33 @@ async function sha256(str) {
   return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
 }
 
+/* Rate limiting (S-WORKER-HARDENING-001, 2026-07-11): reuses the fixed-window
+   KV counter pattern shipped in clarity/workers/clarity-proxy (ad13056) --
+   self-expiring keys via KV expirationTtl, no cleanup job needed. Shares the
+   account's RATELIMIT KV namespace with a "dcc:" key prefix. */
+const IP_LIMIT_PER_HOUR = 30;
+const IP_LIMIT_WINDOW_SECONDS = 3600;
+
+function clientIp(request) {
+  return request.headers.get("CF-Connecting-IP") || "unknown";
+}
+async function checkAndIncrement(env, key, limit, windowSeconds) {
+  const current = parseInt((await env.RATELIMIT.get(key)) || "0", 10);
+  if (current >= limit) return { blocked: true };
+  await env.RATELIMIT.put(key, String(current + 1), { expirationTtl: windowSeconds });
+  return { blocked: false };
+}
+
 export default {
   async fetch(request, env) {
     if (request.method === "OPTIONS") return new Response(null, { headers: corsHeaders() });
     const url = new URL(request.url);
     try {
+      if (env.RATELIMIT && ["/event", "/progress", "/feedback"].includes(url.pathname)) {
+        const ip = clientIp(request);
+        const limit = await checkAndIncrement(env, `dcc:${url.pathname}:${ip}`, IP_LIMIT_PER_HOUR, IP_LIMIT_WINDOW_SECONDS);
+        if (limit.blocked) return json({ ok: false, error: "rate limited" }, 429);
+      }
       // Aggregate event (no PII). body: { cid, type, lesson, value }
       if (url.pathname === "/event" && request.method === "POST") {
         const b = await request.json();

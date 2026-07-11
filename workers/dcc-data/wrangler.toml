@@ -7,3 +7,11 @@ compatibility_date = "2026-01-01"
 binding = "DB"
 database_name = "dcc-data"
 database_id = "b3db5f6a-ccb3-4790-9d70-571d7f4e39d6"
+
+# Rate limiting (S-WORKER-HARDENING-001, 2026-07-11) — reuses the existing
+# RATELIMIT KV namespace (already shipped for clarity-proxy) with a "dcc:"
+# key prefix to avoid collision; separate account KV resource per the
+# CLOUDFLARE WORKERS KV DEPLOY SEQUENCE rule was unnecessary since one exists.
+[[kv_namespaces]]
+binding = "RATELIMIT"
+id = "adc681b4160e4f7c8fda4f17564b66d1"
