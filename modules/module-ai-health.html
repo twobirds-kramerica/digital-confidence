@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Theme + text size before first paint (no flash). Local only, no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Asking AI About Your Health or How You Feel - Digital Confidence Centre</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-ai-health.html">
+  <meta name="description" content="When an AI chatbot can genuinely help with a health or wellbeing question, the honest risks of leaning on it about your body or your mind, and the one rule that keeps you safe, plus exactly where to turn for real help in Canada. Free lesson, no account needed.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- SHARED SHELL: header (generated from module-v2.html.tpl; identical on every page). -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Read this page aloud">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
+        <div class="rate-group" role="group" aria-label="Reading speed">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Slower</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normal</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Faster</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="../index.html">All lessons</a>
+    <a href="../index.html#protect-money">Protect your money</a>
+    <a href="../index.html#everyday-confidence" aria-current="page">Everyday confidence</a>
+    <a href="../index.html#staying-connected">Staying connected</a>
+    <a href="../index.html#getting-things-done">Getting things done</a>
+    <a href="../for-families.html">For families</a>
+    <a href="../support-directory.html">Get help</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="../index.html">All lessons</a></li>
+      <li><a href="../index.html#everyday-confidence">Everyday confidence</a></li>
+      <li><span aria-current="page">Asking AI About Your Health or How You Feel</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <a class="lesson-back" href="../index.html">← Back to all lessons</a>
+
+    <p class="lesson-category"><span aria-hidden="true">🤖</span> Artificial intelligence</p>
+    <h1>Asking AI About Your Health or How You Feel</h1>
+    <p class="lesson-time"><span aria-hidden="true">⏱</span> About 15 minutes, at your own pace</p>
+
+    <!-- Brenda: the first thing a nervous reader sees removes a fear. -->
+    <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
+
+    <p class="lead">When an AI chatbot can genuinely help with a health or wellbeing question, the real risks of leaning on it about your body or your mind, and the one rule that keeps you safe, plus exactly where to turn for real help in Canada. If you are struggling right now, you can skip straight to "Where to find real help in Canada" below, any time.</p>
+
+    <h2>Why this lesson exists</h2>
+    <p>More and more people are typing health questions, and private worries about how they feel, into AI chatbots. It is easy to understand why. The chatbot is there at three in the morning. It never makes you wait, never sends a bill, and never seems to judge you.</p>
+    <p>This lesson is not here to scold you for that. It is here to help you use these tools wisely about the two things that matter most: your body and your mind.</p>
+
+    <div class="coach-block">
+      <span class="coach-mark" aria-hidden="true">💬</span>
+      <div class="coach-body">
+        <span class="coach-label">From your coach</span>
+        <p>If you have turned to a chatbot because it felt easier than telling a real person, I want you to know that makes complete sense. Reaching for something private and always available is a very human thing to do. None of what follows is a telling-off. I just want you to have the full picture, so the tool stays a helper and never becomes a substitute for the care you deserve.</p>
+      </div>
+    </div>
+
+    <h2>Why people turn to AI for this</h2>
+
+    <p>Let us be fair to the tool first, because the reasons are real.</p>
+
+    <ul>
+      <li>It is available any time, day or night, with no appointment and no waiting list.</li>
+      <li>It is free, and it never makes you feel rushed or embarrassed.</li>
+      <li>It can help you put a worry into words, which is sometimes the hardest part.</li>
+      <li>It can help you prepare questions before you see a real doctor or nurse.</li>
+      <li>For someone who feels too anxious or ashamed to talk to a person, it can feel like a gentle first step.</li>
+    </ul>
+
+    <p>Those are genuine benefits. A first step can matter. The trouble starts when the first step becomes the only step.</p>
+
+    <h2>The honest risks (this is the important part)</h2>
+
+    <p>Here is the part the chatbot will not tell you about itself.</p>
+
+    <h3>It is built to agree with you</h3>
+
+    <p>AI chatbots are designed to be pleasant and affirming. They tend to tell you what you want to hear. That is the opposite of what good health and mental-health advice often has to do, which is to gently tell you something you might not want to hear, like "please go and see someone about this."</p>
+
+    <h3>It can be confidently wrong</h3>
+
+    <p>A chatbot can state a wrong fact about a medication, a symptom, or a dose in the same calm, certain voice it uses for correct ones. It does not know your history, your other medications, or your body. And it is not a crisis service; no one is accountable for its advice.</p>
+
+    <h3>Feeling helped is not the same as being helped</h3>
+
+    <p>This is the heart of it. Because the chatbot is so agreeable, talking to it often <em>feels</em> supportive. That good feeling is exactly the trap. It can quietly take the place of talking to a real person, and that can leave you more alone with the problem, not less.</p>
+
+    <div class="helper-note">
+      <span class="block-label">What the research is starting to show</span>
+      <p>In a 2026 United States survey by KFF, about one in three adults said they had used an AI chatbot for health information: 29 percent for physical health and 16 percent for mental health. These are US figures; comparable Canadian numbers are not yet widely published, so treat them as a signal of a growing habit, not an exact Canadian count.</p>
+    </div>
+
+    <h2>The one rule</h2>
+
+    <div class="tip-block">
+      <span class="block-label">Remember this one line</span>
+      <p>AI can be a <strong>starting point</strong>, never the <strong>final word</strong>, on your body or your mind. For anything real, take it to a doctor or a person you trust.</p>
+    </div>
+
+    <p>That is the whole lesson in a sentence. Use the chatbot to gather your thoughts or draft your questions if it helps. Then bring those questions to a real person who can be responsible for the answer.</p>
+
+    <h2>Where to find real help in Canada</h2>
+
+    <p>If the question is about how you are feeling, please do not leave it with a chatbot. These are real Canadian services, staffed by real people, and they are free.</p>
+
+    <h3>If you are in distress or thinking about harming yourself</h3>
+
+    <p>Call or text <strong>988</strong>, the Suicide Crisis Helpline. It is free, available any time, in English or French, anywhere in Canada. You can also call Talk Suicide Canada at <strong>1-833-456-4566</strong>. You do not need to be in crisis to call. If you are not sure, that is a good enough reason to reach out.</p>
+
+    <h3>For a health question or worry</h3>
+
+    <p>In Ontario, dial <strong>811</strong> for Health811 to speak with a registered nurse, free, any time. Your family doctor or pharmacist can answer most everyday health and medication questions. A pharmacist is free to talk to and needs no appointment.</p>
+
+    <h3>To find local support of any kind</h3>
+
+    <p>Dial <strong>211</strong> to reach a real person who can connect you to local mental-health, community, and seniors' services near you. It is free, confidential, and available in many languages.</p>
+
+    <div class="the-move">
+      <span class="move-label">The move is</span>
+      <p>Use a chatbot to put a worry into words or draft questions if that helps you start. Then take anything real about your body or your mind to a real person: your doctor, your pharmacist, Health811 (dial 811), or 988 if you are in distress.</p>
+    </div>
+
+    <h2>Quick check: test your knowledge</h2>
+    <p>Tap the answer you think is correct. There is no score kept and nothing to sign in to.</p>
+    <div class="lesson-quiz">
+      <div class="quiz-q" data-correct="c">
+        <h3>1. What is a genuinely good use of an AI chatbot for health?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Getting a diagnosis for a new symptom</button>
+          <button class="quiz-opt" type="button" data-answer="b">Deciding whether to stop a medication</button>
+          <button class="quiz-opt" type="button" data-answer="c">Putting a worry into words and preparing questions for your doctor</button>
+          <button class="quiz-opt" type="button" data-answer="d">Replacing counselling when you feel low</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. It can help you find the words and prepare questions. The answers themselves still belong with a real person who knows you and is accountable."
+          data-wrong="The safe use is preparation: putting a worry into words and drafting questions to bring to a real doctor, nurse, or pharmacist. Diagnosis, medication changes, and emotional support belong with real people."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>2. Why is it a problem that chatbots are built to be agreeable?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">It makes them slower to answer</button>
+          <button class="quiz-opt" type="button" data-answer="b">They may tell you what you want to hear instead of what you need to hear</button>
+          <button class="quiz-opt" type="button" data-answer="c">It makes them more expensive</button>
+          <button class="quiz-opt" type="button" data-answer="d">It is not a problem</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. Good health advice sometimes has to say &quot;please go and see someone about this.&quot; An agreeable chatbot tends not to, and that comfortable feeling is the trap."
+          data-wrong="Agreeable chatbots tend to tell you what you want to hear. Good health and mental-health advice sometimes needs to gently tell you what you do not want to hear, like &quot;please see someone about this.&quot;"></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>3. "Feeling helped is not the same as being helped" means:</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Chatbots never help anyone</button>
+          <button class="quiz-opt" type="button" data-answer="b">A supportive-feeling chat can quietly replace the real help that would actually make a difference</button>
+          <button class="quiz-opt" type="button" data-answer="c">You should never talk about feelings</button>
+          <button class="quiz-opt" type="button" data-answer="d">Real help always feels unpleasant</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. Because the chatbot feels supportive, it can take the place of talking to a real person, leaving you more alone with the problem, not less."
+          data-wrong="It means the comforting feeling of a chatbot conversation can quietly stand in for real care, so the problem stays unaddressed. The feeling of support is not the same as actual help."></div>
+      </div>
+      <div class="quiz-q" data-correct="c">
+        <h3>4. What is the one rule from this lesson?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Never use AI for anything health-related</button>
+          <button class="quiz-opt" type="button" data-answer="b">Trust AI for small things, doctors for big things</button>
+          <button class="quiz-opt" type="button" data-answer="c">AI is a starting point, never the final word, on your body or your mind</button>
+          <button class="quiz-opt" type="button" data-answer="d">Always ask two different chatbots</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="That is the whole lesson in a sentence. Use it to gather your thoughts, then take anything real to a person who can be responsible for the answer."
+          data-wrong="The rule is: AI can be a starting point, never the final word, on your body or your mind. For anything real, take it to a doctor or a person you trust."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>5. You are in distress and need to talk to someone right now, anywhere in Canada. What do you do?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Ask a chatbot for coping strategies</button>
+          <button class="quiz-opt" type="button" data-answer="b">Call or text 988, free, any time</button>
+          <button class="quiz-opt" type="button" data-answer="c">Wait until your next appointment</button>
+          <button class="quiz-opt" type="button" data-answer="d">Search online for advice</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Right. 988 is the Suicide Crisis Helpline: call or text, free, any time, in English or French. You do not need to be in crisis to reach out."
+          data-wrong="Call or text 988, the Suicide Crisis Helpline: free, any time, anywhere in Canada, in English or French. A real person will answer. You do not need to be certain it is a crisis to call."></div>
+      </div>
+    </div>
+
+    <h2>Your progress</h2>
+    <p>Tick each item as you feel confident with it. This is saved on this device only, with no account needed.</p>
+    <ul class="checklist" data-checklist="module-ai-health">
+      <li class="check-item"><input type="checkbox" id="module-ai-health-1"><label for="module-ai-health-1">I know why a chatbot can feel like a safe place to bring health worries, and why that feeling can be a trap</label></li>
+      <li class="check-item"><input type="checkbox" id="module-ai-health-2"><label for="module-ai-health-2">I know a chatbot can be confidently wrong and does not know my history or medications</label></li>
+      <li class="check-item"><input type="checkbox" id="module-ai-health-3"><label for="module-ai-health-3">I can say the one rule: AI is a starting point, never the final word, on my body or my mind</label></li>
+      <li class="check-item"><input type="checkbox" id="module-ai-health-4"><label for="module-ai-health-4">I know the real Canadian helps: 988, Health811 (dial 811 in Ontario), 211, my doctor, and my pharmacist</label></li>
+      <li class="check-item"><input type="checkbox" id="module-ai-health-5"><label for="module-ai-health-5">I know I can bring chatbot-drafted questions to a real appointment</label></li>
+    </ul>
+
+    <!-- Denise: forward the lesson in isolation. Copy-link only, no share API. -->
+    <section class="send-lesson" aria-labelledby="send-h">
+      <h2 id="send-h">Send this lesson to someone</h2>
+      <p>Helping a parent or friend? This page works on its own, with no account and nothing to install. Copy the link and text it to them.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="button" data-copy-link>Copy the link to this lesson</button>
+        <span class="send-done" data-copy-done hidden>Copied. Paste it into a text or email.</span>
+      </div>
+      <input class="visually-hidden" type="text" data-copy-field hidden readonly aria-label="Link to this lesson">
+    </section>
+
+    <div class="success-state">
+      <p><strong>Well done.</strong> You now know the honest picture: a chatbot can be a private first step, but it agrees with you to a fault, it can be confidently wrong, and feeling helped is not the same as being helped. The rule is simple: a starting point, never the final word, on your body or your mind. And if you ever need a real person, 988, Health811, and 211 are there for you, free, any time.</p>
+    </div>
+
+    <nav class="related-modules" aria-label="Continue learning">
+      <h2>Where to next</h2>
+      <div class="related-grid">
+        <a class="related-card" href="module-15.html">
+          <span class="related-num">Module 15</span>
+          <span class="related-name">Telehealth and Medical Portals</span>
+          <span class="related-desc">Talk to your real doctor from home: what to expect, how to join the call, and what to have ready.</span>
+        </a>
+        <a class="related-card" href="module-17-ai-research.html">
+          <span class="related-num">Module 17</span>
+          <span class="related-name">Using AI for Research</span>
+          <span class="related-desc">How to use AI tools safely for everyday questions, and how to check what they tell you.</span>
+        </a>
+        <a class="related-card" href="module-fact-check.html">
+          <span class="related-num">Special lesson</span>
+          <span class="related-name">Is It True, or Does It Just Sound True?</span>
+          <span class="related-desc">One calm habit for checking whether an answer you find online is actually true before you trust it.</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<!-- SHARED SHELL: footer (identical on every page). -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">For families</a></li>
+      <li><a href="../about.html">About us</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="../glossary.html">Glossary</a></li>
+      <li><a href="../privacy.html">Privacy</a></li>
+      <li><a href="../terms.html">Terms</a></li>
+      <li><a href="../disclaimer.html">Disclaimer</a></li>
+      <li><a href="../support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- SHARED SHELL: layered consent bar (identical on every page). -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="../privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/module.js"></script>
+</body>
+</html>
