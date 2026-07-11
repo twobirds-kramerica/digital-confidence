@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fr-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Politique de confidentialité - Centre de confiance numérique</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/fr/privacy.html">
+  <link rel="alternate" hreflang="en-CA" href="https://twobirds-kramerica.github.io/digital-confidence/privacy.html">
+  <link rel="alternate" hreflang="fr-CA" href="https://twobirds-kramerica.github.io/digital-confidence/fr/privacy.html">
+  <link rel="alternate" hreflang="x-default" href="https://twobirds-kramerica.github.io/digital-confidence/privacy.html">
+  <meta name="description" content="Comment Two Birds Innovation traite les renseignements liés au Centre de confiance numérique : aucun compte, aucune vente de données, des analyses soumises au consentement.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Aller au contenu principal</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">Centre de confiance numérique</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Connexion sécurisée</span>
+    <a class="lang-link" href="../privacy.html" lang="en-CA" hreflang="en-CA">English</a>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Affichage
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Taille du texte">
+        <span class="group-label" aria-hidden="true">Taille du texte</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Texte plus petit">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Texte standard">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Texte plus grand">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Écouter cette page">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Lecture à voix haute</button>
+        <div class="rate-group" role="group" aria-label="Vitesse de lecture">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Plus lent</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normale</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Plus rapide</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Mode sombre</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Sections des leçons">
+  <div class="container">
+    <a href="index.html">Toutes les leçons</a>
+    <a href="index.html#protect-money">Protégez votre argent</a>
+    <a href="index.html#everyday-confidence">Confiance au quotidien</a>
+    <a href="../for-families.html">Pour les familles (en anglais seulement)</a>
+    <a href="../support-directory.html">Obtenir de l’aide (en anglais seulement)</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Fil d’Ariane">
+  <div class="container">
+    <ol>
+      <li><a href="index.html">Accueil</a></li>
+      <li><span aria-current="page">Politique de confidentialité</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <h1>Politique de confidentialité</h1>
+    <p class="last-updated">Date d’entrée en vigueur : 1er juillet 2026 &bull; Dernière mise à jour : juillet 2026</p>
+
+    <div class="draft-note" role="note">
+      <p><strong>ÉBAUCHE : en attente d’une révision juridique professionnelle.</strong><br>
+      Ceci est une ébauche de politique et ne constitue pas un avis juridique. Elle est publiée pour que vous puissiez voir comment elle se lit et fonctionne. Un avocat autorisé de l’Ontario devrait la réviser avant que quiconque s’y fie. En cas de divergence, la <a href="../privacy.html">version anglaise</a> prévaut.</p>
+    </div>
+
+    <p>La présente politique de confidentialité explique comment Two Birds Innovation (« Two Birds », « nous », « notre »), établie à St. Thomas, en Ontario, au Canada, traite les renseignements liés à nos sites Web et à nos produits numériques gratuits, dont le Centre de confiance numérique (un outil Web gratuit d’apprentissage numérique et de protection contre les fraudes), notre outil de recherche d’emploi et les autres outils Web statiques que nous publions (ensemble, les « Produits »).</p>
+    <p>Nous avons conçu ces Produits selon le principe du <strong>minimum de données</strong>. En termes simples : nous essayons de recueillir le moins d’information possible, et la plupart de nos Produits ne recueillent aucun renseignement personnel à votre sujet. Cette politique est rédigée pour être conforme à la Loi sur la protection des renseignements personnels et les documents électroniques (LPRPDE) du Canada et aux lois ontariennes applicables.</p>
+
+    <div class="story-block">
+      <span class="story-label">Résumé en langage clair</span>
+      <p>Le Centre de confiance numérique n’a ni compte ni connexion. Nous ne vendons, ne louons et n’échangeons jamais vos renseignements. Nous n’utilisons aucun réseau publicitaire tiers. Quand nous mesurons l’utilisation du site, nous employons des outils d’analyse respectueux de la vie privée qui ne s’activent que si vous y consentez. Certaines fonctions facultatives (un formulaire de commentaires ou une inscription courriel facultative) recueillent un peu d’information, et seulement si vous choisissez de les utiliser. Tout ce qu’un outil enregistre dans votre propre navigateur reste sur votre appareil.</p>
+    </div>
+
+    <section class="legal-section">
+      <h2>1. Résumé (la version courte)</h2>
+      <ul>
+        <li>Le Centre de confiance numérique n’a <strong>ni compte ni connexion</strong> et n’exige aucun renseignement personnel pour être utilisé.</li>
+        <li>Nous ne vendons, ne louons et n’échangeons <strong>jamais</strong> vos renseignements. Jamais.</li>
+        <li>Nous n’utilisons <strong>pas</strong> vos renseignements pour de la publicité ciblée et nous n’exploitons <strong>aucun</strong> réseau publicitaire tiers sur nos Produits.</li>
+        <li>Quand nous mesurons l’utilisation de nos Produits, nous employons des outils d’analyse soumis au consentement (Google Analytics 4 et Microsoft Clarity) qui ne s’activent qu’après votre accord. Voir la section 4.</li>
+        <li>Certains Produits offrent une inscription courriel ou un formulaire de commentaires <strong>facultatifs</strong>. Ils sont strictement volontaires, et vous pouvez vous désabonner ou demander la suppression de vos données en tout temps. Voir la section 5.</li>
+        <li>Les données qui restent <strong>sur votre propre appareil</strong> (comme la mémoire locale du navigateur qui retient votre progression, votre ville ou vos préférences) ne nous sont pas transmises.</li>
+      </ul>
+    </section>
+
+    <section class="legal-section">
+      <h2>2. Ce que nous ne recueillons PAS</h2>
+      <p>Sur le Centre de confiance numérique et nos autres outils Web statiques, nous ne faisons <strong>pas</strong> ce qui suit :</p>
+      <ul>
+        <li>créer des comptes, des profils ou des connexions d’utilisateur;</li>
+        <li>exiger votre nom, votre adresse, votre numéro de téléphone, votre date de naissance ou des identifiants gouvernementaux;</li>
+        <li>recueillir des renseignements de paiement ou financiers (nos Produits gratuits sont gratuits, il n’y a rien à payer);</li>
+        <li>exiger une connexion avec Google, Facebook ou tout autre fournisseur d’identité;</li>
+        <li>vendre, louer, concéder sous licence ou échanger quelque renseignement que ce soit à votre sujet;</li>
+        <li>utiliser vos renseignements pour vous cibler avec de la publicité, ou permettre à des tiers de le faire sur nos Produits;</li>
+        <li>constituer des profils publicitaires ou de pistage à votre sujet.</li>
+      </ul>
+      <p>Quand un Produit précis recueille quelque chose (par exemple, une adresse courriel facultative que vous choisissez de fournir, voir la section 5), cette collecte est décrite dans la présente politique, et on vous en informe à l’endroit même où vous la fournissez.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>3. Les renseignements que nous pouvons traiter, et pourquoi</h2>
+      <p>Nous gardons volontairement très limitées les catégories de renseignements que nous traitons :</p>
+      <ul>
+        <li><strong>Données d’utilisation soumises au consentement</strong> (des comptages et tendances non identifiants, comme les pages visitées et les types d’appareils utilisés) au moyen d’outils d’analyse respectueux de la vie privée qui ne s’activent qu’après votre accord. Nous les traitons pour comprendre quels outils sont utiles et les améliorer.</li>
+        <li><strong>Données techniques et de serveur</strong> (les renseignements standards que votre navigateur et notre hébergeur échangent pour livrer une page, comme une adresse IP au niveau du réseau, un horodatage et le fichier demandé). Nous ne les utilisons pas pour identifier des personnes; ils sont traités par nos fournisseurs d’hébergement et de diffusion pour livrer le site, le garder disponible et le protéger contre les abus.</li>
+        <li><strong>Adresse courriel facultative</strong>, seulement si vous choisissez de la soumettre par un formulaire volontaire, afin de vous envoyer précisément ce que vous avez demandé. Fondement : consentement explicite (voir la section 5).</li>
+        <li><strong>Données sur l’appareil (mémoire locale)</strong> : la progression, les réponses, la ville et les préférences qu’un outil enregistre dans votre propre navigateur. Elles restent sur votre appareil et ne nous sont pas transmises.</li>
+      </ul>
+      <p>Nous ne combinons <strong>pas</strong> ces catégories pour vous identifier, et nous ne tentons <strong>pas</strong> de réidentifier des données d’analyse agrégées.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>4. Outils d’analyse (soumis au consentement, aucun profil personnel)</h2>
+      <p>Pour savoir si nos Produits gratuits aident vraiment les gens, nous utilisons des outils d’analyse respectueux de la vie privée qui ne se chargent <strong>qu’après votre accord</strong> donné par la bannière de consentement :</p>
+      <ul>
+        <li><strong>Google Analytics 4</strong> : pages vues agrégées, types d’appareils généraux et tendances d’utilisation. Il ne se charge pas sans votre consentement, et vous pouvez refuser.</li>
+        <li><strong>Microsoft Clarity</strong> : des constats d’utilisation agrégés, comme des tendances générales d’interaction. Il ne se charge lui aussi qu’après votre consentement.</li>
+      </ul>
+      <p>Ces outils sont configurés pour mesurer des tendances globales, pas pour bâtir un profil de vous comme personne. Nous ne les utilisons ni pour vendre des données ni pour diffuser de la publicité ciblée. Si nous ajoutons, retirons ou changeons un outil d’analyse, nous mettrons cette section à jour.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>5. Courriel facultatif et commentaires (strictement volontaires)</h2>
+      <p>Certains Produits comprennent un formulaire <strong>facultatif</strong> où vous pouvez choisir de nous donner votre adresse courriel (par exemple, pour recevoir des nouvelles du programme), ou un formulaire de commentaires pour nous envoyer une remarque ou une suggestion. Si vous utilisez l’un de ces formulaires :</p>
+      <ul>
+        <li>Donner votre courriel ou vos commentaires est <strong>entièrement facultatif</strong>. Le Produit fonctionne sans cela.</li>
+        <li>Nous utilisons ce que vous soumettez <strong>uniquement</strong> pour l’objectif précis indiqué sur le formulaire.</li>
+        <li>Nous ne le vendons <strong>pas</strong>, nous ne le partageons pas, et nous ne vous ajoutons à <strong>aucune</strong> liste d’envoi sans lien.</li>
+        <li>Vous pouvez <strong>vous désabonner ou demander la suppression en tout temps</strong>, par l’option de désabonnement de tout message ou en nous écrivant (section 12).</li>
+        <li>Les courriels et commentaires soumis sont traités par notre fournisseur de formulaires, Formspree, qui peut stocker des données à l’extérieur du Canada.</li>
+      </ul>
+      <p>Si un Produit n’affiche aucun formulaire, alors ce Produit ne recueille ni courriel ni commentaires.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>6. Consentement</h2>
+      <p>En vertu de la LPRPDE, nous nous appuyons sur un consentement adapté à la sensibilité des renseignements :</p>
+      <ul>
+        <li>Un <strong>consentement explicite</strong> pour tout ce que vous soumettez activement, comme une adresse courriel facultative ou des commentaires (section 5), et pour les outils d’analyse soumis au consentement de la section 4.</li>
+        <li>Un <strong>consentement implicite</strong> pour les données techniques standards nécessaires pour livrer une page Web, quand l’objectif est celui qu’une personne raisonnable jugerait approprié.</li>
+      </ul>
+      <p>Vous pouvez retirer votre consentement en tout temps (sous réserve de limites légales ou contractuelles), par exemple en refusant ou en effaçant le consentement aux outils d’analyse, en vous désabonnant, en demandant la suppression d’un courriel facultatif ou en vidant la mémoire locale de votre navigateur. Pour retirer votre consentement, écrivez-nous (section 12). Le retrait du consentement n’affecte pas la légalité de ce qui a été fait avant le retrait.</p>
+      <p>Nous n’exigeons <strong>pas</strong> que vous consentiez à une collecte, une utilisation ou une communication de renseignements au-delà de ce qui est nécessaire pour offrir un Produit comme condition d’utilisation de ce Produit.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>7. Comment nous utilisons les renseignements</h2>
+      <p>Nous utilisons les renseignements limités décrits ci-dessus uniquement pour :</p>
+      <ul>
+        <li>livrer, héberger et sécuriser les Produits;</li>
+        <li>comprendre, de façon globale, comment les Produits sont utilisés, afin de les améliorer;</li>
+        <li>vous répondre et vous fournir ce que vous avez expressément demandé (par exemple, par un formulaire facultatif de courriel ou de commentaires);</li>
+        <li>respecter nos obligations légales.</li>
+      </ul>
+      <p>Nous n’utilisons <strong>pas</strong> les renseignements pour des décisions automatisées produisant des effets juridiques ou d’importance semblable à votre sujet.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>8. Communication et fournisseurs de services</h2>
+      <p>Nous ne vendons <strong>pas</strong> vos renseignements et nous ne les communiquons <strong>pas</strong> pour le marketing indépendant de qui que ce soit. Nous faisons appel à un petit nombre de fournisseurs de services réputés (« sous-traitants ») pour faire fonctionner les Produits :</p>
+      <ul>
+        <li><strong>Hébergement et diffusion du site statique :</strong> GitHub Pages livre les fichiers du site.</li>
+        <li><strong>Outils d’analyse :</strong> Google Analytics 4 et Microsoft Clarity (soumis au consentement, voir la section 4).</li>
+        <li><strong>Courriel et formulaires (seulement là où un formulaire facultatif existe) :</strong> Formspree (voir la section 5).</li>
+      </ul>
+      <p>Chaque fournisseur ne traite que les renseignements nécessaires à sa fonction et doit les protéger avec des mesures comparables à celles de la présente politique. Nous pouvons aussi communiquer des renseignements si la loi l’exige (par exemple, en réponse à une demande légale valide) ou pour protéger les droits, la sécurité ou les biens de Two Birds, de nos utilisateurs ou du public.</p>
+      <h3>Stockage à l’extérieur du Canada</h3>
+      <p>Certains fournisseurs peuvent stocker ou traiter des données à l’extérieur du Canada (par exemple, aux États-Unis). Quand des données sont traitées à l’extérieur du Canada, elles peuvent être soumises aux lois de ce pays, y compris l’accès légal par des tribunaux, des forces de l’ordre ou des organismes gouvernementaux étrangers. Nous choisissons des fournisseurs que nous jugeons réputés et, lorsque c’est pratique, nous préférons des configurations qui gardent les données au Canada.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>9. Témoins (cookies) et mémoire locale</h2>
+      <ul>
+        <li>Nos Produits statiques visent à utiliser peu de témoins. Les témoins d’analyse ne sont installés qu’après votre consentement.</li>
+        <li>Certains outils utilisent la mémoire locale du navigateur, sur votre propre appareil, pour retenir votre progression, vos réponses, votre ville ou vos préférences. Cela reste sur votre appareil et ne nous est pas transmis. Vous pouvez l’effacer en tout temps dans les réglages de votre navigateur.</li>
+      </ul>
+      <p>Vous pouvez contrôler ou bloquer les témoins dans les réglages de votre navigateur. Bloquer les témoins n’empêchera pas nos outils statiques de base de fonctionner, mais cela peut toucher les fonctions qui dépendent de vos préférences enregistrées sur l’appareil.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>10. Conservation des données</h2>
+      <ul>
+        <li><strong>Les données d’analyse</strong> ne sont conservées que sous forme agrégée et non identifiante, aussi longtemps qu’elles sont utiles pour comprendre les tendances d’utilisation, selon la période de conservation de l’outil d’analyse utilisé.</li>
+        <li><strong>Les journaux de serveur standards</strong> sont conservés par notre hébergeur pour une période limitée, à des fins de sécurité et d’exploitation, puis supprimés, selon les pratiques de ce fournisseur.</li>
+        <li><strong>Les adresses courriel facultatives et les commentaires</strong> ne sont conservés que jusqu’à votre désabonnement ou votre demande de suppression, ou jusqu’à ce qu’ils ne soient plus nécessaires à l’objectif pour lequel vous les avez fournis, selon la première éventualité.</li>
+        <li><strong>La mémoire locale sur l’appareil</strong> reste sur votre appareil jusqu’à ce que vous l’effaciez.</li>
+      </ul>
+      <p>Nous ne conservons pas de renseignements personnels plus longtemps que nécessaire aux fins pour lesquelles ils ont été recueillis, ou que ce que la loi exige.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>11. Sécurité</h2>
+      <p>Nous prenons des mesures raisonnables pour protéger les renseignements selon leur sensibilité, notamment en livrant les Produits par des connexions chiffrées (HTTPS), en réduisant au minimum ce que nous recueillons, en faisant appel à des fournisseurs d’hébergement et de formulaires réputés qui ont leurs propres mesures de sécurité, et en limitant l’accès aux quelques données courriel facultatives que nous détenons.</p>
+      <p>Aucune méthode de transmission ou de stockage n’est parfaitement sûre, et nous ne pouvons pas garantir une sécurité absolue. Si nous prenons connaissance d’une atteinte à la vie privée présentant un risque réel de préjudice grave, nous agirons conformément à nos obligations en vertu de la LPRPDE, ce qui peut comprendre l’avis aux personnes touchées et au Commissariat à la protection de la vie privée du Canada.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>12. Vos droits : accès, correction et questions</h2>
+      <p>Sous réserve des limites légales, vous avez le droit de demander quels renseignements personnels nous détenons à votre sujet (dans la plupart des cas, pour nos outils statiques, la réponse est « aucun »), d’y accéder, de les faire corriger s’ils sont inexacts, de retirer votre consentement ou de demander la suppression d’un courriel facultatif que vous avez fourni, et de demander comment vos renseignements ont été utilisés ou communiqués.</p>
+      <p>Pour faire une demande, joignez notre responsable de la protection de la vie privée :</p>
+      <p><strong>Aaron Patzalek, Two Birds Innovation</strong><br>
+      Courriel : <a href="mailto:aaron.patzalek@gmail.com">aaron.patzalek@gmail.com</a><br>
+      St. Thomas, Ontario, Canada</p>
+      <p>Nous répondrons dans le délai prévu par la LPRPDE (généralement 30 jours) et vous aviserons si nous avons besoin de plus de temps ou si nous ne pouvons pas donner suite à une demande (avec motifs). Si notre réponse ne vous satisfait pas, vous pouvez joindre le Commissariat à la protection de la vie privée du Canada (<a href="https://www.priv.gc.ca/fr/" target="_blank" rel="noopener noreferrer">www.priv.gc.ca</a>).</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>13. Jeunes utilisateurs</h2>
+      <p>Le Centre de confiance numérique est conçu pour être sûr pour un large public, y compris les aînés et les jeunes.</p>
+      <ul>
+        <li>Pour les jeunes qui utilisent le Centre de confiance numérique et nos autres outils gratuits : nous n’exigeons aucun renseignement personnel, ne créons aucun compte et ne diffusons aucune publicité ciblée. Il n’y a rien à quoi s’inscrire et rien qui profile une jeune personne.</li>
+        <li>Nous ne recueillons pas sciemment de renseignements personnels auprès d’enfants. Si un Produit offre un formulaire courriel facultatif, il ne s’adresse pas aux enfants, et nous demandons à toute personne n’ayant pas atteint l’âge de la majorité en Ontario de ne pas soumettre de renseignements personnels sans la participation d’un parent ou d’un tuteur.</li>
+        <li>Si vous croyez qu’un enfant nous a fourni des renseignements personnels et que vous souhaitez les faire retirer, écrivez-nous (section 12) et nous les supprimerons.</li>
+      </ul>
+    </section>
+
+    <section class="legal-section">
+      <h2>14. Lois applicables</h2>
+      <ul>
+        <li>Two Birds Innovation est établie à St. Thomas, en Ontario, au Canada, et exerce ses activités en vertu des lois fédérales canadiennes et provinciales ontariennes.</li>
+        <li>Notre traitement des renseignements personnels dans le cadre d’activités commerciales est régi principalement par la LPRPDE du Canada.</li>
+        <li>Selon l’activité, d’autres lois peuvent s’appliquer, comme la Loi canadienne anti-pourriel (LCAP) pour tout message électronique commercial (par exemple, un courriel facultatif auquel vous vous abonnez).</li>
+        <li>Si vous accédez à nos Produits depuis l’extérieur du Canada, vous comprenez que vos renseignements seront traités comme le décrit la présente politique et selon le droit canadien.</li>
+      </ul>
+    </section>
+
+    <section class="legal-section">
+      <h2>15. Modifications de la présente politique</h2>
+      <p>Nous pouvons mettre à jour cette politique de confidentialité de temps à autre (par exemple, si nous changeons un outil d’analyse ou ajoutons une fonction facultative). Le cas échéant, nous changerons la date de « dernière mise à jour » en haut de la page. Les changements importants seront signalés sur le Produit concerné lorsque c’est pratique. Continuer d’utiliser un Produit après une mise à jour signifie que vous acceptez la politique révisée.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2>16. Nous joindre</h2>
+      <p><strong>Two Birds Innovation</strong><br>
+      À l’attention de : Aaron Patzalek, responsable de la protection de la vie privée<br>
+      Courriel : <a href="mailto:aaron.patzalek@gmail.com">aaron.patzalek@gmail.com</a><br>
+      St. Thomas, Ontario, Canada</p>
+      <p>Les questions, demandes d’accès, corrections ou plaintes en matière de vie privée peuvent toutes être envoyées à l’adresse ci-dessus. Nous les prenons au sérieux et y répondrons rapidement.</p>
+    </section>
+
+    <p>Consultez aussi nos <a href="terms.html">conditions d’utilisation</a> et notre <a href="../disclaimer.html">avis de non-responsabilité (en anglais seulement)</a>.</p>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Nos engagements">
+      <li><span aria-hidden="true">✓</span> Aucun compte</li>
+      <li><span aria-hidden="true">✓</span> Aucun pistage</li>
+      <li><span aria-hidden="true">✓</span> Rien à acheter</li>
+      <li><span aria-hidden="true">✓</span> Canadien</li>
+    </ul>
+    <p>Le Centre de confiance numérique est offert gratuitement. C’est une initiative communautaire de Two Birds Innovation, une entreprise ontarienne, pour aider les aînés du Canada à rester en sécurité et en contact en ligne. Aucun compte, aucun pistage, aucun appel de vente.</p>
+    <p class="scope-note">Remarque : ce site offre des conseils de sécurité en langage clair, et non des conseils juridiques. Si vous soupçonnez une fraude, communiquez directement avec votre banque.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">Pour les familles (en anglais seulement)</a></li>
+      <li><a href="about.html">À propos de nous</a></li>
+      <li><a href="../faq.html">FAQ (en anglais seulement)</a></li>
+      <li><a href="../glossary.html">Glossaire (en anglais seulement)</a></li>
+      <li><a href="privacy.html">Confidentialité</a></li>
+      <li><a href="terms.html">Conditions d’utilisation</a></li>
+      <li><a href="../disclaimer.html">Avis de non-responsabilité (en anglais seulement)</a></li>
+      <li><a href="../support-directory.html">Obtenir de l’aide (en anglais seulement)</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Choix de confidentialité">
+  <div class="container">
+    <p>Nous utilisons une petite mémoire du navigateur pour faire fonctionner le site et retenir votre taille de texte. <a href="privacy.html">En savoir plus</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accepter</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Refuser</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Préférences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Fonctionnel (toujours actif)</span>
+        <p>Fait fonctionner le site et retient votre taille de texte.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Nous aide à voir quelles leçons aident le plus. Cela ne vous identifie pas.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (facultatif)</span>
+        <p>Nous aide à joindre plus d’aînés. Nous ne vendons jamais vos renseignements personnels.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Enregistrer mes choix</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+</body>
+</html>

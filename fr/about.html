@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>À propos de nous - Centre de confiance numérique</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/fr/about.html">
+  <link rel="alternate" hreflang="en-CA" href="https://twobirds-kramerica.github.io/digital-confidence/about.html">
+  <link rel="alternate" hreflang="fr-CA" href="https://twobirds-kramerica.github.io/digital-confidence/fr/about.html">
+  <link rel="alternate" hreflang="x-default" href="https://twobirds-kramerica.github.io/digital-confidence/about.html">
+  <meta name="description" content="Qui crée le Centre de confiance numérique, pourquoi c’est gratuit, et les principes derrière chaque leçon. Une initiative communautaire de Two Birds Innovation, en Ontario.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Aller au contenu principal</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">Centre de confiance numérique</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Connexion sécurisée</span>
+    <a class="lang-link" href="../about.html" lang="en-CA" hreflang="en-CA">English</a>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Affichage
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Taille du texte">
+        <span class="group-label" aria-hidden="true">Taille du texte</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Texte plus petit">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Texte standard">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Texte plus grand">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Écouter cette page">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Lecture à voix haute</button>
+        <div class="rate-group" role="group" aria-label="Vitesse de lecture">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Plus lent</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normale</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Plus rapide</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Mode sombre</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Sections des leçons">
+  <div class="container">
+    <a href="index.html">Toutes les leçons</a>
+    <a href="index.html#protect-money">Protégez votre argent</a>
+    <a href="index.html#everyday-confidence">Confiance au quotidien</a>
+    <a href="../for-families.html">Pour les familles (en anglais seulement)</a>
+    <a href="../support-directory.html">Obtenir de l’aide (en anglais seulement)</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Fil d’Ariane">
+  <div class="container">
+    <ol>
+      <li><a href="index.html">Accueil</a></li>
+      <li><span aria-current="page">À propos de nous</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <h1>À propos du Centre de confiance numérique</h1>
+
+    <section>
+      <div class="story-block">
+        <span class="story-label">Comment tout a commencé</span>
+        <p>En 2024, Aaron Kramer, concepteur de produits de St. Thomas, en Ontario, s’est assis avec un groupe d’aînés dans un centre communautaire local pour poser une question toute simple : <em>« Qu’aimeriez-vous mieux comprendre au sujet de la technologie? »</em></p>
+        <p>Les réponses n’étaient pas celles qu’il attendait. Les gens ne disaient pas « je veux apprendre les applications ». Ils disaient : <em>« J’ai peur de faire une erreur et de tout briser. »</em> Ils disaient : <em>« Mes petits-enfants essaient de m’aider, mais je me sens gêné. »</em> Ils disaient : <em>« J’ai reçu un appel inquiétant et je ne savais pas quoi faire. »</em></p>
+        <p>Le Centre de confiance numérique est né directement de ces conversations. Chaque module, chaque exemple et chaque parole rassurante de ce programme vient de peurs réelles que de vraies personnes nous ont confiées.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Notre mission</h2>
+
+      <div class="story-block">
+        <p><em>« Nous croyons que chaque aîné du Canada mérite de se sentir en sécurité, confiant et en contact dans un monde numérique. Le Centre de confiance numérique existe pour y arriver, un module à la fois. »</em></p>
+      </div>
+
+      <p>Le Centre de confiance numérique est un programme gratuit d’apprentissage numérique, à votre rythme, conçu spécialement pour les aînés de l’Ontario de 70 ans et plus. Nous croyons que l’âge ne devrait jamais empêcher quiconque de participer en toute sécurité à la vie numérique : faire ses opérations bancaires en ligne, rester en contact avec sa famille ou éviter les fraudes.</p>
+
+      <p>Notre approche repose sur une idée simple : <strong>l’autonomie durable</strong>. Nous ne faisons pas les choses à la place des gens. Nous leur apprenons à les faire eux-mêmes, avec patience, en langage clair, et en rappelant que faire des erreurs fait partie de l’apprentissage. Quand une personne aînée termine un module, cette habileté lui appartient. Elle est à elle, pas empruntée à un proche serviable qui ne sera pas toujours disponible.</p>
+
+      <div class="tip-block">
+        <span class="block-label">🍁 L’Ontario d’abord</span>
+        <p>Tout ici est conçu pour <em>votre</em> vie en Ontario : vos banques, vos applications, vos services téléphoniques, vos fraudes. Pas des conseils génériques copiés d’ailleurs.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Pourquoi c’est important</h2>
+
+      <div class="principle-grid">
+        <div class="principle-card">
+          <div class="principle-icon" aria-hidden="true">👴</div>
+          <div class="principle-title">1 Canadien sur 5 a plus de 65 ans</div>
+          <p>La population aînée du Canada est le groupe démographique qui croît le plus vite au pays. D’ici 2030, les aînés seront plus nombreux que les enfants. L’apprentissage numérique n’est pas une préoccupation marginale : c’est l’un des enjeux d’accès public les plus pressants de la décennie.</p>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-icon" aria-hidden="true">💸</div>
+          <div class="principle-title">Plus de 500 M$ perdus chaque année aux mains des fraudeurs</div>
+          <p>Selon le Centre antifraude du Canada, les pertes liées à la fraude déclarées par les Canadiens dépassent le demi-milliard de dollars par année, et les aînés sont visés de façon disproportionnée. La plupart des victimes disent ne pas avoir reconnu les signes avant-coureurs à temps.</p>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-icon" aria-hidden="true">🧠</div>
+          <div class="principle-title">L’isolement numérique accélère le déclin cognitif</div>
+          <p>Les études à long terme lient de façon constante l’isolement social et numérique des personnes âgées à un déclin cognitif plus rapide et à des taux de dépression plus élevés. Aider quelqu’un à rester en contact, par appel vidéo, courriel ou communauté en ligne, n’est pas qu’une commodité. C’est une intervention de santé.</p>
+        </div>
+      </div>
+
+      <div class="story-block">
+        <p>Le Centre de confiance numérique est une réponse directe à ces trois réalités. Pas un produit. Pas un livrable de subvention. Une réponse.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Pourquoi est-ce gratuit?</h2>
+      <p>On nous pose souvent la question. La réponse courte : parce qu’il le faut.</p>
+      <p>La fraude numérique contre les aînés coûte des centaines de millions de dollars aux Canadiens chaque année. Les personnes les plus à risque sont souvent celles qui peuvent le moins se payer un cours. Mettre ce contenu derrière un mur payant irait à l’encontre de tout le projet.</p>
+      <p>Le Centre de confiance numérique est financé par le temps et le soin de Two Birds, un petit studio de produits ontarien. Il n’y a aucuns frais cachés, aucune formule payante, aucune vente de données personnelles. Et il n’y en aura jamais.</p>
+      <div class="story-block">
+        <p><em>« La seule façon que ça fonctionne, c’est que tout le monde puisse y accéder. Point final. »</em></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Nos convictions</h2>
+      <p>Cinq principes guident chaque décision que nous prenons au sujet de ce programme.</p>
+
+      <div class="principle-grid">
+        <div class="principle-card">
+          <div class="principle-icon" aria-hidden="true">🧠</div>
+          <div class="principle-title">Vous n’êtes pas trop vieux pour apprendre</div>
+          <p>Apprendre la technologie n’est pas une question d’âge : c’est une question de pratique et de patience. Les adultes qui ont appris à conduire, à utiliser un four à micro-ondes ou un magnétoscope ont déjà prouvé qu’ils peuvent apprendre de nouveaux outils. Une tablette, ce n’est pas différent.</p>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-icon" aria-hidden="true">💛</div>
+          <div class="principle-title">Vos craintes sont légitimes</div>
+          <p>Nous ne traitons jamais une inquiétude comme une exagération. Les peurs que nos apprenants partagent — se faire frauder, faire une erreur irréversible, se sentir gêné — sont tout à fait raisonnables. Nous les prenons au sérieux et nous y répondons directement.</p>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-icon" aria-hidden="true">🕰️</div>
+          <div class="principle-title">La dignité avant la vitesse</div>
+          <p>Il n’y a pas de date limite ici. Personne ne note votre vitesse. Ce programme avance au rythme qui vous convient, et vous pouvez refaire n’importe quel module autant de fois que vous le voulez. La confiance ne se précipite pas.</p>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-icon" aria-hidden="true">🗣️</div>
+          <div class="principle-title">De vraies voix</div>
+          <p>Chaque leçon a été façonnée par des conversations avec des personnes aînées, pas par des suppositions sur leurs besoins. Nous retournons régulièrement vers notre communauté pour nous assurer de viser juste.</p>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-icon" aria-hidden="true">🍁</div>
+          <div class="principle-title">L’Ontario d’abord</div>
+          <p>Numéros de téléphone, applications, conseils bancaires, alertes aux fraudes : tout ici est propre à la vie en Ontario. Nous ne sommes pas une plateforme mondiale avec du contenu canadien ajouté après coup. Nous sommes bâtis pour ici, par des gens qui vivent ici.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>À qui cela s’adresse</h2>
+      <p>Le Centre de confiance numérique a été conçu pour toute personne qui se sent hésitante face à la technologie, mais voici les cinq groupes qui nous disent en profiter le plus.</p>
+
+      <ul class="audience-list">
+        <li>
+          <strong>Les personnes récemment retraitées</strong>
+          Quitter un milieu de travail, c’est perdre le service informatique et les collègues à qui demander. Ce programme vous redonne ce filet de sécurité, sans la gêne.
+        </li>
+        <li>
+          <strong>Les personnes ciblées par des fraudes</strong>
+          Si vous avez reçu un appel menaçant, un courriel suspect ou une offre trop belle pour être vraie, ce programme vous explique exactement ce qui s’est passé, et comment rester en sécurité.
+        </li>
+        <li>
+          <strong>Les aînés qui passent aux services bancaires numériques</strong>
+          Des succursales bancaires ferment partout en Ontario. Si l’on vous pousse vers une application ou un site Web, notre leçon sur les services bancaires vous guide clairement et en toute sécurité.
+        </li>
+        <li>
+          <strong>Les proches aidants qui préparent l’appareil d’un être cher</strong>
+          La <a href="../for-families.html">page pour les familles (en anglais seulement)</a> vous aide à envoyer à un parent sa première leçon, avec les bonnes paroles rassurantes dès le premier jour.
+        </li>
+        <li>
+          <strong>Les adultes qui apprennent à leur rythme</strong>
+          Que vous ayez une heure par semaine ou une heure par jour, vous pouvez avancer dans ce programme entièrement selon votre horaire. La progression s’enregistre automatiquement, sur votre propre appareil.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Ce que vous apprendrez</h2>
+      <p>Les 29 modules du programme couvrent les habiletés numériques qui comptent le plus dans la vie quotidienne en Ontario.</p>
+
+      <div class="tip-block">
+        <span class="block-label">📚 29 modules</span>
+        <p>Des tout premiers gestes — comment revenir à votre écran d’accueil quand vous êtes perdu — jusqu’aux services bancaires, aux appels vidéo, à l’épicerie en ligne, au covoiturage commercial et à l’art de demander de l’aide avec confiance quand quelque chose ne va pas.</p>
+      </div>
+
+      <div class="tip-block">
+        <span class="block-label">🤝 Exercez-vous à repérer les fraudes</span>
+        <p>Entraînez-vous à reconnaître des scénarios de fraude réels avant de les rencontrer dans la vraie vie : fraude des grands-parents, faux textos bancaires, appels automatisés se réclamant de l’ARC, fausses fenêtres de soutien technique, et plus encore. Commencez par <a href="../scam-defence-helper.html">l’exercice Repérez la fraude (en anglais seulement)</a>.</p>
+      </div>
+
+      <div class="tip-block">
+        <span class="block-label">🏆 Certificat de réussite</span>
+        <p>Après avoir terminé les modules et <a href="../final-quiz.html">l’évaluation finale (en anglais seulement)</a>, vous recevrez un certificat de confiance numérique imprimable. C’est une vraie réussite qui mérite d’être célébrée.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>La version française, en cours de route</h2>
+      <div class="tip-block">
+        <span class="block-label">⚜ Engagement bilingue</span>
+        <p>La version française du Centre de confiance numérique se construit leçon par leçon, avec un souci de qualité : un français naturel et respectueux, pensé pour la communauté franco-ontarienne, jamais une traduction automatique brute. Les leçons non encore traduites restent accessibles et sont clairement marquées « en anglais seulement ».</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Notre place dans l’écosystème de l’apprentissage numérique</h2>
+      <p>Le Centre de confiance numérique s’inscrit dans un mouvement mondial grandissant pour rendre la technologie accessible aux personnes âgées. Pendant que des organismes comme le <a href="https://www.cybercollective.org" target="_blank" rel="noopener noreferrer">Cyber Collective</a>, établi au Royaume-Uni, servent leurs communautés à l’international, nous nous spécialisons dans l’expérience des aînés de l’Ontario.</p>
+
+      <div class="story-block">
+        <p><em>Nous ne réinventons pas la roue : nous la faisons tourner pour les aînés de l’Ontario, précisément.</em></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Conçu pour tous les lecteurs</h2>
+      <p>Nous avons ajouté plusieurs outils pour rendre la lecture plus facile, peu importe l’âge ou les capacités. Cherchez le bouton Affichage en haut de chaque page.</p>
+
+      <div class="tip-block">
+        <span class="block-label">🔡 Taille du texte</span>
+        <p>Utilisez les boutons <strong>A− A A+</strong> sous Affichage pour agrandir le texte autant que nécessaire. Votre choix est enregistré et retenu.</p>
+      </div>
+
+      <div class="tip-block">
+        <span class="block-label">🌓 Mode sombre</span>
+        <p>Passez d’un fond clair à un fond sombre sous Affichage. Le mode sombre réduit la fatigue oculaire en faible éclairage. Les deux modes respectent les exigences de contraste des couleurs WCAG.</p>
+      </div>
+
+      <div class="tip-block">
+        <span class="block-label">🔊 Lecture à voix haute</span>
+        <p>Chaque page peut se lire à voix haute pour vous, à la vitesse de votre choix. Cherchez le bouton Lecture à voix haute sous Affichage.</p>
+      </div>
+
+      <div class="tip-block">
+        <span class="block-label">🖨️ Imprimez n’importe quelle leçon</span>
+        <p>Imprimez n’importe quelle page depuis votre navigateur. Les pages imprimées ne montrent que le contenu de la leçon — pas de menus, pas de boutons — dans une mise en page nette et facile à lire.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Ce que les gens en disent</h2>
+      <p>Voici ce que des apprenants de partout en Ontario nous ont confié.</p>
+
+      <div class="testimonial-card">
+        <p>« Avant, je tendais mon téléphone à ma fille chaque fois que je recevais un message bizarre. Maintenant, je sais exactement quoi chercher, et je ne me suis pas fait prendre une seule fois. »</p>
+        <p class="testimonial-attr">— Margaret, 74 ans, Stratford (Ontario)</p>
+      </div>
+
+      <div class="testimonial-card">
+        <p>« M’exercer avec les scénarios de fraude, c’est la meilleure chose que j’aie faite. Je comprends enfin pourquoi ces appels semblent si convaincants, et comment raccrocher sans me sentir coupable. »</p>
+        <p class="testimonial-attr">— Robert, 78 ans, London (Ontario)</p>
+      </div>
+
+      <div class="testimonial-card">
+        <p>« J’ai installé le site sur l’iPad de ma mère et elle a fait quatre modules en une semaine. Elle m’a appelée pour me dire qu’elle avait utilisé son application bancaire toute seule pour la première fois. J’ai versé une petite larme. »</p>
+        <p class="testimonial-attr">— Une fille de St. Thomas (Ontario)</p>
+      </div>
+
+      <div class="testimonial-card">
+        <p>« J’ai aimé qu’on ne me fasse jamais sentir stupide. Chaque module commence en disant que mes inquiétudes sont normales. Ça m’a beaucoup touchée. »</p>
+        <p class="testimonial-attr">— Dorothy, 81 ans, Guelph (Ontario)</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>L’équipe</h2>
+
+      <div class="founder-block">
+        <div class="founder-avatar" aria-hidden="true">AK</div>
+        <div class="founder-body">
+          <div class="founder-name">Aaron Kramer</div>
+          <div class="founder-role">Fondateur, Two Birds Innovation | Gestionnaire de produits principal (plus de 20 ans) | St. Thomas (Ontario)</div>
+          <div class="credentials-bar">
+            <span class="credential-badge">Plus de 20 ans en direction de produits</span>
+            <span class="credential-badge">Ancien de TELUS</span>
+            <span class="credential-badge">GP principal — produits numériques</span>
+            <span class="credential-badge">Recherche UX</span>
+            <span class="credential-badge">Ontario, Canada</span>
+          </div>
+          <p>Aaron Kramer est un gestionnaire de produits principal et concepteur qui compte plus de 20 ans d’expérience à la tête de produits numériques pour des organisations canadiennes, dont TELUS. Établi à St. Thomas, en Ontario, il se spécialise dans l’art de rendre la technologie complexe accessible aux personnes qui en ont le plus besoin, en bâtissant des outils ancrés dans une vraie recherche auprès des utilisateurs, pas dans des suppositions.</p>
+          <p>Il a fondé Two Birds Innovation pour se consacrer à une seule question : <em>comment bâtir des outils numériques pour les personnes exclues de la conversation au moment où ces outils sont conçus?</em> Le Centre de confiance numérique est la réponse directe à cette question, né de conversations avec des aînés du Sud-Ouest de l’Ontario qui ont partagé leurs peurs, leurs frustrations et leurs espoirs face à la technologie.</p>
+          <p>Retrouvez-le sur <a href="https://linkedin.com/in/aaronpatzalek" target="_blank" rel="noopener noreferrer">LinkedIn</a>. Chaque module de ce site reflète plus de deux décennies d’expérience à créer des produits numériques que les gens utilisent vraiment.</p>
+        </div>
+      </div>
+
+      <div class="tip-block">
+        <span class="block-label">📅 Fondé en mars 2026</span>
+        <p>Le Centre de confiance numérique a été lancé publiquement en mars 2026, après plus d’un an de recherche, d’entrevues et de développement de contenu avec des personnes aînées de l’Ontario. Tout le contenu des modules est revu et mis à jour régulièrement par Aaron Kramer pour refléter les menaces, les applications et les ressources canadiennes actuelles.</p>
+      </div>
+
+      <p>Le Centre de confiance numérique est un projet de Two Birds Innovation, un petit studio de produits canadien établi en Ontario. Bâti avec soin pour les communautés où nous vivons.</p>
+    </section>
+
+    <section>
+      <h2>Notre promesse de confidentialité</h2>
+      <p>Vos renseignements personnels restent personnels. Le Centre de confiance numérique :</p>
+      <ul>
+        <li>N’exige <strong>pas</strong> de créer un compte ni de donner votre nom</li>
+        <li>Enregistre votre progression <strong>uniquement sur votre propre appareil</strong> — nous ne pouvons pas la voir</li>
+        <li>Ne mesure l’utilisation du site que de façon globale, et seulement si vous y consentez — sans données personnelles</li>
+        <li>Ne vendra, ne partagera et ne monnayera <strong>jamais</strong> vos renseignements</li>
+      </ul>
+      <p>Tous les détails se trouvent dans notre <a href="privacy.html">politique de confidentialité</a>.</p>
+    </section>
+
+    <section>
+      <h2>Partenariats et collaboration</h2>
+      <p>Le Centre de confiance numérique cherche activement des organisations ontariennes qui partagent sa mission et qui veulent offrir un programme d’apprentissage numérique de qualité à leurs communautés. Si vous êtes une bibliothèque, une caisse populaire, un centre communautaire, un bureau de santé publique ou un organisme pour aînés, parlons-en.</p>
+
+      <div class="tip-block">
+        <span class="block-label">📩 Écrivez-nous</span>
+        <p>Nous offrons de la formation pour animateurs, des versions personnalisables du programme et des ententes de partenariat qui respectent l’identité de votre organisation et les besoins de votre communauté. Sans frais pour vous : c’est une collaboration guidée par la mission, pas un argumentaire de vente.</p>
+        <p style="margin-top:0.75rem;"><a href="mailto:aaron.patzalek@gmail.com?subject=DCC%20Partenariat" class="btn btn-primary">Écrire à aaron.patzalek@gmail.com →</a></p>
+      </div>
+    </section>
+
+    <section>
+      <div class="story-block">
+        <p>Bâti avec soin en Ontario, au Canada. Accessible. Toujours en amélioration.</p>
+        <p style="margin-top:0.5rem;">Le Centre de confiance numérique est gratuit, ouvert, et le restera. Si vous le trouvez utile, partagez-le avec quelqu’un qui pourrait en profiter.</p>
+      </div>
+    </section>
+
+    <div class="the-move">
+      <span class="move-label">Le geste à poser</span>
+      <p>Prêt à commencer? Choisissez n’importe quelle leçon sur la <a href="index.html">page d’accueil</a> et avancez à votre rythme, ou parcourez le <a href="../glossary.html">glossaire technologique (en anglais seulement)</a> pour des définitions en langage clair.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Nos engagements">
+      <li><span aria-hidden="true">✓</span> Aucun compte</li>
+      <li><span aria-hidden="true">✓</span> Aucun pistage</li>
+      <li><span aria-hidden="true">✓</span> Rien à acheter</li>
+      <li><span aria-hidden="true">✓</span> Canadien</li>
+    </ul>
+    <p>Le Centre de confiance numérique est offert gratuitement. C’est une initiative communautaire de Two Birds Innovation, une entreprise ontarienne, pour aider les aînés du Canada à rester en sécurité et en contact en ligne. Aucun compte, aucun pistage, aucun appel de vente.</p>
+    <p class="scope-note">Remarque : ce site offre des conseils de sécurité en langage clair, et non des conseils juridiques. Si vous soupçonnez une fraude, communiquez directement avec votre banque.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">Pour les familles (en anglais seulement)</a></li>
+      <li><a href="about.html">À propos de nous</a></li>
+      <li><a href="../faq.html">FAQ (en anglais seulement)</a></li>
+      <li><a href="../glossary.html">Glossaire (en anglais seulement)</a></li>
+      <li><a href="privacy.html">Confidentialité</a></li>
+      <li><a href="terms.html">Conditions d’utilisation</a></li>
+      <li><a href="../disclaimer.html">Avis de non-responsabilité (en anglais seulement)</a></li>
+      <li><a href="../support-directory.html">Obtenir de l’aide (en anglais seulement)</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Choix de confidentialité">
+  <div class="container">
+    <p>Nous utilisons une petite mémoire du navigateur pour faire fonctionner le site et retenir votre taille de texte. <a href="privacy.html">En savoir plus</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accepter</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Refuser</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Préférences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Fonctionnel (toujours actif)</span>
+        <p>Fait fonctionner le site et retient votre taille de texte.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Nous aide à voir quelles leçons aident le plus. Cela ne vous identifie pas.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (facultatif)</span>
+        <p>Nous aide à joindre plus d’aînés. Nous ne vendons jamais vos renseignements personnels.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Enregistrer mes choix</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+</body>
+</html>

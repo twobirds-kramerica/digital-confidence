@@ -1,16 +1,303 @@
 <!DOCTYPE html>
-<html lang="en-CA">
+<html lang="fr-CA" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, follow">
-  <meta http-equiv="refresh" content="0; url=/digital-confidence/classic/fr/index.html">
-  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/classic/fr/index.html">
-  <title>This page has moved</title>
-  <script>location.replace("/digital-confidence/classic/fr/index.html");</script>
+  <script>
+    // Thème + taille du texte avant le premier affichage (aucun clignotement). Local seulement, aucun pistage.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Centre de confiance numérique : Apprentissage numérique gratuit pour les aînés du Canada</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/fr/index.html">
+  <link rel="alternate" hreflang="en-CA" href="https://twobirds-kramerica.github.io/digital-confidence/">
+  <link rel="alternate" hreflang="fr-CA" href="https://twobirds-kramerica.github.io/digital-confidence/fr/index.html">
+  <link rel="alternate" hreflang="x-default" href="https://twobirds-kramerica.github.io/digital-confidence/">
+  <meta name="description" content="Des leçons gratuites, en langage clair, qui aident les aînés du Canada à utiliser la technologie en toute sécurité et avec confiance. Aucun compte requis. Une initiative communautaire de Two Birds Innovation.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
 </head>
 <body>
-  <p>This page has moved to the classic archive of the Digital Confidence Centre.
-     If you are not redirected automatically, <a href="/digital-confidence/classic/fr/index.html">continue to the page</a>.</p>
+
+<a class="skip-link" href="#main">Aller au contenu principal</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">Centre de confiance numérique</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Connexion sécurisée</span>
+    <a class="lang-link" href="../index.html" lang="en-CA" hreflang="en-CA">English</a>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Affichage
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Taille du texte">
+        <span class="group-label" aria-hidden="true">Taille du texte</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Texte plus petit">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Texte standard">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Texte plus grand">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Écouter cette page">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Lecture à voix haute</button>
+        <div class="rate-group" role="group" aria-label="Vitesse de lecture">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Plus lent</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normale</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Plus rapide</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Mode sombre</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Sections des leçons">
+  <div class="container">
+    <a href="index.html" aria-current="page">Toutes les leçons</a>
+    <a href="index.html#protect-money">Protégez votre argent</a>
+    <a href="index.html#everyday-confidence">Confiance au quotidien</a>
+    <a href="../for-families.html">Pour les familles (en anglais seulement)</a>
+    <a href="../support-directory.html">Obtenir de l’aide (en anglais seulement)</a>
+  </div>
+</nav>
+
+<main id="main">
+
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="container hero-flex">
+      <div class="hero-copy">
+        <p class="reassurance"><span aria-hidden="true">✅</span> Vous êtes en lieu sûr. Rien sur cette page ne peut endommager votre appareil.</p>
+        <h1 id="hero-h">Prenez confiance avec votre téléphone, votre tablette ou votre ordinateur, un petit pas à la fois</h1>
+        <p class="lead">Des leçons en langage clair pour les aînés du Canada. Allez à votre rythme, arrêtez-vous quand vous le voulez et revenez quand bon vous semble.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="../modules/module-1-fr.html">Commencer une leçon de 10 minutes (aucun compte requis)</a>
+          <a class="btn btn-secondary" href="#lessons">Voir toutes les leçons</a>
+        </div>
+      </div>
+      <!-- Illustration chaleureuse de style dessiné à la main, SVG intégré, hébergée sur place, adaptée au thème -->
+      <div class="illus illus-hero" aria-hidden="true">
+        <svg viewBox="0 0 240 200" width="240" height="200" role="presentation" focusable="false">
+          <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <!-- head with glasses -->
+            <path d="M104 46 c-2 -15 9 -26 23 -26 c14 0 25 11 23 25 c-1 11 -9 20 -20 22 c-12 2 -24 -8 -26 -21 z"/>
+            <circle cx="118" cy="46" r="6"/>
+            <circle cx="136" cy="46" r="6"/>
+            <path d="M124 46 h6"/>
+            <path d="M118 60 q7 5 14 1"/>
+            <!-- shoulders / cardigan -->
+            <path d="M84 138 c2 -30 16 -44 42 -44 c26 0 40 14 42 44"/>
+            <!-- tablet held comfortably -->
+            <rect x="96" y="110" width="62" height="44" rx="6"/>
+            <path d="M104 124 h34 M104 134 h44"/>
+            <!-- warm mug with steam, on the side table -->
+            <path d="M42 140 h26 v18 c0 6 -5 10 -13 10 c-8 0 -13 -4 -13 -10 z"/>
+            <path d="M68 144 q10 2 0 10"/>
+            <!-- gentle plant -->
+            <path d="M196 168 c0 -14 -4 -26 -12 -34 M196 168 c0 -12 6 -24 14 -30 M196 168 c0 -8 0 -16 0 -22"/>
+            <path d="M186 168 h20 l-3 14 h-14 z"/>
+          </g>
+          <g class="illus-accent" fill="none" stroke-width="3" stroke-linecap="round">
+            <path d="M50 128 q3 -6 0 -10 M58 128 q3 -6 0 -10"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- Qui paie : la gratuité expliquée par le financement -->
+    <aside class="who-pays" aria-label="Pourquoi c’est gratuit">
+      <p><span class="who-pays-title">Pourquoi est-ce gratuit?</span>
+      C’est une initiative communautaire de Two Birds Innovation, une entreprise ontarienne, pour aider les aînés du Canada à rester en sécurité et en contact en ligne. Aucuns frais, aucune publicité, aucun appel de vente.</p>
+    </aside>
+
+    <!-- Petites victoires : s’affiche seulement quand il y en a (progression sans compte) -->
+    <section class="small-wins" id="home-wins" hidden aria-label="Votre progression">
+      <p class="sw-label"><span>Vos petites victoires jusqu’ici</span> <span id="home-wins-count"></span></p>
+      <p style="margin:0; font-size: var(--font-size-sm);">Enregistrées sur cet appareil, aucun compte requis.</p>
+    </section>
+
+    <h2 id="lessons">Choisissez un sujet</h2>
+    <p>Chaque carte vous indique le temps nécessaire. La plupart des gens commencent par l’exercice pratique ci-dessous.</p>
+
+    <ul class="card-grid">
+      <li class="topic-card card-flagship">
+        <span class="flagship-tag">Commencez ici, notre exercice le plus populaire</span>
+        <span class="card-icon" aria-hidden="true">🤝</span>
+        <h3><a href="../scam-defence-helper.html">Exercice : Repérez la fraude (en anglais seulement)</a></h3>
+        <p>Imaginez que votre amie Margaret vous montre un texto qu’elle vient de recevoir. Que lui conseilleriez-vous de faire? Tout est fictif, et aider un ami est le moyen le plus rapide de bâtir sa propre confiance.</p>
+        <span class="ttc"><span aria-hidden="true">⏱</span> 5 minutes vers votre première victoire</span>
+      </li>
+    </ul>
+
+    <!-- Les leçons sur la sécurité de l’argent, regroupées sous un nom en langage clair,
+         jamais des numéros de module. -->
+    <section class="lesson-group" aria-labelledby="protect-money">
+      <h2 id="protect-money">Protégez votre argent</h2>
+      <p class="group-lead">Gardez ce qui vous appartient : repérez les fraudes, arrêtez les frais silencieux et gardez le contrôle de vos propres comptes.</p>
+      <ul class="card-grid">
+        <li class="topic-card">
+          <span class="card-icon" aria-hidden="true">🏦</span>
+          <h3><a href="../modules/module-6-fr.html">Les services bancaires en ligne, en toute sécurité</a></h3>
+          <p>Vérifiez votre solde et payez vos factures depuis votre table de cuisine, avec les habitudes de sécurité qui protègent votre argent.</p>
+          <span class="ttc"><span aria-hidden="true">⏱</span> 15 minutes vers la confiance bancaire</span>
+        </li>
+        <li class="topic-card">
+          <span class="card-icon" aria-hidden="true">🔑</span>
+          <h3><a href="../modules/module-3.html">Des mots de passe faciles à gérer (en anglais seulement)</a></h3>
+          <p>Des mots de passe solides dont vous pouvez vraiment vous souvenir, et quoi faire si vous en oubliez un.</p>
+          <span class="ttc"><span aria-hidden="true">⏱</span> 12 minutes vers des comptes plus sûrs</span>
+        </li>
+        <li class="topic-card">
+          <span class="card-icon" aria-hidden="true">✉️</span>
+          <h3><a href="../modules/module-27-inbox-spam-fr.html">Maîtrisez votre boîte de réception</a></h3>
+          <p>Séparez le vrai courrier du courrier indésirable, et empêchez les pourriels d’enterrer les messages de votre famille.</p>
+          <span class="ttc"><span aria-hidden="true">⏱</span> 10 minutes vers une boîte de réception plus calme</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="lesson-group" aria-labelledby="everyday-confidence">
+      <h2 id="everyday-confidence">Confiance au quotidien</h2>
+      <p class="group-lead">Les habiletés qui rendent tout l’appareil plus calme : revenir en lieu sûr, voir sa famille et savoir ce qui est vrai.</p>
+      <ul class="card-grid">
+        <li class="topic-card">
+          <span class="card-icon" aria-hidden="true">🪂</span>
+          <h3><a href="../modules/module-1-fr.html">La sortie de secours</a></h3>
+          <p>La seule habileté qui règle la plupart des pépins techniques : comment sortir de n’importe quelle situation sur votre appareil, en toute sécurité.</p>
+          <span class="ttc"><span aria-hidden="true">⏱</span> 10 minutes pour vous sentir en contrôle</span>
+        </li>
+        <li class="topic-card">
+          <span class="card-icon" aria-hidden="true">👨‍👩‍👧</span>
+          <h3><a href="../modules/module-8.html">Appels vidéo avec la famille (en anglais seulement)</a></h3>
+          <p>Voyez le visage de vos petits-enfants, pas seulement leur voix. Étape par étape, sur votre appareil.</p>
+          <span class="ttc"><span aria-hidden="true">⏱</span> 8 minutes pour apprendre les appels vidéo</span>
+        </li>
+        <li class="topic-card">
+          <span class="card-icon" aria-hidden="true">🤖</span>
+          <h3><a href="../modules/module-9.html">Comprendre l’IA (en anglais seulement)</a></h3>
+          <p>Ce qu’est vraiment l’IA, à quoi elle sert, et comment savoir quand une photo ou un message a été créé par une machine.</p>
+          <span class="ttc"><span aria-hidden="true">⏱</span> 12 minutes pour voir au-delà du battage</span>
+        </li>
+        <li class="topic-card">
+          <span class="card-icon" aria-hidden="true">🏥</span>
+          <h3><a href="../modules/module-15.html">Rendez-vous de télésanté (en anglais seulement)</a></h3>
+          <p>Parlez à votre médecin depuis la maison. À quoi vous attendre, comment joindre l’appel et quoi préparer.</p>
+          <span class="ttc"><span aria-hidden="true">⏱</span> 10 minutes vers votre première visite virtuelle</span>
+        </li>
+        <li class="topic-card">
+          <span class="card-icon" aria-hidden="true">🤖</span>
+          <h3><a href="../modules/module-ai-literacy.html">Qu’est-ce que l’IA, au juste? (en anglais seulement)</a></h3>
+          <p>Le juste milieu entre miracle et menace : ce que l’IA fait vraiment, et l’habitude qui déjoue les voix clonées et les fausses vidéos.</p>
+          <span class="ttc"><span aria-hidden="true">⏱</span> 30 minutes pour voir l’IA clairement</span>
+        </li>
+        <li class="topic-card">
+          <span class="card-icon" aria-hidden="true">📷</span>
+          <h3><a href="../modules/module-visual-ai.html">Montrez-moi! La caméra comme assistante (en anglais seulement)</a></h3>
+          <p>Pointez votre caméra vers une plante, une pièce ou un message déroutant, et laissez votre appareil vous l’expliquer. Sans rien taper.</p>
+          <span class="ttc"><span aria-hidden="true">⏱</span> 20 minutes vers un nouveau superpouvoir</span>
+        </li>
+        <li class="topic-card">
+          <span class="card-icon" aria-hidden="true">💬</span>
+          <h3><a href="../modules/module-ai-health.html">Parler de votre santé à l’IA (en anglais seulement)</a></h3>
+          <p>Quand un robot conversationnel aide vraiment pour une inquiétude de santé, les risques honnêtes, et où trouver de la vraie aide au Canada.</p>
+          <span class="ttc"><span aria-hidden="true">⏱</span> 15 minutes vers la règle qui vous protège</span>
+        </li>
+        <li class="topic-card">
+          <span class="card-icon" aria-hidden="true">🔍</span>
+          <h3><a href="../modules/module-fact-check.html">Est-ce vrai, ou est-ce que ça sonne vrai? (en anglais seulement)</a></h3>
+          <p>Un ton assuré n’est pas une bonne réponse. Trois questions tranquilles à se poser avant de croire ce qu’une recherche ou un outil d’IA vous dit.</p>
+          <span class="ttc"><span aria-hidden="true">⏱</span> 15 minutes vers l’habitude de vérifier</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Le point d’entrée des familles : l’écran de vérification de 30 secondes. -->
+    <aside class="who-pays" aria-label="Aider un parent ou un proche aîné">
+      <p><span class="who-pays-title">Vous aidez un parent à prendre confiance en ligne?</span>
+      Tout ici est conçu pour qu’il puisse le faire lui-même, et pour que vous ne soyez plus le service de dépannage familial. <a href="../for-families.html">Consultez la page pour les familles (en anglais seulement)</a> pour vérifier que le site est sûr et lui envoyer sa première leçon.</p>
+    </aside>
+
+    <!-- Centre antifraude : son propre espace, clairement distinct de ce site -->
+    <aside class="cafc-block" aria-label="Vers qui se tourner en cas d’inquiétude sérieuse">
+      <p><strong>Si vous avez un jour une inquiétude sérieuse au sujet d’une fraude dans la vraie vie</strong>, le Centre antifraude du Canada, un service du gouvernement du Canada distinct de ce site Web, peut vous aider. Visitez <a href="https://antifraudcentre-centreantifraude.ca" target="_blank" rel="external noopener noreferrer">antifraudcentre-centreantifraude.ca <span class="ext-note">(s’ouvre dans un nouvel onglet)</span></a> ou composez le 1-888-495-8501.</p>
+    </aside>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Nos engagements">
+      <li><span aria-hidden="true">✓</span> Aucun compte</li>
+      <li><span aria-hidden="true">✓</span> Aucun pistage</li>
+      <li><span aria-hidden="true">✓</span> Rien à acheter</li>
+      <li><span aria-hidden="true">✓</span> Canadien</li>
+    </ul>
+    <p>Le Centre de confiance numérique est offert gratuitement. C’est une initiative communautaire de Two Birds Innovation, une entreprise ontarienne, pour aider les aînés du Canada à rester en sécurité et en contact en ligne. Aucun compte, aucun pistage, aucun appel de vente.</p>
+    <p class="scope-note">Remarque : ce site offre des conseils de sécurité en langage clair, et non des conseils juridiques. Si vous soupçonnez une fraude, communiquez directement avec votre banque.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">Pour les familles (en anglais seulement)</a></li>
+      <li><a href="about.html">À propos de nous</a></li>
+      <li><a href="../faq.html">FAQ (en anglais seulement)</a></li>
+      <li><a href="../glossary.html">Glossaire (en anglais seulement)</a></li>
+      <li><a href="privacy.html">Confidentialité</a></li>
+      <li><a href="terms.html">Conditions d’utilisation</a></li>
+      <li><a href="../disclaimer.html">Avis de non-responsabilité (en anglais seulement)</a></li>
+      <li><a href="../support-directory.html">Obtenir de l’aide (en anglais seulement)</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- Consentement en couches : une ligne simple + Accepter / Refuser + Préférences -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Choix de confidentialité">
+  <div class="container">
+    <p>Nous utilisons une petite mémoire du navigateur pour faire fonctionner le site et retenir votre taille de texte. <a href="privacy.html">En savoir plus</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accepter</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Refuser</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Préférences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Fonctionnel (toujours actif)</span>
+        <p>Fait fonctionner le site et retient votre taille de texte.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Nous aide à voir quelles leçons aident le plus. Cela ne vous identifie pas.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (facultatif)</span>
+        <p>Nous aide à joindre plus d’aînés. Nous ne vendons jamais vos renseignements personnels.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Enregistrer mes choix</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script>
+  // Affiche la bande des petites victoires seulement quand ce navigateur en a.
+  (function () {
+    var n = window.DCC.winCount("helper-scam");
+    if (n > 0) {
+      document.getElementById("home-wins").hidden = false;
+      document.getElementById("home-wins-count").textContent =
+        n + (n === 1 ? " victoire" : " victoires") + " à l’exercice de repérage des fraudes";
+    }
+  })();
+</script>
 </body>
 </html>
