@@ -1,0 +1,364 @@
+{
+  "id": "module-ai-literacy",
+  "slug": "module-ai-literacy",
+  "page_title": "What Is AI, Really? - Digital Confidence Centre",
+  "title": "What Is AI, Really?",
+  "description": "A plain-language guide to what artificial intelligence actually does, how it genuinely helps, and how scammers now use AI voice cloning, deepfake videos, and polished fake messages against Canadian seniors. Free lesson, no account needed.",
+  "category": "Artificial intelligence",
+  "category_icon": "🤖",
+  "lesson_time": "About 30 minutes, at your own pace",
+  "lead": "Headlines about AI swing between miracle and menace. This lesson gives you the clear-eyed middle: what these tools actually do, where they genuinely help, and the one habit that protects you when someone uses AI against you.",
+  "nav_current": "../index.html#everyday-confidence",
+  "breadcrumb_group_label": "Everyday confidence",
+  "breadcrumb_group_anchor": "../index.html#everyday-confidence",
+  "story": {
+    "label": "Margaret's Wednesday morning call",
+    "paragraphs": [
+      "Margaret, 74, from Ottawa, was washing dishes when her phone rang. The voice on the line sounded exactly like her grandson Tyler. \"Grandma, I'm in trouble. I was in a car accident and I need $3,000 right now. Please don't tell Mom and Dad yet.\" Margaret felt her heart jump. She almost said yes.",
+      "Then she remembered something she had learned at a library session: stop, breathe, verify. She said, \"Tyler, let me call you back on your number.\" She hung up and called Tyler's actual phone. He answered on the second ring, from his bedroom in Guelph, completely fine. The voice on that call was not Tyler. It was an AI voice clone, built from videos of Tyler that were public on social media. Margaret did not lose $3,000. A three-second pause saved her."
+    ]
+  },
+  "coach": "Headlines about AI swing between miracle and menace, and it is hard to know what to feel. Confusion here is not a knowledge gap; it is an honest response to a technology that is genuinely new. You do not need to pick a side, and you do not need to become an expert. You need a clear-eyed look at what these tools actually do, which is exactly what this lesson offers.",
+  "sections": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "What AI actually does"
+    },
+    {
+      "type": "paragraph",
+      "text": "The term \"artificial intelligence\" sounds complicated, almost like something from a science fiction film. But the AI tools you meet every day are doing something much simpler than they appear."
+    },
+    {
+      "type": "paragraph",
+      "text": "AI tools are <strong>pattern-recognition systems</strong>. They were trained on enormous amounts of text, pictures, and sound: billions of pages of the internet, millions of books and articles. They learned which words tend to appear near which other words, and which answers tend to follow which questions. When you ask an AI something, it does not \"think\" the way a person does. It finds the pattern that best fits your question and returns the most likely response."
+    },
+    {
+      "type": "tip",
+      "label": "The most important thing to know about AI",
+      "text": "AI does not know what is <em>true</em>. It knows what is <em>likely</em>. Most of the time, the likely answer is the correct answer. But not always. That gap, between likely and true, is the source of most AI mistakes."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Where AI already appears in your life"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Your phone's autocomplete</strong>: predicting the word you are likely to type next",
+        "<strong>Spam filters</strong>: recognising patterns that usually appear in junk mail",
+        "<strong>The \"AI overview\" at the top of a Google search</strong>: a machine-written summary of other websites, helpful but not always right",
+        "<strong>Voice assistants</strong> (Siri, Google Assistant, Alexa): matching your spoken words to commands and questions",
+        "<strong>Chatbots</strong> (ChatGPT, Gemini, Copilot): writing text answers based on patterns in their training data",
+        "<strong>Medical imaging software</strong>: flagging patterns in X-rays or scans that match known conditions, for a doctor to review"
+      ]
+    },
+    {
+      "type": "helper",
+      "label": "Confidence check",
+      "text": "You are doing great, and your device is safe. AI is a tool, like a calculator or a dictionary. It can help you, and it can also make mistakes. Understanding that balance is the whole point of this lesson."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "When AI genuinely helps"
+    },
+    {
+      "type": "paragraph",
+      "text": "<strong>A rural clinic in northern Ontario.</strong> Dr. Priya Singh works at a clinic in Sioux Lookout, more than 500 kilometres from the nearest specialist hospital. When a patient needs an X-ray read by a radiologist, the wait can be weeks. Dr. Singh uses an AI imaging tool that flags areas for her attention. She still makes every clinical decision; the AI only says \"this area looks different from the normal X-rays I was trained on.\" That flag alone has helped her catch cases earlier than would otherwise have been possible."
+    },
+    {
+      "type": "paragraph",
+      "text": "<strong>A grandmother in Brampton.</strong> Ninety-one-year-old Harpreet came to Canada from Punjab twenty years ago, and her English was limited. Her Brampton-born grandchildren were more comfortable in English, so family conversations stayed warm but shallow. Then her granddaughter started using an AI translation app: Harpreet spoke in Punjabi, and the app translated to English nearly in real time. Harpreet told her granddaughter things she had never been able to say, about her childhood and what it felt like to leave home. \"Those conversations were a gift,\" her granddaughter said."
+    },
+    {
+      "type": "paragraph",
+      "text": "AI can genuinely improve lives: better medical care, richer family connections, help with letters and questions. The goal of this lesson is not fear. It is clarity."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "When AI is used against you: what the scams look like now"
+    },
+    {
+      "type": "paragraph",
+      "text": "The same technology that translates for Harpreet can copy a voice, invent a photo, or write a flawless fake email. The Canadian Anti-Fraud Centre reported a record year for fraud losses in 2025, with older adults carrying an outsized share of the losses, and scams that use AI, such as voice cloning and deepfake videos, are among the fastest-growing kinds. You do not need to memorise every scam. You need to recognise the four shapes they take."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "1. The cloned voice"
+    },
+    {
+      "type": "paragraph",
+      "text": "This is Margaret's story from the top of the page. A few seconds of someone's voice, taken from a video posted online, is enough for AI to imitate them convincingly on the phone. The call is almost always urgent, emotional, and secretive: an accident, an arrest, bail money, \"please don't tell anyone.\""
+    },
+    {
+      "type": "scam_example",
+      "label": "Example (this is NOT real)",
+      "text": "\"Grandma? It's me. I've been in an accident and my phone is broken, I'm calling from a borrowed one. I need you to e-transfer $2,500 for the repairs today or I'm in real trouble. Please don't call Mom, she'll panic.\""
+    },
+    {
+      "type": "paragraph",
+      "text": "<strong>The tell is not the voice.</strong> The voice may sound perfect. The tell is the pressure: real family will never mind you hanging up and calling them back on the number you already have for them."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2. The fake photo or video"
+    },
+    {
+      "type": "paragraph",
+      "text": "AI can now generate photos and videos of events that never happened, including \"deepfake\" videos of well-known people. A common version in Canada is a fake video of a famous host, politician, or business figure appearing to endorse an investment or cryptocurrency platform. The person never said any of it. The Canadian Anti-Fraud Centre and the Canadian Centre for Cyber Security have both warned about these fake celebrity investment ads."
+    },
+    {
+      "type": "paragraph",
+      "text": "A photo being on your screen does not make it real. Before you share a surprising photo or video, or send money because of one, search for the story on a major Canadian news site such as CBC, CTV, or The Globe and Mail. If something dramatic really happened, they will have it. If you find nothing, be cautious."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "3. The polished message"
+    },
+    {
+      "type": "paragraph",
+      "text": "For years, the standard advice was \"look for spelling mistakes and clumsy English.\" <strong>That rule is out of date.</strong> Scammers now use AI to write their emails and texts, so fake messages from \"your bank,\" \"the CRA,\" or \"Canada Post\" can be perfectly worded, politely phrased, and neatly formatted. A message can be flawless and still be fake."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Judge the <strong>request</strong>, not the writing: any message asking for money, a password, a code, or personal information deserves the 3-second rule.",
+        "Judge the <strong>pressure</strong>: deadlines, threats, and \"act now\" are tactics, not information.",
+        "Judge the <strong>route</strong>: never use the link or phone number in the message. Go to the organisation's own website or the number on your card or bill."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "4. The fake \"official\" chatbot or search answer"
+    },
+    {
+      "type": "paragraph",
+      "text": "Some fake websites now include friendly chat windows or official-looking \"AI answers\" to feel legitimate. Before trusting a chat window or an answer box on a government-looking page, check the web address. Federal government sites end in <strong>canada.ca</strong> or <strong>gc.ca</strong>, and Ontario's is <strong>ontario.ca</strong>. If the address looks unusual, close the page and type the address you know directly."
+    },
+    {
+      "type": "three_second_rule",
+      "heading": "The 3-second rule",
+      "steps": [
+        {
+          "icon": "✋",
+          "name": "Stop",
+          "text": "Before you click, send, share, or pay: pause. Do nothing yet."
+        },
+        {
+          "icon": "🫁",
+          "name": "Breathe",
+          "text": "A real emergency will still be real in sixty seconds. Anyone who says there is no time to pause is using pressure as a tactic."
+        },
+        {
+          "icon": "🔍",
+          "name": "Verify",
+          "text": "Call back on a number you already know. Check the source directly. Never use the link or number that came with the surprise."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "When to apply the 3-second rule"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Any unexpected call, text, or email asking for money or personal information",
+        "A voice that sounds like someone you know, <em>even if it really sounds like them</em>",
+        "A photo or video that seems surprising or alarming",
+        "A message saying your account has been hacked, suspended, or compromised",
+        "Any AI answer you are about to act on, especially about health, money, or legal matters"
+      ]
+    },
+    {
+      "type": "walkthrough",
+      "title": "Practise it now: your verification plan",
+      "steps": [
+        "Say out loud, once, slowly: \"Stop. Breathe. Verify.\"",
+        "Think of one person in your life whose voice could be cloned from videos online. If \"they\" called in an emergency asking for money, what number would you call to check it was really them?",
+        "Save that number in your phone's contacts under \"<strong>[Name] - VERIFY</strong>.\" You now have a standing verification plan, made before you ever need it."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "When AI gets it wrong all by itself"
+    },
+    {
+      "type": "paragraph",
+      "text": "Not every AI problem is a scam. Sometimes the tool is simply wrong, and it sounds exactly as confident when it is wrong as when it is right."
+    },
+    {
+      "type": "paragraph",
+      "text": "<strong>The confident wrong answer.</strong> Donna, 68, from London, Ontario, asked a chatbot whether she could take ibuprofen with her blood pressure medication. The answer was clear, confident, well-written, and wrong: it did not account for her specific medication, which has a known interaction. Her blood pressure spiked and she ended up in emergency care. For health, legal, and money questions, AI is a starting point, never the final answer. Your pharmacist can check medication questions for free, with no appointment."
+    },
+    {
+      "type": "paragraph",
+      "text": "<strong>The out-of-date answer.</strong> Eleanor, 74, from Stratford, asked an AI tool for the schedule of a bus she had never taken. It answered instantly and sounded completely sure. The times were months out of date, and the AI never warned her. Something felt off, so she phoned the transit line: the real bus left earlier than the AI had said. Most AI tools learn from information gathered up to a certain date, and they do not know what has changed since."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Always confirm these at the source"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>Transit schedules and routes</strong>: the transit company's own website or phone line",
+        "<strong>Business and office hours</strong>: call the business or check its own page",
+        "<strong>Appointment times</strong>: confirm with the office directly",
+        "<strong>Prices and fees</strong>: check the seller or provider",
+        "<strong>Government programs, deadlines, and eligibility</strong>: canada.ca or ontario.ca, or phone the program"
+      ]
+    },
+    {
+      "type": "tip",
+      "label": "Rule of thumb",
+      "text": "Use AI for direction and ideas. Verify anything time-sensitive, and anything that matters, at the source before you rely on it. A two-minute check can save a missed bus or a decision based on last year's information."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Is this AI? Five quick scenarios"
+    },
+    {
+      "type": "paragraph",
+      "text": "You do not need to act on any of these. Just read each one and think: what would I do?"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>1. A text from your grandchild's \"new number\"</strong> asks you to e-transfer $500 and not call the old number. <em>What to do:</em> call the old number anyway. Real grandchildren will understand a two-minute delay. A scammer will not.",
+        "<strong>2. A search result gives you a tidy medical summary</strong> with bullet points that look authoritative. <em>What to do:</em> useful context, but call your doctor, your pharmacist, or Health811 (dial 811 in Ontario) before drawing conclusions. Summaries can omit the exception that matters for you.",
+        "<strong>3. A shocking photo of a public figure</strong> is being shared in a family group chat. <em>What to do:</em> before sharing, search the person's name on a major news site. If it is real and significant, they will have it.",
+        "<strong>4. A voice message that sounds exactly like your sister</strong> says she is in trouble and needs help urgently, from a number you do not recognise. <em>What to do:</em> stop, breathe, verify. Call your sister's real number first. This is Margaret's scenario.",
+        "<strong>5. A chat window pops up on a government-looking website</strong> offering to help. <em>What to do:</em> check the address bar. If it does not end in canada.ca, gc.ca, or ontario.ca, close it and type the real address yourself."
+      ]
+    },
+    {
+      "type": "warning",
+      "label": "If you think you have been targeted",
+      "text": "You have done nothing wrong, and reporting helps protect other people. Contact the Canadian Anti-Fraud Centre at <strong>1-888-495-8501</strong> or antifraudcentre-centreantifraude.ca. If money left your account, call your bank first, using the number on the back of your card."
+    },
+    {
+      "type": "the_move",
+      "label": "The move is",
+      "text": "Enjoy what AI does well, and judge every surprise by the request, not the polish. When anything unexpected asks for money, information, or urgency: stop, breathe, and verify through a route you already trust."
+    },
+    {
+      "type": "quiz",
+      "heading": "Quick check: test your knowledge",
+      "intro": "Tap the answer you think is correct. There is no score kept and nothing to sign in to.",
+      "questions": [
+        {
+          "q": "1. What does an AI chatbot actually do when you ask it a question?",
+          "options": [
+            "It looks up the verified true answer",
+            "It returns the most likely answer based on patterns it learned",
+            "It asks a human expert behind the scenes",
+            "It always searches today's internet"
+          ],
+          "correct": 1,
+          "right": "Right. AI predicts the most likely response from patterns in its training. Most of the time likely equals correct, but not always. That gap is where mistakes live.",
+          "wrong": "AI tools are pattern-recognition systems: they return the most likely answer, not a verified true one. That gap between likely and true is the source of most AI mistakes."
+        },
+        {
+          "q": "2. A caller sounds exactly like your grandson and urgently needs money. What is the safest response?",
+          "options": [
+            "Send the money, you recognise his voice",
+            "Ask the caller personal questions",
+            "Hang up and call him back on the number you already have",
+            "Text the number that just called you"
+          ],
+          "correct": 2,
+          "right": "Exactly. A voice can be cloned from a few seconds of online video, so the voice proves nothing. Calling back on the number you already have is the check that works.",
+          "wrong": "The voice itself can no longer be trusted: AI can clone it from a short online video. The safe move is to hang up and call the person back on the number you already have for them."
+        },
+        {
+          "q": "3. A message from \"your bank\" is perfectly written with no spelling mistakes. What does that tell you?",
+          "options": [
+            "It is probably genuine, scams have typos",
+            "Nothing: AI lets scammers write flawless messages, so judge the request instead",
+            "It is definitely a scam",
+            "Banks never send messages"
+          ],
+          "correct": 1,
+          "right": "Right. The old look-for-typos rule is out of date. Judge the request (money, codes, personal information), the pressure, and the route, never the quality of the writing.",
+          "wrong": "Perfect writing proves nothing anymore: scammers use AI to write flawless messages. Judge the request, the pressure, and the route instead, and contact your bank through the number on your card."
+        },
+        {
+          "q": "4. You see a video of a famous Canadian recommending an investment platform. What should you do first?",
+          "options": [
+            "Invest a small amount to test it",
+            "Share it with family so they can benefit too",
+            "Treat it as a possible deepfake and check major news sources",
+            "Trust it if the video quality is good"
+          ],
+          "correct": 2,
+          "right": "Yes. Fake celebrity investment videos are a known AI scam in Canada. If the endorsement were real, major news outlets would carry it. Video quality proves nothing.",
+          "wrong": "AI can fabricate convincing videos of real people, and fake celebrity investment ads are a known scam in Canada. Check major news sources before believing or sharing, and never invest because of a video."
+        },
+        {
+          "q": "5. The 3-second rule is:",
+          "options": [
+            "Delete, block, report",
+            "Stop, breathe, verify",
+            "Read it three times before replying",
+            "Wait three days before answering"
+          ],
+          "correct": 1,
+          "right": "Right. Stop, breathe, verify. A real emergency will still be real in sixty seconds, and the pause is what catches the scam.",
+          "wrong": "The 3-second rule is: stop, breathe, verify. Pause before acting, take a breath, then check through a route you already trust, like calling back on a number you know."
+        }
+      ]
+    },
+    {
+      "type": "checklist",
+      "heading": "Your progress",
+      "intro": "Tick each item as you feel confident with it. This is saved on this device only, with no account needed.",
+      "id": "module-ai-literacy",
+      "items": [
+        "I can explain that AI predicts what is likely, not what is true",
+        "I know the four shapes of AI scams: cloned voices, fake photos and videos, polished messages, and fake official chat windows",
+        "I know that perfect spelling no longer proves a message is genuine",
+        "I can say the 3-second rule without looking: stop, breathe, verify",
+        "I have saved at least one \"VERIFY\" number in my contacts"
+      ]
+    }
+  ],
+  "success_state": "<strong>Well done.</strong> You now know what AI actually does, where it genuinely helps, the four shapes AI scams take in Canada right now, and the one habit, stop, breathe, verify, that protects you from all of them. You have earned this.",
+  "related": {
+    "heading": "Where to next",
+    "cards": [
+      {
+        "num": "Module 9",
+        "name": "Understanding AI",
+        "desc": "A gentle introduction to what artificial intelligence is and how it already shows up in your daily life.",
+        "href": "module-9.html",
+        "external": false
+      },
+      {
+        "num": "Module 17",
+        "name": "Using AI for Research",
+        "desc": "Now that you know what AI is, learn how to use it safely: asking better questions and checking the answers.",
+        "href": "module-17-ai-research.html",
+        "external": false
+      },
+      {
+        "num": "Special lesson",
+        "name": "Is It True, or Does It Just Sound True?",
+        "desc": "One calm habit for checking whether an answer you find online is actually true before you trust it or pass it on.",
+        "href": "module-fact-check.html",
+        "external": false
+      }
+    ]
+  }
+}
