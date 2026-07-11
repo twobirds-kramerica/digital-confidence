@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex,nofollow"><!-- v2 preview - remove before launch -->
   <script>
     // Theme + text size before first paint (no flash). Local only, no tracking.
     (function () {
@@ -15,6 +14,7 @@
     })();
   </script>
   <title>{{PAGE_TITLE}}</title>
+  <link rel="canonical" href="{{CANONICAL_URL}}">
   <meta name="description" content="{{META_DESCRIPTION}}">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/tokens.css">

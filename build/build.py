@@ -546,8 +546,10 @@ def render_module_v2(module: dict, brand: dict, template: str) -> str:
         body_parts.append(v2_section(section))
     body_html = "\n\n".join(body_parts)
 
+    base_url = brand.get("base_url", "").rstrip("/")
     variables = {
         "PAGE_TITLE":          escape(module.get("page_title", module.get("title", "")), True),
+        "CANONICAL_URL":       f"{base_url}/modules/{module.get('slug', '')}.html",
         "META_DESCRIPTION":    escape(module.get("description", ""), True),
         "PRIMARY_NAV_HTML":    v2_primary_nav(brand, module.get("nav_current", "")),
         "BREADCRUMB_HTML":     v2_breadcrumb(module),
