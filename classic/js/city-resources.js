@@ -44,7 +44,7 @@ var DC_CITIES = {
 var NATIONAL_RESOURCES = [
   {
     name: 'Connected Canadians',
-    phone: '1-855-808-0505',
+    phone: '1-877-304-5813',
     website: 'connectedcanadians.ca',
     description: 'Free one-on-one technology help for older adults by phone or video call. Trained volunteers work at your pace — no question is too basic.',
     availability: 'Monday–Friday, 9am–5pm ET · Toll-free · Government of Canada funded',

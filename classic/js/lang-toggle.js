@@ -213,7 +213,7 @@
     if (footerSupport) {
       storeInnerEn(footerSupport);
       if (isFR) {
-        footerSupport.innerHTML = 'Besoin d\'aide? Appelez <strong>Connected Canadians</strong> gratuitement&nbsp;:<br><a href="tel:+18558080505">1-855-808-0505</a>';
+        footerSupport.innerHTML = 'Besoin d\'aide? Appelez <strong>Connected Canadians</strong> gratuitement&nbsp;:<br><a href="tel:+18773045813">1-877-304-5813</a>';
       } else {
         footerSupport.innerHTML = footerSupport.getAttribute('data-en-html');
       }

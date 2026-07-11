@@ -61,7 +61,7 @@ Highlight local organizations, events, and B2B partnerships.
 **Format:** Partner name + what they do + connection to DCC
 **Frequency:** 2–3× per month
 **Examples:**
-- "Connected Canadians offers free 1-on-1 tech support for seniors across Ontario. Call them at 1-855-808-0505. We recommend them to every DCC learner."
+- "Connected Canadians offers free 1-on-1 tech support for seniors across Ontario. Call them at 1-877-304-5813. We recommend them to every DCC learner."
 - "Did you know the St. Thomas Public Library runs free digital literacy drop-ins? Pair them with your DCC modules for the full experience."
 
 ---
@@ -173,7 +173,7 @@ Build transparency and connection with the DCC team.
 | Comment Type | Response |
 |-------------|----------|
 | Question about a module | Answer + link to the relevant lesson |
-| Technical problem | Acknowledge + suggest Connected Canadians 1-855-808-0505 |
+| Technical problem | Acknowledge + suggest Connected Canadians 1-877-304-5813 |
 | Positive feedback | Thank them warmly + tag relevant module |
 | Negative/complaint | Acknowledge privately, offer direct support |
 | Spam or scam | Delete + report, do not engage |

@@ -39,7 +39,7 @@ Use this checklist for every video produced. Complete all items before publishin
 - [ ] Each step narrated verbally AND demonstrated visually
 - [ ] Camera or mouse zoomed in on small UI elements before interacting
 - [ ] No personal data visible at any point
-- [ ] Outro slate recorded: "Well done!", next module cue, support phone number (1-855-808-0505)
+- [ ] Outro slate recorded: "Well done!", next module cue, support phone number (1-877-304-5813)
 
 ---
 
