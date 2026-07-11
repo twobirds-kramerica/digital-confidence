@@ -105,10 +105,33 @@ PY
 ## Localisation
 
 - Canadian English everywhere (Centre, Colour, Labour, recognise, behaviour).
-- Bilingual EN/FR via `[data-en]/[data-fr]`. When French is unavailable, expose
-  the link and add `(English only)` — never hide it. Infer language from
+- When French is unavailable, expose the link and add `(English only)` (FR
+  side: `(en anglais seulement)`) — never hide it. Infer language from
   `navigator.language`; no language-selector field on forms.
+- **v2 bilingual pattern (2026-07-11):** separate generated French pages, not
+  the classic dual-DOM `[data-en]/[data-fr]` (that pattern remains only in
+  `/classic/`). A module JSON in `build/content/modules-v2/` may carry a
+  top-level `"fr"` object mirroring the translatable fields; the build then
+  renders `modules/<slug>-fr.html` with a French shell (string table in
+  `build/build.py` `FR_SHELL_REPLACEMENTS`, asserted against the template) and
+  `hreflang` alternates. Hand-authored French pages live in `fr/`
+  (`index`, `about`, `privacy`, `terms`). Every v2 page shows a header
+  language link (`.lang-link`): EN pages link to the FR sibling when it
+  exists, otherwise to `fr/index.html`. French brand name: «Centre de
+  confiance numérique».
 - Default city: St. Thomas, Ontario; Ontario-specific resources where relevant.
+
+### French coverage status (v2)
+
+| Surface | French status |
+| --- | --- |
+| Homepage (`fr/index.html`) | ✅ Full French (2026-07-11) |
+| About / Privacy / Terms (`fr/*.html`) | ✅ Full French (2026-07-11) |
+| FAQ, Glossary, Disclaimer, For families, Support directory, Scam helper | ❌ English only — header link goes to `fr/index.html`, listed as «(en anglais seulement)» |
+| `module-1` (La sortie de secours) | ✅ `modules/module-1-fr.html` |
+| `module-6` (Services bancaires et transactions) | ✅ `modules/module-6-fr.html` |
+| `module-27-inbox-spam` (Maîtrisez votre boîte de réception) | ✅ `modules/module-27-inbox-spam-fr.html` |
+| Remaining 31 modules | ❌ Not yet translated — add an `"fr"` block to each JSON and rebuild |
 
 ## Workflow
 
