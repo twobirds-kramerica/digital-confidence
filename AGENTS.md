@@ -222,9 +222,16 @@ notes — flagged for a follow-up batch). The youth-track modules (FOUR:
 `--youth-*` theme via an embedded `<style>` block. As of 2026-07-12 the youth
 track has its own shell: `youth/youth.css` (`.yt-` prefix, ages 13–17,
 dark-theme + reduced-motion aware), a hub at `youth/index.html`, and its first
-native module `youth/module-ai-companions.html`. Porting the four classic
-youth modules onto that shell is the intended design pass (see
+native module `youth/module-ai-companions.html`. **All four classic youth
+modules are now ported onto that shell (2026-07-12):**
+`youth/module-ai-literacy.html`, `youth/module-ads.html`,
+`youth/module-gems.html`, `youth/module-pressure.html` — content-preserving
+ports (scenarios/debriefs verbatim, factual fixes kept, before/after DCC_QUIZ
+measurement harness deliberately dropped in favour of the shell's scenario
+answers; unique quiz-only facts folded into each module's takeaway list). The
+hub and `module-ai-companions.html` now link to these; the `/classic/`
+originals remain as the archive. (Research:
 `hal-stack/product-intelligence/dcc-youth-research-2026-07-12.md` in
-two-birds-portfolio).
+two-birds-portfolio.)
 `module-template.html` (scaffold) and the wizard pages remain on the legacy
 layer.

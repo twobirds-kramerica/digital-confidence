@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("dccv2-theme"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <title>Who's Paying for Your Attention? - The attention economy - DCC Youth</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/youth/module-ads.html">
+  <meta name="description" content="Free apps, countdown timers, sponsored creators, and the 45-minute scroll you did not plan. Four scenarios for teens on how attention gets bought and sold online.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="youth.css">
+</head>
+<body class="yt-body">
+
+<a class="yt-skip" href="#main">Skip to main content</a>
+
+<header class="yt-header">
+  <a class="yt-brand" href="index.html">Digital Confidence <span class="yt-brand-tag">Youth</span></a>
+  <button class="yt-theme-btn" type="button" id="theme-btn" aria-pressed="false">Dark mode</button>
+</header>
+
+<section class="yt-hero" aria-label="Module introduction">
+  <div class="yt-container">
+    <span class="yt-eyebrow">The attention economy &middot; About 15 minutes</span>
+    <h1>Who&rsquo;s Paying for Your Attention?</h1>
+    <p>Free apps. Countdown timers. Sponsored creators. The 45-minute scroll you did not plan. Four scenarios on how attention gets bought and sold online.</p>
+  </div>
+</section>
+
+<main id="main" class="yt-container">
+
+  <ul class="yt-straight" aria-label="How this works">
+    <li>Four situations</li>
+    <li>You choose, then we debrief</li>
+    <li>Nobody&rsquo;s telling you to quit anything</li>
+  </ul>
+
+  <div class="yt-takeaway">
+    <h2>Straight with you</h2>
+    <p>If you have ever opened an app for one second and lost 45 minutes &mdash; that was not a personal failure. It was an engineering decision made by a company that earns money every second you stay. Understanding how that works does not mean you have to quit social media. It means you get to decide how much of your attention is worth giving, and to whom.</p>
+  </div>
+
+  <div class="yt-progress" aria-hidden="true">
+    <span class="yt-pip active" id="pip-0"></span>
+    <span class="yt-pip" id="pip-1"></span>
+    <span class="yt-pip" id="pip-2"></span>
+    <span class="yt-pip" id="pip-3"></span>
+    <span class="yt-progress-label" id="progress-label">Scenario 1 of 4</span>
+  </div>
+
+  <!-- Scenario 1 -->
+  <div class="yt-scenario active" id="sc-0" role="region" aria-label="Scenario 1: The app that's free">
+    <div class="yt-scenario-head">
+      <span class="yt-scenario-num" aria-hidden="true">1</span>
+      <span class="yt-scenario-tag">Digital business model</span>
+    </div>
+    <div class="yt-scenario-body">
+      <h2 class="yt-scenario-title">The app that&rsquo;s free</h2>
+      <div class="yt-story">
+        <p>TikTok costs nothing to download. Instagram costs nothing. YouTube costs nothing. Yet the companies behind them are worth hundreds of billions of dollars &mdash; TikTok&rsquo;s parent company ByteDance is valued at over $300 billion CAD. Nobody is paying. Where is the money coming from?</p>
+      </div>
+      <p class="yt-question">How do apps like TikTok make money if users never pay?</p>
+      <div class="yt-answers" data-sc="0">
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">A</span> The apps are funded by government digital access programmes</button>
+        <button class="yt-answer" data-correct="true"><span class="yt-letter" aria-hidden="true">B</span> Advertisers pay to reach you. Your attention &mdash; the time you spend watching &mdash; is what&rsquo;s being sold.</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">C</span> The founders are wealthy enough to run the platforms as a public service</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">D</span> They earn money from premium features most users never buy</button>
+      </div>
+      <div class="yt-debrief" id="db-0">
+        <p class="yt-debrief-label">You are the product</p>
+        <p>Every second you scroll is revenue. Advertisers pay TikTok, Instagram, and YouTube to put their message in front of you &mdash; specifically you, based on your age, location, watch history, and hundreds of other signals the platform has collected. The app is free because you are not the customer. You are what&rsquo;s being sold. A business that earns money every second you stay has one engineering goal: keep you watching as long as possible.</p>
+      </div>
+      <button class="yt-next" id="next-0">Next scenario &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Scenario 2 -->
+  <div class="yt-scenario" id="sc-1" role="region" aria-label="Scenario 2: The ticket that expires in 10 minutes">
+    <div class="yt-scenario-head">
+      <span class="yt-scenario-num" aria-hidden="true">2</span>
+      <span class="yt-scenario-tag">Dark patterns</span>
+    </div>
+    <div class="yt-scenario-body">
+      <h2 class="yt-scenario-title">The ticket that expires in 10 minutes</h2>
+      <div class="yt-story">
+        <p>You find concert tickets online. The page shows: &ldquo;&#9200; Only 2 seats left at this price! Your cart expires in 09:47.&rdquo; A timer counts down. You feel a pull to buy now before you lose them. You haven&rsquo;t checked if the price is reasonable or if other sites have the same seats.</p>
+      </div>
+      <p class="yt-question">What is a countdown timer on a shopping site most likely doing?</p>
+      <div class="yt-answers" data-sc="1">
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">A</span> Protecting your seat while you decide &mdash; a genuine customer service feature</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">B</span> Showing you how long the sale has been running</button>
+        <button class="yt-answer" data-correct="true"><span class="yt-letter" aria-hidden="true">C</span> Creating false urgency &mdash; a design trick called a &ldquo;dark pattern&rdquo; that pushes you to decide before you&rsquo;re ready</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">D</span> Protecting the site from scalper bots buying up inventory</button>
+      </div>
+      <div class="yt-debrief" id="db-1">
+        <p class="yt-debrief-label">False urgency is a feature, not a bug</p>
+        <p>Dark patterns are design choices built into websites and apps that work against the user on purpose. Countdown timers, &ldquo;only 3 left&rdquo; warnings, and hidden unsubscribe buttons are all in the same family. Studies show that a 10-minute countdown increases purchase rates by 30% or more &mdash; even when the timer resets the moment it hits zero. The rule: if you feel rushed to click, that is the signal to slow down. Real scarcity does not need a blinking clock. Open a second tab, compare prices, and decide on your own schedule.</p>
+      </div>
+      <button class="yt-next" id="next-1">Next scenario &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Scenario 3 -->
+  <div class="yt-scenario" id="sc-2" role="region" aria-label="Scenario 3: The creator who swears by this supplement">
+    <div class="yt-scenario-head">
+      <span class="yt-scenario-num" aria-hidden="true">3</span>
+      <span class="yt-scenario-tag">Influencer marketing</span>
+    </div>
+    <div class="yt-scenario-body">
+      <h2 class="yt-scenario-title">The creator who &ldquo;swears by&rdquo; this supplement</h2>
+      <div class="yt-story">
+        <p>A YouTuber with 1.2 million subscribers posts a video. &ldquo;I&rsquo;ve been trying this supplement for three months and I genuinely swear by it. My energy is completely different.&rdquo; Buried three lines into the description: &ldquo;This video is sponsored by NutriMax.&rdquo; They seem sincere. They&rsquo;ve mentioned personal health struggles in past videos. The supplement costs $89 CAD.</p>
+      </div>
+      <p class="yt-question">How should you read this recommendation compared to one from a friend?</p>
+      <div class="yt-answers" data-sc="2">
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">A</span> The same way &mdash; creators only agree to sponsor products they actually use</button>
+        <button class="yt-answer" data-correct="true"><span class="yt-letter" aria-hidden="true">B</span> With more skepticism &mdash; they were paid to say this. That shifts the incentive from sharing to selling, even if they do genuinely like the product.</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">C</span> As completely fake &mdash; sponsored content is always dishonest</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">D</span> More trustfully &mdash; brands carefully screen their ambassadors for authenticity</button>
+      </div>
+      <div class="yt-debrief" id="db-2">
+        <p class="yt-debrief-label">Paid endorsements change the incentive</p>
+        <p>In Canada, paid endorsements must be disclosed under the Competition Act &mdash; which is why &ldquo;Sponsored&rdquo; appears in the description. The disclosure doesn&rsquo;t mean the creator is lying. They may genuinely use the product. But a creator who earns $10,000 for a sponsored video has a financial reason to be enthusiastic, separate from their actual experience. That is not dishonesty &mdash; it is a changed incentive. Apply the same healthy skepticism you would to any advertisement, regardless of how sincere the person seems. Before a $89 purchase: look for independent reviews, check Health Canada&rsquo;s natural health product database, and ask whether you would have wanted this product before you saw the video.</p>
+      </div>
+      <button class="yt-next" id="next-2">Next scenario &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Scenario 4 -->
+  <div class="yt-scenario" id="sc-3" role="region" aria-label="Scenario 4: The 45-minute scroll you didn't plan">
+    <div class="yt-scenario-head">
+      <span class="yt-scenario-num" aria-hidden="true">4</span>
+      <span class="yt-scenario-tag">Attention engineering</span>
+    </div>
+    <div class="yt-scenario-body">
+      <h2 class="yt-scenario-title">The 45-minute scroll you didn&rsquo;t plan</h2>
+      <div class="yt-story">
+        <p>You open Instagram to check one notification. Forty-five minutes later you are deep in content you never set out to find &mdash; videos, stories, reels, suggested posts from accounts you&rsquo;ve never seen. You did not plan to stay. You do not feel particularly refreshed. You are not sure how it happened.</p>
+      </div>
+      <p class="yt-question">Why is it so difficult to stop scrolling on social media?</p>
+      <div class="yt-answers" data-sc="3">
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">A</span> Social media is genuinely more interesting than anything else you could be doing</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">B</span> You made a weak decision to keep scrolling &mdash; it is a self-discipline problem</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">C</span> The apps are designed so well that stopping feels unnatural</button>
+        <button class="yt-answer" data-correct="true"><span class="yt-letter" aria-hidden="true">D</span> There is no natural stopping point because removing one was a deliberate design decision. The longer you scroll, the more ad revenue the platform earns.</button>
+      </div>
+      <div class="yt-debrief" id="db-3">
+        <p class="yt-debrief-label">The missing stop sign</p>
+        <p>The infinite scroll patent was filed explicitly to remove the natural pause of page turns &mdash; the moment where you would have decided whether to keep going. Variable reward &mdash; the mechanism also found in slot machines &mdash; keeps you scrolling because the next piece of content might be interesting, funny, or surprising. Both of these are deliberate engineering decisions, not side effects. The average Canadian teenager spends 4+ hours per day on social media. That is not 4 hours of free choice &mdash; most of it is engineered drift. Knowing this does not mean you have to quit. It means you can set your own stopping points instead of waiting for one that was never built.</p>
+      </div>
+      <button class="yt-next" id="next-3">See how you did &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="yt-results" id="results" role="region" aria-label="Your results">
+    <p class="yt-score" id="score-line"></p>
+    <p class="yt-score-sub">First-try answers. The point was never the score &mdash; it&rsquo;s that you can now name how attention gets bought and sold.</p>
+  </div>
+
+  <div class="yt-takeaway">
+    <h2>The four things worth keeping</h2>
+    <ul>
+      <li>If the app is free, you&rsquo;re not the customer &mdash; your attention is what&rsquo;s being sold, targeted using a detailed profile of your behaviour.</li>
+      <li>If you feel rushed to click, that&rsquo;s the signal to slow down. Real scarcity doesn&rsquo;t need a blinking clock.</li>
+      <li>&ldquo;Sponsored&rdquo; doesn&rsquo;t mean lying &mdash; it means the incentive changed. Read it like an ad, not like a friend.</li>
+      <li>The feed has no stopping point because one was deliberately removed. Set your own instead of waiting for one that was never built.</li>
+    </ul>
+  </div>
+
+  <div class="yt-related yt-related-cards">
+    <h2>Keep going</h2>
+    <ul class="yt-grid">
+      <li class="yt-card">
+        <span class="yt-card-tag">Games &amp; spending</span>
+        <h3><a href="module-gems.html">Gems Are Real Money</a></h3>
+        <p>The same dark patterns, aimed at your wallet &mdash; loot boxes, grind walls, and item-shop timers.</p>
+      </li>
+      <li class="yt-card">
+        <span class="yt-card-tag">AI &amp; deepfakes</span>
+        <h3><a href="module-ai-literacy.html">AI in Real Life</a></h3>
+        <p>Voice clones, deepfakes in the group chat, and what AI is genuinely good for.</p>
+      </li>
+    </ul>
+  </div>
+
+  <nav class="yt-footnav" aria-label="Module navigation">
+    <a href="index.html">&larr; All youth modules</a>
+  </nav>
+
+</main>
+
+<footer class="yt-footer">
+  <div class="yt-container">
+    <nav aria-label="Site">
+      <a href="index.html">Youth hub</a>
+      <a href="../index.html">Main site</a>
+      <a href="../privacy.html">Privacy</a>
+    </nav>
+    <p>Digital Confidence Centre &middot; Free for everyone, always &middot; Canada</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    // theme toggle
+    var btn = document.getElementById("theme-btn");
+    function syncTheme() {
+      var dark = document.documentElement.getAttribute("data-theme") === "dark";
+      btn.textContent = dark ? "Light mode" : "Dark mode";
+      btn.setAttribute("aria-pressed", dark ? "true" : "false");
+    }
+    btn.addEventListener("click", function () {
+      var next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("dccv2-theme", next); } catch (e) {}
+      syncTheme();
+    });
+    syncTheme();
+
+    // scenario engine
+    var TOTAL = 4;
+    var current = 0;
+    var firstTryCorrect = 0;
+    var label = document.getElementById("progress-label");
+
+    document.querySelectorAll(".yt-answers").forEach(function (group) {
+      var answered = false;
+      group.querySelectorAll(".yt-answer").forEach(function (a) {
+        a.addEventListener("click", function () {
+          if (answered) return;
+          answered = true;
+          var sc = group.getAttribute("data-sc");
+          var correct = a.getAttribute("data-correct") === "true";
+          if (correct) {
+            a.classList.add("is-correct");
+            firstTryCorrect++;
+          } else {
+            a.classList.add("is-wrong");
+            var right = group.querySelector('[data-correct="true"]');
+            if (right) right.classList.add("show-correct");
+          }
+          group.querySelectorAll(".yt-answer").forEach(function (b) { b.disabled = true; });
+          document.getElementById("db-" + sc).classList.add("visible");
+          document.getElementById("next-" + sc).classList.add("visible");
+        });
+      });
+    });
+
+    for (var i = 0; i < TOTAL; i++) {
+      (function (i) {
+        document.getElementById("next-" + i).addEventListener("click", function () {
+          document.getElementById("sc-" + i).classList.remove("active");
+          document.getElementById("pip-" + i).classList.remove("active");
+          document.getElementById("pip-" + i).classList.add("done");
+          current = i + 1;
+          if (current < TOTAL) {
+            var nextSc = document.getElementById("sc-" + current);
+            nextSc.classList.add("active");
+            document.getElementById("pip-" + current).classList.add("active");
+            label.textContent = "Scenario " + (current + 1) + " of " + TOTAL;
+            nextSc.scrollIntoView({ behavior: "smooth", block: "start" });
+            var h = nextSc.querySelector(".yt-scenario-title");
+            if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); }
+          } else {
+            label.textContent = "Done";
+            var res = document.getElementById("results");
+            document.getElementById("score-line").textContent = firstTryCorrect + " of " + TOTAL + " on the first try";
+            res.classList.add("visible");
+            res.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      })(i);
+    }
+  })();
+</script>
+
+</body>
+</html>
