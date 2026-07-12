@@ -1,0 +1,321 @@
+/* ==========================================================================
+   DCC Youth theme — ages 13–17
+   Design basis (see hal-stack/product-intelligence/dcc-youth-research-2026-07-12.md):
+   - NN/g teen UX research: clean, professional, whitespace; teens reject
+     childish aesthetics, garish colour, and pointless animation.
+   - More energy than the senior "no pulse" register, but every motion is
+     purposeful (progress, feedback, reveal) and zeroed under
+     prefers-reduced-motion.
+   - Phone-first: Pew 2025 — 95%+ of teens are smartphone-first.
+   Loads AFTER ../css/tokens.css (fonts + base tokens + dark theme come from there).
+   ========================================================================== */
+
+:root {
+  --yt-indigo:        #3949AB;
+  --yt-indigo-deep:   #2C3A8C;
+  --yt-indigo-bg:     #E8EAF6;
+  --yt-teal:          #00796B; /* 4.65:1 on white — AA for large text/UI; body text uses --yt-text */
+  --yt-teal-bg:       #E0F2F1;
+  --yt-green:         #2E7D32;
+  --yt-green-bg:      #E8F5E9;
+  --yt-red:           #C62828;
+  --yt-red-bg:        #FFEBEE;
+  --yt-bg:            #FAFAFC;
+  --yt-surface:       #FFFFFF;
+  --yt-surface-alt:   #F1F2F8;
+  --yt-text:          #1F2430;
+  --yt-text-soft:     #4A5060; /* 7.4:1 on white */
+  --yt-border:        #D9DCE8;
+  --yt-hero-a:        #16203E;
+  --yt-hero-b:        #3949AB;
+  --yt-focus:         #A85410;
+  --yt-radius:        14px;
+  --yt-motion:        220ms;
+}
+
+html[data-theme="dark"] {
+  --yt-indigo:        #9FA8DA;
+  --yt-indigo-deep:   #7986CB;
+  --yt-indigo-bg:     #262B47;
+  --yt-teal:          #4DB6AC;
+  --yt-teal-bg:       #1C3330;
+  --yt-green:         #81C784;
+  --yt-green-bg:      #1E3320;
+  --yt-red:           #EF9A9A;
+  --yt-red-bg:        #3A2022;
+  --yt-bg:            #14161E;
+  --yt-surface:       #1D2029;
+  --yt-surface-alt:   #232734;
+  --yt-text:          #E8EAF2;
+  --yt-text-soft:     #B4B9C9;
+  --yt-border:        #363B4C;
+  --yt-hero-a:        #10182F;
+  --yt-hero-b:        #2C3A8C;
+  --yt-focus:         #F5A860;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --yt-motion: 0ms; }
+  .yt-scenario.active { animation: none; }
+}
+
+/* ---------- base ---------- */
+.yt-body {
+  margin: 0;
+  background: var(--yt-bg);
+  color: var(--yt-text);
+  font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-text-size-adjust: 100%;
+}
+.yt-container { max-width: 680px; margin: 0 auto; padding: 0 1.1rem; }
+.yt-body a { color: var(--yt-indigo); }
+.yt-body :focus-visible { outline: 3px solid var(--yt-focus); outline-offset: 2px; border-radius: 4px; }
+.yt-skip {
+  position: absolute; left: -9999px; top: 0; z-index: 10;
+  background: var(--yt-surface); color: var(--yt-text); padding: 0.6rem 1rem;
+}
+.yt-skip:focus { left: 0.5rem; top: 0.5rem; }
+
+/* ---------- header ---------- */
+.yt-header {
+  display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+  padding: 0.8rem 1.1rem;
+  max-width: 680px; margin: 0 auto;
+}
+.yt-brand {
+  font-weight: 700; font-size: 0.95rem; text-decoration: none;
+  color: var(--yt-text);
+}
+.yt-brand .yt-brand-tag { color: var(--yt-indigo); }
+.yt-theme-btn {
+  min-height: 44px; min-width: 44px;
+  border: 1.5px solid var(--yt-border); border-radius: 10px;
+  background: var(--yt-surface); color: var(--yt-text);
+  font: inherit; font-size: 0.9rem; cursor: pointer; padding: 0.35rem 0.8rem;
+}
+.yt-theme-btn:hover { border-color: var(--yt-indigo); }
+
+/* ---------- hero ---------- */
+.yt-hero {
+  background: linear-gradient(140deg, var(--yt-hero-a) 0%, var(--yt-hero-b) 100%);
+  color: #fff;
+  padding: 2.4rem 0 2.1rem;
+  border-radius: 0 0 20px 20px;
+}
+.yt-hero .yt-eyebrow {
+  display: inline-block;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 999px;
+  padding: 0.28rem 0.9rem;
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+.yt-hero h1 {
+  font-size: clamp(1.7rem, 5.5vw, 2.5rem);
+  font-weight: 800; line-height: 1.12; margin: 0 0 0.7rem;
+}
+.yt-hero p { font-size: 1.05rem; line-height: 1.55; margin: 0; max-width: 34em; color: rgba(255,255,255,0.92); }
+
+/* ---------- straight-with-you strip (trust, teen register) ---------- */
+.yt-straight {
+  display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem;
+  list-style: none; margin: 1.1rem 0 0; padding: 0;
+  font-size: 0.92rem; color: var(--yt-text-soft);
+}
+.yt-straight li::before { content: "✓ "; color: var(--yt-teal); font-weight: 700; }
+
+/* ---------- progress ---------- */
+.yt-progress { display: flex; align-items: center; gap: 0.7rem; margin: 1.6rem 0 1.2rem; }
+.yt-pip {
+  width: 34px; height: 7px; border-radius: 4px;
+  background: var(--yt-indigo-bg);
+  transition: background var(--yt-motion) ease;
+}
+.yt-pip.done { background: var(--yt-indigo); }
+.yt-pip.active { background: var(--yt-teal); }
+.yt-progress-label { font-size: 0.85rem; font-weight: 600; color: var(--yt-text-soft); }
+
+/* ---------- scenario cards ---------- */
+.yt-scenario {
+  background: var(--yt-surface);
+  border: 1.5px solid var(--yt-border);
+  border-radius: var(--yt-radius);
+  overflow: hidden;
+  margin-bottom: 1.6rem;
+  display: none;
+}
+.yt-scenario.active { display: block; animation: yt-rise var(--yt-motion) ease-out; }
+@keyframes yt-rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+.yt-scenario-head {
+  display: flex; align-items: center; gap: 0.7rem;
+  background: var(--yt-surface-alt);
+  padding: 0.85rem 1.2rem;
+  border-bottom: 1.5px solid var(--yt-border);
+}
+.yt-scenario-num {
+  background: var(--yt-indigo); color: var(--yt-surface);
+  width: 2rem; height: 2rem; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem; font-weight: 800; flex-shrink: 0;
+}
+html[data-theme="dark"] .yt-scenario-num { color: #14161E; }
+.yt-scenario-tag {
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--yt-indigo);
+}
+.yt-scenario-body { padding: 1.2rem; }
+.yt-scenario-title { font-size: 1.15rem; font-weight: 800; margin: 0 0 0.7rem; }
+.yt-story {
+  background: var(--yt-surface-alt);
+  border-left: 4px solid var(--yt-indigo);
+  border-radius: 0 10px 10px 0;
+  padding: 0.9rem 1.1rem;
+  margin: 0 0 1.1rem;
+}
+.yt-question { font-weight: 700; margin: 0 0 0.7rem; }
+
+/* answers */
+.yt-answers { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; }
+.yt-answer {
+  display: flex; align-items: flex-start; gap: 0.7rem;
+  min-height: 44px;
+  padding: 0.7rem 0.9rem;
+  border: 2px solid var(--yt-border);
+  border-radius: 10px;
+  background: var(--yt-surface);
+  color: var(--yt-text);
+  font: inherit; text-align: left; cursor: pointer; width: 100%;
+  transition: border-color var(--yt-motion) ease, background var(--yt-motion) ease;
+}
+.yt-answer:hover:not(:disabled) { border-color: var(--yt-indigo); background: var(--yt-indigo-bg); }
+.yt-answer .yt-letter {
+  flex-shrink: 0; width: 1.55rem; height: 1.55rem; margin-top: 2px;
+  background: var(--yt-indigo-bg); color: var(--yt-indigo);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.78rem; font-weight: 800;
+}
+.yt-answer:disabled { cursor: default; }
+.yt-answer.is-correct { border-color: var(--yt-green); background: var(--yt-green-bg); }
+.yt-answer.is-correct .yt-letter { background: var(--yt-green); color: #fff; }
+html[data-theme="dark"] .yt-answer.is-correct .yt-letter { color: #14161E; }
+.yt-answer.is-wrong { border-color: var(--yt-red); background: var(--yt-red-bg); }
+.yt-answer.is-wrong .yt-letter { background: var(--yt-red); color: #fff; }
+html[data-theme="dark"] .yt-answer.is-wrong .yt-letter { color: #14161E; }
+.yt-answer.show-correct { border-color: var(--yt-green); background: var(--yt-green-bg); opacity: 0.75; }
+
+/* debrief */
+.yt-debrief {
+  display: none;
+  border-left: 4px solid var(--yt-teal);
+  border-radius: 0 10px 10px 0;
+  background: var(--yt-teal-bg);
+  padding: 0.9rem 1.1rem;
+  margin-top: 0.9rem;
+}
+.yt-debrief.visible { display: block; animation: yt-rise var(--yt-motion) ease-out; }
+.yt-debrief-label {
+  font-size: 0.76rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--yt-teal); margin: 0 0 0.35rem;
+}
+.yt-debrief p { margin: 0; }
+.yt-debrief p + p { margin-top: 0.6rem; }
+
+.yt-next {
+  display: none;
+  margin-top: 1rem;
+  min-height: 48px;
+  background: var(--yt-indigo); color: #fff;
+  border: none; border-radius: 999px;
+  padding: 0.65rem 1.7rem;
+  font: inherit; font-weight: 700; cursor: pointer;
+  transition: background var(--yt-motion) ease;
+}
+html[data-theme="dark"] .yt-next { color: #14161E; }
+.yt-next:hover { background: var(--yt-indigo-deep); }
+.yt-next.visible { display: inline-flex; align-items: center; gap: 0.4rem; }
+
+/* results */
+.yt-results {
+  display: none;
+  text-align: center;
+  background: var(--yt-indigo-bg);
+  border-radius: var(--yt-radius);
+  padding: 1.8rem 1.1rem;
+  margin-bottom: 1.6rem;
+}
+.yt-results.visible { display: block; animation: yt-rise var(--yt-motion) ease-out; }
+.yt-results .yt-score { font-size: 1.5rem; font-weight: 800; color: var(--yt-indigo); }
+.yt-results .yt-score-sub { margin: 0.4rem 0 0; color: var(--yt-text-soft); }
+
+/* ---------- support / help block ---------- */
+.yt-help {
+  background: var(--yt-surface);
+  border: 2px solid var(--yt-teal);
+  border-radius: var(--yt-radius);
+  padding: 1.1rem 1.2rem;
+  margin: 1.6rem 0;
+}
+.yt-help h2, .yt-help h3 { margin: 0 0 0.5rem; font-size: 1.05rem; }
+.yt-help ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
+.yt-help li { margin-bottom: 0.4rem; }
+
+/* ---------- takeaway ---------- */
+.yt-takeaway {
+  background: var(--yt-surface-alt);
+  border-radius: var(--yt-radius);
+  padding: 1.1rem 1.2rem;
+  margin: 1.6rem 0;
+}
+.yt-takeaway h2 { font-size: 1.05rem; margin: 0 0 0.5rem; }
+.yt-takeaway ul { margin: 0; padding-left: 1.2rem; }
+.yt-takeaway li { margin-bottom: 0.35rem; }
+
+/* ---------- hub cards ---------- */
+.yt-grid { display: grid; grid-template-columns: 1fr; gap: 0.9rem; list-style: none; margin: 1.4rem 0; padding: 0; }
+@media (min-width: 560px) { .yt-grid { grid-template-columns: 1fr 1fr; } }
+.yt-card {
+  background: var(--yt-surface);
+  border: 1.5px solid var(--yt-border);
+  border-radius: var(--yt-radius);
+  padding: 1.1rem 1.2rem;
+  transition: border-color var(--yt-motion) ease, transform var(--yt-motion) ease;
+}
+.yt-card:hover { border-color: var(--yt-indigo); transform: translateY(-2px); }
+@media (prefers-reduced-motion: reduce) { .yt-card:hover { transform: none; } }
+.yt-card .yt-card-tag {
+  font-size: 0.76rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--yt-teal);
+}
+.yt-card h2, .yt-card h3 { font-size: 1.12rem; margin: 0.3rem 0 0.4rem; line-height: 1.3; }
+.yt-card h2 a, .yt-card h3 a { color: var(--yt-text); text-decoration: none; }
+.yt-card h2 a::after, .yt-card h3 a::after { content: ""; position: absolute; inset: 0; }
+.yt-card { position: relative; }
+.yt-card p { margin: 0; font-size: 0.95rem; color: var(--yt-text-soft); }
+.yt-card .yt-mins { display: inline-block; margin-top: 0.6rem; font-size: 0.85rem; font-weight: 600; color: var(--yt-indigo); }
+
+/* ---------- related / footer nav ---------- */
+.yt-related { margin: 2rem 0 1rem; }
+.yt-related h2 { font-size: 1.1rem; }
+.yt-footnav {
+  display: flex; justify-content: space-between; gap: 1rem;
+  margin: 2rem 0 1rem; font-weight: 600;
+}
+.yt-footer {
+  border-top: 1.5px solid var(--yt-border);
+  margin-top: 2.5rem;
+  padding: 1.4rem 0 2rem;
+  font-size: 0.88rem; color: var(--yt-text-soft);
+}
+.yt-footer nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; margin-bottom: 0.6rem; }
+.yt-footer a { color: var(--yt-text-soft); }
+.yt-footer p { margin: 0.25rem 0 0; }
+
+.yt-section-h { font-size: 1.35rem; margin: 2rem 0 0.4rem; }
+.yt-lead { color: var(--yt-text-soft); margin-top: 0; }
