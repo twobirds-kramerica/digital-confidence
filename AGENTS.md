@@ -216,9 +216,15 @@ yet been migrated.
 
 **Still pending (not in batch 3 scope):** `module-11`–`module-20` were not
 present on `main` when batch 3 ran (still off-token despite earlier batch
-notes — flagged for a follow-up batch). The youth-track modules
-(`module-ai-literacy-youth`, `module-ads-youth`, `module-gems-youth`) run a
-deliberate page-local `--youth-*` theme via an embedded `<style>` block and
-need their own design pass to avoid regressing that intentional look.
+notes — flagged for a follow-up batch). The youth-track modules (FOUR:
+`module-ai-literacy-youth`, `module-ads-youth`, `module-gems-youth`,
+`module-pressure-youth`, all in `/classic/`) run a deliberate page-local
+`--youth-*` theme via an embedded `<style>` block. As of 2026-07-12 the youth
+track has its own shell: `youth/youth.css` (`.yt-` prefix, ages 13–17,
+dark-theme + reduced-motion aware), a hub at `youth/index.html`, and its first
+native module `youth/module-ai-companions.html`. Porting the four classic
+youth modules onto that shell is the intended design pass (see
+`hal-stack/product-intelligence/dcc-youth-research-2026-07-12.md` in
+two-birds-portfolio).
 `module-template.html` (scaffold) and the wizard pages remain on the legacy
 layer.
