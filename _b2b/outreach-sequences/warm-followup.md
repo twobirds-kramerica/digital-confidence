@@ -34,7 +34,7 @@ Great to connect. As promised, here's what I'd like to share:
 Happy to answer any questions. What would be most useful as a next step?
 
 Aaron Patzalek
-aaron.patzalek@gmail.com | St. Thomas, Ontario
+[Two Birds contact — see private vault] | St. Thomas, Ontario
 
 ---
 **Personalisation notes:** Always tailor the "What I'd like to explore" section to what came up in the first conversation.
@@ -83,7 +83,7 @@ Is that an accurate summary? If I've missed anything, please let me know.
 Looking forward to working together.
 
 Aaron Patzalek
-aaron.patzalek@gmail.com
+[Two Birds contact — see private vault]
 
 ---
 **Personalisation notes:** Always write this email within 24 hours of the conversation while the details are fresh. Fill in the summary bullets with what was actually discussed.

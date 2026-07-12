@@ -54,7 +54,7 @@ digital literacy platform — no technical expertise required.
 Aaron Kramer
 Two Birds Innovation
 St. Thomas, Ontario
-aaron.patzalek@gmail.com
+[Two Birds contact — see private vault]
 
 ---
 

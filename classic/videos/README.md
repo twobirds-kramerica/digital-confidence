@@ -122,5 +122,5 @@ Examples:
 
 ## Contact
 
-Aaron Kramer — aaron.patzalek@gmail.com
+Aaron Kramer — [Two Birds contact — see private vault]
 Two Birds Innovation, St. Thomas, Ontario

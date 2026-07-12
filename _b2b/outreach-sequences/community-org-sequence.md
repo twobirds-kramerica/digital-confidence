@@ -27,7 +27,7 @@ I'm not asking for anything right now — just wondering if it might be useful t
 
 Aaron Patzalek
 Two Birds Innovation | St. Thomas, Ontario
-aaron.patzalek@gmail.com
+[Two Birds contact — see private vault]
 
 ---
 **Personalisation notes:**

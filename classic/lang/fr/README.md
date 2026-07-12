@@ -86,7 +86,7 @@ Cette traduction a été générée par machine et nécessite une révision prof
 
 ## Contact pour la traduction
 
-Aaron Kramer — aaron.patzalek@gmail.com
+Aaron Kramer — [Two Birds contact — see private vault]
 Two Birds Innovation, St. Thomas, Ontario
 
 ## Calendrier

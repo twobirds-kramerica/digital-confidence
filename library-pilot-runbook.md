@@ -44,7 +44,7 @@ A free 6-week engagement with one library. Three patrons. One facilitator (usual
 ### What Aaron provides
 - Facilitator guide link: https://twobirds-kramerica.github.io/digital-confidence/facilitator-guide.html
 - Suggested session structure: Module 1-2 in Session 1, Module 3-4 in Session 2, etc.
-- Hotline: aaron.patzalek@gmail.com for any questions the facilitator has
+- Hotline: [Two Birds contact — see private vault] for any questions the facilitator has
 
 ### Setup checklist (send to facilitator)
 - [ ] Three patrons identified and invited
@@ -82,7 +82,7 @@ The modules are designed to be self-paced. The patron can work through missed mo
 ### Aaron's 15-minute call with the facilitator
 1. Ask: "Has anything been confusing for patrons?"
 2. Ask: "Is the pacing right, or are they going faster/slower than expected?"
-3. Ask: "Any technical issues with the modules?" (Report to aaron.patzalek@gmail.com if yes)
+3. Ask: "Any technical issues with the modules?" (Report to [Two Birds contact — see private vault] if yes)
 4. Ask: "Any feedback on what they wish was different?"
 
 ---
@@ -136,7 +136,7 @@ New modules are added regularly. Libraries can repeat the curriculum with new pa
 The curriculum meets WCAG 2.2 AA accessibility standards. Large text, high contrast, and screen reader support are built in.
 
 **Q: Who built this?**
-Aaron Patzalek, Two Birds Innovation, St. Thomas, Ontario. aaron.patzalek@gmail.com.
+Aaron Patzalek, Two Birds Innovation, St. Thomas, Ontario. [Two Birds contact — see private vault].
 
 ---
 
@@ -146,5 +146,5 @@ Aaron Patzalek, Two Birds Innovation, St. Thomas, Ontario. aaron.patzalek@gmail.
 - Library landing page: https://twobirds-kramerica.github.io/digital-confidence/for-libraries.html
 - Facilitator guide: https://twobirds-kramerica.github.io/digital-confidence/facilitator-guide.html
 - Certificate: https://twobirds-kramerica.github.io/digital-confidence/certificate.html
-- Aaron contact: aaron.patzalek@gmail.com
+- Aaron contact: [Two Birds contact — see private vault]
 - Booking: https://calendly.com/twobirdsinnovation/30min

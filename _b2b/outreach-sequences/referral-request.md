@@ -35,7 +35,7 @@ Thanks again.
 
 Aaron Patzalek
 Two Birds Innovation | St. Thomas, Ontario
-aaron.patzalek@gmail.com
+[Two Birds contact — see private vault]
 
 ---
 **Personalisation notes:**

@@ -4,7 +4,7 @@
 **Applicant:** Aaron Patzalek, Two Birds Innovation, St. Thomas, Ontario
 **Application cycle:** Fall 2027 intake
 **Requested amount:** $5,000 (maximum award)
-**Contact:** aaron.patzalek@gmail.com | [Phone]
+**Contact:** [Two Birds contact — see private vault] | [Phone]
 
 ---
 

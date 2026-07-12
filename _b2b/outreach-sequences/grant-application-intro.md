@@ -16,7 +16,7 @@ Dear [Program Officer Name / Program Team],
 I am writing to inquire about eligibility before submitting a formal application to the [Grant Name] program.
 
 **Organisation:** Two Birds Innovation, St. Thomas, Ontario
-**Contact:** Aaron Patzalek | aaron.patzalek@gmail.com
+**Contact:** Aaron Patzalek | [Two Birds contact — see private vault]
 
 **Project summary:** The Digital Confidence Centre is a free, bilingual digital literacy platform for Canadian seniors, currently serving learners across Southwestern Ontario. The platform provides 19 self-paced modules covering foundational digital skills — from device safety and online banking to video calling and AI literacy. It is WCAG 2.1 AA accessible and available in both English and French.
 
@@ -29,7 +29,7 @@ I would welcome a brief conversation or any written guidance you can provide.
 Thank you,
 Aaron Patzalek
 Two Birds Innovation | St. Thomas, Ontario
-aaron.patzalek@gmail.com | [Phone]
+[Two Birds contact — see private vault] | [Phone]
 
 ---
 **Personalisation notes:**
@@ -54,7 +54,7 @@ If it would be more appropriate to proceed directly with a formal application ra
 I appreciate any guidance you're able to provide.
 
 Aaron Patzalek
-Two Birds Innovation | aaron.patzalek@gmail.com
+Two Birds Innovation | [Two Birds contact — see private vault]
 
 ---
 **Send time:** 7-10 days after Email 1
@@ -77,7 +77,7 @@ Thank you for [any guidance you provided in your response / taking the time to r
 If any additional information or clarification would be useful during the review process, I'm happy to provide it.
 
 Aaron Patzalek
-Two Birds Innovation | aaron.patzalek@gmail.com
+Two Birds Innovation | [Two Birds contact — see private vault]
 
 ---
 **Personalisation notes:**

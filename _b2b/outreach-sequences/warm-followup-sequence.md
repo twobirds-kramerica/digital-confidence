@@ -32,7 +32,7 @@ Would [Day], [Day], or [Day] work? Happy to send a calendar link if easier.
 
 Aaron Patzalek
 Two Birds Innovation | St. Thomas, Ontario
-aaron.patzalek@gmail.com
+[Two Birds contact — see private vault]
 
 ---
 **Personalisation notes:**
@@ -82,7 +82,7 @@ If now isn't the right time for a partnership conversation — completely unders
 What I'd love to leave you with:
 
 1. **The free resource link**: [DCC URL] — share it with your participants anytime, no strings attached
-2. **My contact**: aaron.patzalek@gmail.com — if the timing changes, or if a grant comes up where a digital literacy partner would be useful, I'm here
+2. **My contact**: [Two Birds contact — see private vault] — if the timing changes, or if a grant comes up where a digital literacy partner would be useful, I'm here
 3. **One specific module worth bookmarking**: Module 2 — scam protection — [module-2 URL] — it's the one your seniors need most and it's 30 minutes, free, no login
 
 Thanks for your time. Keep doing good work.

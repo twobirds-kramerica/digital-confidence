@@ -23,7 +23,7 @@ Would it be useful to take a look?
 
 Aaron Patzalek
 Two Birds Innovation | St. Thomas, Ontario
-aaron.patzalek@gmail.com
+[Two Birds contact — see private vault]
 
 ---
 **Personalisation notes:**
@@ -107,7 +107,7 @@ If not, completely understood. I'll leave you with the link: [DCC URL]
 It's free to use, share, and reference. No registration required.
 
 Aaron Patzalek
-aaron.patzalek@gmail.com | [Phone if comfortable sharing]
+[Two Birds contact — see private vault] | [Phone if comfortable sharing]
 
 ---
 **Send time:** 6 days after Email 3
@@ -133,7 +133,7 @@ I wish [Library Name] well in the work you do.
 
 Aaron Patzalek
 Two Birds Innovation | St. Thomas, Ontario
-aaron.patzalek@gmail.com
+[Two Birds contact — see private vault]
 
 ---
 **Personalisation notes:** End on genuine goodwill. This email often gets replies precisely because it's not asking for anything.

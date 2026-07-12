@@ -98,7 +98,7 @@ Two Birds Innovation is a product studio in St. Thomas, Ontario, specialising in
 
 **Contact:**
 Aaron Patzalek
-aaron.patzalek@gmail.com
+[Two Birds contact — see private vault]
 St. Thomas, Ontario
 
 ---
@@ -111,4 +111,4 @@ St. Thomas, Ontario
 4. Staff training session
 5. Pilot begins
 
-**To proceed:** Reply to this proposal or email aaron.patzalek@gmail.com with "Let's do the pilot."
+**To proceed:** Reply to this proposal or email [Two Birds contact — see private vault] with "Let's do the pilot."

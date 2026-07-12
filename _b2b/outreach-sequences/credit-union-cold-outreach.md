@@ -23,7 +23,7 @@ I'm reaching out because credit unions are uniquely positioned to help their sen
 
 Aaron Patzalek
 Two Birds Innovation | St. Thomas, Ontario
-aaron.patzalek@gmail.com
+[Two Birds contact — see private vault]
 
 ---
 **Personalisation notes:** Research the credit union's community programs and member demographics before sending. If they serve a specific region or cultural community, reference it.
@@ -98,7 +98,7 @@ There's no cost. No contract. No obligation beyond the conversation itself.
 If now isn't the right time: [DCC URL] is there whenever it's useful.
 
 Aaron Patzalek
-aaron.patzalek@gmail.com
+[Two Birds contact — see private vault]
 
 ---
 

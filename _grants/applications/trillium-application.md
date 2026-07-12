@@ -6,7 +6,7 @@
 **Requested amount:** $48,500
 **Project period:** September 1, 2027 – August 31, 2028
 **Organisation:** Two Birds Innovation, St. Thomas, Ontario
-**Contact:** Aaron Patzalek | aaron.patzalek@gmail.com
+**Contact:** Aaron Patzalek | [Two Birds contact — see private vault]
 
 ---
 

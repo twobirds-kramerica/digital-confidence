@@ -192,7 +192,7 @@ The following features are fully functional and ready for real user testing:
 ### Google Analytics Setup
 To enable usage tracking, you need your Measurement ID:
 
-1. Go to [analytics.google.com](https://analytics.google.com) → sign in with getkramer@gmail.com
+1. Go to [analytics.google.com](https://analytics.google.com) → sign in with the Two Birds Google account (see private vault)
 2. Click **Admin** (gear icon, bottom left) → **Create Property**
 3. Property Name: "Digital Confidence Centre"
 4. Click **Data Streams** → **Add Stream** → **Web**

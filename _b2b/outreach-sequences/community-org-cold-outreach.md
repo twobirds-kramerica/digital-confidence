@@ -23,7 +23,7 @@ I'm not asking for anything right now — just wondering if it might be useful t
 
 Aaron Patzalek
 Two Birds Innovation | St. Thomas, Ontario
-aaron.patzalek@gmail.com
+[Two Birds contact — see private vault]
 
 ---
 **Personalisation notes:** Research the organisation's service area, client demographics, and any existing digital programs before sending.
@@ -89,7 +89,7 @@ I'm genuinely curious what [Organisation Name] is already doing around digital l
 No agenda beyond the conversation.
 
 Aaron Patzalek
-aaron.patzalek@gmail.com
+[Two Birds contact — see private vault]
 
 ---
 
