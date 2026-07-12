@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("dccv2-theme"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <title>DCC Youth - Online smarts for ages 13-17 - Digital Confidence Centre</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/youth/">
+  <meta name="description" content="Four short, no-lecture modules for teens on deepfakes and AI, the attention economy, loot boxes, and online pressure. Free, Canadian, no account, no tracking.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="youth.css">
+</head>
+<body class="yt-body">
+
+<a class="yt-skip" href="#main">Skip to main content</a>
+
+<header class="yt-header">
+  <a class="yt-brand" href="../index.html">Digital Confidence <span class="yt-brand-tag">Youth</span></a>
+  <button class="yt-theme-btn" type="button" id="theme-btn" aria-pressed="false">Dark mode</button>
+</header>
+
+<section class="yt-hero" aria-label="Welcome">
+  <div class="yt-container">
+    <span class="yt-eyebrow">For ages 13&ndash;17</span>
+    <h1>Know the trick before it&rsquo;s played.</h1>
+    <p>Four short modules on how apps, games, ads &mdash; and sometimes even friends &mdash; push people around online, and how to spot it happening. No lectures, no &ldquo;screens are bad&rdquo;, no telling you to quit anything.</p>
+  </div>
+</section>
+
+<main id="main" class="yt-container">
+
+  <ul class="yt-straight" aria-label="What this is">
+    <li>Free</li>
+    <li>No account, no tracking</li>
+    <li>About 15 minutes each</li>
+    <li>Made in Canada</li>
+  </ul>
+
+  <h2 class="yt-section-h">The modules</h2>
+  <p class="yt-lead">Each one is built around real situations, not rules. You pick what you&rsquo;d do; the debrief tells you what&rsquo;s actually going on.</p>
+
+  <ul class="yt-grid">
+    <li class="yt-card">
+      <span class="yt-card-tag">AI &amp; deepfakes</span>
+      <h3><a href="../classic/module-ai-literacy-youth.html">AI in Real Life</a></h3>
+      <p>Voice clones, a deepfake in the group chat, AI and schoolwork, and what AI is genuinely good for. Four situations you could actually hit this year.</p>
+      <span class="yt-mins">About 15 minutes</span>
+    </li>
+    <li class="yt-card">
+      <span class="yt-card-tag">The attention economy</span>
+      <h3><a href="../classic/module-ads-youth.html">Who&rsquo;s Paying for Your Attention?</a></h3>
+      <p>If the app is free, someone else is paying &mdash; and what they&rsquo;re buying is your attention. How feeds, countdown timers, and #sponsored posts really work.</p>
+      <span class="yt-mins">About 15 minutes</span>
+    </li>
+    <li class="yt-card">
+      <span class="yt-card-tag">Games &amp; spending</span>
+      <h3><a href="../classic/module-gems-youth.html">Gems Are Real Money</a></h3>
+      <p>Loot boxes, grind walls, and item-shop timers. The design tricks that turn game currency into real spending &mdash; named, so you can see them coming.</p>
+      <span class="yt-mins">About 15 minutes</span>
+    </li>
+    <li class="yt-card">
+      <span class="yt-card-tag">Friends &amp; pressure</span>
+      <h3><a href="../classic/module-pressure-youth.html">The Pressure You Can Name</a></h3>
+      <p>Streaks, group pile-ons, and &ldquo;if you really cared&hellip;&rdquo;. What manipulation looks like inside a chat &mdash; and what naming it lets you do.</p>
+      <span class="yt-mins">About 15 minutes</span>
+    </li>
+  </ul>
+
+  <div class="yt-help">
+    <h2>If something online has gone past &ldquo;annoying&rdquo;</h2>
+    <p>If someone is threatening you, pressuring you for photos, or you&rsquo;re just carrying something heavy &mdash; that&rsquo;s not a &ldquo;figure it out yourself&rdquo; situation, and asking for help isn&rsquo;t weakness.</p>
+    <ul>
+      <li><strong>Kids Help Phone</strong> &mdash; call <a href="tel:1-800-668-6868">1-800-668-6868</a> or text <strong>CONNECT</strong> to <strong>686868</strong>. Free, 24/7, confidential, anywhere in Canada.</li>
+      <li><strong>Cybertip.ca</strong> &mdash; if someone has (or claims to have) intimate images of you or someone you know, <a href="https://cybertip.ca" rel="noopener noreferrer">report it at Cybertip.ca</a>. It happens a lot, it&rsquo;s not your fault, and there are real steps that work.</li>
+    </ul>
+  </div>
+
+  <div class="yt-takeaway">
+    <h2>Who made this?</h2>
+    <ul>
+      <li>The <a href="../index.html">Digital Confidence Centre</a> &mdash; a free Canadian digital-literacy project. The main site teaches grandparents; this section is for you.</li>
+      <li>Nothing here is sponsored, nothing is tracked, and nothing asks for your email.</li>
+    </ul>
+  </div>
+
+</main>
+
+<footer class="yt-footer">
+  <div class="yt-container">
+    <nav aria-label="Site">
+      <a href="../index.html">Main site</a>
+      <a href="../about.html">About</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../classic/kids/index.html">DCC Kids (ages 4&ndash;12)</a>
+    </nav>
+    <p>Digital Confidence Centre &middot; Free for everyone, always &middot; Canada</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById("theme-btn");
+    function sync() {
+      var dark = document.documentElement.getAttribute("data-theme") === "dark";
+      btn.textContent = dark ? "Light mode" : "Dark mode";
+      btn.setAttribute("aria-pressed", dark ? "true" : "false");
+    }
+    btn.addEventListener("click", function () {
+      var next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("dccv2-theme", next); } catch (e) {}
+      sync();
+    });
+    sync();
+  })();
+</script>
+
+</body>
+</html>
