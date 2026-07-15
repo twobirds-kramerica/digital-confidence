@@ -243,5 +243,17 @@ hub and `module-ai-companions.html` now link to these; the `/classic/`
 originals remain as the archive. (Research:
 `hal-stack/product-intelligence/dcc-youth-research-2026-07-12.md` in
 two-birds-portfolio.)
+
+**New native youth module (2026-07-15):** `youth/module-how-do-you-feel-after.html`
+— "How Do You Feel After?" (doomscrolling), the teen parallel of senior
+`module-30`. Hand-authored on the `.yt-` shell (4-scenario engine, same as
+`module-ai-companions`). Canadian anchors, fact-checked live: Canadian Paediatric
+Society "4 Ms" (Manage/Meaningful/Model/**Monitor** = watch for negative emotions
+after being online), no hard hour cap for ages 5–17, the 2-hour figure is the
+24-Hour Movement Guideline (recreational), quality-over-quantity. Core skill =
+judge by how you feel after, not minutes. Kids Help Phone in-flow. Youth hub now
+lists **6** modules (this is the "New" card); sitemap +1. QA: axe-core 0
+critical/serious light + dark, full scenario flow + wrong-answer reveal verified,
+no 375px reflow.
 `module-template.html` (scaffold) and the wizard pages remain on the legacy
 layer.
