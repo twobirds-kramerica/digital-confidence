@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("dccv2-theme"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <title>How Do You Feel After? - Doomscrolling - DCC Youth</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/youth/module-how-do-you-feel-after.html">
+  <meta name="description" content="Doomscrolling isn't about willpower or counting minutes. Four real situations for teens on why the feed keeps you there, why it serves the upsetting stuff, and the one honest signal: how you feel after.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="youth.css">
+</head>
+<body class="yt-body">
+
+<a class="yt-skip" href="#main">Skip to main content</a>
+
+<header class="yt-header">
+  <a class="yt-brand" href="index.html">Digital Confidence <span class="yt-brand-tag">Youth</span></a>
+  <button class="yt-theme-btn" type="button" id="theme-btn" aria-pressed="false">Dark mode</button>
+</header>
+
+<section class="yt-hero" aria-label="Module introduction">
+  <div class="yt-container">
+    <span class="yt-eyebrow">Doomscrolling &middot; About 12 minutes</span>
+    <h1>How Do You Feel After?</h1>
+    <p>You meant to check one thing. Forty-five minutes later you&rsquo;re still scrolling and you feel worse, and you&rsquo;re not sure why. That&rsquo;s not a willpower problem &mdash; the app is built to do exactly that. This is about seeing the machine, and one honest question that beats counting minutes.</p>
+  </div>
+</section>
+
+<main id="main" class="yt-container">
+
+  <ul class="yt-straight" aria-label="How this works">
+    <li>Four situations</li>
+    <li>You choose, then we debrief</li>
+    <li>Nobody&rsquo;s telling you to quit anything</li>
+  </ul>
+
+  <div class="yt-progress" aria-hidden="true">
+    <span class="yt-pip active" id="pip-0"></span>
+    <span class="yt-pip" id="pip-1"></span>
+    <span class="yt-pip" id="pip-2"></span>
+    <span class="yt-pip" id="pip-3"></span>
+    <span class="yt-progress-label" id="progress-label">Scenario 1 of 4</span>
+  </div>
+
+  <!-- Scenario 1 -->
+  <div class="yt-scenario active" id="sc-0" role="region" aria-label="Scenario 1: The 45-minute hole">
+    <div class="yt-scenario-head">
+      <span class="yt-scenario-num" aria-hidden="true">1</span>
+      <span class="yt-scenario-tag">The 45-minute hole</span>
+    </div>
+    <div class="yt-scenario-body">
+      <h2 class="yt-scenario-title">&ldquo;I only opened it to check one thing&rdquo;</h2>
+      <div class="yt-story">
+        <p>You picked up your phone to see one message. Somehow you&rsquo;re now deep in a stranger&rsquo;s argument in the comments, then a disaster clip, then another. You look up and it&rsquo;s been 45 minutes. You feel kind of tense and flat, and nothing actually happened.</p>
+      </div>
+      <p class="yt-question">What&rsquo;s the most useful thing to notice here?</p>
+      <div class="yt-answers" data-sc="0">
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">A</span> Exactly how many minutes you spent, so you can feel bad about the number</button>
+        <button class="yt-answer" data-correct="true"><span class="yt-letter" aria-hidden="true">B</span> That you feel worse than when you started &mdash; the feeling is the real signal, not the clock</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">C</span> That you have no self-control and should just delete the app</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">D</span> Nothing &mdash; 45 minutes on your phone is always fine</button>
+      </div>
+      <div class="yt-debrief" id="db-0">
+        <p class="yt-debrief-label">What&rsquo;s actually going on</p>
+        <p>The feed never ends on purpose &mdash; there&rsquo;s no &ldquo;last page,&rdquo; so there&rsquo;s no natural stop. Counting your minutes afterward mostly just adds guilt, and guilt doesn&rsquo;t change anything. The far more useful read is how the scroll <em>left</em> you: lighter or heavier, calmer or more wound up. Forty minutes that leave you laughing with friends is time well spent. Five minutes that leave you tense is the feed taking more than it gave.</p>
+        <p>This isn&rsquo;t a lecture about being on your phone too much. It&rsquo;s one swap: stop asking &ldquo;how long was I on&rdquo; and start asking &ldquo;how do I feel now.&rdquo;</p>
+      </div>
+      <button class="yt-next" id="next-0">Next scenario &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Scenario 2 -->
+  <div class="yt-scenario" id="sc-1" role="region" aria-label="Scenario 2: Why is it all bad news">
+    <div class="yt-scenario-head">
+      <span class="yt-scenario-num" aria-hidden="true">2</span>
+      <span class="yt-scenario-tag">Why is it all bad news?</span>
+    </div>
+    <div class="yt-scenario-body">
+      <h2 class="yt-scenario-title">The feed is basically rage and disaster now</h2>
+      <div class="yt-story">
+        <p>You notice your For You page has turned into a wall of furious takes, screaming arguments, and &ldquo;the world is ending&rdquo; clips. You didn&rsquo;t ask for that. It kind of stresses you out, but you keep watching.</p>
+      </div>
+      <p class="yt-question">Why does the upsetting stuff keep rising to the top?</p>
+      <div class="yt-answers" data-sc="1">
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">A</span> The world genuinely is only bad news right now</button>
+        <button class="yt-answer" data-correct="true"><span class="yt-letter" aria-hidden="true">B</span> Posts that spark anger or fear get more reactions, so the algorithm serves more of them &mdash; the &ldquo;outrage loop&rdquo;</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">C</span> You accidentally followed a bunch of bad accounts</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">D</span> The app is broken and showing the wrong feed</button>
+      </div>
+      <div class="yt-debrief" id="db-1">
+        <p class="yt-debrief-label">What&rsquo;s actually going on</p>
+        <p>Anger and fear travel faster than calm. A post that makes people furious gets comments, quote-tweets, stitches, shares &mdash; and the algorithm reads all that activity as &ldquo;engaging&rdquo; and pushes it to more people. Calm, ordinary posts quietly sink. So the feed drifts toward whatever winds you up, because winding you up keeps you scrolling. It&rsquo;s not a picture of the world; it&rsquo;s a picture of what keeps you here.</p>
+        <p>Two moves that actually work: hit &ldquo;not interested&rdquo; / mute / unfollow on the rage-bait (the account isn&rsquo;t told), and deliberately linger on stuff you like so the algorithm feeds you more of that instead.</p>
+      </div>
+      <button class="yt-next" id="next-1">Next scenario &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Scenario 3 -->
+  <div class="yt-scenario" id="sc-2" role="region" aria-label="Scenario 3: The two-hour rule">
+    <div class="yt-scenario-head">
+      <span class="yt-scenario-num" aria-hidden="true">3</span>
+      <span class="yt-scenario-tag">&ldquo;You get two hours&rdquo;</span>
+    </div>
+    <div class="yt-scenario-body">
+      <h2 class="yt-scenario-title">Is the two-hour limit an actual rule?</h2>
+      <div class="yt-story">
+        <p>Someone tells you there&rsquo;s an official Canadian rule that teens are &ldquo;allowed two hours of screen time a day&rdquo; and you&rsquo;re breaking it. It doesn&rsquo;t sound right, but you&rsquo;re not sure.</p>
+      </div>
+      <p class="yt-question">What&rsquo;s the honest answer?</p>
+      <div class="yt-answers" data-sc="2">
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">A</span> Yes &mdash; two hours is a hard legal cap for everyone under 18</button>
+        <button class="yt-answer" data-correct="true"><span class="yt-letter" aria-hidden="true">B</span> No &mdash; there&rsquo;s no hard hour cap for ages 5&ndash;17 in Canada; the &ldquo;2 hours&rdquo; is a recreational guideline, and the better guide is quality and how you feel</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">C</span> There are no guidelines at all, so time doesn&rsquo;t matter</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">D</span> The rule is three hours, not two</button>
+      </div>
+      <div class="yt-debrief" id="db-2">
+        <p class="yt-debrief-label">What&rsquo;s actually going on</p>
+        <p>The &ldquo;2 hours&rdquo; number comes from the Canadian 24-Hour Movement Guidelines, and it&rsquo;s about <em>recreational</em> screen time as one part of a balanced day &mdash; it&rsquo;s a guideline, not a hard cap, and not a law. The Canadian Paediatric Society, which advises doctors here, actually moved <strong>away</strong> from a strict stopwatch for ages 5&ndash;17 toward &ldquo;quality over quantity&rdquo;: two hours making stuff or talking to friends is completely different from two hours doomscrolling.</p>
+        <p>Translation: nobody credible is handing you a magic number. A caring adult setting a limit is fair, but the honest measure isn&rsquo;t the clock &mdash; it&rsquo;s whether the time left you better or worse.</p>
+      </div>
+      <button class="yt-next" id="next-2">Next scenario &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Scenario 4 -->
+  <div class="yt-scenario" id="sc-3" role="region" aria-label="Scenario 4: Running your own check">
+    <div class="yt-scenario-head">
+      <span class="yt-scenario-num" aria-hidden="true">4</span>
+      <span class="yt-scenario-tag">Running your own check</span>
+    </div>
+    <div class="yt-scenario-body">
+      <h2 class="yt-scenario-title">So what do you actually do with this?</h2>
+      <div class="yt-story">
+        <p>You&rsquo;ve clocked it: some apps leave you buzzing and connected, one specific app almost always leaves you flat and comparing yourself to everyone. You don&rsquo;t want to nuke your whole phone.</p>
+      </div>
+      <p class="yt-question">What&rsquo;s the actual move?</p>
+      <div class="yt-answers" data-sc="3">
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">A</span> Delete everything and go live in the woods &mdash; it&rsquo;s all-or-nothing</button>
+        <button class="yt-answer" data-correct="true"><span class="yt-letter" aria-hidden="true">B</span> Use the &ldquo;how do I feel after&rdquo; read to adjust &mdash; scroll the one that drains you less, tweak who you follow, keep the ones that don&rsquo;t</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">C</span> Ignore the feeling and just power through, it&rsquo;s not a big deal</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">D</span> Set a strict minute timer and feel guilty when it goes off</button>
+      </div>
+      <div class="yt-debrief" id="db-3">
+        <p class="yt-debrief-label">What&rsquo;s actually going on</p>
+        <p>Doctors literally build this into their advice. The Canadian Paediatric Society&rsquo;s checklist for healthy screen use has four parts &mdash; Manage, Meaningful, Model, Monitor &mdash; and &ldquo;Monitor&rdquo; is spelled out as watching for <strong>negative emotions after being online</strong>. That&rsquo;s the same signal this whole module is about, straight from the guideline. You can run your own version.</p>
+        <p>It&rsquo;s not quit-or-scroll-forever. It&rsquo;s: notice how each app leaves you, then aim more time at the ones that leave you okay, mute the accounts that don&rsquo;t, and open the drainy one on purpose when you actually want it &mdash; not just because your thumb went there.</p>
+      </div>
+      <button class="yt-next" id="next-3">See how you did &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="yt-results" id="results" role="region" aria-label="Your results">
+    <p class="yt-score" id="score-line"></p>
+    <p class="yt-score-sub">First-try answers. The point was never the score &mdash; it&rsquo;s that you can now read the feed instead of the feed reading you.</p>
+  </div>
+
+  <div class="yt-takeaway">
+    <h2>The four things worth keeping</h2>
+    <ul>
+      <li>The feed has no bottom on purpose. There&rsquo;s no natural stop, so you make your own.</li>
+      <li>The upsetting stuff rises because anger and fear get reactions &mdash; the outrage loop, not the real world.</li>
+      <li>There&rsquo;s no hard two-hour law for teens in Canada. Quality beats the stopwatch.</li>
+      <li>The honest signal is how you feel after. Even doctors measure it that way.</li>
+    </ul>
+  </div>
+
+  <div class="yt-help">
+    <h2>If the scroll is where the bad feelings live</h2>
+    <ul>
+      <li><strong>Kids Help Phone</strong> &mdash; call <a href="tel:1-800-668-6868">1-800-668-6868</a> or text <strong>CONNECT</strong> to <strong>686868</strong>. Free, 24/7, confidential, anywhere in Canada. A real person.</li>
+      <li>Feeling low or anxious every time you close an app &mdash; and going back anyway &mdash; is a normal thing to feel and a real thing to tell someone about. That&rsquo;s not weakness; that&rsquo;s the design working on you.</li>
+    </ul>
+  </div>
+
+  <div class="yt-related yt-related-cards">
+    <h2>Keep going</h2>
+    <ul class="yt-grid">
+      <li class="yt-card">
+        <span class="yt-card-tag">The attention economy</span>
+        <h3><a href="module-ads.html">Who&rsquo;s Paying for Your Attention?</a></h3>
+        <p>The same keep-you-here playbook, from the ads and the feed that fund it.</p>
+      </li>
+      <li class="yt-card">
+        <span class="yt-card-tag">AI companions</span>
+        <h3><a href="module-ai-companions.html">The Friend Who Never Logs Off</a></h3>
+        <p>When the thing keeping you online is a chatbot built to never let the conversation end.</p>
+      </li>
+    </ul>
+  </div>
+
+  <nav class="yt-footnav" aria-label="Module navigation">
+    <a href="index.html">&larr; All youth modules</a>
+  </nav>
+
+</main>
+
+<footer class="yt-footer">
+  <div class="yt-container">
+    <nav aria-label="Site">
+      <a href="index.html">Youth hub</a>
+      <a href="../index.html">Main site</a>
+      <a href="../privacy.html">Privacy</a>
+    </nav>
+    <p>Digital Confidence Centre &middot; Free for everyone, always &middot; Canada</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    // theme toggle
+    var btn = document.getElementById("theme-btn");
+    function syncTheme() {
+      var dark = document.documentElement.getAttribute("data-theme") === "dark";
+      btn.textContent = dark ? "Light mode" : "Dark mode";
+      btn.setAttribute("aria-pressed", dark ? "true" : "false");
+    }
+    btn.addEventListener("click", function () {
+      var next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("dccv2-theme", next); } catch (e) {}
+      syncTheme();
+    });
+    syncTheme();
+
+    // scenario engine
+    var TOTAL = 4;
+    var current = 0;
+    var firstTryCorrect = 0;
+    var label = document.getElementById("progress-label");
+
+    document.querySelectorAll(".yt-answers").forEach(function (group) {
+      var answered = false;
+      group.querySelectorAll(".yt-answer").forEach(function (a) {
+        a.addEventListener("click", function () {
+          if (answered) return;
+          answered = true;
+          var sc = group.getAttribute("data-sc");
+          var correct = a.getAttribute("data-correct") === "true";
+          if (correct) {
+            a.classList.add("is-correct");
+            firstTryCorrect++;
+          } else {
+            a.classList.add("is-wrong");
+            var right = group.querySelector('[data-correct="true"]');
+            if (right) right.classList.add("show-correct");
+          }
+          group.querySelectorAll(".yt-answer").forEach(function (b) { b.disabled = true; });
+          document.getElementById("db-" + sc).classList.add("visible");
+          document.getElementById("next-" + sc).classList.add("visible");
+        });
+      });
+    });
+
+    for (var i = 0; i < TOTAL; i++) {
+      (function (i) {
+        document.getElementById("next-" + i).addEventListener("click", function () {
+          document.getElementById("sc-" + i).classList.remove("active");
+          document.getElementById("pip-" + i).classList.remove("active");
+          document.getElementById("pip-" + i).classList.add("done");
+          current = i + 1;
+          if (current < TOTAL) {
+            var nextSc = document.getElementById("sc-" + current);
+            nextSc.classList.add("active");
+            document.getElementById("pip-" + current).classList.add("active");
+            label.textContent = "Scenario " + (current + 1) + " of " + TOTAL;
+            nextSc.scrollIntoView({ behavior: "smooth", block: "start" });
+            var h = nextSc.querySelector(".yt-scenario-title");
+            if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); }
+          } else {
+            label.textContent = "Done";
+            var res = document.getElementById("results");
+            document.getElementById("score-line").textContent = firstTryCorrect + " of " + TOTAL + " on the first try";
+            res.classList.add("visible");
+            res.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      })(i);
+    }
+  })();
+</script>
+
+</body>
+</html>
