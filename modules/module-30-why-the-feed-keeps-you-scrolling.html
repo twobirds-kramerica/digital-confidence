@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Theme + text size before first paint (no flash). Local only, no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Why the Feed Keeps You Scrolling - Digital Confidence Centre</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-30-why-the-feed-keeps-you-scrolling.html">
+  <meta name="description" content="Why social media and news feeds are built to hold your attention: infinite scroll, the slot-machine effect, and why upsetting posts rise to the top. Plus one simple habit, noticing how you feel after, not how long you were on. Free, plain-language lesson for Canadian seniors. No account needed.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- SHARED SHELL: header (generated from module-v2.html.tpl; identical on every page). -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../index.html">Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection</span>
+    <a class="lang-link" href="../fr/index.html" lang="fr-CA" hreflang="fr-CA">Français</a>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Read this page aloud">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Read aloud</button>
+        <div class="rate-group" role="group" aria-label="Reading speed">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Slower</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normal</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Faster</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="../index.html">All lessons</a>
+    <a href="../index.html#protect-money">Protect your money</a>
+    <a href="../index.html#everyday-confidence" aria-current="page">Everyday confidence</a>
+    <a href="../index.html#staying-connected">Staying connected</a>
+    <a href="../index.html#getting-things-done">Getting things done</a>
+    <a href="../for-families.html">For families</a>
+    <a href="../support-directory.html">Get help</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="../index.html">All lessons</a></li>
+      <li><a href="../index.html#everyday-confidence">Everyday confidence</a></li>
+      <li><span aria-current="page">Why the Feed Keeps You Scrolling</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <a class="lesson-back" href="../index.html">← Back to all lessons</a>
+
+    <p class="lesson-category"><span aria-hidden="true">🧭</span> Digital wellbeing</p>
+    <h1>Why the Feed Keeps You Scrolling</h1>
+    <p class="lesson-time"><span aria-hidden="true">⏱</span> About 25 minutes, at your own pace</p>
+
+    <!-- Brenda: the first thing a nervous reader sees removes a fear. -->
+    <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
+
+    <p class="lead">Feeds are designed by very clever people to keep you scrolling. Knowing how they do it, and learning to notice how you feel after, puts you back in charge of your own time and mood.</p>
+
+    <h2>Brenda's story</h2>
+    <p>Brenda, 72, a retired teacher in southwestern Ontario, opened Facebook after lunch to see one photo her daughter had posted. Forty-five minutes later she was still scrolling, and she did not quite know how she had got there. One post about a local road closure had led to an angry argument in the comments, then a news clip that made her worried, then another, then another.</p>
+    <p>When she finally put the tablet down, she felt tired and a little anxious, though nothing bad had actually happened to her. She had not been careless. She had not done anything wrong. She had simply used an app that was built, very deliberately, to keep her there as long as possible.</p>
+    <p>Brenda did not need to delete Facebook. She loved seeing her grandchildren. What she needed was to understand how the feed works, and one small habit to stay in charge of it. That is exactly what this lesson gives you.</p>
+
+    <div class="coach-block">
+      <span class="coach-mark" aria-hidden="true">💬</span>
+      <div class="coach-body">
+        <span class="coach-label">From your coach</span>
+        <p>Let me say this clearly, because it matters: if a feed has ever swallowed an hour of your afternoon, that is not a lack of willpower on your part. These apps are designed by teams of engineers whose whole job is to hold your attention. You are not weak, and you are not behind. Once you can see how the feed works, it loses most of its grip. Nothing on this page can harm your device, and there is nothing here you can get wrong.</p>
+      </div>
+    </div>
+
+    <h2>What a feed is, and why it never ends</h2>
+
+    <p>A <strong>feed</strong> is the scrolling list of posts you see when you open Facebook, Instagram, a news app, or YouTube. You flick your finger upward and new posts appear, one after another, with no bottom to the page. This is called <strong>infinite scroll</strong>, and it is a deliberate design choice.</p>
+
+    <p>A printed newspaper ends. You reach the back page, you fold it up, and you are done. A feed is designed so that ending never comes. There is always one more post loading just below the one you are reading, so there is never a natural moment to stop.</p>
+
+    <div class="tip-block">
+      <span class="block-label">Why there is no "bottom of the page"</span>
+      <p>Older websites showed you a page of results and then a button that said "Next page." That button was a natural pause: a moment where many people simply stopped. Feeds removed the button on purpose. When the next post loads automatically, your mind never gets the little nudge that says "you have finished." The scrolling continues because nothing tells it to stop.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You are not imagining it. The reason the feed feels endless is that it was built to be endless. Knowing this is the first step to deciding for yourself when you are done.</p>
+    </div>
+
+    <h2>The slot-machine feeling</h2>
+
+    <p>Have you noticed that scrolling can feel a bit like waiting to see what comes next? Most posts are ordinary. Then, every so often, something delightful appears: a photo of your grandchild, a funny video, a message from an old friend. You never know when that good moment is coming, so you keep flicking to find out.</p>
+
+    <p>This is the same design that makes slot machines in a casino so hard to walk away from. The reward is unpredictable. Because you cannot guess when the next good post will appear, your mind keeps you reaching for it, one more scroll, then one more. Designers call this a <strong>variable reward</strong>, and it is one of the most powerful tools they have.</p>
+
+    <div class="warning-block">
+      <span class="block-label">This is not an accident</span>
+      <p>The unpredictable timing is not a happy coincidence. It is engineered. The app mixes the occasional wonderful post among many ordinary ones precisely because that keeps you scrolling longer than a steady, predictable stream ever would. Understanding this takes away a lot of its pull.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>That "just one more" feeling is the design working exactly as intended. It says nothing about you. Once you can name it, you can decide whether to keep going or set the device down.</p>
+    </div>
+
+    <h2>Why the upsetting posts rise to the top</h2>
+
+    <p>You may have noticed that feeds often show you things that make you angry, worried, or outraged: a furious argument, an alarming headline, a story designed to frighten. This is not because the world is only bad news. It is because posts that stir up strong feelings get more reactions, and the app shows you more of whatever gets reactions.</p>
+
+    <p>When a post makes people angry, they comment, they argue, they share it. The app watches all of that activity and decides the post is "engaging," so it shows it to even more people. Calm, kind, ordinary posts get quietly pushed down. Over time, the feed fills up with the things most likely to upset you, because upset keeps you scrolling and commenting.</p>
+
+    <div class="tip-block">
+      <span class="block-label">The word for it: the outrage loop</span>
+      <p>Experts call this the <strong>outrage loop</strong> or a "doom feed." Anger and fear travel faster online than calm and kindness, so the app learns to serve you more of what alarms you. It is not trying to inform you or to make you feel good. It is trying to keep you there, and strong emotion is the tool it uses.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">You are allowed to scroll past</span>
+      <p>You never have to read an upsetting post, watch an alarming video, or join an angry argument in the comments. Scrolling straight past something, or closing the app entirely, is always a reasonable choice. You are not being rude, and you are not missing anything you are obliged to see.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>If your feed leaves you feeling angry or frightened more often than not, that is the outrage loop at work, not a true picture of the world. You are allowed to look away.</p>
+    </div>
+
+    <h2>The one question that changes everything</h2>
+
+    <p>Here is the most useful idea in this whole lesson. Most advice about screens tells you to watch the clock: to count your minutes and feel guilty about the number. That rarely helps, and it often just adds shame. There is a better question.</p>
+
+    <p>Instead of asking <strong>"How long was I on?"</strong> ask <strong>"How do I feel now that I have stopped?"</strong> The time you spent matters far less than how the feed leaves you. Twenty minutes that leave you smiling at grandchildren's photos is time well spent. Five minutes that leave you anxious and cross is the feed taking more than it gave.</p>
+
+    <div class="the-move">
+      <span class="move-label">The move is</span>
+      <p>Each time you put the device down, pause and notice how you feel. Lighter or heavier? Calmer or more wound up? Connected or lonelier? Let that feeling, not the number of minutes, tell you whether the feed is serving you.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>How you feel afterward is honest information. It is the clearest signal you have about whether a feed is good for you, and it is far kinder and more useful than counting minutes.</p>
+    </div>
+
+    <h2>A gentle after-scroll check-in</h2>
+
+    <p>This is not a test and there are no right answers. It is simply a moment of noticing. Try it the next few times you finish with a feed.</p>
+
+    <div class="walkthrough">
+      <h4>Your after-scroll check-in</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Pause before you switch to something else.</strong> When you feel yourself ready to stop, take one slow breath before you set the device down.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p><strong>Ask yourself one question:</strong> "Do I feel better or worse than when I started?" There is no wrong answer. You are only noticing.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p><strong>Name the feeling in a single word.</strong> Calm, happy, tired, anxious, cross, connected, lonely. Just naming it puts you back in charge.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p><strong>Decide what that tells you.</strong> If you usually feel worse, that is worth knowing. It does not mean quitting; it might mean scrolling a little less, or following different accounts. That is the next section.</p></span>
+      </div>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>You do not need to change anything today. Simply noticing how the feed leaves you, a few times, will start to shift how you use it, gently and on your own terms.</p>
+    </div>
+
+    <h2>Small settings that hand you back control</h2>
+
+    <p>You do not have to delete anything or give up the parts you enjoy. A few small changes make the feed calmer and easier to put down. Every one of these is reversible, and none of them cost anything.</p>
+
+    <div class="walkthrough">
+      <h4>Four calm settings to try</h4>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <span class="step-text"><p><strong>Turn off autoplay for videos.</strong> Autoplay starts the next video automatically, which pulls you along. In the app's Settings, look for "Media" or "Autoplay" and switch it off. Now videos play only when you choose to tap them.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <span class="step-text"><p><strong>Unfollow, mute, or hide what upsets you.</strong> On any post that leaves you angry, tap the three dots (•••) in the corner and choose "Hide," "Snooze," or "Unfollow." The person is not told, and your feed slowly becomes calmer.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <span class="step-text"><p><strong>Follow accounts that make you feel good.</strong> Seek out gardening groups, local history pages, your grandchildren's updates, and gentle hobby accounts. The more you tap and linger on these, the more of them the app will show you.</p></span>
+      </div>
+      <div class="wt-step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <span class="step-text"><p><strong>Set a soft time signal.</strong> Before you open a feed, set a simple kitchen timer or your tablet's timer for fifteen minutes. It is not a rule, just a friendly tap on the shoulder that says "you meant to do something else now."</p></span>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <span class="block-label">A calmer way to catch the news</span>
+      <p>If it is the news that winds you up, consider reading it once a day from a trusted Canadian source, CBC, CTV, or your local paper, rather than letting alarming headlines find you all day long in a feed. You will still be well informed, and far less rattled.</p>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>None of these settings are permanent, and you can change them back any time. You are not breaking anything. You are simply shaping the feed to suit you, instead of the other way around.</p>
+    </div>
+
+    <h2>Keeping what you love about it</h2>
+
+    <p>This lesson is not asking you to give up social media. For many people it is the easiest way to see grandchildren's milestones, stay in touch with old friends, and feel less alone. The goal is simply to use it on your own terms.</p>
+
+    <ul>
+      <li><strong>Use it on purpose.</strong> Open the app to do a specific thing, see a photo, message a friend, check a group, then close it when that thing is done.</li>
+      <li><strong>Let the feeling be your guide.</strong> If you finish feeling connected and happy, wonderful. If you finish feeling drained, that is a signal to change what you follow or how long you stay.</li>
+      <li><strong>Remember you are the customer of your own time.</strong> The app is free to you because your attention is what it sells. Spending that attention where it makes you feel good is entirely your right.</li>
+    </ul>
+
+    <div class="helper-note">
+      <span class="block-label">Confidence check</span>
+      <p>Watching quietly, dipping in briefly, or stepping away for a while are all perfectly valid ways to use a feed. There is no correct amount. There is only what leaves you feeling well.</p>
+    </div>
+
+    <h2>Quick answers</h2>
+
+    <ul>
+      <li><strong>Is it bad for me to use Facebook or Instagram?</strong> Not at all. Used on your own terms, social media helps many seniors stay connected and feel less isolated. The trouble comes only when the feed pulls you along longer than you wanted and leaves you feeling worse. This lesson is about noticing that difference, not about quitting.</li>
+      <li><strong>How much time on a feed is too much?</strong> There is no magic number, and counting minutes is not the most useful measure. A better guide is how you feel afterward. If you regularly finish feeling anxious, cross, or drained, that matters far more than whether it was ten minutes or forty.</li>
+      <li><strong>Why does my feed show me so much upsetting news?</strong> Because posts that stir strong feelings get more reactions, and the app shows you more of whatever gets reactions. It is not a true picture of the world; it is whatever keeps people scrolling. You are always free to scroll past it or follow calmer accounts instead.</li>
+      <li><strong>Will the app tell people if I unfollow or hide them?</strong> No. Unfollowing, muting, snoozing, or hiding a post is completely private. The other person is never notified. You can quietly shape your feed without any awkwardness.</li>
+    </ul>
+
+    <h2>Quick check: test your knowledge</h2>
+    <p>Tap the answer you think is best. There is no score kept and nothing to sign in to.</p>
+    <div class="lesson-quiz">
+      <div class="quiz-q" data-correct="b">
+        <h3>1. Why does a feed never seem to end?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">You have a slow internet connection</button>
+          <button class="quiz-opt" type="button" data-answer="b">It uses infinite scroll, which loads new posts automatically so there is no natural place to stop</button>
+          <button class="quiz-opt" type="button" data-answer="c">You have followed too many people</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="That is right. Infinite scroll loads the next post automatically and removes the old &quot;Next page&quot; button, so there is never a built-in moment to stop. It is a deliberate design, not something you have done."
+          data-wrong="The reason is infinite scroll: the feed loads new posts automatically so there is no natural place to stop. It is a deliberate design choice, not anything you have done wrong."></div>
+      </div>
+      <div class="quiz-q" data-correct="a">
+        <h3>2. Scrolling can feel a bit like a slot machine. Why is that?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Because the good posts appear at unpredictable moments, so you keep scrolling to find the next one</button>
+          <button class="quiz-opt" type="button" data-answer="b">Because social media costs money like a casino</button>
+          <button class="quiz-opt" type="button" data-answer="c">Because the app is broken</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactly. The occasional delightful post appears at unpredictable times, so your mind keeps reaching for the next one. Designers call this a variable reward, and it is engineered on purpose."
+          data-wrong="It is because the good posts appear at unpredictable moments, a design called a variable reward. Not knowing when the next good post is coming keeps you scrolling, just like a slot machine."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>3. Why do so many angry or alarming posts appear near the top of a feed?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">The world is only bad news</button>
+          <button class="quiz-opt" type="button" data-answer="b">Posts that stir strong feelings get more reactions, so the app shows more of them</button>
+          <button class="quiz-opt" type="button" data-answer="c">You accidentally asked for them</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Well done. Posts that make people angry or afraid get more comments and shares, so the app decides they are &quot;engaging&quot; and shows them to more people. This is the outrage loop, not a true picture of the world."
+          data-wrong="It is because posts that stir strong feelings get more reactions, so the app shows more of them. This is called the outrage loop. It is not a true picture of the world, and you are always free to scroll past."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>4. What is the most useful question to ask after using a feed?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">How many minutes was I on?</button>
+          <button class="quiz-opt" type="button" data-answer="b">How do I feel now that I have stopped?</button>
+          <button class="quiz-opt" type="button" data-answer="c">How many likes did I get?</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="That is the key idea of the whole lesson. How you feel afterward, lighter or heavier, calmer or more wound up, tells you far more than the number of minutes ever could."
+          data-wrong="The most useful question is &quot;How do I feel now that I have stopped?&quot; How the feed leaves you, calmer or more wound up, matters far more than counting minutes."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>5. You finish scrolling and feel anxious and cross, though nothing bad has happened. What does that tell you?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">You did something wrong and should feel guilty</button>
+          <button class="quiz-opt" type="button" data-answer="b">The feed took more than it gave this time, which is a signal to follow calmer accounts or scroll a little less</button>
+          <button class="quiz-opt" type="button" data-answer="c">You must delete the app immediately</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Just right. Feeling worse afterward is honest information: the feed took more than it gave. That is a gentle signal to change what you follow or how long you stay, not a reason for guilt or for quitting entirely."
+          data-wrong="It tells you the feed took more than it gave this time. That feeling is a signal to follow calmer accounts or scroll a little less, not a reason to feel guilty or to delete anything."></div>
+      </div>
+    </div>
+
+    <h2>Your progress</h2>
+    <p>Tick each item as you feel confident with it. This is saved on this device only, with no account needed.</p>
+    <ul class="checklist" data-checklist="module-30-why-the-feed-keeps-you-scrolling">
+      <li class="check-item"><input type="checkbox" id="module-30-why-the-feed-keeps-you-scrolling-1"><label for="module-30-why-the-feed-keeps-you-scrolling-1">I understand that infinite scroll is designed so the feed never naturally ends</label></li>
+      <li class="check-item"><input type="checkbox" id="module-30-why-the-feed-keeps-you-scrolling-2"><label for="module-30-why-the-feed-keeps-you-scrolling-2">I can recognise the slot-machine feeling of variable rewards</label></li>
+      <li class="check-item"><input type="checkbox" id="module-30-why-the-feed-keeps-you-scrolling-3"><label for="module-30-why-the-feed-keeps-you-scrolling-3">I know why upsetting posts rise to the top, and that I can scroll past them</label></li>
+      <li class="check-item"><input type="checkbox" id="module-30-why-the-feed-keeps-you-scrolling-4"><label for="module-30-why-the-feed-keeps-you-scrolling-4">I ask how I feel after using a feed, rather than only counting minutes</label></li>
+      <li class="check-item"><input type="checkbox" id="module-30-why-the-feed-keeps-you-scrolling-5"><label for="module-30-why-the-feed-keeps-you-scrolling-5">I know a few calm settings I can try: autoplay off, hide or unfollow, follow accounts I enjoy, a soft timer</label></li>
+      <li class="check-item"><input type="checkbox" id="module-30-why-the-feed-keeps-you-scrolling-6"><label for="module-30-why-the-feed-keeps-you-scrolling-6">I can enjoy the parts of social media I love while staying in charge of my own time</label></li>
+    </ul>
+
+    <!-- Denise: forward the lesson in isolation. Copy-link only, no share API. -->
+    <section class="send-lesson" aria-labelledby="send-h">
+      <h2 id="send-h">Send this lesson to someone</h2>
+      <p>Helping a parent or friend? This page works on its own, with no account and nothing to install. Copy the link and text it to them.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="button" data-copy-link>Copy the link to this lesson</button>
+        <span class="send-done" data-copy-done hidden>Copied. Paste it into a text or email.</span>
+      </div>
+      <input class="visually-hidden" type="text" data-copy-field hidden readonly aria-label="Link to this lesson">
+    </section>
+
+    <div class="success-state">
+      <p><strong>Well done.</strong> You now know why feeds never end, why they can feel like a slot machine, and why upsetting posts rise to the top. Most importantly, you have the one habit that puts you back in charge: notice how you feel after, not how long you were on. That single question, asked gently, keeps your time and your mood your own.</p>
+    </div>
+
+    <nav class="related-modules" aria-label="Continue learning">
+      <h2>Where to next</h2>
+      <div class="related-grid">
+        <a class="related-card" href="module-13.html">
+          <span class="related-num">Module 13</span>
+          <span class="related-name">Understanding Social Media</span>
+          <span class="related-desc">Use Facebook and Instagram safely: privacy settings, spotting fake profiles, and sharing photos without oversharing.</span>
+        </a>
+        <a class="related-card" href="module-9.html">
+          <span class="related-num">Module 9</span>
+          <span class="related-name">Understanding AI</span>
+          <span class="related-desc">The feed decides what you see using the same kind of technology. A plain-language look at what AI actually is.</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<!-- SHARED SHELL: footer (identical on every page). -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, an Ontario company, to help Canadian seniors stay safe and connected online. No account, no tracking, no sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">For families</a></li>
+      <li><a href="../about.html">About us</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="../glossary.html">Glossary</a></li>
+      <li><a href="../privacy.html">Privacy</a></li>
+      <li><a href="../terms.html">Terms</a></li>
+      <li><a href="../disclaimer.html">Disclaimer</a></li>
+      <li><a href="../support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- SHARED SHELL: layered consent bar (identical on every page). -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="../privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/module.js"></script>
+</body>
+</html>
