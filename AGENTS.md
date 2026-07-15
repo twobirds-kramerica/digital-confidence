@@ -214,6 +214,16 @@ yet been migrated.
 - [x] `module-visual-ai.html` — Using Your Camera to Learn Anything
 - [x] `scam-simulator.html` — Scam Simulator (interactive)
 
+**New senior module (2026-07-15):** `module-30-why-the-feed-keeps-you-scrolling.html`
+— "Why the Feed Keeps You Scrolling" (Digital wellbeing / Everyday confidence
+group). Born token-native on the v2 shell via `build/content/modules-v2/
+module-30-why-the-feed-keeps-you-scrolling.json` → `build/build.py
+--brand=trust-blue --output=modules`. Covers infinite scroll, variable-reward
+(slot-machine) design, and the outrage/doom-feed loop; core skill is noticing
+how you feel *after* a feed, not how long you were on. Wired into the
+`everyday-confidence` cards in `index.html` + `sitemap.xml`. QA: axe-core 0
+critical/serious in light + dark, quiz + checklist verified, no 375px reflow.
+
 **Still pending (not in batch 3 scope):** `module-11`–`module-20` were not
 present on `main` when batch 3 ran (still off-token despite earlier batch
 notes — flagged for a follow-up batch). The youth-track modules (FOUR:
