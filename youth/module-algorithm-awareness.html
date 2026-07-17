@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("dccv2-theme"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <title>Who Picked This For You? - Algorithms - DCC Youth</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/youth/module-algorithm-awareness.html">
+  <meta name="description" content="Your For You page isn't random and it isn't magic. What signals actually feed a recommendation algorithm, why feeds narrow into rabbit holes, and the reset tools the apps themselves built. For teens, made in Canada.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="youth.css">
+</head>
+<body class="yt-body">
+
+<a class="yt-skip" href="#main">Skip to main content</a>
+
+<header class="yt-header">
+  <a class="yt-brand" href="index.html">Digital Confidence <span class="yt-brand-tag">Youth</span></a>
+  <button class="yt-theme-btn" type="button" id="theme-btn" aria-pressed="false">Dark mode</button>
+</header>
+
+<section class="yt-hero" aria-label="Module introduction">
+  <div class="yt-container">
+    <span class="yt-eyebrow">Algorithms &middot; About 12 minutes</span>
+    <h1>Who Picked This For You?</h1>
+    <p>Every video on your For You page was put there by a recommendation system making a prediction about you. It&rsquo;s not random, it&rsquo;s not magic, and it&rsquo;s not reading your mind &mdash; it&rsquo;s reading your behaviour. This module is about seeing the machine: what it watches, why feeds narrow, and the steering wheel most people never touch. Nobody&rsquo;s telling you to quit anything.</p>
+  </div>
+</section>
+
+<main id="main" class="yt-container">
+
+  <ul class="yt-straight" aria-label="How this works">
+    <li>Four situations</li>
+    <li>You choose, then we debrief</li>
+    <li>Zero &ldquo;delete the app&rdquo; lectures</li>
+  </ul>
+
+  <div class="yt-progress" aria-hidden="true">
+    <span class="yt-pip active" id="pip-0"></span>
+    <span class="yt-pip" id="pip-1"></span>
+    <span class="yt-pip" id="pip-2"></span>
+    <span class="yt-pip" id="pip-3"></span>
+    <span class="yt-progress-label" id="progress-label">Scenario 1 of 4</span>
+  </div>
+
+  <!-- Scenario 1 -->
+  <div class="yt-scenario active" id="sc-0" role="region" aria-label="Scenario 1: The signals">
+    <div class="yt-scenario-head">
+      <span class="yt-scenario-num" aria-hidden="true">1</span>
+      <span class="yt-scenario-tag">The signals</span>
+    </div>
+    <div class="yt-scenario-body">
+      <h2 class="yt-scenario-title">&ldquo;But I never liked anything like that&rdquo;</h2>
+      <div class="yt-story">
+        <p>A friend&rsquo;s feed has filled up with videos about a breakup drama between two creators. &ldquo;I never liked a single one of those,&rdquo; they say. &ldquo;I don&rsquo;t even follow them. Why does it keep showing me this?&rdquo; True on both counts &mdash; they never tapped like once. They did, however, watch about thirty of the videos all the way to the end.</p>
+      </div>
+      <p class="yt-question">Which of their actions told the algorithm the most?</p>
+      <div class="yt-answers" data-sc="0">
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">A</span> None &mdash; if you don&rsquo;t like or follow, the app has nothing to go on</button>
+        <button class="yt-answer" data-correct="true"><span class="yt-letter" aria-hidden="true">B</span> Watching to the end, thirty times &mdash; finishing a video is one of the strongest signals there is</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">C</span> Their phone microphone picked up a conversation about the drama</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">D</span> The creators paid to appear in their feed specifically</button>
+      </div>
+      <div class="yt-debrief" id="db-0">
+        <p class="yt-debrief-label">What&rsquo;s actually going on</p>
+        <p>Likes are the signal you know you&rsquo;re sending. Watch time is the one you don&rsquo;t. TikTok&rsquo;s own published explanation of the For You feed says a strong indicator of interest &mdash; like finishing a longer video from beginning to end &mdash; gets more weight than weaker signals, alongside rewatches, shares, comments, and follows. YouTube&rsquo;s engineering team says the same about its recommendations: clicks, watch time, shares, likes, and survey answers all feed a system that processes tens of billions of signals. The feed isn&rsquo;t listening through your microphone; it doesn&rsquo;t need to. Every second you linger is already a vote.</p>
+        <p>That&rsquo;s the core skill of this whole module: <strong>the algorithm can&rsquo;t tell the difference between &ldquo;I love this&rdquo; and &ldquo;I can&rsquo;t look away.&rdquo;</strong> Both look identical from the data side. Hate-watching, stress-watching, and &ldquo;one more to see how dumb this gets&rdquo; all count as demand.</p>
+      </div>
+      <button class="yt-next" id="next-0">Next scenario &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Scenario 2 -->
+  <div class="yt-scenario" id="sc-1" role="region" aria-label="Scenario 2: The rabbit hole">
+    <div class="yt-scenario-head">
+      <span class="yt-scenario-num" aria-hidden="true">2</span>
+      <span class="yt-scenario-tag">The rabbit hole</span>
+    </div>
+    <div class="yt-scenario-body">
+      <h2 class="yt-scenario-title">From one gym video to somewhere darker</h2>
+      <div class="yt-story">
+        <p>Someone watches a few workout videos before tryouts. A week later their feed has drifted: less &ldquo;how to train,&rdquo; more &ldquo;what&rsquo;s wrong with your body.&rdquo; Extreme diets. Before-and-afters that feel bad to look at &mdash; but hard to skip. They didn&rsquo;t search for any of this.</p>
+      </div>
+      <p class="yt-question">Why did the feed go there?</p>
+      <div class="yt-answers" data-sc="1">
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">A</span> The app decided they have a problem and is trying to warn them</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">B</span> Random chance &mdash; feeds drift in every direction equally</button>
+        <button class="yt-answer" data-correct="true"><span class="yt-letter" aria-hidden="true">C</span> The system amplifies whatever holds attention &mdash; and intense, hard-to-skip content holds attention, so each linger narrows the next round</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">D</span> Extreme creators hack the algorithm so it can&rsquo;t be about their watching</button>
+      </div>
+      <div class="yt-debrief" id="db-1">
+        <p class="yt-debrief-label">What&rsquo;s actually going on</p>
+        <p>This is the &ldquo;rabbit hole&rdquo; effect, and it&rsquo;s not a conspiracy theory &mdash; TikTok itself acknowledged it publicly in December 2021, naming &ldquo;extreme dieting or fitness, sadness, or breakups&rdquo; as exactly the kind of content where too much of the same thing can be harmful, and saying it was testing ways to break up repetitive streams. The mechanism is the one from scenario 1 running in a loop: intense content is hard to skip, hard-to-skip reads as interest, interest gets you more of it, and each round is a little more concentrated than the last. Nobody at the company chose your rabbit hole. The optimization did.</p>
+        <p>The tell that you&rsquo;re in one isn&rsquo;t the topic &mdash; it&rsquo;s the narrowing. A healthy feed is varied; a rabbit hole is the same emotional note over and over. Once you can name that, you&rsquo;ve caught it early. What to actually do about it is scenario 4.</p>
+      </div>
+      <button class="yt-next" id="next-1">Next scenario &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Scenario 3 -->
+  <div class="yt-scenario" id="sc-2" role="region" aria-label="Scenario 3: The mirror myth">
+    <div class="yt-scenario-head">
+      <span class="yt-scenario-num" aria-hidden="true">3</span>
+      <span class="yt-scenario-tag">The mirror myth</span>
+    </div>
+    <div class="yt-scenario-body">
+      <h2 class="yt-scenario-title">&ldquo;The algorithm just knows me&rdquo;</h2>
+      <div class="yt-story">
+        <p>Two friends compare feeds at lunch. Completely different worlds &mdash; different sounds, different drama, different everything. One shrugs: &ldquo;It just knows me. My feed is basically my personality.&rdquo;</p>
+      </div>
+      <p class="yt-question">What&rsquo;s wrong with &ldquo;my feed is my personality&rdquo;?</p>
+      <div class="yt-answers" data-sc="2">
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">A</span> Nothing &mdash; the feed is built from your behaviour, so it&rsquo;s an accurate mirror</button>
+        <button class="yt-answer" data-correct="true"><span class="yt-letter" aria-hidden="true">B</span> The feed reflects what keeps you watching, not what you value &mdash; those can be very different things</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">C</span> Feeds are mostly the same for everyone; the differences are cosmetic</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">D</span> The algorithm builds feeds from your school and postal code, not your behaviour</button>
+      </div>
+      <div class="yt-debrief" id="db-2">
+        <p class="yt-debrief-label">What&rsquo;s actually going on</p>
+        <p>The system doesn&rsquo;t know you. It knows a version of you assembled from watch time &mdash; and as scenario 1 showed, watch time can&rsquo;t tell fascination from car-crash-can&rsquo;t-look-away. If rage-bait holds you for eight seconds longer than the stuff you actually care about, the machine&rsquo;s model of &ldquo;you&rdquo; is eight seconds more rage-bait. MediaSmarts &mdash; Canada&rsquo;s digital-literacy organization, whose #ForYou card game for ages 13&ndash;18 is built on exactly this &mdash; frames it as a business question, not a mind-reading one: algorithms exist because your attention and your personal information are worth money to somebody.</p>
+        <p>One honest limit, since this page doesn&rsquo;t do guesses: platforms publish the <em>kinds</em> of signals they use, but the full recipe &mdash; the exact weights, the exact model &mdash; is a trade secret at every major app. Anyone online claiming to know precisely &ldquo;how the algorithm works&rdquo; is selling something. What&rsquo;s on this page is what the companies have said themselves.</p>
+      </div>
+      <button class="yt-next" id="next-2">Next scenario &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Scenario 4 -->
+  <div class="yt-scenario" id="sc-3" role="region" aria-label="Scenario 4: Taking the wheel">
+    <div class="yt-scenario-head">
+      <span class="yt-scenario-num" aria-hidden="true">4</span>
+      <span class="yt-scenario-tag">Taking the wheel</span>
+    </div>
+    <div class="yt-scenario-body">
+      <h2 class="yt-scenario-title">Resetting a feed that&rsquo;s gone somewhere bad</h2>
+      <div class="yt-story">
+        <p>The friend from scenario 2 wants their old feed back. &ldquo;It&rsquo;s ruined,&rdquo; they say. &ldquo;Once it decides what you are, that&rsquo;s it. The only fix is deleting the app.&rdquo;</p>
+      </div>
+      <p class="yt-question">Are they right?</p>
+      <div class="yt-answers" data-sc="3">
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">A</span> Yes &mdash; feeds only move one way; delete and start over is the only option</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">B</span> Mostly &mdash; you can complain to the app, but users have no real controls</button>
+        <button class="yt-answer" data-correct="true"><span class="yt-letter" aria-hidden="true">C</span> No &mdash; the same signals that trained it can retrain it, and the big apps ship actual reset buttons</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">D</span> No, but only premium subscribers get feed controls</button>
+      </div>
+      <div class="yt-debrief" id="db-3">
+        <p class="yt-debrief-label">What&rsquo;s actually going on</p>
+        <p>The feed is trained by behaviour, which means behaviour can retrain it &mdash; and the platforms have shipped real controls, because regulators and parents kept asking. The documented toolkit: <strong>&ldquo;Not interested&rdquo;</strong> (long-press a video) tells TikTok to back off that kind of content; TikTok added a full <strong>&ldquo;Refresh your For You feed&rdquo;</strong> button in 2023 that starts your recommendations over like a new account; Instagram later added a <strong>&ldquo;reset suggested content&rdquo;</strong> option of its own; and on YouTube you can <strong>pause or clear your watch history</strong>, which cuts off the main fuel line. None of these are hidden features &mdash; they&rsquo;re in each app&rsquo;s own settings and help pages.</p>
+        <p>The everyday version needs no buttons at all: spend attention like it&rsquo;s money, because to the algorithm it is. Skip fast on what you don&rsquo;t want more of &mdash; even skippable-but-fascinating garbage. Search, follow, and finish the things you <em>do</em> want more of. It feels slow, but it&rsquo;s the same voting system that built the rabbit hole, pointed the other way. You&rsquo;re not stuck with the version of you the machine guessed.</p>
+      </div>
+      <button class="yt-next" id="next-3">See how you did &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="yt-results" id="results" role="region" aria-label="Your results">
+    <p class="yt-score" id="score-line"></p>
+    <p class="yt-score-sub">First-try answers. The score was never the point &mdash; the point is that the feed stopped being magic. It&rsquo;s a machine with inputs, and you&rsquo;re holding most of them.</p>
+  </div>
+
+  <div class="yt-takeaway">
+    <h2>The four things worth keeping</h2>
+    <ul>
+      <li>Watch time is the loudest signal you send. Every second of lingering is a vote, whether you liked the video or not.</li>
+      <li>The algorithm can&rsquo;t tell &ldquo;I love this&rdquo; from &ldquo;I can&rsquo;t look away.&rdquo; That confusion is where rabbit holes come from.</li>
+      <li>Your feed reflects what holds you, not what you value. It&rsquo;s a model of you, not a mirror.</li>
+      <li>Feeds are retrainable. &ldquo;Not interested,&rdquo; feed refresh, watch-history controls &mdash; and spending attention only on what you want more of.</li>
+    </ul>
+  </div>
+
+  <div class="yt-help">
+    <h2>If the feed keeps serving you heavy stuff</h2>
+    <ul>
+      <li>A feed that keeps circling body image, sadness, or self-harm content isn&rsquo;t a personal failing &mdash; it&rsquo;s the scenario-2 loop doing what it does. Use the reset tools above, and don&rsquo;t carry the feelings part alone.</li>
+      <li><strong>Kids Help Phone</strong> &mdash; call <a href="tel:1-800-668-6868">1-800-668-6868</a> or text <strong>CONNECT</strong> to <strong>686868</strong>. Free, 24/7, confidential, anywhere in Canada. A real person.</li>
+    </ul>
+  </div>
+
+  <div class="yt-related yt-related-cards">
+    <h2>Keep going</h2>
+    <ul class="yt-grid">
+      <li class="yt-card">
+        <span class="yt-card-tag">Doomscrolling</span>
+        <h3><a href="module-how-do-you-feel-after.html">How Do You Feel After?</a></h3>
+        <p>This module was the machine; that one is what the machine does to your mood &mdash; and the one honest signal that beats counting minutes.</p>
+      </li>
+      <li class="yt-card">
+        <span class="yt-card-tag">The attention economy</span>
+        <h3><a href="module-ads.html">Who&rsquo;s Paying for Your Attention?</a></h3>
+        <p>Why the feed is built this way in the first place: if the app is free, your attention is the product being sold.</p>
+      </li>
+    </ul>
+  </div>
+
+  <nav class="yt-footnav" aria-label="Module navigation">
+    <a href="index.html">&larr; All youth modules</a>
+  </nav>
+
+</main>
+
+<footer class="yt-footer">
+  <div class="yt-container">
+    <nav aria-label="Site">
+      <a href="index.html">Youth hub</a>
+      <a href="../index.html">Main site</a>
+      <a href="../privacy.html">Privacy</a>
+    </nav>
+    <p>Digital Confidence Centre &middot; Free for everyone, always &middot; Canada</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    // theme toggle
+    var btn = document.getElementById("theme-btn");
+    function syncTheme() {
+      var dark = document.documentElement.getAttribute("data-theme") === "dark";
+      btn.textContent = dark ? "Light mode" : "Dark mode";
+      btn.setAttribute("aria-pressed", dark ? "true" : "false");
+    }
+    btn.addEventListener("click", function () {
+      var next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("dccv2-theme", next); } catch (e) {}
+      syncTheme();
+    });
+    syncTheme();
+
+    // scenario engine
+    var TOTAL = 4;
+    var current = 0;
+    var firstTryCorrect = 0;
+    var label = document.getElementById("progress-label");
+
+    document.querySelectorAll(".yt-answers").forEach(function (group) {
+      var answered = false;
+      group.querySelectorAll(".yt-answer").forEach(function (a) {
+        a.addEventListener("click", function () {
+          if (answered) return;
+          answered = true;
+          var sc = group.getAttribute("data-sc");
+          var correct = a.getAttribute("data-correct") === "true";
+          if (correct) {
+            a.classList.add("is-correct");
+            firstTryCorrect++;
+          } else {
+            a.classList.add("is-wrong");
+            var right = group.querySelector('[data-correct="true"]');
+            if (right) right.classList.add("show-correct");
+          }
+          group.querySelectorAll(".yt-answer").forEach(function (b) { b.disabled = true; });
+          document.getElementById("db-" + sc).classList.add("visible");
+          document.getElementById("next-" + sc).classList.add("visible");
+        });
+      });
+    });
+
+    for (var i = 0; i < TOTAL; i++) {
+      (function (i) {
+        document.getElementById("next-" + i).addEventListener("click", function () {
+          document.getElementById("sc-" + i).classList.remove("active");
+          document.getElementById("pip-" + i).classList.remove("active");
+          document.getElementById("pip-" + i).classList.add("done");
+          current = i + 1;
+          if (current < TOTAL) {
+            var nextSc = document.getElementById("sc-" + current);
+            nextSc.classList.add("active");
+            document.getElementById("pip-" + current).classList.add("active");
+            label.textContent = "Scenario " + (current + 1) + " of " + TOTAL;
+            nextSc.scrollIntoView({ behavior: "smooth", block: "start" });
+            var h = nextSc.querySelector(".yt-scenario-title");
+            if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); }
+          } else {
+            label.textContent = "Done";
+            var res = document.getElementById("results");
+            document.getElementById("score-line").textContent = firstTryCorrect + " of " + TOTAL + " on the first try";
+            res.classList.add("visible");
+            res.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      })(i);
+    }
+  })();
+</script>
+
+</body>
+</html>
