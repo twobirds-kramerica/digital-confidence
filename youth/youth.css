@@ -319,3 +319,93 @@ html[data-theme="dark"] .yt-next { color: #14161E; }
 
 .yt-section-h { font-size: 1.35rem; margin: 2rem 0 0.4rem; }
 .yt-lead { color: var(--yt-text-soft); margin-top: 0; }
+
+/* ==========================================================================
+   Course pages (certificate tracks) — added 2026-07-16
+   Reuses the module vocabulary (help block, story, takeaway, answers);
+   adds lesson sections, a 25-question check, and a printable certificate.
+   ========================================================================== */
+
+.yt-lesson { margin: 2rem 0; }
+.yt-lesson h2 { font-size: 1.3rem; margin: 0 0 0.6rem; }
+.yt-lesson h3 { font-size: 1.05rem; margin: 1.1rem 0 0.4rem; }
+.yt-lesson p { margin: 0 0 0.8rem; }
+.yt-lesson ul { margin: 0 0 0.8rem; padding-left: 1.2rem; }
+.yt-lesson li { margin-bottom: 0.35rem; }
+.yt-src {
+  font-size: 0.85rem; color: var(--yt-text-soft);
+  border-left: 3px solid var(--yt-border);
+  padding-left: 0.7rem; margin: 0.6rem 0 0;
+}
+.yt-btn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  min-height: 48px;
+  background: var(--yt-indigo); color: #fff;
+  border: none; border-radius: 999px;
+  padding: 0.65rem 1.7rem;
+  font: inherit; font-weight: 700; cursor: pointer;
+  transition: background var(--yt-motion) ease;
+}
+html[data-theme="dark"] .yt-btn { color: #14161E; }
+.yt-btn:hover { background: var(--yt-indigo-deep); }
+.yt-btn-quiet {
+  background: var(--yt-surface); color: var(--yt-text);
+  border: 2px solid var(--yt-border);
+}
+html[data-theme="dark"] .yt-btn-quiet { color: var(--yt-text); }
+.yt-btn-quiet:hover { background: var(--yt-surface-alt); border-color: var(--yt-indigo); }
+
+/* quiz shell */
+.yt-quiz {
+  background: var(--yt-surface);
+  border: 1.5px solid var(--yt-border);
+  border-radius: var(--yt-radius);
+  padding: 1.2rem;
+  margin: 1.6rem 0;
+}
+.yt-quiz .yt-quiz-q { font-weight: 700; margin: 0 0 0.7rem; font-size: 1.05rem; }
+.yt-quiz .yt-progress { margin: 0 0 1rem; }
+
+/* certificate */
+.yt-cert-form { margin: 1.2rem 0 0; }
+.yt-cert-form label { display: block; font-weight: 700; margin-bottom: 0.3rem; }
+.yt-cert-form input {
+  width: 100%; max-width: 24em; box-sizing: border-box;
+  min-height: 48px;
+  border: 2px solid var(--yt-border); border-radius: 10px;
+  background: var(--yt-surface); color: var(--yt-text);
+  font: inherit; padding: 0.5rem 0.8rem; margin-bottom: 0.8rem;
+}
+.yt-cert {
+  display: none;
+  background: var(--yt-surface);
+  border: 3px double var(--yt-indigo);
+  border-radius: var(--yt-radius);
+  padding: 2rem 1.4rem;
+  margin: 1.6rem 0;
+  text-align: center;
+}
+.yt-cert.visible { display: block; animation: yt-rise var(--yt-motion) ease-out; }
+.yt-cert .yt-cert-brand {
+  font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--yt-teal); margin: 0 0 0.8rem;
+}
+.yt-cert h2 { font-size: 1.05rem; font-weight: 600; margin: 0 0 0.3rem; color: var(--yt-text-soft); }
+.yt-cert .yt-cert-name { font-size: 1.7rem; font-weight: 800; margin: 0.2rem 0 0.6rem; }
+.yt-cert .yt-cert-course { font-size: 1.15rem; font-weight: 700; margin: 0 0 0.8rem; }
+.yt-cert .yt-cert-meta { font-size: 0.92rem; color: var(--yt-text-soft); margin: 0; }
+.yt-cert .yt-cert-meta + .yt-cert-meta { margin-top: 0.25rem; }
+
+@media print {
+  body.yt-printing { background: #fff; }
+  body.yt-printing * { visibility: hidden; }
+  body.yt-printing .yt-cert, body.yt-printing .yt-cert * { visibility: visible; }
+  body.yt-printing .yt-cert {
+    display: block !important;
+    position: absolute; left: 0; top: 0; width: 100%; box-sizing: border-box;
+    border-color: #000; background: #fff;
+    margin: 0; max-width: none;
+  }
+  body.yt-printing .yt-cert * { color: #000 !important; }
+  body.yt-printing .yt-cert .yt-btn { display: none !important; }
+}
