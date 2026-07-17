@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("dccv2-theme"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <title>Is This Actually True? - Misinformation - DCC Youth</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/youth/module-misinformation.html">
+  <meta name="description" content="Screenshots with no source, videos that look completely real, and posts built to make you furious. How misinformation actually works, why spotting deepfake glitches is a losing game, and the 30-second check that beats all of it. For teens, made in Canada.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="youth.css">
+</head>
+<body class="yt-body">
+
+<a class="yt-skip" href="#main">Skip to main content</a>
+
+<header class="yt-header">
+  <a class="yt-brand" href="index.html">Digital Confidence <span class="yt-brand-tag">Youth</span></a>
+  <button class="yt-theme-btn" type="button" id="theme-btn" aria-pressed="false">Dark mode</button>
+</header>
+
+<section class="yt-hero" aria-label="Module introduction">
+  <div class="yt-container">
+    <span class="yt-eyebrow">Misinformation &middot; About 12 minutes</span>
+    <h1>Is This Actually True?</h1>
+    <p>Some of what crosses your feed today will be false &mdash; not because you follow the wrong people, but because false stuff is engineered to travel. This module isn&rsquo;t &ldquo;trust nothing&rdquo; and it isn&rsquo;t a lecture about the news. It&rsquo;s four situations, the machinery behind each one, and a check that takes about thirty seconds. Nobody&rsquo;s grading your politics.</p>
+  </div>
+</section>
+
+<main id="main" class="yt-container">
+
+  <ul class="yt-straight" aria-label="How this works">
+    <li>Four situations</li>
+    <li>You choose, then we debrief</li>
+    <li>Zero &ldquo;kids these days&rdquo; lectures</li>
+  </ul>
+
+  <div class="yt-progress" aria-hidden="true">
+    <span class="yt-pip active" id="pip-0"></span>
+    <span class="yt-pip" id="pip-1"></span>
+    <span class="yt-pip" id="pip-2"></span>
+    <span class="yt-pip" id="pip-3"></span>
+    <span class="yt-progress-label" id="progress-label">Scenario 1 of 4</span>
+  </div>
+
+  <!-- Scenario 1 -->
+  <div class="yt-scenario active" id="sc-0" role="region" aria-label="Scenario 1: The screenshot">
+    <div class="yt-scenario-head">
+      <span class="yt-scenario-num" aria-hidden="true">1</span>
+      <span class="yt-scenario-tag">The screenshot</span>
+    </div>
+    <div class="yt-scenario-body">
+      <h2 class="yt-scenario-title">&ldquo;BREAKING&rdquo; in the group chat</h2>
+      <div class="yt-story">
+        <p>A screenshot lands in the group chat: a headline in news-site font saying a celebrity died, with &ldquo;BREAKING&rdquo; in red. No link &mdash; just the image. Two people have already replied &ldquo;WHAT&rdquo; and one has reposted it to their story. It looks exactly like a real news site.</p>
+      </div>
+      <p class="yt-question">What does the screenshot actually prove?</p>
+      <div class="yt-answers" data-sc="0">
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">A</span> That it happened &mdash; nobody would fake a whole news layout</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">B</span> That it probably happened, since two other people believed it</button>
+        <button class="yt-answer" data-correct="true"><span class="yt-letter" aria-hidden="true">C</span> Nothing &mdash; a screenshot with no link is an image, and images of headlines are trivially easy to fake</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">D</span> That it&rsquo;s false &mdash; real news never spreads by screenshot</button>
+      </div>
+      <div class="yt-debrief" id="db-0">
+        <p class="yt-debrief-label">What&rsquo;s actually going on</p>
+        <p>A screenshot is just pixels. Free tools can generate a fake headline in any outlet&rsquo;s exact style in under a minute &mdash; and a screenshot conveniently deletes the one thing that would let you check it: the link. That&rsquo;s not always malicious (people screenshot real news too, which is why answer D is also wrong), but it means the image itself proves nothing either way.</p>
+        <p>MediaSmarts &mdash; Canada&rsquo;s digital media literacy organization &mdash; built its <strong>Break the Fake</strong> program around four quick checks: <strong>use a fact-checking tool, find the original source, verify that source, and see if other outlets are reporting it</strong>. Each one usually takes under a minute, and most of the time one is enough. Here, step two settles it: search the headline. If a real outlet published it, it&rsquo;s on their site and every other news site within minutes. If the only place it exists is a screenshot &mdash; you have your answer.</p>
+      </div>
+      <button class="yt-next" id="next-0">Next scenario &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Scenario 2 -->
+  <div class="yt-scenario" id="sc-1" role="region" aria-label="Scenario 2: The video that looks real">
+    <div class="yt-scenario-head">
+      <span class="yt-scenario-num" aria-hidden="true">2</span>
+      <span class="yt-scenario-tag">The video that looks real</span>
+    </div>
+    <div class="yt-scenario-body">
+      <h2 class="yt-scenario-title">&ldquo;I checked the hands and everything&rdquo;</h2>
+      <div class="yt-story">
+        <p>A clip is going around of a famous athlete announcing something shocking. A friend says they verified it: &ldquo;I know how to spot AI. I checked the hands, the blinking, the lighting. It&rsquo;s real.&rdquo; The video does look flawless &mdash; voice, face, everything.</p>
+      </div>
+      <p class="yt-question">What&rsquo;s wrong with &ldquo;I checked the hands&rdquo;?</p>
+      <div class="yt-answers" data-sc="1">
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">A</span> Nothing &mdash; glitch-spotting is how professionals verify video</button>
+        <button class="yt-answer" data-correct="true"><span class="yt-letter" aria-hidden="true">B</span> Glitch-spotting only catches bad fakes &mdash; good ones pass the eye test, so &ldquo;it looks real&rdquo; can&rsquo;t be the verification</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">C</span> Deepfakes are still so rare that checking isn&rsquo;t worth the effort</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">D</span> Videos can&rsquo;t be faked convincingly &mdash; only photos can</button>
+      </div>
+      <div class="yt-debrief" id="db-1">
+        <p class="yt-debrief-label">What&rsquo;s actually going on</p>
+        <p>The weird-hands era is ending. The Canadian Centre for Cyber Security &mdash; the federal government&rsquo;s cyber defence agency &mdash; warns in its public guidance on false information (ITSAP.00.300) that generative AI is now used to produce deepfakes and spread false and misleading content at scale. Every &ldquo;how to spot a deepfake&rdquo; trick has an expiry date, because the next generation of tools trains on exactly those flaws. If your whole method is looking harder at the video, you&rsquo;re in an arms race your eyes will eventually lose.</p>
+        <p>The move that doesn&rsquo;t expire is to <strong>stop looking at the clip and look around it instead</strong> &mdash; open a new tab and search what independent sources say. Fact-checkers call this <strong>lateral reading</strong>, and it&rsquo;s what CTRL-F, a Canadian program from the civic-education charity CIVIX used in schools across the country, teaches as the core skill. A real announcement from a famous athlete leaves a paper trail everywhere within the hour: their own accounts, their team, actual news outlets. A deepfake has exactly one source &mdash; the account that posted it.</p>
+      </div>
+      <button class="yt-next" id="next-1">Next scenario &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Scenario 3 -->
+  <div class="yt-scenario" id="sc-2" role="region" aria-label="Scenario 3: Built to enrage">
+    <div class="yt-scenario-head">
+      <span class="yt-scenario-num" aria-hidden="true">3</span>
+      <span class="yt-scenario-tag">Built to enrage</span>
+    </div>
+    <div class="yt-scenario-body">
+      <h2 class="yt-scenario-title">The post that makes your blood boil</h2>
+      <div class="yt-story">
+        <p>A post claims a group of students did something outrageous at a school across the country. It&rsquo;s infuriating. The comments are a war zone, the shares are climbing, and your thumb is already on the repost button &mdash; because people <em>need</em> to know about this.</p>
+      </div>
+      <p class="yt-question">The fury you&rsquo;re feeling right now &mdash; what is it, most likely?</p>
+      <div class="yt-answers" data-sc="2">
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">A</span> Proof the story matters &mdash; things that make people this angry are usually true</button>
+        <button class="yt-answer" data-correct="true"><span class="yt-letter" aria-hidden="true">B</span> The product working as designed &mdash; false content is often engineered for outrage, because outrage gets shared before it gets checked</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">C</span> A sign you should reply angrily instead of reposting</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">D</span> Irrelevant &mdash; feelings have nothing to do with whether you share something</button>
+      </div>
+      <div class="yt-debrief" id="db-2">
+        <p class="yt-debrief-label">What&rsquo;s actually going on</p>
+        <p>False content doesn&rsquo;t spread because people are stupid. It spreads because it&rsquo;s <em>optimized</em> &mdash; for exactly the jolt you just felt. The Cyber Centre&rsquo;s guidance describes how false information campaigns deliberately play on emotions to get amplified, and the previous module in this series showed why: the feed promotes whatever gets engagement, and nothing engages like outrage. A false story doesn&rsquo;t have to survive fact-checking. It only has to survive the two seconds between your eyes and your thumb.</p>
+        <p>So flip the signal: <strong>a strong emotional spike is your cue to check, not to share.</strong> Not because anger is wrong &mdash; sometimes the story is true and the anger is earned &mdash; but because &ldquo;this makes me furious&rdquo; is precisely the reaction the fakes are built to trigger. One more thing worth knowing: reposting false stuff, even sincerely, is how most of it travels. The people spreading misinformation are mostly not liars. They&rsquo;re people who were sure.</p>
+      </div>
+      <button class="yt-next" id="next-2">Next scenario &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Scenario 4 -->
+  <div class="yt-scenario" id="sc-3" role="region" aria-label="Scenario 4: The thirty-second check">
+    <div class="yt-scenario-head">
+      <span class="yt-scenario-num" aria-hidden="true">4</span>
+      <span class="yt-scenario-tag">The thirty-second check</span>
+    </div>
+    <div class="yt-scenario-body">
+      <h2 class="yt-scenario-title">&ldquo;Nobody has time to fact-check everything&rdquo;</h2>
+      <div class="yt-story">
+        <p>A friend hears all this and shrugs: &ldquo;Be real. Nobody&rsquo;s going to research every post like a homework assignment. Either you trust your feed or you log off forever.&rdquo;</p>
+      </div>
+      <p class="yt-question">Are those really the only two options?</p>
+      <div class="yt-answers" data-sc="3">
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">A</span> Yes &mdash; proper verification takes hours, so trusting the feed is the only practical choice</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">B</span> Yes &mdash; and logging off forever is the responsible one</button>
+        <button class="yt-answer" data-correct="true"><span class="yt-letter" aria-hidden="true">C</span> No &mdash; you only need to check the things you&rsquo;re about to share or act on, and that check takes about thirty seconds</button>
+        <button class="yt-answer" data-correct="false"><span class="yt-letter" aria-hidden="true">D</span> No &mdash; you can just wait for the platform to label anything false</button>
+      </div>
+      <div class="yt-debrief" id="db-3">
+        <p class="yt-debrief-label">What&rsquo;s actually going on</p>
+        <p>The homework framing is the trap. You don&rsquo;t have to verify your whole feed &mdash; scrolling past something unverified costs nothing. The checkpoint is the <strong>share button</strong>: the moment something is about to travel <em>through you</em> is the moment it deserves thirty seconds. And thirty seconds is genuinely what it takes. The toolkit, all free: <strong>new tab, search the claim</strong> and see if anyone independent confirms it (the lateral-reading move from scenario 2); <strong>reverse image search</strong> a suspicious photo to see where it really came from &mdash; often a real image from a different year and country wearing a new caption; and <strong>check a fact-checker</strong>, since viral fakes usually get debunked within hours. Those are three of MediaSmarts&rsquo; four Break the Fake steps, and their point is that you rarely need more than one.</p>
+        <p>Waiting for platforms to label everything false doesn&rsquo;t work &mdash; labels lag, and plenty of false content never gets one. The realistic version of this skill isn&rsquo;t &ldquo;trust nothing.&rdquo; It&rsquo;s <strong>share slower than you scroll.</strong> That single habit removes you from the delivery chain that misinformation depends on.</p>
+      </div>
+      <button class="yt-next" id="next-3">See how you did &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="yt-results" id="results" role="region" aria-label="Your results">
+    <p class="yt-score" id="score-line"></p>
+    <p class="yt-score-sub">First-try answers. The score was never the point &mdash; the point is that &ldquo;it looks real&rdquo; stopped being evidence, and you now have a check that costs thirty seconds.</p>
+  </div>
+
+  <div class="yt-takeaway">
+    <h2>The four things worth keeping</h2>
+    <ul>
+      <li>A screenshot with no link proves nothing. Search the headline &mdash; real news exists in more than one place.</li>
+      <li>&ldquo;It looks real&rdquo; is not verification anymore. Good fakes pass the eye test; check around the clip, not inside it.</li>
+      <li>A strong emotional spike is the cue to check, not to share. Outrage is the delivery mechanism.</li>
+      <li>You don&rsquo;t have to verify your feed &mdash; just what you share. Thirty seconds: search the claim, reverse-search the image, check a fact-checker.</li>
+    </ul>
+  </div>
+
+  <div class="yt-help">
+    <h2>If what you&rsquo;re seeing is weighing on you</h2>
+    <ul>
+      <li>Feeds full of frightening world events &mdash; real or fake &mdash; can genuinely mess with how you feel, and that&rsquo;s not weakness. It&rsquo;s okay to mute topics, and it&rsquo;s okay to talk to someone about it.</li>
+      <li><strong>Kids Help Phone</strong> &mdash; call <a href="tel:1-800-668-6868">1-800-668-6868</a> or text <strong>CONNECT</strong> to <strong>686868</strong>. Free, 24/7, confidential, anywhere in Canada. A real person.</li>
+      <li>If a fake image or video is <em>of you</em> &mdash; that&rsquo;s a different situation with real help behind it: see <a href="module-sextortion.html">Blackmail Has a Playbook</a> and <a href="https://cybertip.ca" rel="noopener noreferrer">Cybertip.ca</a>.</li>
+    </ul>
+  </div>
+
+  <div class="yt-related yt-related-cards">
+    <h2>Keep going</h2>
+    <ul class="yt-grid">
+      <li class="yt-card">
+        <span class="yt-card-tag">Algorithms</span>
+        <h3><a href="module-algorithm-awareness.html">Who Picked This For You?</a></h3>
+        <p>This module was the fake content; that one is the machine that delivers it &mdash; why the feed amplifies whatever holds your attention.</p>
+      </li>
+      <li class="yt-card">
+        <span class="yt-card-tag">AI &amp; deepfakes</span>
+        <h3><a href="module-ai-literacy.html">AI in Real Life</a></h3>
+        <p>Voice clones, a deepfake in the group chat, and what AI is genuinely good for &mdash; the up-close version of scenario 2.</p>
+      </li>
+    </ul>
+  </div>
+
+  <nav class="yt-footnav" aria-label="Module navigation">
+    <a href="index.html">&larr; All youth modules</a>
+  </nav>
+
+</main>
+
+<footer class="yt-footer">
+  <div class="yt-container">
+    <nav aria-label="Site">
+      <a href="index.html">Youth hub</a>
+      <a href="../index.html">Main site</a>
+      <a href="../privacy.html">Privacy</a>
+    </nav>
+    <p>Digital Confidence Centre &middot; Free for everyone, always &middot; Canada</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    // theme toggle
+    var btn = document.getElementById("theme-btn");
+    function syncTheme() {
+      var dark = document.documentElement.getAttribute("data-theme") === "dark";
+      btn.textContent = dark ? "Light mode" : "Dark mode";
+      btn.setAttribute("aria-pressed", dark ? "true" : "false");
+    }
+    btn.addEventListener("click", function () {
+      var next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("dccv2-theme", next); } catch (e) {}
+      syncTheme();
+    });
+    syncTheme();
+
+    // scenario engine
+    var TOTAL = 4;
+    var current = 0;
+    var firstTryCorrect = 0;
+    var label = document.getElementById("progress-label");
+
+    document.querySelectorAll(".yt-answers").forEach(function (group) {
+      var answered = false;
+      group.querySelectorAll(".yt-answer").forEach(function (a) {
+        a.addEventListener("click", function () {
+          if (answered) return;
+          answered = true;
+          var sc = group.getAttribute("data-sc");
+          var correct = a.getAttribute("data-correct") === "true";
+          if (correct) {
+            a.classList.add("is-correct");
+            firstTryCorrect++;
+          } else {
+            a.classList.add("is-wrong");
+            var right = group.querySelector('[data-correct="true"]');
+            if (right) right.classList.add("show-correct");
+          }
+          group.querySelectorAll(".yt-answer").forEach(function (b) { b.disabled = true; });
+          document.getElementById("db-" + sc).classList.add("visible");
+          document.getElementById("next-" + sc).classList.add("visible");
+        });
+      });
+    });
+
+    for (var i = 0; i < TOTAL; i++) {
+      (function (i) {
+        document.getElementById("next-" + i).addEventListener("click", function () {
+          document.getElementById("sc-" + i).classList.remove("active");
+          document.getElementById("pip-" + i).classList.remove("active");
+          document.getElementById("pip-" + i).classList.add("done");
+          current = i + 1;
+          if (current < TOTAL) {
+            var nextSc = document.getElementById("sc-" + current);
+            nextSc.classList.add("active");
+            document.getElementById("pip-" + current).classList.add("active");
+            label.textContent = "Scenario " + (current + 1) + " of " + TOTAL;
+            nextSc.scrollIntoView({ behavior: "smooth", block: "start" });
+            var h = nextSc.querySelector(".yt-scenario-title");
+            if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); }
+          } else {
+            label.textContent = "Done";
+            var res = document.getElementById("results");
+            document.getElementById("score-line").textContent = firstTryCorrect + " of " + TOTAL + " on the first try";
+            res.classList.add("visible");
+            res.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      })(i);
+    }
+  })();
+</script>
+
+</body>
+</html>
