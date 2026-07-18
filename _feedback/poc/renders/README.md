@@ -52,6 +52,7 @@ must match the JS pacing exactly for this to prove anything) — a straight ffmp
 | `dcc-pilot-01-slideshow.html` | `dcc-pilot-01-slideshow.mp4` | 9 | 90.0s | 410 KB |
 | `dcc-intro-welcome-slideshow.html` | `dcc-intro-welcome-slideshow.mp4` | 8 | 100.0s | 494 KB |
 | `dcc-video-calling-slideshow.html` | `dcc-video-calling-slideshow.mp4` | 9 | 97.0s | 470 KB |
+| `dcc-intro-welcome-slideshow.html` | `dcc-intro-welcome-NARRATED.mp4` (EN, narrated) | 8 | 98.9s (audio-driven) | 1,604 KB |
 
 Rendered 1280×720, H.264/yuv420p, 30fps, `+faststart`. Exact reproduction command: `python assemble.py` in this
 directory (frame PNGs are re-captured from the live HTML via the Playwright steps above first — frames are not
