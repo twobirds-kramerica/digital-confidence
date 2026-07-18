@@ -1,7 +1,7 @@
-"""Narrate + assemble the DCC intro/welcome POC slideshow into a NARRATED MP4.
+"""Narrate + assemble any DCC POC slideshow into a NARRATED MP4.
 
 Extends assemble.py (ADR-0023 sovereign visual pipeline) with a TTS pass:
-per-scene `cap` lines from dcc-intro-welcome-slideshow.html are synthesized to WAV,
+per-scene `cap:` lines from the target slideshow HTML are synthesized to MP3,
 each scene's frame is held for its ACTUAL audio duration (not the hand-authored `s:`
 seconds), then video + concatenated audio are muxed into one MP4.
 
@@ -11,27 +11,61 @@ match to Margaret's locked voice direction). NOTE: edge-tts calls a Microsoft cl
 synthesis endpoint per line (not a fully local/offline model) -- flagged per the sprint
 constraint. Fully local alternatives checked and rejected for v1: pyttsx3/Windows SAPI
 (Microsoft David/Zira Desktop, only two voices installed, dated robotic quality --
-available as a fallback, see FALLBACK_SAPI below) -- Piper/Coqui not installed on this
-machine. ADR-0023's sovereign-vs-paid tool decision is NOT pre-empted: edge-tts is free,
-requires no account/API key, and is not the paid ElevenLabs path the ADR is gated on.
+available as a fallback) -- Piper/Coqui not installed on this machine. ADR-0023's
+sovereign-vs-paid tool decision is NOT pre-empted: edge-tts is free, requires no
+account/API key, and is not the paid ElevenLabs path the ADR is gated on.
 
-Usage: python narrate-and-assemble.py
-Requires: edge-tts (pip install edge-tts), ffmpeg/ffprobe on PATH.
+Generalized (2026-07-18) to accept any target slideshow via TARGETS below --
+originally built single-purpose for dcc-intro-welcome-slideshow.html.
+
+Usage:
+    python narrate-and-assemble.py              # runs every target in TARGETS
+    python narrate-and-assemble.py welcome       # runs only the matching target key
+    python narrate-and-assemble.py pilot01 video-calling
+Requires: edge-tts (pip install edge-tts), ffmpeg/ffprobe on PATH. Frame PNGs for the
+target must already exist in its frame_dir (captured via the Playwright frame-capture
+step documented in README.md) -- this script does not itself capture frames.
 """
 import asyncio
 import json
 import re
 import subprocess
+import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-SLIDESHOW_HTML = HERE.parent / "dcc-intro-welcome-slideshow.html"
-FRAME_DIR = HERE / "frames-intro"
-AUDIO_DIR = HERE / "audio-intro"
-OUT_MP4 = HERE / "dcc-intro-welcome-NARRATED.mp4"
+POC_DIR = HERE.parent
 
 VOICE = "en-CA-ClaraNeural"
 RATE = "-8%"  # slightly slower than default, per script's ~130wpm low-end direction
+
+# key -> (slideshow HTML filename, frame_dir name, audio_dir name, output mp4 name)
+TARGETS = {
+    "welcome": (
+        "dcc-intro-welcome-slideshow.html",
+        "frames-intro",
+        "audio-intro",
+        "dcc-intro-welcome-NARRATED.mp4",
+    ),
+    "pilot01": (
+        "dcc-pilot-01-slideshow.html",
+        "frames-pilot01",
+        "audio-pilot01",
+        "dcc-pilot-01-NARRATED.mp4",
+    ),
+    "video-calling": (
+        "dcc-video-calling-slideshow.html",
+        "frames-videocalling",
+        "audio-videocalling",
+        "dcc-video-calling-NARRATED.mp4",
+    ),
+    "practitioner-family": (
+        "dcc-practitioner-family-slideshow.html",
+        "frames-family",
+        "audio-family",
+        "dcc-practitioner-family-NARRATED.mp4",
+    ),
+}
 
 
 def extract_scene_caps(html_path: Path) -> list[str]:
@@ -122,30 +156,65 @@ def mux(frame_dir: Path, concat_list: Path, audio_track: Path, out_path: Path) -
         raise RuntimeError(r.stderr[-2000:])
 
 
-def main() -> int:
-    print("Extracting scene narration lines from", SLIDESHOW_HTML.name)
-    caps = extract_scene_caps(SLIDESHOW_HTML)
+def run_target(key: str, html_name: str, frame_dir_name: str, audio_dir_name: str, out_name: str) -> dict:
+    slideshow_html = POC_DIR / html_name
+    frame_dir = HERE / frame_dir_name
+    audio_dir = HERE / audio_dir_name
+    out_path = HERE / out_name
+
+    if not frame_dir.exists() or not any(frame_dir.glob("frame-*.png")):
+        raise RuntimeError(
+            f"No captured frames in {frame_dir} -- run the Playwright frame-capture "
+            f"step from README.md for {html_name} first."
+        )
+
+    print(f"[{key}] Extracting scene narration lines from", slideshow_html.name)
+    caps = extract_scene_caps(slideshow_html)
     print(f"  {len(caps)} scenes found")
 
-    print("Synthesizing narration with edge-tts (", VOICE, ")...")
-    audio_paths = asyncio.run(synth_all(caps, AUDIO_DIR))
+    n_frames = len(list(frame_dir.glob("frame-*.png")))
+    if n_frames != len(caps):
+        raise RuntimeError(
+            f"[{key}] scene/frame count mismatch: {len(caps)} cap: lines vs "
+            f"{n_frames} captured frames in {frame_dir}"
+        )
+
+    print(f"[{key}] Synthesizing narration with edge-tts ({VOICE})...")
+    audio_paths = asyncio.run(synth_all(caps, audio_dir))
 
     durations = [ffprobe_duration(p) for p in audio_paths]
-    print("Per-scene audio durations (s):", [round(d, 2) for d in durations])
+    print(f"[{key}] Per-scene audio durations (s):", [round(d, 2) for d in durations])
     print(f"  Total narration length: {sum(durations):.2f}s")
 
-    print("Concatenating narration track...")
-    audio_track = concat_audio(audio_paths, AUDIO_DIR)
+    print(f"[{key}] Concatenating narration track...")
+    audio_track = concat_audio(audio_paths, audio_dir)
 
-    print("Building frame-hold concat list from actual audio durations...")
-    concat_list = build_concat_list(FRAME_DIR, durations)
+    print(f"[{key}] Building frame-hold concat list from actual audio durations...")
+    concat_list = build_concat_list(frame_dir, durations)
 
-    print("Rendering video track + muxing audio...")
-    mux(FRAME_DIR, concat_list, audio_track, OUT_MP4)
+    print(f"[{key}] Rendering video track + muxing audio...")
+    mux(frame_dir, concat_list, audio_track, out_path)
 
-    size = OUT_MP4.stat().st_size
-    total_dur = ffprobe_duration(OUT_MP4)
-    print(f"OK: {OUT_MP4.name} ({size/1024:.0f} KB, {total_dur:.1f}s)")
+    size = out_path.stat().st_size
+    total_dur = ffprobe_duration(out_path)
+    print(f"[{key}] OK: {out_path.name} ({size/1024:.0f} KB, {total_dur:.1f}s)")
+    return {"key": key, "out": str(out_path), "size_kb": size / 1024, "duration_s": total_dur}
+
+
+def main() -> int:
+    keys = sys.argv[1:] if len(sys.argv) > 1 else list(TARGETS.keys())
+    unknown = [k for k in keys if k not in TARGETS]
+    if unknown:
+        print(f"Unknown target(s): {unknown}. Known: {list(TARGETS.keys())}")
+        return 2
+
+    results = []
+    for key in keys:
+        results.append(run_target(key, *TARGETS[key]))
+
+    print("\n=== Summary ===")
+    for r in results:
+        print(f"  {r['key']}: {r['out']} ({r['size_kb']:.0f} KB, {r['duration_s']:.1f}s)")
     return 0
 
 
