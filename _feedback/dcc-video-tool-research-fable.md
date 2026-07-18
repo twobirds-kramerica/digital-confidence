@@ -1,29 +1,105 @@
 # DCC Video Production Tooling — Open-Market Research (Fable sprint)
 
-**Status:** IN PROGRESS (skeleton committed for durability; sections filling in). Research date: 2026-07-18. Grounded in live WebSearch/WebFetch, not training knowledge.
+**Status:** COMPLETE — research date 2026-07-18, grounded in live WebSearch (July 2026 market), NOT training knowledge. Companion to `dcc-video-system-spec-2026-07-17.md` (which it updates in two material ways — see §2.1 Sora and §5) and `dcc-character-cast-architecture.md` (the cast this tooling must render). Forced-read gate honoured: `dcc-brand-guidelines.md` read first.
+
+**Aaron's framing this answers:** validate against the open market (Reddit/creator/solopreneur space + his advisory board), cover BOTH the DCC explainer videos AND the story-arc product initiative (the "*NB*" narrative content line), multi-tool stacks welcome, OpenAI/Google/others all in play, "nano banana" specifically flagged, sovereignty relaxed for video (outputs download to VPS/local) but free/OSS/non-freemium still preferred where viable.
 
 ---
 
-## 1. Requirements recap
+## 1. Requirements recap (from spec + brand guidelines)
 
-IN PROGRESS
+1. Original recurring characters, ~90%+ consistency across every video (consistency IS the brand).
+2. Zero real-person/IP likeness risk.
+3. Bilingual EN + genuine Canadian French, human FR review; captions + transcript always.
+4. Low AI slop; calm, dignified, credible in front of libraries and grant reviewers.
+5. Versatile enough to also serve the story-arc initiative (longer narrative beats, multiple characters in scenes).
+6. Outputs downloadable/ownable (self-host on VPS) — no platform lock-in of the rendered asset or the character.
 
-## 2. Market scan (July 2026)
+## 2. Market scan (July 2026 — what actually changed since the 2026-07-17 spec)
 
-IN PROGRESS
+### 2.1 OpenAI Sora is DEAD — remove from consideration entirely
+The spec listed Sora as "rejected for the cast, maybe B-roll later." That is now moot: OpenAI discontinued the Sora app/web on **April 26, 2026** and the API shuts down **September 24, 2026** (announced March 24, 2026; ~$1M/day cost vs ~$2.1M total revenue, plus copyright/deepfake liability). Nothing gets built on Sora. Sources: [OpenAI Help Center](https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation), [Futurum analysis](https://futurumgroup.com/insights/openai-sora-discontinuation-what-the-end-of-a-platform-means-for-enterprise-ai-strategy/), [Kaopiz shutdown guide](https://kaopiz.com/en/articles/sora-shutdown-guide/). The graybeard lesson (see Nate, §3): platform video tools can vanish inside a year — owning the character asset and the rendered files is the only durable position. Aaron's download-to-VPS instinct is exactly right.
 
-## 3. Advisory board consult (persona-grounded simulation)
+### 2.2 Nano Banana (Google) — Aaron's candidate, validated, with a role clarification
+"Nano Banana" is Google's **image** model family, not a video model — its video role is as the front half of a pipeline. **Nano Banana 2** launched Feb 26, 2026 (Gemini 3.x image family): character consistency for **up to 5 characters and 14 objects within one project/workflow**, 512px→4K, strong text rendering, and — the key part — **direct feed into Veo 3.1 via Flow's "Ingredients" system**, so a locked character reference carries into video generation automatically. This is currently the strongest mainstream pipeline for "same original character, many scenes." Sources: [Google — Nano Banana 2](https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/), [TechCrunch](https://techcrunch.com/2026/02/26/google-launches-nano-banana-2-model-with-faster-image-generation/), [Nano Banana 2 subject consistency](https://www.glbgpt.com/hub/nano-banana-2-subject-consistency/), [character-consistency prompt guide](https://www.nenobanana.com/blogs/nano-banana-character-consistency-12-prompts-that-actually-work--2026-guide), [Nano Banana Pro guide](https://aivideobootcamp.com/blog/nano-banana-pro-complete-guide-2026/).
+**Cost (Flow/Veo, July 2026):** Google AI Pro US$19.99/mo (1,000 Flow credits); Ultra US$100/mo (10,000 credits) or US$200/mo (25,000); Veo 3.1 runs 10–20 credits (Lite/Fast) to 100 credits (Quality) per generation — Quality tier is where character consistency is best. Sources: [Veo pricing 2026](https://diyai.io/ai-tools/video-generation/google-veo-pricing/), [Flow pricing explained](https://www.mindstudio.ai/blog/google-flow-pricing-credits-tiers-explained), [Veo 3.1 pricing guide](https://www.aifreeapi.com/en/posts/veo-3-1-pricing).
 
-IN PROGRESS
+### 2.3 Generative video with character locks (the story-arc contenders)
+Post-Sora, the field consolidated. For recurring characters specifically:
+- **Kling 3.0 (Omni):** up to ~3-minute cinematic clips, dialogue, multi-shot storyboards, tight character consistency — the model faceless-story creators rebuilt on after Sora died. Sources: [SurePrompts 2026 comparison](https://sureprompts.com/blog/best-ai-video-generators-2026), [Autoadify faceless AI stack 2026](https://autoadify.com/blog/faceless-youtube-ai-automation-channel-2026).
+- **Seedance 2.0 (ByteDance):** "Identity Lock" — reference image held across scenes/angles. Source: [tech-insider 2026](https://tech-insider.org/best-ai-video-generator-2026/). Caveat: ByteDance custody — fine under Aaron's relaxed video-sovereignty stance, but the weakest governance story to put in a grant application.
+- **Hailuo (MiniMax):** reputation specifically for holding characters across shots. Source: [Manus top-10 2026](https://manus.im/blog/best-ai-video-generator).
+- **Veo 3.1 (Google):** best all-rounder — prompt adherence, native audio, 4K; character consistency strongest at Quality tier and via Nano Banana Ingredients. Sources as §2.2.
 
-## 4. NotebookLM + Google Drive attempts
+### 2.4 Character-consistency creative platforms
+- **OpenArt Character 2.0** (2026 update): trains a dedicated model from a single reference; "10x more consistent than v1"; multi-angle reference sheets; one-click story builder. Strong for generating the etched cast's reference art + episodic stills. Sources: [OpenArt what's new](https://openart.ai/whats-new), [Character 2.0 overview](https://scribehow.com/page/OpenArt_Character_20_Update_2026_Everything_You_Need_to_Know__Fxluq97URWauBvge3m5Z2w), [Medium — scene consistency with OpenArt](https://medium.com/@latouralexandre/my-ai-animators-dream-achieving-scene-consistency-and-continuity-in-animation-with-openart-ai-76b32b2bed87).
+- **Atlabs:** full AI video platform (scenes, characters, audio, "50+ creative agents") — more automation, less control; higher slop risk for this brand. Source: [Atlabs vs OpenArt](https://www.atlabs.ai/alternative/openart).
 
-IN PROGRESS
+### 2.5 Deterministic 2D character animation (zero drift by construction)
+- **Adobe Character Animator** (alive and current, 2026 release): rig the etched puppet once, auto lip-sync from any audio track (including fr-CA), you own the puppet file 100%, drift is *impossible* — the character is a file, not a probability distribution. Sources: [Adobe product page](https://www.adobe.com/products/character-animator.html), [Adobe lip-sync](https://www.adobe.com/creativecloud/video/discover/animation-lip-sync.html). ~US$22.99+/mo single-app CC subscription (verify current CA pricing at spend time).
+- **Vyond / Animaker** (template 2D explainer platforms): the 2026 education-market picks for consistent cartoon characters in explainer videos — build a custom character once, reuse forever, deterministic output, built for exactly the "calm educational explainer" register. Weakness: house style can read generic ("AI-slop adjacent" in the other direction — template slop) unless the DCC etched style can be imported as custom assets. Sources: [Knowlify — cartoon animation tools 2026](https://knowlify.com/articles/best-ai-video-generators-for-cartoon-animation-2026), [Colossyan — text-to-animation 2026](https://www.colossyan.com/posts/ai-animation-video-generators/).
 
-## 5. Ranked recommendation (multi-tool stack)
+### 2.6 Realistic avatar presenters (unchanged verdict: fallback only)
+HeyGen (600+ avatars, 175+ languages, photo/illustration-to-avatar), Synthesia (140+ languages, enterprise), Colossyan (education features: quizzes, branching, SCORM). One 2026 development worth noting: **HeyGen's avatar-from-photo now accepts illustrations and stylized art**, which softens the old "realistic human presenter only" objection — an etched DCC character image could plausibly become a talking avatar. Still second-line: lip-sync-on-a-still can read uncanny, and the platform owns the animation layer. Sources: [VideoAI.me comparison 2026](https://videoai.me/blog/d-id-vs-heygen-vs-synthesia-vs-colossyan-comparison-2026), [HeyGen avatar-from-photo](https://www.heygen.com/blog/create-ai-avatar-from-photo), [AI Magicx comparison](https://www.aimagicx.com/blog/heygen-vs-synthesia-vs-colossyan-avatar-comparison-2026).
 
-IN PROGRESS
+### 2.7 OSS / self-hostable (the decapitation-aware lane)
+Credible in 2026, GPU-dependent:
+- **Wan 2.2** (Alibaba, Apache 2.0): most versatile open video model — T2V, I2V, editing in one deployment. Source: [Pixazo OSS video rankings](https://www.pixazo.ai/blog/best-open-source-ai-video-generation-models).
+- **HunyuanVideo-Avatar** (Tencent, free/open): photo + audio → talking character, strong identity preservation, ~720p. Sources: [project site](https://hunyuanvideo-avatar.com/), [Spheron deploy guide](https://www.spheron.network/blog/image-to-video-gpu-cloud-ltx-wan-hunyuan/).
+- **LivePortrait** (Kuaishou) / **Hallo3**: portrait animation / long-form talking head without identity drift, near-real-time on a modern GPU. Sources: [LivePortrait GitHub](https://github.com/KlingAIResearch/LivePortrait), [Pixazo lip-sync comparison](https://www.pixazo.ai/blog/best-open-source-ai-lip-sync-models).
+**Honest read:** these need a rented GPU (or a serious local card) plus pipeline-tending time. Viable as the *escape hatch* (the character art + scripts are portable; any of these can re-render if a SaaS vendor dies — the Sora lesson), not as the v1 production line for a solo operator shipping bilingual educational video on a deadline.
 
-## 6. Sources
+### 2.8 Voice (both stacks need it)
+- **ElevenLabs** leads 2026 quality (Eleven v3, MOS ~4.3, highest commercial; French judged "notably above Google TTS/Polly"); voice-ID pinning supports the anti-drift baseline in the cast doc. fr-CA specifically: no published fr-CA-vs-fr-FR benchmark found — **audition required** (bake-off task), with Azure Neural (has explicit fr-CA voices) as the fallback if ElevenLabs' French reads France-French to a Canadian ear. Human FR review gate applies regardless. Sources: [TTS comparison 2026](https://ttsforfree.com/en/blogs/google-vs-azure-vs-elevenlabs-tts-comparison/), [ElevenLabs French test](https://videoia.fr/en/elevenlabs-review-test/), [Aloa ElevenLabs vs Azure](https://aloa.co/ai/comparisons/ai-voice-comparison/elevenlabs-vs-azure-speech). ElevenLabs Creator tier ~US$22/mo (verify at spend time).
+- Creator-community corroboration: voice consistency is loyalty-critical in faceless/narrative content — "choose one voice and stick with it" is standing advice; ElevenLabs is the benchmark. Source: [Autoadify 2026 stack](https://autoadify.com/blog/faceless-youtube-ai-automation-channel-2026).
 
-IN PROGRESS
+### 2.9 Solopreneur/creator-community pattern (the open-market validation Aaron asked for)
+The 2026 faceless-creator playbook converged on exactly the architecture the DCC spec guessed at: **an image model with a character lock (Nano Banana 2 / OpenArt Character 2.0) for the cast + a motion model (Kling 3.0 / Veo 3.1) for scenes + one pinned ElevenLabs voice per character**, with multi-angle reference sheets as the consistency backbone. Story-driven channels lean on stills + narration ("people are there to listen"), which maps well to DCC's calm, low-motion register — full motion is optional, not mandatory, for the story arcs. Sources: [Autoadify — complete AI stack (tested) 2026](https://autoadify.com/blog/faceless-youtube-ai-automation-channel-2026), [LongStories — consistent AI animated stories guide](https://longstories.ai/blog/complete-guide-consistent-ai-animated-stories), [Miraflow — faceless channel explosion 2026](https://miraflow.ai/blog/faceless-youtube-channel-explosion-ai-million-subscriber-creators-2026), [OpusClip faceless creator playbook](https://www.opus.pro/blog/faceless-creator-playbook-2026). (Reddit thread-level sourcing: direct subreddit results did not surface through search on this pass — the creator-guide sources above aggregate that community practice; flagging per the completeness rule rather than fabricating thread links.)
+
+## 3. Advisory board consult (persona-grounded simulation — parallel blind protocol)
+
+Simulated from the documented persona/knowledge files in `C:\twobirds\two-birds-portfolio\hal-stack\personas\mentor-committee\`. Each voice grounded ONLY in its own file; extrapolations beyond documented positions flagged.
+
+**SABRINA RAMONOV** — *Non-technical user test:* the tool doesn't matter to Margaret's audience; the output does — calm, consistent, followable. *Commercial test:* videos must serve the grant/library revenue path, not exist for their own sake — pick the stack that ships pilot 01 fastest at credible quality, not the most impressive one. *Recipe test:* the winning pipeline must reduce to a documented, repeatable recipe (script → reference art → render → caption → archive) that one person runs; if producing video #7 is as hard as video #1, the stack is wrong. *Transparency:* she marks AI content visibly (her avatar's hat); DCC's analogue — being straightforwardly an illustrated character, never pretending to be a filmed human — argues for the etched-character path over realistic avatars. *Stay in the loop:* human review before anything ships (already DCC's FR/accuracy gate — she'd endorse). *Her verdict:* multi-tool recipe, dogfood on one video, document it, then batch. [Her file documents Blotato/social-content automation, not video-generation tool picks — specific tool endorsements would be [NEEDS SOURCE]; the workflow principles above are documented.]
+
+**KYLE BALMER** — *Learner test:* consistency and calm pacing beat production value for an audience that's overwhelmed; a recurring character the learner recognizes lowers cognitive load every single video. *Drip test:* his 193-issue daily model says pick the stack that sustains a steady cadence forever, not a cinematic one-off. *AI Tells:* generative video has visual "goblins" (morphing hands, drifting faces) the way AI text has "delve" — a drifting Margaret is the visual tell that clocks DCC as machine-slop; the deterministic-puppet path is the video equivalent of his Belt-and-Braces (locked reference = belt, drift-check before ship = braces). *His verdict:* whatever renders, lock the character asset and check every output against it. [Video-tooling specifics beyond his documented AI-Tells/pedagogy frameworks would be [NEEDS SOURCE].]
+
+**LOGAN CURRIE** — *Cognitive-cost question:* a multi-tool stack is fine ONCE; a multi-tool stack Aaron must re-learn every render is a second job — cap the stack at 2–3 tools with a written runbook. *Scenario resilience:* Sora's death inside 12 months is her exact scenario-planning case made real — require for every tool: "if this vanishes next quarter, what survives?" Answer must be: the character art, scripts, voice reference, and rendered files, all archived in-repo/VPS (which the governance rules already mandate). Adobe's puppet file and downloaded MP4s pass; a platform-locked character model fails. *Her verdict:* choose for exit-friendliness, not peak capability. [Documented framework applied; no tool-specific positions in her file.]
+
+**NATE B. JONES** — *Daily-use test:* "smartest model ≠ what I use daily" — Veo Quality at 100 credits/generation is the impressive tool; the right daily tool for 60–120s explainers is the boring deterministic one. *Failure mode first:* what does a bad render cost? With generative video: re-rolls, drift, credit burn, and brand risk in front of grant reviewers. With a rigged puppet: a stiff shoulder you fix in the rig. Optimize for the failure case. *Graybeard pattern:* platform video tools vanishing (Sora) is the pattern he'd say he's seen every cycle — build on what you own. *His verdict:* deterministic core, generative garnish. [Applied from documented stances; he has no published DCC-tooling position — anything more specific would be [NEEDS SOURCE].]
+
+**Synthesis (The Hand):** all four lenses converge, independently, on the same architecture: **own the character asset; use a deterministic/locked render path for the recurring cast; keep generative video for scene-setting and story-arc B-roll; pin one voice per character; archive everything so any vendor can die without taking the brand with it.** That is also what the open market (§2.9) converged on. High confidence.
+
+## 4. NotebookLM + Google Drive attempts (honesty section)
+
+- **NotebookLM MCP: reachable and authenticated, but the local notebook library is EMPTY (0 notebooks registered)** — the MCP can only query notebooks added to its library via share-URL, and none of Aaron's "special video and publishing" leader notebooks are registered. Could not query them. **Aaron action (small):** open NotebookLM, copy the share link of the video/publishing notebook(s), and ask any session to `add_notebook` — from then on the board-consult step can run against his actual curated sources. The persona-file simulation (§3) stood in this run.
+- **Google Drive: searched.** Found and read `video and first script dcc feedback to cli` (Aaron's reply doc — confirms this sprint's brief verbatim, including "nano banana" and the *NB* story-arc initiative). **The Fleetway/Fleet-AI London event notes doc was NOT found** under Fleetway / Fleet AI / Samuel+London / event-notes searches. Consistent with Aaron's own "not much on video I don't think." If it exists under another title, a title hint would let a later pass grab it. The "Samuel's email links" thread remains for a Gmail pass (prior Gmail search 2026-07-17 also found nothing).
+
+## 5. RANKED RECOMMENDATION — a two-lane, three-tool stack
+
+**Updates to the 2026-07-17 spec:** (1) Sora removed everywhere (dead). (2) The "seeded consistency tool" candidate is now concretely Nano Banana 2 + Flow Ingredients, with OpenArt Character 2.0 as the reference-sheet generator. Otherwise the spec's Path A logic survives contact with the market.
+
+### Lane 1 — DCC explainer/guide videos (Margaret + cast, the recurring brand)
+**#1: Nano Banana 2 (character/reference art) + Adobe Character Animator (rig + render) + ElevenLabs (pinned voices).**
+- Nano Banana 2 designs the etched cast and multi-angle reference sheets (5-character consistency covers any DCC scene; Aaron's instinct about the tool was right — as the *image* half of the pipeline).
+- Character Animator turns the approved master art into owned puppet files: zero drift by construction, auto lip-sync from EN and FR audio tracks alike (bilingual = swap the audio, reuse the puppet — the cheapest possible fr-CA story), 100% IP custody, survives any vendor death.
+- ElevenLabs voices, one pinned voice-ID per character per language, per the cast doc's anti-drift baseline; Azure Neural fr-CA as audition fallback.
+- **Cost:** ~US$20 (Google AI Pro) + ~US$23 (CC single-app) + ~US$22 (ElevenLabs Creator) ≈ **US$65/mo** while producing; pausable. Captions/transcripts: script-first workflow means transcripts are free; burn captions in the editor.
+- **Risk/mitigation:** Character Animator has a real learning curve (rigging). Mitigation: the bake-off (below) checks this first; if rigging stalls, fallback #2 is one week away, and the puppet art is reusable there.
+
+**#2 (fallback if rigging proves too slow): Vyond (or Animaker) with imported custom DCC character assets** — deterministic, education-native, faster to operate, but house-style/template risk; only acceptable if the etched style imports cleanly as custom assets. **#3 (last resort, unchanged from spec): Colossyan/HeyGen avatar presenters** — HeyGen's illustration-to-avatar softens but does not remove the objection.
+
+### Lane 2 — Story-arc initiative (*NB* narrative line)
+**#1: Nano Banana 2 stills + Veo 3.1 via Flow Ingredients (motion), with Kling 3.0 as the alternate motion engine.**
+- Same character references feed both lanes — one cast, two render styles. Story arcs tolerate (and benefit from) cinematic generative motion in a way the trainer videos must not; Ingredients carries the locked characters into Veo scenes.
+- Ship story stills + narration first (the proven low-cost story format per §2.9 — "people are there to listen"), add full Veo motion for hero moments only (100-credit Quality generations, used sparingly).
+- Kling 3.0 is the market's post-Sora consistency leader for long clips — audition it against Veo in the bake-off; either can be adopted without changing the character pipeline.
+
+### Cross-cutting (both lanes)
+- **Sovereignty/exit:** every render downloaded to VPS/repo same-day; master character art, scripts, voice reference reads, and puppet files versioned in-repo — any tool above can die (Sora precedent) with zero brand loss. OSS lane (Wan 2.2 / HunyuanVideo-Avatar) documented as the re-render escape hatch, not v1 production.
+- **ADR before spend** (per spec §4) — this doc is the research input to that ADR.
+- **Bake-off (1 character, Margaret, pilot-01 script):** (a) Nano Banana 2 etched-style reference sheet → Aaron taste-gate; (b) Character Animator rig + EN/FR ElevenLabs audio → the real "can Aaron's operation run this" test; (c) same reference through Flow/Veo Ingredients for one story-arc beat; (d) fr-CA voice audition (ElevenLabs vs Azure) with a Franco-Canadian ear on review.
+
+## 6. Source index
+
+All inline above. Primary: Google/TechCrunch (Nano Banana 2, Flow/Veo pricing), OpenAI Help Center/Futurum/Kaopiz (Sora shutdown), Adobe (Character Animator 2026), OpenArt/Atlabs (Character 2.0), SurePrompts/tech-insider/Manus (Kling/Seedance/Hailuo), VideoAI.me/HeyGen/AI Magicx (avatar platforms), Knowlify/Colossyan (Vyond/Animaker education lane), Pixazo/Spheron/GitHub (OSS lane), ttsforfree/videoia.fr/Aloa (TTS), Autoadify/LongStories/Miraflow/OpusClip (creator-community practice).
