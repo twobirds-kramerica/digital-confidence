@@ -57,7 +57,9 @@ Naming decision confirmed by Aaron: **"DCC Adults" + "DCC Kids"** is the delinea
 
 11. **Pick ONE video style for DCC Adults**, appropriate sections only (not everywhere), then produce **one** pilot video and iterate.
     - NOT the "six people" illustration for video.
-    - Direction: **cartoon characters**, possibly **real human head on a cartoon body** (Monty-Python-cutout feel) — silly but fun, emotive (happy / sad / worried), can look at their phone, scratch head, react along with the narration. Mix of men/women, bald/not.
+    - **Tone: helpful, serious, professional — with warmth and light fun. Walk the line.** Aaron walked back the earlier Monty-Python / South-Park-cutout idea as **too goofy/silly** — these go in front of libraries and potential **government grant** reviewers, so they must read as credible, not a gimmick.
+    - **HARD IP/LIKENESS GUARDRAIL (Aaron, do not cross):** NO recognizable real people (celebrities) and NO copyrighted/trademarked characters (e.g. Golden Girls, South Park) — right-of-publicity + copyright/trademark risk, unacceptable for a grant-funded public product. **Use ORIGINAL, generic AI-generated characters only.** When in doubt, default to a plain generic character. This ties directly to the etched **character library (D)** — the video characters should be that SAME original family, not a one-off cutout gimmick.
+    - Characters: original, emotive (happy / sad / worried), can look at their phone, scratch head, react along with the narration. Mix of men/women, ages, bald/not — reflect the audience.
     - **Voiceover + transcription**, **English + Canadian French** (both — do not forget French). **Spanish = nice-to-have, backlog** (Canadian-focused first).
     - Intro/simple sections framing: "What you'll learn is ___", open with **"Did you know…"** or **"Have you ever had a moment where…"**.
     - **Research-first**: use research to determine the appropriate style before producing. These are introductory/simpler pieces.
