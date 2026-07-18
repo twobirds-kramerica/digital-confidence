@@ -66,11 +66,51 @@ concat-demuxer quirk (the repeated final-file line, needed so the last image isn
 of the last scene's duration). Cosmetic only; scene order and relative pacing are exact. Worth a one-line fix
 (trim the final segment) if these move past POC.
 
-## Known gap — audio/TTS
+## Known gap — audio/TTS (silent v1, pilot 01 + video-calling)
 
-**Silent v1.** Captions are burned into each slide (the `.caption` div — visible on-screen text matching the spoken
-narration line), so the video is watchable/understandable without sound. This render proves the **visual pipeline**
-(HTML → frames → assembled mp4 with correct per-slide pacing) only. Voiceover/TTS (ElevenLabs, per the POC's own
-in-page note) is a **separate later step** — not attempted here, not faked. Adding it would mean: TTS-render each
-`cap` line to a WAV per scene, use the WAV duration (not the hand-authored `s:` value) to drive frame hold time so
-video and audio pacing match, then mux audio+video with a final ffmpeg pass. Not built in this sprint.
+**Silent v1** for `dcc-pilot-01-slideshow.mp4` and `dcc-video-calling-slideshow.mp4`. Captions are burned into each
+slide (the `.caption` div — visible on-screen text matching the spoken narration line), so these videos are
+watchable/understandable without sound. These renders prove the **visual pipeline** (HTML → frames → assembled mp4
+with correct per-slide pacing) only. Voiceover/TTS is a separate later step for these two — not attempted here, not
+faked.
+
+## Narrated v1 — dcc-intro-welcome-NARRATED.mp4 (ADR-0023 sovereign audio pipeline)
+
+The intro/welcome POC (`dcc-intro-welcome-slideshow.html`) now has a fully narrated render, proving the audio pipeline
+on top of the silent visual pipeline above.
+
+**TTS engine: `edge-tts`** (Microsoft Edge neural voices, Python package `edge-tts`, pip-installed — free, no API key,
+no account). Voice: `en-CA-ClaraNeural` (Canadian English, female, "Friendly, Positive" profile) — the closest free
+match to Margaret's locked warm/dignified voice direction, spoken at `rate=-8%` (slightly slower than default, per
+the script's ~130wpm low-end pacing direction). **Sovereignty note: `edge-tts` is a free/no-account call to a
+Microsoft cloud synthesis endpoint per line — it is NOT a fully local/offline model.** It was selected over the two
+fully-local options checked on this machine: Windows SAPI (`pyttsx3`/`System.Speech`, voices `Microsoft David
+Desktop` and `Microsoft Zira Desktop` — installed, fully local, but dated/robotic quality, likely not good enough for
+a senior-audience welcome video) and Piper/Coqui (not installed, no local model files present). This does **not**
+pre-empt ADR-0023's still-open sovereign-vs-paid decision: edge-tts is free and keyless, not the paid ElevenLabs path
+that ADR is gated on — flagged here for Aaron's awareness, not decided unilaterally.
+
+**Method (extends the visual pipeline above):**
+1. Frames already captured in `frames-intro/` (from the silent-render sprint — reused as-is, not re-captured).
+2. `python narrate-and-assemble.py` (this directory):
+   - Extracts each scene's `cap:` narration line directly from `dcc-intro-welcome-slideshow.html` via regex (the
+     JS `scenes` array is the source of truth, same principle as the visual pipeline's `page.evaluate` read).
+   - Synthesizes one MP3 per scene with `edge-tts` (`en-CA-ClaraNeural`, `rate=-8%`) into `audio-intro/scene-N.mp3`.
+   - Reads each clip's **actual** duration via `ffprobe` — this replaces the hand-authored `s:` seconds as the
+     frame-hold driver, so video and audio pacing match exactly (the gap flagged in the silent-v1 note above).
+   - Concatenates the per-scene MP3s into one AAC track (`audio-intro/narration-full.m4a`) via ffmpeg concat demuxer.
+   - Builds a frame-hold concat list from the real audio durations (`frames-intro/concat-list-narrated.txt`).
+   - Renders the video track (same `fps=30,format=yuv420p,libx264` settings as `assemble.py`), then muxes video +
+     audio with `-c:v copy -c:a aac -map 0:v:0 -map 1:a:0 -shortest`.
+3. Output: `dcc-intro-welcome-NARRATED.mp4` (1280×720, H.264/yuv420p + AAC, `+faststart`).
+4. Cleanup: `audio-intro/` (per-scene MP3s + concat lists) is gitignored, same treatment as `frames-*/` — kept
+   locally for reproducibility/debugging, not committed. Nothing deleted per the Production Deletion Guard.
+
+**EN-only v1.** The fr-CA narration track stays gated on human review (per the script's own `FR REVIEW FLAG`) —
+not attempted in this sprint. A French narrated render is a follow-up once Aaron has reviewed the FR script text.
+
+**Honest quality read:** `edge-tts` neural voices are a significant step up from Windows SAPI, but this is still a
+generic stock neural voice, not Margaret's actual locked character voice (that requires a voice actor or a
+custom/cloned model — out of scope for a free sovereign TTS check). Good enough to prove the audio pipeline mechanics
+end-to-end; a real senior-audience-facing release would likely want either a professional voice-over read or a
+higher-tier TTS product once ADR-0023 is resolved with Aaron.

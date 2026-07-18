@@ -38,3 +38,4 @@ __pycache__/
 
 # POC video pipeline — captured frame PNGs are derived/temp, only the rendered mp4s are committed
 _feedback/poc/renders/frames-*/
+_feedback/poc/renders/audio-*/
