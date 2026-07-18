@@ -80,19 +80,42 @@ def extract_scene_caps(html_path: Path) -> list[str]:
     return caps
 
 
+def extract_scene_seconds(html_path: Path) -> list[float]:
+    """Pull each scene's authored `s:` seconds -- used as the held duration for scenes
+    with an empty cap: line (e.g. a closing/logo card with no spoken narration)."""
+    text = html_path.read_text(encoding="utf-8")
+    return [float(s) for s in re.findall(r"s:([0-9.]+)\s*\}", text)]
+
+
 async def synth_one(text: str, out_path: Path) -> None:
     import edge_tts
     communicate = edge_tts.Communicate(text, VOICE, rate=RATE)
     await communicate.save(str(out_path))
 
 
-async def synth_all(caps: list[str], audio_dir: Path) -> list[Path]:
+def synth_silence(seconds: float, out_path: Path) -> None:
+    """Empty cap: line = no spoken narration for that scene (e.g. closing card).
+    Generate a silent MP3 held for the scene's own authored `s:` duration, so the
+    frame-hold logic downstream (driven by real audio duration) still gets a clip."""
+    cmd = [
+        "ffmpeg", "-y", "-f", "lavfi", "-i", f"anullsrc=r=24000:cl=mono",
+        "-t", str(seconds), "-q:a", "9", str(out_path),
+    ]
+    subprocess.run(cmd, check=True, capture_output=True, text=True)
+
+
+async def synth_all(caps: list[str], scene_seconds: list[float], audio_dir: Path) -> list[Path]:
     audio_dir.mkdir(exist_ok=True)
     paths = []
     for i, cap in enumerate(caps):
         out_path = audio_dir / f"scene-{i}.mp3"
-        print(f"  Synthesizing scene {i} ({len(cap)} chars)...")
-        await synth_one(cap, out_path)
+        if cap.strip():
+            print(f"  Synthesizing scene {i} ({len(cap)} chars)...")
+            await synth_one(cap, out_path)
+        else:
+            fallback = scene_seconds[i] if i < len(scene_seconds) else 2.0
+            print(f"  Scene {i} has no cap: line -- generating {fallback:.1f}s of silence")
+            synth_silence(fallback, out_path)
         paths.append(out_path)
     return paths
 
@@ -170,6 +193,7 @@ def run_target(key: str, html_name: str, frame_dir_name: str, audio_dir_name: st
 
     print(f"[{key}] Extracting scene narration lines from", slideshow_html.name)
     caps = extract_scene_caps(slideshow_html)
+    scene_seconds = extract_scene_seconds(slideshow_html)
     print(f"  {len(caps)} scenes found")
 
     n_frames = len(list(frame_dir.glob("frame-*.png")))
@@ -180,7 +204,7 @@ def run_target(key: str, html_name: str, frame_dir_name: str, audio_dir_name: st
         )
 
     print(f"[{key}] Synthesizing narration with edge-tts ({VOICE})...")
-    audio_paths = asyncio.run(synth_all(caps, audio_dir))
+    audio_paths = asyncio.run(synth_all(caps, scene_seconds, audio_dir))
 
     durations = [ffprobe_duration(p) for p in audio_paths]
     print(f"[{key}] Per-scene audio durations (s):", [round(d, 2) for d in durations])
