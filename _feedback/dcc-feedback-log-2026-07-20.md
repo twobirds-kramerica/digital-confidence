@@ -19,6 +19,13 @@
 
 - [ ] **UX/UI not yet self-reviewed by Aaron / no beta tester.** Full UX/UI audit to surface issues systematically (recover the lost feedback batch).
 
+- [F] **"For Families" page — section-footer CTA/info treatment (Aaron, design flag + "give it a crack").** The 3 sections each have an oval cream-coloured button at the bottom, **left-justified**, and they're **cramming information into a call-to-action shape**. Problems + wants:
+    1. **Separate INFO from ACTION.** Time-to-complete and "certificate at the end" are *information*, not CTAs — don't put them in a button/oval shape. Present info subtly/differently (e.g. a light-grey "…" dotted-line treatment / small caption), reserve the button shape for the ACTUAL call to action (Get Started / Learn More).
+    2. **One message per element — don't cram.** Time estimate = its own message, CONSISTENT across all 3 sections. The "certificate at 85%" note is fine but as its OWN message, not mashed together. Currently inconsistent: two sections mention time, one mentions the certificate.
+    3. **Rename "certificate."** "Certificate" sounds too official/overstated → use **"completion badge"** or "completion certificate" (Aaron leans badge; his call).
+    4. **Alignment:** the CTA button should be **centered or bottom-right, NOT bottom-left.**
+    5. **Give it a crack:** research who does course-card footers well (best practice) + use the available UX design tools (Anthropic frontend-design skill, design-languages reference) and take another shot. Propose for Aaron's review (DCC design gate).
+
 ## Notes
 - Prior DCC feedback batch (nav/delineation, read-aloud placement, logos, contrast, iPhone-default, "back to DCC" broken, video style) was given earlier this session — cross-reference `digital-confidence/_feedback/` for existing items so we don't duplicate.
 - Fixes to the LIVE site must pass Playwright live-verification (LIVE-OUTCOME VERIFICATION rule) + bump service-worker CACHE_NAME so returning visitors get the fix.
