@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DCC Intro/Welcome — LOON render frame (bilingual)</title>
+<style>
+  /* Render-only page: the stage IS the full 1280x720 frame. No chrome, no controls.
+     Captions are burned in large + high-contrast for a senior audience (LOON standard). */
+  :root{ --edge:#bfe0ef; --fill:#12405c; }
+  *{box-sizing:border-box}
+  html{color-scheme:light}
+  html,body{margin:0;padding:0;background:#0e2438}
+  .stage{position:relative;width:1280px;height:720px;overflow:hidden;
+    background:linear-gradient(160deg,#0e2438,#123a54);color:#eaf3f8;
+    font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  .slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:56px 72px 168px;text-align:center;opacity:0}
+  .slide.active{opacity:1}
+  .fig{width:150px;height:150px;margin-bottom:26px;filter:drop-shadow(0 6px 14px rgba(0,0,0,.35))}
+  .onscreen{font-size:40px;font-weight:600;line-height:1.28;max-width:88%;color:#fff}
+  .cards{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin-top:12px}
+  .card{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.28);border-radius:14px;
+    padding:20px 24px;font-size:22px;min-width:190px}
+  .card .ic{font-size:38px;display:block;margin-bottom:10px}
+  .devices{display:flex;gap:30px;align-items:flex-end;justify-content:center;margin-bottom:26px}
+  .endcard{font-size:52px;font-weight:700;letter-spacing:.4px;color:#fff}
+  .endcard small{display:block;font-size:24px;font-weight:400;color:#b3d3e4;margin-top:14px;letter-spacing:.6px}
+  /* Burned-in caption bar: large, bold, high contrast — legible for seniors. */
+  .caption{position:absolute;left:0;right:0;bottom:0;padding:22px 52px 26px;
+    background:linear-gradient(transparent,rgba(0,0,0,.72) 38%);
+    font-size:27px;font-weight:600;line-height:1.42;min-height:132px;
+    display:flex;align-items:flex-end;justify-content:center;text-align:center;
+    color:#ffffff;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+  <div class="caption" id="caption"></div>
+</div>
+<script>
+// Original etched neutral guide figure (placeholder for Margaret — original art, no likeness, no IP).
+const FIG = `<svg class="fig" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <circle cx="60" cy="46" r="24" stroke="#bfe0ef" stroke-width="2.5" fill="#12405c"/>
+  <path d="M28 104c0-19 14-30 32-30s32 11 32 30" stroke="#bfe0ef" stroke-width="2.5" fill="#12405c"/>
+  <path d="M50 44c3 3 17 3 20 0M46 40h6M68 40h6" stroke="#bfe0ef" stroke-width="2.2" stroke-linecap="round"/>
+</svg>`;
+// Etched device motifs: phone, tablet, laptop (generic, no branding).
+const DEVICES = `<div class="devices" aria-hidden="true">
+  <svg width="58" height="96" viewBox="0 0 46 76" fill="none"><rect x="2" y="2" width="42" height="72" rx="8" stroke="#bfe0ef" stroke-width="2.5" fill="#12405c"/><circle cx="23" cy="65" r="3" fill="#bfe0ef"/></svg>
+  <svg width="108" height="84" viewBox="0 0 86 66" fill="none"><rect x="2" y="2" width="82" height="62" rx="8" stroke="#bfe0ef" stroke-width="2.5" fill="#12405c"/></svg>
+  <svg width="138" height="88" viewBox="0 0 110 70" fill="none"><rect x="12" y="2" width="86" height="54" rx="6" stroke="#bfe0ef" stroke-width="2.5" fill="#12405c"/><path d="M2 66h106" stroke="#bfe0ef" stroke-width="2.5" stroke-linecap="round"/></svg>
+</div>`;
+
+const SCENES = {
+  en: [
+    { html:`${FIG}<div class="onscreen">Welcome.</div>`,
+      cap:`Welcome. I'm so glad you're here.` },
+    { html:`${FIG}<div class="onscreen">This welcome takes less than two minutes.</div>`,
+      cap:`Before anything else: this welcome takes less than two minutes, and there is nothing you need to do while you watch. You can just listen.` },
+    { html:`${FIG}<div class="onscreen">The Digital Confidence Centre.<br>Built for Canadians like you.</div>`,
+      cap:`This is the Digital Confidence Centre. It was built for Canadians who want to feel more comfortable with everyday technology. Phones, messages, video calls, staying safe. All of it, one small step at a time.` },
+    { html:`<div class="onscreen" style="margin-bottom:26px">Short lessons, simple sections</div><div class="cards"><div class="card"><span class="ic">🛡</span>Staying safe</div><div class="card"><span class="ic">💬</span>Staying connected</div><div class="card"><span class="ic">💡</span>Everyday skills</div></div>`,
+      cap:`The Centre is organized into short lessons, grouped into a few simple sections: staying safe, staying connected, and everyday skills. Each lesson tells you up front how long it takes. Most are just a few minutes.` },
+    { html:`${DEVICES}<div class="onscreen">Use the device you have.<br>Not sure which? That's okay too.</div>`,
+      cap:`You can use whatever device you have. A phone, a tablet, a computer. And if you're not sure what you have, that's okay too. The lessons will meet you where you are.` },
+    { html:`${FIG}<div class="onscreen">Skip anything. Pause anytime.<br>Take all the time you need.</div>`,
+      cap:`Now, the most important part. You are in charge here. You can skip anything. You can pause anytime. You can watch a lesson twice, or ten times. Nothing is timed, nothing is graded, and nothing you do here can break anything.` },
+    { html:`${FIG}<div class="onscreen">Feeling a little behind?<br>You're exactly who this was made for.</div>`,
+      cap:`And if you've been feeling a little behind, or a little uncomfortable with all of this, I want you to know: you are exactly who this place was made for. You're not behind. You're just getting started.` },
+    { html:`<div class="endcard">Digital Confidence Centre<small>Calm. Capable. Dignified.</small></div>`,
+      cap:`Take your time. We'll be right here.` }
+  ],
+  fr: [
+    { html:`${FIG}<div class="onscreen">Bienvenue.</div>`,
+      cap:`Bienvenue. Je suis très heureuse que vous soyez ici.` },
+    { html:`${FIG}<div class="onscreen">Ce mot de bienvenue dure moins de deux minutes.</div>`,
+      cap:`D'abord, une chose : ce mot de bienvenue dure moins de deux minutes, et vous n'avez rien à faire pendant que vous l'écoutez. Vous pouvez simplement écouter.` },
+    { html:`${FIG}<div class="onscreen">Le Centre de confiance numérique.<br>Conçu pour des gens comme vous.</div>`,
+      cap:`Voici le Centre de confiance numérique. Il a été créé pour les Canadiennes et les Canadiens qui veulent se sentir plus à l'aise avec la technologie de tous les jours. Les téléphones, les messages, les appels vidéo, la sécurité. Tout cela, un petit pas à la fois.` },
+    { html:`<div class="onscreen" style="margin-bottom:26px">De courtes leçons, des sections simples</div><div class="cards"><div class="card"><span class="ic">🛡</span>Rester en sécurité</div><div class="card"><span class="ic">💬</span>Rester en contact</div><div class="card"><span class="ic">💡</span>Habiletés de tous les jours</div></div>`,
+      cap:`Le Centre est organisé en courtes leçons, regroupées en quelques sections simples : rester en sécurité, rester en contact, et les habiletés de tous les jours. Chaque leçon vous dit dès le départ combien de temps elle prend. La plupart durent seulement quelques minutes.` },
+    { html:`${DEVICES}<div class="onscreen">Utilisez l'appareil que vous avez.<br>Pas certain? Ce n'est pas grave.</div>`,
+      cap:`Vous pouvez utiliser l'appareil que vous avez. Un téléphone, une tablette, un ordinateur. Et si vous n'êtes pas certain de ce que vous avez, ce n'est pas grave non plus. Les leçons vous rejoindront là où vous êtes.` },
+    { html:`${FIG}<div class="onscreen">Sautez ce que vous voulez. Faites une pause.<br>Prenez tout votre temps.</div>`,
+      cap:`Maintenant, le plus important. C'est vous qui décidez, ici. Vous pouvez sauter ce que vous voulez. Vous pouvez faire une pause à tout moment. Vous pouvez regarder une leçon deux fois, ou dix fois. Rien n'est chronométré, rien n'est noté, et rien de ce que vous faites ici ne peut briser quoi que ce soit.` },
+    { html:`${FIG}<div class="onscreen">Un peu en retard?<br>C'est exactement pour vous que c'est fait.</div>`,
+      cap:`Et si vous vous sentez un peu en retard, ou un peu mal à l'aise avec tout cela, je veux que vous le sachiez : cet endroit a été créé exactement pour vous. Vous n'êtes pas en retard. Vous êtes en train de commencer.` },
+    { html:`<div class="endcard">Centre de confiance numérique<small>Calme. Capable. Digne.</small></div>`,
+      cap:`Prenez votre temps. Nous serons là.` }
+  ]
+};
+
+const params = new URLSearchParams(location.search);
+const lang = params.get('lang') === 'fr' ? 'fr' : 'en';
+document.documentElement.lang = (lang === 'fr') ? 'fr-CA' : 'en-CA';
+const scenes = SCENES[lang];
+window.scenes = scenes; // exposed for the capture script (page.evaluate reads cap: lines)
+
+const stage = document.getElementById('stage');
+const caption = document.getElementById('caption');
+const nodes = scenes.map((sc)=>{
+  const d = document.createElement('div');
+  d.className = 'slide';
+  d.innerHTML = sc.html;
+  stage.insertBefore(d, caption);
+  return d;
+});
+// Single-slide render: only the requested slide is visible, no transition (clean frames, no ghosting).
+window.show = function(i){
+  nodes.forEach((n,j)=>n.classList.toggle('active', j===i));
+  caption.textContent = scenes[i].cap;
+};
+window.show(0);
+</script>
+</body>
+</html>
