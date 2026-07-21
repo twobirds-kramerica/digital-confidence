@@ -19,6 +19,35 @@
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/core.css">
   <link rel="stylesheet" href="css/print.css" media="print">
+  <!-- For Families card-footer: INFO (time + reward) separated from ACTION (CTA). Scoped to this page only so shared .ttc on index/fr is untouched. Proposal 2026-07-21, awaiting Aaron sign-off. -->
+  <style>
+    .topic-card .card-foot {
+      margin-top: auto;
+      display: flex; flex-direction: column; gap: var(--space-4);
+      padding-top: var(--space-4);
+      border-top: 1px dotted var(--color-border-strong);
+    }
+    .topic-card .card-meta {
+      list-style: none; margin: 0; padding: 0;
+      display: flex; flex-direction: column; gap: var(--space-2);
+    }
+    .topic-card .card-meta li {
+      display: flex; align-items: baseline; gap: var(--space-2);
+      color: var(--color-text-light);
+      font-size: var(--font-size-sm); line-height: 1.4;
+    }
+    .topic-card .card-meta .meta-ico {
+      flex: 0 0 auto; font-size: 1.05em; line-height: 1;
+      position: relative; top: 1px;
+    }
+    .topic-card .card-cta {
+      align-self: flex-end;            /* bottom-right, never bottom-left */
+      position: relative; z-index: 1;  /* sit above the whole-card click overlay */
+    }
+    @media (max-width: 560px) {
+      .topic-card .card-cta { align-self: stretch; }  /* full-width tap target on phones */
+    }
+  </style>
 </head>
 <body>
 
@@ -99,19 +128,34 @@
         <span class="card-icon" aria-hidden="true">🪂</span>
         <h3><a href="modules/module-1.html">The Escape Hatch</a></h3>
         <p>The one skill that fixes most tech trouble: how to safely back out of anything on screen. It ends the panic that causes most support calls.</p>
-        <span class="ttc"><span aria-hidden="true">⏱</span> 10 minutes to feel in control</span>
+        <div class="card-foot">
+          <ul class="card-meta">
+            <li><span class="meta-ico" aria-hidden="true">⏱</span> About 10 minutes</li>
+          </ul>
+          <a class="btn btn-primary card-cta" href="modules/module-1.html">Open lesson</a>
+        </div>
       </li>
       <li class="topic-card">
         <span class="card-icon" aria-hidden="true">🤝</span>
         <h3><a href="scam-defence-helper.html">Practice: Spot the Scam</a></h3>
         <p>A gentle, pretend exercise. They help "a friend" decide what to do about a suspicious text, which is the calmest way to build real confidence.</p>
-        <span class="ttc"><span aria-hidden="true">⏱</span> 5 minutes to a first win</span>
+        <div class="card-foot">
+          <ul class="card-meta">
+            <li><span class="meta-ico" aria-hidden="true">⏱</span> About 5 minutes</li>
+          </ul>
+          <a class="btn btn-primary card-cta" href="scam-defence-helper.html">Start practice</a>
+        </div>
       </li>
       <li class="topic-card">
         <span class="card-icon" aria-hidden="true">🏦</span>
         <h3><a href="modules/module-6.html">Online banking, safely</a></h3>
         <p>The safety habits that protect their money, so a worried call to you becomes a calm check they can do themselves.</p>
-        <span class="ttc"><span aria-hidden="true">⏱</span> 15 minutes to banking confidence</span>
+        <div class="card-foot">
+          <ul class="card-meta">
+            <li><span class="meta-ico" aria-hidden="true">⏱</span> About 15 minutes</li>
+          </ul>
+          <a class="btn btn-primary card-cta" href="modules/module-6.html">Open lesson</a>
+        </div>
       </li>
     </ul>
 
@@ -127,19 +171,35 @@
         <span class="card-icon" aria-hidden="true">🧭</span>
         <h3><a href="youth/index.html">DCC Youth (ages 13&ndash;17)</a></h3>
         <p>Eight short, no-lecture modules on sextortion, algorithms, deepfakes and AI, the attention economy, loot boxes, and online pressure. Built to respect a teen's intelligence, not to scare them.</p>
-        <span class="ttc"><span aria-hidden="true">⏱</span> About 15 minutes each</span>
+        <div class="card-foot">
+          <ul class="card-meta">
+            <li><span class="meta-ico" aria-hidden="true">⏱</span> About 15 minutes each</li>
+          </ul>
+          <a class="btn btn-primary card-cta" href="youth/index.html">See the modules</a>
+        </div>
       </li>
       <li class="topic-card">
         <span class="card-icon" aria-hidden="true">🎓</span>
         <h3><a href="youth/course-parent-intro.html">Parent courses: social media and your teen</a></h3>
-        <p>Two certificate courses for parents of teens 13&ndash;17 &mdash; the grounded introduction, then <a href="youth/course-parent-advanced.html">the advanced course</a> on resourceful kids, hand-me-down phones, and the serious risks. Every fact cited to a Canadian source.</p>
-        <span class="ttc"><span aria-hidden="true">⏱</span> 30&ndash;40 minutes each, certificate at 85%</span>
+        <p>Two courses for parents of teens 13&ndash;17 &mdash; the grounded introduction, then <a href="youth/course-parent-advanced.html">the advanced course</a> on resourceful kids, hand-me-down phones, and the serious risks. Every fact cited to a Canadian source.</p>
+        <div class="card-foot">
+          <ul class="card-meta">
+            <li><span class="meta-ico" aria-hidden="true">⏱</span> About 30&ndash;40 minutes each</li>
+            <li><span class="meta-ico" aria-hidden="true">🏅</span> Earn a completion badge at 85%</li>
+          </ul>
+          <a class="btn btn-primary card-cta" href="youth/course-parent-intro.html">View the courses</a>
+        </div>
       </li>
       <li class="topic-card">
         <span class="card-icon" aria-hidden="true">🧸</span>
         <h3><a href="classic/kids/index.html">DCC Kids (ages 4&ndash;12)</a></h3>
         <p>Caregiver-led lessons in three age bands, from "secret stuff vs. share stuff" to spotting a "please don't tell your parents" message.</p>
-        <span class="ttc"><span aria-hidden="true">⏱</span> Sit-together lessons</span>
+        <div class="card-foot">
+          <ul class="card-meta">
+            <li><span class="meta-ico" aria-hidden="true">⏱</span> At your own pace, together</li>
+          </ul>
+          <a class="btn btn-primary card-cta" href="classic/kids/index.html">See kids lessons</a>
+        </div>
       </li>
     </ul>
 
