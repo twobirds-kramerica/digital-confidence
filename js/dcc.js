@@ -52,10 +52,15 @@
       if (scrollToId(id)) { try { history.pushState(null, "", "#" + id); } catch (err) {} }
     });
     // Landing directly on a page with a #hash (cross-page link, bookmark, refresh).
+    // The browser's own native fragment-scroll can fire after our correction
+    // (timing varies by browser/load speed) and would silently undo it, so
+    // re-apply a couple of times shortly after in case that happens.
     function fixInitialHash() {
       if (!location.hash) return;
       var id = decodeURIComponent(location.hash.slice(1));
       scrollToId(id, "auto");
+      setTimeout(function () { scrollToId(id, "auto"); }, 100);
+      setTimeout(function () { scrollToId(id, "auto"); }, 400);
     }
     if (document.readyState === "complete") fixInitialHash();
     else window.addEventListener("load", fixInitialHash);
