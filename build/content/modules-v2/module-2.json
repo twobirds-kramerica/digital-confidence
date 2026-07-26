@@ -34,7 +34,7 @@
     {
       "type": "list",
       "items": [
-        "The Canadian Anti-Fraud Centre reported that Canadians lost over <strong>$530 million</strong> to fraud in a recent year. The real number is likely much higher because many people feel too embarrassed to report it.",
+        "The Canadian Anti-Fraud Centre reported that Canadians lost over <strong>$704 million</strong> to fraud in 2025, the highest year on record. The real number is much higher: the CAFC estimates only 5 to 10 per cent of fraud is ever reported, often because people feel too embarrassed.",
         "Scammers do not target people who are foolish. They target people who are <strong>trusting, polite, and law-abiding</strong>. Those are good qualities. Scammers exploit them.",
         "Being scammed is <strong>not your fault</strong>. These are professional criminals who do this for a living.",
         "The best defence is not technical skill. It is <strong>knowing what to look for</strong>. That is exactly what we are about to learn."
@@ -330,6 +330,53 @@
     {
       "type": "heading",
       "level": 2,
+      "text": "Scam 8: Remote access and screen-sharing scams"
+    },
+    {
+      "type": "paragraph",
+      "text": "Many of the scams in this module share one final, dangerous step: the caller asks you to let them <strong>see your screen</strong> or <strong>control your device from far away</strong> (this is called remote access). Screen sharing is a real, legitimate feature; families use it to help each other, and real companies use it when <em>you</em> call <em>them</em> for help. But in a scammer's hands, it is a window into your banking, your email, and your passwords, all at once."
+    },
+    {
+      "type": "paragraph",
+      "text": "The Canadian Anti-Fraud Centre received more than 112,000 fraud reports in 2025, with over <strong>$704 million</strong> in reported losses, the highest year on record. Remote access and screen sharing show up across many of the worst of these frauds: fake tech support, fake bank security departments, and fake investment advisors alike all want to get onto your screen."
+    },
+    {
+      "type": "scam_example",
+      "label": "What the scam sounds like (this is NOT real)",
+      "text": "This is the fraud department at your bank. Someone is moving money out of your account right now. Stay on the line, I will help you protect it. First, open your app store and download the screen-sharing app I name for you. Now read me the code it shows. Good. Now log in to your online banking so we can check whether the transfers went through."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Red flags to watch for"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<strong>No real bank, government office, or company will ever ask you to download an app so they can see or control your screen.</strong> Not your bank's fraud department, not the CRA, not your internet provider. Ever. This one rule stops the whole scam.",
+        "<strong>They ask you to read out a code from your screen.</strong> That code is the key that lets them connect to your device. Reading it aloud is like reading out your house key's cutting pattern.",
+        "<strong>They ask you to log in to your bank while they are connected.</strong> If they can see your screen, they can see your password as you type it and your accounts once you are in.",
+        "<strong>A friendly \"investment advisor\" offers to guide you by controlling your screen.</strong> Investment fraud was the costliest fraud in Canada in 2025, at $351 million in reported losses, and many of these scams start with a helpful stranger steering your device toward a fake trading website.",
+        "<strong>They insist you stay on the phone the whole time.</strong> Just like the CRA scam, they cannot let you pause and check with someone you trust."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "<strong>Applying the 3-Second Rule.</strong> <strong>Stop:</strong> Hang up. Do not download anything a caller asks for. <strong>Breathe:</strong> Your money is not moving anywhere; that story is the scammer's pressure tactic. <strong>Verify:</strong> Call your bank yourself using the number on the back of your bank card. If the fraud department really needs you, that number reaches the real one."
+    },
+    {
+      "type": "warning",
+      "label": "If you already let someone connect",
+      "text": "Do not feel ashamed, act quickly instead. <strong>First,</strong> disconnect from the internet (turn off your Wi-Fi or unplug the router) so the connection is cut. <strong>Second,</strong> call your bank using the number on your bank card and tell them what happened. <strong>Third,</strong> using a different device if you can, change the passwords for any account you opened while they were connected. <strong>Fourth,</strong> have your device checked by a trusted family member or a local repair shop before you use it for banking again. <strong>Finally,</strong> report it to the Canadian Anti-Fraud Centre at 1-888-495-8501; the CAFC estimates only 5 to 10 per cent of fraud is ever reported, and every report helps protect someone else."
+    },
+    {
+      "type": "tip",
+      "label": "Tip",
+      "text": "Screen sharing with your own family is still fine. The difference is simple: <strong>you</strong> chose the person, <strong>you</strong> started the call, and you can hang up any time. The danger is only when a stranger who contacted <em>you</em> asks to get onto your screen."
+    },
+    {
+      "type": "heading",
+      "level": 2,
       "text": "Your master scam-spotting checklist"
     },
     {
@@ -441,6 +488,17 @@
           "correct": 1,
           "right": "That is it. Stop, Breathe, Verify. Three simple steps that protect you from almost every scam.",
           "wrong": "The 3-Second Rule is: Stop (take your fingers off the screen), Breathe (one deep breath), and Verify (check if the message is real by contacting the organisation directly)."
+        },
+        {
+          "q": "5. A caller says they are from your bank's fraud department and asks you to download a screen-sharing app so they can \"secure your account.\" What should you do?",
+          "options": [
+            "Download the app quickly, your money is in danger",
+            "Hang up and call the number on the back of your bank card",
+            "Ask the caller to prove they work for the bank"
+          ],
+          "correct": 1,
+          "right": "Exactly right. No real bank will ever ask you to download an app so they can see or control your screen. Hanging up and calling the number on your bank card always reaches the real bank.",
+          "wrong": "The safe answer is to hang up and call the number on the back of your bank card. No real bank ever asks you to download a screen-sharing app, and a scammer can sound convincing when 'proving' who they are."
         }
       ]
     },
@@ -455,7 +513,8 @@
         "I know how the grandparent scam works",
         "I can identify a phishing email from a fake bank",
         "I know the red flags of romance scams",
-        "I can recognise tech support scams and fake warnings"
+        "I can recognise tech support scams and fake warnings",
+        "I will never download an app or share my screen because a caller asked me to"
       ]
     },
     {
@@ -474,7 +533,8 @@
         "<a href=\"../classic/resources/scam-deep-dives/call-forwarding-scam.html\" target=\"_blank\" rel=\"noopener noreferrer\">Call Forwarding Scam</a> <span class=\"ext-note\">(opens the original site in a new tab)</span>",
         "<a href=\"../classic/resources/scam-deep-dives/cra-phone-scam.html\" target=\"_blank\" rel=\"noopener noreferrer\">CRA Phone Scam</a> <span class=\"ext-note\">(opens the original site in a new tab)</span>",
         "<a href=\"../classic/resources/scam-deep-dives/grandparent-scam.html\" target=\"_blank\" rel=\"noopener noreferrer\">Grandparent Scam</a> <span class=\"ext-note\">(opens the original site in a new tab)</span>",
-        "<a href=\"../classic/resources/scam-deep-dives/romance-scam-seniors.html\" target=\"_blank\" rel=\"noopener noreferrer\">Romance Scams</a> <span class=\"ext-note\">(opens the original site in a new tab)</span>"
+        "<a href=\"../classic/resources/scam-deep-dives/romance-scam-seniors.html\" target=\"_blank\" rel=\"noopener noreferrer\">Romance Scams</a> <span class=\"ext-note\">(opens the original site in a new tab)</span>",
+        "<a href=\"../classic/resources/scam-deep-dives/remote-access-scam.html\" target=\"_blank\" rel=\"noopener noreferrer\">Remote Access and Screen-Sharing Scams</a> <span class=\"ext-note\">(opens the original site in a new tab)</span>"
       ]
     },
     {
@@ -548,7 +608,7 @@
       {
         "type": "list",
         "items": [
-          "Le Centre antifraude du Canada a rapporté que les Canadiens ont perdu plus de <strong>530 millions de dollars</strong> aux mains des fraudeurs au cours d’une année récente. Le vrai chiffre est probablement bien plus élevé, car bien des gens sont trop gênés pour le signaler.",
+          "Le Centre antifraude du Canada a rapporté que les Canadiens ont perdu plus de <strong>704 millions de dollars</strong> aux mains des fraudeurs en 2025, un sommet historique. Le vrai chiffre est bien plus élevé : le Centre estime que seulement 5 à 10 pour cent des fraudes sont signalées, souvent parce que les gens sont trop gênés.",
           "Les fraudeurs ne ciblent pas les gens naïfs. Ils ciblent les gens <strong>confiants, polis et respectueux des lois</strong>. Ce sont de belles qualités. Les fraudeurs les exploitent.",
           "Être victime d’une fraude n’est <strong>pas votre faute</strong>. Ce sont des criminels professionnels qui en font leur métier.",
           "La meilleure défense n’est pas une habileté technique. C’est de <strong>savoir quoi surveiller</strong>. C’est exactement ce que nous allons apprendre."
@@ -844,6 +904,53 @@
       {
         "type": "heading",
         "level": 2,
+        "text": "Fraude 8 : l’accès à distance et le partage d’écran"
+      },
+      {
+        "type": "paragraph",
+        "text": "Bien des fraudes de ce module partagent une dernière étape dangereuse : l’interlocuteur vous demande de le laisser <strong>voir votre écran</strong> ou <strong>contrôler votre appareil à distance</strong> (c’est ce qu’on appelle l’accès à distance). Le partage d’écran est une fonction réelle et légitime; les familles s’en servent pour s’entraider, et les vraies entreprises l’utilisent quand c’est <em>vous</em> qui <em>les</em> appelez pour obtenir de l’aide. Mais entre les mains d’un fraudeur, c’est une fenêtre ouverte sur vos services bancaires, vos courriels et vos mots de passe, tout à la fois."
+      },
+      {
+        "type": "paragraph",
+        "text": "Le Centre antifraude du Canada a reçu plus de 112 000 signalements de fraude en 2025, totalisant plus de <strong>704 millions de dollars</strong> en pertes déclarées, l’année la plus lourde jamais enregistrée. L’accès à distance et le partage d’écran reviennent dans plusieurs des pires de ces fraudes : le faux soutien technique, les faux services de sécurité bancaire et les faux conseillers en placements veulent tous se rendre sur votre écran."
+      },
+      {
+        "type": "scam_example",
+        "label": "À quoi ressemble la fraude (ce n’est PAS réel)",
+        "text": "Ici le service antifraude de votre banque. Quelqu’un est en train de retirer de l’argent de votre compte en ce moment même. Restez en ligne, je vais vous aider à le protéger. D’abord, ouvrez votre boutique d’applications et téléchargez l’application de partage d’écran que je vais vous nommer. Maintenant, lisez-moi le code qui s’affiche. Bien. Connectez-vous maintenant à vos services bancaires en ligne pour que nous vérifiions si les virements sont passés."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Les signaux d’alarme à surveiller"
+      },
+      {
+        "type": "list",
+        "items": [
+          "<strong>Aucune vraie banque, aucun organisme gouvernemental ni aucune entreprise ne vous demandera jamais de télécharger une application pour voir ou contrôler votre écran.</strong> Ni le service antifraude de votre banque, ni l’ARC, ni votre fournisseur Internet. Jamais. Cette seule règle bloque toute la fraude.",
+          "<strong>On vous demande de lire à voix haute un code affiché à l’écran.</strong> Ce code est la clé qui leur permet de se connecter à votre appareil. Le lire à voix haute, c’est comme dicter le patron de découpe de la clé de votre maison.",
+          "<strong>On vous demande de vous connecter à votre banque pendant qu’ils sont connectés.</strong> S’ils voient votre écran, ils voient votre mot de passe pendant que vous le tapez, puis vos comptes une fois que vous êtes entré.",
+          "<strong>Un « conseiller en placements » sympathique offre de vous guider en contrôlant votre écran.</strong> La fraude à l’investissement a été la plus coûteuse au Canada en 2025, avec 351 millions de dollars en pertes déclarées, et bien de ces fraudes commencent par un inconnu serviable qui dirige votre appareil vers un faux site de placements.",
+          "<strong>On insiste pour que vous restiez au téléphone tout le long.</strong> Comme dans la fraude de l’ARC, ils ne peuvent pas vous laisser faire une pause pour vérifier auprès d’une personne de confiance."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "<strong>Appliquer la règle des 3 secondes.</strong> <strong>Arrêtez :</strong> raccrochez. Ne téléchargez rien de ce qu’un interlocuteur vous demande. <strong>Respirez :</strong> votre argent ne s’en va nulle part; cette histoire est la tactique de pression du fraudeur. <strong>Vérifiez :</strong> appelez vous-même votre banque au numéro inscrit au dos de votre carte bancaire. Si le service antifraude a vraiment besoin de vous, ce numéro mène au vrai service."
+      },
+      {
+        "type": "warning",
+        "label": "Si vous avez déjà laissé quelqu’un se connecter",
+        "text": "N’ayez pas honte : agissez vite. <strong>Premièrement,</strong> coupez la connexion Internet (fermez le Wi-Fi ou débranchez le routeur) pour rompre le lien. <strong>Deuxièmement,</strong> appelez votre banque au numéro de votre carte bancaire et racontez ce qui s’est passé. <strong>Troisièmement,</strong> en utilisant un autre appareil si possible, changez les mots de passe de tout compte ouvert pendant qu’ils étaient connectés. <strong>Quatrièmement,</strong> faites vérifier votre appareil par un proche de confiance ou un atelier de réparation local avant de l’utiliser de nouveau pour vos opérations bancaires. <strong>Enfin,</strong> signalez la fraude au Centre antifraude du Canada au 1-888-495-8501; le Centre estime que seulement 5 à 10 pour cent des fraudes sont signalées, et chaque signalement aide à protéger quelqu’un d’autre."
+      },
+      {
+        "type": "tip",
+        "label": "Conseil",
+        "text": "Partager votre écran avec votre propre famille demeure sans danger. La différence est simple : c’est <strong>vous</strong> qui avez choisi la personne, c’est <strong>vous</strong> qui avez lancé l’appel, et vous pouvez raccrocher à tout moment. Le danger n’existe que lorsqu’un inconnu qui <em>vous</em> a contacté demande à se rendre sur votre écran."
+      },
+      {
+        "type": "heading",
+        "level": 2,
         "text": "Votre grande liste de vérification antifraude"
       },
       {
@@ -955,6 +1062,17 @@
             "correct": 1,
             "right": "C’est ça. Arrêtez, respirez, vérifiez. Trois étapes simples qui vous protègent de presque toutes les fraudes.",
             "wrong": "La règle des 3 secondes, c’est : Arrêtez (retirez vos doigts de l’écran), Respirez (une grande respiration) et Vérifiez (confirmez si le message est vrai en contactant l’organisation directement)."
+          },
+          {
+            "q": "5. Un interlocuteur dit appartenir au service antifraude de votre banque et vous demande de télécharger une application de partage d’écran pour « sécuriser votre compte ». Que devriez-vous faire?",
+            "options": [
+              "Télécharger l’application rapidement : votre argent est en danger",
+              "Raccrocher et appeler le numéro au dos de votre carte bancaire",
+              "Demander à l’interlocuteur de prouver qu’il travaille pour la banque"
+            ],
+            "correct": 1,
+            "right": "Exactement. Aucune vraie banque ne vous demandera jamais de télécharger une application pour voir ou contrôler votre écran. Raccrocher et appeler le numéro de votre carte bancaire mène toujours à la vraie banque.",
+            "wrong": "La réponse sûre est de raccrocher et d’appeler le numéro au dos de votre carte bancaire. Aucune vraie banque ne demande de télécharger une application de partage d’écran, et un fraudeur peut sembler très convaincant quand il « prouve » son identité."
           }
         ]
       },
@@ -969,7 +1087,8 @@
           "Je sais comment fonctionne la fraude des grands-parents",
           "Je peux reconnaître un courriel d’hameçonnage d’une fausse banque",
           "Je connais les signaux d’alarme des fraudes amoureuses",
-          "Je peux reconnaître le faux soutien technique et les faux avertissements"
+          "Je peux reconnaître le faux soutien technique et les faux avertissements",
+          "Je ne téléchargerai jamais une application et je ne partagerai jamais mon écran parce qu’un interlocuteur me l’a demandé"
         ]
       },
       {
@@ -988,7 +1107,8 @@
           "<a href=\"../classic/resources/scam-deep-dives/call-forwarding-scam.html\" target=\"_blank\" rel=\"noopener noreferrer\">La fraude du renvoi d’appel</a> <span class=\"ext-note\">(ouvre le site original, en anglais, dans un nouvel onglet)</span>",
           "<a href=\"../classic/resources/scam-deep-dives/cra-phone-scam.html\" target=\"_blank\" rel=\"noopener noreferrer\">La fraude téléphonique de l’ARC</a> <span class=\"ext-note\">(ouvre le site original, en anglais, dans un nouvel onglet)</span>",
           "<a href=\"../classic/resources/scam-deep-dives/grandparent-scam.html\" target=\"_blank\" rel=\"noopener noreferrer\">La fraude des grands-parents</a> <span class=\"ext-note\">(ouvre le site original, en anglais, dans un nouvel onglet)</span>",
-          "<a href=\"../classic/resources/scam-deep-dives/romance-scam-seniors.html\" target=\"_blank\" rel=\"noopener noreferrer\">Les fraudes amoureuses</a> <span class=\"ext-note\">(ouvre le site original, en anglais, dans un nouvel onglet)</span>"
+          "<a href=\"../classic/resources/scam-deep-dives/romance-scam-seniors.html\" target=\"_blank\" rel=\"noopener noreferrer\">Les fraudes amoureuses</a> <span class=\"ext-note\">(ouvre le site original, en anglais, dans un nouvel onglet)</span>",
+          "<a href=\"../classic/resources/scam-deep-dives/remote-access-scam.html\" target=\"_blank\" rel=\"noopener noreferrer\">L’accès à distance et le partage d’écran</a> <span class=\"ext-note\">(ouvre le site original, en anglais, dans un nouvel onglet)</span>"
         ]
       },
       {
@@ -1022,9 +1142,9 @@
         },
         {
           "num": "Module 3",
-          "name": "Mots de passe et biométrie",
+          "name": "Mots de passe et biométrie (en anglais seulement)",
           "desc": "Renforcez encore votre bouclier avec des mots de passe robustes et la connexion biométrique, pour que vos comptes restent à vous seul.",
-          "href": "module-3-fr.html",
+          "href": "module-3.html",
           "external": false
         }
       ]
