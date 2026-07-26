@@ -570,9 +570,27 @@
     if (el.fab) { el.fab.style.display = ""; }
   }
 
+  // Beta tester tagging (S-DCC-BETA-DEMO-001, 2026-07-26): if this device
+  // arrived via the beta entry point (see js/beta.js), tag the submission
+  // with betaTester + a HASHED email so Aaron can filter/aggregate beta
+  // feedback separately. The raw email is never sent here -- only the
+  // SHA-256 hash computed by js/beta.js (same algorithm the dcc-data Worker
+  // uses server-side for /progress), matching ADR-0027's PII discipline.
+  // Anonymous/non-beta visitors are unaffected: this is a no-op for them.
+  function tagBetaContext(bundle) {
+    if (!window.DCCBeta || !window.DCCBeta.isBeta || !window.DCCBeta.isBeta()) {
+      return Promise.resolve(bundle);
+    }
+    bundle.context.betaTester = true;
+    return window.DCCBeta.getEmailHash().then(function (hash) {
+      if (hash) { bundle.context.betaEmailHash = hash; }
+      return bundle;
+    });
+  }
+
   // ---- Send ----------------------------------------------------------------
   function sendBundle(btn, statusNode) {
-    var bundle = buildBundle(state.finalTranscript);
+    var rawBundle = buildBundle(state.finalTranscript);
     if (btn) { btn.disabled = true; btn.textContent = "Sending..."; }
 
     function done(msg, cls) {
@@ -583,6 +601,12 @@
       window.setTimeout(function () { abortAll(); }, 1200);
     }
 
+    tagBetaContext(rawBundle).then(function (bundle) {
+      sendTaggedBundle(bundle, done);
+    });
+  }
+
+  function sendTaggedBundle(bundle, done) {
     if (!WIDGET_ENDPOINT) {
       var ok = saveLocal(bundle);
       done(ok
