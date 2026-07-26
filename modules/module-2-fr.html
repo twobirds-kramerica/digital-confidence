@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="fr-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Theme + text size before first paint (no flash). Local only, no tracking.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Le bouclier de sécurité - Centre de confiance numérique</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-2-fr.html">
+  <link rel="alternate" hreflang="en-CA" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-2.html">
+  <link rel="alternate" hreflang="fr-CA" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-2-fr.html">
+  <link rel="alternate" hreflang="x-default" href="https://twobirds-kramerica.github.io/digital-confidence/modules/module-2.html">
+  <meta name="description" content="Apprenez à reconnaître et à arrêter les fraudes les plus courantes visant les Canadiens : la fraude téléphonique de l’ARC, les courriels d’hameçonnage, le faux soutien technique et plus encore, grâce à la règle calme des 3 secondes. Une leçon gratuite en langage clair pour les aînés du Canada. Aucun compte requis.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Aller au contenu principal</a>
+
+<!-- SHARED SHELL: header (generated from module-v2.html.tpl; identical on every page). -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../fr/index.html">Centre de confiance numérique</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Connexion sécurisée</span>
+    <a class="lang-link" href="module-2.html" lang="en-CA" hreflang="en-CA">English</a>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Affichage
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Taille du texte">
+        <span class="group-label" aria-hidden="true">Taille du texte</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Texte plus petit">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Texte standard">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Texte plus grand">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Écouter cette page">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Lecture à voix haute</button>
+        <div class="rate-group" role="group" aria-label="Vitesse de lecture">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Plus lent</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normale</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Plus rapide</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Mode sombre</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Sections des leçons">
+  <div class="container">
+    <a href="../fr/index.html">Toutes les leçons</a>
+    <a href="../fr/index.html#protect-money" aria-current="page">Protégez votre argent</a>
+    <a href="../fr/index.html#everyday-confidence">Confiance au quotidien</a>
+    <a href="../for-families.html">Pour les familles (en anglais seulement)</a>
+    <a href="../support-directory.html">Obtenir de l’aide (en anglais seulement)</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Fil d’Ariane">
+  <div class="container">
+    <ol>
+      <li><a href="../fr/index.html">Toutes les leçons</a></li>
+      <li><a href="../fr/index.html#protect-money">Protégez votre argent</a></li>
+      <li><span aria-current="page">Le bouclier de sécurité</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <a class="lesson-back" href="../fr/index.html">← Retour à toutes les leçons</a>
+
+    <p class="lesson-category"><span aria-hidden="true">🛡️</span> Protection contre la fraude</p>
+    <h1>Le bouclier de sécurité</h1>
+    <p class="lesson-time"><span aria-hidden="true">⏱</span> Environ 25 minutes, à votre rythme</p>
+
+    <!-- Brenda: the first thing a nervous reader sees removes a fear. -->
+    <p class="reassurance"><span aria-hidden="true">✅</span> Vous êtes en lieu sûr. Rien sur cette page ne peut endommager votre appareil.</p>
+
+    <p class="lead">Comment reconnaître les fraudes les plus courantes visant les Canadiens et vous en protéger, pour vous sentir fort, et non effrayé, quand il est question de sécurité en ligne.</p>
+
+    <h2>L’histoire de Dorothy</h2>
+    <p>Dorothy, 72 ans, vit en Ontario. Un matin, elle a reçu un appel de quelqu’un qui disait travailler pour l’Agence du revenu du Canada (l’ARC, l’organisme gouvernemental qui s’occupe des impôts). L’interlocuteur affirmait que Dorothy devait 4 200 $ en impôts impayés et que la police se présenterait chez elle dans les deux heures, à moins qu’elle paie immédiatement avec des cartes-cadeaux iTunes.</p>
+    <p>Le cœur de Dorothy battait fort. Elle avait toujours payé ses impôts à temps. Mais l’interlocuteur était si convaincant. Il connaissait son nom complet, il avait l’air officiel, et il lui a même donné un numéro de matricule. Dorothy s’est rendue à sa pharmacie locale et a acheté pour 500 $ de cartes iTunes avant d’appeler sa fille, qui lui a dit de raccrocher immédiatement.</p>
+    <p>Dorothy a perdu ces 500 $. Mais elle a appris quelque chose de puissant ce jour-là : les fraudeurs sont des menteurs professionnels. Ils s’exercent à paraître vrais. Ils utilisent la peur et l’urgence comme des armes. Et une fois qu’on connaît leurs trucs, on les repère à des kilomètres.</p>
+    <p>Ce module est le cadeau de Dorothy pour vous : tout ce qu’elle aurait voulu savoir avant cet appel.</p>
+
+    <div class="coach-block">
+      <span class="coach-mark" aria-hidden="true">💬</span>
+      <div class="coach-body">
+        <span class="coach-label">From your coach</span>
+        <p>Si vous avez déjà eu honte d’avoir failli tomber dans le piège d’une fraude, laissez ce sentiment partir. Les fraudeurs passent des mois à étudier la psychologie, les techniques vocales et les tactiques de pression. Ils testent leurs scénarios sur des centaines de personnes et peaufinent sans cesse ce qui fonctionne. Douter un instant quand quelqu’un crée un sentiment d’urgence n’est pas une faiblesse. C’est la preuve que vos instincts fonctionnent.</p>
+      </div>
+    </div>
+
+    <h2>La vérité sur la fraude au Canada</h2>
+
+    <p>Avant d’examiner des fraudes précises, voici quelques faits qui pourraient vous surprendre.</p>
+
+    <ul>
+      <li>Le Centre antifraude du Canada a rapporté que les Canadiens ont perdu plus de <strong>530 millions de dollars</strong> aux mains des fraudeurs au cours d’une année récente. Le vrai chiffre est probablement bien plus élevé, car bien des gens sont trop gênés pour le signaler.</li>
+      <li>Les fraudeurs ne ciblent pas les gens naïfs. Ils ciblent les gens <strong>confiants, polis et respectueux des lois</strong>. Ce sont de belles qualités. Les fraudeurs les exploitent.</li>
+      <li>Être victime d’une fraude n’est <strong>pas votre faute</strong>. Ce sont des criminels professionnels qui en font leur métier.</li>
+      <li>La meilleure défense n’est pas une habileté technique. C’est de <strong>savoir quoi surveiller</strong>. C’est exactement ce que nous allons apprendre.</li>
+    </ul>
+
+    <div class="three-second-rule">
+      <h3>La règle des 3 secondes</h3>
+      <ol class="tsr-steps">
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">✋</span><span class="tsr-name">Arrêtez</span> Ne touchez à rien, ne cliquez pas, ne répondez pas.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🫁</span><span class="tsr-name">Respirez</span> Une longue et profonde respiration. L’urgence est l’arme du fraudeur.</li>
+        <li class="tsr-step"><span class="tsr-icon" aria-hidden="true">🔍</span><span class="tsr-name">Vérifiez</span> Communiquez directement avec la vraie organisation en utilisant un numéro tiré de son site officiel ou de votre carte bancaire.</li>
+      </ol>
+    </div>
+
+    <div class="helper-note">
+      <span class="block-label">Un mot d’encouragement</span>
+      <p>Apprendre à connaître les fraudes n’a rien d’effrayant : c’est une source de pouvoir. Vous êtes en train de vous bâtir une armure. Prenez votre temps avec ce module. Il y a beaucoup d’information, mais chaque élément vous rend plus fort.</p>
+    </div>
+
+    <h2>Fraude 1 : la fraude téléphonique de l’ARC</h2>
+
+    <p>C’est la fraude la plus répandue visant les Canadiens. Voici comment elle fonctionne.</p>
+
+    <div class="scam-example">
+      <span class="example-label">À quoi ressemble l’appel frauduleux (ce n’est PAS réel)</span>
+      <p>Ici l’agent James Wilson, matricule 4471, de l’Agence du revenu du Canada. Nos dossiers indiquent que vous avez une dette fiscale impayée de 4 200 $. Un mandat d’arrestation a été émis contre vous. Pour éviter une arrestation immédiate, vous devez effectuer un paiement aujourd’hui. Nous acceptons les paiements par cartes-cadeaux iTunes, Bitcoin ou virement bancaire. Faites le 1 pour parler à un agent de paiement.</p>
+    </div>
+
+    <h3>Les signaux d’alarme à surveiller</h3>
+
+    <ul>
+      <li><strong>L’ARC ne vous appellera jamais pour vous menacer d’arrestation.</strong> Si vous deviez des impôts, elle vous enverrait d’abord une lettre par la poste — plusieurs lettres, en fait.</li>
+      <li><strong>Aucun organisme gouvernemental n’accepte les cartes-cadeaux iTunes comme paiement.</strong> C’est l’indice le plus flagrant. Les cartes-cadeaux sont impossibles à retracer — c’est exactement pourquoi les fraudeurs les veulent.</li>
+      <li><strong>Ils créent une fausse urgence.</strong> « Vous devez payer aujourd’hui » ou « la police est en route ». Les vrais organismes gouvernementaux vous laissent le temps de répondre.</li>
+      <li><strong>Ils se fâchent ou deviennent menaçants quand vous posez des questions.</strong> Un vrai agent de l’ARC serait patient et professionnel.</li>
+      <li><strong>Ils vous demandent de rester en ligne.</strong> Ils ne veulent pas que vous appeliez quelqu’un d’autre pour vérifier si c’est vrai.</li>
+    </ul>
+
+    <p><strong>Appliquer la règle des 3 secondes.</strong> <strong>Arrêtez :</strong> raccrochez. Vous n’avez pas à être poli avec un criminel. <strong>Respirez :</strong> rappelez-vous que l’ARC envoie des lettres, pas des appels menaçants. <strong>Vérifiez :</strong> si vous êtes inquiet, appelez l’ARC directement au <strong>1-800-959-8281</strong> (c’est son vrai numéro, vous pouvez le trouver sur canada.ca).</p>
+
+    <div class="warning-block">
+      <span class="block-label">Attention</span>
+      <p>Aucun vrai organisme gouvernemental ne vous demandera jamais de payer par cartes-cadeaux, Bitcoin ou virement bancaire. Si quelqu’un demande un paiement de cette façon, c’est toujours une fraude, sans exception.</p>
+    </div>
+
+    <p><strong>Si vous avez déjà répondu.</strong> Si vous avez donné des numéros de cartes-cadeaux, communiquez immédiatement avec l’entreprise émettrice : elle pourrait geler les fonds. Signalez la fraude au Centre antifraude du Canada au <strong>1-888-495-8501</strong>. Ne soyez pas gêné; en la signalant, vous aidez à protéger les autres.</p>
+
+    <div class="tip-block">
+      <span class="block-label">Conseil</span>
+      <p>Enregistrez dès maintenant le vrai numéro de l’ARC (1-800-959-8281) dans les contacts de votre téléphone. Ainsi, si vous recevez un jour un appel suspect au sujet de vos impôts, vous pourrez appeler la vraie ARC directement pour vérifier.</p>
+    </div>
+
+    <h2>Fraude 2 : la fraude des grands-parents</h2>
+
+    <p>Cette fraude est particulièrement cruelle parce qu’elle mise sur l’amour que vous portez à votre famille.</p>
+
+    <div class="scam-example">
+      <span class="example-label">À quoi ressemble l’appel frauduleux (ce n’est PAS réel)</span>
+      <p>Grand-maman? C’est moi… [en sanglots]… J’ai des ennuis. J’ai eu un accident de voiture à Montréal et je me suis fait arrêter. S’il te plaît, ne le dis pas à papa et maman. Mon avocat dit qu’il me faut 3 000 $ pour la caution. Peux-tu envoyer l’argent par Western Union? S’il te plaît, grand-maman, j’ai tellement peur.</p>
+    </div>
+
+    <h3>Les signaux d’alarme à surveiller</h3>
+
+    <ul>
+      <li><strong>Ils ne disent jamais leur nom en premier.</strong> Ils attendent que vous disiez « C’est toi, Michael? », puis répondent « Oui, c’est Michael! ». Ils connaissent maintenant le nom de votre petit-enfant.</li>
+      <li><strong>Ils vous supplient de ne rien dire aux autres membres de la famille.</strong> Ils doivent vous isoler pour que personne ne puisse vérifier l’histoire.</li>
+      <li><strong>L’« avocat » rappelle.</strong> Une deuxième personne appelle en se faisant passer pour un avocat et confirme la fausse histoire. Cela la rend plus crédible.</li>
+      <li><strong>Ils ont besoin d’argent d’urgence par des moyens impossibles à retracer.</strong> Virements bancaires, cartes-cadeaux ou cryptomonnaie.</li>
+      <li><strong>Leur voix sonne « bizarre ».</strong> Ils l’expliquent souvent en disant qu’ils ont un rhume ou que la connexion téléphonique est mauvaise.</li>
+    </ul>
+
+    <p><strong>Appliquer la règle des 3 secondes.</strong> <strong>Arrêtez :</strong> n’envoyez pas d’argent. <strong>Respirez :</strong> la peur pour un être cher est l’émotion la plus puissante que les fraudeurs peuvent exploiter. Prenez un moment. <strong>Vérifiez :</strong> raccrochez et appelez votre petit-enfant directement au numéro que vous avez déjà. Appelez ses parents. Si votre vrai petit-enfant répond et dit « De quoi parles-tu, grand-maman? », vous venez d’éviter une fraude.</p>
+
+    <div class="tip-block">
+      <span class="block-label">Conseil de sécurité familiale</span>
+      <p>Pensez à créer un <strong>mot de code familial</strong>, un mot secret que seule votre famille connaît. Si quelqu’un appelle en prétendant être un proche en difficulté, demandez le mot de code. Un fraudeur ne le connaîtra pas.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Attention</span>
+      <p>Les fraudeurs peuvent maintenant utiliser l’intelligence artificielle pour cloner des voix. Même si la voix au bout du fil ressemble exactement à celle de votre petit-enfant, raccrochez toujours et rappelez votre proche directement au numéro déjà enregistré.</p>
+    </div>
+
+    <h2>Fraude 3 : les faux courriels de banque (hameçonnage)</h2>
+
+    <p><strong>L’hameçonnage</strong>, c’est quand un fraudeur vous envoie un faux courriel ou un faux texto en se faisant passer pour une entreprise de confiance, comme votre banque. Il « pêche » vos renseignements personnels en espérant que vous mordrez à l’hameçon.</p>
+
+    <div class="scam-example">
+      <span class="example-label">Exemple de faux courriel de « RBC » (ce n’est PAS réel)</span>
+      <p>De : security-alert@rbc-banking-secure.com. Objet : URGENT : Activité inhabituelle sur votre compte RBC. Cher client, nous avons détecté une activité inhabituelle sur votre compte RBC Banque Royale. Votre compte a été temporairement verrouillé pour votre protection. Pour rétablir l’accès, veuillez confirmer votre identité en cliquant sur le lien ci-dessous : [Vérifier mon compte maintenant]. Si vous ne le faites pas dans les 24 heures, votre compte sera fermé définitivement. Équipe de sécurité RBC Banque Royale.</p>
+    </div>
+
+    <h3>Les signaux d’alarme à surveiller</h3>
+
+    <ul>
+      <li><strong>L’adresse courriel est fausse.</strong> Regardez bien : « rbc-banking-secure.com » n’est PAS une vraie adresse de RBC. La vraie se terminerait par « @rbc.com », rien d’autre.</li>
+      <li><strong>On y lit « Cher client » plutôt que votre vrai nom.</strong> Votre vraie banque connaît votre nom.</li>
+      <li><strong>« URGENT » et une échéance serrée.</strong> « Vous avez 24 heures » est conçu pour vous faire paniquer et agir sans réfléchir.</li>
+      <li><strong>On veut que vous cliquiez sur un lien.</strong> Ce lien mène à un faux site qui ressemble à celui de votre banque, mais qui est contrôlé par le fraudeur. Si vous y tapez votre mot de passe, vous le remettez à un voleur.</li>
+      <li><strong>Un ton menaçant.</strong> « Votre compte sera fermé définitivement » : votre banque ne fermerait pas votre compte pour un courriel manqué.</li>
+    </ul>
+
+    <p><strong>Appliquer la règle des 3 secondes.</strong> <strong>Arrêtez :</strong> ne cliquez sur aucun lien dans le courriel. <strong>Respirez :</strong> votre compte bancaire va bien. Les vrais problèmes de sécurité se règlent par téléphone, pas par des liens dans un courriel. <strong>Vérifiez :</strong> ouvrez une toute nouvelle fenêtre de navigateur (n’utilisez aucun lien du courriel) et rendez-vous sur le vrai site de votre banque en tapant l’adresse vous-même. Ou appelez le numéro au dos de votre carte bancaire.</p>
+
+    <div class="scam-example">
+      <span class="example-label">Exemple de faux courriel de la « Banque TD » (ce n’est PAS réel)</span>
+      <p>De : td-easyweb-security@td-bank-alert.net. Objet : Action requise : votre accès TD EasyWeb a été suspendu. Nous avons remarqué une tentative de connexion depuis un appareil non reconnu. Pour votre sécurité, nous avons suspendu votre accès TD EasyWeb. Cliquez ci-dessous pour confirmer votre identité et rétablir votre compte : [Rétablir l’accès TD EasyWeb]. Sans action de votre part dans les 12 heures, votre compte sera suspendu. Sécurité numérique TD Canada Trust.</p>
+    </div>
+
+    <p>Remarquez le même stratagème : une fausse adresse courriel (« td-bank-alert.net » n’est pas une vraie adresse de la TD), l’urgence (« 12 heures ») et un lien qui veut vos renseignements de connexion. La vraie adresse du site de la TD est <strong>td.com</strong>; tout le reste est faux. Le site de votre banque affiche son nom exact dans la barre d’adresse (td.com). Un faux site ajoute des mots supplémentaires : td-secure-login.com ou td-bank-verify.net. Ces sites ne sont pas ceux de votre banque.</p>
+
+    <h2>Fraude 4 : les fraudes amoureuses</h2>
+
+    <p>Les fraudes amoureuses commencent souvent sur les médias sociaux ou les applications de rencontre. Quelqu’un vous envoie un gentil message, vous commencez à discuter, et au fil des semaines ou des mois, la personne bâtit une relation avec vous. Puis les demandes d’argent commencent.</p>
+
+    <div class="scam-example">
+      <span class="example-label">Comment cela se déroule habituellement (ce n’est PAS réel)</span>
+      <p>Semaine 1 : « Bonjour, j’ai remarqué votre belle photo de profil. Je m’appelle Robert, je suis ingénieur en Alberta. » Semaine 3 : messages quotidiens, appels téléphoniques, conversations personnelles profondes. Il est gentil, attentionné, tout ce qu’on peut souhaiter. Semaine 6 : « Je suis coincé à l’étranger pour un contrat. J’ai besoin de 2 000 $ pour un billet d’avion. Je te rembourse dès mon arrivée. Tu es la seule personne en qui j’ai confiance. »</p>
+    </div>
+
+    <h3>Les signaux d’alarme à surveiller</h3>
+
+    <ul>
+      <li><strong>La personne ne peut jamais faire d’appel vidéo.</strong> Sa caméra est toujours « brisée » ou la connexion toujours « mauvaise ». Elle utilise des photos volées sur les médias sociaux d’autres personnes.</li>
+      <li><strong>La relation avance très vite.</strong> On vous dit « je t’aime » en quelques jours ou quelques semaines.</li>
+      <li><strong>Il y a une raison dramatique qui empêche toute rencontre en personne.</strong> La personne est à l’étranger, dans l’armée, sur une plateforme pétrolière, ou une autre histoire du genre.</li>
+      <li><strong>Tôt ou tard, on vous demande de l’argent.</strong> Ça commence petit et ça grossit. Une urgence médicale, des frais de voyage, des ennuis d’affaires.</li>
+      <li><strong>On vous demande de garder la relation secrète.</strong> On ne veut pas que votre famille ou vos amis posent des questions.</li>
+    </ul>
+
+    <p><strong>Appliquer la règle des 3 secondes.</strong> <strong>Arrêtez :</strong> n’envoyez jamais d’argent à quelqu’un que vous n’avez pas rencontré en personne. <strong>Respirez :</strong> c’est difficile sur le plan émotif. C’est correct de se sentir blessé ou déboussolé. <strong>Vérifiez :</strong> faites une recherche d’image inversée de la photo de profil (un membre de votre famille ou une personne de confiance en techno peut vous montrer comment), ou demandez un appel vidéo. Si la personne a toujours une excuse, vous avez votre réponse.</p>
+
+    <h2>Fraude 5 : le faux soutien technique</h2>
+
+    <p>Cette fraude commence habituellement par un appel téléphonique ou une fenêtre surgissante à l’écran. L’interlocuteur prétend travailler pour Apple, Google, Microsoft ou une autre entreprise connue.</p>
+
+    <div class="scam-example">
+      <span class="example-label">À quoi ressemble la fraude (ce n’est PAS réel)</span>
+      <p>Bonjour, ici John du soutien Apple. Nous avons détecté une faille de sécurité sur votre iPad. Des pirates ont accédé à votre appareil et nous devons corriger la situation immédiatement. J’aurai besoin que vous me donniez un accès à distance à votre iPad pour que je puisse éliminer la menace. Il y a aussi des frais de service de sécurité de 299 $.</p>
+    </div>
+
+    <h3>Les signaux d’alarme à surveiller</h3>
+
+    <ul>
+      <li><strong>Apple, Microsoft et Google ne vous appelleront jamais pour un problème que vous n’avez pas signalé.</strong> Si vous ne les avez pas contactés en premier, l’appel est faux.</li>
+      <li><strong>On vous demande un accès à distance à votre appareil.</strong> Ne laissez jamais un inconnu contrôler votre appareil ou votre ordinateur.</li>
+      <li><strong>On exige des frais pour « réparer » un problème qui n’existe pas.</strong></li>
+      <li><strong>Ce sont eux qui vous ont trouvé, pas l’inverse.</strong> Le vrai soutien technique attend que vous le contactiez.</li>
+    </ul>
+
+    <p><strong>Appliquer la règle des 3 secondes.</strong> <strong>Arrêtez :</strong> raccrochez. <strong>Respirez :</strong> Apple, Google et Microsoft ne vous ont pas appelé. Votre appareil va bien. <strong>Vérifiez :</strong> si votre appareil vous inquiète, rendez-vous au magasin Apple le plus proche ou appelez Apple directement au <strong>1-800-275-2273</strong>. Pour un appareil Android, utilisez le site de soutien du fabricant (comme support.google.com ou samsung.com/ca/support). Pour Windows, utilisez support.microsoft.com ou un atelier de réparation local et digne de confiance — jamais la personne qui vous a appelé.</p>
+
+    <h2>Fraude 6 : les faux textos de livraison de colis</h2>
+
+    <div class="scam-example">
+      <span class="example-label">Exemple de texto frauduleux (ce n’est PAS réel)</span>
+      <p>Postes Canada : votre colis n’a pas pu être livré. Des frais d’expédition de 2,65 $ sont requis. Payez maintenant pour reprogrammer la livraison : http://canadapost-redelivery-fee.com/pay</p>
+    </div>
+
+    <h3>Les signaux d’alarme à surveiller</h3>
+
+    <ul>
+      <li><strong>Postes Canada ne vous envoie pas de textos au sujet de frais de livraison.</strong> S’il y a des frais, un avis est laissé dans votre boîte aux lettres.</li>
+      <li><strong>Le lien a l’air presque correct, mais il ne l’est pas.</strong> « canadapost-redelivery-fee.com » n’est pas un vrai site de Postes Canada. Le vrai est <strong>canadapost-postescanada.ca</strong>.</li>
+      <li><strong>Le montant est petit exprès.</strong> On espère que vous vous direz « 2,65 $, ce n’est pas grand-chose » et que vous entrerez votre numéro de carte de crédit sans réfléchir. Ensuite, ils ont votre numéro de carte.</li>
+    </ul>
+
+    <p><strong>Appliquer la règle des 3 secondes.</strong> <strong>Arrêtez :</strong> ne touchez pas au lien. <strong>Respirez :</strong> si vous attendez un colis, vérifiez directement sur le vrai site de Postes Canada. <strong>Vérifiez :</strong> allez sur <strong>canadapost-postescanada.ca</strong> et utilisez le numéro de suivi de votre courriel de confirmation de commande.</p>
+
+    <div class="helper-note">
+      <span class="block-label">Un mot d’encouragement</span>
+      <p>Vous venez d’apprendre six grands types de fraude. Chaque fraude suit la même formule de base : créer la peur ou l’urgence, puis demander de l’argent ou des renseignements personnels. Une fois que vous voyez la formule, vous voyez à travers le déguisement.</p>
+    </div>
+
+    <h2>Fraude 7 : les faux avertissements « Microsoft » à l’écran</h2>
+
+    <p>Pendant que vous naviguez sur le Web, un avertissement plein écran apparaît soudainement. Cette alarme plein écran est toujours fausse. Les vrais avertissements de votre appareil sont de petites notifications discrètes, pas des alarmes clignotantes avec un numéro de téléphone à appeler.</p>
+
+    <div class="scam-example">
+      <span class="example-label">Exemple de faux avertissement Microsoft (ce n’est PAS réel)</span>
+      <p>ALERTE DE SÉCURITÉ MICROSOFT! Erreur no DW6BD36. Votre ordinateur a été verrouillé! Activité suspecte détectée. Vos données de navigation et vos renseignements personnels (y compris vos mots de passe bancaires) sont en train d’être volés. Appelez immédiatement les techniciens certifiés Microsoft : 1-877-555-0142. N’ÉTEIGNEZ PAS VOTRE ORDINATEUR.</p>
+    </div>
+
+    <h3>Les signaux d’alarme à surveiller</h3>
+
+    <ul>
+      <li><strong>Microsoft n’envoie pas d’avertissements par votre navigateur Web.</strong> C’est une page Web, pas une vraie alerte du système.</li>
+      <li><strong>Des codes d’erreur qui ont l’air officiels mais ne veulent rien dire.</strong> « Erreur no DW6BD36 » est inventé pour paraître technique.</li>
+      <li><strong>On vous dit de NE PAS fermer la fenêtre.</strong> C’est le contraire de ce qu’il faut faire. Fermez-la immédiatement avec votre sortie de secours du module 1.</li>
+      <li><strong>Un numéro de téléphone.</strong> Les vrais avertissements de votre système d’exploitation n’incluent jamais de numéro de téléphone à appeler.</li>
+    </ul>
+
+    <p><strong>Appliquer la règle des 3 secondes.</strong> <strong>Arrêtez :</strong> retirez vos doigts de l’écran. <strong>Respirez :</strong> c’est un faux site Web, pas un vrai avertissement. Votre appareil n’a jamais été en danger. <strong>Vérifiez :</strong> sur un iPad ou un iPhone, appuyez sur le bouton principal ou balayez vers le haut pour fermer le navigateur. Sur Android, appuyez sur le bouton principal, puis fermez l’onglet du navigateur. Sur Windows, fermez la fenêtre du navigateur avec le X ou appuyez sur Alt et F4. Quand vous rouvrirez votre navigateur, l’avertissement aura disparu.</p>
+
+    <h2>Votre grande liste de vérification antifraude</h2>
+
+    <p>Vous pouvez utiliser ces questions pour évaluer tout message, courriel, appel téléphonique ou site Web suspect. Si la réponse à l’une d’elles est « oui », il s’agit très probablement d’une fraude.</p>
+
+    <ul>
+      <li>Est-ce que ça crée un sentiment d’<strong>urgence</strong>? (« Agissez maintenant! » « Vous avez 24 heures! »)</li>
+      <li>Est-ce que ça crée de la <strong>peur</strong>? (« Votre compte est verrouillé! » « La police s’en vient! »)</li>
+      <li>Est-ce qu’on demande des <strong>modes de paiement inhabituels</strong>? (Cartes-cadeaux, virements bancaires, cryptomonnaie)</li>
+      <li>Est-ce qu’on vous demande de <strong>cliquer sur un lien</strong> pour régler un problème?</li>
+      <li>Est-ce que <strong>ce sont eux qui vous ont contacté</strong>, et non l’inverse?</li>
+      <li>Est-ce qu’on vous demande de <strong>garder le secret</strong> face à votre famille?</li>
+      <li>Est-ce que l’adresse courriel ou le site Web a l’air <strong>presque correct, mais pas tout à fait</strong>?</li>
+      <li>Est-ce que la salutation est <strong>générique</strong> (« Cher client ») plutôt que d’utiliser votre nom?</li>
+    </ul>
+
+    <h2>Protéger votre appareil : antivirus et vrai soutien technique</h2>
+
+    <p>Après avoir vu toutes ces fraudes, vous vous demandez peut-être ce que vous devriez concrètement faire pour protéger votre appareil. La bonne nouvelle : tous les appareils modernes incluent déjà une solide protection intégrée.</p>
+
+    <ul>
+      <li><strong>iPhone et iPad :</strong> ces appareils n’attrapent pas les virus informatiques traditionnels, et vous n’avez pas besoin d’acheter un antivirus. Gardez votre logiciel à jour, ne téléchargez des applications que depuis l’App Store officiel et utilisez un mot de passe robuste ou Face ID.</li>
+      <li><strong>Android :</strong> votre appareil possède déjà une sécurité intégrée appelée Google Play Protect, qui analyse les applications automatiquement. Gardez votre logiciel à jour et ne téléchargez des applications que depuis la boutique officielle Google Play. Malwarebytes Free est une option gratuite et bien respectée si vous voulez une tranquillité d’esprit supplémentaire.</li>
+      <li><strong>Windows :</strong> votre ordinateur inclut déjà Windows Defender (aussi appelé Microsoft Defender), qui fait aussi bien que la plupart des antivirus payants. Vous n’avez pas besoin d’acheter Norton, McAfee ou un produit semblable. Pour le vérifier, ouvrez le menu Démarrer, tapez « Sécurité Windows » et cherchez les crochets verts.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">Où trouver du vrai soutien technique</span>
+      <p>Pour un iPad ou un iPhone, réservez le service gratuit Genius Bar de votre magasin Apple le plus proche (apple.com/ca/retail). Pour Android et Windows, la Geek Squad de Best Buy et les services techniques de Bureau en Gros (Staples) offrent de l’aide payante en personne. Beaucoup de bibliothèques locales et de centres pour aînés offrent aussi des cliniques techno gratuites. C’est vous qui les trouvez; eux ne vous trouvent jamais.</p>
+    </div>
+
+    <div class="warning-block">
+      <span class="block-label">Évitez ces pièges de soutien technique</span>
+      <p><strong>Quiconque vous appelle</strong> pour offrir de réparer votre ordinateur est un fraudeur. <strong>Les fenêtres surgissantes</strong> qui disent que vous avez un virus et qu’il faut appeler un numéro sont une fraude. <strong>Les publicités pour des logiciels du genre « PC Cleaner » ou « accélérez votre ordinateur »</strong> sont presque toujours inutiles au mieux, nuisibles au pire. <strong>Les visiteurs porte-à-porte en « réparation d’ordinateurs »</strong> doivent être vérifiés uniquement par des canaux officiels.</p>
+    </div>
+
+    <h2>Où signaler une fraude au Canada</h2>
+
+    <ul>
+      <li><strong>Centre antifraude du Canada :</strong> le centre national de signalement des fraudes. Téléphone 1-888-495-8501. Site Web antifraudcentre-centreantifraude.ca.</li>
+      <li><strong>Pensezcybersecurite.gc.ca :</strong> le site officiel du gouvernement du Canada sur la cybersécurité, écrit en langage clair avec des conseils pratiques.</li>
+    </ul>
+
+    <div class="tip-block">
+      <span class="block-label">Vous vous sentez coincé?</span>
+      <p>Vous n’avez pas à démêler tout cela seul. <strong>Connected Canadians</strong> (1-877-304-5813) et <strong>Cyber-Seniors</strong> (1-844-217-3057) sont des services canadiens gratuits, tenus par de vraies personnes patientes qui se spécialisent dans l’accompagnement technologique des aînés, à votre rythme.</p>
+    </div>
+
+    <h2>Petite vérification : testez vos connaissances</h2>
+    <p>Touchez la réponse qui vous semble la bonne. Aucun pointage n’est conservé et il n’y a rien à quoi se connecter.</p>
+    <div class="lesson-quiz">
+      <div class="quiz-q" data-correct="c">
+        <h3>1. Vous recevez un appel de quelqu’un qui prétend être de l’ARC : vous devriez des impôts et devez payer avec des cartes-cadeaux iTunes. Que devriez-vous faire?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Acheter les cartes-cadeaux : vous ne voulez pas être arrêté</button>
+          <button class="quiz-opt" type="button" data-answer="b">Leur donner votre numéro d’assurance sociale pour confirmer votre identité</button>
+          <button class="quiz-opt" type="button" data-answer="c">Raccrocher immédiatement : l’ARC ne demande jamais de paiement par cartes-cadeaux</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Exactement. L’ARC n’appelle jamais pour exiger un paiement immédiat par cartes-cadeaux. Raccrochez et appelez l’ARC directement au 1-800-959-8281 si vous êtes inquiet."
+          data-wrong="La bonne réponse est de raccrocher. L’ARC n’exigera jamais un paiement par cartes-cadeaux et ne menacera jamais d’arrestation immédiate au téléphone."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>2. Un courriel de « RBC » dit que votre compte est verrouillé et que vous devez cliquer sur un lien pour le confirmer. L’adresse de l’expéditeur est security@rbc-alert-canada.com. Que remarquez-vous?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Cela semble légitime : on mentionne RBC et le Canada</button>
+          <button class="quiz-opt" type="button" data-answer="b">L’adresse courriel est fausse : un vrai courriel de RBC viendrait de @rbc.com</button>
+          <button class="quiz-opt" type="button" data-answer="c">Vous devriez cliquer sur le lien par prudence</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Bien joué. Vous avez repéré la fausse adresse courriel. Les vrais courriels de RBC viennent de @rbc.com; tout le reste est une fraude."
+          data-wrong="Regardez bien l’adresse courriel. « rbc-alert-canada.com » n’est pas une vraie adresse de RBC. La vraie se termine par @rbc.com. Ne cliquez jamais sur les liens des courriels suspects."></div>
+      </div>
+      <div class="quiz-q" data-correct="a">
+        <h3>3. Votre petit-enfant appelle en pleurant : il serait en prison et aurait besoin d’argent pour la caution. Il vous supplie de ne rien dire à ses parents. Quelle est la meilleure réaction?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Raccrocher et appeler votre petit-enfant directement à son vrai numéro</button>
+          <button class="quiz-opt" type="button" data-answer="b">Envoyer l’argent tout de suite : votre petit-enfant est en danger</button>
+          <button class="quiz-opt" type="button" data-answer="c">Demander à l’interlocuteur plus de détails sur l’endroit où il se trouve</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="Parfait. Vérifiez toujours en appelant votre petit-enfant directement. S’il répond normalement, vous venez d’attraper un fraudeur."
+          data-wrong="Le geste le plus sûr est de raccrocher et d’appeler votre petit-enfant au numéro que vous avez déjà. Si c’est vraiment lui, il répondra. Si c’est une fraude, vous le saurez immédiatement."></div>
+      </div>
+      <div class="quiz-q" data-correct="b">
+        <h3>4. Qu’est-ce que la règle des 3 secondes?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-answer="a">Compter jusqu’à trois avant d’ouvrir un courriel</button>
+          <button class="quiz-opt" type="button" data-answer="b">Arrêter, respirer et vérifier avant de répondre à quoi que ce soit de suspect</button>
+          <button class="quiz-opt" type="button" data-answer="c">Attendre trois secondes avant de répondre au téléphone</button>
+        </div>
+        <div class="quiz-fb"
+          data-right="C’est ça. Arrêtez, respirez, vérifiez. Trois étapes simples qui vous protègent de presque toutes les fraudes."
+          data-wrong="La règle des 3 secondes, c’est : Arrêtez (retirez vos doigts de l’écran), Respirez (une grande respiration) et Vérifiez (confirmez si le message est vrai en contactant l’organisation directement)."></div>
+      </div>
+    </div>
+
+    <h2>Votre progression</h2>
+    <p>Cochez chaque élément quand vous vous sentez à l’aise. C’est enregistré sur cet appareil seulement, aucun compte requis.</p>
+    <ul class="checklist" data-checklist="module-2">
+      <li class="check-item"><input type="checkbox" id="module-2-1"><label for="module-2-1">Je comprends la règle des 3 secondes (Arrêtez, Respirez, Vérifiez)</label></li>
+      <li class="check-item"><input type="checkbox" id="module-2-2"><label for="module-2-2">Je peux repérer une fraude téléphonique de l’ARC</label></li>
+      <li class="check-item"><input type="checkbox" id="module-2-3"><label for="module-2-3">Je sais comment fonctionne la fraude des grands-parents</label></li>
+      <li class="check-item"><input type="checkbox" id="module-2-4"><label for="module-2-4">Je peux reconnaître un courriel d’hameçonnage d’une fausse banque</label></li>
+      <li class="check-item"><input type="checkbox" id="module-2-5"><label for="module-2-5">Je connais les signaux d’alarme des fraudes amoureuses</label></li>
+      <li class="check-item"><input type="checkbox" id="module-2-6"><label for="module-2-6">Je peux reconnaître le faux soutien technique et les faux avertissements</label></li>
+    </ul>
+
+    <h2>Aller plus loin : les fraudes à la loupe</h2>
+
+    <p>Si vous voulez apprendre exactement comment fonctionnent les fraudes les plus courantes visant les aînés du Canada, y compris les scénarios exacts que les criminels utilisent et comment les arrêter, ces pages détaillées s’ouvrent sur le site original.</p>
+
+    <ul>
+      <li><a href="../classic/resources/scam-deep-dives/courier-fraud.html" target="_blank" rel="noopener noreferrer">La fraude du faux coursier</a> <span class="ext-note">(ouvre le site original, en anglais, dans un nouvel onglet)</span></li>
+      <li><a href="../classic/resources/scam-deep-dives/call-forwarding-scam.html" target="_blank" rel="noopener noreferrer">La fraude du renvoi d’appel</a> <span class="ext-note">(ouvre le site original, en anglais, dans un nouvel onglet)</span></li>
+      <li><a href="../classic/resources/scam-deep-dives/cra-phone-scam.html" target="_blank" rel="noopener noreferrer">La fraude téléphonique de l’ARC</a> <span class="ext-note">(ouvre le site original, en anglais, dans un nouvel onglet)</span></li>
+      <li><a href="../classic/resources/scam-deep-dives/grandparent-scam.html" target="_blank" rel="noopener noreferrer">La fraude des grands-parents</a> <span class="ext-note">(ouvre le site original, en anglais, dans un nouvel onglet)</span></li>
+      <li><a href="../classic/resources/scam-deep-dives/romance-scam-seniors.html" target="_blank" rel="noopener noreferrer">Les fraudes amoureuses</a> <span class="ext-note">(ouvre le site original, en anglais, dans un nouvel onglet)</span></li>
+    </ul>
+
+    <h2>Aussi offert pour les enfants</h2>
+
+    <p>Vous animez une séance familiale de littératie numérique? DCC Kids propose des versions de ce sujet adaptées à chaque âge. Ces leçons s’ouvrent sur le site original.</p>
+
+    <ul>
+      <li><a href="../classic/kids/10-12/spotting-please-dont-tell-your-parent.html" target="_blank" rel="noopener noreferrer">10 à 12 ans : repérer un message « ne le dis pas à tes parents »</a> <span class="ext-note">(ouvre le site original, en anglais, dans un nouvel onglet)</span></li>
+      <li><a href="../classic/kids/7-9/telling-a-grown-up-when-something-feels-weird.html" target="_blank" rel="noopener noreferrer">7 à 9 ans : le dire à un adulte quand quelque chose semble bizarre en ligne</a> <span class="ext-note">(ouvre le site original, en anglais, dans un nouvel onglet)</span></li>
+      <li><a href="../classic/kids/4-6/secret-stuff-share-stuff.html" target="_blank" rel="noopener noreferrer">4 à 6 ans : les choses secrètes et les choses à partager</a> <span class="ext-note">(ouvre le site original, en anglais, dans un nouvel onglet)</span></li>
+    </ul>
+
+    <!-- Denise: forward the lesson in isolation. Copy-link only, no share API. -->
+    <section class="send-lesson" aria-labelledby="send-h">
+      <h2 id="send-h">Envoyer cette leçon à quelqu’un</h2>
+      <p>Vous aidez un parent ou un ami? Cette page fonctionne toute seule, sans compte et sans rien à installer. Copiez le lien et envoyez-le-lui par texto.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="button" data-copy-link>Copier le lien de cette leçon</button>
+        <span class="send-done" data-copy-done hidden>Copié. Collez-le dans un texto ou un courriel.</span>
+      </div>
+      <input class="visually-hidden" type="text" data-copy-field hidden readonly aria-label="Lien vers cette leçon">
+    </section>
+
+    <div class="success-state">
+      <p><strong>Bravo.</strong> Vous avez maintenant un puissant bouclier de sécurité. Les fraudeurs n’ont aucune chance contre quelqu’un qui connaît leurs trucs. Partagez ce que vous avez appris avec un ami ou une amie : vous pourriez les protéger aussi.</p>
+    </div>
+
+    <nav class="related-modules" aria-label="Continue learning">
+      <h2>Et maintenant, où aller?</h2>
+      <div class="related-grid">
+        <a class="related-card" href="module-1-fr.html">
+          <span class="related-num">Module 1</span>
+          <span class="related-name">La sortie de secours</span>
+          <span class="related-desc">Si un écran frauduleux vous coince un jour, voici votre porte de sortie : la seule habileté à apprendre avant tout le reste.</span>
+        </a>
+        <a class="related-card" href="module-3-fr.html">
+          <span class="related-num">Module 3</span>
+          <span class="related-name">Mots de passe et biométrie</span>
+          <span class="related-desc">Renforcez encore votre bouclier avec des mots de passe robustes et la connexion biométrique, pour que vos comptes restent à vous seul.</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<!-- SHARED SHELL: footer (identical on every page). -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Nos engagements">
+      <li><span aria-hidden="true">✓</span> Aucun compte</li>
+      <li><span aria-hidden="true">✓</span> Aucun pistage</li>
+      <li><span aria-hidden="true">✓</span> Rien à acheter</li>
+      <li><span aria-hidden="true">✓</span> Canadien</li>
+    </ul>
+    <p>Le Centre de confiance numérique est offert gratuitement. C’est une initiative communautaire de Two Birds Innovation, une entreprise ontarienne, pour aider les aînés du Canada à rester en sécurité et en contact en ligne. Aucun compte, aucun pistage, aucun appel de vente.</p>
+    <p class="scope-note">Remarque : ce site offre des conseils de sécurité en langage clair, et non des conseils juridiques. Si vous soupçonnez une fraude, communiquez directement avec votre banque.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">Pour les familles (en anglais seulement)</a></li>
+      <li><a href="../fr/about.html">À propos de nous</a></li>
+      <li><a href="../faq.html">FAQ (en anglais seulement)</a></li>
+      <li><a href="../glossary.html">Glossaire (en anglais seulement)</a></li>
+      <li><a href="../fr/privacy.html">Confidentialité</a></li>
+      <li><a href="../fr/terms.html">Conditions d’utilisation</a></li>
+      <li><a href="../disclaimer.html">Avis de non-responsabilité (en anglais seulement)</a></li>
+      <li><a href="../support-directory.html">Obtenir de l’aide (en anglais seulement)</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- SHARED SHELL: layered consent bar (identical on every page). -->
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Choix de confidentialité">
+  <div class="container">
+    <p>Nous utilisons une petite mémoire du navigateur pour faire fonctionner le site et retenir votre taille de texte. <a href="../fr/privacy.html">En savoir plus</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accepter</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Refuser</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Préférences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Fonctionnel (toujours actif)</span>
+        <p>Fait fonctionner le site et retient votre taille de texte.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Nous aide à voir quelles leçons aident le plus. Cela ne vous identifie pas.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (facultatif)</span>
+        <p>Nous aide à joindre plus d’aînés. Nous ne vendons jamais vos renseignements personnels.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Enregistrer mes choix</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/module.js"></script>
+</body>
+</html>
