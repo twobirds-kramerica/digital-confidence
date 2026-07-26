@@ -132,6 +132,25 @@
   background: var(--color-surface-alt); border-radius: var(--radius-md);
   padding: var(--space-4) var(--space-5); margin: var(--space-4) 0;
 }
+
+/* --- Glossary predictive suggestions ------------------------------------------ */
+.gloss-search-wrap { position: relative; }
+.gloss-suggest {
+  list-style: none; margin: 0; padding: var(--space-2) 0; position: absolute;
+  top: 100%; left: 0; width: 100%; max-width: 480px; z-index: 20;
+  background: var(--color-surface); border: 2px solid var(--color-border-strong);
+  border-top: none; border-radius: 0 0 var(--radius-md) var(--radius-md);
+  box-shadow: 0 6px 16px rgba(0,0,0,.12);
+}
+.gloss-suggest-item {
+  display: block; width: 100%; text-align: left; background: none; border: none;
+  font-family: var(--font-body); font-size: var(--font-size-base); color: var(--color-text);
+  padding: var(--space-2) var(--space-4); min-height: var(--tap-target); cursor: pointer;
+}
+.gloss-suggest-item:hover, .gloss-suggest-item.is-active { background: var(--color-surface-alt); }
+.gloss-suggest-item:focus { outline: var(--focus-ring); outline-offset: -2px; }
+.gloss-suggest-item mark { background: none; font-weight: var(--font-weight-bold); color: inherit; padding: 0; }
+.gloss-jump-highlight { outline: var(--focus-ring); outline-offset: 2px; border-radius: var(--radius-md); transition: outline-color .2s ease; }
 .faq-category { margin: var(--space-12) 0 var(--space-4); }
 .faq-item {
   background: var(--color-surface); border: 1px solid var(--color-border);

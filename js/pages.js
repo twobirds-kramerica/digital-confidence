@@ -43,7 +43,8 @@
     var gNoRes = document.getElementById('gloss-no-results');
     var total = cards.length;
     if (gCount) gCount.textContent = 'Showing all ' + total + ' terms';
-    glossInput.addEventListener('input', function () {
+
+    function runFilter() {
       var q = norm(glossInput.value.trim());
       var shown = 0;
       cards.forEach(function (c) {
@@ -56,6 +57,89 @@
       });
       if (gCount) gCount.textContent = q ? 'Showing ' + shown + ' of ' + total + ' terms' : 'Showing all ' + total + ' terms';
       if (gNoRes) gNoRes.hidden = shown !== 0;
+    }
+
+    /* Predictive suggestions: top 5 term names, so people don't have to
+       type the whole word. Term-name matches rank above definition-text
+       matches; matches at the START of the term rank above matches in
+       the middle (so "pass" suggests "Password" before "Bypass"). */
+    var suggestBox = document.getElementById('gloss-suggest');
+    var terms = cards.map(function (c) {
+      return { card: c, name: c.querySelector('.gloss-term').textContent, norm: norm(c.querySelector('.gloss-term').textContent) };
+    });
+    var activeIndex = -1;
+
+    function closeSuggest() {
+      suggestBox.hidden = true;
+      suggestBox.innerHTML = '';
+      glossInput.setAttribute('aria-expanded', 'false');
+      activeIndex = -1;
+    }
+
+    function jumpTo(card) {
+      closeSuggest();
+      glossInput.value = card.querySelector('.gloss-term').textContent;
+      runFilter();
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      card.classList.add('gloss-jump-highlight');
+      setTimeout(function () { card.classList.remove('gloss-jump-highlight'); }, 2000);
+    }
+
+    function renderSuggest(q) {
+      if (!q) { closeSuggest(); return; }
+      var starts = terms.filter(function (t) { return t.norm.indexOf(q) === 0; });
+      var contains = terms.filter(function (t) { return t.norm.indexOf(q) > 0; });
+      var top = starts.concat(contains).slice(0, 5);
+      if (!top.length) { closeSuggest(); return; }
+      suggestBox.innerHTML = '';
+      top.forEach(function (t, i) {
+        var li = document.createElement('li');
+        li.setAttribute('role', 'presentation');
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'gloss-suggest-item';
+        btn.id = 'gloss-suggest-opt-' + i;
+        btn.setAttribute('role', 'option');
+        btn.textContent = t.name;
+        btn.addEventListener('mousedown', function (e) { e.preventDefault(); jumpTo(t.card); });
+        li.appendChild(btn);
+        suggestBox.appendChild(li);
+      });
+      suggestBox.hidden = false;
+      glossInput.setAttribute('aria-expanded', 'true');
+      activeIndex = -1;
+    }
+
+    glossInput.addEventListener('input', function () {
+      runFilter();
+      renderSuggest(norm(glossInput.value.trim()));
+    });
+
+    glossInput.addEventListener('keydown', function (e) {
+      var opts = suggestBox.querySelectorAll('.gloss-suggest-item');
+      if (suggestBox.hidden || !opts.length) return;
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        activeIndex = (activeIndex + 1) % opts.length;
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        activeIndex = (activeIndex - 1 + opts.length) % opts.length;
+      } else if (e.key === 'Enter' && activeIndex >= 0) {
+        e.preventDefault();
+        opts[activeIndex].dispatchEvent(new MouseEvent('mousedown'));
+        return;
+      } else if (e.key === 'Escape') {
+        closeSuggest();
+        return;
+      } else {
+        return;
+      }
+      opts.forEach(function (o, i) { o.classList.toggle('is-active', i === activeIndex); });
+      glossInput.setAttribute('aria-activedescendant', opts[activeIndex].id);
+    });
+
+    glossInput.addEventListener('blur', function () {
+      setTimeout(closeSuggest, 100); /* delay so a click/mousedown on an option still registers */
     });
   }
 })();

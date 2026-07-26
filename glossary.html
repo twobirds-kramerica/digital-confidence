@@ -79,8 +79,9 @@
       <p class="faq-intro">Plain-English definitions for the technology words you'll hear most often. No jargon — just clear explanations.</p>
 
       <!-- Search bar -->
-      <div class="page-search-wrap">
-        <input type="search" id="gloss-search" class="page-search-input" placeholder="Search terms... (e.g. Wi-Fi, password, cloud)" aria-label="Search glossary terms">
+      <div class="page-search-wrap gloss-search-wrap">
+        <input type="search" id="gloss-search" class="page-search-input" placeholder="Search terms... (e.g. Wi-Fi, password, cloud)" aria-label="Search glossary terms" role="combobox" aria-expanded="false" aria-controls="gloss-suggest" aria-autocomplete="list" autocomplete="off">
+        <ul id="gloss-suggest" class="gloss-suggest" role="listbox" hidden></ul>
         <span class="page-search-count" id="gloss-count" aria-live="polite"></span>
       </div>
       <div id="gloss-no-results" class="page-no-results" hidden>No matching terms found. Try a shorter word.</div>
