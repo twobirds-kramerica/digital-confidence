@@ -14,7 +14,15 @@
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
-  scroll-padding-top: 88px; /* WCAG 2.2 SC 2.4.11 — focus never hidden by sticky header */
+  /* WCAG 2.2 SC 2.4.11 — focus/anchor targets never hidden by the sticky header.
+     84px is a CSS-only fallback sized to the single-row header (~74px + buffer);
+     the header grows taller on narrow widths where its toolbar wraps onto 2-3
+     rows, so js/dcc.js measures the real header height at anchor-scroll time
+     and corrects for it (S-DCC-ANCHOR-SCROLL-UX-001, 2026-07-26). This is the
+     ONE offset mechanism site-wide — do not also add scroll-margin-top to
+     individual heading selectors, the two stack additively per spec and
+     overshoot past the header into the previous section. */
+  scroll-padding-top: 84px;
 }
 
 body {
@@ -598,7 +606,7 @@ body.consent-open { padding-bottom: 240px; }
 
 /* --- Lesson-group headings on the index (named sections nav points at) ----- */
 .lesson-group { margin: var(--space-12) 0 var(--space-6); }
-.lesson-group > h2 { margin-bottom: var(--space-2); scroll-margin-top: 96px; }
+.lesson-group > h2 { margin-bottom: var(--space-2); } /* anchor-scroll offset: html scroll-padding-top + js/dcc.js, not a per-selector scroll-margin-top (see core.css:16) */
 .lesson-group > .group-lead { margin-bottom: var(--space-2); color: var(--color-text); }
 
 /* ============================================================================

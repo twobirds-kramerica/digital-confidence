@@ -12,6 +12,55 @@
   /* ---------- Locale — French pages set <html lang="fr-CA"> ---------------- */
   var IS_FR = (doc.getAttribute("lang") || "en").toLowerCase().indexOf("fr") === 0;
 
+  /* ---------- Anchor-scroll offset — clear the sticky header exactly -------
+     Site-wide fix for S-DCC-ANCHOR-SCROLL-UX-001 (2026-07-26): the header's
+     real height varies with viewport width (its toolbar wraps onto 2-3 rows
+     on narrow screens, ~74px up to ~180px+), and with the A-/A/A+ text-size
+     toggle. A fixed CSS scroll-padding-top (core.css) covers the common
+     single-row case as a no-JS fallback; this measures the header for real
+     and re-scrolls so every anchor target — any element with an id, any page
+     that loads dcc.js — lands cleanly below it, no prior section visible. */
+  (function () {
+    var header = document.querySelector(".site-header");
+    function headerOffset() {
+      return (header ? Math.ceil(header.getBoundingClientRect().height) : 74) + 16;
+    }
+    function scrollToId(id, behavior) {
+      var el = document.getElementById(id);
+      if (!el) return false;
+      var y = el.getBoundingClientRect().top + window.pageYOffset - headerOffset();
+      window.scrollTo({ top: Math.max(y, 0), behavior: behavior || "smooth" });
+      return true;
+    }
+    function isSamePagePath(pathPart) {
+      if (pathPart === "") return true; // bare "#id" link
+      var currentFile = location.pathname.split("/").pop() || "index.html";
+      var linkFile = pathPart.split("/").pop() || "index.html";
+      return currentFile === linkFile;
+    }
+    // Clicking a nav/in-page anchor link: intercept and scroll with the real offset.
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest ? e.target.closest("a[href*='#']") : null;
+      if (!a) return;
+      var href = a.getAttribute("href") || "";
+      var hashIdx = href.indexOf("#");
+      if (hashIdx === -1) return;
+      var id = href.slice(hashIdx + 1);
+      if (!id || !isSamePagePath(href.slice(0, hashIdx))) return;
+      if (!document.getElementById(id)) return; // not a target on this page — let it navigate
+      e.preventDefault();
+      if (scrollToId(id)) { try { history.pushState(null, "", "#" + id); } catch (err) {} }
+    });
+    // Landing directly on a page with a #hash (cross-page link, bookmark, refresh).
+    function fixInitialHash() {
+      if (!location.hash) return;
+      var id = decodeURIComponent(location.hash.slice(1));
+      scrollToId(id, "auto");
+    }
+    if (document.readyState === "complete") fixInitialHash();
+    else window.addEventListener("load", fixInitialHash);
+  })();
+
   /* ---------- Text size (A− A A+) — class already set inline in <head> ---- */
   var SIZES = ["s", "m", "l"];
   function currentSize() {

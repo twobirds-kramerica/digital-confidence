@@ -161,7 +161,7 @@
   font-family: var(--font-heading); font-size: var(--font-size-h2);
   font-weight: var(--font-weight-bold); color: var(--color-primary);
   border-bottom: 2px solid var(--color-border); padding-bottom: var(--space-1);
-  margin-bottom: var(--space-4); scroll-margin-top: 96px;
+  margin-bottom: var(--space-4); /* anchor-scroll offset: html scroll-padding-top + js/dcc.js, see core.css:16 */
 }
 .gloss-grid { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
 .gloss-card {
