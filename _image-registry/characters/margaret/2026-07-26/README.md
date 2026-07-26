@@ -1,6 +1,6 @@
-# Margaret Doyle — Master Reference Sheet — 2026-07-26 registry entry
+# Margaret Doyle: Master Reference Sheet: 2026-07-26 registry entry
 
-**Status: PROPOSAL STAGING — NO ART GENERATED YET. DESIGN GATE not cleared.**
+**Status: PROPOSAL STAGING: NO ART GENERATED YET. DESIGN GATE not cleared.**
 
 ## What this folder is
 
@@ -24,7 +24,7 @@ Pro), which is the ADR-0036-approved paid exception for exactly this DCC video/c
 
 ## Contents
 
-- `generation-prompt.md` — the exact, ready-to-run prompts (three style-intensity
+- `generation-prompt.md`: the exact, ready-to-run prompts (three style-intensity
   variants, per art-briefs section 13.1) assembled verbatim from the briefs' Style DNA
   plus Margaret's full character brief.
 - When generation runs: save the output image(s) here as

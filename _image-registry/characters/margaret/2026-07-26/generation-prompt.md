@@ -1,4 +1,4 @@
-# Margaret Doyle — master reference sheet — ready-to-run generation prompts
+# Margaret Doyle: master reference sheet: ready-to-run generation prompts
 
 **Target tool:** Google AI Pro image generation (Nano Banana Pro), per ADR-0036 paid
 exception (LOON video/cast lane). Max resolution (4K). Aspect: landscape sheet.
@@ -27,7 +27,7 @@ STYLE RULES:
 - Three-weight line hierarchy: confident medium contour outline around silhouette and
   major forms; interior hatching at one-third the contour weight in 2-3 consistent
   directions per shadow area; finest weight only for hair strands, fabric weave, smile lines.
-- [HATCH DENSITY: baseline — balanced etched modelling, roughly equal open paper and
+- [HATCH DENSITY: baseline: balanced etched modelling, roughly equal open paper and
   hatched shadow on the face.]
 - All linework in near-black #1A1A2E ink, never pure black, never coloured line.
 - Background plain warm white #FAFAF8.
@@ -35,7 +35,7 @@ STYLE RULES:
   engraving. Skin largely paper-toned with warm tint only in shadow areas. No gradients,
   no glow, no rim light.
 
-CHARACTER — MARGARET DOYLE, 71, retired teacher, warm and trustworthy:
+CHARACTER: MARGARET DOYLE, 71, retired teacher, warm and trustworthy:
 - Age read through steel-grey softly waved silver hair (chin-to-shoulder, tucked behind
   one ear, practical and cared-for), defined smile lines, softened jaw. Posture upright
   and settled, never stooped. Medium comfortable build, average height.
@@ -70,13 +70,13 @@ emotion symbols; pointing at the viewer; brand logos; any text other than the sw
 ## Variant 1 (lighter-etched)
 
 Same prompt with the bracketed line replaced by:
-[HATCH DENSITY: lighter — minimal interior hatching, mostly open paper on the face,
+[HATCH DENSITY: lighter: minimal interior hatching, mostly open paper on the face,
 etching reserved for form-defining shadows only; the lightest, warmest read.]
 
 ## Variant 3 (denser-etched)
 
 Same prompt with the bracketed line replaced by:
-[HATCH DENSITY: denser — fuller classical engraving coverage, richer cross-hatch
+[HATCH DENSITY: denser: fuller classical engraving coverage, richer cross-hatch
 modelling in all shadow areas while keeping lit skin open; the most traditional
 book-plate read.]
 
