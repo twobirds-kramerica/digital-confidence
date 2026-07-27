@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DCC Beta Welcome — LOON render frame</title>
+<style>
+  /* Render-only page: the stage IS the full 1280x720 frame. No chrome, no controls.
+     Unlike the earlier LOON pilots (dark navy stage), this one uses the ACTUAL
+     DCC Adult Warm Hearth palette from css/tokens.css, because it is a real
+     product asset shown to real beta testers, not a capability demo:
+       bg #F8F9FB / surface-alt #EAF1F8 / primary #1D4E89 / accent #E0A63A
+       text #1C2733 / accent-light #FDF3E3
+     No character art. Margaret has not been drawn, so she does not appear and
+     is not implied. The visuals are original line art in the brand palette. */
+  :root{ --primary:#1D4E89; --accent:#E0A63A; --accent-deep:#7A4A00; --ink:#1C2733; }
+  *{box-sizing:border-box}
+  html{color-scheme:light}
+  html,body{margin:0;padding:0;background:#F8F9FB}
+  .stage{position:relative;width:1280px;height:720px;overflow:hidden;
+    background:linear-gradient(165deg,#FFFFFF 0%,#F8F9FB 45%,#EAF1F8 100%);color:var(--ink);
+    font-family:'Source Sans 3','Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+  .slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:56px 76px 176px;text-align:center;opacity:0}
+  .slide.active{opacity:1}
+  .wordmark{position:absolute;top:34px;left:0;right:0;text-align:center;
+    font-size:21px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--primary);opacity:.85}
+  .fig{width:150px;height:150px;margin-bottom:26px}
+  .onscreen{font-size:42px;font-weight:600;line-height:1.26;max-width:90%;color:var(--primary)}
+  .titlecard{font-size:62px;font-weight:700;letter-spacing:.2px;color:var(--primary);line-height:1.14}
+  .endcard{font-size:50px;font-weight:700;color:var(--primary)}
+  .endcard small{display:block;font-size:24px;font-weight:400;color:var(--ink);margin-top:16px;letter-spacing:.4px}
+  .note{margin-top:22px;font-size:25px;color:var(--ink);max-width:82%;line-height:1.45}
+  .cards{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin-top:26px;max-width:96%}
+  .card{background:#FFFFFF;border:2px solid #D5DDE6;border-radius:14px;
+    padding:16px 20px;font-size:22px;color:var(--ink);min-width:180px}
+  .card .ic{font-size:34px;display:block;margin-bottom:8px}
+  .pill{display:inline-block;background:#FDF3E3;color:var(--accent-deep);border:2px solid var(--accent);
+    border-radius:999px;padding:10px 24px;font-size:24px;font-weight:700;margin-top:22px}
+  /* Burned-in caption bar: solid brand navy, white text. Large and high
+     contrast (well past AA) because our audience often reads along. */
+  .caption{position:absolute;left:0;right:0;bottom:0;padding:24px 56px 28px;
+    background:var(--primary);
+    font-size:28px;font-weight:600;line-height:1.4;min-height:140px;
+    display:flex;align-items:center;justify-content:center;text-align:center;color:#FFFFFF}
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+  <div class="wordmark" id="wordmark">Digital Confidence Centre</div>
+  <div class="caption" id="caption"></div>
+</div>
+<script>
+/* Original line art in the DCC brand palette. Deliberately NOT a person and not
+   a character: no locked character art exists, and inventing one for a beta
+   welcome would set an expectation the product cannot yet keep. */
+const OPEN_DOOR = `<svg class="fig" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect x="26" y="16" width="60" height="90" rx="6" stroke="#1D4E89" stroke-width="3" fill="#FFFFFF"/>
+  <path d="M40 30h32M40 46h32M40 62h20" stroke="#1D4E89" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="76" cy="84" r="4.5" fill="#E0A63A"/>
+</svg>`;
+
+const HANDS = `<svg class="fig" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path d="M22 74c0-10 8-18 18-18h40c10 0 18 8 18 18" stroke="#1D4E89" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="60" cy="38" r="16" stroke="#1D4E89" stroke-width="3" fill="#FFFFFF"/>
+  <path d="M30 92h60" stroke="#E0A63A" stroke-width="4" stroke-linecap="round"/>
+</svg>`;
+
+const SPEAK = `<svg class="fig" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path d="M18 30h84v50H62L40 98V80H18z" stroke="#1D4E89" stroke-width="3" fill="#FFFFFF" stroke-linejoin="round"/>
+  <path d="M34 48h52M34 62h34" stroke="#1D4E89" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="92" cy="26" r="9" fill="#E0A63A"/>
+</svg>`;
+
+const SCENES = {
+  en: [
+    { html:`<div class="titlecard">Welcome.</div><div class="note">You are one of the first people here.</div>`,
+      cap:`Welcome to the Digital Confidence Centre, built for people like you.` },
+
+    { html:`<div class="onscreen">Short lessons, at your own pace.</div><div class="cards"><div class="card"><span class="ic">🛡</span>Spotting scams</div><div class="card"><span class="ic">🏦</span>Banking safely</div><div class="card"><span class="ic">🔑</span>Passwords</div><div class="card"><span class="ic">📹</span>Video calls</div><div class="card"><span class="ic">🩺</span>Telehealth</div><div class="card"><span class="ic">🤖</span>Artificial intelligence</div></div>`,
+      cap:`Short lessons on scams, banking, passwords, video calls, telehealth and artificial intelligence.` },
+
+    { html:`${OPEN_DOOR}<div class="onscreen">This is the version for adults.</div><div class="note">A separate version for younger people is nearly ready. It is not this one.</div>`,
+      cap:`This is the adult version, not the one for younger people. That one is nearly ready.` },
+
+    { html:`${HANDS}<div class="onscreen">Thank you for joining the pilot group.</div><div class="pill">Nothing is timed. Nothing can break.</div>`,
+      cap:`Thank you for joining the pilot group. Explore freely.` },
+
+    { html:`${SPEAK}<div class="onscreen">If something is not clear, tell us.</div><div class="note">Every page has a Give feedback link at the bottom, and every lesson ends with a feedback box.</div>`,
+      cap:`If something is not clear, tell us. There is a Give feedback link on every page.` },
+
+    { html:`<div class="onscreen">About that email box.</div><div class="note">Only so we can remember your place, or follow up on something you write. Optional. One click to skip. Never required.</div>`,
+      cap:`We only ask for your email if you want us to remember your place. Optional, and never required.` },
+
+    { html:`<div class="endcard">Take your time.<small>Digital Confidence Centre &nbsp;·&nbsp; Two Birds Innovation</small></div>`,
+      cap:`Take your time.` }
+  ],
+
+  fr: [
+    { html:`<div class="titlecard">Bienvenue.</div><div class="note">Vous etes parmi les premieres personnes ici.</div>`,
+      cap:`Bienvenue au Centre de confiance numerique, concu pour des personnes comme vous.` },
+
+    { html:`<div class="onscreen">De courtes lecons, a votre rythme.</div><div class="cards"><div class="card"><span class="ic">🛡</span>Reperer les fraudes</div><div class="card"><span class="ic">🏦</span>Banque en ligne</div><div class="card"><span class="ic">🔑</span>Mots de passe</div><div class="card"><span class="ic">📹</span>Appels video</div><div class="card"><span class="ic">🩺</span>Telesante</div><div class="card"><span class="ic">🤖</span>Intelligence artificielle</div></div>`,
+      cap:`De courtes lecons sur les fraudes, la banque, les mots de passe, les appels video, la telesante et l'intelligence artificielle.` },
+
+    { html:`${OPEN_DOOR}<div class="onscreen">Ceci est la version pour adultes.</div><div class="note">Une version distincte pour les jeunes est presque prete. Ce n'est pas celle-ci.</div>`,
+      cap:`Ceci est la version pour adultes, pas celle pour les jeunes. Celle-la est presque prete.` },
+
+    { html:`${HANDS}<div class="onscreen">Merci de participer au groupe d'essai.</div><div class="pill">Rien n'est chronometre. Rien ne peut casser.</div>`,
+      cap:`Merci de participer au groupe d'essai. Explorez librement.` },
+
+    { html:`${SPEAK}<div class="onscreen">Si quelque chose n'est pas clair, dites-le nous.</div><div class="note">Chaque page a un lien Donner mon avis en bas, et chaque lecon se termine par une boite a commentaires.</div>`,
+      cap:`Si quelque chose n'est pas clair, dites-le nous. Chaque page a un lien Donner mon avis.` },
+
+    { html:`<div class="onscreen">Au sujet du courriel.</div><div class="note">Uniquement pour retenir ou vous en etes, ou pour donner suite a un commentaire. Facultatif. Un seul clic pour passer. Jamais obligatoire.</div>`,
+      cap:`Nous demandons votre courriel seulement si vous voulez qu'on retienne ou vous en etes. Facultatif, et jamais obligatoire.` },
+
+    { html:`<div class="endcard">Prenez votre temps.<small>Centre de confiance numerique &nbsp;·&nbsp; Two Birds Innovation</small></div>`,
+      cap:`Prenez votre temps.` }
+  ]
+};
+
+const params = new URLSearchParams(location.search);
+const lang = SCENES[params.get('lang')] ? params.get('lang') : 'en';
+document.documentElement.lang = (lang === 'fr') ? 'fr-CA' : 'en-CA';
+document.getElementById('wordmark').textContent =
+  (lang === 'fr') ? 'Centre de confiance numerique' : 'Digital Confidence Centre';
+const scenes = SCENES[lang];
+window.scenes = scenes; // exposed for the capture script (page.evaluate reads cap: lines)
+
+const stage = document.getElementById('stage');
+const caption = document.getElementById('caption');
+const nodes = scenes.map((sc)=>{
+  const d = document.createElement('div');
+  d.className = 'slide';
+  d.innerHTML = sc.html;
+  stage.insertBefore(d, caption);
+  return d;
+});
+// Single-slide render: only the requested slide is visible, no transition.
+window.show = function(i){
+  nodes.forEach((n,j)=>n.classList.toggle('active', j===i));
+  caption.textContent = scenes[i].cap;
+};
+window.show(0);
+</script>
+</body>
+</html>
