@@ -24,6 +24,53 @@
   var EMAIL_KEY = "dccv2-beta-email";
   var WORKER = "https://dcc-data.twobirdsinnovation.workers.dev";
 
+  // Language follows the page, not the browser. DCC's language split is whole
+  // separate pages (index.html = EN, fr/index.html = FR) with a manual link, so
+  // this matches js/feedback-inflow.js rather than introducing auto-detection.
+  var IS_FR = (document.documentElement.getAttribute("lang") || "en").toLowerCase().indexOf("fr") === 0;
+
+  var T = IS_FR ? {
+    label: "Accueil des testeurs beta",
+    welcome: "Merci de participer comme testeur beta.",
+    welcomeBack: "Bon retour.",
+    introBack: "Content de vous revoir. Regardez a votre rythme. Si quelque chose vous semble confus ou ne fonctionne pas, un lien Donner mon avis se trouve au bas de chaque page.",
+    gotIt: "Compris",
+    intro: "Vous etes parmi les premieres personnes a voir le Centre de confiance numerique. Il n'y a rien a configurer. Regardez a votre rythme, et si quelque chose vous semble confus ou ne fonctionne pas, dites-le nous avec le lien Donner mon avis au bas de chaque page, ou la boite a la fin de chaque lecon.",
+    emailIntro: "Si vous voulez que nous nous souvenions de votre passage pour ne pas avoir a tout reexpliquer la prochaine fois, vous pouvez laisser votre courriel ci-dessous. C'est entierement facultatif.",
+    formLabel: "Facultatif : se souvenir de moi",
+    emailLabel: "Votre courriel (facultatif)",
+    remember: "Se souvenir de moi",
+    skip: "Non merci, je veux seulement regarder",
+    saved: "Merci. Nous nous souviendrons de vous sur cet appareil.",
+    videoHeading: "Un mot de bienvenue en video (environ 45 secondes)",
+    videoNote: "Facultatif. Rien ne joue tant que vous n'appuyez pas sur lecture.",
+    videoSrc: "../videos/dcc-beta-welcome-fr.mp4",
+    videoVtt: "../videos/dcc-beta-welcome-fr.vtt",
+    videoLang: "fr",
+    videoTrack: "Francais",
+    videoFallback: "Votre navigateur ne peut pas lire cette video."
+  } : {
+    label: "Beta tester welcome",
+    welcome: "Thank you for joining as a beta tester.",
+    welcomeBack: "Welcome back.",
+    introBack: "Good to see you again. Look around at your own pace. If anything feels confusing or does not work, there is a Give feedback link at the bottom of every page.",
+    gotIt: "Got it",
+    intro: "You are one of the first people to see the Digital Confidence Centre. There is nothing to set up. Look around at your own pace, and if anything feels confusing or does not work, please tell us using the Give feedback link at the bottom of every page, or the box at the end of each lesson.",
+    emailIntro: "If you would like us to remember you were here so you do not have to explain again next time, you can leave your email below. This is entirely optional.",
+    formLabel: "Optional: remember me next time",
+    emailLabel: "Your email (optional)",
+    remember: "Remember me next time",
+    skip: "No thanks, just let me look around",
+    saved: "Thank you. We will remember you on this device.",
+    videoHeading: "A short welcome video (about 40 seconds)",
+    videoNote: "Optional. Nothing plays until you press play.",
+    videoSrc: "videos/dcc-beta-welcome-en.mp4",
+    videoVtt: "videos/dcc-beta-welcome-en.vtt",
+    videoLang: "en",
+    videoTrack: "English",
+    videoFallback: "Your browser cannot play this video."
+  };
+
   if (window.__dccBetaLoaded) { return; }
   window.__dccBetaLoaded = true;
 
@@ -91,7 +138,16 @@
       ".dcc-beta-form{display:flex;gap:var(--space-2);flex-wrap:wrap;align-items:center;margin-top:var(--space-2);}",
       ".dcc-beta-form input[type=email]{flex:1 1 240px;min-height:var(--tap-target-min);padding:0 var(--space-3);border:1px solid var(--color-border);border-radius:var(--radius-sm);font:inherit;background:var(--color-surface);color:var(--color-text);}",
       ".dcc-beta-skip{background:none;border:none;color:var(--color-text-link);text-decoration:underline;cursor:pointer;font:inherit;min-height:var(--tap-target-min);padding:0 var(--space-2);}",
-      ".dcc-beta-status{margin-top:var(--space-2);font-size:var(--font-size-sm);font-weight:var(--font-weight-semibold);}"
+      ".dcc-beta-status{margin-top:var(--space-2);font-size:var(--font-size-sm);font-weight:var(--font-weight-semibold);}",
+      // The welcome video sits IN the banner, in normal document flow. Not a
+      // modal, not an interstitial, not autoplay: PRODUCT.md bans floating
+      // overlays over content, and design principle 1 (anxiety first) rules out
+      // anything that starts making noise at a nervous first-time visitor.
+      ".dcc-beta-video{margin:var(--space-5) 0 var(--space-2);}",
+      ".dcc-beta-video h3{margin:0 0 var(--space-2);font-size:var(--font-size-h3);color:var(--color-primary);}",
+      ".dcc-beta-video video{display:block;width:100%;max-width:640px;height:auto;",
+      "border:1px solid var(--color-border);border-radius:var(--radius-md);background:#000;}",
+      ".dcc-beta-video .dcc-beta-videonote{margin:var(--space-2) 0 0;font-size:var(--font-size-sm);}"
     ].join("");
     document.head.appendChild(s);
   }
@@ -103,38 +159,72 @@
     return n;
   }
 
+  // Optional welcome video. Native <video controls>, deliberately: the native
+  // control set is already keyboard operable and screen-reader labelled, and on
+  // most desktop browsers its overflow menu carries the playback-speed option
+  // Aaron asked for, for an audience that often wants things slower. Building a
+  // custom control bar would cost all of that and buy nothing.
+  // preload="none" so a tester on a metered or slow connection downloads
+  // nothing unless they actually choose to watch.
+  function buildVideo() {
+    var wrap = elt("div", "dcc-beta-video");
+    wrap.appendChild(elt("h3", null, T.videoHeading));
+
+    var v = document.createElement("video");
+    v.setAttribute("controls", "");
+    v.setAttribute("preload", "none");
+    v.setAttribute("playsinline", "");
+    v.setAttribute("aria-label", T.videoHeading);
+
+    var src = document.createElement("source");
+    src.src = T.videoSrc;
+    src.type = "video/mp4";
+    v.appendChild(src);
+
+    var track = document.createElement("track");
+    track.kind = "captions";
+    track.src = T.videoVtt;
+    track.srclang = T.videoLang;
+    track.label = T.videoTrack;
+    track.setAttribute("default", "");
+    v.appendChild(track);
+
+    v.appendChild(document.createTextNode(T.videoFallback));
+    wrap.appendChild(v);
+    wrap.appendChild(elt("p", "dcc-beta-videonote", T.videoNote));
+    return wrap;
+  }
+
   function renderBanner(main, returning) {
     injectStyles();
     var box = elt("section", "dcc-beta-banner");
-    box.setAttribute("aria-label", "Beta tester welcome");
+    box.setAttribute("aria-label", T.label);
 
-    box.appendChild(elt("h2", null, returning ? "Welcome back." : "Thank you for joining as a beta tester."));
+    box.appendChild(elt("h2", null, returning ? T.welcomeBack : T.welcome));
 
     if (returning) {
-      box.appendChild(elt("p", null,
-        "Good to see you again. Look around at your own pace. If anything feels confusing or does not work, there is a Give feedback link at the bottom of every page."));
-      var dismiss = elt("button", "dcc-beta-skip", "Got it");
+      box.appendChild(elt("p", null, T.introBack));
+      var dismiss = elt("button", "dcc-beta-skip", T.gotIt);
       dismiss.type = "button";
       dismiss.addEventListener("click", function () { box.remove(); });
       box.appendChild(dismiss);
     } else {
-      box.appendChild(elt("p", null,
-        "You are one of the first people to see the Digital Confidence Centre. There is nothing to set up. Look around at your own pace, and if anything feels confusing or does not work, please tell us using the Give feedback link at the bottom of every page, or the box at the end of each lesson."));
-      box.appendChild(elt("p", null,
-        "If you would like us to remember you were here so you do not have to explain again next time, you can leave your email below. This is entirely optional."));
+      box.appendChild(elt("p", null, T.intro));
+      box.appendChild(buildVideo());
+      box.appendChild(elt("p", null, T.emailIntro));
 
       var form = elt("form", "dcc-beta-form");
-      form.setAttribute("aria-label", "Optional: remember me next time");
-      var label = elt("label", "visually-hidden", "Your email (optional)");
+      form.setAttribute("aria-label", T.formLabel);
+      var label = elt("label", "visually-hidden", T.emailLabel);
       label.setAttribute("for", "dcc-beta-email");
       var input = elt("input");
       input.type = "email";
       input.id = "dcc-beta-email";
-      input.placeholder = "Your email (optional)";
+      input.placeholder = T.emailLabel;
       input.autocomplete = "email";
-      var submitBtn = elt("button", "btn btn-primary", "Remember me next time");
+      var submitBtn = elt("button", "btn btn-primary", T.remember);
       submitBtn.type = "submit";
-      var skipBtn = elt("button", "dcc-beta-skip", "No thanks, just let me look around");
+      var skipBtn = elt("button", "dcc-beta-skip", T.skip);
       skipBtn.type = "button";
       var status = elt("div", "dcc-beta-status");
 
@@ -151,7 +241,7 @@
         if (!email) { box.remove(); return; }
         setEmail(email);
         saveProgressEmail(email);
-        status.textContent = "Thank you. We will remember you on this device.";
+        status.textContent = T.saved;
         window.setTimeout(function () { box.remove(); }, 1800);
       });
       skipBtn.addEventListener("click", function () { box.remove(); });
