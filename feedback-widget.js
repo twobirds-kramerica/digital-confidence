@@ -657,7 +657,13 @@
     root.style.position = "static";
     document.body.appendChild(root);
     el.root = root;
-    buildFab();
+    // In-flow mode (S-DCC-BETA-FEEDBACK-SURFACE-001): a host page may set
+    // window.FFW_NO_FAB before this script boots to suppress the floating
+    // button and supply its own in-flow triggers instead (see
+    // js/feedback-inflow.js). PRODUCT.md names floating feedback bubbles as an
+    // anti-pattern, and DESIGN GATE puts anti-references above the plan.
+    // Default behaviour is unchanged for any page that does not set the flag.
+    if (!window.FFW_NO_FAB) { buildFab(); }
     // Capture-phase so pins win over normal click handlers while pointing.
     document.addEventListener("click", onCaptureClick, true);
     // Public hook for tests / debugging.

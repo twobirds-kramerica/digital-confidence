@@ -1,0 +1,17 @@
+name = "dcc-beta-measurement"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+# Beta-cohort confidence readings ONLY. Deliberately a different D1 database
+# from dcc-data so that a production baseline query run against dcc-data cannot
+# reach beta rows even by accident. Do NOT add this binding to dcc-data.
+[[d1_databases]]
+binding = "BETA_DB"
+database_name = "dcc-beta-measurement"
+database_id = "e420ae74-df15-4891-ad8b-09bc2c4a3d14"
+
+# Shared account rate-limit namespace, "dccbeta:" key prefix (same pattern as
+# dcc-data, per the CLOUDFLARE WORKERS KV DEPLOY SEQUENCE rule).
+[[kv_namespaces]]
+binding = "RATELIMIT"
+id = "adc681b4160e4f7c8fda4f17564b66d1"

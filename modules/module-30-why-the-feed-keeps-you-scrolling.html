@@ -420,5 +420,13 @@
 
 <script src="../js/dcc.js"></script>
 <script src="../js/module.js"></script>
+<!-- Beta cohort (S-DCC-BETA-CONFIDENCE-001 / S-DCC-BETA-FEEDBACK-SURFACE-001, 2026-07-27).
+     beta.js supplies the DCCBeta identity API; confidence-quiz.js renders for the beta
+     cohort only; feedback-inflow.js must precede feedback-widget.js so the no-floating-
+     button flag is set before the widget boots (PRODUCT.md anti-reference). -->
+<script src="../js/beta.js"></script>
+<script src="../js/confidence-quiz.js"></script>
+<script src="../js/feedback-inflow.js"></script>
+<script src="../feedback-widget.js"></script>
 </body>
 </html>

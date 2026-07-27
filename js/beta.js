@@ -112,14 +112,14 @@
 
     if (returning) {
       box.appendChild(elt("p", null,
-        "Good to see you again. Look around at your own pace. If anything feels confusing or does not work, the Feedback button in the corner is always there."));
+        "Good to see you again. Look around at your own pace. If anything feels confusing or does not work, there is a Give feedback link at the bottom of every page."));
       var dismiss = elt("button", "dcc-beta-skip", "Got it");
       dismiss.type = "button";
       dismiss.addEventListener("click", function () { box.remove(); });
       box.appendChild(dismiss);
     } else {
       box.appendChild(elt("p", null,
-        "You are one of the first people to see the Digital Confidence Centre. There is nothing to set up. Look around at your own pace, and please tell us with the Feedback button in the corner if anything feels confusing or does not work."));
+        "You are one of the first people to see the Digital Confidence Centre. There is nothing to set up. Look around at your own pace, and if anything feels confusing or does not work, please tell us using the Give feedback link at the bottom of every page, or the box at the end of each lesson."));
       box.appendChild(elt("p", null,
         "If you would like us to remember you were here so you do not have to explain again next time, you can leave your email below. This is entirely optional."));
 
@@ -165,7 +165,12 @@
     if (betaParam === "1" || betaParam === "true") { setBeta(true); }
     if (!isBeta()) { return; } // general anonymous visitor: experience is unchanged
 
-    var main = document.getElementById("main");
+    // The welcome banner is an opt-in per page (data-beta-banner on <main>).
+    // beta.js is now loaded on every module page too, because the DCCBeta
+    // identity API is what tags feedback and gates the beta confidence check
+    // (S-DCC-BETA-CONFIDENCE-001). Repeating the welcome banner on all 39
+    // module pages would be noise, so only the landing page opts in.
+    var main = document.querySelector("#main[data-beta-banner]");
     if (!main) { return; }
     renderBanner(main, !!getEmail());
   }
