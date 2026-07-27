@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DCC Beta Welcome v2 — LOON render frame</title>
+<style>
+  /* Render-only page: the stage IS the full 1280x720 frame. No chrome, no controls.
+     v2 (2026-07-27). Same DCC Adult Warm Hearth palette as v1, from css/tokens.css,
+     because this is a real product asset shown to real beta testers:
+       bg #F8F9FB / surface-alt #EAF1F8 / primary #1D4E89 / accent #E0A63A
+       text #1C2733 / accent-light #FDF3E3
+
+     WHAT CHANGED FROM v1 (all from Aaron's watch-through of v1):
+       - New script, close to Aaron's own words.
+       - The kids/youth beat is GONE from narration entirely. It made viewers feel
+         singled out by age. It survives only as a small on-screen line at the very
+         end, which the narrator never reads.
+       - The feedback beat is now SHOWN, not just described: scene 4 is a graphic
+         reproduction of the real in-flow feedback block and footer link that ship
+         in js/feedback-inflow.js.
+       - Closing scene carries the Two Birds Innovation logo with a real
+         two-chevron convergence (the mark genuinely is two chevrons), plus a warm
+         gratitude treatment.
+
+     STILL NO CHARACTER ART. Margaret has not been drawn, so she does not appear and
+     is not implied. Same honest posture as v1. */
+  :root{ --primary:#1D4E89; --accent:#E0A63A; --accent-deep:#7A4A00; --ink:#1C2733;
+         --cream:#FDF3E3; --border:#D5DDE6; --tb-blue:#0066CC; }
+  *{box-sizing:border-box}
+  html{color-scheme:light}
+  html,body{margin:0;padding:0;background:#F8F9FB}
+  .stage{position:relative;width:1280px;height:720px;overflow:hidden;
+    background:linear-gradient(165deg,#FFFFFF 0%,#F8F9FB 45%,#EAF1F8 100%);color:var(--ink);
+    font-family:'Source Sans 3','Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+  .slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:56px 76px 176px;text-align:center;opacity:0}
+  .slide.active{opacity:1}
+  .wordmark{position:absolute;top:34px;left:0;right:0;text-align:center;
+    font-size:21px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--primary);opacity:.85}
+  .fig{width:150px;height:150px;margin-bottom:26px}
+  .onscreen{font-size:42px;font-weight:600;line-height:1.26;max-width:90%;color:var(--primary)}
+  .titlecard{font-size:62px;font-weight:700;letter-spacing:.2px;color:var(--primary);line-height:1.14}
+  .note{margin-top:22px;font-size:25px;color:var(--ink);max-width:82%;line-height:1.45}
+  .cards{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin-top:26px;max-width:96%}
+  .card{background:#FFFFFF;border:2px solid var(--border);border-radius:14px;
+    padding:16px 20px;font-size:22px;color:var(--ink);min-width:180px}
+  .card .ic{font-size:34px;display:block;margin-bottom:8px}
+  .pill{display:inline-block;background:var(--cream);color:var(--accent-deep);border:2px solid var(--accent);
+    border-radius:999px;padding:10px 24px;font-size:24px;font-weight:700;margin-top:22px}
+
+  /* ---- Scene 4: graphic reproduction of the REAL feedback surface -------------
+     Mirrors js/feedback-inflow.js: an accent-light block with an h2, one line of
+     body copy and a primary button, plus the plain "Give feedback" link appended
+     to the site footer link list. Deliberately not a screenshot: a screenshot at
+     this size would be unreadable for a 65+ viewer. Same words, same order, same
+     colours, set at a size someone can actually read from a phone. */
+  .fbmock{width:820px;text-align:left}
+  .fbmock .block{background:var(--cream);border:2px solid var(--border);border-radius:16px;padding:26px 30px}
+  .fbmock .block h3{margin:0 0 10px;font-size:31px;color:var(--primary);font-weight:700}
+  .fbmock .block p{margin:0 0 20px;font-size:21px;line-height:1.4;color:var(--ink)}
+  .fbmock .btn{display:inline-block;background:var(--primary);color:#FFFFFF;border-radius:10px;
+    padding:14px 26px;font-size:22px;font-weight:700}
+  .fbmock .footmock{margin-top:22px;background:#FFFFFF;border:2px solid var(--border);border-radius:16px;
+    padding:18px 30px;display:flex;gap:26px;flex-wrap:wrap;align-items:center;font-size:20px;color:#5A6673}
+  .fbmock .footmock .live{color:var(--primary);font-weight:700;text-decoration:underline;
+    text-underline-offset:5px;text-decoration-thickness:3px}
+  .fbmock .footmock .live::after{content:"";display:inline-block;width:13px;height:13px;margin-left:10px;
+    border-radius:50%;background:var(--accent);vertical-align:middle}
+
+  /* ---- Scene 6: Two Birds Innovation closing ---------------------------------
+     The mark really is two chevrons (assets/logos/two-birds/two-birds-logo.svg,
+     V05: two white chevrons + four identity circles on #0066CC). Aaron asked for
+     "two chevrons coming together", so the closing frames drive the two chevron
+     groups from apart to their true logo positions. Geometry is the real logo's,
+     not a redrawn approximation. The warm halo is the gratitude treatment: no
+     character face is drawn, because none exists yet. */
+  .closing{display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .halo{position:relative;display:flex;align-items:center;justify-content:center;
+    width:300px;height:300px;border-radius:50%;
+    background:radial-gradient(circle,#FDF3E3 0%,rgba(253,243,227,.55) 55%,rgba(253,243,227,0) 72%)}
+  .tbmark{width:186px;height:186px;border-radius:33px;display:block}
+  .tbword{margin-top:18px;font-size:27px;font-weight:700;letter-spacing:1.2px;color:var(--primary)}
+  .tbthanks{margin-top:14px;font-size:46px;font-weight:700;color:var(--primary)}
+
+  /* Small, low-emphasis, informational. Never spoken. Sits above the caption bar
+     so it cannot be mistaken for a caption line. */
+  .comingsoon{position:absolute;left:0;right:0;bottom:150px;text-align:center;
+    font-size:19px;color:#5A6673;letter-spacing:.3px}
+
+  /* Burned-in caption bar: solid brand navy, white text. Large and high
+     contrast (well past AA) because our audience often reads along. */
+  .caption{position:absolute;left:0;right:0;bottom:0;padding:24px 56px 28px;
+    background:var(--primary);
+    font-size:28px;font-weight:600;line-height:1.4;min-height:140px;
+    display:flex;align-items:center;justify-content:center;text-align:center;color:#FFFFFF}
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+  <div class="wordmark" id="wordmark">Digital Confidence Centre</div>
+  <div class="caption" id="caption"></div>
+</div>
+<script>
+/* Original line art in the DCC brand palette. Deliberately NOT a person and not
+   a character: no locked character art exists, and inventing one for a beta
+   welcome would set an expectation the product cannot yet keep. */
+const HANDS = `<svg class="fig" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path d="M22 74c0-10 8-18 18-18h40c10 0 18 8 18 18" stroke="#1D4E89" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="60" cy="38" r="16" stroke="#1D4E89" stroke-width="3" fill="#FFFFFF"/>
+  <path d="M30 92h60" stroke="#E0A63A" stroke-width="4" stroke-linecap="round"/>
+</svg>`;
+
+const SPEAK = `<svg class="fig" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path d="M18 30h84v50H62L40 98V80H18z" stroke="#1D4E89" stroke-width="3" fill="#FFFFFF" stroke-linejoin="round"/>
+  <path d="M34 48h52M34 62h34" stroke="#1D4E89" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="92" cy="26" r="9" fill="#E0A63A"/>
+</svg>`;
+
+/* The real Two Birds Innovation mark (V05), split into its two chevron groups so
+   they can be driven apart and brought together. Coordinates, stroke width (52),
+   circle radius (34) and the blue (#0066CC) are copied verbatim from
+   C:\twobirds\two-birds-portfolio\assets\logos\two-birds\two-birds-logo.svg.
+   The cosmos dot texture is omitted only because it is invisible at 186px. */
+const TB_MARK = `<svg class="tbmark" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="1024" height="1024" rx="180" ry="180" fill="#0066CC"/>
+  <g id="tb-chev-a">
+    <polyline points="210,195 550,335 210,475" fill="none" stroke="#FFFFFF" stroke-width="52" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="550" cy="335" r="34" fill="#FFFFFF"/>
+    <circle cx="210" cy="195" r="34" fill="#FFFFFF"/>
+  </g>
+  <g id="tb-chev-b">
+    <polyline points="814,549 474,689 814,829" fill="none" stroke="#FFFFFF" stroke-width="52" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="474" cy="689" r="34" fill="#FFFFFF"/>
+    <circle cx="814" cy="829" r="34" fill="#FFFFFF"/>
+  </g>
+</svg>`;
+
+const FB_MOCK_EN = `<div class="fbmock">
+  <div class="block">
+    <h3>Tell us what you think</h3>
+    <p>Did anything here feel confusing, or not work the way you expected? Please tell us.</p>
+    <span class="btn">Give feedback on this lesson</span>
+  </div>
+  <div class="footmock">
+    <span>About us</span><span>FAQ</span><span>Privacy</span><span class="live">Give feedback</span>
+  </div>
+</div>`;
+
+const FB_MOCK_FR = `<div class="fbmock">
+  <div class="block">
+    <h3>Dites-nous ce que vous en pensez</h3>
+    <p>Quelque chose vous a semble confus, ou n'a pas fonctionne? Dites-le nous.</p>
+    <span class="btn">Donner mon avis sur cette lecon</span>
+  </div>
+  <div class="footmock">
+    <span>A propos</span><span>FAQ</span><span>Confidentialite</span><span class="live">Donner mon avis</span>
+  </div>
+</div>`;
+
+function closing(thanks, byline, soon) {
+  return `<div class="closing">
+    <div class="halo">${TB_MARK}</div>
+    <div class="tbword">${byline}</div>
+    <div class="tbthanks">${thanks}</div>
+  </div>
+  <div class="comingsoon">${soon}</div>`;
+}
+
+const SCENES = {
+  en: [
+    { html:`<div class="titlecard">Welcome.</div><div class="note">The Digital Confidence Centre is here to help you feel confident with technology.</div>`,
+      cap:`Welcome to the Digital Confidence Centre, built to help adults feel confident with technology.` },
+
+    { html:`<div class="onscreen">Short lessons, at your own pace.</div><div class="cards"><div class="card"><span class="ic">🛡</span>Spotting scams</div><div class="card"><span class="ic">🏦</span>Banking safely</div><div class="card"><span class="ic">🔑</span>Passwords</div><div class="card"><span class="ic">📹</span>Video calls</div><div class="card"><span class="ic">🩺</span>Telehealth</div><div class="card"><span class="ic">🤖</span>Artificial intelligence</div></div>`,
+      cap:`Short lessons on scams, banking, passwords, video calls and more.` },
+
+    { html:`${HANDS}<div class="onscreen">This is the beta site.</div><div class="pill">Nothing is timed. Nothing can break.</div>`,
+      cap:`This is the beta site. You are one of the first to see it, and we thank you for your time.` },
+
+    { html:`${SPEAK}<div class="onscreen">Tell us what you think as you go.</div><div class="note">As much or as little as you like. There is no wrong amount.</div>`,
+      cap:`As you go, tell us what you think. Do as much or as little as you like.` },
+
+    { html:FB_MOCK_EN,
+      cap:`A feedback tool is on the screen at any point. Use it any time.` },
+
+    { html:`<div class="onscreen">Every comment counts.</div><div class="note">We take all of it into consideration when we prepare the version that goes out to the public.</div>`,
+      cap:`Every comment shapes the version that goes to the public. Come back any time.` },
+
+    { html:closing("Thank you.", "TWO BIRDS INNOVATION", "Coming soon: Digital Confidence for youth."),
+      cap:`From Two Birds Innovation, thank you for your feedback and your time.`,
+      sub:12 }
+  ],
+
+  fr: [
+    { html:`<div class="titlecard">Bienvenue.</div><div class="note">Le Centre de confiance numerique est la pour vous aider a vous sentir a l'aise avec la technologie.</div>`,
+      cap:`Bienvenue au Centre de confiance numerique, pour vous aider a vous sentir a l'aise avec la technologie.` },
+
+    { html:`<div class="onscreen">De courtes lecons, a votre rythme.</div><div class="cards"><div class="card"><span class="ic">🛡</span>Reperer les fraudes</div><div class="card"><span class="ic">🏦</span>Banque en ligne</div><div class="card"><span class="ic">🔑</span>Mots de passe</div><div class="card"><span class="ic">📹</span>Appels video</div><div class="card"><span class="ic">🩺</span>Telesante</div><div class="card"><span class="ic">🤖</span>Intelligence artificielle</div></div>`,
+      cap:`De courtes lecons sur les fraudes, la banque, les mots de passe, les appels video et plus encore.` },
+
+    { html:`${HANDS}<div class="onscreen">Ceci est le site en version beta.</div><div class="pill">Rien n'est chronometre. Rien ne peut casser.</div>`,
+      cap:`Ceci est la version beta. Vous etes parmi les premiers a le voir, merci de votre temps.` },
+
+    { html:`${SPEAK}<div class="onscreen">Dites-nous ce que vous en pensez.</div><div class="note">Autant ou aussi peu que vous le voulez. Il n'y a pas de mauvaise quantite.</div>`,
+      cap:`Dites-nous ce que vous en pensez. Autant ou aussi peu que vous le voulez.` },
+
+    { html:FB_MOCK_FR,
+      cap:`Un outil de commentaires est a l'ecran en tout temps. Utilisez-le quand vous voulez.` },
+
+    { html:`<div class="onscreen">Chaque commentaire compte.</div><div class="note">Nous en tenons compte lorsque nous preparons la version qui sera offerte au public.</div>`,
+      cap:`Chaque commentaire faconne la version offerte au public. Revenez quand vous voulez.` },
+
+    { html:closing("Merci.", "TWO BIRDS INNOVATION", "Bientot : Confiance numerique pour les jeunes."),
+      cap:`De la part de Two Birds Innovation, merci pour vos commentaires et votre temps.`,
+      sub:12 }
+  ]
+};
+
+const params = new URLSearchParams(location.search);
+const lang = SCENES[params.get('lang')] ? params.get('lang') : 'en';
+document.documentElement.lang = (lang === 'fr') ? 'fr-CA' : 'en-CA';
+document.getElementById('wordmark').textContent =
+  (lang === 'fr') ? 'Centre de confiance numerique' : 'Digital Confidence Centre';
+const scenes = SCENES[lang];
+window.scenes = scenes; // exposed for the capture script (page.evaluate reads cap: lines)
+
+const stage = document.getElementById('stage');
+const caption = document.getElementById('caption');
+const nodes = scenes.map((sc)=>{
+  const d = document.createElement('div');
+  d.className = 'slide';
+  d.innerHTML = sc.html;
+  stage.insertBefore(d, caption);
+  return d;
+});
+
+/* Sub-frame count per scene. The runner reads this; scenes without `sub` render
+   as a single held frame exactly as before, so v1-era templates are unaffected. */
+window.subframes = function (i) { return scenes[i].sub || 1; };
+
+/* Chevron convergence, driven by explicit inline transforms rather than CSS
+   animation, because the capture script disables all transitions and animations
+   to get clean frames. k is the sub-frame index, n the sub-frame count. The two
+   groups start apart along the mark's own diagonal and arrive at their true logo
+   coordinates; the wordmark and the thank-you settle in after they meet. */
+function paintClosing(node, k, n) {
+  const a = node.querySelector('#tb-chev-a');
+  const b = node.querySelector('#tb-chev-b');
+  if (!a || !b) { return; }
+  const p = (n <= 1) ? 1 : k / (n - 1);
+  const ease = 1 - Math.pow(1 - Math.min(p / 0.62, 1), 3); // converged by ~62%
+  const gap = 300 * (1 - ease);                            // SVG user units
+  a.setAttribute('transform', `translate(${-gap},${-gap})`);
+  b.setAttribute('transform', `translate(${gap},${gap})`);
+  a.setAttribute('opacity', (0.25 + 0.75 * ease).toFixed(3));
+  b.setAttribute('opacity', (0.25 + 0.75 * ease).toFixed(3));
+
+  const settle = Math.max(0, Math.min((p - 0.6) / 0.3, 1));
+  const word = node.querySelector('.tbword');
+  const thanks = node.querySelector('.tbthanks');
+  if (word) { word.style.opacity = settle.toFixed(3); }
+  if (thanks) {
+    thanks.style.opacity = settle.toFixed(3);
+    thanks.style.transform = `translateY(${(12 * (1 - settle)).toFixed(1)}px)`;
+  }
+  const soon = node.parentNode && node.parentNode.querySelector
+    ? node.parentNode.querySelector('.comingsoon') : null;
+  if (soon) { soon.style.opacity = Math.max(0, Math.min((p - 0.75) / 0.2, 1)).toFixed(3); }
+}
+
+// Single-slide render: only the requested slide is visible, no transition.
+// show(i) keeps the v1 signature; show(i, k) paints sub-frame k of scene i.
+window.show = function (i, k) {
+  nodes.forEach((n, j) => n.classList.toggle('active', j === i));
+  caption.textContent = scenes[i].cap;
+  const n = window.subframes(i);
+  const closingNode = nodes[i].querySelector('.closing');
+  if (closingNode) { paintClosing(closingNode, (k == null ? n - 1 : k), n); }
+};
+window.show(0);
+</script>
+</body>
+</html>

@@ -31,15 +31,28 @@ HERE = Path(__file__).resolve().parent
 # Free keyless Microsoft Edge neural voices. Rate is slowed for the senior-facing register.
 # Never a cloned/vendor-locked voice identity — recreatability tier must stay "High".
 VOICES = {
-    "en": {"voice": "en-CA-ClaraNeural",  "rate": "-8%", "tag": "EN"},
+    # en: switched 2026-07-27 from en-CA-ClaraNeural to Ava, Microsoft's newer
+    # conversational voice line (metadata: Conversation/Copilot, Expressive/Caring),
+    # which reads noticeably less robotic. The trade-off is real and deliberate:
+    # there is no Canadian voice in that line, so the accent moves en-CA -> en-US.
+    # Evidence + samples + one-word revert: renders/VOICE-TEST-2026-07-27.md.
+    "en": {"voice": "en-US-AvaMultilingualNeural", "rate": "-8%", "tag": "EN"},
     "fr": {"voice": "fr-CA-SylvieNeural", "rate": "-6%", "tag": "FR-CA"},
 }
 
 
-def capture_frames(template: Path, lang: str, frame_dir: Path) -> list[str]:
-    """Screenshot each scene of the template to frame-<i>.png. Returns the narration lines."""
+def capture_frames(template: Path, lang: str, frame_dir: Path) -> tuple[list[str], list[list[str]]]:
+    """Screenshot every scene of the template. Returns (narration lines, frames per scene).
+
+    A scene is normally ONE held frame. A template may optionally expose
+    `window.subframes(i)` returning a count > 1 for a scene that needs motion (e.g.
+    a logo animation); that scene is then captured as several frames which later
+    share the scene's own audio duration. Templates without `window.subframes` are
+    captured exactly as before.
+    """
     frame_dir.mkdir(parents=True, exist_ok=True)
     url = template.as_uri() + f"?lang={lang}"
+    per_scene: list[list[str]] = []
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page(viewport={"width": 1280, "height": 720}, device_scale_factor=1)
@@ -47,13 +60,21 @@ def capture_frames(template: Path, lang: str, frame_dir: Path) -> list[str]:
         page.add_style_tag(content="*{transition:none !important;animation:none !important}")
         n = page.evaluate("window.scenes.length")
         caps = page.evaluate("window.scenes.map(s => s.cap)")
+        has_sub = page.evaluate("typeof window.subframes === 'function'")
         for i in range(n):
-            page.evaluate(f"window.show({i})")
-            page.wait_for_timeout(120)
-            page.locator("#stage").screenshot(path=str(frame_dir / f"frame-{i}.png"))
+            subs = page.evaluate(f"window.subframes({i})") if has_sub else 1
+            names = []
+            for k in range(subs):
+                page.evaluate(f"window.show({i}, {k})")
+                page.wait_for_timeout(120)
+                name = f"frame-{i}.png" if subs == 1 else f"frame-{i}-{k}.png"
+                page.locator("#stage").screenshot(path=str(frame_dir / name))
+                names.append(name)
+            per_scene.append(names)
         browser.close()
-    print(f"  [{lang}] captured {n} frames -> {frame_dir}")
-    return caps
+    total = sum(len(f) for f in per_scene)
+    print(f"  [{lang}] captured {n} scenes / {total} frames -> {frame_dir}")
+    return caps, per_scene
 
 
 async def _synth_one(text: str, voice: str, rate: str, out_path: Path) -> None:
@@ -95,12 +116,17 @@ def concat_audio(audio_paths: list[Path], audio_dir: Path) -> Path:
     return out
 
 
-def build_concat_list(frame_dir: Path, durs: list[float]) -> Path:
+def build_concat_list(frame_dir: Path, durs: list[float], per_scene: list[list[str]]) -> Path:
+    """Each SCENE holds for its own real audio duration. A scene captured as several
+    sub-frames splits that same duration evenly across them, so adding motion never
+    changes the length of the video or desynchronises the narration."""
     lines = []
-    for i, d in enumerate(durs):
-        lines.append(f"file 'frame-{i}.png'")
-        lines.append(f"duration {d:.3f}")
-    lines.append(f"file 'frame-{len(durs)-1}.png'")  # concat-demuxer quirk: repeat last
+    for names, d in zip(per_scene, durs):
+        share = d / len(names)
+        for name in names:
+            lines.append(f"file '{name}'")
+            lines.append(f"duration {share:.3f}")
+    lines.append(f"file '{per_scene[-1][-1]}'")  # concat-demuxer quirk: repeat last
     lst = frame_dir / "concat-list.txt"
     lst.write_text("\n".join(lines), encoding="utf-8")
     return lst
@@ -147,7 +173,7 @@ def run_lang(template: Path, slug: str, lang: str, date: str) -> dict:
     vtt_path = HERE / f"{slug}-{cfg['tag']}-{date}.vtt"
 
     print(f"[{lang}] capturing frames from {template.name} ...")
-    caps = capture_frames(template, lang, frame_dir)
+    caps, per_scene = capture_frames(template, lang, frame_dir)
 
     print(f"[{lang}] synthesizing narration ({cfg['voice']}, rate {cfg['rate']}) ...")
     audio_paths = synth_all(caps, cfg["voice"], cfg["rate"], audio_dir)
@@ -155,7 +181,7 @@ def run_lang(template: Path, slug: str, lang: str, date: str) -> dict:
     print(f"  per-scene s: {[round(d, 2) for d in durs]}  total {sum(durs):.1f}s")
 
     audio_track = concat_audio(audio_paths, audio_dir)
-    concat_list = build_concat_list(frame_dir, durs)
+    concat_list = build_concat_list(frame_dir, durs, per_scene)
     write_vtt(caps, durs, vtt_path)
     print(f"[{lang}] rendering + muxing -> {out_path.name}")
     mux(frame_dir, concat_list, audio_track, out_path)
