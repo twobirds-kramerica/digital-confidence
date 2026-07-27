@@ -87,10 +87,19 @@ never in the header or hero of this DCC asset.
 
 ### 5. Closing gratitude visual
 Warm treatment only: the logo inside a soft `#FDF3E3` radial halo, the wordmark, and "Thank
-you." **No Margaret, and nothing that implies her.** Character art is still blocked on Aaron's
-own manual step and no locked art exists, so none was attempted and no placeholder face was
-drawn. Same posture as v1. If character art is ever approved, the template is one file and can
-be re-rendered.
+you." **No Margaret, and nothing that implies her.** No placeholder face was drawn.
+
+**Timing note, stated rather than glossed:** this sprint began with no character art existing
+at all, which is why v2 was designed without it. Partway through, Aaron completed his manual
+generation step and pushed the first real Margaret reference sheet (commit `baf5292`,
+`digital-confidence/.../characters/margaret/2026-07-27/`). So the blocker Aaron has been
+carrying is now cleared — but that art is a **reference sheet with two known cosmetic
+defects**, not approved, locked, per-scene production art, and putting a character into a
+welcome video is a taste decision Aaron has not made. v2 therefore ships without her, on
+purpose, not because the art does not exist.
+
+**This is the obvious v3.** The template is one file; re-rendering with Margaret in place of
+the line-art figures is a small job once Aaron says the character is locked.
 
 ### 6. Voice: `en-CA-ClaraNeural` → `en-US-AvaMultilingualNeural`
 Full comparison, three real samples, and the one-word revert are in
@@ -156,7 +165,9 @@ the FR page did not do.
 
 ## What is honestly NOT in this asset
 
-- **No character art, no Margaret, nothing that implies her.** Unchanged from v1.
+- **No character art, no Margaret, nothing that implies her.** Unchanged from v1 — but note
+  that the reason changed mid-sprint: reference art now exists (see section 5), it is just not
+  locked or approved for production use yet.
 - **No cosmos texture on the closing logo mark** (invisible at that size).
 - **No custom playback-speed control** — relying on native controls, with the Android caveat
   above stated rather than papered over.
