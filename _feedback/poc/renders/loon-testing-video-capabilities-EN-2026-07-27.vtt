@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:12.096
+Testing video capabilities. This is a pilot, made to prove one thing: that we can produce a finished, narrated, captioned video end to end, without buying anything.
+
+00:00:12.096 --> 00:00:25.968
+Here is how it works. The video you are watching started life as an ordinary web page. A browser captures each slide as a still image, and those images are assembled into a film.
+
+00:00:25.968 --> 00:00:40.560
+The voice you are hearing right now is not a recording of a person. It is a free Canadian English neural voice, generated from the script. There is no microphone, no studio, and no licence fee.
+
+00:00:40.560 --> 00:00:55.176
+Every word being spoken is also written across the bottom of the screen, in large high-contrast text. That is deliberate. Our audience often watches with the sound off, or reads along to keep up.
+
+00:00:55.176 --> 00:01:10.128
+Pacing is handled automatically. Each slide is measured against its own narration and held on screen for exactly as long as the sentence takes to say. Nothing is cut off, and nothing sits in silence.
+
+00:01:10.128 --> 00:01:28.608
+Now, an honest limitation. The figure on screen is a placeholder. Our guide character, Margaret, has not been drawn yet. What you are seeing is simple original line art standing in for her, and it will be replaced once her artwork is approved.
+
+00:01:28.608 --> 00:01:43.200
+So: narration works. Captions work. Pacing works. The pipeline runs from a script to a finished file in a single command, and it can do the same thing again in Canadian French.
+
+00:01:43.200 --> 00:01:51.888
+The pipeline is working. Nothing here cost anything to make, and all of it can be made again from the same files.

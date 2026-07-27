@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Testing Video Capabilities — LOON render frame</title>
+<style>
+  /* Render-only page: the stage IS the full 1280x720 frame. No chrome, no controls.
+     Visual language is inherited verbatim from dcc-intro-welcome-render.html (already
+     design-gated, LOON standard) — this pilot deliberately introduces NO new design
+     direction. Captions are burned in large + high-contrast for a senior audience. */
+  :root{ --edge:#bfe0ef; --fill:#12405c; }
+  *{box-sizing:border-box}
+  html{color-scheme:light}
+  html,body{margin:0;padding:0;background:#0e2438}
+  .stage{position:relative;width:1280px;height:720px;overflow:hidden;
+    background:linear-gradient(160deg,#0e2438,#123a54);color:#eaf3f8;
+    font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  .slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:56px 72px 168px;text-align:center;opacity:0}
+  .slide.active{opacity:1}
+  .fig{width:150px;height:150px;margin-bottom:26px;filter:drop-shadow(0 6px 14px rgba(0,0,0,.35))}
+  .onscreen{font-size:40px;font-weight:600;line-height:1.28;max-width:88%;color:#fff}
+  .kicker{font-size:22px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;
+    color:#8fc4dd;margin-bottom:18px}
+  .cards{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin-top:22px}
+  .card{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.28);border-radius:14px;
+    padding:20px 24px;font-size:22px;min-width:200px}
+  .card .ic{font-size:38px;display:block;margin-bottom:10px}
+  .titlecard{font-size:64px;font-weight:700;letter-spacing:.4px;color:#fff;line-height:1.15}
+  .endcard{font-size:52px;font-weight:700;letter-spacing:.4px;color:#fff}
+  .endcard small{display:block;font-size:24px;font-weight:400;color:#b3d3e4;margin-top:14px;letter-spacing:.6px}
+  .note{margin-top:22px;font-size:24px;color:#b3d3e4;max-width:80%;line-height:1.4}
+  /* Burned-in caption bar: large, bold, high contrast — legible for seniors. */
+  .caption{position:absolute;left:0;right:0;bottom:0;padding:22px 52px 26px;
+    background:linear-gradient(transparent,rgba(0,0,0,.72) 38%);
+    font-size:27px;font-weight:600;line-height:1.42;min-height:132px;
+    display:flex;align-items:flex-end;justify-content:center;text-align:center;
+    color:#ffffff;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+  <div class="caption" id="caption"></div>
+</div>
+<script>
+// Original etched neutral guide figure. This is a PLACEHOLDER, not Margaret — no locked
+// character art exists yet. Original inline SVG line-art: no likeness, no IP, no US symbols.
+const FIG = `<svg class="fig" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <circle cx="60" cy="46" r="24" stroke="#bfe0ef" stroke-width="2.5" fill="#12405c"/>
+  <path d="M28 104c0-19 14-30 32-30s32 11 32 30" stroke="#bfe0ef" stroke-width="2.5" fill="#12405c"/>
+  <path d="M50 44c3 3 17 3 20 0M46 40h6M68 40h6" stroke="#bfe0ef" stroke-width="2.2" stroke-linecap="round"/>
+</svg>`;
+
+// Etched pipeline motif: page -> frames -> film strip (generic, no branding, no vendor marks).
+const PIPE = `<div style="display:flex;gap:34px;align-items:center;justify-content:center;margin-bottom:26px" aria-hidden="true">
+  <svg width="92" height="104" viewBox="0 0 74 84" fill="none"><rect x="2" y="2" width="70" height="80" rx="8" stroke="#bfe0ef" stroke-width="2.5" fill="#12405c"/><path d="M16 24h42M16 38h42M16 52h28" stroke="#bfe0ef" stroke-width="2.4" stroke-linecap="round"/></svg>
+  <svg width="42" height="42" viewBox="0 0 34 34" fill="none"><path d="M4 17h24M20 9l8 8-8 8" stroke="#bfe0ef" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <svg width="112" height="104" viewBox="0 0 90 84" fill="none"><rect x="2" y="14" width="86" height="56" rx="7" stroke="#bfe0ef" stroke-width="2.5" fill="#12405c"/><path d="M14 14v56M76 14v56" stroke="#bfe0ef" stroke-width="2.4"/><path d="M2 28h12M2 42h12M2 56h12M76 28h12M76 42h12M76 56h12" stroke="#bfe0ef" stroke-width="2.2" stroke-linecap="round"/></svg>
+</div>`;
+
+const SCENES = {
+  en: [
+    { html:`<div class="kicker">Two Birds Innovation</div><div class="titlecard">Testing Video<br>Capabilities</div>`,
+      cap:`Testing video capabilities. This is a pilot, made to prove one thing: that we can produce a finished, narrated, captioned video end to end, without buying anything.` },
+
+    { html:`${PIPE}<div class="onscreen">A web page becomes a video.</div>`,
+      cap:`Here is how it works. The video you are watching started life as an ordinary web page. A browser captures each slide as a still image, and those images are assembled into a film.` },
+
+    { html:`${FIG}<div class="onscreen">The voice is generated.<br>Canadian English, no licence fee.</div>`,
+      cap:`The voice you are hearing right now is not a recording of a person. It is a free Canadian English neural voice, generated from the script. There is no microphone, no studio, and no licence fee.` },
+
+    { html:`<div class="onscreen">Every spoken word is also on screen.</div><div class="cards"><div class="card"><span class="ic">💬</span>Burned-in captions</div><div class="card"><span class="ic">🔎</span>Large, high contrast</div><div class="card"><span class="ic">⏸</span>Never rushed</div></div>`,
+      cap:`Every word being spoken is also written across the bottom of the screen, in large high-contrast text. That is deliberate. Our audience often watches with the sound off, or reads along to keep up.` },
+
+    { html:`${FIG}<div class="onscreen">Each slide is held for<br>exactly as long as it is spoken.</div>`,
+      cap:`Pacing is handled automatically. Each slide is measured against its own narration and held on screen for exactly as long as the sentence takes to say. Nothing is cut off, and nothing sits in silence.` },
+
+    { html:`${FIG}<div class="onscreen">Honest limitation:<br>this figure is a placeholder.</div><div class="note">No locked character art exists yet. Margaret has not been drawn.</div>`,
+      cap:`Now, an honest limitation. The figure on screen is a placeholder. Our guide character, Margaret, has not been drawn yet. What you are seeing is simple original line art standing in for her, and it will be replaced once her artwork is approved.` },
+
+    { html:`<div class="onscreen">What this pilot proves</div><div class="cards"><div class="card"><span class="ic">🎙</span>Narration works</div><div class="card"><span class="ic">📝</span>Captions work</div><div class="card"><span class="ic">⏱</span>Pacing works</div></div>`,
+      cap:`So: narration works. Captions work. Pacing works. The pipeline runs from a script to a finished file in a single command, and it can do the same thing again in Canadian French.` },
+
+    { html:`<div class="endcard">Pipeline verified<small>Zero cost &nbsp;·&nbsp; Fully reproducible &nbsp;·&nbsp; Canadian English</small></div>`,
+      cap:`The pipeline is working. Nothing here cost anything to make, and all of it can be made again from the same files.` }
+  ]
+};
+
+const params = new URLSearchParams(location.search);
+const lang = SCENES[params.get('lang')] ? params.get('lang') : 'en';
+document.documentElement.lang = (lang === 'fr') ? 'fr-CA' : 'en-CA';
+const scenes = SCENES[lang];
+window.scenes = scenes; // exposed for the capture script (page.evaluate reads cap: lines)
+
+const stage = document.getElementById('stage');
+const caption = document.getElementById('caption');
+const nodes = scenes.map((sc)=>{
+  const d = document.createElement('div');
+  d.className = 'slide';
+  d.innerHTML = sc.html;
+  stage.insertBefore(d, caption);
+  return d;
+});
+// Single-slide render: only the requested slide is visible, no transition (clean frames, no ghosting).
+window.show = function(i){
+  nodes.forEach((n,j)=>n.classList.toggle('active', j===i));
+  caption.textContent = scenes[i].cap;
+};
+window.show(0);
+</script>
+</body>
+</html>
