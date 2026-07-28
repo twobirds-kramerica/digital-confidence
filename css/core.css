@@ -299,7 +299,11 @@ html[data-theme="dark"] { --dcc-leaf-red: #FF6B5E; }
 .topic-card h3 a:hover { text-decoration: underline; }
 .topic-card p { margin: 0; font-size: calc(var(--font-size-base) - 2px); }
 
-/* Time-to-Confidence label — an outcome contract, not a syllabus time */
+/* Time-to-Confidence label — an outcome contract, not a syllabus time.
+   Pill shapes never wrap gracefully -- a 2-line pill loses its lozenge
+   shape and looks broken. Keep copy at roughly 35 characters or under
+   (measured against real card widths, not eyeballed); if it wraps at any
+   card breakpoint, shorten the copy rather than widen the card. */
 .ttc {
   display: inline-flex; align-items: center; gap: var(--space-2);
   align-self: flex-start;
