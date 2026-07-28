@@ -64,14 +64,15 @@
     beforeQ: "Quel est votre niveau d'aisance avec ce sujet en ce moment?",
     afterTitle: "Maintenant que vous avez termine",
     afterQ: "Quel est votre niveau d'aisance avec ce sujet maintenant?",
-    why: "Une seule question. Il n'y a pas de bonne reponse. Cela nous aide a mesurer si les lecons aident vraiment.",
+    why: "Une seule question, et il n'y a pas de bonne reponse. Votre reponse nous est envoyee sans votre nom, liee seulement a un code aleatoire pour cet appareil, afin de voir si les lecons aident vraiment. Vous pouvez passer.",
     lo: "Pas du tout a l'aise",
     hi: "Tres a l'aise",
-    save: "Enregistrer ma reponse",
+    scaleWords: ["Pas du tout", "Un peu", "Assez", "Plutot", "Tres"],
+    save: "Envoyer ma reponse",
     skip: "Passer cette question",
     pick: "Veuillez choisir un chiffre de 1 a 5.",
-    savedBefore: "Merci. Votre reponse est enregistree. Nous vous reposerons la question a la fin.",
-    savedAfter: "Merci. Votre reponse est enregistree.",
+    savedBefore: "Merci. Votre reponse a ete envoyee, sans votre nom. Nous vous reposerons la question a la fin de la lecon.",
+    savedAfter: "Merci. Votre reponse a ete envoyee, sans votre nom.",
     resultUp: "Votre aisance est passee de {a} sur 5 a {b} sur 5.",
     resultSame: "Votre aisance est restee a {a} sur 5.",
     resultDown: "Votre aisance est passee de {a} sur 5 a {b} sur 5.",
@@ -83,14 +84,15 @@
     beforeQ: "How confident do you feel about this topic right now?",
     afterTitle: "Now that you have finished",
     afterQ: "How confident do you feel about this topic now?",
-    why: "One question. There is no right answer. It helps us measure whether the lessons actually help.",
+    why: "One question, and there is no right answer. Your answer is sent to us without your name on it, tied only to a random code for this device, so we can see whether the lessons actually help. You can skip it.",
     lo: "Not at all confident",
     hi: "Very confident",
-    save: "Save my answer",
+    scaleWords: ["Not at all", "A little", "Fairly", "Quite", "Very"],
+    save: "Send my answer",
     skip: "Skip this question",
     pick: "Please choose a number from 1 to 5.",
-    savedBefore: "Thank you. Your answer is saved. We will ask again at the end.",
-    savedAfter: "Thank you. Your answer is saved.",
+    savedBefore: "Thank you. Your answer has been sent, without your name. We will ask you again at the end of the lesson.",
+    savedAfter: "Thank you. Your answer has been sent, without your name.",
     resultUp: "Your confidence went from {a} out of 5 to {b} out of 5.",
     resultSame: "Your confidence stayed at {a} out of 5.",
     resultDown: "Your confidence went from {a} out of 5 to {b} out of 5.",
@@ -170,27 +172,26 @@
       ".dcc-conf .dcc-conf-q{margin:0 0 var(--space-2);font-weight:var(--font-weight-semibold);}",
       ".dcc-conf .dcc-conf-why{margin:0 0 var(--space-5);color:var(--color-text-light);",
       "font-size:var(--font-size-sm);max-width:60ch;}",
-      ".dcc-conf-scale{display:flex;gap:var(--space-2);flex-wrap:wrap;margin:0 0 var(--space-3);padding:0;border:0;}",
+      ".dcc-conf-scale{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--space-2);margin:0 0 var(--space-5);padding:0;border:0;}",
       ".dcc-conf-scale legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}",
-      ".dcc-conf-opt{flex:1 1 96px;}",
+      ".dcc-conf-opt{display:flex;flex-direction:column;align-items:center;gap:var(--space-1);}",
       ".dcc-conf-opt input{position:absolute;width:1px;height:1px;opacity:0;}",
       ".dcc-conf-opt label{display:flex;align-items:center;justify-content:center;min-height:var(--tap-target-min,48px);",
-      "min-width:48px;padding:var(--space-3);background:var(--color-surface);border:2px solid var(--color-border-strong);",
+      "width:100%;padding:var(--space-3);background:var(--color-surface);border:2px solid var(--color-border-strong);",
       "border-radius:var(--radius-md);font-family:var(--font-heading);font-size:var(--font-size-h4);",
       "font-weight:var(--font-weight-bold);color:var(--color-text);cursor:pointer;}",
       ".dcc-conf-opt label:hover{border-color:var(--color-primary);}",
       ".dcc-conf-opt input:checked + label{background:var(--color-primary);color:var(--color-primary-contrast);",
       "border-color:var(--color-primary);}",
-      ".dcc-conf-opt input:focus-visible + label{outline:3px solid var(--color-accent);outline-offset:2px;}",
-      ".dcc-conf-ends{display:flex;justify-content:space-between;gap:var(--space-4);",
-      "color:var(--color-text-light);font-size:var(--font-size-sm);margin:0 0 var(--space-5);}",
+      ".dcc-conf-opt input:focus-visible + label{outline:var(--focus-ring-width,3px) solid var(--focus-ring-color);outline-offset:2px;}",
+      ".dcc-conf-optlabel{font-size:var(--font-size-sm);color:var(--color-text);text-align:center;line-height:1.3;",
+      "text-wrap:balance;}",
+      "@media (max-width:400px){.dcc-conf-optlabel{position:absolute;width:1px;height:1px;overflow:hidden;",
+      "clip:rect(0 0 0 0);white-space:nowrap;}}",
       ".dcc-conf-actions{display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center;}",
-      ".dcc-conf-skip{background:none;border:0;color:var(--color-text-link);text-decoration:underline;",
-      "cursor:pointer;font:inherit;min-height:var(--tap-target-min,48px);padding:0 var(--space-2);}",
       ".dcc-conf-msg{margin:var(--space-4) 0 0;font-weight:var(--font-weight-semibold);color:var(--color-success-deep);}",
       ".dcc-conf-warn{margin:var(--space-3) 0 0;font-weight:var(--font-weight-semibold);color:var(--color-error);}",
-      ".dcc-conf-result{font-size:var(--font-size-lead);line-height:var(--line-height-lead);margin:0;}",
-      "@media (max-width:520px){.dcc-conf-opt{flex:1 1 18%;}}"
+      ".dcc-conf-result{font-size:var(--font-size-lead);line-height:var(--line-height-lead);margin:0;}"
     ].join("");
     document.head.appendChild(s);
   }
@@ -222,24 +223,21 @@
       input.name = name;
       input.id = name + "-" + i;
       input.value = String(i);
+      var word = T.scaleWords[i - 1];
       var label = elt("label", null, String(i));
       label.setAttribute("for", input.id);
-      label.setAttribute("aria-label", i + " " + (i === 1 ? T.lo : (i === 5 ? T.hi : "")));
+      label.setAttribute("aria-label", i + " " + (IS_FR ? "sur" : "out of") + " 5, " + word.toLowerCase());
       wrap.appendChild(input);
       wrap.appendChild(label);
+      wrap.appendChild(elt("span", "dcc-conf-optlabel", word));
       fs.appendChild(wrap);
     }
     box.appendChild(fs);
 
-    var ends = elt("div", "dcc-conf-ends");
-    ends.appendChild(elt("span", null, "1 " + T.lo));
-    ends.appendChild(elt("span", null, "5 " + T.hi));
-    box.appendChild(ends);
-
     var actions = elt("div", "dcc-conf-actions");
     var saveBtn = elt("button", "btn btn-primary", T.save);
     saveBtn.type = "button";
-    var skipBtn = elt("button", "dcc-conf-skip", T.skip);
+    var skipBtn = elt("button", "btn btn-secondary", T.skip);
     skipBtn.type = "button";
     actions.appendChild(saveBtn);
     actions.appendChild(skipBtn);

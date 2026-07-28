@@ -101,6 +101,7 @@ a:hover { color: var(--color-text-link-hover); }
   min-height: var(--tap-target-min);
 }
 .brand:hover { color: var(--color-primary-hover); }
+.brand-mark { width: 32px; height: 32px; flex: 0 0 auto; }
 
 /* Padlock secure badge (CDC/FTC pattern) — icon ALWAYS paired with text */
 .secure-badge {
@@ -109,6 +110,26 @@ a:hover { color: var(--color-text-link-hover); }
   font-family: var(--font-heading); font-size: var(--font-size-sm);
   padding: var(--space-2) var(--space-3); border-radius: var(--radius-pill);
   border: 1px solid var(--color-border);
+}
+
+/* Canadian trust badge -- icon ALWAYS paired with text, same pattern as .secure-badge.
+   One-time entrance only, never a loop (Two Birds master kit: "nothing loops"). */
+:root { --dcc-leaf-red: #C8102E; }
+html[data-theme="dark"] { --dcc-leaf-red: #FF6B5E; }
+.ca-badge {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  font-family: var(--font-heading); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);
+  color: var(--color-text-light);
+  opacity: 0; transform: scale(0.86);
+  animation: dcc-ca-badge-in var(--motion-duration-3) var(--motion-ease) 120ms forwards;
+}
+.ca-leaf { width: 20px; height: 20px; flex: 0 0 auto; color: var(--dcc-leaf-red); }
+@keyframes dcc-ca-badge-in { to { opacity: 1; transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .ca-badge { animation: none; opacity: 1; transform: none; }
+}
+@media (max-width: 400px) {
+  .ca-badge .ca-badge-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 }
 
 /* Language link — always visible in the header (AGENTS.md localisation rule:

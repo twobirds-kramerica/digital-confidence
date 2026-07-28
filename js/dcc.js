@@ -239,22 +239,59 @@
        Canadian English first, then any English; prefer higher-quality
        natural/neural voices where the browser exposes them. */
     var chosenVoice = null;
+    // Named-voice preference (2026-07-28, spec beta-welcome-wizard-SPEC section 28.3):
+    // Clara is this project's own vetted Canadian voice (en-CA neural), chosen
+    // deliberately over Ava here even though Ava was picked for the welcome video --
+    // the video is a 39s one-off where naturalness won; read-aloud is the everyday
+    // voice of a Canadian product running for many minutes, where the accent match
+    // compounds and matters more. Do not "harmonise" this to Ava.
+    var NAME_PREFS = IS_FR ? ["sylvie", "amelie", "amélie"] : ["clara"];
+    function score(v) {
+      var s = 0, lang = (v.lang || "").toLowerCase(), name = (v.name || "");
+      var wantExact = IS_FR ? "fr-ca" : "en-ca";
+      var wantPrefix = IS_FR ? "fr" : "en";
+      var nameLower = name.toLowerCase();
+      for (var i = 0; i < NAME_PREFS.length; i++) {
+        if (nameLower.indexOf(NAME_PREFS[i]) !== -1) { s += 50; break; }
+      }
+      if (lang === wantExact) s += 40;
+      else if (lang.indexOf(wantPrefix) === 0) s += 20;
+      if (/natural|neural|online/i.test(name)) s += 25; // raised above the generic-language bonus: quality outranks a near-miss locale
+      if (v.localService) s += 1; // network-stutter resilience only; no longer favours the robotic offline legacy voices
+      return s;
+    }
+    // Quiet "Reading with: X" line -- tells the listener what was picked instead of
+    // staying silent about a system whose quality genuinely varies by device. Same
+    // tell-the-user-what-is-happening posture as the confidence quiz and the wizard
+    // identification step (spec section 28.3).
+    var voiceStatus = null;
+    function friendlyVoiceLabel(v) {
+      var name = (v.name || "").toLowerCase();
+      for (var i = 0; i < NAME_PREFS.length; i++) {
+        if (name.indexOf(NAME_PREFS[i]) !== -1) {
+          return NAME_PREFS[i].charAt(0).toUpperCase() + NAME_PREFS[i].slice(1) + (IS_FR ? " (Canadienne)" : " (Canadian)");
+        }
+      }
+      var lang = (v.lang || "").toLowerCase();
+      if (lang === (IS_FR ? "fr-ca" : "en-ca")) { return v.name + (IS_FR ? " (Canadienne)" : " (Canadian)"); }
+      return v.name;
+    }
+    function reflectVoiceStatus() {
+      if (!chosenVoice) { return; }
+      if (!voiceStatus) {
+        voiceStatus = document.createElement("p");
+        voiceStatus.className = "dcc-read-voice-status";
+        voiceStatus.style.cssText = "font-size:var(--font-size-sm);color:var(--color-text-light);margin:var(--space-2) 0 0;";
+        if (readBtn.parentNode) { readBtn.parentNode.insertBefore(voiceStatus, readBtn.nextSibling); }
+      }
+      voiceStatus.textContent = (IS_FR ? "Lecture avec : " : "Reading with: ") + friendlyVoiceLabel(chosenVoice);
+    }
     function pickVoice() {
       if (!("speechSynthesis" in window)) return;
       var voices = window.speechSynthesis.getVoices() || [];
       if (!voices.length) return;
-      function score(v) {
-        var s = 0, lang = (v.lang || "").toLowerCase(), name = (v.name || "");
-        var wantExact = IS_FR ? "fr-ca" : "en-ca";
-        var wantPrefix = IS_FR ? "fr" : "en";
-        if (lang === wantExact) s += 40;
-        else if (lang.indexOf(wantPrefix) === 0) s += 20;
-        if (/natural|neural|online/i.test(name)) s += 10;
-        if (v.localService) s += 3; // works offline, no network stutter
-        return s;
-      }
       voices.sort(function (a, b) { return score(b) - score(a); });
-      if (score(voices[0]) > 0) chosenVoice = voices[0];
+      if (score(voices[0]) > 0) { chosenVoice = voices[0]; reflectVoiceStatus(); }
     }
     if ("speechSynthesis" in window) {
       pickVoice();

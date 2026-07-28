@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs><clipPath id="c5"><rect width="1024" height="1024" rx="180" ry="180"/></clipPath></defs>
+  <rect width="1024" height="1024" rx="180" ry="180" fill="#0066CC"/>
+  <!-- V05: With cosmos, larger circles (34px). Medium spread. -->
+  <g clip-path="url(#c5)">
+    <circle cx="87" cy="43" r="2" fill="#FFF" opacity=".10"/><circle cx="412" cy="52" r="2" fill="#FFF" opacity=".12"/>
+    <circle cx="589" cy="31" r="4" fill="#FFF" opacity=".09"/><circle cx="741" cy="67" r="2" fill="#FFF" opacity=".11"/>
+    <circle cx="55" cy="142" r="3" fill="#FFF" opacity=".10"/><circle cx="338" cy="155" r="5" fill="#FFF" opacity=".08"/>
+    <circle cx="785" cy="172" r="3" fill="#FFF" opacity=".09"/><circle cx="950" cy="153" r="2" fill="#FFF" opacity=".12"/>
+    <circle cx="98" cy="278" r="4" fill="#FFF" opacity=".09"/><circle cx="690" cy="262" r="3" fill="#FFF" opacity=".08"/>
+    <circle cx="873" cy="289" r="2" fill="#FFF" opacity=".14"/><circle cx="152" cy="341" r="2" fill="#FFF" opacity=".09"/>
+    <circle cx="815" cy="332" r="4" fill="#FFF" opacity=".08"/><circle cx="72" cy="427" r="3" fill="#FFF" opacity=".10"/>
+    <circle cx="905" cy="442" r="5" fill="#FFF" opacity=".08"/><circle cx="48" cy="538" r="2" fill="#FFF" opacity=".11"/>
+    <circle cx="356" cy="510" r="2" fill="#FFF" opacity=".13"/><circle cx="958" cy="560" r="3" fill="#FFF" opacity=".09"/>
+    <circle cx="112" cy="633" r="4" fill="#FFF" opacity=".08"/><circle cx="930" cy="648" r="3" fill="#FFF" opacity=".12"/>
+    <circle cx="63" cy="735" r="2" fill="#FFF" opacity=".09"/><circle cx="855" cy="738" r="2" fill="#FFF" opacity=".14"/>
+    <circle cx="88" cy="842" r="3" fill="#FFF" opacity=".10"/><circle cx="618" cy="858" r="2" fill="#FFF" opacity=".12"/>
+    <circle cx="920" cy="862" r="2" fill="#FFF" opacity=".11"/><circle cx="315" cy="952" r="3" fill="#FFF" opacity=".09"/>
+    <circle cx="695" cy="955" r="4" fill="#FFF" opacity=".10"/><circle cx="505" cy="118" r="6" fill="#FFF" opacity=".08"/>
+    <circle cx="130" cy="505" r="6" fill="#FFF" opacity=".08"/><circle cx="895" cy="505" r="6" fill="#FFF" opacity=".08"/>
+  </g>
+  <polyline points="210,195 550,335 210,475" fill="none" stroke="#FFFFFF" stroke-width="52" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="550" cy="335" r="34" fill="#FFFFFF"/>
+  <circle cx="210" cy="195" r="34" fill="#FFFFFF"/>
+  <polyline points="814,549 474,689 814,829" fill="none" stroke="#FFFFFF" stroke-width="52" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="474" cy="689" r="34" fill="#FFFFFF"/>
+  <circle cx="814" cy="829" r="34" fill="#FFFFFF"/>
+</svg>
