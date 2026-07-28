@@ -64,8 +64,8 @@
     wizTitle1: "Merci de participer comme testeur beta.",
     wizAttrib: "Le Centre de confiance numérique est un programme de Two Birds Innovation.",
     wizBody1: "Vous êtes parmi les premières personnes à voir le Centre de confiance numérique, un programme canadien gratuit de leçons en langage simple sur la sécurité en ligne. Il n'y a rien à configurer et aucun compte à créer. Nous avons une courte vidéo de bienvenue, environ 45 secondes, puis vous pourrez regarder à votre rythme.",
-    wizNext: "Regarder la vidéo de bienvenue (45 secondes)",
-    wizSkip: "Passer la vidéo et commencer à regarder",
+    wizNext: "Regarder la vidéo (45 secondes)",
+    wizSkip: "Passer la vidéo",
     wizTitle2: "Un mot de bienvenue de Two Birds Innovation",
     wizBody2: "Le son est désactivé au départ. Activez-le quand vous voulez. Les mots apparaissent sur la vidéo dans les deux cas.",
     wizSoundOn: "Activer le son",
@@ -84,7 +84,9 @@
     wizIdSave: "Enregistrer et commencer à regarder",
     wizIdSkip: "Passer et commencer à regarder",
     wizIdThanks: "Merci, {name}. Vos commentaires nous arriveront avec votre nom.",
-    wizTellUs: "Dites-nous qui vous êtes"
+    wizTellUs: "Dites-nous qui vous êtes",
+    wizClose: "Fermer",
+    wizBrandName: "Centre de confiance numérique"
   } : {
     label: "Beta tester welcome",
     welcome: "Thank you for joining as a beta tester.",
@@ -112,8 +114,10 @@
     wizTitle1: "Thank you for joining as a beta tester.",
     wizAttrib: "Digital Confidence Centre is a programme of Two Birds Innovation.",
     wizBody1: "You are one of the first people to see the Digital Confidence Centre, a free Canadian programme of plain-language lessons on staying safe online. There is nothing to set up and nothing to sign in to. We have a short welcome video, about 40 seconds, and then you can look around at your own pace.",
-    wizNext: "Watch the welcome video (40 seconds)",
-    wizSkip: "Skip the video and start looking around",
+    wizNext: "Watch the video (40 seconds)",
+    wizSkip: "Skip the video",
+    wizClose: "Close",
+    wizBrandName: "Digital Confidence Centre",
     wizTitle2: "A short welcome from Two Birds Innovation",
     wizBody2: "The sound starts off. Turn it on whenever you like. The words appear on the video either way.",
     wizSoundOn: "Turn the sound on",
@@ -238,36 +242,46 @@
       /* ---- Welcome wizard: native <dialog>, DCC's own tokens only ---- */
       ":root{--dcc-welcome-scrim:rgba(16,23,31,0.66);}",
       "html[data-theme=\"dark\"]{--dcc-welcome-scrim:rgba(0,0,0,0.72);}",
-      "dialog.dcc-welcome{--dcc-welcome-scrim:rgba(16,23,31,0.66);border:0;padding:0;background:transparent;z-index:var(--z-modal,1000);max-width:none;max-height:none;}",
+      "dialog.dcc-welcome{--dcc-welcome-scrim:rgba(16,23,31,0.66);border:0;outline:0;padding:0;background:transparent;z-index:var(--z-modal,1000);max-width:none;max-height:none;}",
       "html[data-theme=\"dark\"] dialog.dcc-welcome{--dcc-welcome-scrim:rgba(0,0,0,0.72);}",
       "dialog.dcc-welcome::backdrop{background:var(--dcc-welcome-scrim);opacity:0;transition:opacity var(--motion-duration-2,200ms) var(--motion-ease,ease);}",
       "dialog.dcc-welcome.is-open::backdrop{opacity:1;}",
-      ".dcc-welcome-panel{width:min(680px,calc(100vw - (2 * var(--space-4))));max-height:calc(100dvh - (2 * var(--space-6)));",
+      ".dcc-welcome-panel{width:min(680px,calc(100vw - (2 * var(--space-4))));height:max-content;max-height:calc(100dvh - (2 * var(--space-6)));",
       "margin:auto;position:fixed;inset:0;background:var(--color-surface);border-radius:var(--radius-lg);",
-      "display:grid;grid-template-rows:auto 1fr auto;opacity:0;transform:translateY(12px) scale(0.98);",
+      "display:grid;grid-template-rows:auto minmax(0,1fr) auto;opacity:0;transform:translateY(12px) scale(0.98);",
       "transition:opacity var(--motion-duration-3,320ms) var(--motion-ease,ease),transform var(--motion-duration-3,320ms) var(--motion-ease,ease);}",
       "dialog.dcc-welcome.is-open .dcc-welcome-panel{opacity:1;transform:translateY(0) scale(1);}",
       "dialog.dcc-welcome.is-closing .dcc-welcome-panel{transition-duration:var(--motion-duration-2,200ms);opacity:0;transform:translateY(12px) scale(0.98);}",
       "dialog.dcc-welcome.is-closing::backdrop{transition-duration:var(--motion-duration-2,200ms);opacity:0;}",
       ".dcc-welcome-panel{box-shadow:var(--shadow-lg);}",
+      ".dcc-welcome-panel:focus,.dcc-welcome-body:focus,.dcc-welcome-body section:focus{outline:none;}",
       "html[data-theme=\"dark\"] .dcc-welcome-panel{box-shadow:none;border:1px solid var(--color-border-strong);}",
       ".dcc-welcome-head{background:var(--color-accent-light);border-bottom:1px solid var(--color-border);",
-      "padding:var(--space-6) var(--space-8) var(--space-5);border-radius:var(--radius-lg) var(--radius-lg) 0 0;",
-      "display:flex;align-items:flex-start;gap:var(--space-3);}",
+      "padding:var(--space-5) var(--space-8) var(--space-5);border-radius:var(--radius-lg) var(--radius-lg) 0 0;",
+      "display:flex;align-items:flex-start;gap:var(--space-3);position:relative;}",
       "html[data-theme=\"dark\"] .dcc-welcome-head{background:var(--color-surface-alt);}",
       ".dcc-welcome-margaret{width:96px;height:96px;border-radius:var(--radius-pill);flex:0 0 auto;object-fit:cover;}",
-      ".dcc-welcome-headtext{min-width:0;}",
+      ".dcc-welcome-headtext{min-width:0;padding-right:var(--space-8);}",
+      ".dcc-welcome-brandline{display:flex;align-items:center;gap:var(--space-2);margin:0 0 var(--space-3);}",
+      ".dcc-welcome-brandmark{width:20px;height:20px;flex:0 0 auto;color:var(--color-primary);}",
+      ".dcc-welcome-brandname{font-family:var(--font-heading);font-size:var(--font-size-sm);font-weight:var(--font-weight-semibold);color:var(--color-text-light);}",
       ".dcc-welcome-step{margin:0 0 var(--space-2);font-family:var(--font-heading);font-size:var(--font-size-sm);",
       "font-weight:var(--font-weight-semibold);color:var(--color-accent-deep);}",
       "html[data-theme=\"dark\"] .dcc-welcome-step{color:var(--color-text-light);font-weight:400;}",
       ".dcc-welcome-panel h2{margin:0 0 var(--space-2);font-family:var(--font-heading);font-weight:var(--font-weight-bold);",
       "font-size:var(--font-size-h2);color:var(--color-primary);}",
       ".dcc-welcome-attrib{margin:0;font-size:var(--font-size-sm);font-weight:var(--font-weight-semibold);color:var(--color-primary);}",
+      ".dcc-welcome-close{position:absolute;top:var(--space-3);right:var(--space-3);width:var(--tap-target-min,44px);",
+      "height:var(--tap-target-min,44px);border-radius:var(--radius-pill);border:0;background:transparent;",
+      "color:var(--color-text-light);font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;}",
+      ".dcc-welcome-close:hover,.dcc-welcome-close:focus-visible{background:rgba(0,0,0,0.08);color:var(--color-text);}",
+      "html[data-theme=\"dark\"] .dcc-welcome-close:hover,html[data-theme=\"dark\"] .dcc-welcome-close:focus-visible{background:rgba(255,255,255,0.12);}",
       ".dcc-welcome-body{overflow-y:auto;padding:var(--space-6) var(--space-8);min-height:0;}",
       ".dcc-welcome-body p{margin:0 0 var(--space-4);max-width:60ch;}",
       ".dcc-welcome-body section[hidden]{display:none;}",
       ".dcc-welcome-body section{opacity:1;transition:opacity var(--motion-duration-2,200ms) var(--motion-ease,ease);}",
       ".dcc-welcome-body section.is-fading{opacity:0;}",
+      ".dcc-welcome-art{display:block;width:150px;height:auto;margin:var(--space-2) auto 0;color:var(--color-primary);}",
       ".dcc-welcome-video{width:100%;aspect-ratio:16/9;border-radius:var(--radius-md);background:#000;display:block;margin:0 0 var(--space-4);}",
       ".dcc-welcome-audiobtn{width:100%;margin:0 0 var(--space-2);}",
       ".dcc-welcome-audiostatus{margin:0 0 var(--space-4);font-size:var(--font-size-sm);color:var(--color-text-light);}",
@@ -279,11 +293,11 @@
       ".dcc-welcome-fieldhelp{margin:var(--space-2) 0 0;font-size:var(--font-size-sm);color:var(--color-text-light);}",
       ".dcc-welcome-thanks{margin:0 0 var(--space-4);font-weight:var(--font-weight-semibold);color:var(--color-success-deep);}",
       ".dcc-welcome-actions{padding:var(--space-5) var(--space-8);border-top:1px solid var(--color-border);",
-      "display:flex;gap:var(--space-3);justify-content:flex-end;flex-wrap:wrap;}",
+      "display:flex;gap:var(--space-3);flex-wrap:nowrap;}",
+      ".dcc-welcome-actions .btn{flex:1 1 0;min-width:0;}",
       "@media (max-width:559px){.dcc-welcome-panel{width:calc(100vw - (2 * var(--space-4)));}",
       ".dcc-welcome-head,.dcc-welcome-body,.dcc-welcome-actions{padding-left:var(--space-6);padding-right:var(--space-6);}",
-      ".dcc-welcome-actions{flex-direction:column-reverse;}",
-      ".dcc-welcome-actions .btn{width:100%;}}",
+      ".dcc-welcome-actions{gap:var(--space-2);}}",
       "@media (max-height:559px) and (orientation:landscape){dialog.dcc-welcome .dcc-welcome-panel{max-height:calc(100dvh - (2 * var(--space-4)));}}",
       "@media (prefers-reduced-motion:reduce){dialog.dcc-welcome::backdrop,.dcc-welcome-panel,.dcc-welcome-body section{transition:none;}}"
     ].join("");
@@ -360,23 +374,53 @@
       head.appendChild(margImg);
     }
     var headtext = elt("div", "dcc-welcome-headtext");
+    var brandLine = elt("div", "dcc-welcome-brandline");
+    var brandMark = document.createElement("div");
+    brandMark.className = "dcc-welcome-brandmark";
+    brandMark.innerHTML = "<svg viewBox=\"0 0 32 32\" width=\"20\" height=\"20\" aria-hidden=\"true\" focusable=\"false\"><rect width=\"32\" height=\"32\" rx=\"7\" fill=\"currentColor\"/><path d=\"M16 4 L26 8 V15 C26 22 21.5 26.5 16 28.5 C10.5 26.5 6 22 6 15 V8 Z\" fill=\"var(--color-accent-light)\"/><path d=\"M11 16 L14.5 19.5 L21.5 12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>";
+    brandLine.appendChild(brandMark);
+    brandLine.appendChild(elt("span", "dcc-welcome-brandname", T.wizBrandName));
     var stepLine = elt("p", "dcc-welcome-step", T.wizStep1of3);
     var title = elt("h2", null, T.wizTitle1);
     title.id = "dcc-welcome-title";
     var attrib = elt("p", "dcc-welcome-attrib", T.wizAttrib);
+    headtext.appendChild(brandLine);
     headtext.appendChild(stepLine);
     headtext.appendChild(title);
     headtext.appendChild(attrib);
     head.appendChild(headtext);
+    // The design spec deliberately excluded a corner X (audience-accessibility
+    // reasoning: "X means close" isn't universal for this demographic, and a
+    // small icon-only control is the exact "cramped dismiss" pattern being
+    // avoided). Aaron asked for one directly after seeing the built result, so
+    // it's added here -- additive, not a replacement: the full-size labelled
+    // Skip/Watch buttons remain the primary, accessible exit path either way.
+    var closeBtn = document.createElement("button");
+    closeBtn.type = "button";
+    closeBtn.className = "dcc-welcome-close";
+    closeBtn.setAttribute("aria-label", T.wizClose);
+    closeBtn.innerHTML = "<span aria-hidden=\"true\">×</span>";
+    head.appendChild(closeBtn);
     panel.appendChild(head);
 
     var body = elt("div", "dcc-welcome-body");
     body.tabIndex = -1;
 
-    // Step 1: thanks
+    // Step 1: thanks. Welcoming line-art variant of the site's etched-illustration
+    // style (see index.html hero) -- glasses, warm smile, a raised waving hand.
+    // Aaron asked for a friendly welcoming figure here specifically; this is a
+    // one-off for the wizard, not the broader per-module illustration rollout
+    // (that's its own scoped sprint, S-DCC-ILLUSTRATION-SYSTEM-001).
     var s1 = elt("section", null);
     s1.setAttribute("data-step", "1");
     s1.appendChild(elt("p", null, T.wizBody1));
+    // Reuses index.html hero illustration's head/shoulder geometry verbatim
+    // (same coordinate space, same stroke weight) for visual consistency with
+    // the rest of the site, with a wider smile and a waving arm swapped in for
+    // this welcoming context (no tablet/mug/plant needed here).
+    var artWrap = document.createElement("div");
+    artWrap.innerHTML = "<svg class=\"dcc-welcome-art\" viewBox=\"0 0 240 200\" role=\"presentation\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M104 46 c-2 -15 9 -26 23 -26 c14 0 25 11 23 25 c-1 11 -9 20 -20 22 c-12 2 -24 -8 -26 -21 z\"/><circle cx=\"118\" cy=\"46\" r=\"6\"/><circle cx=\"136\" cy=\"46\" r=\"6\"/><path d=\"M124 46 h6\"/><path d=\"M114 60 q13 10 26 0\"/><path d=\"M84 138 c2 -30 16 -44 42 -44 c26 0 40 14 42 44\"/><path d=\"M168 128 c16 -6 28 -20 30 -36\"/><circle cx=\"200\" cy=\"88\" r=\"7\"/><path d=\"M212 78 l6 -4 M214 92 l7 3\"/></g></svg>";
+    s1.appendChild(artWrap.firstChild);
     body.appendChild(s1);
 
     // Step 2: the video
@@ -550,6 +594,7 @@
       if (currentStep === 2) { setStep(1); }
       else { closeWizard(); }
     });
+    closeBtn.addEventListener("click", function () { closeWizard(); });
     dlg.addEventListener("cancel", function () {
       // Esc: native <dialog> behaviour, not suppressed. Still runs our own
       // markWelcomeSeen()/cleanup rather than letting the browser close it raw.
