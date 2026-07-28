@@ -281,7 +281,7 @@
       ".dcc-welcome-body section[hidden]{display:none;}",
       ".dcc-welcome-body section{opacity:1;transition:opacity var(--motion-duration-2,200ms) var(--motion-ease,ease);}",
       ".dcc-welcome-body section.is-fading{opacity:0;}",
-      ".dcc-welcome-art{display:block;width:150px;height:auto;margin:var(--space-2) auto 0;color:var(--color-primary);}",
+      ".dcc-welcome-art{display:block;width:220px;height:auto;margin:var(--space-3) auto 0;color:var(--color-primary);}",
       ".dcc-welcome-video{width:100%;aspect-ratio:16/9;border-radius:var(--radius-md);background:#000;display:block;margin:0 0 var(--space-4);}",
       ".dcc-welcome-audiobtn{width:100%;margin:0 0 var(--space-2);}",
       ".dcc-welcome-audiostatus{margin:0 0 var(--space-4);font-size:var(--font-size-sm);color:var(--color-text-light);}",
@@ -419,7 +419,7 @@
     // the rest of the site, with a wider smile and a waving arm swapped in for
     // this welcoming context (no tablet/mug/plant needed here).
     var artWrap = document.createElement("div");
-    artWrap.innerHTML = "<svg class=\"dcc-welcome-art\" viewBox=\"0 0 240 200\" role=\"presentation\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M104 46 c-2 -15 9 -26 23 -26 c14 0 25 11 23 25 c-1 11 -9 20 -20 22 c-12 2 -24 -8 -26 -21 z\"/><circle cx=\"118\" cy=\"46\" r=\"6\"/><circle cx=\"136\" cy=\"46\" r=\"6\"/><path d=\"M124 46 h6\"/><path d=\"M114 60 q13 10 26 0\"/><path d=\"M84 138 c2 -30 16 -44 42 -44 c26 0 40 14 42 44\"/><path d=\"M168 128 c16 -6 28 -20 30 -36\"/><circle cx=\"200\" cy=\"88\" r=\"7\"/><path d=\"M212 78 l6 -4 M214 92 l7 3\"/></g></svg>";
+    artWrap.innerHTML = "<svg class=\"dcc-welcome-art\" viewBox=\"0 0 240 220\" role=\"presentation\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M92 56 c-3 -22 13 -38 34 -38 c21 0 37 16 34 37 c-2 16 -13 29 -29 32 c-17 3 -35 -11 -39 -31 z\"/><circle cx=\"114\" cy=\"56\" r=\"7.5\"/><circle cx=\"140\" cy=\"56\" r=\"7.5\"/><path d=\"M128.5 56 h5\"/><path d=\"M106 76 q20 14 40 0\"/><path d=\"M76 168 c2 -34 20 -50 50 -50 c30 0 46 16 50 50\"/><path d=\"M176 144 c18 -6 32 -22 34 -40\"/><circle cx=\"212\" cy=\"98\" r=\"8\"/><path d=\"M226 86 l7 -5 M228 100 l8 3\"/></g></svg>";
     s1.appendChild(artWrap.firstChild);
     body.appendChild(s1);
 
