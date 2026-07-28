@@ -242,14 +242,24 @@
       /* ---- Welcome wizard: native <dialog>, DCC's own tokens only ---- */
       ":root{--dcc-welcome-scrim:rgba(16,23,31,0.66);}",
       "html[data-theme=\"dark\"]{--dcc-welcome-scrim:rgba(0,0,0,0.72);}",
-      "dialog.dcc-welcome{--dcc-welcome-scrim:rgba(16,23,31,0.66);border:0;outline:0;padding:0;background:transparent;z-index:var(--z-modal,1000);max-width:none;max-height:none;}",
+      /* Dialog IS the centering container (flex, full viewport via inset:0 --
+         not 100vw, which includes the scrollbar gutter in Chrome/Firefox and
+         was pushing the panel off-centre whenever the page had a scrollbar).
+         The panel is a normal flex child, never position:fixed itself --
+         two independent full-viewport-anchored boxes stacked was the root
+         cause of the below-the-fold / pushed-down reports (2026-07-28). */
+      "dialog.dcc-welcome{--dcc-welcome-scrim:rgba(16,23,31,0.66);border:0;outline:0;padding:var(--space-6);background:transparent;",
+      "z-index:var(--z-modal,1000);max-width:none;max-height:none;position:fixed;inset:0;margin:0;width:100%;height:100%;",
+      "display:flex;align-items:center;justify-content:center;box-sizing:border-box;}",
       "html[data-theme=\"dark\"] dialog.dcc-welcome{--dcc-welcome-scrim:rgba(0,0,0,0.72);}",
       "dialog.dcc-welcome::backdrop{background:var(--dcc-welcome-scrim);opacity:0;transition:opacity var(--motion-duration-2,200ms) var(--motion-ease,ease);}",
       "dialog.dcc-welcome.is-open::backdrop{opacity:1;}",
-      ".dcc-welcome-panel{width:min(680px,calc(100vw - (2 * var(--space-4))));height:max-content;max-height:calc(100dvh - (2 * var(--space-6)));",
-      "margin:auto;position:fixed;inset:0;background:var(--color-surface);border-radius:var(--radius-lg);",
-      "display:grid;grid-template-rows:auto minmax(0,1fr) auto;opacity:0;transform:translateY(12px) scale(0.98);",
+      ".dcc-welcome-panel{width:min(680px,100%);max-height:100%;",
+      "background:var(--color-surface);border-radius:var(--radius-lg);",
+      "display:flex;flex-direction:column;overflow:hidden;opacity:0;transform:translateY(12px) scale(0.98);",
       "transition:opacity var(--motion-duration-3,320ms) var(--motion-ease,ease),transform var(--motion-duration-3,320ms) var(--motion-ease,ease);}",
+      ".dcc-welcome-head{flex:0 0 auto;}",
+      ".dcc-welcome-actions{flex:0 0 auto;}",
       "dialog.dcc-welcome.is-open .dcc-welcome-panel{opacity:1;transform:translateY(0) scale(1);}",
       "dialog.dcc-welcome.is-closing .dcc-welcome-panel{transition-duration:var(--motion-duration-2,200ms);opacity:0;transform:translateY(12px) scale(0.98);}",
       "dialog.dcc-welcome.is-closing::backdrop{transition-duration:var(--motion-duration-2,200ms);opacity:0;}",
@@ -276,7 +286,7 @@
       "color:var(--color-text-light);font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;}",
       ".dcc-welcome-close:hover,.dcc-welcome-close:focus-visible{background:rgba(0,0,0,0.08);color:var(--color-text);}",
       "html[data-theme=\"dark\"] .dcc-welcome-close:hover,html[data-theme=\"dark\"] .dcc-welcome-close:focus-visible{background:rgba(255,255,255,0.12);}",
-      ".dcc-welcome-body{overflow-y:auto;padding:var(--space-6) var(--space-8);min-height:0;}",
+      ".dcc-welcome-body{flex:1 1 auto;overflow-y:auto;padding:var(--space-6) var(--space-8);min-height:0;}",
       ".dcc-welcome-body p{margin:0 0 var(--space-4);max-width:60ch;}",
       ".dcc-welcome-body section[hidden]{display:none;}",
       ".dcc-welcome-body section{opacity:1;transition:opacity var(--motion-duration-2,200ms) var(--motion-ease,ease);}",
@@ -295,10 +305,14 @@
       ".dcc-welcome-actions{padding:var(--space-5) var(--space-8);border-top:1px solid var(--color-border);",
       "display:flex;gap:var(--space-3);flex-wrap:nowrap;}",
       ".dcc-welcome-actions .btn{flex:1 1 0;min-width:0;}",
-      "@media (max-width:559px){.dcc-welcome-panel{width:calc(100vw - (2 * var(--space-4)));}",
+      /* Narrow/short viewports: shrink the DIALOG's own padding so the panel
+         (already width:min(680px,100%) / max-height:100% of the dialog's
+         content box) automatically gets more room -- no 100vw/100dvh math
+         needed, the flex-centering container handles it. */
+      "@media (max-width:559px){dialog.dcc-welcome{padding:var(--space-4);}",
       ".dcc-welcome-head,.dcc-welcome-body,.dcc-welcome-actions{padding-left:var(--space-6);padding-right:var(--space-6);}",
       ".dcc-welcome-actions{gap:var(--space-2);}}",
-      "@media (max-height:559px) and (orientation:landscape){dialog.dcc-welcome .dcc-welcome-panel{max-height:calc(100dvh - (2 * var(--space-4)));}}",
+      "@media (max-height:559px) and (orientation:landscape){dialog.dcc-welcome{padding:var(--space-4);}}",
       "@media (prefers-reduced-motion:reduce){dialog.dcc-welcome::backdrop,.dcc-welcome-panel,.dcc-welcome-body section{transition:none;}}"
     ].join("");
     document.head.appendChild(s);
