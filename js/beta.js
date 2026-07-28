@@ -22,7 +22,15 @@
 
   var FLAG_KEY = "dccv2-beta";
   var EMAIL_KEY = "dccv2-beta-email";
+  var NAME_KEY = "dccv2-beta-name";
+  var WELCOME_SEEN_KEY = "dccv2-beta-welcome-seen";
   var WORKER = "https://dcc-data.twobirdsinnovation.workers.dev";
+
+  // Margaret reference art has two known cosmetic defects (a label typo and a
+  // stray scale bar) and has not had Aaron's DESIGN GATE sign-off for any
+  // customer-facing placement. Built behind this flag so he can flip one word
+  // after looking at it, per beta-welcome-wizard-SPEC-2026-07-28.md section 23.
+  var SHOW_MARGARET = false;
 
   // Language follows the page, not the browser. DCC's language split is whole
   // separate pages (index.html = EN, fr/index.html = FR) with a manual link, so
@@ -46,9 +54,37 @@
     videoNote: "Facultatif. Rien ne joue tant que vous n'appuyez pas sur lecture.",
     videoSrc: "../videos/dcc-beta-welcome-fr.mp4",
     videoVtt: "../videos/dcc-beta-welcome-fr.vtt",
+    videoPoster: "../videos/dcc-beta-welcome-fr-poster.jpg",
     videoLang: "fr",
     videoTrack: "Francais",
-    videoFallback: "Votre navigateur ne peut pas lire cette video."
+    videoFallback: "Votre navigateur ne peut pas lire cette video.",
+    wizStep1of3: "Étape 1 de 3",
+    wizStep2of3: "Étape 2 de 3",
+    wizStep3of3: "Étape 3 de 3",
+    wizTitle1: "Merci de participer comme testeur beta.",
+    wizAttrib: "Le Centre de confiance numérique est un programme de Two Birds Innovation.",
+    wizBody1: "Vous êtes parmi les premières personnes à voir le Centre de confiance numérique, un programme canadien gratuit de leçons en langage simple sur la sécurité en ligne. Il n'y a rien à configurer et aucun compte à créer. Nous avons une courte vidéo de bienvenue, environ 45 secondes, puis vous pourrez regarder à votre rythme.",
+    wizNext: "Regarder la vidéo de bienvenue (45 secondes)",
+    wizSkip: "Passer la vidéo et commencer à regarder",
+    wizTitle2: "Un mot de bienvenue de Two Birds Innovation",
+    wizBody2: "Le son est désactivé au départ. Activez-le quand vous voulez. Les mots apparaissent sur la vidéo dans les deux cas.",
+    wizSoundOn: "Activer le son",
+    wizSoundOff: "Désactiver le son",
+    wizStatusMuted: "Le son est désactivé. Les sous-titres sont affichés.",
+    wizStatusUnmuted: "Le son est activé.",
+    wizContinue: "Continuer",
+    wizBack: "Retour",
+    wizRewatch: "Revoir la vidéo de bienvenue",
+    wizLabel: "Accueil des testeurs beta",
+    wizIdTitle: "À qui parlons-nous?",
+    wizIdBody: "Quand vous nous envoyez un commentaire, il arrive sans nom. Si vous nous donnez votre prénom, nous saurons qu'il vient de vous, et nous pourrons revenir vers vous si nous avons une question. C'est entièrement à vous de décider et vous pouvez laisser le champ vide.",
+    wizIdName: "Votre prénom",
+    wizIdEmail: "Votre courriel, seulement si vous voulez que vos leçons vous suivent d'un appareil à l'autre",
+    wizIdEmailHelp: "Nous ne conservons jamais votre adresse courriel. Votre navigateur la brouille d'abord, ce qui permet de vous reconnaître sans que nous la voyions.",
+    wizIdSave: "Enregistrer et commencer à regarder",
+    wizIdSkip: "Passer et commencer à regarder",
+    wizIdThanks: "Merci, {name}. Vos commentaires nous arriveront avec votre nom.",
+    wizTellUs: "Dites-nous qui vous êtes"
   } : {
     label: "Beta tester welcome",
     welcome: "Thank you for joining as a beta tester.",
@@ -66,9 +102,37 @@
     videoNote: "Optional. Nothing plays until you press play.",
     videoSrc: "videos/dcc-beta-welcome-en.mp4",
     videoVtt: "videos/dcc-beta-welcome-en.vtt",
+    videoPoster: "videos/dcc-beta-welcome-en-poster.jpg",
     videoLang: "en",
     videoTrack: "English",
-    videoFallback: "Your browser cannot play this video."
+    videoFallback: "Your browser cannot play this video.",
+    wizStep1of3: "Step 1 of 3",
+    wizStep2of3: "Step 2 of 3",
+    wizStep3of3: "Step 3 of 3",
+    wizTitle1: "Thank you for joining as a beta tester.",
+    wizAttrib: "Digital Confidence Centre is a programme of Two Birds Innovation.",
+    wizBody1: "You are one of the first people to see the Digital Confidence Centre, a free Canadian programme of plain-language lessons on staying safe online. There is nothing to set up and nothing to sign in to. We have a short welcome video, about 40 seconds, and then you can look around at your own pace.",
+    wizNext: "Watch the welcome video (40 seconds)",
+    wizSkip: "Skip the video and start looking around",
+    wizTitle2: "A short welcome from Two Birds Innovation",
+    wizBody2: "The sound starts off. Turn it on whenever you like. The words appear on the video either way.",
+    wizSoundOn: "Turn the sound on",
+    wizSoundOff: "Turn the sound off",
+    wizStatusMuted: "The sound is off. Captions are on.",
+    wizStatusUnmuted: "The sound is on.",
+    wizContinue: "Continue",
+    wizBack: "Back",
+    wizRewatch: "Watch the welcome video again",
+    wizLabel: "Beta tester welcome",
+    wizIdTitle: "Who are we talking to?",
+    wizIdBody: "When you send us feedback, it arrives with no name on it. If you tell us your first name, we will know it came from you, and we can come back to you if we have a question about something you told us. This is entirely up to you and you can leave it blank.",
+    wizIdName: "Your first name",
+    wizIdEmail: "Your email, only if you want lessons to carry over between your devices",
+    wizIdEmailHelp: "We never store your email address. Your own browser scrambles it first, so it works as a key without us ever seeing it.",
+    wizIdSave: "Save this and start looking around",
+    wizIdSkip: "Skip this and start looking around",
+    wizIdThanks: "Thank you, {name}. Your feedback will come to us with your name on it.",
+    wizTellUs: "Tell us who you are"
   };
 
   if (window.__dccBetaLoaded) { return; }
@@ -91,6 +155,25 @@
   }
   function setEmail(v) {
     try { window.localStorage.setItem(EMAIL_KEY, v || ""); } catch (e) { /* ignore */ }
+  }
+  function getName() {
+    try { return window.localStorage.getItem(NAME_KEY) || ""; }
+    catch (e) { return ""; }
+  }
+  function setName(v) {
+    // Cap at 60 chars, strip newlines: this string gets prefixed onto feedback
+    // text bodies, so it must not be usable to fake extra content or blow the
+    // 2000-char feedback limit.
+    var clean = String(v || "").replace(/[\r\n]+/g, " ").trim().slice(0, 60);
+    try { window.localStorage.setItem(NAME_KEY, clean); } catch (e) { /* ignore */ }
+    return clean;
+  }
+  function welcomeSeen() {
+    try { return !!window.localStorage.getItem(WELCOME_SEEN_KEY); }
+    catch (e) { return false; } // storage throws (private browsing): treat as unseen, show it
+  }
+  function markWelcomeSeen() {
+    try { window.localStorage.setItem(WELCOME_SEEN_KEY, new Date().toISOString()); } catch (e) { /* ignore */ }
   }
 
   function sha256Hex(str) {
@@ -118,6 +201,7 @@
   window.DCCBeta = {
     isBeta: isBeta,
     getEmail: getEmail,
+    getName: getName,
     getEmailHash: function () {
       var email = getEmail();
       if (!email) { return Promise.resolve(""); }
@@ -147,7 +231,61 @@
       ".dcc-beta-video h3{margin:0 0 var(--space-2);font-size:var(--font-size-h3);color:var(--color-primary);}",
       ".dcc-beta-video video{display:block;width:100%;max-width:640px;height:auto;",
       "border:1px solid var(--color-border);border-radius:var(--radius-md);background:#000;}",
-      ".dcc-beta-video .dcc-beta-videonote{margin:var(--space-2) 0 0;font-size:var(--font-size-sm);}"
+      ".dcc-beta-video .dcc-beta-videonote{margin:var(--space-2) 0 0;font-size:var(--font-size-sm);}",
+      ".dcc-beta-rewatch{background:none;border:none;color:var(--color-text-link);text-decoration:underline;cursor:pointer;font:inherit;min-height:var(--tap-target-min);padding:var(--space-2) 0;display:block;margin-top:var(--space-2);}",
+      ".dcc-beta-tellus{font-size:var(--font-size-sm);}",
+
+      /* ---- Welcome wizard: native <dialog>, DCC's own tokens only ---- */
+      ":root{--dcc-welcome-scrim:rgba(16,23,31,0.66);}",
+      "html[data-theme=\"dark\"]{--dcc-welcome-scrim:rgba(0,0,0,0.72);}",
+      "dialog.dcc-welcome{--dcc-welcome-scrim:rgba(16,23,31,0.66);border:0;padding:0;background:transparent;z-index:var(--z-modal,1000);max-width:none;max-height:none;}",
+      "html[data-theme=\"dark\"] dialog.dcc-welcome{--dcc-welcome-scrim:rgba(0,0,0,0.72);}",
+      "dialog.dcc-welcome::backdrop{background:var(--dcc-welcome-scrim);opacity:0;transition:opacity var(--motion-duration-2,200ms) var(--motion-ease,ease);}",
+      "dialog.dcc-welcome.is-open::backdrop{opacity:1;}",
+      ".dcc-welcome-panel{width:min(680px,calc(100vw - (2 * var(--space-4))));max-height:calc(100dvh - (2 * var(--space-6)));",
+      "margin:auto;position:fixed;inset:0;background:var(--color-surface);border-radius:var(--radius-lg);",
+      "display:grid;grid-template-rows:auto 1fr auto;opacity:0;transform:translateY(12px) scale(0.98);",
+      "transition:opacity var(--motion-duration-3,320ms) var(--motion-ease,ease),transform var(--motion-duration-3,320ms) var(--motion-ease,ease);}",
+      "dialog.dcc-welcome.is-open .dcc-welcome-panel{opacity:1;transform:translateY(0) scale(1);}",
+      "dialog.dcc-welcome.is-closing .dcc-welcome-panel{transition-duration:var(--motion-duration-2,200ms);opacity:0;transform:translateY(12px) scale(0.98);}",
+      "dialog.dcc-welcome.is-closing::backdrop{transition-duration:var(--motion-duration-2,200ms);opacity:0;}",
+      ".dcc-welcome-panel{box-shadow:var(--shadow-lg);}",
+      "html[data-theme=\"dark\"] .dcc-welcome-panel{box-shadow:none;border:1px solid var(--color-border-strong);}",
+      ".dcc-welcome-head{background:var(--color-accent-light);border-bottom:1px solid var(--color-border);",
+      "padding:var(--space-6) var(--space-8) var(--space-5);border-radius:var(--radius-lg) var(--radius-lg) 0 0;",
+      "display:flex;align-items:flex-start;gap:var(--space-3);}",
+      "html[data-theme=\"dark\"] .dcc-welcome-head{background:var(--color-surface-alt);}",
+      ".dcc-welcome-margaret{width:96px;height:96px;border-radius:var(--radius-pill);flex:0 0 auto;object-fit:cover;}",
+      ".dcc-welcome-headtext{min-width:0;}",
+      ".dcc-welcome-step{margin:0 0 var(--space-2);font-family:var(--font-heading);font-size:var(--font-size-sm);",
+      "font-weight:var(--font-weight-semibold);color:var(--color-accent-deep);}",
+      "html[data-theme=\"dark\"] .dcc-welcome-step{color:var(--color-text-light);font-weight:400;}",
+      ".dcc-welcome-panel h2{margin:0 0 var(--space-2);font-family:var(--font-heading);font-weight:var(--font-weight-bold);",
+      "font-size:var(--font-size-h2);color:var(--color-primary);}",
+      ".dcc-welcome-attrib{margin:0;font-size:var(--font-size-sm);font-weight:var(--font-weight-semibold);color:var(--color-primary);}",
+      ".dcc-welcome-body{overflow-y:auto;padding:var(--space-6) var(--space-8);min-height:0;}",
+      ".dcc-welcome-body p{margin:0 0 var(--space-4);max-width:60ch;}",
+      ".dcc-welcome-body section[hidden]{display:none;}",
+      ".dcc-welcome-body section{opacity:1;transition:opacity var(--motion-duration-2,200ms) var(--motion-ease,ease);}",
+      ".dcc-welcome-body section.is-fading{opacity:0;}",
+      ".dcc-welcome-video{width:100%;aspect-ratio:16/9;border-radius:var(--radius-md);background:#000;display:block;margin:0 0 var(--space-4);}",
+      ".dcc-welcome-audiobtn{width:100%;margin:0 0 var(--space-2);}",
+      ".dcc-welcome-audiostatus{margin:0 0 var(--space-4);font-size:var(--font-size-sm);color:var(--color-text-light);}",
+      ".dcc-welcome-field{margin:0 0 var(--space-4);}",
+      ".dcc-welcome-field label{display:block;font-weight:var(--font-weight-semibold);margin:0 0 var(--space-2);}",
+      ".dcc-welcome-field input{width:100%;min-height:var(--tap-target);padding:0 var(--space-3);",
+      "border:1px solid var(--color-border);border-radius:var(--radius-sm);font:inherit;",
+      "background:var(--color-surface);color:var(--color-text);}",
+      ".dcc-welcome-fieldhelp{margin:var(--space-2) 0 0;font-size:var(--font-size-sm);color:var(--color-text-light);}",
+      ".dcc-welcome-thanks{margin:0 0 var(--space-4);font-weight:var(--font-weight-semibold);color:var(--color-success-deep);}",
+      ".dcc-welcome-actions{padding:var(--space-5) var(--space-8);border-top:1px solid var(--color-border);",
+      "display:flex;gap:var(--space-3);justify-content:flex-end;flex-wrap:wrap;}",
+      "@media (max-width:559px){.dcc-welcome-panel{width:calc(100vw - (2 * var(--space-4)));}",
+      ".dcc-welcome-head,.dcc-welcome-body,.dcc-welcome-actions{padding-left:var(--space-6);padding-right:var(--space-6);}",
+      ".dcc-welcome-actions{flex-direction:column-reverse;}",
+      ".dcc-welcome-actions .btn{width:100%;}}",
+      "@media (max-height:559px) and (orientation:landscape){dialog.dcc-welcome .dcc-welcome-panel{max-height:calc(100dvh - (2 * var(--space-4)));}}",
+      "@media (prefers-reduced-motion:reduce){dialog.dcc-welcome::backdrop,.dcc-welcome-panel,.dcc-welcome-body section{transition:none;}}"
     ].join("");
     document.head.appendChild(s);
   }
@@ -195,7 +333,290 @@
     return wrap;
   }
 
-  function renderBanner(main, returning) {
+  // ---- Welcome wizard --------------------------------------------------
+  // Native <dialog>, first appearance only per device (dccv2-beta-welcome-seen).
+  // Replaces the old inline video + "remember me" box with one coherent
+  // first-run flow. See beta-welcome-wizard-SPEC-2026-07-28.md.
+  var wizard = null; // lazily built singleton: {dlg, openAt}
+
+  function buildWizard() {
+    if (!("HTMLDialogElement" in window) || typeof document.createElement("dialog").showModal !== "function") {
+      return null; // no <dialog> support: caller falls back to buildVideo() inline
+    }
+
+    var dlg = document.createElement("dialog");
+    dlg.className = "dcc-welcome";
+    dlg.setAttribute("aria-labelledby", "dcc-welcome-title");
+
+    var panel = elt("div", "dcc-welcome-panel");
+
+    var head = elt("div", "dcc-welcome-head");
+    if (SHOW_MARGARET) {
+      var margImg = document.createElement("img");
+      margImg.className = "dcc-welcome-margaret";
+      margImg.src = "assets/characters/margaret-welcome.png";
+      margImg.setAttribute("aria-hidden", "true");
+      margImg.alt = "";
+      head.appendChild(margImg);
+    }
+    var headtext = elt("div", "dcc-welcome-headtext");
+    var stepLine = elt("p", "dcc-welcome-step", T.wizStep1of3);
+    var title = elt("h2", null, T.wizTitle1);
+    title.id = "dcc-welcome-title";
+    var attrib = elt("p", "dcc-welcome-attrib", T.wizAttrib);
+    headtext.appendChild(stepLine);
+    headtext.appendChild(title);
+    headtext.appendChild(attrib);
+    head.appendChild(headtext);
+    panel.appendChild(head);
+
+    var body = elt("div", "dcc-welcome-body");
+    body.tabIndex = -1;
+
+    // Step 1: thanks
+    var s1 = elt("section", null);
+    s1.setAttribute("data-step", "1");
+    s1.appendChild(elt("p", null, T.wizBody1));
+    body.appendChild(s1);
+
+    // Step 2: the video
+    var s2 = elt("section", null);
+    s2.setAttribute("data-step", "2");
+    s2.hidden = true;
+    s2.appendChild(elt("p", null, T.wizBody2));
+    var video = document.createElement("video");
+    video.className = "dcc-welcome-video";
+    video.setAttribute("controls", "");
+    video.setAttribute("playsinline", "");
+    video.setAttribute("preload", "metadata");
+    video.setAttribute("poster", T.videoPoster);
+    video.setAttribute("aria-label", T.wizTitle2);
+    var vsrc = document.createElement("source");
+    vsrc.src = T.videoSrc;
+    vsrc.type = "video/mp4";
+    video.appendChild(vsrc);
+    var vtrack = document.createElement("track");
+    vtrack.kind = "captions";
+    vtrack.src = T.videoVtt;
+    vtrack.srclang = T.videoLang;
+    vtrack.label = T.videoTrack;
+    vtrack.setAttribute("default", "");
+    video.appendChild(vtrack);
+    s2.appendChild(video);
+    var audioBtn = elt("button", "btn btn-secondary dcc-welcome-audiobtn");
+    audioBtn.type = "button";
+    var audioIcon = elt("span", null, "");
+    audioIcon.setAttribute("aria-hidden", "true");
+    var audioLabelText = document.createTextNode("");
+    audioBtn.appendChild(audioIcon);
+    audioBtn.appendChild(audioLabelText);
+    s2.appendChild(audioBtn);
+    var audioStatus = elt("p", "dcc-welcome-audiostatus", "");
+    audioStatus.setAttribute("aria-live", "polite");
+    s2.appendChild(audioStatus);
+    body.appendChild(s2);
+
+    function syncAudioUI() {
+      audioIcon.textContent = video.muted ? "🔇 " : "🔊 ";
+      audioLabelText.textContent = video.muted ? T.wizSoundOn : T.wizSoundOff;
+      audioBtn.setAttribute("aria-pressed", video.muted ? "false" : "true");
+      audioStatus.textContent = video.muted ? T.wizStatusMuted : T.wizStatusUnmuted;
+    }
+    video.addEventListener("volumechange", syncAudioUI);
+    audioBtn.addEventListener("click", function () {
+      video.muted = !video.muted;
+      if (!video.muted) { video.volume = 1; }
+    });
+    syncAudioUI();
+
+    // Step 3: optional self-identification
+    var s3 = elt("section", null);
+    s3.setAttribute("data-step", "3");
+    s3.hidden = true;
+    s3.appendChild(elt("p", null, T.wizIdBody));
+    var nameField = elt("div", "dcc-welcome-field");
+    var nameLabel = elt("label", null, T.wizIdName);
+    nameLabel.setAttribute("for", "dcc-welcome-name");
+    var nameInput = document.createElement("input");
+    nameInput.type = "text";
+    nameInput.id = "dcc-welcome-name";
+    nameInput.autocomplete = "given-name";
+    nameInput.maxLength = 60;
+    nameField.appendChild(nameLabel);
+    nameField.appendChild(nameInput);
+    s3.appendChild(nameField);
+    var emailField = elt("div", "dcc-welcome-field");
+    var emailLabel = elt("label", null, T.wizIdEmail);
+    emailLabel.setAttribute("for", "dcc-welcome-email");
+    var emailInput = document.createElement("input");
+    emailInput.type = "email";
+    emailInput.id = "dcc-welcome-email";
+    emailInput.autocomplete = "email";
+    emailField.appendChild(emailLabel);
+    emailField.appendChild(emailInput);
+    emailField.appendChild(elt("p", "dcc-welcome-fieldhelp", T.wizIdEmailHelp));
+    s3.appendChild(emailField);
+    var idThanks = elt("p", "dcc-welcome-thanks", "");
+    idThanks.hidden = true;
+    idThanks.setAttribute("aria-live", "polite");
+    s3.appendChild(idThanks);
+    body.appendChild(s3);
+
+    panel.appendChild(body);
+
+    var actions = elt("div", "dcc-welcome-actions");
+    var btnSkip = elt("button", "btn btn-secondary", T.wizSkip);
+    btnSkip.type = "button";
+    var btnPrimary = elt("button", "btn btn-primary", T.wizNext);
+    btnPrimary.type = "button";
+    actions.appendChild(btnSkip);
+    actions.appendChild(btnPrimary);
+    panel.appendChild(actions);
+
+    dlg.appendChild(panel);
+    document.body.appendChild(dlg);
+
+    var currentStep = 1;
+    var openedFromRewatch = false;
+    var priorOverflow = "";
+    var returnFocusEl = null;
+
+    function setStep(n, animate) {
+      var sections = { 1: s1, 2: s2, 3: s3 };
+      var steps = { 1: T.wizStep1of3, 2: T.wizStep2of3, 3: T.wizStep3of3 };
+      var titles = { 1: T.wizTitle1, 2: T.wizTitle2, 3: T.wizIdTitle };
+      function doSwitch() {
+        sections[currentStep].hidden = true;
+        currentStep = n;
+        stepLine.textContent = steps[n];
+        title.textContent = titles[n];
+        attrib.style.display = n === 1 ? "" : "none";
+        if (head.querySelector(".dcc-welcome-margaret")) {
+          head.querySelector(".dcc-welcome-margaret").style.display = n === 1 ? "" : "none";
+        }
+        if (n === 2) { btnPrimary.textContent = T.wizContinue; btnSkip.textContent = T.wizBack; }
+        else if (n === 3) { btnPrimary.textContent = T.wizIdSave; btnSkip.textContent = T.wizIdSkip; }
+        else { btnPrimary.textContent = T.wizNext; btnSkip.textContent = T.wizSkip; }
+        sections[n].hidden = false;
+        sections[n].tabIndex = -1;
+        sections[n].focus();
+        if (n === 2 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          video.muted = true;
+          video.play().catch(function () { /* policy rejection: poster + controls remain, silent */ });
+        }
+      }
+      if (currentStep === 2 && n !== 2) { video.pause(); }
+      doSwitch();
+    }
+
+    function closeWizard() {
+      video.pause();
+      markWelcomeSeen();
+      dlg.classList.remove("is-open");
+      dlg.classList.add("is-closing");
+      var done = false;
+      function finish() {
+        if (done) { return; }
+        done = true;
+        dlg.close();
+        dlg.classList.remove("is-closing");
+        try { document.documentElement.style.overflow = priorOverflow; } catch (e) {}
+        if (openedFromRewatch && returnFocusEl) { returnFocusEl.focus(); }
+        else {
+          var m = document.getElementById("main");
+          if (m) { m.setAttribute("tabindex", "-1"); m.focus(); }
+        }
+      }
+      dlg.addEventListener("transitionend", finish, { once: true });
+      window.setTimeout(finish, 260);
+    }
+
+    function saveIdentity() {
+      var n = setName(nameInput.value);
+      var email = (emailInput.value || "").trim();
+      if (email) { setEmail(email); saveProgressEmail(email); }
+      if (n) {
+        idThanks.textContent = T.wizIdThanks.replace("{name}", n);
+        idThanks.hidden = false;
+      }
+    }
+
+    btnPrimary.addEventListener("click", function () {
+      if (currentStep === 1) { setStep(2); }
+      else if (currentStep === 2) { setStep(3); }
+      else { saveIdentity(); closeWizard(); }
+    });
+    btnSkip.addEventListener("click", function () {
+      if (currentStep === 2) { setStep(1); }
+      else { closeWizard(); }
+    });
+    dlg.addEventListener("cancel", function () {
+      // Esc: native <dialog> behaviour, not suppressed. Still runs our own
+      // markWelcomeSeen()/cleanup rather than letting the browser close it raw.
+      video.pause();
+      markWelcomeSeen();
+      try { document.documentElement.style.overflow = priorOverflow; } catch (e) {}
+    });
+
+    function openAt(step, fromRewatch, triggerEl) {
+      openedFromRewatch = !!fromRewatch;
+      returnFocusEl = triggerEl || null;
+      try { priorOverflow = document.documentElement.style.overflow || ""; } catch (e) { priorOverflow = ""; }
+      document.documentElement.style.overflow = "hidden";
+      // Force currentStep to whatever step is NOT the target so setStep()'s
+      // "hide the outgoing section" logic below always has something real to
+      // hide, even when opening straight into step 2 or 3 from the rewatch /
+      // tell-us-who-you-are buttons (s1 is visible by default in the markup).
+      currentStep = step === 1 ? 2 : 1;
+      dlg.showModal();
+      setStep(step);
+      panel.tabIndex = -1;
+      panel.focus();
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { dlg.classList.add("is-open"); });
+      });
+    }
+
+    return { dlg: dlg, openAt: openAt };
+  }
+
+  function ensureWizard() {
+    if (wizard === null) { wizard = buildWizard() || false; }
+    return wizard || null;
+  }
+
+  function maybeShowWizardOnLoad(main) {
+    if (welcomeSeen()) { return false; }
+    if (!main) { return false; }
+    var w = ensureWizard();
+    if (!w) { return false; } // no <dialog> support: caller keeps the inline video fallback
+    w.openAt(1, false, null);
+    return true;
+  }
+
+  function buildRewatchButton() {
+    var btn = elt("button", "dcc-beta-rewatch", T.wizRewatch);
+    btn.type = "button";
+    btn.addEventListener("click", function () {
+      var w = ensureWizard();
+      if (w) { w.openAt(2, true, btn); }
+    });
+    return btn;
+  }
+
+  function buildTellUsLink() {
+    var wrap = elt("p", "dcc-beta-tellus");
+    var btn = elt("button", "dcc-beta-rewatch", T.wizTellUs);
+    btn.type = "button";
+    btn.addEventListener("click", function () {
+      var w = ensureWizard();
+      if (w) { w.openAt(3, true, btn); }
+    });
+    wrap.appendChild(btn);
+    return wrap;
+  }
+
+  function renderBanner(main, returning, needsInlineVideo) {
     injectStyles();
     var box = elt("section", "dcc-beta-banner");
     box.setAttribute("aria-label", T.label);
@@ -209,43 +630,19 @@
       dismiss.addEventListener("click", function () { box.remove(); });
       box.appendChild(dismiss);
     } else {
+      // The video and the "who are we talking to" identification now live in
+      // the wizard (see maybeShowWizardOnLoad, called from boot()). This
+      // banner is what remains once the wizard is dismissed: intro prose and
+      // a way to bring either piece back on purpose.
       box.appendChild(elt("p", null, T.intro));
-      box.appendChild(buildVideo());
-      box.appendChild(elt("p", null, T.emailIntro));
-
-      var form = elt("form", "dcc-beta-form");
-      form.setAttribute("aria-label", T.formLabel);
-      var label = elt("label", "visually-hidden", T.emailLabel);
-      label.setAttribute("for", "dcc-beta-email");
-      var input = elt("input");
-      input.type = "email";
-      input.id = "dcc-beta-email";
-      input.placeholder = T.emailLabel;
-      input.autocomplete = "email";
-      var submitBtn = elt("button", "btn btn-primary", T.remember);
-      submitBtn.type = "submit";
-      var skipBtn = elt("button", "dcc-beta-skip", T.skip);
-      skipBtn.type = "button";
-      var status = elt("div", "dcc-beta-status");
-
-      form.appendChild(label);
-      form.appendChild(input);
-      form.appendChild(submitBtn);
-      form.appendChild(skipBtn);
-      box.appendChild(form);
-      box.appendChild(status);
-
-      form.addEventListener("submit", function (ev) {
-        ev.preventDefault();
-        var email = (input.value || "").trim();
-        if (!email) { box.remove(); return; }
-        setEmail(email);
-        saveProgressEmail(email);
-        status.textContent = T.saved;
-        window.setTimeout(function () { box.remove(); }, 1800);
-      });
-      skipBtn.addEventListener("click", function () { box.remove(); });
+      if (needsInlineVideo) {
+        // No <dialog> support (old iPads, pre-iOS 15.4 Safari): fall back to
+        // today's inline video, in normal document flow.
+        box.appendChild(buildVideo());
+      }
     }
+    box.appendChild(buildRewatchButton());
+    if (!getName()) { box.appendChild(buildTellUsLink()); }
 
     main.insertBefore(box, main.firstChild);
   }
@@ -262,7 +659,11 @@
     // module pages would be noise, so only the landing page opts in.
     var main = document.querySelector("#main[data-beta-banner]");
     if (!main) { return; }
-    renderBanner(main, !!getEmail());
+
+    var dialogSupported = "HTMLDialogElement" in window && typeof document.createElement("dialog").showModal === "function";
+    var willShowWizard = dialogSupported && !welcomeSeen();
+    renderBanner(main, !!getEmail(), !dialogSupported && !welcomeSeen());
+    if (willShowWizard) { maybeShowWizardOnLoad(main); }
   }
 
   if (document.readyState === "loading") {
