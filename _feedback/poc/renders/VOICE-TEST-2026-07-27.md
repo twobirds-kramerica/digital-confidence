@@ -54,6 +54,11 @@ then re-run the regenerate command in `DCC-BETA-WELCOME-PRODUCTION-NOTES.md`.
 line as Clara, so it costs the Canadian accent without buying much naturalness. If the
 accent is going to change, it should buy the newer voice line.
 
+## Aaron's decision, 2026-07-27/28 (confirmed live): Ava it is
+Aaron listened and explicitly approved `en-US-AvaMultilingualNeural`, accepting the
+Canadian-to-American accent trade-off described above. Settled — do not re-litigate the
+Clara-vs-Ava question without a new reason to revisit it.
+
 ## French: unchanged
 
 `fr-CA-SylvieNeural` stays exactly as it was. No French equivalent trade-off was requested,
