@@ -1,13 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-  <!-- DCC Monoline Figure System -- sprite of record.
+  <!-- DCC Monoline Figure System, sprite of record.
        Spec: _feedback/dcc-illustration-system-guideline-2026-07-28.md
        Canvas: viewBox 0 0 240 220, live area 200x180, centre axis x=126.
        Rig: head top y=40, chin y=92, eye centres x=114/138 y=60 r=6.5,
        mouth floor y<=80 width<=28, shoulder crown y=118, baseline y=172.
        Fixed for all poses: fill=none, stroke=currentColor, stroke-linecap/
        linejoin=round. Stroke width set by the consuming .illus-* class via
-       the --illus-stroke custom property (crosses the <use> shadow boundary,
-       ordinary CSS selectors do not). -->
+       the illus-stroke custom property (crosses the use shadow boundary,
+       ordinary CSS selectors do not). NOTE: an XML comment body must never
+       contain two hyphens in a row anywhere except the closing marker;
+       violating that breaks the parser for any consumer loading this file
+       as a standalone XML document, which is every cross-document use
+       reference (even though inline-HTML embedding tolerates it). Found
+       2026-07-29 while wiring the first real cross-document use consumer,
+       S-DCC-ILLUSTRATION-CASCADE-001; every comment in this file had that
+       mistake from the original build, so no symbol here was ever actually
+       renderable via use until this fix. -->
   <style>
     g.fig { fill: none; stroke: currentColor;
             stroke-width: var(--illus-stroke, 3);
@@ -17,7 +25,7 @@
 
   <!-- fig-greeting: one arm raised, open palm, wave. No props.
        Covers: beta wizard step 1, welcome states, first-visit banners.
-       2026-07-28: rebuilt against the locked rig -- previous freehand
+       2026-07-28: rebuilt against the locked rig; the previous freehand
        version had a bridge line between the eyes (read as glasses), a
        mouth arc that collided with the chin (clearance rule violation),
        and the waving arm's endpoint sat inside the hand circle instead of
@@ -38,10 +46,34 @@
     </g>
   </symbol>
 
-  <!-- Remaining 7 core poses (fig-using-device, fig-guarding, fig-securing,
-       fig-connecting, fig-considering, fig-celebrating, fig-resting) build
-       against this same head/torso rig when their surfaces are scoped --
-       see hal-stack/sprint-system/dcc-work-inventory-2026-07-28.md,
+  <!-- fig-guarding: one palm raised outward, calm not alarmed. No props at
+       Spot tier (tier budget = 0 props per guideline S4.5); shield/envelope
+       prop reserved for a future Panel/Hero-tier use of this pose.
+       Covers: "Protect your money" section opener (S-DCC-ILLUSTRATION-CASCADE-001).
+       Head, torso and mouth are the exact same paths as fig-greeting per the
+       rig rule (only the arm changes); palm sits closer to the torso and
+       lower than the wave's reach, and the flat single line across the palm
+       (in place of two splayed finger marks) reads as a held, static gesture
+       rather than a waving motion. Clearance check: palm circle centre
+       (186,88) is about 43 units from the nearest head-outline point, well
+       clear of the 8-unit minimum. -->
+  <symbol id="fig-guarding" viewBox="0 0 240 220">
+    <g class="fig">
+      <ellipse cx="126" cy="66" rx="23" ry="26"/>
+      <circle cx="114" cy="60" r="6.5"/>
+      <circle cx="138" cy="60" r="6.5"/>
+      <path d="M112 74 Q126 80 140 74"/>
+      <path d="M78 172 C78 140 100 118 126 118 C152 118 174 140 174 172"/>
+      <path d="M158 126 C168 118 176 106 180 94"/>
+      <circle cx="186" cy="88" r="8"/>
+      <path d="M178 78 h16"/>
+    </g>
+  </symbol>
+
+  <!-- Remaining 6 core poses (fig-using-device, fig-securing, fig-connecting,
+       fig-considering, fig-celebrating, fig-resting) build against this same
+       head/torso rig when their surfaces are scoped; see
+       hal-stack/sprint-system/dcc-work-inventory-2026-07-28.md,
        S-DCC-ILLUSTRATION-CASCADE-001. Head, torso and prop geometry are
        shared across all poses; only the arm and prop change. -->
 </svg>

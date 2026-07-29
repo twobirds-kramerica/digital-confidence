@@ -518,7 +518,18 @@ html[data-theme="dark"] { --dcc-leaf-red: #FF6B5E; }
 .hero-flex { display: flex; align-items: center; gap: var(--space-8); flex-wrap: wrap; }
 .hero-copy { flex: 1 1 480px; }
 .illus-hero { flex: 0 1 240px; margin-inline: auto; }
+.illus-panel { width: 180px; --illus-stroke: 4; }
+.illus-spot { width: 120px; --illus-stroke: 5.5; flex: 0 0 auto; }
 .illus-lesson { text-align: center; margin: var(--space-4) 0; }
+@media (max-width: 767px) { .illus-spot { width: 110px; } }
+@media (max-width: 559px) { .illus-spot { width: 96px; } }
+
+/* Section opener with a Spot-tier figure beside the heading + lead copy --
+   first use: "Protect your money" (S-DCC-ILLUSTRATION-CASCADE-001). */
+.lesson-group-head { display: flex; align-items: center; gap: var(--space-6); flex-wrap: wrap; }
+.lesson-group-head > div:not(.illus) { flex: 1 1 320px; }
+.lesson-group-head h2, .lesson-group-head .group-lead { margin: 0; }
+.lesson-group-head .group-lead { margin-top: var(--space-2); }
 
 /* --- Read-aloud group: button + Slower/Normal/Faster speed control ---------- */
 .read-group { display: inline-flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; }
