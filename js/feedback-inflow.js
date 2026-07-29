@@ -44,13 +44,17 @@
     body: "Quelque chose vous a semble confus, ou n'a pas fonctionne? Dites-le nous. Cela prend une minute et cela nous aide beaucoup.",
     cta: "Donner mon avis sur cette lecon",
     ctaPage: "Donner mon avis sur cette page",
-    footer: "Donner mon avis"
+    footer: "Donner mon avis",
+    betaTag: "Testeurs bêta",
+    betaSentence: "Vous faites partie de nos testeurs bêta, alors votre avis compte doublement."
   } : {
     title: "Tell us what you think",
     body: "Did anything here feel confusing, or not work the way you expected? Please tell us. It takes a minute and it helps us more than you might think.",
     cta: "Give feedback on this lesson",
     ctaPage: "Give feedback on this page",
-    footer: "Give feedback"
+    footer: "Give feedback",
+    betaTag: "Beta testers",
+    betaSentence: "You are one of our beta testers, so this matters twice as much."
   };
 
   function injectStyles() {
@@ -58,10 +62,18 @@
     var s = document.createElement("style");
     s.id = "dcc-fb-inflow-styles";
     s.textContent = [
-      ".dcc-fb-block{background:var(--color-accent-light);border:1px solid var(--color-border);",
+      ".dcc-fb-block{position:relative;background:var(--color-accent-light);border:1px solid var(--color-border);",
       "border-radius:var(--radius-lg);padding:var(--space-6);margin:var(--space-8) 0;}",
       ".dcc-fb-block h2{margin:0 0 var(--space-2);color:var(--color-primary);font-size:var(--font-size-h3);}",
-      ".dcc-fb-block p{margin:0 0 var(--space-5);max-width:60ch;}"
+      ".dcc-fb-block p{margin:0 0 var(--space-5);max-width:60ch;}",
+      /* Option A, hal-stack/research/dcc-feedback-surface-research-2026-07-28.md:
+         a pill straddling the block's top border, beta testers only. */
+      ".dcc-fb-beta-tag{position:absolute;top:calc(-1 * var(--space-3));left:var(--space-5);",
+      "max-width:calc(100% - (var(--space-5) * 2));box-sizing:border-box;",
+      "background:var(--color-btn-primary-bg);color:var(--color-btn-primary-text);",
+      "font-family:var(--font-heading);font-weight:var(--font-weight-semibold);",
+      "font-size:var(--font-size-caption,.8rem);letter-spacing:.02em;",
+      "padding:var(--space-1) var(--space-3);border-radius:var(--radius-pill);white-space:nowrap;}"
     ].join("");
     document.head.appendChild(s);
   }
@@ -75,14 +87,28 @@
     box.className = "dcc-fb-block";
     box.setAttribute("aria-labelledby", "dcc-fb-h");
 
+    var isBeta = !!(window.DCCBeta && window.DCCBeta.isBeta());
     var h = document.createElement("h2");
     h.id = "dcc-fb-h";
+    if (isBeta) {
+      var tag = document.createElement("p");
+      tag.className = "dcc-fb-beta-tag";
+      tag.textContent = T.betaTag;
+      tag.setAttribute("aria-hidden", "true"); // decorative label; the real sentence below is announced instead
+      box.appendChild(tag);
+    }
     h.textContent = T.title;
     box.appendChild(h);
 
     var p = document.createElement("p");
     p.textContent = T.body;
     box.appendChild(p);
+
+    if (isBeta) {
+      var betaP = document.createElement("p");
+      betaP.textContent = T.betaSentence;
+      box.appendChild(betaP);
+    }
 
     var btn = document.createElement("button");
     btn.type = "button";

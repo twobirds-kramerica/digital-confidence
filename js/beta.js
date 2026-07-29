@@ -40,6 +40,20 @@
   // this matches js/feedback-inflow.js rather than introducing auto-detection.
   var IS_FR = (document.documentElement.getAttribute("lang") || "en").toLowerCase().indexOf("fr") === 0;
 
+  // Video paths must resolve correctly whether beta.js loads from a root page
+  // (index.html, fr/index.html) or a one-level-deep module page -- a hardcoded
+  // "videos/..." vs "../videos/..." string can only be right for one depth.
+  // Derived from this very script's own resolved src (absolute URL, so it is
+  // never a GH-Pages-project-site domain-root path) rather than guessing depth.
+  // Bug found 2026-07-29 when S-DCC-BETA-BANNER-RESEARCH-001 made the rewatch-
+  // video button reachable from module pages for the first time.
+  var VIDEO_BASE = (function () {
+    if (document.currentScript && document.currentScript.src) {
+      return document.currentScript.src.replace(/js\/beta\.js(?:\?.*)?$/, "");
+    }
+    return "";
+  })();
+
   var T = IS_FR ? {
     label: "Accueil des testeurs beta",
     welcome: "Merci de participer comme testeur beta.",
@@ -55,9 +69,9 @@
     saved: "Merci. Nous nous souviendrons de vous sur cet appareil.",
     videoHeading: "Un mot de bienvenue en video (environ 45 secondes)",
     videoNote: "Facultatif. Rien ne joue tant que vous n'appuyez pas sur lecture.",
-    videoSrc: "../videos/dcc-beta-welcome-fr.mp4",
-    videoVtt: "../videos/dcc-beta-welcome-fr.vtt",
-    videoPoster: "../videos/dcc-beta-welcome-fr-poster.jpg",
+    videoSrc: VIDEO_BASE + "videos/dcc-beta-welcome-fr.mp4",
+    videoVtt: VIDEO_BASE + "videos/dcc-beta-welcome-fr.vtt",
+    videoPoster: VIDEO_BASE + "videos/dcc-beta-welcome-fr-poster.jpg",
     videoLang: "fr",
     videoTrack: "Francais",
     videoFallback: "Votre navigateur ne peut pas lire cette video.",
@@ -104,9 +118,9 @@
     saved: "Thank you. We will remember you on this device.",
     videoHeading: "A short welcome video (about 40 seconds)",
     videoNote: "Optional. Nothing plays until you press play.",
-    videoSrc: "videos/dcc-beta-welcome-en.mp4",
-    videoVtt: "videos/dcc-beta-welcome-en.vtt",
-    videoPoster: "videos/dcc-beta-welcome-en-poster.jpg",
+    videoSrc: VIDEO_BASE + "videos/dcc-beta-welcome-en.mp4",
+    videoVtt: VIDEO_BASE + "videos/dcc-beta-welcome-en.vtt",
+    videoPoster: VIDEO_BASE + "videos/dcc-beta-welcome-en-poster.jpg",
     videoLang: "en",
     videoTrack: "English",
     videoFallback: "Your browser cannot play this video.",
@@ -211,6 +225,14 @@
       var email = getEmail();
       if (!email) { return Promise.resolve(""); }
       return sha256Hex(email).catch(function () { return ""; });
+    },
+    // Exposed for beta-collapsible-banner.js (S-DCC-BETA-BANNER-RESEARCH-001,
+    // 2026-07-29) so a page-top banner on module pages can reopen the same
+    // wizard steps (2 = rewatch video, 3 = tell us who you are) that the
+    // landing-page banner already uses, without duplicating the wizard build.
+    openWizardStep: function (step, triggerEl) {
+      var w = ensureWizard();
+      if (w) { w.openAt(step, true, triggerEl || null); }
     }
   };
 
