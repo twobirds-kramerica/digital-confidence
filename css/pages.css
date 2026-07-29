@@ -114,6 +114,32 @@
 .contact-row a { min-height: var(--tap-target-min); display: inline-flex; align-items: center; overflow-wrap: anywhere; word-break: break-word; }
 .efficacy-note { display: block; color: var(--color-text-light); margin: var(--space-3) 0; }
 .card-actions { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-4); }
+.contact-alt { color: var(--color-text-light); font-size: var(--font-size-sm); }
+
+/* --- Support directory: optional region picker (S-DCC-SUPPORT-DIRECTORY-LOCALIZE-001) --- */
+.region-picker {
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg); padding: var(--space-5) var(--space-6);
+  margin: var(--space-6) 0;
+}
+.region-inputs { display: flex; gap: var(--space-3); align-items: center; flex-wrap: wrap; margin-top: var(--space-2); }
+.region-inputs label { font-weight: var(--font-weight-semibold); }
+.region-inputs input[type="text"] {
+  min-height: var(--tap-target-min); padding: 0 var(--space-3); font: inherit;
+  border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+  background: var(--color-surface); color: var(--color-text); width: 9em;
+}
+.region-error { color: var(--color-danger-deep, var(--color-text)); font-weight: var(--font-weight-semibold); margin: var(--space-2) 0 0; }
+.region-privacy-note { color: var(--color-text-light); font-size: var(--font-size-sm); margin: var(--space-3) 0 0; max-width: 60ch; }
+.region-select-wrap { margin: var(--space-4) 0 0; }
+.region-select-wrap label { display: block; font-weight: var(--font-weight-semibold); margin: 0 0 var(--space-2); }
+.region-select-wrap select {
+  min-height: var(--tap-target-min); padding: 0 var(--space-3); font: inherit;
+  border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+  background: var(--color-surface); color: var(--color-text);
+}
+.region-confirm { margin-top: var(--space-2); }
+.region-confirm .btn-quiet { margin-left: var(--space-3); }
 
 /* --- FAQ --------------------------------------------------------------------- */
 .page-search-wrap { margin: var(--space-5) 0; }

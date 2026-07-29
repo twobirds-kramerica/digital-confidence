@@ -146,62 +146,295 @@
       </div>
     </div>
 
-    <h2>Ontario Programmes</h2>
+    <section class="region-picker" id="region-picker">
+      <h2>Find help near you (optional)</h2>
+      <p>Every programme above helps people anywhere in Canada. If you'd like, we can also show programmes in your own province or territory.</p>
+      <form class="region-form" id="region-form">
+        <div class="region-inputs">
+          <label for="region-postal">Postal code</label>
+          <input type="text" id="region-postal" name="postal" autocomplete="postal-code" inputmode="text" maxlength="7" placeholder="e.g. N5P 3Z7">
+          <button class="btn btn-primary" type="submit">Show help near me</button>
+          <button class="btn btn-secondary" type="button" id="region-geo"><span aria-hidden="true">📍</span> Use my location</button>
+        </div>
+        <p class="region-error" id="region-postal-error" hidden>That doesn't look like a Canadian postal code — check the first letter and try again.</p>
+        <p class="region-privacy-note">Your postal code and location never leave this device. We only use the first letter of your postal code to know which province you're in — nothing is sent anywhere, and nothing is saved unless you say so. If you use "Use my location," your browser will ask permission first; saying no is completely fine.</p>
+        <p class="region-select-wrap">
+          <label for="region-select">Or choose your province or territory from a list</label>
+          <select id="region-select">
+            <option value="">Choose...</option>
+            <option value="ON">Ontario</option>
+            <option value="QC">Quebec</option>
+            <option value="BC">British Columbia</option>
+            <option value="AB">Alberta</option>
+            <option value="MB">Manitoba</option>
+            <option value="SK">Saskatchewan</option>
+            <option value="NS">Nova Scotia</option>
+            <option value="NB">New Brunswick</option>
+            <option value="NL">Newfoundland and Labrador</option>
+            <option value="PE">Prince Edward Island</option>
+            <option value="YT">Yukon</option>
+            <option value="NT">Northwest Territories</option>
+            <option value="NU">Nunavut</option>
+          </select>
+        </p>
+      </form>
+      <p class="region-confirm" id="region-confirm" hidden aria-live="polite">
+        Showing programmes for <strong id="region-confirm-name"></strong>.
+        <button class="btn-quiet" type="button" id="region-change">Change province</button>
+        <button class="btn-quiet" type="button" id="region-clear">Show Canada-wide list only</button>
+      </p>
+    </section>
 
-    <div class="directory-card">
-      <span class="cost-badge">Free</span>
-      <h3>Ontario 2-1-1</h3>
-      <p>Free confidential helpline connecting Ontarians to local social and community services, including digital literacy support. Just dial 2-1-1 on any phone — no area code needed.</p>
-      <div class="contact-row"><strong>Phone:</strong> <a href="tel:211">2-1-1</a></div>
-      <div class="contact-row"><strong>Website:</strong> <a href="https://211ontario.ca" target="_blank" rel="noopener noreferrer">211ontario.ca</a></div>
-      <em class="efficacy-note">Available 24/7 across Ontario — just dial 2-1-1</em>
-      <div class="card-actions">
-        <a class="btn btn-primary" href="tel:211">Call 2-1-1</a>
-        <a class="btn btn-secondary" href="https://211ontario.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
-      </div>
-    </div>
+    <div id="region-sections">
 
-    <h2>Local — London &amp; St. Thomas</h2>
+      <section data-region="ON" hidden>
+        <h2>Programmes in Ontario</h2>
+        <div class="directory-card">
+          <span class="cost-badge">Free</span>
+          <h3>211 Ontario</h3>
+          <p>Free confidential helpline connecting Ontarians to local social and community services, including digital literacy support. Just dial 2-1-1 on any phone — no area code needed.</p>
+          <div class="contact-row"><strong>Phone:</strong> <a href="tel:211">2-1-1</a></div>
+          <div class="contact-row"><strong>Website:</strong> <a href="https://211ontario.ca" target="_blank" rel="noopener noreferrer">211ontario.ca</a></div>
+          <em class="efficacy-note">Available 24/7 across Ontario — just dial 2-1-1</em>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="tel:211">Call 2-1-1</a>
+            <a class="btn btn-secondary" href="https://211ontario.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
+          </div>
+        </div>
 
-    <div class="directory-card">
-      <span class="cost-badge">Free</span>
-      <h3>London Public Library — Digital Literacy</h3>
-      <p>Free digital help sessions, device workshops, and one-on-one tech appointments at branches across London, Ontario. Drop in without an appointment for quick help, or book a longer session.</p>
-      <div class="contact-row"><strong>Phone:</strong> <a href="tel:+15196614600">519-661-4600</a></div>
-      <div class="contact-row"><strong>Website:</strong> <a href="https://londonpubliclibrary.ca" target="_blank" rel="noopener noreferrer">londonpubliclibrary.ca</a></div>
-      <em class="efficacy-note">Free tech help at your local branch — no appointment needed for drop-in sessions</em>
-      <div class="card-actions">
-        <a class="btn btn-primary" href="tel:+15196614600">Call now</a>
-        <a class="btn btn-secondary" href="https://londonpubliclibrary.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
-      </div>
-    </div>
+        <h3>Local — London &amp; St. Thomas area</h3>
 
-    <div class="directory-card">
-      <span class="cost-badge">Free</span>
-      <h3>St. Thomas Public Library</h3>
-      <p>Digital literacy programmes and tech help for community members in St. Thomas and Elgin County. The friendly staff at 153 Curtis St are ready to help with your device — no question is too small.</p>
-      <div class="contact-row"><strong>Address:</strong> 153 Curtis St, St. Thomas, ON N5P 3Z7</div>
-      <div class="contact-row"><strong>Phone:</strong> <a href="tel:+15196316050">519-631-6050</a></div>
-      <div class="contact-row"><strong>Website:</strong> <a href="https://stthomaspubliclibrary.ca" target="_blank" rel="noopener noreferrer">stthomaspubliclibrary.ca</a></div>
-      <em class="efficacy-note">Your local library — friendly staff ready to help with your device</em>
-      <div class="card-actions">
-        <a class="btn btn-primary" href="tel:+15196316050">Call now</a>
-        <a class="btn btn-secondary" href="https://stthomaspubliclibrary.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
-      </div>
-    </div>
+        <div class="directory-card">
+          <span class="cost-badge">Free</span>
+          <h3>London Public Library — Digital Literacy</h3>
+          <p>Free digital help sessions, device workshops, and one-on-one tech appointments at branches across London, Ontario. Drop in without an appointment for quick help, or book a longer session.</p>
+          <div class="contact-row"><strong>Phone:</strong> <a href="tel:+15196614600">519-661-4600</a></div>
+          <div class="contact-row"><strong>Website:</strong> <a href="https://londonpubliclibrary.ca" target="_blank" rel="noopener noreferrer">londonpubliclibrary.ca</a></div>
+          <em class="efficacy-note">Free tech help at your local branch — no appointment needed for drop-in sessions</em>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="tel:+15196614600">Call now</a>
+            <a class="btn btn-secondary" href="https://londonpubliclibrary.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
+          </div>
+        </div>
 
-    <div class="directory-card">
-      <span class="cost-badge">Free*</span>
-      <h3>Masonville Apple Store (London, ON)</h3>
-      <p>Free one-on-one support for iPhone, iPad, and Mac at the Apple Store in Masonville Place. Book a Genius Bar appointment online for in-depth device help from Apple-certified technicians. <em>*Free with any Apple device.</em></p>
-      <div class="contact-row"><strong>Address:</strong> 1680 Richmond St, London, ON N6G 3Y9 (Masonville Place)</div>
-      <div class="contact-row"><strong>Phone:</strong> <a href="tel:+18002752273">1-800-275-2273</a></div>
-      <div class="contact-row"><strong>Website:</strong> <a href="https://apple.com/ca/retail/masonvilleplace" target="_blank" rel="noopener noreferrer">apple.com/ca/retail/masonvilleplace</a></div>
-      <em class="efficacy-note">Expert help from Apple-certified technicians for your iPhone or iPad</em>
-      <div class="card-actions">
-        <a class="btn btn-primary" href="tel:+18002752273">Call Apple Support</a>
-        <a class="btn btn-secondary" href="https://apple.com/ca/retail/masonvilleplace" target="_blank" rel="noopener noreferrer">Book Genius Bar</a>
-      </div>
+        <div class="directory-card">
+          <span class="cost-badge">Free</span>
+          <h3>St. Thomas Public Library</h3>
+          <p>Digital literacy programmes and tech help for community members in St. Thomas and Elgin County. The friendly staff at 153 Curtis St are ready to help with your device — no question is too small.</p>
+          <div class="contact-row"><strong>Address:</strong> 153 Curtis St, St. Thomas, ON N5P 3Z7</div>
+          <div class="contact-row"><strong>Phone:</strong> <a href="tel:+15196316050">519-631-6050</a></div>
+          <div class="contact-row"><strong>Website:</strong> <a href="https://stthomaspubliclibrary.ca" target="_blank" rel="noopener noreferrer">stthomaspubliclibrary.ca</a></div>
+          <em class="efficacy-note">Your local library — friendly staff ready to help with your device</em>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="tel:+15196316050">Call now</a>
+            <a class="btn btn-secondary" href="https://stthomaspubliclibrary.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
+          </div>
+        </div>
+
+        <div class="directory-card">
+          <span class="cost-badge">Free*</span>
+          <h3>Masonville Apple Store (London, ON)</h3>
+          <p>Free one-on-one support for iPhone, iPad, and Mac at the Apple Store in Masonville Place. Book a Genius Bar appointment online for in-depth device help from Apple-certified technicians. <em>*Free with any Apple device.</em></p>
+          <div class="contact-row"><strong>Address:</strong> 1680 Richmond St, London, ON N6G 3Y9 (Masonville Place)</div>
+          <div class="contact-row"><strong>Phone:</strong> <a href="tel:+18002752273">1-800-275-2273</a></div>
+          <div class="contact-row"><strong>Website:</strong> <a href="https://apple.com/ca/retail/masonvilleplace" target="_blank" rel="noopener noreferrer">apple.com/ca/retail/masonvilleplace</a></div>
+          <em class="efficacy-note">Expert help from Apple-certified technicians for your iPhone or iPad</em>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="tel:+18002752273">Call Apple Support</a>
+            <a class="btn btn-secondary" href="https://apple.com/ca/retail/masonvilleplace" target="_blank" rel="noopener noreferrer">Book Genius Bar</a>
+          </div>
+        </div>
+      </section>
+
+      <section data-region="QC" hidden>
+        <h2>Programmes in Quebec</h2>
+        <div class="directory-card">
+          <span class="cost-badge">Free</span>
+          <h3>211 Québec</h3>
+          <p>Free confidential service connecting Quebecers to nearby community and social services, in 200+ languages. Dial 2-1-1 and you'll be routed to the right regional service for where you live.</p>
+          <div class="contact-row"><strong>Phone:</strong> <a href="tel:211">2-1-1</a></div>
+          <div class="contact-row"><strong>Website:</strong> <a href="https://www.211qc.ca/en/home" target="_blank" rel="noopener noreferrer">211qc.ca</a></div>
+          <em class="efficacy-note">Available 24/7 in the Grand Montréal area and connected regions — dial 2-1-1 anywhere in Quebec</em>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="tel:211">Call 2-1-1</a>
+            <a class="btn btn-secondary" href="https://www.211qc.ca/en/home" target="_blank" rel="noopener noreferrer">Visit website</a>
+          </div>
+        </div>
+      </section>
+
+      <section data-region="BC" hidden>
+        <h2>Programmes in British Columbia</h2>
+        <div class="directory-card">
+          <span class="cost-badge">Free</span>
+          <h3>211 British Columbia</h3>
+          <p>Free confidential help finding housing, mental-health, food, and community services across BC, by phone or text.</p>
+          <div class="contact-row"><strong>Phone:</strong> <a href="tel:211">2-1-1</a> (call or text)</div>
+          <div class="contact-row"><strong>Website:</strong> <a href="https://bc.211.ca" target="_blank" rel="noopener noreferrer">bc.211.ca</a></div>
+          <em class="efficacy-note">Phone line answers 9am–9pm, weekdays — the online directory at bc.211.ca is searchable any time</em>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="tel:211">Call 2-1-1</a>
+            <a class="btn btn-secondary" href="https://bc.211.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
+          </div>
+        </div>
+      </section>
+
+      <section data-region="AB" hidden>
+        <h2>Programmes in Alberta</h2>
+        <div class="directory-card">
+          <span class="cost-badge">Free</span>
+          <h3>211 Alberta</h3>
+          <p>Free confidential helpline and searchable database of Alberta's community and social services, by phone, text, or chat.</p>
+          <div class="contact-row"><strong>Phone:</strong> <a href="tel:211">2-1-1</a></div>
+          <div class="contact-row"><strong>Website:</strong> <a href="https://ab.211.ca" target="_blank" rel="noopener noreferrer">ab.211.ca</a></div>
+          <em class="efficacy-note">Available 24/7 across Alberta</em>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="tel:211">Call 2-1-1</a>
+            <a class="btn btn-secondary" href="https://ab.211.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
+          </div>
+        </div>
+      </section>
+
+      <section data-region="MB" hidden>
+        <h2>Programmes in Manitoba</h2>
+        <div class="directory-card">
+          <span class="cost-badge">Free</span>
+          <h3>211 Manitoba</h3>
+          <p>Free confidential information on health, community, and social services across Manitoba.</p>
+          <div class="contact-row"><strong>Phone:</strong> <a href="tel:211">2-1-1</a> <span class="contact-alt">(toll-free 1-855-275-1197)</span></div>
+          <div class="contact-row"><strong>Website:</strong> <a href="https://mb.211.ca" target="_blank" rel="noopener noreferrer">mb.211.ca</a></div>
+          <em class="efficacy-note">Available 24/7 across Manitoba</em>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="tel:211">Call 2-1-1</a>
+            <a class="btn btn-secondary" href="https://mb.211.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
+          </div>
+        </div>
+      </section>
+
+      <section data-region="SK" hidden>
+        <h2>Programmes in Saskatchewan</h2>
+        <div class="directory-card">
+          <span class="cost-badge">Free</span>
+          <h3>211 Saskatchewan</h3>
+          <p>Free confidential information on health, community, and social services across Saskatchewan.</p>
+          <div class="contact-row"><strong>Phone:</strong> <a href="tel:211">2-1-1</a> <span class="contact-alt">(toll-free 1-855-275-1197)</span></div>
+          <div class="contact-row"><strong>Website:</strong> <a href="https://sk.211.ca" target="_blank" rel="noopener noreferrer">sk.211.ca</a></div>
+          <em class="efficacy-note">Available 24/7 across Saskatchewan</em>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="tel:211">Call 2-1-1</a>
+            <a class="btn btn-secondary" href="https://sk.211.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
+          </div>
+        </div>
+      </section>
+
+      <section data-region="NS" hidden>
+        <h2>Programmes in Nova Scotia</h2>
+        <div class="directory-card">
+          <span class="cost-badge">Free</span>
+          <h3>211 Nova Scotia</h3>
+          <p>Free confidential connection to community, government, and social services in Nova Scotia, by phone or text.</p>
+          <div class="contact-row"><strong>Phone:</strong> <a href="tel:211">2-1-1</a> <span class="contact-alt">(from outside NS: 1-855-466-4994)</span></div>
+          <div class="contact-row"><strong>Website:</strong> <a href="https://ns.211.ca" target="_blank" rel="noopener noreferrer">ns.211.ca</a></div>
+          <em class="efficacy-note">Available 24/7 across Nova Scotia</em>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="tel:211">Call 2-1-1</a>
+            <a class="btn btn-secondary" href="https://ns.211.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
+          </div>
+        </div>
+      </section>
+
+      <section data-region="NB" hidden>
+        <h2>Programmes in New Brunswick</h2>
+        <div class="directory-card">
+          <span class="cost-badge">Free</span>
+          <h3>211 New Brunswick</h3>
+          <p>Free bilingual (English/French) confidential connection to community and government services, in 170+ languages.</p>
+          <div class="contact-row"><strong>Phone:</strong> <a href="tel:211">2-1-1</a> <span class="contact-alt">(TTY 1-855-258-4126)</span></div>
+          <div class="contact-row"><strong>Website:</strong> <a href="https://nb.211.ca" target="_blank" rel="noopener noreferrer">nb.211.ca</a></div>
+          <em class="efficacy-note">Available 24/7 across New Brunswick, in English and French</em>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="tel:211">Call 2-1-1</a>
+            <a class="btn btn-secondary" href="https://nb.211.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
+          </div>
+        </div>
+      </section>
+
+      <section data-region="NL" hidden>
+        <h2>Programmes in Newfoundland and Labrador</h2>
+        <div class="directory-card">
+          <span class="cost-badge">Free</span>
+          <h3>211 Newfoundland and Labrador</h3>
+          <p>Free confidential access to social, community, health, and government services in Newfoundland and Labrador.</p>
+          <div class="contact-row"><strong>Phone:</strong> <a href="tel:211">2-1-1</a> <span class="contact-alt">(toll-free 1-855-276-9072)</span></div>
+          <div class="contact-row"><strong>Website:</strong> <a href="https://nl.211.ca" target="_blank" rel="noopener noreferrer">nl.211.ca</a></div>
+          <em class="efficacy-note">Available 24/7 across Newfoundland and Labrador</em>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="tel:211">Call 2-1-1</a>
+            <a class="btn btn-secondary" href="https://nl.211.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
+          </div>
+        </div>
+      </section>
+
+      <section data-region="PE" hidden>
+        <h2>Programmes in Prince Edward Island</h2>
+        <div class="directory-card">
+          <span class="cost-badge">Free</span>
+          <h3>211 Prince Edward Island</h3>
+          <p>The Island's free community navigation service — find community and social resources near you.</p>
+          <div class="contact-row"><strong>Phone:</strong> <a href="tel:211">2-1-1</a> <span class="contact-alt">(toll-free 1-844-925-1257)</span></div>
+          <div class="contact-row"><strong>Website:</strong> <a href="https://pe.211.ca" target="_blank" rel="noopener noreferrer">pe.211.ca</a></div>
+          <em class="efficacy-note">Available 24/7 across Prince Edward Island</em>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="tel:211">Call 2-1-1</a>
+            <a class="btn btn-secondary" href="https://pe.211.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
+          </div>
+        </div>
+      </section>
+
+      <section data-region="YT" hidden>
+        <h2>Programmes in Yukon</h2>
+        <div class="directory-card">
+          <span class="cost-badge">Free</span>
+          <h3>211 Yukon</h3>
+          <p>Free searchable directory of social, community, health, and government services in Yukon.</p>
+          <div class="contact-row"><strong>Phone/website:</strong> Dial 2-1-1, or search the online directory any time.</div>
+          <div class="contact-row"><strong>Website:</strong> <a href="https://yt.211.ca" target="_blank" rel="noopener noreferrer">yt.211.ca</a></div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="tel:211">Call 2-1-1</a>
+            <a class="btn btn-secondary" href="https://yt.211.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
+          </div>
+        </div>
+      </section>
+
+      <section data-region="NT" hidden>
+        <h2>Programmes in the Northwest Territories</h2>
+        <div class="directory-card">
+          <span class="cost-badge">Free</span>
+          <h3>211 Northwest Territories</h3>
+          <p>Free searchable directory of community, government, and social services in the NWT.</p>
+          <div class="contact-row"><strong>Phone/website:</strong> Dial 2-1-1, or search the online directory any time.</div>
+          <div class="contact-row"><strong>Website:</strong> <a href="https://nt.211.ca" target="_blank" rel="noopener noreferrer">nt.211.ca</a></div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="tel:211">Call 2-1-1</a>
+            <a class="btn btn-secondary" href="https://nt.211.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
+          </div>
+        </div>
+      </section>
+
+      <section data-region="NU" hidden>
+        <h2>Programmes in Nunavut</h2>
+        <div class="directory-card">
+          <span class="cost-badge">Free</span>
+          <h3>211 Nunavut</h3>
+          <p>Free searchable directory connecting Nunavummiut to programs and services in their community.</p>
+          <div class="contact-row"><strong>Phone/website:</strong> Dial 2-1-1, or search the online directory any time.</div>
+          <div class="contact-row"><strong>Website:</strong> <a href="https://nu.211.ca" target="_blank" rel="noopener noreferrer">nu.211.ca</a></div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="tel:211">Call 2-1-1</a>
+            <a class="btn btn-secondary" href="https://nu.211.ca" target="_blank" rel="noopener noreferrer">Visit website</a>
+          </div>
+        </div>
+      </section>
+
     </div>
 
     <div class="the-move">
@@ -272,5 +505,6 @@
 
 <script src="js/dcc.js"></script>
 <script src="js/readaloud-discoverable.js"></script>
+<script src="js/support-directory-region.js"></script>
 </body>
 </html>
