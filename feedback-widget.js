@@ -38,7 +38,7 @@
   var CSS = [
     ".ffw-root,.ffw-root *{box-sizing:border-box}",
     ".ffw-root{position:fixed;z-index:2147483000;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:15px;line-height:1.4;color:#101418}",
-    ".ffw-fab{position:fixed;right:18px;bottom:18px;z-index:2147483001;display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border:2px solid #0b3d2e;border-radius:999px;background:#0b6b4f;color:#fff;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.28);-webkit-tap-highlight-color:transparent}",
+    ".ffw-fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:2147483001;display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border:2px solid #0b3d2e;border-radius:999px;background:#0b6b4f;color:#fff;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.28);-webkit-tap-highlight-color:transparent}",
     ".ffw-fab:hover{background:#0a5c44}",
     ".ffw-fab:focus-visible{outline:3px solid #ffd24d;outline-offset:2px}",
     ".ffw-fab-dot{width:10px;height:10px;border-radius:50%;background:#fff;display:inline-block}",
@@ -61,7 +61,7 @@
     "@media (prefers-reduced-motion: reduce){.ffw-rec-dot{animation:none}}",
     ".ffw-pin{position:absolute;z-index:2147483001;min-width:24px;height:24px;padding:0 6px;border-radius:999px;background:#c62828;color:#fff;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.4);font-weight:800;font-size:13px;line-height:20px;text-align:center;pointer-events:none}",
     ".ffw-arming,.ffw-arming *{cursor:crosshair !important}",
-    ".ffw-overlay{position:fixed;inset:0;z-index:2147483003;background:rgba(8,14,12,.55);display:flex;align-items:center;justify-content:center;padding:16px}",
+    ".ffw-overlay{position:fixed;inset:0;z-index:2147483003;background:rgba(8,14,12,.55);display:flex;align-items:center;justify-content:center;padding:16px;padding-bottom:calc(16px + env(safe-area-inset-bottom,0px))}",
     ".ffw-panel{width:min(620px,100%);max-height:88vh;overflow-y:auto;background:#fff;border:2px solid #0b3d2e;border-radius:14px;box-shadow:0 16px 50px rgba(0,0,0,.4);padding:18px 18px 16px}",
     ".ffw-panel h2{margin:0 0 4px;font-size:19px}",
     ".ffw-panel .ffw-sub{color:#445;margin:0 0 14px;font-size:13px}",

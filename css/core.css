@@ -621,6 +621,10 @@ html[data-theme="dark"] { --dcc-leaf-red: #FF6B5E; }
   border-top: 3px solid var(--color-primary);
   box-shadow: var(--shadow-lg);
   padding: var(--space-4);
+  /* Bottom-anchored CTA row: keep the Accept/Reject buttons clear of an iOS
+     home indicator / bottom browser bar (S-DCC-MODAL-CTA-BOTTOM-PADDING-001,
+     2026-07-29 -- same rule as the welcome wizard's dialog padding). */
+  padding-bottom: calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
 }
 body.consent-open { padding-bottom: 240px; }
 .consent-bar .container {

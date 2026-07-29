@@ -285,15 +285,31 @@
          The panel is a normal flex child, never position:fixed itself --
          two independent full-viewport-anchored boxes stacked was the root
          cause of the below-the-fold / pushed-down reports (2026-07-28). */
-      "dialog.dcc-welcome{--dcc-welcome-scrim:rgba(16,23,31,0.66);border:0;outline:0;padding:var(--space-6);background:transparent;",
+      /* Vertical padding is the ONLY breathing room between the CTA row and
+         the viewport edge whenever the panel is height-constrained (short
+         laptop windows, 125-200% zoom) -- the panel fills max-height:100% and
+         its actions row lands at the dialog's content-box bottom. space-8
+         baseline, never below space-6 (see media queries below), plus
+         env(safe-area-inset-bottom) so an iOS home indicator or bottom
+         browser bar can never sit on the buttons. S-DCC-MODAL-CTA-BOTTOM-
+         PADDING-001 (2026-07-29): measured 16px at short/zoomed viewports
+         before this -- the buttons read as flush against the taskbar. */
+      "dialog.dcc-welcome{--dcc-welcome-scrim:rgba(16,23,31,0.66);border:0;outline:0;",
+      "padding:var(--space-8) var(--space-6) calc(var(--space-8) + env(safe-area-inset-bottom,0px));background:transparent;",
       "z-index:var(--z-modal,1000);max-width:none;max-height:none;position:fixed;inset:0;margin:0;width:100%;height:100%;",
       "display:flex;align-items:center;justify-content:center;box-sizing:border-box;}",
       "html[data-theme=\"dark\"] dialog.dcc-welcome{--dcc-welcome-scrim:rgba(0,0,0,0.72);}",
       "dialog.dcc-welcome::backdrop{background:var(--dcc-welcome-scrim);opacity:0;transition:opacity var(--motion-duration-2,200ms) var(--motion-ease,ease);}",
       "dialog.dcc-welcome.is-open::backdrop{opacity:1;}",
+      /* overflow-y:auto (not hidden): when head + actions alone exceed a very
+         short/zoomed viewport, hidden CLIPPED the CTA row off the bottom with
+         no way to reach it (measured live 2026-07-29: buttons 100px offscreen
+         at 390px phone width @150% zoom). auto keeps the same rounded-corner
+         clipping in the normal case and degrades to a scrollable panel in the
+         extreme case, so the buttons are always reachable. */
       ".dcc-welcome-panel{width:min(680px,100%);max-height:100%;",
       "background:var(--color-surface);border-radius:var(--radius-lg);",
-      "display:flex;flex-direction:column;overflow:hidden;opacity:0;transform:translateY(12px) scale(0.98);",
+      "display:flex;flex-direction:column;overflow-y:auto;overflow-x:hidden;opacity:0;transform:translateY(12px) scale(0.98);",
       "transition:opacity var(--motion-duration-3,320ms) var(--motion-ease,ease),transform var(--motion-duration-3,320ms) var(--motion-ease,ease);}",
       ".dcc-welcome-head{flex:0 0 auto;}",
       ".dcc-welcome-actions{flex:0 0 auto;}",
@@ -343,14 +359,27 @@
       ".dcc-welcome-actions{padding:var(--space-5) var(--space-8);border-top:1px solid var(--color-border);",
       "display:flex;gap:var(--space-3);flex-wrap:nowrap;}",
       ".dcc-welcome-actions .btn{flex:1 1 0;min-width:0;}",
-      /* Narrow/short viewports: shrink the DIALOG's own padding so the panel
-         (already width:min(680px,100%) / max-height:100% of the dialog's
+      /* Narrow/short viewports: shrink the dialog's HORIZONTAL padding so the
+         panel (already width:min(680px,100%) / max-height:100% of the dialog's
          content box) automatically gets more room -- no 100vw/100dvh math
-         needed, the flex-centering container handles it. */
-      "@media (max-width:559px){dialog.dcc-welcome{padding:var(--space-4);}",
+         needed, the flex-centering container handles it. VERTICAL padding
+         never drops below space-6: these are exactly the viewports where the
+         panel fills the full height, so shrinking the vertical gap here (the
+         pre-2026-07-29 behaviour, space-4) put the CTA row 16px from the
+         screen edge at the very sizes with the least room. */
+      "@media (max-width:559px){dialog.dcc-welcome{padding:var(--space-6) var(--space-4) calc(var(--space-6) + env(safe-area-inset-bottom,0px));}",
       ".dcc-welcome-head,.dcc-welcome-body,.dcc-welcome-actions{padding-left:var(--space-6);padding-right:var(--space-6);}",
       ".dcc-welcome-actions{gap:var(--space-2);}}",
-      "@media (max-height:559px) and (orientation:landscape){dialog.dcc-welcome{padding:var(--space-4);}}",
+      /* Short viewports (any orientation -- 559px covers laptop-at-200%-zoom
+         landscape AND small phones at 125%+): compact the panel's own vertical
+         paddings instead of the dialog's outer gap. Measured 2026-07-29: head
+         213px + actions 97px + body padding 48px = 358px min against a 322px
+         content box at 640x370 -- the ~48px reclaimed here is what lets the
+         CTA row keep its full 24px clearance instead of overflowing. */
+      "@media (max-height:559px){dialog.dcc-welcome{padding:var(--space-6) var(--space-4) calc(var(--space-6) + env(safe-area-inset-bottom,0px));}",
+      ".dcc-welcome-head{padding-top:var(--space-3);padding-bottom:var(--space-3);}",
+      ".dcc-welcome-body{padding-top:var(--space-4);padding-bottom:var(--space-4);}",
+      ".dcc-welcome-actions{padding-top:var(--space-3);padding-bottom:var(--space-3);}}",
       "@media (prefers-reduced-motion:reduce){dialog.dcc-welcome::backdrop,.dcc-welcome-panel,.dcc-welcome-body section{transition:none;}}"
     ].join("");
     document.head.appendChild(s);
