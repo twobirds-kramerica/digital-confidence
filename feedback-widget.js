@@ -582,6 +582,15 @@
       return Promise.resolve(bundle);
     }
     bundle.context.betaTester = true;
+    // Wizard step 3 (js/beta.js, "Who are we talking to?") collects an
+    // optional first name so a submission can be traced back to a specific
+    // tester -- that only means something if the transcript actually carries
+    // it. Prefixed onto the visible text, not just context metadata, per
+    // beta-welcome-wizard-SPEC-2026-07-28.md #24 item 19.
+    if (window.DCCBeta.getName) {
+      var name = window.DCCBeta.getName();
+      if (name) { bundle.transcript = "[Beta tester: " + name + "] " + bundle.transcript; }
+    }
     return window.DCCBeta.getEmailHash().then(function (hash) {
       if (hash) { bundle.context.betaEmailHash = hash; }
       return bundle;

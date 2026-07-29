@@ -97,8 +97,8 @@
     wizIdName: "Votre prénom",
     wizIdEmail: "Votre courriel, seulement si vous voulez que vos leçons vous suivent d'un appareil à l'autre",
     wizIdEmailHelp: "Nous ne conservons jamais votre adresse courriel. Votre navigateur la brouille d'abord, ce qui permet de vous reconnaître sans que nous la voyions.",
-    wizIdSave: "Enregistrer et commencer à regarder",
-    wizIdSkip: "Passer et commencer à regarder",
+    wizIdSave: "Enregistrer et continuer",
+    wizIdSkip: "Passer et continuer",
     wizIdThanks: "Merci, {name}. Vos commentaires nous arriveront avec votre nom.",
     wizTellUs: "Dites-nous qui vous êtes",
     wizClose: "Fermer",
@@ -148,8 +148,8 @@
     wizIdName: "Your first name",
     wizIdEmail: "Your email, only if you want lessons to carry over between your devices",
     wizIdEmailHelp: "We never store your email address. Your own browser scrambles it first, so it works as a key without us ever seeing it.",
-    wizIdSave: "Save this and start looking around",
-    wizIdSkip: "Skip this and start looking around",
+    wizIdSave: "Save and continue",
+    wizIdSkip: "Skip and continue",
     wizIdThanks: "Thank you, {name}. Your feedback will come to us with your name on it.",
     wizTellUs: "Tell us who you are"
   };
