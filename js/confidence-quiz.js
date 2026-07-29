@@ -59,7 +59,7 @@
   var IS_FR = (document.documentElement.getAttribute("lang") || "en").toLowerCase().indexOf("fr") === 0;
 
   var T = IS_FR ? {
-    badge: "Groupe pilote",
+    badge: "Bêta",
     beforeTitle: "Avant de commencer",
     beforeQ: "Quel est votre niveau d'aisance avec ce sujet en ce moment?",
     afterTitle: "Maintenant que vous avez termine",
@@ -79,7 +79,7 @@
     resultSolo: "Votre reponse: {b} sur 5.",
     onlyAfter: "Vous n'aviez pas repondu avant la lecon, alors il n'y a rien a comparer. Ce n'est pas grave."
   } : {
-    badge: "Pilot group",
+    badge: "Beta",
     beforeTitle: "Before you start",
     beforeQ: "How confident do you feel about this topic right now?",
     afterTitle: "Now that you have finished",
