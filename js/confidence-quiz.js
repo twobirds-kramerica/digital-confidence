@@ -284,10 +284,17 @@
     var st = load(id);
     injectStyles();
 
-    /* BEFORE: high in the page, after the reassurance line so the first thing a
-       nervous reader meets is still the reassurance, not a question. */
+    /* BEFORE: high in the page, but after p.lead -- not just after the
+       reassurance line. Real bug, 2026-07-29 (Aaron, module-1.html "The
+       Escape Hatch"): with the old anchor (reassurance only), this card
+       landed directly under the title, before the one-line plain-language
+       description of what the lesson topic actually is. A first-time
+       visitor was asked "how confident do you feel about this topic"
+       having seen only a title (often an evocative/non-literal name like
+       "The Escape Hatch") with zero context for what it means. p.lead
+       exists on all 39 module pages -- verified before relying on it. */
     if (!st.beforeDone) {
-      var anchorTop = container.querySelector("p.reassurance") || container.querySelector("h1");
+      var anchorTop = container.querySelector("p.lead") || container.querySelector("p.reassurance") || container.querySelector("h1");
       if (anchorTop) {
         var beforeCard = buildCard("before", function (value, box) {
           var s2 = load(id);
