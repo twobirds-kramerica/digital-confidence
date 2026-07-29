@@ -20,12 +20,12 @@ Screenshots: `C:\twobirds\digital-confidence\quality\playwright-results\` (wizar
 | 12 | Audio-button / native-mute agreement | INCONCLUSIVE — flagged, not false-failed. A stale `devicePixelRatio` (0.8) surfaced in this long Playwright session distorted viewport-width readings independent of the product; this is harness state, not a DCC bug. Needs a fresh browser session to re-check cleanly. |
 | 13-14 | Screenshot evidence saved to `quality/playwright-results/` | DONE (this pass) |
 | 15 | (see spec) | PASS — no issue found |
-| 16-18 | Chevron-watermark on beta welcome videos | **BLOCKED — feature not built.** Confirmed via grep of `_feedback/poc/dcc-beta-welcome-render-v2.html` (the video source file): zero "watermark" references exist. This is not a verification failure, it's an unimplemented feature tracked separately as `S-DCC-VIDEO-WATERMARK-001`, which has not yet been run. Do not mark these items done. |
+| 16-18 | Chevron-watermark on beta welcome videos | **RESOLVED 2026-07-29** via `S-DCC-VIDEO-WATERMARK-001` (commit `df13d19`, digital-confidence main). Watermark + attribution line built, re-rendered, verified live in the wizard. Originally blocked at the time this report was first written — see that sprint's own record for full detail. |
 | 19 | Beta-tester name must reach the feedback transcript | **FAIL → FIXED THIS PASS.** See bug #1 above. Now PASS. |
 | 20 | (see spec) | PASS |
 | 21 | Sub-400px caption-hide check | INCONCLUSIVE — same stale-devicePixelRatio harness issue as item 12; `window.innerWidth` reported 488 instead of the requested 390 mid-session. Not false-failed; needs a fresh Playwright session to re-run cleanly. |
 | 22 | (see spec) | PASS |
-| 23 | Attribution-line legibility at phone size | **BLOCKED — entangled with the watermark feature (items 16-18).** Same not-yet-run sprint. |
+| 23 | Attribution-line legibility at phone size | **RESOLVED 2026-07-29** alongside items 16-18. Attribution line ships at 23px weight 600, AAA contrast per the spec's own arithmetic (S18.3), same treatment at every render size since it's burned into the video frame, not a responsive DOM element. |
 | 24-26 | Remaining consolidated checks | PASS — no issues found |
 
 ## Summary
