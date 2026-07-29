@@ -188,7 +188,7 @@
       "text-wrap:balance;}",
       "@media (max-width:400px){.dcc-conf-optlabel{position:absolute;width:1px;height:1px;overflow:hidden;",
       "clip:rect(0 0 0 0);white-space:nowrap;}}",
-      ".dcc-conf-actions{display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center;}",
+      ".dcc-conf-actions{display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center;justify-content:flex-end;}",
       ".dcc-conf-msg{margin:var(--space-4) 0 0;font-weight:var(--font-weight-semibold);color:var(--color-success-deep);}",
       ".dcc-conf-warn{margin:var(--space-3) 0 0;font-weight:var(--font-weight-semibold);color:var(--color-error);}",
       ".dcc-conf-result{font-size:var(--font-size-lead);line-height:var(--line-height-lead);margin:0;}"
@@ -239,8 +239,10 @@
     saveBtn.type = "button";
     var skipBtn = elt("button", "btn btn-secondary", T.skip);
     skipBtn.type = "button";
-    actions.appendChild(saveBtn);
+    // Secondary (Skip) left, primary (Send) right -- Aaron, 2026-07-28:
+    // affirmative action goes on the right, skip/back on the left.
     actions.appendChild(skipBtn);
+    actions.appendChild(saveBtn);
     box.appendChild(actions);
 
     var warn = elt("p", "dcc-conf-warn");

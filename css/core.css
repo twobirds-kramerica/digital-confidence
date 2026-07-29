@@ -120,14 +120,14 @@ html[data-theme="dark"] { --dcc-leaf-red: #FF6B5E; }
   display: inline-flex; align-items: center; gap: var(--space-2);
   font-family: var(--font-heading); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);
   color: var(--color-text-light);
-  opacity: 0; transform: scale(0.86);
-  animation: dcc-ca-badge-in var(--motion-duration-3) var(--motion-ease) 120ms forwards;
 }
 .ca-leaf { width: 20px; height: 20px; flex: 0 0 auto; color: var(--dcc-leaf-red); }
-@keyframes dcc-ca-badge-in { to { opacity: 1; transform: scale(1); } }
-@media (prefers-reduced-motion: reduce) {
-  .ca-badge { animation: none; opacity: 1; transform: none; }
-}
+/* 2026-07-28: this badge used to be opacity:0 by default, made visible only
+   once a CSS entrance animation completed ("forwards" fill). Aaron reported
+   it missing entirely on a live page -- root cause: a trust badge must never
+   depend on an animation actually finishing to become visible (backgrounded
+   tabs throttle CSS animations, so "forwards" can simply never arrive).
+   Visible by default now, no animation, no failure mode. */
 @media (max-width: 400px) {
   .ca-badge .ca-badge-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 }
@@ -322,6 +322,13 @@ html[data-theme="dark"] { --dcc-leaf-red: #FF6B5E; }
   margin-top: auto;
 }
 .topic-card.card-flagship { border: 2px solid var(--color-primary); }
+/* position:absolute + a fixed negative top offset means a 2-line wrap
+   doesn't just look bad, it grows DOWNWARD into the card's own content
+   underneath (confirmed live 2026-07-28: the FR text wrapped and covered
+   the card icon). max-width alone only stops horizontal overflow, not
+   this. Primary defence is keeping the text short enough to stay on one
+   line in EVERY language this badge ships in -- verify each language,
+   not just the one it was authored in (see ux-qa-lessons-2026-07-28.md). */
 .flagship-tag {
   position: absolute; top: calc(-1 * var(--space-3)); left: var(--space-5);
   max-width: calc(100% - (var(--space-5) * 2)); box-sizing: border-box;
@@ -329,6 +336,7 @@ html[data-theme="dark"] { --dcc-leaf-red: #FF6B5E; }
   font-family: var(--font-heading); font-weight: var(--font-weight-semibold);
   font-size: var(--font-size-caption); text-align: center;
   padding: var(--space-1) var(--space-3); border-radius: var(--radius-pill);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 
 /* ============================================================================
