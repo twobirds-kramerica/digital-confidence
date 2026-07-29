@@ -32,15 +32,32 @@
   .stage{position:relative;width:1280px;height:720px;overflow:hidden;
     background:linear-gradient(165deg,#FFFFFF 0%,#F8F9FB 45%,#EAF1F8 100%);color:var(--ink);
     font-family:'Source Sans 3','Segoe UI',Roboto,Helvetica,Arial,sans-serif}
-  .slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  .slide{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
     padding:56px 76px 176px;text-align:center;opacity:0}
   .slide.active{opacity:1}
   .wordmark{position:absolute;top:34px;left:0;right:0;text-align:center;
     font-size:21px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--primary);opacity:.85}
+
+  /* ---- Opening watermark (scene 1 only) --------------------------------------
+     Oversized attribution mark, per beta-welcome-wizard-SPEC-2026-07-28.md S18.
+     Plate-less variant of the real V05 mark (chevrons + identity circles only,
+     no filled rounded-square background -- a 620px filled blue square behind the
+     title would be a colour block, not a watermark). Recoloured white->#0066CC
+     (true Two Birds Blue, not DCC's #1D4E89 -- the Feathers Model forbids
+     blending palettes) at 6% opacity, well under the 8% ceiling. Title-card
+     treatment only: shown on scene 1, hidden on scenes 2-7 (S17.5), sitting
+     behind slide content (z-index 0 vs .slide's 1) but above the stage
+     background. Named, dated exception to the Feathers Model's "never the
+     master chevron in a sub-brand's hero" rule -- recorded in
+     hal-stack/brand/guidelines/dcc-adult.md's Logo section, Aaron's direct
+     request 2026-07-28. */
+  #watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-54%);
+    width:620px;height:620px;z-index:0;opacity:.06;pointer-events:none;display:none}
   .fig{width:150px;height:150px;margin-bottom:26px}
   .onscreen{font-size:42px;font-weight:600;line-height:1.26;max-width:90%;color:var(--primary)}
   .titlecard{font-size:62px;font-weight:700;letter-spacing:.2px;color:var(--primary);line-height:1.14}
   .note{margin-top:22px;font-size:25px;color:var(--ink);max-width:82%;line-height:1.45}
+  .attrib{margin-top:26px;font-size:23px;font-weight:600;color:var(--primary);letter-spacing:.3px}
   .cards{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin-top:26px;max-width:96%}
   .card{background:#FFFFFF;border:2px solid var(--border);border-radius:14px;
     padding:16px 20px;font-size:22px;color:var(--ink);min-width:180px}
@@ -98,6 +115,7 @@
 <body>
 <div class="stage" id="stage">
   <div class="wordmark" id="wordmark">Digital Confidence Centre</div>
+  <div id="watermark"></div>
   <div class="caption" id="caption"></div>
 </div>
 <script>
@@ -135,6 +153,24 @@ const TB_MARK = `<svg class="tbmark" viewBox="0 0 1024 1024" xmlns="http://www.w
   </g>
 </svg>`;
 
+/* Plate-less, recoloured variant of TB_MARK for the opening watermark (S18.1).
+   Same coordinates as TB_MARK's two chevron groups; no plate rect, no gradient,
+   stroke/fill #0066CC instead of white. Rendered at native (converged) logo
+   position -- unlike the closing scene, this is a static title-card mark, not
+   an animated convergence. */
+const WATERMARK_MARK = `<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:100%;height:100%;display:block">
+  <g id="wm-chev-a">
+    <polyline points="210,195 550,335 210,475" fill="none" stroke="#0066CC" stroke-width="52" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="550" cy="335" r="34" fill="#0066CC"/>
+    <circle cx="210" cy="195" r="34" fill="#0066CC"/>
+  </g>
+  <g id="wm-chev-b">
+    <polyline points="814,549 474,689 814,829" fill="none" stroke="#0066CC" stroke-width="52" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="474" cy="689" r="34" fill="#0066CC"/>
+    <circle cx="814" cy="829" r="34" fill="#0066CC"/>
+  </g>
+</svg>`;
+
 const FB_MOCK_EN = `<div class="fbmock">
   <div class="block">
     <h3>Tell us what you think</h3>
@@ -168,7 +204,7 @@ function closing(thanks, byline, soon) {
 
 const SCENES = {
   en: [
-    { html:`<div class="titlecard">Welcome.</div><div class="note">The Digital Confidence Centre is here to help you feel confident with technology.</div>`,
+    { html:`<div class="titlecard">Welcome.</div><div class="note">The Digital Confidence Centre is here to help you feel confident with technology.</div><div class="attrib">Digital Confidence Centre is a programme of Two Birds Innovation.</div>`,
       cap:`Welcome to the Digital Confidence Centre, built to help adults feel confident with technology.` },
 
     { html:`<div class="onscreen">Short lessons, at your own pace.</div><div class="cards"><div class="card"><span class="ic">🛡</span>Spotting scams</div><div class="card"><span class="ic">🏦</span>Banking safely</div><div class="card"><span class="ic">🔑</span>Passwords</div><div class="card"><span class="ic">📹</span>Video calls</div><div class="card"><span class="ic">🩺</span>Telehealth</div><div class="card"><span class="ic">🤖</span>Artificial intelligence</div></div>`,
@@ -192,7 +228,7 @@ const SCENES = {
   ],
 
   fr: [
-    { html:`<div class="titlecard">Bienvenue.</div><div class="note">Le Centre de confiance numerique est la pour vous aider a vous sentir a l'aise avec la technologie.</div>`,
+    { html:`<div class="titlecard">Bienvenue.</div><div class="note">Le Centre de confiance numerique est la pour vous aider a vous sentir a l'aise avec la technologie.</div><div class="attrib">Le Centre de confiance numerique est un programme de Two Birds Innovation.</div>`,
       cap:`Bienvenue au Centre de confiance numerique, pour vous aider a vous sentir a l'aise avec la technologie.` },
 
     { html:`<div class="onscreen">De courtes lecons, a votre rythme.</div><div class="cards"><div class="card"><span class="ic">🛡</span>Reperer les fraudes</div><div class="card"><span class="ic">🏦</span>Banque en ligne</div><div class="card"><span class="ic">🔑</span>Mots de passe</div><div class="card"><span class="ic">📹</span>Appels video</div><div class="card"><span class="ic">🩺</span>Telesante</div><div class="card"><span class="ic">🤖</span>Intelligence artificielle</div></div>`,
@@ -226,6 +262,8 @@ window.scenes = scenes; // exposed for the capture script (page.evaluate reads c
 
 const stage = document.getElementById('stage');
 const caption = document.getElementById('caption');
+const watermark = document.getElementById('watermark');
+watermark.innerHTML = WATERMARK_MARK;
 const nodes = scenes.map((sc)=>{
   const d = document.createElement('div');
   d.className = 'slide';
@@ -273,6 +311,7 @@ function paintClosing(node, k, n) {
 window.show = function (i, k) {
   nodes.forEach((n, j) => n.classList.toggle('active', j === i));
   caption.textContent = scenes[i].cap;
+  watermark.style.display = (i === 0) ? 'block' : 'none';
   const n = window.subframes(i);
   const closingNode = nodes[i].querySelector('.closing');
   if (closingNode) { paintClosing(closingNode, (k == null ? n - 1 : k), n); }
