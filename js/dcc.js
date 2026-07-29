@@ -116,6 +116,32 @@
     labelTheme();
   }
 
+  /* ---------- Dyslexia-friendly font toggle --------------------------------
+     Restored 2026-07-28: shipped under classic/ (js/accessibility.js,
+     css/accessibility.css) but never carried over to this V2 root during
+     the cutover. Same font asset (fonts/opendyslexic/, SIL OFL 1.1), same
+     html.dyslexic-font class, same pattern as the dark-mode toggle above. */
+  var dyslexicBtn = document.querySelector("[data-dyslexic-toggle]");
+  var DYSLEXIC_KEY = "dccv2-dyslexic-font";
+  function labelDyslexic() {
+    if (!dyslexicBtn) return;
+    var on = doc.classList.contains("dyslexic-font");
+    dyslexicBtn.textContent = IS_FR ? "👓 Police pour la dyslexie" : "👓 Dyslexia-friendly font";
+    dyslexicBtn.setAttribute("aria-pressed", on ? "true" : "false");
+  }
+  if (dyslexicBtn) {
+    var dyslexicOn = false;
+    try { dyslexicOn = localStorage.getItem(DYSLEXIC_KEY) === "1"; } catch (e) {}
+    if (dyslexicOn) { doc.classList.add("dyslexic-font"); }
+    dyslexicBtn.addEventListener("click", function () {
+      var next = !doc.classList.contains("dyslexic-font");
+      doc.classList.toggle("dyslexic-font", next);
+      try { localStorage.setItem(DYSLEXIC_KEY, next ? "1" : "0"); } catch (e) {}
+      labelDyslexic();
+    });
+    labelDyslexic();
+  }
+
   /* ---------- Display-settings expander -----------------------------------
      The text-size / dark-mode / read-aloud controls collapse behind a gear
      toggle so they stay one tap away without dominating the sticky header. */

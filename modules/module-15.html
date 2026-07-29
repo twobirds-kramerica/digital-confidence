@@ -50,6 +50,7 @@
         </div>
       </div>
       <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+      <button class="theme-btn" type="button" data-dyslexic-toggle aria-pressed="false">👓 Dyslexia-friendly font</button>
     </div>
   </div>
 </header>
