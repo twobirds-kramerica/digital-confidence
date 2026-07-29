@@ -479,7 +479,11 @@
     // glasses), a mouth arc colliding with the chin, and the waving arm's
     // endpoint sitting inside the hand circle instead of meeting its edge.
     var artWrap = document.createElement("div");
-    artWrap.innerHTML = "<svg class=\"dcc-welcome-art\" viewBox=\"0 0 240 220\" role=\"presentation\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><ellipse cx=\"126\" cy=\"66\" rx=\"23\" ry=\"26\"/><circle cx=\"114\" cy=\"60\" r=\"6.5\"/><circle cx=\"138\" cy=\"60\" r=\"6.5\"/><path d=\"M112 74 Q126 80 140 74\"/><path d=\"M78 172 C78 140 100 118 126 118 C152 118 174 140 174 172\"/><path d=\"M160 124 C176 119 188 106 194 94\"/><circle cx=\"200\" cy=\"88\" r=\"8\"/><path d=\"M212 76 l8 -6 M214 92 l9 4\"/></g></svg>";
+    // Glasses added 2026-07-29 (Aaron): this is the senior-facing site, the
+    // greeting figure should read as clearly senior/relatable, matching the
+    // homepage hero illustration's own glasses convention (index.html
+    // .illus-hero) rather than a bare face.
+    artWrap.innerHTML = "<svg class=\"dcc-welcome-art\" viewBox=\"0 0 240 220\" role=\"presentation\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><ellipse cx=\"126\" cy=\"66\" rx=\"23\" ry=\"26\"/><circle cx=\"114\" cy=\"60\" r=\"6.5\"/><circle cx=\"138\" cy=\"60\" r=\"6.5\"/><circle cx=\"114\" cy=\"60\" r=\"11\"/><circle cx=\"138\" cy=\"60\" r=\"11\"/><path d=\"M125 60 h2\"/><path d=\"M103 58 l-9 -3\"/><path d=\"M149 58 l9 -3\"/><path d=\"M112 74 Q126 80 140 74\"/><path d=\"M78 172 C78 140 100 118 126 118 C152 118 174 140 174 172\"/><path d=\"M160 124 C176 119 188 106 194 94\"/><circle cx=\"200\" cy=\"88\" r=\"8\"/><path d=\"M212 76 l8 -6 M214 92 l9 4\"/></g></svg>";
     s1.appendChild(artWrap.firstChild);
     body.appendChild(s1);
 
