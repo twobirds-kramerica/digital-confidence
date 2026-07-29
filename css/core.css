@@ -373,6 +373,20 @@ html[data-theme="dark"] { --dcc-leaf-red: #FF6B5E; }
   font-size: var(--font-size-sm); display: flex; justify-content: space-between;
   gap: var(--space-4); margin-bottom: var(--space-2);
 }
+/* Homepage aggregate summary: the count gets its own larger line so it reads
+   as a plain-language sentence, and the storage note is visually demoted
+   (smaller, muted, more space above) so it doesn't blur into the count as
+   one confusing line. Aaron, 2026-07-29: previous single-line layout read
+   as an unexplained score with an unrelated technical note crammed under it. */
+.small-wins .sw-count {
+  font-family: var(--font-heading); font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lead); margin: 0 0 var(--space-3);
+}
+.small-wins .sw-note {
+  margin: var(--space-3) 0 0; padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border); font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+}
 .sw-track {
   background: var(--color-surface-alt); border-radius: var(--radius-pill);
   height: 14px; overflow: hidden;

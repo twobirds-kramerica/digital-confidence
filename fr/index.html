@@ -121,8 +121,9 @@
 
     <!-- Petites victoires : s’affiche seulement quand il y en a (progression sans compte) -->
     <section class="small-wins" id="home-wins" hidden aria-label="Votre progression">
-      <p class="sw-label"><span>Vos petites victoires jusqu’ici</span> <span id="home-wins-count"></span></p>
-      <p style="margin:0; font-size: var(--font-size-sm);">Enregistrées sur cet appareil, aucun compte requis.</p>
+      <p class="sw-label">Vos petites victoires jusqu’ici</p>
+      <p class="sw-count" id="home-wins-count"></p>
+      <p class="sw-note">Enregistré automatiquement sur cet appareil. Aucun compte requis.</p>
     </section>
 
     <h2 id="lessons">Choisissez un sujet</h2>
@@ -315,7 +316,7 @@
     if (n > 0) {
       document.getElementById("home-wins").hidden = false;
       document.getElementById("home-wins-count").textContent =
-        n + (n === 1 ? " victoire" : " victoires") + " à l’exercice de repérage des fraudes";
+        "Vous avez terminé " + n + (n === 1 ? " exercice" : " exercices") + " de repérage des fraudes.";
     }
   })();
 </script>

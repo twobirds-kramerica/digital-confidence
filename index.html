@@ -121,8 +121,9 @@
 
     <!-- Small Wins: appears only once you have some (no-login progress) -->
     <section class="small-wins" id="home-wins" hidden aria-label="Your progress">
-      <p class="sw-label"><span>Your small wins so far</span> <span id="home-wins-count"></span></p>
-      <p style="margin:0; font-size: var(--font-size-sm);">Saved on this device, no account needed.</p>
+      <p class="sw-label">Your small wins so far</p>
+      <p class="sw-count" id="home-wins-count"></p>
+      <p class="sw-note">Saved automatically on this device. No account needed.</p>
     </section>
 
     <h2 id="lessons">Choose a topic</h2>
@@ -324,7 +325,7 @@
     if (n > 0) {
       document.getElementById("home-wins").hidden = false;
       document.getElementById("home-wins-count").textContent =
-        n + (n === 1 ? " win" : " wins") + " in scam-spotting practice";
+        "You've completed " + n + (n === 1 ? " scam-spotting practice." : " scam-spotting practices.");
     }
   })();
 </script>
