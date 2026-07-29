@@ -274,7 +274,12 @@
       }
       var lang = (v.lang || "").toLowerCase();
       if (lang === (IS_FR ? "fr-ca" : "en-ca")) { return v.name + (IS_FR ? " (Canadienne)" : " (Canadian)"); }
-      return v.name;
+      // Neither our named voice nor an exact en-CA/fr-CA match: this is
+      // whatever generic voice the device happens to expose (e.g. a raw
+      // Windows SAPI name like "Microsoft David - English (United States)").
+      // Never surface that raw OS label -- wrong locale framing for a
+      // Canadian product, and the bracketed country code reads as a glitch.
+      return IS_FR ? "la voix de votre appareil" : "your device's voice";
     }
     function reflectVoiceStatus() {
       if (!chosenVoice) { return; }

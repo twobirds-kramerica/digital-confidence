@@ -40,8 +40,9 @@
     label: "Accueil des testeurs beta",
     welcome: "Merci de participer comme testeur beta.",
     welcomeBack: "Bon retour.",
+    barIntro: "Vous testez la version bêta.",
     introBack: "Content de vous revoir. Regardez a votre rythme. Si quelque chose vous semble confus ou ne fonctionne pas, un lien Donner mon avis se trouve au bas de chaque page.",
-    gotIt: "Compris",
+    gotIt: "Fermer",
     intro: "Vous etes parmi les premieres personnes a voir le Centre de confiance numerique. Il n'y a rien a configurer. Regardez a votre rythme, et si quelque chose vous semble confus ou ne fonctionne pas, dites-le nous avec le lien Donner mon avis au bas de chaque page, ou la boite a la fin de chaque lecon.",
     emailIntro: "Si vous voulez que nous nous souvenions de votre passage pour ne pas avoir a tout reexpliquer la prochaine fois, vous pouvez laisser votre courriel ci-dessous. C'est entierement facultatif.",
     formLabel: "Facultatif : se souvenir de moi",
@@ -76,7 +77,7 @@
     wizStatusUnmuted: "Le son est activé.",
     wizContinue: "Continuer",
     wizBack: "Retour",
-    wizRewatch: "Revoir la vidéo de bienvenue",
+    wizRewatch: "Revoir la vidéo de bienvenue bêta",
     wizLabel: "Accueil des testeurs beta",
     wizIdTitle: "À qui parlons-nous?",
     wizIdBody: "Quand vous nous envoyez un commentaire, il arrive sans nom. Si vous nous donnez votre prénom, nous saurons qu'il vient de vous, et nous pourrons revenir vers vous si nous avons une question. C'est entièrement à vous de décider et vous pouvez laisser le champ vide.",
@@ -93,8 +94,9 @@
     label: "Beta tester welcome",
     welcome: "Thank you for joining as a beta tester.",
     welcomeBack: "Welcome back.",
+    barIntro: "You are testing the beta.",
     introBack: "Good to see you again. Look around at your own pace. If anything feels confusing or does not work, there is a Give feedback link at the bottom of every page.",
-    gotIt: "Got it",
+    gotIt: "Dismiss",
     intro: "You are one of the first people to see the Digital Confidence Centre. There is nothing to set up. Look around at your own pace, and if anything feels confusing or does not work, please tell us using the Give feedback link at the bottom of every page, or the box at the end of each lesson.",
     emailIntro: "If you would like us to remember you were here so you do not have to explain again next time, you can leave your email below. This is entirely optional.",
     formLabel: "Optional: remember me next time",
@@ -132,7 +134,7 @@
     wizUnmuteNudge: "Tap here for sound",
     wizContinue: "Continue",
     wizBack: "Back",
-    wizRewatch: "Watch the welcome video again",
+    wizRewatch: "Watch the beta welcome video again",
     wizLabel: "Beta tester welcome",
     wizIdTitle: "Who are we talking to?",
     wizIdBody: "When you send us feedback, it arrives with no name on it. If you tell us your first name, we will know it came from you, and we can come back to you if we have a question about something you told us. This is entirely up to you and you can leave it blank.",
@@ -229,6 +231,20 @@
       ".dcc-beta-banner{background:var(--color-accent-light);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-5);margin:0 0 var(--space-6);}",
       ".dcc-beta-banner h2{margin:0 0 var(--space-2);color:var(--color-primary);}",
       ".dcc-beta-banner p{margin:0 0 var(--space-3);max-width:60ch;}",
+      /* Thin returning-visitor bar: one line, dismissible, sits directly under
+         the header. Not the full cream card treatment used for the first-visit
+         fallback below (that one is the entire onboarding surface for
+         no-dialog-support browsers and genuinely needs the room; this is a
+         courtesy reminder for someone who already saw the wizard). */
+      ".dcc-beta-bar{display:flex;align-items:center;gap:var(--space-3);flex-wrap:wrap;",
+      "background:var(--color-accent-light);border-bottom:1px solid var(--color-border);",
+      "padding:var(--space-2) var(--space-4);margin:0 0 var(--space-5);font-size:var(--font-size-sm);}",
+      ".dcc-beta-bar-text{flex:1 1 auto;min-width:0;}",
+      ".dcc-beta-bar-text strong{font-weight:var(--font-weight-semibold);color:var(--color-primary);}",
+      ".dcc-beta-bar-link{background:none;border:none;color:var(--color-text-link);text-decoration:underline;cursor:pointer;font:inherit;padding:0;white-space:nowrap;}",
+      ".dcc-beta-bar-dismiss{background:none;border:none;color:var(--color-text-light);cursor:pointer;",
+      "font-size:20px;line-height:1;padding:var(--space-1) var(--space-2);flex:0 0 auto;}",
+      ".dcc-beta-bar-dismiss:hover,.dcc-beta-bar-dismiss:focus-visible{color:var(--color-text);}",
       ".dcc-beta-form{display:flex;gap:var(--space-2);flex-wrap:wrap;align-items:center;margin-top:var(--space-2);}",
       ".dcc-beta-form input[type=email]{flex:1 1 240px;min-height:var(--tap-target-min);padding:0 var(--space-3);border:1px solid var(--color-border);border-radius:var(--radius-sm);font:inherit;background:var(--color-surface);color:var(--color-text);}",
       ".dcc-beta-skip{background:none;border:none;color:var(--color-text-link);text-decoration:underline;cursor:pointer;font:inherit;min-height:var(--tap-target-min);padding:0 var(--space-2);}",
@@ -705,30 +721,51 @@
     return wrap;
   }
 
+  function renderReturningBar(main) {
+    injectStyles();
+    var bar = elt("div", "dcc-beta-bar");
+    bar.setAttribute("aria-label", T.label);
+
+    var text = elt("span", "dcc-beta-bar-text");
+    text.appendChild(elt("strong", null, T.welcomeBack + " "));
+    text.appendChild(document.createTextNode(T.barIntro + " "));
+    var rewatch = elt("button", "dcc-beta-bar-link", T.wizRewatch);
+    rewatch.type = "button";
+    rewatch.addEventListener("click", function () {
+      var w = ensureWizard();
+      if (w) { w.openAt(2, true, rewatch); }
+    });
+    text.appendChild(rewatch);
+    bar.appendChild(text);
+
+    var dismiss = elt("button", "dcc-beta-bar-dismiss", "");
+    dismiss.type = "button";
+    dismiss.setAttribute("aria-label", T.gotIt);
+    dismiss.innerHTML = "<span aria-hidden=\"true\">&times;</span>";
+    dismiss.addEventListener("click", function () { bar.remove(); });
+    bar.appendChild(dismiss);
+
+    main.insertBefore(bar, main.firstChild);
+  }
+
   function renderBanner(main, returning, needsInlineVideo) {
+    if (returning) { renderReturningBar(main); return; }
+
     injectStyles();
     var box = elt("section", "dcc-beta-banner");
     box.setAttribute("aria-label", T.label);
 
-    box.appendChild(elt("h2", null, returning ? T.welcomeBack : T.welcome));
+    box.appendChild(elt("h2", null, T.welcome));
 
-    if (returning) {
-      box.appendChild(elt("p", null, T.introBack));
-      var dismiss = elt("button", "dcc-beta-skip", T.gotIt);
-      dismiss.type = "button";
-      dismiss.addEventListener("click", function () { box.remove(); });
-      box.appendChild(dismiss);
-    } else {
-      // The video and the "who are we talking to" identification now live in
-      // the wizard (see maybeShowWizardOnLoad, called from boot()). This
-      // banner is what remains once the wizard is dismissed: intro prose and
-      // a way to bring either piece back on purpose.
-      box.appendChild(elt("p", null, T.intro));
-      if (needsInlineVideo) {
-        // No <dialog> support (old iPads, pre-iOS 15.4 Safari): fall back to
-        // today's inline video, in normal document flow.
-        box.appendChild(buildVideo());
-      }
+    // The video and the "who are we talking to" identification now live in
+    // the wizard (see maybeShowWizardOnLoad, called from boot()). This
+    // banner is what remains once the wizard is dismissed: intro prose and
+    // a way to bring either piece back on purpose.
+    box.appendChild(elt("p", null, T.intro));
+    if (needsInlineVideo) {
+      // No <dialog> support (old iPads, pre-iOS 15.4 Safari): fall back to
+      // today's inline video, in normal document flow.
+      box.appendChild(buildVideo());
     }
     box.appendChild(buildRewatchButton());
     if (!getName()) { box.appendChild(buildTellUsLink()); }

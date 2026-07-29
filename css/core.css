@@ -159,6 +159,14 @@ html[data-theme="dark"] { --dcc-leaf-red: #FF6B5E; }
 .settings-toggle[aria-expanded="true"] {
   background: var(--color-surface-alt); border-color: var(--color-border-strong);
 }
+.settings-toggle-chevron {
+  display: inline-block; font-size: 12px; color: var(--color-text-light);
+  transition: transform var(--motion-duration-2, 200ms) var(--motion-ease, ease);
+}
+.settings-toggle[aria-expanded="true"] .settings-toggle-chevron { transform: rotate(180deg); }
+@media (prefers-reduced-motion: reduce) {
+  .settings-toggle-chevron { transition: none; }
+}
 
 .header-tools {
   width: 100%; margin-top: var(--space-2);
