@@ -370,7 +370,10 @@
       window.speechSynthesis && window.speechSynthesis.cancel();
       restoreActive();
       readBtn.setAttribute("aria-pressed", "false");
-      readBtn.textContent = IS_FR ? "🔊 Lecture à voix haute" : "🔊 Read aloud";
+      // Label matches the discoverable top-of-page control's static markup
+      // (S-DCC-READALOUD-DISCRETE-UX-001, 2026-07-29) so it reads the same
+      // whether this is the first render or a reset-after-stop.
+      readBtn.textContent = IS_FR ? "🔊 Écouter cette page" : "🔊 Listen to this page";
     }
     function buildQueue() {
       var nodes = document.querySelectorAll("main h1, main h2, main h3, main p, main .choices button, main .mailrow");
