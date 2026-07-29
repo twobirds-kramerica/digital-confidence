@@ -26,11 +26,10 @@
   var WELCOME_SEEN_KEY = "dccv2-beta-welcome-seen";
   var WORKER = "https://dcc-data.twobirdsinnovation.workers.dev";
 
-  // Margaret reference art has two known cosmetic defects (a label typo and a
-  // stray scale bar) and has not had Aaron's DESIGN GATE sign-off for any
-  // customer-facing placement. Built behind this flag so he can flip one word
-  // after looking at it, per beta-welcome-wizard-SPEC-2026-07-28.md section 23.
-  var SHOW_MARGARET = false;
+  // Margaret approved by Aaron 2026-07-28 -- the two cosmetic defects (a
+  // typo, a stray scale bar) were on the reference sheet only, cropped out
+  // of the actual served asset (assets/characters/margaret-welcome.png).
+  var SHOW_MARGARET = true;
 
   // Language follows the page, not the browser. DCC's language split is whole
   // separate pages (index.html = EN, fr/index.html = FR) with a manual link, so
@@ -61,10 +60,13 @@
     wizStep1of3: "Étape 1 de 3",
     wizStep2of3: "Étape 2 de 3",
     wizStep3of3: "Étape 3 de 3",
-    wizTitle1: "Merci de participer comme testeur beta.",
+    wizTitle1: "Bienvenue au programme bêta.",
     wizAttrib: "Le Centre de confiance numérique est un programme de Two Birds Innovation.",
-    wizBody1: "Vous êtes parmi les premières personnes à voir le Centre de confiance numérique, un programme canadien gratuit de leçons en langage simple sur la sécurité en ligne. Il n'y a rien à configurer et aucun compte à créer. Nous avons une courte vidéo de bienvenue, environ 45 secondes, puis vous pourrez regarder à votre rythme.",
-    wizNext: "Regarder la vidéo (45 secondes)",
+    wizBody1: "Restez en sécurité et à l'aise avec la technologie du quotidien.",
+    wizBullet1: "Rien à configurer",
+    wizBullet2: "Aucune connexion requise",
+    wizBullet3: "Vidéo d'introduction facultative de 40 secondes",
+    wizNext: "Suivant",
     wizSkip: "Passer la vidéo",
     wizTitle2: "Un mot de bienvenue de Two Birds Innovation",
     wizBody2: "Le son est désactivé au départ. Activez-le quand vous voulez. Les mots apparaissent sur la vidéo dans les deux cas.",
@@ -111,10 +113,13 @@
     wizStep1of3: "Step 1 of 3",
     wizStep2of3: "Step 2 of 3",
     wizStep3of3: "Step 3 of 3",
-    wizTitle1: "Thank you for joining as a beta tester.",
+    wizTitle1: "Welcome, beta tester.",
     wizAttrib: "Digital Confidence Centre is a programme of Two Birds Innovation.",
-    wizBody1: "You are one of the first people to see the Digital Confidence Centre, a free Canadian programme of plain-language lessons on staying safe online. There is nothing to set up and nothing to sign in to. We have a short welcome video, about 40 seconds, and then you can look around at your own pace.",
-    wizNext: "Watch the video (40 seconds)",
+    wizBody1: "Stay safe and comfortable with practical, everyday technology.",
+    wizBullet1: "Nothing to set up",
+    wizBullet2: "No sign-in required",
+    wizBullet3: "Optional 40-second intro video",
+    wizNext: "Next",
     wizSkip: "Skip the video",
     wizClose: "Close",
     wizBrandName: "Digital Confidence Centre",
@@ -124,6 +129,7 @@
     wizSoundOff: "Turn the sound off",
     wizStatusMuted: "The sound is off. Captions are on.",
     wizStatusUnmuted: "The sound is on.",
+    wizUnmuteNudge: "Tap here for sound",
     wizContinue: "Continue",
     wizBack: "Back",
     wizRewatch: "Watch the welcome video again",
@@ -292,7 +298,15 @@
       ".dcc-welcome-body section{opacity:1;transition:opacity var(--motion-duration-2,200ms) var(--motion-ease,ease);}",
       ".dcc-welcome-body section.is-fading{opacity:0;}",
       ".dcc-welcome-art{display:block;width:220px;height:auto;margin:var(--space-3) auto 0;color:var(--color-primary);}",
+      ".dcc-welcome-checklist{list-style:none;margin:0 0 var(--space-2);padding:0;display:grid;gap:var(--space-2);}",
+      ".dcc-welcome-checklist li{position:relative;padding-left:var(--space-6);}",
+      ".dcc-welcome-checklist li::before{content:\"\\2713\";position:absolute;left:0;color:var(--color-success-deep,var(--color-primary));font-weight:var(--font-weight-bold);}",
       ".dcc-welcome-video{width:100%;aspect-ratio:16/9;border-radius:var(--radius-md);background:#000;display:block;margin:0 0 var(--space-4);}",
+      ".dcc-welcome-nudge{display:flex;align-items:center;gap:var(--space-2);margin:0 0 var(--space-2);",
+      "font-size:var(--font-size-sm);font-weight:var(--font-weight-semibold);color:var(--color-accent-deep);}",
+      ".dcc-welcome-nudge-arrow{display:inline-block;animation:dcc-nudge-bounce 1.4s ease-in-out infinite;}",
+      "@keyframes dcc-nudge-bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(4px);}}",
+      "@media (prefers-reduced-motion:reduce){.dcc-welcome-nudge-arrow{animation:none;}}",
       ".dcc-welcome-audiobtn{width:100%;margin:0 0 var(--space-2);}",
       ".dcc-welcome-audiostatus{margin:0 0 var(--space-4);font-size:var(--font-size-sm);color:var(--color-text-light);}",
       ".dcc-welcome-field{margin:0 0 var(--space-4);}",
@@ -428,12 +442,20 @@
     var s1 = elt("section", null);
     s1.setAttribute("data-step", "1");
     s1.appendChild(elt("p", null, T.wizBody1));
-    // Reuses index.html hero illustration's head/shoulder geometry verbatim
-    // (same coordinate space, same stroke weight) for visual consistency with
-    // the rest of the site, with a wider smile and a waving arm swapped in for
-    // this welcoming context (no tablet/mug/plant needed here).
+    var s1list = elt("ul", "dcc-welcome-checklist");
+    [T.wizBullet1, T.wizBullet2, T.wizBullet3].forEach(function (item) {
+      s1list.appendChild(elt("li", null, item));
+    });
+    s1.appendChild(s1list);
+    // Mirrors assets/illustrations/dcc-figures.svg#fig-greeting -- keep in
+    // sync. Inline here per the JS-injected-surface exception in the DCC
+    // Monoline Figure System guideline (sprite may not resolve before this
+    // DOM is built). 2026-07-28: rebuilt against the locked rig -- the
+    // previous version had a bridge line between the eyes (read as
+    // glasses), a mouth arc colliding with the chin, and the waving arm's
+    // endpoint sitting inside the hand circle instead of meeting its edge.
     var artWrap = document.createElement("div");
-    artWrap.innerHTML = "<svg class=\"dcc-welcome-art\" viewBox=\"0 0 240 220\" role=\"presentation\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M92 56 c-3 -22 13 -38 34 -38 c21 0 37 16 34 37 c-2 16 -13 29 -29 32 c-17 3 -35 -11 -39 -31 z\"/><circle cx=\"114\" cy=\"56\" r=\"7.5\"/><circle cx=\"140\" cy=\"56\" r=\"7.5\"/><path d=\"M128.5 56 h5\"/><path d=\"M106 76 q20 14 40 0\"/><path d=\"M76 168 c2 -34 20 -50 50 -50 c30 0 46 16 50 50\"/><path d=\"M176 144 c18 -6 32 -22 34 -40\"/><circle cx=\"212\" cy=\"98\" r=\"8\"/><path d=\"M226 86 l7 -5 M228 100 l8 3\"/></g></svg>";
+    artWrap.innerHTML = "<svg class=\"dcc-welcome-art\" viewBox=\"0 0 240 220\" role=\"presentation\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><ellipse cx=\"126\" cy=\"66\" rx=\"23\" ry=\"26\"/><circle cx=\"114\" cy=\"60\" r=\"6.5\"/><circle cx=\"138\" cy=\"60\" r=\"6.5\"/><path d=\"M112 74 Q126 80 140 74\"/><path d=\"M78 172 C78 140 100 118 126 118 C152 118 174 140 174 172\"/><path d=\"M160 124 C176 119 188 106 194 94\"/><circle cx=\"200\" cy=\"88\" r=\"8\"/><path d=\"M212 76 l8 -6 M214 92 l9 4\"/></g></svg>";
     s1.appendChild(artWrap.firstChild);
     body.appendChild(s1);
 
@@ -461,6 +483,13 @@
     vtrack.setAttribute("default", "");
     video.appendChild(vtrack);
     s2.appendChild(video);
+    var nudgeWrap = elt("div", "dcc-welcome-nudge");
+    var nudgeArrow = elt("span", "dcc-welcome-nudge-arrow", "↓");
+    nudgeArrow.setAttribute("aria-hidden", "true");
+    var nudgeText = elt("span", null, T.wizUnmuteNudge);
+    nudgeWrap.appendChild(nudgeArrow);
+    nudgeWrap.appendChild(nudgeText);
+    s2.appendChild(nudgeWrap);
     var audioBtn = elt("button", "btn btn-secondary dcc-welcome-audiobtn");
     audioBtn.type = "button";
     var audioIcon = elt("span", null, "");
@@ -479,6 +508,7 @@
       audioLabelText.textContent = video.muted ? T.wizSoundOn : T.wizSoundOff;
       audioBtn.setAttribute("aria-pressed", video.muted ? "false" : "true");
       audioStatus.textContent = video.muted ? T.wizStatusMuted : T.wizStatusUnmuted;
+      nudgeWrap.hidden = !video.muted;
     }
     video.addEventListener("volumechange", syncAudioUI);
     audioBtn.addEventListener("click", function () {

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <!-- DCC Monoline Figure System -- sprite of record.
+       Spec: _feedback/dcc-illustration-system-guideline-2026-07-28.md
+       Canvas: viewBox 0 0 240 220, live area 200x180, centre axis x=126.
+       Rig: head top y=40, chin y=92, eye centres x=114/138 y=60 r=6.5,
+       mouth floor y<=80 width<=28, shoulder crown y=118, baseline y=172.
+       Fixed for all poses: fill=none, stroke=currentColor, stroke-linecap/
+       linejoin=round. Stroke width set by the consuming .illus-* class via
+       the --illus-stroke custom property (crosses the <use> shadow boundary,
+       ordinary CSS selectors do not). -->
+  <style>
+    g.fig { fill: none; stroke: currentColor;
+            stroke-width: var(--illus-stroke, 3);
+            stroke-linecap: round; stroke-linejoin: round; }
+    g.fig-accent { stroke: var(--color-accent); }
+  </style>
+
+  <!-- fig-greeting: one arm raised, open palm, wave. No props.
+       Covers: beta wizard step 1, welcome states, first-visit banners.
+       2026-07-28: rebuilt against the locked rig -- previous freehand
+       version had a bridge line between the eyes (read as glasses), a
+       mouth arc that collided with the chin (clearance rule violation),
+       and the waving arm's endpoint sat inside the hand circle instead of
+       meeting its edge (the "crossover" Aaron flagged). All three fixed
+       here: eyes are two plain circles with no connecting stroke, the
+       mouth floor is y=74-80 (12 units clear of the chin at y=92), and the
+       arm terminates just outside the hand circle's edge. -->
+  <symbol id="fig-greeting" viewBox="0 0 240 220">
+    <g class="fig">
+      <ellipse cx="126" cy="66" rx="23" ry="26"/>
+      <circle cx="114" cy="60" r="6.5"/>
+      <circle cx="138" cy="60" r="6.5"/>
+      <path d="M112 74 Q126 80 140 74"/>
+      <path d="M78 172 C78 140 100 118 126 118 C152 118 174 140 174 172"/>
+      <path d="M160 124 C176 119 188 106 194 94"/>
+      <circle cx="200" cy="88" r="8"/>
+      <path d="M212 76 l8 -6 M214 92 l9 4"/>
+    </g>
+  </symbol>
+
+  <!-- Remaining 7 core poses (fig-using-device, fig-guarding, fig-securing,
+       fig-connecting, fig-considering, fig-celebrating, fig-resting) build
+       against this same head/torso rig when their surfaces are scoped --
+       see hal-stack/sprint-system/dcc-work-inventory-2026-07-28.md,
+       S-DCC-ILLUSTRATION-CASCADE-001. Head, torso and prop geometry are
+       shared across all poses; only the arm and prop change. -->
+</svg>
