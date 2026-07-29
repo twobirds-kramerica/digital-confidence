@@ -39,8 +39,7 @@
   var T = IS_FR ? {
     label: "Accueil des testeurs beta",
     welcome: "Merci de participer comme testeur beta.",
-    welcomeBack: "Bon retour.",
-    barIntro: "Vous testez la version bêta.",
+    welcomeBack: "Bon retour dans la version bêta.",
     introBack: "Content de vous revoir. Regardez a votre rythme. Si quelque chose vous semble confus ou ne fonctionne pas, un lien Donner mon avis se trouve au bas de chaque page.",
     gotIt: "Fermer",
     intro: "Vous etes parmi les premieres personnes a voir le Centre de confiance numerique. Il n'y a rien a configurer. Regardez a votre rythme, et si quelque chose vous semble confus ou ne fonctionne pas, dites-le nous avec le lien Donner mon avis au bas de chaque page, ou la boite a la fin de chaque lecon.",
@@ -71,10 +70,6 @@
     wizSkip: "Passer la vidéo",
     wizTitle2: "Un mot de bienvenue de Two Birds Innovation",
     wizBody2: "Le son est désactivé au départ. Activez-le quand vous voulez. Les mots apparaissent sur la vidéo dans les deux cas.",
-    wizSoundOn: "Activer le son",
-    wizSoundOff: "Désactiver le son",
-    wizStatusMuted: "Le son est désactivé. Les sous-titres sont affichés.",
-    wizStatusUnmuted: "Le son est activé.",
     wizContinue: "Continuer",
     wizBack: "Retour",
     wizRewatch: "Revoir la vidéo de bienvenue bêta",
@@ -93,8 +88,7 @@
   } : {
     label: "Beta tester welcome",
     welcome: "Thank you for joining as a beta tester.",
-    welcomeBack: "Welcome back.",
-    barIntro: "You are testing the beta.",
+    welcomeBack: "Welcome back to the beta.",
     introBack: "Good to see you again. Look around at your own pace. If anything feels confusing or does not work, there is a Give feedback link at the bottom of every page.",
     gotIt: "Dismiss",
     intro: "You are one of the first people to see the Digital Confidence Centre. There is nothing to set up. Look around at your own pace, and if anything feels confusing or does not work, please tell us using the Give feedback link at the bottom of every page, or the box at the end of each lesson.",
@@ -127,11 +121,6 @@
     wizBrandName: "Digital Confidence Centre",
     wizTitle2: "A short welcome from Two Birds Innovation",
     wizBody2: "The sound starts off. Turn it on whenever you like. The words appear on the video either way.",
-    wizSoundOn: "Turn the sound on",
-    wizSoundOff: "Turn the sound off",
-    wizStatusMuted: "The sound is off. Captions are on.",
-    wizStatusUnmuted: "The sound is on.",
-    wizUnmuteNudge: "Tap here for sound",
     wizContinue: "Continue",
     wizBack: "Back",
     wizRewatch: "Watch the beta welcome video again",
@@ -318,13 +307,6 @@
       ".dcc-welcome-checklist li{position:relative;padding-left:var(--space-6);}",
       ".dcc-welcome-checklist li::before{content:\"\\2713\";position:absolute;left:0;color:var(--color-success-deep,var(--color-primary));font-weight:var(--font-weight-bold);}",
       ".dcc-welcome-video{width:100%;aspect-ratio:16/9;border-radius:var(--radius-md);background:#000;display:block;margin:0 0 var(--space-4);}",
-      ".dcc-welcome-nudge{display:flex;align-items:center;gap:var(--space-2);margin:0 0 var(--space-2);",
-      "font-size:var(--font-size-sm);font-weight:var(--font-weight-semibold);color:var(--color-accent-deep);}",
-      ".dcc-welcome-nudge-arrow{display:inline-block;animation:dcc-nudge-bounce 1.4s ease-in-out infinite;}",
-      "@keyframes dcc-nudge-bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(4px);}}",
-      "@media (prefers-reduced-motion:reduce){.dcc-welcome-nudge-arrow{animation:none;}}",
-      ".dcc-welcome-audiobtn{width:100%;margin:0 0 var(--space-2);}",
-      ".dcc-welcome-audiostatus{margin:0 0 var(--space-4);font-size:var(--font-size-sm);color:var(--color-text-light);}",
       ".dcc-welcome-field{margin:0 0 var(--space-4);}",
       ".dcc-welcome-field label{display:block;font-weight:var(--font-weight-semibold);margin:0 0 var(--space-2);}",
       ".dcc-welcome-field input{width:100%;min-height:var(--tap-target);padding:0 var(--space-3);",
@@ -499,39 +481,12 @@
     vtrack.setAttribute("default", "");
     video.appendChild(vtrack);
     s2.appendChild(video);
-    var nudgeWrap = elt("div", "dcc-welcome-nudge");
-    var nudgeArrow = elt("span", "dcc-welcome-nudge-arrow", "↓");
-    nudgeArrow.setAttribute("aria-hidden", "true");
-    var nudgeText = elt("span", null, T.wizUnmuteNudge);
-    nudgeWrap.appendChild(nudgeArrow);
-    nudgeWrap.appendChild(nudgeText);
-    s2.appendChild(nudgeWrap);
-    var audioBtn = elt("button", "btn btn-secondary dcc-welcome-audiobtn");
-    audioBtn.type = "button";
-    var audioIcon = elt("span", null, "");
-    audioIcon.setAttribute("aria-hidden", "true");
-    var audioLabelText = document.createTextNode("");
-    audioBtn.appendChild(audioIcon);
-    audioBtn.appendChild(audioLabelText);
-    s2.appendChild(audioBtn);
-    var audioStatus = elt("p", "dcc-welcome-audiostatus", "");
-    audioStatus.setAttribute("aria-live", "polite");
-    s2.appendChild(audioStatus);
     body.appendChild(s2);
-
-    function syncAudioUI() {
-      audioIcon.textContent = video.muted ? "🔇 " : "🔊 ";
-      audioLabelText.textContent = video.muted ? T.wizSoundOn : T.wizSoundOff;
-      audioBtn.setAttribute("aria-pressed", video.muted ? "false" : "true");
-      audioStatus.textContent = video.muted ? T.wizStatusMuted : T.wizStatusUnmuted;
-      nudgeWrap.hidden = !video.muted;
-    }
-    video.addEventListener("volumechange", syncAudioUI);
-    audioBtn.addEventListener("click", function () {
-      video.muted = !video.muted;
-      if (!video.muted) { video.volume = 1; }
-    });
-    syncAudioUI();
+    // No custom mute/nudge UI here (removed 2026-07-28, was built earlier
+    // this session for the muted-autoplay problem that no longer exists --
+    // see the no-autoplay comment above). Native <video controls> already
+    // has a volume/mute control; sound is on by default since nothing sets
+    // .muted, so there is nothing left for a custom control to solve.
 
     // Step 3: optional self-identification
     var s3 = elt("section", null);
@@ -604,10 +559,13 @@
         sections[n].hidden = false;
         sections[n].tabIndex = -1;
         sections[n].focus();
-        if (n === 2 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-          video.muted = true;
-          video.play().catch(function () { /* policy rejection: poster + controls remain, silent */ });
-        }
+        // No autoplay (Aaron, 2026-07-28): starting muted-and-playing meant
+        // most people never noticed the sound was off and had to restart to
+        // hear it. The video now sits on its poster frame -- native
+        // <video controls> already renders a large centre play button when
+        // paused -- and pressing play starts it WITH sound, since nothing
+        // sets .muted anymore. Removes the need for the unmute nudge below;
+        // it simply never shows now (muted stays false).
       }
       if (currentStep === 2 && n !== 2) { video.pause(); }
       doSwitch();
@@ -728,7 +686,6 @@
 
     var text = elt("span", "dcc-beta-bar-text");
     text.appendChild(elt("strong", null, T.welcomeBack + " "));
-    text.appendChild(document.createTextNode(T.barIntro + " "));
     var rewatch = elt("button", "dcc-beta-bar-link", T.wizRewatch);
     rewatch.type = "button";
     rewatch.addEventListener("click", function () {
