@@ -26,10 +26,14 @@
   var WELCOME_SEEN_KEY = "dccv2-beta-welcome-seen";
   var WORKER = "https://dcc-data.twobirdsinnovation.workers.dev";
 
-  // Margaret approved by Aaron 2026-07-28 -- the two cosmetic defects (a
-  // typo, a stray scale bar) were on the reference sheet only, cropped out
-  // of the actual served asset (assets/characters/margaret-welcome.png).
-  var SHOW_MARGARET = true;
+  // Margaret pulled from the wizard header 2026-07-28 (same day she was
+  // enabled): Aaron's call after seeing her live -- a single-angle stock-
+  // photo-style headshot competing for attention against the monoline
+  // stick-figure system in the same small space, no stated purpose to the
+  // audience. She stays out until there's a researched, purposeful use
+  // case (lifestyle photos, closeup "she's telling you something" crops,
+  // not a bubble avatar) -- see hal-stack/sprint-system/dcc-ux-batch-2026-07-28-late.md.
+  var SHOW_MARGARET = false;
 
   // Language follows the page, not the browser. DCC's language split is whole
   // separate pages (index.html = EN, fr/index.html = FR) with a manual link, so
@@ -39,7 +43,7 @@
   var T = IS_FR ? {
     label: "Accueil des testeurs beta",
     welcome: "Merci de participer comme testeur beta.",
-    welcomeBack: "Bon retour dans la version bêta.",
+    welcomeBack: "Bon retour sur le site bêta.",
     introBack: "Content de vous revoir. Regardez a votre rythme. Si quelque chose vous semble confus ou ne fonctionne pas, un lien Donner mon avis se trouve au bas de chaque page.",
     gotIt: "Fermer",
     intro: "Vous etes parmi les premieres personnes a voir le Centre de confiance numerique. Il n'y a rien a configurer. Regardez a votre rythme, et si quelque chose vous semble confus ou ne fonctionne pas, dites-le nous avec le lien Donner mon avis au bas de chaque page, ou la boite a la fin de chaque lecon.",
@@ -72,7 +76,7 @@
     wizBody2: "Le son est désactivé au départ. Activez-le quand vous voulez. Les mots apparaissent sur la vidéo dans les deux cas.",
     wizContinue: "Continuer",
     wizBack: "Retour",
-    wizRewatch: "Revoir la vidéo de bienvenue bêta",
+    wizRewatch: "Voir la vidéo de bienvenue",
     wizLabel: "Accueil des testeurs beta",
     wizIdTitle: "À qui parlons-nous?",
     wizIdBody: "Quand vous nous envoyez un commentaire, il arrive sans nom. Si vous nous donnez votre prénom, nous saurons qu'il vient de vous, et nous pourrons revenir vers vous si nous avons une question. C'est entièrement à vous de décider et vous pouvez laisser le champ vide.",
@@ -88,7 +92,7 @@
   } : {
     label: "Beta tester welcome",
     welcome: "Thank you for joining as a beta tester.",
-    welcomeBack: "Welcome back to the beta.",
+    welcomeBack: "Welcome back to the beta site.",
     introBack: "Good to see you again. Look around at your own pace. If anything feels confusing or does not work, there is a Give feedback link at the bottom of every page.",
     gotIt: "Dismiss",
     intro: "You are one of the first people to see the Digital Confidence Centre. There is nothing to set up. Look around at your own pace, and if anything feels confusing or does not work, please tell us using the Give feedback link at the bottom of every page, or the box at the end of each lesson.",
@@ -123,7 +127,7 @@
     wizBody2: "The sound starts off. Turn it on whenever you like. The words appear on the video either way.",
     wizContinue: "Continue",
     wizBack: "Back",
-    wizRewatch: "Watch the beta welcome video again",
+    wizRewatch: "Watch welcome video",
     wizLabel: "Beta tester welcome",
     wizIdTitle: "Who are we talking to?",
     wizIdBody: "When you send us feedback, it arrives with no name on it. If you tell us your first name, we will know it came from you, and we can come back to you if we have a question about something you told us. This is entirely up to you and you can leave it blank.",
