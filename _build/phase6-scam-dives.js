@@ -24,7 +24,7 @@ function makePage(data) {
     "headline": ${JSON.stringify(data.title)},
     "description": ${JSON.stringify(data.metaDesc)},
     "url": "https://twobirds-kramerica.github.io/digital-confidence/resources/scam-deep-dives/${data.slug}.html",
-    "author": {"@type": "Person", "name": "Aaron Kramer", "worksFor": {"@type": "Organization", "name": "Two Birds Innovation"}},
+    "author": {"@type": "Organization", "name": "Two Birds Innovation"},
     "publisher": {"@type": "Organization", "name": "Digital Confidence Centre"},
     "datePublished": "2026-03-27", "dateModified": "2026-03-27", "inLanguage": "en-CA"
   }
@@ -51,7 +51,7 @@ ${faqSchema}
       </nav>
 
       <h1>${data.title}</h1>
-      <p class="module-byline">Reviewed by Aaron Kramer, Two Birds Innovation &middot; Last reviewed: March 2026</p>
+      <p class="module-byline">Reviewed by Two Birds Innovation &middot; Last reviewed: March 2026</p>
 
 ${data.body}
 

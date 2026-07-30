@@ -11,7 +11,7 @@ TIPS = [
         "desc": "Criminals can now clone someone's voice using AI after just a few seconds of audio. Learn how to protect yourself from this growing scam targeting Canadian families.",
         "headline": "AI Voice Clone Scams: When the Voice on the Phone Isn't Who You Think",
         "headline_fr": "Arnaques par clonage vocal IA : Quand la voix au téléphone n'est pas qui vous croyez",
-        "byline": "By Aaron Kramer, Two Birds Innovation · March 2026",
+        "byline": "By Two Birds Innovation · March 2026",
         "module": "module-2.html",
         "module_name": "Module 2: The Security Shield",
         "faq": [
@@ -51,7 +51,7 @@ TIPS = [
         "desc": "Your Ontario health card number can be used to steal your identity. Learn how this scam works and how to protect yourself.",
         "headline": "The Medicare Card Scam: Why Criminals Want Your Health Card Number",
         "headline_fr": "L'arnaque de la carte Medicare : Pourquoi les criminels veulent votre numéro de carte santé",
-        "byline": "By Aaron Kramer, Two Birds Innovation · March 2026",
+        "byline": "By Two Birds Innovation · March 2026",
         "module": "module-2.html",
         "module_name": "Module 2: The Security Shield",
         "faq": [
@@ -90,7 +90,7 @@ TIPS = [
         "desc": "Facebook Marketplace is convenient but has real risks. Learn how to buy and sell safely — essential tips for Canadian seniors.",
         "headline": "Staying Safe on Facebook Marketplace: A Guide for Seniors",
         "headline_fr": "Rester en sécurité sur Facebook Marketplace : Un guide pour les aînés",
-        "byline": "By Aaron Kramer, Two Birds Innovation · March 2026",
+        "byline": "By Two Birds Innovation · March 2026",
         "module": "module-6.html",
         "module_name": "Module 6: Banking & Transactions",
         "faq": [
@@ -129,7 +129,7 @@ TIPS = [
         "desc": "Smart speakers are always listening for their wake word. Learn what they actually record, how to delete recordings, and how to use them safely.",
         "headline": "Smart Speakers and Privacy: What Alexa and Google Home Are Actually Listening To",
         "headline_fr": "Haut-parleurs intelligents et confidentialité : Ce qu'Alexa et Google Home écoutent vraiment",
-        "byline": "By Aaron Kramer, Two Birds Innovation · March 2026",
+        "byline": "By Two Birds Innovation · March 2026",
         "module": "module-9.html",
         "module_name": "Module 9: Understanding AI",
         "faq": [
@@ -168,7 +168,7 @@ TIPS = [
         "desc": "Online grocery shopping is convenient and safe when you follow a few simple steps. A practical guide for Canadian seniors using Instacart, Walmart, and Grocery Gateway.",
         "headline": "How to Order Groceries Online Safely: A Guide for Seniors",
         "headline_fr": "Comment commander des épiceries en ligne en toute sécurité : Un guide pour les aînés",
-        "byline": "By Aaron Kramer, Two Birds Innovation · March 2026",
+        "byline": "By Two Birds Innovation · March 2026",
         "module": "module-10.html",
         "module_name": "Module 10: Grocery & Food Delivery",
         "faq": [
@@ -207,7 +207,7 @@ TIPS = [
         "desc": "Already comfortable with video calls? These tips will help you look and sound better, manage large family calls, and troubleshoot common problems.",
         "headline": "Getting the Most from Video Calls: Advanced Tips for Seniors",
         "headline_fr": "Tirer le meilleur parti des appels vidéo : Conseils avancés pour les aînés",
-        "byline": "By Aaron Kramer, Two Birds Innovation · March 2026",
+        "byline": "By Two Birds Innovation · March 2026",
         "module": "module-8.html",
         "module_name": "Module 8: Stay Connected",
         "faq": [
@@ -247,7 +247,7 @@ TIPS = [
         "desc": "Simple tips to extend your iPad's battery life and keep it healthy for longer — practical advice for Canadian seniors.",
         "headline": "How to Make Your iPad Battery Last Longer",
         "headline_fr": "Comment prolonger la durée de vie de la batterie de votre iPad",
-        "byline": "By Aaron Kramer, Two Birds Innovation · March 2026",
+        "byline": "By Two Birds Innovation · March 2026",
         "module": "module-4.html",
         "module_name": "Module 4: App Store Safety",
         "faq": [
@@ -285,7 +285,7 @@ TIPS = [
         "desc": "Misinformation spreads quickly on social media. Learn how to check if a news story is real before sharing it — practical tips for Canadian seniors.",
         "headline": "How to Spot Fake News Online: A Guide for Seniors",
         "headline_fr": "Comment repérer les fausses nouvelles en ligne : Un guide pour les aînés",
-        "byline": "By Aaron Kramer, Two Birds Innovation · March 2026",
+        "byline": "By Two Birds Innovation · March 2026",
         "module": "module-9.html",
         "module_name": "Module 9: Understanding AI",
         "faq": [
@@ -324,7 +324,7 @@ TIPS = [
         "desc": "Thousands of photos on your iPhone? Learn how to organise your digital memories with albums, iCloud, and simple backup tips for Canadian seniors.",
         "headline": "How to Organise Your Digital Photos: A Simple Guide for Seniors",
         "headline_fr": "Comment organiser vos photos numériques : Un guide simple pour les aînés",
-        "byline": "By Aaron Kramer, Two Birds Innovation · March 2026",
+        "byline": "By Two Birds Innovation · March 2026",
         "module": "module-7.html",
         "module_name": "Module 7: Photos & Memories",
         "faq": [
@@ -362,7 +362,7 @@ TIPS = [
         "desc": "Simple daily email habits that protect you from phishing, malware, and scams — practical tips for Canadian seniors to stay safe in their inbox.",
         "headline": "10 Safe Email Habits Every Senior Should Have",
         "headline_fr": "10 habitudes de courriel sécuritaires que chaque aîné devrait avoir",
-        "byline": "By Aaron Kramer, Two Birds Innovation · March 2026",
+        "byline": "By Two Birds Innovation · March 2026",
         "module": "module-5.html",
         "module_name": "Module 5: Email & Messages",
         "faq": [
@@ -393,7 +393,7 @@ TIPS = [
         "desc": "AI assistants like Siri, ChatGPT, and Gemini can be helpful — when you know how to use them well. A practical guide for Canadian seniors.",
         "headline": "How to Talk to AI: A Plain-Language Guide for Seniors",
         "headline_fr": "Comment parler à l'IA : Un guide en langage simple pour les aînés",
-        "byline": "By Aaron Kramer, Two Birds Innovation · March 2026",
+        "byline": "By Two Birds Innovation · March 2026",
         "module": "module-9.html",
         "module_name": "Module 9: Understanding AI",
         "faq": [
@@ -432,7 +432,7 @@ TIPS = [
         "desc": "Apple's built-in password manager remembers all your passwords securely — no extra app needed. A simple setup guide for Canadian seniors.",
         "headline": "How to Set Up Apple's Password Manager: A Step-by-Step Guide",
         "headline_fr": "Comment configurer le gestionnaire de mots de passe d'Apple : Un guide étape par étape",
-        "byline": "By Aaron Kramer, Two Birds Innovation · March 2026",
+        "byline": "By Two Birds Innovation · March 2026",
         "module": "module-3.html",
         "module_name": "Module 3: Passwords & Biometrics",
         "faq": [
@@ -490,7 +490,7 @@ TEMPLATE = '''<!DOCTYPE html>
     "headline": "{headline}",
     "description": "{desc}",
     "url": "https://twobirds-kramerica.github.io/digital-confidence/tips/{file}",
-    "author": {{"@type": "Person", "name": "Aaron Kramer", "jobTitle": "Senior Product Manager", "worksFor": {{"@type": "Organization", "name": "Two Birds Innovation"}}}},
+    "author": {{"@type": "Organization", "name": "Two Birds Innovation"}},
     "publisher": {{"@type": "Organization", "name": "Digital Confidence Centre"}},
     "datePublished": "March 2026", "dateModified": "March 2026", "inLanguage": "en-CA"
   }}

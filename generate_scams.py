@@ -368,7 +368,7 @@ TEMPLATE = '''<!DOCTYPE html>
     "headline": "{headline}",
     "description": "{desc}",
     "url": "https://twobirds-kramerica.github.io/digital-confidence/resources/scam-deep-dives/{file}",
-    "author": {{"@type": "Person", "name": "Aaron Kramer", "worksFor": {{"@type": "Organization", "name": "Two Birds Innovation"}}}},
+    "author": {{"@type": "Organization", "name": "Two Birds Innovation"}},
     "publisher": {{"@type": "Organization", "name": "Digital Confidence Centre"}},
     "datePublished": "2026-03-28", "dateModified": "2026-03-28", "inLanguage": "en-CA"
   }}
@@ -395,7 +395,7 @@ TEMPLATE = '''<!DOCTYPE html>
       </nav>
 
       <h1>{headline}</h1>
-      <p class="module-byline">Reviewed by Aaron Kramer, Two Birds Innovation &middot; Last reviewed: March 2026</p>
+      <p class="module-byline">Reviewed by Two Birds Innovation &middot; Last reviewed: March 2026</p>
 
       <div class="warning-block">
         <strong>{warning}</strong>

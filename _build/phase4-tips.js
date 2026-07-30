@@ -24,7 +24,7 @@ function makeTipPage({ slug, titleEn, titleFr, descEn, descFr, moduleLink, modul
     "headline": ${JSON.stringify(titleEn)},
     "description": ${JSON.stringify(descEn)},
     "url": "https://twobirds-kramerica.github.io/digital-confidence/tips/${slug}.html",
-    "author": {"@type": "Person", "name": "Aaron Kramer", "jobTitle": "Senior Product Manager", "worksFor": {"@type": "Organization", "name": "Two Birds Innovation"}},
+    "author": {"@type": "Organization", "name": "Two Birds Innovation"},
     "publisher": {"@type": "Organization", "name": "Digital Confidence Centre"},
     "datePublished": "${datePublished}", "dateModified": "${datePublished}", "inLanguage": "en-CA"
   }
@@ -51,7 +51,7 @@ ${faqSchema}
       </nav>
 
       <h1 data-en="${titleEn}" data-fr="${titleFr}">${titleEn}</h1>
-      <p class="module-byline" data-en="By Aaron Kramer, Two Birds Innovation · ${datePublished}" data-fr="Par Aaron Kramer, Two Birds Innovation · ${datePublished}">By Aaron Kramer, Two Birds Innovation · ${datePublished}</p>
+      <p class="module-byline" data-en="By Two Birds Innovation · ${datePublished}" data-fr="Par Two Birds Innovation · ${datePublished}">By Two Birds Innovation · ${datePublished}</p>
 
 ${bodyEn}
 
