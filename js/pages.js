@@ -6,6 +6,8 @@
 
   function norm(s) { return (s || '').toLowerCase(); }
 
+  var isFr = document.documentElement.lang === 'fr-CA';
+
   /* FAQ: filter <details class="faq-item"> by question + answer text. */
   var faqInput = document.getElementById('faq-search');
   if (faqInput) {
@@ -29,7 +31,7 @@
         }
         cat.hidden = !any;
       });
-      if (count) count.textContent = q ? shown + ' question' + (shown === 1 ? '' : 's') + ' match' : '';
+      if (count) count.textContent = q ? (isFr ? shown + ' question' + (shown === 1 ? '' : 's') + ' correspond' + (shown === 1 ? '' : 'ent') : shown + ' question' + (shown === 1 ? '' : 's') + ' match') : '';
       if (noRes) noRes.hidden = shown !== 0;
     });
   }
@@ -42,7 +44,7 @@
     var gCount = document.getElementById('gloss-count');
     var gNoRes = document.getElementById('gloss-no-results');
     var total = cards.length;
-    if (gCount) gCount.textContent = 'Showing all ' + total + ' terms';
+    if (gCount) gCount.textContent = isFr ? 'Affichage des ' + total + ' termes' : 'Showing all ' + total + ' terms';
 
     function runFilter() {
       var q = norm(glossInput.value.trim());
@@ -55,7 +57,7 @@
       sections.forEach(function (sec) {
         sec.hidden = !sec.querySelector('.gloss-card:not([hidden])');
       });
-      if (gCount) gCount.textContent = q ? 'Showing ' + shown + ' of ' + total + ' terms' : 'Showing all ' + total + ' terms';
+      if (gCount) gCount.textContent = q ? (isFr ? 'Affichage de ' + shown + ' sur ' + total + ' termes' : 'Showing ' + shown + ' of ' + total + ' terms') : (isFr ? 'Affichage des ' + total + ' termes' : 'Showing all ' + total + ' terms');
       if (gNoRes) gNoRes.hidden = shown !== 0;
     }
 

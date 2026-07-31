@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="fr-CA" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Thème + taille du texte avant le premier affichage (aucun clignotement). Local seulement, aucun pistage.
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>Glossaire technologique - Centre de confiance numérique</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/fr/glossaire.html">
+  <link rel="alternate" hreflang="en-CA" href="https://twobirds-kramerica.github.io/digital-confidence/glossary.html">
+  <link rel="alternate" hreflang="fr-CA" href="https://twobirds-kramerica.github.io/digital-confidence/fr/glossaire.html">
+  <link rel="alternate" hreflang="x-default" href="https://twobirds-kramerica.github.io/digital-confidence/glossary.html">
+  <meta name="description" content="Des définitions en langage clair pour les mots technologiques que vous entendrez le plus souvent. Aucun jargon, seulement des explications claires.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Aller au contenu principal</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M16 4 L26 8 V15 C26 22 21.5 26.5 16 28.5 C10.5 26.5 6 22 6 15 V8 Z" fill="var(--color-surface)"/><path d="M11 16 L14.5 19.5 L21.5 12" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Centre de confiance numérique</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Connexion sécurisée<span class="ca-badge" aria-label="Canadien"><svg class="ca-leaf" viewBox="2400 0 4800 4800" aria-hidden="true" focusable="false"><path fill="currentColor" d="m2490 4430-45-863a95 95 0 0 1 111-98l859 151-116-320a65 65 0 0 1 20-73l941-762-212-99a65 65 0 0 1-34-79l186-572-542 115a65 65 0 0 1-73-38l-105-247-423 454a65 65 0 0 1-111-57l204-1052-327 189a65 65 0 0 1-91-27l-332-652-332 652a65 65 0 0 1-91 27l-327-189 204 1052a65 65 0 0 1-111 57l-423-454-105 247a65 65 0 0 1-73 38l-542-115 186 572a65 65 0 0 1-34 79l-212 99 941 762a65 65 0 0 1 20 73l-116 320 859-151a95 95 0 0 1 111 98l-45 863z"/></svg><span class="ca-badge-label" aria-hidden="true">Canadien</span></span></span>
+    <a class="lang-link" href="../glossary.html" lang="en-CA" hreflang="en-CA">English</a>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Affichage
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Taille du texte">
+        <span class="group-label" aria-hidden="true">Taille du texte</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Texte plus petit">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Texte standard">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Texte plus grand">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Écouter cette page">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Écouter cette page</button>
+        <div class="rate-group" role="group" aria-label="Vitesse de lecture">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Plus lent</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normale</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Plus rapide</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Mode sombre</button>
+      <button class="theme-btn" type="button" data-dyslexic-toggle aria-pressed="false">👓 Police pour la dyslexie</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Sections des leçons">
+  <div class="container">
+    <a href="index.html">Toutes les leçons</a>
+    <a href="index.html#protect-money">Protégez votre argent</a>
+    <a href="index.html#everyday-confidence">Confiance au quotidien</a>
+    <a href="../for-families.html">Pour les familles (en anglais seulement)</a>
+    <a href="../support-directory.html">Obtenir de l’aide (en anglais seulement)</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Fil d’Ariane">
+  <div class="container">
+    <ol>
+      <li><a href="index.html">Accueil</a></li>
+      <li><span aria-current="page">Glossaire</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <h1>Glossaire technologique</h1>
+      <p class="faq-intro">Des définitions en langage clair pour les mots technologiques que vous entendrez le plus souvent. Aucun jargon — seulement des explications claires.</p>
+
+      <!-- Barre de recherche -->
+      <div class="page-search-wrap gloss-search-wrap">
+        <input type="search" id="gloss-search" class="page-search-input" placeholder="Cherchez un terme... (p. ex. Wi-Fi, mot de passe, infonuagique)" aria-label="Chercher un terme du glossaire" role="combobox" aria-expanded="false" aria-controls="gloss-suggest" aria-autocomplete="list" autocomplete="off">
+        <ul id="gloss-suggest" class="gloss-suggest" role="listbox" hidden></ul>
+        <span class="page-search-count" id="gloss-count" aria-live="polite"></span>
+      </div>
+      <div id="gloss-no-results" class="page-no-results" hidden>Aucun terme correspondant trouvé. Essayez un mot plus court.</div>
+
+      <!-- Navigation A-Z -->
+      <nav class="gloss-alpha-nav" aria-label="Aller à la lettre">
+        <a href="#gloss-A">A</a>
+        <a href="#gloss-B">B</a>
+        <a href="#gloss-C">C</a>
+        <a href="#gloss-D">D</a>
+        <a href="#gloss-E">E</a>
+        <a href="#gloss-F">F</a>
+        <a href="#gloss-G">G</a>
+        <a href="#gloss-H">H</a>
+        <a href="#gloss-I">I</a>
+        <a href="#gloss-J">J</a>
+        <a href="#gloss-K">K</a>
+        <a href="#gloss-L">L</a>
+        <a href="#gloss-M">M</a>
+        <a href="#gloss-N">N</a>
+        <a href="#gloss-P">P</a>
+        <a href="#gloss-Q">Q</a>
+        <a href="#gloss-R">R</a>
+        <a href="#gloss-S">S</a>
+        <a href="#gloss-T">T</a>
+        <a href="#gloss-U">U</a>
+        <a href="#gloss-V">V</a>
+        <a href="#gloss-W">W</a>
+        <a href="#gloss-Y">Y</a>
+        <a href="#gloss-Z">Z</a>
+      </nav>
+
+      <!-- ═══ A ═══ -->
+      <div class="gloss-section" id="gloss-A">
+        <div class="gloss-letter">A</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="appli" data-cat="basic">
+            <div class="gloss-term">Appli</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Abréviation d'« application » — un programme sur lequel vous appuyez pour l'ouvrir sur votre téléphone ou votre tablette. La météo, les services bancaires, les cartes et les jeux sont tous des applis. Voyez-les comme de petits outils, chacun conçu pour une tâche précise.</p>
+          </div>
+
+          <div class="gloss-card" data-term="app store" data-cat="services">
+            <div class="gloss-term">App Store</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">La boutique officielle d'Apple pour télécharger des applis sur votre iPhone ou iPad. Chaque appli de l'App Store a été vérifiée par Apple pour votre sécurité. Téléchargez toujours à partir d'ici — jamais d'un site Web inconnu.</p>
+          </div>
+
+          <div class="gloss-card" data-term="pièce jointe" data-cat="basic">
+            <div class="gloss-term">Pièce jointe</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Un fichier (comme une photo, un document ou un PDF) envoyé avec un courriel — un peu comme une lettre avec une photo glissée à l'intérieur. Soyez prudent avant d'ouvrir une pièce jointe venant d'une personne que vous ne connaissez pas : certaines contiennent des programmes nuisibles.</p>
+          </div>
+
+          <div class="gloss-card" data-term="ia intelligence artificielle" data-cat="basic">
+            <div class="gloss-term">IA (intelligence artificielle)</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Un logiciel conçu pour faire des choses qui demandaient autrefois une personne — répondre à des questions, reconnaître un visage sur une photo, suggérer ce que vous vous apprêtez à taper. Vous l'avez probablement déjà utilisée sans le savoir : l'assistant de votre téléphone, le filtre à pourriel de votre courriel et les suggestions d'une appli de visionnement sont tous de l'IA. C'est un outil, pas une personne — elle ne pense pas et ne ressent rien comme vous.</p>
+          </div>
+
+          <div class="gloss-card" data-term="antivirus" data-cat="security">
+            <div class="gloss-term">Antivirus</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Un logiciel qui surveille votre appareil et cherche les programmes nuisibles (virus) qui tentent de s'y glisser. Les iPhone et les iPad offrent une forte protection intégrée, si bien qu'une appli antivirus distincte n'est habituellement pas nécessaire sur les appareils Apple.</p>
+          </div>
+
+          <div class="gloss-card" data-term="algorithme" data-cat="intermediate">
+            <div class="gloss-term">Algorithme</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Une série d'instructions qu'un ordinateur suit pour prendre une décision — un peu comme une recette. Les réseaux sociaux utilisent des algorithmes pour choisir quelles publications vous montrer en premier, selon ce que vous avez aimé ou regardé auparavant.</p>
+          </div>
+
+          <div class="gloss-card" data-term="authentification" data-cat="security">
+            <div class="gloss-term">Authentification</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Le fait de prouver qui vous êtes à un site Web ou à une appli — habituellement en entrant un mot de passe, en utilisant votre empreinte digitale ou en entrant un code reçu sur votre téléphone. C'est l'équivalent numérique de montrer une pièce d'identité à la banque.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ B ═══ -->
+      <div class="gloss-section" id="gloss-B">
+        <div class="gloss-letter">B</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="sauvegarde" data-cat="basic">
+            <div class="gloss-term">Sauvegarde</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Une copie de vos photos, de vos contacts et d'autres renseignements importants, enregistrée en lieu sûr — comme dans iCloud ou sur un disque externe. Si votre appareil est perdu ou brisé, une sauvegarde vous permet de tout récupérer.</p>
+          </div>
+
+          <div class="gloss-card" data-term="bande passante" data-cat="intermediate">
+            <div class="gloss-term">Bande passante</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">La quantité d'information que votre connexion Internet peut transporter à la fois — comme la largeur d'un tuyau. Un tuyau plus large (une bande passante plus grande) veut dire un Internet plus rapide et des appels vidéo plus fluides. Si votre appel vidéo gèle sans arrêt, une bande passante limitée peut en être la cause.</p>
+          </div>
+
+          <div class="gloss-card" data-term="bluetooth" data-cat="basic">
+            <div class="gloss-term">Bluetooth</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Une connexion sans fil qui permet à deux appareils proches de communiquer entre eux — comme votre téléphone et des écouteurs sans fil, ou une prothèse auditive. Elle ne fonctionne que sur une courte distance (environ 10 mètres) et n'utilise pas vos données Internet.</p>
+          </div>
+
+          <div class="gloss-card" data-term="navigateur" data-cat="basic">
+            <div class="gloss-term">Navigateur</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">L'appli que vous utilisez pour visiter des sites Web — comme Safari (le navigateur intégré d'Apple) ou Google Chrome. Vous tapez une adresse Web dans le navigateur, et il va chercher la page et l'affiche pour vous.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ C ═══ -->
+      <div class="gloss-section" id="gloss-C">
+        <div class="gloss-letter">C</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="cache" data-cat="intermediate">
+            <div class="gloss-term">Cache</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Une réserve temporaire de renseignements de sites Web que votre appareil enregistre pour que les pages se chargent plus vite à votre prochaine visite — comme mettre une recette de côté pour ne pas avoir à la rechercher. Vider le cache (effacer ces données enregistrées) peut réparer une page qui a l'air brisée ou qui ne se charge pas bien.</p>
+          </div>
+
+          <div class="gloss-card" data-term="robot conversationnel" data-cat="intermediate">
+            <div class="gloss-term">Robot conversationnel</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Un programme informatique qui tient une conversation écrite avec vous. Certains robots conversationnels sont simples (ils suivent un script), d'autres utilisent l'IA et peuvent répondre à presque n'importe quelle question.</p>
+          </div>
+
+          <div class="gloss-card" data-term="stockage infonuagique" data-cat="services">
+            <div class="gloss-term">Stockage infonuagique</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Enregistrer vos fichiers (photos, documents) sur des ordinateurs à distance appartenant à Apple, Google ou Microsoft, plutôt que seulement sur votre propre appareil. Vos fichiers restent en sécurité même si votre téléphone se brise.</p>
+          </div>
+
+          <div class="gloss-card" data-term="infonuagique le nuage" data-cat="basic">
+            <div class="gloss-term">Infonuagique (le nuage)</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Un espace de stockage sur les ordinateurs d'une entreprise, accessible par Internet. Quand vos photos « se sauvegardent dans le nuage », elles sont enregistrées sur les ordinateurs sécurisés d'Apple — pas seulement sur votre appareil. Elles restent donc en sécurité même si votre iPad se brise.</p>
+          </div>
+
+          <div class="gloss-card" data-term="paiement sans contact" data-cat="services">
+            <div class="gloss-term">Paiement sans contact</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Payer en approchant votre carte ou votre téléphone d'un terminal de paiement, sans l'insérer ni le glisser. Sûr et pratique pour les achats de moins de 250 $ au Canada.</p>
+          </div>
+
+          <div class="gloss-card" data-term="témoin cookie" data-cat="intermediate">
+            <div class="gloss-term">Témoin (cookie)</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Un tout petit fichier texte qu'un site Web enregistre sur votre appareil pour se souvenir de vous — comme un tampon sur la main dans une foire. Il peut se rappeler votre langue préférée ou vous garder connecté. Les témoins sont généralement sans danger, mais les sites Web doivent maintenant vous demander la permission de les utiliser.</p>
+          </div>
+
+          <div class="gloss-card" data-term="bourrage d'identifiants" data-cat="security">
+            <div class="gloss-term">Bourrage d'identifiants</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Quand des criminels prennent des combinaisons de nom d'utilisateur et de mot de passe volées lors d'une fuite de données et les essaient sur beaucoup d'autres sites Web. C'est pourquoi utiliser le même mot de passe sur plusieurs sites est dangereux.</p>
+          </div>
+
+          <div class="gloss-card" data-term="curseur" data-cat="basic">
+            <div class="gloss-term">Curseur</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">La petite flèche ou la ligne clignotante sur un écran d'ordinateur qui montre où vous pointez ou tapez. Sur un écran tactile, votre doigt agit comme le curseur. Sur un ordinateur portable ou de bureau, le curseur est contrôlé par votre souris ou votre pavé tactile.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ D ═══ -->
+      <div class="gloss-section" id="gloss-D">
+        <div class="gloss-letter">D</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="hypertrucage deepfake" data-cat="security">
+            <div class="gloss-term">Hypertrucage (deepfake)</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Une vidéo ou un enregistrement audio fabriqué avec l'IA qui fait croire que quelqu'un a dit ou fait une chose qu'il n'a jamais vraiment dite ou faite. Les fraudeurs utilisent les hypertrucages pour se faire passer pour des politiciens, des célébrités, ou même des membres de votre famille.</p>
+          </div>
+
+          <div class="gloss-card" data-term="bureau" data-cat="basic">
+            <div class="gloss-term">Bureau</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Soit l'écran principal d'un ordinateur (l'arrière-plan où se trouvent les icônes), soit un type d'ordinateur qui reste sur une table plutôt que d'être portable. Sur un téléphone ou une tablette, l'équivalent est votre écran d'accueil.</p>
+          </div>
+
+          <div class="gloss-card" data-term="téléchargement" data-cat="basic">
+            <div class="gloss-term">Téléchargement</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Copier quelque chose d'Internet vers votre appareil — comme enregistrer une photo, installer une appli ou recevoir une pièce jointe par courriel. Le contraire est le téléversement (envoyer quelque chose de votre appareil vers Internet).</p>
+          </div>
+
+          <div class="gloss-card" data-term="fuite de données" data-cat="security">
+            <div class="gloss-term">Fuite de données</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Quand les renseignements privés d'une entreprise — y compris les noms, les mots de passe ou les numéros de carte de crédit de ses clients — sont volés par des pirates informatiques. Si vous apprenez qu'une entreprise que vous utilisez a subi une fuite de données, changez votre mot de passe pour ce service tout de suite.</p>
+          </div>
+
+          <div class="gloss-card" data-term="dns" data-cat="intermediate">
+            <div class="gloss-term">DNS</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Signifie « Domain Name System » — l'annuaire téléphonique d'Internet. Quand vous tapez « google.com », le DNS traduit ce nom facile à retenir en un numéro que votre appareil utilise pour trouver le bon ordinateur. Vous n'avez presque jamais à y penser; ça fonctionne automatiquement en arrière-plan.</p>
+          </div>
+
+          <div class="gloss-card" data-term="nom de domaine" data-cat="intermediate">
+            <div class="gloss-term">Nom de domaine</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">L'adresse lisible d'un site Web — la partie après le « www. ». Par exemple, dans « www.rbc.com », le nom de domaine est « rbc.com ». Vérifiez toujours attentivement le nom de domaine avant d'entrer un mot de passe ou des renseignements bancaires, pour vous assurer qu'il s'agit du vrai site Web.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ E ═══ -->
+      <div class="gloss-section" id="gloss-E">
+        <div class="gloss-letter">E</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="virement interac" data-cat="services">
+            <div class="gloss-term">Virement Interac</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Une façon d'envoyer de l'argent directement de votre compte bancaire à l'adresse courriel ou au numéro de téléphone d'une autre personne. C'est sécuritaire et instantané. Vous ne pouvez pas annuler un virement Interac une fois qu'il a été accepté par la personne qui le reçoit.</p>
+          </div>
+
+          <div class="gloss-card" data-term="courriel" data-cat="basic">
+            <div class="gloss-term">Courriel</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Un message électronique envoyé sur Internet d'une personne à une autre. Comme une lettre, mais instantanée et gratuite. Il vous faut une adresse courriel (comme votrenom@gmail.com) pour envoyer et recevoir des courriels.</p>
+          </div>
+
+          <div class="gloss-card" data-term="émoji" data-cat="basic">
+            <div class="gloss-term">Émoji</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">De petits dessins utilisés dans les messages et les publications pour exprimer des émotions ou des idées — comme un sourire 😊, un cœur ❤️, ou un pouce levé 👍. Ils sont apparus comme une façon d'ajouter du ton à un texte, puisqu'un message écrit ne peut pas montrer une expression du visage.</p>
+          </div>
+
+          <div class="gloss-card" data-term="chiffrement" data-cat="security">
+            <div class="gloss-term">Chiffrement</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Une façon de brouiller l'information pour que seul le destinataire prévu puisse la lire — comme envoyer une lettre dans une boîte verrouillée. Quand un site Web montre un cadenas dans la barre d'adresse, votre connexion est chiffrée, et personne ne peut lire ce que vous tapez.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ F ═══ -->
+      <div class="gloss-section" id="gloss-F">
+        <div class="gloss-letter">F</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="facebook" data-cat="services">
+            <div class="gloss-term">Facebook</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Un site Web et une appli de réseau social populaires où vous pouvez partager des nouvelles, des photos et des messages avec vos amis et votre famille. Vous créez un profil et vous vous connectez avec des gens que vous connaissez. Portez attention à vos paramètres de confidentialité — vous décidez qui peut voir ce que vous publiez.</p>
+          </div>
+
+          <div class="gloss-card" data-term="facetime" data-cat="services">
+            <div class="gloss-term">FaceTime</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">L'appli d'appels vidéo gratuite d'Apple, intégrée à chaque iPhone et iPad. Vous pouvez voir et entendre la personne que vous appelez en temps réel — comme un téléphone vidéo. Elle fonctionne par Wi-Fi ou données mobiles, et les appels entre appareils Apple sont entièrement gratuits.</p>
+          </div>
+
+          <div class="gloss-card" data-term="pare-feu" data-cat="security">
+            <div class="gloss-term">Pare-feu</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Une barrière de protection — intégrée à votre appareil ou à votre routeur — qui bloque le trafic Internet suspect à l'entrée. Voyez-le comme un agent de sécurité à la porte principale de votre appareil. La plupart des appareils viennent déjà avec un pare-feu activé.</p>
+          </div>
+
+          <div class="gloss-card" data-term="dossier" data-cat="basic">
+            <div class="gloss-term">Dossier</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Un contenant utilisé pour organiser des fichiers ou des applis — tout comme un dossier physique dans un classeur. Sur votre iPad, vous pouvez regrouper des applis dans des dossiers en appuyant sur l'icône d'une appli jusqu'à ce qu'elle se mette à trembler, puis en la faisant glisser sur une autre.</p>
+          </div>
+
+          <div class="gloss-card" data-term="micrologiciel" data-cat="intermediate">
+            <div class="gloss-term">Micrologiciel</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Le logiciel intégré à l'intérieur d'appareils comme les routeurs, les téléviseurs intelligents et les thermostats. Les mises à jour de micrologiciel corrigent des failles de sécurité et ajoutent de nouvelles fonctions. Votre routeur pourrait avoir besoin d'une mise à jour de micrologiciel de temps en temps.</p>
+          </div>
+
+          <div class="gloss-card" data-term="police de caractères" data-cat="basic">
+            <div class="gloss-term">Police (de caractères)</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Le style et la forme des lettres imprimées ou affichées à l'écran. Tout comme une note manuscrite a l'air différente d'une lettre tapée, les différentes polices ont chacune leur personnalité — certaines sont formelles, d'autres décontractées. Vous pouvez souvent changer la taille de la police sur les sites Web et dans les paramètres de votre appareil.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ G ═══ -->
+      <div class="gloss-section" id="gloss-G">
+        <div class="gloss-letter">G</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="ia générative" data-cat="intermediate">
+            <div class="gloss-term">IA générative</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Une IA capable de créer du nouveau contenu — textes, images, musique et vidéos — plutôt que de simplement répondre à des questions. ChatGPT, DALL-E et Gemini en sont des exemples.</p>
+          </div>
+
+          <div class="gloss-card" data-term="gmail" data-cat="services">
+            <div class="gloss-term">Gmail</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Le service de courriel gratuit de Google. Si votre adresse courriel se termine par « @gmail.com », vous utilisez Gmail. Vous pouvez y accéder par l'appli Gmail ou en visitant gmail.com dans votre navigateur. Il comprend 15 gigaoctets de stockage gratuit.</p>
+          </div>
+
+          <div class="gloss-card" data-term="google" data-cat="services">
+            <div class="gloss-term">Google</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Le moteur de recherche le plus populaire au monde — un outil qui vous aide à trouver de l'information sur Internet. Tapez simplement ce que vous cherchez, et Google vous montre une liste de sites Web correspondants. Google offre aussi beaucoup d'autres services, dont Gmail, Google Maps et YouTube.</p>
+          </div>
+
+          <div class="gloss-card" data-term="google maps" data-cat="services">
+            <div class="gloss-term">Google Maps</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Une appli gratuite qui vous montre des cartes, vous donne des directions étape par étape et vous aide à trouver des commerces, des restaurants et des services près de vous. Vous pouvez chercher une adresse, et l'appli vous y guidera à pied, en voiture ou en transport en commun — avec des instructions vocales.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ H ═══ -->
+      <div class="gloss-section" id="gloss-H">
+        <div class="gloss-letter">H</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="hallucination ia" data-cat="intermediate">
+            <div class="gloss-term">Hallucination (IA)</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Quand un assistant d'IA vous donne, avec assurance, une information complètement inventée ou fausse. L'IA peut « halluciner » des faits, des noms et même des adresses Web. Vérifiez toujours une information importante auprès d'une autre source.</p>
+          </div>
+
+          <div class="gloss-card" data-term="écran d'accueil" data-cat="basic">
+            <div class="gloss-term">Écran d'accueil</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">L'écran principal que vous voyez en allumant votre téléphone ou votre tablette — celui où toutes les icônes de vos applis sont affichées. Peu importe à quel point vous vous sentez perdu dans une appli, appuyer sur le bouton d'accueil (ou glisser vers le haut depuis le bas de l'écran) vous y ramène toujours en toute sécurité.</p>
+          </div>
+
+          <div class="gloss-card" data-term="https" data-cat="security">
+            <div class="gloss-term">HTTPS</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Le « s » de HTTPS veut dire « sécurisé ». Quand une adresse Web commence par « https:// » (et montre un cadenas), votre connexion est chiffrée — ce qui veut dire que personne ne peut espionner ce que vous tapez. Cherchez toujours https avant d'entrer un mot de passe ou un numéro de carte de crédit.</p>
+          </div>
+
+          <div class="gloss-card" data-term="html" data-cat="intermediate">
+            <div class="gloss-term">HTML</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Le langage de programmation utilisé pour construire la structure des pages Web — il indique à votre navigateur quels titres, paragraphes, images et liens afficher. Vous n'avez pas besoin de connaître le HTML pour utiliser Internet; il fonctionne silencieusement en arrière-plan de chaque site Web que vous visitez.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ I ═══ -->
+      <div class="gloss-section" id="gloss-I">
+        <div class="gloss-letter">I</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="icône" data-cat="basic">
+            <div class="gloss-term">Icône</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Un petit dessin qui représente une appli, un fichier ou une action — comme le symbole d'une caméra pour les photos, ou une enveloppe pour le courriel. Appuyer sur une icône l'ouvre ou l'active. Les icônes sont conçues pour vous donner un indice visuel de ce qu'elles font.</p>
+          </div>
+
+          <div class="gloss-card" data-term="mode navigation privée" data-cat="intermediate">
+            <div class="gloss-term">Mode navigation privée</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Un mode de navigation privé dans votre navigateur Web qui n'enregistre pas votre historique de navigation ni vos témoins sur votre appareil. Il ne vous rend PAS anonyme en ligne — votre fournisseur d'accès Internet peut quand même voir votre activité.</p>
+          </div>
+
+          <div class="gloss-card" data-term="internet" data-cat="basic">
+            <div class="gloss-term">Internet</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Un réseau mondial qui relie des milliards d'ordinateurs et d'appareils pour qu'ils puissent échanger de l'information. Quand vous naviguez sur un site Web, envoyez un courriel ou appelez un petit-enfant en vidéo, vous utilisez Internet. Votre routeur à la maison connecte vos appareils à celui-ci.</p>
+          </div>
+
+          <div class="gloss-card" data-term="instagram" data-cat="services">
+            <div class="gloss-term">Instagram</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Une appli de réseau social axée sur le partage de photos et de courtes vidéos. Beaucoup de gens y suivent des amis, de la famille ou leurs commerces préférés. Comme pour Facebook, réfléchissez bien à vos paramètres de confidentialité et aux renseignements personnels que vous partagez publiquement.</p>
+          </div>
+
+          <div class="gloss-card" data-term="ido internet des objets" data-cat="intermediate">
+            <div class="gloss-term">IdO (Internet des objets)</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Le nom donné aux objets du quotidien branchés à Internet — téléviseurs intelligents, thermostats intelligents, robots aspirateurs, et même certains réfrigérateurs. « IdO » veut dire « Internet des objets ».</p>
+          </div>
+
+          <div class="gloss-card" data-term="adresse ip" data-cat="intermediate">
+            <div class="gloss-term">Adresse IP</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Un numéro unique attribué à votre appareil sur Internet — comme une adresse postale pour votre ordinateur. Les sites Web l'utilisent pour vous renvoyer de l'information. Votre adresse IP peut révéler votre région générale (votre ville), mais pas votre adresse exacte.</p>
+          </div>
+
+          <div class="gloss-card" data-term="vol d'identité" data-cat="security">
+            <div class="gloss-term">Vol d'identité</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Quand un criminel utilise vos renseignements personnels — comme votre nom, votre date de naissance ou votre numéro d'assurance sociale — pour se faire passer pour vous, souvent afin d'ouvrir des comptes de crédit ou de commettre une fraude. Protégez-vous en ne partageant jamais de détails personnels avec des appelants ou des sites Web inconnus.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ J ═══ -->
+      <div class="gloss-section" id="gloss-J">
+        <div class="gloss-letter">J</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="javascript" data-cat="intermediate">
+            <div class="gloss-term">JavaScript</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Un langage de programmation qui rend les sites Web interactifs — il fait fonctionner des choses comme les boîtes de recherche qui donnent des résultats instantanés, les boutons qui ouvrent des fenêtres surgissantes, et les cartes que vous pouvez glisser. Vous n'avez rien à en connaître; il s'exécute automatiquement dans votre navigateur.</p>
+          </div>
+
+          <div class="gloss-card" data-term="piratage de recharge usb" data-cat="security">
+            <div class="gloss-term">Piratage de recharge USB</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Une arnaque où un port de recharge USB public a été trafiqué pour voler les données de votre téléphone pendant qu'il charge. Utilisez votre propre chargeur et votre propre prise, ou apportez une batterie portable.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ K ═══ -->
+      <div class="gloss-section" id="gloss-K">
+        <div class="gloss-letter">K</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="clavier" data-cat="basic">
+            <div class="gloss-term">Clavier</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">L'ensemble des touches de lettres et de chiffres utilisées pour taper. Sur un téléphone ou une tablette, le clavier s'affiche à l'écran quand vous touchez une case de texte. Vous pouvez aussi brancher un vrai clavier sans fil à votre iPad par Bluetooth, si vous préférez taper sur de vraies touches.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ L ═══ -->
+      <div class="gloss-section" id="gloss-L">
+        <div class="gloss-letter">L</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="grand modèle de langage" data-cat="intermediate">
+            <div class="gloss-term">Grand modèle de langage</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Un type d'intelligence artificielle qui a appris en lisant des milliards de pages Web et de livres. Il peut répondre à des questions et tenir des conversations qui semblent étonnamment humaines. Exemples : ChatGPT, Siri.</p>
+          </div>
+
+          <div class="gloss-card" data-term="connexion ouverture de session" data-cat="basic">
+            <div class="gloss-term">Connexion (ouverture de session)</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Le fait d'entrer votre nom d'utilisateur et votre mot de passe pour accéder à un compte — comme déverrouiller une porte avec une clé. « Se connecter » et « ouvrir une session » veulent dire la même chose. Une fois terminé, déconnectez-vous pour garder votre compte en sécurité, surtout sur un appareil partagé.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ M ═══ -->
+      <div class="gloss-section" id="gloss-M">
+        <div class="gloss-letter">M</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="données mobiles" data-cat="basic">
+            <div class="gloss-term">Données mobiles</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">L'accès à Internet fourni par votre fournisseur de téléphonie par leur réseau — le même signal qui transporte les appels téléphoniques. Vous payez une quantité fixe chaque mois (votre « forfait de données »). Utilisez le Wi-Fi quand c'est possible pour préserver votre allocation mensuelle.</p>
+          </div>
+
+          <div class="gloss-card" data-term="apprentissage automatique" data-cat="intermediate">
+            <div class="gloss-term">Apprentissage automatique</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Une façon d'enseigner aux ordinateurs en leur montrant des millions d'exemples plutôt qu'en écrivant des règles précises. Un peu comme apprendre à un enfant à reconnaître un chien en lui montrant beaucoup de chiens.</p>
+          </div>
+
+          <div class="gloss-card" data-term="logiciel malveillant" data-cat="security">
+            <div class="gloss-term">Logiciel malveillant</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Tout programme conçu pour nuire à votre appareil ou voler vos renseignements. Cela comprend les virus, les logiciels espions et les rançongiciels. Évitez de télécharger des applis de sources inconnues et ne cliquez jamais sur des liens suspects pour rester protégé.</p>
+          </div>
+
+          <div class="gloss-card" data-term="réseau maillé" data-cat="intermediate">
+            <div class="gloss-term">Réseau maillé</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Un système Wi-Fi qui utilise plusieurs petits appareils placés autour de votre maison, plutôt qu'un seul routeur. Cela vous donne un Wi-Fi fort et constant dans chaque pièce, sans zone morte.</p>
+          </div>
+
+          <div class="gloss-card" data-term="métadonnées" data-cat="intermediate">
+            <div class="gloss-term">Métadonnées</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">De l'information cachée jointe à un fichier qui le décrit — comme l'étiquette sur une boîte de conserve. Les métadonnées d'une photo peuvent inclure la date où elle a été prise, votre emplacement et le type d'appareil photo utilisé. Cette information peut être partagée sans que vous vous en rendiez compte quand vous envoyez des photos en ligne.</p>
+          </div>
+
+          <div class="gloss-card" data-term="messenger" data-cat="services">
+            <div class="gloss-term">Messenger</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">L'appli de messagerie distincte de Facebook, pour envoyer des messages texte privés, des photos, et faire des appels vocaux ou vidéo avec vos amis Facebook. Elle est gratuite et fonctionne par Wi-Fi ou données mobiles. Téléchargez-la depuis l'App Store si vous voulez échanger avec vos contacts Facebook.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ N ═══ -->
+      <div class="gloss-section" id="gloss-N">
+        <div class="gloss-letter">N</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="netflix" data-cat="services">
+            <div class="gloss-term">Netflix</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Un service de visionnement par abonnement où vous payez des frais mensuels pour regarder autant de films et d'émissions de télévision que vous le voulez. Vous pouvez regarder sur votre iPad, votre téléviseur ou votre ordinateur. Netflix n'a pas de publicité et vous permet de faire une pause et de reprendre en tout temps.</p>
+          </div>
+
+          <div class="gloss-card" data-term="notifications" data-cat="basic">
+            <div class="gloss-term">Notifications</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Des alertes ou des bandeaux surgissants qui apparaissent à l'écran pour vous informer de quelque chose — un nouveau message, une nouvelle, un rappel. Vous pouvez décider quelles applis peuvent vous envoyer des notifications dans les Paramètres de votre appareil, sous « Notifications ».</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ P ═══ -->
+      <div class="gloss-section" id="gloss-P">
+        <div class="gloss-letter">P</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="mot de passe" data-cat="basic">
+            <div class="gloss-term">Mot de passe</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Un mot secret, ou une combinaison de lettres, de chiffres et de symboles, utilisé pour prouver votre identité et accéder à un compte — comme une clé pour une porte. Un bon mot de passe est long, unique à chaque compte, et n'est pas un mot facile à deviner (comme le nom de votre animal ou votre date de naissance).</p>
+          </div>
+
+          <div class="gloss-card" data-term="gestionnaire de mots de passe" data-cat="security">
+            <div class="gloss-term">Gestionnaire de mots de passe</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Une appli ou un outil intégré (comme le trousseau iCloud d'Apple) qui conserve tous vos mots de passe en un seul endroit sécurisé, protégé par un mot de passe maître ou votre empreinte digitale. Vous n'avez qu'un seul mot de passe à retenir, et le gestionnaire remplit le reste pour vous automatiquement.</p>
+          </div>
+
+          <div class="gloss-card" data-term="paiement préautorisé" data-cat="services">
+            <div class="gloss-term">Paiement préautorisé</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Quand vous donnez à une entreprise la permission continue de retirer automatiquement un montant fixe de votre compte bancaire sur une base régulière — comme une facture mensuelle de services publics ou un abonnement à un service de visionnement.</p>
+          </div>
+
+          <div class="gloss-card" data-term="hameçonnage" data-cat="security">
+            <div class="gloss-term">Hameçonnage</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Une arnaque où des criminels envoient de faux courriels, textos ou appels en prétendant être une entreprise de confiance (votre banque, l'Agence du revenu du Canada, ou Apple) pour vous tromper et vous faire donner votre mot de passe ou vos renseignements personnels. En cas de doute, communiquez directement avec la vraie entreprise, à un numéro que vous trouvez vous-même.</p>
+          </div>
+
+          <div class="gloss-card" data-term="pixel" data-cat="intermediate">
+            <div class="gloss-term">Pixel</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Le plus petit point de couleur sur un écran — les images sont composées de millions de ces minuscules carrés. Plus il y a de pixels, plus l'image est nette et détaillée. La qualité d'une caméra est souvent décrite en « mégapixels » — des millions de pixels.</p>
+          </div>
+
+          <div class="gloss-card" data-term="requête invite" data-cat="intermediate">
+            <div class="gloss-term">Requête (invite)</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">La question ou l'instruction que vous tapez à un assistant d'IA. Plus vous décrivez clairement ce que vous voulez, meilleure sera la réponse que vous recevrez.</p>
+          </div>
+
+          <div class="gloss-card" data-term="module d'extension plugiciel" data-cat="intermediate">
+            <div class="gloss-term">Module d'extension (plugiciel)</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Un petit ajout qui donne une fonction supplémentaire à un navigateur ou à une appli — comme un correcteur d'orthographe ou un bloqueur de publicité que vous installez dans Safari. Installez seulement des modules d'extension provenant de sources fiables, car ceux mal conçus peuvent ralentir votre navigateur ou causer des problèmes.</p>
+          </div>
+
+          <div class="gloss-card" data-term="fenêtre surgissante pop-up" data-cat="basic">
+            <div class="gloss-term">Fenêtre surgissante (pop-up)</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Une fenêtre qui apparaît soudainement par-dessus ce que vous faites — parfois un message utile, mais souvent une publicité ou un faux avertissement conçu pour vous faire peur et vous pousser à cliquer. Si une fenêtre surgissante dit que votre appareil a un virus, ignorez-la — fermez la fenêtre et continuez.</p>
+          </div>
+
+          <div class="gloss-card" data-term="profil" data-cat="basic">
+            <div class="gloss-term">Profil</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Votre page ou compte personnel sur un service — comme votre profil Facebook avec votre photo et votre nom, ou votre compte Apple ID. Votre profil comprend habituellement les renseignements que vous avez choisi de partager, et vous contrôlez qui peut les voir grâce aux paramètres de confidentialité.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ Q ═══ -->
+      <div class="gloss-section" id="gloss-Q">
+        <div class="gloss-letter">Q</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="code qr" data-cat="basic">
+            <div class="gloss-term">Code QR</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Un motif carré de points noirs que vous pouvez balayer avec la caméra de votre téléphone pour ouvrir un site Web ou télécharger une appli. Beaucoup de restaurants et de commerces les utilisent sur leurs affiches. Pointez simplement votre caméra dessus — un lien apparaîtra, sur lequel vous appuyez pour l'ouvrir. Évitez de balayer un code QR sur un autocollant inconnu dans un lieu public.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ R ═══ -->
+      <div class="gloss-section" id="gloss-R">
+        <div class="gloss-letter">R</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="ram mémoire vive" data-cat="intermediate">
+            <div class="gloss-term">RAM (mémoire vive)</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">L'espace de travail à court terme que votre appareil utilise pour faire fonctionner les applis en ce moment. Voyez-la comme un bureau : plus le bureau est grand (plus il y a de RAM), plus vous pouvez avoir de choses ouvertes en même temps sans que tout ralentisse. La RAM est différente du stockage, qui est l'endroit où vos photos et vos fichiers sont enregistrés.</p>
+          </div>
+
+          <div class="gloss-card" data-term="rançongiciel" data-cat="security">
+            <div class="gloss-term">Rançongiciel</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Un programme nuisible qui vous bloque l'accès à vos fichiers ou à votre appareil et exige de l'argent (une « rançon ») pour vous le redonner. Il arrive habituellement par une pièce jointe suspecte. Ne payez jamais la rançon — communiquez avec un professionnel de confiance en informatique ou signalez-le au Centre antifraude du Canada au 1-888-495-8501.</p>
+          </div>
+
+          <div class="gloss-card" data-term="routeur" data-cat="intermediate">
+            <div class="gloss-term">Routeur</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">L'appareil qui connecte votre maison à Internet et partage cette connexion avec tous vos appareils. Habituellement fourni par votre fournisseur d'accès Internet. Votre mot de passe Wi-Fi est imprimé sur un autocollant sous la plupart des routeurs.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ S ═══ -->
+      <div class="gloss-section" id="gloss-S">
+        <div class="gloss-letter">S</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="capture d'écran" data-cat="basic">
+            <div class="gloss-term">Capture d'écran</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Une photo de ce qui s'affiche exactement à l'écran en ce moment — utile pour garder un numéro de confirmation, partager quelque chose de drôle, ou obtenir de l'aide. Sur la plupart des iPad, appuyez en même temps sur le bouton du haut et le bouton de volume plus. La capture s'enregistre automatiquement dans vos Photos.</p>
+          </div>
+
+          <div class="gloss-card" data-term="paramètres" data-cat="basic">
+            <div class="gloss-term">Paramètres</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Le panneau de contrôle de votre appareil — où vous ajustez tout, de la luminosité de l'écran et la taille du texte à la confidentialité et aux notifications. Cherchez l'icône en forme de roue dentée sur votre écran d'accueil. La plupart des changements prennent effet immédiatement et peuvent toujours être défaits.</p>
+          </div>
+
+          <div class="gloss-card" data-term="raccourci" data-cat="basic">
+            <div class="gloss-term">Raccourci</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Une façon plus rapide de faire quelque chose — comme appuyer deux fois sur le bouton d'accueil pour voir vos applis récentes, ou tenir le bouton d'alimentation enfoncé pour appeler les services d'urgence. Les raccourcis font gagner du temps une fois appris, mais tout ce qu'ils font peut aussi se faire de la façon habituelle, par les menus.</p>
+          </div>
+
+          <div class="gloss-card" data-term="pourriel" data-cat="security">
+            <div class="gloss-term">Pourriel</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Un courriel indésirable — habituellement de la publicité, mais parfois des tentatives de fraude ou d'hameçonnage. La plupart des services de courriel filtrent automatiquement le pourriel dans un dossier Indésirables séparé. Ne cliquez jamais sur un lien dans un pourriel, et signalez-le comme indésirable pour que votre courriel apprenne à bloquer des messages semblables à l'avenir.</p>
+          </div>
+
+          <div class="gloss-card" data-term="usurpation mystification" data-cat="security">
+            <div class="gloss-term">Usurpation (mystification)</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Quand un fraudeur déguise son numéro de téléphone ou son adresse courriel pour donner l'impression qu'il provient de quelqu'un en qui vous avez confiance — votre banque, le gouvernement, ou même un membre de la famille. Si un appel ou un message semble inhabituel, même d'un contact familier, raccrochez et rappelez à un numéro que vous savez véritable.</p>
+          </div>
+
+          <div class="gloss-card" data-term="fraude arnaque" data-cat="security">
+            <div class="gloss-term">Fraude (arnaque)</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Un stratagème malhonnête conçu pour voler votre argent ou vos renseignements personnels. Les fraudes courantes comprennent les faux appels de l'Agence du revenu du Canada exigeant un paiement immédiat, les fraudes de l'amour et les appels de faux soutien technique prétendant que votre appareil a un virus. La règle d'or : si quelqu'un vous contacte à l'improviste et demande de l'argent ou des renseignements personnels, arrêtez-vous et vérifiez par une voie officielle.</p>
+          </div>
+
+          <div class="gloss-card" data-term="serveur" data-cat="intermediate">
+            <div class="gloss-term">Serveur</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Un ordinateur puissant qui conserve de l'information et l'envoie à d'autres ordinateurs sur demande. Quand vous visitez un site Web, un serveur livre la page à votre appareil. « Le serveur est en panne » veut dire que cet ordinateur est temporairement indisponible — le site Web sera habituellement de retour sous peu.</p>
+          </div>
+
+          <div class="gloss-card" data-term="ssl" data-cat="security">
+            <div class="gloss-term">SSL</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Signifie « Secure Sockets Layer » — la technologie qui chiffre votre connexion à un site Web. Vous savez que le SSL est actif quand vous voyez « https:// » et un cadenas dans la barre d'adresse de votre navigateur. Cela veut dire que l'information que vous envoyez (comme un mot de passe) est brouillée et privée.</p>
+          </div>
+
+          <div class="gloss-card" data-term="échange de carte sim" data-cat="security">
+            <div class="gloss-term">Échange de carte SIM</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Une arnaque où un criminel convainc votre fournisseur de téléphonie de transférer votre numéro de téléphone à une carte SIM qu'il contrôle. Une fois qu'il a votre numéro, il peut recevoir vos codes d'authentification à deux facteurs et prendre le contrôle de vos comptes.</p>
+          </div>
+
+          <div class="gloss-card" data-term="siri" data-cat="services">
+            <div class="gloss-term">Siri</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">L'assistant vocal intégré d'Apple. Dites « Dis Siri » (ou appuyez sur le bouton latéral) et demandez-lui n'importe quoi — « Mets un rappel », « Appelle ma fille », « Quelle est la météo? » Il peut ouvrir des applis, répondre à des questions et envoyer des messages, tout ça mains libres. Particulièrement utile si taper vous est difficile.</p>
+          </div>
+
+          <div class="gloss-card" data-term="prise intelligente" data-cat="intermediate">
+            <div class="gloss-term">Prise intelligente</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Une prise électrique ordinaire avec le Wi-Fi intégré. Vous pouvez allumer ou éteindre une lampe ou un appareil ordinaire à l'aide d'une appli sur votre téléphone, ou établir un horaire.</p>
+          </div>
+
+          <div class="gloss-card" data-term="thermostat intelligent" data-cat="intermediate">
+            <div class="gloss-term">Thermostat intelligent</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Un thermostat que vous pouvez contrôler depuis votre téléphone, et qui peut apprendre votre horaire pour chauffer ou refroidir votre maison automatiquement. Peut faire économiser sur les factures d'énergie.</p>
+          </div>
+
+          <div class="gloss-card" data-term="hameçonnage par texto smishing" data-cat="security">
+            <div class="gloss-term">Hameçonnage par texto (smishing)</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Un faux texto conçu pour vous inciter à cliquer sur un lien ou à appeler un faux numéro. Le terme anglais « smishing » vient de la combinaison de « SMS » (texto) et « phishing » (hameçonnage).</p>
+          </div>
+
+          <div class="gloss-card" data-term="ingénierie sociale" data-cat="security">
+            <div class="gloss-term">Ingénierie sociale</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Des trucs que les fraudeurs utilisent pour manipuler les gens psychologiquement plutôt que techniquement. Créer de la peur, de l'urgence ou de l'enthousiasme pour vous faire agir sans réfléchir.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ T ═══ -->
+      <div class="gloss-section" id="gloss-T">
+        <div class="gloss-letter">T</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="celi" data-cat="services">
+            <div class="gloss-term">CELI (compte d'épargne libre d'impôt)</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Un compte bancaire spécial où votre argent fait des gains sans aucun impôt sur les revenus qu'il génère. Offert aux résidents canadiens de 18 ans et plus.</p>
+          </div>
+
+          <div class="gloss-card" data-term="écran tactile" data-cat="basic">
+            <div class="gloss-term">Écran tactile</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Un écran qui réagit au toucher de votre doigt — donc au lieu d'utiliser une souris, vous appuyez, glissez et pincez directement sur la vitre. Tous les iPhone et iPad ont des écrans tactiles. Vous ne pouvez pas le briser en le touchant — touchez aussi fermement que nécessaire.</p>
+          </div>
+
+          <div class="gloss-card" data-term="authentification à deux facteurs" data-cat="security">
+            <div class="gloss-term">Authentification à deux facteurs</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Une étape de sécurité supplémentaire lors de la connexion — après votre mot de passe, vous recevez un court code par texto ou courriel pour confirmer que c'est vraiment vous. Comme un deuxième verrou sur la porte. Même si un voleur vole votre mot de passe, il ne peut toujours pas entrer sans votre téléphone. Activez-la pour vos comptes de courriel, bancaires et de réseaux sociaux.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ U ═══ -->
+      <div class="gloss-section" id="gloss-U">
+        <div class="gloss-letter">U</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="téléversement" data-cat="basic">
+            <div class="gloss-term">Téléversement</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Envoyer un fichier de votre appareil vers Internet — comme publier une photo sur Facebook, ou envoyer un courriel avec une pièce jointe. Le contraire du téléchargement (recevoir quelque chose). Le téléversement utilise vos données Internet de la même façon que le téléchargement.</p>
+          </div>
+
+          <div class="gloss-card" data-term="url" data-cat="intermediate">
+            <div class="gloss-term">URL</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">L'adresse Web complète d'une page — par exemple, « https://www.rbc.com/banque ». URL veut dire « Uniform Resource Locator », mais vous n'avez pas besoin de le retenir. Ce qui compte : vérifiez toujours l'URL attentivement avant d'entrer des renseignements sensibles, pour vous assurer que vous êtes sur le vrai site Web et non une fausse copie.</p>
+          </div>
+
+          <div class="gloss-card" data-term="nom d'utilisateur" data-cat="basic">
+            <div class="gloss-term">Nom d'utilisateur</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Le nom que vous utilisez pour vous identifier en vous connectant à un site Web ou à une appli — souvent votre adresse courriel, mais parfois un surnom que vous avez choisi en vous inscrivant. C'est différent de votre mot de passe : votre nom d'utilisateur dit qui vous êtes, alors que votre mot de passe le prouve.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ V ═══ -->
+      <div class="gloss-section" id="gloss-V">
+        <div class="gloss-letter">V</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="hameçonnage vocal vishing" data-cat="security">
+            <div class="gloss-term">Hameçonnage vocal (vishing)</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Une arnaque par appel téléphonique où quelqu'un prétend représenter un vrai organisme (comme votre banque ou l'ARC) pour vous tromper et obtenir des renseignements personnels. Le terme anglais « vishing » vient de « voice phishing ».</p>
+          </div>
+
+          <div class="gloss-card" data-term="assistant vocal" data-cat="services">
+            <div class="gloss-term">Assistant vocal</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Un logiciel qui répond à des commandes parlées. Alexa d'Amazon, Siri d'Apple et l'Assistant Google en sont des exemples. Vous pouvez leur demander de régler une minuterie, de jouer de la musique, de répondre à des questions, et de contrôler des appareils domestiques intelligents.</p>
+          </div>
+
+          <div class="gloss-card" data-term="rpv réseau privé virtuel" data-cat="security">
+            <div class="gloss-term">RPV (réseau privé virtuel)</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Signifie « réseau privé virtuel » — un outil qui crée un tunnel sécurisé et privé pour votre trafic Internet, le cachant des autres personnes sur le même réseau Wi-Fi. Utile en utilisant un Wi-Fi public (dans un café ou une bibliothèque). Pas essentiel à la maison, mais ajoute une couche de confidentialité supplémentaire à l'extérieur.</p>
+          </div>
+
+          <div class="gloss-card" data-term="virus" data-cat="security">
+            <div class="gloss-term">Virus</div>
+            <span class="gloss-category-tag tag-security">Sécurité</span>
+            <p class="gloss-def">Un programme nuisible capable de se copier lui-même et de se propager à d'autres appareils, causant souvent des dommages ou volant de l'information — nommé d'après les virus biologiques, car ils se propagent d'une façon semblable. Les iPhone et les iPad résistent très bien aux virus quand vous ne téléchargez des applis que depuis l'App Store officiel.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ W ═══ -->
+      <div class="gloss-section" id="gloss-W">
+        <div class="gloss-letter">W</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="whatsapp" data-cat="services">
+            <div class="gloss-term">WhatsApp</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Une appli de messagerie gratuite qui vous permet d'envoyer des textos, des photos et des messages vocaux, et de faire des appels vocaux ou vidéo — le tout par Wi-Fi ou données mobiles, partout dans le monde. Très populaire pour rester en contact avec de la famille outre-mer, sans frais interurbains. Les messages sont chiffrés pour votre confidentialité.</p>
+          </div>
+
+          <div class="gloss-card" data-term="wi-fi" data-cat="basic">
+            <div class="gloss-term">Wi-Fi</div>
+            <span class="gloss-category-tag tag-basic">De base</span>
+            <p class="gloss-def">Une connexion Internet sans fil qui provient d'un routeur — la petite boîte que votre fournisseur d'accès Internet a installée chez vous. En vous connectant au Wi-Fi, votre appareil peut accéder à Internet sans utiliser les données de votre forfait téléphonique. Connectez-vous toujours à votre Wi-Fi à la maison avant de naviguer ou de regarder des vidéos.</p>
+          </div>
+
+          <div class="gloss-card" data-term="widget module" data-cat="intermediate">
+            <div class="gloss-term">Widget (module)</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Un petit panneau interactif que vous pouvez ajouter à votre écran d'accueil pour voir de l'information utile en un coup d'œil — comme la météo du jour, votre calendrier ou l'heure — sans ouvrir l'appli complète. Sur un iPad, appuyez et tenez l'écran d'accueil pour entrer en « mode tremblotant », puis touchez le bouton « + » pour ajouter des widgets.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ Y ═══ -->
+      <div class="gloss-section" id="gloss-Y">
+        <div class="gloss-letter">Y</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="youtube" data-cat="services">
+            <div class="gloss-term">YouTube</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Un site Web et une appli gratuits (appartenant à Google) où n'importe qui peut regarder ou publier des vidéos. Vous pouvez y trouver des vidéos explicatives, des documentaires, de la musique, des recettes, des cours d'exercice, et bien plus encore. La version de base est gratuite avec quelques publicités; YouTube Premium retire les publicités moyennant des frais mensuels.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ Z ═══ -->
+      <div class="gloss-section" id="gloss-Z">
+        <div class="gloss-letter">Z</div>
+        <div class="gloss-grid">
+
+          <div class="gloss-card" data-term="zoom" data-cat="services">
+            <div class="gloss-term">Zoom</div>
+            <span class="gloss-category-tag tag-services">Service</span>
+            <p class="gloss-def">Une appli d'appels vidéo gratuite largement utilisée pour les réunions, les rassemblements familiaux et les cours. Vous pouvez rejoindre une réunion Zoom en appuyant sur un lien que quelqu'un vous envoie — vous n'avez pas besoin de compte pour rejoindre la réunion d'une autre personne. Le forfait gratuit permet des appels individuels illimités et des appels de groupe jusqu'à 40 minutes.</p>
+          </div>
+
+          <div class="gloss-card" data-term="zoom pincer pour zoomer" data-cat="intermediate">
+            <div class="gloss-term">Zoom (pincer pour zoomer)</div>
+            <span class="gloss-category-tag tag-intermediate">Intermédiaire</span>
+            <p class="gloss-def">Un geste sur écran tactile pour agrandir des éléments à l'écran. Placez deux doigts ensemble sur l'écran et écartez-les pour zoomer (agrandir), ou rapprochez-les pour dézoomer (rapetisser). Fonctionne dans les photos, les cartes, les pages Web et la plupart des applis. Vous pouvez toujours dézoomer pour revenir à la vue normale.</p>
+          </div>
+
+        </div>
+      </div>
+
+    <div class="the-move">
+      <span class="move-label">Le geste à faire</span>
+      <p>Vous n'avez pas trouvé le mot que vous cherchiez? Appelez <strong>Connected Canadians</strong> gratuitement au <a href="tel:+18773045813">1-877-304-5813</a> — de vraies personnes se feront un plaisir d'expliquer n'importe quel terme technologique en langage clair (en anglais). D'autres ressources sont énumérées sur notre page <a href="../support-directory.html">Obtenir de l'aide (en anglais seulement)</a>.</p>
+    </div>
+
+    <div class="lesson-nav">
+      <a class="btn btn-secondary" href="index.html">← Retour à toutes les leçons</a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Nos engagements">
+      <li><span aria-hidden="true">✓</span> Aucun compte</li>
+      <li><span aria-hidden="true">✓</span> Aucun pistage</li>
+      <li><span aria-hidden="true">✓</span> Rien à acheter</li>
+      <li><span aria-hidden="true">✓</span> Canadien</li>
+    </ul>
+    <p><img src="../assets/logos/two-birds-logo.svg" alt="" aria-hidden="true" role="presentation" width="20" height="20" style="width:20px;height:20px;vertical-align:-4px;margin-inline-end:var(--space-2);">Le Centre de confiance numérique est offert gratuitement. C'est une initiative communautaire de Two Birds Innovation, une entreprise ontarienne, pour aider les aînés du Canada à rester en sécurité et en contact en ligne. Aucun compte, aucun pistage, aucun appel de vente.</p>
+    <p class="scope-note">Remarque : ce site offre des conseils de sécurité en langage clair, et non des conseils juridiques. Si vous soupçonnez une fraude, communiquez directement avec votre banque.</p>
+    <ul class="footer-links">
+      <li><a href="../for-families.html">Pour les familles (en anglais seulement)</a></li>
+      <li><a href="about.html">À propos de nous</a></li>
+      <li><a href="../faq.html">FAQ (en anglais seulement)</a></li>
+      <li><a href="glossaire.html">Glossaire</a></li>
+      <li><a href="privacy.html">Confidentialité</a></li>
+      <li><a href="terms.html">Conditions d'utilisation</a></li>
+      <li><a href="../disclaimer.html">Avis de non-responsabilité (en anglais seulement)</a></li>
+      <li><a href="../support-directory.html">Obtenir de l'aide (en anglais seulement)</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Choix de confidentialité">
+  <div class="container">
+    <p>Nous utilisons une petite mémoire du navigateur pour faire fonctionner le site et retenir votre taille de texte. <a href="privacy.html">En savoir plus</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accepter</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Refuser</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Préférences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Fonctionnel (toujours actif)</span>
+        <p>Fait fonctionner le site et retient votre taille de texte.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Nous aide à voir quelles leçons aident le plus. Cela ne vous identifie pas.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (facultatif)</span>
+        <p>Nous aide à joindre plus d'aînés. Nous ne vendons jamais vos renseignements personnels.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Enregistrer mes choix</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/dcc.js"></script>
+<script src="../js/readaloud-discoverable.js"></script>
+<script src="../js/pages.js"></script>
+</body>
+</html>
