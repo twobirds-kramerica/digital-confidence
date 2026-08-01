@@ -1,7 +1,19 @@
 # DCC Design System — Warm Hearth
+
+> **STALE FOR THE LIVE SITE (flagged 2026-08-01, S-DCC-SKIN-FABLE closeout).** This
+> file governs `/classic/` only. The 2026-07-11 V2-7 cutover (Aaron-approved)
+> promoted a separately-built `dcc-v2` to the site root; its design tokens
+> (`css/tokens.css` at repo root — deep trust blue `#1D4E89` + amber `#E0A63A`,
+> not this doc's teal/orange) were never written up here or anywhere else.
+> **Before touching any HTML on the live v2 site, read `css/tokens.css` directly**
+> — do not trust this doc's colour table for anything outside `/classic/`. A
+> proper v2 design-system doc is a real gap, filed separately, not written here
+> to avoid guessing at values that should be read from the live CSS, not
+> reconstructed from memory.
+
 *Last updated: 2026-06-17 · Supersedes the April 2026 legacy-blue edition*
 
-This is the production reference for building DCC modules and pages. All decisions about colour, type, layout, component structure, and voice are governed here. Read this before touching any HTML.
+This is the production reference for building **`/classic/`** modules and pages (see warning above for the live v2 root). All decisions about colour, type, layout, component structure, and voice for `/classic/` are governed here. Read this before touching any `/classic/` HTML.
 
 ---
 
