@@ -311,6 +311,11 @@
       <div class="story-block">
         <p>Bâti avec soin au Canada. Accessible. Toujours en amélioration.</p>
         <p style="margin-top:0.5rem;">Le Centre de confiance numérique est gratuit, ouvert, et le restera. Si vous le trouvez utile, partagez-le avec quelqu’un qui pourrait en profiter.</p>
+        <p style="margin-top:0.75rem;">
+          <button class="btn btn-secondary" type="button" id="shareBtn">Partager le Centre de confiance numérique</button>
+          <button class="btn btn-secondary" type="button" id="copyBtn">Copier le lien</button>
+          <span id="shareMsg" role="status" style="font-family: var(--font-heading); font-size: var(--font-size-sm); margin-left: var(--space-2);"></span>
+        </p>
       </div>
     </section>
 
@@ -378,5 +383,33 @@
 
 <script src="../js/dcc.js"></script>
 <script src="../js/readaloud-discoverable.js"></script>
+<script>
+(function () {
+  "use strict";
+  var shareMsg = document.getElementById("shareMsg");
+  var shareBtn = document.getElementById("shareBtn");
+  var copyBtn = document.getElementById("copyBtn");
+  if (shareBtn) {
+    shareBtn.addEventListener("click", function () {
+      if (navigator.share) {
+        navigator.share({ title: document.title, url: location.href }).catch(function () {});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(location.href).then(function () { shareMsg.textContent = "Lien copié — collez-le dans un message."; });
+      } else {
+        shareMsg.textContent = location.href;
+      }
+    });
+  }
+  if (copyBtn) {
+    copyBtn.addEventListener("click", function () {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(location.href).then(function () { shareMsg.textContent = "Lien copié."; });
+      } else {
+        shareMsg.textContent = location.href;
+      }
+    });
+  }
+})();
+</script>
 </body>
 </html>
