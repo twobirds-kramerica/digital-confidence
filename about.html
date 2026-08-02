@@ -138,7 +138,7 @@
     <section>
       <h2>Why Is This Free?</h2>
       <p>The site is free because the whole point of this is to help people gain their independence without any boundaries. Digital literacy and comfort is something every Canadian should have access to. No agenda, no strings, no sales — just support to help you function in the rapidly changing world and keep up with the things that matter to you.</p>
-      <p>The Digital Confidence Centre is funded through the time and care of Two Birds Innovation, a small Canadian product studio. There are no hidden fees, no premium tiers, no personal data sold. There never will be.</p>
+      <p>The Digital Confidence Centre is funded through the time and care of Two Birds Innovation, a small Canadian product studio. This is DCC Essential: free to use, with no hidden fees and no personal data sold. Two Birds Innovation may, in future, offer a separate paid tier for institutions and libraries, called DCC Advanced. That would be new and separate. It would not change anything you can already access here for free.</p>
     </section>
 
     <section>
@@ -312,6 +312,11 @@
       <div class="story-block">
         <p>Built with care in Canada. Accessible. Always improving.</p>
         <p style="margin-top:0.5rem;">Digital Confidence Centre is free, open, and will remain so. If you find it valuable, share it with someone who could benefit.</p>
+        <p style="margin-top:0.75rem;">
+          <button class="btn btn-secondary" type="button" id="shareBtn">Share Digital Confidence Centre</button>
+          <button class="btn btn-secondary" type="button" id="copyBtn">Copy the link</button>
+          <span id="shareMsg" role="status" style="font-family: var(--font-heading); font-size: var(--font-size-sm); margin-left: var(--space-2);"></span>
+        </p>
       </div>
     </section>
 
@@ -379,5 +384,33 @@
 
 <script src="js/dcc.js"></script>
 <script src="js/readaloud-discoverable.js"></script>
+<script>
+(function () {
+  "use strict";
+  var shareMsg = document.getElementById("shareMsg");
+  var shareBtn = document.getElementById("shareBtn");
+  var copyBtn = document.getElementById("copyBtn");
+  if (shareBtn) {
+    shareBtn.addEventListener("click", function () {
+      if (navigator.share) {
+        navigator.share({ title: document.title, url: location.href }).catch(function () {});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(location.href).then(function () { shareMsg.textContent = "Link copied — paste it into a message."; });
+      } else {
+        shareMsg.textContent = location.href;
+      }
+    });
+  }
+  if (copyBtn) {
+    copyBtn.addEventListener("click", function () {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(location.href).then(function () { shareMsg.textContent = "Link copied."; });
+      } else {
+        shareMsg.textContent = location.href;
+      }
+    });
+  }
+})();
+</script>
 </body>
 </html>

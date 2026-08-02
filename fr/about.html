@@ -138,7 +138,7 @@
     <section>
       <h2>Pourquoi est-ce gratuit?</h2>
       <p>Ce site est gratuit parce que le but de tout cela est d’aider les gens à retrouver leur autonomie, sans aucune limite. L’aisance et l’accès au numérique sont des choses auxquelles chaque Canadien devrait avoir droit. Aucun agenda, aucune condition, aucune vente : seulement du soutien pour vous aider à fonctionner dans un monde qui change rapidement et à suivre ce qui compte pour vous.</p>
-      <p>Le Centre de confiance numérique est financé par le temps et le soin de Two Birds Innovation, un petit studio de produits canadien. Il n’y a aucuns frais cachés, aucune formule payante, aucune vente de données personnelles. Et il n’y en aura jamais.</p>
+      <p>Le Centre de confiance numérique est financé par le temps et le soin de Two Birds Innovation, un petit studio de produits canadien. Il s’agit de DCC Essential : gratuit, sans frais cachés et sans vente de données personnelles. Two Birds Innovation pourrait, à l’avenir, offrir un forfait payant distinct pour les institutions et les bibliothèques, appelé DCC Advanced. Ce serait nouveau et distinct. Cela ne changerait rien à ce que vous pouvez déjà utiliser ici gratuitement.</p>
     </section>
 
     <section>
@@ -311,6 +311,11 @@
       <div class="story-block">
         <p>Bâti avec soin au Canada. Accessible. Toujours en amélioration.</p>
         <p style="margin-top:0.5rem;">Le Centre de confiance numérique est gratuit, ouvert, et le restera. Si vous le trouvez utile, partagez-le avec quelqu’un qui pourrait en profiter.</p>
+        <p style="margin-top:0.75rem;">
+          <button class="btn btn-secondary" type="button" id="shareBtn">Partager le Centre de confiance numérique</button>
+          <button class="btn btn-secondary" type="button" id="copyBtn">Copier le lien</button>
+          <span id="shareMsg" role="status" style="font-family: var(--font-heading); font-size: var(--font-size-sm); margin-left: var(--space-2);"></span>
+        </p>
       </div>
     </section>
 
@@ -378,5 +383,33 @@
 
 <script src="../js/dcc.js"></script>
 <script src="../js/readaloud-discoverable.js"></script>
+<script>
+(function () {
+  "use strict";
+  var shareMsg = document.getElementById("shareMsg");
+  var shareBtn = document.getElementById("shareBtn");
+  var copyBtn = document.getElementById("copyBtn");
+  if (shareBtn) {
+    shareBtn.addEventListener("click", function () {
+      if (navigator.share) {
+        navigator.share({ title: document.title, url: location.href }).catch(function () {});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(location.href).then(function () { shareMsg.textContent = "Lien copié — collez-le dans un message."; });
+      } else {
+        shareMsg.textContent = location.href;
+      }
+    });
+  }
+  if (copyBtn) {
+    copyBtn.addEventListener("click", function () {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(location.href).then(function () { shareMsg.textContent = "Lien copié."; });
+      } else {
+        shareMsg.textContent = location.href;
+      }
+    });
+  }
+})();
+</script>
 </body>
 </html>

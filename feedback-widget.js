@@ -71,7 +71,6 @@
     ".ffw-voice-panel{margin-top:8px;padding:10px 12px;border:1px solid #cdd7d3;border-radius:8px;background:#f4f7f6}",
     ".ffw-voice-explain{margin:0 0 10px;color:#334;font-size:13px}",
     ".ffw-voice-live{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:13px;color:#334;font-weight:600}",
-    ".ffw-voice-interim{color:#667;font-style:italic;font-weight:400}",
     ".ffw-point-count{margin-left:10px;font-size:13px;color:#445}",
     ".ffw-pinlist{list-style:none;margin:8px 0 0;padding:0}",
     ".ffw-pinlist li{display:flex;gap:10px;align-items:flex-start;border:1px solid #dde5e2;border-radius:8px;padding:8px 10px;margin-bottom:8px}",
@@ -111,7 +110,6 @@
     fab: null,
     overlay: null,
     composeText: null,
-    voiceInterim: null,
     bar: null,
     pinLayer: null
   };
@@ -290,14 +288,36 @@
     r.lang = SPEECH_LANG;
     r.continuous = true;
     r.interimResults = true;
+    // Not-yet-final words are written straight into the compose box (interimLen
+    // tracks how many trailing chars are the current live guess) so nothing is
+    // lost if recognition stops before Chrome marks a phrase final.
+    var interimLen = 0;
+    function stripInterim() {
+      var ta = el.composeText;
+      if (!ta || !interimLen) { return; }
+      ta.value = ta.value.slice(0, ta.value.length - interimLen);
+      interimLen = 0;
+    }
     r.onresult = function (e) {
       var interim = "";
       for (var i = e.resultIndex; i < e.results.length; i++) {
         var res = e.results[i];
-        if (res.isFinal) { appendToCompose(res[0].transcript); }
-        else { interim += res[0].transcript; }
+        if (res.isFinal) {
+          stripInterim();
+          appendToCompose(res[0].transcript);
+        } else {
+          interim += res[0].transcript;
+        }
       }
-      if (el.voiceInterim) { el.voiceInterim.textContent = trim(interim); }
+      stripInterim();
+      interim = trim(interim);
+      if (interim && el.composeText) {
+        var ta = el.composeText;
+        var sep = (ta.value && !/\s$/.test(ta.value)) ? " " : "";
+        var addition = sep + interim;
+        ta.value += addition;
+        interimLen = addition.length;
+      }
     };
     r.onerror = function (e) {
       if (e && (e.error === "not-allowed" || e.error === "service-not-allowed")) {
@@ -334,7 +354,6 @@
       try { state.recognition.stop(); } catch (e) { /* ignore */ }
       state.recognition = null;
     }
-    el.voiceInterim = null;
   }
 
   // ---- Compose overlay (text-first) ---------------------------------------
@@ -438,11 +457,8 @@
         // Now, and only now, request the microphone.
         vp.innerHTML = "";
         live.appendChild(elt("span", "ffw-rec-dot"));
-        var lbl = elt("span", null, "Listening. Speak now, then choose Stop. ");
-        var interim = elt("span", "ffw-voice-interim");
-        lbl.appendChild(interim);
+        var lbl = elt("span", null, "Listening. Speak now, then choose Stop. Your words appear above as you talk.");
         live.appendChild(lbl);
-        el.voiceInterim = interim;
         var stopBtn = elt("button", "ffw-btn ffw-btn-ghost", "Stop");
         stopBtn.type = "button";
         stopBtn.addEventListener("click", function () {
@@ -455,7 +471,7 @@
         vp.appendChild(live);
         vp.appendChild(stopBtn);
         toggle.textContent = "🎤 Microphone is on";
-        startVoice(interim);
+        startVoice(lbl);
       });
       vp.appendChild(startBtn);
       wrap.appendChild(vp);
@@ -546,7 +562,6 @@
     if (el.overlay && el.overlay.parentNode) { el.overlay.parentNode.removeChild(el.overlay); }
     el.overlay = null;
     el.composeText = null;
-    el.voiceInterim = null;
   }
 
   // ---- Discard (confirm before losing non-empty feedback) ------------------
