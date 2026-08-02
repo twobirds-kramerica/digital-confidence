@@ -1,0 +1,15 @@
+name = "field-feedback"
+main = "worker.js"
+compatibility_date = "2026-07-01"
+
+# KV binding for stored feedback bundles. Namespace already exists in the
+# Cloudflare account (id below); do NOT run `kv namespace create` again --
+# that would create a second, empty namespace and orphan this binding from
+# the real data.
+[[kv_namespaces]]
+binding = "FEEDBACK"
+id = "7e8603e81dce443e9b02dfe06cbfc35c"
+
+# FEEDBACK_READ_KEY is NOT set here -- it is a Worker secret. Set/rotate with:
+#   npx wrangler secret put FEEDBACK_READ_KEY
+# (run from this directory). See README.md for where the current value lives.
