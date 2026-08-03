@@ -15,3 +15,11 @@ database_id = "e420ae74-df15-4891-ad8b-09bc2c4a3d14"
 [[kv_namespaces]]
 binding = "RATELIMIT"
 id = "adc681b4160e4f7c8fda4f17564b66d1"
+
+# Daily volume anomaly check (S-DCC-CONFIDENCE-AUDIT-001, 2026-08-02).
+# 00:20 UTC scores the UTC day that just closed, never a partial day. The 20
+# minute offset is slack so a late-arriving write is not missed at the boundary.
+# Free plan allows 5 cron triggers per ACCOUNT; this is the second in use
+# (hal-sentinel holds the other), so there is headroom.
+[triggers]
+crons = ["20 0 * * *"]

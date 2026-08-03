@@ -38,3 +38,9 @@ CREATE TABLE IF NOT EXISTS confidence_beta (
 
 CREATE INDEX IF NOT EXISTS idx_conf_beta_module ON confidence_beta(module);
 CREATE INDEX IF NOT EXISTS idx_conf_beta_client ON confidence_beta(client_id);
+
+-- NOTE (2026-08-02): the integrity layer added by migration-002-integrity.sql
+-- is NOT repeated here, because this file is applied to an existing database
+-- and a second ALTER TABLE ... ADD COLUMN flags would fail. To build a fresh
+-- copy of this database, run this file and then migration-002-integrity.sql, in
+-- that order. The live database has had both applied.
