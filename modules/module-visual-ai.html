@@ -114,7 +114,8 @@
 
     <p>Find something green nearby: a houseplant on the windowsill, a flower in a pot, a weed you have been meaning to identify, or a leaf from a walk. Any plant will work, and there is no wrong plant to photograph. This is just practice, and it is genuinely fun.</p>
 
-    <div class="walkthrough">
+    <div data-dcc-device-group>
+    <div class="walkthrough" data-dcc-device="iphone ipad">
       <h4>On iPhone or iPad, using Visual Look Up</h4>
       <div class="wt-step">
         <span class="step-num" aria-hidden="true">1</span>
@@ -138,7 +139,7 @@
       </div>
     </div>
 
-    <div class="walkthrough">
+    <div class="walkthrough" data-dcc-device="android-phone android-tablet">
       <h4>On Android, using Google Lens</h4>
       <div class="wt-step">
         <span class="step-num" aria-hidden="true">1</span>
@@ -160,6 +161,7 @@
         <span class="step-num" aria-hidden="true">5</span>
         <span class="step-text"><p>Read what it found. The plant's name and information appear at the bottom of your screen.</p></span>
       </div>
+    </div>
     </div>
 
     <div class="helper-note">
@@ -204,9 +206,9 @@
 
     <p>A screenshot captures exactly what is on your screen at that moment: the message, the pop-up, the warning, the website. It is saved to your Photos or Gallery app like any other picture.</p>
 
-    <ul>
-      <li><strong>On iPhone or iPad:</strong> press the <strong>Side button</strong> (right edge) and the <strong>Volume Up button</strong> (left edge) at the same time. The screen flashes briefly, and the screenshot is saved to Photos.</li>
-      <li><strong>On Android:</strong> press the <strong>Power button</strong> and the <strong>Volume Down button</strong> at the same time. The screen flashes, and the screenshot is saved to Photos or Gallery.</li>
+    <ul data-dcc-device-group>
+      <li data-dcc-device="iphone ipad"><strong>On iPhone or iPad:</strong> press the <strong>Side button</strong> (right edge) and the <strong>Volume Up button</strong> (left edge) at the same time. The screen flashes briefly, and the screenshot is saved to Photos.</li>
+      <li data-dcc-device="android-phone android-tablet"><strong>On Android:</strong> press the <strong>Power button</strong> and the <strong>Volume Down button</strong> at the same time. The screen flashes, and the screenshot is saved to Photos or Gallery.</li>
     </ul>
 
     <h3>What to do with your screenshot</h3>
@@ -412,6 +414,7 @@
 
 <script src="../js/dcc.js"></script>
 <script src="../js/readaloud-discoverable.js"></script>
+<script src="../js/device-preference.js"></script>
 <script src="../js/module.js"></script>
 <!-- Beta cohort (S-DCC-BETA-CONFIDENCE-001 / S-DCC-BETA-FEEDBACK-SURFACE-001, 2026-07-27).
      beta.js supplies the DCCBeta identity API; confidence-quiz.js renders for the beta

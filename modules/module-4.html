@@ -111,10 +111,10 @@
 
     <p>The official store is the only safe place to download apps: the <strong>App Store</strong> on an iPad or iPhone (run by Apple), the <strong>Google Play Store</strong> on Android (run by Google), and the <strong>Microsoft Store</strong> on Windows. Every app in these stores has been reviewed for safety. Here is how to find the real one:</p>
 
-    <ul>
-      <li><strong>On an iPad or iPhone:</strong> look on your Home screen for a <strong>blue icon with a white letter "A" made of lines</strong> (like sticks arranged in an A shape). Tap it once to open the App Store.</li>
-      <li><strong>On Android:</strong> look for a <strong>colourful triangle icon</strong> (it looks like a sideways play button in blue, green, red, and yellow) on your Home screen or app drawer. It may be labelled simply "Play Store".</li>
-      <li><strong>On Windows:</strong> click the <strong>blue shopping bag icon</strong> in your taskbar at the bottom of the screen, or search "Microsoft Store" in the Start menu.</li>
+    <ul data-dcc-device-group>
+      <li data-dcc-device="iphone ipad"><strong>On an iPad or iPhone:</strong> look on your Home screen for a <strong>blue icon with a white letter "A" made of lines</strong> (like sticks arranged in an A shape). Tap it once to open the App Store.</li>
+      <li data-dcc-device="android-phone android-tablet"><strong>On Android:</strong> look for a <strong>colourful triangle icon</strong> (it looks like a sideways play button in blue, green, red, and yellow) on your Home screen or app drawer. It may be labelled simply "Play Store".</li>
+      <li data-dcc-device="windows"><strong>On Windows:</strong> click the <strong>blue shopping bag icon</strong> in your taskbar at the bottom of the screen, or search "Microsoft Store" in the Start menu.</li>
     </ul>
 
     <div class="warning-block">
@@ -443,6 +443,7 @@
 
 <script src="../js/dcc.js"></script>
 <script src="../js/readaloud-discoverable.js"></script>
+<script src="../js/device-preference.js"></script>
 <script src="../js/module.js"></script>
 <!-- Beta cohort (S-DCC-BETA-CONFIDENCE-001 / S-DCC-BETA-FEEDBACK-SURFACE-001, 2026-07-27).
      beta.js supplies the DCCBeta identity API; confidence-quiz.js renders for the beta
