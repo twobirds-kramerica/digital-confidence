@@ -61,9 +61,9 @@
   var T = IS_FR ? {
     badge: "Bêta",
     beforeTitle: "Avant de commencer",
-    beforeQ: "Quel est votre niveau d'aisance avec ce sujet en ce moment?",
+    beforeQ: "Quel est votre niveau d'aisance avec {topic} en ce moment?",
     afterTitle: "Maintenant que vous avez termine",
-    afterQ: "Quel est votre niveau d'aisance avec ce sujet maintenant?",
+    afterQ: "Quel est votre niveau d'aisance avec {topic} maintenant?",
     why: "Une seule question, et il n'y a pas de bonne reponse. Votre reponse nous est envoyee sans votre nom, liee seulement a un code aleatoire pour cet appareil, afin de voir si les lecons aident vraiment. Vous pouvez passer.",
     lo: "Pas du tout a l'aise",
     hi: "Tres a l'aise",
@@ -81,9 +81,9 @@
   } : {
     badge: "Beta",
     beforeTitle: "Before you start",
-    beforeQ: "How confident do you feel about this topic right now?",
+    beforeQ: "How confident do you feel about {topic} right now?",
     afterTitle: "Now that you have finished",
-    afterQ: "How confident do you feel about this topic now?",
+    afterQ: "How confident do you feel about {topic} now?",
     why: "One question, and there is no right answer. Your answer is sent to us without your name on it, tied only to a random code for this device, so we can see whether the lessons actually help. You can skip it.",
     lo: "Not at all confident",
     hi: "Very confident",
@@ -170,6 +170,10 @@
       "border-radius:var(--radius-sm);padding:var(--space-1) var(--space-3);margin-bottom:var(--space-3);}",
       ".dcc-conf h2{margin:0 0 var(--space-2);color:var(--color-primary);font-size:var(--font-size-h3);}",
       ".dcc-conf .dcc-conf-q{margin:0 0 var(--space-2);font-weight:var(--font-weight-semibold);}",
+      /* Aaron, 2026-08-02: "topic" was too vague on its own -- name the
+         actual lesson topic inline and make that word/phrase visually
+         unmistakable (not just present in prose). */
+      ".dcc-conf-topic{font-weight:var(--font-weight-bold);font-size:1.15em;color:var(--color-primary);}",
       ".dcc-conf .dcc-conf-why{margin:0 0 var(--space-5);color:var(--color-text-light);",
       "font-size:var(--font-size-sm);max-width:60ch;}",
       ".dcc-conf-scale{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--space-2);margin:0 0 var(--space-5);padding:0;border:0;}",
@@ -203,18 +207,50 @@
     return n;
   }
 
+  /* Short per-module topic phrase, e.g. "Scam protection" (p.lesson-category,
+     present on all 39 module pages). h1 titles are deliberately excluded --
+     often evocative/non-literal ("The Escape Hatch") and name nothing, which
+     is the same failure this whole feature exists to avoid (see the 2026-07-29
+     comment below). Falls back to the h1 only if lesson-category is missing. */
+  function topicText(container) {
+    var cat = container.querySelector("p.lesson-category");
+    if (cat && cat.textContent.trim()) {
+      return cat.textContent.replace(/^[^A-Za-z0-9]+/, "").trim().toLowerCase();
+    }
+    var h1 = container.querySelector("h1");
+    return h1 ? h1.textContent.trim() : (IS_FR ? "ce sujet" : "this topic");
+  }
+
+  /* Builds T.beforeQ/T.afterQ ("...{topic}...") as mixed text/element nodes so
+     the inserted topic phrase can carry its own visible emphasis (Aaron,
+     2026-08-02: the word/phrase being asked about must be unmistakable, not
+     just present in prose). */
+  function questionNodes(tpl, topic) {
+    var parts = tpl.split("{topic}");
+    var frag = document.createDocumentFragment();
+    frag.appendChild(document.createTextNode(parts[0]));
+    frag.appendChild(elt("strong", "dcc-conf-topic", topic));
+    frag.appendChild(document.createTextNode(parts[1] || ""));
+    return frag;
+  }
+
   /* ---- Card ------------------------------------------------------------- */
-  function buildCard(phase, onDone) {
+  function buildCard(phase, topic, onDone) {
+    var qTpl = phase === "before" ? T.beforeQ : T.afterQ;
     var box = elt("section", "dcc-conf");
     box.setAttribute("aria-label", phase === "before" ? T.beforeTitle : T.afterTitle);
 
     box.appendChild(elt("span", "dcc-conf-badge", T.badge));
     box.appendChild(elt("h2", null, phase === "before" ? T.beforeTitle : T.afterTitle));
-    box.appendChild(elt("p", "dcc-conf-q", phase === "before" ? T.beforeQ : T.afterQ));
+    var qP = elt("p", "dcc-conf-q");
+    qP.appendChild(questionNodes(qTpl, topic));
+    box.appendChild(qP);
     box.appendChild(elt("p", "dcc-conf-why", T.why));
 
     var fs = elt("fieldset", "dcc-conf-scale");
-    fs.appendChild(elt("legend", null, phase === "before" ? T.beforeQ : T.afterQ));
+    var legend = elt("legend");
+    legend.appendChild(questionNodes(qTpl, topic));
+    fs.appendChild(legend);
     var name = "dcc-conf-" + phase;
     for (var i = 1; i <= 5; i++) {
       var wrap = elt("div", "dcc-conf-opt");
@@ -293,10 +329,12 @@
        having seen only a title (often an evocative/non-literal name like
        "The Escape Hatch") with zero context for what it means. p.lead
        exists on all 39 module pages -- verified before relying on it. */
+    var topic = topicText(container);
+
     if (!st.beforeDone) {
       var anchorTop = container.querySelector("p.lead") || container.querySelector("p.reassurance") || container.querySelector("h1");
       if (anchorTop) {
-        var beforeCard = buildCard("before", function (value, box) {
+        var beforeCard = buildCard("before", topic, function (value, box) {
           var s2 = load(id);
           s2.beforeDone = true;
           if (value === null) { s2.beforeSkipped = true; }
@@ -327,7 +365,7 @@
       return;
     }
 
-    var afterCard = buildCard("after", function (value, box) {
+    var afterCard = buildCard("after", topic, function (value, box) {
       var s3 = load(id);
       s3.afterDone = true;
       if (value === null) { s3.afterSkipped = true; save(id, s3); box.remove(); return; }
