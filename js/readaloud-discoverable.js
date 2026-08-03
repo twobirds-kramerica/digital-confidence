@@ -59,7 +59,15 @@
     var readBtn = group.querySelector("[data-read-aloud]");
     if (!readBtn) { return; }
 
-    var main = document.querySelector("#main .container") || document.querySelector("#main");
+    // Direct-child combinator, not a descendant selector: on hero pages
+    // (index.html, fr/index.html) the first .container in document order is
+    // nested inside <section class="hero">, not a direct child of #main --
+    // a plain "#main .container" match put this button INSIDE the hero's
+    // flex row (squeezed next to the safety badge/heading, S-DCC-READALOUD-
+    // DISCRETE-UX-001 follow-up, flagged by Aaron 2026-07-31). Module/about/
+    // for-families pages have .container as #main's direct child, so this
+    // still matches there exactly as before.
+    var main = document.querySelector("#main > .container") || document.querySelector("#main");
     if (!main) { return; }
 
     injectStyles();

@@ -251,9 +251,14 @@
          fallback below (that one is the entire onboarding surface for
          no-dialog-support browsers and genuinely needs the room; this is a
          courtesy reminder for someone who already saw the wizard). */
-      ".dcc-beta-bar{display:flex;align-items:center;gap:var(--space-3);flex-wrap:wrap;",
-      "background:var(--color-accent-light);border-bottom:1px solid var(--color-border);",
-      "padding:var(--space-2) var(--space-4);margin:0 0 var(--space-5);font-size:var(--font-size-sm);}",
+      /* Full-width band + inner .container, same pattern as .site-header and
+         .primary-nav -- was missing its .container wrapper (S-DCC-BETA-
+         BANNER-RESEARCH-001 follow-up, flagged by Aaron 2026-07-31: text sat
+         flush against the left viewport edge while every other page element
+         aligns to the shared content column). */
+      ".dcc-beta-bar{background:var(--color-accent-light);border-bottom:1px solid var(--color-border);",
+      "padding:var(--space-2) 0;margin:0 0 var(--space-5);font-size:var(--font-size-sm);}",
+      ".dcc-beta-bar-inner{display:flex;align-items:center;gap:var(--space-3);flex-wrap:wrap;}",
       ".dcc-beta-bar-text{flex:1 1 auto;min-width:0;}",
       ".dcc-beta-bar-text strong{font-weight:var(--font-weight-semibold);color:var(--color-primary);}",
       ".dcc-beta-bar-link{background:none;border:none;color:var(--color-text-link);text-decoration:underline;cursor:pointer;font:inherit;padding:0;white-space:nowrap;}",
@@ -742,6 +747,7 @@
     injectStyles();
     var bar = elt("div", "dcc-beta-bar");
     bar.setAttribute("aria-label", T.label);
+    var inner = elt("div", "dcc-beta-bar-inner container");
 
     var text = elt("span", "dcc-beta-bar-text");
     text.appendChild(elt("strong", null, T.welcomeBack + " "));
@@ -752,15 +758,16 @@
       if (w) { w.openAt(2, true, rewatch); }
     });
     text.appendChild(rewatch);
-    bar.appendChild(text);
+    inner.appendChild(text);
 
     var dismiss = elt("button", "dcc-beta-bar-dismiss", "");
     dismiss.type = "button";
     dismiss.setAttribute("aria-label", T.gotIt);
     dismiss.innerHTML = "<span aria-hidden=\"true\">&times;</span>";
     dismiss.addEventListener("click", function () { bar.remove(); });
-    bar.appendChild(dismiss);
+    inner.appendChild(dismiss);
 
+    bar.appendChild(inner);
     main.insertBefore(bar, main.firstChild);
   }
 
