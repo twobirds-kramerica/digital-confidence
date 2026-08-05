@@ -310,8 +310,8 @@
     localStorage.setItem('dcc_onboarded', 'true');
     localStorage.setItem('dcc_goal',   state.goal   || 'setup');
     localStorage.setItem('dcc_device', state.device || 'notsure');
-    localStorage.setItem('dcc_name',   state.name   || '');
-    /* Mirror name to key used by homepage-personalise.js */
+    /* Name key consolidation (S-DCC-LAYER0-FIXES-001): 'dc-user-name' is
+       canonical (dcc_name / userName are legacy read-only fallbacks now). */
     if (state.name) localStorage.setItem('dc-user-name', state.name);
     /* Map device to dc-device-profile format used by setup-wizard.js */
     if (state.device === 'ipad') {

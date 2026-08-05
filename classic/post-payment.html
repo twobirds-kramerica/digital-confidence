@@ -205,7 +205,7 @@
       }
 
       /* Pass name + date to premium cert via URL param */
-      var name = localStorage.getItem('userName') || '';
+      var name = localStorage.getItem('dc-user-name') || localStorage.getItem('dcc_name') || localStorage.getItem('userName') || '';
       var date = localStorage.getItem('finalQuizDate') || '';
       var certUrl = 'premium-certificate.html';
       var parts = [];

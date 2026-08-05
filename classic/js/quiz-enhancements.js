@@ -123,7 +123,7 @@
       var certEl = document.querySelector('.certificate, #certificate, .cert-inner, main');
       if (!certEl) return;
 
-      var name    = localStorage.getItem('dcc_name') || localStorage.getItem('dc-user-name') || localStorage.getItem('userName') || '';
+      var name    = localStorage.getItem('dc-user-name') || localStorage.getItem('dcc_name') || localStorage.getItem('userName') || '';
       var score   = localStorage.getItem('dc-quiz-best') || '';
       var certNum = 'DCC-' + Date.now().toString(36).toUpperCase();
       var today   = new Date().toLocaleDateString(isFr ? 'fr-CA' : 'en-CA', { year: 'numeric', month: 'long', day: 'numeric' });

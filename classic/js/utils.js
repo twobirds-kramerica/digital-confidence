@@ -94,11 +94,20 @@ DCC.isModuleComplete = function(moduleNum) {
 };
 
 /**
- * Get the stored user name, checking both key variants.
- * Returns an empty string if no name is found.
+ * Get the stored user name, checking the canonical key first, then the
+ * legacy variants (S-DCC-LAYER0-FIXES-001) so nobody's already-stored name
+ * goes missing. Returns an empty string if no name is found.
  */
 DCC.getStoredName = function() {
   return DCC.store.get('dc-user-name') || DCC.store.get('dcc_name') || DCC.store.get('userName') || '';
+};
+
+/**
+ * Set the stored user name. Always writes to the canonical key only —
+ * 'dcc_name' and 'userName' are legacy read-only fallbacks now.
+ */
+DCC.setStoredName = function(name) {
+  return DCC.store.set('dc-user-name', name);
 };
 
 /**

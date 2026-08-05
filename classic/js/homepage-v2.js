@@ -11,7 +11,7 @@
 
   var goal   = localStorage.getItem('dcc_goal')   || '';
   var device = localStorage.getItem('dcc_device') || '';
-  var name   = localStorage.getItem('dcc_name')   || localStorage.getItem('dc-user-name') || '';
+  var name   = localStorage.getItem('dc-user-name') || localStorage.getItem('dcc_name') || localStorage.getItem('userName') || '';
   var lang   = localStorage.getItem('dc-lang') || '';
   var isFr   = lang === 'fr';
 

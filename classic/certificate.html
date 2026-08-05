@@ -483,7 +483,7 @@
   <script src="js/settings.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      var name   = localStorage.getItem('userName') || '';
+      var name   = localStorage.getItem('dc-user-name') || localStorage.getItem('dcc_name') || localStorage.getItem('userName') || '';
       var score  = localStorage.getItem('finalQuizScore') || '';
       var date   = localStorage.getItem('finalQuizDate') || '';
 
@@ -514,7 +514,7 @@
         genBtn.addEventListener('click', function () {
           var n = (document.getElementById('name-input').value || '').trim();
           if (!n) { alert('Please enter your name first.'); return; }
-          localStorage.setItem('userName', n);
+          localStorage.setItem('dc-user-name', n);
           document.getElementById('cert-name-display').textContent = n;
           document.getElementById('name-section').style.display = 'none';
         });

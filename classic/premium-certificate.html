@@ -440,7 +440,7 @@
 
       /* Name: URL param takes priority (passed from post-payment), then localStorage */
       var params = new URLSearchParams(window.location.search);
-      name = params.get('name') || localStorage.getItem('userName') || '';
+      name = params.get('name') || localStorage.getItem('dc-user-name') || localStorage.getItem('dcc_name') || localStorage.getItem('userName') || '';
       date = params.get('date') || localStorage.getItem('finalQuizDate') || '';
 
       if (!date) {
@@ -472,7 +472,7 @@
         nameEl.addEventListener('click', function () {
           var entered = prompt('Enter your name for the certificate:');
           if (entered && entered.trim()) {
-            localStorage.setItem('userName', entered.trim());
+            localStorage.setItem('dc-user-name', entered.trim());
             nameEl.textContent = entered.trim();
             nameEl.style.cursor = '';
             nameEl.title = '';

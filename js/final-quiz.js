@@ -1228,7 +1228,7 @@ var DC_QUIZ = (function () {
     if (passed) {
       document.getElementById('get-cert-btn').addEventListener('click', function () {
         var name = (document.getElementById('cert-name').value || '').trim();
-        if (name) localStorage.setItem('userName', name);
+        if (name) localStorage.setItem('dc-user-name', name);
         window.location.href = 'certificate.html';
       });
     }

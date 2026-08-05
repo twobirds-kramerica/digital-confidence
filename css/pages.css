@@ -33,6 +33,15 @@
 }
 .legal-agreement p { margin: 0; }
 
+/* --- Manage-my-data control (S-DCC-LAYER0-FIXES-001) ------------------------
+   Save / restore / clear-data control for on-device localStorage, inside
+   the Cookies and local storage section of privacy.html. Reuses .story-block
+   for the panel and .btn / .btn-quiet for actions — no new button styles. */
+.data-manager .data-manager-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin: var(--space-4) 0 0; }
+.data-manager-status { margin: var(--space-3) 0 0; font-weight: var(--font-weight-semibold); min-height: 1.4em; }
+.data-manager-status.is-error { color: var(--color-error); }
+.data-manager-status.is-success { color: var(--color-success-deep); }
+
 /* --- About page ------------------------------------------------------------ */
 .story-block {
   background: var(--color-surface); border-left: 6px solid var(--color-primary);

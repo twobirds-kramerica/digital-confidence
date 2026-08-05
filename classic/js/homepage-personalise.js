@@ -32,7 +32,7 @@
     }
   });
   var count = completed.length;
-  var userName = (localStorage.getItem('dcc_name') || localStorage.getItem('dc-user-name') || '').trim();
+  var userName = (localStorage.getItem('dc-user-name') || localStorage.getItem('dcc_name') || localStorage.getItem('userName') || '').trim();
 
   // ── Find the "continue where you left off" module ───────────────────────
   var continueModule = null;

@@ -197,9 +197,21 @@
       <h2>9. Cookies and local storage</h2>
       <ul>
         <li>Our static Products aim to be cookie-light. Analytics cookies are only set after you grant analytics consent.</li>
-        <li>Some tools use browser local storage on your own device to remember your progress, answers, city, or preferences. This stays on your device and is not transmitted to us. You can clear it any time through your browser settings.</li>
+        <li>Some tools use browser local storage on your own device to remember your progress, answers, city, or preferences. This stays on your device and is not transmitted to us. You can save it, restore it, or clear it any time using the tool below, or through your browser settings.</li>
       </ul>
       <p>You can control or block cookies through your browser settings. Blocking cookies will not stop our core static tools from working, though it may affect features that rely on remembering your on-device preferences.</p>
+
+      <div class="story-block data-manager" id="manage-my-data">
+        <span class="story-label">Manage the data saved on this device</span>
+        <p>The Digital Confidence Centre saves your progress, name, and preferences only in this browser, on this device — never on our servers. Clearing your browser's cache or history deletes it, with no way to bring it back, unless you save a copy first.</p>
+        <div class="data-manager-actions">
+          <button type="button" class="btn btn-secondary" data-dcc-save-progress>💾 Save my progress</button>
+          <button type="button" class="btn btn-secondary" data-dcc-restore-progress-btn>📂 Restore my progress</button>
+          <input type="file" id="dcc-restore-file" accept="application/json,.json" hidden>
+          <button type="button" class="btn btn-quiet" data-dcc-clear-data>🗑️ Clear my data on this device</button>
+        </div>
+        <p class="data-manager-status" id="dcc-data-status" role="status" aria-live="polite"></p>
+      </div>
     </section>
 
     <section class="legal-section">
@@ -324,5 +336,6 @@
 
 <script src="js/dcc.js"></script>
 <script src="js/readaloud-discoverable.js"></script>
+<script src="js/data-manager.js"></script>
 </body>
 </html>

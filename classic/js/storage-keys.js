@@ -24,7 +24,7 @@ window.DCC_KEYS = {
   ONBOARDED:          'dcc_onboarded',
   DEVICE:             'dcc_device',
   GOAL:               'dcc_goal',
-  NAME:               'dcc_name',
+  NAME:               'dcc_name',  // legacy — read-only fallback, see USER_NAME below
   SETUP_COMPLETE:     'dc-setup-complete',
   SPLASH_SEEN:        'dc-splash-seen',
   MIGRATED:           'dc-migrated',
@@ -50,11 +50,15 @@ window.DCC_KEYS = {
   FINAL_QUIZ_DATE:    'finalQuizDate',
 
   // User identity
+  // CANONICAL name key (S-DCC-LAYER0-FIXES-001, 2026-08-04). NAME ('dcc_name')
+  // and USER_NAME_EMAIL ('userName') below are legacy — read-only fallbacks
+  // for users with a name already stored under the old keys. New writes go
+  // to USER_NAME only.
   USER_NAME:          'dc-user-name',
   EMAIL_CAPTURED:     'emailCaptured',
   EMAIL_CAPTURE_DATE: 'emailCaptureDate',
   USER_EMAIL:         'userEmail',
-  USER_NAME_EMAIL:    'userName',
+  USER_NAME_EMAIL:    'userName',  // legacy — read-only fallback
 
   // Certificate
   CERT_NUMBER:        'dc-cert-number',
