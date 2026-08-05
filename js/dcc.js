@@ -329,8 +329,32 @@
       window.speechSynthesis.onvoiceschanged = pickVoice;
     }
 
+    /* Icons/symbols (✓, ⏱, etc.) are already marked aria-hidden="true" for
+       real screen readers — this read-aloud engine is a distinct, simpler
+       "read me the words" feature, not a full accessibility screen reader,
+       but it should honour the same hidden marking so it never speaks a
+       bare symbol between sentences. */
+    function isAriaHidden(node) {
+      return node.nodeType === 1 && node.getAttribute && node.getAttribute("aria-hidden") === "true";
+    }
+
+    /* Text actually spoken for a block — same aria-hidden skip as wrapWords,
+       so utterance text and word-highlight offsets stay in lockstep. */
+    function speakableText(el) {
+      var parts = [];
+      function walk(node) {
+        if (node.nodeType === 3) { parts.push(node.nodeValue); }
+        else if (node.nodeType === 1) {
+          if (isAriaHidden(node)) return;
+          Array.prototype.slice.call(node.childNodes).forEach(walk);
+        }
+      }
+      walk(el);
+      return parts.join("");
+    }
+
     /* Wrap every word of a block in a span, preserving inner markup.
-       Returns the spans in reading order (matches textContent order). */
+       Returns the spans in reading order (matches speakableText order). */
     function wrapWords(el) {
       var spans = [], offset = 0;
       function walk(node) {
@@ -352,6 +376,7 @@
           offset += text.length;
           node.parentNode.replaceChild(frag, node);
         } else if (node.nodeType === 1) {
+          if (isAriaHidden(node)) return;
           Array.prototype.slice.call(node.childNodes).forEach(walk);
         }
       }
@@ -387,7 +412,7 @@
       restoreActive();
       activeEl = queue[i];
       activeHTML = activeEl.innerHTML;
-      var text = activeEl.textContent;
+      var text = speakableText(activeEl);
       activeSpans = wrapWords(activeEl);
 
       /* Keep the block being read in view — smooth and block-level (never per
@@ -421,6 +446,23 @@
       readBtn.textContent = IS_FR ? "⏹ Arrêter la lecture" : "⏹ Stop reading";
       queue = buildQueue();
       window.speechSynthesis.cancel();
+      beginSpeaking(fromIndex, 8);
+    }
+    /* Some browsers fire onvoiceschanged late, or not at all, before the
+       first click — if that races a click, chosenVoice stays null and
+       speech silently falls back to the OS's raw default voice (the
+       robotic one this heuristic exists to avoid). Retry pickVoice() a
+       few times, up to ~400ms, before giving up and speaking with
+       whatever's available. */
+    function beginSpeaking(fromIndex, attemptsLeft) {
+      if (!reading) return; // stopped while we were waiting for a voice
+      if (!chosenVoice && attemptsLeft > 0) {
+        pickVoice();
+        if (!chosenVoice) {
+          setTimeout(function () { beginSpeaking(fromIndex, attemptsLeft - 1); }, 50);
+          return;
+        }
+      }
       speakBlock(Math.min(fromIndex || 0, Math.max(queue.length - 1, 0)));
     }
     readBtn.addEventListener("click", function () {
