@@ -1,16 +1,331 @@
 <!DOCTYPE html>
-<html lang="en-CA">
+<html lang="en-CA" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, follow">
-  <meta http-equiv="refresh" content="0; url=/digital-confidence/classic/for-libraries.html">
-  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/classic/for-libraries.html">
-  <title>This page has moved</title>
-  <script>location.replace("/digital-confidence/classic/for-libraries.html");</script>
+  <script>
+    (function () {
+      var t = null, s = null;
+      try { t = localStorage.getItem("dccv2-theme"); s = localStorage.getItem("dccv2-text-size"); } catch (e) {}
+      if (!t) t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (s) document.documentElement.classList.add("text-size-" + s);
+    })();
+  </script>
+  <title>For libraries and institutions - Digital Confidence Centre</title>
+  <link rel="canonical" href="https://twobirds-kramerica.github.io/digital-confidence/for-libraries.html">
+  <meta name="description" content="Bring Digital Confidence Centre to your library, school, or organisation. Free for every learner, always. Tiered institutional support from CA$500/year, with white-label options for large systems.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/core.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <!-- Page-specific pricing/lead-form styles, token-driven only. Scoped here
+       so no shared component on other pages is touched (SURGICAL CHANGES). -->
+  <style>
+    .lib-pricing {
+      display: grid; gap: var(--space-6); grid-template-columns: 1fr;
+      margin: var(--space-6) 0;
+    }
+    @media (min-width: 820px) { .lib-pricing { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1100px) { .lib-pricing { grid-template-columns: repeat(4, 1fr); } }
+    .lib-price {
+      display: flex; flex-direction: column;
+      padding: var(--space-6); background: var(--color-surface);
+      border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+    }
+    .lib-price--featured { border: 2px solid var(--color-primary); }
+    .lib-price__tier {
+      font-family: var(--font-heading); font-weight: var(--font-weight-bold);
+      font-size: var(--font-size-sm); text-transform: uppercase; letter-spacing: 0.03em;
+      color: var(--color-text-light); margin-bottom: var(--space-2);
+    }
+    .lib-price__amount {
+      font-family: var(--font-heading); font-weight: var(--font-weight-bold);
+      font-size: var(--font-size-h2); color: var(--color-primary); line-height: 1.1;
+    }
+    .lib-price__period { color: var(--color-text-light); font-size: var(--font-size-sm); margin-bottom: var(--space-4); }
+    .lib-price ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+    .lib-price li { padding-left: var(--space-5); position: relative; font-size: calc(var(--font-size-base) - 2px); }
+    .lib-price li::before { content: "\2713"; position: absolute; left: 0; color: var(--color-success); font-weight: var(--font-weight-bold); }
+    .lib-founding-badge {
+      display: inline-block; background: var(--color-accent-light); color: var(--color-accent-deep);
+      font-family: var(--font-heading); font-weight: var(--font-weight-bold); font-size: var(--font-size-caption);
+      padding: var(--space-1) var(--space-3); border-radius: var(--radius-pill); margin-bottom: var(--space-3);
+    }
+
+    .lib-form {
+      background: var(--color-surface); border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg); padding: var(--space-6); max-width: var(--content-max);
+    }
+    .lib-form label {
+      display: block; font-family: var(--font-heading); font-weight: var(--font-weight-semibold);
+      margin: var(--space-4) 0 var(--space-2);
+    }
+    .lib-form label:first-of-type { margin-top: 0; }
+    .lib-form input, .lib-form select, .lib-form textarea {
+      width: 100%; font: inherit; color: var(--color-text); background: var(--color-bg);
+      border: 1px solid var(--color-border-strong); border-radius: var(--radius-md);
+      padding: var(--space-3); min-height: var(--tap-target-min);
+    }
+    .lib-form textarea { min-height: 120px; resize: vertical; }
+    .lib-form input:focus, .lib-form select:focus, .lib-form textarea:focus {
+      outline: var(--focus-ring); outline-offset: var(--focus-ring-offset);
+    }
+    .lib-form-actions { margin-top: var(--space-6); display: flex; gap: var(--space-4); flex-wrap: wrap; }
+    .lib-form-note { font-size: var(--font-size-sm); color: var(--color-text-light); margin-top: var(--space-3); }
+  </style>
 </head>
 <body>
-  <p>This page has moved to the classic archive of the Digital Confidence Centre.
-     If you are not redirected automatically, <a href="/digital-confidence/classic/for-libraries.html">continue to the page</a>.</p>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M16 4 L26 8 V15 C26 22 21.5 26.5 16 28.5 C10.5 26.5 6 22 6 15 V8 Z" fill="var(--color-surface)"/><path d="M11 16 L14.5 19.5 L21.5 12" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Digital Confidence Centre</a>
+    <span class="secure-badge"><span aria-hidden="true">🔒</span> Secure connection<span class="ca-badge" aria-label="Canadian"><svg class="ca-leaf" viewBox="2400 0 4800 4800" aria-hidden="true" focusable="false"><path fill="currentColor" d="m2490 4430-45-863a95 95 0 0 1 111-98l859 151-116-320a65 65 0 0 1 20-73l941-762-212-99a65 65 0 0 1-34-79l186-572-542 115a65 65 0 0 1-73-38l-105-247-423 454a65 65 0 0 1-111-57l204-1052-327 189a65 65 0 0 1-91-27l-332-652-332 652a65 65 0 0 1-91 27l-327-189 204 1052a65 65 0 0 1-111 57l-423-454-105 247a65 65 0 0 1-73 38l-542-115 186 572a65 65 0 0 1-34 79l-212 99 941 762a65 65 0 0 1 20 73l-116 320 859-151a95 95 0 0 1 111 98l-45 863z"/></svg><span class="ca-badge-label" aria-hidden="true">Canadian</span></span></span>
+    <a class="lang-link" href="fr/index.html" lang="fr-CA" hreflang="fr-CA">Français</a>
+    <button class="settings-toggle" type="button" data-settings-toggle aria-expanded="false" aria-controls="display-settings">
+      <span aria-hidden="true">⚙</span> Display settings
+    </button>
+    <div class="header-tools" id="display-settings" hidden>
+      <div class="text-size-group" role="group" aria-label="Text size">
+        <span class="group-label" aria-hidden="true">Text size</span>
+        <button class="ts-btn" type="button" data-text-size="s" aria-pressed="false" aria-label="Smaller text">A−</button>
+        <button class="ts-btn" type="button" data-text-size="default" aria-pressed="true" aria-label="Standard text">A</button>
+        <button class="ts-btn" type="button" data-text-size="l" aria-pressed="false" aria-label="Larger text">A+</button>
+      </div>
+      <div class="read-group" role="group" aria-label="Read this page aloud">
+        <button class="theme-btn" type="button" data-read-aloud aria-pressed="false">🔊 Listen to this page</button>
+        <div class="rate-group" role="group" aria-label="Reading speed">
+          <button class="ts-btn rate-btn" type="button" data-read-rate="slow" aria-pressed="false">Slower</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="normal" aria-pressed="true">Normal</button>
+          <button class="ts-btn rate-btn" type="button" data-read-rate="fast" aria-pressed="false">Faster</button>
+        </div>
+      </div>
+      <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false">🌙 Dark mode</button>
+      <button class="theme-btn" type="button" data-dyslexic-toggle aria-pressed="false">👓 Dyslexia-friendly font</button>
+    </div>
+  </div>
+</header>
+
+<nav class="primary-nav" aria-label="Lesson sections">
+  <div class="container">
+    <a href="index.html">All lessons</a>
+    <a href="index.html#protect-money">Protect your money</a>
+    <a href="index.html#everyday-confidence">Everyday confidence</a>
+    <a href="for-families.html">For families</a>
+    <a href="support-directory.html">Get help</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li><span aria-current="page">For libraries and institutions</span></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+
+    <h1>Bring Digital Confidence Centre to your library, school, or organisation</h1>
+    <p class="lead">31 free, bilingual lessons on scams, banking, video calls, and AI, ready to use in your programming today. No installation, no learner accounts, and no per-seat fees, ever.</p>
+
+    <ul class="trust-row" aria-label="Our promises to your patrons">
+      <li><span aria-hidden="true">✓</span> Free for every learner</li>
+      <li><span aria-hidden="true">✓</span> No account or login needed</li>
+      <li><span aria-hidden="true">✓</span> Bilingual (English/French)</li>
+      <li><span aria-hidden="true">✓</span> WCAG 2.2 AA accessible</li>
+    </ul>
+
+    <!-- Positioning device: "Free to Use. Not Free to Make." (Khan Academy
+         framing, borrowed deliberately) -- reuses the existing .who-pays
+         component so no new visual pattern is introduced. -->
+    <aside class="who-pays" aria-label="Why institutions pay while learners never do">
+      <p><span class="who-pays-title">Free to Use. Not Free to Make.</span>
+      Every lesson, quiz, and the scam simulator stay 100% free for every learner, no account, no login, forever. Institutional fees fund the facilitator support, reporting, and partnership work that keep the free side running, never content access for the people using it.</p>
+    </aside>
+
+    <h2 id="pricing">Institutional pricing</h2>
+    <p>Priced by organisation size, not a flat fee, so a small rural library and a multi-branch system each pay for what they actually need.</p>
+
+    <div class="lib-pricing" role="list" aria-label="Institutional pricing tiers">
+      <div class="lib-price lib-price--featured" role="listitem">
+        <span class="lib-founding-badge">First 3 organisations, year 1</span>
+        <span class="lib-price__tier">Founding Partner</span>
+        <div class="lib-price__amount">CA$500</div>
+        <span class="lib-price__period">per year</span>
+        <ul>
+          <li>Full curriculum, any organisation size</li>
+          <li>Locked rate for all of year one</li>
+          <li>Direct input on the content roadmap</li>
+        </ul>
+      </div>
+      <div class="lib-price" role="listitem">
+        <span class="lib-price__tier">Small / rural library</span>
+        <div class="lib-price__amount">CA$750</div>
+        <span class="lib-price__period">per year · 1&ndash;3 branches</span>
+        <ul>
+          <li>Full curriculum, bilingual EN/FR</li>
+          <li>Facilitator guide and print handouts</li>
+          <li>Usage summary report</li>
+        </ul>
+      </div>
+      <div class="lib-price" role="listitem">
+        <span class="lib-price__tier">Mid-size system</span>
+        <div class="lib-price__amount">CA$1,500</div>
+        <span class="lib-price__period">per year · 4&ndash;10 branches</span>
+        <ul>
+          <li>Everything in Small / rural</li>
+          <li>Quarterly usage and impact reports</li>
+          <li>Staff onboarding session</li>
+        </ul>
+      </div>
+      <div class="lib-price" role="listitem">
+        <span class="lib-price__tier">Large system</span>
+        <div class="lib-price__amount">CA$3,000</div>
+        <span class="lib-price__period">per year · unlimited branches</span>
+        <ul>
+          <li>Everything in Mid-size</li>
+          <li><strong>Co-branding</strong>: your organisation's name and logo alongside DCC's</li>
+          <li><strong>Custom landing content</strong> for your community's local resources</li>
+          <li><strong>Usage and impact analytics</strong> for your board and funders</li>
+          <li>NHSP grant co-application support</li>
+        </ul>
+      </div>
+    </div>
+    <p class="lib-form-note">The Large system tier's co-branding, custom content, and analytics are modelled on the Public Library Association's DigitalLearn.org program, a proven pattern for library-branded digital literacy delivery in the United States.</p>
+
+    <!-- NHSP mention: brief, one line, per the sprint's non-negotiable scope
+         (not a full grant-writing guide). Named plainly, no external link,
+         matching the existing site's own NHSP references. -->
+    <div class="tip-block">
+      <span class="block-label">A funding option worth knowing about</span>
+      <p>Many Canadian institutions can apply for the federal <strong>New Horizons for Seniors Program (NHSP)</strong>, run by Employment and Social Development Canada, to cover this fee as part of a seniors-focused community project. Mention it when you get in touch below and we can talk through whether it fits your organisation.</p>
+    </div>
+
+    <h2 id="contact">Tell us about your organisation</h2>
+    <p>Fill this in and it opens a pre-filled email straight to Aaron Patzalek at Two Birds Innovation, no account or sign-up needed on your end.</p>
+
+    <form class="lib-form" id="lib-lead-form" aria-label="Institutional interest form">
+      <label for="lib-org-name">Organisation name</label>
+      <input type="text" id="lib-org-name" name="org-name" required autocomplete="organization">
+
+      <label for="lib-contact-email">Contact email</label>
+      <input type="email" id="lib-contact-email" name="contact-email" required autocomplete="email">
+
+      <label for="lib-org-type">Organisation size / type</label>
+      <select id="lib-org-type" name="org-type" required>
+        <option value="">Choose one</option>
+        <option value="Small / rural library (1-3 branches)">Small / rural library (1&ndash;3 branches)</option>
+        <option value="Mid-size library system (4-10 branches)">Mid-size library system (4&ndash;10 branches)</option>
+        <option value="Large system / multi-branch / LTC chain">Large system / multi-branch / LTC chain</option>
+        <option value="Settlement agency">Settlement agency</option>
+        <option value="School or community college">School or community college</option>
+        <option value="Other community organisation">Other community organisation</option>
+      </select>
+
+      <label for="lib-need">What would you like to do with Digital Confidence Centre?</label>
+      <textarea id="lib-need" name="need" required placeholder="For example: bring it into our existing digital help desk, run a facilitated group session, explore the NHSP grant, learn more about the Large system tier's co-branding."></textarea>
+
+      <div class="lib-form-actions">
+        <button type="submit" class="btn btn-primary">Send by email</button>
+        <a class="btn btn-secondary" href="https://cal.com/twobirds-4n5ajg/30min" target="_blank" rel="noopener noreferrer">Book a 30-minute call instead</a>
+      </div>
+      <p class="lib-form-note">"Send by email" opens your email application with these details already filled in, addressed to aaron.patzalek@gmail.com. Nothing is sent automatically and nothing is stored on this site.</p>
+    </form>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <ul class="trust-row" aria-label="Our promises">
+      <li><span aria-hidden="true">✓</span> No account</li>
+      <li><span aria-hidden="true">✓</span> No tracking</li>
+      <li><span aria-hidden="true">✓</span> Nothing to buy for learners</li>
+      <li><span aria-hidden="true">✓</span> Canadian</li>
+    </ul>
+    <p>Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, a Canadian company, to help Canadian adults stay safe and connected online. No account, no tracking, no sales calls.</p>
+    <p class="scope-note">Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly.</p>
+    <ul class="footer-links">
+      <li><a href="index.html">Learner site</a></li>
+      <li><a href="for-families.html">For families</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="disclaimer.html">Disclaimer</a></li>
+      <li><a href="support-directory.html">Get help</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div class="consent-bar" id="consent-bar" hidden role="region" aria-label="Privacy choices">
+  <div class="container">
+    <p>We use a small browser memory to keep the site working and remember your text size. <a href="privacy.html">Read more</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-primary" type="button" id="consent-accept">Accept</button>
+      <button class="btn btn-secondary" type="button" id="consent-reject">Reject</button>
+      <button class="btn-quiet" type="button" id="consent-prefs-toggle" aria-expanded="false" aria-controls="consent-prefs">Preferences</button>
+    </div>
+  </div>
+  <div class="consent-prefs" id="consent-prefs" hidden>
+    <div class="container">
+      <label class="consent-option">
+        <input type="checkbox" checked disabled>
+        <span><span class="opt-name">Functional (always on)</span>
+        <p>Keeps the site working and remembers your text size.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-performance">
+        <span><span class="opt-name">Performance</span>
+        <p>Helps us see which lessons help most. It doesn't identify you.</p></span>
+      </label>
+      <label class="consent-option">
+        <input type="checkbox" id="consent-marketing">
+        <span><span class="opt-name">Marketing (optional)</span>
+        <p>Helps us reach more seniors. We never sell your personal information.</p></span>
+      </label>
+      <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/dcc.js"></script>
+<script src="js/readaloud-discoverable.js"></script>
+<script>
+  // Minimum-viable lead capture: no backend exists for structured institutional
+  // leads (feedback-widget.js posts free-text page feedback to a different
+  // endpoint for a different purpose), so this builds a pre-filled mailto:
+  // straight to Aaron per the sprint's accepted MVP path.
+  (function () {
+    var form = document.getElementById("lib-lead-form");
+    if (!form) { return; }
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var orgName = document.getElementById("lib-org-name").value.trim();
+      var email = document.getElementById("lib-contact-email").value.trim();
+      var orgType = document.getElementById("lib-org-type").value;
+      var need = document.getElementById("lib-need").value.trim();
+
+      var subject = "DCC institutional interest: " + (orgName || "an organisation");
+      var bodyLines = [
+        "Organisation name: " + orgName,
+        "Contact email: " + email,
+        "Organisation size / type: " + orgType,
+        "",
+        "What they would like to do:",
+        need
+      ];
+      var mailto = "mailto:aaron.patzalek@gmail.com" +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(bodyLines.join("\n"));
+      window.location.href = mailto;
+    });
+  })();
+</script>
 </body>
 </html>
