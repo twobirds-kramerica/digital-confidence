@@ -67,6 +67,7 @@
     ".ffw-panel .ffw-sub{color:#445;margin:0 0 14px;font-size:13px}",
     ".ffw-field-label{font-weight:700;margin:12px 0 6px}",
     ".ffw-review-text{width:100%;min-height:120px;border:1px solid #9aa7a1;border-radius:8px;padding:10px 12px;font:inherit;resize:vertical}",
+    ".ffw-name-input{width:100%;border:1px solid #9aa7a1;border-radius:8px;padding:10px 12px;font:inherit}",
     ".ffw-opt{margin-top:14px}",
     ".ffw-voice-panel{margin-top:8px;padding:10px 12px;border:1px solid #cdd7d3;border-radius:8px;background:#f4f7f6}",
     ".ffw-voice-explain{margin:0 0 10px;color:#334;font-size:13px}",
@@ -97,6 +98,7 @@
   // ---- State ---------------------------------------------------------------
   var state = {
     finalTranscript: "",   // the person's typed + dictated feedback
+    visitorName: "",       // optional name, never required, never pre-populated
     pins: [],              // { n, selector, text, rect }
     recognition: null,
     speechSupported: false,
@@ -110,6 +112,7 @@
     fab: null,
     overlay: null,
     composeText: null,
+    composeName: null,
     bar: null,
     pinLayer: null
   };
@@ -205,9 +208,14 @@
 
   // ---- Context bundle ------------------------------------------------------
   function buildBundle(transcript) {
+    // If the person chose to leave a name, carry it in the transcript itself
+    // (same reasoning as the beta-tester prefix below: a name only means
+    // something if the text Aaron reads actually shows it) and in context.
+    var visitorName = trim(state.visitorName);
     return {
       schemaVersion: SCHEMA_VERSION,
-      transcript: trim(transcript),
+      transcript: (visitorName ? "[Name: " + visitorName + "] " : "") + trim(transcript),
+      visitorName: visitorName,
       pins: state.pins.map(function (p) {
         return { n: p.n, selector: p.selector, text: p.text, rect: p.rect };
       }),
@@ -409,15 +417,34 @@
     sendBtn.type = "button";
     sendBtn.addEventListener("click", function () {
       state.finalTranscript = ta.value || "";
+      if (el.composeName) { state.visitorName = el.composeName.value || ""; }
       sendBundle(sendBtn, status);
     });
     var discardBtn = elt("button", "ffw-btn ffw-btn-danger", "Discard");
     discardBtn.type = "button";
     discardBtn.addEventListener("click", onDiscard);
-    actions.appendChild(sendBtn);
+    // Paired-action placement rule (design-ui-gates.md, 2026-07-30):
+    // negative/discard on the LEFT, positive/go-forward on the RIGHT.
     actions.appendChild(discardBtn);
+    actions.appendChild(sendBtn);
 
     panel.appendChild(actions);
+
+    // Optional name, never required, never pre-populated (site form standard:
+    // label "Your Name (Optional)", placeholder "Type here...", placed after
+    // the submit control per the feedback-form field-order convention).
+    var nameLabel = elt("label", "ffw-field-label", "Your Name (Optional)");
+    nameLabel.setAttribute("for", "ffw-compose-name");
+    var nameInput = elt("input", "ffw-name-input");
+    nameInput.type = "text";
+    nameInput.id = "ffw-compose-name";
+    nameInput.placeholder = "Type here...";
+    nameInput.autocomplete = "name";
+    nameInput.value = state.visitorName || "";
+    el.composeName = nameInput;
+    panel.appendChild(nameLabel);
+    panel.appendChild(nameInput);
+
     panel.appendChild(status);
     overlay.appendChild(panel);
     el.root.appendChild(overlay);
@@ -562,6 +589,7 @@
     if (el.overlay && el.overlay.parentNode) { el.overlay.parentNode.removeChild(el.overlay); }
     el.overlay = null;
     el.composeText = null;
+    el.composeName = null;
   }
 
   // ---- Discard (confirm before losing non-empty feedback) ------------------
@@ -582,6 +610,7 @@
     removeOverlay();
     clearPins();
     state.finalTranscript = "";
+    state.visitorName = "";
     if (el.fab) { el.fab.style.display = ""; }
   }
 
@@ -652,14 +681,14 @@
       keepalive: true
     }).then(function (res) {
       if (res && res.ok) {
-        done("Feedback sent. Thank you.", "ffw-status-ok");
+        done("Thank you, we got it.", "ffw-status-ok");
       } else {
         saveLocal(bundle);
-        done("Server error. Saved locally so nothing is lost.", "ffw-status-warn");
+        done("We could not send your note just now. It is saved safely on this device, so nothing is lost.", "ffw-status-warn");
       }
     }).catch(function () {
       saveLocal(bundle);
-      done("Network error. Saved locally so nothing is lost.", "ffw-status-warn");
+      done("We could not send your note just now. It is saved safely on this device, so nothing is lost.", "ffw-status-warn");
     });
   }
 

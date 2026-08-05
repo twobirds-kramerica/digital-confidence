@@ -37,6 +37,16 @@
   if (window.__dccFeedbackInflowLoaded) { return; }
   window.__dccFeedbackInflowLoaded = true;
 
+  /* Footer-only mode (site-wide rollout, S-DCC-BETA-FEEDBACK-SURFACE-001):
+     a host page may include this script with the data-footer-only attribute
+     to get the plain labelled footer link and the no-FAB flag WITHOUT the
+     end-of-lesson block. Used on non-module pages (About, FAQ, Privacy and
+     so on) where a "Tell us what you think" block has no lesson to comment
+     on. Read at parse time because document.currentScript is null inside
+     the DOMContentLoaded callback. */
+  var FOOTER_ONLY = !!(document.currentScript &&
+    document.currentScript.hasAttribute("data-footer-only"));
+
   var IS_FR = (document.documentElement.getAttribute("lang") || "en").toLowerCase().indexOf("fr") === 0;
 
   var T = IS_FR ? {
@@ -137,13 +147,16 @@
     injectStyles();
 
     /* End-of-lesson block: after "Where to next" if present, otherwise at the
-       end of the lesson container. Never above the content it comments on. */
-    var container = document.querySelector("#main .container") || document.querySelector("#main");
-    if (container) {
-      var rel = container.querySelector("nav.related-modules");
-      var block = buildBlock(!!container.querySelector(".lesson-back"));
-      if (rel && rel.parentNode) { rel.parentNode.insertBefore(block, rel.nextSibling); }
-      else { container.appendChild(block); }
+       end of the lesson container. Never above the content it comments on.
+       Skipped entirely in footer-only mode. */
+    if (!FOOTER_ONLY) {
+      var container = document.querySelector("#main .container") || document.querySelector("#main");
+      if (container) {
+        var rel = container.querySelector("nav.related-modules");
+        var block = buildBlock(!!container.querySelector(".lesson-back"));
+        if (rel && rel.parentNode) { rel.parentNode.insertBefore(block, rel.nextSibling); }
+        else { container.appendChild(block); }
+      }
     }
 
     addFooterLink();

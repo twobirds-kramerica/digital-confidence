@@ -1,0 +1,433 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Digital Confidence Centre" [ref=e5] [cursor=pointer]:
+        - /url: ../index.html
+      - generic [ref=e10]:
+        - generic [ref=e11]: 🔒
+        - text: Secure connection
+        - generic "Canadian" [ref=e12]
+      - link "Français" [ref=e16] [cursor=pointer]:
+        - /url: ../fr/index.html
+      - button "Display settings" [ref=e17] [cursor=pointer]:
+        - generic [ref=e18]: ⚙
+        - text: Display settings
+  - navigation "Lesson sections" [ref=e19]:
+    - generic [ref=e20]:
+      - link "All lessons" [ref=e21] [cursor=pointer]:
+        - /url: ../index.html
+      - link "Protect your money" [ref=e22] [cursor=pointer]:
+        - /url: ../index.html#protect-money
+      - link "Everyday confidence" [ref=e23] [cursor=pointer]:
+        - /url: ../index.html#everyday-confidence
+      - link "For families" [ref=e24] [cursor=pointer]:
+        - /url: ../for-families.html
+      - link "Get help" [ref=e25] [cursor=pointer]:
+        - /url: ../support-directory.html
+  - navigation "Breadcrumb" [ref=e26]:
+    - list [ref=e28]:
+      - listitem [ref=e29]:
+        - link "All lessons" [ref=e30] [cursor=pointer]:
+          - /url: ../index.html
+      - listitem [ref=e31]:
+        - text: ›
+        - link "Everyday confidence" [ref=e32] [cursor=pointer]:
+          - /url: ../index.html#everyday-confidence
+      - listitem [ref=e33]:
+        - text: ›
+        - generic [ref=e34]: Photos and Memories
+  - main [ref=e35]:
+    - generic [ref=e36]:
+      - region "Read aloud" [ref=e37]:
+        - button "🔊 Listen to this page" [ref=e38] [cursor=pointer]
+        - paragraph [ref=e39]: "Reading with: Microsoft Richard - English (Canada) (Canadian)"
+      - link "← Back to all lessons" [ref=e40] [cursor=pointer]:
+        - /url: ../index.html
+      - paragraph [ref=e41]:
+        - generic [ref=e42]: 🎨
+        - text: Photos and creativity
+      - heading "Photos and Memories" [level=1] [ref=e43]
+      - paragraph [ref=e44]:
+        - generic [ref=e45]: ⏱
+        - text: About 15 minutes, at your own pace
+      - paragraph [ref=e46]:
+        - generic [ref=e47]: ✅
+        - text: You are in a safe place. Nothing on this page can harm your device.
+      - paragraph [ref=e48]: The fun stuff. Your device is not just a tool for email and banking. It is a canvas for creativity, a photo album that never fills up, and a window into art and music. This module is about discovering joy in your device.
+      - heading "Betty's story" [level=2] [ref=e49]
+      - paragraph [ref=e50]: Betty, 78, had always loved painting watercolours. When arthritis made it harder to hold a brush, she thought her painting days were over. Then her granddaughter showed her a drawing app on the iPad.
+      - paragraph [ref=e51]: "\"At first I thought it was silly, painting with your finger on a piece of glass,\" Betty laughs. \"But then I discovered you could choose any colour instantly, undo a mistake with one tap, and zoom in to add tiny details. I painted my first digital watercolour that afternoon, a cardinal sitting on the fence in my backyard.\""
+      - paragraph [ref=e52]: Betty now paints on her iPad every evening after dinner. She emails her paintings to friends, prints them out as greeting cards, and recently started an online gallery that her grandchildren helped her set up. "This little device gave me my art back," she says.
+      - generic [ref=e55]:
+        - generic [ref=e56]: From your coach
+        - paragraph [ref=e57]: "Many people avoid touching their photos because they are afraid of deleting a memory they cannot get back. That fear is an act of love, not a weakness. The good news: deleted photos sit in a recovery folder for 30 days, so even a wrong tap is reversible. Your memories are safer than you think."
+      - generic [ref=e58]:
+        - generic [ref=e59]: Tip
+        - paragraph [ref=e60]: You do not need an expensive camera. The camera on your device takes wonderful photos. The best camera is the one you have with you.
+      - heading "Taking great photos with your device" [level=2] [ref=e61]
+      - generic [ref=e62]:
+        - heading "Taking a photo" [level=4] [ref=e63]
+        - generic [ref=e64]:
+          - generic [ref=e65]: "1"
+          - paragraph [ref=e67]:
+            - text: Find the
+            - strong [ref=e68]: Camera
+            - text: app on your Home screen. On an iPad or iPhone it looks like a simple camera icon on a grey background. On Android it usually says "Camera".
+        - generic [ref=e69]:
+          - generic [ref=e70]: "2"
+          - paragraph [ref=e72]: Point your device at what you want to photograph. The screen shows what the camera sees.
+        - generic [ref=e73]:
+          - generic [ref=e74]: "3"
+          - paragraph [ref=e76]:
+            - text: Tap the large
+            - strong [ref=e77]: round button
+            - text: at the bottom of the screen. That is the shutter button. It takes the photo.
+        - generic [ref=e78]:
+          - generic [ref=e79]: "4"
+          - paragraph [ref=e81]:
+            - text: "Your photo is automatically saved: in the"
+            - strong [ref=e82]: Photos
+            - text: app on Apple devices, or in
+            - strong [ref=e83]: Google Photos
+            - text: or your device's
+            - strong [ref=e84]: Gallery
+            - text: app on Android.
+      - generic [ref=e85]:
+        - generic [ref=e86]: Photo tips for better pictures
+        - paragraph [ref=e87]:
+          - strong [ref=e88]: "Hold steady:"
+          - text: rest your elbows on a table or hold your device with both hands. Shaky hands mean blurry photos.
+          - strong [ref=e89]: "Use natural light:"
+          - text: photos taken near a window or outside in daylight look much better than photos taken under indoor lighting.
+          - strong [ref=e90]: "Tap to focus:"
+          - text: if you want to photograph something specific (like a flower in a garden), tap on that object on your screen. The camera will adjust to make that object sharp and clear.
+          - strong [ref=e91]: "Clean the lens:"
+          - text: the tiny camera lens on the back of your device can get smudged by fingerprints. Gently wipe it with a soft cloth before taking photos.
+      - generic [ref=e92]:
+        - generic [ref=e93]: Confidence check
+        - paragraph [ref=e94]: You have a camera in your hands right now. Every moment is an opportunity to capture something beautiful. Now let us make those photos look even better.
+      - heading "Editing your photos" [level=2] [ref=e95]
+      - paragraph [ref=e96]:
+        - text: "Your device comes with built-in photo editing tools that are surprisingly powerful. You do not need any extra apps: use the"
+        - strong [ref=e97]: Photos
+        - text: app on an iPad or iPhone, or
+        - strong [ref=e98]: Google Photos
+        - text: on Android.
+      - generic [ref=e99]:
+        - heading "Basic photo editing" [level=4] [ref=e100]
+        - generic [ref=e101]:
+          - generic [ref=e102]: "1"
+          - paragraph [ref=e104]:
+            - text: Open the
+            - strong [ref=e105]: Photos
+            - text: app (colourful flower icon) on Apple, or
+            - strong [ref=e106]: Google Photos
+            - text: (colourful pinwheel icon) on Android.
+        - generic [ref=e107]:
+          - generic [ref=e108]: "2"
+          - paragraph [ref=e110]: Tap the photo you want to edit.
+        - generic [ref=e111]:
+          - generic [ref=e112]: "3"
+          - paragraph [ref=e114]:
+            - text: Tap
+            - strong [ref=e115]: "\"Edit\""
+            - text: . On Apple it is in the top-right corner; on Android it looks like a set of sliders at the bottom.
+        - generic [ref=e116]:
+          - generic [ref=e117]: "4"
+          - paragraph [ref=e119]:
+            - text: "You will see several tools:"
+            - strong [ref=e120]: Auto-Enhance
+            - text: (the magic wand on Apple, or "Enhance" under Suggestions in Google Photos) lets your device automatically improve the photo. This is often the best first step.
+            - strong [ref=e121]: Crop
+            - text: (square icon) cuts away parts of the photo you do not want.
+            - strong [ref=e122]: Filters
+            - text: add artistic effects like black and white.
+            - strong [ref=e123]: Adjust
+            - text: changes brightness, contrast, and colour.
+        - generic [ref=e124]:
+          - generic [ref=e125]: "5"
+          - paragraph [ref=e127]:
+            - text: When you are happy with your edits, tap
+            - strong [ref=e128]: "\"Done\""
+            - text: (Apple) or
+            - strong [ref=e129]: "\"Save copy\""
+            - text: (Google Photos, which keeps your original safe).
+        - generic [ref=e130]:
+          - generic [ref=e131]: "6"
+          - paragraph [ref=e133]:
+            - text: Changed your mind? You can always go back to Edit and tap
+            - strong [ref=e134]: "\"Revert\""
+            - text: to undo all changes and return to the original photo. Nothing is permanent.
+      - generic [ref=e135]:
+        - generic [ref=e136]: Tip
+        - paragraph [ref=e137]: Photo editing is non-destructive. Your original photo is always saved, and you can always undo any edits by tapping "Revert to Original". So experiment freely.
+      - heading "Organizing your photos" [level=2] [ref=e138]
+      - paragraph [ref=e139]: "As you take more photos, you will want to keep them organised. Here are some helpful features built into the Photos app and Google Photos:"
+      - list [ref=e140]:
+        - listitem [ref=e141]:
+          - strong [ref=e142]: "Albums:"
+          - text: you can create albums to group photos together, like "Garden 2025", "Grandchildren", or "Recipes". On Apple, tap the
+          - strong [ref=e143]: Albums
+          - text: tab, then the
+          - strong [ref=e144]: "\"+\""
+          - text: button. In Google Photos, tap the
+          - strong [ref=e145]: Library
+          - text: tab, then
+          - strong [ref=e146]: "\"New album\""
+          - text: .
+        - listitem [ref=e147]:
+          - strong [ref=e148]: "Favourites:"
+          - text: when viewing a photo, tap the
+          - strong [ref=e149]: heart icon
+          - text: (Apple) or
+          - strong [ref=e150]: star icon
+          - text: (Google Photos) to mark it as a favourite. All your favourites appear in a special "Favourites" album for quick access.
+        - listitem [ref=e151]:
+          - strong [ref=e152]: "Search:"
+          - text: your photo app can recognise what is in your photos. Tap
+          - strong [ref=e153]: Search
+          - text: and type something like "beach" or "birthday" or even "dog", and it will find matching photos.
+        - listitem [ref=e154]:
+          - strong [ref=e155]: "Memories:"
+          - text: your device automatically creates slideshows from your photos, set to music. On Apple, look for the
+          - strong [ref=e156]: "\"For You\""
+          - text: tab. In Google Photos, look at the top of the main screen. They can be quite lovely.
+      - generic [ref=e157]:
+        - generic [ref=e158]: Confidence check
+        - paragraph [ref=e159]: Your photos are treasures, and now you know how to take them, improve them, and keep them organised. Well done.
+      - heading "Drawing and painting apps" [level=2] [ref=e160]
+      - paragraph [ref=e161]: "Your device is a wonderful tool for drawing, painting, and creating art. Here are some apps to explore:"
+      - list [ref=e162]:
+        - listitem [ref=e163]:
+          - strong [ref=e164]: Paper by WeTransfer
+          - text: "(free, App Store, developer WeTransfer BV): a beautiful, simple drawing app. Swipe to turn pages, draw with your finger, and choose from pencils, pens, markers, and watercolour brushes. Perfect for sketching and doodling."
+        - listitem [ref=e165]:
+          - strong [ref=e166]: Ibis Paint X
+          - text: "(free, Play Store, developer ibis inc.): a popular and beginner-friendly drawing app for Android with many brushes, pens, and tools. One of the most-loved free art apps on Android."
+        - listitem [ref=e167]:
+          - strong [ref=e168]: Tayasui Sketches
+          - text: "(free version available, App Store and Play Store, developer Tayasui): incredibly realistic art tools. The watercolour brush actually behaves like real watercolour paint, blending and spreading on the digital \"paper\". Betty's favourite app."
+        - listitem [ref=e169]:
+          - strong [ref=e170]: Colouring books for adults
+          - text: "(various, free): search the App Store or Play Store for \"adult colouring\" to find relaxing colouring book apps. Tap to fill in areas with colour, choose from hundreds of patterns, and save your creations."
+      - generic [ref=e171]:
+        - generic [ref=e172]: Watch out
+        - paragraph [ref=e173]: When downloading creative apps, always use the official App Store or Play Store. Some "free" art apps contain ads or hidden subscriptions. Check the reviews and developer name first.
+      - heading "Making greeting cards and collages" [level=2] [ref=e174]
+      - paragraph [ref=e175]: "Your photos can become beautiful greeting cards, collages, and gifts:"
+      - list [ref=e176]:
+        - listitem [ref=e177]:
+          - strong [ref=e178]: The Photos app
+          - text: itself can create printed books, calendars, and cards. Look for the share button and options to print or order prints. In
+          - strong [ref=e179]: Google Photos
+          - text: ", check the Library tab and look for \"Utilities\" to find options for creating collages and movies."
+        - listitem [ref=e180]:
+          - strong [ref=e181]: Canva
+          - text: (free, App Store and Play Store, developer Canva) is an app with thousands of templates for cards, invitations, posters, and social media posts.
+        - listitem [ref=e182]:
+          - strong [ref=e183]: "Print at home:"
+          - text: if you have a printer, you can print photos directly from your photo app. On Apple, tap the share button (square with upward arrow) and select
+          - strong [ref=e184]: "\"Print\""
+          - text: . In Google Photos, tap the three dots menu on any photo and select "Print".
+      - heading "Listening to music and audiobooks" [level=2] [ref=e185]
+      - paragraph [ref=e186]: "Your device is also a wonderful entertainment device:"
+      - list [ref=e187]:
+        - listitem [ref=e188]:
+          - strong [ref=e189]: "Apple Music:"
+          - text: access millions of songs. If you have an Apple Music subscription, open the
+          - strong [ref=e190]: Music
+          - text: app and search for your favourite artists or decades (try "1960s hits" or "classical piano").
+        - listitem [ref=e191]:
+          - strong [ref=e192]: "Apple Books:"
+          - text: read e-books or listen to audiobooks. The
+          - strong [ref=e193]: Books
+          - text: app (orange icon with a book) lets you adjust text size, and audiobooks are wonderful for when your eyes need a rest.
+        - listitem [ref=e194]:
+          - strong [ref=e195]: "Podcasts:"
+          - text: the purple
+          - strong [ref=e196]: Podcasts
+          - text: app has thousands of free shows on every topic imaginable. Search for "gardening", "history", "mystery stories", or anything else that interests you.
+      - generic [ref=e197]:
+        - generic [ref=e198]: Confidence check
+        - paragraph [ref=e199]: You have discovered that your device is not just a communication tool. It is a creative studio. Betty found her art again through her iPad. What will you create?
+      - 'heading "Practical exercise: your creative debut" [level=2] [ref=e200]'
+      - paragraph [ref=e201]: "This is the fun one. Choose one or more of these activities:"
+      - generic [ref=e202]:
+        - heading "Try it yourself" [level=4] [ref=e203]
+        - generic [ref=e204]:
+          - generic [ref=e205]: "1"
+          - paragraph [ref=e207]:
+            - strong [ref=e208]: Take five photos
+            - text: "of things you find beautiful around your home: a vase of flowers, a favourite book, the view from your window, your pet, or your morning coffee."
+        - generic [ref=e209]:
+          - generic [ref=e210]: "2"
+          - paragraph [ref=e212]:
+            - strong [ref=e213]: Edit one photo
+            - text: using the built-in editing tools. Try the Auto-Enhance (magic wand) first, then experiment with cropping.
+        - generic [ref=e214]:
+          - generic [ref=e215]: "3"
+          - paragraph [ref=e217]:
+            - strong [ref=e218]: Create a favourites album.
+            - text: Go to Albums, tap "+", name it something like "My Beautiful Things", and add your five photos.
+        - generic [ref=e219]:
+          - generic [ref=e220]: "4"
+          - paragraph [ref=e222]:
+            - strong [ref=e223]: Try a drawing app.
+            - text: "Download \"Paper by WeTransfer\" from the App Store and draw anything: a flower, a face, your name. There are no rules."
+        - generic [ref=e224]:
+          - generic [ref=e225]: "5"
+          - paragraph [ref=e227]:
+            - strong [ref=e228]: Send your favourite creation to someone you love.
+            - text: Share a photo or drawing with a family member using Messages or Mail.
+      - generic [ref=e229]:
+        - generic [ref=e230]: Success looks like this
+        - paragraph [ref=e231]: You have taken and edited at least one photo. You have discovered that your device can bring you joy, not just anxiety. You may have surprised yourself with what you created.
+      - generic [ref=e232]:
+        - generic [ref=e233]: Try it today
+        - paragraph [ref=e234]: Send a photo of something you see right now to someone you love. It does not have to be perfect. They will love that you thought of them.
+      - 'heading "Quick check: test your knowledge" [level=2] [ref=e235]'
+      - paragraph [ref=e236]: Tap the answer you think is correct. There is no score kept and nothing to sign in to.
+      - generic [ref=e237]:
+        - generic [ref=e238]:
+          - heading "1. Where are your photos stored when you take them on an iPhone?" [level=3] [ref=e239]
+          - generic [ref=e240]:
+            - button "Only on the phone, until you send them somewhere" [ref=e241] [cursor=pointer]
+            - button "Automatically in iCloud if iCloud Photos is turned on" [ref=e242] [cursor=pointer]
+            - button "They are saved to your email account" [ref=e243] [cursor=pointer]
+            - button "They are uploaded to Apple's website for public viewing" [ref=e244] [cursor=pointer]
+        - generic [ref=e245]:
+          - heading "2. Someone asks you to text them a photo of your driver's licence so they can \"verify your identity\". What should you do?" [level=3] [ref=e246]
+          - generic [ref=e247]:
+            - button "Send it, it is just a photo, not the actual licence" [ref=e248] [cursor=pointer]
+            - button "Refuse, photos of ID documents can be used for identity theft" [ref=e249] [cursor=pointer]
+            - button "Blur your photo number first, then send" [ref=e250] [cursor=pointer]
+            - button "Only send it if they send their ID first" [ref=e251] [cursor=pointer]
+        - generic [ref=e252]:
+          - heading "3. You want to share a family photo album with grandchildren far away. The safest option is:" [level=3] [ref=e253]
+          - generic [ref=e254]:
+            - button "Post every photo publicly on Facebook so anyone can see" [ref=e255] [cursor=pointer]
+            - button "Use a private shared album (iCloud, Google Photos) where only invited people can see it" [ref=e256] [cursor=pointer]
+            - button "Email each photo individually" [ref=e257] [cursor=pointer]
+            - button "Print all the photos and mail them" [ref=e258] [cursor=pointer]
+        - generic [ref=e259]:
+          - heading "4. What does it mean to \"back up\" your photos?" [level=3] [ref=e260]
+          - generic [ref=e261]:
+            - button "Moving them off your phone to free up space, permanently deleting the originals" [ref=e262] [cursor=pointer]
+            - button "Saving a copy of them in a second location so you do not lose them if your phone breaks" [ref=e263] [cursor=pointer]
+            - button "Sharing them on social media" [ref=e264] [cursor=pointer]
+            - button "Printing them at a pharmacy" [ref=e265] [cursor=pointer]
+        - generic [ref=e266]:
+          - heading "5. A photo app asks permission to access ALL photos on your phone. You only want it to use one specific photo. What should you do?" [level=3] [ref=e267]
+          - generic [ref=e268]:
+            - button "Allow all access, apps need it to function" [ref=e269] [cursor=pointer]
+            - button "Choose \"Select Photos\" or \"Limited Access\" if your phone offers it, so only the specific photo is shared" [ref=e270] [cursor=pointer]
+            - button "Deny all access and take a screenshot instead" [ref=e271] [cursor=pointer]
+            - button "Close the app and use email" [ref=e272] [cursor=pointer]
+      - heading "Your progress" [level=2] [ref=e273]
+      - paragraph [ref=e274]: Tick each item as you feel confident with it. This is saved on this device only, with no account needed.
+      - list [ref=e275]:
+        - listitem [ref=e276]:
+          - checkbox "I can take a photo with the Camera app" [ref=e277]
+          - generic [ref=e278]: I can take a photo with the Camera app
+        - listitem [ref=e279]:
+          - checkbox "I can edit a photo and revert it back to the original" [ref=e280]
+          - generic [ref=e281]: I can edit a photo and revert it back to the original
+        - listitem [ref=e282]:
+          - checkbox "I can create an album and mark photos as favourites" [ref=e283]
+          - generic [ref=e284]: I can create an album and mark photos as favourites
+        - listitem [ref=e285]:
+          - checkbox "I have tried a drawing or colouring app, or know where to find one safely" [ref=e286]
+          - generic [ref=e287]: I have tried a drawing or colouring app, or know where to find one safely
+        - listitem [ref=e288]:
+          - checkbox "I know deleted photos wait in Recently Deleted for 30 days" [ref=e289]
+          - generic [ref=e290]: I know deleted photos wait in Recently Deleted for 30 days
+        - listitem [ref=e291]:
+          - checkbox "I have shared a photo or creation with someone I love" [ref=e292]
+          - generic [ref=e293]: I have shared a photo or creation with someone I love
+      - region [ref=e294]:
+        - heading "Send this lesson to someone" [level=2] [ref=e295]
+        - paragraph [ref=e296]: Helping a parent or friend? This page works on its own, with no account and nothing to install. Copy the link and text it to them.
+        - button "Copy the link to this lesson" [ref=e298] [cursor=pointer]
+      - paragraph [ref=e300]:
+        - strong [ref=e301]: Well done.
+        - text: "You have explored the creative side of your device: taking photos, editing, drawing, and sharing. Your device is not just safe. It is a source of creativity, beauty, and connection. Enjoy it."
+      - navigation "Continue learning" [ref=e302]:
+        - heading "Where to next" [level=2] [ref=e303]
+        - generic [ref=e304]:
+          - link "Module 8 Stay Connected Share your favourite photos with family through video calls and messaging apps." [ref=e305] [cursor=pointer]:
+            - /url: module-8.html
+            - generic [ref=e306]: Module 8
+            - generic [ref=e307]: Stay Connected
+            - generic [ref=e308]: Share your favourite photos with family through video calls and messaging apps.
+          - link "Module 2.5 Common Digital Tasks Practise the everyday tasks, like taking screenshots and backing up photos, that make your memories more useful." [ref=e309] [cursor=pointer]:
+            - /url: module-2-5.html
+            - generic [ref=e310]: Module 2.5
+            - generic [ref=e311]: Common Digital Tasks
+            - generic [ref=e312]: Practise the everyday tasks, like taking screenshots and backing up photos, that make your memories more useful.
+          - link "Module 4 App Store Safety Find trusted photo editing and storage apps safely so your memories are organised and backed up." [ref=e313] [cursor=pointer]:
+            - /url: module-4.html
+            - generic [ref=e314]: Module 4
+            - generic [ref=e315]: App Store Safety
+            - generic [ref=e316]: Find trusted photo editing and storage apps safely so your memories are organised and backed up.
+      - region [ref=e317]:
+        - heading "Tell us what you think" [level=2] [ref=e318]
+        - paragraph [ref=e319]: Did anything here feel confusing, or not work the way you expected? Please tell us. It takes a minute and it helps us more than you might think.
+        - button "Give feedback on this lesson" [ref=e320] [cursor=pointer]
+  - contentinfo [ref=e321]:
+    - generic [ref=e322]:
+      - list "Our promises" [ref=e323]:
+        - listitem [ref=e324]:
+          - generic [ref=e325]: ✓
+          - text: No account
+        - listitem [ref=e326]:
+          - generic [ref=e327]: ✓
+          - text: No tracking
+        - listitem [ref=e328]:
+          - generic [ref=e329]: ✓
+          - text: Nothing to buy
+        - listitem [ref=e330]:
+          - generic [ref=e331]: ✓
+          - text: Canadian
+      - paragraph [ref=e332]: Digital Confidence Centre is free to use, a community initiative by Two Birds Innovation, a Canadian company, to help Canadian adults stay safe and connected online. No account, no tracking, no sales calls.
+      - paragraph [ref=e333]: "Note: this site offers plain-language safety tips, not legal advice. If you suspect a scam, contact your bank directly."
+      - list [ref=e334]:
+        - listitem [ref=e335]:
+          - link "For families" [ref=e336] [cursor=pointer]:
+            - /url: ../for-families.html
+        - listitem [ref=e337]:
+          - link "About us" [ref=e338] [cursor=pointer]:
+            - /url: ../about.html
+        - listitem [ref=e339]:
+          - link "FAQ" [ref=e340] [cursor=pointer]:
+            - /url: ../faq.html
+        - listitem [ref=e341]:
+          - link "Glossary" [ref=e342] [cursor=pointer]:
+            - /url: ../glossary.html
+        - listitem [ref=e343]:
+          - link "Privacy" [ref=e344] [cursor=pointer]:
+            - /url: ../privacy.html
+        - listitem [ref=e345]:
+          - link "Terms" [ref=e346] [cursor=pointer]:
+            - /url: ../terms.html
+        - listitem [ref=e347]:
+          - link "Disclaimer" [ref=e348] [cursor=pointer]:
+            - /url: ../disclaimer.html
+        - listitem [ref=e349]:
+          - link "Get help" [ref=e350] [cursor=pointer]:
+            - /url: ../support-directory.html
+        - listitem [ref=e351]:
+          - link "Give feedback" [ref=e352] [cursor=pointer]:
+            - /url: "#"
+  - region "Privacy choices" [ref=e353]:
+    - generic [ref=e354]:
+      - paragraph [ref=e355]:
+        - text: We use a small browser memory to keep the site working and remember your text size.
+        - link "Read more" [ref=e356] [cursor=pointer]:
+          - /url: ../privacy.html
+        - text: .
+      - generic [ref=e357]:
+        - button "Accept" [ref=e358] [cursor=pointer]
+        - button "Reject" [ref=e359] [cursor=pointer]
+        - button "Preferences" [ref=e360] [cursor=pointer]
