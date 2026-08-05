@@ -708,6 +708,14 @@
   }
 
   function ensureWizard() {
+    // injectStyles() used to run only via boot()'s renderBanner(), which is
+    // gated to the landing page (#main[data-beta-banner], index.html only
+    // by design). openWizardStep() below is also called from module pages
+    // (via beta-collapsible-banner.js's rewatch/tell-us links), which never
+    // run boot() at all -- so the wizard built and opened fine, completely
+    // unstyled, on any page but the landing page. Idempotent (guarded by
+    // the "dcc-beta-styles" id check inside), so safe to call every time.
+    injectStyles();
     if (wizard === null) { wizard = buildWizard() || false; }
     return wizard || null;
   }
