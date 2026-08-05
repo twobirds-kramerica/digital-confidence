@@ -1,0 +1,30 @@
+# DCC AI help-chat Worker -- PROTOTYPE, NOT DEPLOYED (S-DCC-AI-CHAT-PROTO-001)
+# See the header comment in worker.js for full context. This config has never
+# been run through `wrangler deploy` -- it is here so Aaron can `wrangler dev`
+# it locally, and deploy it himself once he has reviewed the prototype.
+#
+# Credential note: no ANTHROPIC_API_KEY secret is set here (none was created
+# for this prototype). Without it, the Worker answers using Cloudflare
+# Workers AI (the [ai] binding below), which needs no API key. If Aaron wants
+# the higher-quality Claude Haiku 4.5 path instead, he runs, from this
+# directory:
+#   npx wrangler secret put ANTHROPIC_API_KEY
+# using an Anthropic API key he already holds (or none, if Workers AI quality
+# is sufficient for the pilot).
+
+name = "dcc-chat-prototype"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+# Cloudflare Workers AI binding -- no API key, no new credential, uses the
+# existing Cloudflare account already hosting dcc-data / dcc-beta-measurement.
+[ai]
+binding = "AI"
+
+# Rate limiting -- reuses the existing shared RATELIMIT KV namespace (same
+# account resource already used by dcc-data and dcc-beta-measurement per the
+# CLOUDFLARE WORKERS KV DEPLOY SEQUENCE rule) with a "dccchat:" key prefix.
+# No new KV namespace created for this prototype.
+[[kv_namespaces]]
+binding = "RATELIMIT"
+id = "adc681b4160e4f7c8fda4f17564b66d1"

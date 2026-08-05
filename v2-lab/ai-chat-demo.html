@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>AI help-chat prototype (internal review only) | Digital Confidence Centre</title>
+<style>
+  :root{ --ink:#1C2733; --soft:#435463; --line:#D5DDE6; --bg:#F8F9FB; --card:#fff; --accent:#1D4E89; --accent-d:#163C6A; }
+  html{color-scheme:light}
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);
+    margin:0;line-height:1.6;font-size:1.1rem;padding-bottom:80px}
+  header{background:linear-gradient(160deg,var(--accent),var(--accent-d));color:#fff;padding:26px 20px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px}
+  header h1{margin:0 0 8px;font-size:1.5rem;line-height:1.3}
+  header p{margin:0;opacity:.95;font-size:1rem}
+  main{max-width:760px;margin:0 auto;padding:20px 18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:16px 0;
+    box-shadow:0 1px 3px rgba(16,23,31,.06)}
+  .card h2{font-size:1.15rem;margin:0 0 8px;color:var(--accent-d)}
+  .card p{margin:0 0 10px}
+  code{background:#EAF1F8;border-radius:4px;padding:1px 6px;font-size:.95em}
+  .flag{background:#FFF8E1;border:1px solid #F9A825;border-radius:10px;padding:14px 16px;margin:16px 0}
+  .flag h2{color:#7A5800;margin:0 0 6px;font-size:1.05rem}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>DCC AI help-chat &mdash; internal review prototype</h1>
+    <p>Not part of the live site. Not linked from any navigation. For Aaron's review only.</p>
+  </div>
+</header>
+<main>
+  <div class="card">
+    <h2>What this is</h2>
+    <p>A working prototype of a floating chat widget that answers digital-literacy questions using an AI service, per the P2 sprint recommending a text-first Cloudflare Worker (see <code>hal-stack/research/dcc-voice-support-shared-vps-feasibility-2026-08-04.md</code>). It has never been deployed anywhere live.</p>
+  </div>
+  <div class="card">
+    <h2>How to try it</h2>
+    <p>1. From <code>digital-confidence/workers/dcc-chat-prototype/</code>, run <code>npx wrangler dev</code>. It will print a local URL, typically <code>http://127.0.0.1:8787</code>.</p>
+    <p>2. Open this page over HTTP (not <code>file://</code>) with any static server, e.g. from the repo root: <code>python3 -m http.server 8000</code>, then visit <code>http://localhost:8000/v2-lab/ai-chat-demo.html</code>.</p>
+    <p>3. Click the "Ask DCC" button in the bottom-right corner and type a question, e.g. "How do I know if an email is a scam?"</p>
+    <p>By default the Worker answers using Cloudflare Workers AI (no API key needed, free at this volume). To try the higher-quality Claude Haiku path instead, run <code>npx wrangler secret put ANTHROPIC_API_KEY</code> in the worker directory before <code>wrangler dev</code>.</p>
+  </div>
+  <div class="flag">
+    <h2>Design-gate conflict &mdash; flagged, not resolved</h2>
+    <p>PRODUCT.md's own Anti-references list names "Floating overlays that cover content ... these are current anti-patterns already on the live site." This prototype builds exactly the floating-button treatment the sprint asked for, so it can be reviewed as asked &mdash; but a filed product doc already calls that treatment an anti-pattern, and this sprint isn't the one authorized to resolve that conflict. Before any production merge, worth deciding whether the chat entry point should instead live in a fixed "designated zone" (nav or footer) per PRODUCT.md principle 4.</p>
+  </div>
+  <div class="card">
+    <h2>Privacy</h2>
+    <p>The widget shows a plain-language notice every time it opens: messages are sent to an AI service to generate a reply, and sensitive information (passwords, account numbers) should not be shared. The Worker stores no message content server-side &mdash; only an anonymous per-IP rate-limit counter.</p>
+  </div>
+</main>
+<script>
+  // Point at your local `wrangler dev` Worker. Change the port if wrangler
+  // printed a different one.
+  window.DCC_CHAT_ENDPOINT = "http://127.0.0.1:8787/chat";
+</script>
+<script src="ai-chat-widget.js" defer></script>
+</body>
+</html>
