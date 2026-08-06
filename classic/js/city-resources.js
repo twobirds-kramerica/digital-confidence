@@ -60,7 +60,7 @@ var NATIONAL_RESOURCES = [
   },
   {
     name: 'Canadian Anti-Fraud Centre',
-    phone: '1-888-495-4416',
+    phone: '1-888-495-8501',
     website: 'antifraudcentre-centreantifraude.ca',
     description: 'The official national centre for reporting fraud and scams in Canada. Call to report a scam, get advice, or check if something is suspicious.',
     availability: 'Monday–Friday, 9am–4:45pm ET · Toll-free',
@@ -177,7 +177,7 @@ function dcRenderCityBlock(city) {
   html += dcResourceCard(city.name + ' Police (Non-Emergency)', city.policeNonEmergency, 'For fraud or scam reporting. In an emergency, always call 911.', '');
 
   // Shared fraud line
-  html += dcResourceCard('Canadian Anti-Fraud Centre', '1-888-495-4416', 'National fraud reporting hotline. All cities share this resource.', 'Official Government of Canada resource — report scams and protect other Canadians.');
+  html += dcResourceCard('Canadian Anti-Fraud Centre', '1-888-495-8501', 'National fraud reporting hotline. All cities share this resource.', 'Official Government of Canada resource — report scams and protect other Canadians.');
 
   return html;
 }
