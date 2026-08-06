@@ -217,15 +217,26 @@
           <h2 id="protect-money">Protect your money</h2>
           <p class="group-lead">Keep more of what is yours: spot the scams, stop the silent charges, and stay in control of your own accounts.</p>
         </div>
-        <!-- Monoline figure (fig-guarding): a calm, non-alarmed raised palm --
-             this section's content (scams, fraud, staying in control of your
-             accounts) carries emotional temperature the copy deliberately
-             understates. DCC Monoline Figure System, S-DCC-ILLUSTRATION-CASCADE-001. -->
-        <div class="illus illus-spot" aria-hidden="true">
-          <svg viewBox="0 0 240 220" role="presentation" focusable="false">
-            <use href="assets/illustrations/dcc-figures.svg#fig-guarding"></use>
-          </svg>
-        </div>
+        <!-- The fig-guarding monoline figure used to sit here. Pulled
+             2026-08-05 (S-DCC-UX-BATCH-001) after Aaron's live review, on
+             three independent signals pointing the same way:
+               1. Aaron: small, right-floating, waving, goofy, and nothing
+                  about it says money. All verified true.
+               2. ux-reviewer, run against the live page after the sprint's
+                  geometry fixes: still reads as a lollipop head on an empty
+                  dome with the arm as a balloon on a string. "Below the bar
+                  the hero just set. Pull it."
+               3. hal-stack/research/visual-content-engagement-strategy-2026-07-28.md
+                  line 86: fraud and scam content gets an ICON, not a character
+                  illustration -- a monoline figure looking worried beside
+                  scam content is the exact failure that rule exists to stop.
+                  By that rule this placement was never right, taste aside.
+             The figure is aria-hidden decoration, so removing it costs the
+             page nothing semantically and is one revert away. The sprite
+             itself keeps its corrected geometry for other surfaces. What (if
+             anything) replaces it is Aaron's call -- Notion
+             3b4a09cf-876a-817f-a687-f8f09c145170. -->
+
       </div>
       <ul class="card-grid">
         <li class="topic-card">
