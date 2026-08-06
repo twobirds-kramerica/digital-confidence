@@ -277,11 +277,23 @@
       var wantExact = IS_FR ? "fr-ca" : "en-ca";
       var wantPrefix = IS_FR ? "fr" : "en";
       var nameLower = name.toLowerCase();
+
+      /* HARD LANGUAGE GATE (2026-08-05) — a voice that does not speak this
+         page's language is DISQUALIFIED outright, never merely down-ranked.
+         Before this gate, the /natural|neural|online/ bonus below was
+         language-independent, so on a French page an English neural voice
+         scored 25 (+1 localService) with no French voice present — a passing
+         score — and was then handed French text to read. That is the
+         "pretty bad sounding French" Aaron reported. A wrong-language voice
+         is never an acceptable near-miss on a bilingual Canadian product;
+         speaking nothing is better than speaking French in an English voice. */
+      if (lang.indexOf(wantPrefix) !== 0) return 0;
+
       for (var i = 0; i < NAME_PREFS.length; i++) {
         if (nameLower.indexOf(NAME_PREFS[i]) !== -1) { s += 50; break; }
       }
       if (lang === wantExact) s += 40;
-      else if (lang.indexOf(wantPrefix) === 0) s += 20;
+      else s += 20; // right language, different region (e.g. fr-FR on a fr-CA page)
       if (/natural|neural|online/i.test(name)) s += 25; // raised above the generic-language bonus: quality outranks a near-miss locale
       if (v.localService) s += 1; // network-stutter resilience only; no longer favours the robotic offline legacy voices
       return s;
@@ -420,9 +432,15 @@
          very first block so we do not yank the page away from the top. */
       try { if (i > 0) activeEl.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) {}
 
+      /* Defence in depth (2026-08-05): beginSpeaking() is the guarded entry
+         point, but the block-to-block chain re-enters here directly. If a
+         voice ever went missing mid-read, the old code silently dropped
+         u.voice and the OS default finished the page. Refuse instead. */
+      if (!chosenVoice) { noAcceptableVoice(); return; }
+
       var u = new SpeechSynthesisUtterance(text);
       u.lang = IS_FR ? "fr-CA" : "en-CA";
-      if (chosenVoice) u.voice = chosenVoice;
+      u.voice = chosenVoice;
       u.rate = RATES[rateKey];
       u.pitch = 0.85; // slightly lower pitch — clearer for age-related hearing loss
       u.onboundary = function (ev) {
@@ -454,12 +472,49 @@
        robotic one this heuristic exists to avoid). Retry pickVoice() a
        few times, up to ~400ms, before giving up and speaking with
        whatever's available. */
+    /* REFUSE-TO-SPEAK GUARD (2026-08-05) — replaces "give up and speak with
+       whatever's available". Previously, once attemptsLeft hit 0 this fell
+       straight through to speakBlock() with chosenVoice still null; speakBlock
+       only sets u.voice when a voice exists, so the OS default read the page —
+       silently, with no message, no log, and nothing for Aaron to notice. That
+       is the catastrophic-fallback he asked to be made impossible, and it
+       recurred the same day the retry mitigation shipped (95d687b).
+       A bounded retry cannot fix the no-suitable-voice-installed case at all:
+       waiting longer never conjures a French voice onto a device without one.
+       So the fallback is now removed rather than lengthened. */
+    function noAcceptableVoice() {
+      stopReading();
+      var msg = IS_FR
+        ? "La lecture à voix haute est en pause : cet appareil n’a pas encore la voix canadienne que nous utilisons. Nous préférons nous taire plutôt que de vous lire avec une voix robotisée."
+        : "Read aloud is paused: this device does not have the Canadian voice we use yet. We would rather stay quiet than read to you in a robotic voice.";
+      if (voiceStatus) voiceStatus.textContent = msg;
+      readBtn.textContent = IS_FR ? "Lecture à voix haute en pause" : "Read aloud paused";
+      /* Code orange. Loud in the console, and persisted so it survives the
+         page the listener was on — a fallback nobody can see is how this got
+         through twice. */
+      try {
+        console.error("[DCC][READ-ALOUD][CODE-ORANGE] No acceptable " +
+          (IS_FR ? "fr" : "en") + " voice installed — refused to speak rather than use the OS default.");
+        localStorage.setItem("dcc-readaloud-no-voice", JSON.stringify({
+          lang: IS_FR ? "fr" : "en",
+          at: new Date().toISOString(),
+          page: location.pathname,
+          voices: (window.speechSynthesis.getVoices() || []).map(function (v) { return v.name + "|" + v.lang; })
+        }));
+      } catch (e) {}
+    }
+
     function beginSpeaking(fromIndex, attemptsLeft) {
       if (!reading) return; // stopped while we were waiting for a voice
-      if (!chosenVoice && attemptsLeft > 0) {
-        pickVoice();
-        if (!chosenVoice) {
-          setTimeout(function () { beginSpeaking(fromIndex, attemptsLeft - 1); }, 50);
+      if (!chosenVoice) {
+        if (attemptsLeft > 0) {
+          pickVoice();
+          if (!chosenVoice) {
+            setTimeout(function () { beginSpeaking(fromIndex, attemptsLeft - 1); }, 50);
+            return;
+          }
+        } else {
+          noAcceptableVoice(); // never speak with the OS default
           return;
         }
       }
