@@ -90,8 +90,12 @@
             <circle cx="136" cy="46" r="6"/>
             <path d="M124 46 h6"/>
             <path d="M118 60 q7 5 14 1"/>
-            <!-- shoulders / cardigan -->
-            <path d="M84 138 c2 -30 16 -44 42 -44 c26 0 40 14 42 44"/>
+            <!-- Cou. Sans lui la tete flotte: l'arc des epaules culminait a
+                 y=94 face a un menton finissant a y~68, laissant un vide de 26
+                 unites (corrige 2026-08-05, S-DCC-UX-BATCH-001). -->
+            <path d="M120 66 v13 M134 66 v13"/>
+            <!-- epaules / cardigan: sommet releve pour rejoindre le cou -->
+            <path d="M84 138 c2 -34 18 -62 43 -62 c25 0 41 28 43 62"/>
             <!-- tablet held comfortably -->
             <rect x="96" y="110" width="62" height="44" rx="6"/>
             <path d="M104 124 h34 M104 134 h44"/>

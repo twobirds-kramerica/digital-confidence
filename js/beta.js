@@ -779,7 +779,24 @@
     main.insertBefore(bar, main.firstChild);
   }
 
+  // True when beta-collapsible-banner.js is on the page. That banner is the
+  // single beta notice surface: BETA tag, one-line lead, Give feedback,
+  // Watch welcome video, Tell us who you are, dismiss -- everything this
+  // file's own banner carried. Rendering both stacked two beta notices and
+  // two "Watch welcome video" links on top of the landing page (measured
+  // 2026-08-05: 63% of a 1440x900 fold before the hero), and the returning
+  // bar's "Welcome back to the beta site" fired off getEmail() rather than a
+  // real return visit, so it greeted a first-time tester who had just typed
+  // their email into the wizard seconds earlier. S-DCC-UX-BATCH-001.
+  function phaseBannerPresent() {
+    return !!document.querySelector('script[src$="beta-collapsible-banner.js"]');
+  }
+
   function renderBanner(main, returning, needsInlineVideo) {
+    // The one thing the phase banner cannot carry: the inline <video>
+    // fallback for browsers with no <dialog> support, which has nowhere else
+    // to live. Everything else defers to the phase banner.
+    if (phaseBannerPresent() && !needsInlineVideo) { return; }
     if (returning) { renderReturningBar(main); return; }
 
     injectStyles();

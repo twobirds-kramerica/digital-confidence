@@ -90,9 +90,16 @@
             <circle cx="136" cy="46" r="6"/>
             <path d="M124 46 h6"/>
             <path d="M118 60 q7 5 14 1"/>
-            <!-- shoulders / cardigan -->
-            <path d="M84 138 c2 -30 16 -44 42 -44 c26 0 40 14 42 44"/>
-            <!-- tablet held comfortably -->
+            <!-- Neck. Without it the head floats: the shoulder arc used to peak
+                 at y=94 against a head whose chin ends at y~68, leaving a 26-unit
+                 void, so the head plus its two round lenses read as a detached
+                 abstract mark hovering over a rectangle. Aaron, 2026-08-05:
+                 "an infinity-loop icon just kinda floating there". -->
+            <path d="M120 66 v13 M134 66 v13"/>
+            <!-- shoulders / cardigan: apex raised to meet the neck -->
+            <path d="M84 138 c2 -34 18 -62 43 -62 c25 0 41 28 43 62"/>
+            <!-- tablet held comfortably: sits inside the shoulder arc, no
+                 crossing strokes (the arc is already outside x96-158 by y=110) -->
             <rect x="96" y="110" width="62" height="44" rx="6"/>
             <path d="M104 124 h34 M104 134 h44"/>
             <!-- warm mug with steam, on the side table -->
