@@ -333,6 +333,31 @@ html[data-theme="dark"] { --dcc-leaf-red: #FF6B5E; }
   margin-top: auto;
 }
 .topic-card.card-flagship { border: 2px solid var(--color-primary); }
+
+/* A one-card grid still inherited repeat(auto-fill, minmax(290px, 1fr)), so the
+   "Start here, our most popular practice" card rendered at one third of the
+   content width with two thirds of empty row beside it, and its copy (the
+   longest on the page at 179 characters) crammed into 6 lines in the narrowest
+   column on the page. Read as broken rather than deliberate -- Aaron, 2026-08-05,
+   described it as heavy text left and heavy empty space right. Give the feature
+   card the full row and lay it out horizontally once there is room for it. */
+.card-grid--feature { grid-template-columns: 1fr; }
+@media (min-width: 768px) {
+  .card-grid--feature .topic-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "icon title" "icon body" "icon meta";
+    column-gap: var(--space-6);
+    row-gap: var(--space-3);
+    align-items: start;
+  }
+  .card-grid--feature .topic-card .card-icon { grid-area: icon; align-self: center; }
+  .card-grid--feature .topic-card h3 { grid-area: title; }
+  .card-grid--feature .topic-card p { grid-area: body; max-width: 70ch; }
+  /* justify-self, not align-self: .ttc's own align-self:flex-start is a
+     flex rule and does nothing here, so the pill stretched the full column. */
+  .card-grid--feature .topic-card .ttc { grid-area: meta; margin-top: 0; justify-self: start; }
+}
 /* position:absolute + a fixed negative top offset means a 2-line wrap
    doesn't just look bad, it grows DOWNWARD into the card's own content
    underneath (confirmed live 2026-07-28: the FR text wrapped and covered
@@ -609,6 +634,34 @@ html[data-theme="dark"] { --dcc-leaf-red: #FF6B5E; }
   background: var(--color-surface);
 }
 .cafc-block p { margin: 0; font-size: calc(var(--font-size-base) - 1px); }
+
+/* --- Partner / institution CTA -------------------------------------------
+   Three same-shaped blocks used to close the landing page: the families
+   reassurance (.who-pays), this partner pitch, and the Anti-Fraud Centre
+   notice (.cafc-block). This one and the fraud notice were literally the
+   same class -- the commercial ask and a legal safety notice rendered
+   identically, so the ask read as boilerplate and was skimmed past (Aaron,
+   2026-08-05). They are differentiated by ROLE, not by decoration: PRODUCT.md
+   principle 2 rules out a loud competing CTA, and nothing here is louder than
+   the lesson CTAs above it. What changed is that this block now behaves like
+   an offer -- named heading, its own accent edge, and a real button instead
+   of an underlined link buried mid-sentence -- while the fraud notice stays
+   the quietest of the three, which is correct for a notice. */
+.partner-cta {
+  border: 1px solid var(--color-border-strong);
+  border-left: 5px solid var(--color-accent-deep, var(--color-primary));
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  margin: var(--space-12) 0 var(--space-6);
+  background: var(--color-surface-alt);
+}
+.partner-cta h2 {
+  margin: 0 0 var(--space-2);
+  font-size: var(--font-size-h3);
+  color: var(--color-primary);
+}
+.partner-cta p { margin: 0 0 var(--space-5); max-width: 66ch; }
+.partner-cta .btn { margin: 0; }
 
 /* ============================================================================
    CONSENT — layered bar: one line + Accept / Reject / Preferences.
