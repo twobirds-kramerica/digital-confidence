@@ -1239,7 +1239,27 @@ var DC_QUIZ = (function () {
   }
 
   /* ── Module completion check ─────────────────────────────── */
+  /* v2 modules persist checklist progress through DCC.winStep() into
+     "dccv2-wins-module-<N>" (a JSON array of ticked checkbox ids — see
+     js/dcc.js SW_PREFIX/winStep and js/module.js's data-checklist wiring).
+     No total is stored alongside the array, so "all done" is checked
+     against each module's known checklist item count below (kept in sync
+     with the <ul class="checklist" data-checklist="module-N"> markup in
+     modules/module-N.html). v1 dc-progress-m<N>-<step> keys are kept as a
+     fallback so returning classic-era users still register as done. */
+  var V2_MODULE_CHECKLIST_TOTAL = {
+    1: 4, 2: 7, 3: 6, 4: 6, 5: 5, 6: 5, 7: 6, 8: 6, 9: 6, 10: 6, 11: 6
+  };
   function isModuleDone(moduleNum) {
+    var v2Key = 'dccv2-wins-module-' + moduleNum;
+    var v2Wins;
+    try { v2Wins = JSON.parse(localStorage.getItem(v2Key)) || []; }
+    catch (e) { v2Wins = []; }
+    if (v2Wins.length > 0) {
+      var total = V2_MODULE_CHECKLIST_TOTAL[moduleNum];
+      return total ? v2Wins.length >= total : true;
+    }
+
     var prefix = 'dc-progress-m' + moduleNum;
     var hasItems = false, allDone = true;
     for (var i = 1; i <= 10; i++) {
