@@ -178,7 +178,7 @@
     /* ── Share/protect grid ── */
     .sp-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1.25rem;
       margin-top: 1rem;
     }
@@ -479,6 +479,27 @@
       .sp-grid { grid-template-columns: 1fr; }
       .module-nav a { max-width: 100%; }
     }
+  
+    /* High-zoom safety (brand-audit Phase 2, 2026-08-10): unbreakable tokens
+       wrap, and flex/grid text cells may shrink below max-content, instead of
+       clipping invisibly behind bundle.css body overflow-x:hidden at 150-200%
+       zoom. Unmatched selectors are no-ops on pages without those elements. */
+    body { overflow-wrap: break-word; }
+    /* Standard flex/grid min-width:auto reset -- only has effect when a
+       flex/grid container squeezes below content minimum (i.e. high zoom /
+       ultra-narrow), inert at desktop widths. */
+    body * { min-width: 0; }
+    /* bundle.css sets strong{color:var(--text-primary)} which lands dark
+       text on the coloured caregiver banner (2.4:1, fails AA) -- banner
+       text inherits the banner's own colour instead. */
+    .caregiver-banner strong { color: inherit; }
+    /* Inline-block chips (mono password examples, tags, result pills) hold
+       unbreakable tokens -- cap to container and allow token break. */
+    .example, .we-result, .optional-tag, .passphrase-example, .pw-chip {
+      max-width: 100%; overflow-wrap: anywhere; box-sizing: border-box;
+    }
+    .optional-tag { flex-shrink: 1; }
+  
   </style>
 </head>
 <body>

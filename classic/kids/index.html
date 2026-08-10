@@ -202,7 +202,7 @@
       flex-shrink: 0;
       margin-top: 0.1rem;
     }
-    .how-item .how-text { font-size: 0.9rem; color: var(--kids-text-light); line-height: 1.5; }
+    .how-item .how-text { font-size: 0.9rem; color: var(--kids-text-light); line-height: 1.5; min-width: 0; }
     .how-item .how-text strong { color: var(--kids-text); }
 
     .kids-footer {
@@ -217,8 +217,35 @@
        css/tokens-kids.css so the adult dark-theme paragraph rule cannot win */
 
     @media (max-width: 480px) {
-      .age-grid { grid-template-columns: repeat(2, 1fr); }
+      .age-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
+    @media (max-width: 359px) {
+      /* below ~360px the 2-up cards fall under their content minimum and the
+         classic bundle's body overflow-x:hidden silently clips them -- one
+         column keeps every card fully visible at high zoom */
+      .age-grid { grid-template-columns: 1fr; }
+    }
+  
+    /* High-zoom safety (brand-audit Phase 2, 2026-08-10): unbreakable tokens
+       wrap, and flex/grid text cells may shrink below max-content, instead of
+       clipping invisibly behind bundle.css body overflow-x:hidden at 150-200%
+       zoom. Unmatched selectors are no-ops on pages without those elements. */
+    body { overflow-wrap: break-word; }
+    /* Standard flex/grid min-width:auto reset -- only has effect when a
+       flex/grid container squeezes below content minimum (i.e. high zoom /
+       ultra-narrow), inert at desktop widths. */
+    body * { min-width: 0; }
+    /* bundle.css sets strong{color:var(--text-primary)} which lands dark
+       text on the coloured caregiver banner (2.4:1, fails AA) -- banner
+       text inherits the banner's own colour instead. */
+    .caregiver-banner strong { color: inherit; }
+    /* Inline-block chips (mono password examples, tags, result pills) hold
+       unbreakable tokens -- cap to container and allow token break. */
+    .example, .we-result, .optional-tag, .passphrase-example, .pw-chip {
+      max-width: 100%; overflow-wrap: anywhere; box-sizing: border-box;
+    }
+    .optional-tag { flex-shrink: 1; }
+  
   </style>
 </head>
 <body>

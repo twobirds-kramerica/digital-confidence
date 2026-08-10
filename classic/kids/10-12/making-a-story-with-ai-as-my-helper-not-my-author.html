@@ -170,7 +170,7 @@
       text-transform: uppercase; color: var(--kids-indigo); margin: 0 0 0.5rem;
     }
     .line-breakdown {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.75rem;
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; margin-top: 0.75rem;
     }
     .my-lines {
       background: var(--kids-green-bg); border: 2px solid var(--kids-green-light);
@@ -186,7 +186,7 @@
 
     /* AI-assisted vs AI-generated */
     .distinction-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0;
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.25rem 0;
     }
     .distinction-card {
       border-radius: 14px; padding: 1.1rem;
@@ -223,7 +223,7 @@
     .meter-step.good   { background: var(--kids-green-bg); border-color: var(--kids-green-light); color: var(--kids-green); }
     .meter-step.target { background: var(--kids-green); border-color: var(--kids-green); color: #fff; }
     .meter-labels {
-      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem;
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem;
       font-size: 0.8rem; color: var(--text-muted); margin-top: 0.35rem;
     }
     .meter-labels span:nth-child(2) { text-align: center; }
@@ -241,7 +241,7 @@
     .activity-box h3 { font-size: 1.15rem; color: var(--text-primary); margin: 0 0 1rem; }
 
     .variant-tabs {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem;
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; margin-bottom: 1.5rem;
     }
     .variant-tab {
       border-radius: 12px; padding: 0.85rem 1rem; border: 2px solid;
@@ -274,7 +274,7 @@
       display: flex; flex-direction: column; gap: 0.5rem;
     }
     .story-line {
-      display: grid; grid-template-columns: 1.75rem 1fr; gap: 0.75rem; align-items: start;
+      display: grid; grid-template-columns: 1.75rem minmax(0, 1fr); gap: 0.75rem; align-items: start;
     }
     .line-num {
       width: 1.75rem; height: 1.75rem; border-radius: 50%;
@@ -358,7 +358,7 @@
     }
 
     .do-avoid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1rem 0;
     }
     .do-box {
       background: var(--kids-green-bg); border: 2px solid var(--kids-green-light);
@@ -394,6 +394,27 @@
       .variant-tabs { grid-template-columns: 1fr; }
       .do-avoid { grid-template-columns: 1fr; }
     }
+  
+    /* High-zoom safety (brand-audit Phase 2, 2026-08-10): unbreakable tokens
+       wrap, and flex/grid text cells may shrink below max-content, instead of
+       clipping invisibly behind bundle.css body overflow-x:hidden at 150-200%
+       zoom. Unmatched selectors are no-ops on pages without those elements. */
+    body { overflow-wrap: break-word; }
+    /* Standard flex/grid min-width:auto reset -- only has effect when a
+       flex/grid container squeezes below content minimum (i.e. high zoom /
+       ultra-narrow), inert at desktop widths. */
+    body * { min-width: 0; }
+    /* bundle.css sets strong{color:var(--text-primary)} which lands dark
+       text on the coloured caregiver banner (2.4:1, fails AA) -- banner
+       text inherits the banner's own colour instead. */
+    .caregiver-banner strong { color: inherit; }
+    /* Inline-block chips (mono password examples, tags, result pills) hold
+       unbreakable tokens -- cap to container and allow token break. */
+    .example, .we-result, .optional-tag, .passphrase-example, .pw-chip {
+      max-width: 100%; overflow-wrap: anywhere; box-sizing: border-box;
+    }
+    .optional-tag { flex-shrink: 1; }
+  
   </style>
 </head>
 <body>

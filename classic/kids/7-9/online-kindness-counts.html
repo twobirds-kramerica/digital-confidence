@@ -148,7 +148,7 @@
 
     /* Upstander vs bystander */
     .compare-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0;
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.25rem 0;
     }
     .compare-card { border-radius: 16px; padding: 1.25rem; }
     .compare-card.bystander { background: #FFF8F0; border: 2px solid var(--kids-orange-light); }
@@ -184,7 +184,7 @@
 
     .nav-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 2rem; }
     .nav-link-prev, .nav-link-next {
-      flex: 1; min-width: 220px; display: flex; align-items: center; gap: 0.75rem;
+      flex: 1; min-width: 0; display: flex; align-items: center; gap: 0.75rem;
       border-radius: var(--kids-radius); padding: 1rem 1.25rem;
       text-decoration: none; color: var(--text-primary); transition: box-shadow 0.15s;
     }
@@ -234,8 +234,8 @@
 
     @media (max-width: 520px) {
       .compare-grid { grid-template-columns: 1fr; }
-      .why-grid { grid-template-columns: 1fr 1fr; }
-      .nav-links { flex-direction: column; }
+      .why-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .nav-links { flex-direction: column; flex-wrap: nowrap; }
     }
 
     .kids-footer {
@@ -249,6 +249,27 @@
       .kids-hero { padding: 1rem; }
       body { background: #fff; }
     }
+  
+    /* High-zoom safety (brand-audit Phase 2, 2026-08-10): unbreakable tokens
+       wrap, and flex/grid text cells may shrink below max-content, instead of
+       clipping invisibly behind bundle.css body overflow-x:hidden at 150-200%
+       zoom. Unmatched selectors are no-ops on pages without those elements. */
+    body { overflow-wrap: break-word; }
+    /* Standard flex/grid min-width:auto reset -- only has effect when a
+       flex/grid container squeezes below content minimum (i.e. high zoom /
+       ultra-narrow), inert at desktop widths. */
+    body * { min-width: 0; }
+    /* bundle.css sets strong{color:var(--text-primary)} which lands dark
+       text on the coloured caregiver banner (2.4:1, fails AA) -- banner
+       text inherits the banner's own colour instead. */
+    .caregiver-banner strong { color: inherit; }
+    /* Inline-block chips (mono password examples, tags, result pills) hold
+       unbreakable tokens -- cap to container and allow token break. */
+    .example, .we-result, .optional-tag, .passphrase-example, .pw-chip {
+      max-width: 100%; overflow-wrap: anywhere; box-sizing: border-box;
+    }
+    .optional-tag { flex-shrink: 1; }
+  
   </style>
 </head>
 <body>
