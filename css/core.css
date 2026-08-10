@@ -33,6 +33,11 @@ body {
   font-size: var(--font-size-base);
   line-height: var(--line-height-body);
   text-align: left; /* never centre or justify prose */
+  /* Long unbreakable tokens in prose (passwords.google.com, myaccount.google.com
+     in module walkthroughs) overflow the page at high zoom on small screens.
+     break-word only activates when a word cannot fit its line — no effect on
+     normal text. (2026-08-10, S-PORTFOLIO-BRAND-AUDIT-REFRESH-001 Phase 1.) */
+  overflow-wrap: break-word;
 }
 
 img { max-width: 100%; height: auto; }
@@ -113,6 +118,15 @@ a:hover { color: var(--color-text-link-hover); }
   white-space: nowrap; /* wrap-hardening (2026-07-28 rule): the pill moves as one
     unit on narrow/zoomed layouts; FR "Connexion sécurisée · Canadien" must never
     break internally. */
+}
+/* Extreme-narrow exception to the 2026-07-28 nowrap rule: under real browser
+   zoom (150-200%, common for DCC's own audience) the CSS viewport on a phone
+   shrinks below the pill's intrinsic width, and an unwrappable pill then forces
+   horizontal scrolling of the whole page — worse than a two-line pill. The rule
+   stands everywhere a real device can actually fit the pill.
+   (2026-08-10, S-PORTFOLIO-BRAND-AUDIT-REFRESH-001 Phase 1, overlap-check matrix.) */
+@media (max-width: 280px) {
+  .secure-badge { white-space: normal; }
 }
 
 /* Canadian trust badge -- icon ALWAYS paired with text, same pattern as .secure-badge.
@@ -289,7 +303,11 @@ html[data-theme="dark"] { --dcc-leaf-red: #FF6B5E; }
    ========================================================================== */
 .card-grid {
   display: grid; gap: var(--space-6);
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  /* min(290px, 100%): the 290px floor must yield when the container itself is
+     narrower (real browser zoom 150-200% on small screens shrinks the CSS
+     viewport below 290px) — otherwise cards force horizontal scroll.
+     Found by the overlap-check width x zoom matrix, 2026-08-10. */
+  grid-template-columns: repeat(auto-fill, minmax(min(290px, 100%), 1fr));
   margin: var(--space-8) 0;
   padding: 0; list-style: none;
 }
@@ -815,7 +833,10 @@ body.consent-open { padding-bottom: 240px; }
   display: inline-flex; align-items: center; justify-content: center;
   font-family: var(--font-heading); font-weight: var(--font-weight-bold); font-size: 19px;
 }
-.wt-step .step-text { flex: 1 1 auto; }
+.wt-step .step-text { flex: 1 1 auto; min-width: 0; /* flex min-width:auto blocks
+  shrinking below content min-width, overflowing the page at high zoom when a
+  step contains a long domain (passwords.google.com). min-width:0 + body's
+  overflow-wrap lets it wrap instead. (2026-08-10, brand-audit Phase 1.) */ }
 .wt-step .step-text p:last-child { margin-bottom: 0; }
 
 /* Fake-warning depiction - deliberately quoted, clearly labelled "not real" */
@@ -878,7 +899,8 @@ body.consent-open { padding-bottom: 240px; }
 }
 .check-item:last-child { border-bottom: 0; }
 .check-item input[type="checkbox"] { width: 28px; height: 28px; margin-top: 2px; flex: 0 0 auto; accent-color: var(--color-btn-primary-bg); }
-.check-item label { font-family: var(--font-body); }
+.check-item label { font-family: var(--font-body); min-width: 0; /* flex item:
+  allow shrink + wrap at high zoom, same fix as .wt-step .step-text */ }
 
 .success-state {
   background: var(--color-success-light); color: var(--color-success-deep);
@@ -889,7 +911,7 @@ body.consent-open { padding-bottom: 240px; }
 
 /* Related + within-course navigation */
 .related-modules { margin: var(--space-12) 0 0; }
-.related-grid { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.related-grid { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); /* min(): shrink below 260px at high zoom, see .card-grid note */ }
 .related-card {
   display: block; background: var(--color-surface); border: 1px solid var(--color-border);
   border-radius: var(--radius-lg); padding: var(--space-5); text-decoration: none; color: var(--color-text);
@@ -913,4 +935,13 @@ body.consent-open { padding-bottom: 240px; }
   body.consent-open { padding-bottom: 320px; }
   .primary-nav .container { flex-direction: column; gap: 0; }
   .primary-nav a { width: 100%; }
+}
+
+/* Reduced-motion gate, consolidated (2026-08-10, S-PORTFOLIO-BRAND-AUDIT-REFRESH-001
+   Phase 1): the baseline (warm-approachable-senior #8) mandates minimal motion for
+   vestibular safety. The chevron and quiz bar were already gated individually;
+   this gates the remaining transitions (skip-link slide, button background fade,
+   progress fills). Colour fades are low-risk but zero-cost to disable. */
+@media (prefers-reduced-motion: reduce) {
+  .skip-link, .btn, .sw-fill { transition: none; }
 }

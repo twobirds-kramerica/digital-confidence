@@ -57,7 +57,8 @@
 
 .principle-grid {
   display: grid; gap: var(--space-4);
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  /* min(): shrink below the floor at high zoom, see core.css .card-grid note */
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
   margin: var(--space-5) 0;
 }
 .principle-card {
@@ -217,7 +218,7 @@
   border-bottom: 2px solid var(--color-border); padding-bottom: var(--space-1);
   margin-bottom: var(--space-4); /* anchor-scroll offset: html scroll-padding-top + js/dcc.js, see core.css:16 */
 }
-.gloss-grid { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.gloss-grid { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); /* min(): shrink below 300px at high zoom, see core.css .card-grid note */ }
 .gloss-card {
   background: var(--color-surface); border: 1px solid var(--color-border);
   border-radius: var(--radius-lg); padding: var(--space-4) var(--space-5);

@@ -278,7 +278,11 @@ html[data-theme="dark"] {
   }
 }
 
-/* User text-size toggle (A− / A / A+) — JS adds one class to <html>. */
-html.text-size-s { --font-size-base: 16px; }
+/* User text-size toggle (A− / A / A+) — JS adds one class to <html>.
+   A− is 18px, not 16px: the DCC baseline (warm-approachable-senior, design
+   language #8) and this repo's CLAUDE.md both set an 18px floor for BODY
+   text on this product — 16px is the floor for meta/small text only.
+   (Corrected 2026-08-10, S-PORTFOLIO-BRAND-AUDIT-REFRESH-001 Phase 1.) */
+html.text-size-s { --font-size-base: 18px; }
 html.text-size-m { --font-size-base: 21px; }
 html.text-size-l { --font-size-base: 24px; }
