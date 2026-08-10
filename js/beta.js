@@ -92,11 +92,11 @@
     wizBack: "Retour",
     wizRewatch: "Voir la vidéo de bienvenue",
     wizLabel: "Accueil des testeurs beta",
-    wizIdTitle: "À qui parlons-nous?",
+    wizIdTitle: "Un peu à propos de vous",
     wizIdBody: "Quand vous nous envoyez un commentaire, il arrive sans nom. Si vous nous donnez votre prénom, nous saurons qu'il vient de vous, et nous pourrons revenir vers vous si nous avons une question. C'est entièrement à vous de décider et vous pouvez laisser le champ vide.",
     wizIdName: "Votre prénom",
     wizIdEmail: "Votre courriel, seulement si vous voulez que vos leçons vous suivent d'un appareil à l'autre",
-    wizIdEmailHelp: "Nous ne conservons jamais votre adresse courriel. Votre navigateur la brouille d'abord, ce qui permet de vous reconnaître sans que nous la voyions.",
+    wizIdEmailHelp: "Nous ne voyons jamais votre courriel - votre navigateur le transforme d'abord en code.",
     wizIdSave: "Enregistrer et continuer",
     wizIdSkip: "Passer et continuer",
     wizIdThanks: "Merci, {name}. Vos commentaires nous arriveront avec votre nom.",
@@ -143,11 +143,11 @@
     wizBack: "Back",
     wizRewatch: "Watch welcome video",
     wizLabel: "Beta tester welcome",
-    wizIdTitle: "Who are we talking to?",
+    wizIdTitle: "A little about you",
     wizIdBody: "When you send us feedback, it arrives with no name on it. If you tell us your first name, we will know it came from you, and we can come back to you if we have a question about something you told us. This is entirely up to you and you can leave it blank.",
     wizIdName: "Your first name",
     wizIdEmail: "Your email, only if you want lessons to carry over between your devices",
-    wizIdEmailHelp: "We never store your email address. Your own browser scrambles it first, so it works as a key without us ever seeing it.",
+    wizIdEmailHelp: "We never see your email - your browser turns it into a code first.",
     wizIdSave: "Save and continue",
     wizIdSkip: "Skip and continue",
     wizIdThanks: "Thank you, {name}. Your feedback will come to us with your name on it.",
@@ -708,6 +708,14 @@
   }
 
   function ensureWizard() {
+    // injectStyles() used to run only via boot()'s renderBanner(), which is
+    // gated to the landing page (#main[data-beta-banner], index.html only
+    // by design). openWizardStep() below is also called from module pages
+    // (via beta-collapsible-banner.js's rewatch/tell-us links), which never
+    // run boot() at all -- so the wizard built and opened fine, completely
+    // unstyled, on any page but the landing page. Idempotent (guarded by
+    // the "dcc-beta-styles" id check inside), so safe to call every time.
+    injectStyles();
     if (wizard === null) { wizard = buildWizard() || false; }
     return wizard || null;
   }
@@ -771,7 +779,24 @@
     main.insertBefore(bar, main.firstChild);
   }
 
+  // True when beta-collapsible-banner.js is on the page. That banner is the
+  // single beta notice surface: BETA tag, one-line lead, Give feedback,
+  // Watch welcome video, Tell us who you are, dismiss -- everything this
+  // file's own banner carried. Rendering both stacked two beta notices and
+  // two "Watch welcome video" links on top of the landing page (measured
+  // 2026-08-05: 63% of a 1440x900 fold before the hero), and the returning
+  // bar's "Welcome back to the beta site" fired off getEmail() rather than a
+  // real return visit, so it greeted a first-time tester who had just typed
+  // their email into the wizard seconds earlier. S-DCC-UX-BATCH-001.
+  function phaseBannerPresent() {
+    return !!document.querySelector('script[src$="beta-collapsible-banner.js"]');
+  }
+
   function renderBanner(main, returning, needsInlineVideo) {
+    // The one thing the phase banner cannot carry: the inline <video>
+    // fallback for browsers with no <dialog> support, which has nowhere else
+    // to live. Everything else defers to the phase banner.
+    if (phaseBannerPresent() && !needsInlineVideo) { return; }
     if (returning) { renderReturningBar(main); return; }
 
     injectStyles();

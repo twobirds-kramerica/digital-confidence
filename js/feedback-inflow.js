@@ -137,8 +137,18 @@
     injectStyles();
 
     /* End-of-lesson block: after "Where to next" if present, otherwise at the
-       end of the lesson container. Never above the content it comments on. */
-    var container = document.querySelector("#main .container") || document.querySelector("#main");
+       end of the lesson container. Never above the content it comments on.
+
+       Take the LAST .container in #main, not the first. A lesson page has one
+       .container so the two are the same; the landing page has several (the
+       beta banner strip, the hero, each lesson group), and querySelector
+       returned the FIRST one -- so this "end of lesson" block was appended
+       into the topmost strip and rendered near the top of the homepage,
+       directly under the beta banner, breaking the rule the comment above
+       states. Third stacked beta surface in Aaron's 2026-08-05 screenshot.
+       S-DCC-UX-BATCH-001. */
+    var containers = document.querySelectorAll("#main .container");
+    var container = containers.length ? containers[containers.length - 1] : document.querySelector("#main");
     if (container) {
       var rel = container.querySelector("nav.related-modules");
       var block = buildBlock(!!container.querySelector(".lesson-back"));

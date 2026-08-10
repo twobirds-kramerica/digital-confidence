@@ -2,8 +2,31 @@
   <!-- DCC Monoline Figure System, sprite of record.
        Spec: _feedback/dcc-illustration-system-guideline-2026-07-28.md
        Canvas: viewBox 0 0 240 220, live area 200x180, centre axis x=126.
-       Rig: head top y=40, chin y=92, eye centres x=114/138 y=60 r=6.5,
-       mouth floor y<=80 width<=28, shoulder crown y=118, baseline y=172.
+       Rig: head top y=40, chin y=92, eye centres x=118/134 y=60 r=5.5,
+       neck y=90 to y=118 at x=119/133, mouth floor y<=80 width<=28,
+       shoulder crown y=118, baseline y=172.
+
+       2026-08-05 rig correction (S-DCC-UX-BATCH-001, Aaron's live review).
+       Three defects, all failures of this system's OWN 14-point checklist,
+       not taste calls:
+       (1) EYE CLEARANCE. The old rig (centres x=114/138, r=6.5) put the eye
+           outer edge 3.9 units from the head outline against a checklist
+           minimum of 8. At the shipped 120px Spot size that is about 2 CSS
+           px, which is Aaron's "eyes touching the sides of the head". The
+           rig itself guaranteed the violation, so every pose built to it
+           inherited it. Now centres x=118/134, r=5.5: clearance 8.9 units.
+       (2) NO NECK. Chin y=92 against shoulder crown y=118 left a 26-unit
+           void, so the head floated free of the body. Identical defect to
+           the homepage hero, which was fixed the same day and never
+           back-ported here. Neck added.
+       (3) See the fig-guarding note below for the palm-line defect.
+
+       STILL OPEN, deliberately not decided here: whether these figures get
+       glasses / read as older. That is follow-up A4-3 in the guideline,
+       which states in terms that it is Aaron's taste call, not an
+       autonomous one. Note the system is currently split against itself:
+       the beta wizard figure (js/beta.js) and the homepage hero both HAVE
+       glasses, this sprite does not. Escalated 2026-08-05, not patched. -->
        Fixed for all poses: fill=none, stroke=currentColor, stroke-linecap/
        linejoin=round. Stroke width set by the consuming .illus-* class via
        the illus-stroke custom property (crosses the use shadow boundary,
@@ -36,9 +59,10 @@
   <symbol id="fig-greeting" viewBox="0 0 240 220">
     <g class="fig">
       <ellipse cx="126" cy="66" rx="23" ry="26"/>
-      <circle cx="114" cy="60" r="6.5"/>
-      <circle cx="138" cy="60" r="6.5"/>
+      <circle cx="118" cy="60" r="5.5"/>
+      <circle cx="134" cy="60" r="5.5"/>
       <path d="M112 74 Q126 80 140 74"/>
+      <path d="M119 90 v28 M133 90 v28"/>
       <path d="M78 172 C78 140 100 118 126 118 C152 118 174 140 174 172"/>
       <path d="M160 124 C176 119 188 106 194 94"/>
       <circle cx="200" cy="88" r="8"/>
@@ -51,22 +75,40 @@
        prop reserved for a future Panel/Hero-tier use of this pose.
        Covers: "Protect your money" section opener (S-DCC-ILLUSTRATION-CASCADE-001).
        Head, torso and mouth are the exact same paths as fig-greeting per the
-       rig rule (only the arm changes); palm sits closer to the torso and
-       lower than the wave's reach, and the flat single line across the palm
-       (in place of two splayed finger marks) reads as a held, static gesture
-       rather than a waving motion. Clearance check: palm circle centre
-       (186,88) is about 43 units from the nearest head-outline point, well
-       clear of the 8-unit minimum. -->
+       rig rule (only the arm changes).
+
+       2026-08-05: this pose did not read as guarding, it read as waving, and
+       Aaron reported it as waving. Measured against fig-greeting, the only
+       differences were a 14-unit shift of the hand circle and a swap of two
+       finger marks for one flat stroke. Crucially the palm stayed at y=88 in
+       BOTH poses, i.e. at head height, just below the eye line: an open hand
+       raised beside a smiling face reads as a wave whatever the finger marks
+       do. And the "flat single line across the palm" was at y=78 while the
+       palm circle spans y=80 to 96, so the line floated clear above the palm
+       rather than crossing it, contradicting this comment.
+       Fixed: the palm drops to chest height (y=106, below the eye line and
+       above the shoulder crown at y=118) so the gesture reads as a steady
+       held palm rather than a raised wave, and the palm stroke now actually
+       crosses the palm. Clearance: palm circle centre (182,106) is about 48
+       units from the nearest head-outline point, well clear of the 8-unit
+       minimum. The arm also now STARTS on the torso outline (166,142)
+       instead of floating free of it, and terminates on the palm circle's
+       lower edge; previously it began inside the silhouette and read as a
+       detached stroke with a loose circle beside it. Same defect class as
+       the missing neck.
+       Prop budget at Spot tier is still 0, so nothing here says "money";
+       see the escalation note in the sprint record. -->
   <symbol id="fig-guarding" viewBox="0 0 240 220">
     <g class="fig">
       <ellipse cx="126" cy="66" rx="23" ry="26"/>
-      <circle cx="114" cy="60" r="6.5"/>
-      <circle cx="138" cy="60" r="6.5"/>
+      <circle cx="118" cy="60" r="5.5"/>
+      <circle cx="134" cy="60" r="5.5"/>
       <path d="M112 74 Q126 80 140 74"/>
+      <path d="M119 90 v28 M133 90 v28"/>
       <path d="M78 172 C78 140 100 118 126 118 C152 118 174 140 174 172"/>
-      <path d="M158 126 C168 118 176 106 180 94"/>
-      <circle cx="186" cy="88" r="8"/>
-      <path d="M178 78 h16"/>
+      <path d="M166 142 C174 136 179 124 181 114"/>
+      <circle cx="182" cy="106" r="8"/>
+      <path d="M177 106 h10"/>
     </g>
   </symbol>
 

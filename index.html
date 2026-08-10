@@ -60,10 +60,11 @@
 <nav class="primary-nav" aria-label="Lesson sections">
   <div class="container">
     <a href="index.html" aria-current="page">All lessons</a>
-    <a href="index.html#protect-money">Protect your money</a>
     <a href="index.html#everyday-confidence">Everyday confidence</a>
+    <a href="index.html#protect-money">Protect your money</a>
     <a href="for-families.html">For families</a>
     <a href="support-directory.html">Get help</a>
+    <a href="final-quiz.html">Final assessment</a>
   </div>
 </nav>
 
@@ -77,7 +78,10 @@
         <p class="lead">Plain-language lessons for Canadian seniors. Go at your own pace, stop whenever you like, and come back any time.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="scam-defence-helper.html">Try a 5-minute lesson (no account needed)</a>
-          <a class="btn btn-secondary" href="#protect-money">See all the lessons</a>
+          <!-- #lessons ("Choose a topic"), not #protect-money: the button says
+               "all the lessons" and used to drop the visitor into one of the
+               two sections. It also no longer happens to be the first one. -->
+          <a class="btn btn-secondary" href="#lessons">See all the lessons</a>
         </div>
       </div>
       <!-- Warm hand-drawn-style illustration, inline SVG, self-hosted, theme-aware -->
@@ -90,9 +94,16 @@
             <circle cx="136" cy="46" r="6"/>
             <path d="M124 46 h6"/>
             <path d="M118 60 q7 5 14 1"/>
-            <!-- shoulders / cardigan -->
-            <path d="M84 138 c2 -30 16 -44 42 -44 c26 0 40 14 42 44"/>
-            <!-- tablet held comfortably -->
+            <!-- Neck. Without it the head floats: the shoulder arc used to peak
+                 at y=94 against a head whose chin ends at y~68, leaving a 26-unit
+                 void, so the head plus its two round lenses read as a detached
+                 abstract mark hovering over a rectangle. Aaron, 2026-08-05:
+                 "an infinity-loop icon just kinda floating there". -->
+            <path d="M120 66 v13 M134 66 v13"/>
+            <!-- shoulders / cardigan: apex raised to meet the neck -->
+            <path d="M84 138 c2 -34 18 -62 43 -62 c25 0 41 28 43 62"/>
+            <!-- tablet held comfortably: sits inside the shoulder arc, no
+                 crossing strokes (the arc is already outside x96-158 by y=110) -->
             <rect x="96" y="110" width="62" height="44" rx="6"/>
             <path d="M104 124 h34 M104 134 h44"/>
             <!-- warm mug with steam, on the side table -->
@@ -128,7 +139,7 @@
     <h2 id="lessons">Choose a topic</h2>
     <p>Every card tells you how long it takes. Most people start with the practice below.</p>
 
-    <ul class="card-grid">
+    <ul class="card-grid card-grid--feature">
       <li class="topic-card card-flagship">
         <span class="flagship-tag">Start here, our most popular practice</span>
         <span class="card-icon" aria-hidden="true">🤝</span>
@@ -140,50 +151,6 @@
 
     <!-- Gord's IA: money-safety lessons grouped under a plain-language name,
          never module numbers. -->
-    <section class="lesson-group" aria-labelledby="protect-money">
-      <div class="lesson-group-head">
-        <div>
-          <h2 id="protect-money">Protect your money</h2>
-          <p class="group-lead">Keep more of what is yours: spot the scams, stop the silent charges, and stay in control of your own accounts.</p>
-        </div>
-        <!-- Monoline figure (fig-guarding): a calm, non-alarmed raised palm --
-             this section's content (scams, fraud, staying in control of your
-             accounts) carries emotional temperature the copy deliberately
-             understates. DCC Monoline Figure System, S-DCC-ILLUSTRATION-CASCADE-001. -->
-        <div class="illus illus-spot" aria-hidden="true">
-          <svg viewBox="0 0 240 220" role="presentation" focusable="false">
-            <use href="assets/illustrations/dcc-figures.svg#fig-guarding"></use>
-          </svg>
-        </div>
-      </div>
-      <ul class="card-grid">
-        <li class="topic-card">
-          <span class="card-icon" aria-hidden="true">🛡️</span>
-          <h3><a href="modules/module-2.html">Spot the scams before they start</a></h3>
-          <p>The eight most common scams targeting Canadians, from fake CRA calls to screen-sharing tricks, and the calm 3-Second Rule that stops them all.</p>
-          <span class="ttc"><span aria-hidden="true">⏱</span> 25 minutes to spot every scam</span>
-        </li>
-        <li class="topic-card">
-          <span class="card-icon" aria-hidden="true">🏦</span>
-          <h3><a href="modules/module-6.html">Online banking, safely</a></h3>
-          <p>Check your balance and pay bills from your kitchen table, with the safety habits that protect your money.</p>
-          <span class="ttc"><span aria-hidden="true">⏱</span> 15 minutes to banking confidence</span>
-        </li>
-        <li class="topic-card">
-          <span class="card-icon" aria-hidden="true">🔑</span>
-          <h3><a href="modules/module-3.html">Passwords, made manageable</a></h3>
-          <p>Strong passwords you can actually remember, and what to do if you forget one.</p>
-          <span class="ttc"><span aria-hidden="true">⏱</span> 12 minutes to safer accounts</span>
-        </li>
-        <li class="topic-card">
-          <span class="card-icon" aria-hidden="true">✉️</span>
-          <h3><a href="modules/module-27-inbox-spam.html">Tame your inbox</a></h3>
-          <p>Sort the real mail from the junk, and stop spam from crowding out your family's messages.</p>
-          <span class="ttc"><span aria-hidden="true">⏱</span> 10 minutes to a calmer inbox</span>
-        </li>
-      </ul>
-    </section>
-
     <section class="lesson-group" aria-labelledby="everyday-confidence">
       <h2 id="everyday-confidence">Everyday confidence</h2>
       <p class="group-lead">The skills that make the whole device feel calmer: getting back to safety, seeing family, and knowing what is real.</p>
@@ -245,16 +212,75 @@
       </ul>
     </section>
 
+    <section class="lesson-group" aria-labelledby="protect-money">
+      <div class="lesson-group-head">
+        <div>
+          <h2 id="protect-money">Protect your money</h2>
+          <p class="group-lead">Keep more of what is yours: spot the scams, stop the silent charges, and stay in control of your own accounts.</p>
+        </div>
+        <!-- The fig-guarding monoline figure used to sit here. Pulled
+             2026-08-05 (S-DCC-UX-BATCH-001) after Aaron's live review, on
+             three independent signals pointing the same way:
+               1. Aaron: small, right-floating, waving, goofy, and nothing
+                  about it says money. All verified true.
+               2. ux-reviewer, run against the live page after the sprint's
+                  geometry fixes: still reads as a lollipop head on an empty
+                  dome with the arm as a balloon on a string. "Below the bar
+                  the hero just set. Pull it."
+               3. hal-stack/research/visual-content-engagement-strategy-2026-07-28.md
+                  line 86: fraud and scam content gets an ICON, not a character
+                  illustration -- a monoline figure looking worried beside
+                  scam content is the exact failure that rule exists to stop.
+                  By that rule this placement was never right, taste aside.
+             The figure is aria-hidden decoration, so removing it costs the
+             page nothing semantically and is one revert away. The sprite
+             itself keeps its corrected geometry for other surfaces. What (if
+             anything) replaces it is Aaron's call -- Notion
+             3b4a09cf-876a-817f-a687-f8f09c145170. -->
+
+      </div>
+      <ul class="card-grid">
+        <li class="topic-card">
+          <span class="card-icon" aria-hidden="true">🛡️</span>
+          <h3><a href="modules/module-2.html">Spot the scams before they start</a></h3>
+          <p>The eight most common scams targeting Canadians, from fake CRA calls to screen-sharing tricks, and the calm 3-Second Rule that stops them all.</p>
+          <span class="ttc"><span aria-hidden="true">⏱</span> 25 minutes to spot every scam</span>
+        </li>
+        <li class="topic-card">
+          <span class="card-icon" aria-hidden="true">🏦</span>
+          <h3><a href="modules/module-6.html">Online banking, safely</a></h3>
+          <p>Check your balance and pay bills from your kitchen table, with the safety habits that protect your money.</p>
+          <span class="ttc"><span aria-hidden="true">⏱</span> 15 minutes to banking confidence</span>
+        </li>
+        <li class="topic-card">
+          <span class="card-icon" aria-hidden="true">🔑</span>
+          <h3><a href="modules/module-3.html">Passwords, made manageable</a></h3>
+          <p>Strong passwords you can actually remember, and what to do if you forget one.</p>
+          <span class="ttc"><span aria-hidden="true">⏱</span> 12 minutes to safer accounts</span>
+        </li>
+        <li class="topic-card">
+          <span class="card-icon" aria-hidden="true">✉️</span>
+          <h3><a href="modules/module-27-inbox-spam.html">Tame your inbox</a></h3>
+          <p>Sort the real mail from the junk, and stop spam from crowding out your family's messages.</p>
+          <span class="ttc"><span aria-hidden="true">⏱</span> 10 minutes to a calmer inbox</span>
+        </li>
+      </ul>
+    </section>
+
     <!-- Denise's entry point: a family member's 30-second safety screen. -->
     <aside class="who-pays" aria-label="Helping a parent or older relative">
       <p><span class="who-pays-title">Helping a parent get confident online?</span>
       Everything here is built so they can do it themselves, and so you can stop being the tech-support line. <a href="for-families.html">See the page for families</a> to check it is safe and send them their first lesson.</p>
     </aside>
 
-    <!-- Educator/institution CTA: routes to for-libraries.html. Reuses the
-         existing .cafc-block callout styling, no new visual pattern added. -->
-    <aside class="cafc-block" aria-label="For educators and institutions">
-      <p><strong>Are you an educator or institution?</strong> If you work with a library, school, settlement agency, or seniors' organisation, Digital Confidence Centre is ready to bring into your programming today, free for every learner. <a href="for-libraries.html">See pricing and partner options for libraries and institutions</a>.</p>
+    <!-- Educator/institution CTA: routes to for-libraries.html. Own .partner-cta
+         treatment as of 2026-08-05 -- it previously shared .cafc-block with the
+         Anti-Fraud Centre notice below, so the one commercial ask on the page
+         was styled as a legal disclaimer. See the .partner-cta note in core.css. -->
+    <aside class="partner-cta" aria-labelledby="partner-cta-h">
+      <h2 id="partner-cta-h">Are you an educator or institution?</h2>
+      <p>If you work with a library, school, settlement agency, or seniors' organisation, Digital Confidence Centre is ready to bring into your programming today, free for every learner.</p>
+      <a class="btn btn-secondary" href="for-libraries.html">See partner options for libraries and institutions</a>
     </aside>
 
     <!-- Anti-Fraud Centre: its own airspace, clearly NOT this site's support line -->

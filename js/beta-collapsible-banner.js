@@ -13,11 +13,21 @@
  *   Option A (beta tag): the same visual tag vocabulary as the end-of-lesson
  *   .dcc-fb-beta-tag pill (see feedback-inflow.js), reused here as the label.
  *
- * "Collapsible" per Aaron's sprint wording: the slim strip (label + feedback
- * link) is always shown -- that is the part research says must never be
- * hidden. A "More" toggle expands it in place to a full panel carrying the
- * rewatch-video and tell-us-who-you-are affordances, so those are not lost
- * on module pages, without permanently spending page-top real estate on them.
+ * 2026-08-05 (S-DCC-UX-BATCH-001): the "More options" / "Fewer options"
+ * toggle is GONE. It hid a panel whose only guaranteed member was the
+ * rewatch-video link -- "Tell us who you are" is suppressed once the tester
+ * has given a name, which every returning tester has, so in practice the
+ * toggle expanded to reveal exactly one link. A disclosure control for one
+ * item costs a click, an aria-expanded state, and roughly 70px of page-top
+ * height to save one line. Every affordance now sits inline on the one row.
+ * If this banner ever grows past three inline links, revisit -- but do not
+ * reintroduce a toggle for two.
+ *
+ * This banner is also now the SINGLE beta surface on the landing page.
+ * beta.js used to render its own returning-visitor bar ("Welcome back to the
+ * beta site. Watch welcome video") directly underneath this one, duplicating
+ * the rewatch link and asserting a return visit that had not happened. That
+ * bar is suppressed wherever this banner runs (see beta.js renderBanner).
  *
  * Does nothing for a general anonymous visitor (DCCBeta.isBeta() false).
  * Depends on beta.js loading first (for window.DCCBeta) and
@@ -39,21 +49,19 @@
     lead: "Ceci est une version d'essai.",
     body: "Dites-nous ce qui porte à confusion et nous le corrigerons.",
     feedback: "Donner mon avis",
-    more: "Plus d'options",
-    less: "Moins d'options",
     rewatch: "Voir la vidéo de bienvenue",
     tellUs: "Dites-nous qui vous êtes",
-    label: "Bandeau bêta"
+    label: "Bandeau bêta",
+    dismiss: "Masquer ce bandeau"
   } : {
     tag: "BETA",
     lead: "This is a test version.",
     body: "Tell us what is confusing and we will fix it.",
     feedback: "Give feedback",
-    more: "More options",
-    less: "Fewer options",
     rewatch: "Watch welcome video",
     tellUs: "Tell us who you are",
-    label: "Beta banner"
+    label: "Beta banner",
+    dismiss: "Hide this banner"
   };
 
   function injectStyles() {
@@ -69,16 +77,17 @@
       "font-weight:var(--font-weight-semibold);font-size:var(--font-size-caption,.8rem);",
       "letter-spacing:.04em;padding:var(--space-1) var(--space-3);border-radius:var(--radius-sm);flex:0 0 auto;}",
       ".dcc-phase-banner__text{flex:1 1 auto;min-width:0;font-size:var(--font-size-sm);}",
-      ".dcc-phase-banner__link,.dcc-phase-banner__toggle{background:none;border:0;font:inherit;",
+      ".dcc-phase-banner__link{background:none;border:0;font:inherit;",
       "font-size:var(--font-size-sm);font-weight:var(--font-weight-semibold);color:var(--color-primary);",
       "text-decoration:underline;cursor:pointer;padding:var(--space-1) 0;min-height:var(--tap-target-min);",
       "flex:0 0 auto;}",
-      ".dcc-phase-banner__panel{margin-top:var(--space-3);padding-top:var(--space-3);",
-      "border-top:1px solid var(--color-border);display:flex;gap:var(--space-4);flex-wrap:wrap;}",
-      ".dcc-phase-banner__panel[hidden]{display:none;}",
-      ".dcc-phase-banner__panel button{background:none;border:0;font:inherit;font-size:var(--font-size-sm);",
-      "font-weight:var(--font-weight-semibold);color:var(--color-primary);text-decoration:underline;",
-      "cursor:pointer;padding:var(--space-1) 0;min-height:var(--tap-target-min);}"
+      /* Dismiss sits last in the row, visually separated from the links so it
+         never reads as one more affordance to consider. Not a hard-coded
+         glyph size: 20px matches the old .dcc-beta-bar-dismiss this replaces. */
+      ".dcc-phase-banner__dismiss{background:none;border:0;color:var(--color-text-light);cursor:pointer;",
+      "font-size:20px;line-height:1;padding:var(--space-1) var(--space-2);flex:0 0 auto;",
+      "min-height:var(--tap-target-min);min-width:var(--tap-target-min);}",
+      ".dcc-phase-banner__dismiss:hover,.dcc-phase-banner__dismiss:focus-visible{color:var(--color-text);}"
     ].join("");
     document.head.appendChild(s);
   }
@@ -112,46 +121,39 @@
     fb.addEventListener("click", openFeedback);
     row.appendChild(fb);
 
-    var toggle = document.createElement("button");
-    toggle.type = "button";
-    toggle.className = "dcc-phase-banner__toggle";
-    toggle.textContent = T.more;
-    toggle.setAttribute("aria-expanded", "false");
-    row.appendChild(toggle);
-
-    box.appendChild(row);
-
-    var panel = document.createElement("div");
-    panel.className = "dcc-phase-banner__panel";
-    panel.hidden = true;
-
+    // Inline, always visible. No disclosure toggle: see the header note.
     var rewatch = document.createElement("button");
     rewatch.type = "button";
+    rewatch.className = "dcc-phase-banner__link";
     rewatch.textContent = T.rewatch;
     rewatch.addEventListener("click", function () {
       if (window.DCCBeta && window.DCCBeta.openWizardStep) { window.DCCBeta.openWizardStep(2, rewatch); }
     });
-    panel.appendChild(rewatch);
+    row.appendChild(rewatch);
 
     if (window.DCCBeta && !window.DCCBeta.getName()) {
       var tellUs = document.createElement("button");
       tellUs.type = "button";
+      tellUs.className = "dcc-phase-banner__link";
       tellUs.textContent = T.tellUs;
       tellUs.addEventListener("click", function () {
         if (window.DCCBeta && window.DCCBeta.openWizardStep) { window.DCCBeta.openWizardStep(3, tellUs); }
       });
-      panel.appendChild(tellUs);
+      row.appendChild(tellUs);
     }
 
-    box.appendChild(panel);
+    // Carried over from the beta.js returning-visitor bar this banner
+    // replaces: the beta notice is short-lived by design, and a tester who
+    // has read it once should be able to put it away for the session.
+    var dismiss = document.createElement("button");
+    dismiss.type = "button";
+    dismiss.className = "dcc-phase-banner__dismiss";
+    dismiss.setAttribute("aria-label", T.dismiss);
+    dismiss.innerHTML = "<span aria-hidden=\"true\">&times;</span>";
+    dismiss.addEventListener("click", function () { box.remove(); });
+    row.appendChild(dismiss);
 
-    toggle.addEventListener("click", function () {
-      var open = panel.hidden;
-      panel.hidden = !open;
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      toggle.textContent = open ? T.less : T.more;
-    });
-
+    box.appendChild(row);
     return box;
   }
 
