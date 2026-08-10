@@ -68,6 +68,10 @@ html[data-theme="dark"] {
   font-size: 1.0625rem;
   line-height: 1.65;
   -webkit-text-size-adjust: 100%;
+  /* Unbreakable-token safety (passwords.google.com class) — youth pages load
+     only tokens.css + this file, so the 2026-08-10 core.css body fix never
+     reaches them. Inert on normal text. (Brand-audit Phase 2, DCC Kids/Youth.) */
+  overflow-wrap: break-word;
 }
 .yt-container { max-width: 680px; margin: 0 auto; padding: 0 1.1rem; }
 .yt-body a { color: var(--yt-indigo); }

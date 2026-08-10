@@ -185,7 +185,7 @@
     /* ── Who could you make something for? ── */
     .for-whom-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(130px, 100%), 1fr));
       gap: 0.75rem;
       margin-top: 1rem;
     }
@@ -207,7 +207,7 @@
     /* ── Ideas grid ── */
     .ideas-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
       gap: 0.85rem;
       margin-top: 1rem;
     }
