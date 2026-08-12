@@ -288,6 +288,21 @@
       <p><strong>If you ever have a serious concern about fraud in real life</strong>, the Canadian Anti-Fraud Centre, a Government of Canada service separate from this website, can help. Visit <a href="https://antifraudcentre-centreantifraude.ca" target="_blank" rel="external noopener noreferrer">antifraudcentre-centreantifraude.ca <span class="ext-note">(opens in a new tab)</span></a> or call 1-888-495-8501.</p>
     </aside>
 
+    <!-- Shared-terminal exit control: visible equivalent of the "always sign
+         out on a shared computer" habit module-6 teaches. The clearing
+         function itself lives in js/data-manager.js and is reused as-is
+         (also wired from privacy.html); this just adds a second, visible
+         entry point where a learner actually is at the end of a session.
+         S-DCC-SHARED-TERMINAL-EXIT-001, 2026-08-12. -->
+    <aside class="session-exit" aria-labelledby="session-exit-h">
+      <h2 id="session-exit-h">On a shared or library computer?</h2>
+      <p>The Digital Confidence Centre saves your name and your progress only on this device — never on our servers. If you're using a shared computer, like a library computer, you can clear that saved information before you go.</p>
+      <div class="session-exit-actions">
+        <button type="button" class="btn btn-secondary" data-dcc-clear-data>🗑️ I'm finished — clear my information from this device</button>
+      </div>
+      <p class="session-exit-status" id="dcc-data-status" role="status" aria-live="polite"></p>
+    </aside>
+
   </div>
 </main>
 
@@ -365,5 +380,6 @@
 <script src="js/beta-collapsible-banner.js"></script>
   <script src="js/feedback-inflow.js"></script>
   <script src="feedback-widget.js"></script>
+  <script src="js/data-manager.js"></script>
 </body>
 </html>

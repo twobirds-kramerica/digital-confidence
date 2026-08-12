@@ -3,7 +3,11 @@
    Save my progress / Restore my progress / Clear my data.
    Implements hal-stack/standards/base-security.md §6 (user data deletion)
    and gives progress a way to survive a cleared cache — no login, no
-   server, everything stays on this device. Loaded on privacy.html only.
+   server, everything stays on this device. Loaded on privacy.html (full
+   save/restore/clear control) and index.html (clear-only entry point,
+   S-DCC-SHARED-TERMINAL-EXIT-001 2026-08-12, for shared/library
+   terminals — see .session-exit there). Element lookups below are all
+   guarded, so a page missing some of the buttons/inputs is fine.
    ========================================================================== */
 (function () {
   "use strict";

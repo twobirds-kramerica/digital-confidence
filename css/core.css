@@ -298,6 +298,23 @@ html[data-theme="dark"] { --dcc-leaf-red: #FF6B5E; }
   color: var(--color-primary); display: block; margin-bottom: var(--space-2);
 }
 
+/* Shared-terminal exit control (S-DCC-SHARED-TERMINAL-EXIT-001, 2026-08-12) —
+   visible "clear my information" control for the homepage, so patrons on a
+   shared/library computer have an equivalent to the one already buried in
+   privacy.html (js/data-manager.js, wired the same way). Mirrors
+   .story-block/.data-manager on privacy.html (pages.css), reproduced here
+   because pages.css is legal-page-only and index.html doesn't load it. */
+.session-exit {
+  background: var(--color-surface); border-left: 6px solid var(--color-primary);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  padding: var(--space-5) var(--space-6); margin: var(--space-8) 0;
+}
+.session-exit h2 { margin-top: 0; }
+.session-exit-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin: var(--space-4) 0 0; }
+.session-exit-status { margin: var(--space-3) 0 0; font-weight: var(--font-weight-semibold); min-height: 1.4em; }
+.session-exit-status.is-error { color: var(--color-error); }
+.session-exit-status.is-success { color: var(--color-success-deep); }
+
 /* ============================================================================
    CARD GRID (topic library — Senior Planet / Be Connected)
    ========================================================================== */
