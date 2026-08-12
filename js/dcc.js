@@ -495,12 +495,51 @@
       try {
         console.error("[DCC][READ-ALOUD][CODE-ORANGE] No acceptable " +
           (IS_FR ? "fr" : "en") + " voice installed — refused to speak rather than use the OS default.");
-        localStorage.setItem("dcc-readaloud-no-voice", JSON.stringify({
+        var report = {
           lang: IS_FR ? "fr" : "en",
           at: new Date().toISOString(),
           page: location.pathname,
           voices: (window.speechSynthesis.getVoices() || []).map(function (v) { return v.name + "|" + v.lang; })
-        }));
+        };
+        localStorage.setItem("dcc-readaloud-no-voice", JSON.stringify(report));
+        reportCodeOrange(report);
+      } catch (e) {}
+    }
+
+    /* RI-011 (RELIABILITY-ISSUES.md, "still open" clause): the localStorage
+       record above never leaves the one browser it was written in, so it
+       never reached Aaron. This best-effort, fire-and-forget POST reuses the
+       already-shipped, already-reviewed field-feedback Worker
+       (feedback-widget.js's WIDGET_ENDPOINT, same sovereign Cloudflare
+       Worker + KV store, same bundle shape it expects) rather than standing
+       up a second alert channel. Tagged "[SYSTEM][CODE-ORANGE]" in the
+       transcript so it reads distinctly from real tester feedback in
+       read-feedback.py's output. Never blocks or alters the read-aloud UX:
+       any failure (no network, endpoint down, CORS) is swallowed silently —
+       the localStorage record above remains the fallback of record. */
+    function reportCodeOrange(report) {
+      if (!window.fetch) return;
+      try {
+        window.fetch("https://field-feedback.twobirdsinnovation.workers.dev/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          keepalive: true,
+          body: JSON.stringify({
+            schemaVersion: 1,
+            transcript: "[SYSTEM][CODE-ORANGE] No acceptable " + report.lang +
+              " read-aloud voice installed on this device — refused to speak " +
+              "rather than fall back to a robotic OS voice.",
+            pins: [],
+            context: {
+              url: location.href,
+              title: document.title || "",
+              device: "system-diagnostic",
+              language: report.lang,
+              voices: report.voices
+            },
+            clientTimestamp: report.at
+          })
+        }).catch(function () {});
       } catch (e) {}
     }
 
