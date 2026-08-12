@@ -309,7 +309,7 @@
             <a href="privacy.html">Politique de Confidentialité</a>
           </nav>
           <p class="footer-support">Des questions sur ce site ? Laissez-nous un message vocal ou une note écrite en utilisant le bouton Commentaires.</p>
-          <p class="footer-copy">&copy; 2026 Two Birds. Fait avec soin en Ontario, Canada.</p>
+          <p class="footer-copy">&copy; <span id="copyright-year">2026</span> Two Birds. Fait avec soin en Ontario, Canada.</p>
           <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.5rem;">⚜ Cette traduction a été générée par ordinateur et nécessite une révision professionnelle.</p>
         </div>
       </footer>
@@ -584,6 +584,7 @@
 
       html += '<div class="footer-note">Centre de Confiance Numérique &mdash; Formation numérique gratuite pour les aînés ontariens. Visitez : twobirds-kramerica.github.io/digital-confidence/lang/fr/ &nbsp;|&nbsp; Aide gratuite : Canadiens Branchés 1-877-304-5813</div>';
       html += '  <script src="../js/offline-banner.js" defer></script>
+<script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
 </body></html>';
 
       var win = window.open('', '_blank');

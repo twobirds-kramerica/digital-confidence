@@ -412,7 +412,7 @@
             <a href="#" onclick="openFeedbackModal(); return false;">Ideas &amp; Feedback</a> |
             <a href="support-directory.html">Get Help</a>
           </nav>
-          <p class="footer-copy">&copy; 2026 Two Birds Innovation. Made with care in Ontario, Canada.</p>
+          <p class="footer-copy">&copy; <span id="copyright-year">2026</span> Two Birds Innovation. Made with care in Ontario, Canada.</p>
         </div>
       </footer>
 
@@ -425,5 +425,6 @@
   <script src="../js/app.js" defer></script>
   <script src="../js/lang-toggle.js" defer></script>
   <script src="../js/accessibility.js" defer></script>
+<script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

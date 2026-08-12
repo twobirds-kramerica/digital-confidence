@@ -134,12 +134,12 @@
       <div class="legal-container">
         <header class="legal-header">
           <h1>Copyright</h1>
-          <p class="last-updated">© 2026 Digital Confidence Centre. All rights reserved.</p>
+          <p class="last-updated">© <span class="copyright-year">2026</span> Digital Confidence Centre. All rights reserved.</p>
         </header>
 
         <section class="legal-section">
           <h2>Original Content</h2>
-          <p>All original text, instructional content, module structure, stories, exercises, and educational materials on this Site are copyright &copy; 2026 Digital Confidence Centre.</p>
+          <p>All original text, instructional content, module structure, stories, exercises, and educational materials on this Site are copyright &copy; <span class="copyright-year">2026</span> Digital Confidence Centre.</p>
         </section>
 
         <section class="legal-section">
@@ -184,5 +184,6 @@
   <script src="js/settings.js" defer></script>
   <script src="js/panic-button.js" defer></script>
   <script src="js/offline-banner.js" defer></script>
+<script>document.querySelectorAll('.copyright-year').forEach(function(el){el.textContent = new Date().getFullYear();});</script>
 </body>
 </html>

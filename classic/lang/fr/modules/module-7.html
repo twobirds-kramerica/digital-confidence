@@ -410,7 +410,7 @@
           <p style="font-size:0.78rem;opacity:0.65;margin-top:0.75rem;font-style:italic;">
             ⚜ Cette traduction a été générée par ordinateur et nécessite une révision professionnelle. Si vous remarquez des erreurs, veuillez nous contacter.
           </p>
-          <p class="footer-copy">&copy; 2026 Two Birds. Fait avec soin en Ontario, Canada.</p>
+          <p class="footer-copy">&copy; <span id="copyright-year">2026</span> Two Birds. Fait avec soin en Ontario, Canada.</p>
         </div>
       </footer>
 
@@ -423,5 +423,6 @@
   <script src="../../../js/scam-quiz.js" defer></script>
   <button class="btn-print" onclick="window.print()" aria-label="Imprimer ce module">🖨️ Imprimer ce Module</button>
   <script src="../js/offline-banner.js" defer></script>
+<script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

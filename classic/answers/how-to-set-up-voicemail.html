@@ -141,7 +141,7 @@
 
   <footer style="background: #1a1a1a; color: #ccc; padding: 2rem 1.5rem; text-align: center; font-size: 0.9rem; margin-top: 4rem;">
     <p data-en="© 2026 Digital Confidence Centre — Free digital literacy for Ontario seniors. A Two Birds Innovation community service." data-fr="© 2026 Centre de Confiance Numérique — Littératie numérique gratuite pour les aînés de l'Ontario. Un service communautaire de Two Birds Innovation.">
-      © 2026 Digital Confidence Centre — Free digital literacy for Ontario seniors. A Two Birds Innovation community service.
+      © <span id="copyright-year">2026</span> Digital Confidence Centre — Free digital literacy for Ontario seniors. A Two Birds Innovation community service.
     </p>
     <p style="margin-top: 0.5rem;">
       <a href="../index.html" style="color: #FFD740;" data-en="Home" data-fr="Accueil">Home</a> &nbsp;|&nbsp;
@@ -151,5 +151,6 @@
   </footer>
   <script src="../js/accessibility.js" defer></script>
   <script src="../js/lang-toggle.js" defer></script>
+<script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

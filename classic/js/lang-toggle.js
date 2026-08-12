@@ -224,7 +224,7 @@
     if (footerCopy) {
       storeEn(footerCopy);
       footerCopy.textContent = isFR
-        ? '\u00A9 2026 Two Birds. Fait avec soin en Ontario, Canada.'
+        ? '\u00A9 ' + new Date().getFullYear() + ' Two Birds. Fait avec soin en Ontario, Canada.'
         : footerCopy.getAttribute('data-en');
     }
 
@@ -284,6 +284,12 @@
       }
       var frText = el.getAttribute('data-fr');
       var enText = el.getAttribute('data-en');
+      /* Copyright-year literals baked into data-en/data-fr strings can't
+         host a live <span>; recompute the year here instead so a language
+         toggle never re-displays a stale hardcoded year. */
+      var curYear = new Date().getFullYear();
+      frText = frText.replace(/©\s*2026/, '© ' + curYear);
+      enText = enText.replace(/©\s*2026/, '© ' + curYear);
       if (el.tagName === 'A') {
         /* For links, preserve href — only swap visible text */
         el.textContent = isFR ? frText : enText;

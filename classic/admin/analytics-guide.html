@@ -160,7 +160,7 @@
 
       <footer class="site-footer">
         <div class="footer-inner">
-          <p class="footer-copy">&copy; 2026 Two Birds Innovation — Admin Area</p>
+          <p class="footer-copy">&copy; <span id="copyright-year">2026</span> Two Birds Innovation — Admin Area</p>
         </div>
       </footer>
     </main>
@@ -189,5 +189,6 @@
   </script>
   <script src="../js/app.js" defer></script>
   <script src="../js/accessibility.js" defer></script>
+<script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

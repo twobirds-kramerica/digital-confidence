@@ -236,7 +236,7 @@
       <div class="wl-footer">
         <strong>First Credit Union</strong>: Your Financial Partner for Life<br>
         Powered by <a href="https://twobirds-kramerica.github.io/digital-confidence/" style="color:#00A651;">Digital Confidence Centre</a><br>
-        <small>© 2026 First Credit Union. Member of DICO.</small>
+        <small>© <span id="copyright-year">2026</span> First Credit Union. Member of DICO.</small>
       </div>
 
     </main>
@@ -247,5 +247,6 @@
   <script src="../../js/progress.js" defer></script>
   <button class="btn-print" onclick="window.print()" aria-label="Print this module">🖨️ Print This Module</button>
   <script src="../js/offline-banner.js" defer></script>
+<script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

@@ -285,7 +285,7 @@
             <a href="../privacy.html">Privacy Policy</a>
           </nav>
           <p class="footer-support">Questions about this site? Leave us a voice message or written note using the Feedback button.</p>
-          <p class="footer-copy">&copy; 2026 Two Birds. Made with care in Ontario, Canada.</p>
+          <p class="footer-copy">&copy; <span id="copyright-year">2026</span> Two Birds. Made with care in Ontario, Canada.</p>
         </div>
       </footer>
     </main>
@@ -297,5 +297,6 @@
   <script src="../js/app.js" defer></script>
   <script src="../js/accessibility.js" defer></script>
   <script src="../js/offline-banner.js" defer></script>
+<script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

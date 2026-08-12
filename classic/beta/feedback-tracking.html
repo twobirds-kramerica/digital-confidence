@@ -294,7 +294,7 @@
         <div class="footer-inner">
           <p class="footer-brand">Digital Confidence Centre</p>
           <p class="footer-tagline">A free digital learning programme for all Canadians</p>
-          <p class="footer-copy">&copy; 2026 Two Birds. Made with care in Ontario, Canada.</p>
+          <p class="footer-copy">&copy; <span id="copyright-year">2026</span> Two Birds. Made with care in Ontario, Canada.</p>
         </div>
       </footer>
 
@@ -375,5 +375,6 @@
   </script>
 
   <button class="btn-print" onclick="window.print()" aria-label="Print this page">🖨️ Print This Page</button>
+<script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

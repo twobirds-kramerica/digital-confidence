@@ -212,10 +212,11 @@
       <a href="../index.html" style="color:#ccc;" lang="en">English</a>
     </p>
     <p style="font-size:0.85rem;color:#888;margin-top:12px;">
-      © 2026 Centre de Confiance Numérique &nbsp;•&nbsp; Un service communautaire de Two Birds Innovation &nbsp;•&nbsp; St. Thomas, Ontario
+      © <span id="copyright-year">2026</span> Centre de Confiance Numérique &nbsp;•&nbsp; Un service communautaire de Two Birds Innovation &nbsp;•&nbsp; St. Thomas, Ontario
     </p>
   </footer>
 
   <script src="../js/accessibility.js" defer></script>
+<script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

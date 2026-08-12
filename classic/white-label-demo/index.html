@@ -218,7 +218,7 @@
       <div class="wl-footer">
         <strong>First Credit Union</strong> — Your Financial Partner for Life<br>
         Powered by <a href="https://twobirds-kramerica.github.io/digital-confidence/" style="color:#00A651;">Digital Confidence Centre</a> | White-label digital literacy solution<br>
-        <small>© 2026 First Credit Union. All rights reserved. | Member of DICO | Member of CCUA</small>
+        <small>© <span id="copyright-year">2026</span> First Credit Union. All rights reserved. | Member of DICO | Member of CCUA</small>
       </div>
 
     </main>
@@ -228,5 +228,6 @@
   <script src="../js/accessibility.js" defer></script>
 
   <script src="../js/offline-banner.js" defer></script>
+<script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

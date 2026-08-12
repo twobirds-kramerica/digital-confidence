@@ -111,8 +111,9 @@
   </main>
 
   <footer style="background:#1a1a1a;color:#ccc;padding:2rem 1.5rem;text-align:center;font-size:0.9rem;margin-top:4rem;">
-    <p>© 2026 Digital Confidence Centre — Free digital literacy for Ontario seniors. A Two Birds Innovation community service.</p>
+    <p>© <span id="copyright-year">2026</span> Digital Confidence Centre — Free digital literacy for Ontario seniors. A Two Birds Innovation community service.</p>
   </footer>
   <script src="../js/accessibility.js" defer></script>
+<script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

@@ -582,7 +582,7 @@
             <a href="resources/support-directory.html">Get Help</a>
           </nav>
           <p class="footer-support">Questions about this site? Leave us a voice message or written note using the Feedback button.</p>
-          <p class="footer-copy">&copy; 2026 Two Birds Innovation. Made with care in Ontario, Canada.</p>
+          <p class="footer-copy">&copy; <span id="copyright-year">2026</span> Two Birds Innovation. Made with care in Ontario, Canada.</p>
           <p class="city-footer-label" style="display:none;"></p>
           <p class="device-footer-label" style="display:none;"></p>
         </div>
@@ -1000,6 +1000,7 @@
 
       html += '<div class="footer-note">Digital Confidence Centre &mdash; Free digital literacy training for Ontario seniors. Visit: twobirds-kramerica.github.io/digital-confidence/ &nbsp;|&nbsp; Free help: Connected Canadians 1-877-304-5813</div>';
       html += '  <script src="js/offline-banner.js" defer></script>
+<script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
 </body></html>';
 
       var win = window.open('', '_blank');

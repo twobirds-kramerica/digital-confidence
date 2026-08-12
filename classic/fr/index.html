@@ -199,7 +199,7 @@
       <a href="../resources/support-directory.html" style="color:#ccc;">Répertoire de soutien</a>
     </p>
     <p style="font-size:0.85rem;color:#888;margin-top:12px;">
-      © 2026 Centre de Confiance Numérique &nbsp;•&nbsp; Un service communautaire de Two Birds Innovation &nbsp;•&nbsp; St. Thomas, Ontario
+      © <span id="copyright-year">2026</span> Centre de Confiance Numérique &nbsp;•&nbsp; Un service communautaire de Two Birds Innovation &nbsp;•&nbsp; St. Thomas, Ontario
     </p>
     <p style="font-size:0.8rem;color:#666;margin-top:8px;">
       Ressources pour les aînés de l'Ontario &nbsp;•&nbsp; Centre antifraude du Canada: 1-888-495-8501 &nbsp;•&nbsp; 211 Ontario: composez 211
@@ -207,5 +207,6 @@
   </footer>
 
   <script src="../js/accessibility.js" defer></script>
+<script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

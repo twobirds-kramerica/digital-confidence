@@ -340,7 +340,7 @@
               <div><p class="sg-label">Connect</p><ul><li><a href="#">Contact</a></li><li><a href="#">Help</a></li></ul></div>
             </div>
             <div class="site-footer__legal">
-              <span>© 2026 Two Birds Innovation</span>
+              <span>© <span id="copyright-year">2026</span> Two Birds Innovation</span>
               <a href="#" class="back-to-top">↑ Back to top</a>
             </div>
           </div>
@@ -554,5 +554,6 @@
 <!-- S-030 components loaded for live keyboard helper + progress dots in context -->
 <script src="../js/keyboard-helper.js" defer></script>
 
+<script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

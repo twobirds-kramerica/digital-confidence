@@ -422,7 +422,7 @@
   <footer class="kids-footer" role="contentinfo">
     <p>
       <a href="../../index.html">Digital Confidence Centre</a> · Kids Digital Literacy · Ages 4–6 ·
-      <a href="../../copyright.html">© 2026 Two Birds Innovation</a> ·
+      <a href="../../copyright.html">© <span id="copyright-year">2026</span> Two Birds Innovation</a> ·
       <a href="../../privacy.html">Privacy Policy</a>
     </p>
     <p style="margin-top: 0.4rem; font-size: 0.8rem;">
@@ -430,5 +430,6 @@
     </p>
   </footer>
 
+<script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
