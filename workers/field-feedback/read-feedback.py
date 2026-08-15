@@ -44,18 +44,23 @@ import urllib.request
 
 def fetch(endpoint, key, since, limit):
     base = endpoint.rstrip("/") + "/list"
-    params = {"key": key}
+    params = {}
     if since:
         params["since"] = since
     if limit:
         params["limit"] = str(limit)
-    url = base + "?" + urllib.parse.urlencode(params)
+    url = base + ("?" + urllib.parse.urlencode(params) if params else "")
     # Cloudflare's edge bot-fight mode blocks the default "Python-urllib/x.y"
     # User-Agent (error 1010, browser_signature_banned) before the request
     # ever reaches the Worker. A plain browser-shaped UA clears it.
+    # Read key goes in the X-Feedback-Key header, not ?key= -- a query-string
+    # secret lands in Cloudflare request logs (S-SECURITY-WORKER-URL-PII-
+    # HARDENING-001, 2026-08-15). The Worker still accepts ?key= too, during
+    # the transition.
     req = urllib.request.Request(url, headers={
         "Accept": "application/json",
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) read-feedback.py/1.0"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) read-feedback.py/1.0",
+        "X-Feedback-Key": key
     })
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:

@@ -69,14 +69,15 @@ export default {
           .bind(h, JSON.stringify(b.data || {}).slice(0, 4000), Date.now()).run();
         return json({ ok: true });
       }
-      // Load progress. GET /progress?e=<email>
-      if (url.pathname === "/progress" && request.method === "GET") {
-        const email = url.searchParams.get("e");
-        if (!email) return json({ ok: false }, 400);
-        const h = await sha256(email);
-        const row = await env.DB.prepare("SELECT data FROM progress WHERE email_hash=?").bind(h).first();
-        return json({ ok: true, data: row ? JSON.parse(row.data) : null });
-      }
+      // NOTE (S-SECURITY-WORKER-URL-PII-HARDENING-001, 2026-08-15): a GET
+      // /progress?e=<raw email> route used to live here. Removed -- it put a
+      // raw email address in a URL query string (Cloudflare logs, browser
+      // history, Referer), which ADR-0027's "stored hashed, no raw email"
+      // discipline never intended. No checked-out repo called it (js/beta.js
+      // :213, the only /progress caller, POSTs the email in the body), so it
+      // was reachable dead code. If a GET-style read is ever needed again, it
+      // must accept a client-computed hash (see dcc-beta-measurement/worker.js
+      // safeHash()), never the raw address.
       // One-way feedback. body: { text }
       if (url.pathname === "/feedback" && request.method === "POST") {
         const b = await request.json();

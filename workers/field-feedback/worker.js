@@ -40,6 +40,7 @@ var ALLOWED_ORIGINS = [
 
 var KEY_PREFIX = "feedback:";
 var MAX_LIST = 200;
+var FEEDBACK_TTL_SECONDS = 60 * 60 * 24 * 180; // 180 days
 
 function pickOrigin(request) {
   var origin = request.headers.get("Origin") || "";
@@ -114,21 +115,31 @@ async function handleSubmit(request, env) {
   // Authoritative server time wins over the client hint.
   bundle.timestamp = serverTimestamp;
   bundle.serverTimestamp = serverTimestamp;
-  bundle.receivedFrom = request.headers.get("CF-Connecting-IP") || "";
+  // NOTE (S-SECURITY-WORKER-URL-PII-HARDENING-001, 2026-08-15): no longer
+  // storing the submitter's IP (bundle.receivedFrom) -- the rate-limit key
+  // above already carries the abuse signal and self-expires; retaining it on
+  // the durable feedback record served no purpose but identifiability.
   bundle.cfCountry = (request.cf && request.cf.country) || "";
 
   var rand = Math.random().toString(36).slice(2, 10);
   var id = serverTimestamp + ":" + rand;
   var key = KEY_PREFIX + id;
 
-  await env.FEEDBACK.put(key, JSON.stringify(bundle));
+  // FEEDBACK_TTL_SECONDS: bounded retention -- privacy.html promises optional
+  // feedback is "retained only until ... no longer needed for the purpose
+  // given", not forever. 180 days (~6 months) covers an active
+  // development/beta review window without indefinite retention.
+  await env.FEEDBACK.put(key, JSON.stringify(bundle), { expirationTtl: FEEDBACK_TTL_SECONDS });
 
   return json({ ok: true, id: id }, 200, request);
 }
 
 async function handleList(request, env) {
   var url = new URL(request.url);
-  var providedKey = url.searchParams.get("key") || "";
+  // Prefer the X-Feedback-Key header (S-SECURITY-WORKER-URL-PII-HARDENING-001,
+  // 2026-08-15) -- a query-string key lands in Cloudflare request logs; a
+  // header does not. ?key= kept working during the transition.
+  var providedKey = request.headers.get("X-Feedback-Key") || url.searchParams.get("key") || "";
   var expected = env.FEEDBACK_READ_KEY || "";
 
   if (!expected) {
