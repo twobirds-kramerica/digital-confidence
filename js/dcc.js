@@ -303,6 +303,23 @@
     // tell-the-user-what-is-happening posture as the confidence quiz and the wizard
     // identification step (spec section 28.3).
     var voiceStatus = null;
+    /* Single creation path for voiceStatus (2026-08-16, RI-011 4th recurrence) —
+       both the success path (reflectVoiceStatus) and the no-voice path
+       (noAcceptableVoice) MUST go through this so the element always exists by
+       the time either one writes to it. The prior bug was exactly this: the
+       success path created it inline and the no-voice path only checked
+       `if (voiceStatus)`, so the no-voice message silently never rendered when
+       that path ran first. Routing every write through one function forecloses
+       that shape of bug here — no call site can "forget" to create it. */
+    function ensureVoiceStatus() {
+      if (!voiceStatus) {
+        voiceStatus = document.createElement("p");
+        voiceStatus.className = "dcc-read-voice-status";
+        voiceStatus.style.cssText = "font-size:var(--font-size-sm);color:var(--color-text-light);margin:var(--space-2) 0 0;";
+        if (readBtn.parentNode) { readBtn.parentNode.insertBefore(voiceStatus, readBtn.nextSibling); }
+      }
+      return voiceStatus;
+    }
     function friendlyVoiceLabel(v) {
       var name = (v.name || "").toLowerCase();
       for (var i = 0; i < NAME_PREFS.length; i++) {
@@ -321,13 +338,7 @@
     }
     function reflectVoiceStatus() {
       if (!chosenVoice) { return; }
-      if (!voiceStatus) {
-        voiceStatus = document.createElement("p");
-        voiceStatus.className = "dcc-read-voice-status";
-        voiceStatus.style.cssText = "font-size:var(--font-size-sm);color:var(--color-text-light);margin:var(--space-2) 0 0;";
-        if (readBtn.parentNode) { readBtn.parentNode.insertBefore(voiceStatus, readBtn.nextSibling); }
-      }
-      voiceStatus.textContent = (IS_FR ? "Lecture avec : " : "Reading with: ") + friendlyVoiceLabel(chosenVoice);
+      ensureVoiceStatus().textContent = (IS_FR ? "Lecture avec : " : "Reading with: ") + friendlyVoiceLabel(chosenVoice);
     }
     function pickVoice() {
       if (!("speechSynthesis" in window)) return;
@@ -487,7 +498,7 @@
       var msg = IS_FR
         ? "La lecture à voix haute est en pause : cet appareil n’a pas encore la voix canadienne que nous utilisons. Nous préférons nous taire plutôt que de vous lire avec une voix robotisée."
         : "Read aloud is paused: this device does not have the Canadian voice we use yet. We would rather stay quiet than read to you in a robotic voice.";
-      if (voiceStatus) voiceStatus.textContent = msg;
+      ensureVoiceStatus().textContent = msg;
       readBtn.textContent = IS_FR ? "Lecture à voix haute en pause" : "Read aloud paused";
       /* Code orange. Loud in the console, and persisted so it survives the
          page the listener was on — a fallback nobody can see is how this got
