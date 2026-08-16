@@ -20,6 +20,8 @@
   <link rel="alternate" hreflang="x-default" href="https://twobirds-kramerica.github.io/digital-confidence/">
   <meta name="description" content="Free, plain-language lessons that help Canadian seniors use technology safely and confidently. No account needed. A community initiative by Two Birds Innovation.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/core.css">
   <link rel="stylesheet" href="css/print.css" media="print">
@@ -57,17 +59,6 @@
   </div>
 </header>
 
-<nav class="primary-nav" aria-label="Lesson sections">
-  <div class="container">
-    <a href="index.html" aria-current="page">All lessons</a>
-    <a href="index.html#everyday-confidence">Everyday confidence</a>
-    <a href="index.html#protect-money">Protect your money</a>
-    <a href="for-families.html">For families</a>
-    <a href="support-directory.html">Get help</a>
-    <a href="final-quiz.html">Final assessment</a>
-  </div>
-</nav>
-
 <main id="main" data-beta-banner>
 
   <section class="hero" aria-labelledby="hero-h">
@@ -75,9 +66,12 @@
       <div class="hero-copy">
         <p class="reassurance"><span aria-hidden="true">✅</span> You are in a safe place. Nothing on this page can harm your device.</p>
         <h1 id="hero-h">Feel confident with your phone, tablet, or computer, one small step at a time</h1>
-        <p class="lead">Plain-language lessons for Canadian seniors. Go at your own pace, stop whenever you like, and come back any time.</p>
+        <p class="lead">Plain-language lessons for Canadian seniors. No account needed. Go at your own pace, stop whenever you like, and come back any time.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="scam-defence-helper.html">Try a 5-minute lesson (no account needed)</a>
+          <!-- "(no account needed)" moved into the lead 2026-08-16: the longer
+               label wrapped to two lines at 390px, and BUTTON CONVENTIONS
+               (design-ui-gates.md) says shorten the copy, never wrap. -->
+          <a class="btn btn-primary" href="scam-defence-helper.html">Try a 5-minute lesson</a>
           <!-- #lessons ("Choose a topic"), not #protect-money: the button says
                "all the lessons" and used to drop the visitor into one of the
                two sections. It also no longer happens to be the first one. -->
@@ -121,7 +115,26 @@
     </div>
   </section>
 
-  <div class="container">
+  <!-- Section nav sits BELOW the hero (S-DCC-MOBILE-FIRST-LOAD-JOURNEY-001,
+       2026-08-16). At 390px the six links used to fill the entire first
+       viewport before the h1/reassurance line ever appeared (Aaron's
+       2026-08-10 field report, audit blocker B3). The nav indexes the
+       sections that follow it, so it reads naturally here, and DOM order
+       stays equal to visual order at every width (no CSS order tricks,
+       WCAG 2.4.3). Module pages keep the nav at the top: they have no hero
+       and the nav is their way back. -->
+  <nav class="primary-nav" aria-label="Lesson sections">
+    <div class="container">
+      <a href="index.html" aria-current="page">All lessons</a>
+      <a href="index.html#everyday-confidence">Everyday confidence</a>
+      <a href="index.html#protect-money">Protect your money</a>
+      <a href="for-families.html">For families</a>
+      <a href="support-directory.html">Get help</a>
+      <a href="final-quiz.html">Final assessment</a>
+    </div>
+  </nav>
+
+  <div class="container" data-beta-banner-mount>
 
     <!-- Who pays: "free" framed by funding, never "forever" (locked brief section 3) -->
     <aside class="who-pays" aria-label="Why this is free">
@@ -354,7 +367,7 @@
       </label>
       <label class="consent-option">
         <input type="checkbox" id="consent-marketing">
-        <span><span class="opt-name">Marketing (optional)</span>
+        <span><span class="opt-name">Marketing (your choice)</span>
         <p>Helps us reach more seniors. We never sell your personal information.</p></span>
       </label>
       <button class="btn btn-primary" type="button" id="consent-save">Save my choices</button>

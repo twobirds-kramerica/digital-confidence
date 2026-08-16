@@ -20,6 +20,8 @@
   <link rel="alternate" hreflang="x-default" href="https://twobirds-kramerica.github.io/digital-confidence/">
   <meta name="description" content="Des leçons gratuites, en langage clair, qui aident les aînés du Canada à utiliser la technologie en toute sécurité et avec confiance. Aucun compte requis. Une initiative communautaire de Two Birds Innovation.">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
   <link rel="stylesheet" href="../css/tokens.css">
   <link rel="stylesheet" href="../css/core.css">
   <link rel="stylesheet" href="../css/print.css" media="print">
@@ -57,17 +59,6 @@
   </div>
 </header>
 
-<nav class="primary-nav" aria-label="Sections des leçons">
-  <div class="container">
-    <a href="index.html" aria-current="page">Toutes les leçons</a>
-    <a href="index.html#everyday-confidence">Confiance au quotidien</a>
-    <a href="index.html#protect-money">Protégez votre argent</a>
-    <a href="../for-families.html">Pour les familles (en anglais seulement)</a>
-    <a href="../support-directory.html">Obtenir de l’aide (en anglais seulement)</a>
-    <a href="../final-quiz.html">Évaluation finale</a>
-  </div>
-</nav>
-
 <main id="main" data-beta-banner>
 
   <section class="hero" aria-labelledby="hero-h">
@@ -75,9 +66,12 @@
       <div class="hero-copy">
         <p class="reassurance"><span aria-hidden="true">✅</span> Vous êtes en lieu sûr. Rien sur cette page ne peut endommager votre appareil.</p>
         <h1 id="hero-h">Prenez confiance avec votre téléphone, votre tablette ou votre ordinateur, un petit pas à la fois</h1>
-        <p class="lead">Des leçons en langage clair pour les aînés du Canada. Allez à votre rythme, arrêtez-vous quand vous le voulez et revenez quand bon vous semble.</p>
+        <p class="lead">Des leçons en langage clair pour les aînés du Canada. Aucun compte requis. Allez à votre rythme, arrêtez-vous quand vous le voulez et revenez quand bon vous semble.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="../modules/module-1-fr.html">Commencer une leçon de 10 minutes (aucun compte requis)</a>
+          <!-- « (aucun compte requis) » déplacé dans le paragraphe d'intro
+               2026-08-16 : le libellé long passait sur deux lignes à 390 px
+               (règle BUTTON CONVENTIONS : raccourcir, ne jamais replier). -->
+          <a class="btn btn-primary" href="../modules/module-1-fr.html">Commencer une leçon de 10 minutes</a>
           <a class="btn btn-secondary" href="#lessons">Voir toutes les leçons</a>
         </div>
       </div>
@@ -115,7 +109,22 @@
     </div>
   </section>
 
-  <div class="container">
+  <!-- La navigation de sections se place SOUS le héros (S-DCC-MOBILE-FIRST-
+       LOAD-JOURNEY-001, 2026-08-16) : à 390 px, les six liens remplissaient
+       tout le premier écran avant même le h1. Même correctif que la page
+       d'accueil anglaise. -->
+  <nav class="primary-nav" aria-label="Sections des leçons">
+    <div class="container">
+      <a href="index.html" aria-current="page">Toutes les leçons</a>
+      <a href="index.html#everyday-confidence">Confiance au quotidien</a>
+      <a href="index.html#protect-money">Protégez votre argent</a>
+      <a href="../for-families.html">Pour les familles (en anglais seulement)</a>
+      <a href="../support-directory.html">Obtenir de l’aide (en anglais seulement)</a>
+      <a href="../final-quiz.html">Évaluation finale</a>
+    </div>
+  </nav>
+
+  <div class="container" data-beta-banner-mount>
 
     <!-- Qui paie : la gratuité expliquée par le financement -->
     <aside class="who-pays" aria-label="Pourquoi c’est gratuit">
@@ -300,7 +309,7 @@
       </label>
       <label class="consent-option">
         <input type="checkbox" id="consent-marketing">
-        <span><span class="opt-name">Marketing (facultatif)</span>
+        <span><span class="opt-name">Marketing (à vous de choisir)</span>
         <p>Nous aide à joindre plus d’aînés. Nous ne vendons jamais vos renseignements personnels.</p></span>
       </label>
       <button class="btn btn-primary" type="button" id="consent-save">Enregistrer mes choix</button>

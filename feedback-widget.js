@@ -393,8 +393,12 @@
         var li = elt("li");
         li.appendChild(elt("span", "ffw-pin-num", String(p.n)));
         var body = elt("div", "ffw-pin-body");
-        body.appendChild(elt("div", "ffw-pin-text", p.text ? ('"' + p.text + '"') : "(no visible text)"));
-        body.appendChild(elt("div", "ffw-pin-sel", p.selector));
+        /* Show the person the words they pointed at, never the technical CSS
+           selector — that string still travels in the bundle for Aaron, but
+           on screen it read as jargon to the exact audience this tool serves
+           (2026-08-10 field report screenshot: "main#main > div.container >
+           aside.partner-cta:nth-of-type(3) > p"). */
+        body.appendChild(elt("div", "ffw-pin-text", p.text ? ('"' + p.text + '"') : "(a picture or button with no words)"));
         li.appendChild(body);
         ul.appendChild(li);
       });
@@ -420,6 +424,17 @@
     panel.appendChild(actions);
     panel.appendChild(status);
     overlay.appendChild(panel);
+
+    /* Escape closes the dialog (launch-readiness audit 2026-08-16: keyboard
+       users previously had to tab to Discard). Same confirm-first guard as
+       the Discard button, so a stray Escape never loses a written note. */
+    overlay.addEventListener("keydown", function (ev) {
+      if (ev.key === "Escape" || ev.key === "Esc") {
+        ev.stopPropagation();
+        onDiscard();
+      }
+    });
+
     el.root.appendChild(overlay);
     el.overlay = overlay;
     if (el.fab) { el.fab.style.display = "none"; }
@@ -481,8 +496,13 @@
   }
 
   function buildPointOptIn() {
+    /* Copy reworked 2026-08-16 (S-DCC-MOBILE-FIRST-LOAD-JOURNEY-001, Aaron's
+       2026-08-10 field report): "(optional)" was generic UI copy, and the
+       pin/📍 vocabulary is foreign to the audience ("people don't put a pin
+       down"). Kitchen-table phrasing instead: you show someone where by
+       pointing at it. */
     var wrap = elt("div", "ffw-opt");
-    var btn = elt("button", "ffw-btn ffw-btn-ghost ffw-btn-block", "📍 Point to a spot on the page (optional)");
+    var btn = elt("button", "ffw-btn ffw-btn-ghost ffw-btn-block", "👉 Show us where on the page (if you like)");
     btn.type = "button";
     btn.addEventListener("click", function () {
       // Save the typed text, then let the person tap the page.
@@ -492,7 +512,7 @@
     });
     wrap.appendChild(btn);
     if (state.pins.length) {
-      wrap.appendChild(elt("span", "ffw-point-count", state.pins.length + (state.pins.length === 1 ? " spot pinned" : " spots pinned")));
+      wrap.appendChild(elt("span", "ffw-point-count", "You pointed to " + state.pins.length + (state.pins.length === 1 ? " spot" : " spots")));
     }
     return wrap;
   }
@@ -518,13 +538,20 @@
     bar.appendChild(actions);
     el.root.appendChild(bar);
     el.bar = bar;
+    document.addEventListener("keydown", onPointingKeydown, true);
   }
 
   function stopPointing() {
     state.pointing = false;
+    document.removeEventListener("keydown", onPointingKeydown, true);
     document.documentElement.classList.remove("ffw-arming");
     removeBar();
     openCompose();
+  }
+
+  /* Escape ends pointing mode and returns to the note (2026-08-16). */
+  function onPointingKeydown(ev) {
+    if (ev.key === "Escape" || ev.key === "Esc") { stopPointing(); }
   }
 
   // Capture-phase click handler: while pointing, a tap pins the element

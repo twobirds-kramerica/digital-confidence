@@ -774,7 +774,16 @@ body.consent-open { padding-bottom: 240px; }
 }
 
 /* --- Lesson-group headings on the index (named sections nav points at) ----- */
-.lesson-group { margin: var(--space-12) 0 var(--space-6); }
+/* Chapter divider (S-DCC-MOBILE-FIRST-LOAD-JOURNEY-001, 2026-08-16): Aaron's
+   2026-08-10 field report described the mobile page as "screens stacked on
+   screens" with no visual cue where one section ends and the next begins.
+   Books, not apps (warm-approachable-senior #8): a quiet rule + generous air
+   marks each chapter without adding chrome. */
+.lesson-group {
+  margin: var(--space-12) 0 var(--space-6);
+  border-top: 1px solid var(--color-divider);
+  padding-top: var(--space-8);
+}
 .lesson-group > h2 { margin-bottom: var(--space-2); } /* anchor-scroll offset: html scroll-padding-top + js/dcc.js, not a per-selector scroll-margin-top (see core.css:16) */
 .lesson-group > .group-lead { margin-bottom: var(--space-2); color: var(--color-text); }
 
@@ -1005,6 +1014,29 @@ body.consent-open { padding-bottom: 240px; }
   body.consent-open { padding-bottom: 320px; }
   .primary-nav .container { flex-direction: column; gap: 0; }
   .primary-nav a { width: 100%; }
+
+  /* Tighter header chrome on phones (S-DCC-MOBILE-FIRST-LOAD-JOURNEY-001):
+     at 390px the sticky header wraps to three rows; smaller gaps claw back
+     vertical room without touching tap-target floors (44px min-heights on
+     .brand, buttons and links all stand). */
+  .site-header .container { gap: var(--space-2); }
+
+  /* Scroll-snap to section starts, phones only (Aaron, 2026-08-10: a normal
+     scroll gesture should settle on the next section; a slow drag must still
+     let you stop anywhere). `proximity` is the native CSS behaviour that does
+     exactly that: it nudges only when a scroll ENDS near a section boundary
+     and never hijacks a deliberate mid-section stop (a `mandatory` snap on
+     sections taller than the viewport is the known hazard, so it is not
+     used). Targets are the .lesson-group chapters ONLY: a snap-align on
+     .hero made the browser auto-scroll ~83px at first paint (hero start
+     minus scroll-padding), hiding the reassurance line under the sticky
+     header — measured live at 390x844 before shipping. scroll-margin-top
+     tops up html's static 84px scroll-padding to the real wrapped-header
+     height at this width; it does NOT touch the JS anchor-offset mechanism
+     (core.css:16), because anchors target the h2 IDs inside the groups, not
+     the .lesson-group containers themselves. */
+  html { scroll-snap-type: y proximity; }
+  .lesson-group { scroll-snap-align: start; scroll-margin-top: 84px; }
 }
 
 /* Reduced-motion gate, consolidated (2026-08-10, S-PORTFOLIO-BRAND-AUDIT-REFRESH-001

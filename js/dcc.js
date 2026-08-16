@@ -164,8 +164,28 @@
     var saved = null;
     try { saved = localStorage.getItem("dccv2-consent"); } catch (e) {}
     if (!saved) {
-      consentBar.hidden = false;
-      document.body.classList.add("consent-open");
+      /* First visit: do not cover the first screen. At 390px the bar used to
+         hide the bottom ~30% of the viewport before the visitor had even read
+         what the site is (2026-08-10 field report; launch-readiness audit
+         blocker B3, S-DCC-MOBILE-FIRST-LOAD-JOURNEY-001). The choice is only
+         about optional local storage, so it can wait until the person has
+         started reading: reveal on the first real scroll. If they never
+         scroll, nothing optional is stored, which is the same outcome as
+         Reject. The bar is appended below the page (fixed bottom + body
+         padding), so revealing it never shifts what they are reading. */
+      var revealConsent = function () {
+        window.removeEventListener("scroll", onFirstScroll);
+        consentBar.hidden = false;
+        document.body.classList.add("consent-open");
+      };
+      var onFirstScroll = function () {
+        if ((window.scrollY || window.pageYOffset || 0) > 80) { revealConsent(); }
+      };
+      if ((window.scrollY || window.pageYOffset || 0) > 80) {
+        revealConsent();
+      } else {
+        window.addEventListener("scroll", onFirstScroll, { passive: true });
+      }
     }
     function closeConsent(value) {
       try { localStorage.setItem("dccv2-consent", JSON.stringify(value)); } catch (e) {}

@@ -159,7 +159,15 @@
 
   function boot() {
     if (!window.DCCBeta || !window.DCCBeta.isBeta()) { return; }
-    var main = document.querySelector("#main .container") || document.querySelector("#main");
+    /* A page may name an explicit mount with [data-beta-banner-mount]. The
+       landing pages do (S-DCC-MOBILE-FIRST-LOAD-JOURNEY-001, 2026-08-16), so
+       the banner sits BELOW the hero: on a 390px first screen this banner
+       plus the header used to push the h1 and reassurance line entirely
+       below the fold (Aaron's 2026-08-10 screenshots). Module pages keep the
+       old first-container behaviour, where top-of-page is right. */
+    var main = document.querySelector("[data-beta-banner-mount]") ||
+               document.querySelector("#main .container") ||
+               document.querySelector("#main");
     if (!main) { return; }
     injectStyles();
     main.insertBefore(build(), main.firstChild);
