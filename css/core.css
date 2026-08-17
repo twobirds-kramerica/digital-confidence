@@ -89,7 +89,20 @@ a:hover { color: var(--color-text-link-hover); }
    Same position on every page (WCAG 2.2 SC 3.2.6).
    ========================================================================== */
 .site-header {
-  position: sticky; top: 0; z-index: var(--z-nav);
+  /* MC4 (hal-stack/disciplines/ux-launch-readiness-corpus.md §9): unpinned is
+     the default on content surfaces -- 14/17 benchmarked products let the
+     header leave, and DCC's own live stress-test
+     (hal-stack/strategy/dcc-mobile-header-launch-readiness-audit-2026-08-16.md)
+     measured 67.6% of the viewport pinned at the audience's real 175%+ zoom
+     (MC3's zoom corollary), plus an unreachable dyslexia-font toggle when the
+     Display-settings panel opened inside a sticky header that could not grow
+     past the viewport bottom (B2). No in-task exemption for pinning is
+     recorded per MC4, so un-stickied 2026-08-17 (S-MOBILE-CHROME-SWEEP-001)
+     -- the header now scrolls with the page like the mature-product
+     benchmark lane. This is the conservative/WCAG-floor reading of the
+     pinned-trust-badge taste call filed to Aaron (Notion 3bfa09cf-876a-8102-
+     8abe-ca6628c8b5b9) -- provisional pending his actual pick; re-pinning
+     with a recorded justification is still open to him. */
   background: var(--color-surface);
   border-bottom: 2px solid var(--color-border);
   box-shadow: var(--shadow-sm);
@@ -168,6 +181,24 @@ html[data-theme="dark"] { --dcc-leaf-red: #FF6B5E; }
   font-size: var(--font-size-sm); color: var(--color-primary);
 }
 .lang-link:hover { color: var(--color-primary-hover); }
+
+/* IAL4 (hal-stack/disciplines/ia-launch-readiness-corpus.md §9): the no-twin
+   disclosure. Where a lang-link falls back to the other locale's hub instead
+   of an exact page twin, this note discloses the downgrade AT THE POINT OF
+   THE JUMP so the label's promise matches the destination -- a toggle that
+   silently swaps "this page in French" for "the French homepage" is an IA3
+   broken label (live-demonstrated stranding, dcc-locale-switcher-ial-audit-
+   2026-08-16.md B1). Added 2026-08-17 (S-MOBILE-CHROME-SWEEP-001).
+   font-size-sm is the accessibility floor (tokens.css: "absolute minimum") --
+   never go smaller even for a secondary note. */
+.lang-link-note {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  max-width: 240px;
+}
 
 /* Settings-gear expander — keeps the accessibility controls one tap away
    without letting them dominate the sticky header (esp. on mobile). */
@@ -1020,6 +1051,15 @@ body.consent-open { padding-bottom: 240px; }
      vertical room without touching tap-target floors (44px min-heights on
      .brand, buttons and links all stand). */
   .site-header .container { gap: var(--space-2); }
+
+  /* MC6 (ux-launch-readiness-corpus.md §9): chrome must not grow additional
+     visual rows by ANY mechanism, including text-wrap (not just flex-wrap).
+     At 320px "Digital Confidence Centre" line-wrapped to two lines inside
+     .brand, adding ~34px (live-measured 78px vs a 44px single-line row) --
+     found by the stress-test audit, fixed 2026-08-17
+     (S-MOBILE-CHROME-SWEEP-001). 20px keeps the wordmark on one line down to
+     320px while the .brand min-height:44px tap target is untouched. */
+  .brand { font-size: 20px; }
 
   /* Scroll-snap to section starts, phones only (Aaron, 2026-08-10: a normal
      scroll gesture should settle on the next section; a slow drag must still
