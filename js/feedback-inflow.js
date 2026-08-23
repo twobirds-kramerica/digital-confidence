@@ -46,7 +46,12 @@
     ctaPage: "Donner mon avis sur cette page",
     footer: "Donner mon avis",
     betaTag: "Testeurs bêta",
-    betaSentence: "Vous faites partie de nos testeurs bêta, alors votre avis compte doublement."
+    betaSentence: "Vous faites partie de nos testeurs bêta, alors votre avis compte doublement.",
+    shareLead: "Vous connaissez quelqu'un qui aimerait l'essayer? Partagez la version bêta avec un proche.",
+    shareBtn: "Partager avec un proche",
+    copyBtn: "Copier le lien",
+    copied: "Lien copié.",
+    copiedLong: "Lien copié. Collez-le dans un message."
   } : {
     title: "Tell us what you think",
     body: "Did anything here feel confusing, or not work the way you expected? Please tell us. It takes a minute and it helps us more than you might think.",
@@ -54,7 +59,12 @@
     ctaPage: "Give feedback on this page",
     footer: "Give feedback",
     betaTag: "Beta testers",
-    betaSentence: "You are one of our beta testers, so this matters twice as much."
+    betaSentence: "You are one of our beta testers, so this matters twice as much.",
+    shareLead: "Know someone who would like to try this? Share the beta with a friend.",
+    shareBtn: "Share with a friend",
+    copyBtn: "Copy the link",
+    copied: "Link copied.",
+    copiedLong: "Link copied. Paste it into a message."
   };
 
   function injectStyles() {
@@ -73,7 +83,13 @@
       "background:var(--color-btn-primary-bg);color:var(--color-btn-primary-text);",
       "font-family:var(--font-heading);font-weight:var(--font-weight-semibold);",
       "font-size:var(--font-size-caption,.8rem);letter-spacing:.02em;",
-      "padding:var(--space-1) var(--space-3);border-radius:var(--radius-pill);white-space:nowrap;}"
+      "padding:var(--space-1) var(--space-3);border-radius:var(--radius-pill);white-space:nowrap;}",
+      /* Share-with-a-friend row (S-DCC-UX-BATCH-2026-07-28-LATE item 6):
+         end-of-lesson is where share intent peaks, so it lives inside the same
+         end-of-lesson block, visually separated by a top rule. */
+      ".dcc-fb-share{margin-top:var(--space-5);padding-top:var(--space-4);border-top:1px solid var(--color-border);}",
+      ".dcc-fb-share p{margin:0 0 var(--space-3);}",
+      ".dcc-fb-share-row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-3);}"
     ].join("");
     document.head.appendChild(s);
   }
@@ -116,6 +132,60 @@
     btn.textContent = isLesson ? T.cta : T.ctaPage;
     btn.addEventListener("click", openWidget);
     box.appendChild(btn);
+
+    /* Share-the-beta row, beta testers only (item 6). The shared link is the
+       locale-correct site front door with ?beta=1, not this deep lesson URL,
+       because "share this beta with a friend" means inviting them in at the
+       start, wizard included -- not dropping them mid-lesson. Same Web Share +
+       clipboard-fallback pattern as about.html / scam-defence-helper.html. */
+    if (isBeta) {
+      var shareUrl = "";
+      try { shareUrl = new URL("index.html?beta=1", window.location.href).href; } catch (e) {}
+      if (shareUrl) {
+        var share = document.createElement("div");
+        share.className = "dcc-fb-share";
+        var lead = document.createElement("p");
+        lead.textContent = T.shareLead;
+        share.appendChild(lead);
+
+        var row = document.createElement("div");
+        row.className = "dcc-fb-share-row";
+        var msg = document.createElement("span");
+        msg.setAttribute("role", "status");
+
+        function copyLink(text) {
+          if (navigator.clipboard) {
+            navigator.clipboard.writeText(shareUrl).then(function () { msg.textContent = text; });
+          } else {
+            msg.textContent = shareUrl;
+          }
+        }
+
+        var shareBtn = document.createElement("button");
+        shareBtn.type = "button";
+        shareBtn.className = "btn btn-secondary";
+        shareBtn.textContent = T.shareBtn;
+        shareBtn.addEventListener("click", function () {
+          if (navigator.share) {
+            navigator.share({ title: document.title, url: shareUrl }).catch(function () {});
+          } else {
+            copyLink(T.copiedLong);
+          }
+        });
+        row.appendChild(shareBtn);
+
+        var copyBtn = document.createElement("button");
+        copyBtn.type = "button";
+        copyBtn.className = "btn btn-secondary";
+        copyBtn.textContent = T.copyBtn;
+        copyBtn.addEventListener("click", function () { copyLink(T.copied); });
+        row.appendChild(copyBtn);
+
+        row.appendChild(msg);
+        share.appendChild(row);
+        box.appendChild(share);
+      }
+    }
 
     return box;
   }
