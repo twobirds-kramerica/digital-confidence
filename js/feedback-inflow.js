@@ -39,6 +39,18 @@
 
   var IS_FR = (document.documentElement.getAttribute("lang") || "en").toLowerCase().indexOf("fr") === 0;
 
+  /* Site root, derived from THIS script's src (<root>/js/feedback-inflow.js)
+     at parse time. Pages loading this script live at root, fr/, and modules/
+     (where FR twins are module-*-fr.html in the SAME directory), so resolving
+     "index.html" against the PAGE URL lands on modules/index.html -- wrong.
+     Caught by local verification 2026-08-23. GH Pages project site: never a
+     domain-root absolute path. */
+  var SITE_ROOT = "";
+  var curScript = document.currentScript;
+  if (curScript && curScript.src) {
+    SITE_ROOT = curScript.src.replace(/js\/[^\/]*$/, "");
+  }
+
   var T = IS_FR ? {
     title: "Dites-nous ce que vous en pensez",
     body: "Quelque chose vous a semble confus, ou n'a pas fonctionne? Dites-le nous. Cela prend une minute et cela nous aide beaucoup.",
@@ -139,8 +151,7 @@
        start, wizard included -- not dropping them mid-lesson. Same Web Share +
        clipboard-fallback pattern as about.html / scam-defence-helper.html. */
     if (isBeta) {
-      var shareUrl = "";
-      try { shareUrl = new URL("index.html?beta=1", window.location.href).href; } catch (e) {}
+      var shareUrl = SITE_ROOT ? SITE_ROOT + (IS_FR ? "fr/" : "") + "index.html?beta=1" : "";
       if (shareUrl) {
         var share = document.createElement("div");
         share.className = "dcc-fb-share";
