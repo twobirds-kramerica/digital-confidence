@@ -346,6 +346,12 @@
       "html[data-theme=\"dark\"] .dcc-welcome-close:hover,html[data-theme=\"dark\"] .dcc-welcome-close:focus-visible{background:rgba(255,255,255,0.12);}",
       ".dcc-welcome-body{flex:1 1 auto;overflow-y:auto;padding:var(--space-6) var(--space-8);min-height:0;}",
       ".dcc-welcome-body p{margin:0 0 var(--space-4);max-width:60ch;}",
+      /* SCROLL-AVOIDANCE rule (design-ui-gates.md, 2026-08-23): the last
+         element's bottom margin is dead space -- the body's own padding
+         already provides the gap. Measured live at 1280x800: step 2's video
+         margin made bodyScrollH exceed clientH by 2px, producing a scrollbar
+         for nothing. S-DCC-UX-BATCH-2026-07-28-LATE item 10. */
+      ".dcc-welcome-body section > :last-child{margin-bottom:0;}",
       ".dcc-welcome-body section[hidden]{display:none;}",
       ".dcc-welcome-body section{opacity:1;transition:opacity var(--motion-duration-2,200ms) var(--motion-ease,ease);}",
       ".dcc-welcome-body section.is-fading{opacity:0;}",
