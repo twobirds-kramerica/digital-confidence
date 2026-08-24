@@ -776,6 +776,10 @@ body.consent-open { padding-bottom: 240px; }
 .site-footer .scope-note { color: var(--color-text); }
 .footer-links { display: flex; gap: var(--space-5); flex-wrap: wrap; justify-content: center; padding: 0; list-style: none; margin: var(--space-4) 0 0; }
 .footer-links a { min-height: var(--tap-target-min); display: inline-flex; align-items: center; }
+/* The feedback link (injected by feedback-inflow.js) reads as a stray line when it
+   wraps alone on narrower rows -- a small leading mark ties it back to the row
+   visually, whether it wraps or sits inline. */
+.footer-links .fb-footer-item::before { content: '\2022'; margin-right: var(--space-2); color: var(--color-border); }
 
 /* ============================================================================
    PRIMARY NAV (Sprint V2-2 shell) - grouped by plain-language destination,

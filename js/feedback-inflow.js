@@ -205,6 +205,7 @@
     var list = document.querySelector(".site-footer .footer-links");
     if (!list || list.querySelector("[data-dcc-fb-footer]")) { return; }
     var li = document.createElement("li");
+    li.className = "fb-footer-item";
     var a = document.createElement("a");
     a.href = "#";
     a.textContent = T.footer;
