@@ -281,9 +281,8 @@
     });
     reflectRate();
 
-    /* Voice choice — best-clarity heuristic for hard-of-hearing listeners:
-       Canadian English first, then any English; prefer higher-quality
-       natural/neural voices where the browser exposes them. */
+    /* Voice choice — honour a same-language system preference first, then
+       prefer the project's vetted names and natural/neural voices. */
     var chosenVoice = null;
     // Named-voice preference (2026-07-28, spec beta-welcome-wizard-SPEC section 28.3):
     // Clara is this project's own vetted Canadian voice (en-CA neural), chosen
@@ -297,6 +296,8 @@
       var wantExact = IS_FR ? "fr-ca" : "en-ca";
       var wantPrefix = IS_FR ? "fr" : "en";
       var nameLower = name.toLowerCase();
+      var isNamed = false;
+      var isNatural = /natural|neural|online/i.test(name);
 
       /* HARD LANGUAGE GATE (2026-08-05) — a voice that does not speak this
          page's language is DISQUALIFIED outright, never merely down-ranked.
@@ -310,13 +311,28 @@
       if (lang.indexOf(wantPrefix) !== 0) return 0;
 
       for (var i = 0; i < NAME_PREFS.length; i++) {
-        if (nameLower.indexOf(NAME_PREFS[i]) !== -1) { s += 50; break; }
+        if (nameLower.indexOf(NAME_PREFS[i]) !== -1) { isNamed = true; s += 50; break; }
       }
-      if (lang === wantExact) s += 40;
+      var isExactRegion = lang === wantExact;
+      /* RI-011 5th variant (2026-08-29): v.default used to add +100, dwarfing
+         every other signal, and an exact-region voice that was NOT also the
+         OS default scored 0 below and was excluded outright. On Windows the
+         systemwide TTS default is almost always an old legacy voice (e.g.
+         "Microsoft David"), so it won by default-flag alone regardless of
+         region -- while a genuinely correct-region voice (e.g. "Microsoft
+         Richard - English (Canada)") never qualified at all. Lowered to a
+         tiebreaker, well below the exact-region bonus, and exact-region is
+         now its own acceptability path below. */
+      if (v.default) s += 15;
+      if (isExactRegion) s += 40;
       else s += 20; // right language, different region (e.g. fr-FR on a fr-CA page)
-      if (/natural|neural|online/i.test(name)) s += 25; // raised above the generic-language bonus: quality outranks a near-miss locale
+      if (isNatural) s += 25; // raised above the generic-language bonus: quality outranks a near-miss locale
       if (v.localService) s += 1; // network-stutter resilience only; no longer favours the robotic offline legacy voices
-      return s;
+      /* A same-language label alone does not make a legacy voice acceptable
+         -- but an exact region match (the actual target locale) always does.
+         Otherwise an explicitly assigned robotic voice bypasses the guarded
+         no-voice path just as effectively as the old OS-default fallback. */
+      return (v.default || isNamed || isNatural || isExactRegion) ? s : 0;
     }
     // Quiet "Reading with: X" line -- tells the listener what was picked instead of
     // staying silent about a system whose quality genuinely varies by device. Same
