@@ -54,13 +54,15 @@ jobs:
           check_link "https://www.fightspam.gc.ca" "CASL Reporting (fightspam.gc.ca)"
           check_link "https://www.ccts-cprst.ca" "CCTS telecom complaints"
 
-          echo "broken_links<<EOF" >> $GITHUB_OUTPUT
-          printf "$BROKEN" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+          DELIM="ghadelim_$(openssl rand -hex 8)"
 
-          echo "ok_links<<EOF" >> $GITHUB_OUTPUT
-          printf "$OK" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+          echo "broken_links<<$DELIM" >> $GITHUB_OUTPUT
+          printf '%s' "$BROKEN" >> $GITHUB_OUTPUT
+          echo "$DELIM" >> $GITHUB_OUTPUT
+
+          echo "ok_links<<$DELIM" >> $GITHUB_OUTPUT
+          printf '%s' "$OK" >> $GITHUB_OUTPUT
+          echo "$DELIM" >> $GITHUB_OUTPUT
 
           # Count broken links for issue creation decision
           BROKEN_COUNT=$(printf "$BROKEN" | grep -c "❌" || echo "0")
