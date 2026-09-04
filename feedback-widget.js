@@ -62,8 +62,11 @@
     ".ffw-pin{position:absolute;z-index:2147483001;min-width:24px;height:24px;padding:0 6px;border-radius:999px;background:#c62828;color:#fff;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.4);font-weight:800;font-size:13px;line-height:20px;text-align:center;pointer-events:none}",
     ".ffw-arming,.ffw-arming *{cursor:crosshair !important}",
     ".ffw-overlay{position:fixed;inset:0;z-index:2147483003;background:rgba(8,14,12,.55);display:flex;align-items:center;justify-content:center;padding:16px;padding-bottom:calc(16px + env(safe-area-inset-bottom,0px))}",
-    ".ffw-panel{width:min(620px,100%);max-height:88vh;overflow-y:auto;background:#fff;border:2px solid #0b3d2e;border-radius:14px;box-shadow:0 16px 50px rgba(0,0,0,.4);padding:18px 18px 16px}",
-    ".ffw-panel h2{margin:0 0 4px;font-size:19px}",
+    ".ffw-panel{position:relative;width:min(620px,100%);max-height:88vh;overflow-y:auto;background:#fff;border:2px solid #0b3d2e;border-radius:14px;box-shadow:0 16px 50px rgba(0,0,0,.4);padding:18px 18px 16px}",
+    ".ffw-panel-close{position:absolute;top:12px;right:14px;appearance:none;background:none;border:none;color:#445;font-size:14px;font-weight:700;cursor:pointer;padding:6px 8px;border-radius:6px;-webkit-tap-highlight-color:transparent}",
+    ".ffw-panel-close:hover{background:#eef2f0;color:#101418}",
+    ".ffw-panel-close:focus-visible{outline:3px solid #ffd24d;outline-offset:2px}",
+    ".ffw-panel h2{margin:0 30px 4px 0;font-size:19px}",
     ".ffw-panel .ffw-sub{color:#445;margin:0 0 14px;font-size:13px}",
     ".ffw-field-label{font-weight:700;margin:12px 0 6px}",
     ".ffw-review-text{width:100%;min-height:120px;border:1px solid #9aa7a1;border-radius:8px;padding:10px 12px;font:inherit;resize:vertical;background:#fff;color:#101418}",
@@ -366,6 +369,18 @@
     panel.setAttribute("role", "dialog");
     panel.setAttribute("aria-modal", "true");
     panel.setAttribute("aria-label", "Share your feedback");
+
+    /* Standing rule (CLAUDE.md, Form & Modal Standards): plain "X Close" text
+       button, top-right, subtle hover -- never a red-circle X. Discard/Send
+       already guard correctly (onDiscard only confirms when there's
+       something to lose), but "Discard" reads as loss-coded even for a
+       no-cost exit -- this gives a neutral third way out (2026-09-02
+       ux-heuristic-review, Finding 2). */
+    var closeBtn = elt("button", "ffw-panel-close", "✕ Close");
+    closeBtn.type = "button";
+    closeBtn.setAttribute("aria-label", "Close feedback dialog");
+    closeBtn.addEventListener("click", onDiscard);
+    panel.appendChild(closeBtn);
 
     panel.appendChild(elt("h2", null, "Share your feedback"));
     panel.appendChild(elt("p", "ffw-sub", "Type your feedback below. We read every note. Nothing is sent until you choose Send."));
