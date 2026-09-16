@@ -994,7 +994,12 @@ body.consent-open { padding-bottom: 240px; }
 }
 .quiz-opt:hover { border-color: var(--color-primary); }
 .quiz-opt.chosen-right { border-color: var(--color-success-deep); background: var(--color-success-light); color: var(--color-success-deep); }
-.quiz-opt.chosen-wrong { border-color: var(--color-error); background: var(--color-error-light); color: var(--color-error); }
+/* Amber, not red (2026-09-02 ux-heuristic-review, Finding 1): this product's
+   anxiety-first mandate bans failure-coded signals, and a red-bordered box
+   after tapping an answer reads like the "flashing red warning" Module 1
+   itself teaches users to distrust. Tokens are already AA-compliant here
+   (--color-warning-deep is 6.1:1 on --color-warning-light). */
+.quiz-opt.chosen-wrong { border-color: var(--color-warning-deep); background: var(--color-warning-light); color: var(--color-warning-deep); }
 .quiz-opt:disabled { cursor: default; }
 .quiz-fb {
   display: none; margin-top: var(--space-4); border-radius: var(--radius-md);
