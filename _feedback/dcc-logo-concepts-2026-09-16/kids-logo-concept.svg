@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160" width="640" height="160" aria-label="DCC Kids Logo Concept">
+  <defs>
+    <style>
+      .brand-title-dcc { font-family: 'Source Sans 3', 'Segoe UI', sans-serif; font-weight: 700; font-size: 52px; fill: #1D4E89; }
+      .brand-title-kids { font-family: 'Source Sans 3', 'Segoe UI', sans-serif; font-weight: 800; font-size: 52px; fill: #E8842C; }
+      .brand-sub { font-family: 'Source Sans 3', 'Segoe UI', sans-serif; font-weight: 600; font-size: 22px; fill: #1C2733; letter-spacing: 0.5px; }
+      .brand-tag { font-family: 'Source Sans 3', 'Segoe UI', sans-serif; font-weight: 600; font-size: 14px; fill: #2A7B6F; letter-spacing: 1px; text-transform: uppercase; }
+    </style>
+  </defs>
+
+  <!-- Left: Mark Container (120x120 at offset x=20, y=20) -->
+  <g transform="translate(20, 20)">
+    <!-- Squircle background in DCC Teal (#2A7B6F) with Orange border -->
+    <rect width="120" height="120" rx="24" fill="#2A7B6F" stroke="#E8842C" stroke-width="3"/>
+
+    <!-- Light Bulb Silhouette -->
+    <path d="M60 26 C80 26 92 40 92 57 C92 70 82 78 78 84 L74 91 L46 91 L42 84 C38 78 28 70 28 57 C28 40 40 26 60 26Z" 
+          fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+    
+    <!-- Bulb Base Lines -->
+    <line x1="46" y1="98" x2="74" y2="98" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+    <line x1="50" y1="105" x2="70" y2="105" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Sideways Baseball Cap (#E8842C Burnt Orange) -->
+    <!-- Cap Crown resting on top of bulb -->
+    <path d="M42 28 C42 16 53 12 64 12 C74 12 82 17 82 28 Z" fill="#E8842C"/>
+    <!-- Cap Visor / Brim extending right -->
+    <path d="M76 28 C85 28 98 30 102 36 C92 36 78 32 72 30.5 Z" fill="#E8842C"/>
+    <!-- Cap Top Button -->
+    <circle cx="62" cy="12" r="3" fill="#FAFAF8"/>
+
+    <!-- Calm / Friendly Eye Dots inside Bulb -->
+    <circle cx="49" cy="55" r="5.5" fill="#FAFAF8"/>
+    <circle cx="71" cy="55" r="5.5" fill="#FAFAF8"/>
+    <!-- Calm Smile Arc -->
+    <path d="M53 68 Q60 74 67 68" fill="none" stroke="#FAFAF8" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Right: Wordmark Lockup -->
+  <!-- Divider line -->
+  <line x1="168" y1="32" x2="168" y2="128" stroke="#D5DDE6" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Text elements -->
+  <g transform="translate(192, 0)">
+    <!-- Primary Title: DCC KIDS -->
+    <text x="0" y="65">
+      <tspan class="brand-title-dcc">DCC </tspan>
+      <tspan class="brand-title-kids">KIDS</tspan>
+    </text>
+    <!-- Secondary Title -->
+    <text x="0" y="98" class="brand-sub">Digital Confidence Centre</text>
+    <!-- Junior Tier Tag -->
+    <text x="0" y="124" class="brand-tag">Youth &amp; Junior Learning Tier</text>
+  </g>
+</svg>

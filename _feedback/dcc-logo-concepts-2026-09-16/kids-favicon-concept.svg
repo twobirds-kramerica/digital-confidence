@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" aria-label="DCC Kids Favicon Concept">
+  <!-- DCC Kids Favicon Concept (32x32) -->
+  <!-- Background: DCC Teal (#2A7B6F) with 6px rounded corners -->
+  <rect width="32" height="32" rx="6" fill="#2A7B6F"/>
+
+  <!-- Light Bulb Contour (DCC Core Mark Family Shape) -->
+  <path d="M16 6 C21 6 24 10 24 14.5 C24 18.5 21.5 20.5 20.5 22 L19.5 23.5 L12.5 23.5 L11.5 22 C10.5 20.5 8 18.5 8 14.5 C8 10 11 6 16 6Z" 
+        fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- Bulb Base Lines -->
+  <line x1="12.5" y1="25.5" x2="19.5" y2="25.5" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="13.5" y1="27.5" x2="18.5" y2="27.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Kid Cue 1: Stylized Sideways Baseball Cap (#E8842C Burnt Orange) -->
+  <!-- Cap Crown resting on top curve of bulb -->
+  <path d="M11 7 C11 3.8 14 3 17 3 C20 3 22 4.5 22 7.5 Z" fill="#E8842C"/>
+  <!-- Cap Visor / Brim sticking out to the right -->
+  <path d="M20.5 7.5 C23 7.5 26.5 8 27.5 9.5 C25 9.5 21 8.5 19.5 8.2 Z" fill="#E8842C"/>
+  <!-- Small Button on Cap top -->
+  <circle cx="16.5" cy="3" r="0.8" fill="#FAFAF8"/>
+
+  <!-- Kid Cue 2: Friendly, Serious-Calm Eye Dots inside Bulb (#FAFAF8) -->
+  <circle cx="13" cy="14" r="1.5" fill="#FAFAF8"/>
+  <circle cx="19" cy="14" r="1.5" fill="#FAFAF8"/>
+  <!-- Slight subtle calm smile arc -->
+  <path d="M14 17.5 Q16 19 18 17.5" fill="none" stroke="#FAFAF8" stroke-width="1.2" stroke-linecap="round"/>
+</svg>
