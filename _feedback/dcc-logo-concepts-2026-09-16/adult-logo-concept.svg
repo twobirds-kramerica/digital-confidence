@@ -1,9 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160" width="640" height="160" aria-label="DCC Adults Logo Concept">
   <defs>
     <style>
-      .brand-title { font-family: 'Source Sans 3', 'Segoe UI', sans-serif; font-weight: 700; font-size: 52px; fill: #1D4E89; }
+      .brand-title-dcc { font-family: 'Source Sans 3', 'Segoe UI', sans-serif; font-weight: 700; font-size: 52px; fill: #1D4E89; }
+      .brand-title-adults { font-family: 'Source Sans 3', 'Segoe UI', sans-serif; font-weight: 700; font-size: 52px; fill: #E0A63A; }
       .brand-sub { font-family: 'Source Sans 3', 'Segoe UI', sans-serif; font-weight: 600; font-size: 22px; fill: #1C2733; letter-spacing: 0.5px; }
-      .brand-tag { font-family: 'Merriweather', Georgia, serif; font-style: italic; font-size: 15px; fill: #7A4A00; }
+      .brand-tag { font-family: 'Source Sans 3', 'Segoe UI', sans-serif; font-weight: 600; font-size: 14px; fill: #1D4E89; letter-spacing: 1px; text-transform: uppercase; }
     </style>
   </defs>
 
@@ -12,7 +13,7 @@
     <!-- Squircle background in Trust Blue (#1D4E89) with subtle Amber border -->
     <rect width="120" height="120" rx="24" fill="#1D4E89" stroke="#E0A63A" stroke-width="3"/>
 
-    <!-- Light Bulb Silhouette (Scaled to 120x120 box) -->
+    <!-- Light Bulb Silhouette (Full Mark Family Shape) -->
     <path d="M60 20 C80 20 92 36 92 54 C92 68 82 76 78 83 L74 90 L46 90 L42 83 C38 76 28 68 28 54 C28 36 40 20 60 20Z" 
           fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
     
@@ -20,16 +21,19 @@
     <line x1="46" y1="97" x2="74" y2="97" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
     <line x1="50" y1="104" x2="70" y2="104" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
 
-    <!-- Spectacles Motif (#E0A63A Warm Amber) -->
+    <!-- Adult Spectacles Motif (#E0A63A Warm Amber) - Thinner stroke (stroke/radius = 0.25, matching favicon) -->
     <!-- Left Lens -->
-    <circle cx="46" cy="53" r="11" fill="none" stroke="#E0A63A" stroke-width="4.5"/>
+    <circle cx="46.5" cy="53.5" r="12" fill="none" stroke="#E0A63A" stroke-width="3.0"/>
     <!-- Right Lens -->
-    <circle cx="74" cy="53" r="11" fill="none" stroke="#E0A63A" stroke-width="4.5"/>
+    <circle cx="73.5" cy="53.5" r="12" fill="none" stroke="#E0A63A" stroke-width="3.0"/>
     <!-- Bridge -->
-    <path d="M57 51 C58.5 47 61.5 47 63 51" fill="none" stroke="#E0A63A" stroke-width="4" stroke-linecap="round"/>
+    <path d="M58.5 51.4 C59.4 48.4 60.6 48.4 61.5 51.4" fill="none" stroke="#E0A63A" stroke-width="2.7" stroke-linecap="round"/>
     <!-- Temples -->
-    <line x1="35" y1="51" x2="30" y2="49" stroke="#E0A63A" stroke-width="3.5" stroke-linecap="round"/>
-    <line x1="85" y1="51" x2="90" y2="49" stroke="#E0A63A" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="34.5" y1="51.4" x2="28.5" y2="49.3" stroke="#E0A63A" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="85.5" y1="51.4" x2="91.5" y2="49.3" stroke="#E0A63A" stroke-width="2.4" stroke-linecap="round"/>
+
+    <!-- Facial Expression: Subtle Calm Smile (#FAFAF8) -->
+    <path d="M54 74 Q60 78.5 66 74" fill="none" stroke="#FAFAF8" stroke-width="3.0" stroke-linecap="round"/>
   </g>
 
   <!-- Right: Wordmark Lockup -->
@@ -38,11 +42,14 @@
 
   <!-- Text elements -->
   <g transform="translate(192, 0)">
-    <!-- Primary Title -->
-    <text x="0" y="65" class="brand-title">DCC</text>
+    <!-- Primary Title: DCC Adults -->
+    <text x="0" y="65">
+      <tspan class="brand-title-dcc">DCC </tspan>
+      <tspan class="brand-title-adults">Adults</tspan>
+    </text>
     <!-- Secondary Title -->
     <text x="0" y="98" class="brand-sub">Digital Confidence Centre</text>
-    <!-- Brand Essence Tag -->
-    <text x="0" y="124" class="brand-tag">Calm. Capable. Dignified.</text>
+    <!-- Tier Tag: ADULT LEARNING TIER (Matching Kids style, colored Trust Blue) -->
+    <text x="0" y="124" class="brand-tag">ADULT LEARNING TIER</text>
   </g>
 </svg>
