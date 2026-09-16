@@ -10,7 +10,7 @@
 
 DCC (Digital Confidence Centre) helps Canadians — starting with adults/seniors — build genuine confidence with everyday technology, calmly and without judgement. The brand feeling: **a patient, respected friend who is good with tech and never makes you feel foolish.**
 
-**Three words:** Calm. Capable. Dignified.
+**Three words:** ~~Calm. Capable. Dignified.~~ **Confident. Capable. Caring.** (Aaron's live draft revision, 2026-09-16 — he felt "dignified" was unnecessary; this replacement is his own tentative wording, not fully locked yet, flagged here for the next review pass rather than silently overwritten.)
 
 ## 2. Tone rules (bind ALL copy, scripts, voiceover)
 
