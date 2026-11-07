@@ -1,25 +1,27 @@
 # New Horizons for Seniors Program — Grant Application
-**Grant program:** New Horizons for Seniors Program (NHSP)
-**Administered by:** Employment and Social Development Canada (ESDC)
-**Regional contact:** Service Canada — Ontario Region
-**Application type:** Community-Based Stream
-**Requested amount:** $25,000
-**Project period:** April 1, 2027 – March 31, 2028
-**Organisation:** Two Birds Innovation, St. Thomas, Ontario
-**Contact:** Aaron Patzalek | [Two Birds contact — see private vault]
+**Grant program:** New Horizons for Seniors Program (NHSP)  
+**Administered by:** Employment and Social Development Canada (ESDC)  
+**Regional contact:** Service Canada — Ontario Region  
+**Application stream:** Community-Based Stream (Projects up to $50,000)  
+**Target intake:** 2027–2028 Call (Intake opens Spring 2027; project delivery Fall 2027 – Fall 2028)  
+**Lead applicant:** Southwestern Ontario Public Library Partner (e.g. Elgin County Library / St. Thomas Public Library) in partnership with Senior Advisory Council  
+**Turnkey delivery partner:** Two Birds Innovation, St. Thomas, Ontario  
+**Project lead / technical advisor:** Aaron Patzalek | Two Birds Innovation  
 
 ---
 
 ## Section 1 — Organisation Description
 
-Two Birds Innovation is a social enterprise based in St. Thomas, Ontario, dedicated to building accessible technology tools for underserved communities. Our flagship project, the Digital Confidence Centre (DCC), is a free, bilingual digital literacy platform designed specifically for Canadian seniors.
+This application represents a community-led partnership between a recognized Southwestern Ontario public library system (the lead eligible applicant) and Two Birds Innovation (the technical and pedagogical delivery partner), governed by a paid Senior Advisory Council.
 
-Since launch, the Digital Confidence Centre has grown to include 19 self-paced learning modules covering foundational digital skills — from device safety and recognising online scams to video calling, online banking, and understanding artificial intelligence. The platform is:
+The core educational vehicle is the **Digital Confidence Centre (DCC)**, a zero-barrier, zero-login bilingual digital literacy and scam-defense platform designed specifically for Canadian adults aged 55+.
 
-- **Free** — no cost to learners or partner organisations
-- **Bilingual** — fully available in English and French
-- **Accessible** — WCAG 2.1 AA compliant, iPad-optimised, and designed for adults with limited prior technology experience
-- **Self-paced** — learners can work through modules independently, at home, or supported by a facilitator
+The Digital Confidence Centre features **40+ self-paced interactive learning modules** covering foundational and high-stakes digital safety skills — from identifying fraudulent texts, banking scams, and phone spoofing, to managing healthcare portals, video calling family, and understanding artificial intelligence. The platform is:
+
+- **Free and Open** — Zero cost to patrons or branches; no mandatory accounts, passwords, or personal data collection.
+- **Bilingual** — Available in Canadian English and French.
+- **Senior-First Accessibility** — High-contrast surfaces (WCAG 2.2 token AAA contrast), 19px base font, large 56px touch targets, dyslexic font toggle, and unpinned layout at high zoom (tested up to 200%).
+- **Turnkey Library Delivery** — 100% static client-side architecture with zero local IT overhead or firewall friction on shared library terminals.
 
 Our primary service area is Elgin County and the broader Thames Valley region of Southwestern Ontario, with learners accessing the platform through referrals from public libraries, community centres, and senior services organisations.
 
