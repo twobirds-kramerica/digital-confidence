@@ -78,52 +78,61 @@ html.dyslexic-font body, body.dyslexic-font {
 :root {
   color-scheme: light;
 
-  /* --- Colour: surfaces ---------------------------------------------------- */
-  --color-bg:              #F8F9FB; /* cool near-white page background */
-  --color-surface:         #FFFFFF; /* cards, modals */
-  --color-surface-alt:     #EAF1F8; /* topic tags, subtle blue fills */
-  --color-surface-primary: #E3EDF7; /* primary-tinted fill (confidence blocks) */
+  /* --- Colour: surfaces (Layered Architectural Depth) ---------------------- */
+  --color-bg:              #F7F9FC; /* Crisp cool-alabaster canvas; reduces glare vs pure white */
+  --color-surface:         #FFFFFF; /* Primary elevated card & module container surface */
+  --color-surface-elevated:#FCFDFE; /* High-tier interactive surface (modals, chrome) */
+  --color-surface-alt:     #EDF3FA; /* Soft slate-blue well for secondary pills & controls */
+  --color-surface-primary: #E6EFFA; /* Reassuring institutional blue tint for callouts */
+  --color-surface-warm:    #FBF7F0; /* Warm editorial parchment for Coach & human guidance */
 
-  /* --- Colour: brand — Trust Blue ------------------------------------------ */
-  --color-primary:         #1D4E89; /* deep trust blue — headings, nav, buttons (8.4:1 vs white) */
-  --color-primary-hover:   #163C6A; /* darker */
-  --color-primary-active:  #102D50; /* pressed */
-  --color-primary-light:   #E3EDF7;
+  /* --- Colour: brand — Trust Blue (Institutional Authority) ---------------- */
+  --color-primary:         #184377; /* 9.8:1 on #FFFFFF (AAA) · 9.3:1 on #F7F9FC (AAA) */
+  --color-primary-hover:   #12345D; /* 11.9:1 on #FFFFFF (AAA) */
+  --color-primary-active:  #0C2544; /* 14.2:1 on #FFFFFF (AAA) */
+  --color-primary-light:   #E6EFFA;
+  --color-primary-subtle:  rgba(24, 67, 119, 0.08);
   --color-primary-contrast:#FFFFFF;
 
   /* Warm accent — DECORATIVE ONLY (progress fills, badge trims, hero flourish).
      Never text on light. For amber TEXT on light fills use --color-accent-deep. */
   --color-accent:          #E0A63A;
-  --color-accent-strong:   #8A5A00; /* white text on this = 5.6:1 (AA) */
-  --color-accent-hover:    #6F4900;
-  --color-accent-active:   #5C3C00;
-  --color-accent-light:    #FDF3E3;
+  --color-accent-strong:   #7A4900; /* 7.1:1 with white text (AAA) */
+  --color-accent-hover:    #613A00;
+  --color-accent-active:   #4A2C00;
+  --color-accent-light:    #FEF5E7; /* Warm amber badge fill */
+  --color-accent-border:   #F3D29B; /* Crisp badge keyline */
+  --color-accent-deep:     #693E00; /* 7.8:1 on #FEF5E7 (AAA) — badge & pill label ink */
   --color-accent-contrast: #FFFFFF;
-  --color-accent-deep:     #7A4A00; /* 6.6:1 on #FDF3E3 (AA+) — amber text on light fill */
 
   /* --- Colour: text -------------------------------------------------------- */
-  --color-text:            #1C2733; /* near-black, blue-cast — 14.9:1 on bg */
-  --color-text-light:      #435463; /* meta/captions ONLY — 7.4:1 on bg (AAA). Never for body prose. */
+  --color-text:            #14202E; /* Deep navy-charcoal ink — 15.8:1 on bg (AAA) */
+  --color-text-light:      #3B4C5E; /* Secondary metadata — 8.3:1 on bg, 7.7:1 on surface-alt (AAA) */
   --color-text-inverse:    #FFFFFF;
-  --color-text-link:       #1D4E89;
-  --color-text-link-hover: #163C6A;
+  --color-text-link:       #184377; /* 9.3:1 on bg (AAA) */
+  --color-text-link-hover: #0C2544;
 
   /* --- Colour: structure --------------------------------------------------- */
-  --color-border:          #D5DDE6;
-  --color-border-strong:   #A9B7C6;
-  --color-divider:         #D5DDE6;
+  --color-border-subtle:   #E3EAF2; /* Structural hairline divider */
+  --color-border:          #CFD9E6; /* Resting card perimeter (1px crisp edge) */
+  --color-border-strong:   #94A7BE; /* Interactive input & high-visibility boundary (3.1:1 UI contrast) */
+  --color-divider:         #E3EAF2;
 
-  /* --- Colour: state ------------------------------------------------------- */
-  --color-success:         #2E7D32;
-  --color-success-light:   #E8F5E9;
-  --color-success-deep:    #1B5E20; /* 7.0:1 on success-light (AAA) */
-  --color-error:           #B42318; /* 6.5:1 on white */
-  --color-error-light:     #FDECEA;
-  --color-warning:         #F9A825; /* decorative border only — 1.9:1 as text */
-  --color-warning-light:   #FFF8E1;
-  --color-warning-deep:    #7A5800; /* 6.1:1 on warning-light (AA+) */
-  --color-info:            #1D4E89;
-  --color-info-light:      #E3EDF7;
+  /* --- Colour: state (Semantic Layering) ----------------------------------- */
+  --color-success:         #1E6B24;
+  --color-success-light:   #EAF6EC; /* Soft botanical mint fill */
+  --color-success-border:  #B7DFBE; /* Defined semantic perimeter */
+  --color-success-deep:    #145218; /* 8.4:1 on #EAF6EC (AAA) */
+  --color-error:           #9E1C13; /* 8.1:1 on #FFFFFF (AAA) */
+  --color-error-light:     #FDF0EF;
+  --color-error-border:    #F3B7B2;
+  --color-error-deep:      #7D140D; /* 9.2:1 on #FDF0EF (AAA) */
+  --color-warning:         #D98A00; /* Decorative bar/icon accent only */
+  --color-warning-light:   #FFF8E6; /* Soft warm-sand fill */
+  --color-warning-border:  #F2D184;
+  --color-warning-deep:    #664600; /* 7.6:1 on #FFF8E6 (AAA) */
+  --color-info:            #184377;
+  --color-info-light:      #E6EFFA;
 
   --color-disabled-bg:     #EDF0F4;
   --color-disabled-text:   #8A97A5; /* disabled affordance only, never content */
@@ -169,17 +178,31 @@ html.dyslexic-font body, body.dyslexic-font {
   --space-12:  48px;
   --space-16:  64px;
 
-  /* --- Radius scale ---------------------------------------------------------- */
-  --radius-sm:     4px;
-  --radius-md:     8px;
-  --radius-lg:     12px;
-  --radius-xl:     16px;
-  --radius-pill:   999px;
+  /* --- Radius scale (Architectural & Tactile) -------------------------------- */
+  --radius-sm:     6px;     /* Inline controls, text-size buttons */
+  --radius-md:     10px;    /* Quiz options, callout blocks, buttons */
+  --radius-lg:     16px;    /* Primary module cards, coach blocks, quiz containers */
+  --radius-xl:     22px;    /* Feature hero containers & device simulation frames */
+  --radius-pill:   9999px;  /* Time-to-Confidence lozenges & security badges */
 
-  /* --- Shadows --------------------------------------------------------------- */
-  --shadow-sm:  0 1px 4px rgba(16, 23, 31, 0.07);
-  --shadow-md:  0 2px 10px rgba(16, 23, 31, 0.09);
-  --shadow-lg:  0 4px 22px rgba(16, 23, 31, 0.13);
+  /* --- Multi-Layered Diffused Shadows (Tactile Paper Elevation) ------------- */
+  --shadow-sm:
+    0 1px 2px rgba(20, 32, 46, 0.04),
+    0 2px 6px rgba(20, 32, 46, 0.04);
+  --shadow-md:
+    0 2px 4px -1px rgba(20, 32, 46, 0.05),
+    0 6px 16px -2px rgba(20, 32, 46, 0.07);
+  --shadow-lg:
+    0 4px 8px -2px rgba(20, 32, 46, 0.06),
+    0 14px 32px -4px rgba(20, 32, 46, 0.10);
+  --shadow-card:
+    0 1px 2px rgba(20, 32, 46, 0.03),
+    0 4px 12px rgba(24, 67, 119, 0.05),
+    0 0 0 1px rgba(24, 67, 119, 0.04);
+  --shadow-card-hover:
+    0 4px 8px -2px rgba(20, 32, 46, 0.06),
+    0 12px 24px -4px rgba(24, 67, 119, 0.11),
+    0 0 0 1px rgba(24, 67, 119, 0.14);
 
   /* --- Motion (reduced-motion zeroed below) ---------------------------------- */
   --motion-ease:       cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -257,6 +280,8 @@ html[data-theme="dark"] {
   --shadow-sm:  0 1px 4px rgba(0,0,0,0.4);
   --shadow-md:  0 2px 10px rgba(0,0,0,0.45);
   --shadow-lg:  0 4px 22px rgba(0,0,0,0.55);
+  --shadow-card:             0 2px 10px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  --shadow-card-hover:       0 8px 24px rgba(0, 0, 0, 0.60), 0 0 0 1px rgba(133, 184, 237, 0.28);
 
   --focus-ring-color:   #E0A63A; /* brighter amber ring on dark — 7.9:1 vs bg */
 }

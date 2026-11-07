@@ -104,7 +104,8 @@ a:hover { color: var(--color-text-link-hover); }
      8abe-ca6628c8b5b9) -- provisional pending his actual pick; re-pinning
      with a recorded justification is still open to him. */
   background: var(--color-surface);
-  border-bottom: 2px solid var(--color-border);
+  border-top: 3px solid var(--color-primary);
+  border-bottom: 1px solid var(--color-border);
   box-shadow: var(--shadow-sm);
 }
 .site-header .container {
@@ -363,12 +364,26 @@ html[data-theme="dark"] { --dcc-leaf-red: #FF6B5E; }
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-card);
   padding: var(--space-6);
   display: flex; flex-direction: column; gap: var(--space-3);
   position: relative;
+  transition:
+    transform var(--motion-duration-2) var(--motion-ease),
+    box-shadow var(--motion-duration-2) var(--motion-ease),
+    border-color var(--motion-duration-2) var(--motion-ease);
 }
-.topic-card:hover { box-shadow: var(--shadow-md); border-color: var(--color-border-strong); }
+.topic-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-primary);
+}
+.topic-card:focus-within {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-card-hover);
+}
 .topic-card .card-icon {
   font-size: 34px; line-height: 1;
   width: 64px; height: 64px; border-radius: var(--radius-lg);
@@ -855,10 +870,12 @@ body.consent-open { padding-bottom: 240px; }
    ========================================================================== */
 .coach-block {
   display: flex; gap: var(--space-5); align-items: flex-start; flex-wrap: wrap;
-  background: var(--color-surface-primary);
-  border-left: 5px solid var(--color-primary);
-  border-radius: var(--radius-md);
-  padding: var(--space-5) var(--space-6); margin: var(--space-8) 0;
+  background: var(--color-surface-warm);
+  border: 1px solid var(--color-accent-border);
+  border-left: 6px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-6); margin: var(--space-8) 0;
 }
 .coach-block .coach-mark {
   flex: 0 0 auto; width: 52px; height: 52px; border-radius: 50%;
@@ -880,8 +897,11 @@ body.consent-open { padding-bottom: 240px; }
    ========================================================================== */
 .the-move {
   background: var(--color-success-light); color: var(--color-success-deep);
-  border: 1px solid var(--color-success-deep); border-radius: var(--radius-lg);
-  padding: var(--space-5) var(--space-6); margin: var(--space-8) 0;
+  border: 1px solid var(--color-success-border);
+  border-left: 6px solid var(--color-success-deep);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-6); margin: var(--space-8) 0;
 }
 .the-move .move-label {
   display: block; font-family: var(--font-heading);
@@ -967,8 +987,12 @@ body.consent-open { padding-bottom: 240px; }
 
 /* 3-Second Rule - calm, three steps, no alarm */
 .three-second-rule {
-  background: var(--color-surface-primary); border-radius: var(--radius-lg);
-  padding: var(--space-6); margin: var(--space-6) 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-6); margin: var(--space-8) 0;
 }
 .three-second-rule h3 { margin-top: 0; }
 .tsr-steps { display: flex; flex-wrap: wrap; gap: var(--space-5); margin: 0; padding: 0; list-style: none; }
@@ -987,12 +1011,23 @@ body.consent-open { padding-bottom: 240px; }
 .quiz-q h3 { margin-top: 0; }
 .quiz-opts { display: flex; flex-direction: column; gap: var(--space-3); }
 .quiz-opt {
-  text-align: left; background: var(--color-surface); color: var(--color-text);
-  border: 2px solid var(--color-border); border-radius: var(--radius-md);
+  text-align: left; background: var(--color-surface-elevated); color: var(--color-text);
+  border: 2px solid var(--color-border-strong); border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
   padding: var(--space-4) var(--space-5); min-height: var(--tap-target);
   font-family: var(--font-body); font-size: var(--font-size-base); line-height: 1.5; cursor: pointer;
+  transition:
+    background-color var(--motion-duration-1) var(--motion-ease),
+    border-color var(--motion-duration-1) var(--motion-ease),
+    box-shadow var(--motion-duration-1) var(--motion-ease),
+    transform var(--motion-duration-1) var(--motion-ease);
 }
-.quiz-opt:hover { border-color: var(--color-primary); }
+.quiz-opt:hover:not(:disabled) {
+  background: var(--color-surface-alt);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
 .quiz-opt.chosen-right { border-color: var(--color-success-deep); background: var(--color-success-light); color: var(--color-success-deep); }
 /* Amber, not red (2026-09-02 ux-heuristic-review, Finding 1): this product's
    anxiety-first mandate bans failure-coded signals, and a red-bordered box
