@@ -240,8 +240,10 @@ html[data-theme="dark"] {
 
   --color-bg:              #10171F;
   --color-surface:         #1A2430;
+  --color-surface-elevated:#1F2C3A;
   --color-surface-alt:     #223349;
   --color-surface-primary: #1E3048;
+  --color-surface-warm:    #26221A; /* warm dark parchment for coach block in dark mode */
 
   --color-primary:         #7FB3E8; /* light trust blue for headings/links on dark — 8.2:1 */
   --color-primary-hover:   #A3C9F0;
@@ -253,6 +255,7 @@ html[data-theme="dark"] {
   --color-accent-strong:   #8A5A00;
   --color-accent-light:    #3A2F10;
   --color-accent-deep:     #F5D48A; /* amber text on dark amber fill — 8.9:1 */
+  --color-accent-border:   #5C451D;
 
   --color-text:            #ECF1F6;
   --color-text-light:      #ADBDCB; /* 8.2:1 on surface */
